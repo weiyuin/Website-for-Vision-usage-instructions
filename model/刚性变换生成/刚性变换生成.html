@@ -16,115 +16,113 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>刚性变换生成工具</h1>
+<h1>Công cụ Tạo Biến đổi Cứng</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>该工具主要针对实际工程中，当目标图像无法提供很好的定位信息输出二维线性变换结果，或者传统的定位方式无法对指定对象提供二维线性变换时，该工具能够利用找线、卡尺等工具灵活的将目标的旋转平移信息生成二维线性变换供后续工具使用。</p>
+<p>Công cụ này chủ yếu dành cho các trường hợp trong thực tế khi ảnh mục tiêu không thể cung cấp thông tin định vị tốt để xuất kết quả biến đổi tuyến tính 2D, hoặc các phương pháp định vị truyền thống không thể cung cấp biến đổi tuyến tính 2D cho đối tượng chỉ định. Công cụ này có thể linh hoạt sử dụng các công cụ tìm đường, thước kẹp... để tạo ra thông tin dịch chuyển và xoay của mục tiêu dưới dạng biến đổi tuyến tính 2D cho các công cụ tiếp theo sử dụng.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称   </th>
-<th> 参数描述                                                                                                                   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口   </td>
-<td> 重置参考位置                                                 </td>
-<td> 此参数需要特别注意设置的方法。<br />选择<strong>是</strong>：则获取新的参考位置（一般来说，需要设置参考位置时才将此参数设置为是。特别的，如果参考位置一直有独立的数据源，才可以在实时检测时将此参数设置为否）。<br />选择<strong>否</strong>：实时检测时需要将该参数设置为否，此时将使用之前的参考数据（第一次设置参考位置时，需先将该参数设置为是，以获取训练的参考位置参数）。 </td>
-</tr>
-<tr>
-<td></td>
-<td>是否耦合角度</td>
-<td> 否：平移单独取自参考点，是：平移取自参考点平移和旋转角度                         </td>
-</tr>
-<tr>
-<td>图像窗口</td>
-<td>       无       </td>
-<td> 无                                                                                                                         </td>
-</tr>
-<tr>
-<td> 数据链     </td>
-<td> 位置参考值                                                   </td>
-<td> 参考位置的坐标，用于计算实时位置的改变（参考位置获取方式跟参数选择重置参考有关），scVector类型。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 实时位置   </td>
-<td> 实时位置的坐标，用于计算实时位置的改变，scVector类型。                                                                     </td>
-</tr>
-<tr>
-<td></td>
-<td> 角度参考值 </td>
-<td> 参考位置的角度，用于计算实时角度变换（参考位置获取方式跟参数选择重置参考有关），double类型。                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 实时角度   </td>
-<td> 实时位置的角度，用于计算实时角度变换，double类型。                                                                         </td>
-</tr>
-<tr>
-<td>高级界面</td>
-<td>  无  </td>
-<td> 无                                                                                                                         </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                           </th>
+<th>Phân loại </th>
+<th> Tên tham số   </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 二维线性变换   </td>
-<td> 实时位置相对于参考位置的平移、旋转、缩放变换       </td>
+<td> Cửa sổ thuộc tính   </td>
+<td> Đặt lại vị trí tham chiếu                                                 </td>
+<td> Tham số này cần chú ý cách thiết lập.<br />Chọn <strong>Có</strong>: lấy vị trí tham chiếu mới (thông thường chỉ đặt thành Có khi cần thiết lập vị trí tham chiếu. Đặc biệt, nếu vị trí tham chiếu luôn có nguồn dữ liệu độc lập, thì khi kiểm tra thực tế có thể đặt tham số này thành Không).<br />Chọn <strong>Không</strong>: khi kiểm tra thực tế cần đặt tham số này thành Không, lúc đó sẽ sử dụng dữ liệu tham chiếu trước đó (lần đầu thiết lập vị trí tham chiếu phải đặt thành Có để lấy tham số vị trí tham chiếu dùng trong huấn luyện).</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                     </td>
+<td>Có kết hợp góc</td>
+<td> Không: dịch chuyển lấy riêng từ điểm tham chiếu; Có: dịch chuyển lấy từ dịch chuyển và góc xoay của điểm tham chiếu. </td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>       Không       </td>
+<td> Không                                                                                                                         </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu     </td>
+<td> Giá trị vị trí tham chiếu                                                   </td>
+<td> Tọa độ vị trí tham chiếu dùng để tính toán thay đổi vị trí thực tế (cách lấy vị trí tham chiếu liên quan đến tham số đặt lại vị trí tham chiếu), kiểu scVector. </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                     </td>
+<td> Vị trí thực tế   </td>
+<td> Tọa độ vị trí thực tế dùng để tính toán thay đổi vị trí, kiểu scVector.                                                                     </td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无 </td>
-<td> 无                                                                 </td>
+<td></td>
+<td> Giá trị góc tham chiếu </td>
+<td> Góc vị trí tham chiếu dùng để tính biến đổi góc thực tế (cách lấy vị trí tham chiếu liên quan tham số đặt lại vị trí tham chiếu), kiểu double.                                                               </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 二维线性变换   </td>
-<td> 输出二维线性变换，供其他工具使用，同监视窗口参数。 </td>
+<td></td>
+<td> Góc thực tế   </td>
+<td> Góc vị trí thực tế dùng để tính biến đổi góc, kiểu double.                                                                         </td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>  Không  </td>
+<td> Không                                                                                                                         </td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Cửa sổ giám sát </td>
+<td> Biến đổi tuyến tính 2D   </td>
+<td> Biến đổi dịch chuyển, xoay, thu phóng vị trí thực tế so với vị trí tham chiếu       </td>
+</tr>
+<tr>
+<td></td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                                                     </td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td> Không </td>
+<td> Không                                                                 </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu   </td>
+<td> Biến đổi tuyến tính 2D   </td>
+<td> Xuất biến đổi tuyến tính 2D để các công cụ khác sử dụng, tương tự tham số cửa sổ giám sát. </td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không</p>
 
-<p>无</p>
+<h2>Lưu ý</h2>
 
-<h2>示例工程</h2>
+<p>Không</p>
 
-<p>参见“\Samples\刚性变换生成工具.gvp”。</p>
+<h2>Dự án mẫu</h2>
+
+<p>Xem tại “\Samples\刚性变换生成工具.gvp”.</p>

@@ -16,318 +16,294 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>显示与格式化</h1>
+<h1>Hiển thị và Định dạng</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>使用脚本实现在视图中格式化显示的功能。</p>
+<p>Sử dụng script để thực hiện chức năng hiển thị đã định dạng trên giao diện.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th> 接口名称                         </th>
-<th> 接口描述                           </th>
+<th> Tên giao diện                         </th>
+<th> Mô tả giao diện                      </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> ImageShowTextXY </td>
-<td> 用XY坐标表示需要显示的位置文字 </td>
+<td> Hiển thị văn bản tại vị trí tọa độ XY </td>
 </tr>
 <tr>
 <td> ImageShowTextPos </td>
-<td> 用二维向量的位置显示文字 </td>
+<td> Hiển thị văn bản tại vị trí vector 2 chiều </td>
 </tr>
 <tr>
 <td> ImageShowCircle </td>
-<td> 用二维向量的位置显示圆 </td>
+<td> Hiển thị hình tròn tại vị trí vector 2 chiều </td>
 </tr>
 <tr>
 <td> ImageShowPolyline </td>
-<td> 用点向量生成多边形 </td>
+<td> Tạo đa giác từ tập điểm vector </td>
 </tr>
 <tr>
 <td> ImageShowLine </td>
-<td> 用直线显示直线的位置 </td>
+<td> Hiển thị vị trí đường thẳng </td>
 </tr>
 <tr>
 <td> ImageShowLineSeg </td>
-<td> 用线段显示线段的位置  </td>
+<td> Hiển thị vị trí đoạn thẳng </td>
 </tr>
 <tr>
 <td> ImageShowLineSegVec </td>
-<td> 用两点显示线段的位置 </td>
+<td> Hiển thị vị trí đoạn thẳng từ hai điểm </td>
 </tr>
 <tr>
 <td> ImageShowRec </td>
-<td> 显示矩形区域 </td>
+<td> Hiển thị vùng hình chữ nhật </td>
 </tr>
 <tr>
 <td> ImageShowRecCenter </td>
-<td> 用中心和长宽显示矩形区域 </td>
+<td> Hiển thị vùng hình chữ nhật theo tâm và kích thước </td>
 </tr>
 <tr>
 <td> ImageShowAffRec </td>
-<td> 显示仿射矩形区域 </td>
+<td> Hiển thị vùng hình chữ nhật affine </td>
 </tr>
 <tr>
 <td> ImageShowAffRecCenter </td>
-<td> 用中心长宽角度显示仿射矩形区域 </td>
+<td> Hiển thị vùng hình chữ nhật affine theo tâm, kích thước và góc xoay </td>
 </tr>
 <tr>
 <td> ImagechowCrossVec </td>
-<td> 显示向量类型的十字 </td>
+<td> Hiển thị dấu cộng theo vector </td>
 </tr>
 <tr>
 <td> ImagechowCrossCood </td>
-<td> 显示位置姿态类型的十字 </td>
+<td> Hiển thị dấu cộng theo vị trí và tư thế </td>
 </tr>
 </tbody>
 </table>
 
+<h2>Chi tiết</h2>
 
-<h2>详细说明</h2>
-
-<h3>ImageShowTextXY(self,guiArray,posX=100,posY=100,strmsg=<strong>&ldquo;hello&rdquo;</strong>,clrLineColor = [0,255, 0],lFontSize = 100,degree=0.0)</h3>
-
-<ul>
-<li><p>功能：用XY坐标表示需要显示的位置文字。</p></li>
-<li><p>参数：</p>
+<h3>ImageShowTextXY(self, guiArray, posX=100, posY=100, strmsg=<strong>&ldquo;hello&rdquo;</strong>, clrLineColor=[0,255,0], lFontSize=100, degree=0.0)</h3>
 
 <ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>posX：double类型，表示X位置。</li>
-<li>posY：double类型，表示Y位置。</li>
-<li>strmsg：string类型，表示需要显示的内容。</li>
-<li>clrLineColor ：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>lFontSize ：int类型，字体大小。</li>
-<li>degree：double类型默认角度0.0°。</li>
+<li><p>Chức năng: Hiển thị văn bản tại vị trí tọa độ XY.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>posX: kiểu double, vị trí X.</li>
+<li>posY: kiểu double, vị trí Y.</li>
+<li>strmsg: kiểu string, nội dung hiển thị.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>lFontSize: kiểu int, kích thước font chữ.</li>
+<li>degree: kiểu double, góc xoay mặc định 0.0°.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImageShowTextPos(self, guiArray, pos, strmsg=<strong>&ldquo;hello&rdquo;</strong>, clrLineColor=[0,255,0], lFontSize=100)</h3>
+
+<ul>
+<li>Chức năng: Hiển thị văn bản tại vị trí vector 2 chiều.</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>pos: kiểu ScVector, vị trí hiển thị.</li>
+<li>strmsg: kiểu string, nội dung hiển thị.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>lFontSize: kiểu int, kích thước font chữ.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImageShowCircle(self, guiArray, centerpos, R=50, clrLineColor=[0,255,0], nLineWidth=1)</h3>
+
+<ul>
+<li>Chức năng: Hiển thị hình tròn tại vị trí vector 2 chiều.</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>centerpos: kiểu ScVector, vị trí tâm hình tròn.</li>
+<li>R: kiểu int, bán kính hình tròn.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImageShowPolyline(self, guiArray, VectorVec, clrLineColor=[0,255,0], nLineWidth=1)</h3>
+
+<ul>
+<li>Chức năng: Tạo đa giác từ tập điểm vector.</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>VectorVec: kiểu ScVectorVec, tập hợp điểm đa giác.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImageShowLine(self, guiArray, line, clrLineColor=[0,255,0], nLineWidth=1)</h3>
+
+<ul>
+<li>Chức năng: Hiển thị vị trí đường thẳng.</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>line: kiểu ScLine, đường thẳng.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImageShowLineSeg(self, guiArray, lineSeg, clrLineColor=[0,255,0], nLineWidth=1)</h3>
+
+<ul>
+<li>Chức năng: Hiển thị vị trí đoạn thẳng.</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>lineSeg: kiểu ScLineSeg, đoạn thẳng.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImageShowLineSegVec(self, guiArray, Pos1, Pos2, clrLineColor=[0,255,0], nLineWidth=1)</h3>
+
+<ul>
+<li>Chức năng: Hiển thị đoạn thẳng bằng hai điểm.</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>Pos1, Pos2: kiểu ScVector, hai điểm 2 chiều.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImageShowRec(self, guiArray, rect, clrLineColor=[0,255,0], nLineWidth=1, strLabel=<strong>&ldquo;&rdquo;</strong>)</h3>
+
+<ul>
+<li>Chức năng: Hiển thị vùng hình chữ nhật.</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>rect: kiểu scRect, hình chữ nhật.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
+<li>strLabel: kiểu string, nhãn cho hình chữ nhật.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImageShowRecCenter(self, guiArray, centerPos, W=100, H=200, clrLineColor=[0,255,0], nLineWidth=1, strLabel=<strong>&ldquo;&rdquo;</strong>)</h3>
+
+<ul>
+<li>Chức năng: Hiển thị hình chữ nhật theo tâm và kích thước (rộng, cao).</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>centerPos: kiểu ScVector, tâm hình chữ nhật.</li>
+<li>W: kiểu double, chiều rộng.</li>
+<li>H: kiểu double, chiều cao.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
+<li>strLabel: kiểu string, nhãn cho hình chữ nhật.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImageShowAffRec(self, guiArray, affinerect, clrLineColor=[0,255,0], nLineWidth=1, strLabel=<strong>&ldquo;&rdquo;</strong>)</h3>
+
+<ul>
+<li>Chức năng: Hiển thị vùng hình chữ nhật affine.</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>affinerect: kiểu scaffinerect, hình chữ nhật affine.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
+<li>strLabel: kiểu string, nhãn cho hình chữ nhật.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImageShowAffRecCenter(self, guiArray, centerPos, W=100, H=200, dangle=0.0, clrLineColor=[0,255,0], nLineWidth=1, strLabel=<strong>&ldquo;&rdquo;</strong>)</h3>
+
+<ul>
+<li><p>Chức năng: Hiển thị hình chữ nhật affine theo tâm, kích thước và góc xoay.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>centerPos: kiểu ScVector, tâm hình chữ nhật.</li>
+<li>W: kiểu double, chiều rộng.</li>
+<li>H: kiểu double, chiều cao.</li>
+<li>dangle: kiểu double, góc xoay.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
+<li>strLabel: kiểu string, nhãn cho hình chữ nhật.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImagechowCrossVec(self, guiArray, pos, clrLineColor=[0,255,0], nLineWidth=1)</h3>
+
+<ul>
+<li>Chức năng: Hiển thị dấu cộng tại vị trí vector.</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>pos: kiểu ScVector, vị trí dấu cộng.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
+</ul>
+</li>
+</ul>
+
+<h3>ImagechowCrossCood(self, guiArray, pos, degree=0.0, clrLineColor=[0,255,0], nLineWidth=1)</h3>
+
+<ul>
+<li>Chức năng: Hiển thị dấu cộng tại vị trí có góc xoay.</li>
+<li>Tham số:
+<ul>
+<li>self: đối tượng lớp ScImageShow.</li>
+<li>guiArray: mảng hiển thị guiArray.</li>
+<li>pos: kiểu ScVector, vị trí dấu cộng.</li>
+<li>degree: kiểu double, góc xoay.</li>
+<li>clrLineColor: kiểu RGB, mặc định [0, 255, 0] màu xanh lá.</li>
+<li>nLineWidth: kiểu int, độ dày đường viền.</li>
 </ul>
 </li>
 </ul>
 
 
-<h3>ImageShowTextPos(self,guiArray,pos,strmsg=<strong>&ldquo;hello&rdquo;</strong>,clrLineColor=[0,255, 0],lFontSize=100)</h3>
 
-<ul>
-<li>功能：用二维向量的位置显示文字。</li>
-<li>参数：
+<h2>Mã ví dụ</h2>
 
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>pos：ScVector类型，表示显示位置。</li>
-<li>strmsg：string类型，表示需要显示的内容。</li>
-<li>clrLineColor：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>lFontSize：int类型，字体大小。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImageShowCircle(self,guiArray,centerpos, R=50,clrLineColor=[0, 255, 0], nLineWidth=1)</h3>
-
-<ul>
-<li>功能：用二维向量的位置显示圆。</li>
-<li>参数：
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>centerpos：ScVector类型，表示显示圆心位置。</li>
-<li>R：int类型，表示圆半径大小。</li>
-<li>clrLineColor：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth：int类型，表示线宽。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImageShowPolyline(self,guiArray,VectorVec, clrLineColor=[0,255, 0], nLineWidth=1)</h3>
-
-<ul>
-<li>功能：用点向量生成多边形。</li>
-<li>参数：
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>VectorVec：ScVectorVec类型，表示多边形上的点集。</li>
-<li>clrLineColor：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth：int类型，表示线宽。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImageShowLine(self,guiArray,line,clrLineColor = [0,255, 0],nLineWidth = 1)</h3>
-
-<ul>
-<li>功能：用直线显示直线的位置。</li>
-<li>参数：
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>line：ScLine类型，表示直线。</li>
-<li>clrLineColor ：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth ：int类型，表示线宽。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImageShowLineSeg(self,guiArray,lineSeg, clrLineColor=[0,255, 0], nLineWidth=1)</h3>
-
-<ul>
-<li>功能：用线段显示线段的位置。</li>
-<li>参数：
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>lineSeg：ScLineSeg类型，表示线段。</li>
-<li>clrLineColor：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth：int类型，表示线宽。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImageShowLineSegVec(self,guiArray,Pos1,Pos2, clrLineColor=[0,255, 0], nLineWidth=1)</h3>
-
-<ul>
-<li>功能：用两点显示线段的位置。</li>
-<li>参数：
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>Pos1，Pos2：ScVector类型，表示二维向量。</li>
-<li>clrLineColor：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth：int类型，表示线宽。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImageShowRec(self, guiArray, rect, clrLineColor=[0,255, 0], nLineWidth=1,strLabel= <strong>&ldquo;&rdquo;</strong>)</h3>
-
-<ul>
-<li>功能：显示矩形区域。</li>
-<li>参数：
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>rect：scRect类型，表示矩形。</li>
-<li>clrLineColor：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth：int类型，表示线宽。</li>
-<li>strLabel：string类型显示矩形的标号。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImageShowRecCenter(self, guiArray,centerPos,W=100,==200, clrLineColor=[0,255, 0], nLineWidth=1,strLabel= <strong>&ldquo;&rdquo;</strong>)</h3>
-
-<ul>
-<li>功能：用中心和长宽显示矩形区域。</li>
-<li>参数：
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>centerPos：scVector类型，表示矩形。</li>
-<li>W：double类型表示矩形宽。</li>
-<li>H：double类型 表示矩形高。</li>
-<li>clrLineColor ：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth：int类型，表示线宽。</li>
-<li>strLabel：string类型显示矩形的标号。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImageShowAffRec(self, guiArray, affinerect, clrLineColor=[0,255, 0], nLineWidth=1,strLabel= <strong>&ldquo;&rdquo;</strong>)</h3>
-
-<ul>
-<li>功能：显示仿射矩形区域。</li>
-<li>参数：
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>affinerect：scaffinerect类型，表示仿射矩形。</li>
-<li>clrLineColor：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth：int类型，表示线宽。</li>
-<li>strLabel：string类型显示矩形的标号。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImageShowAffRecCenter(self, guiArray,centerPos,W=100,H=200,dangle=0.0, clrLineColor=[0,255, 0], nLineWidth=1,strLabel= <strong>&ldquo;&rdquo;</strong>)</h3>
-
-<ul>
-<li><p>功能：用中心长宽角度显示仿射矩形区域。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>centerPos：scVector类型，表示矩形。</li>
-<li>W：double类型 表示矩形宽。</li>
-<li>H：double类型 表示矩形高。</li>
-<li>clrLineColor：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth：int类型，表示线宽。</li>
-<li>strLabel：string类型 显示矩形的标号。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImagechowCrossVec(self,guiArray, Vec, clrLineColor=[0,255, 0], nLineWidth=1)</h3>
-
-<ul>
-<li>功能：显示向量类型的十字。</li>
-<li>参数：
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>Vec：二维向量位置位置（含角度）。</li>
-<li>clrLineColor：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth：int类型，表示线宽。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ImagechowCrossCood(self, guiArray, Cood, size=10,clrLineColor=[0, 255, 0], nLineWidth=1)</h3>
-
-<ul>
-<li>功能：显示位置姿态类型的十字。</li>
-<li>参数：
-
-<ul>
-<li>self：ScImageShow类本身。</li>
-<li>guiArray：显示数组guiArray。</li>
-<li>Cood：位置姿态生成的位置（含角度）。</li>
-<li>size：尺寸大小。</li>
-<li>clrLineColor：RGB类型，默认 [0, 255, 0]绿色。</li>
-<li>nLineWidth：int类型，表示线宽。</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>示例代码</h2>
-
-<p>脚本中函数在使用过程中，格式比较统一，利于扩展。例程Demo与实际效果如下：</p>
+<p>Trong quá trình sử dụng các hàm trong script, định dạng tương đối đồng nhất, thuận tiện cho việc mở rộng. Ví dụ Demo và hiệu quả thực tế như sau:</p>
 
 <p><img src="media/68bggbjak1264196agagd.png" alt="" /></p>
 
@@ -370,10 +346,10 @@ ScImageShow.ImageShowAffRecCenter(ScImageShow, guiArray,p2,600,500,45, [0, 255, 
 
 <p>```</p>
 
-<h2>注意：</h2>
+<h2>Lưu ý:</h2>
 
 <p>from ScImageShow import ScImageShow</p>
 
-<p>引用库：ScImageShow</p>
+<p>Thư viện tham chiếu: ScImageShow</p>
 
-<p>类名称：class ScImageShow</p>
+<p>Tên lớp: class ScImageShow</p>
