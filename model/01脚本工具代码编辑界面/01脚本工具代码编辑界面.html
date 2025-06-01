@@ -16,129 +16,102 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1><strong>代码编辑界面</strong></h1>
+<h1><strong>Giao diện chỉnh sửa mã</strong></h1>
 
-<p>脚本工具的高级界面是脚本的代码编辑界面，如下图所示。</p>
+<p>Giao diện nâng cao của công cụ script là giao diện chỉnh sửa mã nguồn, như hình dưới:</p>
 
 <p><img src="media/Script_1_1.png" alt="image-20210317131956954" /></p>
 
-<h2>菜单栏</h2>
+<h2>Thanh menu</h2>
 
-<p>菜单栏暂时只提供文件、运行可用；</p>
-
-<ul>
-<li><p>文件菜单</p>
+<p>Hiện tại chỉ cung cấp menu Tệp và Chạy:</p>
 
 <ul>
-<li><p>打开：打开.py文件。</p></li>
-<li><p>保存 Ctrl + S：将代码更新到脚本工具。</p></li>
-<li><p>另存为：将代码另存为.py文件。</p></li>
+  <li><p>Menu Tệp</p>
+    <ul>
+      <li><p>Mở: Mở tệp .py.</p></li>
+      <li><p>Lưu Ctrl + S: Cập nhật mã vào công cụ script.</p></li>
+      <li><p>Lưu thành: Lưu mã dưới dạng tệp .py mới.</p></li>
+    </ul>
+  </li>
+  <li><p>Menu Chỉnh sửa: Tạm thời chưa có, sẽ được mở trong phiên bản tiếp theo.</p>
+    <ul>
+      <li><p>Tìm Ctrl + F: Mở cửa sổ tìm kiếm.</p></li>
+      <li><p>Thay thế Ctrl + H: Mở cửa sổ thay thế.</p></li>
+      <li><p>Đánh dấu: Mở cửa sổ đánh dấu.</p></li>
+      <li><p>Đi tới Ctrl + G: Mở cửa sổ nhảy tới dòng.</p></li>
+      <li><p>Ghi chú Alt + 3: Ghi chú đoạn mã được chọn.</p></li>
+      <li><p>Bỏ ghi chú Alt + 4: Bỏ ghi chú đoạn mã đã chọn.</p></li>
+      <li><p>Cài đặt: Tạm thời chưa có, sẽ có trong phiên bản tiếp theo.</p></li>
+    </ul>
+  </li>
+  <li><p>Chạy F5:</p>
+    <ul>
+      <li>Thực thi mã script.</li>
+    </ul>
+  </li>
+  <li><p>Trợ giúp</p></li>
 </ul>
-</li>
-<li><p>编辑菜单：暂无，下个版本开放。</p>
+
+<h2>Thanh công cụ</h2>
 
 <ul>
-<li><p>查找 Ctrl + F：打开查找窗口。</p></li>
-<li><p>替换 Ctrl + H：打开替换窗口。</p></li>
-<li><p>标记：打开标记窗口。</p></li>
-<li><p>转到 Ctrl + G：打开行跳转窗口。</p></li>
-<li><p>注释 Alt + 3：注释选中代码。</p></li>
-<li><p>取消注释 Alt + 4：取消注释选中代码。</p></li>
-<li><p>设置：暂无，下个版本开放。</p></li>
+  <li><p>Mở <img src="media/script_1__01.png" alt="" /></p>
+    <p>Mở tệp .py.</p></li>
+  <li><p>Lưu <img src="media/script_1__02.png" alt="" /></p>
+    <p>Lưu mã vào công cụ script.</p></li>
+  <li><p>Lưu thành <img src="media/script_1__03.png" alt="" /></p>
+    <p>Lưu mã thành tệp .py mới.</p></li>
+  <li><p>Cắt <img src="media/script_1__04.png" alt="" /></p>
+    <p>Cắt đoạn mã được chọn.</p></li>
+  <li><p>Sao chép <img src="media/script_1__05.png" alt="" /></p>
+    <p>Sao chép đoạn mã được chọn.</p></li>
+  <li><p>Dán <img src="media/script_1__06.png" alt="" /></p>
+    <p>Dán mã.</p></li>
+  <li><p>Chạy <img src="media/script_1__07.png" alt="" /></p>
+    <p>Chạy mã Python.</p></li>
+  <li><p>Mở trợ giúp <img src="media/script_1__08.png" alt="" /></p>
+    <p>Mở tài liệu trợ giúp script.</p></li>
 </ul>
-</li>
-<li><p>运行 F5：</p>
+
+<h2>Chỉnh sửa</h2>
 
 <ul>
-<li>执行脚本代码。</li>
-</ul>
-</li>
-<li><p>帮助</p></li>
-</ul>
-
-
-<h2>工具栏</h2>
-
-<ul>
-<li><p>打开<img src="media/script_1__01.png" alt="" /></p>
-
-<p>打开.py文件。</p></li>
-<li><p>保存<img src="media/script_1__02.png" alt="" /></p>
-
-<p>将代码更新到脚本工具。</p></li>
-<li><p>另存为<img src="media/script_1__03.png" alt="" /></p>
-
-<p> 将代码另存为.py文件。</p></li>
-<li><p>剪切<img src="media/script_1__04.png" alt="" /></p>
-
-<p>剪切选中代码。</p></li>
-<li><p>复制<img src="media/script_1__05.png" alt="" /></p>
-
-<p>复制选中代码。X<sub>1</sub></p></li>
-<li><p>粘贴<img src="media/script_1__06.png" alt="" /></p>
-
-<p> 粘贴代码。</p></li>
-<li><p>运行<img src="media/script_1__07.png" alt="" /></p>
-
-<p>执行python代码。</p></li>
-<li><p>打开帮助<img src="media/script_1__08.png" alt="" /></p>
-
-<p>打开脚本帮助文档。</p></li>
-</ul>
-
-
-<h2>编辑</h2>
-
-<ul>
-<li><p>高亮显示</p>
-
-<ul>
-<li><p>关键字颜色为<font color= #FF7700>淡橘黄色</font>：</p>
-
-<p>如"<font color = #FF7700>True False class return None if while</font>>"</p></li>
-<li><p>built-in function颜色为<font color= #900090>紫色</font>：</p>
-
-<p>如"<font color= #900090>print list abs</font> "</p></li>
-<li><p>数字颜色为<font color= #007373>蓝绿色</font>：</p>
-
-<p><font color= #007373>0 1 2 3 4 5 6 7 8 9</font></p></li>
-<li><p>行注释和块注释颜色为<font color= #DD0000>暗红色</font>：</p>
-
-<p><font color= #DD0000>## 行注释</font></p>
-
-<p><font color= #DD0000>### 块注释</font></p></li>
-<li><p>字符串颜色为<font color= #15A315>绿色</font>：</p>
-
-<p>1、双引号：<font color= #15A315>“字符串abc123”</font></p>
-
-<p>2、单引号：<font color= #15A315>‘字符串abc123’</font></p>
-
-<p>3、三单引号：<font color= #15A315>&lsquo;&rsquo;&lsquo;字符串abc123&rsquo;&lsquo;&rsquo;</font></p>
-
-<p>4、三双引号：<font color= #15A315>&ldquo;&rdquo;&ldquo;字符串abc123&rdquo;&ldquo;&rdquo;</font></p></li>
-<li><p>类名和函数名颜色是<font color= #0000FF>蓝色</font>：</p>
-
-<p><font color = #FF7700>class</font> <font color= #0000FF>myClass</font>:</p>
-
-<p>​     <font color = #FF7700>def</font> <font color= #0000FF>_<em>init</em>_</font>:</p></li>
-<li><p>其他为黑色。</p></li>
-</ul>
-</li>
-<li><p>快捷键</p>
-
-<ul>
-<li><p>Ctrl + F: 打开查找窗口。</p></li>
-<li><p>Ctrl + H: 打开替换窗口。</p></li>
-<li><p>Ctrl + G: 打开跳转窗口。</p></li>
-<li><p>Ctrl + S：保存代码到工具。</p></li>
-<li><p>Alt + 3: 注释代码。</p></li>
-<li><p>Alt + 4: 取消注释。</p></li>
-<li><p>F5: 执行代码。</p></li>
-</ul>
-</li>
+  <li><p>Hiển thị tô màu (Highlight)</p>
+    <ul>
+      <li><p>Từ khóa có màu <font color="#FF7700">cam nhạt</font>:</p>
+        <p>Như "<font color="#FF7700">True False class return None if while</font>"</p></li>
+      <li><p>Hàm có sẵn (built-in) màu <font color="#900090">tím</font>:</p>
+        <p>Như "<font color="#900090">print list abs</font>"</p></li>
+      <li><p>Số có màu <font color="#007373">xanh ngọc</font>:</p>
+        <p><font color="#007373">0 1 2 3 4 5 6 7 8 9</font></p></li>
+      <li><p>Ghi chú dòng và ghi chú khối có màu <font color="#DD0000">đỏ sẫm</font>:</p>
+        <p><font color="#DD0000">## Ghi chú dòng</font></p>
+        <p><font color="#DD0000">### Ghi chú khối</font></p></li>
+      <li><p>Chuỗi có màu <font color="#15A315">xanh lá cây</font>:</p>
+        <p>1. Nháy đôi: <font color="#15A315">"chuỗi abc123"</font></p>
+        <p>2. Nháy đơn: <font color="#15A315">'chuỗi abc123'</font></p>
+        <p>3. Ba nháy đơn: <font color="#15A315">'''chuỗi abc123'''</font></p>
+        <p>4. Ba nháy đôi: <font color="#15A315">"""chuỗi abc123"""</font></p></li>
+      <li><p>Tên lớp và hàm có màu <font color="#0000FF">xanh dương</font>:</p>
+        <p><font color="#FF7700">class</font> <font color="#0000FF">myClass</font>:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FF7700">def</font> <font color="#0000FF">__init__</font>:</p></li>
+      <li><p>Các phần còn lại là màu đen.</p></li>
+    </ul>
+  </li>
+  <li><p>Phím tắt</p>
+    <ul>
+      <li><p>Ctrl + F: Mở tìm kiếm.</p></li>
+      <li><p>Ctrl + H: Mở thay thế.</p></li>
+      <li><p>Ctrl + G: Mở nhảy dòng.</p></li>
+      <li><p>Ctrl + S: Lưu mã vào công cụ.</p></li>
+      <li><p>Alt + 3: Ghi chú đoạn mã.</p></li>
+      <li><p>Alt + 4: Bỏ ghi chú đoạn mã.</p></li>
+      <li><p>F5: Chạy mã.</p></li>
+    </ul>
+  </li>
 </ul>
 
+<h2>Xuất ra</h2>
 
-<h2>输出</h2>
-
-<p>如果有输出，会显示在输出栏，正常输出为蓝色，如果有错误输出为红色。</p>
+<p>Nếu có kết quả xuất ra, nó sẽ hiển thị ở khu vực xuất. Kết quả bình thường sẽ có màu xanh dương, nếu có lỗi sẽ hiển thị bằng màu đỏ.</p>

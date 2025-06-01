@@ -16,101 +16,100 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1><strong>GvVisionAssembly</strong>模块</h1>
+<h1><strong>Mô-đun GvVisionAssembly</strong></h1>
 
-<p>该模块提供了访问和操作工具的方法，包含了工具涉及到的一些数据类型，例如sc2Vector,GcCoordPos,GcPlatformAxisPos等。</p>
+<p>Mô-đun này cung cấp các phương thức để truy cập và thao tác với công cụ, bao gồm một số kiểu dữ liệu liên quan, ví dụ như sc2Vector, GcCoordPos, GcPlatformAxisPos, v.v.</p>
 
 <ul>
-<li><p>GvVisionAssembly.GcCoordPos</p>
+  <li><p>GvVisionAssembly.GcCoordPos</p>
+    <p>Biểu thị vị trí và tư thế.</p></li>
 
-<p>表示位置姿态。</p></li>
-<li><p>GvVisionAssembly.GcPlatformAxisPos</p>
+  <li><p>GvVisionAssembly.GcPlatformAxisPos</p>
+    <p>Biểu thị vị trí trục.</p></li>
 
-<p>表示轴位置。</p></li>
-<li><p>GvVisionAssembly.GcScriptGuiArray</p>
+  <li><p>GvVisionAssembly.GcScriptGuiArray</p>
+    <p>Mảng GUI được hiển thị trên giao diện. Để một đối tượng GUI hiển thị trên cửa sổ giao diện, phải thêm nó vào mảng GcScriptGuiArray.</p></li>
 
-<p>要显示到视图的GUI数组。添加的GUI对象，如果想要显示到视图窗口，必须添加到GcScriptGuiArray数组。</p></li>
-<li><p>GvVisionAssembly.GcScriptGuiDataAgent</p>
+  <li><p>GvVisionAssembly.GcScriptGuiDataAgent</p>
+    <p>Đại lý hiển thị giao diện. GcScriptGuiArray phải thông qua đối tượng này để thêm GUI vào cửa sổ hiển thị.</p></li>
 
-<p>视图窗口代理。GcScriptGuiArray需要通过该代理将GUI对象添加到视图窗口。</p></li>
-<li><p>GvVisionAssembly.GsScriptGuiText</p>
+  <li><p>GvVisionAssembly.GsScriptGuiText</p>
+    <p>Giao diện văn bản.</p></li>
 
-<p>文本GUI。</p></li>
-<li><p>GvVisionAssembly.GsScriptGuiCross</p>
+  <li><p>GvVisionAssembly.GsScriptGuiCross</p>
+    <p>Giao diện dấu cộng (hình chữ thập).</p></li>
 
-<p>十字GUI。</p></li>
-<li><p>GvVisionAssembly.GsScriptGuiRect</p>
+  <li><p>GvVisionAssembly.GsScriptGuiRect</p>
+    <p>Giao diện hình chữ nhật.</p></li>
 
-<p>矩形GUI。</p></li>
-<li><p>GvVisionAssembly.GsScriptGuiPolyline</p>
+  <li><p>GvVisionAssembly.GsScriptGuiPolyline</p>
+    <p>Giao diện đa giác (nhiều đoạn thẳng nối liền).</p></li>
 
-<p>多边形GUI。</p></li>
-<li><p>GvVisionAssembly.GsScriptGuiCircle</p>
+  <li><p>GvVisionAssembly.GsScriptGuiCircle</p>
+    <p>Giao diện hình tròn.</p></li>
 
-<p>圆形GUI。</p></li>
-<li><p>GvVisionAssembly.GsScriptGuiStyle</p>
+  <li><p>GvVisionAssembly.GsScriptGuiStyle</p>
+    <p>Phong cách giao diện GUI.</p></li>
 
-<p>GUI风格。</p></li>
-<li><p>GvVisionAssembly.GeMsgReportType</p>
+  <li><p>GvVisionAssembly.GeMsgReportType</p>
+    <p>Kiểu báo cáo thông báo.</p></li>
 
-<p>消息报告类型。</p></li>
-<li><p>GvVisionAssembly. ReportMessage</p>
+  <li><p>GvVisionAssembly.ReportMessage</p>
+    <p>Hàm tạo thông báo, dùng để tạo thông báo ở vị trí tương ứng với kiểu thông báo, ví dụ như cảnh báo hoặc lỗi.</p>
 
-<p>生成消息报告，根据不同的消息报告类型，在对应位置生成消息，例如警告、错误消息。</p>
+    <p><strong>Hàm báo cáo thông báo, tương đương với công cụ báo cáo thông báo:</strong></p>
+    <ul>
+      <li><strong>strMsg</strong>: Thông báo cần xuất.</li>
+      <li><strong>eType</strong>: Kiểu thông báo, tham khảo mô tả GeMsgReportType.</li>
+      <li><strong>bIsForbid</strong>: Có cấm hiện hộp thoại không. Chỉ áp dụng cho các loại thông báo có hộp thoại.<br>
+      True: Không hiện hộp thoại.<br>
+      False: Cho phép hiện hộp thoại.</li>
+    </ul>
 
-<p>```python</p>
+    <p><code>GvVisionAssembly.ReportMessage(str strMsg, GeMsgReportType eType, bool bIsForbid)</code></p>
+  </li>
 
-<h2>消息报告函数，相当于消息报告工具。</h2>
+  <li><p>GvVisionAssembly.sc2Vector</p>
+    <p>Vector 2 chiều, biểu thị tọa độ tìm kiếm trong kết quả định vị hoặc tâm của hình tròn khi tìm hình tròn.</p></li>
 
-<h2>strMsg: 要输出的消息；</h2>
-
-<h2>eType: 消息类型，参见GeMsgReportType的说明。</h2>
-
-<h2>bIsForbid: 是否禁止弹窗，仅对有弹窗的消息类型有作用。True:禁止弹窗, False:允许弹窗。</h2>
-
-<p>GvVisionAssembly.ReportMessage(str strMsg, GeMsgReportType eType, boolbIsForbid)
-```</p></li>
-<li><p>GvVisionAssembly.sc2Vector</p>
-
-<p>二维向量，表示定位结果的搜索坐标或者找圆结果的圆心。</p></li>
-<li><p>GvVisionAssembly.sc2VectorVec</p>
-
-<p>二维向量的std::vector形式。如果要获取其中的元素，需要使用__getitem__(index)，index从0开始，例如获取第二个元素。</p>
-
-<p><code>python
-vecGeomResult = GvTool.GetToolData("几何定位_001.搜索坐标数组")
+  <li><p>GvVisionAssembly.sc2VectorVec</p>
+    <p>Dạng std::vector của sc2Vector (vector 2 chiều). Để truy cập phần tử, sử dụng __getitem__(index), với index bắt đầu từ 0.</p>
+    <p><code>
+vecGeomResult = GvTool.GetToolData("几何定位_001.搜索坐标数组")<br>
 geomResult0 = vecGeomResult.__getitem__(1)
-</code></p></li>
-<li><p>GvVisionAssembly.sc2XformLinear</p>
+    </code></p>
+  </li>
 
-<p>二维线性变换，通常出现在定位工具的输出参数中。</p></li>
-<li><p>GvVisionAssembly.scRadian</p></li>
-<li><p>GvVisionAssembly.scRect</p>
+  <li><p>GvVisionAssembly.sc2XformLinear</p>
+    <p>Biến đổi tuyến tính 2 chiều, thường xuất hiện trong đầu ra của công cụ định vị.</p></li>
 
-<p>表示矩形，例如几何定位的搜索区域，Blob工具的矩形ROI区域。</p></li>
-<li><p>GvVisionAssembly.scAffineRect</p>
+  <li><p>GvVisionAssembly.scRadian</p>
+    <p>Biểu thị góc (radian).</p></li>
 
-<p>表示仿射矩形，例如几何定位的训练区域，Blob工具的仿射矩形ROI区域。</p></li>
-<li><p>GvVisionAssembly.scCircle</p>
+  <li><p>GvVisionAssembly.scRect</p>
+    <p>Biểu thị hình chữ nhật, ví dụ vùng tìm kiếm trong công cụ định vị hình học, hoặc ROI hình chữ nhật trong công cụ Blob.</p></li>
 
-<p>表示圆形，例如找圆工具的圆结果，Blob工具的圆形ROI区域。</p></li>
-<li><p>GvVisionAssembly.scCircularArc</p>
+  <li><p>GvVisionAssembly.scAffineRect</p>
+    <p>Biểu thị hình chữ nhật affine (biến đổi tự do), ví dụ vùng huấn luyện trong định vị hình học, hoặc ROI affine trong công cụ Blob.</p></li>
 
-<p>表示圆弧。</p></li>
-<li><p>GvVisionAssembly.scAnnulus</p>
+  <li><p>GvVisionAssembly.scCircle</p>
+    <p>Biểu thị hình tròn, ví dụ kết quả tìm hình tròn, hoặc vùng ROI hình tròn trong công cụ Blob.</p></li>
 
-<p>表示圆环。</p></li>
-<li><p>GvVisionAssembly.scEllipse</p>
+  <li><p>GvVisionAssembly.scCircularArc</p>
+    <p>Biểu thị cung tròn.</p></li>
 
-<p>表示椭圆，例如Blob工具的椭圆ROI区域，灰度检测工具的椭圆检测区域。</p></li>
-<li><p>GvVisionAssembly.scLine</p>
+  <li><p>GvVisionAssembly.scAnnulus</p>
+    <p>Biểu thị hình vành khuyên (vòng tròn rỗng ở giữa).</p></li>
 
-<p>表示直线，例如找线工具的找线结果。</p></li>
-<li><p>GvVisionAssembly.scLineSeg</p>
+  <li><p>GvVisionAssembly.scEllipse</p>
+    <p>Biểu thị hình elip, ví dụ ROI elip trong công cụ Blob hoặc vùng kiểm tra elip trong công cụ kiểm tra độ xám.</p></li>
 
-<p>表示线段。</p></li>
-<li><p>GvVisionAssembly.scPolyline</p>
+  <li><p>GvVisionAssembly.scLine</p>
+    <p>Biểu thị đường thẳng, ví dụ kết quả tìm đường thẳng từ công cụ tìm đường.</p></li>
 
-<p>表示多边形，例如Bolb工具的多边形ROI。</p></li>
+  <li><p>GvVisionAssembly.scLineSeg</p>
+    <p>Biểu thị đoạn thẳng.</p></li>
+
+  <li><p>GvVisionAssembly.scPolyline</p>
+    <p>Biểu thị đa giác (nhiều đoạn thẳng nối tiếp), ví dụ vùng ROI đa giác trong công cụ Blob.</p></li>
 </ul>
-

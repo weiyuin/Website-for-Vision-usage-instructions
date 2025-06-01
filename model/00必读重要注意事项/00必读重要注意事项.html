@@ -16,39 +16,37 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h2>必读重要注意事项</h2>
+<h2>Những lưu ý quan trọng bắt buộc phải đọc</h2>
 
-<p><strong>Python编程规范参考：</strong></p>
+<p><strong>Tham khảo quy chuẩn lập trình Python:</strong></p>
 
-<p>Python官方文档：<a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p>
+<p>Tài liệu chính thức của Python: <a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p>
 
-<p>Google风格文档：<a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/">https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/</a></p>
+<p>Quy chuẩn theo phong cách Google: <a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/">https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/</a></p>
 
-<h3>死循环问题：提前保存</h3>
+<h3>Vấn đề vòng lặp vô hạn: Hãy lưu trước</h3>
 
-<p>当前版本中，如果在python代码中无意编写了死循环，会导致整个软件卡死，必须强制关闭。因此在代码中使用循环时要务必小心仔细，最好提前保存整个工程。</p>
+<p>Trong phiên bản hiện tại, nếu trong mã Python bạn vô tình viết vòng lặp vô hạn, phần mềm sẽ bị treo và phải đóng cưỡng bức. Do đó, khi sử dụng vòng lặp trong mã, cần cực kỳ cẩn trọng và nên lưu toàn bộ project trước khi chạy.</p>
 
-<h3>条件判断语句：检查每个分支</h3>
+<h3>Câu lệnh điều kiện: Kiểm tra tất cả các nhánh</h3>
 
-<p>由于Python自身特性，对于运行时错误，只有执行到还有错误的语句时，才会报错，如果没有执行到包含错误的语句不会提示有错误！！！。例如</p>
+<p>Do đặc tính của Python, lỗi chỉ xuất hiện khi chương trình thực sự chạy đến dòng chứa lỗi. Nếu một dòng chứa lỗi không được thực thi, chương trình sẽ không báo lỗi!!! Ví dụ:</p>
 
 <p><code>python
 if True:
     print(True)
 else:
-    print(False)  ## 这里有拼写错误
+    print(False)
 </code></p>
 
-<p>由于if的判断条件为True因此会执行print(True)，程序可以正常执行，并且不会报错。如果有某一次if判断条件为False，那么会执行print(Fals)语句，该语句有错误，此时才会提示有错误。</p>
+<p>Vì điều kiện `if` là True nên dòng `print(True)` được thực hiện, chương trình chạy bình thường và không báo lỗi. Tuy nhiên, nếu điều kiện `if` là False thì dòng `print(Fals)` sẽ chạy và gây lỗi vì viết sai. Do đó, sau khi viết xong đoạn mã có nhiều nhánh điều kiện, nhất định phải kiểm tra từng nhánh để đảm bảo không có lỗi.</p>
 
-<p>因此在编写脚本代码时一定要注意条件判断语句，写完代码，一定要测试每一个条件分支是否有错误。</p>
+<h3>Vấn đề tham số đầu vào khi sửa thông qua công cụ script: Cấm liên kết tham số với chuỗi dữ liệu</h3>
 
-<h3>脚本修改工具输入参数问题：禁止同时给参数链接数据链</h3>
+<p>Nếu bạn quyết định dùng script để sửa đổi một tham số đầu vào của công cụ, thì **không được** liên kết tham số đó với chuỗi dữ liệu bên ngoài.</p>
 
-<p>如果决定使用脚本来修改某个工具的输入参数，则禁止在外部配置该参数的数据链。</p>
+<p>Ví dụ: nếu một tham số đầu vào được liên kết với một biến trong phần quản lý biến, và tham số này lại được sửa đổi trong script, thì biến liên kết đó cũng sẽ bị thay đổi. Nếu biến này đang được dùng ở công cụ khác, điều này có thể gây ra lỗi thực thi và các hành vi không thể dự đoán. Vì vậy, các tham số bị thay đổi bên trong script **tuyệt đối không được liên kết với dữ liệu từ ngoài**.</p>
 
-<p>假如工具的输入参数链接了变量管理中的变量，在脚本内部修改了该参数，那么该参数所链接的变量管理中的变量也会被修改。假如在其他工具也使用了该变量，会导致工程不能按预想情况执行，导致不可预料的情况发生，因此对于在脚本内部修改的工具输入参数，严禁链接参数链。</p>
+<h3>Script không thể gán giá trị cho công cụ mảng</h3>
 
-<h3>脚本工具无法对数组工具进行赋值</h3>
-
-<p>由于数组工具每给一个索引对应的数据赋值都需要执行一次数组工具，当前脚本工具不支持执行工具的功能，因此脚本工具无法对数组工具进行赋值操作。</p>
+<p>Vì công cụ mảng cần phải thực thi lại mỗi lần gán giá trị cho từng chỉ mục, mà hiện tại công cụ script không hỗ trợ khả năng thực thi công cụ, nên *script không thể gán giá trị cho công cụ mảng*.</p>

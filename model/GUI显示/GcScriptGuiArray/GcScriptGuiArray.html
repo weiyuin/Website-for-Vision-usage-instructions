@@ -18,60 +18,69 @@
            </head>
 <h1>GcScriptGuiArray</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>用来存储要显示到视图窗口的GUI数据，添加到GcScriptGuiArray中的GUI对象可以显示到视图窗口。</p>
+<p>Dùng để lưu trữ dữ liệu GUI sẽ được hiển thị lên cửa sổ hình ảnh (view window). Các đối tượng GUI được thêm vào GcScriptGuiArray có thể hiển thị trên giao diện người dùng.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                  </th>
-<th> 接口描述                         </th>
+<th>Loại</th>
+<th>Tên hàm</th>
+<th>Mô tả</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> GcScriptGuiArray </td>
-<td> GcScriptGuiArray()默认构造函数。 </td>
+<td>Hàm khởi tạo</td>
+<td>GcScriptGuiArray</td>
+<td>Hàm tạo mặc định GcScriptGuiArray().</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> Add(GUI对象)           </td>
-<td> 添加要显示到视图窗口的GUI对象    </td>
+<td>Hàm</td>
+<td>Add(GUI对象)</td>
+<td>Thêm đối tượng GUI để hiển thị lên cửa sổ hình ảnh.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Giải thích chi tiết</h2>
 
-<h2>详细说明</h2>
-
-<h3>GcScriptGuiArray( )</h3>
+<h3>GcScriptGuiArray()</h3>
 
 <ul>
-<li><p><strong>功能</strong>：构造GcScriptGuiArray对象。</p></li>
-<li><p><strong>参数</strong>：无</p></li>
-<li><p><strong>返回值</strong>：无</p></li>
+<li><strong>Chức năng</strong>: Khởi tạo một đối tượng GcScriptGuiArray.</li>
+<li><strong>Tham số</strong>: Không có.</li>
+<li><strong>Giá trị trả về</strong>: Không có.</li>
 </ul>
-
 
 <h3>Add(GUI对象)</h3>
 
 <ul>
-<li><p><strong>功能</strong>：将要显示到视图窗口的GUI对象添加到GcScriptGuiArray中。</p></li>
-<li><p><strong>参数</strong>：GUI对象，例如GsScriptGuiCross类型的对象，GsScriptGuiText类型的对象。</p></li>
-<li><p><strong>返回值</strong>：bool类型，表示是否添加成功。</p></li>
+<li><strong>Chức năng</strong>: Thêm một đối tượng GUI vào mảng GcScriptGuiArray để hiển thị.</li>
+<li><strong>Tham số</strong>: Một đối tượng GUI, ví dụ như đối tượng kiểu <code>GsScriptGuiCross</code> (dấu cộng), <code>GsScriptGuiText</code> (văn bản).</li>
+<li><strong>Giá trị trả về</strong>: Kiểu <code>bool</code>, biểu thị thêm thành công hay không.</li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
 
-<p>无</p>
+<h2>Ví dụ mã nguồn</h2>
+<!-- (Chỗ này bạn có thể thêm ví dụ từ tài liệu trước như SetGraphicDisplay) -->
 
-<h2>示例代码</h2>
+<pre><code class="language-python">
+guiArray = GvVisionAssembly.GcScriptGuiArray()
+guiCross = GvVisionAssembly.GsScriptGuiCross()
+guiCross.posX = 100.0
+guiCross.posY = 200.0
+guiArray.Add(guiCross)
+
+GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
+</code></pre>
+
 
 <p><code>python
 guiArray = GvVisionAssembly.GcScriptGuiArray()

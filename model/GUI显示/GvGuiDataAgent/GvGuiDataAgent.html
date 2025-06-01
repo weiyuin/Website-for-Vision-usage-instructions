@@ -18,66 +18,62 @@
            </head>
 <h1>GvGuiDataAgent</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>用来将GvGuiDataAgent中存储的GUI对象数组显示到视图窗口的GcScriptGuiDataAgent类的对象，禁止自己定义一个GcScriptGuiDataAgent对象。</p>
+<p>Dùng để hiển thị mảng các đối tượng GUI được lưu trữ trong GvGuiDataAgent lên cửa sổ hiển thị (view window) thông qua đối tượng lớp GcScriptGuiDataAgent. <strong>Không được tự định nghĩa đối tượng GcScriptGuiDataAgent.</strong></p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                     </th>
-<th> 接口描述                          </th>
+<th>Loại</th>
+<th>Tên hàm</th>
+<th>Mô tả</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 函数 </td>
-<td> SetGraphicDisplay(str, value) </td>
-<td> 将要显示的GUI对象添加到视图窗口。 </td>
+<td>Hàm</td>
+<td>SetGraphicDisplay(str, value)</td>
+<td>Thêm đối tượng GUI cần hiển thị vào cửa sổ hiển thị.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>SetGraphicDisplay(str, value)</h3>
 
 <ul>
-<li><p>功能：将要显示的GUI对象数组添加到视图窗口。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li><p>str: str类型，视图名称。例如”View-1”。</p></li>
-<li><p>value: GcScriptGuiArray类型，要添加的GUI对象数组。</p></li>
-</ul>
+<li><p><strong>Chức năng</strong>: Thêm mảng đối tượng GUI vào cửa sổ hiển thị.</p></li>
+<li><p><strong>Tham số</strong>:</p>
+  <ul>
+    <li><p><code>str</code>: kiểu chuỗi, tên của cửa sổ hiển thị. Ví dụ: "View-1".</p></li>
+    <li><p><code>value</code>: kiểu <code>GcScriptGuiArray</code>, là mảng các đối tượng GUI cần hiển thị.</p></li>
+  </ul>
 </li>
-<li><p>返回值：bool类型，表示是否添加成功。</p></li>
+<li><p><strong>Giá trị trả về</strong>: kiểu bool, biểu thị việc thêm có thành công hay không.</p></li>
 </ul>
 
-
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ol>
-<li>禁止自己定义一个GcScriptGuiDataAgent对象，内部已经定义了GvGuiDataAgent对象，可以直接使用。</li>
+<li>Không được tự định nghĩa đối tượng <code>GcScriptGuiDataAgent</code>, vì đã có sẵn đối tượng <code>GvGuiDataAgent</code> nội bộ có thể sử dụng trực tiếp.</li>
 </ol>
 
+<h2>Ví dụ mã nguồn</h2>
 
-<h2>示例代码</h2>
+<p>1. Thêm GUI vào cửa sổ hiển thị:</p>
 
-<p>1、添加GUI</p>
-
-<p><code>python
+<pre><code class="language-python">
 guiArray = GvVisionAssembly.GcScriptGuiArray()
 guiText = GvVisionAssembly.GsScriptGuiText()
 guiText.sScriptGuiStyle = guiStyle
-guiText.strText ="text"
+guiText.strText = "text"
 guiText.posX = 0.0
 guiText.posY = 0.0
 guiText.deg = 0.0
 guiArray.Add(guiText)
 GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
-</code></p>
+</code></pre>
