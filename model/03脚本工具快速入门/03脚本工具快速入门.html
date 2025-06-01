@@ -16,24 +16,22 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>脚本工具快速入门</h1>
+<h1>Hướng Dẫn Nhanh Công Cụ Script</h1>
 
-<p>脚本工具使用的编程语言是Python，Python是一种简单易学功能强大的编程语言。脚本工具现阶段支持了获取、设置工具参数，获取、设置变量管理中变量的参数，显示GUI到视图窗口等功能。</p>
+<p>Ngôn ngữ lập trình sử dụng trong công cụ script là Python, một ngôn ngữ lập trình đơn giản, dễ học và mạnh mẽ. Công cụ script hiện tại hỗ trợ các chức năng như lấy và thiết lập tham số công cụ, lấy và thiết lập biến trong quản lý biến, hiển thị GUI lên cửa sổ xem, v.v.</p>
 
-<h2>Python基本语法</h2>
+<h2>Cú pháp cơ bản của Python</h2>
 
-<p>详细的Python学习请参考专业书籍或者网上教程。</p>
+<p>Để học Python chi tiết, vui lòng tham khảo sách chuyên ngành hoặc các khóa học trực tuyến.</p>
 
-<p>Python编程规范参考：</p>
+<p>Tham khảo quy chuẩn lập trình Python:</p>
 
-<p><a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/">https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/</a></p>
-
-<p>https://www.python.org/dev/peps/pep-0008/</p>
+<p><a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p>
 
 <ul>
-<li><p>Python编程语言语句结尾无分号，Python表示代码块范围使用缩进来实现，不像某些高级语言使用花括号{}来表示。因此在编写Python代码时，需要注意代码缩进，Python中严禁使用Tab键来实现缩进，必须使用空格，缩进4个空格表示一个层级。</p></li>
-<li><p>Python中布尔类型变量为<strong>True</strong> <strong>False</strong>注意首字母大写。</p></li>
-<li><p>Python条件判断：</p>
+<li><p>Câu lệnh Python không kết thúc bằng dấu chấm phẩy; phạm vi khối lệnh Python được xác định bằng thụt lề, không giống như một số ngôn ngữ cao cấp dùng dấu ngoặc nhọn {}. Do đó khi viết mã Python, cần chú ý thụt lề, nghiêm cấm sử dụng phím Tab mà phải dùng 4 dấu cách cho một cấp thụt lề.</p></li>
+<li><p>Kiểu dữ liệu Boolean trong Python là <strong>True</strong> và <strong>False</strong>, chú ý chữ cái đầu viết hoa.</p></li>
+<li><p>Điều kiện trong Python:</p>
 
 <p><code>python
 a = 1
@@ -43,194 +41,177 @@ if a &gt; b:
 elif a == b:
   print("a == b")
 else:
-  print("a \&lt; b")
+  print("a &lt; b")
 </code></p></li>
-<li><p>Python中for循环：</p>
+<li><p>Vòng lặp for trong Python:</p>
 
-<p>  <code>python
+<p><code>python
 for i in range(10):
     print(i)
- </code></p></li>
-<li><p>Python中while循环：</p>
+</code></p></li>
+<li><p>Vòng lặp while trong Python:</p>
 
 <p><code>python
 i = 0
-while i&lt; 10:
+while i &lt; 10:
   print(i)
-    i = i + 2
+  i = i + 2
 </code></p></li>
-<li><p>Python中逻辑运算符：</p>
+<li><p>Toán tử logic trong Python:</p>
 
-<p>逻辑与：<strong>and</strong></p>
+<p>Và (AND): <strong>and</strong></p>
 
-<p>逻辑或：<strong>or</strong></p>
+<p>Hoặc (OR): <strong>or</strong></p>
 
-<p>逻辑非：<strong>not</strong></p>
+<p>Phủ định (NOT): <strong>not</strong></p>
 
-<p>```python
-findline_result4 = GvTool.GetToolData(&ldquo;找线工具<em>004.执行结果&rdquo;)
-findline_result5 = GvTool.GetToolData(&ldquo;找线工具</em>005.执行结果&rdquo;)</p>
+<p><code>python
+findline_result4 = GvTool.GetToolData("找线工具004.执行结果")
+findline_result5 = GvTool.GetToolData("找线工具005.执行结果")
 
-<p>  if findline_result4 and findline_result5:
-print(&ldquo;找线工具004和找线工具005执行成功&rdquo;)
-  elif not findline_result4:
-print(&ldquo;找线工具004执行失败&rdquo;)
-```</p></li>
-<li><p>Python中位运算符：</p>
+if findline_result4 and findline_result5:
+    print("找线工具004和找线工具005执行成功")
+elif not findline_result4:
+    print("找线工具004执行失败")
+</code></p></li>
+<li><p>Toán tử bit trong Python:</p>
 
-<p>按位与：<strong>&amp;</strong></p>
+<p>AND bit: <strong>&amp;</strong></p>
 
-<p>按位或：<strong>|</strong></p>
+<p>OR bit: <strong>|</strong></p>
 
-<p>按位异或：<strong>^</strong></p></li>
+<p>XOR bit: <strong>^</strong></p></li>
 </ul>
 
+<h2>Lấy và thiết lập tham số công cụ</h2>
 
-<h2>获取\设置工具参数</h2>
-
-<p>和工具相关的操作是通过<a href="../../%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/GvTool.htm">GvTool</a>对象来实现的。其中包括GetToolData，SetToolData，RefToolData。</p>
+<p>Các thao tác liên quan đến công cụ thực hiện thông qua đối tượng <a href="../../%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/GvTool.htm">GvTool</a>, bao gồm các hàm GetToolData, SetToolData, RefToolData.</p>
 
 <ul>
 <li><p><strong>GetToolData</strong></p>
 
-<p>GetToolData是用来获取工具参数的。例如获取几何定位的搜索坐标：</p>
+<p>Dùng để lấy tham số công cụ, ví dụ lấy tọa độ tìm kiếm của công cụ định vị hình học:</p>
 
 <p><code>python
 pos = GvTool.GetToolData("几何定位_002.搜索坐标")
 </code></p></li>
 <li><p><strong>SetToolData</strong></p>
 
-<p>SetToolData是用来设置工具参数的，如果通过SetToolData设置工具的某个参数，那么该参数<font color = red>严禁配置参数链</font>，即禁止在数据链编辑对话框对该参数进行参数链接(双击工具弹出的对话框)。例如设置几何定位的接收阈值：</p>
+<p>Dùng để thiết lập tham số công cụ. Nếu dùng SetToolData thiết lập tham số, thì <font color="red">không được phép liên kết tham số này trong chuỗi tham số</font> (không được thiết lập liên kết tham số trong hộp thoại chỉnh sửa chuỗi dữ liệu, khi nhấp đúp vào công cụ). Ví dụ thiết lập ngưỡng nhận của công cụ định vị hình học:</p>
 
 <p><code>python
 GvTool.SetToolData("几何定位_002.接受阈值", 0.8)
 </code></p>
 
-<blockquote><p><strong>注意：</strong>如果设置工具参数时，设置的工具参数和传入的参数类型不匹配会产生错误，因此在设置工具参数时，需要传入对应类型的参数。</p>
+<blockquote><p><strong>Lưu ý:</strong> Nếu kiểu tham số truyền vào không phù hợp với kiểu tham số công cụ sẽ gây lỗi, nên khi thiết lập tham số cần truyền đúng kiểu.</p>
 
 <p><img src="media/8ebb8818339d4b873ac27c799a6b1aac.png" alt="" /></p></blockquote></li>
 <li><p><strong>RefToolData</strong></p>
 
-<p>RefToolData获取的是工具参数的引用，将获取的参数绑定到变量，通过修改变量值可以直接修改对应的工具参数。该方式不推荐使用，由于获取到的是引用，因此使用RefToolData要特别注意，可能会有不小心修改了工具的参数，而你本意不是要修改参数。</p></li>
+<p>Lấy tham chiếu tham số công cụ, tham số lấy được sẽ liên kết với biến, chỉnh sửa biến sẽ thay đổi tham số công cụ. Cách này không được khuyến khích vì dễ gây lỗi khi vô tình sửa tham số công cụ mà không mong muốn.</p></li>
 </ul>
 
+<h2>Thiết lập tham số giới hạn trên dưới của công cụ</h2>
 
-<h2>设置工具的上下限参数</h2>
+<p>Khi công cụ có tham số giới hạn trên dưới như tổng số pixel trên/dưới, số lượng kết quả trên/dưới, có thể thiết lập theo các cách sau:</p>
 
-<p>  当工具存在上下限参数时，如Blob工具的总像素数上/下限和结果个数上/下限，可使用如下方法进行设置：</p>
+<p>Cách 1: Thiết lập trực tiếp giá trị giới hạn mới</p>
 
-<p>  方法1：直接使用新的上下限定值进行设置</p>
+<p><code>python
+# Cách 1:
+# Sửa giới hạn trên tổng số pixel của công cụ Blob (kiểu số nguyên)
+GvTool.SetToolData("Blob工具_001.总像素数上限", GvVisionAssembly.Limit_Int(1000))
+# Sửa giới hạn trên góc biến đổi đường thẳng của công cụ tìm đường thẳng (kiểu số thực)
+GvTool.SetToolData("找线工具_003.直线变化角度上限", GvVisionAssembly.Limit_Double(10.0))
+</code></p>
 
-<p>  <code>python
-  #方法1：
-  #修改blob工具的总像素数上限（整型数值）
-  GvTool.SetToolData("Blob工具_001.总像素数上限",GvVisionAssembly.Limit_Int(1000))
-  #修改找线工具的直线变化角度上限（浮点数值）
-  GvTool.SetToolData("找线工具_003.直线变化角度上限",GvVisionAssembly.Limit_Double(10.0))
- </code></p>
+<p>Cách 2: Lấy tham số giới hạn, chỉnh sửa thuộc tính rồi thiết lập lại</p>
 
-<p>  方法2：获取工具的上下限参数，并使用上下限参数的属性值进行设置</p>
+<p><code>python
+# Cách 2: sửa giới hạn trên tổng số pixel công cụ Blob
+upper = GvTool.GetToolData("Blob工具_001.结果个数上限")  # lấy giới hạn trên
+upper.Value = 1000  # chỉnh giá trị giới hạn
+upper.Enable = True  # bật hiệu lực giới hạn
+GvTool.SetToolData("Blob工具_001.总像素数上限", upper)  # thiết lập lại
+</code></p>
 
-<p>  <code>python
-  #方法2：修改blob工具的总像素数上限
-  upper = GvTool.GetToolData("Blob工具_001.结果个数上限")#获取blob工具的总像素数上限
-  upper.Value = 1000 #修改总像素数上限取值
-  upper.Enable = True #修改总像素数上限是否生效
-  GvTool.SetToolData("Blob工具_001.总像素数上限",upper)#设置blob工具的总像素数上限
- </code></p>
+<h2>Lấy và thiết lập biến trong quản lý biến</h2>
 
-<h2>获取\设置变量管理中变量</h2>
-
-<p>和工具相关的操作是通过GvVar对象来实现的。其中包括GetVar，SetVar，RefVar(现阶段无效)。</p>
+<p>Các thao tác liên quan thực hiện qua đối tượng GvVar, gồm GetVar, SetVar, RefVar (hiện không dùng).</p>
 
 <ul>
-<li><p><strong>获取变量</strong></p>
+<li><p><strong>Lấy biến</strong></p>
 
 <p><code>python
 a = GvVar.GetVar("#L0")
 </code></p></li>
-<li><p><strong>设置变量</strong></p>
+<li><p><strong>Thiết lập biến</strong></p>
 
 <p><code>python
 a = 50
-GvVar.SetVar("#L0",a)
+GvVar.SetVar("#L0", a)
 </code></p></li>
 </ul>
 
+<h2>Hiển thị GUI</h2>
 
-<h2>GUI显示</h2>
+<p>Công cụ script có thể thêm GUI lên ảnh, gồm văn bản, hình chữ nhật, hình tròn, hình dấu cộng. Mỗi loại GUI gồm một đối tượng kiểu phong cách GUI (GUI style) và một đối tượng hình dạng. Ví dụ hình chữ nhật dùng loại GsScriptGuiRect có 2 thuộc tính sScriptGuiStyle (phong cách) và rect (hình chữ nhật hiển thị).</p>
 
-<p>脚本工具可以向图像添加GUI，包括文本、矩形、圆形和十字等。每种GUI类型都包含一个GUI风格对象和一个对应的形状对象，例如用来显示矩形GUI的GsScriptGuiRect类型，包含两属性sScriptGuiStyle和rect，sScriptGuiStyle表示Gui的风格，rect表示显示的矩形。</p>
-
-<p>对于要显示的Gui必须添加到Gui数组GcScriptGuiArray中，最后将Gui数组通过Gui代理设置到对应的视图，SetGraphicDisplay(“视图名”, Gui数组)。</p>
+<p>GUI muốn hiển thị phải thêm vào mảng GUI GcScriptGuiArray, cuối cùng thiết lập mảng GUI lên cửa sổ xem bằng SetGraphicDisplay("tên cửa sổ", mảng GUI).</p>
 
 <ul>
-<li><p><strong>设置Gui风格</strong></p>
+<li><p><strong>Thiết lập phong cách GUI</strong></p>
 
-<p>Gui风格包含设置线形，线宽和颜色等，具体可以参考GsScriptGuiStyle文档。首先要定义一个GsScriptGuiStyle类型的变量，设置需要显示的GUI风格，GsScriptGuiStyle有默认初始值，只需设置需要的属性即可，例如和标签相关的属性不需要显示标签的话可以不设置。对于线型和线宽没有特殊要求也可以不设置。</p>
+<p>Phong cách GUI gồm thiết lập kiểu đường kẻ, độ dày, màu sắc,... Tham khảo tài liệu GsScriptGuiStyle. Trước hết định nghĩa biến kiểu GsScriptGuiStyle, chỉ cần chỉnh các thuộc tính cần thiết, ví dụ nếu không cần hiện nhãn thì không đặt. Nếu không cần chỉnh kiểu đường hoặc độ dày thì có thể bỏ qua.</p>
 
-<p>```python</p>
-
-<h2>设置GUI格式</h2>
-
-<p>guiStyle = GvVisionAssembly.GsScriptGuiStyle()
+<p><code>python
+guiStyle = GvVisionAssembly.GsScriptGuiStyle()
 guiStyle.bVisible = False
 guiStyle.nLineStyle = 3
 guiStyle.nLineWidth = 2
 guiStyle.clrLineColor = [255,0,0]
 guiStyle.bLabelVisible = True
-guiStyle.strLabelFont = &ldquo;宋体&rdquo;
+guiStyle.strLabelFont = "宋体"
 guiStyle.lSizeFont = 10
-```</p></li>
-<li><p><strong>Gui对象</strong></p>
+</code></p></li>
+<li><p><strong>Đối tượng Gui</strong></p>
 
-<p>Gui对象以矩形为例，其他的类型可以参考对应的文档手册。</p>
+<p>Ví dụ đối tượng Gui hình chữ nhật, các loại khác tham khảo tài liệu tương ứng.</p>
 
-<p>```python</p>
-
-<h1>矩形GUI</h1>
-
-<p>guiRect = GvVisionAssembly.GsScriptGuiRect()
+<p><code>python
+guiRect = GvVisionAssembly.GsScriptGuiRect()
 rect0 = GvVisionAssembly.scRect(GvVisionAssembly.sc2Vector(100,100),
                                 GvVisionAssembly.sc2Vector(200,300))
 guiRect.rect = rect0
-guiStyle.strLabel = &ldquo;矩形&rdquo; #可以不设置
-guiRect.sScriptGuiStyle = guiStyle #设置Gui风格
-```</p></li>
-<li><p><strong>设置Gui显示数组 </strong></p>
+guiStyle.strLabel = "矩形"  # Có thể không đặt
+guiRect.sScriptGuiStyle = guiStyle  # thiết lập phong cách GUI
+</code></p></li>
+<li><p><strong>Thiết lập mảng Gui hiển thị</strong></p>
 
-<p>Gui数组是用来存储所有需要添加到同一视图的Gui，这样方便将所有Gui一起添加到视图。</p>
+<p>Mảng Gui dùng để lưu tất cả Gui cần thêm lên cùng một cửa sổ xem, tiện thao tác cùng lúc.</p>
 
-<p>要往视图添加Gui，必须先添加到Gui数组，最终将Gui数组通过代理设置到对应的视图才可以显示。</p>
+<p>Muốn thêm Gui lên cửa sổ xem, phải thêm Gui vào mảng trước, sau đó thiết lập mảng lên cửa sổ xem qua proxy mới hiển thị được.</p>
 
-<p>```python
-guiArray.Add(guiRect)</p>
+<p><code>python
+guiArray.Add(guiRect)
 
-<h1>将GUI数组设置到视图</h1>
-
-<p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiArray)
-```</p></li>
+GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
+</code></p></li>
 </ul>
 
+<h2>Báo cáo thông báo</h2>
 
-<h2>消息报告</h2>
+<p>Báo cáo thông báo thực hiện bằng hàm ReportMessage, tạo các loại thông báo khác nhau như nhắc nhở, cảnh báo, lỗi,... Loại thông báo xác định qua GeMsgReportType, xem tài liệu để biết chi tiết.</p>
 
-<p>消息报告可以通过ReportMessage函数实现，根据不同的消息报告类型，在对应位置生成消息，例如提示、警告、错误消息。消息报告类型通过GeMsgReportType来确定，具体内容可以参考相应文档。</p>
+<p><code>python
+# Hàm báo cáo thông báo, tương đương công cụ báo cáo
+# strMsg: nội dung thông báo
+# eType: loại thông báo, xem GeMsgReportType
+# bIsForbid: có cho phép bật hộp thoại popup không, True: cấm popup, False: cho phép popup
+GvVisionAssembly.ReportMessage(str strMsg, GeMsgReportType eType, bool bIsForbid)
+</code></p>
 
-<p>```python</p>
-
-<h2>消息报告函数，相当于消息报告工具。</h2>
-
-<h2>strMsg: 要输出的消息；</h2>
-
-<h2>eType: 消息类型，参见GeMsgReportType的说明。</h2>
-
-<h2>bIsForbid: 是否允许弹窗，仅对有弹窗的消息类型有作用。True:禁止弹窗, False:允许弹窗。</h2>
-
-<p>GvVisionAssembly.ReportMessage(str strMsg, GeMsgReportType eType, bool bIsForbid)
-```</p>
-
-<p><strong>参考代码</strong>：</p>
+<p><strong>Ví dụ:</strong></p>
 
 <p><code>python
 Genote = GvVisionAssembly.GeMsgReportType
