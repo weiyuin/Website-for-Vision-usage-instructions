@@ -1,0 +1,180 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>灰度检测工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     灰度检测工具主要用来对输入图像或输入图像的某一区域内的灰度进行合格率检测。</p>
+
+<p><img src="media/GcGrayDetectTool_1_1.png" alt="" /></p>
+
+<p><imgnote>图1 灰度检测工具 应用示意图</imgnote></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     灰度检测工具可获取图像或图像ROI内的区域灰度特征，合格百分比（灰度区间内的像素占比)、区域平均灰度等，适用于目标与背景灰度差异较大时，检测区域内目标物是否存在。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     <strong>合格百分比</strong></p>
+
+<p>​     ROI区域内在灰度上下限范围内的像素点的数目（如图2中红色表示，灰度阈值上限设置为255，灰度阈值下限设为100），与像素总数的比值。</p>
+
+<p><img src="media/GcGrayDetectTool_1_2.png" alt="img" /></p>
+
+<p><imgnote>图2 灰度检测工具 计算示意图</imgnote></p>
+
+<p>​     <strong>平均灰度值</strong></p>
+
+<p>​     ROI区域内像素灰度总和除以像素总数。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcGrayDetectTool_1_3.png" alt="" /></p>
+
+<ul>
+<li><h4>定检测区域、灰度上限阈值、灰度下限阈值、合格百分上限、合格百分比下限</h4></li>
+</ul>
+
+
+<p><img src="media/GcGrayDetectTool_1_4.png" alt="" /></p>
+
+<p><img src="media/GcGrayDetectTool_1_5.png" alt="" /></p>
+
+<p><strong>检测区域</strong></p>
+
+<p>工具执行检测的区域，分为3种：椭圆、多边形、仿射矩形。</p>
+
+<p>可通过Edit视图（如上图，为仿射矩形界面设置）和ParameterList 参数列表进行设置，仿射矩形可使用外部链入。</p>
+
+<p><strong>灰度上限阈值、灰度下限阈值</strong></p>
+
+<p>目标灰度区间，一般根据目标物的灰度值或区域均值进行设置。</p>
+
+<p><strong>合格百分上限、合格百分比下限</strong></p>
+
+<p>对于输出参数<a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">合格百分比</a>的有效范围进行设定，合格百分上限、合格百分比下限的取值范围为[0.0,1.0]，浮点型，精度1E-6，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对<a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">合格百分比</a>上限或下限不进行限定。</p>
+
+<p>使用合格百分上限/合格百分比下限对<a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">合格百分比</a>的有效范围进行设定后，执行此距离工具。</p>
+
+<p>当输出结果<a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">合格百分比</a>在设定的有效范围内时，显示工具执行成功；否则，显示工具执行失败。</p>
+
+<ul>
+<li><h4>查看结果</h4></li>
+</ul>
+
+
+<p><img src="media/GcGrayDetectTool_1_6.png" alt="" /></p>
+
+<p><img src="media/GcGrayDetectTool_1_7.png" alt="" /></p>
+
+<h2>5. 常见问题</h2>
+
+<p>无</p>
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像       </td>
+<td> 待检测的图像（图像宽度、高度、像素大小）。                   </td>
+</tr>
+<tr>
+<td> 二维线性变换   </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                       </td>
+</tr>
+<tr>
+<td> 检测区域类型   </td>
+<td> 工具执行检测的区域，分为3种：椭圆、多边形、仿射矩形。其中椭圆的参数Rotation以及仿射矩形的参数Rotation和Skew的角度输入范围是[-180,180)，可在Edit视图观察和拖动。 </td>
+</tr>
+<tr>
+<td> 合格百分比上限 </td>
+<td> 取值范围为[0.0, 1.0]，合格率小于合格百分比时工具的执行结果显示为true，否则为false。 </td>
+</tr>
+<tr>
+<td> 合格百分比下限 </td>
+<td> 取值范围为[0.0, 1.0]，合格率大于合格百分比时工具的执行结果显示为true，否则为false。 </td>
+</tr>
+<tr>
+<td> 灰度上限阈值   </td>
+<td> 取值范围为[0, 255]，在上限阈值和下限阈值之间的灰度判定为合格的灰度，且下限阈值不大于上限阈值。 </td>
+</tr>
+<tr>
+<td> 灰度下限阈值   </td>
+<td> 取值范围为[0, 255]，在上限阈值和下限阈值之间的灰度判定为合格的灰度，且下限阈值不大于上限阈值。 </td>
+</tr>
+<tr>
+<td> 高级界面       </td>
+<td> 无</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                </th>
+<th> 参数说明                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像                                </td>
+<td> 输出图像宽度、高度、像素大小。     </td>
+</tr>
+<tr>
+<td> 合格百分比结果</td>
+<td> 输出实际计算所得的合格百分比结果。 </td>
+</tr>
+<tr>
+<td> 平均灰度值                              </td>
+<td> 输出计算区域内的平均灰度值。       </td>
+</tr>
+<tr>
+<td> 执行结果                                </td>
+<td> 工具执行结果。                     </td>
+</tr>
+<tr>
+<td> 执行时间                                </td>
+<td> 工具执行时间。                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\灰度检测工具.gvp”。</p>

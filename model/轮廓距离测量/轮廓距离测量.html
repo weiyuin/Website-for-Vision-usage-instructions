@@ -1,0 +1,253 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>轮廓距离测量工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     轮廓距离测量工具主要用于轮廓之间的距离测量，主要支持边到边和圆弧到圆弧之间的距离。</p>
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_1_2.png" alt="" /></p>
+
+<p><imgnote>图1 轮廓距离测量工具高级属性圆弧到圆弧距离</imgnote></p>
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_1_1.png" alt="" /></p>
+
+<p><imgnote>图2 轮廓距离测量工具高级属性边到边距离</imgnote></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     常用于检测不规则目标物间的距离是否符合要求。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     <strong>距离计算方法</strong></p>
+
+<p>​     1、提取图像中的两条轮廓线或圆弧，即轮廓A、轮廓B；</p>
+
+<p>​     2、设定基准点，选取轮廓A上基准点P<sub>A0</sub>，选取轮廓B上的基准点P<sub>B0</sub>;（可选择多个基准点P<sub>An</sub>P<sub>Bn</sub>）</p>
+
+<p>​     3、计算P<sub>A0</sub>到轮廓B的距离L<sub>a0b</sub>，计算P<sub>B0</sub>到轮廓A的距离L<sub>b0a</sub>，放入距离集合Set<sub>L</sub>。（每个基准点对应一条距离线）</p>
+
+<p>​     4、对两条直线进行处理，根据“距离类型”得到距离集合Set<sub>L</sub>的平均值或最大值或最小值，即为轮廓到轮廓距离。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_4_1.png" alt="" /></p>
+
+<ul>
+<li><h4>轮廓查找</h4></li>
+</ul>
+
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_4_2_1.png" alt="" /></p>
+
+<p><strong>设置轮廓类型</strong></p>
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_4_2_2.png" alt="" /></p>
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_4_2_3.png" alt="" /></p>
+
+<p><strong>查找轮廓1，轮廓2</strong></p>
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_4_2_4.png" alt="" /></p>
+
+<p><strong>确定基准点</strong></p>
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_4_2_5.png" alt="" /></p>
+
+<p><strong>选择距离类型，执行，查看结果输出</strong></p>
+
+<ul>
+<li><h4>ParameterList 快速修改参数</h4></li>
+</ul>
+
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_4_2.png" alt="" /></p>
+
+<p><strong>轮廓类型</strong></p>
+
+<p>设置轮廓类型为边到边或圆弧到圆弧，注意，修改轮廓类型后，需要重新进行上一步轮廓查找。</p>
+
+<p><strong>距离类型</strong></p>
+
+<p>设置距离类型，平均值、最大值、最小值。</p>
+
+<p><strong>轮廓到轮廓距离上限、轮廓到轮廓距离下限</strong></p>
+
+<p>对于输出参数<a href="#%E8%BD%AE%E5%BB%93%E5%88%B0%E8%BD%AE%E5%BB%93%E8%B7%9D%E7%A6%BB">轮廓到轮廓距离</a>的有效范围进行设定，可取值范围为[0, 999999.999999]，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对<a href="#%E8%BD%AE%E5%BB%93%E5%88%B0%E8%BD%AE%E5%BB%93%E8%B7%9D%E7%A6%BB">轮廓到轮廓距离</a>上限或下限不进行限定。</p>
+
+<p>使用距离值上限或/和距离值下限对<a href="#%E8%BD%AE%E5%BB%93%E5%88%B0%E8%BD%AE%E5%BB%93%E8%B7%9D%E7%A6%BB">轮廓到轮廓距离</a>数值的有效范围进行设定后，执行此测量工具。</p>
+
+<p>当输出结果<a href="#%E8%BD%AE%E5%BB%93%E5%88%B0%E8%BD%AE%E5%BB%93%E8%B7%9D%E7%A6%BB">轮廓到轮廓距离</a>在设定的有效范围内时，显示工具执行结果成功；否则，显示工具执行结果失败。</p>
+
+<ul>
+<li><h4>查看结果</h4></li>
+</ul>
+
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_4_3.png" alt="" /></p>
+
+<p><img src="media/GvDistanceContour2ContourAdvancedTool_4_4.png" alt="" /></p>
+
+<h2>5. 常见问题</h2>
+
+<p>无</p>
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明                                                </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像     </td>
+<td> 要进行轮廓测量的图像。                                  </td>
+</tr>
+<tr>
+<td> 二维线性变换 </td>
+<td> 可选项，是否对输入和输出图像进行二维线性变换。          </td>
+</tr>
+<tr>
+<td> 轮廓类型                                                     </td>
+<td> 主要有两种类型：边到边和圆弧到圆弧。边到边的指的线性轮廓，圆弧到圆弧指的是曲线轮廓。 </td>
+</tr>
+<tr>
+<td> 距离类型         </td>
+<td> 主要有三种类型：平均值，最大值和最小值。平均值就是最大值和最小值之间的平均值。最大值，就是轮廓的基准点到另一个轮廓的最短距离，因为有两个轮廓和两个基准点，所以会存在两个值，较大的值为最大值，较小的值为最小值。最大值和最小值有可能相等。                                                               </td>
+</tr>
+<tr>
+<td> 轮廓到轮廓距离上限 </td>
+<td> 取值范围[0,999999.999999]，输出参数 轮廓到轮廓的距离 的上限阈值。 </td>
+</tr>
+<tr>
+<td> 轮廓到轮廓距离下限 </td>
+<td> 取值范围[0,999999.999999]，输出参数 轮廓到轮廓的距离 的下限阈值。 </td>
+</tr>
+<tr>
+<td> 距离值固定补偿 </td>
+<td> 测量结果固定补偿。一般为0，用于补偿成像等系统误差。 </td>
+</tr>
+<tr>
+<td> 距离值系数补偿 </td>
+<td> 测量结果系数补偿。一般为1，用于补偿成像等系统误差。 </td>
+</tr>
+<tr>
+<td> 高级界面     </td>
+<td> 有 </td>
+</tr>
+<tr>
+<td> 设置                                                         </td>
+<td> 对轮廓类型进行设置，见属性窗口的轮廓类型。                   </td>
+</tr>
+<tr>
+<td> 查找1/查找2      </td>
+<td> 这两个选项卡就是设置两个轮廓的。                                                                                           </td>
+</tr>
+<tr>
+<td> 智能设置         </td>
+<td> 会出现各个轮廓，这时候可以选择想要测量的轮廓，只要点击一下就可以。2个轮廓要分别进行设置。                                                               </td>
+</tr>
+<tr>
+<td> 边缘极性     </td>
+<td> 可以参考找线工具的里面的极性相关属性。                                                                                     </td>
+</tr>
+<tr>
+<td> 对比度阈值       </td>
+<td> 可以参考找线工具的里面的对比度阈值相关属性。                                                                               </td>
+</tr>
+<tr>
+<td> （高级选项）展开 </td>
+<td> 可以设置边缘选择、局外点比例、是否启用掩膜和是否手动设置卡尺。                                                               </td>
+</tr>
+<tr>
+<td> 基准点           </td>
+<td> 基准点就是计算该点到另一个轮廓的最短距离。                                                                                 </td>
+</tr>
+<tr>
+<td> 添加基准点       </td>
+<td> 点击添加基准点，然后在已经选择好的轮廓的某点设置基准点，至少设置一个基准点，可以设置多个基准点，每个基准点都会去计算到另一个轮廓的最短距离。                                                               </td>
+</tr>
+<tr>
+<td> 轮廓中心点       </td>
+<td> 是否将轮廓的中心点作为基准点。                                                                                             </td>
+</tr>
+<tr>
+<td> 删除基准点       </td>
+<td> 选择基准点信息列表的某一行，选中，再点击删除基准点，可以进行删除选中的基准点。                                                               </td>
+</tr>
+<tr>
+<td> 距离类型         </td>
+<td> 参见属性面板的距离类型。                                                                                                   </td>
+</tr>
+<tr>
+<td> 轮廓到轮廓的距离 </td>
+<td> 根据距离类型，显示相关的距离。                                                                                             </td>
+</tr>
+<tr>
+<td> 执行             </td>
+<td> 根据选择好的轮廓和基准点，对轮廓距离进行计算。                                                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                            </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像                            </td>
+<td> 要进行轮廓测量的图像。                             </td>
+</tr>
+<tr>
+<td> 轮廓到轮廓距离                      </td>
+<td> 根据距离类型，显示相关的距离。</td>
+</tr>
+<tr>
+<td> 工具执行结果                        </td>
+<td> 工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 工具执行时间                        </td>
+<td> 工具执行时间。                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\轮廓距离测量.gvp”。</p>

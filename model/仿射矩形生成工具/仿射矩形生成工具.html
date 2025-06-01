@@ -1,0 +1,174 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>仿射矩形生成工具</h1>
+
+<h2>功能</h2>
+
+<p>仿射矩形生成工具是根据输入的中心点坐标、宽度和高度，生成仿射矩形的操作。效果如图1</p>
+
+<p><img src="media/wps3.jpg" alt="img" /></p>
+
+<p><imgnote>图1 仿射矩形生成工具应用示意图（虚线为标注）</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称         </th>
+<th> 参数描述                                                                                                </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属性窗口</td>
+<td> 是否拖动生成 </td>
+<td> 选择是否拖动生成仿射矩形。当选择“是”时，属性窗口会出现“仿射矩形图形”属性。                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形图形 </td>
+<td> 拖动生成仿射矩形的参数。 </td>
+</tr>
+<tr>
+<td> 图像窗口         </td>
+<td> 输入图像                                      </td>
+<td> 显示待检测的图像。                                       </td>
+</tr>
+<tr>
+<td> 数据链           </td>
+<td> 输入图像                                      </td>
+<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形中心X    </td>
+<td> 输入形成仿射矩形的中心点X轴坐标，double类型。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形中心Y    </td>
+<td> 输入形成仿射矩形的中心点Y轴坐标，double类型。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形宽度     </td>
+<td> 输入形成仿射矩形的宽度，double类型。                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形高度     </td>
+<td> 输入形成仿射矩形的高度，double类型。                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形旋转角度 </td>
+<td> 输入形成仿射矩形的旋转角度，double类型。                                                                </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无        </td>
+<td> 无                                                                                                      </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称      </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口      </td>
+<td> 仿射矩形x角点                                                </td>
+<td> 输出x角点坐标。                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形y角点 </td>
+<td> 输出y角点坐标。                                                                                                            </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形结果  </td>
+<td> 输出形成仿射矩形的中心点坐标、宽度、高度、旋转角度和切变角度。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果      </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间      </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口      </td>
+<td> 仿射矩形结果                                                 </td>
+<td> 显示生成的仿射矩形，同监视窗口的仿射矩形结果参数。           </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像      </td>
+<td> 输出根据图像大小生成一个掩膜图像(二值)。                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果      </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                               </td>
+</tr>
+<tr>
+<td> 数据链        </td>
+<td> 仿射矩形x角点                                                </td>
+<td> 输出x角点坐标，供后序工具使用，同监视窗口的PointCornerX参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形y角点 </td>
+<td> 输出y角点坐标，供后序工具使用，同监视窗口的PointCornerY参数。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形结果  </td>
+<td> 输出生成的仿射矩形，供后序工具使用，同监视窗口的仿射矩形结果参数。                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

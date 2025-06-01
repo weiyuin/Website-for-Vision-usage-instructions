@@ -1,0 +1,187 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云与网格数据比对工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云与网格数据比对工具主要是计算输入点云图像与模型文件之间的偏差。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​    在3D工程项目中，常常需要在基准坐标系下对工件进行尺寸规格质量检测。点云网格比对工具则是在该应用背景下开发的工具，主要是基于对齐结果，计算点云数据和CAD模型（stl格式）之间的曲面距离，获取偏差差异，凸显缺陷区域，如下图所示。</p>
+
+<p><img src="media/GcCloudMeshCompareTool_2_1.png" alt="" />
+​  <br/>
+<imgnote>图3_1 点云与网格数据比对工具流程</imgnote></p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4></li>
+</ul>
+
+
+<p><img src="media/GcCloudMeshCompareTool_3_1.png" alt="" />
+​  <br/>
+<imgnote>图3_1 点云与网格数据比对工具流程</imgnote></p>
+
+<ul>
+<li><h4>参数设置</h4>
+
+<ul>
+<li>① 数据链中链接输入的点云图像；</li>
+<li>② 属性参数加载STL文件及设置相应的参数；</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 输入待比对的点云数据，可为点云模型对齐工具的输出点云等，目的是计算对齐后的点云与STL模型差异，进而判定对齐的效果。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 模型文件路径 </td>
+<td> 输入待比对STL模型路径； </td>
+</tr>
+<tr>
+<td> 距离类型                                     </td>
+<td> 包括三种：最短距离（默认值，即计算点到面的垂直距离）; 几何距离，即计算点到面片中心距离; 沿法线距离，即计算点沿法线到面片的距离，输入点云图需要自带法向量，否则需要添加点云法线生成工具生成发现后再进行比对； </td>
+</tr>
+<tr>
+<td> 采样比率 </td>
+<td> 指定用于实际比对的采样点云数据的占比；取值范围为：(0, 1]，值为1时表示不采样； </td>
+</tr>
+<tr>
+<td> 高/低阈值 </td>
+<td> 可以计算[低阈值, 高阈值]范围内的点云数目，也可以在点云图像中显示此公差带内偏差结果，取值范围为：[-1000000, 1000000]； </td>
+</tr>
+<tr>
+<td> 启用高低阈值绘制比对结果 </td>
+<td> 是：按照设定的高低阈值设置颜色条上下限; 否：按照计算的最小最大值设置颜色条上下限。                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（监视窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云图像                                            </td>
+<td> 按照索引值输出对应点云图像。 </td>
+</tr>
+<tr>
+<td> 最小值/最大值/均值/标准差 </td>
+<td> 距离偏差结果的最大值、最小值、均值、标准差。 </td>
+</tr>
+<tr>
+<td> 阈值范围内点云个数 </td>
+<td> 根据期望距离阈值，进行统计，返回满足[低阈值, 高阈值]范围内的点云数目。 </td>
+</tr>
+<tr>
+<td> 偏差测量结果 </td>
+<td> 所有点的偏差结果。 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果。 </td>
+</tr>
+<tr>
+<td> 执行时间           </td>
+<td> 工具执行时间。                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云图像                                            </td>
+<td> 按照索引值输出对应点云图像。 </td>
+</tr>
+<tr>
+<td> 最小值/最大值/均值/标准差 </td>
+<td> 距离偏差结果的最大值、最小值、均值、标准差。 </td>
+</tr>
+<tr>
+<td> 阈值范围内点云个数 </td>
+<td> 根据期望距离阈值，进行统计，返回满足[低阈值, 高阈值]范围内的点云数目。 </td>
+</tr>
+<tr>
+<td> 偏差测量结果 </td>
+<td> 所有点的偏差结果。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点云模型对齐工具.gvp”。</p>
+
+<h2>7. 特殊说明</h2>
+
+<p>​      点云模型对齐工具是计算输入点云与STL模型之间的变换关系，并输出对齐后的点云数据；点云与网格数据比对工具主要是计算输入点云与STL模型之间的偏差，并将偏差显示出来。</p>

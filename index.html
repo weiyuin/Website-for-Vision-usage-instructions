@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>VISIONAssembly 6.5 操作手册</title>
+		<meta name="description" content="SmartOctopusHelp">
+		<meta name="keywords" content="SmartOctopusHelp">
+		<link href="" rel="stylesheet">
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<link rel="stylesheet" type="text/css" href="layui/icon/iconfont.css">
+		<link rel="stylesheet" href="css/index.css" type="text/css" />
+		<link rel="stylesheet" href="css/viewer.min.css">
+		<link rel="shortcut icon" href="image/Genivision.ico" type="image/x-icon">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.md5.js"></script>
+		<script src="js/viewer-jquery.min.js"></script>
+		<script src="layui/layui.js"></script>
+		<script type="text/javascript" src="js/tree.js" ></script>
+		<script src="js/index.js"></script>
+		<script type="text/javascript" src="js/script.js" ></script>
+	</head>
+
+	<body>
+		<div id="div-window" style="text-align:left; min-width: 920px;height:100%; min-height: 0px;margin:0;padding: 0;overflow-y: auto;overflow-x: hidden;">
+			<table cellspacing="" cellpadding="" id="div-table">
+				<tr>
+					<td width="320px", bgcolor="#EFEFEF"><img src="image/logo.png" /></td>
+<!--
+					<td class="show-type" hidden="hidden">
+						<h1 style="margin-right:300px;">VisionAssembly 操作手册</h1>
+					</td>
+-->
+				</tr>
+			</table>
+
+			<div class="div-main">
+				<div class="div-menu">
+					<input type="text" id="searchtree" onkeyup="searchtree();" onchange="searchtree();" name="title" required lay-verify="required" placeholder="搜索内容" autocomplete="off" class="layui-input" style="width: 310px;display: inline;height: 22px;margin:5px ;">
+<!--
+					<button type="button" class="layui-btn layui-btn layui-btn-xs" style="height: 25px;" onclick="searchtree();">
+ 							<i class="layui-icon" >&#xe615;</i> 查询
+					</button>
+-->
+					<div id="classtree" >
+
+					</div>
+				</div>
+				<div class="div-frame" id="frame-model">
+
+				</div>
+				<!--用于图片展示 -->
+				<img src="" width="0px" height="0px" id="showimg" />
+			</div>
+			<div class="footer row" hidden="hidden">
+				<div class="footer-pt1 row">
+					<div class="inner row">
+						<div class="side row">
+						</div>
+						<div class="con">
+							<div class="call"></div>
+							<div class="ewm">
+								<p style="font-size: 16px;color: white;float: left;margin-left: 80px"></p>
+								<p style="font-size: 16px;color: white;float: right;margin-right: 47px"></p>
+								<p style="font-size: 16px;color: white;float: left;margin-left: 80px"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-pt2 row">
+					<div class="inner row">
+						<div class="side">
+							<div class="img"><img src="image/logo_footer.png" alt=""></div>
+							<div class="copy">
+								<p>Copyright (C) 2016~2022, LUSTER LightTech. All rights reserved.
+									<a style="color: rgba(255,255,255,0.7)" </p>
+							</div>
+						</div>
+						<div class="con">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

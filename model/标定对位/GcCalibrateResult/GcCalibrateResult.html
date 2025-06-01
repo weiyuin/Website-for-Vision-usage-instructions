@@ -1,0 +1,157 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GcCalibrateResult</h1>
+
+<h2>功能</h2>
+
+<p>表示位置姿态，例如位置姿态生成工具的输出，标定结果（标准标定计算工具）的图像坐标和平台坐标。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th> 分类 </th>
+<th> 接口名称 </th>
+<th> 接口描述                                         </th>
+<th>                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造     </td>
+<td> GcCalibrateResult     </td>
+<td> GcCalibrateResult默认构造函数                       </td>
+<td></td>
+</tr>
+<tr>
+<td> 属性     </td>
+<td> matrixImageToPlatform </td>
+<td> 图像坐标和平台坐标之间的转换矩阵                    </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> coordPosImage             </td>
+<td> 标记点在初始位置时的图像坐标                        </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> coordPosPlatform           </td>
+<td> 标记点在初始位置时的平台坐标                        </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> dImagePixelRadioX         </td>
+<td> X方向像素当量                                       </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> dImagePixelRadioY         </td>
+<td> Y方向像素当量                                       </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> dAngleImageInPlatform </td>
+<td> 图像坐标系X轴正方向在平台坐标系中的角度（单位是度） </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> dAnglePlatformShear     </td>
+<td> 平台坐标系Y轴偏离垂直90度的角度（单位是度）         </td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>GcCalibrateResult ( )</h3>
+
+<ul>
+<li><p>功能：构造GcCalibrateResult对象。</p>
+
+<p>初始化dImagePixelRadioX和dImagePixelRadioY为1.0，初始化dAngleImageInPlatform和dAnglePlatformShear为0.0</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>matrixImageToPlatform</h3>
+
+<ul>
+<li>功能：图像坐标和平台坐标之间的转换矩阵。sc2Matrix类型，可读写。</li>
+</ul>
+
+
+<h3>coordPosImage</h3>
+
+<ul>
+<li>功能：标记点在初始位置时的图像坐标。GcCoordPos类型，可读写。</li>
+</ul>
+
+
+<h3>coordPosPlatform</h3>
+
+<ul>
+<li>功能：标记点在初始位置时的平台坐标。GcCoordPos类型，可读写。</li>
+</ul>
+
+
+<h3>dImagePixelRadioX</h3>
+
+<ul>
+<li>功能：X方向像素当量。浮点型，可读写。</li>
+</ul>
+
+
+<h3>dImagePixelRadioY</h3>
+
+<ul>
+<li>功能：Y方向像素当量。浮点型，可读写。</li>
+</ul>
+
+
+<h3>dAngleImageInPlatform</h3>
+
+<ul>
+<li>功能：图像坐标系X轴正方向在平台坐标系中的角度（单位是度）。浮点型，可读写。</li>
+</ul>
+
+
+<h3>dAnglePlatformShear</h3>
+
+<ul>
+<li>功能：平台坐标系Y轴偏离垂直90度的角度（单位是度）。浮点型，可读写。</li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

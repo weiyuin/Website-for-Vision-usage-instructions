@@ -1,0 +1,333 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>图像源工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     图像源工具的作用是代替图像采集工具、图像文件工具和图像文件夹工具以简化图像采集流程，所以它的主要功能是获取图像并输出给其他工具使用。同时，还内置了光源的控制及图像增强等功能。</p>
+
+<h2>2. 应用场景</h2>
+
+<p><img src="media/GcImageSourceAdvanceTool_1_1.png" alt="GcImageSourceAdvancedTool_1_1" /></p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     图像源工具根据系统状态决定图像来源，系统为在线状态时，图像源工具从相机获取图像，系统为离线状态时，图像源工具从文件或文件夹获取图像。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，右键高级属性窗口</h4></li>
+</ul>
+
+
+<p><img src="media/GcImageSourceAdvanceTool_4_1.png" alt="GcImageSourceAdvanceTool_4_1" /></p>
+
+<ul>
+<li><h4>相机参数</h4></li>
+</ul>
+
+
+<p><img src="media/GcImageSourceAdvanceTool_4_2.png" alt="GcImageSourceAdvanceTool_4_2" /></p>
+
+<p><strong>相机名称</strong></p>
+
+<p>下拉显示连接的相机，从中选择要获取图像的相机名。</p>
+
+<p><strong>独立参数</strong></p>
+
+<p>当不选中独立参数时，工具执行时用相机内部参数，曝光、Gamma和增益参数设置控件隐藏；当选中独立参数时，曝光、Gamma和增益参数设置控件显示，可在工具内设置，不改变相机内部参数值。</p>
+
+<p><strong>曝光</strong></p>
+
+<p>独立参数选中时可设置，设置工具运行时相机的曝光，独立参数没选中时控件隐藏。</p>
+
+<p><strong>Gamma值</strong></p>
+
+<p>独立参数选中时可设置，设置工具运行时相机的Gamma值，独立参数没选中时控件隐藏。</p>
+
+<p><strong>增益</strong></p>
+
+<p>独立参数选中时可设置，设置工具运行时相机的增益，独立参数没选中时控件隐藏。</p>
+
+<p><strong>是否防呆</strong></p>
+
+<p>相机是否开启防呆。</p>
+
+<p><strong>防呆次数</strong></p>
+
+<p>相机防呆的次数，开启防呆时可设置。</p>
+
+<p><strong>等待时长</strong></p>
+
+<p>-1为一直等待，大于-1为等待的时间，最大值为10000，单位为毫秒。</p>
+
+<p><strong>图像旋转</strong></p>
+
+<p>对相机采集到图像的旋转处理，包含0度、90度、180度、270度，其中0度不做操作，这个功能是在相机管理的旋转的基础上进行的。</p>
+
+<p><strong>图像镜像</strong></p>
+
+<p>对相机采集到的图像的镜像处理，包含无、水平、垂直、水平垂直，其中“无”不做处理，这个功能是在相机管理的镜像的基础上进行的。</p>
+
+<p><strong>记录时间</strong></p>
+
+<p>当选中时，图像采集时将在日志中记录光源开启、图像采集的时间点，用来在执行耗时长时排查问题。</p>
+
+<p><strong>输出灰度图像</strong></p>
+
+<p>在相机为RGB时可用，选中时，工具输出RGB图像的同时输出灰度图像，不选中时，工具不输出灰度图像。</p>
+
+<ul>
+<li><h4>文件</h4></li>
+</ul>
+
+
+<p><img src="media/GcImageSourceAdvanceTool_4_3.png" alt="GcImageSourceAdvanceTool_4_3" /></p>
+
+<p><strong>固定文件</strong></p>
+
+<p>选择是，就是文件路径可设置；选择否，文件路径不可设置，工具将加载动态文件路径的图片。</p>
+
+<p><strong>文件路径</strong></p>
+
+<p>加载本地图片的路径。</p>
+
+<ul>
+<li><h4>文件夹</h4></li>
+</ul>
+
+
+<p><img src="media/GcImageSourceAdvanceTool_4_4.png" alt="GcImageSourceAdvanceTool_4_5" /></p>
+
+<p><strong>文件路径</strong></p>
+
+<p>加载图片的文件夹路径。</p>
+
+<p><strong>关键字过滤</strong></p>
+
+<p>用来过滤文件夹内的图片，当图片文件名中包含关键字，图片将会留下，其他的被过滤掉。</p>
+
+<ul>
+<li><h4>光源</h4></li>
+</ul>
+
+
+<p><img src="media/GcImageSourceAdvanceTool_4_5.png" alt="GcImageSourceAdvanceTool_4_5" /></p>
+
+<p><strong>端口号</strong></p>
+
+<p>下拉显示当前所有<strong><em>无协议</em></strong>端口号，选中控制光源所连接的端口。</p>
+
+<p><strong>延时</strong></p>
+
+<p>设置光源开启与相机图像采集的时间间隔。</p>
+
+<p><strong>开启指令</strong></p>
+
+<p>用来开启光源所发送的指令。</p>
+
+<p><strong>关闭指令</strong></p>
+
+<p>用来关闭光源所发送的指令。</p>
+
+<ul>
+<li><h4>在线离线状态</h4></li>
+</ul>
+
+
+<p>通过操作主面板下系统状态栏内的在线离线按钮（如下图），实现系统在线离线状态的切换，点击“在线”，系统切换为在线状态，点击“离线”，系统切换为离线状态。</p>
+
+<p><img src="media/GcImageSourceAdvanceTool_4_6.png" alt="GcImageSourceAdvanceTool_4_6" /></p>
+
+<p>状态栏显示：</p>
+
+<p><img src="media/GcImageSourceAdvanceTool_4_7.png" alt="GcImageSourceAdvanceTool_4_7" /></p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述                       </th>
+<th> 解决方法                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 在线状态下，获取图像失败       </td>
+<td> 检查相机的连接状态，在相机管理窗口检查能否正常获取图像       </td>
+</tr>
+<tr>
+<td> 在线状态下，开启光源，光源不亮 </td>
+<td> 检查控制光源端口有无异常，若端口正常，检查控制光源的指令是否正确 </td>
+</tr>
+<tr>
+<td> 图像文件获取失败               </td>
+<td> 检查图像文件路径是否设置，选中的图像文件是否正常             </td>
+</tr>
+<tr>
+<td> 图像文件夹获取失败             </td>
+<td> 检查文件夹路径是否正常，所设置的路径下是否有图像             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称         </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 相机名称         </td>
+<td> 采集图像的相机的名称，又称序列号。                           </td>
+</tr>
+<tr>
+<td> 是否使用独立参数 </td>
+<td> 如果不使用独立参数，会按照相机初始的参数进行图像采集，选是的话，需要手动设置增益和曝光时间。 </td>
+</tr>
+<tr>
+<td> 增益             </td>
+<td> 使用独立参数时，相机的增益，单位为分贝（dB）。系统在线状态下可用。 </td>
+</tr>
+<tr>
+<td> Gamma            </td>
+<td> 使用独立参数时，相机的Gamma值。                              </td>
+</tr>
+<tr>
+<td> 曝光             </td>
+<td> 使用独立参数时，相机的曝光时间，单位为毫秒。系统在线状态下可用。 </td>
+</tr>
+<tr>
+<td> 是否开启防呆     </td>
+<td> 相机是否开启防呆。                                           </td>
+</tr>
+<tr>
+<td> 防呆次数         </td>
+<td> 相机防呆的次数，开启防呆时可设置。                           </td>
+</tr>
+<tr>
+<td> 采集等待时间     </td>
+<td> -1为一直等待，大于-1为等待的时间，最大值为10000，单位为毫秒。 </td>
+</tr>
+<tr>
+<td> 是否输出灰度图像 </td>
+<td> 图像来源为RGB相机时可用，可以设置工具是否输出RGB图像的同时输出灰度图像。 </td>
+</tr>
+<tr>
+<td> 图像旋转         </td>
+<td> 对相机采集到图像的旋转处理，包含0度、90度、180度、270度，其中0度不做操作，这个功能是在相机管理的旋转的基础上进行的。 </td>
+</tr>
+<tr>
+<td> 图像镜像         </td>
+<td> 对相机采集到的图像的镜像处理，包含无、水平、垂直、水平垂直，其中“无”不做处理，这个功能是在相机管理的镜像的基础上进行的。 </td>
+</tr>
+<tr>
+<td> 图像来源         </td>
+<td> 可以选择文件或文件夹，系统为离线状态时可用。选择文件，工具从文件中加载图像，当选择文件夹时，工具从文件夹中加载图像。 </td>
+</tr>
+<tr>
+<td> 固定文件         </td>
+<td> 图像来源为文件时，选择是，就是固定文件路径；选择否，就是动态文件路径。 </td>
+</tr>
+<tr>
+<td> 文件路径         </td>
+<td> 加载图片的文件路径，只有固定路径选择“是”，才会出现文件路径属性。设置加载图片的路径。 </td>
+</tr>
+<tr>
+<td> 文件夹路径       </td>
+<td> 图像来源为文件夹时，加载图片的文件夹路径。                   </td>
+</tr>
+<tr>
+<td> 过滤关键字       </td>
+<td> 图像来源为文件夹时，用来过滤文件夹内图片的关键字。当图片文件名中包含关键字，图片将会留下，其他的被过滤掉。 </td>
+</tr>
+<tr>
+<td> 动态文件路径     </td>
+<td> 图像来源为文件时，固定路径选择否，加载图片的动态路径。       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出图像     </td>
+<td> 灰度图像输出，包括图像长宽和像素大小。         </td>
+</tr>
+<tr>
+<td> 输出图像RGB  </td>
+<td> 彩色图像输出，包括图像长宽和像素大小。         </td>
+</tr>
+<tr>
+<td> 输出深度图像 </td>
+<td> 深度图像输出，包括图像长宽和像素大小。         </td>
+</tr>
+<tr>
+<td> 输出轮廓图像 </td>
+<td> 轮廓图像输出，包括轮廓总点数和有效点数。       </td>
+</tr>
+<tr>
+<td> 当前文件     </td>
+<td> 当前图片的路径文件名，图像来源为文件夹时可见。 </td>
+</tr>
+<tr>
+<td> 当前文件名称 </td>
+<td> 当前图片的名称，图像来源为文件夹时可见。       </td>
+</tr>
+<tr>
+<td> 遍历到达末尾 </td>
+<td> 是否遍历到文件末尾，图像来源为文件夹时可见。   </td>
+</tr>
+<tr>
+<td> 光源开启指令 </td>
+<td> 输出光源开启指令字符串，只在通信发送成功时输出，否则输空字符串。 </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td> 工具执行结果。                                               </td>
+</tr>
+<tr>
+<td> 执行时间     </td>
+<td> 工具执行时间。                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\图像源工具.gvp”。</p>

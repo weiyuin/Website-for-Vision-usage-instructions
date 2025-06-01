@@ -1,0 +1,311 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云球体圆柱圆锥拟合工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​ 点云球体圆柱圆锥拟合工具主要用于对点云数据进行球体、圆柱体或者圆锥体形状的拟合，为其他工具提供拟合后的球体、圆柱体或者圆锥体的信息；</p>
+
+<p>​ 点云球体圆柱圆锥拟合工具：主要是剔除点云图像数据中的局外点，根据内点数据计算得到球体、圆柱和圆锥的解析表达式，以协助后续的检测和标定等操作。</p>
+
+<div align="center">
+<img src="media/3DSphereFitting_1_1.png" style="zoom:100%;"/>
+<img src="media/3DSphereFitting_1_2.png" style="zoom:100%;"/>
+<img src="media/3DSphereFitting_1_3.png" style="zoom:100%;"/>
+    <center>图1_1 点云球体圆柱圆锥拟合工具原理</center>
+</div>
+
+
+<h2>2.使用场景</h2>
+
+<p>​          <strong>案例1：3D测量-VC散热片厚度测量</strong></p>
+
+<div align="center">
+<img src="media/3DSphereFitting_2_2.png" style="zoom:100%;"/>
+    <center>图2_1 场景1：VC散热片厚度测量</center>
+</div>
+
+
+<p>​          <strong>案例02：3D测量-手机中板厚度测量</strong></p>
+
+<div align="center">
+<img src="media/3DPlaneFitting_2_2.png" style="zoom:50%;"/>
+    <center>图2_2 场景2：手机中板平面度测量--图片来源于网络</center>
+</div>
+
+
+<p>​          <strong>案例03：3D测量-3C零部件螺钉孔锥度测量</strong></p>
+
+<div align="center">
+<img src="media/3DSphereFitting_2_3.png" style="zoom:70%;"/>
+    <center>图2_3 场景3：手机主板屏蔽罩平面度检测</center>
+</div>
+
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>工具添加，图像导入、参数调节</h3>
+
+<p><strong>Step1:</strong>添加点云球体圆柱圆锥拟合工具（3个），并双击打开工具参数链，链接点云文件，如图3-1所示；<br/>
+<strong>Step2:</strong>右击工具点击“属性”打开工具高级界面，如图3-2所示；</p></li>
+</ul>
+
+
+<div align="center">
+<img src="media/3DSphereFitting_3_1.png" style="zoom:80%;"/>
+    <center>图3_1 添加点云球体圆柱圆锥拟合工具</center>
+</div>
+
+
+<div align="center">
+<img src="media/3DSphereFitting_3_2.gif" style="zoom:80%;"/>
+    <center>图3_2 球体拟合</center>
+</div>
+
+
+
+
+<div align="center">
+<img src="media/3DSphereFitting_3_3.gif" style="zoom:80%;"/>
+    <center>图3_3 圆柱拟合</center>
+</div>
+
+
+
+
+<div align="center">
+<img src="media/3DSphereFitting_3_4.gif" style="zoom:80%;"/>
+    <center>图3_4 圆锥拟合</center>
+</div>
+
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据                                               </td>
+<td> 输入待拟合的点云图像                                  </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否使用ROI                               </td>
+<td> 选择“是”，则使用长方体框选ROI进行拟合；选择“否”，则对全部点云进行平面拟合 </td>
+</tr>
+<tr>
+<td>拟合类型</td>
+<td>分为三种：球体、圆柱、圆锥</td>
+</tr>
+<tr>
+<td>球体拟合方法</td>
+<td>分为最佳拟合和带局外点拟合</td>
+</tr>
+<tr>
+<td>距离阈值</td>
+<td>三维点到拟合平面距离的最大值，超出距离判定为局外点，不参与拟合计算，范围：(0,1000]，单位：像素</td>
+</tr>
+<tr>
+<td>置信度</td>
+<td>衡量拟合平面的可信程度，置信度越大，拟合平面越可靠，范围：(0,1)，单位：百分比</td>
+</tr>
+<tr>
+<td>局外点比例</td>
+<td>局外点占总三维点的比例，范围：[0,1)</td>
+</tr>
+<tr>
+<td>采样半宽</td>
+<td>采样后相邻三维点之间的距离为采样距离的两倍，范围：(0,50]，单位：像素</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+
+<table>
+<thead>
+<tr>
+<th> 按钮名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 绘制ROI                                </td>
+<td> 在高级界面图像中，相应位置点击并拖动鼠标即可绘制长方体ROI </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>球体   </td>
+<td>输出拟合的球体</td>
+</tr>
+<tr>
+<td>圆柱    </td>
+<td> 输出拟合的圆柱 </td>
+</tr>
+<tr>
+<td>圆锥 </td>
+<td> 输出拟合的圆锥 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> RMS </td>
+<td> 参与拟合的数据点的RMS值 </td>
+</tr>
+<tr>
+<td>球体   </td>
+<td>球体：Center，拟合球体的球心三维坐标<br />球体：Radius，拟合球体的半径，单位：mm</td>
+</tr>
+<tr>
+<td>圆柱    </td>
+<td> 圆柱：Pos，拟合圆柱体下表面圆心的三维坐标<br />圆柱：Normal，拟合圆柱的轴线向量<br />圆柱：Radius，拟合圆柱底面圆形的半径，单位：mm </td>
+</tr>
+<tr>
+<td>圆锥 </td>
+<td> 圆锥：Apex，拟合圆锥体半锥顶角<br />圆锥：Center，拟合圆锥顶点三维坐标<br />圆柱：Radius，拟合圆锥底面圆形的半径，单位：mm </td>
+</tr>
+<tr>
+<td>执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间                                                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云球体圆柱圆锥拟合工具.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>算法原理说明</h3>
+
+<ul>
+<li><h3>7.1 点云球体、圆柱、圆锥拟合原理：</h3></li>
+</ul>
+
+
+<p><strong>1.球体参数:球心O(a,b,c)、半径：r</strong></p>
+
+<p>球体的几何含义：球面上一点到球心的距离等于半径；
+$$
+  球体方程：(x-a)<sup>2</sup>+(y-b)<sup>2</sup>+(z-c)<sup>2</sup>=r<sup>2</sup>
+$$</p>
+
+<div align="center">
+<img src="media/3DSphereFitting_7_1.png" style="zoom:100%;"/>
+    <center>图7-1 球体方程</center>
+</div>
+
+
+<p><strong>2.圆柱参数：轴线上一点Q（x0,y0,z0）、轴线向量：PN(a,b,c)、半径：r</strong></p>
+
+<p>圆柱的几何含义：圆柱上一点Q、轴线上一点P以及Q在轴线上的垂足N构成三角形满足勾股定理；
+$$
+圆柱方程：(x-x0)<sup>2</sup>+(y-y0)<sup>2</sup>+(z-z0)<sup>2</sup>=[a(x-x0)+b(y-y0)+c(z-z0)]^2+r<sup>2</sup>
+$$</p>
+
+<div align="center">
+<img src="media/3DSphereFitting_7_2.png" style="zoom:100%;"/>
+    <center>图7-2 圆柱方程</center>
+</div>
+
+
+<p><strong>3.圆锥参数：顶点P(x0,y0,z0)、轴线向量PN(a,b,c)、半锥顶角γ</strong></p>
+
+<p>圆锥的几何含义：圆锥顶点P与圆锥上任意一点Q构成的向量PQ与轴线向量PN的夹角为半锥顶角；
+$$
+圆锥方程：[a(x-x0)+b(y-y0)+c(z-z0)]^2=cos<sup>2</sup> 𝛾[(𝑥−𝑥<em>0 )<sup>2</sup>+(𝑦−𝑦</em>0 )<sup>2</sup>+(𝑧−𝑧_0 )<sup>2</sup>]
+$$</p>
+
+<div align="center">
+<img src="media/3DSphereFitting_7_3.png" style="zoom:100%;"/>
+    <center>图7-3 圆锥方程</center>
+</div>
+
+
+<p><strong>4.工具高级参数</strong></p>
+
+<div align="center">
+<img src="media/3DSphereFitting_7_4.png" style="zoom:120%;"/>
+    <center>图7-4 球、圆柱、圆锥拟合</center>
+</div>
+
+
+<p><strong>距离阈值：</strong>指设定点到球体、圆柱和圆锥距离的最大值；
+<strong>局外点：</strong>指点云数据点到球体、圆柱和圆锥的距离不满足距离阈值的点；
+<strong>内点：</strong>指点云数据点到球体、圆柱和圆锥的距离在距离阈值之内的点；
+<strong>局外点比例：</strong>局外点占总点云数据点的比例，其中，内点与外点的和为总点云数据点；
+<strong>置信度：</strong>衡量使用内点构造球体、圆柱和圆锥的可信程度，置信度越大，拟合越可靠。</p>

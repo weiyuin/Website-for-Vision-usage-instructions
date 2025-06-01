@@ -1,0 +1,132 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>二维向量外层相加工具</h1>
+
+<h2>功能</h2>
+
+<p>将两个vector&lt;vector<sc2Vector>>A，B组成一个数组，数组第一个元素是A，第二个元素是B，如图1所示。</p>
+
+<p><img src="media/wps31.png" alt="img" /></p>
+
+<p><imgnote>(a) A</imgnote></p>
+
+<p><img src="media/wps32.png" alt="img" /></p>
+
+<p><imgnote>(b) B</imgnote></p>
+
+<p><img src="media/wps33.png" alt="img" /></p>
+
+<p><imgnote>&copy; 二维向量外层相加工具执行结果</imgnote></p>
+
+<p><imgnote>图1 二维向量外层相加工具</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称      </th>
+<th> 参数描述                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属性窗口</td>
+<td>    无   </td>
+<td> 无                                         </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td>    无   </td>
+<td> 无                                         </td>
+</tr>
+<tr>
+<td> 数据链        </td>
+<td> 输入二维向量A        </td>
+<td> 输入第一组二维向量。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入二维向量B </td>
+<td> 输入第二组二维向量。                       </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无 </td>
+<td> 无                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述（参数的含义）                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出二维向量           </td>
+<td> 组合后的结果。                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                       </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 执行结果               </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出二维向量           </td>
+<td> 输出组合后的结果，供其他工具使用，同监视窗口“输出二维向量”参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>“二维向量外层相加工具”的输入是vector&lt;vector<sc2Vector>>类型的，属于该类型的数据有“靶标相机标定工具”的输出数据链中的“有效角点的畸变图像坐标”、“有效角点的全局靶标坐标”。可以通过数组生成工具将“有效角点的即便图像坐标”、“有效角点的全局靶标坐标”的数据提取出来，将数据类型属性选为“scSc2vectorVector”。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\二维向量外层相加工具.gvp”。</p>

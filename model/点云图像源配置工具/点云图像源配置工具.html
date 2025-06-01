@@ -1,0 +1,135 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云图像源配置工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云图像源配置工具主要是根据输入的三个点云图像以及索引，输出索引值对应的点云图像。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量中，经常会存在不同工位采集点云图像，而处理流程完全一致的情况，那么需要点云图像源配置切换不同工位的采集图像，进而达到共用处理流程的作用。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4></li>
+</ul>
+
+
+<p><img src="media/GcCloudSourceConfigTool_3_1.png" alt="" /></p>
+
+<p><imgnote>图3_1 点云图像源配置工具流程</imgnote></p>
+
+<ul>
+<li><h4>参数设置</h4>
+
+<ul>
+<li>① 数据链中点云图像源1、2、3，根据需要分别设置；</li>
+<li>② 数据链中图像源索引设置，默认索引为1；</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 点云图像源1 </td>
+<td> 图像数据来源1，最多支持3个图像源，可以是点云文件夹，点云文件，3D图像采集工具等点云文件           </td>
+</tr>
+<tr>
+<td> 点云图像源2                                       </td>
+<td> 图像数据来源2，同上                    </td>
+</tr>
+<tr>
+<td> 点云图像源3 </td>
+<td> 图像数据来源3，同上 </td>
+</tr>
+<tr>
+<td> 图像源索引 </td>
+<td> 输出的索引值范围为1~3，默认值为1                                                                    </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云图像 </td>
+<td> 按照索引值输出对应点云图像 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云图像                                            </td>
+<td> 按照索引值输出对应点云图像 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间           </td>
+<td> 工具执行时间                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点云图像源配置工具.gvp”。</p>
+
+<h2>7. 特殊说明</h2>

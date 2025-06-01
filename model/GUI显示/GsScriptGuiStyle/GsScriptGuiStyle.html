@@ -1,0 +1,159 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GsScriptGuiStyle</h1>
+
+<h2>功能</h2>
+
+<p>表示要在视图窗口显示的GUI风格，包括是否可见，字体大小，线型，线宽，颜色，标签是否可见，标签内容，标签字体等。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                         </th>
+<th> 接口描述     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性 </td>
+<td> bVisible           </td>
+<td> GUI是否可见  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> nLineStyle       </td>
+<td> 线型         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> nLineWidth       </td>
+<td> 线宽         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> clrLineColor   </td>
+<td> 颜色         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> bLabelVisible </td>
+<td> 标签是否可见 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> strLabel           </td>
+<td> 标签内容     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> strLabelFont   </td>
+<td> 标签字体     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> lFontSize         </td>
+<td> 标签大小     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>bVisible</h3>
+
+<ul>
+<li>功能：GUI是否可见。布尔类型，True: 可见; False: 不可见。</li>
+</ul>
+
+
+<h3>nLineStyle</h3>
+
+<ul>
+<li>功能：GUI线型，线型范围只支持0，1，2，3，4。</li>
+<li><p>0：表示实线 “————”。</p></li>
+<li><p>1：表示虚线 “&mdash;&mdash;&mdash;&mdash;-”。</p></li>
+<li><p>2：表示点构成的线 “…………..”。</p></li>
+<li><p>3：表示下划线和点构成的线 “<em>.</em>.<em>.</em>._.”。</p></li>
+<li><p>4：表示下滑线和双点构成的线 “<em>..</em>..<em>..</em>.._”。</p></li>
+</ul>
+
+
+<h3>nLineWidth</h3>
+
+<ul>
+<li>功能：表示线宽，线宽设置范围是1\~15。</li>
+</ul>
+
+
+<h3>clrLineColor</h3>
+
+<ul>
+<li>功能：表示颜色，List类型[r, g, b]。例如设置红色clrLineColor = [255, 0, 0]。</li>
+</ul>
+
+
+<h3>bLabelVisible</h3>
+
+<ul>
+<li>功能：表示标签是否可见。布尔类型True或者False。</li>
+</ul>
+
+
+<h3>strLabel</h3>
+
+<ul>
+<li>功能：设置标签内容，str类型。</li>
+</ul>
+
+
+<h3>strLabelFont</h3>
+
+<ul>
+<li>功能：标签字体，str类型。例如 strLabelFont = “Arial”</li>
+</ul>
+
+
+<h3>lFontSize</h3>
+
+<ul>
+<li>功能：字体大小(字号)，字体大小设置范围是8\~360整型。</li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无。</p>
+
+<h2>示例代码</h2>
+
+<p><code>python
+guiStyle = GvVisionAssembly.GsScriptGuiStyle()
+guiStyle.bVisible = True
+guiStyle.nLineStyle = 1
+guiStyle.nLineWidth =
+guiStyle.clrLineColor = [255, 0, 0]
+guiStyle.bLabelVisible = True
+guiStyle.strLabel = "标签"
+guiStyle.strLabelFont = "Arial"
+guiStyle.lFontSize = 20
+</code></p>

@@ -1,0 +1,354 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scRect</h1>
+
+<h2>功能</h2>
+
+<p>表示矩形，例如几何定位的搜索区域，Blob工具的矩形ROI区域。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                      </th>
+<th> 接口描述                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scRect           </td>
+<td> scRect()默认构造函数。                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scRect    </td>
+<td> scRect(ul, sz)构造函数。                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scRect      </td>
+<td> scRect(w, h)构造函数。                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scRect </td>
+<td> scRect(x, y, w, h)构造函数。               </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> Set         </td>
+<td> Set(ul, sz)设置矩形左上角坐标和大小。      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> Set      </td>
+<td> Set(x, y, w, h) 设置矩形左上角坐标和大小。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetOrigin  </td>
+<td> 设置矩形左上角点。                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetOrigin    </td>
+<td> 获取矩形左上角点。                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetSize      </td>
+<td> 设置矩形的尺寸。                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSize        </td>
+<td> 获取矩形的尺寸。                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetWidth     </td>
+<td> 设置矩形的宽。                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetWidth      </td>
+<td> 获取矩形的宽。                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetHeight   </td>
+<td> 设置矩形的高。                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetHeight    </td>
+<td> 获取矩形的高。                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetUL            </td>
+<td> 获取矩形左上角点。                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetUR            </td>
+<td> 获取矩形右上角点。                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetLR            </td>
+<td> 获取矩形右下角点。                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetLL            </td>
+<td> 获取矩形左下角点。                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scRect()</h3>
+
+<ul>
+<li><p>功能：构造scRect对象。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scRect(ul, sz)</h3>
+
+<ul>
+<li><p>功能：构造scRect对象，左上角设置为ul，宽高为sz。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>ul：矩形左上角位置，sc2Vector类型。</p></li>
+<li><p>sz：矩形的宽高，sc2Vector类型的sz中的x表示宽，y表示高。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scRect(w, h)</h3>
+
+<ul>
+<li><p>功能：构造scRect对象，设置宽为w，高为h，左上角坐标为(0, 0)。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>w：矩形的宽，浮点数类型。</p></li>
+<li><p>h：矩形的高，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scRect(x, y, w, h)</h3>
+
+<ul>
+<li><p>功能：构造scRect对象，设置左上角位置为(x, y)，宽为w，高为h。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>x：矩形的左上角x坐标，浮点数类型。</p></li>
+<li><p>y：矩形的左上角y坐标，浮点数类型。</p></li>
+<li><p>w：矩形的宽，浮点数类型。</p></li>
+<li><p>h：矩形的高，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>Set (ul, sz)</h3>
+
+<ul>
+<li><p>功能：设置矩形的左上角点和宽高。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>ul：矩形左上角位置，sc2Vector类型。</p></li>
+<li><p>sz：矩形的宽高，sc2Vector类型的sz中的x表示宽，y表示高。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>Set (x, y, w, h)</h3>
+
+<ul>
+<li><p>功能：设置矩形左上角点和宽高。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>x：矩形的左上角x坐标，浮点数类型。</p></li>
+<li><p>y：矩形的左上角y坐标，浮点数类型。</p></li>
+<li><p>w：矩形的宽，浮点数类型。</p></li>
+<li><p>h：矩形的高，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetOrigin(ul)</h3>
+
+<ul>
+<li><p>功能：设置矩形的左上角点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>ul：矩形左上角位置，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetOrigin()</h3>
+
+<ul>
+<li><p>功能：获取矩形的左上角点。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：矩形的左上角点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>SetSize(sz)</h3>
+
+<ul>
+<li><p>功能：设置矩形的宽高。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>sz：矩形的宽高，sc2Vector类型的sz中的x表示宽，y表示高。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetSize()</h3>
+
+<ul>
+<li><p>功能：获取矩形的宽高。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：矩形的宽高，sc2Vector类型，x表示宽，y表示高。</p></li>
+</ul>
+
+
+<h3>SetWidth(w)</h3>
+
+<ul>
+<li><p>功能：设置矩形的宽。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>w：矩形的宽，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>Getwidth()</h3>
+
+<ul>
+<li><p>功能：获取矩形的宽。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：矩形的宽，浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetHeight(h)</h3>
+
+<ul>
+<li><p>功能：设置矩形的高。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>h：矩形的高，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetHeight()</h3>
+
+<ul>
+<li><p>功能：获取矩形的高。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：矩形的高，浮点数类型。</p></li>
+</ul>
+
+
+<h3>GetUL()</h3>
+
+<ul>
+<li><p>功能：获取矩形左上角点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：矩形的左上角点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetUR()</h3>
+
+<ul>
+<li><p>功能：获取矩形的右上角点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：矩形的右上角点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetLR()</h3>
+
+<ul>
+<li><p>功能：获取矩形的右下角点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：矩形的右下角点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetLL()</h3>
+
+<ul>
+<li><p>功能：获取矩形的左下角点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：矩形的左下角点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

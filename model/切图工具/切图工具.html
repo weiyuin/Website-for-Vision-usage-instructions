@@ -1,0 +1,177 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>切图工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     切图即图像切割，是图像预处理方法之一，可以将输入图像指定矩形区域切割出来并输出，以实现对图像关键区域进行处理。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     当需要对输入图像进行切割并提取时，会用到切图工具。如图。</p>
+
+<p>​     输入图像：</p>
+
+<p><img src="media/GcGetSliceImageTool_2_1.png" alt="GcGetSliceImageTool_2_1" /></p>
+
+<p>​     结果图像：</p>
+
+<p><img src="media/GcGetSliceImageTool_2_2.png" alt="GcGetSliceImageTool_2_2" /></p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     切图的过程是根据链入的中心点和输出图像尺寸，计算得出矩形区域大小和位置，然后在输入图像上，将矩形区域提取出来，生成输出图像。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，链入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcGetSliceImageTool_4_1.png" alt="GcGetSliceImageTool_4_1" /></p>
+
+<ul>
+<li><h4>设置输出图像尺寸</h4></li>
+</ul>
+
+
+<p><img src="media/GcGetSliceImageTool_4_2.png" alt="GcGetSliceImageTool_4_2" /></p>
+
+<ul>
+<li><h4>链入中心点，以找圆结果为例</h4></li>
+</ul>
+
+
+<p><img src="media/GcGetSliceImageTool_4_3.png" alt="GcGetSliceImageTool_4_3" /></p>
+
+<ul>
+<li><h4>查看结果</h4></li>
+</ul>
+
+
+<p><img src="media/GcGetSliceImageTool_4_4.png" alt="GcGetSliceImageTool_4_4" /></p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述                           </th>
+<th> 解决方法                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 错误栏输出图像数据为空             </td>
+<td> 检查数据链是否链入图像，以及图像数据是否正常                 </td>
+</tr>
+<tr>
+<td> 结果图像异常                       </td>
+<td> 检查数据链是否链入中心点，如果已链入，检查生成中心点的工具输出点是否正确 </td>
+</tr>
+<tr>
+<td> 错误栏输出中心点无效，不能超出图像 </td>
+<td> 所链入的中心点已超出图像范围，检查是否链错了输出图像         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称      </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像      </td>
+<td> 被切割的图像，由数据链链入输入图像。                         </td>
+</tr>
+<tr>
+<td> 输入图像(RGB) </td>
+<td> 被切割的彩色图像，由数据链链入输入彩色图像。                 </td>
+</tr>
+<tr>
+<td> 中心点        </td>
+<td> 要切割的矩形区域的中心点，由数据链链入。                     </td>
+</tr>
+<tr>
+<td> 输出图像尺寸  </td>
+<td> 要切割图像的矩形边宽。                                       </td>
+</tr>
+<tr>
+<td> 填充值        </td>
+<td> 当输出图像大于要切图像时，多余部分由输入的填充数值的颜色填充，数值范围[0-255]之间的整数。 </td>
+</tr>
+<tr>
+<td> 切图是否为彩色图像        </td>
+<td> 是：切图是彩色图像； 否：切图不是彩色图像。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称      </th>
+<th> 参数说明                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像      </td>
+<td> 被切割的图像尺寸，供数据链使用。 </td>
+</tr>
+<tr>
+<td> 输入图像(RGB) </td>
+<td> 被切割的彩色图像，供数据链使用。 </td>
+</tr>
+<tr>
+<td> 输出图像      </td>
+<td> 切图后输出的结果图像。           </td>
+</tr>
+<tr>
+<td> 输出图像(RGB) </td>
+<td> 切图后输出的结果图像。           </td>
+</tr>
+<tr>
+<td> 执行结果      </td>
+<td> 工具执行结果。                   </td>
+</tr>
+<tr>
+<td> 执行时间      </td>
+<td> 工具执行时间。                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\切图工具.gvp”。</p>

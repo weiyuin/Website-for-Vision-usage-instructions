@@ -1,0 +1,153 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>CPK运算工具</h1>
+
+<h2>功能</h2>
+
+<p>对输入的数据向量根据给定的规格上/下限值（USL/LSL）进行CPK运算，最终输出CPK结果。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口   </td>
+<td> 规格上限值                           </td>
+<td> USL参数，给定的任意值，参与CPK计算。   </td>
+</tr>
+<tr>
+<td></td>
+<td> 规格下限值 </td>
+<td> LSL参数，给定的任意值，参与CPK计算。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像窗口   </td>
+<td> 无                                                                             </td>
+</tr>
+<tr>
+<td> 数据链     </td>
+<td> 输入数据向量                         </td>
+<td> 输入的数据向量，为double类型的数据数组。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 计算结果       </td>
+<td> 计算的CPK结果。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像窗口 </td>
+<td> 无                              </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 计算结果       </td>
+<td> 计算的CPK结果。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>CPK (Process Capability Index )的意义为制程水平的量化反映，即用一个数值来表达制程的水平，其实质作用是反映制程合格率的高低；</p></li>
+<li><p>计算CPK时，输入数据向量至少应有20组数据，且数据要具有一定代表性；</p></li>
+<li><p>CPK等级的评定与处理原则如下表所示：</p></li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th> 等级 </th>
+<th> CPK值         </th>
+<th> 处理原则                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> A+   </td>
+<td> ≥1.67         </td>
+<td> 无缺点，考虑降低成本                 </td>
+</tr>
+<tr>
+<td> A    </td>
+<td> 1.33≤CPK&lt;1.67 </td>
+<td> 状态良好维持现状                     </td>
+</tr>
+<tr>
+<td> B    </td>
+<td> 1.0≤CPK&lt;1.33  </td>
+<td> 改进为A级                            </td>
+</tr>
+<tr>
+<td> C    </td>
+<td> 0.67≤CPK&lt;1.0  </td>
+<td> 制程不良较多，必须提升其能力         </td>
+</tr>
+<tr>
+<td> D    </td>
+<td> CPK&lt;0.67      </td>
+<td> 制程能力较差，考虑整改设计制程       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\CPK运算工具.gvp”</p>

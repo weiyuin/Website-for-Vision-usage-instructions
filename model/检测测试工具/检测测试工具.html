@@ -1,0 +1,194 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>检测测试工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     检测测试工具用于定位复杂特征和目标，该工具的输入为单张图像及训练好的网络模型，输出为目标外接矩形结果。</p>
+
+<p>​     图a中的螺帽和螺钉是要检测的目标，图b的红框是检测出的目标。</p>
+
+<p> <img src="media/GcDetectionTestTool_1_1.png" alt="GcDetectionTestTool_1_1" style="zoom:100%;" /></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     字符的定位问题，检测螺丝缺失、多件等。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     <strong>模型训练：</strong>通过训练来学习输入图像特征到输出目标框位置间的映射关系，这种映射关系是通过卷积神经网络来建立的。检测网络一般先用分类的主干网络对图像进行特征提取得到特征图，然后由特征图出发结合anchor框先验信息得到可能的结果矩形框，最后再根据置信度阈值对重叠区域进行非极大值抑制得到最终结果。特征提取网络部分有许多参数，训练中会学习这些参数。</p>
+
+<p>​     <strong>检测测试：</strong>实时图像被输入到网络中，网络会输出该图像每一个目标框的位置、类别、置信度。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入模型</h4>
+
+<p><img src="media/GcDetectionTestTool_4_1.png" alt="GcDetectionTestTool_4_1" style="zoom:50%;" /></p></li>
+<li><h4>设置图像数据链接</h4>
+
+<p>双击“检测测试工具”，在弹出的数据链接对话框中，选择输入图像。</p>
+
+<p><img src="media/GcDetectionTestTool_4_2.png" alt="GcDetectionTestTool_4_2" style="zoom:50%;" /></p></li>
+<li><h4>执行，查看结果</h4>
+
+<p><img src="media/GcDetectionTestTool_4_3.png" alt="GcDetectionTestTool_4_3" style="zoom:100%;" /></p>
+
+<p><img src="media/GcDetectionTestTool_4_4.png" alt="GcDetectionTestTool_4_4" style="zoom:100%;" /></p></li>
+</ul>
+
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述                         </th>
+<th> 解决方法                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 工具运行失败，提示“获取图像错误” </td>
+<td> 检查输入图像是否设置，双击工具即可设置输入图像               </td>
+</tr>
+<tr>
+<td> 工具运行失败，提示“调用深度学习算法错误”   </td>
+<td> 1、检查模型管理器中模型是否初始化成功；2、检查输入图像通道和宽高是否与模型相同 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称      </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 使用RGB输入图像    </td>
+<td> “是”：数据链接中显示输入图像RGB参数；“否”：数据链接中显示输入图像参数 </td>
+</tr>
+<tr>
+<td>启用掩膜</td>
+<td>“是”：数据链接中显示输入掩膜图像参数；“否”：数据链接中不显示输入掩膜图像参数 </td>
+</tr>
+<tr>
+<td> 使用模型           </td>
+<td> 要使用的分类模型名称                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称   </th>
+<th> 参数说明                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像   </td>
+<td> 输入的检测图像                     </td>
+</tr>
+<tr>
+<td> 结果个数   </td>
+<td> 检测出的目标个数                 </td>
+</tr>
+<tr>
+<td> 检测结果   </td>
+<td> 检测结果的集合                    </td>
+</tr>
+<tr>
+<td> 结果类别   </td>
+<td> 类别的索引                       </td>
+</tr>
+<tr>
+<td> 类别名称   </td>
+<td> 类别的名称                       </td>
+</tr>
+<tr>
+<td> 结果矩形   </td>
+<td> 检测出的目标的左上角点坐标，尺寸 </td>
+</tr>
+<tr>
+<td> 结果置信度 </td>
+<td> 识别结果的可信度                 </td>
+</tr>
+<tr>
+<td> 结果面积   </td>
+<td> 检测出的目标的面积 </td>
+</tr>
+<tr>
+<td> 模型路径   </td>
+<td> 检测时使用的模型路径 </td>
+</tr>
+<tr>
+<td> 执行结果   </td>
+<td> 工具执行是否成功 </td>
+</tr>
+<tr>
+<td> 执行时间   </td>
+<td> 工具执行耗时 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>视图参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称   </th>
+<th> 参数说明           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像   </td>
+<td> 显示输入的检测图像 </td>
+</tr>
+<tr>
+<td> 结果矩形块 </td>
+<td> 显示结果矩形       </td>
+</tr>
+<tr>
+<td> 执行结果   </td>
+<td> 显示工具的执行结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​ 参见“\Samples\检测测试工具.gvp”。</p>

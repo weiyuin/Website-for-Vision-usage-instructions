@@ -1,0 +1,99 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>支持通信协议列表</h1>
+
+<table>
+<thead>
+<tr>
+<th> 协议        </th>
+<th> 通信方式  </th>
+<th> PLC厂商            </th>
+<th> 软件封装协议                                      </th>
+<th> 支持的数据区域                              </th>
+<th> 备注                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 三菱MX      </td>
+<td> 网口/串口 </td>
+<td> 三菱               </td>
+<td> MxComponent                                       </td>
+<td> M、D、X、Y                                  </td>
+<td> D、X、Y只支持单地址读写                                    </td>
+</tr>
+<tr>
+<td> FINS        </td>
+<td> 网口      </td>
+<td> 欧姆龙             </td>
+<td> HostlinkFINS_TCP、HostlinkFINS_UDP                </td>
+<td> D、CIO                                      </td>
+<td> 无                                                         </td>
+</tr>
+<tr>
+<td> KeyenceSWLU </td>
+<td> 网口      </td>
+<td> 基恩士             </td>
+<td> KeyenceSWLU                                       </td>
+<td> DM、EM、W、IM、CM、VM、R、B、MR、LR、CR、VB </td>
+<td> 无                                                         </td>
+</tr>
+<tr>
+<td> Modbus      </td>
+<td> 网口/串口 </td>
+<td> 施耐德、汇川、台达 </td>
+<td> ModbusTCP、ModbusRTU（串口）、ModbusASCII（串口） </td>
+<td> 保持寄存器(4x)                              </td>
+<td> 暂不支持线圈、输入线圈、输入寄存器                         </td>
+</tr>
+<tr>
+<td> MEWTOCOL    </td>
+<td> 串口      </td>
+<td> 松下               </td>
+<td> Mewtocol                                          </td>
+<td> N/A                                         </td>
+<td> 无                                                         </td>
+</tr>
+<tr>
+<td> ADS         </td>
+<td> 网口      </td>
+<td> 倍福               </td>
+<td> ADS                                               </td>
+<td> N/A                                         </td>
+<td> ADS协议配置请参考”ADS通信环境搭建V1.0.docx”                </td>
+</tr>
+<tr>
+<td> S7Comm      </td>
+<td> 网口      </td>
+<td> 西门子             </td>
+<td> S7Comm                                            </td>
+<td> I、M、Q、DB                                 </td>
+<td> string数据类型使用时地址向后偏移2个字节                    </td>
+</tr>
+<tr>
+<td> ProfiNet    </td>
+<td> 板卡      </td>
+<td> 西门子             </td>
+<td> ProfiNet                                          </td>
+<td> I、Q                                        </td>
+<td> 对于视觉来说，I区只写，Q区只读，且目前只支持CIFX 50-RE板卡 </td>
+</tr>
+</tbody>
+</table>
+

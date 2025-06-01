@@ -1,0 +1,188 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>分类测试工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     分类测试工具用于识别物体类别或区分不同场景，该工具的输入为单张图像及训练好的网络模型。输出为该图像对应的类别。</p>
+
+<p>​</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     判别某张图像上是否有缺陷以及缺陷种类，如屏幕外观检测，适用于一张图像上的类别是单一的。</p>
+
+<p>​</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     <strong>模型训练：</strong>通过训练来学习输入图像特征到输出类别的映射关系，这种映射关系是通过卷积神经网络来建立的。分类网络一般由多个卷积层、多个池化层和一个全连接层组成，层与层之间相连接，每一层的输出会作为下一层的输入；每一层都有自己的功能，第一层卷积层用来提取低级特征，如边缘特征，第二层后面的卷积层用来提取更复杂的组合特征，池化层进行下采样操作，用来减少数据量，全连接层用来分类；卷积层和全连接层都有参数，训练中会学习这些参数。</p>
+
+<p>​     <strong>分类测试：</strong>实时图像会被输入到网络中，网络会输出该图像属于每一类的概率，概率最大的类别即为实时图像的分类结果。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入模型</h4>
+
+<p><img src="media/GcClassificationTestTool_4_1.png" alt="GcClassificationTestTool_4_1" style="zoom:70%;" /></p></li>
+<li><h4>设置图像数据链接</h4>
+
+<p>双击“分类测试工具”，在弹出的数据链接对话框中，选择输入图像。</p>
+
+<p><img src="media/GcClassificationTestTool_4_2.png" alt="GcClassificationTestTool_4_2" style="zoom:70%;" /></p></li>
+<li><h4>执行，查看结果</h4>
+
+<p><img src="media/GcClassificationTestTool_4_3.png" alt="GcClassificationTestTool_4_3" style="zoom:100%;" /></p></li>
+</ul>
+
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述                         </th>
+<th> 解决方法                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 工具运行失败，提示“获取图像错误” </td>
+<td> 检查输入图像是否设置，双击工具即可设置输入图像               </td>
+</tr>
+<tr>
+<td> 工具运行失败，提示“调用深度学习算法错误”   </td>
+<td> 1、检查模型管理器中模型是否初始化成功；2、检查输入图像通道和宽高是否与模型相同 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 使用RGB输入图像    </td>
+<td> “是”：数据链接中显示输入图像RGB参数；“否”：数据链接中显示输入图像参数 </td>
+</tr>
+<tr>
+<td>启用掩膜</td>
+<td>“是”：数据链接中显示输入掩膜图像参数；“否”：数据链接中不显示输入掩膜图像参数 </td>
+</tr>
+<tr>
+<td> 使用模型           </td>
+<td> 要使用的分类模型名称                                         </td>
+</tr>
+<tr>
+<td> 是否获取热力图 </td>
+<td> “是”：获取热力图；“否”：不获取热力图   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像   </td>
+<td> 显示输入的检测图像 </td>
+</tr>
+<tr>
+<td> 结果类别     </td>
+<td> 类别的索引                 </td>
+</tr>
+<tr>
+<td> 类别名称     </td>
+<td> 类别的名称                 </td>
+</tr>
+<tr>
+<td> 结果概率数组 </td>
+<td> 每个类别的分类结果可信度   </td>
+</tr>
+<tr>
+<td> 结果置信度   </td>
+<td> 当前给出的分类结果的可信度 </td>
+</tr>
+<tr>
+<td> 热力图   </td>
+<td> 当前结果的热力图 </td>
+</tr>
+<tr>
+<td> 模型路径   </td>
+<td> 检测时使用的模型路径 </td>
+</tr>
+<tr>
+<td> 执行结果   </td>
+<td> 工具执行是否成功 </td>
+</tr>
+<tr>
+<td> 执行时间   </td>
+<td> 工具执行耗时 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>视图参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称   </th>
+<th> 参数说明           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像   </td>
+<td> 显示输入的检测图像 </td>
+</tr>
+<tr>
+<td> 热力图 </td>
+<td> 显示热力图       </td>
+</tr>
+<tr>
+<td> 执行结果   </td>
+<td> 显示工具的执行结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​ 参见“\Samples\分类测试工具.gvp”。</p>

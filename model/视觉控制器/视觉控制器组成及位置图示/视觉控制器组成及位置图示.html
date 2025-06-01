@@ -1,0 +1,196 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>视觉控制器的组成及位置图示</h1>
+
+<p>本小节主要介绍各机型的组成部分，包括接口、内部组件位置、功能，从而为后续的排查工作提供支撑。</p>
+
+<p>视觉控制器主要由机箱、主板、CPU、CPU风扇、内存、硬盘(固态盘用于装系统，机械盘用于存数据)、显卡、电源/适配器、以及对应的扩展卡或扩展模块(如POE网卡，USB3.0卡，cameralink卡，串口卡等)组成。</p>
+
+<h2>1. 控制盒 VC5100 &amp; VC7100</h2>
+
+<ul>
+<li><p><strong>接口部分</strong></p>
+
+<p><img src="media/1660725538462.png" alt="" /></p>
+
+<p>拆机时如下图所示，拧下螺丝后向上将上盖打开</p>
+
+<p><img src="media/1660725569269.png" alt="" /></p></li>
+<li><p><strong>内部器件示意图</strong></p>
+
+<p>内部器件图如下图所示，其中小框中的螺丝为拆卸/安装时螺丝，分别对应硬盘支架、硬盘及CPU风扇。</p>
+
+<p>内置USB用于加密狗的安装。</p>
+
+<p><img src="media/1660725637274.png" alt="" /></p></li>
+<li><p><strong>CPU</strong></p>
+
+<p>拆除风扇后的CPU如图所示，如需拆卸，将右下角固定扣向下按后向右按出，安装时注意左下角小三角的方向，主板上会有方向对应。</p>
+
+<p>下部卡扣先扣在六角螺丝下，之后将右侧固定扣向左下按回。</p>
+
+<p>CPU表面是硅脂，起散热作用。如CPU散热器拔不下来，需暖机后在做拆除。</p>
+
+<p><img src="media/1660725706019.png" alt="" /></p></li>
+<li><p><strong>系统固态盘</strong></p>
+
+<p>固态盘安装在视觉控制器侧面，拔出或需要重新插拔时按压右侧黑色卡扣，固态盘会弹出。</p>
+
+<p>此固态盘用于装系统，为Cfast卡，装回时注意接口方向。</p>
+
+<p><img src="media/1660725766695.png" alt="" /></p></li>
+<li><p><strong>内存</strong></p>
+
+<p>内存位置在CPU风扇右侧，左右拨红框中的金属挡片，内存倾斜后拔出即可。装回时先斜插，然后往里推正就可以。</p>
+
+<p><img src="media/1660725812922.png" alt="" /></p></li>
+<li><p><strong>主板电池</strong></p>
+
+<p>主板电池主要用于BIOS信息的存储，位置位于控制盒主板下部，</p>
+
+<p><img src="media/1660725851962.png" alt="" /></p></li>
+</ul>
+
+
+<h2>2. VC5200 &amp; VC7200</h2>
+
+<ul>
+<li><p><strong>接口部分</strong></p>
+
+<p><img src="media/1660725953401.png" alt="" /></p></li>
+<li><p><strong>内部器件示意图</strong></p>
+
+<ul>
+<li><p><strong>背面</strong></p>
+
+<p><img src="media/1660726060378.png" alt="" /></p>
+
+<p><img src="media/1660726073875.png" alt="" /></p></li>
+<li><p><strong>正面</strong></p>
+
+<p><img src="media/1660726091887.png" alt="" /></p></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>3. VC5300 &amp; VC7300</h2>
+
+<ul>
+<li><p><strong>接口部分</strong></p>
+
+<p><img src="media/1660726163882.png" alt="" /></p></li>
+<li><p><strong>内部器件示意图</strong></p>
+
+<ul>
+<li><p><strong>背面</strong></p>
+
+<p><img src="media/1660726221202.png" alt="" /></p>
+
+<p><img src="media/1660726243089.png" alt="" /></p>
+
+<p><img src="media/1660726265663.png" alt="" /></p></li>
+<li><p><strong>正面</strong></p>
+
+<p><img src="media/1660726288336.png" alt="" /></p></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4. 4U视觉控制器</h2>
+
+<p>本小节以<strong>IPC-610-786-9900K-32G-2TSSD-W10</strong>为例，但不局限于该视觉控制器，客户自用的视觉控制器在调试时也可参考该小节说明。</p>
+
+<ul>
+<li><p><strong>接口部分</strong></p>
+
+<p><img src="media/1660726516820.png" alt="" /></p>
+
+<p><img src="media/1660726546965.png" alt="" /></p>
+
+<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+
+<ul>
+<li>当插显卡时，左侧显示接口不可用，显示器连线需插在显卡接口上。</li>
+<li>具体位置不同机型可能有所变动，仅参考接口外观及位置。</li>
+</ul>
+</blockquote></li>
+<li><p><strong>内部器件示意图</strong></p>
+
+<p>4U视觉控制器各组件位置如下图所示：</p>
+
+<p><img src="media/1660734593259.png" alt="" /></p></li>
+<li><p><strong>电源部分</strong></p>
+
+<p>电源一般分为模组电源和非模组电源,模组电源的输出可灵活接出，非模组电源输出均已接好。</p>
+
+<p><img src="media/1660734623001.png" alt="" /></p>
+
+<p><img src="media/1660734831820.png" alt="" /></p></li>
+<li><p><strong>主板</strong></p>
+
+<p>主板是视觉控制器的核心部分，视觉控制器的所有资源都来自于主板，包括CPU，内存，硬盘，显卡，网卡，以及各种接口。</p>
+
+<p><img src="media/1660734867357.png" alt="" /></p></li>
+</ul>
+
+
+<p><img src="media/1660734895814.png" alt="" /></p>
+
+<ul>
+<li><p><strong>插槽部分</strong></p>
+
+<ul>
+<li><p>主板中的插槽，PCIe x16主要用于插显卡(一般为双槽宽度，需要占两个槽位)，万兆网卡及双口cameralink卡需要PCIe x8。</p></li>
+<li><p>PCIe x4可以插4口千兆网卡/POE卡，串口卡，单口cameralink卡，4口独立USB卡。</p></li>
+<li><p>PCIe x1可支持双口千兆网卡/POE卡，串口卡，非独立USB卡。</p></li>
+<li><p>PCI使用较少，一般可扩充单口千兆网卡。</p></li>
+<li><p>所有PCIe槽均向下兼容，向上兼容时容易出现带宽不足或卡片无法识别的问题。</p>
+
+<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+
+<p>有些厂家的主板槽位是PCIe x16或PCIe x8，当出现丢图时，考虑带宽问题，让客户提供主板资料。</p></blockquote></li>
+</ul>
+
+
+<p><img src="media/1660735022902.png" alt="" /></p></li>
+<li><p><strong>内存部分</strong></p>
+
+<p>拆卸时，将红色部分往两侧按压，内存条可正常弹出。一般来说，同色内存插槽为双通道插槽，插两片内存时注意插槽颜色，优先选择同色。</p>
+
+<p><img src="media/1660735052369.png" alt="" /></p></li>
+<li><p><strong>硬盘部分</strong></p>
+
+<p>硬盘分为SATA线(信号线)和供电线，其中供电由电源提供，SATA线连接主板。</p>
+
+<p><img src="media/1660735094419.png" alt="" /></p>
+
+<p>硬盘的形态较多，分类主要包括固态硬盘(SSD)和机械硬盘(HDD)，其中，固态硬盘的形态(接口)主要包括2.5寸sata盘、Msata、M.2及CFcard。</p>
+
+<p><img src="media/wps77CB.tmp.jpg" alt="" /><img src="media/wps77CC.tmp.jpg" alt="" /><img src="media/wps77CD.tmp.jpg" alt="" /><img src="media/wps77CE.tmp.jpg" alt="" /><img src="media/wps77CF.tmp.jpg" alt="" /></p>
+
+<p>机械硬盘从尺寸上分为3.5寸和2.5寸，从存储逻辑上分，分为叠瓦盘和垂直盘。叠瓦盘一般用于冷存储(无擦写仓库盘)，有存图需求的项目建议使用垂直盘。通常来说，可以通过缓存来判断，64M的都是垂直盘，256M的需要确认是否为叠瓦盘。如果不确定客户现场使用的是什么盘，可以抓取硬盘型号确认。</p></li>
+<li><p><strong>显卡部分</strong></p>
+
+<p>显卡需要单独的供电，一般在显卡尾部，一般为8pin或双8pin供电。显卡正常上电时，显卡风扇是旋转的。注意，此风扇并非CPU风扇。</p>
+
+<p><img src="media/1660735213166.png" alt="" /></p></li>
+</ul>
+

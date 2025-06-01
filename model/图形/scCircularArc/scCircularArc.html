@@ -1,0 +1,315 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scCircularArc</h1>
+
+<h2>功能</h2>
+
+<p>表示圆弧。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scCircularArc                     </td>
+<td> scCircularArc(circle)构造函数。                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scCircularArc  </td>
+<td> scCircularArc(circle, startPhi, spanphi)构造函数。           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scCircularArc </td>
+<td> scCircularArc(center, radius, startPhi, spanPhi)构造函数。   </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> SetCenterRadiusStartPhiSpanPhi </td>
+<td> 设置圆弧所在圆的圆心center和半径radius，以及起始角startPhi和张角spanPhi。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCircle                             </td>
+<td> 设置圆弧所在的圆。                                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetStartPhi                       </td>
+<td> 设置圆弧起始角。                                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetSpanPhi                          </td>
+<td> 设置圆弧张角。                                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCircle                                   </td>
+<td> 获取圆弧所在的圆。                                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCircleCenter                       </td>
+<td> 获取圆弧所在的圆的圆心。                                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCircleRadius                       </td>
+<td> 获取圆弧所在的圆的半径。                                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetStartPhi                               </td>
+<td> 获取圆弧的起始角。                                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSpanPhi                                 </td>
+<td> 获取圆弧的张角。                                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetEndPhi                                   </td>
+<td> 获取圆弧的终止角。                                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetStartPoint                   </td>
+<td> 获取圆弧的起始点。                                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetMidPoint                               </td>
+<td> 获取圆弧的中点。                                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetEndPoint                               </td>
+<td> 获取圆弧的终点。                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scCircularArc(cirlce)</h3>
+
+<ul>
+<li><p>功能：用圆形构造scCircularArc对象。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>circle：圆形，scCircle类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scCircularArc (circle, startPhi, spanphi)</h3>
+
+<ul>
+<li><p>功能：用圆形circle,起始角startPhi和张角spanPhi来构造圆弧。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>circle：圆形，scCircle类型。</p></li>
+<li><p>startPhi：圆弧起始角，scRadian类型。</p></li>
+<li><p>spanPhi：圆弧张角，scRadian类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scCircularArc (center, radius, startPhi, spanPhi)</h3>
+
+<ul>
+<li><p>功能：构造圆弧，设置圆弧所在圆的圆心center和半径radius，以及起始角startPhi和张角spanPhi。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>center：圆心坐标，sc2Vector类型。</p></li>
+<li><p>radius：圆半径，浮点数类型。</p></li>
+<li><p>startPhi：圆弧起始角，scRadian类型。</p></li>
+<li><p>spanPhi：圆弧张角，scRadian类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>SetCenterRadiusStartPhiSpanPhi(center, radius, startPhi, spanPhi)</h3>
+
+<ul>
+<li><p>功能：设置圆弧所在圆的圆心center和半径radius，以及起始角startPhi和张角spanPhi。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>center：圆心坐标，sc2Vector类型。</p></li>
+<li><p>radius：圆半径，浮点数类型。</p></li>
+<li><p>startPhi：圆弧起始角，scRadian类型。</p></li>
+<li><p>spanPhi：圆弧张角，scRadian类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCircle(circle)</h3>
+
+<ul>
+<li><p>功能：设置圆弧所在的圆。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>circle：圆形，scCircle类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetStartPhi(startPhi)</h3>
+
+<ul>
+<li><p>功能：设置圆弧起始角。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>startPhi：圆弧起始角，scRadian类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetSpanPhi(spanPhi)</h3>
+
+<ul>
+<li><p>功能：设置圆弧张角。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>spanPhi：圆弧张角，scRadian类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCricle()</h3>
+
+<ul>
+<li><p>功能：获取圆弧所在的圆。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：圆弧所在的圆，scCircle类型。</p></li>
+</ul>
+
+
+<h3>GetCircleCenter()</h3>
+
+<ul>
+<li><p>功能：获取圆弧所在的圆的圆心。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：圆弧所在的圆的圆心，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetCircleRadius()</h3>
+
+<ul>
+<li><p>功能：获取圆弧所在圆的半径。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆弧所在圆的半径，浮点数类型。</p></li>
+</ul>
+
+
+<h3>GetStartPhi()</h3>
+
+<ul>
+<li><p>功能：获取圆弧的起始角。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆弧的起始角，scRadian类型。</p></li>
+</ul>
+
+
+<h3>GetSpanPhi()</h3>
+
+<ul>
+<li><p>功能：获取圆弧的张角。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆弧的张角，scRadian类型。</p></li>
+</ul>
+
+
+<h3>GetEndPhi()</h3>
+
+<ul>
+<li><p>功能：获取圆弧的终止角。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆弧的终止角，scRadian类型。</p></li>
+</ul>
+
+
+<h3>GetStartPoint()</h3>
+
+<ul>
+<li><p>功能：获取圆弧的起始点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆弧的起始点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetMidPoint()</h3>
+
+<ul>
+<li><p>功能：获取圆弧的中点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆弧的中点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetEndPoint()</h3>
+
+<ul>
+<li><p>功能：获取圆弧的终点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆弧的终点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

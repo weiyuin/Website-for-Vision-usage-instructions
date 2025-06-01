@@ -1,0 +1,223 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云采样工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​ 点云采样工具主要服务于3D点云测量项目，解决点云数据量大需进行降采样问题，工具主要应用在三维测量项目的预处理阶段。</p>
+
+<h2>2.使用场景</h2>
+
+<p>​ 典型的应用场景如：获取点云数据时，由于点云数据过于庞大带来的影响，对其进行操作时处理时间过长，需要使用点云采样工具，可以通过体素采样、随机采样、固定索引步长采样、空间点距采样的方式，减少点云数据量，有效缩短处理时间。</p>
+
+<div align="center">
+<img src="media/GvCloudSampleTool_2_1.png" style="zoom:100%;"/>
+    <center>图2_1 点云采样
+</center>
+</div>
+
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>3.1体素采样</h3>
+
+<p><strong>step1：</strong>添加点云文件、点云采样工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p><strong>step2：</strong>右击点云采样工具点击“属性”打开工具高级界面，如图3-2所示，选择“体素采样”，设置采样参数，然后点击运行即可得到采样结果；</p></li>
+</ul>
+
+
+<div align="center">
+<img src="media/GvCloudSampleTool_3_1.png" style="zoom:70%;"/>
+    <center>图3_1 点云采样：采样流程</center>
+</div>
+
+
+
+
+<div align="center">
+<img src="media/GvCloudSampleTool_3_2.gif" style="zoom:70%;"/>
+    <center>图3_2 点云采样：体素采样</center>
+</div>
+
+
+<ul>
+<li><h3>3.2随机采样</h3>
+
+<p><strong>step1：</strong>添加点云文件、点云采样工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p><strong>step2：</strong>右击点云采样工具点击“属性”打开工具高级界面，如图3-3所示，采样类型选择“降采样”，采样方法设置“随机采样”，设置采样参数，然后点击运行即可得到采样结果；</p>
+
+<div align="center">
+<img src="media/GvCloudSampleTool_3_3.gif" style="zoom:70%;"/>
+    <center>图3_3 点云采样：随机采样</center>
+</div>
+</li>
+<li><h3>3.3固定索引步长采样</h3>
+
+<p><strong>step1：</strong>添加点云文件、点云采样工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p><strong>step2：</strong>右击点云采样工具点击“属性”打开工具高级界面，如图3-3所示，采样类型选择“降采样”，采样方法设置“固定索引步长”，设置采样参数，然后点击运行即可得到采样结果；</p>
+
+<div align="center">
+<img src="media/GvCloudSampleTool_3_4.gif" style="zoom:70%;"/>
+    <center>图3_4 点云采样：固定索引步长采样</center>
+</div>
+</li>
+</ul>
+
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称</th>
+<th> 参数描述               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据                                                 </td>
+<td> 链接外部的的点云图像 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数名称 </th>
+<th> 参数描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 点云采样类型                                                 </td>
+<td> 分为体素采样和降采样                                       </td>
+</tr>
+<tr>
+<td> 体素X、Y、Z                                                  </td>
+<td> 指定单个体素网格尺寸大小，以此对整片点云进行体素划分；取值范围为[0.001,1] </td>
+</tr>
+<tr>
+<td> 单个体素内最少点                                             </td>
+<td> 指定有效体素内的最少点数，少于该阈值的体素网格为无效体素，采样结果将剔除无效体素内的点；取值范围为(0,500] </td>
+</tr>
+<tr>
+<td> 体素特征点类型                                               </td>
+<td> 指定体素滤波结果的特征点类型，包含体素质心点和体素中心最近点 </td>
+</tr>
+<tr>
+<td> 裁剪方向                                                     </td>
+<td> 指定X/Y/Z/XYZ等方向进行裁剪                                </td>
+</tr>
+<tr>
+<td> X/YZ上下限                                                   </td>
+<td> 取值范围为[-20000,20000]                                   </td>
+</tr>
+<tr>
+<td> 采样方法                                                     </td>
+<td> 指定降采样的方法，包含随机采样、固定索引步长采样、空间点距采样 </td>
+</tr>
+<tr>
+<td> 输出数据类型                                                 </td>
+<td> 包含索引和数据点                                           </td>
+</tr>
+<tr>
+<td> 空间点距                                                     </td>
+<td> 指定降采样后各点的间隔，仅空间点距采样有效；取值范围为[0.001,5] </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致。</p>
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 输出点云数据 </th>
+<th> 包含点云中点个数；   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据 </td>
+<td> 供外部使用的点云数据 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据 </td>
+<td> 包含点云中点个数 </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td> 工具执行结果     </td>
+</tr>
+<tr>
+<td> 执行时间     </td>
+<td> 工具执行时间     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云测量.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>采样原理说明</h3>
+
+<p><strong>点云采样工具：</strong>点云采样工具主要包括体素/均匀/索引/空间点距/随机等功能</p>
+
+<p><strong>体素采样原理：</strong>先对输入点云进行体素网格划分，然后对体素内作重叠点处理，选取体素网格质心点</p>
+
+<p><strong>随机采样原理：</strong>对输入点云进行随机选点降采样</p>
+
+<p><strong>索引采样原理：</strong>根据指定的索引步长对输入点云进行降采样</p>
+
+<p><strong>空间点距采样原理：</strong>根据指定采样后的各点空间点距对输入点云进行降采样</p>

@@ -1,0 +1,122 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>相机IO工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     设置LBAS相机的输出通道参数。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     相机IO工具是在使用LBAS相机时设置通道的参数，当相机到触发条件时会按照设定好的参数输出信号。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     相机IO工具在填好相机名称后，在执行到这个工具的时候就可以对指定的通道设置信号持续时间、信号的逆变和是否输出信号。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，设置相机</h4></li>
+</ul>
+
+
+<p><img src="media/GcCamIOTool_4_1.png" alt="GcCamParamSetTool_4_1" /></p>
+
+<p>先在相机管理中找到使用的相机，然后把相机的名称填写到“相机名称”，然后设置IO、持续时间、信号逆变、输出使能就可以了，在该工具执行的时候会按照工具属性中设置的参数对相机进行设置。</p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述           </th>
+<th> 解决方法                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 报错未找到指定相机 </td>
+<td> 在相机管理中查看相机是否连接，如果连接看一下名称是否写错，如果没连接按照FAQ排查问题； </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 相机名称 </td>
+<td> 输入在相机管理中设置的相机的名称。 </td>
+</tr>
+<tr>
+<td> IO   </td>
+<td> 选取要设置的通道，这里可以选取Line1和Line2。 </td>
+</tr>
+<tr>
+<td> 持续时间   </td>
+<td> 设置相机输出信号的持续时间，范围是[0,9999500],单位是微秒。 </td>
+</tr>
+<tr>
+<td> 信号逆变 </td>
+<td> 设置输出信号是否发生反转,默认输出是高电平，信号是低电平，逆变信号是true时，输出信号是高电平，当逆变设置是false时，输出信号是低电平。 </td>
+</tr>
+<tr>
+<td> 输出使能   </td>
+<td> 设置是否输出信号。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;"> 参数名称 </th>
+<th style="text-align:left;"> 参数说明                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;"> 执行时间 </td>
+<td style="text-align:left;"> 该工具执行完 消耗的时间。 </td>
+</tr>
+<tr>
+<td style="text-align:left;"> 执行结果 </td>
+<td style="text-align:left;"> 该工具执行设置的结果      </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\相机IO工具.gvp”。</p>

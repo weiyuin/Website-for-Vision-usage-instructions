@@ -1,0 +1,274 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>深度学习OCR工具</h1>
+
+<h2>功能</h2>
+
+<p>深度学习OCR主要用于图像中字符文本行的识别。与原来的OCR工具相比，整体技术翻新，应用深度学习易用性大幅度提高，主要具备以下功能：</p>
+
+<ul>
+<li><p>1) 文本定位功能：从全图或者ROI区域定位文本，可实现多文本定位，包括旋转字符、颠倒字符、点阵字符、浮雕字符、镭射蚀刻字符、包裝标签字符、低对比度字符，复杂背景字符。</p>
+
+<p>效果图如下所示：</p></li>
+</ul>
+
+
+<p><img src="media/1.png" alt="" /></p>
+
+<p><imgnote>(a) 原图</imgnote></p>
+
+<p><img src="media/2.png" alt="" /></p>
+
+<p><imgnote>(b) 定位结果</imgnote></p>
+
+<p><imgnote>图1 深度学习OCR工具定位示意图</imgnote></p>
+
+<ul>
+<li><p>2) 文本识别功能：从全图或者ROI区域中识别字符，可识别字符集为"_!\&ldquo;%&amp;&lsquo;()+-,./0123456789:;?[]@#$*&lt;>=~{}\abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"，</p>
+
+<p>​   包括点阵字符、浮雕字符、镭射蚀刻字符、包裝标签字符、低对比度字符，复杂背景字符，在文本分类功能加持下可识别颠倒字符。效果图如下所示：</p></li>
+</ul>
+
+
+<p><img src="media/3.png" alt="" /></p>
+
+<p><imgnote>(a) 原图</imgnote></p>
+
+<p><img src="media/4.png" alt="" /></p>
+
+<p><imgnote>(b) 识别结果</imgnote></p>
+
+<p><imgnote>图2 深度学习OCR工具定位示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 执行模式 </td>
+<td> 可选定位、识别和仅识别。<br />定位是只对文本区域做定位；识别包含两步：定位和识别；仅识别：不需要定位，对ROI区域的内容进行识别。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否启用ROI </td>
+<td> 是否启用ROI，若为否，则为全图匹配识别。                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 定位阈值 </td>
+<td> 定位框分数阈值，用于滤除分数较低检测框，取值范围为(0.0,1.0]的浮点数。         </td>
+</tr>
+<tr>
+<td></td>
+<td> 最长边 </td>
+<td> 控制图像缩放尺寸，缩放后图像最长边不大于该值，取值范围为[32,5000]的整数。                </td>
+</tr>
+<tr>
+<td></td>
+<td> 扩张系数 </td>
+<td> 控制定位框相对于字符区域紧致程度，取值范围为(0.0,5.0]的浮点数。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 识别阈值 </td>
+<td> 识别字符串分数阈值，用于滤除分数较低字符串，取值范围为(0.0,1.0]的浮点数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 归一化宽度 </td>
+<td> 控制图像宽度缩放尺寸，取值范围为[32,2000]的整数。                   </td>
+</tr>
+<tr>
+<td></td>
+<td>是否启用分类器</td>
+<td>选择是的时候会启用分类器，当启动时对颠倒字符识别效果更佳。</td>
+</tr>
+<tr>
+<td></td>
+<td>识别范围</td>
+<td>输入需要识别字符范围的字符串。范围是!\&ldquo;%&amp;&lsquo;()+-,./0123456789:;?[]@#$*&lt;>=~{}\abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入图像    </td>
+<td> 用来实时识别的输入图像，只支持灰度图像。              </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 输入的定位二维线性变换结果，以根据其变换相应的识别区域                                                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                                                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 输入图像宽度、高度、像素大小。                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 定位矩形区域 </td>
+<td> 选择定位模式时候有效，为定位得到的所有文本框矩形。 </td>
+</tr>
+<tr>
+<td> </td>
+<td> 定位分数 </td>
+<td> 选择定位模式时候有效，为定位得到的所有文本的定位分数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 识别矩形区域 </td>
+<td> 选择识别模式时候有效，为识别过程中得到的所有文本框矩形。                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> 识别分数 </td>
+<td> 选择识别模式时候有效，为识别得到的所有文本的识别分数。              </td>
+</tr>
+<tr>
+<td></td>
+<td> 识别结果字符串 </td>
+<td> 选择识别模式时候有效，为识别得到的所有文本的识别结果字符串。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 第一个识别字符串 </td>
+<td> 选择识别模式时候有效，为识别到的第一个结果字符串。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 工具执行结果。                                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间   </td>
+<td> 工具执行时间。                                                                                                   </td>
+</tr>
+<tr>
+<td>数据链</td>
+<td> 识别结果字符串   </td>
+<td> 选择识别模式时候有效，为识别得到的所有文本的识别结果字符串。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 第一个识别字符串 </td>
+<td> 选择识别模式时候有效，为识别到的第一个结果字符串。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>错误码</h3>
+
+<p>错误代码的含义，如下表：</p>
+
+<table>
+<thead>
+<tr>
+<th> 错误码 </th>
+<th> 含义                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1      </td>
+<td> 输入图像无效         </td>
+</tr>
+<tr>
+<td> 2      </td>
+<td> ROI区域无效          </td>
+</tr>
+<tr>
+<td> 3      </td>
+<td> 模型未初始化         </td>
+</tr>
+<tr>
+<td> 4      </td>
+<td> 文本检测前处理失败   </td>
+</tr>
+<tr>
+<td> 5      </td>
+<td> 文本检测推理失败     </td>
+</tr>
+<tr>
+<td> 6      </td>
+<td> 文本检测后处理失败   </td>
+</tr>
+<tr>
+<td> 7      </td>
+<td> 文本检测未知内部错误 </td>
+</tr>
+<tr>
+<td> 9      </td>
+<td> 文本检测参数无效     </td>
+</tr>
+<tr>
+<td> 8      </td>
+<td> 检测结果为空         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<ul>
+<li><p>此工具由于使用深度学习方法进行识别，所以需要载入训练好的模型，会增加一些耗时，具体体现在：</p>
+
+<ul>
+<li><p>新增工具后的第一次执行中。</p></li>
+<li><p>加载包含该工具工程的时候。</p></li>
+</ul>
+</li>
+<li><p>当输入图像大小改变(不启用ROI)或者ROI区域大小改变(启用ROI)时，执行工具耗时会有一些增加。</p></li>
+<li><p>ROI矩形区域的宽度和高度不能太小，当小于64个像素时候会执行失败。</p></li>
+<li><p>使用深度学习OCR工具时候<strong>硬件选型和系统要求</strong>：</p>
+
+<p>工控机CPU要求在5代以上，系统要求是Win10。（不符合要求可能有崩溃风险）</p></li>
+<li><p>当输入的ROI区域包含要识别的文本，并且比较紧致的时候，要用“仅识别”功能，不要用“识别”功能，因为不需要再定位了。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\深度学习OCR工具.gvp”。</p>

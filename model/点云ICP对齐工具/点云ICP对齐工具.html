@@ -1,0 +1,159 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云ICP对齐工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云ICP对齐工具计算源点云数据和模板点云数据之间的变换关系的工具。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量中，经常遇到对两个点云位置关系的变换，即将输入点云变换到模板点云的位置。点云ICP对齐工具计算两点云直接的距离，迭代至点集间距离最小，即认为点云对齐计算成功，并输出变换矩阵。</p>
+
+<h2>3. 使用向导</h2>
+
+<p>step1：添加点云文件、点云ICP对齐工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p>step2：点击工具属性参数，然后点击运行该工具；</p>
+
+<p><img src="media/GcCloudICPAlignmentTool3_1.png" alt="img" /></p>
+
+<p><imgnote>图3_1 点云ICP对齐：点云ICP对齐</imgnote></p>
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称       </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 输入源点云图像                                                                               </td>
+</tr>
+<tr>
+<td> 输入模板点云 </td>
+<td> 输入模板点云图像 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称       </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 最大迭代次数      </td>
+<td> 取值范围：(0,10000] </td>
+</tr>
+<tr>
+<td> 搜索半径 </td>
+<td> 搜索半径，取值 &lt;= 0时表示无限制，取值范围：[-1000000,1000000] </td>
+</tr>
+<tr>
+<td> 最大匹配距离因子 </td>
+<td> 取值范围：[0.0,1.0]                       </td>
+</tr>
+<tr>
+<td> 开启并行运算 </td>
+<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+</tr>
+<tr>
+<td> 线程数百分比 </td>
+<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 源点云数据到模板点云数据刚性变换矩阵 </td>
+<td> 输出变换矩阵 </td>
+</tr>
+<tr>
+<td> 模板点云数据到源点云数据刚性变换矩阵 </td>
+<td> 输出变换矩阵 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 源点云数据到模板点云数据刚性变换矩阵 </td>
+<td> 输出变换矩阵 </td>
+</tr>
+<tr>
+<td> 模板点云数据到源点云数据刚性变换矩阵 </td>
+<td> 输出变换矩阵 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​ 参见“\Samples\3D\点云\点云模型对齐工具.gvp”。</p>
+
+<h2>7. 特殊说明</h2>
+
+<p>​ 无</p>

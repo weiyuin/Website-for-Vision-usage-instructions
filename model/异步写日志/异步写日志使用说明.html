@@ -1,0 +1,49 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1><strong>异步写日志使用说明</strong></h1>
+
+<h2>说明</h2>
+
+<ul>
+<li>此日志模块是在python的第三方库loguru的基础上封装</li>
+<li>异步写日志(队列方式)</li>
+<li>日志以“年-月-日 时:分秒:毫秒 - 日志内容”的格式进行打印</li>
+<li>每天会创建新的日志文件进行记录</li>
+<li>每天凌晨00:00会对昨天的日志文件进行备份，备份文件格式为“文件名称.第一条日志的时间.txt”</li>
+<li>日志最多会缓存一个月，超过一个月的会自动进行清理</li>
+</ul>
+
+
+<h2>使用步骤及示例</h2>
+
+<ul>
+<li><p>步骤一：导入GVLog</p></li>
+<li><p>步骤二:   写日志</p>
+
+<p><strong>代码示例：</strong></p>
+
+<p>from GvAsyncLog import GvLog</p>
+
+<p>GvLog.Log(&ldquo;D:/标定.txt&rdquo;,&ldquo;Helelo&rdquo;)</p>
+
+<p><strong><em>注意：</em></strong></p>
+
+<p>   日志中的文件每天都会新建一个，不需要在脚本中每天更换不同的文件名称</p></li>
+</ul>
+

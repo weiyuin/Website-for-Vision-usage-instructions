@@ -1,0 +1,300 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云距离测量工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​          该工具主要完成两点距离、点到线距离、点到面距离、线线距离或线面距离的计算。</p>
+
+<h2>2.使用场景</h2>
+
+<p>​          1.计算两个三维点距离的问题；
+​          2.计算点到线距离的问题；
+​          3.计算点到面距离的问题；
+​          4.计算线线距离的问题；
+​          5.计算线面距离的问题；
+​          6.利用系数补偿和固定补偿，补偿成像系统误差，来对齐二次元投影数据；
+​          7.测量的距离值需要判定上下限，并输出判定结果；</p>
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>3.1 两点距离测量</h3>
+
+<p><strong>step1：</strong>添加点云文件、元素生成工具、点云距离测量工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p><strong>step2：</strong>右击元素生成工具点击“属性”打开工具高级界面，如图3-2所示，分别生成两个三维点；</p>
+
+<p><strong>Step3：</strong>点云距离测量工具链接数据链，右击打开该工具高级属性界面，系数补偿设置’1‘，固定补偿设置’0‘，然后点击运行即可得到这两个三维点的距离，如图3-3所示；</p>
+
+<div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_1.png" style="zoom:70%;"/>
+    <center>图3_1 点云距离测量：两点距离测量流程</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_2.gif" style="zoom:70%;"/>
+    <center>图3_2 点云距离测量：两点距离测量中设置三维点操作</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_3.gif" style="zoom:70%;"/>
+    <center>图3_3 点云距离测量：两点距离测量</center>
+</div>
+</li>
+<li><h3>3.2 点线距离测量</h3>
+
+<p><strong>step1：</strong>添加点云文件、元素生成工具、点云距离测量工具，并双击打开工具参数链，链接点云文件，如图3-4所示；</p>
+
+<p><strong>step2：</strong>右击元素生成工具点击“属性”打开工具高级界面，如图3-5所示，分别生成一个三维点和一条三维直线；</p>
+
+<p><strong>Step3：</strong>点云距离测量工具链接数据链，右击打开该工具高级属性界面，系数补偿设置’1‘，固定补偿设置’0‘，然后点击运行即可得到三维点和三维直线的距离，如图3-6所示；</p>
+
+<ul>
+<li><div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_4.png" style="zoom:70%;"/>
+    <center>图3_4 点云距离测量：点线距离测量流程</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_5.gif" style="zoom:70%;"/>
+    <center>图3_5 点云距离测量：点线距离测量中设置三维点和三维直线操作</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_6.gif" style="zoom:70%;"/>
+    <center>图3_6 点云距离测量：点线距离测量</center>
+</div>
+</li>
+</ul>
+</li>
+<li><h3>3.3 点面距离测量</h3>
+
+<p><strong>step1：</strong>添加点云文件、元素生成工具、点云距离测量工具，并双击打开工具参数链，链接点云文件，如图3-7所示；</p>
+
+<p><strong>step2：</strong>右击元素生成工具点击“属性”打开工具高级界面，如图3-8所示，分别生成一个三维点和一个三维平面；</p>
+
+<p><strong>Step3：</strong>点云距离测量工具链接数据链，右击打开该工具高级属性界面，系数补偿设置’1‘，固定补偿设置’0‘，然后点击运行即可得到三维点和三维平面的距离，如图3-9所示；</p>
+
+<p> <div align="center">
+  <img src="media/GvCloudDistanceMeasurementTool_3_7.png" style="zoom:70%;"/>
+      <center>图3_7 点云距离测量：点面距离测量流程</center>
+  </div></p>
+
+<p>  <div align="center">
+  <img src="media/GvCloudDistanceMeasurementTool_3_8.gif" style="zoom:70%;"/>
+      <center>图3_8 点云距离测量：点面距离测量中设置三维点和三维平面操作</center>
+  </div></p>
+
+<p>  <div align="center">
+  <img src="media/GvCloudDistanceMeasurementTool_3_9.gif" style="zoom:70%;"/>
+      <center>图3_9 点云距离测量：点面距离测量</center>
+  </div></p></li>
+<li><h3>3.4 两线距离测量</h3>
+
+<p><strong>step1：</strong>添加点云文件、元素生成工具、点云距离测量工具，并双击打开工具参数链，链接点云文件，如图3-10所示；</p>
+
+<p><strong>step2：</strong>右击元素生成工具点击“属性”打开工具高级界面，如图3-11所示，分别生成两条三维直线；</p>
+
+<p><strong>Step3：</strong>点云距离测量工具链接数据链，右击打开该工具高级属性界面，系数补偿设置’1‘，固定补偿设置’0‘，然后点击运行即可得到这两条三维直线的距离，如图3-12所示；</p>
+
+<ul>
+<li><div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_10.png" style="zoom:70%;"/>
+    <center>图3_10 点云距离测量：两线距离测量流程</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_11.gif" style="zoom:70%;"/>
+    <center>图3_11 点云距离测量：两线距离测量中设置三维直线操作</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_12.gif" style="zoom:70%;"/>
+    <center>图3_12 点云距离测量：两线距离测量</center>
+</div>
+</li>
+</ul>
+</li>
+<li><h3>3.5 线面距离测量</h3>
+
+<p><strong>step1：</strong>添加点云文件、元素生成工具、点云距离测量工具，并双击打开工具参数链，链接点云文件，如图3-13所示；</p>
+
+<p><strong>step2：</strong>右击元素生成工具点击“属性”打开工具高级界面，如图3-14所示，分别生成一条三维直线和一个三维平面；</p>
+
+<p><strong>Step3：</strong>点云距离测量工具链接数据链，右击打开该工具高级属性界面，系数补偿设置’1‘，固定补偿设置’0‘，然后点击运行即可得到三维直线和三维平面的距离，如图3-15所示；</p>
+
+<ul>
+<li><div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_13.png" style="zoom:70%;"/>
+    <center>图3_13 点云距离测量：线面距离测量流程</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_14.gif" style="zoom:70%;"/>
+    <center>图3_14 点云距离测量：线面距离测量中设置三维直线和三维平面操作</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudDistanceMeasurementTool_3_15.gif" style="zoom:70%;"/>
+    <center>图3_15 点云距离测量：线面距离测量</center>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 链接外部的点云图像 </td>
+</tr>
+<tr>
+<td> 输入点1      </td>
+<td> 链接外部的点       </td>
+</tr>
+<tr>
+<td> 输入点2      </td>
+<td> 链接外部的点       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 距离测量类型 </td>
+<td> 包括：两点距离、点线距离、点面距离、两线距离、线面距离       </td>
+</tr>
+<tr>
+<td> 系数补偿     </td>
+<td> 测量结果系数补偿。范围为[-1000000,1000000]；一般为1，用于补偿成像等系统误差 </td>
+</tr>
+<tr>
+<td> 固定补偿     </td>
+<td> 测量结果固定补偿。范围为[-1000000,1000000]；一般为0，用于补偿成像等系统误差 </td>
+</tr>
+<tr>
+<td> 距离值下限   </td>
+<td> 取值范围为[-1000000,1000000]，且下限应小于等于上限           </td>
+</tr>
+<tr>
+<td> 距离值上限   </td>
+<td> 取值范围为[-1000000,1000000]，且下限应小于等于上限           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致。</p>
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 距离结果 </td>
+<td> 距离测量结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 距离结果 </td>
+<td> 距离测量结果 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云测量.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>距离测量类型说明</h3>
+
+<p><strong>两点距离：</strong>输入点云数据，获取两个三维点，计算两个三维点之间的距离；</p>
+
+<p><strong>点线距离：</strong>输入点云数据，获取一个三维点和一条三维直线，计算三维点和三维直线之间的距离；</p>
+
+<p><strong>点面距离：</strong>输入点云数据，获取一个三维点和一个三维平面，计算三维点和三维平面之间的距离；</p>
+
+<p><strong>两线距离：</strong>输入点云数据，获取两条三维直线，计算两条三维直线之间的距离；</p>
+
+<p><strong>线面距离：</strong>输入点云数据，获取一条三维直线和一个三维平面，计算三维直线和三维平面之间的距离；</p>

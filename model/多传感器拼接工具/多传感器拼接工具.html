@@ -1,0 +1,263 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>多传感器拼接</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     支持不同坐标系下深度图像的拼接。</p>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_1_1.png" alt="" /></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     在3D工程项目中，常常需要对待测量或检测物体进行良好的3D成像，以便于后续对拍摄物体进行3D测量和3D检测。但是目前市场上大部分的3D相机具有以下特点：1. 精度高，但相机视场相对较小； 2. 相机视场大，但精度相对较低。为了能够较低成本的实现高精度，大视场的3D成像，可利用多传感器拼接工具，对多张高精度的3D深度图像进行拼接操作。3D多传感器拼接的具体效果如下图所示。</p>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_2_1.png" alt="" /></p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     首先通过特征点提取算法将靶标的特征点坐标提取出来，形成特征点点集；然后，利用全局标定算法，对特征点点集和参考点集之间的位置关系进行标定；最后，通过标定的位置关系，将多张深度图像的信息根据拼接算法规则进行拼接融合，拼接成一张更大的深度图像。</p>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_3_1.png" alt="" /></p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_4_1.png" alt="" /></p>
+
+<ul>
+<li><h4>特征点提取界面</h4>
+
+<ul>
+<li><p><strong>Step 1</strong>   选择标定方式</p>
+
+<p>根据标定物，选择是塔台方式标定，还是球体拟合标定。</p>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_4_1.png" alt="" /></p></li>
+<li><p><strong>Step 2</strong>   加载标定图像，设置标定对象</p>
+
+<p>根据靶标图像个数，选择对应的索引以及需要的ROI个数；</p>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_4_2.png" alt="" /></p></li>
+<li><p><strong>Step 3</strong>   拟合参数设置，设置点集生成方式</p>
+
+<p>选择平面2拟合类型以及相应的拟合参数，在图像窗口点击需要拟合的ROI，单击添加到坐标列表中，比如需要3个ROI求交点，然后点击+按钮；添加完成后，点击特征点提取按钮，或者特征点提取结果。</p>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_4_3.png" alt="" /></p></li>
+</ul>
+</li>
+<li><h4>多传感器标定界面</h4>
+
+<ul>
+<li><p><strong>Step 1</strong>   加载靶标世界坐标</p>
+
+<p>有几幅靶标图像，就对应有几个靶标世界坐标，添加至列表中；</p>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_4_4.png" alt="" /></p></li>
+<li><p><strong>Step 2</strong>   设置标定方法</p>
+
+<p>选取相应的标定方法和干扰点距离阈值；</p>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_4_5.png" alt="" /></p></li>
+<li><p><strong>Step 3</strong>   获取标定结果</p>
+
+<p>执行标定，获取标定结果以及标定点距误差；</p>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_4_6.png" alt="" /></p></li>
+</ul>
+</li>
+<li><h4>多传感器拼接界面</h4>
+
+<p>设置输出坐标系和拼接参数，执行得到拼接后的结果图像。</p>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_4_7.png" alt="" /></p></li>
+<li><h4>使用拼接结果，以深度图像滤波工具为例，链接上述拼接输出深度图像</h4>
+
+<p><img src="media/GcRangeImageMultiSensorsStitchTool_4_3.png" alt="" /></p></li>
+</ul>
+
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述           </th>
+<th> 解决方法               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 拼接失败           </td>
+<td> 看标定结果是否正确     </td>
+</tr>
+<tr>
+<td> 拼接效果不是想要的 </td>
+<td> 调整重叠模式和插值方法 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像             </td>
+<td> 显示待拼接的深度图像、靶标深度图像                           </td>
+</tr>
+<tr>
+<td> 拼接所需图像个数     </td>
+<td> 待拼接的图像个数，目前最多支持16张图像拼接                   </td>
+</tr>
+<tr>
+<td> 是否完成标定         </td>
+<td> 所有塔台图像都标定成功                                       </td>
+</tr>
+<tr>
+<td> 是否已有标定结果文件 </td>
+<td> 标定结果是否保存                                             </td>
+</tr>
+<tr>
+<td> 标定结果文件路径     </td>
+<td> 标定结果存储的路径                                           </td>
+</tr>
+<tr>
+<td> 结果坐标系           </td>
+<td> 分为世界坐标系和传感器坐标系                                 </td>
+</tr>
+<tr>
+<td> 重叠模式             </td>
+<td> 重叠模式用于处理一个像素位置处对应多个高度数据的情况。目前，重叠模式主要支持四种方式：最大值模式，最小值模式，优先级模式和图像中心模式等四种 </td>
+</tr>
+<tr>
+<td> 插值方法             </td>
+<td> 插值方法用于处理深度图像整数坐标像素映射的问题。目前提供最近邻法、线性插值法和权重法三种。最近邻方法具有速度快的特性，线性插值和权重法具有精度高的特性。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称          </th>
+<th> 参数说明                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出深度图像      </td>
+<td> 输出拼接完成后的深度图像 </td>
+</tr>
+<tr>
+<td> 交点              </td>
+<td> 深度图像中的特征点       </td>
+</tr>
+<tr>
+<td> 标定结果-旋转矩阵 </td>
+<td> 刚性变换矩阵中的旋转矩阵 </td>
+</tr>
+<tr>
+<td> 标的结果-平移矩阵 </td>
+<td> 刚性变换矩阵中的平移矩阵 </td>
+</tr>
+<tr>
+<td> 执行结果          </td>
+<td> 工具执行结果，true/false </td>
+</tr>
+<tr>
+<td> 执行时间          </td>
+<td> 工具执行完所需的时间     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7.注意事项</h2>
+
+<p>1）测试环境：i7-8565U CPU 1.80GHz主频、16G内存的64位Win10操作系统。深度图像有效点数规模及耗时情况：</p>
+
+<ul>
+<li><p>波动性指 (max-min)/mean</p></li>
+<li><p>波动频次指 大于0.75*(max-min)+min的占比；</p>
+
+<table>
+<thead>
+<tr>
+<th> 深度图大小 </th>
+<th> 执行100次耗时 </th>
+<th> 波动性 </th>
+<th>      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 200Wx4     </td>
+<td> 400ms         </td>
+<td> 80%    </td>
+<td> 34%  </td>
+</tr>
+<tr>
+<td> 800Wx3     </td>
+<td> 1000ms        </td>
+<td> 40%    </td>
+<td> 1%   </td>
+</tr>
+<tr>
+<td> 1000Wx4    </td>
+<td> 2300ms        </td>
+<td> 30%    </td>
+<td> 16%  </td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+
+
+<p>2）拼接占用内存的计算方式：</p>
+
+<ul>
+<li>假设当前产品大小为：120$*$120mm，测量子项较多，需要分批次扫描，共扫描12次，输出12张图像，单次扫描图像大小为80MB左右；</li>
+<li>目前rdb内存申请主要在Z轴数据，且数据格式为short类型双字节，算法内部需要将原始图像转换为物理坐标点，double类型（8个字节），且需要包含3个轴位坐标（x\y\z），转到算法内部该图像占用内存为<strong><u>80MB$<em>$4$</em>$3 = 960MB</u></strong>，一共12组图像，共11.25GB；</li>
+<li>分三组拼接相继输出三张图像，也会申请接近11.25GB，在并行分支做拼接时，即时内存可达到22.5GB；加上其他工具执行结果、实例创建以及系统内存的占用，占用近28GB的内存，<strong>此种情况下，内存配置为32G。</strong></li>
+</ul>
+
+
+<p>【注】：多传感器拼接工具对使用场景没有特殊要求</p>
+
+<h2>8. 示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\多传感器拼接工具.gvp”。</p>

@@ -1,0 +1,255 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scEllipse</h1>
+
+<h2>功能</h2>
+
+<p>表示椭圆，例如Blob工具的椭圆ROI区域，灰度检测工具的椭圆检测区域。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                                            </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scEllipse                                   </td>
+<td> scEllipse()默认构造函数。                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scEllipse            </td>
+<td> scEllipse(sc2Vector, sc2Vector, scRadian)构造函数。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scEllipse                    </td>
+<td> scEllipse(sc2XformLinear)构造函数。                 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> SetCenterRadiusRotation </td>
+<td> 设置椭圆中心、半轴长度和旋转角度。                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRadii                                </td>
+<td> 设置X方向和Y方向的半轴长度。                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRadii                                     </td>
+<td> 获取X方向和Y方向的半轴长度。                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCenter                             </td>
+<td> 设置中心。                                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCenter                                   </td>
+<td> 获取中心。                                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRotation                       </td>
+<td> 设置旋转角度。                                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRotation                               </td>
+<td> 获取旋转角度。                                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetEllFromUnitCirc </td>
+<td> 设置仿射变换。                                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetEllFromUnitCirc             </td>
+<td> 获取仿射变换。                                      </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scEllipse()</h3>
+
+<ul>
+<li><p>功能：构造scEllipse对象。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scEllipse(center, radii, rotation)</h3>
+
+<ul>
+<li><p>功能：用中心center、X方向和Y方向的半轴长度构成的向量radii、旋转角度rotation来构造scEllipse对象。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>center：椭圆中心坐标，sc2Vector类型。</p></li>
+<li><p>radii：X方向和Y方向半轴长度构成的向量，sc2Vector类型。</p></li>
+<li><p>rotation：旋转角度，scRadian类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scEllipse(ellFromUnitCirc)</h3>
+
+<ul>
+<li><p>功能：用二维仿射变换ellFromUnitedCirc来构造scCircle对象。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>ellFromUnitCirc：二维仿射变换，sc2XformLinear类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>SetCenterRadiusRotation(center, radii, rotation)</h3>
+
+<ul>
+<li><p>功能：设置椭圆的中心，半轴长度和旋转角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>center：椭圆中心坐标，sc2Vector类型。</p></li>
+<li><p>radii：X方向和Y方向半轴长度构成的向量，sc2Vector类型。</p></li>
+<li><p>rotation：旋转角度，scRadian类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetRadii(radii)</h3>
+
+<ul>
+<li><p>功能：设置椭圆的X方向和Y方向的半轴长度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>radii：X方向和Y方向半轴长度构成的向量，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetRadii()</h3>
+
+<ul>
+<li><p>功能：获取椭圆的X方向和Y方向的半轴长度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：X方向和Y方向半轴长度构成的向量，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>SetCenter(center)</h3>
+
+<ul>
+<li><p>功能：设置椭圆圆心。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>center：椭圆中心坐标，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCenter()</h3>
+
+<ul>
+<li><p>功能：获取椭圆圆心。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：椭圆中心坐标，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>SetRotation(rotation)</h3>
+
+<ul>
+<li><p>功能：设置椭圆的旋转角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>rotation：旋转角度，scRadian类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetRotation()</h3>
+
+<ul>
+<li><p>功能：获取椭圆的旋转角度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：旋转角度，scRadian类型。</p></li>
+</ul>
+
+
+<h3>SetEllFromUnitCirc( ellFromUnitCirc )</h3>
+
+<ul>
+<li><p>功能：设置仿射变换。</p></li>
+<li><p>参数：无。</p>
+
+<ul>
+<li>ellFromUnitCirc：二维仿射变换，sc2XformLinear类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetEllFromUnitCirc()</h3>
+
+<ul>
+<li><p>功能：获取仿射变换。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：二维仿射变换，sc2XformLinear类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

@@ -1,0 +1,126 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>校验和计算工具</h1>
+
+<h2>功能</h2>
+
+<p>计算输入字符串的校验和。计算时以字节为单位进行计算。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 校验和有效位个数 </td>
+<td> 计算出的校验和有几位是有效的。可根据实际需要进行选择，“低6位有效”(计算出的校验和为一个字节，这个字节中的低6位组成输出的校验和)，“低7位有效”（ 计算出的校验和为一个字节，这个字节中的低7位组成输出的校验和），“全部有效”（ 计算出的校验和为一个字节，这个字节中的8位组成输出的校验和）。 </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无               </td>
+<td> 无                                                                             </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入字符串       </td>
+<td> 待计算校验码的输入字符串。                                   </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无               </td>
+<td> 无                                                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述（参数的含义）                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 校验码                 </td>
+<td> 依据“检验码的有效位个数”计算出的校验码。                     </td>
+</tr>
+<tr>
+<td>   </td>
+<td> 带校验码的字符串                </td>
+<td> 字符串后面添加校验码。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                       </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无       </td>
+<td> 无                                                                                   </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 校验码                 </td>
+<td> 依据“检验码的有效位个数”计算出的校验码。与“监视窗口”中的校验码是同一个参数。 </td>
+</tr>
+<tr>
+<td>   </td>
+<td> 带校验码的字符串                </td>
+<td> 字符串后面添加校验码。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>该工具的输入类型是字符串String类型，输出是字符类型Char。</p></li>
+<li><p>测试结果如图，其中输入的字符串为“12”，校验和为“第7位有效”，计算出的校验和为“63”。63为16进制的数。红框外边的‘c’表示16进制的63所对应的ASCII码。</p>
+
+<p><img src="media/wps42.jpg" alt="img" /></p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\校验和计算工具.gvp”。</p>

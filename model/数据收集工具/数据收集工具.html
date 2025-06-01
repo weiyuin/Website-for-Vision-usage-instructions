@@ -1,0 +1,168 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>数据收集工具</h1>
+
+<h2>功能</h2>
+
+<p>数据收集工具主要的用途是收集数据，将收集的数据保存在数据库里。同时，还可以对收集的数据进行统计分析等。它一共可以收集12种的数据类型。主要可以收集的数据类型有：double、int、bool、string、int64、char、float、long、short、unsigned char、unsigned long和 unsigned short类型。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 无  </td>
+<td> 无                                          </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 无    </td>
+<td> 无                                           </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入数据（0~255）                                         </td>
+<td> 高级属性里面的数据源，最多可以新建256路，每一路相当于数据库表里面的一列。 </td>
+</tr>
+<tr>
+<td> 高级界面     </td>
+<td> 数据源                                                 </td>
+<td> 显示可用的数据源，从Channel0- Channel255。                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 数据名称     </td>
+<td> 每个数据源的对应的名称。                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 数据类型     </td>
+<td> 每个数据源的类型。12种类型之一。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 数据类型是否可修改 </td>
+<td> 是否允许修改数据类型。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 重命名数据表 </td>
+<td> 对连接的数据库里面的数据表进行重命名。                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 添加数据源   </td>
+<td> 新增加一个数据源，最多支持256个数据源。                                                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 删除         </td>
+<td> 删除一个指定的数据源。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 确定         </td>
+<td> 保存所进行的设置，并退出，请查看消息输出窗口。                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 取消         </td>
+<td> 不保存所进行的设置，并退出。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 消息输出窗口 </td>
+<td> 当“确定”时，如果出现错误会在此窗口显示，窗口暂不关闭。                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述（参数的含义）                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 表名称           </td>
+<td> 与之相连的数据库里面表的名称。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无 </td>
+<td> 无                                                     </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 表名称          </td>
+<td> 与之相连的数据库里面表的名称。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>此工具是需要和数据库一起使用的工具。为了实现数据收集的目的，先要连接数据库，如下图1所示，数据库管理的UI。</p></li>
+<li><p>数据源支持的个数最大是256个。一个数据收集工具对应于数据库里面的一个表，而数据收集工具的数据源就相当于一个表里面的一个列，数据源名称就相当于列名，数据源的个数也就决定了一个表里面列的个数。</p></li>
+<li><p>当连接上数据库时，每次添加一个数据收集工具，就会在数据库里面生成一个表，表名是唯一的。通过数据收集工具的高级属性，可以对这个表进行添加和删除数据源（即表中的列），设置数据源数据类型（表的数据类型），重命名表的名称等。见下图2所示，高级属性。</p>
+
+<p><img src="media/wps25.png" alt="img" /></p>
+
+<p><imgnote>图1 数据库管理</imgnote></p>
+
+<p><img src="media/wps26.png" alt="img" /></p>
+
+<p><imgnote>图2 高级属性</imgnote></p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\数据库相关工具.gvp”。</p>

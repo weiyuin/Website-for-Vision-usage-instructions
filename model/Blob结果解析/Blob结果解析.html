@@ -1,0 +1,479 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Blob结果解析工具</h1>
+
+<h2>功能</h2>
+
+<p>Blob结果解析工具用于对Blob工具的Blob结果进行解析处理。由于Blob工具的Blob结果参数类型为struct_Gs_SingleBlobResult，需要先使用数组解析工具将单个数组元素解析为一组数据，再使用Blob结果解析工具将该组数据解析成单个结果数据。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属性窗口</td>
+<td> 无 </td>
+<td> 无                                                                     </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                                     </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> Blob结果 </td>
+<td> Blob工具的Blob结果参数，经数组解析工具解析为一组数据后，作为该参数的输入。 </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无       </td>
+<td> 无                                                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称            </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口            </td>
+<td> 计算矩相关特性                                               </td>
+<td> Blob工具的属性窗口的“是否计算矩相关特性”参数选择“是”，该参数为true，并计算矩相关特征量。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 计算轮廓相关特性    </td>
+<td> Blob工具的属性窗口的“是否计算轮廓相关特性”参数选择“是”，该参数为true，并计算轮廓相关特征量。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 计算灰度相关特性    </td>
+<td> Blob工具的属性窗口的“是否计算灰度相关特性”参数选择“是”，该参数为true，并计算灰度相关特征量。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Area                </td>
+<td> Blob中所有非零像素的权重之和。                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> Label               </td>
+<td> 归一化后直线的角度。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> CenterMassX         </td>
+<td> Blob质心的X轴图像坐标。                                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> CenterMassY         </td>
+<td> Blob质心的Y轴图像坐标。                                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> NumChildren         </td>
+<td> 子节点个数。                                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> DiagonalLength      </td>
+<td> 坐标最小外接矩形对角线长。                                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> MassToBoundOffsetX  </td>
+<td> 质心与最小外界矩形X方向的偏差量。                                                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> MassToBoundOffsetY  </td>
+<td> 质心与最小外界矩形Y方向的偏差量。                                                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> InertiaX            </td>
+<td> 关于坐标轴X的惯性二阶矩。                                                                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> InertiaY            </td>
+<td> 关于坐标轴Y的惯性二阶矩。                                                                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> InertiaMin          </td>
+<td> 最小惯性二阶矩。                                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> InertiaMax          </td>
+<td> 最大惯性二阶矩。                                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> Angle               </td>
+<td> 区域方向，对应惯性二阶矩最小的轴。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> Elongation          </td>
+<td> 延长度，最大惯性二阶矩与最小惯性二阶矩的比值。                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> Density             </td>
+<td> 稠密度，描述Blob内部点分布的紧凑程度，其定义为总面积/主轴最小外接矩形面积，取值范围为(0,1]。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Scartchaness        </td>
+<td> 划伤度，指主轴最小外接矩形宽度平方与面积的比值，反映了属于划伤的可能性，取值范围为(0,+∞]，该值越大，则越可能是划伤。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Eccentricity        </td>
+<td> 离心率，指物体圆形度。如果离心率越大，物体越扁平；反之则越接近圆形。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> BoundaryPixelLength </td>
+<td> 像素边界长度。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> Perimeter           </td>
+<td> 周长，Blob区域边界像素权重之和。                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> Acircularity        </td>
+<td> 圆度，可定义为周长的平方与面积和4π乘积的比值，圆度为1 时表示一个完美的圆形。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> AcircularityRms     </td>
+<td> 归一化圆度。                                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> MinPixelValue       </td>
+<td> 最小灰度，即Blob内部所点的最小灰度值。                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> MaxPixelValue       </td>
+<td> 最大灰度，即Blob内部所点的最大灰度值。                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> AvergPixelValue     </td>
+<td> 平均灰度，即Blob内部所点的平均灰度值。                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> AvergPixelValueMax  </td>
+<td> 基于事件的平均灰度的最大值。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> AvergPixelValueMin  </td>
+<td> 基于事件的平均灰度的最小值。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形MinX        </td>
+<td> Blob的坐标最小外接矩形区域的X最大坐标。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形MaxX        </td>
+<td> Blob的坐标最小外接矩形区域的X最小坐标。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形MinY        </td>
+<td> Blob的坐标最小外接矩形区域的Y最大坐标。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形MaxY        </td>
+<td> Blob的坐标最小外接矩形区域的Y最小坐标。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形长宽比      </td>
+<td> Blob的坐标最小外接矩形的长与宽之比。                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 主轴外接矩形宽度    </td>
+<td> Blob的主轴最小外接矩形的长度。                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 主轴外接矩形高度    </td>
+<td> Blob的主轴最小外接矩形的宽度。                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓边界点          </td>
+<td> Blob的轮廓边界点的图像坐标向量。                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果            </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间            </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td>图像窗口 </td>
+<td> 无 </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链            </td>
+<td> 计算矩相关特性                                               </td>
+<td> Blob工具的属性窗口的“是否计算矩相关特性”参数选择“是”，该参数为true，并计算矩相关特征量。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 计算轮廓相关特性    </td>
+<td> Blob工具的属性窗口的“是否计算轮廓相关特性”参数选择“是”，该参数为true，并计算轮廓相关特征量。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 计算灰度相关特性    </td>
+<td> Blob工具的属性窗口的“是否计算灰度相关特性”参数选择“是”，该参数为true，并计算灰度相关特征量。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Area                </td>
+<td> Blob中所有非零像素的权重之和。                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> Label               </td>
+<td> 归一化后直线的角度。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> CenterMassX         </td>
+<td> Blob质心的X轴图像坐标。                                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> CenterMassY         </td>
+<td> Blob质心的Y轴图像坐标。                                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> NumChildren         </td>
+<td> 子节点个数。                                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> DiagonalLength      </td>
+<td> 坐标最小外接矩形对角线长。                                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> MassToBoundOffsetX  </td>
+<td> 质心与最小外界矩形X方向的偏差量。                                                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> MassToBoundOffsetY  </td>
+<td> 质心与最小外界矩形Y方向的偏差量。                                                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> InertiaX            </td>
+<td> 关于坐标轴X的惯性二阶矩。                                                                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> InertiaY            </td>
+<td> 关于坐标轴Y的惯性二阶矩。                                                                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> InertiaMin          </td>
+<td> 最小惯性二阶矩。                                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> InertiaMax          </td>
+<td> 最大惯性二阶矩。                                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> Angle               </td>
+<td> 区域方向，对应惯性二阶矩最小的轴。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> Elongation          </td>
+<td> 延长度，最大惯性二阶矩与最小惯性二阶矩的比值。                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> Density             </td>
+<td> 稠密度，描述Blob内部点分布的紧凑程度，其定义为总面积/主轴最小外接矩形面积，取值范围为(0,1]。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Scartchaness        </td>
+<td> 划伤度，指主轴最小外接矩形宽度平方与面积的比值，反映了属于划伤的可能性，取值范围为(0,+∞]，该值越大，则越可能是划伤。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Eccentricity        </td>
+<td> 离心率，指物体圆形度。如果离心率越大，物体越扁平；反之则越接近圆形。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> BoundaryPixelLength </td>
+<td> 像素边界长度。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> Perimeter           </td>
+<td> 周长，Blob区域边界像素权重之和。                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> Acircularity        </td>
+<td> 圆度，可定义为周长的平方与面积和4π乘积的比值，圆度为1 时表示一个完美的圆形。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> AcircularityRms     </td>
+<td> 归一化圆度。                                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> MinPixelValue       </td>
+<td> 最小灰度，即Blob内部所点的最小灰度值。                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> MaxPixelValue       </td>
+<td> 最大灰度，即Blob内部所点的最大灰度值。                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> AvergPixelValue     </td>
+<td> 平均灰度，即Blob内部所点的平均灰度值。                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> AvergPixelValueMax  </td>
+<td> 基于事件的平均灰度的最大值。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> AvergPixelValueMin  </td>
+<td> 基于事件的平均灰度的最小值。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> AvergPixelValueCore  </td>
+<td> 基于事件的平均核心灰度值。                                                                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形        </td>
+<td> Blob的坐标最小外接矩形区域。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形MinX        </td>
+<td> Blob的坐标最小外接矩形区域的X最大坐标。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形MaxX        </td>
+<td> Blob的坐标最小外接矩形区域的X最小坐标。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形MinY        </td>
+<td> Blob的坐标最小外接矩形区域的Y最大坐标。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形MaxY        </td>
+<td> Blob的坐标最小外接矩形区域的Y最小坐标。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 外接矩形长宽比      </td>
+<td> Blob的坐标最小外接矩形的长与宽之比。                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 主轴外接矩形宽度    </td>
+<td> Blob的主轴最小外接矩形的长度。                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 主轴外接矩形高度    </td>
+<td> Blob的主轴最小外接矩形的宽度。                                                                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>详细说明可参见Blob工具的基本特征量、矩相关特征量、轮廓相关特征量和灰度相关特征量。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>Blob结果解析工具不能单独使用，需要与数组解析工具配合使用，数组解析工具将Blob工具结果的单个数组元素解析为一组数据，再使用Blob结果解析工具将该组数据解析成单个结果数据。</p></li>
+<li><p>数组解析工具在与Blob结果解析工具搭配使用时，其属性窗口的数据类型参数应选择为GsSingleBlobResult，否则在数据链窗口配置参数输入数组时会找不到参数来源。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\Blob工具.gvp”。</p>

@@ -1,0 +1,187 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>图像坐标偏移修正工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​ 本工具作用为将距离基准点的物理坐标转变为图像坐标，并可更加实际精度进行相应补偿。</p>
+
+<h2>2.应用场景</h2>
+
+<p>​ 比如在激光打标应用场景中，打标起始点往往不具有明显的视觉特征，但可以在其附近寻找明显特征点，此时可得起始点到特征点的相对坐标值（物理尺寸单位），成像后可在确定特征点图像坐标后，通过相机标定换算出起始点的图像坐标，如此可确定起始点在机构坐标系下坐标，完成打标任务。</p>
+
+<h2>3.原理说明</h2>
+
+<p>​ 如下图所示，<strong>P2</strong>点为待求点，在图像上难确定其特征，<strong>P1</strong>点为<strong>P2</strong>点附近某特征点，若以<strong>P1</strong>点为原点建立其相交直线边为轴建立坐标系，通过实际测量可得<strong>P2</strong>点到两轴距离，如此即可换算出<strong>P2</strong>点在图像上坐标，从而计算出在相关平台下坐标。</p>
+
+<p><img src="media\GvImgCrdProdOffsetTool_3_1.png" alt="GvImgCrdProdOffsetTool_3_1" /></p>
+
+<h2>4.使用向导</h2>
+
+<p>​ 详见“7.示例工程”中介绍</p>
+
+<h2>5.常见问题</h2>
+
+<p>​ 无</p>
+
+<h2>6.参数说明</h2>
+
+<ul>
+<li>输入参数</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th> 参数名称      </th>
+<th> 参数描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 直线0         </td>
+<td> X轴距离偏移基准线                                            </td>
+</tr>
+<tr>
+<td> 直线1         </td>
+<td> Y轴距离偏移基准线                                            </td>
+</tr>
+<tr>
+<td> 像素当量      </td>
+<td> 相机像素尺寸大小                                             </td>
+</tr>
+<tr>
+<td> 修正基准线    </td>
+<td> 目标点计算时，角度选择基准线；0为输入直线0，1为输入直线1，只能输入0或1 </td>
+</tr>
+<tr>
+<td> X轴补偿方向   </td>
+<td> 0向左，1向右，只能输入0或1                                   </td>
+</tr>
+<tr>
+<td> Y轴补偿方向   </td>
+<td> 0向左，1向右，只能输入0或1                                   </td>
+</tr>
+<tr>
+<td> X轴固定偏移量 </td>
+<td> 目标点到X轴距离，物理尺寸值                                  </td>
+</tr>
+<tr>
+<td> Y轴固定偏移量 </td>
+<td> 目标点到Y轴距离，物理尺寸值                                  </td>
+</tr>
+<tr>
+<td> X轴随机补偿量 </td>
+<td> 为与物理尺寸值一致所需补偿值                                 </td>
+</tr>
+<tr>
+<td> Y轴随机补偿量 </td>
+<td> 为与物理尺寸值一致所需补偿值                                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>输出参数</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th> 参数名称       </th>
+<th> 参数描述       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 修正后图像坐标 </td>
+<td> 计算目标点坐标 </td>
+</tr>
+<tr>
+<td> 执行结果       </td>
+<td> 工具执行结果   </td>
+</tr>
+<tr>
+<td> 执行时间       </td>
+<td> 工具执行时间   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7.示例工程</h2>
+
+<p>​ 参见“\Samples\图像坐标偏移修正工具.gvp”。</p>
+
+<p>​ 工程说明如下：</p>
+
+<ul>
+<li>工程流程如下：</li>
+</ul>
+
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_1.png" alt="GvImgCrdProdOffsetTool_7_1" /></p>
+
+<ul>
+<li>为获取基准点，先进行找线操作；</li>
+</ul>
+
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_2.png" alt="GvImgCrdProdOffsetTool_7_2" /></p>
+
+<ul>
+<li>“图像坐标偏移修正工具”链接找线结果和像素当量；</li>
+<li>根据目标点与特征点实际间距和方向，设置相关属性参数；</li>
+</ul>
+
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_3.png" alt="GvImgCrdProdOffsetTool_7_3" /></p>
+
+<ul>
+<li>修正后坐标点如下图所示；</li>
+</ul>
+
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_4.png" alt="GvImgCrdProdOffsetTool_7_4" /></p>
+
+<ul>
+<li>目标点到直线0、直线1距离如下，从结果可看出与直线0距离存在一定误差，这是由于计算精度所导致的；</li>
+</ul>
+
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_5.png" alt="GvImgCrdProdOffsetTool_7_5" /></p>
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_6.png" alt="GvImgCrdProdOffsetTool_7_6" /></p>
+
+<ul>
+<li>对目标点到直线0的距离进行修正；</li>
+</ul>
+
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_7.png" alt="GvImgCrdProdOffsetTool_7_7" /></p>
+
+<ul>
+<li>修正后重新计算目标点到直线0距离；</li>
+</ul>
+
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_8.png" alt="GvImgCrdProdOffsetTool_7_8" /></p>

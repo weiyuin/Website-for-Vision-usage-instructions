@@ -1,0 +1,542 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>元素生成工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>   生成空间中的基本元素：空间点、空间直线、空间线段、空间平面、长方体、圆柱体等，为后续其他点云工具的数据链参数做准备。元素的生成方式可以人工输入数据生成，也可以拾取已有点数据来完成。</p>
+
+<h2>2.使用场景</h2>
+
+<p>   元素生成工具主要用于生成空间几何基本元素，为其他工具提供链接；</p>
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>3.1 点元素生成</h3></li>
+<li><p><strong>方法一：XYZ坐标模式：手动输入三维点坐标（X,Y,Z）生成点元素</strong><br/>
+<strong>Step1:</strong>双击元素生成工具，分别在“三维点X坐标”、“三维点Y坐标”、“三维点Z坐标”处输入三维点的坐标值；<br/>
+<strong>Step2:</strong>运行选中的元素生成工具，输出窗口可以看到生成的三维点坐标；</p></li>
+</ul>
+
+
+<p><img src="media/PointCloudGenerate_2_1.png" alt="" /></p>
+
+<p><imgnote>图2_1 手动生成三维点</imgnote></p>
+
+<ul>
+<li><p><strong>方法二：点偏移 + 三维点获取方式拾取：参考拾取到的点进行固定偏移来生成点元素</strong><br/>
+<strong>Step1:</strong>添加元素生成工具，在属性界面“三维点生成模式”：点偏移，三维点获取方式：拾取；<br/>
+<strong>Step2:</strong>双击元素生成工具进行数据链接，输入点云数据（需要设置输入图像进行三维点拾取）、偏移量设置；<br/>
+<strong>Step3:</strong>打开高级界面，点击”点1拾取“按钮，可以在视图中点击想要设置的特征点；<br/>
+<strong>Step4:</strong>点击执行按钮，可以在视图中看到固定偏移后的特征点；</p>
+
+<p><font color = "red">注：高级界面中红色点表示拾取的点，白色点表示偏移后的点；</font></p></li>
+</ul>
+
+
+<p><img src="media/PointCloudGenerate_2_2.png" alt="" /></p>
+
+<p><imgnote>图2_2 参考拾取到的点进行固定偏移来生成点元素</imgnote></p>
+
+<ul>
+<li><strong>方法三：点偏移 + 三维点获取方式引用：直接引用其他工具的三维点进行固定偏移来生成点元素</strong><br/>
+<strong>Step1:</strong>添加元素生成工具，在属性界面“三维点生成模式”：点偏移，三维点获取方式：引用；<br/>
+<strong>Step2:</strong>双击工具打开数据链界面，在“原始点”数据链处选中一个三维点，并进行偏移量设置；<br/>
+<strong>Step3:</strong>选中工具运行，即可生成固定偏移点；</li>
+</ul>
+
+
+<p><img src="media/PointCloudGenerate_2_3.png" alt="" /></p>
+
+<p><imgnote>图2_3 拾取已有点云数据中的某个点</imgnote></p>
+
+<ul>
+<li><p><strong>方法四：方向偏移 + 三维点获取方式拾取：参考拾取到的点进行方向偏移来生成点元素</strong><br/>
+<strong>Step1:</strong>添加元素生成工具，在属性界面“三维点生成模式”：方向偏移，三维点获取方式：拾取；<br/>
+<strong>Step2:</strong>双击元素生成工具进行数据链接，输入点云数据（需要设置输入图像进行三维点拾取）、方向向量(可以是直线或线段的方向向量，或三维点作为方向向量)、偏移量设置；<br/>
+<strong>Step3:</strong>打开高级界面，点击”点1拾取“按钮，可以在视图中点击想要设置的特征点；<br/>
+<strong>Step4:</strong>点击执行按钮，可以在视图中看到特定方向偏移后的特征点；</p>
+
+<p><font color = "red">注：高级界面中红色点表示拾取的点，白色点表示偏移后的点；</font></p></li>
+</ul>
+
+
+<p><img src="media/PointCloudGenerate_2_4.png" alt="" /></p>
+
+<p><imgnote>图2_4 参考拾取到的点进行固定偏移来生成点元素</imgnote></p>
+
+<ul>
+<li><p><strong>方法五：方向偏移 + 三维点获取方式引用：参考引用到的点进行特定方向偏移来生成点元素</strong><br/>
+<strong>Step1:</strong>添加元素生成工具，在属性界面“三维点生成模式”：方向偏移，三维点获取方式：引用；<br/>
+<strong>Step2:</strong>双击工具打开数据链界面，设置方向向量(可以是直线或线段的方向向量，或三维点作为方向向量)和偏移量；<br/>
+<strong>Step3:</strong>选中工具运行，即可生成特定方向上的偏移点；</p></li>
+<li><h3>3.2 三维直线元素生成</h3></li>
+<li><p><strong>方法一：两点式生成三维直线</strong></p></li>
+<li><p><strong>Step1:</strong>在工具属性界面选中三维直线生成模式：两点式，三维点获取方式：引用</p></li>
+<li><p><strong>Step2:</strong>双击工具打开参数链界面，然后链接“起始点”、“终止点”，然后点击运行工具；</p></li>
+</ul>
+
+
+<p><img src="media/PointCloudGenerate_2_5.png" alt="" /></p>
+
+<p><imgnote>图2_5 两点式生成三维直线(1)</imgnote></p>
+
+<ul>
+<li><strong>Step3:</strong>在工具属性界面选中三维直线生成模式：两点式，三维点获取方式：拾取;</li>
+<li><strong>Step4:</strong>右键打开工具高级界面，点击“点1拾取”，然后选取三维点1；点击“点2拾取”，然后选取三维点2；点击执行；</li>
+</ul>
+
+
+<p><img src="media/PointCloudGenerate_2_6.png" alt="" /></p>
+
+<p><imgnote>图2_6 两点式生成三维直线(2)</imgnote></p>
+
+<ul>
+<li><strong>方法二：点斜式生成三维直线</strong></li>
+<li><strong>Step1：</strong>添加元素生成工具，在属性界面设置：元素生成类型：三维直线、三维直线生成模式：点斜式、三维点获取方式：引用；</li>
+<li><strong>Step2：</strong>双击打开该工具参数链配置界面，配置各个参数链后点击运行工具；</li>
+</ul>
+
+
+<p><img src="media/PointCloudGenerate_2_7.png" alt="" /></p>
+
+<p><imgnote>图2_7 点斜式生成三维直线</imgnote></p>
+
+<ul>
+<li><strong>方法三：位置+倾斜角+旋转角生成三维直线</strong></li>
+<li><strong>Step1：</strong>添加元素生成工具，在属性界面设置：元素生成类型：三维直线、三维直线生成模式：位置+倾斜角+旋转角、三维点获取方式：引用；</li>
+<li><strong>Step2：</strong>双击打开工具参数链界面，链接一个三维点，输入倾斜角、旋转角，然后点击运行工具；</li>
+</ul>
+
+
+<p><img src="media/PointCloudGenerate_2_8.png" alt="" /></p>
+
+<p><imgnote>图2_8 位置+倾斜角+旋转角生成三维直线</imgnote></p>
+
+<ul>
+<li><strong>方法四：参考平行直线生成三维直线</strong></li>
+<li><strong>Step1：</strong>添加元素生成工具，在属性界面设置：元素生成类型：三维直线、三维直线生成模式：平行直线；</li>
+<li><strong>Step2：</strong>双击打开工具参数链界面，链接方向向量、给定直线，偏移量（偏移量可以不设置链接）；</li>
+</ul>
+
+
+<p><img src="media/PointCloudGenerate_2_9.png" alt="" /></p>
+
+<p><imgnote>图2_9 参考平行直线生成三维直线</imgnote></p>
+
+<ul>
+<li><strong>方法五：参考垂直直线生成三维直线</strong></li>
+<li><strong>Step1：</strong>添加元素生成工具，在属性界面设置：元素生成类型：三维直线、三维直线生成模式：垂直线；</li>
+<li><strong>Step2：</strong>双击打开工具参数链界面，链接三维点、给定直线；</li>
+</ul>
+
+
+<p><img src="media/PointCloudGenerate_2_10.png" alt="" /></p>
+
+<p><imgnote>图2_10 参考垂直直线生成三维直线</imgnote></p>
+
+<ul>
+<li><h3>3.3 其他元素生成</h3>
+
+<p>  其他元素生成的操作方式原理与点、线的生成方式相似，在此不在赘述，使用者可自行设置；</p></li>
+</ul>
+
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据                                                 </td>
+<td> 输入点云图像                                               </td>
+</tr>
+<tr>
+<td> 三维点X/Y/Z坐标                                              </td>
+<td> 三维点生成模式下，XYZ坐标                                  </td>
+</tr>
+<tr>
+<td> 原始点                                                       </td>
+<td> 三维点生成模式下，点偏移、方向偏移时原始点坐标                  </td>
+</tr>
+<tr>
+<td> 偏移X/Y/Z                                                    </td>
+<td> 三维点生成模式下，点偏移时的偏移量                      </td>
+</tr>
+<tr>
+<td> 起始点                                                       </td>
+<td> 三维直线生成模式下，两点式时使用<br />三维线段生成模式下，两点式、点+方向向量+线段长度、点+倾斜+旋转+线段长度、垂线段时使用 </td>
+</tr>
+<tr>
+<td> 终止点                                                       </td>
+<td> 三维直线生成模式下，两点式时使用<br />三维线段生成模式下，两点式时使用 </td>
+</tr>
+<tr>
+<td> 三维点                                                       </td>
+<td> 三维直线生成模式下，点斜式、位置+倾斜角+旋转角、垂直线时使用<br />三维平面生成模式下，点+法向量时使用 </td>
+</tr>
+<tr>
+<td> 方向向量                                                     </td>
+<td> 三维点生成模式下，方向偏移时使用<br />三维直线生成模式下，点斜式、平行直线时使用<br />三维线段生成模式下，点+方向向量+线段长度、平行线段时使用 </td>
+</tr>
+<tr>
+<td> 倾斜角                                                       </td>
+<td> 三维直线生成模式下，位置+倾斜角+旋转角时使用<br />三维线段生成模式下，点+倾斜角+旋转角+线段长度时使用<br />三维圆形生成模式下，倾斜角+旋转角+圆心+半径、倾斜角+旋转角+偏移量+半径时使用 </td>
+</tr>
+<tr>
+<td> 旋转角                                                       </td>
+<td> 三维直线生成模式下，位置+倾斜角+旋转角时使用<br />三维线段生成模式下，点+倾斜角+旋转角+线段长度时使用<br />三维圆形生成模式下，倾斜角+旋转角+圆心+半径、倾斜角+旋转角+偏移量+半径时使用 </td>
+</tr>
+<tr>
+<td> 给定直线                                                     </td>
+<td> 三维直线生成模式下，平行直线、垂直线时使用<br />三维线段生成模式下，垂线段时使用 </td>
+</tr>
+<tr>
+<td> 给定线段                                                     </td>
+<td> 三维线段生成模式下，平行线段时使用 </td>
+</tr>
+<tr>
+<td> 偏移量                                                       </td>
+<td> 三维点生成模式下，方向偏移时使用<br />三维直线生成模式下，平行直线时使用<br />三维线段生成模式下，平行线段时使用<br />三维平面生成模式下，法向量+偏移、平行平面时使用<br />三维圆形生成模式下，法向量+偏移+半径、倾斜角+旋转角+偏移+半径时使用 </td>
+</tr>
+<tr>
+<td> 线段长度                                                     </td>
+<td> 三维线段生成模式下，点+方向向量+线段长度、点+倾斜+旋转+线段长度时使用 </td>
+</tr>
+<tr>
+<td> 三维点1/2/3                                                  </td>
+<td> 三维平面生成模式下，三点式时使用<br />三维圆形生成模式下，三点式时使用 </td>
+</tr>
+<tr>
+<td> 半径                                                         </td>
+<td> 三维圆形生成模式下，平面+半径、法向量+圆心+半径、法向量+偏移+半径、倾斜角+旋转角+圆心+半径、倾斜角+旋转角+偏移+半径时使用<br />圆柱体生成模式下，基于点、基于线时使用<br />球体生成模式下，基于球心+半径时使用 </td>
+</tr>
+<tr>
+<td> 平面                                                         </td>
+<td> 三维圆形生成模式下，平面+半径时使用 </td>
+</tr>
+<tr>
+<td> 法向量                                                       </td>
+<td> 三维平面生成模式下，点+法向量、法向量+偏移时使用<br />三维圆形生成模式下，法向量+圆心+半径、法向量+偏移+半径时使用 </td>
+</tr>
+<tr>
+<td> 给定平面                                                     </td>
+<td> 三维平面生成模式下，平行平面、垂直平面时使用 </td>
+</tr>
+<tr>
+<td> 三维直线                                                     </td>
+<td> 三维平面生成模式下，垂直平面时使用 </td>
+</tr>
+<tr>
+<td> 中心点                                                       </td>
+<td> 三维矩形生成模式下，中心点+方向向量+尺寸时使用<br />长方体生成模式下使用 </td>
+</tr>
+<tr>
+<td> 左上角点                                                     </td>
+<td> 三维矩形生成模式下，左上点+方向向量+尺寸时使用 </td>
+</tr>
+<tr>
+<td> 长/宽/高方向向量                                             </td>
+<td> 三维矩形生成模式下使用 </td>
+</tr>
+<tr>
+<td> 长/宽/高尺寸                                                 </td>
+<td> 三维矩形/长方体生成模式下使用 </td>
+</tr>
+<tr>
+<td> 圆心                                                         </td>
+<td> 三维圆形生成模式下，法向量+圆心+半径、倾斜角+旋转角+圆心+半径时使用 </td>
+</tr>
+<tr>
+<td> 长方体长/宽/高正方向向量                                     </td>
+<td> 长方体生成模式下，基于中心点+长宽高正方向向量+尺寸使用 </td>
+</tr>
+<tr>
+<td> 输入坐标系 </td>
+<td> 长方体生成模式下，基于坐标系+尺寸使用 </td>
+</tr>
+<tr>
+<td> 轴线一点                                                     </td>
+<td> 圆柱体生成模式下，基于点时使用 </td>
+</tr>
+<tr>
+<td> 轴线方向                                                     </td>
+<td> 圆柱体生成模式下，基于点时使用 </td>
+</tr>
+<tr>
+<td> 轴线                                                         </td>
+<td> 圆柱体生成模式下，基于线时使用 </td>
+</tr>
+<tr>
+<td> 球心                                                         </td>
+<td> 球体生成模式下使用 </td>
+</tr>
+<tr>
+<td> 球上一点                                                     </td>
+<td> 球体生成模式下，基于球心+球上一点时使用 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 元素生成类型                                          </td>
+<td> 选择想要生成的基本元素，基本元素包括：三维点、三维直线、三维线段、三维平面、三维矩形、三维圆形、长方体、圆柱体、球体 </td>
+</tr>
+<tr>
+<td> 三维元素生成模式           </td>
+<td> 指元素的生成模式，不同元素的生成方式有多种，具体如下： <br />三维点生成模式：XYZ坐标、点偏移、方向偏移<br />三维直线生成模式：两点式、点斜式、位置+倾斜角+旋转角、平行直线、垂直线<br />三维线段生成模式：两点式、点+方向向量+线段长度、点+倾斜角+旋转角+线段长度、平行线段、垂线段<br />三维平面生成模式：三点式、点+法向量、法向量+平移、平行平面、垂直平面<br />三维矩形生成模式：左上点+方向向量+尺寸、中心点+方向向量+尺寸<br />三维圆形生成模式：三点式、平面+半径、法向量+圆心+半径、法向量+偏移+半径、倾斜角+旋转角+圆心+半径、倾斜角+旋转角+偏移+半径<br />长方体生成模式：中心点+长宽高方向向量+尺寸、坐标系+尺寸<br />圆柱体生成模式：基于点、基于线<br />球体生成模式：基于球心+半径、基于球心+球上一点 </td>
+</tr>
+<tr>
+<td> 三维点获取方式     </td>
+<td> 引用：引用其他工具的输出结果；拾取：使用交互式的方式来选取三维点 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致，交互相关参数如下：</p>
+
+<table>
+<thead>
+<tr>
+<th> 按钮名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 点1/2/3拾取                                   </td>
+<td> 在高级界面图像中，相应位置点击即可拾取到该位置的点 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出三维点                                            </td>
+<td> 输出三维点的X、Y、Z坐标值 </td>
+</tr>
+<tr>
+<td> 输出三维直线                               </td>
+<td> 输出三维直线 </td>
+</tr>
+<tr>
+<td> 输出直线方向向量 </td>
+<td> 输出三维直线的方向向量 </td>
+</tr>
+<tr>
+<td>输出三维线段        </td>
+<td>输出三维线段</td>
+</tr>
+<tr>
+<td>输出线段方向向量 </td>
+<td>输出三维线段的方向向量</td>
+</tr>
+<tr>
+<td>三维平面   </td>
+<td>输出三维平面</td>
+</tr>
+<tr>
+<td>三维矩形     </td>
+<td>输出三维矩形</td>
+</tr>
+<tr>
+<td>三维圆形      </td>
+<td>输出三维圆形</td>
+</tr>
+<tr>
+<td>长方体       </td>
+<td>输出三维立方体        </td>
+</tr>
+<tr>
+<td>圆柱体</td>
+<td>输出圆柱体</td>
+</tr>
+<tr>
+<td>球体  </td>
+<td>输出球体</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出三维点                                            </td>
+<td> 输出三维点的X、Y、Z坐标值 </td>
+</tr>
+<tr>
+<td> 输出三维直线                               </td>
+<td> 三维直线：StartPoint，两点式生成直线时起始点三维坐标值<br />三维直线：EndPoint，两点式生成直线时终止点三维坐标值<br />三维直线：Direction，三维直线的方向<br />三维直线：Tilt，直线倾斜角<br />三维直线：Rotation，直线旋转角<br />三维直线：方向向量，直线的方向向量 </td>
+</tr>
+<tr>
+<td> 输出直线方向向量 </td>
+<td> 输出三维直线的方向向量； </td>
+</tr>
+<tr>
+<td>输出三维线段        </td>
+<td>三维线段：Pos，三维线段的起始点<br />三维线段：Dir，三维线段的方向<br />三维线段：Tilt，三维线段倾斜角<br />三维线段：Rotation，三维线段的旋转角<br />三维直线：方向向量，直线的方向向量</td>
+</tr>
+<tr>
+<td>输出线段方向向量 </td>
+<td>输出三维线段的方向向量</td>
+</tr>
+<tr>
+<td>三维平面   </td>
+<td>三维平面：平面点，拟合平面经过的点<br />三维平面：法向量，拟合平面的法向量<br />三维平面：偏移量，拟合平面相对于零平面的偏移量<br />三维平面：倾斜角，拟合平面法向量与Z轴的夹角<br />三维平面：旋转角，拟合平面法向量在XOY平面的投影向量与X轴的夹角</td>
+</tr>
+<tr>
+<td>三维矩形     </td>
+<td>三维矩形：Center,三维平面中心坐标(三维坐标)<br />三维矩形：NormalWidth，矩形平面的宽度<br />三维矩形：NormalHeight，矩形平面的长度<br />三维矩形：Width，矩形平面的宽度<br />三维矩形：Height，矩形平面的长度</td>
+</tr>
+<tr>
+<td>三维圆形      </td>
+<td>三维圆形：Center，三维圆形圆心三维坐标<br />三维圆形：Normal，三维圆形平面的法向量<br />三维圆形：Radius，三维圆形的半径</td>
+</tr>
+<tr>
+<td>长方体       </td>
+<td>三维立方体：Center，三维立方体的中心坐标<br />三维立方体：NormalLength，三维立方体空间上的长度<br />三维立方体：NormalWidht，三维立方体空间上的宽度<br />三维立方体：NormalHeight，三维立方体空间上的高度<br />三维立方体：Length，三维立方体在沿立方体方向上的投影矩形的长度<br />三维立方体：Width，三维立方体在沿立方体方向上的投影矩形的宽度<br />三维立方体：Height，三维立方体在沿立方体方向上的投影矩形的高度        </td>
+</tr>
+<tr>
+<td>圆柱体</td>
+<td>圆柱体：Pos，圆柱体中心位置的三维坐标<br />圆柱体：Normal，圆柱体底部平面法向量的方向<br />圆柱体：Radius，圆柱体中圆形半径</td>
+</tr>
+<tr>
+<td>球体  </td>
+<td>球体：Center，球体球心的三维坐标<br />球体：Radius，球体的半径</td>
+</tr>
+<tr>
+<td> 执行结果         </td>
+<td> 工具执行结果                                               </td>
+</tr>
+<tr>
+<td> 执行时间         </td>
+<td> 工具执行时间                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云卡尺工具.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>原理说明</h3>
+
+<ul>
+<li><h3>7.1 三维直线生成原理：</h3></li>
+</ul>
+
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_11.gif" style="zoom:50%;"/>
+    <center>图2_11 两点式空间直线生成原理</center>
+</div>
+
+
+<p></p>
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_12.gif" style="zoom:50%;"/>
+    <center>图2_12 点斜式直线生成原理</center>
+</div>
+
+
+<p></p>
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_13.gif" style="zoom:50%;"/>
+    <center>图2_13 点斜式直线生成原理</center>
+</div>
+
+
+<p></p>
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_14.gif" style="zoom:50%;"/>
+    <center>图2_14 点+平行线直线生成原理</center>
+</div>
+
+
+<p></p>
+
+<ul>
+<li><h3>7.2 平面生成原理：</h3></li>
+</ul>
+
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_15.gif" style="zoom:50%;"/>
+    <center>图2_15 三点生成平面原理</center>
+</div>
+
+
+<p></p>
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_16.gif" style="zoom:50%;"/>
+    <center>图2_16 点+法向量生成原理</center>
+</div>
+
+
+<p></p>

@@ -1,0 +1,233 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云拼接工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​         点云拼接工具根据输入的刚性变换矩阵将多副点云图像进行拼接。</p>
+
+<div align="center">
+<img src="media/3DStitchingTool_1_1.png" style="zoom:100%;"/>
+    <center>图1_1 点云拼接工具原理</center>
+</div>
+
+
+<h2>2.使用场景</h2>
+
+<p>​          该工具主要用于XY或Z方向拼接类项目；比如：</p>
+
+<p><strong>场景1：IPhone手机平面度检测项目</strong></p>
+
+<div align="center">
+<img src="media/3DAlignment Tool_2_1.png" style="zoom:50%;"/>
+    <center>图2_1 IPhone手机平面度检测项目</center>
+</div>
+
+
+<p>​ 由于测量精度高，该产品需要进行拼接，同时客户提供的测量点坐标是以客户给定产品坐标系来定义的，所以需要我们先进行坐标系对齐，才可以精确地定位到测量点。</p>
+
+<p><strong>场景2：厚度测量项目</strong></p>
+
+<div align="center">
+<img src="media/3DStitchingTool_2_2.png" style="zoom:50%;"/>
+    <center>图2_2 厚度测量项目</center>
+</div>
+
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>工具添加，图像导入、参数调节</h3>
+
+<p><strong>Step1:</strong>添加点云文件（2-16个）、点云拼接工具，并双击打开工具参数链，链接点云文件，如图3-1所示；<br/>
+<strong>Step2:</strong>根据矩阵来源选择不同方式设置拼接矩阵，如在属性栏中设置拼接参数、加载转换矩阵文件（.txt文件），如图3-2所示；</p></li>
+</ul>
+
+
+<div align="center">
+<img src="media/3DStitchingTool_3_1.png" style="zoom:100%;"/>
+    <center>图3_1 点云拼接流程</center>
+</div>
+
+
+<div align="center">
+<img src="media/3DStitchingTool_3_2.gif" style="zoom:100%;"/>
+    <center>图3_2 点云拼接设置</center>
+</div>
+
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据                                               </td>
+<td> 输入待拼接的点云图像                                    </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 拼接所需图像个数                    </td>
+<td>需要拼接的图像的个数</td>
+</tr>
+<tr>
+<td> 矩阵来源 </td>
+<td>包括两种：属性外部导入和高级界面设置</td>
+</tr>
+<tr>
+<td> 标定结果文件路径 </td>
+<td>导入标定文件，标定文件的格式如第7部分所示</td>
+</tr>
+<tr>
+<td> 输出坐标系       </td>
+<td> 包括两种：世界坐标系和传感器坐标系        </td>
+</tr>
+<tr>
+<td> 开启并行运算 </td>
+<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+</tr>
+<tr>
+<td> 线程数百分比 </td>
+<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面可以用于设置矩阵如下：</p>
+
+<table>
+<thead>
+<tr>
+<th> 名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 矩阵                                </td>
+<td> 在高级界面中输入变换矩阵 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据       </td>
+<td>输出拼接的点云图像</td>
+</tr>
+<tr>
+<td> 输出刚性变换矩阵 </td>
+<td>显示刚性变换矩阵</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据       </td>
+<td>输出拼接的点云图像</td>
+</tr>
+<tr>
+<td> 输出刚性变换矩阵 </td>
+<td>显示刚性变换矩阵</td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云拼接工具.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>7.1 工具使用</h3>
+
+<p>​    <strong>Step1：</strong>利用Polyworks等软件对塔台等靶标进行标定，获取刚性变换矩阵；
+​      <br/>
+​    <strong>Step2：</strong>导入刚性变换矩阵到VA中，VA中的矩阵格式如图7_1所示，第一行为拼接图像个数，依次为各个点云图像对应的刚性变换矩阵；</p>
+
+<p><img src="media/3DStitchingTool_7_3.png" alt="" /></p>
+
+<p><imgnote>图7_1 </imgnote></p>
+
+<p>   <strong>Step3：</strong>导入刚性变换矩阵到VA中，使用塔台进图像拼接验证效果，拼接前后如图7_2所示，同时，执行成功后在监视中可以看到导入的刚性变换矩阵，如图7_3所示；</p>
+
+<p><img src="media/3DStitchingTool_7_4.png" alt="" /></p>
+
+<p><imgnote>图7_2 </imgnote></p>
+
+<p><img src="media/3DStitchingTool_7_5.png" alt="" /></p>
+
+<p><imgnote>图7_3 </imgnote></p>
+
+<p>​    <strong>Step4：</strong>输入图像切换为物料产品，进行拼接计算即可；</p>

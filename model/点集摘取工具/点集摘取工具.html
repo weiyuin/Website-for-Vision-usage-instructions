@@ -1,0 +1,133 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点集摘取工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 可以将相机采集图像中的2D灰度图中的像素点集映射为点云数据中的点集。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 可将2D灰度图与3D点云图联合起来处理。如手眼标定场景，可将2D特征点映射到3D点云中去，用作标定输入。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4></li>
+</ul>
+
+
+<p><img src="media/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8.png" alt="" /></p>
+
+<ul>
+<li><h4>数据链设置</h4>
+
+<p>数据链中先链入相机采集的灰度图、与之对应的点云图及有效点索引；</p>
+
+<p>然后输入在灰度图中的待转换的特征点集。</p>
+
+<p><em>注意：输入的点云图、有效点索引、灰度图都必须是采集工具同一时刻输出的图像</em></p></li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云图 </td>
+<td> 相机采集的点云图像 </td>
+</tr>
+<tr>
+<td> 输入点云有效点索引 </td>
+<td> 点云图像对应的有效点索引 </td>
+</tr>
+<tr>
+<td> 输入灰度图 </td>
+<td> 同时刻相机采集的灰度图像        </td>
+</tr>
+<tr>
+<td> 输入灰度图点集 </td>
+<td> 灰度图中的待转换的特征点集 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据点集 </td>
+<td> 输出映射到3D点云坐标上的点集 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据点集 </td>
+<td> 输出映射到3D点云坐标上的点集 </td>
+</tr>
+<tr>
+<td> 执行结果         </td>
+<td> 工具执行结果                 </td>
+</tr>
+<tr>
+<td> 执行时间         </td>
+<td> 工具执行时间                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点集摘取工具.gvp”。</p>
+
+<h2>7. 特殊说明</h2>

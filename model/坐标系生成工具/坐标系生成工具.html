@@ -1,0 +1,147 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>坐标系生成工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 坐标系生成工具主要是在三维空间内建立XYZ坐标系的功能。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量中，经常会根据需求在空间内建立指定的直角坐标系，该工具根据特征点位置和方向向量建立直角坐标系，以便后续坐标系对齐等工具使用。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4>
+
+<p><img src=".\media\GcCloudCoordinateTool3_1.png" style="zoom:70%;" /></p></li>
+<li><h4>参数设置</h4>
+
+<ul>
+<li>① 选择坐标系生成类型：原点+XYZ方向向量、原点+XY方向向量、原点+XZ方向向量、原点+YZ方向向量；</li>
+<li>② 数据链接设置输入坐标系原点、XYZ轴方向向量等；</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 坐标系原点 </td>
+<td> 输入待构建的直角坐标系原点                                                                        </td>
+</tr>
+<tr>
+<td> 坐标系X轴方向向量                                    </td>
+<td> 输入待构建的直角坐标系X轴方向向量              </td>
+</tr>
+<tr>
+<td> 坐标系Y轴方向向量 </td>
+<td> 输入待构建的直角坐标系Y轴方向向量                                                                        </td>
+</tr>
+<tr>
+<td> 坐标系Z轴方向向量 </td>
+<td> 输入待构建的直角坐标系Z轴方向向量 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 坐标系生成类型           </td>
+<td> 分为四种：原点+XYZ方向向量、原点+XY方向向量、原点+XZ方向向量、原点+YZ方向向量 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 直角坐标系                                       </td>
+<td> 输出建立直角坐标系的原点以及XYZ方向向量 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 直角坐标系                                       </td>
+<td> 输出建立直角坐标系的原点以及XYZ方向向量 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间           </td>
+<td> 工具执行时间                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点云坐标系对齐.gvp”。</p>
+
+<h2>7. 特殊说明</h2>

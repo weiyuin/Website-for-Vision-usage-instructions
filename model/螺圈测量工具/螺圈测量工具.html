@@ -1,0 +1,379 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>螺圈测量工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>针对使用目前VA工具难以测量螺孔圈数的问题，开发专用于螺圈测量的工具。</p>
+
+<h2>2.参数说明</h2>
+
+<p>输入参数</p>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                  </th>
+<th> 参数描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入通道1图像             </td>
+<td> 链接输入图像1（彩色图像通道分离后某通道）                    </td>
+</tr>
+<tr>
+<td> 输入通道2图像             </td>
+<td> 链接输入图像2（彩色图像通道分离后某通道）                    </td>
+</tr>
+<tr>
+<td> 输入极坐标展开工具圆弧GUI </td>
+<td> 链接极坐标展开工具中检测区域相关参数                         </td>
+</tr>
+<tr>
+<td> 是否启用双通道            </td>
+<td> ture：双通道计数；false：第一通道计数；默认选择双通道；      </td>
+</tr>
+<tr>
+<td> 螺纹距离                  </td>
+<td> 螺纹间距                                                     </td>
+</tr>
+<tr>
+<td> 螺纹高度                  </td>
+<td> 螺纹竖向高度                                                 </td>
+</tr>
+<tr>
+<td> 尾部螺纹宽度阈值          </td>
+<td> 尾部螺纹宽度，作用：（1）blob宽度大于此阈值才判断为螺纹；（2）用于计算尾部严重黏连的螺纹，防止只检测出1圈； </td>
+</tr>
+<tr>
+<td> 中间螺纹宽度阈值          </td>
+<td> 用于计算中间严重黏连的螺纹，防止只检测出1圈                  </td>
+</tr>
+<tr>
+<td> 头部螺纹宽度阈值          </td>
+<td> 用于计算头部严重黏连的螺纹，防止只检测出1圈                  </td>
+</tr>
+<tr>
+<td> 头部螺纹最小宽度阈值      </td>
+<td> 头部螺纹blob宽度大于此阈值才认可为头部螺纹，否则舍弃         </td>
+</tr>
+<tr>
+<td> 是否使用手动blob阈值      </td>
+<td> ture：手动阈值；false：自动阈值                              </td>
+</tr>
+<tr>
+<td> Blob检测阈值              </td>
+<td> 是否使用手动blob阈值选择true时参数起效，此阈值相当于灰度阈值分割 </td>
+</tr>
+<tr>
+<td> 螺纹平均灰度值            </td>
+<td> 螺纹灰度值，螺纹像素灰度均值低于该阈值不统计。               </td>
+</tr>
+<tr>
+<td> 螺纹理论圈数              </td>
+<td> 本螺孔螺圈的真实值                                           </td>
+</tr>
+<tr>
+<td> 基础螺纹圈数              </td>
+<td> 实际产线上要求的最低参数                                     </td>
+</tr>
+<tr>
+<td> 长Blob的高度              </td>
+<td> 螺纹必须有1个Blob满足该高度要求                              </td>
+</tr>
+<tr>
+<td> 长Blob的角度偏差          </td>
+<td> 螺纹必须有1个Blob满足该角度要求;（例值为40时，角度范围为[50，130]度）；范围[-40.0,40.0] </td>
+</tr>
+<tr>
+<td> 分组中心距离              </td>
+<td> 多段的Blob的中心距离要小于该阈值，不同螺纹的Blob之间要大于该阈值 </td>
+</tr>
+<tr>
+<td> 是否统计短Blob            </td>
+<td> 启动是否将小Blob分组到长Blob组里                             </td>
+</tr>
+<tr>
+<td> 短Blob的宽度              </td>
+<td> 该值一般小于螺纹宽度低值                                     </td>
+</tr>
+<tr>
+<td> 短Blob的高度              </td>
+<td> 根据需要统计的小Blob长度设置                                 </td>
+</tr>
+<tr>
+<td> 螺纹平均灰度值            </td>
+<td> 螺纹灰度值，螺纹像素灰度均值低于该阈值不统计。               </td>
+</tr>
+<tr>
+<td> 粘连螺纹比例              </td>
+<td> 如果发生两个螺纹粘连，要求未粘连的比例必须大于该阈值，否则统计为1个螺纹；值越大，允许粘连的比例越小； </td>
+</tr>
+<tr>
+<td> 头部粘连螺纹比例          </td>
+<td> 参数意义同粘连螺纹比例，适用于头部螺纹                       </td>
+</tr>
+<tr>
+<td> 头部粘连螺纹的宽度        </td>
+<td> 头部粘连螺纹游程宽度                                         </td>
+</tr>
+<tr>
+<td> 中间粘连螺纹的宽度        </td>
+<td> 中间粘连螺纹游程宽度                                         </td>
+</tr>
+<tr>
+<td> 尾部粘连螺纹的宽度        </td>
+<td> 尾部粘连螺纹游程宽度                                         </td>
+</tr>
+<tr>
+<td> 头部螺纹宽游程连续高度    </td>
+<td> 宽游程指大于螺纹宽度阈值的游程                               </td>
+</tr>
+<tr>
+<td> 头部螺纹窄游程连续高度    </td>
+<td> 窄游程是指大于粘连螺纹宽度，小于螺纹宽度阈值的游程           </td>
+</tr>
+<tr>
+<td> 非头部螺纹宽游程连续高度  </td>
+<td> 宽游程指大于螺纹宽度阈值的游程                               </td>
+</tr>
+<tr>
+<td> 非头部螺纹窄游程连续高度  </td>
+<td> 窄游程是指大于粘连螺纹宽度，小于螺纹宽度阈值的游程           </td>
+</tr>
+<tr>
+<td> 是否启用修正螺纹数量      </td>
+<td> 是否启用最后通过宽度再次修正螺纹数量                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>高级属性窗口</p>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称         </th>
+<th> 参数描述                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 二值图像         </td>
+<td> 显示进行二值化处理后的图像 </td>
+</tr>
+<tr>
+<td> Blob结果图像     </td>
+<td> 显示blob处理结果           </td>
+</tr>
+<tr>
+<td> 螺纹粗分组       </td>
+<td> 显示可能为螺纹的blob区域   </td>
+</tr>
+<tr>
+<td> 螺纹分组过滤干扰 </td>
+<td> 显示过滤干扰后螺纹区域     </td>
+</tr>
+<tr>
+<td> 螺纹统计结果     </td>
+<td> 显示最终螺纹结果           </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>输出参数</p>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称      </th>
+<th> 参数描述                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入通道1图像 </td>
+<td> 输入通道1图像的规格参数            </td>
+</tr>
+<tr>
+<td> 输入通道2图像 </td>
+<td> 输入通道2图像的规格参数            </td>
+</tr>
+<tr>
+<td> 螺纹圈数      </td>
+<td> 螺纹圈数检测结果                   </td>
+</tr>
+<tr>
+<td> 螺纹轮廓      </td>
+<td> 检测后判断为螺纹的轮廓信息         </td>
+</tr>
+<tr>
+<td> 原图螺纹轮廓  </td>
+<td> 显示在原图的轮廓信息               </td>
+</tr>
+<tr>
+<td> 图像通道1圈数 </td>
+<td> 图像通道1检测圈数                  </td>
+</tr>
+<tr>
+<td> 图像通道2圈数 </td>
+<td> 图像通道2检测圈数                  </td>
+</tr>
+<tr>
+<td> 螺纹暗漏圈数  </td>
+<td> 检测出由于中间螺纹较暗而遗漏的圈数 </td>
+</tr>
+<tr>
+<td> 缺陷类型      </td>
+<td> 螺纹的缺陷类型（已停止使用）       </td>
+</tr>
+<tr>
+<td> 执行结果      </td>
+<td> 工具执行是否成功                   </td>
+</tr>
+<tr>
+<td> 执行时间      </td>
+<td> 工具执行时间                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>3.详细说明</h2>
+
+<h3>3.1 工具重要参数说明</h3>
+
+<p><strong>1、</strong> <strong>螺圈测量参数</strong></p>
+
+<p><strong>尾部螺纹宽度阈值：</strong>统计的螺纹长Blob宽度要大于<strong>该阈值，防止干扰窄的Blob</strong>；</p>
+
+<p><strong>螺纹平均灰度值：</strong>螺纹分组中，长Blob的灰度要大于此阈值，防止较暗的干扰Blob；</p>
+
+<p><strong>螺纹高度：</strong>最后统计有效的螺纹的高度要大于此阈值，可以理解为每组多段Blob的总高度要大于此阈值。</p>
+
+<p><strong>头部螺纹最小宽度阈值：</strong>由于头部宽度较宽，所以单独设置宽度阈值</p>
+
+<p><strong>2、</strong> <strong>螺纹分组参数</strong>：</p>
+
+<p>按照螺纹的X方向进行分组，首先将满足长Blob高度的螺纹进行排序，同一个螺纹要求Blob的距离小于分组中心距离。</p>
+
+<p>为了防止螺纹可能被分开多段小的Blob，因此可启动 <strong>是否统计短Blob</strong><strong>，</strong>将满足要求的短的Blob 归属到长Blob对应的分组中。</p>
+
+<p><strong>3、粘连螺纹参数如下：</strong>粘连螺纹宽度应该比相应尾部/中间/头部螺纹宽度阈值要小些</p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_1.png" alt="1638779992737" /></p>
+
+<p><strong>粘连螺纹游程高度：</strong>可去掉多个小分叉累计高度满足粘连比例，导致的多数，如下图设置游程连续高度偏大，则可以使中间螺纹仅数出1个；</p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_2.png" alt="1638780091056" /></p>
+
+<center>低宽度</center>
+
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_3.png" alt="1638780232692" /></p>
+
+<center>高宽度</center>
+
+
+<p><strong>粘连螺纹的宽度</strong>：可以去除掉粘连的较窄的螺纹</p>
+
+<p>如下图，第一个粘连螺纹，将头部粘连螺纹宽度大于第一个窄游程的宽度，就可以使第一个螺纹数为1；</p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_4.png" alt="1638780576266" /></p>
+
+<center>低宽度</center>
+
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_5.png" alt="1638780615971" /></p>
+
+<center>高宽度</center>
+
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_6.png" alt="1638780652712" /></p>
+
+<center>粘连螺纹宽度及高度示意</center>
+
+
+<p><strong>是否启用螺纹数量：</strong> 如第一个螺纹，螺纹数量为1，如果启用该参数，则最后根据每个螺纹游程的平均宽度与对应螺纹宽度进行比较，更新最终的螺纹数量。对应的宽度为：</p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_7.png" alt="1638780712164" /></p>
+
+<p><strong>螺纹数量 = Blob游程的平均宽度/相应的螺纹宽度阈值（尾部、中间、头部）</strong></p>
+
+<p><strong>如下图则可将两个严重黏连的螺纹计算出两个；</strong></p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_8.png" alt="1638780778571" /></p>
+
+<p><strong>4.暗漏圈数</strong></p>
+
+<p>如下图存在中间螺纹blob较小被遗漏，可通过设置合适的“螺纹距离”来计算被遗漏的螺纹</p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_9.png" alt="1638780832092" /></p>
+
+<h3>3.2 工具使用步骤</h3>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_10.png" alt="1638780895808" /></p>
+
+<p>（1）使用定位工具对螺孔位置进行定位；</p>
+
+<p>（2）使用极坐标展开工具选取螺纹检测区域，二维线性变换链接定位工具结果；</p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_11.png" alt="1638780933101" /></p>
+
+<p>注：区域的设置不能太大，这样会在blob分析时引入过多的干扰信息；同时区域设置不能太小，这样会有由于定位工具精度的影响，导致螺纹不完全在检测区域内；</p>
+
+<p>（3）螺纹检测工具输入图像必须保证为螺圈横向分布，使用旋转镜像工具对其转换；</p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_12.png" alt="1638780981775" /></p>
+
+<p>（4）螺圈检测工具链接极坐标展开工具检测区域</p>
+
+<p>为将螺圈检测工具检测螺纹轮廓结果显示到原图，需要清楚极坐标展开工具检测区域，从而进行相应坐标变化；使用如下脚本进行设置：</p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_13.png" alt="1638781057807" /></p>
+
+<p>（5）结果显示</p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_14.png" alt="1638781090867" /></p>
+
+<center>工具属性界面</center>
+
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_15.png" alt="1638781147831" /></p>
+
+<center>Result界面</center>
+
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_16.png" alt="1638781185575" /></p>
+
+<center>视图窗口原图显示</center>
+
+
+<h3>3.3 属性界面</h3>
+
+<p>如图属性界面中检测结果为blob分析结果，可根据图像中blob的ID在表中查看相关检测信息</p>
+
+<p><img src="media\GcThreadTurnsMeasureTool_3_17.png" alt="1638781264100" /></p>
+
+<h2>4. 示例工程</h2>
+
+<p>参见“\Samples\螺圈测量工具.gvp”。</p>

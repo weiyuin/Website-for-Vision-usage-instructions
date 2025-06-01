@@ -1,0 +1,159 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scGuiPointsDistance</h1>
+
+<h2>功能</h2>
+
+<p>表示两点之间尺寸的Gui控件类，即在视图中可见的图形，可表示深度图像或轮廓图像中两个特征点之间的宽度、高度、距离等信息。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                             </th>
+<th> 接口描述                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scGuiPointsDistance       </td>
+<td> scGuiPointsDistance ()默认构造函数。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetLineSeg                  </td>
+<td> 设置距离线段。                       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetLineSeg                     </td>
+<td> 获取距离线段。                       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetTextInfoVisible </td>
+<td> 设置文本提示信息是否可见。           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> IsTextInfoVisible           </td>
+<td> 获取文本提示信息是否可见。           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetTextInfoManually   </td>
+<td> 设置文本提示内容。                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetTextInfoManually   </td>
+<td> 获取文本提示内容。                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scGuiPointsDistance()</h3>
+
+<ul>
+<li><p>功能：构造scGuiPointsDistance对象。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>SetLineSeg(lineSeg)</h3>
+
+<ul>
+<li><p>功能：设置距离线段。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>lineSeg：距离线段，scLineSeg类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetLineSeg()</h3>
+
+<ul>
+<li><p>功能：获取距离线段。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：返回距离线段，scLineSeg类型。</p></li>
+</ul>
+
+
+<h3>SetTextInfoVisible(bVisible)</h3>
+
+<ul>
+<li><p>功能：设置文本提示信息是否可见。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>bVisible：文本是否可见，bool类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>IsTextInfoVisible()</h3>
+
+<ul>
+<li><p>功能：获取文本提示信息是否可见。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：bool类型，表示文本提示信息是否可见。</p></li>
+</ul>
+
+
+<h3>SetTextInfoManually(info)</h3>
+
+<ul>
+<li><p>功能：设置文本提示内容。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>info：文本提示内容，字符串类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetTextInfoManually(info)</h3>
+
+<ul>
+<li><p>功能：获取文本提示内容。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：文本提示内容， 字符串类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无。</p>
+
+<h2>示例代码</h2>

@@ -1,0 +1,158 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>相机参数设置工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     相机参数设置工具是在一些场景中需要提前设置相机参数用于拍摄，不能直接在图像采集工具中设置的情况。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     相机参数设置工具是在一些场景中需要提前设置相机参数用于拍摄，不能直接在图像采集工具中设置的情况；设置好参数后可以提前拍摄图片，在图像采集工具中运行时直接获取就可以了。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     相机参数设置工具在填好相机名称后，在执行到这个工具的时候就可以把设置好的增益和曝光设置进相机里，在相机拍图的时候就可以使用设置好的参数进行拍摄。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcCamParamSetTool_4_1.png" alt="GcCamParamSetTool_4_1" /></p>
+
+<p>先在相机管理中找到使用的相机，然后把相机的名称填写到“相机名称”，然后设置相机增益和曝光就可以了，在该工具执行的时候会按照工具属性中设置的参数对相机进行设置。</p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述           </th>
+<th> 解决方法                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 报错未找到指定相机 </td>
+<td> 在相机管理中查看相机是否连接，如果连接看一下名称是否写错，如果没连接按照FAQ排查问题； </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 相机名称 </td>
+<td> 输入在相机管理中设置的相机的名称。 </td>
+</tr>
+<tr>
+<td> 是否开启基础参数     </td>
+<td> 设置曝光、增益、Gamma的开关。       </td>
+</tr>
+<tr>
+<td> 曝光     </td>
+<td> 需要设置给相机的曝光参数值。       </td>
+</tr>
+<tr>
+<td> 增益     </td>
+<td> 需要设置给相机的增益参数值。       </td>
+</tr>
+<tr>
+<td> Gamma     </td>
+<td> 需要设置给相机的Gamma参数值。       </td>
+</tr>
+<tr>
+<td> 设置白平衡     </td>
+<td> 设置白平衡的开关。       </td>
+</tr>
+<tr>
+<td> 红色     </td>
+<td> 需要设置给彩色相机红色通道参数值。       </td>
+</tr>
+<tr>
+<td> 绿色     </td>
+<td> 需要设置给彩色相机绿色通道参数值。       </td>
+</tr>
+<tr>
+<td> 蓝色     </td>
+<td> 需要设置给彩色相机蓝色通道参数值。       </td>
+</tr>
+<tr>
+<td> 是否开启ROI设置     </td>
+<td> 设置相机ROI的开关。       </td>
+</tr>
+<tr>
+<td> X     </td>
+<td> 需要设置给相机ROI的X参数值。       </td>
+</tr>
+<tr>
+<td> Y     </td>
+<td> 需要设置给相机ROI的Y参数值。       </td>
+</tr>
+<tr>
+<td> Width     </td>
+<td> 需要设置给相机ROI的Width参数值。       </td>
+</tr>
+<tr>
+<td> Height     </td>
+<td> 需要设置给相机ROI的Height参数值。       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明                                          </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 执行结果 </td>
+<td> 该工具执行完 相机的曝光和增益同时设置成功或失败。 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 该工具执行消耗的时间。                            </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\相机参数设置工具.gvp”。</p>

@@ -1,0 +1,203 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>照明补正工具</h1>
+
+<h2>功能</h2>
+
+<p>照明补正工具的主要任务是根据基准图像的亮度均值（基准值）调整实时图像，以减轻光照变化（变弱或变强）对图像的影响。</p>
+
+<p><img src="media/image-20210312163509687.png" alt="image-20210312163509687" /></p>
+
+<p><imgnote>图1 照明补正示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称            </th>
+<th> 参数描述                                                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口            </td>
+<td> 基准值获取方法                                               </td>
+<td> 基准值获取的方法有使用基准图像和直接指定。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 基准值              </td>
+<td> 只有在基准值获取方法为“直接指定”时，才显示该属性。范围0-255，设置的数值越大，补正之后的图像越亮。                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> ROI类型设置         </td>
+<td> 基准图像ROI和照明补正ROI等两种类型设置。                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 基准图像ROI         </td>
+<td> 基准图像ROI主要有四种：全图、矩形、仿射矩形和多边形。                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 基准图像矩形ROI     </td>
+<td> 基准图像ROI采用矩形ROI，主要有X、Y、W和H，即左上角左边和矩形的长和宽。                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 基准图像仿射矩形ROI </td>
+<td> 基准图像ROI采用仿射矩形ROI，主要有Center（X/Y）、Size（SizeX/SizeY）、Rotation（旋转角度）和Skew（切变角度）。                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 基准图像多边形ROI   </td>
+<td> VerticesNum（顶点个数）和Vertices（顶点）。                                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 照明补正ROI         </td>
+<td> 当ROI类型选择照明补正ROI的时候。主要有四种：全图、矩形、仿射矩形和多边形。                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 照明补正矩形ROI     </td>
+<td> 照明补正ROI采用矩形ROI，主要有X、Y、W和H，即左上角左边和矩形的长和宽。                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 照明补正仿射矩形ROI </td>
+<td> 照明补正ROI采用仿射矩形ROI，主要有Center（X/Y）、Size（SizeX/SizeY）、Rotation（旋转角度）和Skew（切变角度）。                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 照明补正多边形ROI   </td>
+<td> VerticesNum（顶点个数）和Vertices（顶点）。                                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 开启并行运算 </td>
+<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 线程数百分比 </td>
+<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+</tr>
+<tr>
+<td> 图像窗口            </td>
+<td> 输入图像                                                     </td>
+<td> 需要照明补正的图像。                       </td>
+</tr>
+<tr>
+<td></td>
+<td> ROI选取GUI          </td>
+<td> 用于设置输入图像需要照明补正的区域，或者设置选区里面的基准图像作为基准图像。                                             </td>
+</tr>
+<tr>
+<td> 数据链              </td>
+<td> 输入图像                                                     </td>
+<td> 需要照明补正的图像。                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 基准图像            </td>
+<td> 照明补正的基准图像。                                                                                     </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无                  </td>
+<td> 无                                                                                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 当前基准值                                                   </td>
+<td> 照明补正的基准值。       </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像 </td>
+<td> 经过照明补正的结果图像。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 经过照明补正的结果图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像                                                     </td>
+<td> 经过照明补正的结果图像。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>基本原理</h3>
+
+<p>照明补正工具实质是将弱光或强光下的图像补正至一个正常光照范围的图像，具体实现方法为对当前图像乘以一个补正系数，补正系数由基准图像的均值除以当前图像的均值获得（图像的灰度均值反映了图像亮度的整体情况。图像较亮，则灰度均值较大，图像较暗，则灰度均值较小）。</p>
+
+<p><img src="media/wps102.jpg" alt="img" /></p>
+
+<p><imgnote>图2 照明补正原理示意图</imgnote></p>
+
+<h2>注意</h2>
+
+<ul>
+<li>基准值获取方法选择直接指定时，在Eidt视图有补正ROI区域，照明补正只在ROI区域范围内起作用。当基准值获取方法选择使用基准图像时，属性中的ROI类型设置，可以选择基准图像ROI和照明补正ROI，分别对应取基准值的ROI区域，和照明补正的ROI区域，需要分别设置。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\照明补正工具.gvp”。</p>

@@ -1,0 +1,235 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>仿射采样工具</h1>
+
+<h2>功能</h2>
+
+<p>仿射采样工具主要对输入图像仿射矩形区域内的图像进行采样，输出矩形图像，以便对其进行后续处理。下图为用仿射矩形采样工具进行旋转纠正的示例。仿射矩形采样工具还可用于尺度和歪斜纠正。</p>
+
+<p><img src="media/wps91.png" alt="img" /></p>
+
+<p><imgnote>(a) 旋转的工件图像</imgnote> <imgnote>(b) 仿射采样结果图像 </imgnote></p>
+
+<p><imgnote>图1 仿射矩形采样工具示例</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称            </th>
+<th> 参数描述                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口            </td>
+<td> ROI形状                                                      </td>
+<td> 可选择的形状整幅图像和仿射矩形。 </td>
+</tr>
+<tr>
+<td></td>
+<td> X/Y方向采样长度     </td>
+<td> 当ROI形状选择整幅图像的时候，需要设置横纵方向的采样长度。                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形            </td>
+<td> 当ROI形状选择仿射矩形的时候，会显示仿射矩形的设置。<img src="media/wps93.jpg" alt="img" />                     </td>
+</tr>
+<tr>
+<td></td>
+<td> Center（X/Y）       </td>
+<td> 仿射矩形的中心点坐标。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> Size（SizeX/SizeY） </td>
+<td> 仿射矩形的长和宽大小。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> Rotation            </td>
+<td> 仿射矩形的旋转角度。                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> Skew                </td>
+<td> 仿射矩形的切变角度。                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 多边形ROI           </td>
+<td> 当ROI形状选择多边形ROI的时候，会显示多边形ROI的设置，由于只支持4边形，所以可以看到是矩形的ROI。</td>
+</tr>
+<tr>
+<td></td>
+<td> VerticesNum         </td>
+<td> 顶点个数，只能为4。                                                                            </td>
+</tr>
+<tr>
+<td></td>
+<td> Vertices            </td>
+<td> 各个顶点的坐标。                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否彩色图            </td>
+<td> 输入是否是彩色图像。                                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口            </td>
+<td> 输入图像                                                     </td>
+<td> 需要进行仿射采样的图像。         </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形GUI         </td>
+<td> 用于设置仿射矩形。                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 多边形ROI           </td>
+<td> 用于设置四边形。                                                                               </td>
+</tr>
+<tr>
+<td> 数据链              </td>
+<td> 输入图像                                                     </td>
+<td> 需要进行仿射采样的图像。         </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 二维线性变换是指目标相对于模板的平移、旋转、缩放变换。二维线性变换数组是指在该工具在某一次执行完之后，所有二维线性变换所组成的数组。                                                               </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无         </td>
+<td> 无                                                                                              </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 需要进行仿射采样的图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像 </td>
+<td> 进行仿射采样之后的图像。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 进行仿射采样之后的图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。       </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入图像                                                     </td>
+<td> 需要进行仿射采样的图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像 </td>
+<td> 进行仿射采样之后的图像。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 彩色输出图像 </td>
+<td> 进行仿射采样之后的彩色图像。                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>基本原理</h3>
+
+<p>仿射矩形采用三顶点定义方式定义，通过定义仿射矩形的三个顶点P<sub>o</sub>、P<sub>x</sub>、P<sub>y</sub>即可确定仿射矩形，如图2所示：</p>
+
+<p><img src="media/wps96.png" alt="img" /></p>
+
+<p><imgnote>图2 三顶点仿射矩形定义</imgnote></p>
+
+<p>根据P<sub>o</sub> - P<sub>x</sub>和P<sub>o</sub> - P<sub>y</sub>方向采样点数，可将仿射矩形划分为等面积的仿射像素，若P<sub>o</sub> - P<sub>x</sub>和P<sub>o</sub> - P<sub>y</sub>方向的采样点数分别为x_divisions和y_divisions，其即为采样结果图像的列数和行数。根据输出图像坐标(x’, y’)，可反向映射以计算其在输入图像空间的坐标(x, y)。</p>
+
+<p><img src="media/wps97.png" alt="img" /></p>
+
+<p><imgnote>图3 仿射矩形采样原理</imgnote></p>
+
+<p>根据输入图像空间坐标(x, y)，可通过灰度级插值确定其灰度级。仿射采样工具中，为了保证精度和一定的效率，使用的是双线性插值方法。</p>
+
+<p>在应用中，当我们用仿射矩形及其采样参数对输入图像进行采样时，规定的仿射矩形可能超出输入图像边界，称之为剪切，如图4（a）所示。当仿射矩形中仿射像素的中心在输入图像的边界两个像素之间时，也会出现剪切现象，如图4（b）所示。</p>
+
+<p><img src="media/wps98.png" alt="img" /></p>
+
+<p><imgnote>图4 剪切示意图</imgnote></p>
+
+<p>对于剪切问题，采用如下解决策略：对剪切部分置零，并且返回和仿射采样图像尺寸相同的权重图像，以表示采样图像中的剪切状态，其中“0”表示剪切，“1”表示正常。如图5所示。</p>
+
+<p><img src="media/wps99.png" alt="img" /></p>
+
+<p><imgnote>(a) 输入图像及仿射矩形区域</imgnote> <imgnote>(b) 采样结果图像</imgnote> <imgnote>&copy; 权重图像</imgnote></p>
+
+<p><imgnote>图5 采样和权重图像计算示例</imgnote></p>
+
+<p><strong>仿射矩形</strong></p>
+
+<p><img src="media/wps100.jpg" alt="img" /></p>
+
+<p><imgnote>图6 仿射矩形</imgnote></p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Sample\仿射采样工具.gvp”。</p>

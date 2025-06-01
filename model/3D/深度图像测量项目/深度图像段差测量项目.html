@@ -1,0 +1,92 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>深度图像段差测量项目</h1>
+
+<h2>1.项目需求</h2>
+
+<p>​ 本项目主要测量摄像头外圈到基平面的高度落差。</p>
+
+<h2>2.方案分析</h2>
+
+<p>​ 如下图所示为待测量产品工件，定位过程中要求选取物料比较显著的特征进行定位，平面拟合过程最好采用多区域进行拟合，保证拟合平面的稳定性。</p>
+
+<p><img src=".\media\RangeImage_2_1.png" alt="" /></p>
+
+<h2>3.方案实现</h2>
+
+<h3>3.1 检测流程</h3>
+
+<p><code>mermaid
+graph LR;
+等待PLC信号--&gt;3D图像采集
+3D图像采集--&gt;产品定位-注册模板
+产品定位-注册模板--&gt;测量项设置
+测量项设置--&gt;检测区域设置
+测量项设置--&gt;预处理
+测量项设置--&gt;带局外的平面拟合
+测量项设置--&gt;高度测量
+测量项设置--&gt;输出设置
+输出设置--&gt;检测结果汇总判断
+产品定位-注册模板--&gt;检测结果汇总判断
+检测结果汇总判断--&gt;检测结果发送PLC
+</code></p>
+
+<h3>3.2 检测具体实现</h3>
+
+<ul>
+<li>整体流程图</li>
+</ul>
+
+
+<p><img src=".\media\RangeImage_3_1.png" alt="" /></p>
+
+<ul>
+<li><p>产品定位</p>
+
+<p>定位特征选取边缘轮廓即可，如下图所示。</p></li>
+</ul>
+
+
+<p><img src=".\media\RangeImage_3_2.png" alt="" /></p>
+
+<ul>
+<li><p>测量项设置</p>
+
+<p>根据测量需求，追加测量项，然后设置测量区域、预处理、基准平面和高度测量参数，如下图所示。</p>
+
+<p><img src=".\media\RangeImage_3_3.png" alt="" /></p></li>
+<li><p>输出设置</p>
+
+<p>​   根据测量需求，在输出列表中对应添加需要的测量项，比如测量项1最大值，并修改系数补偿和固定补偿，以及阈值上下限，得到结果值及判定结果。</p></li>
+</ul>
+
+
+<p><img src=".\media\RangeImage_3_4.png" alt="" /></p>
+
+<h2>4.结果展示</h2>
+
+<p>​ 在输出窗口中可以看到二维线性变换数组及测量结果数据。</p>
+
+<p><strong>测量结果数据</strong>包含原值、结果数据及判定结果</p>
+
+<p><img src=".\media\RangeImage_3_5.png" alt="" /></p>
+
+<h2>5. 示例工程</h2>
+
+<p>​     参见“\Samples\应用案例\测高类项目\深度图像测量项目\深度图像段差测量工程.gvp”。</p>

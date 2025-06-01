@@ -1,0 +1,171 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云尺寸测量工具</h1>
+
+<h2>功能</h2>
+
+<p>对深度图像中某两个特征点之间的尺寸信息进行测量，图1所示为两个特征点之间的长度信息。</p>
+
+<p><img src="media/wps90.jpg" alt="img" /></p>
+
+<p><imgnote>图1 点云尺寸测量工具示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 尺寸 特征类型                          </td>
+<td> 深度数据的尺寸类型，以便计算两个特征点的距离或中点，分为6种：宽度、长度、高度、欧氏距离、平面距离、中点。<img src="media/wps92.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 系数补偿 </td>
+<td> 测量结果系数补偿，一般为1，用于补偿成像等系统误差。 </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 固定补偿 </td>
+<td> 测量结果固定补偿，一般为0，用于补偿成像等系统误差。 </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 阈值范围下限 </td>
+<td> 判定条件的下限值，取值范围：[-100000,100000]，单位：mm。 </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 阈值范围上限 </td>
+<td> 判定条件的上限值，取值范围：[-100000,100000]，单位：mm。 </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 深度图像                               </td>
+<td> 显示待检测的深度图像，显示为伪彩色图像。                     </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入深度图像                           </td>
+<td> 输入待检测的深度图像。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                                                               </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无    </td>
+<td> 无                                                                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称          </th>
+<th> 参数描述                                                                                            </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口          </td>
+<td> 输入深度图像                                          </td>
+<td> 输入图像的长宽和像素大小，以及深度数据参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 位置1             </td>
+<td> 第1个特征点的三维坐标信息。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 位置2             </td>
+<td> 第2个特征点的三维坐标信息。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 尺寸结果          </td>
+<td> 两个特征点间的宽度/长度/高度/欧氏距离/平面距离/中点。                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果          </td>
+<td> 工具执行结果。                                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间          </td>
+<td> 工具执行时间。                                                                                      </td>
+</tr>
+<tr>
+<td> 图像窗口          </td>
+<td> 输入深度图像                                          </td>
+<td> 显示检测的深度图像，显示为伪彩色图像。       </td>
+</tr>
+<tr>
+<td></td>
+<td> 特征点、距离/中点 </td>
+<td> 显示特征点结果，及两个特征点间的距离或中点。                                                        </td>
+</tr>
+<tr>
+<td>数据链</td>
+<td>             </td>
+<td> 同监视窗口参数，供后续工具使用。                                                                    </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>使用向导</h3>
+
+<p><strong>Step 1 设置深度数据尺寸类型</strong></p>
+
+<p>为了获取深度数据特征点之间的距离或者中点坐标信息，需要设置深度数据的尺寸类型。深度数据的尺寸类型有6种：宽度、长度、高度、欧式距离、平面距离、中点，如图2所示。</p>
+
+<p><img src="media/wps95.jpg" alt="img" /></p>
+
+<p><imgnote>图2 尺寸示意图</imgnote></p>
+
+<p><strong>Step 2 执行测量和输出结果</strong></p>
+
+<p>在设置好深度数据尺寸类型之后，就可以执行测量了。输出的结果包括，两个特征点的三维坐标信息，两个特征点之间的尺寸信息或者其中点坐标信息。</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\3D测量工具.gvp”。</p>

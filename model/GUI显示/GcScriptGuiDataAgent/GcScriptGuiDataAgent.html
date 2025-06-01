@@ -1,0 +1,133 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GcScriptGuiDataAgent</h1>
+
+<h2>功能</h2>
+
+<p>用来将GcScriptGuiArray中存储的GUI对象数组显示到视图窗口，禁止自己定义一个GcScriptGuiDataAgent对象，内部已经定义了GvGuiDataAgent对象，可以直接使用。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> GcScriptGuiDataAgent </td>
+<td> GcScriptGuiDataAgent(strName, strID)构造函数。 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> SetGraphicDisplay(str, value) </td>
+<td> 将要显示的GUI对象添加到视图窗口。              </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> AddGraphicToContainer(nIndex, value) </td>
+<td> 将要显示的GUI对象添加到自定义工具的图形数组输出中。              </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>GcScriptGuiDataAgent(strName, strID)</h3>
+
+<ul>
+<li><p><strong>功能</strong>：构造GcScriptGuiDataAgent对象。</p></li>
+<li><p><strong>参数</strong>：</p>
+
+<ul>
+<li><p>strName: str类型，当前工程名。例如”工程-1”。</p></li>
+<li><p>strID: str类型，脚本工具ID。</p></li>
+</ul>
+</li>
+<li><p><strong>返回值</strong>：无</p></li>
+</ul>
+
+
+<h3>SetGraphicDisplay(str, value)</h3>
+
+<ul>
+<li><p><strong>功能</strong>：将要显示的GUI对象数组添加到视图窗口。</p></li>
+<li><p><strong>参数</strong>：</p>
+
+<ul>
+<li><p>str: str类型，视图名称。例如”View-1”。</p></li>
+<li><p>value: GcScriptGuiArray类型，要添加的GUI对象数组。</p></li>
+</ul>
+</li>
+<li><p><strong>返回值</strong>：bool类型，表示是否添加成功。</p>
+
+<h3>AddGraphicToContainer(nIndex, value)</h3></li>
+<li><p><strong>功能</strong>：将要显示的GUI对象添加到自定义工具的图形数组输出中。</p></li>
+<li><p><strong>参数</strong>：</p>
+
+<ul>
+<li><p>nIndex: int类型，图形数组的索引，范围为[0,5]。例如:0。</p></li>
+<li><p>value: GcScriptGuiArray类型，要添加的GUI对象数组。</p></li>
+</ul>
+</li>
+<li><p><strong>返回值</strong>：bool类型，表示是否添加成功。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<ol>
+<li>禁止自己定义一个GcScriptGuiDataAgent对象，内部已经定义了GvGuiDataAgent对象，可以直接使用。</li>
+<li>自定义工具内部脚本工具不能使用SetGraphicDisplay函数，只有普通工程里面可以使用。</li>
+<li>普通工程中脚本工具不能使用AddGraphicToContainer，只有自定义工具内部可以使用。</li>
+</ol>
+
+
+<h2>示例代码</h2>
+
+<p>1、普通工程内部添加GUI</p>
+
+<p><code>python
+guiArray = GvVisionAssembly.GcScriptGuiArray()
+guiText = GvVisionAssembly.GsScriptGuiText()
+guiText.strText ="text"
+guiText.posX = 0.0
+guiText.posY = 0.0
+guiText.deg = 0.0
+guiArray.Add(guiText)
+GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
+</code>
+2、自定义工具内部添加GUI</p>
+
+<p><code>python
+guiArray = GvVisionAssembly.GcScriptGuiArray()
+guiText = GvVisionAssembly.GsScriptGuiText()
+guiText.strText ="text"
+guiText.posX = 0.0
+guiText.posY = 0.0
+guiText.deg = 0.0
+guiArray.Add(guiText)
+GvGuiDataAgent.AddGraphicToContainer(0, guiArray)
+GvGuiDataAgent.AddGraphicToContainer(1, guiArray)
+</code></p>

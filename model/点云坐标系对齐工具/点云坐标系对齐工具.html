@@ -1,0 +1,198 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云坐标系对齐工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​         该工具主要完成指定坐标系间的对齐功能，以协助后续点云测量和检测的任务，同时该功能可以替代深度图像中定位的功能；</p>
+
+<h2>2.使用场景</h2>
+
+<p>​          该工具主要用于需要和客户产品坐标系对齐的项目比如：</p>
+
+<p>​        <strong>场景1：IPhone手机平面度检测项目</strong></p>
+
+<div align="center">
+<img src="media/3DAlignment Tool_2_1.png" style="zoom:50%;"/>
+    <center>图2_1 IPhone手机平面度检测项目-图片来源于网络</center>
+</div>
+
+
+<p>​ 由于测量精度高，该产品需要进行拼接，同时客户提供的测量点坐标是以客户给定产品坐标系来定义的，所以需要我们先进行坐标系对齐，才可以精确的定位到测量点。</p>
+
+<p>​        <strong>场景2：大尺寸精确定位测量项目</strong></p>
+
+<div align="center">
+<img src="media/3DAlignment Tool_2_2.png" style="zoom:50%;"/>
+    <center>图2_2 大尺寸精确定位测量项目</center>
+</div>
+
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>工具添加，图像导入、参数调节</h3>
+
+<p><strong>Step1:</strong>添加坐标系生成工具（2个）和一个点云坐标系对齐工具，并双击打开工具参数链，链接点云文件、X、Y、Z坐标、源坐标系和目标坐标系，如图3-1所示；<br/>
+<strong>Step2:</strong>右击点云坐标系工具点击“属性”打开工具高级界面，如图3-2所示；</p></li>
+</ul>
+
+
+<div align="center">
+<img src="media/3DAlignment Tool_3_1.png" style="zoom:100%;"/>
+    <center>图3_1 添加点云坐标系对齐工具</center>
+</div>
+
+
+<div align="center">
+<img src="media/3DAlignment Tool_3_2.gif" style="zoom:100%;"/>
+    <center>图3_2 点云坐标系对齐运行结果及保存</center>
+</div>
+
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据                                               </td>
+<td> 输入待对齐的点云图像                                   </td>
+</tr>
+<tr>
+<td> 源坐标系 </td>
+<td> 输入源坐标系 </td>
+</tr>
+<tr>
+<td> 目标坐标系 </td>
+<td> 输入目标坐标系 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云图像                               </td>
+<td> 显示对齐后的点云图像 </td>
+</tr>
+<tr>
+<td> 刚性变换矩阵 </td>
+<td> 输出对齐矩阵 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>刚性变换矩阵   </td>
+<td>刚性变换矩阵：Trans，平移矩阵；<br />刚性变换矩阵：Matrix，旋转矩阵；</td>
+</tr>
+<tr>
+<td>输出点云图像 </td>
+<td>显示对齐后的点云图像的点数</td>
+</tr>
+<tr>
+<td>执行时间 </td>
+<td>工具执行时间</td>
+</tr>
+<tr>
+<td>执行结果 </td>
+<td>工具执行结果</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云坐标系对齐.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>算法原理说明</h3>
+
+<p>主要是根据构建的源坐标系和目标坐标系，将源坐标系转换到目标坐标系，从而完成对齐并输出转换矩阵的过程；</p>
+
+<div align="center">
+<img src="media/3DAlignment Tool_7_1.png" style="zoom:100%;"/>
+    <center>图7_1 点云坐标系对齐原理</center>
+</div>
+
+
+<h3>工具使用说明</h3>
+
+<p>以产品坐标系转换到世界坐标系为例进行说明</p>
+
+<p><strong>1、产品坐标系</strong>：建立产品坐标系，需要中心点、X轴方向向量、Y轴方向向量；</p>
+
+<p><img src="media/3DAlignment%20Tool_7_2.png" alt="" /></p>
+
+<p><imgnote>图7_2 产品坐标系</imgnote></p>
+
+<p><strong>2、世界坐标系</strong>：建立世界坐标系，中心点(0,0,0)、X轴方向向量(1,0,0)、Y轴方向向量(0,1,0)；</p>
+
+<p><img src="media/3DAlignment%20Tool_7_3.png" alt="" /></p>
+
+<p><imgnote>图7_3 世界坐标系</imgnote></p>
+
+<p><strong>3、坐标系对齐</strong>：将源坐标系转换到目标坐标系；</p>
+
+<p><img src="media/3DAlignment%20Tool_7_6.png" alt="" /></p>
+
+<p><imgnote>图7_4 坐标系对齐工具</imgnote></p>
+
+<p><strong>4、坐标系效果</strong>：将产品坐标系的中心点，转到世界坐标系下的原点，对齐后产品中心会转换到(0,0,0)位置，产品的X轴与世界坐标系X轴平行；</p>
+
+<div align="center">
+  <img src="media/3DAlignment Tool_7_4.png" style="zoom:100%;"/>
+  <img src="media/3DAlignment Tool_7_5.png" style="zoom:100%;"/>
+      <center>图7_5 对齐前后对比</center>
+</div>
+
+
+<p></p>

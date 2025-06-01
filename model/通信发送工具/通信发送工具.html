@@ -1,0 +1,123 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>通信发送工具</h1>
+
+<h2>功能</h2>
+
+<p>通信发送工具主要是通过对目标设备端口发送特定格式的数据指令，完成与外部设备的信息交互。通常在使用之前需要在通信管理对话框（工具条-设置-通信）中完成对通信端口的设置。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 通信端口                                                 </td>
+<td> 选择所需要通信的设备（由通信管理对话框完成端口配置）。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 指令格式 </td>
+<td> 将数据链中的发送数据进行格式转换（同字符串格式化工具）。                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 通信超时 </td>
+<td> 设备通信超时等待时间（最小5ms，设置-1表示一直等待）。 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无  </td>
+<td> 无                                                                                                               </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 发送数据                                                 </td>
+<td> 需要发送的数据，通常先由数据包生成工具处理。           </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无  </td>
+<td> 无                                                                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 执行结果       </td>
+<td> 工具执行结果。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 发送字符串 </td>
+<td> 工具实际发送出去的数据 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无</td>
+<td> 无                             </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 无     </td>
+<td> 无                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>在格式转换中，对于bool型变量是转换成0或1发送出去的，对应转换符号%d。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\通信发送&amp;接收工具.gvp”。</p>

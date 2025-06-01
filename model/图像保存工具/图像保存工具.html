@@ -1,0 +1,193 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>图像保存工具</h1>
+
+<h2>功能</h2>
+
+<p>对图片进行保存。该工具可保存整幅图片，也可保存整幅图片的一部分，即子图。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 自动命名                                                     </td>
+<td> 对保存的图片进行命名。<br />当选择为“否”时，数据链中会出现“文件名”这一链接，需要在此处链接上提前拟好的命名；<br />当选择为“是”时，保存的图片会使用系统自定义的命名。<br />系统自动命名的规则为：工具名+时间（年月日时分秒毫秒）。如：图像保存工具_2_20171108093033803。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 覆盖保存     </td>
+<td> 自动名选择“否”，文件名参数不为空时，是否覆盖同名文件保存。                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 文件格式     </td>
+<td> 选择图片的保存格式。分为自动、JPG、BMP、PNG四种。自动时当选择为JPG格式时，属性窗口会显示“压缩比例”以及“压缩质量”这两个属性。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 压缩比例     </td>
+<td> 图像压缩的比例，可选的值为1，2，4，8，分别代表将图压缩至原始图像的1/1，1/2，1/4，1/8；默认值为1。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 压缩质量     </td>
+<td> 图片压缩的质量。                                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否截子图   </td>
+<td> 选择保存整张图片，还是保存图片中感兴趣的部分。当选择“是”时，属性窗口会出现“子图区域”属性。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 子图区域     </td>
+<td> 选取整幅图片中要保存的区域。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出文件路径 </td>
+<td> 图片的保存地址。此处为空时，会启用默认的存储地址，该默认地址为软件执行文件目录下的\Data\Image                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 子图区域                                                     </td>
+<td> 选取整幅图片中要保存的区域。                                 </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 文件名                                                       </td>
+<td> 当属性窗口中的“自动命名”选择为“否”时，会出现此链接。此处链接提前拟好的命名。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入图像     </td>
+<td> 用于保存的黑白图像。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 二维线性变换是指目标相对于模板的平移、旋转、缩放变换。用于子图区域的区域变换。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入图像RGB  </td>
+<td> 用于保存的彩色图像。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入深度图像 </td>
+<td> 用于保存的深度图像。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入轮廓图像 </td>
+<td> 用于保存的轮廓图像。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 启用         </td>
+<td> 是否启用图像保存，当链接的变量为“true”时才会启用保存功能。                                                                 </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无           </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称         </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口         </td>
+<td> 执行结果                                                 </td>
+<td> 工具执行结果。                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间         </td>
+<td> 工具执行时间。                                                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口         </td>
+<td> 执行结果                                                 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链           </td>
+<td> 输入图像                                                 </td>
+<td> 用于保存的黑白图像。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入图像RGB      </td>
+<td> 用于保存的彩色图像。                                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入深度图像     </td>
+<td> 用于保存的深度图像。                                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入轮廓图像     </td>
+<td> 用于保存的轮廓图像。                                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 文件路径与文件名 </td>
+<td> 该工具执行完成后，保存的图片所在的路径以及该图片的名称。                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>通过该工具与图像文件的联合使用，可实现对上一个次品图像的显示。工程详见“图像保存工具.gvp”。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>前面工具执行失败时，该工具可以正常执行。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\图像源配置工具.gvp”。</p>

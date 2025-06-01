@@ -1,0 +1,120 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GvTool</h1>
+
+<h2>功能</h2>
+
+<p>GvTool用来和工具参数交互的GcVisionAssemblyTool类的对象。禁止自己定义一个GcVisionAssemblyTool对象。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 函数 </td>
+<td> GetToolData(str, is_raw_string) </td>
+<td> 获取工具参数，返回值是一份拷贝。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetToolData(str, value, is_raw_string) </td>
+<td> 设置工具参数。                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>GvTool.GetToolData(str, is_raw_string)</h3>
+
+<ul>
+<li><p>功能：获取工具的参数。获取的是一份拷贝，对拷贝修改，不会自动同步到对应的工具参数。例如，</p>
+
+<p><code>python
+searchNum = GvTool.GetToolData("几何定位_001.搜索个数") #此时搜索个数为1
+searchNum = 5 ## 此时工具的搜索个数仍然为1
+</code></p>
+
+<p>用GvTool.GetToolData()获取的工具参数如果想将修改同步到工具，就要配合使用GvTool.SetToolData()。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>str：工具参数名。例如“几何定位<em>001.执行结果”、“几何定位</em>001.搜索坐标”。</p></li>
+<li><p>is_raw_string：布尔型。默认不显示该参数，值为False（除获取原始字符串外，均使用默认值即可，即不需要设置该参数）。</p>
+
+<ul>
+<li><p>True表示获取原始字符串，并且返回值为bytes类型。</p></li>
+<li><p>False表示获取的字符串会转换为UTF-8。</p></li>
+</ul>
+
+
+<p>例如通信接收工具的接收字符串，如果接收的是十六进制，如05 4c 4d 11 00 51，这时接收的数据中有00，如果按照普通字符串处理，在遇到00时会被截断，获取到的字符串就只有05 4c 4d 11，长度为4；如果想获取完整的长度为6的数据05 4c 4d 11 00 51，就需要使用True。</p></li>
+</ul>
+</li>
+<li><p>返回值：对应工具参数的拷贝。</p></li>
+</ul>
+
+
+<h3>GvTool.SetToolData(str, value, is_raw_string)</h3>
+
+<ul>
+<li><p>功能：设置工具的参数，配合GvTool.GetToolData()使用。例如,</p>
+
+<p><code>python
+searchNum = GvTool.GetToolData(“几何定位_001.搜索个数”)#此时搜索个数为1
+searchNum = 5 ## 此时工具的搜索个数仍然为1
+GvTool.SetToolData(“几何定位_001.搜索个数”, searchNum) #此时工具的搜索个数为5
+</code></p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>str：工具参数名。例如“几何定位<em>001.搜索个数”、“几何定位</em>001.搜索坐标”。</p></li>
+<li><p>value: 要设置的值。</p></li>
+<li><p>is_raw_string：布尔型。默认不显示该参数，值为False（除设置原始字符串外，均使用默认值即可，即不需要设置该参数）。</p>
+
+<ul>
+<li><p>True表示设置原始字符串，并且返回值为bytes类型。</p></li>
+<li><p>False表示设置的字符串会转换为GBK。</p></li>
+</ul>
+
+
+<p>例如GvTool.SetToolData(“数据包解析工具_002.输入数据0”, b’\xAA’)。如果设置最后一个参数is_raw_string为False，则赋值结果为3F，而设置为True，则赋值结果为AA</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>1、禁止自己定义一个GcVisionAssemblyTool对象，内部已经定义了GvTool对象，可以直接使用。</p>
+
+<p>2、用GvTool.GetToolData()获取的工具参数如果想将修改同步到工具，就要配合使用GvTool.SetToolData()。</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

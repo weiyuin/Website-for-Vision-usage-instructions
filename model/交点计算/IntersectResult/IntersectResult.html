@@ -1,0 +1,92 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>IntersectResult</h1>
+
+<h2>功能</h2>
+
+<p>表示求交点的计算结果，例如直线与圆的交点，圆与圆的交点，线段与圆之间的交点等。</p>
+
+<p>由于两个图形相交情况不同，在不同相交情况下交点个数也不同，例如直线和圆可能不相交（即相离，无交点），也可能相切（有1个交点），还可能相交（有2个交点），因此在交点结果类型里面包含了一个intersect属性，用来表示是否有交点，同时配合判断points中元素个数（len(result.points)），即可判断出相交的具体情况。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                 </th>
+<th> 接口描述         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性 </td>
+<td> issucceed </td>
+<td> 表示计算是否成功 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> intersect </td>
+<td> 是否有交点       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> points       </td>
+<td> 交点             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>issucceed</h3>
+
+<ul>
+<li>功能：表示计算是否成功，布尔类型。</li>
+</ul>
+
+
+<h3>intersect</h3>
+
+<ul>
+<li><p>功能：判断是否两图形是否有交点，布尔型。</p>
+
+<p>False：无交点。</p>
+
+<p>True：表示有交点，但是要结合points中的元素个数具体分析。例如直线与直线交点，结果为intersect为True，但是points为0，这种情况表示两条直线重合。</p></li>
+</ul>
+
+
+<h3>points</h3>
+
+<ul>
+<li><p>功能：表示求出的交点，sc2Vector类型的列表list，在脚本工具中使用type查看类型，返回值为sc2VectorVec。</p>
+
+<blockquote><p>注意：points中元素个数可以为0，需要根据points具体个数情况结合intersect来判断相交情况。</p></blockquote></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>只通过判断points中元素个数为0，无法断定两个图形不相交，例如计算两条直线的交点，如果两条直线重合，则结果中points元素个数为0，但是两条直线是重合的，即有无穷个交点，需要结合intersect判断具体相交情况，详情需要参考具体的交点计算函数说明。</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

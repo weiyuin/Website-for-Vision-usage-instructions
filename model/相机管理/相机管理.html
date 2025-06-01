@@ -1,0 +1,106 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>相机管理</h1>
+
+<p>工程中使用的相机，通过功能区-设置里的相机管理，进行参数设置及管理。</p>
+
+<p><img src="media/Camera_01.png" alt="" /></p>
+
+<ul>
+<li><p><strong>相机列表</strong></p></li>
+<li><p>显示可检测到的相机序列号及状态；</p></li>
+<li><p>显示选中相机的型号、驱动、分辨率等信息；</p></li>
+<li><p><strong>图像显示区</strong></p>
+
+<ul>
+<li>显示选中相机采集的图像；</li>
+</ul>
+</li>
+<li><p><strong>设置</strong></p>
+
+<ul>
+<li>视频模式：包含分辨率、帧率模式，可根据实际需要选择。选择的帧率模式即为帧率可调范围的上限值；</li>
+<li>像素格式：自定义视频模式Format7下，可选择不同的像素格式；</li>
+<li>ROI区域：设置图像显示的位置，可以居中显示，或者图像最大显示；</li>
+<li>帧率：相机的采集速率。可通过拖动滑动条进行调整；</li>
+<li>曝光、增益：调整参数，以获得高质量的图像；</li>
+<li>Gamma：对图像进行Gamma校正；</li>
+<li><p>存储通道：分为Default、Channel1、Channel2共3个通道。</p>
+
+<ul>
+<li><p>Default为相机出厂参数默认保存通道，只可重载该通道参数，不可将参数保存在该通道；</p></li>
+<li><p>Channel1、Channel2为自定义保存通道，可将设置的参数保存在该通道，也可重载该通道的参数；</p></li>
+</ul>
+</li>
+<li><p>工作模式</p>
+
+<ul>
+<li><p>软件触发：软件发送触发信号触发相机采集单帧图像；</p></li>
+<li><p>连续采集：相机连续采集图像；</p></li>
+<li><p>硬触发：采用硬件触发。</p></li>
+</ul>
+</li>
+<li>清晰度：对采集的图像进行图像质量评价，使用清晰度评价；</li>
+<li>对比度：对采集的图像进行图像质量评价，使用对比度评价；</li>
+<li>信噪比：对采集的图像进行图像质量评价，使用信噪比评价。</li>
+<li>高级：查看数据包大小，设置数据包延时、图像缓存和白平衡；</li>
+<li>均匀性评估：对相机采集的图像做均匀性评估，展示均值、曲线和做均匀性评估数据的保存；</li>
+</ul>
+</li>
+<li><p><strong>操作按钮</strong></p>
+
+<ul>
+<li>删除所有掉线相机：检测已掉线相机，并从相机列表中将其删除；</li>
+<li>刷新：刷新相机列表；</li>
+<li>确定：保存当前设置，并退出相机管理；</li>
+<li>取消：取消当前设置，并退出相机管理。</li>
+</ul>
+</li>
+<li><p><strong>高级参数</strong></p>
+
+<p><img src="media/Camera_02.png" alt="" /></p>
+
+<ul>
+<li>数据包大小：传输的数据包大小，只读类型，如果是1500表示网卡等基本设置没有设置好，8164位正常值；</li>
+<li>数据包延时：发送数据包的间隔，可以改善丢包情况，设置过大会影响帧率；</li>
+<li>图像缓存：缓存图像数，用于飞拍存储图像，飞拍几次设置为几；</li>
+<li>自动白平衡：设置白平衡的模式，只对LBAS彩色相机有效，取值有Continuous、Once、Off；</li>
+<li>白平衡通道：自动白平衡设置为Off时可用，可以选择R、G、B通道；</li>
+<li>白平衡比率：对选定白平衡通道值的设置；</li>
+</ul>
+</li>
+<li><p><strong>图像均匀性评估</strong></p>
+
+<p><img src="media/Camera_03.png" alt="" /></p>
+
+<ul>
+<li>图像展示区：展示刷新的图像和需要显示的均值图像或者曲线图像；</li>
+<li>图像类型：显示图像类型是Gray还是RGB，只读类型；</li>
+<li>图像刷新：采集一张图片，然后按照设置值计算图像均匀性并显示；</li>
+<li>评估：展示图像均匀性的方式，有均值和曲线两种模式；</li>
+<li>通道：按通道显示，只对RGB图像有效，均值取值是R、G、B三种，曲线取值是R、G、B、RGB四种；</li>
+<li>行：计算图像均匀性时需要设置划分的行；</li>
+<li>列：计算图像均匀性时需要设置划分的列；</li>
+<li>行（复选框）及输入框：曲线模式时，按照选定的行展示；</li>
+<li>列（复选框）及输入框：曲线模式时，按照选定的列展示；</li>
+<li>数据保存：把图像均值计算结果保存的Excel表格；</li>
+</ul>
+</li>
+</ul>
+

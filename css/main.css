@@ -1,0 +1,80 @@
+body {
+	margin-left: 5%;
+	width: 80%;
+	height: 100px;//解决IE出现多滚动条问题
+}
+
+h1 {
+	text-align: center;
+}
+
+p img {
+	display: inline;
+}
+
+imgnote {
+	font-family: simhei;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 10 auto;
+	text-align: center;
+	width: 80%;
+}
+
+table td,
+table th {
+	text-align: left;
+	border: 1px solid #000000;
+	color: #666;
+	height: 30px;
+}
+
+table thead th {
+	background-color: #C0504D;
+	width: 100px;
+	color: #fff;
+}
+
+table tr:nth-child(odd) {
+	background: #fff;
+}
+
+table tr:nth-child(even) {
+	background: #F4E9E9;
+}
+
+pre {
+	white-space: pre-wrap;
+	padding: 0px;
+	background-color: #EAFFEA;
+}
+
+img {
+	display: inline-block;
+	height: auto;
+	max-width: 85%;
+}
+
+prenote {
+	color: #009688;
+}
+pre p {
+	margin: 0px;
+	padding: 0px;
+}
+
+blockquote {
+  font-size: 100%;
+  color: #999;
+  border-left: 4px solid #A8A8A8;
+  padding-left: 0.8em;
+  margin: 1em 0;
+}
+
+.md toc {
+	position: float;
+	left: 500px;
+	top: 50px;	
+}

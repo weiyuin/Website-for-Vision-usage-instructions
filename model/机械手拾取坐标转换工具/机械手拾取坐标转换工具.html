@@ -1,0 +1,131 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>机械手拾取坐标转换工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>在机械手标定后，通过链接标定结果，将图像坐标转换成机械手坐标。链接的图像坐标类型为GcCoordPos；链接的标定结果类型为GcCalibrateResult，可链接标准标定计算工具的计算结果、触碰标定计算工具的标定结果、基准修正标定计算工具的标定结果、标定结果手动融合工具的标定结果和关联标定计算工具的标定结果。</p>
+
+<h2>2.应用场景</h2>
+
+<p>在对位项目中需要将图像坐标转化为机械坐标。</p>
+
+<h2>3.原理说明</h2>
+
+<p>图像坐标系和机械手坐标系可以抽象成共面的直角坐标系，如下图所示：</p>
+
+<p><img src="media/Conversion_relationship.png" alt="" /></p>
+
+<p><imgnote>图1机械手坐标系和图像坐标系关系</imgnote></p>
+
+<p>其中两个坐标系的转换关系可以由如下公式表示。</p>
+
+<p><img src="media/formula1.png" alt="" /></p>
+
+<p>标定结果中存有一组基准图像坐标和机械手坐标，二者存在如下关系：</p>
+
+<p><img src="media/formula2.png" alt="" /></p>
+
+<p>所以对与任何一个图像坐标都可通过（1）-（2）求出机械手坐标。</p>
+
+<p><img src="media/formula3.png" alt="" /></p>
+
+<h2>4.使用向导</h2>
+
+<h3>配置输入</h3>
+
+<p><img src="media/Link.png" alt="" /></p>
+
+<p><imgnote>图2 参数链设定示意图</imgnote></p>
+
+<h3>属性栏参数设置</h3>
+
+<p><img src="media/property.png" alt="" /></p>
+
+<p><imgnote>图3 属性栏参数设定示意图</imgnote></p>
+
+<h2>5.常见问题</h2>
+
+<p>无</p>
+
+<h2>6.参数说明</h2>
+
+<h3>输入参数</h3>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 是否绝对角度 </td>
+<td> <strong>是：</strong> 绝对角度是产品在图像坐标系下的角度，最终的机械手坐标结果驱动机械手进行绝对旋转<br /><strong>否：</strong> 相对角度是实时产品相对于模板产品的角度，最终的机械手坐标结果驱动机械手进行相对旋转。 </td>
+</tr>
+<tr>
+<td> 图像坐标     </td>
+<td> 待转换为机械手坐标的原始图像坐标                             </td>
+</tr>
+<tr>
+<td> 标定结果     </td>
+<td> 标定计算过程输出的标定结果                                   </td>
+</tr>
+<tr>
+<td> 机械轴方向   </td>
+<td> 机械手各轴正方向                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>输出参数</h3>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称         </th>
+<th> 参数描述                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 机械手坐标输出   </td>
+<td> 转换后的机械手坐标结果                             </td>
+</tr>
+<tr>
+<td> 机械手坐标轴方向 </td>
+<td> 输出机械手各轴正方向                               </td>
+</tr>
+<tr>
+<td> 执行结果         </td>
+<td> 工具执行结果                                       </td>
+</tr>
+<tr>
+<td> 执行时间         </td>
+<td> 工具执行时间                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7.示例工程</h2>
+
+<p>参见“\Samples\机械手拾取坐标转换工具.gvp”。</p>

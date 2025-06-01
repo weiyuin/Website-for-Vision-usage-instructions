@@ -1,0 +1,137 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scRadian</h1>
+
+<h2>功能</h2>
+
+<p>表示弧度，例如通过脚本获取的直线的角度，scLine.GetRotation。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                  </th>
+<th> 接口描述                    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scRadian            </td>
+<td> scRadian(value)构造函数     </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> ToDouble                  </td>
+<td> 将弧度转换为浮点数          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> Norm                         </td>
+<td> 将弧度规范化到[0, 2PI]      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SignedNorm             </td>
+<td> 将弧度规范化到[-PI, PI]     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> NormMod180             </td>
+<td> 将弧度规范化到[0, PI]       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SignedNormMod180 </td>
+<td> 将弧度规范化到[-PI/2, PI/2] </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scRadian(value)</h3>
+
+<ul>
+<li><p>功能：构造sc2Vector对象，初始化为value。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>value：弧度值，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>ToDouble()</h3>
+
+<ul>
+<li><p>功能：将弧度转换为浮点数。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：弧度，浮点数类型</p></li>
+</ul>
+
+
+<h3>Norm( )</h3>
+
+<ul>
+<li><p>功能：将弧度规范化到[0, 2PI]。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：规范化后的弧度，scRadian类型</p></li>
+</ul>
+
+
+<h3>SignedNorm( )</h3>
+
+<ul>
+<li><p>功能：将弧度规范化到[-PI, PI]。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：规范化后的弧度，scRadian类型</p></li>
+</ul>
+
+
+<h3>NormMod180( )</h3>
+
+<ul>
+<li><p>功能：将弧度规范化到[0, PI]。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：规范化后的弧度，scRadian类型</p></li>
+</ul>
+
+
+<h3>SignedNormMod180( )</h3>
+
+<ul>
+<li><p>功能：将弧度规范化到[-PI/2, PI/2]。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：规范化后的弧度，scRadian类型</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

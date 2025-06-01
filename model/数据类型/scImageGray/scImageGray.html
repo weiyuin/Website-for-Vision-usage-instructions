@@ -1,0 +1,164 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scImageGray</h1>
+
+<h2>功能</h2>
+
+<p>表示灰度图像。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                      </th>
+<th> 接口描述                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scImageGray                </td>
+<td> scImageGray ()默认构造函数 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> Width                            </td>
+<td> 获取图像宽度               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> Height                          </td>
+<td> 获取图像高度               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetPixelValue        </td>
+<td> 获取指定位置的像素值       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetPixelValue </td>
+<td> 设置指定位置的像素值       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSubImage       </td>
+<td> 获取子图像                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scImageGray()</h3>
+
+<ul>
+<li><p>功能：默认构造函数。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>Width()</h3>
+
+<ul>
+<li><p>功能：获取图像的宽度。</p></li>
+<li><p>返回值：图像宽度，整型。</p></li>
+</ul>
+
+
+<h3>Height()</h3>
+
+<ul>
+<li><p>功能：获取图像的高度。</p></li>
+<li><p>返回值：图像高度，整型。</p></li>
+</ul>
+
+
+<h3>GetPixelValue(x, y)</h3>
+
+<ul>
+<li><p>功能：获取(x,
+y)位置像素灰度值，一定要注意图像大小，传入的x，y不能越界。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>x：图像坐标系x坐标，整型。</p></li>
+<li><p>y：图像坐标系y坐标，整型。</p></li>
+</ul>
+</li>
+<li><p>返回值：(x, y)坐标位置的像素灰度值，double类型。</p></li>
+</ul>
+
+
+<h3>SetPixelValue(x, y, value)</h3>
+
+<ul>
+<li><p>功能：设置(x,
+y)位置像素灰度值，一定要注意图像大小，传入的x，y不能越界。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>x：图像坐标系x坐标，整型。</p></li>
+<li><p>y：图像坐标系y坐标，整型。</p></li>
+<li><p>value：像素灰度值。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetSubImage(img, rect)</h3>
+
+<ul>
+<li><p>功能：获取ROI区域为rect的子图像。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>img：获取的子图像，scImageGray类型。</p></li>
+<li><p>rect：提取子图像的ROI区域，scRect类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：整型。</p>
+
+<ul>
+<li><p>0：执行成功。</p></li>
+<li><p>1025：图像内存为空或图像大小不合法。</p></li>
+<li><p>1541：内存分配失败。</p></li>
+<li><p>2049：无效的区域。</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p><code>python
+raw_img = GvTool.GetToolData("图像文件_001.输出图像")
+sub_img = GvVisionAssembly.scImageGray()
+roi_rect = GvVisionAssembly.scRect(0, 0, 100, 100)
+status = raw_img.GetSubImage(sub_img, roi_rect)
+</code></p>

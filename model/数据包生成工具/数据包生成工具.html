@@ -1,0 +1,254 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>数据包生成工具</h1>
+
+<h2>功能</h2>
+
+<p>将指定个数的不同类型的数据打包输出一个数据包。个数上限为64个，可以支持多种数据类型：基本数据类型（int、double、long、float、bool 、sc2Vector）、图像数据（8位灰度图像和24位RGB图像）定位工具的结果解析、检测工具的结果和查找工具的结果解析等等，见详细说明。<img src="media/wps67.jpg" alt="img" /></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口             </td>
+<td> 输入数据个数                                                 </td>
+<td> 需要打包的数据的个数，最多支持64个数据。    </td>
+</tr>
+<tr>
+<td></td>
+<td> 开启全部应用         </td>
+<td> 此属性是开启一键修改成指定类型的功能，是将数据包里所有数据改成与“全部应用类型”一致的数据类型。                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 全部应用类型         </td>
+<td> 开启全部应用，然后选择对应的类型，可以将数据包所有数据改成相应的类型数据。                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入数据（0-63）类型 </td>
+<td> 对应于每个需要打包数据的数据类型。                                                                         </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无                   </td>
+<td> 无                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链               </td>
+<td> 输入数据                                                     </td>
+<td> 根据属性窗口输入的个数，显示需要设置的数据。 </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无                   </td>
+<td> 无                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出数据包     </td>
+<td> 输出打包数据生成的数据包。                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出数据包     </td>
+<td> 输出打包数据生成的数据包，供后序工具使用，同监视窗口的输出数据包参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<table>
+<thead>
+<tr>
+<th> 数据类型                </th>
+<th> 说明                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> scCircle                </td>
+<td> 圆形。找圆，圆拟合等工具的输出类型。                         </td>
+</tr>
+<tr>
+<td> scLine                  </td>
+<td> 直线。找线，线拟合等工具的输出类型。                         </td>
+</tr>
+<tr>
+<td> scGeomSearchResult      </td>
+<td> 几何定位的结果。                                             </td>
+</tr>
+<tr>
+<td> DMSingleReaderResult    </td>
+<td> 单个DM码读码结果。                                           </td>
+</tr>
+<tr>
+<td> SingleLinearCodeResult  </td>
+<td> 单个解码结果。                                               </td>
+</tr>
+<tr>
+<td> QRSingleReaderResult    </td>
+<td> 单个QR码读码结果。                                           </td>
+</tr>
+<tr>
+<td> DefectResultInfo        </td>
+<td> 瑕疵结果信息。                                               </td>
+</tr>
+<tr>
+<td> GsGlueDetectResult      </td>
+<td> 固体胶位置检测工具的结果。                                   </td>
+</tr>
+<tr>
+<td> scPatSearchMaxResult    </td>
+<td> 单个区域定位的结果。                                         </td>
+</tr>
+<tr>
+<td> GsSingleBlobResult      </td>
+<td> BLOB单个结果                                                 </td>
+</tr>
+<tr>
+<td> scCaliperOneEdgeResult  </td>
+<td> 单边卡尺工具输出结果类型。                                   </td>
+</tr>
+<tr>
+<td> scCaliperTwoEdgeResult  </td>
+<td> 双边卡尺工具输出结果类型。                                   </td>
+</tr>
+<tr>
+<td> GsLineSearchResult      </td>
+<td> 线定位单个结果。                                             </td>
+</tr>
+<tr>
+<td> GsCircleSearchResult    </td>
+<td> 圆定位工具单个结果。                                         </td>
+</tr>
+<tr>
+<td> scTriangleSearchResult  </td>
+<td> 三角形定位结果。                                             </td>
+</tr>
+<tr>
+<td> EdgeDeviation           </td>
+<td> 边缘偏差(边检测用)，曲线边宽检测工具的结果。                 </td>
+</tr>
+<tr>
+<td> scFeatureletVector      </td>
+<td> 特征点集，一般是轮廓提取的结果。                             </td>
+</tr>
+<tr>
+<td> GcCoordPos              </td>
+<td> 点坐标，可以为九圆关联标定工具的结果、多区域振镜位置计算工具等。 </td>
+</tr>
+<tr>
+<td> GcPlatformAxisPos       </td>
+<td> 轴位置，一般为轮廓与直线对位计算工具的结果。                 </td>
+</tr>
+<tr>
+<td> scCrossSearchResult     </td>
+<td> 十字定位工具的单个结果。                                     </td>
+</tr>
+<tr>
+<td> scRectangleSearchResult </td>
+<td> 矩形定位工具的单个结果。                                     </td>
+</tr>
+<tr>
+<td> GsGlueMeasureResult     </td>
+<td> 固体胶尺寸测量工具的测量结果。                               </td>
+</tr>
+<tr>
+<td> scGcCoordPosVector      </td>
+<td> 点坐标集，一系列点坐标。                                     </td>
+</tr>
+<tr>
+<td> scSc2vectorVector       </td>
+<td> 一系列二维向量。                                             </td>
+</tr>
+<tr>
+<td> GcBoardPoints           </td>
+<td> 靶标相机标定工具的结果输出。                                 </td>
+</tr>
+<tr>
+<td> GsTextDisplayParam      </td>
+<td> 文本显示数组工具输出的输出数组类型。                         </td>
+</tr>
+<tr>
+<td> GsMultiCLOutputResult   </td>
+<td> 多圆多线定位工具输出的搜索结果类型。                         </td>
+</tr>
+<tr>
+<td> GcCalibrateResult       </td>
+<td> 触碰标定计算工具的结果。                                     </td>
+</tr>
+<tr>
+<td> sc2XformLinear          </td>
+<td> 二维线性变换。                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<ul>
+<li>只有“开启全部应用”不开启时，才能修改某个特定数据的类型；开启时，增加数据的类型与“全部应用类型”的类型一样。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\通信发送及接收工具.gvp”。</p>

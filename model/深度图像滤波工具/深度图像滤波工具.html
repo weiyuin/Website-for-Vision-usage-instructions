@@ -1,0 +1,166 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>深度图像滤波工具</h1>
+
+<h2>功能</h2>
+
+<p>在3D测量中，深度图像滤波工具主要是将深度图像中每个像素替换为该点邻域窗口内所有像素的均值或中值，实现图像平滑、去噪的功能。</p>
+
+<p><img src="media/wps129.jpg" alt="img" />  <img src="media/wps130.jpg" alt="img" />  <img src="media/wps131.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 原图</imgnote> <imgnote>(b) 均值滤波</imgnote> <imgnote>&copy; 中值滤波</imgnote></p>
+
+<p><imgnote>图1 深度图像滤波工具示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> ROI类型                              </td>
+<td> 待滤波区域，分为7种：整幅图像、矩形、仿射矩形、圆形、圆环、椭圆、多边形。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 滤波类型     </td>
+<td> 分为2种：中值滤波和均值滤波。                                                                        </td>
+</tr>
+<tr>
+<td></td>
+<td> 核尺寸 高    </td>
+<td> 滤波核（邻域窗口）的高度。                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 核尺寸 宽    </td>
+<td> 滤波核（邻域窗口）的宽度。                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 开启并行运算 </td>
+<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 线程数百分比 </td>
+<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 深度图像                               </td>
+<td> 显示待检测的深度图像，显示为伪彩色图像。                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域     </td>
+<td> 在图像上显示待滤波区域。                                                                             </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入深度图像                           </td>
+<td> 输入待检测的深度图像。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                                                               </td>
+</tr>
+<tr>
+<td> 高级界面     </td>
+<td> 无     </td>
+<td> 无                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口     </td>
+<td> 输入深度图像                                 </td>
+<td> 输入图像的长宽和像素大小，以及深度数据参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出深度图像 </td>
+<td> 输出图像的长宽和像素大小，以及深度数据参数。                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果     </td>
+<td> 工具执行结果。                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间     </td>
+<td> 工具执行时间。                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 输入深度图像                                 </td>
+<td> 显示检测的深度图像，显示为伪彩色图像。       </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出深度图像 </td>
+<td> 显示滤波后深度图像，显示为伪彩色图像。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 数据链       </td>
+<td> 同监视窗口参数，供后续工具使用。                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>目前版本的算法，当噪点邻域为缺失像素时，直接使用滤波工具噪点滤除不掉。有个替代方案实测可行：先进行缺失像素固定值填充（一般填充一个特别大的值），再进行滤波，最后使用点云分割工具将之前填充的固定值去除，达到效果。如下图所示：</p>
+
+<p><img src="media/17.png" alt="17" /></p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\深度图像滤波工具.gvp”。</p>

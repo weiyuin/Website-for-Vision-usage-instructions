@@ -1,0 +1,130 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>16进制字符串转10进制整数工具</h1>
+
+<h2>功能</h2>
+
+<p>解析接收到的数据。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 是否为源码字符串                                             </td>
+<td> <strong>是：</strong>按照接收到的原始数据解析，具体参考详细说明。<img src="media/wps51.jpg" alt="img" /><br /><strong>否：</strong>接收的字符串就表示实际数据的十六进制，具体参考详细说明。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否包含符号 </td>
+<td> <strong>是：</strong>转换之后的整数可以是负数；<br /><strong>否：</strong>转换为无符号整数，即只有正数。                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像窗口     </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 16进制字符串                                                 </td>
+<td> 待转换的字符串，具体参见详细说明。                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 高级界面     </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出数据       </td>
+<td> 转换之后的10进制整数                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 执行结果       </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出数据       </td>
+<td> 转换之后的10进制整数，供其他工具使用。同监视窗口输出数据参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>是否为源码字符串</h3>
+
+<p><strong>“是”：</strong>按照接收的数据在内存中的形式进行转换。例如接收的数据显示为字符串是“2B”，在内存对应的数据为3242H（H：表示十六进制），对应实际接收的整数数据为12866。</p>
+
+<p><strong>“否”：</strong>按照16进制字符串所表示16进制直接转换，可以转换的“16进制字符串”可以是一个字符，例如“F”，即代表一个16进制，转换结果为15；或者两个字符如“2B”，即代表一个字节，表示十进制整数43；或者4个字符如“3132”，即代表两个字节，表示十进制12594。</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\16进制字符串转10进制整数工具.gvp”。</p>
+
+<p><strong>工程说明</strong></p>
+
+<ul>
+<li><p>第一个“16进制字符串转10进制整数_001”工具，示例的是非源码字符串，1个字符，不包含符号。</p></li>
+<li><p>第二个“16进制字符串转10进制整数_002”工具，示例的是非源码字符串，2个字符，不包含符号。</p></li>
+<li><p>第三个“16进制字符串转10进制整数_003”工具，示例的是非源码字符串，4个字符，不包含符号。</p></li>
+<li><p>第四个“16进制字符串转10进制整数_004”工具，示例的是非源码字符串，2个字符，包含符号。</p></li>
+<li><p>第五个“16进制字符串转10进制整数_005”工具，示例的是源码字符串，2个字符，不包含符号。</p></li>
+</ul>
+

@@ -1,0 +1,471 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scGuiTrendlineEx</h1>
+
+<h2>功能</h2>
+
+<p>表示可变折线卡尺Gui控件类，即在视图中可见的图形，其中包含一个基础的图形数据类型scTrendlineExCaliper，Gui控件类只是对于scTrendlineExCaliper类型做了一个封装方便再图像上显示。例如曲线边宽检测工具的检测区域、找腰形工具的查找区域。如图所示，其中每一个小矩形(扇形)都是一个可变矩形，这些小矩形（扇形）组成了一个可变折线卡尺，每个小矩形(扇形)是可变折线卡尺中的一个分段。</p>
+
+<p>如果要获取和图形相关的参数一般要先通过GetTrendlineExCaliper()获取到该Gui图形中包含的基础图形scTrendlineExCaliper类型。</p>
+
+<p><img src="media/06f43c9908066e3b05c191ae2b72d381.png" alt="" /></p>
+
+<p><imgnote>(a) 可变折线控件</imgnote></p>
+
+<p><img src="media/25f82a2c8da16e57998f22568c723aa7.png" alt="" /></p>
+
+<p><imgnote>(b) 可变折线控件显示卡尺</imgnote></p>
+
+<p><imgnote>图1 可变折线控件示意图</imgnote></p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scGuiTrendlineEx                     </td>
+<td> scGuiTrendlineEx ()默认构造函数。                          </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> GetTrendlineExCaliper           </td>
+<td> 获取可变折线卡尺。                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetTrendlineExCaliper </td>
+<td> 设置可变折线卡尺。                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetPolyline                               </td>
+<td> 获取可变折线区域（多边形）。                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetPolyline                       </td>
+<td> 设置可变折线区域（多边形）。                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetYlength                </td>
+<td> 获取指定分段的可变折线高度(OY边长度)                       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetYlength                 </td>
+<td> 设置指定分段的可变折线高度(OY边长度)                       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetIsCaliperParamApplyToAll </td>
+<td> 获取卡尺参数是否对全部可变折线有效                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> IsCaliperParamApplyToAll </td>
+<td> 设置卡尺参数是否对全部可变折线有效                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperWidth        </td>
+<td> 获取指定分段的卡尺宽度。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperWidth        </td>
+<td> 设置指定分段的卡尺宽度。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperSpace        </td>
+<td> 获取指定分段的卡尺间隔。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperSpace        </td>
+<td> 设置指定分段的卡尺间隔。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperID          </td>
+<td> 获取指定分段中选中的卡尺ID，即在图像中显示为绿色的卡尺。   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperID          </td>
+<td> 设置指定分段的卡尺ID，即设置在图像中要显示为绿色的卡尺ID。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSearchDirection </td>
+<td> 获取指定分段的卡尺搜索方向。                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetSearchDirection </td>
+<td> 设置指定分段的卡尺搜索方向。                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetBendAngle          </td>
+<td> 获取可变折线指定分段的弯曲角                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetBendAngle          </td>
+<td> 设置可变折线指定分段的弯曲角                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperNum       </td>
+<td> 获取指定分段的卡尺数目。                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scGuiTrendlineEx()</h3>
+
+<ul>
+<li><p>功能：构造scGuiTrendlineEx对象。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetTrendlineExCaliper()</h3>
+
+<ul>
+<li><p>功能：获取可变折线卡尺。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变折线卡尺，scTrendlineExCaliper类型。</p></li>
+</ul>
+
+
+<h3>SetTrendlineExCaliper(trendlineExCaliper)</h3>
+
+<ul>
+<li><p>功能：设置可变折线卡尺。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>trendlineExCaliper：可变折线卡尺，scTrendlineExCaliper类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。。</p></li>
+</ul>
+
+
+<h3>GetPolyline()</h3>
+
+<ul>
+<li><p>功能：获取可变折线区域（多边形）。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变折线区域（多边形），scPolyline类型。</p></li>
+</ul>
+
+
+<h3>SetPolyline(polyline)</h3>
+
+<ul>
+<li><p>功能：设置可变折线区域（多边形）。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>polyline：可变折线区域（多边形），scPolyline类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetYlength(rectExID, ylength)</h3>
+
+<ul>
+<li><p>功能：获取指定分段的折线高度（OY边长度）。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>ylength：指定分段的折线高度（OY边长度），输出参数，浮点数类型。需要先创建一个浮点数变量，然后作为该函数的第二参数传入。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetYlength(rectExID, length)</h3>
+
+<ul>
+<li><p>功能：设置指定分段的折线高度（OY边长度）。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>length：指定分段的折线高度（OY边长度），输入参数，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetIsCaliperParamApplyToAll()</h3>
+
+<ul>
+<li><p>功能：获取卡尺参数是否对全部可变折线有效。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺参数是否对全部可变折线有效，布尔型。</p></li>
+</ul>
+
+
+<h3>IsCaliperParamApplyToAll(applytoall)</h3>
+
+<ul>
+<li><p>功能：设置卡尺参数是否对全部可变折线有效。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>applytoall：卡尺参数是否对全部可变折线有效，True：全部有效，False：不是全部有效，布尔型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperWidth(rectExID, width)</h3>
+
+<ul>
+<li><p>功能：获取指定分段的卡尺宽度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>width：指定分段的卡尺宽度，输出参数，整型。需要先创建一个整型变量，然后作为该函数的第二参数传入。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCaliperWidth(rectExID, width)</h3>
+
+<ul>
+<li><p>功能：设置指定分段的卡尺宽度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>width：指定分段的卡尺宽度，输入参数，整型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperSpace(rectExID, space)</h3>
+
+<ul>
+<li><p>功能：获取指定分段的卡尺间隔。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>space：指定分段的卡尺间隔，输出参数，整型。需要先创建一个整型变量，然后作为该函数的第二参数传入。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCaliperSpace(rectExID, space)</h3>
+
+<ul>
+<li><p>功能：设置指定分段的卡尺间隔。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>space：指定分段的卡尺间隔，输入参数，整型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperID(rectExID, caliperID)</h3>
+
+<ul>
+<li><p>功能：获取可变折线第rectExID分段的卡尺ID，卡尺ID为选中的卡尺，即在图形中显示为绿色的卡尺ID。默认无选中卡尺，获取的卡尺ID
+为-1。该函数一般不做外部使用。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>caliperID：指定分段的卡尺ID，输出参数，整型。需要先创建一个整型变量，然后作为该函数的第二参数传入。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCaliperID(rectExID, caliperID)</h3>
+
+<ul>
+<li><p>功能：设置可变折线第rectExID分段的卡尺ID。即设置选中卡尺的ID，被设置的卡尺会显示为绿色。该函数一般不做外部使用。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>caliperID：指定分段的卡尺ID，输入参数，整型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetSearchDirection(rectExID, searchdirection)</h3>
+
+<ul>
+<li><p>功能：获取可变折线第rectExID分段的卡尺搜索方向。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>searchdirection：指定分段的卡尺搜索方向，输出参数，整型。需要先创建一个整型变量，然后作为该函数的第二参数传入。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetSearchDirection(rectExID, searchdirection)</h3>
+
+<ul>
+<li><p>功能：设置可变折线第rectExID分段的卡尺搜索方向。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>searchdirection：指定分段的卡尺搜索方向，输入参数，整型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetBendAngle(rectExID, bendangle)</h3>
+
+<ul>
+<li><p>功能：获取可变折线第rectExID分段的弯曲角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>bendangle：指定分段的弯曲角度，输出参数，浮点数类型。需要先创建一个浮点数变量，然后作为该函数的第二参数传入。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetBendAngle(rectExID, bendangle)</h3>
+
+<ul>
+<li><p>功能：设置可变折线第rectExID分段的弯曲角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>bendangle：指定分段的弯曲角度，输入参数，浮点数型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperNum(rectExID, calipernum)</h3>
+
+<ul>
+<li><p>功能：获取指定分段的卡尺数目。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：指定分段的ID，输入参数，整型。</p></li>
+<li><p>calipernum：指定分段的卡尺数目，输出参数，整型。需要先创建一个整型变量，然后作为该函数的第二参数传入。</p></li>
+</ul>
+</li>
+<li><p>返回值：指定分段的卡尺数目，整型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>```python</p>
+
+<h2>&mdash;&ndash; 获取可变折线卡尺GUI角点参数 &mdash;-</h2>
+
+<p>ROI_Line1 = GvTool.GetToolData(&ldquo;曲线边宽检测工具_015.检测区域&rdquo;)
+caliper = ROI_Line1.GetTrendlineExCaliper() #获取曲线边宽检测区域Gui控件中的可变卡尺折线</p>
+
+<p>subrectexnum = caliper.GetSubRectNum()
+for i in range(subrectexnum):
+    subrectex = caliper.GetSubRectEx(i)
+    po = subrectex.GetOriginPoint()
+    Px = subrectex.GetCornerPx()
+    Py = subrectex.GetCornerPy()
+    Popp = subrectex.GetCornerPopp()
+    print(&ldquo;&mdash;&mdash;&ndash;%d&mdash;&mdash;&mdash;&rdquo; %i)
+    print(po.GetX(),po.GetY())
+    print(Px.GetX(),Px.GetY())
+    print(Py.GetX(),Py.GetY())
+    print(Popp.GetX(),Popp.GetY())</p>
+
+<h2>&mdash;&ndash; 设置可变折线卡尺 GUI &mdash;-</h2>
+
+<p>ROI_Line1 = GvTool.GetToolData(&ldquo;曲线边宽检测工具_024.检测区域&rdquo;)</p>
+
+<p>polyline = GvVisionAssembly.scPolyline()</p>
+
+<p>v1 = GvVisionAssembly.sc2Vector(50,50)
+v2 = GvVisionAssembly.sc2Vector(100,50)
+v3 = GvVisionAssembly.sc2Vector(150,50)
+polyline.AddVertex(v1)
+polyline.AddVertex(v2)
+polyline.AddVertex(v3)</p>
+
+<p>ROI_Line1.SetPolyline(polyline)
+ROI_Line1.SetBendAngle(0, 45)
+ROI_Line1.SetBendAngle(1, 90)
+GvTool.SetToolData(&ldquo;曲线边宽检测工具_024.检测区域&rdquo;, ROI_Line1)
+```</p>

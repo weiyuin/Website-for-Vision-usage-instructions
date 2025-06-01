@@ -1,0 +1,130 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>刚性变换生成工具</h1>
+
+<h2>功能</h2>
+
+<p>该工具主要针对实际工程中，当目标图像无法提供很好的定位信息输出二维线性变换结果，或者传统的定位方式无法对指定对象提供二维线性变换时，该工具能够利用找线、卡尺等工具灵活的将目标的旋转平移信息生成二维线性变换供后续工具使用。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口   </td>
+<td> 重置参考位置                                                 </td>
+<td> 此参数需要特别注意设置的方法。<br />选择<strong>是</strong>：则获取新的参考位置（一般来说，需要设置参考位置时才将此参数设置为是。特别的，如果参考位置一直有独立的数据源，才可以在实时检测时将此参数设置为否）。<br />选择<strong>否</strong>：实时检测时需要将该参数设置为否，此时将使用之前的参考数据（第一次设置参考位置时，需先将该参数设置为是，以获取训练的参考位置参数）。 </td>
+</tr>
+<tr>
+<td></td>
+<td>是否耦合角度</td>
+<td> 否：平移单独取自参考点，是：平移取自参考点平移和旋转角度                         </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td>       无       </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链     </td>
+<td> 位置参考值                                                   </td>
+<td> 参考位置的坐标，用于计算实时位置的改变（参考位置获取方式跟参数选择重置参考有关），scVector类型。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 实时位置   </td>
+<td> 实时位置的坐标，用于计算实时位置的改变，scVector类型。                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 角度参考值 </td>
+<td> 参考位置的角度，用于计算实时角度变换（参考位置获取方式跟参数选择重置参考有关），double类型。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 实时角度   </td>
+<td> 实时位置的角度，用于计算实时角度变换，double类型。                                                                         </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td>  无  </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 二维线性变换   </td>
+<td> 实时位置相对于参考位置的平移、旋转、缩放变换       </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                     </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                                 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 二维线性变换   </td>
+<td> 输出二维线性变换，供其他工具使用，同监视窗口参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\刚性变换生成工具.gvp”。</p>

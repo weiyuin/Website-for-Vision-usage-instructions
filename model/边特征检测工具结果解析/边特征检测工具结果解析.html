@@ -1,0 +1,186 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>边特征检测工具结果解析</h1>
+
+<h2>功能</h2>
+
+<p>边特征检测工具结果解析用于对边检测工具、边对检测工具和边宽检测工具的检测结果进行解析处理。由于边检测工具、边对检测工具和边宽检测工具的检测结果参数类型为EdgeDeviation，需要先使用数组解析工具将单个数组元素解析为一组数据，再使用边/边对/边宽检测工具结果解析工具将该组数据解析成单个结果数据。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属性窗口</td>
+<td>无  </td>
+<td> 无                                                                       </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                                       </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 边检测结果 </td>
+<td> 边检测工具、边对检测工具和边宽检测工具的检测结果，经数组解析工具解析为一组数据后，作为该参数的输入。 </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无         </td>
+<td> 无                                                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称        </th>
+<th> 参数描述                                                                        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口        </td>
+<td> PosX                                                         </td>
+<td> 偏差位置的X坐标。 </td>
+</tr>
+<tr>
+<td></td>
+<td> PosY            </td>
+<td> 偏差位置的Y坐标。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Area            </td>
+<td> 偏差面积。                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> Size            </td>
+<td> 偏差尺寸。                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> StartCalipIndex </td>
+<td> 偏差起始卡尺序号。                                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> EndCalipIndex   </td>
+<td> 偏差结束卡尺序号。                                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 偏差类型        </td>
+<td> 偏差类型，分为8种：<br />eNormal（正常）<br />eLeftDefect（左侧缺陷、<br />eRightDefect（右侧缺陷）<br />eWideDefect（宽缺陷）<br />eNarrowDefect（窄缺陷）<br />eLeftPosDefect（左侧位置缺陷）<br />eRightPosDefect（右侧位置缺陷）<br />eGap（间距） </td>
+</tr>
+<tr>
+<td></td>
+<td> 偏差类型序号    </td>
+<td> 偏差类型序号：<br />0：eNormal（正常）<br />1：eLeftDefect（左侧缺陷）<br />2：eRightDefect（右侧缺陷）<br />3：eWideDefect（宽缺陷）<br />4：eNarrowDefect（窄缺陷）<br />5：eLeftPosDefect（左侧位置缺陷）<br />6：eRightPosDefect（右侧位置缺陷）<br />7：eGap（间距） </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果        </td>
+<td> 工具执行结果。                                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间        </td>
+<td> 工具执行时间。                                                                  </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td>   无    </td>
+<td> 无                                                                              </td>
+</tr>
+<tr>
+<td> 数据链 </td>
+<td>        PosX         </td>
+<td> 偏差位置的X坐标                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> PosY            </td>
+<td> 偏差位置的Y坐标。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Area            </td>
+<td> 偏差面积。                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> Size            </td>
+<td> 偏差尺寸。                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> StartCalipIndex </td>
+<td> 偏差起始卡尺序号。                                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> EndCalipIndex   </td>
+<td> 偏差结束卡尺序号。                                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 偏差类型</td>
+<td> 同监视窗口对应参数，供后序工具使用。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 偏差类型序号 </td>
+<td>  同监视窗口对应参数，供后序工具使用。</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p><strong>偏差类型</strong></p>
+
+<p>左侧缺陷（边、边对），右侧缺陷（边、边对），宽缺陷（边宽、珠体探测、珠体跟踪），窄缺陷（边宽、珠体探测、珠体跟踪），左侧位置缺陷（珠体跟踪），右侧位置缺陷（珠体跟踪），间距</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>边特征检测工具结果解析不能单独使用，需要与数组解析工具配合使用，数组解析工具将边检测工具、边对检测工具和边宽检测工具的检测结果解析为一组数据，再使用边/边对/边宽检测工具结果解析将该组数据解析成单个结果数据。</p></li>
+<li><p>数组解析工具在与边特征检测工具结果解析搭配使用时，其属性窗口的数据类型参数应选择为EdgeDeviation，否则在数据链窗口配置参数输入数组时会找不到参数来源。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\边特征检测工具结果解析.gvp”。</p>

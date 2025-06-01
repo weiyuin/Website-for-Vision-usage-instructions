@@ -1,0 +1,159 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>文件操作</h1>
+
+<h2>功能</h2>
+
+<p>使用脚本实现文件的部分功能。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th> 接口名称                         </th>
+<th> 接口描述                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> mkdirFolder </td>
+<td> 新建一个文件夹                         </td>
+</tr>
+<tr>
+<td> mkdirDate </td>
+<td> 在一个文件夹下面建一个当天日期的文件夹 </td>
+</tr>
+<tr>
+<td> ScReadCSVRowCol </td>
+<td> 读CSV的某一行某一列的值 </td>
+</tr>
+<tr>
+<td> Sczip_file </td>
+<td> 压缩文件夹 </td>
+</tr>
+<tr>
+<td> Scunzip_file </td>
+<td> 解压压缩文件 </td>
+</tr>
+<tr>
+<td> Scget_dir_size </td>
+<td> 获取文件夹大小 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>mkdirFolder(rootpath)</h3>
+
+<ul>
+<li>功能： 新建一个文件夹。</li>
+<li>参数：
+
+<ul>
+<li>rootpath：要新建的文件夹路径。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>mkdirDate(rootpath)</h3>
+
+<ul>
+<li>功能：在一个文件夹下面建一个当天日期的文件夹（用于防止脚本工具本身没有建文件夹的权限）。</li>
+<li>参数：
+
+<ul>
+<li>rootpath：要新建的文件夹路径。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>ScReadCSVRowCol(self,filepath,Row,Col,encode=&lsquo;gbk&rsquo;)</h3>
+
+<ul>
+<li>功能：读CSV的某一行某一列的值。</li>
+<li>参数：
+
+<ul>
+<li>filepath：CSV文件路径。</li>
+<li>Row：int类型，表示行。</li>
+<li>Col：int类型，表示列。</li>
+<li>encode:打开CSV文件的编码格式。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Sczip_file(src_dir,zip_name = <strong>&lsquo;&rsquo;</strong>)</h3>
+
+<ul>
+<li>功能：压缩文件夹。</li>
+<li>参数：
+
+<ul>
+<li>src_dir：要压缩的文件夹的路径。</li>
+<li>zip_name：压缩后zip文件的路径及名称。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Scunzip_file(zip_src, dst_dir)</h3>
+
+<ul>
+<li>功能：解压压缩文件。</li>
+<li>参数：
+
+<ul>
+<li>zip_src：<em>zip文件的全路径</em>。</li>
+<li>dst_dir：要解压到的目的文件夹。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Scget_dir_size(dir_path,SizeFormat=<strong>&ldquo;MB&rdquo;</strong>)</h3>
+
+<ul>
+<li><p>功能：获取文件夹大小。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>dir_path：要获取的文件夹路径。</li>
+<li>SizeFormat：获取文件夹大小的单位。</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>注意：</h2>
+
+<p>from ScFile import ScFile</p>
+
+<p>引用库：ScFile</p>
+
+<p>类名称： class ScFile</p>
+
+<h2>示例代码：</h2>
+
+<p>无</p>

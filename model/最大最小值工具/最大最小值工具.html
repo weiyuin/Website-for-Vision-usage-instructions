@@ -1,0 +1,134 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>最大最小值工具</h1>
+
+<h2>功能</h2>
+
+<p>最大最小值工具可以用来求解一组输入数据中的最大值和最小值。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称  </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口  </td>
+<td> 数据个数                                                     </td>
+<td> 在N个数据中求解最大值和最小值，N即为数据个数，取值范围为[1,9]，默认为2。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 数据类型  </td>
+<td> 输入数据的数据类型，最大最小值工具提供的数据类型分为2种：double和int。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口  </td>
+<td> 无  </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链    </td>
+<td> 输入数据0                                                    </td>
+<td> 一组数据中的第一个输入值。                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入数据1 </td>
+<td> 一组数据中的第二个输入值。                                                                                                 </td>
+</tr>
+<tr>
+<td> 高级界面  </td>
+<td> 无</td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 最大值                                                       </td>
+<td> 一组数据中的最大值。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 最小值   </td>
+<td> 一组数据中的最小值。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口  </td>
+<td> 无 </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 最大值                                                       </td>
+<td> 一组数据中的最大值，供后序工具使用，同监视窗口的最大值参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 最小值   </td>
+<td> 一组数据中的最小值，供后序工具使用，同监视窗口的最小值参数。                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>数据链窗口输入数据的类型和属性窗口的数据类型必须一致，否则数据链参数找不到来源，最大最小值工具不能执行。</p></li>
+<li><p>属性窗口的数据个数参数决定了数据链窗口输入数据的个数。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\数学运算相关工具.gvp”。</p>

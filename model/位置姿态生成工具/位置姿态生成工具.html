@@ -1,0 +1,118 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>位置姿态生成</h1>
+
+<h2>功能</h2>
+
+<p>本工具可将sc2Vector型的位置坐标数据与double型旋转量组合转换为GcCoordPos类型的位置姿态数据结果。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 无   </td>
+<td> 无                                        </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无  </td>
+<td> 无                                        </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 位置坐标         </td>
+<td> sc2Vector型位置坐标数据 </td>
+</tr>
+<tr>
+<td></td>
+<td> 旋转量   </td>
+<td> double型的旋转量                          </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无 </td>
+<td> 无                                        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 位置姿态     </td>
+<td> GcCoordPos型的位置姿态数据结果                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间                                                           </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无 </td>
+<td> 无  </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 位置姿态     </td>
+<td> GcCoordPos型的位置姿态数据结果，后序工具使用，同监视窗口 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>该类型转换工具的主要应用在图像到平台坐标转换工具之前，将定位到的图像特征点坐标，并加上相应的旋转量，组合成位置姿态结果。该位置姿态结果作为图像到平台坐标转换工具的图像坐标输入。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\标准标定+基准两点对位.gvp”</p>

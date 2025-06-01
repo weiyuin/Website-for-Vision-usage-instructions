@@ -1,0 +1,130 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>图像源配置工具</h1>
+
+<h2>功能</h2>
+
+<p>可以输入三个RGB或者灰色的图像或者深度图像，根据索引值输出一个图像。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口   </td>
+<td> 图像类型                           </td>
+<td> 输入图像的数据类型可以为RGB彩色图像，灰度图像，深度图像，轮廓图像。 </td>
+</tr>
+<tr>
+<td> 图像窗口   </td>
+<td> 无  </td>
+<td> 无                     </td>
+</tr>
+<tr>
+<td> 数据链     </td>
+<td> 图像源1                            </td>
+<td> 图像数据来源1，最多支持3个图像源，可以是图像文件夹，图像文件，图像采集数据源等等。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像源2    </td>
+<td> 图像数据来源2，同上。                                                                            </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像源3    </td>
+<td> 图像数据来源3，同上。                                                                            </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像源索引 </td>
+<td> 输出的索引值范围为1~3，默认值为1。                                                               </td>
+</tr>
+<tr>
+<td> 高级界面   </td>
+<td> 无   </td>
+<td> 无                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小。                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                     </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 根据索引值，选择输出的图像，默认为第一个数据源图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                       </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像                                                     </td>
+<td> 按照索引值输出的图像。                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无。</p>
+
+<h2>注意</h2>
+
+<p>无。</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\图像源配置工具.gvp”。</p>

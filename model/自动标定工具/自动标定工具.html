@@ -1,0 +1,153 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>自动标定工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​ 本工具用于对输入含有DM码的棋盘格图像进行标定。</p>
+
+<h2>2.应用场景</h2>
+
+<p>​ 无</p>
+
+<h2>3.原理说明</h2>
+
+<p>​ 读取其中一个DM码的字符串，含有位置信息和靶标尺寸（一个黑格或者白格实际的物理尺寸）。然后选取此DM码附近的某个位置，计算这个位置的实际物理坐标，即全局靶标；然后计算局部靶标与全局靶标的偏移，再根据靶标坐标系和图像坐标系的关系，将棋盘格输出的角点的局部靶标转换成全局靶标，最终进行标定计算。</p>
+
+<h2>4.使用向导</h2>
+
+<p>​ “自动标定工具”不需要设置任何参数，直接链入图像运行即可。</p>
+
+<p><img src="media\GvCalibDMCodeTool_4_1.png" alt="GvCalibDMCodeTool_4_1" /></p>
+
+<h2>5.常见问题</h2>
+
+<p>​ 如前文的原理说明中介绍，自动标定工具内部会自动读取DM码的信息，并依据此信息计算图像坐标系和靶标坐标系之间的关系，当用户在使用过程中发现自动标定工具的输出结果异常，如”像素当量“和理论值偏差过大，或者使用此标定结果进行畸变校正得到的图像明显不正确时，可以按照以下流程进行标定结果正确性验证：</p>
+
+<ul>
+<li>自动标定验证流程图如下：</li>
+</ul>
+
+
+<p><img src="media\GvCalibDMCodeTool_5_1.png" alt="GvCalibDMCodeTool_5_1" /></p>
+
+<ul>
+<li>使用“高级DM读码工具”对“自动标定工具”所用DM码进行读码；</li>
+</ul>
+
+
+<p><img src="media\GvCalibDMCodeTool_5_2.png" alt="GvCalibDMCodeTool_5_2" /></p>
+
+<ul>
+<li>对码结果如下图所示，字符串解析出来的是全局靶标坐标(6,194)，0.5为1个黑格或者白格的实际物理尺寸0.5，单位为毫米；</li>
+</ul>
+
+
+<p><img src="media\GvCalibDMCodeTool_5_3.png" alt="GvCalibDMCodeTool_5_3" /></p>
+
+<ul>
+<li>全局靶标坐标位置为下图上红点位置，即与二维码第0点最近的棋盘格位置。</li>
+</ul>
+
+
+<p><img src="media\GvCalibDMCodeTool_5_4.png" alt="GvCalibDMCodeTool_5_4" /></p>
+
+<ul>
+<li>使用脚本工具对读码结果进行解析，获取二维码0点图像坐标，并使用“二维向量生成工具”生成向量；</li>
+</ul>
+
+
+<p><img src="media\GvCalibDMCodeTool_5_5.png" alt="GvCalibDMCodeTool_5_5" /></p>
+
+<ul>
+<li>将二维码0点向量坐标与“自动标定工具”标定结果链接到“图像坐标反投影工具”中，获取二维码0点在全局坐标系下坐标；</li>
+</ul>
+
+
+<p><img src="media\GvCalibDMCodeTool_5_6.png" alt="GvCalibDMCodeTool_5_6" /></p>
+
+<ul>
+<li>比较读码结果中全局靶标坐标为(6,194)，二维码0点图像坐标反投影后在全局坐标系下坐标为(6.093,193.899)二者值相近，符合位置关系，代表自动标定结果正确。</li>
+</ul>
+
+
+<h2>6.参数说明</h2>
+
+<p><strong>输入参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th> 分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 搜索区域 </td>
+<td> 用于设置待标定图像中DM码的搜索区域            </td>
+</tr>
+<tr>
+<td> 参数链 </td>
+<td> 输入图像 </td>
+<td> 带DM码的棋盘格图像读码区域接收二维线性变换以确保读码区域与DM码的相对固定 </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>输出参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称       </th>
+<th> 参数描述                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 相机标定结果   </td>
+<td> 输出相机的标定结果                                 </td>
+</tr>
+<tr>
+<td> 像素当量       </td>
+<td> 输出标定时，计算出的像素当量                       </td>
+</tr>
+<tr>
+<td> 靶标尺寸       </td>
+<td> 读取DM码时输出的靶标尺寸                         </td>
+</tr>
+<tr>
+<td> 执行结果       </td>
+<td> 工具执行结果                                       </td>
+</tr>
+<tr>
+<td> 执行时间       </td>
+<td> 工具执行时间                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7.示例工程</h2>
+
+<p>​ 参见“\Samples\DM码相机标定.gvp”。</p>

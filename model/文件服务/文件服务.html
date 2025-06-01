@@ -1,0 +1,201 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>文件服务</h1>
+
+<h2>背景</h2>
+
+<p>针对文件服务类功能（图像保存、文件保存（TXT和EXCEL）/删除图像）统一升级，提升产品效能。</p>
+
+<h2>版本说明</h2>
+
+<table>
+<thead>
+<tr>
+<th> 已支持服务版本                            </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 6.2.231版本及以上（含深度学习、3D版本） </td>
+</tr>
+<tr>
+<td> 6.3.220版本及以上                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>使用规范</h2>
+
+<ol>
+<li>服务进程的安装、卸载是随VA软件的安装、卸载进行的；</li>
+<li>软件安装后<strong>不要修改安装的路径或名称</strong>，否则会导致服务启动异常，不能正常卸载，不能再次正常安装的情况；出现这种情况时，可见常见<em>问题7</em>；</li>
+<li>服务进程安装后，不能手动修改服务的启动类型或停止服务，否则会导致<strong>服务进程异常，从而导致存图异常，存图失败等</strong>；</li>
+<li>文件服务只支持单个VA程序，启动多个VA，第二个VA启动时会报文件服务启动失败。</li>
+</ol>
+
+
+<h2>常见问题及解决办法</h2>
+
+<h3>（1）文件服务启动失败！建议开启单进程</h3>
+
+<p><img src="media/3-1-1.png" alt="1657605837813" /></p>
+
+<p><strong>原因：</strong> 服务进程不支持多进程同时使用，已打开第1个VA软件，再次打开第2个VA时导致</p>
+
+<p><strong>解决办法：</strong> 不建议一台设备上开启2个或以上的VA软件同时使用，同时开启时，会导致其中一个VA进行存图时，存图失败</p>
+
+<h3>（2）文件保存压力预警！</h3>
+
+<p><img src="media/3-2-1.png" alt="1657606002177" /></p>
+
+<p><strong>现象：</strong> 软件运行过程中，软件右下角出现弹窗报错“[警告]文件保存压力预警！”</p>
+
+<p><strong>原因：</strong> 工程存图的压力较大，提示用户当前存图压力已达到一个临界值</p>
+
+<p><strong>解决办法：</strong> 暂不影响正常存图，如果压力继续上涨，则会提示<em>问题3</em>报错</p>
+
+<h3>（3）文件保存队列到达上限值，当前图像存储功能暂时关闭</h3>
+
+<p><img src="media/3-3-1.png" alt="1657609919817" /></p>
+
+<p><strong>现象：</strong> 软件运行过程中，软件右下角出现弹窗报错“文件保存队列到达上限值，当前图像存储功能暂时关闭。建议修改工程参数，减轻图像存储负载，可使图像存储功能恢复。”</p>
+
+<p><strong>原因：</strong> 工程存图的压力较大</p>
+
+<p><strong>解决办法：</strong> 修改工程，减少存图压力或增加延时工具延长工程执行CT；<strong>或者联系设备厂家更换高性能硬盘。</strong></p>
+
+<h3>（4）工程数据无法写入硬盘</h3>
+
+<p><img src="media/3-4-1.png" alt="1657610031162" /></p>
+
+<p><strong>现象：</strong> 软件运行过程中，输出警告窗口出现“工程数据无法写入硬盘，可能由于硬盘空间不足或磁盘损坏等原因”</p>
+
+<p><strong>原因：</strong> 可能是磁盘空间不足导致或磁盘已损坏</p>
+
+<p><strong>解决办法：</strong> 查看存图路径磁盘剩余空间是否充足；若磁盘损坏则需更换磁盘</p>
+
+<h3>（5）不能打开要写入的文件</h3>
+
+<p><img src="media/3-5-1.png" alt="1657610126913" /></p>
+
+<p><strong>现象：</strong> 软件安装时，出现“不能打开要写入的文件”报错</p>
+
+<p><strong>原因：</strong> 可能是磁盘空间不足导致</p>
+
+<p><strong>解决办法：</strong> 点击“中止”，换一个空间充足的磁盘重新安装</p>
+
+<h3>（6）GvCacheService.exe被占用</h3>
+
+<p><img src="media/3-6-1.png" alt="1657610244551" /></p>
+
+<p><strong>现象：</strong> 软件安装时，出现“GvCacheService.exe被占用，请解除文件占用后重试”报错</p>
+
+<p><strong>原因：</strong> 可能是某进程正在使用“GvCacheService”服务进程</p>
+
+<p><strong>解决办法：</strong> 重启电脑，解除某进程的占用；重新安装软件</p>
+
+<h3>（7）无法定位到程序输入点</h3>
+
+<p><img src="media/3-7-1.png" alt="1657611326943" /></p>
+
+<p><strong>现象：</strong> 出现“无法定位到程序输入点”报错</p>
+
+<p><strong>原因：</strong> 服务没有正常卸载，甚至还在运行，它占用写日志的库文件，导致这个库文件不能被替换</p>
+
+<p><strong>解决办法：</strong> 手动卸载服务（详细操作见<em>附录3“手动卸载服务”</em>）</p>
+
+<h3>（8）Send file manager strategy failed! errCode:15</h3>
+
+<p><img src="media/3-8-1.png" alt="1657611587968" /></p>
+
+<p><strong>现象</strong>：出现弹窗报错“Send file manager strategy failed! errCode:15”</p>
+
+<p><strong>原因：</strong> 可能是服务进程当前非运行状态，已停止运行</p>
+
+<p><strong>解决办法：</strong> 手动重启服务进程（备注：详细操作见<em>附录2</em>）</p>
+
+<h3>（9）无法启动GvFileService服务 错误193:0xc1</h3>
+
+<p><img src="media/3-9-1.png" alt="1657611666220" /></p>
+
+<p><strong>现象：</strong> 重启服务时，出现“无法启动GvFileService服务 错误193:0xc1”弹窗报错</p>
+
+<p><strong>原因：</strong> 可能系统安装盘根目录下有“program”文件导致</p>
+
+<p><strong>解决办法：</strong> 将系统安装盘根目录下“program”文件删除；然后再重启服务</p>
+
+<h2>附录</h2>
+
+<h3>（1）查看服务运行状态</h3>
+
+<p>通过任务管理器—>服务—>找到服务（如：GvCacheService），可查看服务当前状态；</p>
+
+<p>备注：正常情况下状态为正在运行，若状态为已停止则需手动重启服务；详细操作见<em>附录2“手动重启服务”</em></p>
+
+<p><img src="media/4-1-1.png" alt="1657611791005" /></p>
+
+<h3>（2）手动重启服务</h3>
+
+<p><img src="media/4-2-1.png" alt="1657611836593" /></p>
+
+<p><strong>现象：</strong> 任务管理器中服务状态显示为已停止</p>
+
+<p><strong>解决办法：</strong> 手动重启服务；选中服务（如：GvWatchdog），右键菜单，点击开始；Windows7系统需打开服务界面对服务进行重启，步骤如下：任务管理器—>选中服务—>右键菜单—>打开服务—>找到服务—>右键菜单—>启动</p>
+
+<p><img src="media/4-2-2.png" alt="1657611943545" /></p>
+
+<h3>（3）手动卸载服务</h3>
+
+<p><strong>方式1：</strong> 在VA软件安装路径下，找到“ServicesUninstall”(批处理文件格式)，右键菜单，通过管理员身份运行</p>
+
+<p><img src="media/4-3-1.png" alt="1657611986817" /></p>
+
+<p><strong>方式2：</strong> 通过使用CMD命令卸载服务</p>
+
+<ol>
+<li>找到服务所在的文件夹，通过任务管理器—>打开服务—>找到服务（如：GvCacheService）——>右键属性，可查看所在路径</li>
+</ol>
+
+
+<p><img src="media/4-3-2.png" alt="1657612033681" /></p>
+
+<ol>
+<li>管理员身份运行cmd命令行窗口，依次输入如下命令，如截图所示（例如安装路径：C:\Program Files\VISIONAssembly_x64）</li>
+</ol>
+
+
+<p><img src="media/4-3-3.png" alt="1657612060720" /></p>
+
+<ul>
+<li><p>第1行命令：cd C:\Program Files\VISIONAssembly_x64   （切换至服务的安装路径）</p></li>
+<li><p>第2行命令：sc.exe delete &ldquo;GvWatchdog&rdquo;   （卸载“GvWatchdog”服务）</p></li>
+<li><p>第3行命令：sc.exe config &ldquo;GvFileService&rdquo; depend=&ldquo; &rdquo;    （去掉依赖）</p>
+
+<p>备注：Windows7系统时“=”后面要加空格</p></li>
+<li><p>第4行命令：sc.exe delete &ldquo;GvFileService&rdquo;  （卸载“GvFileService”服务）</p></li>
+<li><p>第5行命令：sc.exe delete &ldquo;GvCacheService&rdquo;  （卸载“GvCacheService”服务）</p></li>
+</ul>
+
+
+<h3>（4）手动安装服务</h3>
+
+<p>软件安装路径下找到“Servicesinstall.bat”,右键菜单以管理员身份运行</p>
+
+<p><img src="media/4-4-1.png" alt="1657695432877" /></p>

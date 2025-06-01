@@ -1,0 +1,239 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>脚本工具快速入门</h1>
+
+<p>脚本工具使用的编程语言是Python，Python是一种简单易学功能强大的编程语言。脚本工具现阶段支持了获取、设置工具参数，获取、设置变量管理中变量的参数，显示GUI到视图窗口等功能。</p>
+
+<h2>Python基本语法</h2>
+
+<p>详细的Python学习请参考专业书籍或者网上教程。</p>
+
+<p>Python编程规范参考：</p>
+
+<p><a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/">https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/</a></p>
+
+<p>https://www.python.org/dev/peps/pep-0008/</p>
+
+<ul>
+<li><p>Python编程语言语句结尾无分号，Python表示代码块范围使用缩进来实现，不像某些高级语言使用花括号{}来表示。因此在编写Python代码时，需要注意代码缩进，Python中严禁使用Tab键来实现缩进，必须使用空格，缩进4个空格表示一个层级。</p></li>
+<li><p>Python中布尔类型变量为<strong>True</strong> <strong>False</strong>注意首字母大写。</p></li>
+<li><p>Python条件判断：</p>
+
+<p><code>python
+a = 1
+b = 0
+if a &gt; b:
+  print("a &gt; b")
+elif a == b:
+  print("a == b")
+else:
+  print("a \&lt; b")
+</code></p></li>
+<li><p>Python中for循环：</p>
+
+<p>  <code>python
+for i in range(10):
+    print(i)
+ </code></p></li>
+<li><p>Python中while循环：</p>
+
+<p><code>python
+i = 0
+while i&lt; 10:
+  print(i)
+    i = i + 2
+</code></p></li>
+<li><p>Python中逻辑运算符：</p>
+
+<p>逻辑与：<strong>and</strong></p>
+
+<p>逻辑或：<strong>or</strong></p>
+
+<p>逻辑非：<strong>not</strong></p>
+
+<p>```python
+findline_result4 = GvTool.GetToolData(&ldquo;找线工具<em>004.执行结果&rdquo;)
+findline_result5 = GvTool.GetToolData(&ldquo;找线工具</em>005.执行结果&rdquo;)</p>
+
+<p>  if findline_result4 and findline_result5:
+print(&ldquo;找线工具004和找线工具005执行成功&rdquo;)
+  elif not findline_result4:
+print(&ldquo;找线工具004执行失败&rdquo;)
+```</p></li>
+<li><p>Python中位运算符：</p>
+
+<p>按位与：<strong>&amp;</strong></p>
+
+<p>按位或：<strong>|</strong></p>
+
+<p>按位异或：<strong>^</strong></p></li>
+</ul>
+
+
+<h2>获取\设置工具参数</h2>
+
+<p>和工具相关的操作是通过<a href="../../%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/GvTool.htm">GvTool</a>对象来实现的。其中包括GetToolData，SetToolData，RefToolData。</p>
+
+<ul>
+<li><p><strong>GetToolData</strong></p>
+
+<p>GetToolData是用来获取工具参数的。例如获取几何定位的搜索坐标：</p>
+
+<p><code>python
+pos = GvTool.GetToolData("几何定位_002.搜索坐标")
+</code></p></li>
+<li><p><strong>SetToolData</strong></p>
+
+<p>SetToolData是用来设置工具参数的，如果通过SetToolData设置工具的某个参数，那么该参数<font color = red>严禁配置参数链</font>，即禁止在数据链编辑对话框对该参数进行参数链接(双击工具弹出的对话框)。例如设置几何定位的接收阈值：</p>
+
+<p><code>python
+GvTool.SetToolData("几何定位_002.接受阈值", 0.8)
+</code></p>
+
+<blockquote><p><strong>注意：</strong>如果设置工具参数时，设置的工具参数和传入的参数类型不匹配会产生错误，因此在设置工具参数时，需要传入对应类型的参数。</p>
+
+<p><img src="media/8ebb8818339d4b873ac27c799a6b1aac.png" alt="" /></p></blockquote></li>
+<li><p><strong>RefToolData</strong></p>
+
+<p>RefToolData获取的是工具参数的引用，将获取的参数绑定到变量，通过修改变量值可以直接修改对应的工具参数。该方式不推荐使用，由于获取到的是引用，因此使用RefToolData要特别注意，可能会有不小心修改了工具的参数，而你本意不是要修改参数。</p></li>
+</ul>
+
+
+<h2>设置工具的上下限参数</h2>
+
+<p>  当工具存在上下限参数时，如Blob工具的总像素数上/下限和结果个数上/下限，可使用如下方法进行设置：</p>
+
+<p>  方法1：直接使用新的上下限定值进行设置</p>
+
+<p>  <code>python
+  #方法1：
+  #修改blob工具的总像素数上限（整型数值）
+  GvTool.SetToolData("Blob工具_001.总像素数上限",GvVisionAssembly.Limit_Int(1000))
+  #修改找线工具的直线变化角度上限（浮点数值）
+  GvTool.SetToolData("找线工具_003.直线变化角度上限",GvVisionAssembly.Limit_Double(10.0))
+ </code></p>
+
+<p>  方法2：获取工具的上下限参数，并使用上下限参数的属性值进行设置</p>
+
+<p>  <code>python
+  #方法2：修改blob工具的总像素数上限
+  upper = GvTool.GetToolData("Blob工具_001.结果个数上限")#获取blob工具的总像素数上限
+  upper.Value = 1000 #修改总像素数上限取值
+  upper.Enable = True #修改总像素数上限是否生效
+  GvTool.SetToolData("Blob工具_001.总像素数上限",upper)#设置blob工具的总像素数上限
+ </code></p>
+
+<h2>获取\设置变量管理中变量</h2>
+
+<p>和工具相关的操作是通过GvVar对象来实现的。其中包括GetVar，SetVar，RefVar(现阶段无效)。</p>
+
+<ul>
+<li><p><strong>获取变量</strong></p>
+
+<p><code>python
+a = GvVar.GetVar("#L0")
+</code></p></li>
+<li><p><strong>设置变量</strong></p>
+
+<p><code>python
+a = 50
+GvVar.SetVar("#L0",a)
+</code></p></li>
+</ul>
+
+
+<h2>GUI显示</h2>
+
+<p>脚本工具可以向图像添加GUI，包括文本、矩形、圆形和十字等。每种GUI类型都包含一个GUI风格对象和一个对应的形状对象，例如用来显示矩形GUI的GsScriptGuiRect类型，包含两属性sScriptGuiStyle和rect，sScriptGuiStyle表示Gui的风格，rect表示显示的矩形。</p>
+
+<p>对于要显示的Gui必须添加到Gui数组GcScriptGuiArray中，最后将Gui数组通过Gui代理设置到对应的视图，SetGraphicDisplay(“视图名”, Gui数组)。</p>
+
+<ul>
+<li><p><strong>设置Gui风格</strong></p>
+
+<p>Gui风格包含设置线形，线宽和颜色等，具体可以参考GsScriptGuiStyle文档。首先要定义一个GsScriptGuiStyle类型的变量，设置需要显示的GUI风格，GsScriptGuiStyle有默认初始值，只需设置需要的属性即可，例如和标签相关的属性不需要显示标签的话可以不设置。对于线型和线宽没有特殊要求也可以不设置。</p>
+
+<p>```python</p>
+
+<h2>设置GUI格式</h2>
+
+<p>guiStyle = GvVisionAssembly.GsScriptGuiStyle()
+guiStyle.bVisible = False
+guiStyle.nLineStyle = 3
+guiStyle.nLineWidth = 2
+guiStyle.clrLineColor = [255,0,0]
+guiStyle.bLabelVisible = True
+guiStyle.strLabelFont = &ldquo;宋体&rdquo;
+guiStyle.lSizeFont = 10
+```</p></li>
+<li><p><strong>Gui对象</strong></p>
+
+<p>Gui对象以矩形为例，其他的类型可以参考对应的文档手册。</p>
+
+<p>```python</p>
+
+<h1>矩形GUI</h1>
+
+<p>guiRect = GvVisionAssembly.GsScriptGuiRect()
+rect0 = GvVisionAssembly.scRect(GvVisionAssembly.sc2Vector(100,100),
+                                GvVisionAssembly.sc2Vector(200,300))
+guiRect.rect = rect0
+guiStyle.strLabel = &ldquo;矩形&rdquo; #可以不设置
+guiRect.sScriptGuiStyle = guiStyle #设置Gui风格
+```</p></li>
+<li><p><strong>设置Gui显示数组 </strong></p>
+
+<p>Gui数组是用来存储所有需要添加到同一视图的Gui，这样方便将所有Gui一起添加到视图。</p>
+
+<p>要往视图添加Gui，必须先添加到Gui数组，最终将Gui数组通过代理设置到对应的视图才可以显示。</p>
+
+<p>```python
+guiArray.Add(guiRect)</p>
+
+<h1>将GUI数组设置到视图</h1>
+
+<p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiArray)
+```</p></li>
+</ul>
+
+
+<h2>消息报告</h2>
+
+<p>消息报告可以通过ReportMessage函数实现，根据不同的消息报告类型，在对应位置生成消息，例如提示、警告、错误消息。消息报告类型通过GeMsgReportType来确定，具体内容可以参考相应文档。</p>
+
+<p>```python</p>
+
+<h2>消息报告函数，相当于消息报告工具。</h2>
+
+<h2>strMsg: 要输出的消息；</h2>
+
+<h2>eType: 消息类型，参见GeMsgReportType的说明。</h2>
+
+<h2>bIsForbid: 是否允许弹窗，仅对有弹窗的消息类型有作用。True:禁止弹窗, False:允许弹窗。</h2>
+
+<p>GvVisionAssembly.ReportMessage(str strMsg, GeMsgReportType eType, bool bIsForbid)
+```</p>
+
+<p><strong>参考代码</strong>：</p>
+
+<p><code>python
+Genote = GvVisionAssembly.GeMsgReportType
+noteType = Genote.eMRTFatalErr
+GvVisionAssembly.ReportMessage("123", noteType, False)
+</code></p>

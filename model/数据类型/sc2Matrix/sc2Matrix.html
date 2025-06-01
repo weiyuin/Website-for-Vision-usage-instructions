@@ -1,0 +1,137 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>sc2Matrix</h1>
+
+<h2>功能</h2>
+
+<p>表示2*2矩阵，例如二维线性变换中的矩阵，标定结果中的矩阵。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                     </th>
+<th> 接口描述                              </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> sc2Matrix                  </td>
+<td> sc2Matrix()默认构造函数。             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> sc2Matrix </td>
+<td> sc2Matrix(a00, a01, a10, a11)构造函数 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> GetElement         </td>
+<td> 获取矩阵元素。                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetElement   </td>
+<td> 设置矩阵元素。                        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>sc2Matrix( )</h3>
+
+<ul>
+<li><p>功能：构造sc2Matrix对象，矩阵元素初始化为1.0 0.0 0.0 1.0。</p>
+
+<blockquote><p>|1.0 0.0|</p>
+
+<p>|0.0 1.0|</p></blockquote></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>sc2Matrix(a00, a01, a10, a11)</h3>
+
+<ul>
+<li><p>功能：构造sc2Vector对象，矩阵元素初始化为a00 a01 a10 a11。</p>
+
+<blockquote><p>|a00 a01|</p>
+
+<p>|a10 a11|</p></blockquote></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>a00：矩阵第一行第一列元素，浮点数类型。</p></li>
+<li><p>a01：矩阵第一行第二列元素，浮点数类型。</p></li>
+<li><p>a10：矩阵第二行第一列元素，浮点数类型。</p></li>
+<li><p>a11：矩阵第二行第二列元素，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>GetElement(row, col)</h3>
+
+<ul>
+<li><p>功能：获取矩阵第row行第col列元素，行号列号都是从0开始。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>row：要获取的元素所在行数，索引从0开始，整型。</p></li>
+<li><p>col：要获取的元素所在列数，索引从0开始，整型。</p></li>
+</ul>
+
+
+<p>例如获取第一行第一列元素GetElement(0, 0)。</p></li>
+<li><p>返回值：浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetElement(row, col, value)</h3>
+
+<ul>
+<li><p>功能：设置矩阵元素。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>row：要设置的元素所在行数，索引从0开始，整型。</p></li>
+<li><p>col：要设置的元素所在列数，索引从0开始，整型。</p></li>
+<li><p>value：要设置的值，浮点数类型。</p></li>
+</ul>
+
+
+<p>例如设置第二行第一列元素SetElement(1, 0, 0.5)。</p></li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

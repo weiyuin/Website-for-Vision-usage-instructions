@@ -1,0 +1,256 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GsProfileData</h1>
+
+<h2>功能</h2>
+
+<p>表示轮廓图像。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> GsProfileData                           </td>
+<td> GsProfileData()默认构造函数              </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> IsValid                                       </td>
+<td> 获取图像是否有效                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> ProfileDataNum                     </td>
+<td> 获取轮廓数据量                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> ValidProfileDataNum               </td>
+<td> 获取轮廓有效点数量                       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> MaxXData                                     </td>
+<td> 获取最大X值                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> MinXData                                     </td>
+<td> 获取最小X值                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> MaxZData                                     </td>
+<td> 获取最大Z值                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> MinZData                                     </td>
+<td> 获取最小Z值                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRangeParam                           </td>
+<td> 获取深度数据参数                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> Get2DData                            </td>
+<td> 获取轮廓点二维坐标有效数据               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRect2DData              </td>
+<td> 获取矩形区域内轮廓点二维坐标有效数据     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetAffineRect2DData </td>
+<td> 获取仿射矩形区域内轮廓点二维坐标有效数据 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> FormLinearI2P                   </td>
+<td> 获取图像空间到物理空间的二维线性变换     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> FormLinearP2I                           </td>
+<td> 获取物理空间到图像空间的二维线性变换     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>GsProfileData()</h3>
+
+<ul>
+<li><p>功能：默认构造函数。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>IsValid()</h3>
+
+<ul>
+<li><p>功能：获取图像是否有效。</p></li>
+<li><p>返回值：图像是否有效，bool类型。</p></li>
+</ul>
+
+
+<h3>ProfileDataNum()</h3>
+
+<ul>
+<li><p>功能：获取轮廓数据量。</p></li>
+<li><p>返回值：轮廓中总点数，整型。</p></li>
+</ul>
+
+
+<h3>ValidProfileDataNum()</h3>
+
+<ul>
+<li><p>功能：获取轮廓有效点数量。</p></li>
+<li><p>返回值：轮廓中有效点数，整型。</p></li>
+</ul>
+
+
+<h3>MaxXData()</h3>
+
+<ul>
+<li><p>功能：获取最大X值。</p></li>
+<li><p>返回值：最大X值，float类型。</p></li>
+</ul>
+
+
+<h3>MinXData()</h3>
+
+<ul>
+<li><p>功能：获取最小X值。</p></li>
+<li><p>返回值：最小X值，浮点数类型。</p></li>
+</ul>
+
+
+<h3>MaxZData()</h3>
+
+<ul>
+<li><p>功能：获取最大Z值。</p></li>
+<li><p>返回值：最大Z值，浮点数类型。</p></li>
+</ul>
+
+
+<h3>MinZData()</h3>
+
+<ul>
+<li><p>功能：获取最小Z值。</p></li>
+<li><p>返回值：最小Z值，浮点数类型。</p></li>
+</ul>
+
+
+<h3>GetRangeParam()</h3>
+
+<ul>
+<li><p>功能：获取深度数据参数。</p></li>
+<li><p>返回值：深度数据参数，scRangeParam类型。</p></li>
+</ul>
+
+
+<h3>Get2DData(vPoints)</h3>
+
+<ul>
+<li><p>功能：获取轮廓点二维坐标有效数据。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>vPoints：二维坐标有效数据，sc2Vector类型数组。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否获取成功。</p></li>
+</ul>
+
+
+<h3>GetRect2DData(vPoints, rect)</h3>
+
+<ul>
+<li><p>功能：获取矩形区域内轮廓点二维坐标有效数据。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>vPoints：二维坐标有效数据，sc2Vector类型数组。</p></li>
+<li><p>rect：矩形区域，scRect类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否获取成功。</p></li>
+</ul>
+
+
+<h3>GetAffineRect2DData( vPoints, affineRect)</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形区域内轮廓点二维坐标有效数据。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>vPoints：二维坐标有效数据，sc2Vector类型数组。</p></li>
+<li><p>affineRect：仿射矩形区域，scAffineRect类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否获取成功。</p></li>
+</ul>
+
+
+<h3>FormLinearI2P()</h3>
+
+<ul>
+<li><p>功能：获取图像空间到物理空间的二维线性变换。</p></li>
+<li><p>返回值：图像空间到物理空间的二维线性变换，sc2XformLinear类型。</p></li>
+</ul>
+
+
+<h3>FormLinearP2I()</h3>
+
+<ul>
+<li><p>功能：获取物理空间到图像空间的二维线性变换。</p></li>
+<li><p>返回值：物理空间到图像空间的二维线性变换，sc2XformLinear类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无。</p>
+
+<h2>示例代码</h2>
+
+<ol>
+<li>Get2DData、GetRect2DData、GetAffineRect2DData</li>
+</ol>
+
+
+<p><img src="media/6ccb15fc572ff3749a55f92f404ce456.png" alt="" /></p>

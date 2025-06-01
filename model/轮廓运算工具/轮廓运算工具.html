@@ -1,0 +1,140 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>轮廓运算工具</h1>
+
+<h2>1、功能</h2>
+
+<p>输入轮廓数据1、2，利用1、2轮廓数据对齐后进行相减得到新的z值，重新绘制轮廓信息。</p>
+
+<h2>2、应用场景</h2>
+
+<p>存在明确参考轮廓时，可用来做差运算，计算多出的轮廓信息，如胶线检测项目提取实际胶线位置。</p>
+
+<p> <img src="media/%E8%BE%93%E5%85%A5%E8%BD%AE%E5%BB%931.png" alt="" />   -  <img src="media/%E8%BE%93%E5%85%A5%E8%BD%AE%E5%BB%932.png" alt="" /> =  <img src="media/%E8%BF%90%E7%AE%97%E7%BB%93%E6%9E%9C.png" alt="" /></p>
+
+<h2>3、使用向导</h2>
+
+<p><strong>Step 1 链接输入轮廓1、输入轮廓2</strong></p>
+
+<p>为了兼容轮廓有效点数量不一致以及轮廓起始点难对齐的情况，工具包含了轮廓间点数差值、轮廓数据偏移1、轮廓数据偏移2参数；</p>
+
+<p><strong>Step 2 执行测量和输出结果</strong></p>
+
+<p>在完成参数设置及输入轮廓链接操作后，点击执行，工具会输出对应的运算结果，运算结果示意如下。</p>
+
+<p><img src="media/%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE.png" alt="" /></p>
+
+<h2>4、参数说明</h2>
+
+<h3>4.1 输入</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;"> 属性窗口     </td>
+<td> 轮廓间点数差值                                </td>
+<td> 输入轮廓点数的最大差值，超过最大差值则不予计算，在最大差值内，向左对齐进行运算，范围[0,实际轮廓有效点数]； </td>
+</tr>
+<tr>
+<td style="text-align:left;"></td>
+<td> 轮廓数据偏移1 </td>
+<td> 输入轮廓1开始运算点偏移，从第N个点开始往后运算，直到点数最小的轮廓全部计算结束，范围[0,实际轮廓有效点数]； </td>
+</tr>
+<tr>
+<td style="text-align:left;"></td>
+<td> 轮廓数据偏移2 </td>
+<td> 输入轮廓2开始运算点偏移，从第N个点开始往后运算，直到点数最小的轮廓全部计算结束，范围[0,实际轮廓有效点数]； </td>
+</tr>
+<tr>
+<td style="text-align:left;"> 图像窗口     </td>
+<td> 轮廓图像                                                     </td>
+<td> 显示待检测的轮廓图像。                           </td>
+</tr>
+<tr>
+<td style="text-align:left;"> 数据链       </td>
+<td> 输出轮廓数据                                                 </td>
+<td> 输出运算过后的轮廓数据。 </td>
+</tr>
+<tr>
+<td style="text-align:left;">高级界面</td>
+<td> 无    </td>
+<td> 无                                                                                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>其中，</p>
+
+<p><strong>轮廓数据偏移1、2：</strong></p>
+
+<p><img src="media/GcProfileOperationTool_1.png" alt="img" /></p>
+
+<h3>4.2 输出</h3>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称  </th>
+<th> 参数描述                                                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口  </td>
+<td> 输入轮廓数据                             </td>
+<td> 输入的轮廓数据，包括轮廓点数，有效点数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果  </td>
+<td> 工具执行结果。                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间  </td>
+<td> 工具执行时间。                                                                     </td>
+</tr>
+<tr>
+<td> 图像窗口  </td>
+<td> 输出轮廓数据                             </td>
+<td> 显示运算后的轮廓图像。                    </td>
+</tr>
+<tr>
+<td>数据链</td>
+<td>     </td>
+<td> 同监视窗口参数，供后续工具使用。                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>5、常见问题</h2>
+
+<h2>6、示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\轮廓运算工具.gvp”。</p>

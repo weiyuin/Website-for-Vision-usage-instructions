@@ -1,0 +1,194 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>消息报告与日志记录</h1>
+
+<h2>功能</h2>
+
+<p>使用脚本记录消息报告与日志。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th> 接口名称                         </th>
+<th> 接口描述                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> RecordMsgDate </td>
+<td> 记录日志 </td>
+</tr>
+<tr>
+<td> RecordMsgFolder </td>
+<td> 记录日志 </td>
+</tr>
+<tr>
+<td> RecordAutoLog </td>
+<td> 记录日志 </td>
+</tr>
+<tr>
+<td> ReportMsg </td>
+<td> 报告提示消息 </td>
+</tr>
+<tr>
+<td> ReportMsgWarn </td>
+<td> 报告警告 </td>
+</tr>
+<tr>
+<td> ReportMsgError </td>
+<td> 报告错误提示      </td>
+</tr>
+<tr>
+<td> ReportMsgPop </td>
+<td> 报告弹出提示 </td>
+</tr>
+<tr>
+<td> ReportMsgOption </td>
+<td> 报告自定义提示框，带返回值 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>RecordMsgDate(filePath,filename=&ldquo;Null.txt&rdquo;, cmdWrite=&ldquo;Hello&rdquo;)</h3>
+
+<ul>
+<li>功能：可以把日志记录在指定的文件夹路径下面，下面的指定文件名。</li>
+<li>参数：
+
+<ul>
+<li>filePath：路径名称，文件存储在这个文件夹下面的日期文件夹（自动创建）。</li>
+<li>filename：日志文件名称。</li>
+<li>cmdWrite：日志文件内容。默认 hello。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>RecordMsgFolder(filePath,filename=&ldquo;Null.txt&rdquo;, cmdWrite=&ldquo;Hello&rdquo;)</h3>
+
+<ul>
+<li><p>功能：可以把日志记录在指定的文件夹路径下面，下面的指定文件名。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>filePath：路径名称。</li>
+<li>filename：日志文件名称。</li>
+<li>cmdWrite：日志文件内容。默认 hello。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>RecordAutoLog(filePath,cmdWrite=&ldquo;Hello&rdquo;)</h3>
+
+<ul>
+<li><p>功能：可以把日志记录在指定的文件夹路径下面，下面的指定文件名，日志名称自动指定为 日期当天.txt。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>filePath：路径名称。</li>
+<li>cmdWrite：日志文件内容。默认 hello。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>ReportMsg(cmdMsg=&ldquo;Hello&rdquo;)</h3>
+
+<ul>
+<li><p>功能：报告提示消息。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>cmdMsg：提示消息内容。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>ReportMsgWarn(cmdMsg=&ldquo;Hello&rdquo;)</h3>
+
+<ul>
+<li><p>功能：报告警告。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>cmdMsg：警告内容。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>ReportMsgError(cmdMsg=&ldquo;Hello&rdquo;)</h3>
+
+<ul>
+<li><p>功能：报告错误提示。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>cmdMsg：错误提示内容。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>ReportMsgPop(cmdMsg=&ldquo;Hello&rdquo;, bPumpOut=True)</h3>
+
+<ul>
+<li><p>功能：报告弹出提示。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>cmdMsg：报告弹出提示内容。</li>
+<li>bPumpOut：bool型，True表示禁止弹出，False表示弹出。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>ReportMsgOption(cmdMsg=&ldquo;Hello&rdquo;, bPumpOut=True)</h3>
+
+<ul>
+<li><p>功能：报告自定义提示框，带返回值。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>cmdMsg：提示框内容。</li>
+<li>bPumpOut：bool型，True表示禁止弹出，False表示弹出。</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>注意：</h2>
+
+<p>from ScMsgReport import ScMsgReport</p>
+
+<p>引用库：ScMsgReport</p>
+
+<p>类名称：class ScMsgReport</p>
+
+<h2>示例代码：</h2>
+
+<p>无</p>

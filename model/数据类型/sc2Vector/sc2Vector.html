@@ -1,0 +1,188 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>sc2Vector</h1>
+
+<h2>功能</h2>
+
+<p>表示二维向量，例如几何定位工具的输出参数搜索坐标，找圆工具的输出参数圆心，二维向量生成工具的输出，位置姿态生成工具的输入参数位置坐标都是该类型。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                      </th>
+<th> 接口描述                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> sc2Vector   </td>
+<td> sc2Vector()默认构造函数，XY初始化为0.0           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> sc2Vector </td>
+<td> sc2Vector (x, y)构造函数                         </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> GetX             </td>
+<td> 获取X坐标                                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetY             </td>
+<td> 获取Y坐标                                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetX          </td>
+<td> 设置X坐标                                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetY         </td>
+<td> 设置Y坐标                                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> a + b              </td>
+<td> sc2Vector类型的加法，a和b都是sc2Vector类型的对象 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> a - b              </td>
+<td> sc2Vector类型的减法，a和b都是sc2Vector类型的对象 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>sc2Vector( )</h3>
+
+<ul>
+<li><p>功能：构造sc2Vector对象，坐标初始化为0.0。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>sc2Vector(x, y)</h3>
+
+<ul>
+<li><p>功能：构造sc2Vector对象。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>x：X坐标，浮点数类型。</p></li>
+<li><p>y：Y坐标，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>GetX( )</h3>
+
+<ul>
+<li><p>功能：获取X坐标。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：浮点数类型。</p></li>
+</ul>
+
+
+<h3>GetY( )</h3>
+
+<ul>
+<li><p>功能：获取Y坐标。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetX(newX )</h3>
+
+<ul>
+<li><p>功能：设置X坐标。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>newX：新的X坐标，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetY(newY )</h3>
+
+<ul>
+<li><p>功能：设置Y坐标。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>newY：新的Y坐标，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>a + b</h3>
+
+<ul>
+<li><p>功能：sc2Vector类型的加法。如：c = a + b</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>a：sc2Vector类型对象。</p></li>
+<li><p>b：sc2Vector类型对象。</p></li>
+</ul>
+</li>
+<li><p>返回值：sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>a - b</h3>
+
+<ul>
+<li><p>功能：sc2Vector类型的减法。如：c = a – b。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>a：sc2Vector类型对象。</p></li>
+<li><p>b：sc2Vector类型对象。</p></li>
+</ul>
+</li>
+<li><p>返回值：sc2Vector类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

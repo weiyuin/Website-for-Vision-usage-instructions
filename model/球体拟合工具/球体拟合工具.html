@@ -1,0 +1,201 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>球体拟合</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     拟合得到球心坐标。</p>
+
+<p><img src="media/GcSphereFitTool_1_1.png" alt="" /></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     主要是剔除深度数据图像中的局外点，根据内点数据计算得到球体的解析表达式，以协助后续3D相机全局标定等操作。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     主要是基于Ransac算法框架（需设置距离阈值、置信度和局外点比例）来获取次优球体，再对次优球体通过迭代寻优的方法获得最优的拟合球体。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcSphereFitTool_4_1.png" alt="" /></p>
+
+<ul>
+<li><h4>设置参数、采样半宽以及是否启用掩膜</h4>
+
+<ul>
+<li><p><strong>Step 1</strong> 【局外点判定距离】0.005~0.01（看拟合点数，点数太少就需要放宽）</p></li>
+<li><p><strong>Step 2</strong> 【局外点比例】0.3</p></li>
+<li><p><strong>Step 3</strong> 【结果置信度】0.9999</p></li>
+<li><p><strong>Step 4</strong> 【采样距离】1（一般调1，需要加速可适当提高）</p></li>
+</ul>
+
+
+<blockquote><p><strong>注：框ROI可先观看三维点云图，适当调整ROI的大小；</strong></p></blockquote>
+
+<p><img src="media/GcSphereFitTool_4_5.png" alt="" /></p></li>
+<li><h4>查看结果</h4>
+
+<p><img src="media/GcSphereFitTool_4_3.png" alt="" /></p></li>
+</ul>
+
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述     </th>
+<th> 解决方法             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 拟合不出球心 </td>
+<td> 局外点判定距离放宽些 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 分类     </th>
+<th> 参数名称       </th>
+<th> 参数描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> ROI类型        </td>
+<td> 待拟合区域，分为8种：整幅图像、矩形、仿射矩形、圆形、圆环段、椭圆、多边形、多仿射矩形。 </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 局外点判定距离 </td>
+<td> 参与拟合的深度数据点到拟合球体距离的最大值。                 </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 局外点比例     </td>
+<td> 局外点占总深度数据点的比例。                                 </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 结果置信度     </td>
+<td> 衡量使用内点构造拟合球体的可信程度，置信度越大，拟合球体越可靠。 </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 采样距离       </td>
+<td> 每隔多少采样一次，缩短球体拟合时间。                         </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 启用掩膜       </td>
+<td> 用于过滤不需要拟合的区域，对该部分添加掩膜。选择“是”时，则可通过属性高级界面进行掩膜设置 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 深度图像       </td>
+<td> 显示待检测的深度图像，显示为伪彩色图像。                     </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 拟合区域       </td>
+<td> 在图像上显示待拟合区域。                                     </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入深度图像   </td>
+<td> 输入待拟合的深度图像。                                       </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 二维线性变换   </td>
+<td> ROI相对于模板的平移、旋转、缩放变换。                        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 分类   </th>
+<th> 参数名称       </th>
+<th> 参数说明                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出栏 </td>
+<td> 输出深度图像   </td>
+<td> 输出拟合后的深度图像         </td>
+</tr>
+<tr>
+<td>        </td>
+<td> 球心           </td>
+<td> 拟合得到的球心               </td>
+</tr>
+<tr>
+<td>        </td>
+<td> 半径           </td>
+<td> 拟合得到的球体半径           </td>
+</tr>
+<tr>
+<td>        </td>
+<td> 拟合误差       </td>
+<td> 平面拟合结果的RMS误差        </td>
+</tr>
+<tr>
+<td>        </td>
+<td> 球体拟合的点数 </td>
+<td> 球体拟合过程中用到的点的个数 </td>
+</tr>
+<tr>
+<td>        </td>
+<td> 执行结果       </td>
+<td> 工具执行结果                 </td>
+</tr>
+<tr>
+<td>        </td>
+<td> 执行时间       </td>
+<td> 工具执行时间                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\球体拟合.gvp”。</p>

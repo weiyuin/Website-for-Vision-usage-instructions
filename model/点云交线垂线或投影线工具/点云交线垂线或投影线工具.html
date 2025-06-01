@@ -1,0 +1,180 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云交线垂线或投影线工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云交线垂线或投影线工具主要是计算三维空间内面面交线、点到三维直线的垂线、点到三维平面的垂线、直线到平面的投影线、线段到平面的投影线。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量中，该工具可以计算三维空间内面面交线、点到三维直线的垂线、点到三维平面的垂线、直线到平面的投影线、线段到平面的投影线的位置，得到点云图像中特征直线的三维信息，为后续角度测量等工具提供输入。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4>
+
+<p><img src=".\media\GcCloudIntersectVerticalProjectedLineTool3_1.png" style="zoom:70%;" /></p></li>
+<li><h4>参数设置</h4>
+
+<ul>
+<li>① 选择三维直线类型：交线模式、垂线模式、投影线模式；</li>
+<li>② 交线类型、垂线类型或投影线类型设置；</li>
+<li>③ 数据链接设置输入点云数据等；</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 三维点                                             </td>
+<td> 输入待测量的三维点                               </td>
+</tr>
+<tr>
+<td> 三维直线     </td>
+<td> 输入待测量的三维直线                                                                                       </td>
+</tr>
+<tr>
+<td> 三维线段 </td>
+<td> 输入待测量的三维线段 </td>
+</tr>
+<tr>
+<td> 三维平面/三维平面1/三维平面2 </td>
+<td> 输入待测量的三维平面                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 三维直线类型                  </td>
+<td> 分为三种：交线模式、垂线模式、投影线模式 </td>
+</tr>
+<tr>
+<td> 垂线类型     </td>
+<td> 分为两种：点到三维直线的垂线、点到三维平面的垂线 </td>
+</tr>
+<tr>
+<td> 投影线类型       </td>
+<td> 分为两种：直线到平面投影线和线段到平面投影线                    </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出三维直线                                              </td>
+<td> 输出三维直线的位置坐标、倾斜角、旋转角度等 </td>
+</tr>
+<tr>
+<td> 输出三维直线方向向量 </td>
+<td> 输出三维直线方向向量 </td>
+</tr>
+<tr>
+<td> 输出三维线段 </td>
+<td> 输出三维线段的位置坐标、倾斜角、旋转角度等 </td>
+</tr>
+<tr>
+<td> 输出三维线段方向向量 </td>
+<td> 输出三维线段方向向量 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出三维直线                                              </td>
+<td> 输出三维直线的位置坐标、倾斜角、旋转角度等 </td>
+</tr>
+<tr>
+<td> 输出三维直线方向向量 </td>
+<td> 输出三维直线方向向量 </td>
+</tr>
+<tr>
+<td> 输出三维线段 </td>
+<td> 输出三维线段的位置坐标、倾斜角、旋转角度等 </td>
+</tr>
+<tr>
+<td> 输出三维线段方向向量 </td>
+<td> 输出三维线段方向向量 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间             </td>
+<td> 工具执行时间                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点云测量.gvp”。</p>
+
+<h2>7. 特殊说明</h2>

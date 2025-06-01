@@ -1,0 +1,169 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>二值化工具</h1>
+
+<h2>功能</h2>
+
+<p>二值化是常用的图像预处理方法之一，二值化工具的实质是对图像灰度进行分割，从而将灰度图像转化为二值图像，其示意图如图1所示。</p>
+
+<p><img src="media/wps65.jpg" alt="img" />      <img src="media/wps66.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 输入图像</imgnote> <imgnote>(b) 结果图像</imgnote></p>
+
+<p><imgnote>图1 二值化示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 是否使用ROI                                                  </td>
+<td> 选择“是”，则在Edit窗口显示ROI区域，用来指定要实现二值化的图像区域；选择“否”，则对整幅图像进行二值化，默认为否。 </td>
+</tr>
+<tr>
+<td> </td>
+<td> ROI区域     </td>
+<td> 进行二值化的图像区域，全图、矩形、仿射矩形ROI、多边形ROI、圆环ROI、圆形ROI、圆环（段）ROI、启用掩膜。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 二值化模式   </td>
+<td> 二值化工具提供的二值化模式分为2种：自动阈值模式和手动阈值模式。选择自动阈值模式，显示自动阈值方法参数；选择手动阈值模式，显示手动阈值参数。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 自动阈值方法 </td>
+<td> 自动阈值方法使用的是自动阈值算法，包括迭代法和最大类间方差法。该参数只在二值化模式参数选择自动阈值模式时有效。<a href="#_%E8%87%AA%E5%8A%A8%E9%98%88%E5%80%BC%E6%96%B9%E6%B3%95"><img src="media/wps68.jpg" alt="img" /></a>                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 手动阈值     </td>
+<td> 以手动阈值参数为分界对图像进行分割，灰度值小于阈值的像素设置为0，灰度值大于阈值的像素设置为255。该参数只在二值化模式参数选择手动阈值模式时有效，范围0-255。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 输入图像                                                     </td>
+<td> 显示待二值化的图像。                                         </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入图像                                                     </td>
+<td> 输入待二值化的图像。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换          </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                                                                        </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无    </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小。                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像 </td>
+<td> 输出图像宽度、高度、像素大小。                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 显示工具执行结果图像。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                               </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小，供后序工具使用，同监视窗口的输出图像参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>自动阈值方法</h3>
+
+<p><strong>迭代法</strong></p>
+
+<p>它是基于逼近的思想，首先根据图像的灰度分布情况，选取一个近似阈值作为初始阈值，然后通过分割图像和修改阈值的迭代过程获得认可的最佳阈值。</p>
+
+<p><strong>最大类间方差法</strong></p>
+
+<p>它是按图像的灰度特性，将图像分成前景和背景两部分，前景和背景之间的类间方差越大，说明构成图像的两部分的差别越大。当部分前景错分为部分背景或部分背景错分为部分前景都会导致两部分差别变小。因此，使类间方差最大的分割意味着错分概率最小。</p>
+
+<p><img src="media/wps71.jpg" alt="img" />      <img src="media/wps72.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 迭代法</imgnote> <imgnote>(b) 最大类间方差法</imgnote></p>
+
+<p><img src="media/wps73.jpg" alt="img" />      <img src="media/wps74.jpg" alt="img" /></p>
+
+<p><imgnote>&copy; 手动阈值120</imgnote> <imgnote>(d) 手动阈值140</imgnote></p>
+
+<p><imgnote>图2 自动阈值和手动阈值</imgnote></p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\二值化工具.gvp”。</p>

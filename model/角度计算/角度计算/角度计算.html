@@ -1,0 +1,124 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>角度计算</h1>
+
+<h2>功能</h2>
+
+<p>角度计算是计算直线到直线角度和点到点角度。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th> 接口名称                                     </th>
+<th> 接口描述   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> AngleLine2Line </td>
+<td> 直线到直线角度 </td>
+</tr>
+<tr>
+<td> AnglePoint2Point </td>
+<td> 点到点角度     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细描述</h2>
+
+<h3>AngleLine2Line(lineA, lineB)</h3>
+
+<ul>
+<li><p>功能：计算直线lineA到直线lineB的角度，顺时针为正，逆时针为负，范围[-pi, pi]。</p>
+
+<p>如下图所示，从A到B结果为44.9度，从B到A为-44.9度：</p></li>
+</ul>
+
+
+<p><img src="media/86eae6419433a255806c8403924dcbb9.png" alt="" /></p>
+
+<ul>
+<li><p>参数：</p>
+
+<ul>
+<li><p>lineA：直线A，scLine类型。</p></li>
+<li><p>lineB：直线B，scLine类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：角度结果，单位弧度，scRadian类型。</p></li>
+</ul>
+
+
+<h3>AnglePoint2Point(p1, p2)</h3>
+
+<ul>
+<li><p>功能：计算两点之间的角度，即两点连线与水平方向的夹角，单位弧度，范围[-pi, pi]。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>p1：点A，sc2Vector类型。</p></li>
+<li><p>p2：点B，sc2Vector类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：角度结果，单位弧度，scRadian类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<ul>
+<li><p>直线到直线角度</p>
+
+<p>直线A与直线B的角度α可以描述为：假设直线的方向为向上、向右为正，直线A旋转α度后与直线B平行（或重合），其中α的方向为顺时针为正，逆时针为负。其示意图如图1所示</p>
+
+<p><img src="media/83f6b4a6c2b39e5cb76cb5b90fe3e8bd.png" alt="LLA0" /></p>
+
+<p><imgnote>(a) 角度为正</imgnote></p>
+
+<p><img src="media/20a43eb0b949f83975e087e9f4a9cfad.png" alt="LLA01" /></p>
+
+<p><imgnote>(b) 角度为负</imgnote></p>
+
+<p><imgnote>图1 直线到直线角度示意图</imgnote></p></li>
+<li><p>点到点角度</p>
+
+<p>点A与点B的角度θ可以描述为：点A和点B确定的直线AB，假设其方向为由A指向B，且水平方向向右为正，则水平线旋转θ度与直线AB平行（重合）。其中，θ的方向为顺时针为正，逆时针为负。其示意图如图2所示：</p>
+
+<p><img src="media/cdb57e4d1eb24fc4eaa5c6296088477b.png" alt="PPA0" /></p>
+
+<p><imgnote>(a) 角度为正</imgnote></p>
+
+<p><img src="media/80627ca3229d9ca70124510c02267d76.png" alt="PPA01" /></p>
+
+<p><imgnote>(b) 角度为负</imgnote></p>
+
+<p><imgnote>图2 点到点角度示意图</imgnote></p></li>
+</ul>
+
+
+<h2>示例代码</h2>
+
+<ul>
+<li>角度计算：参见“\Samples\脚本工具\脚本工具角度计算.gvp”。</li>
+</ul>
+

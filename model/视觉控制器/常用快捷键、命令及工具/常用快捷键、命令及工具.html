@@ -1,0 +1,279 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>常用快捷键、命令及工具</h1>
+
+<h2>1. 常用快捷键及命令</h2>
+
+<h3>1.1 系统外快捷键及命令</h3>
+
+<ul>
+<li><p><strong>进BIOS界面按键</strong></p>
+
+<p>开机时不断按<kbd>DEL</kbd>(非按住)</p></li>
+<li><p><strong>卡界面重启(系统外)</strong></p>
+
+<p>卡界面时，如找不到硬盘，找不到引导，或黑屏时不清楚主板有没有正常启动，可通过<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>进行重启，从而判断是显示问题还是主板问题。</p></li>
+<li><p><strong>选择启动盘</strong></p>
+
+<p>开机时不断按<kbd>F7</kbd>(VC5200/7200为<kbd>F12</kbd>)，可进入启动盘选择界面。</p></li>
+<li><p><strong>重置BIOS设置</strong></p>
+
+<p>当显示器无显示，怀疑是BIOS设置有问题时，在按<kbd>DEL</kbd>进入BIOS后，可通过依次按<kbd>F3</kbd>(重置BIOS设置)、<kbd>F4</kbd>(保存BIOS设置)，<kbd>Enter</kbd>(确认)进行BIOS重置。</p></li>
+<li><p><strong>DOS下刷写BIOS</strong></p>
+
+<p>当需要刷写BIOS时(一般为BIOS故障时)，将bin文件拷贝到DOS盘根目录下，并输入<strong>AFUDOS xxx.bin /x /b /p /n</strong>，DOS系统会将BIOS固件重新刷写。</p></li>
+</ul>
+
+
+<h3>1.2 系统内快捷键及命令</h3>
+
+<ul>
+<li><p><strong>任务管理器</strong></p>
+
+<p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Esc</kbd>为直接呼出任务管理器，<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>为切出桌面(用在桌面未响应时)，可选择任务管理器。</p></li>
+<li><p><strong>Win键组合</strong></p>
+
+<p><kbd>Win</kbd>单独按：打开开始菜单</p>
+
+<p><kbd>Win</kbd>+<kbd>R</kbd>：打开运行对话框(此部分可运行很多命令)</p>
+
+<p><kbd>Win</kbd>+<kbd>D</kbd>:  显示桌面，一般用于界面或软件卡死时，无法关闭又想回到桌面。</p></li>
+<li><p><strong>运行框命令</strong></p>
+
+<ul>
+<li><p>Cmd：CMD命令提示符界面(常用)</p></li>
+<li><p>MSConfig：系统配置实用程序，常用于启动项选择，及在无法通过<kbd>F8</kbd>进入安全系统时，从系统内进入安全模式。</p>
+
+<p><img src="media/1660736018484.png" alt="" /></p></li>
+<li><p>Regedit：注册表编辑器</p></li>
+<li><p>Mstsc：远程桌面连接，常用命令</p></li>
+<li><p>services.msc：系统服务项状态</p></li>
+<li><p>gpedit.msc：组策略</p></li>
+<li><p>Dcomcnfg：打开系统组件服务</p></li>
+<li><p>devmgmt.msc：设备管理器</p></li>
+<li><p>compmgmt.msc：计算机管理</p></li>
+<li><p>secpol.msc：本地安全策略</p></li>
+<li><p>diskmgmt.msc：磁盘管理，常用于磁盘分区</p>
+
+<p><img src="media/1660736180773.png" alt="" /></p></li>
+<li><p>Dxdiag：检查DirectX信息，常用于检测系统详细版本</p>
+
+<p><img src="media/1660736198764.png" alt="" /></p></li>
+<li><p>sfc /scannow：Windows文件保护，主要用于检查系统重要文件的缺失和回复</p></li>
+<li><p>Eventvwr：事件查看器，常用于抓取系统日志及应用日志</p>
+
+<p><img src="media/1660736214031.png" alt="" /></p></li>
+<li><p>certmgr.msc：证书管理实用程序，可检查驱动签名的状态</p>
+
+<p><img src="media/1660736229559.png" alt="" /></p></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>2. 常用工具及设置</h2>
+
+<ul>
+<li><p><strong>1 系统问题日志保存方法</strong></p>
+
+<p>对于系统类问题，包括系统崩溃、蓝屏、死机，弹窗报错、中毒，或者驱动、软件、补丁问题引起的非硬件问题的无法开机，都可以使用重装系统或还原系统的方法来解决，这虽然解决了问题，但没办法对根因进行分析，无法从源头避免这些问题的再次发生。</p>
+
+<p>其中，蓝屏需记录左下角报错代码，弹窗报错需记录报错信息。</p>
+
+<p><img src="media/1660736498509.png" alt="" /></p>
+
+<p>其他的异常关机，系统崩溃等，需记录大概时间后，导出应用日志及系统日志，协助定位异常崩溃的原因。</p>
+
+<p><strong>操作步骤</strong></p>
+
+<ul>
+<li><p>右键点击计算机-管理</p>
+
+<p><img src="media/1660736577876.png" alt="" /></p></li>
+<li><p>点击事件查看器</p>
+
+<p><img src="media/1660736695940.png" alt="" /></p></li>
+<li><p>点击windows日志</p>
+
+<p><img src="media/1660736716253.png" alt="" /></p></li>
+<li><p>右键点击应用程序-将所有事件另存为，右键点击系统-将所有事件另存为。</p>
+
+<p><img src="media/1660736776994.png" alt="" /></p></li>
+<li><p>选择一个位置，输入名字点保存即可</p></li>
+</ul>
+</li>
+<li><p><strong>2 BIOS设置</strong></p>
+
+<p>BIOS是工控机的硬件系统，即使操作系统崩溃，只要计算机主板本身没有问题，就可以正常进入BIOS界面，所以进BIOS界面又是判断主板硬件问题的方法之一。</p>
+
+<p>BIOS界面选项一般包括以下几个分类选项：</p>
+
+<p><img src="media/1660736859356.png" alt="" /></p>
+
+<p>其中，常用到的包括：</p>
+
+<ul>
+<li><p><strong>来电自启动选项</strong></p>
+
+<p>Chipset-PCH-IO Configuration-restore AC Power loss选项中， &ldquo;S0&rdquo; (power on), &ldquo;S5&rdquo; (power off), or &ldquo;Last State&rdquo;.选择S0 (power on)。</p>
+
+<p>部分主板选项在Chipset-Restore AC Power Loss下，可直接选择Power on。</p>
+
+<p><img src="media/1660736890905.png" alt="" /></p>
+
+<p><img src="media/1660736906356.png" alt="" /></p></li>
+<li><p><strong>硬盘启动项</strong></p>
+
+<p>在<strong>Boot-hard Drive BBS Priorities</strong>中，选择希望首启动的硬盘或引导，<strong>Enter</strong>确认后按<kbd>F4</kbd>保存后重启(部分主板为<kbd>F10</kbd>保存)</p>
+
+<p><img src="media/1660736986674.png" alt="" /></p>
+
+<p><img src="media/1660737008306.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p><strong>3 PE系统盘</strong></p>
+
+<p>PE系统盘一般用于无法进入系统时，重做系统、硬盘检测、驱动卸载等场景。</p>
+
+<p>右键管理员打开PE制作工具(老毛桃，大白菜，U深度，微PE都可以，其中大白菜和U深度兼容性更好，微PE工具较少)。</p>
+
+<ul>
+<li><p><strong>3.1 PE盘的制作</strong></p>
+
+<p>插入需要做PE系统的U盘，选中后点击一键制作USB启动盘。</p>
+
+<p><img src="media/1660737269624.png" alt="" /></p></li>
+<li><p><strong>3.2 PE盘的使用</strong></p>
+
+<p>待制作完毕后，将PE系统盘插到工控机上，开机后不断按<kbd>Del</kbd>，进入BIOS界面后选择Boot-hard Drive BBS Priorities，选中U盘作为首启动项，保存后重启</p>
+
+<p>选择启动Win10 X64 PE或启动Win2003PE，进入PE系统。</p>
+
+<p><img src="media/1660737285722.png" alt="" /></p>
+
+<p>进入PE系统后，主要关注以下几个工具：</p></li>
+<li><p><strong>3.3 硬盘工具</strong></p>
+
+<p><img src="media/1660737302429.png" alt="" /></p>
+
+<p>主要用于格式化系统盘，硬盘分区设置。</p>
+
+<p><img src="media/1660737318673.png" alt="" /></p></li>
+<li><p><strong>3.4 镜像恢复工具</strong></p>
+
+<p>GHOST 11.5</p>
+
+<p><img src="media/1660737336854.png" alt="" /></p>
+
+<p>系统还原工具，用于还原系统</p>
+
+<p>还原时，依次选择local-partition-from image</p>
+
+<p><img src="media/1660737359428.png" alt="" /></p>
+
+<p>选择D盘</p>
+
+<p><img src="media/1660737377898.png" alt="" /></p>
+
+<p>选择C_PAN.GHO文件，选择镜像分区</p>
+
+<p><img src="media/1660737392516.png" alt="" /></p>
+
+<p>选择需要恢复的盘符，点击OK等待恢复成功后重启。</p>
+
+<p><img src="media/1660737408309.png" alt="" /></p></li>
+<li><p><strong>3.5 系统引导恢复工具</strong></p>
+
+<p><img src="media/1660737426161.png" alt="" /></p>
+
+<p>以及系统驱动卸载工具：DISM++</p>
+
+<p><img src="media/1660737440296.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p><strong>4 硬件/系统信息抓取工具</strong></p>
+
+<p><img src="media/wps7824.tmp.jpg" alt="" /></p>
+
+<p>管理员模式打开D:\AIDA64 文件夹下aida64.exe文件</p>
+
+<p><img src="media/1660790447436.png" alt="" /></p>
+
+<p>点击报告</p>
+
+<p><img src="media/1660790473038.png" alt="" /></p>
+
+<p>依次点击下一步-从文件载入-选择报告配置文件-打开-下一步-选中HTML-完成</p>
+
+<p><img src="media/1660790732666.png" alt="" /></p>
+
+<p>  点击保存为文件，格式为htm文件。</p>
+
+<p>  此报告一般用于工控机在出问题时的问题排查。</p></li>
+<li><p><strong>5 系统设置</strong></p>
+
+<ul>
+<li><p><strong>5.1 网卡设置</strong></p>
+
+<p>右下角右键单击网络图标，选择打开网络和internet。</p>
+
+<p><img src="media/1660790761997.png" alt="" /></p>
+
+<p>点击更改适配器选项，右键选择需要配置的网卡，点击属性-配置-高级</p>
+
+<p>将巨帧数据包(大型数据包)设置为最大值（一般为 9014）。</p>
+
+<p><img src="media/1660790780941.png" alt="" /></p>
+
+<p>将“性能选项” 点击属性中的“传送缓冲区”和“接收缓冲区”的值设置为最大 2048， “性能选项”中 “中断节流（裁决）率”，则将其设置为“极值”，如果没有该属性，则不需要设置。</p>
+
+<p><img src="media/wps783D.tmp.jpg" alt="" /></p>
+
+<ul>
+<li><p><strong>5.2 系统高性能设置</strong></p>
+
+<p>左键点击左下角开始，选择控制面板-电源选项</p>
+
+<p>选择高性能，并关闭休眠</p>
+
+<p><img src="media/wps783E.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps783F.tmp.jpg" alt="" /></p></li>
+<li><p><strong>5.3 防火墙设置</strong></p>
+
+<p>打开右下角的网络连接，依次点击：网络&mdash;>网络和共享中心&mdash;>Windows 防火墙，依次选择关闭。</p>
+
+<p><img src="media/wps7840.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps7841.tmp.jpg" alt="" /></p></li>
+<li><p><strong>5.4 Windows 更新设置</strong></p>
+
+<p>右键单击计算机-属性，单击左下角windows update-更改设置</p>
+
+<p><img src="media/wps7842.tmp.jpg" alt="" /><img src="media/wps7843.tmp.jpg" alt="  " /></p>
+
+<p>选择从不检查更新</p>
+
+<p><img src="media/wps7844.tmp.jpg" alt="" /></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+

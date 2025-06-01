@@ -1,0 +1,145 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>结果判定</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 结果判定工具能够新增、删除参与判定项；获取对应判定项的当前结果数值；对多ROI功能工具进行ROI选择，且可直接设置补偿值、判定阈值等参数；可输出列表中所有参与项的OK/NG结果情况，包含整个工具的输出结果；可选择判定策略来决定整个工具的输出结果。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 当前瑞声大部分的3D量测类项目对待检物料均进行采样检测，样本总数为10，其中检测区域中有5个判定输出真值成功则物料OK，否则NG；或另一种判定模式，10个样本区域中存在一定的逻辑性关系，利用自定义的逻辑关系来输出OK/NG状态。目前对个体工具的阈值设置以及所有工具输出结果判定的方式均通过变量传递至脚本中实施，对于现场人员技术要求较高，且较为繁琐，生产界面中导入时数值很多，搭建耗时长且容易出错。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​ 结果判定工具通过获取当前工程中的所有3D检测类工具的ID以及工具名，添加至对应的列表中，然后通过ID获取相应的补偿值、判定阈值等参数，最后根据判定策略的选择，执行得到结果。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4>
+
+<p><img src=".\media\GcResultJudgementTool_4_1.png" style="zoom:70%;" /></p></li>
+<li><h4>在高级界面中进行设置</h4>
+
+<ul>
+<li>① 新增、删除参与判定的工具；</li>
+<li>② 在列表中设置多ROI或单ROI工具对应的系数、固定补偿、判定阈值等参数；</li>
+<li>③ 选择判定策略，自定义逻辑判定或统计占比判定模式；</li>
+<li>④ 按照选择的判定模式执行输出工具执行结果；</li>
+</ul>
+
+
+<p><img src=".\media\GcResultJudgementTool_4_2.png" alt="" /></p></li>
+</ul>
+
+
+<h2>5. 常见问题</h2>
+
+<p>无</p>
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 判定策略选择 </td>
+<td> 可选择自定义逻辑判定、统计占比判定两种模式                   </td>
+</tr>
+<tr>
+<td> 工具个数     </td>
+<td> 添加至列表项中用于判定的工具个数                             </td>
+</tr>
+<tr>
+<td> 工具成功个数 </td>
+<td> 执行成功的工具个数                                           </td>
+</tr>
+<tr>
+<td> 工具失败个数 </td>
+<td> 执行失败的工具个数                                           </td>
+</tr>
+<tr>
+<td> 判定表达式   </td>
+<td> 自定义逻辑判定中可直接输入判断项名称，利用逻辑表达式的方式来设置判定标准 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称         </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 3D工具参数       </td>
+<td> 当前工程中所包含的3D工具参数                                 </td>
+</tr>
+<tr>
+<td> 工具执行结果数值 </td>
+<td> 所有参与判定项的执行结果数值输出，输出形式为数组，数组内顺序按列表顺序输出。 </td>
+</tr>
+<tr>
+<td> 工具执行判定结果 </td>
+<td> 所有参与判定项的执行结果输出，输出形式为数组，数组内顺序按列表顺序输出。 </td>
+</tr>
+<tr>
+<td> 系数补偿         </td>
+<td> 测量结果增加的系数补偿                                       </td>
+</tr>
+<tr>
+<td> 固定补偿         </td>
+<td> 测量结果增加的固定补偿                                       </td>
+</tr>
+<tr>
+<td> 阈值下限         </td>
+<td> 测量结果所在的阈值下限                                       </td>
+</tr>
+<tr>
+<td> 阈值上限         </td>
+<td> 测量结果所在的阈值上限                                       </td>
+</tr>
+<tr>
+<td> 执行结果         </td>
+<td> 工具执行结果。                                               </td>
+</tr>
+<tr>
+<td> 执行时间         </td>
+<td> 工具执行时间。                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​ 参见“\Samples\3D\深度图\结果判定工具.gvp”。</p>

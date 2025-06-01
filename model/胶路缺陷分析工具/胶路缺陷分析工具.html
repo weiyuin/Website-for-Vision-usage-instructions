@@ -1,0 +1,286 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>胶路缺陷分析工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 胶路缺陷分析工具，针对非均匀线状胶/点状胶的建模和检测，准确反馈缺陷路径</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​        主要应用在点胶检测项目中</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​ 通过对样本点集进行训练，计算出标准中心点集与标准宽度；执行检测时，将输入点集与训练结果进行对比，计算出胶路的宽度偏差和中心偏差，从而根据检测阈值参数判断出缺陷类型、缺陷位置等信息。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li>以例程<code>胶路缺陷分析工具.gvp</code>为例，如图4-1所示</li>
+</ul>
+
+
+<p><img src="media/GvGlueEvaluateTool_4_1.png" alt="1684137492373" /></p>
+
+<p><imgnote>4-1 例程</imgnote></p>
+
+<h3>训练</h3>
+
+<ul>
+<li>使用<code>曲线边宽检测工具</code>获取样本图像的边缘点集</li>
+<li>使用<code>脚本工具</code>获取<code>曲线边宽检测工具</code>检测区域ROI的每段点集，将其放入<code>数组生成工具</code>，<code>脚本工具_003</code>内容如下：</li>
+</ul>
+
+
+<p><code>python
+vvvPoints=GvTool.GetToolData("曲线边宽检测工具_002.候选点")
+GvTool.SetToolData("数组生成工具_008.输入数据",vvvPoints[0])
+</code></p>
+
+<ul>
+<li><p>如此进行循环，循环次数为样本图像个数</p></li>
+<li><p><code>脚本工具_012</code>是将<code>胶路缺陷分析工具</code>切换为训练模式，代码如下：</p></li>
+</ul>
+
+
+<p><code>python
+GvTool.SetToolData("胶路缺陷分析工具_004.是否启用训练",True)
+</code></p>
+
+<h3>检测</h3>
+
+<ul>
+<li>使用<code>脚本工具_015</code>将训练部分的<code>曲线边宽检测工具</code>的检测区域设置到检测部分的<code>曲线边宽检测工具</code>中，使训练和检测的位置保持一致，代码如下：</li>
+</ul>
+
+
+<p><code>python
+roi=GvTool.GetToolData("曲线边宽检测工具_002.检测区域")
+GvTool.SetToolData("曲线边宽检测工具_010.检测区域",roi)
+</code></p>
+
+<ul>
+<li>使用<code>曲线边宽检测工具</code>获取检测图像的边缘点集，通过脚本工具设置到<code>胶路缺陷分析工具</code>中，代码如下：</li>
+</ul>
+
+
+<p><code>python
+vvvPoints=GvTool.GetToolData("曲线边宽检测工具_010.候选点")
+GvTool.SetToolData("胶路缺陷分析工具_004.输入点集",vvvPoints[0])
+GvTool.SetToolData("胶路缺陷分析工具_004.是否启用训练",False)
+</code></p>
+
+<h2>5. 参数说明</h2>
+
+<h3>输入参数</h3>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th style="text-align:left;"> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点集 </td>
+<td style="text-align:left;"> 待检测的胶路点集，由脚本工具从曲线边宽检测工具中获取并设置到胶路缺陷分析工具，数据结构为<code>vector&lt;vector&lt;point&gt;&gt;</code> </td>
+</tr>
+<tr>
+<td> 训练点集 </td>
+<td style="text-align:left;"> 待训练的胶路点集，点集来自于曲线边宽检测工具的检测结果，由数组生成工具进行汇总，数据结构为<code>vector&lt;vector&lt;vector&lt;point&gt;&gt;&gt;</code> </td>
+</tr>
+<tr>
+<td> 输入图像 </td>
+<td style="text-align:left;"> 待检测工件的图像，实际不参与检测，仅起到辅助显示的作用       </td>
+</tr>
+<tr>
+<td> 训练图像 </td>
+<td style="text-align:left;"> 待训练工件的图像，实际不参与训练，仅起到辅助显示的作用       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>输出参数</h3>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称         </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 标准中心点集     </td>
+<td> 由多组胶路点集数据训练所得到的胶路中心点集（数组大小为卡尺数量） </td>
+</tr>
+<tr>
+<td> 标准宽度         </td>
+<td> 由多组胶路点集数据训练所得到的胶路宽度（数组大小为卡尺数量） </td>
+</tr>
+<tr>
+<td> 宽度偏差         </td>
+<td> 待检测胶路宽度与标准宽度之间的偏差（数组大小为卡尺数量）     </td>
+</tr>
+<tr>
+<td> 中心偏差         </td>
+<td> 待检测胶路中心与标准中心之间的偏差（数组大小为卡尺数量）     </td>
+</tr>
+<tr>
+<td> 少胶胶判定结果   </td>
+<td> 少胶检测结果，数据结构为缺陷的卡尺起点与终点序号、面积、最大偏差 </td>
+</tr>
+<tr>
+<td> 溢胶胶判定结果溢 </td>
+<td> 溢胶检测结果，数据结构同上                                   </td>
+</tr>
+<tr>
+<td> 正胶偏判定结果   </td>
+<td> 正胶偏检测结果，数据结构同上；胶偏为与标准中心比较结果，正方向为每组卡尺第二点指向第一点； </td>
+</tr>
+<tr>
+<td> 负胶偏判定结果   </td>
+<td> 负胶偏检测结果，数据结构等说明同上                           </td>
+</tr>
+<tr>
+<td> 少胶区域         </td>
+<td> 少胶缺陷在图像上的位置                                       </td>
+</tr>
+<tr>
+<td> 溢胶区域         </td>
+<td> 溢胶缺陷在图像上的位置                                       </td>
+</tr>
+<tr>
+<td> 正胶偏区域       </td>
+<td> 正胶偏缺陷在图像上的位置                                     </td>
+</tr>
+<tr>
+<td> 负胶偏区域       </td>
+<td> 负胶偏缺陷在图像上的位置                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>属性栏参数</h3>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否启用训练          </td>
+<td> 工具是否开启训练 </td>
+</tr>
+<tr>
+<td>最大训练数目          </td>
+<td> 当工具开启训练后，需设置当前的训练样本数 </td>
+</tr>
+<tr>
+<td>宽度最小评价连续点数          </td>
+<td> 宽度缺陷的最小连续点数，低于此值的不判断为缺陷，属于外部干扰 </td>
+</tr>
+<tr>
+<td>宽度评价阈值下限          </td>
+<td> 宽度偏差最小阈值 </td>
+</tr>
+<tr>
+<td>宽度评价阈值上限          </td>
+<td> 宽度偏差最大阈值 </td>
+</tr>
+<tr>
+<td>宽度缺陷面积检测阈值          </td>
+<td> 宽度偏差面积阈值 </td>
+</tr>
+<tr>
+<td>中心偏差最小评价连续点数          </td>
+<td> 中心偏差缺陷的最小连续点数，低于此值的不判断为缺陷，属于外部干扰 </td>
+</tr>
+<tr>
+<td>中心偏差评价阈值下限          </td>
+<td> 中心偏差最小阈值 </td>
+</tr>
+<tr>
+<td>中心偏差评价阈值上限           </td>
+<td> 中心偏差最大阈值 </td>
+</tr>
+<tr>
+<td>中心偏差缺陷面积检测阈值          </td>
+<td> 中心偏差面积阈值 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>输出栏参数</h3>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入图像          </td>
+<td> 输入图像的宽度、高度、像素大小 </td>
+</tr>
+<tr>
+<td>训练图像          </td>
+<td> 训练图像的宽度、高度、像素大小 </td>
+</tr>
+<tr>
+<td>少胶胶判定结果          </td>
+<td> 少胶检测结果，数据结构为缺陷的卡尺起点与终点序号、面积、最大偏差 </td>
+</tr>
+<tr>
+<td>溢胶胶判定结果          </td>
+<td> 溢胶检测结果，数据结构同上 </td>
+</tr>
+<tr>
+<td>正胶偏判定结果          </td>
+<td> 正胶偏检测结果，数据结构同上；胶偏为与标准中心比较结果，正方向为每组卡尺第二点指向第一点； </td>
+</tr>
+<tr>
+<td>负胶偏判定结果          </td>
+<td> 负胶偏检测结果，数据结构等说明同上 </td>
+</tr>
+<tr>
+<td>执行结果          </td>
+<td> 工具的执行结果 </td>
+</tr>
+<tr>
+<td>执行时间          </td>
+<td> 工具的执行时间 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>参见“\Samples\胶路缺陷分析工具.gvp”。</p>

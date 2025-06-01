@@ -1,0 +1,375 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scGuiFindLineEx</h1>
+
+<h2>功能</h2>
+
+<p>表示直线探测控件的升级版，即在视图中可见的图形，例如找线工具的查找区域，多圆多线工具的查找线区域为该类型的向量。</p>
+
+<p><img src="media/52058058f26614e6a32d6d2ce638885d.png" alt="" /></p>
+
+<p><imgnote>图1 直线探测控件升级示意图</imgnote></p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                    </th>
+<th> 接口描述                              </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scGuiFindLineEx                 </td>
+<td> scGuiFindLineEx (dof=1)默认构造函数。 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> GetAffineRect                          </td>
+<td> 获取仿射矩形                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetAffineRect            </td>
+<td> 设置仿射矩形                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetMaskRegion                          </td>
+<td> 获取掩膜位置                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetMaskRegion               </td>
+<td> 设置掩膜位置                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSearchDirectionDOF          </td>
+<td> 获取搜索方向自由度。                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRectEx                                  </td>
+<td> 获取可变矩形。                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRectEx                            </td>
+<td> 设置可变矩形。                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRectExCaliper                    </td>
+<td> 获取可变矩形卡尺。                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRectExCaliper       </td>
+<td> 设置可变矩形卡尺。                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperWidth                      </td>
+<td> 获取卡尺宽度（仅在手动模式下有效）。  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperWidth                 </td>
+<td> 设置卡尺宽度（仅在手动模式下有效）。  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperSpace                      </td>
+<td> 获取卡尺间隔（仅在手动模式下有效）。  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperSpace             </td>
+<td> 设置卡尺间隔（仅在手动模式下有效）。  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperID                            </td>
+<td> 获取卡尺ID。                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperID                   </td>
+<td> 设置卡尺ID。                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSearchDirection                </td>
+<td> 获取卡尺搜索方向。                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetSearchDirection </td>
+<td> 设置卡尺搜索方向。                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperNum                          </td>
+<td> 获取卡尺数目。                        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scGuiFindLineEx(dof=1)</h3>
+
+<ul>
+<li><p>功能：构造scGuiFindLineEx对象，默认搜索方向自由度为1，此参数可以不用设置，直接使用scGuiFindLineEx()即可。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>dof：自由度，整型，可选参数。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetAffineRect()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形，scAffineRect类型。</p></li>
+</ul>
+
+
+<h3>SetAffineRect(affinerect)</h3>
+
+<ul>
+<li><p>功能：设置仿射矩形。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>affinerect：仿射矩形，scAffineRect类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetMaskRegion()</h3>
+
+<ul>
+<li><p>功能：获取掩膜位置。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：掩膜位置，sc2Vector类型的向量，在Python中类似于list。</p></li>
+</ul>
+
+
+<h3>SetMaskRegion(vMaskRegion)</h3>
+
+<ul>
+<li><p>功能：设置掩膜位置。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>vMaskRegion：掩膜位置，sc2Vector类型的向量，在Python中类似于list。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetSearchDirectionDOF()</h3>
+
+<ul>
+<li><p>功能：获取搜索方向自由度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：搜索方向自由度，整型。</p></li>
+</ul>
+
+
+<h3>GetRectEx()</h3>
+
+<ul>
+<li><p>功能：获取可变矩形。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变矩形，scRectEx类型。</p></li>
+</ul>
+
+
+<h3>SetRectEx(rectEx)</h3>
+
+<ul>
+<li><p>功能：设置可变矩形。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>rectEx：可变矩形，scRectEx类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetRectExCaliper()</h3>
+
+<ul>
+<li><p>功能：获取可变矩形卡尺。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变矩形卡尺，scRectExCaliper类型。</p></li>
+</ul>
+
+
+<h3>SetRectExCaliper(rectExCaliper)</h3>
+
+<ul>
+<li><p>功能：获取可变矩形卡尺。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>rectExCaliper：可变矩形卡尺，scRectExCaliper类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperWidth()</h3>
+
+<ul>
+<li><p>功能：获取卡尺宽度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺宽度，整型。</p></li>
+</ul>
+
+
+<h3>SetCaliperWidth(width)</h3>
+
+<ul>
+<li><p>功能：设置卡尺宽度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>width：卡尺宽度，整型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperSpace()</h3>
+
+<ul>
+<li><p>功能：获取卡尺间隔。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺间隔，整型。</p></li>
+</ul>
+
+
+<h3>SetCaliperSpace(space)</h3>
+
+<ul>
+<li><p>功能：设置卡尺间隔。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>space：卡尺间隔，整型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperID()</h3>
+
+<ul>
+<li><p>功能：获取卡尺ID。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺ID，整型。</p></li>
+</ul>
+
+
+<h3>SetCaliperID(caliperID)</h3>
+
+<ul>
+<li><p>功能：设置卡尺ID。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>caliperID：卡尺ID，整型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetSearchDirection()</h3>
+
+<ul>
+<li><p>功能：获取卡尺搜索方向。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺搜索方向，整型。</p></li>
+</ul>
+
+
+<h3>SetSearchDirection(searchdirection)</h3>
+
+<ul>
+<li><p>功能：设置卡尺搜索方向。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>searchdirection：卡尺搜索方向，整型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperNum()</h3>
+
+<ul>
+<li><p>功能：获取卡尺数目。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺数目，整型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>```python
+ROI_Line_gui = GvTool.GetToolData(&ldquo;找线工具_021.查找区域&rdquo;)
+affrect = ROI_Line_gui.GetAffineRect() ## 获取找线控件中的仿射矩形图形
+po = affrect.GetCornerPo()
+Px = affrect.GetCornerPx()
+Py = affrect.GetCornerPy()
+Popp = affrect.GetCornerPopp()</p>
+
+<p>print(po.GetX(),po.GetY())
+print(Px.GetX(),Px.GetY())
+print(Py.GetX(),Py.GetY())
+print(Popp.GetX(),Popp.GetY())
+```</p>

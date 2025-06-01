@@ -1,0 +1,287 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>直方图工具</h1>
+
+<h2>功能</h2>
+
+<p>直方图工具主要用来计算输入图像的直方图和相关统计信息（最小值、最大值、中值、模值、均值、标准差、方差、像素数量）。</p>
+
+<p><img src="media/wps116.jpg" alt="img" />      <img src="media/wps117.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 输入图像</imgnote> <imgnote>(b) 灰度直方图</imgnote></p>
+
+<p><imgnote>图1 直方图示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称              </th>
+<th> 参数描述                                                                                                      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口              </td>
+<td> ROI区域类型                                                    </td>
+<td> 执行直方图统计的图像区域，全图、矩形、仿射矩形ROI、多边形ROI、圆环ROI、圆形ROI、圆环（段）ROI、启用掩膜。 </td>
+</tr>
+<tr>
+<td></td>
+<td> Num Bins              </td>
+<td> 单个像素的最大灰度值加1，范围1~256，默认值为256，灰度图像像素值最大为255，因此该属性设置为255+1=256，一般不需要修改。                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否显示直方图GUI结果 </td>
+<td> 选择“是”，将在图像窗口输出图像上的左上角显示直方图，默认为是。                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否显示二值化图像    </td>
+<td> 选择“是”，将在图像窗口输出二值化图像，并且属性窗口显示Low Tail、High Tail、Percent三个属性。该参数默认值为是。                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 阈值模式    </td>
+<td> 直方图裁剪阈值的模式，包含相对阈值、动态阈值、手动阈值。                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> Low Tail              </td>
+<td> 直方图低阶裁剪的比重，取值范围1~100，默认为0，仅在是否显示二值化图像参数为是时有效。Low Tail+ High Tail不能大于100。                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> High Tail             </td>
+<td> 直方图高阶裁剪的比重，取值范围1~100，默认为0，仅在是否显示二值化图像参数为是时有效。Low Tail+ High Tail不能大于100。                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> Percent               </td>
+<td> 去掉低阶和高阶后的百分比重，取值范围1~100，默认为10，仅在是否显示二值化图像参数为是时有效。                                                  </td>
+</tr>
+<tr>
+<td> 图像窗口              </td>
+<td> 输入图像                                                     </td>
+<td> 显示待直方图统计的输入图像。                    </td>
+</tr>
+<tr>
+<td> 数据链                </td>
+<td> 输入图像                                                     </td>
+<td> 输入待直方图统计的图像。                        </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换          </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                                                                        </td>
+</tr>
+<tr>
+<td> 高级界面              </td>
+<td> 无 </td>
+<td> 无                                    </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口   </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像的宽度、高度、像素大小。                 </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 掩膜图像     </td>
+<td> 掩膜区域图像的宽度、高度、像素大小。                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 相对阈值   </td>
+<td> 图像二值化时的分割阈值，是由Low Tail、High Tail和Percent参与计算得出的值，调节这三个属性参数可以得到想要的相对阈值。                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 像素数量   </td>
+<td> 图像中像素个数的总和。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 模值       </td>
+<td> 图像中出现频率最高的灰度值，即图像（归一化）直方图峰值对应的灰度值。                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 中值       </td>
+<td> 图像中灰度值的中值。即大于该灰度值的像素概率为50%，并且小于该灰度值的像素概率也是50%，在图像累计直方图上，该灰度值对应的累计概率为50%。                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 最小值     </td>
+<td> 图像中灰度值的最小值。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 最大值     </td>
+<td> 图像中灰度值的最大值。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 均值       </td>
+<td> 图像中灰度值的均值，是图像平均亮度的度量。                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 方差       </td>
+<td> 图像中灰度值的方差。                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 标准差     </td>
+<td> 图像中灰度值的标准差。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 直方图数据 </td>
+<td> 图像中每一灰度值的像素个数。                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像   </td>
+<td> 输出图像宽度、高度、像素大小。                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 工具执行结果。                                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间   </td>
+<td> 工具执行时间。                                                                                                 </td>
+</tr>
+<tr>
+<td> 图像窗口   </td>
+<td> 输入图像                                                     </td>
+<td> 显示工具执行结果图像，同监视窗口的输入图像参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 直方图     </td>
+<td> 显示直方GUI。                                                                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                   </td>
+</tr>
+<tr>
+<td> 数据链     </td>
+<td> 输出图像                                                     </td>
+<td> 输出图像经过二值化后的图像。                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 相对阈值   </td>
+<td> 输出图像二值化时的分割阈值，是由Low Tail、High Tail和Percent参与计算得出的值，调节这三个属性参数可以得到想要的相对阈值。供其他工具使用，同监视窗口参数。                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 像素数量   </td>
+<td> 输出图像中像素个数的总和。供其他工具使用，同监视窗口参数。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 模值       </td>
+<td> 输出图像中出现频率最高的灰度值，即图像（归一化）直方图峰值对应的灰度值。供其他工具使用，同监视窗口参数。                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 中值       </td>
+<td> 输出图像中灰度值的中值。即大于该灰度值的像素概率为50%，并且小于该灰度值的像素概率也是50%，在图像累计直方图上，该灰度值对应的累计概率为50%。供其他工具使用，同监视窗口参数。                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 最小值     </td>
+<td> 输出图像中灰度值的最小值。供其他工具使用，同监视窗口参数。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 最大值     </td>
+<td> 输出图像中灰度值的最大值。供其他工具使用，同监视窗口参数。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 均值       </td>
+<td> 输出图像中灰度值的均值，是图像平均亮度的度量。供其他工具使用，同监视窗口参数。                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 方差       </td>
+<td> 输出图像中灰度值的方差。供其他工具使用，同监视窗口参数。                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 标准差     </td>
+<td> 输出图像中灰度值的标准差。供其他工具使用，同监视窗口参数。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 直方图数据 </td>
+<td> 输出图像中每一灰度值的像素个数。供其他工具使用，同监视窗口参数。                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>基本原理</h3>
+
+<p>图像的灰度统计直方图，是图像灰度级分布的一位离散函数，如下式表示：</p>
+
+<p><img src="media/wps121.png" alt="img" /></p>
+
+<p>其中图像的灰度级范围为[0, L-1]，r<sub>k</sub>为第k个灰度级，n<sub>k</sub>为图像中灰度级是r<sub>k</sub>的像素个数的总和。</p>
+
+<p>根据图像直方图可以导出关于灰度级的一些统计量，这些统计量是图像灰度级特征描述，据此可以对图像进行分析和理解。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>Low Tail和High Tail之和不能大于100。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\直方图工具.gvp”。</p>

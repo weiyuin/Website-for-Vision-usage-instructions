@@ -1,0 +1,133 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点坐标线性变换工具</h1>
+
+<h2>功能</h2>
+
+<p>点坐标线性变换工具是用来对某个点单独做线性变换使用的，例如某个点单独根据几何定位的结果进行移动和旋转，如图1所示。点坐标线性变换工具的初始位置为绿色十字，经过线性变换之后的结果为紫色十字。几何定位工具模版用的是最左边的手机屏幕，由于点坐标线性变换工具输入的二维线性变换是几何定位工具的结果，因此点坐标变换工具的输出结果会跟随几何定位结果移动。</p>
+
+<p> <img src="media/wps24.jpg" alt="img" /></p>
+
+<p><imgnote>图1 点坐标线性变换工具示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属性窗口</td>
+<td>  无    </td>
+<td> 无                                                   </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 输入图像                         </td>
+<td> 输入图像。              </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入点坐标                       </td>
+<td> 需要进行线性变换的点坐标。</td>
+</tr>
+<tr>
+<td></td>
+<td> 输入图像     </td>
+<td> 输入图像。                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 输出点相对于输入点的平移、旋转。                             </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td>  无    </td>
+<td> 无                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出点坐标                                                   </td>
+<td> 经过二维线性变换之后的点坐标。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出点坐标                                                   </td>
+<td> 显示经过二维线性变换之后的点。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                 </td>
+</tr>
+<tr>
+<td>数据链</td>
+<td> 无 </td>
+<td> 无                                                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\点坐标线性变换工具.gvp”。</p>
+
+<p>工程说明：</p>
+
+<p>工程演示的是点坐标利用点坐标线性变换工具跟随几何定位结果变动的示例。点坐标线性变换工具的输入点坐标是从变量定义，由二维向量生成工具生成的。点坐标线性变换结果显示在“View-1”视图里面，循环里面增加了延时工具是为了方便在视图里查看结果，延长显示时间。</p>

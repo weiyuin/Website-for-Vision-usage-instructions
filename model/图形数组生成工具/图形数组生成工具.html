@@ -1,0 +1,171 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>图形数组生成工具</h1>
+
+<h2>功能</h2>
+
+<p>图形数组生成工具将输入的数据按照对应的索引值显示输出。其应用效果如图1所示。</p>
+
+<p><img src="media/wps35.jpg" alt="img" /></p>
+
+<p><imgnote>图1 图形数组生成工具应用示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 数据类型                                                     </td>
+<td> 选择输入数据的数据类型。<img src="media/wps37.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td></td>
+<td> 自动清空 </td>
+<td> 控制是否清空输出数组，如果清空数组，每次运行工具都会将输出数组中的数据清空。                                                  </td>
+</tr>
+<tr>
+<td> 图像窗口      </td>
+<td> 无                                                                                                           </td>
+<td>无</td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入数据                                                     </td>
+<td> 输入形成图形数组的数据，类型可选。              </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入数据索引 </td>
+<td> 输入数据索引，int类型；如果输入数据为sc2Vector类型，那么输出数据将是sc2Vector类型的数组，输入数据索引就是将输入数据写入到输出数组位置的索引。                                                  </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>| 高级界面     | 无   | 无                                                                                                            |</p>
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出数组                                                     </td>
+<td> 输出形成的图形数组。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出数组                                                     </td>
+<td> 显示形成的图形数组，同监视窗口的输出数据参数。               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                               </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出数组                                                     </td>
+<td> 输出形成的图形数组，同监视窗口的输出数据参数。即将输入数据按索引位置写入后的生成的图形数组，大小不定，随着写入索引而改变。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>数据类型</h3>
+
+<p>数据类型选择时，需同输入数据的数据类型相同，可选的数据类型如表1所示。</p>
+
+<p>表1 数据类型</p>
+
+<table>
+<thead>
+<tr>
+<th> 数据类型               </th>
+<th> 说明                                 </th>
+<th> 数据类型  </th>
+<th> 说明                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> GsTextDisplayParam     </td>
+<td> 文本显示数组工具输出的输出数组类型。 </td>
+<td> Sc2Vector </td>
+<td> 二维向量。                           </td>
+</tr>
+<tr>
+<td> scCaliperTwoEdgeResult </td>
+<td> 双边卡尺工具输出结果类型。           </td>
+<td> scCircle  </td>
+<td> 圆形。找圆，圆拟合等工具的输出类型。 </td>
+</tr>
+<tr>
+<td> scCaliperOneEdgeResult </td>
+<td> 单边卡尺工具输出结果类型。           </td>
+<td> scLine    </td>
+<td> 直线。找线，线拟合等工具的输出类型。 </td>
+</tr>
+<tr>
+<td> GsMultiCLOutputResult  </td>
+<td> 多圆多线定位工具输出的搜索结果类型。            </td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<ul>
+<li>图形数组生成工具显示输入的字符串时，需要将显示结果加到有图片显示的View视图中。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\图形数组生成工具.gvp”。</p>

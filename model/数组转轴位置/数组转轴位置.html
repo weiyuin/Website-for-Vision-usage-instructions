@@ -1,0 +1,113 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>数组转轴位置</h1>
+
+<h2>功能</h2>
+
+<p>本工具可将三个double型的数据组成的数组（通常为三元数组生成工具生成的结果）转换为GcPlatformAxisPos类型的轴位置数据。该轴位置结果通常作为标定轴位置获取工具的初始轴位置数据链输入。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 无 </td>
+<td> 无 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无 </td>
+<td> 无</td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 坐标数组 </td>
+<td> 三个double型数据组成的数组，通常由三元数组生成工具生成。 </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无  </td>
+<td> 无  </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 轴位置         </td>
+<td> GcPlatformAxisPos类型的轴位置结果。                          </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无  </td>
+<td>无</td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 轴位置         </td>
+<td> 输出GcPlatformAxisPos类型轴位置，供后序工具使用，同监视窗口参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>该类型转换工具应用场景不多，根据项目当需要通过3个double数据数组构建轴位置时，可使用此工具。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\数组转轴位置.gvp”。</p>

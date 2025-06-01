@@ -1,0 +1,141 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>3D图像采集工具</h1>
+
+<h2>功能</h2>
+
+<p>用于与之相连的3D相机采集图像。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称         </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口         </td>
+<td> 相机名称                                                     </td>
+<td> 采集图像的3D相机的名称，又称序列号                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出数据类型    </td>
+<td> 选择3D相机采集输出的数据类型，有输出深度图像、输出点云图像、全部输出三种类型可选         </td>
+</tr>
+<tr>
+<td></td>
+<td> 采集等待时间 </td>
+<td> -1为一直等待，大于-1为等待的时间，单位为毫秒              </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口     </td>
+<td> 点云图像   </td>
+<td> 采集到的点云图像，以及点云数据量             </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 有效点索引 </td>
+<td> 相机采集点云图像的所有有效点索引号           </td>
+</tr>
+<tr>
+<td></td>
+<td> 深度图像   </td>
+<td> 深度图像的长宽和像素大小，以及深度数据参数 </td>
+</tr>
+<tr>
+<td></td>
+<td> 灰度图像   </td>
+<td> 灰度图像的长宽和像素大小                     </td>
+</tr>
+<tr>
+<td></td>
+<td> Snap发送完成标志 </td>
+<td> 当相机为Keyence且相机在线时输出，开始状态为false，当发送完成snap信号开始采集时，状态变为true </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果     </td>
+<td> 工具执行结果                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间     </td>
+<td> 工具执行时间                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 深度图像                                                     </td>
+<td> 显示采集到的深度图像                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 点云图像   </td>
+<td> 显示采集到的点云图像（Cloud视图）            </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 点云图像   </td>
+<td> 采集到的点云图像 </td>
+</tr>
+<tr>
+<td></td>
+<td> 有效点索引 </td>
+<td> 相机采集点云图像的所有有效点索引号                                            </td>
+</tr>
+<tr>
+<td></td>
+<td> 深度图像   </td>
+<td> 相机采集到的深度图像                         </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 灰度图像   </td>
+<td> 相机采集的灰度图像                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\3D图像采集工具.gvp”。</p>

@@ -1,0 +1,128 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Excel文件创建工具</h1>
+
+<h2>功能</h2>
+
+<p>EXCEL文件创建工具主要功能是将数据存储到Excel文件中保存。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称      </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口      </td>
+<td> 自动命名                                                     </td>
+<td> 是否自动为excel文件命名（是-以序号+时间的格式自动命名；否-须在参数链中设置文件名）。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出文件路径  </td>
+<td> 文件存储路径。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像窗口      </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链        </td>
+<td> EXCEL文件名                                                  </td>
+<td> 属性窗口-自动命名选择为否时设置（命名格式：*.csv）。         </td>
+</tr>
+<tr>
+<td></td>
+<td> EXCEL表头数据 </td>
+<td> EXCEL文件表头,若要创建多个表头，则各个表头用逗号隔开（Head1，Head2&hellip;）。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> EXCEL数据     </td>
+<td> 对应表头下的数据（对应表头格式，各列数据用逗号隔开）。<img src="media/wps77.jpg" alt="img" />                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否换行      </td>
+<td> 每次执行写入新数据时，是否换行写入。                                                                                        </td>
+</tr>
+<tr>
+<td></td>
+<td> 高级界面      </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出项 </td>
+<td> 执行结果       </td>
+<td> 工具执行结果。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像窗口 </td>
+<td> 无                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 数据链   </td>
+<td> 无                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>由于各个表头名需要逗号隔开，因此创建多个表头时，可与数据包生成工具和字符串解析工具来管理、组合表头名。同时的，对应不同的表头，其数据也可以用相同的方式来组合。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\EXCEL文件创建工具.gvp”。</p>

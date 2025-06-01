@@ -1,0 +1,303 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scPolyline</h1>
+
+<h2>功能</h2>
+
+<p>表示多边形，例如Blob工具的多边形ROI。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                          </th>
+<th> 接口描述                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scPolyline               </td>
+<td> scPolyline ()默认构造函数。               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scPolyline     </td>
+<td> scPolyline (sc2VectorVec, bool)构造函数。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scPolyline             </td>
+<td> scPolyline (scPolyline) 构造函数。        </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> GetVerticesNum              </td>
+<td> 获取顶点的数量。                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetVertex             </td>
+<td> 设置第idx个顶点的坐标。                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetVertex                     </td>
+<td> 获取第idx个顶点的坐标。                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetVertices            </td>
+<td> 重新设置多边形的顶点。                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetVertices                    </td>
+<td> 获取多边形的顶点。                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> InsertVertex       </td>
+<td> 在idx位置插入新的顶点。                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> InsertVertices </td>
+<td> 在第idx位置插入一组顶点。                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> AddVertex                  </td>
+<td> 在多边形点序列的尾部添加新的顶点。        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> AddVertices            </td>
+<td> 在多边形点序列的尾部添加一组顶点。        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> RemoveVertex               </td>
+<td> 删除第idx个顶点。                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> RemoveVertices              </td>
+<td> 删除所有顶点。                            </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scPolyline(bClosed)</h3>
+
+<ul>
+<li><p>功能：构造scPolyline对象，若bClosed为True则构造闭合的多边形。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>bClosed：多边形是否闭合标记，True:表示闭合，bool类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scPolyline(vertices, bClosed)</h3>
+
+<ul>
+<li><p>功能：用一组点构成的向量来构造多边形。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>vertices：线段的起始点，sc2VectorVec类型。</p></li>
+<li><p>bClosed：多边形是否闭合标记，True:表示闭合，bool类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scPolyline (polyline)</h3>
+
+<ul>
+<li><p>功能：用已知多边形构造多边形。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>polyline：多变形，scPolyline类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetVerticesNum()</h3>
+
+<ul>
+<li><p>功能：获取顶点的数量。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：多边形顶点的数量，int类型。</p></li>
+</ul>
+
+
+<h3>SetVertex(idx, vertex)</h3>
+
+<ul>
+<li><p>功能：设置第idx个顶点的坐标。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>idx：顶点序号，int类型。</p></li>
+<li><p>vertex：顶点坐标，sc2Vector类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetVertex(idx)</h3>
+
+<ul>
+<li><p>功能：获取第idx个顶点的坐标。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>idx：顶点序号，int类型。</li>
+</ul>
+</li>
+<li><p>返回值：顶点坐标，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>SetVertices(vertices)</h3>
+
+<ul>
+<li><p>功能：设置第idx个顶点的坐标。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>vertices：顶点数组，sc2VectorVec类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetVertices()</h3>
+
+<ul>
+<li><p>功能：获取所有顶点的坐标。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：所有顶点的坐标，sc2VectorVec类型。</p></li>
+</ul>
+
+
+<h3>InsertVertex(idx, vertex)</h3>
+
+<ul>
+<li><p>功能：在第idx个位置插入新的顶点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>idx：顶点序号，int类型。</p></li>
+<li><p>vertex：顶点坐标，sc2Vector类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否插入成功。</p></li>
+</ul>
+
+
+<h3>InsertVertices(idx, vertices)</h3>
+
+<ul>
+<li><p>功能：在第idx个位置插入一组顶点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>idx：顶点序号，int类型。</p></li>
+<li><p>vertices：要插入的一组顶点坐标数组，sc2VectorVec类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否插入成功。</p></li>
+</ul>
+
+
+<h3>AddVertex(vertex)</h3>
+
+<ul>
+<li><p>功能：在多边形点序列的尾部添加新的顶点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>vertex：新的顶点坐标，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>AddVertices(vertices)</h3>
+
+<ul>
+<li><p>功能：在多边形点序列的尾部添加一组顶点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>vertices：一组顶点坐标数组，sc2VectorVec类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>RemoveVertex(idx)</h3>
+
+<ul>
+<li><p>功能：删除第idx个顶点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>idx：顶点序号，int类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否删除成功。</p></li>
+</ul>
+
+
+<h3>RemoveVertices()</h3>
+
+<ul>
+<li><p>功能：删除所有顶点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

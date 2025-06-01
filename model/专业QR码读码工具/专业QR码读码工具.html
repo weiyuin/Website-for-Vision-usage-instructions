@@ -1,0 +1,171 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>专业QR码读码工具</h1>
+
+<h2>1.功能</h2>
+
+<p>本工具用于对图像中的QR码进行识读。</p>
+
+<h2>2.参数</h2>
+
+<h3>输入参数</h3>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称         </th>
+<th> 参数描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 是否启用ROI      </td>
+<td> 启用后将限定读码的识别范围，配合参数链—“二维线性变换”一起使用；不启用则默认为全图识别； </td>
+</tr>
+<tr>
+<td> 读码区域         </td>
+<td> 读码识别区域，为仿射矩形；                                   </td>
+</tr>
+<tr>
+<td> 待读取QR码个数   </td>
+<td> 选择要读取的QR码个数，例：当图像中有10个QR码时，设置需要读取的个数为2，则最终会只读取2个QR码，且返回读码成功。若图像中只有1个QR码，设置需要读取的个数为2，则最终只会读取1个QR码，返回读码失败； </td>
+</tr>
+<tr>
+<td> 是否限定读码个数 </td>
+<td> 当功能开启时，读到的QR码个数与设定的待读取QR码个数不相等时运行失败；功能关闭时，得到的QR码个数大于零小于等于设置的待读取QR码个数，工具运行成功； </td>
+</tr>
+<tr>
+<td> QR码类型         </td>
+<td> QR码、微QR码                                                 </td>
+</tr>
+<tr>
+<td> 条码极性         </td>
+<td> 黑色码-DarkOnLight、白色码-LightOnDark；                     </td>
+</tr>
+<tr>
+<td> 开启质量评价     </td>
+<td> 是否开启质量评价，默认不开启                                 </td>
+</tr>
+<tr>
+<td> 质量评价标准     </td>
+<td> 评价标准支持ISOIEC15415和AIMDPM                              </td>
+</tr>
+<tr>
+<td> 条码等级下限     </td>
+<td> 评价标准等级下限，当条码等级低于下限工具运行不成功。         </td>
+</tr>
+<tr>
+<td> 是否启动TimeOut  </td>
+<td> 为了防止工具执行时间过长，增加超时处理，选择是时，如果执行时长超出指定时长，工具执行失败并退出； </td>
+</tr>
+<tr>
+<td> TimeOut          </td>
+<td> 启动TimeOut时可用，单位为ms，取值范围【1，1000000】。在执行计算时可能无法立即中断计算，所以可能存在2~3ms的误差，在设置值时，需要比预期执行时间大，否则可能影响识别率； </td>
+</tr>
+<tr>
+<td> 启用训练         </td>
+<td> 选择启用训练，可以加快工具执行效率；选择启用训练后，会将当前场景的第一个解码成功的QR码码区信息作为训练结果，用于后续图像的读码；训练结果会在选择“否”和执行失败时进行清空；如果当前产品码区尺寸相差较大，不建议启用训练，因为可能会影响识别率； </td>
+</tr>
+<tr>
+<td> 输入图像         </td>
+<td> 待读码的图像；                                               </td>
+</tr>
+<tr>
+<td> 二维线性变换     </td>
+<td> 读码区域接收二维线性变换以确保读码区域与QR码的相对固定；     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>输出参数</h3>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像     </td>
+<td> 输入图像的宽度、高度、像素大小；                             </td>
+</tr>
+<tr>
+<td> 评价结果     </td>
+<td> 根据质量评级标准，输出ISOIEC15415或AIMDPM评价结果            </td>
+</tr>
+<tr>
+<td> 结果数目     </td>
+<td> 工具实际读码数目；                                           </td>
+</tr>
+<tr>
+<td> 所有读码结果 </td>
+<td> 显示所有读码结果，包括条码区域、解码字符串及版本、条码极性、模块尺寸、是否镜像、降采样分辨率等； </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td> 工具执行结果；                                               </td>
+</tr>
+<tr>
+<td> 执行时间     </td>
+<td> 工具执行时间；                                               </td>
+</tr>
+<tr>
+<td> 输出图像     </td>
+<td> 完成读码的图像；                                             </td>
+</tr>
+<tr>
+<td> 条码区域     </td>
+<td> 条码所在的区域；                                             </td>
+</tr>
+<tr>
+<td> 结果数目     </td>
+<td> 工具实际读码数目，与监视窗口中的“结果数目”是同一个参数；     </td>
+</tr>
+<tr>
+<td> 所有读码结果 </td>
+<td> 包括读码结果，包括条码区域、解码字符串及版本、条码极性、模块尺寸、是否镜像、降采样分辨率等。与监视窗口中的“所有读码结果”是同一参数； </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>3.详细说明</h2>
+
+<p>相对于QR码读码工具的升级点</p>
+
+<ol>
+<li>参数设置：输入参数简化为2个，且支持训练功能，用户可以迅速的通过条码特性及成像情况选择正确的参数；</li>
+<li>识别率：解码成功率有较大的提升，同一场景下可以使用相同参数读码成功；</li>
+<li>效率：效率提升明显；</li>
+<li>支持训练功能：当运行批量图像时，用户可勾选启用训练以加快解码效率；</li>
+</ol>
+
+
+<h2>4.注意</h2>
+
+<p>​ 获取读码结果需要一个数组解析工具（数据类型选择<code>QRSingleReaderResultEx</code>,区别于QR码读码工具的<code>QRSingleReaderResult</code>），如果有多个读码结果，可以用循环来个挨个获取，在数组解析工具的参数链中设置输出参数项，通过变量表达式赋值可以获取最终的解码字符串。</p>
+
+<p><img src="media/GcBarcodeQRvwToolEx_4_1.png" alt="GcBarcodeQRvwToolEx_4_1" /></p>
+
+<h2>5.示例工程</h2>
+
+<p>参见<code>“\Samples\专业QR码读码工具.gvp”</code></p>

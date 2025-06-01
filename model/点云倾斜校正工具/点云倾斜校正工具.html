@@ -1,0 +1,125 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云倾斜校正工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云倾斜校正工具适用于3D测量、检测等场景，点云倾斜校正工具主要根据输入点云和相机安装角度进行倾斜校正功能。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量中，点云倾斜应用较为广泛，如由于产品或安装空间原因，相机以固定角度倾斜安装，拍摄的点云图像需要校正后再进行相应的测量的项目，即倾斜校正工具后的点云图像相当于相机水平安装拍摄的图像效果。</p>
+
+<h2>3. 使用向导</h2>
+
+<p><strong>step1</strong>：添加点云文件、点云倾斜校正工具，如图3-1所示；</p>
+
+<p><strong>step2</strong>：并双击打开工具参数链，链接点云文件；</p>
+
+<p><strong>step3</strong>：属性栏输入相机倾斜角度，然后点击运行即可得到倾斜校正后的点云数据；</p>
+
+<p><img src="media/GcCloudTiltTool3_1.png" alt="" /></p>
+
+<p><imgnote>图3_1 点云倾斜校正工具流程</imgnote></p>
+
+<h2>4. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 输入待校正的点云图像                                                                                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 相机安装角度       </td>
+<td> 倾斜校正的角度，参数范围[-360,360] </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据 </td>
+<td> 输出倾斜校正后的数据，用于测量 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据 </td>
+<td> 输出倾斜校正后的数据，用于测量 </td>
+</tr>
+<tr>
+<td> 执行时间     </td>
+<td> 工具执行时间                   </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td> 工具执行结果                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>5. 示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云倾斜校正工具.gvp”。</p>

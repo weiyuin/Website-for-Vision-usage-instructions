@@ -1,0 +1,160 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>孔洞填充工具</h1>
+
+<h2>功能</h2>
+
+<p>孔洞填充是图像预处理方法之一，主要任务是对因打光问题或噪声污染得到的图像进行填充，得到消除打光影响或噪声后的填充孔洞后的图像。根据待填充孔洞与其边界像素的关系，孔洞填充分为深色孔填充和浅色孔填充。</p>
+
+<p><img src="media/wps3.jpg" alt="img" /></p>
+
+<p><imgnote>图1 深色孔填充</imgnote></p>
+
+<p><img src="media/wps4.jpg" alt="img" /></p>
+
+<p><imgnote>图2 浅色孔填充</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                              </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 孔洞填充ROI                                             </td>
+<td> 全图还是矩形，全图就是将全图的孔洞都进行填充，矩形的话就是只对矩形框里面的孔洞进行填充。<img src="media/wps6.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td></td>
+<td> 矩形ROI  </td>
+<td> 当孔洞填充为矩形的时候，需要设置矩形ROI。即X、Y、W和H。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 填充类型 </td>
+<td> 深色孔填充和浅色孔填充。<img src="media/wps7.jpg" alt="img" />                                                                        </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像                                                </td>
+<td> 待进行孔洞填充的图片。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 矩形GUI  </td>
+<td> 用于孔洞填充ROI为矩形时，设置矩形区域。                                                                               </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入图像                                                </td>
+<td> 待进行孔洞填充的图片。                                       </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无 </td>
+<td> 无                                                                                                                    </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 进行孔洞填充的结果图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 进行孔洞填充的结果图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像                                                     </td>
+<td> 进行孔洞填充的结果图像。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>深色孔填充</h3>
+
+<p>将浅色像素所包围的深色像素转换为浅色像素，在输出图像中会填充深色孔。</p>
+
+<h3>浅色孔填充</h3>
+
+<p>将深色像素所包围的浅色像素转换为深色像素，在输出图像中会填充浅色孔。</p>
+
+<h3>基本原理</h3>
+
+<p>深色孔和浅色孔填充工具原理是膨胀和腐蚀的灰度形态学重建。浅色孔填充和深色孔填充的原理相似，这里只以深色孔填充工具为例，说明孔洞填充的基本原理。</p>
+
+<p><img src="media/wps10.jpg" alt="img" /></p>
+
+<p><imgnote>图3 一维灰度图像深色孔填充原理图</imgnote></p>
+
+<p>图3为一维灰度图像深色孔填充的原理图。以输入图像的非作为模板图像。标记图像的边界与模板图像边界相同，其余部分为0。利用标记图像对模板图像反复进行测地膨胀操作，直到稳定状态。将稳定状态结果求非即为对原图像进行深色孔洞填充的结果，即图3中（a）-（h）的过程。</p>
+
+<p><img src="media/wps11.jpg" alt="img" /></p>
+
+<p><imgnote>图4 二维灰度图像深色孔填充原理图</imgnote></p>
+
+<p>图4为二维灰度图像深色孔填充示意图。根据图3的过程很容易将一维算法推广到二维灰度图像的情况，图4中只对边界迭代一次后部分位置做了说明，具体可参照一维灰度图像填充进行推广。</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\孔洞填充工具.gvp”。</p>

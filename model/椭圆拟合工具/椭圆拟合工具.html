@@ -1,0 +1,176 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>椭圆拟合工具</h1>
+
+<h2>功能</h2>
+
+<p>对输入的点集进行椭圆拟合，得到最匹配的椭圆。其应用效果如图1所示。</p>
+
+<p><img src="media/wps53.jpg" alt="img" /> <img src="media/wps54.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 输入轮廓点集</imgnote> <imgnote>(b) 椭圆拟合结果</imgnote></p>
+
+<p><imgnote>图1 椭圆拟合工具应用示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称         </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口         </td>
+<td> 拟合方法                                                     </td>
+<td> 拟合方法分为2种，代数距离和几何距离。                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 启用全局最优拟合 </td>
+<td> 是否启用全局最优拟合，默认为“否”。如果选否，则使用效率优先的拟合方式；如果选是，则使用全局最优拟合。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 考虑局外点       </td>
+<td> 椭圆拟合过程中是否考虑偏离曲线较远的点(局外点)，选择“是”，显示局外点方法和局外点个数参数。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 局外点方法       </td>
+<td> 局外点方法分为3种，Combination(全组合)、Ransac(随机抽样)、Robust(权重)。Robust提供稳定高效的拟合结果，Combination的结果最优但效率极低，Ransac的结果具有随机性。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 局外点个数       </td>
+<td> 不参与椭圆拟合的点个数，局外点个数小于总点数减2。                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> 约束角度         </td>
+<td> 约束拟合椭圆的角度，取值范围-180°~180°。                                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口         </td>
+<td> 输入图像                                                     </td>
+<td> 显示待检测的图像。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入点集         </td>
+<td> 显示输入点集。                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链           </td>
+<td> 输入图像                                                     </td>
+<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入点集         </td>
+<td> 输入拟合的点集，同图像窗口的输入点集参数。                                                                             </td>
+</tr>
+<tr>
+<td> 高级界面         </td>
+<td> 无       </td>
+<td> 无   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口   </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小。                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 椭圆结果   </td>
+<td> 输出拟合椭圆的圆心、半轴长度和角度。                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 拟合点集   </td>
+<td> 输出参与拟合椭圆的点集（排除局外点）。                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 均方根误差 </td>
+<td> 输出拟合结果的误差，值越小，拟合效果越好。                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 工具执行结果。                                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间   </td>
+<td> 工具执行时间。                                                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口   </td>
+<td> 椭圆结果                                                     </td>
+<td> 显示椭圆拟合结果，同监视窗口的椭圆结果参数。             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                           </td>
+</tr>
+<tr>
+<td> 数据链    </td>
+<td> 椭圆结果   </td>
+<td> 输出椭圆拟合结果，供后序工具使用，同监视窗口的椭圆结果参数。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 拟合点集   </td>
+<td> 输出参与拟合椭圆的点集，供后序工具使用，同监视窗口的拟合点集参数。                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

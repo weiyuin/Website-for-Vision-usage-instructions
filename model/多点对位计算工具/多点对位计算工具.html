@@ -1,0 +1,171 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>多点对位计算</h1>
+
+<h2>功能</h2>
+
+<p>对位是指，在统一的平台坐标系下，根据对象和目标的多个特征，计算机械手/平台运动XYD/XDY/DXY偏移量，使得对象和目标对准重合。最常见的两点对位，如图1所示。</p>
+
+<p><img src="media/wps91.jpg" alt="img" /></p>
+
+<p><imgnote>图1 狭义对位举例</imgnote></p>
+
+<p>在多点对位计算中，根据采样数量和位置分布的不同，矩形产品的点对位点，分为四种具体场景，即2个相邻点、2个对角点、3个L型点、4个矩形点，如图2所示。</p>
+
+<p><img src="media/wps92.jpg" alt="img" /> <img src="media/wps93.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 2个相邻点</imgnote> <imgnote>(b) 2个对角点</imgnote></p>
+
+<p>​ <img src="media/wps94.jpg" alt="img" /> <img src="media/wps95.jpg" alt="img" /></p>
+
+<p><imgnote>&copy; 3个L型点</imgnote> <imgnote>(d) 4个矩形点</imgnote></p>
+
+<p><imgnote>图2 点对点对位</imgnote></p>
+
+<p>本工具就用于计算多点间的对位偏移量。目前适用于大于等于2个点的情况，且对象向量与目标向量的长度应相等。</p>
+
+<h2>输入参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称       </th>
+<th> 参数描述                                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口       </td>
+<td> 坐标系类型                 </td>
+<td> 选择是XYD平台坐标系/XDY平台坐标系/DXY平台坐标系下对位。<img src="media/wps97.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td> 图像窗口       </td>
+<td> 无                         </td>
+<td> 无                                                           </td>
+</tr>
+<tr>
+<td> 数据链         </td>
+<td> 对象点坐标向量             </td>
+<td> 对象点平台坐标组成的向量。     </td>
+</tr>
+<tr>
+<td></td>
+<td> 目标点坐标向量 </td>
+<td> 目标点平台坐标组成的向量。                                </td>
+</tr>
+<tr>
+<td></td>
+<td> 平台轴方向     </td>
+<td> 平台各轴的正方向。                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> X补偿量          </td>
+<td> 输出的对位计算结果在X方向需要增加的补偿量 </td>
+</tr>
+<tr>
+<td></td>
+<td> Y补偿量          </td>
+<td> 输出的对位计算结果在Y方向需要增加的补偿量 </td>
+</tr>
+<tr>
+<td></td>
+<td> D补偿量          </td>
+<td> 输出的对位计算结果在D方向需要增加的补偿量 </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无 </td>
+<td> 无                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 相对对位偏移量 </td>
+<td> 计算的相对对位偏移量结果。                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像窗口 </td>
+<td> 无                                                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 相对对位偏移量 </td>
+<td> 输出计算的相对对位偏移量结果，供后序工具使用，同监视窗口参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>坐标系类型</h3>
+
+<p>XYD平台：项目中最常见的平台类型，其XY轴呈垂直关系，旋转D轴直接对产品进行旋转，而对XY轴的角度关系无影响，如图3(a)所示。</p>
+
+<p>XDY平台：该平台类型的旋转D轴安装于X轴与Y轴之间，直接决定XY轴之间的夹角。如图3(b)所示。</p>
+
+<p>DXY平台：该平台的XY轴会随D轴旋转而旋转，但XY轴始终保持垂直关系，如图3&copy;所示。</p>
+
+<p>​</p>
+
+<p><img src="media/wps100.jpg" alt="img" /><img src="media/wps101.jpg" alt="img" /><img src="media/wps102.jpg" alt="img" /></p>
+
+<p><imgnote>(a) XYD平台</imgnote> <imgnote>(b) XDY平台</imgnote> <imgnote>&copy; DXY平台</imgnote></p>
+
+<p><imgnote>图3 坐标系类型</imgnote></p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>对象点坐标向量与目标点坐标向量中的坐标点顺序需要保持一致，使对象点与目标点对应。</p></li>
+<li><p>输入的对象点坐标向量或者目标点坐标向量可以通过二元数组生成工具、三元数组生成工具、四元数组生成工具、数组生成工具，数据类型属性选择“GcCoordPos”来获得。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>用法参见“\Samples\标准标定+基准四点两线对位.gvp”的多点对位计算工具。</p>

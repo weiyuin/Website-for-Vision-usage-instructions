@@ -1,0 +1,177 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>颜色识别工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     颜色识别工具主要对标准样品以及待分类产品的图像进行对比分析，并根据产品图像与样品图像之间的颜色相似性对产品进行分类。</p>
+
+<p><img src="media/GvColorIdentifyTool_1_1.jpg" alt="img" /></p>
+
+<p><imgnote>图1 颜色识别示例</imgnote></p>
+
+<p><img src="media/GvColorIdentifyTool_1_2.png" alt="img" /></p>
+
+<p><imgnote>图2 监视窗口显示六组识别区域的结果</imgnote></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     根据图像颜色对产品分类</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     鉴于灰度图像提供的信息量较小，RGB彩色图像不符合人的视觉习惯，颜色识别工具采用HSL颜色空间图像进行颜色识别。HSL颜色空间是人类视觉空间体系中的一种，反映了人类感知和体验颜色的方式，是最适合进行颜色识别的颜色空间。</p>
+
+<p><img src="media/GvColorIdentifyTool_3_1.jpg" alt="img" /></p>
+
+<p><imgnote>图3 颜色识别工具流程示意图</imgnote></p>
+
+<p>如图3所示为颜色识别工具流程示意图。在HSL颜色空间进行颜色识别的关键有两点：1）HSL图像的色谱生成：对HSL颜色空间图像进行降维处理，将图像的三维空间颜色特征降维为一维颜色特征，能有效的减小识别的运算量，方便识别算法的实现；2）色谱的相似性度量：采用曼哈顿距离度量不同色谱之间的相似程度。如图4所示为色谱的示意图。</p>
+
+<p><img src="media/GvColorIdentifyTool_3_2.jpg" alt="img" /></p>
+
+<p><imgnote>图4 色谱表示流程示意图</imgnote></p>
+
+<h2>4. 使用向导</h2>
+
+<p>​     工具执行流程：配置输入→设定属性→训练图像→执行识别。</p>
+
+<h3>配置输入</h3>
+
+<p>双击工具在弹出窗口中配置输入图像，二维线性变换；</p>
+
+<p><img src="media/GvColorIdentifyTool_4_1.png" alt="img" /></p>
+
+<p><imgnote>图5 配置输入示意图</imgnote></p>
+
+<h3>设定属性</h3>
+
+<p>属性栏设置如图6，右键工具→属性→打开高级界面设置如图7</p>
+
+<p><img src="media/GvColorIdentifyTool_4_2.png" alt="img" /></p>
+
+<p><imgnote>图6 属性栏设置示意图</imgnote></p>
+
+<p><img src="media/GvColorIdentifyTool_4_3.png" alt="img" /></p>
+
+<p><imgnote>图7 高级界面设置示意图</imgnote></p>
+
+<h3>训练图像</h3>
+
+<p>先点击“获取训练图像”，再点击“执行训练”；</p>
+
+<p><img src="media/GvColorIdentifyTool_4_4.png" alt="img" /></p>
+
+<p><imgnote>图8 训练图像示意图</imgnote></p>
+
+<h3>执行识别</h3>
+
+<p>先点击“使大小相同”来设置识别区域，再点击“执行识别”；</p>
+
+<p><img src="media/GvColorIdentifyTool_4_5.png" alt="img" /></p>
+
+<p><imgnote>图9 训练图像示意图</imgnote></p>
+
+<h3>精度</h3>
+
+<p>粗略模式将色谱划分为16个区域；一般模式将色谱划分为30个区域；精细模式将色谱划分为58个区域。颜色灵敏度决定着颜色识别工具的精度，从粗略模式、一般模式到精细模式精度依次提高，但速度依次下降。</p>
+
+<h2>5. 常见问题</h2>
+
+<p>​     无</p>
+
+<h2>6. 参数说明</h2>
+
+<p>​</p>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                   </th>
+<th> 参数说明                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 外部链入ROI  </td>
+<td> ROI区域通过外部链入指定的区域。   </td>
+</tr>
+<tr>
+<td> ROI区域类型 </td>
+<td> 工具执行检测的区域类型，分为四种：仿射矩形ROI，圆形ROI，圆环ROI，椭圆ROI </td>
+</tr>
+<tr>
+<td> 训练图像是否保存  </td>
+<td> 保存训练图像。   </td>
+</tr>
+<tr>
+<td> 识别区域数量 </td>
+<td> 颜色识别的区域内识别数量。    </td>
+</tr>
+<tr>
+<td> 分数阈值     </td>
+<td> 根据分数阈值设置是否匹配成功。范围是(0,100]，默认是80。</td>
+</tr>
+<tr>
+<td> 输入图像     </td>
+<td> 需要进行颜色识别的图像。   </td>
+</tr>
+<tr>
+<td> 二维线性变换 </td>
+<td> 对图像进行基础变换的矩阵，一般不做设置。               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数说明                                                    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像     </td>
+<td> 输入图像宽度、高度、像素大小。   </td>
+</tr>
+<tr>
+<td> 匹配分数     </td>
+<td> 一个或者多个待测区域的匹配分数。   </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td> 工具执行结果。     </td>
+</tr>
+<tr>
+<td> 执行时间     </td>
+<td> 工具执行时间。     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\颜色识别工具.gvp”。</p>

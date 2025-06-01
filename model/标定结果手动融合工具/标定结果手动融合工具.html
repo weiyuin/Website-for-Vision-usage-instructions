@@ -1,0 +1,133 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>标定结果手动融合工具</h1>
+
+<h2>功能</h2>
+
+<p>将修改后的标定结果的参数，例如图像坐标，平台坐标，进行组合，生成一个整体的标定结果，供其他工具使用，例如“图像到平台坐标转换工具”的数据链输入。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属性窗口</td>
+<td> 旧标定类型 </td>
+<td> 标识当前要链接旧标定结果（GcCalibrateResult）还是新标定结果（GeneralCalibResult）                                              </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td>   无   </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 图像坐标                                                     </td>
+<td> 标定结果的图像坐标，通常是标定时用来定位的Mark点的图像坐标, GcCoordPos类型。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 平台坐标     </td>
+<td> 标定结果的平台坐标，通常是修改后的平台坐标，GcCoordPos类型。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入标定结果 </td>
+<td> 被修改的原始标定结果（旧标定结果）                                                                                                </td>
+</tr>
+<tr>
+<td></td>
+<td> 运动标定结果 </td>
+<td> 被修改的原始标定结果（新标定结果） </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无     </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 标定结果       </td>
+<td> 修改后的标定结果（旧标定结果）。                                    </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 输出标定结果 </td>
+<td> 修改后的标定结果（新标定结果）。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 执行结果       </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 标定结果       </td>
+<td> 修改后的标定结果，供其他工具使用，同监视窗口参数。           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>数据链中的<strong>“</strong>图像坐标<strong>”</strong>、<strong>“</strong>平台坐标<strong>”</strong>可以使用“位置姿态生成工具”来获得。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\双相机对位.gvp”。</p>

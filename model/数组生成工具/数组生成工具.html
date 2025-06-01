@@ -1,0 +1,237 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>数组生成工具</h1>
+
+<h2>功能</h2>
+
+<p>数组生成工具可以用来将相同类型的一组独立的数据，按照对应的索引号，生成数组；其作用与数组解析工具相反。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 数据类型                                     </td>
+<td> 选择生成数组的数据类型，根据实际使用情况选择对应的数据类型。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否清空数组 </td>
+<td> 选择“是”，则在向数组中添加数据前，清空数组。                                                               </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无           </td>
+<td> 无                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入数据索引                                 </td>
+<td> 输入生成数组的索引号（int型），通常是自定义的变量。          </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入数据     </td>
+<td> 输入数据（与属性窗口数据类型相同）。                                                                       </td>
+</tr>
+<tr>
+<td> 高级界面     </td>
+<td> 无 </td>
+<td> 无                                </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出数组       </td>
+<td> 输出生成的数组信息。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无 </td>
+<td> 无 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出数组       </td>
+<td> 输出生成的数组信息，供后序工具使用，同监视窗口的输出数组参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>数组生成工具提供的数据类型如下所示。</p>
+
+<table>
+<thead>
+<tr>
+<th>  bool                   </th>
+<th> 布尔             </th>
+<th>  int                    </th>
+<th> 整型             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>  double                 </td>
+<td> 双精度浮点型     </td>
+<td>  float                  </td>
+<td> 单精度浮点型     </td>
+</tr>
+<tr>
+<td>  long                   </td>
+<td> 长整型           </td>
+<td>  sc2Vector              </td>
+<td> 二维向量         </td>
+</tr>
+<tr>
+<td>  GcCalibrateResult      </td>
+<td> 标定结果         </td>
+<td>  GcCoordPos             </td>
+<td> 位置姿态         </td>
+</tr>
+<tr>
+<td>  GcPlatformAxisPos      </td>
+<td> 轴位置           </td>
+<td>  GcBoardPoints          </td>
+<td> 靶标角点坐标     </td>
+</tr>
+<tr>
+<td>  sc2XformLinear         </td>
+<td> 二维线性变换     </td>
+<td>  scCaliperOneEdgeResult </td>
+<td> 单边卡尺结果     </td>
+</tr>
+<tr>
+<td>  scCaliperTwoEdgeResult </td>
+<td> 双边卡尺结果     </td>
+<td>  scCircle               </td>
+<td> 找圆工具结果     </td>
+</tr>
+<tr>
+<td>  scGeomSearchResult     </td>
+<td> 几何定位结果     </td>
+<td>  scImage24              </td>
+<td> 24位彩色图像     </td>
+</tr>
+<tr>
+<td>  scImage8               </td>
+<td> 8位灰度图像      </td>
+<td>  scLine                 </td>
+<td> 找线工具结果     </td>
+</tr>
+<tr>
+<td>  scPatSearchMaxResult   </td>
+<td> PatSearchMax结果 </td>
+<td>  scGcCoordPosVector     </td>
+<td> 位置姿态向量     </td>
+</tr>
+<tr>
+<td>  scSc2vectorVector      </td>
+<td> 二维向量向量     </td>
+<td>  scFeatureletVector     </td>
+<td> 特征链           </td>
+</tr>
+<tr>
+<td>  GsTextDisplayParam     </td>
+<td> 文本显示参数     </td>
+<td>  DefectResultInfo       </td>
+<td> 瑕疵检测结果     </td>
+</tr>
+<tr>
+<td>  DMSingleReaderResult   </td>
+<td> 单个DM读码结果   </td>
+<td>  GsGlueDetectResult     </td>
+<td> 胶体位置检测结果 </td>
+</tr>
+<tr>
+<td>  GsSingleBlobResult     </td>
+<td> 单个Blob结果     </td>
+<td>  GsGlueMeasureResult    </td>
+<td> 胶体尺寸测量结果 </td>
+</tr>
+<tr>
+<td>  scCrossSearchResult    </td>
+<td> 十字定位结果     </td>
+<td>  QRSingleReaderResult   </td>
+<td> 单个QR读码结果   </td>
+</tr>
+<tr>
+<td>  GsMultiCLOutputResult  </td>
+<td> 多圆多线定位结果 </td>
+<td>  SingleLinearCodeResult </td>
+<td> 一维读码结果     </td>
+</tr>
+<tr>
+<td> EdgeDeviation    </td>
+<td> 边缘检测结果                               </td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<ul>
+<li><p>数据链窗口输入数据的类型和属性窗口的数据类型必须一致，否则数据链参数找不到来源，数组生成工具不能执行。</p></li>
+<li><p>数组生成工具同时只能向数组中写入一个数据。</p></li>
+<li><p>数据类型中的GcCalibrateResult 标定结果为 标准/高精度/触碰/相机轴标定计算工具的标定结果，是计算图像、平台及轴坐标系间的转换关系；而靶标相机标定工具的标定结果是scCalibrateResult类型，是计算图像坐标系与世界坐标系的关系。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\数组生成工具.gvp”。</p>
+
+<p>该工程通过循环，使用数组生成工具，生成了一个类型为double，大小为10的一维数组。</p>

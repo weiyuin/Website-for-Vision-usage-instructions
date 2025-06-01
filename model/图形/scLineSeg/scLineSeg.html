@@ -1,0 +1,196 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scLineSeg</h1>
+
+<h2>功能</h2>
+
+<p>表示线段。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                       </th>
+<th> 接口描述                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scLineSeg     </td>
+<td> scLineSeg()默认构造函数。                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scLineSeg  </td>
+<td> scLineSeg(sc2Vector, sc2Vector)构造函数。 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> Set          </td>
+<td> 设置线段起始点和终止点。                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetP1            </td>
+<td> 设置线段起始点。                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetP2            </td>
+<td> 设置线段终止点。                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetP1            </td>
+<td> 获取线段起始点。                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetP2            </td>
+<td> 获取线段终止点。                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetLine         </td>
+<td> 获取当前线段所在的直线。                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRotation </td>
+<td> 获取线段的旋转角度。                      </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scLineSeg()</h3>
+
+<ul>
+<li><p>功能：构造scLineSeg对象，默认构造函。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scLine(p1, p2)</h3>
+
+<ul>
+<li><p>功能：用起始点p1和终止点p2构造线段对象。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>p1：线段的起始点，sc2Vector类型。</p></li>
+<li><p>p2：线段的终止点，sc2Vector类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>Set (p1, p2)</h3>
+
+<ul>
+<li><p>功能：设置线段的起始点p1和终止点p2。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>p1：线段的起始点，sc2Vector类型。</p></li>
+<li><p>p2：线段的终止点，sc2Vector类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetP1(p)</h3>
+
+<ul>
+<li><p>功能：设置线段的起始点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>p：线段的起始点，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetP2(p)</h3>
+
+<ul>
+<li><p>功能：设置线段的终止点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>p：线段的终止点，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetP1 ()</h3>
+
+<ul>
+<li><p>功能：获取线段的起始点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：线段的起始点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetP2 ()</h3>
+
+<ul>
+<li><p>功能：获取线段的终止点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：线段的终止点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetLine()</h3>
+
+<ul>
+<li><p>功能：获取当前线段所在的直线。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：线段所在的直线，scLine类型。</p></li>
+</ul>
+
+
+<h3>GetRotation()</h3>
+
+<ul>
+<li><p>功能：获取线段的旋转角度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：线段的旋转角度，scRadian类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

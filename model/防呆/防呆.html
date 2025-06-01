@@ -1,0 +1,114 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>防呆</h1>
+
+<h2>功能</h2>
+
+<p>使用脚本实现防呆功能。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th> 接口名称                         </th>
+<th> 接口描述                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> ScFoolProofline1 </td>
+<td> 判断单条线夹角是否满足需求 </td>
+</tr>
+<tr>
+<td> ScFoolProofline2 </td>
+<td> 判断两条线夹角是否满足需求 </td>
+</tr>
+<tr>
+<td> ScFoolProofCircle </td>
+<td> 判断圆半径是否满足需求 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>ScFoolProofline1(line0,stdAngle=90,AngleLimit=10,strlabel=<strong>&ldquo;L1&rdquo;</strong>)</h3>
+
+<ul>
+<li>功能：  判断单条线夹角是否满足需求。</li>
+<li>参数：
+
+<ul>
+<li>line0：输入线1  scLine类型。</li>
+<li>stdAngle：标准夹角  double类型。</li>
+<li>AngleLimit：标准公差  double类型。</li>
+<li>strlabel：标注（NG时提示哪一个异常了）可忽略。</li>
+</ul>
+</li>
+<li>返回值：True符合标准，False不符合标准。</li>
+</ul>
+
+
+<h3>ScFoolProofline2(line0,line1,stdAngle=90,AngleLimit=1,strlabel=<strong>&ldquo;L1&amp;L2&rdquo;</strong>)</h3>
+
+<ul>
+<li>功能：判断两条线夹角是否满足需求。</li>
+<li>参数：
+
+<ul>
+<li>line0：输入线1  scLine类型。</li>
+<li>line1：输入线2  scLine类型。</li>
+<li>stdAngle：标准夹角  double类型。</li>
+<li>AngleLimit：标准公差  double类型。</li>
+<li>strlabel：标注（NG时提示哪一个异常了）可忽略。</li>
+</ul>
+</li>
+<li>返回值：True符合标准，False不符合标准。</li>
+</ul>
+
+
+<h3>ScFoolProofCircle(circleR,stdR=100,RLimit=10,strlabel=<strong>&ldquo;R1&rdquo;</strong>)</h3>
+
+<ul>
+<li><p>功能：判断圆半径是否满足需求。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>circleR：输入圆  scCircle类型。</li>
+<li>stdR：标准圆半径  double类型。</li>
+<li>strlabel：标注（NG时提示哪一个异常了）可忽略。</li>
+</ul>
+</li>
+<li>返回值：True符合标准，False不符合标准。</li>
+</ul>
+
+
+<h2>注意：</h2>
+
+<p>from ScFoolProof import ScFoolProof</p>
+
+<p>引用库：ScFoolProof</p>
+
+<p>类名称： class ScFoolProof</p>
+
+<h2>示例代码：</h2>
+
+<p>无</p>

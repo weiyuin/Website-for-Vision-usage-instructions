@@ -1,0 +1,186 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>轮廓边界框工具</h1>
+
+<h2>功能</h2>
+
+<p>获取轮廓数据的边界框信息，图1所示为轮廓边界框工具的效果图。</p>
+
+<p> <img src="media/wps33.jpg" alt="img" /></p>
+
+<p><imgnote>图1 轮廓边界框工具示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 定位跟随                                     </td>
+<td> 选“是”，可以链接二维线性变换，ROI区域随二维线性变换变化。 </td>
+</tr>
+<tr>
+<td>  </td>
+<td> ROI类型 </td>
+<td> 分为3种，整幅图像、矩形ROI和仿射矩形ROI。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 边界框是否旋转  </td>
+<td> 分为2种，旋转和不旋转。旋转检测的是主轴最小外接矩形，不旋转检测的是坐标最小外接矩形。                                                   </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 轮廓图像                                                     </td>
+<td> 显示待检测的轮廓图像。                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域     </td>
+<td> 在图像上显示待检测区域。                                                                                       </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入轮廓数据                                                 </td>
+<td> 输入待检测的轮廓数据，该参数来源于截面生成工具。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                                                                         </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无    </td>
+<td> 无                                                                                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称  </th>
+<th> 参数描述                                                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口  </td>
+<td> 输入轮廓数据                             </td>
+<td> 输入的轮廓数据，包括轮廓点数，有效点数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 中心X坐标 </td>
+<td> 检测结果边界框中心的X坐标。                                                        </td>
+</tr>
+<tr>
+<td></td>
+<td> 中心Z坐标 </td>
+<td> 检测结果边界框中心的Z坐标。                                                        </td>
+</tr>
+<tr>
+<td></td>
+<td> 宽度      </td>
+<td> 检测结果边界框的宽度。                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 高度      </td>
+<td> 检测结果边界框的高度。                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 旋转角度  </td>
+<td> 检测结果边界框的旋转角度。                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果  </td>
+<td> 工具执行结果。                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间  </td>
+<td> 工具执行时间。                                                                     </td>
+</tr>
+<tr>
+<td> 图像窗口  </td>
+<td> 输入轮廓数据                             </td>
+<td> 显示检测的轮廓图像。                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 边界框    </td>
+<td> 显示检测结果边界框，包括边界框及其中心。                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 数据链    </td>
+<td> 同监视窗口参数，供后续工具使用。                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>使用向导</h3>
+
+<p><strong>Step 1 设置检测区域和旋转类型</strong></p>
+
+<p>为了获取轮廓数据的边界框信息，需要设置检测区域和边界框旋转类型。其中，检测区域有3种：整幅图像、矩形、仿射矩形，而旋转类型有2种：旋转和不旋转。</p>
+
+<p><strong>Step 2 执行测量和输出结果</strong></p>
+
+<p>在完成检测区域，边界框的旋转类型的设置后，就可以执行测量了。输出的结果包括：边界框的中心坐标，边界框的边长信息以及边界框的旋转角度。边界框的相关信息如图2所示。</p>
+
+<p><img src="media/wps37.png" alt="img" /></p>
+
+<p><imgnote>图2 轮廓图像边界框示意图</imgnote></p>
+
+<p>其中，</p>
+
+<p><strong>中心坐标：</strong>检测区域内轮廓数据边界框的中心点坐标 (x,z)，如图2(a)所示。</p>
+
+<p><strong>宽度：</strong>检测区域内轮廓数据边界框的宽度。如图2(b)所示，当不启用旋转功能时，边界框为侧边平行于X轴和Z轴的最小矩形，宽度为X轴方向上的尺寸。如图2&copy;所示，当启用旋转功能时，宽度为旋转后边界框与X轴夹角绝对值小于等于45°的侧边的尺寸。</p>
+
+<p><strong>高度：</strong>检测区域内轮廓数据边界框的高度。如图2(b)所示，当不启用旋转功能时，边界框为侧边平行于X轴和Z轴的最小矩形，高度为Z轴方向上的尺寸。如图2&copy;所示，当启用旋转功能时，高度为旋转后边界框与X轴夹角绝对值大于45°的侧边的尺寸。</p>
+
+<p><strong>旋转角度：</strong>当不启用旋转功能，旋转角度始终为90°；当启用旋转功能时，如图2(d)所示，旋转角度为边界框长边与X轴的夹角θ。</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\3D测量工具.gvp”。</p>

@@ -1,0 +1,481 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scAffineRect</h1>
+
+<h2>功能</h2>
+
+<p>表示仿射矩形，例如几何定位的训练区域，Blob工具的仿射矩形ROI区域。</p>
+
+<p><img src="media/d991a54662aeaa5ab555cd264709fdb9.png" alt="" /></p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scAffineRect                              </td>
+<td> scAffineRect()默认构造函数。                                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scAffineRect                </td>
+<td> scAffineRect(sc2XformLinear)构造函数。                       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scAffineRect </td>
+<td> scAffineRect(sc2Vector, sc2Vector,sc2Vector)构造函数。       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scAffineRect </td>
+<td> scAffineRect(sc2Vector, double, double, scRadian, scRadian)构造函数。 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> SetAffineRectFromUnitSq </td>
+<td> 设置仿射变换。                                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCornersPoPxPy </td>
+<td> 设置仿射矩形原点cornerPo，x角点cornerPx，y角点cornerPy。     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCenterLengthsRotAndSkew </td>
+<td> 设置仿射矩形中心center，x边长xLen，y边长yLen，x边旋转角度xRotation和切变角skew。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCornerPoLengthsRotAndSkew </td>
+<td> 设置仿射矩形原点cornerPo，x边长xLen，y边长yLen，x边旋转角度xRotation和切变角skew </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCenter                            </td>
+<td> 设置仿射矩形的中心。                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCornerPo                             </td>
+<td> 设置仿射矩形的原点Po。                                       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetXLength                             </td>
+<td> 设置仿射矩形的x边长。                                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetYLength                             </td>
+<td> 设置仿射矩形的y边长。                                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetXRotation                         </td>
+<td> 设置仿射矩形的x边旋转角度。                                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetSkew                                   </td>
+<td> 设置仿射矩形的切变角度。                                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetAffineRectFromUnitSq       </td>
+<td> 获取仿射变换。                                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCornerPo                               </td>
+<td> 获取仿射矩形的原点Po。                                       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCornerPx                               </td>
+<td> 获取仿射矩形的x角点Px。                                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCornerPy                           </td>
+<td> 获取仿射矩形的y角点Py。                                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCornerPopp                           </td>
+<td> 获取仿射矩形对角点坐标。                                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCenter                                   </td>
+<td> 获取仿射矩形的中心。                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetXLength                                 </td>
+<td> 获取仿射矩形的x边长。                                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetYLength                                 </td>
+<td> 获取仿射矩形的y边长。                                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetXRotation                              </td>
+<td> 获取仿射矩形的x边旋转角度。                                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetYRotation                              </td>
+<td> 获取仿射矩形的y边旋转角度。                                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSkew                                       </td>
+<td> 获取仿射矩形的切变角度。                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scAffineRect()</h3>
+
+<ul>
+<li><p>功能：构造scAffineRect对象。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scAffineRect(affRectFromUS)</h3>
+
+<ul>
+<li><p>功能：根据二维仿射变换构造scAffineRect对象，。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>affRectFromUS：二维仿射变换，sc2XformLinear类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scAffineRect(cornerPo, cornerPx, cornerPy)</h3>
+
+<ul>
+<li><p>功能：构造scAffineRect对象，设置原点为cornerPo，Px角点为conerPx和Py角点为cornerPy。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>cornerPo：仿射矩形的原点，sc2Vector类型。</p></li>
+<li><p>cornerPx：仿射矩形的Px点，sc2Vector类型。</p></li>
+<li><p>cornerPy：仿射矩形的Py点，sc2Vector类型.</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scAffineRect(center, xLen, yLen, xRotation, skew)</h3>
+
+<ul>
+<li><p>功能：构造scAffineRect对象，设置中心为center，x边长为xLen，y边长为yLen，旋转角度为xRotation，切变角为skew。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>center：仿射矩形的中心，sc2Vector类型。</p></li>
+<li><p>xLen：仿射矩形的x边长，浮点数类型。</p></li>
+<li><p>yLen：仿射矩形的y边长，浮点数类型。</p></li>
+<li><p>xRotation：仿射矩形的旋转角度（弧度表示），scRadian类型。</p></li>
+<li><p>skew：仿射矩形的切变角（弧度表示），scRadian类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>SetAffineRectFromUnitSq(affRectFromUS)</h3>
+
+<ul>
+<li><p>功能：设置仿射变换。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>affRectFromUS：仿射变换，sc2XformLinear类型.</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCornersPoPxPy(cornerPo, cornerPx, cornerPy)</h3>
+
+<ul>
+<li><p>功能：设置仿射矩形的原点，Px角点和Py角点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>cornerPo：仿射矩形的原点，sc2Vector类型。</p></li>
+<li><p>cornerPx：仿射矩形的Px点，sc2Vector类型。</p></li>
+<li><p>cornerPy：仿射矩形的Py点，sc2Vector类型.</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCenterLengthsRotAndSkew(center, xLen, yLen, xRotation, skew)</h3>
+
+<ul>
+<li><p>功能：设置仿射矩形中心为center，x边长为xLen，y边长为yLen，旋转角度为xRotation，切变角为skew。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>center：仿射矩形的中心，sc2Vector类型。</p></li>
+<li><p>xLen：仿射矩形的x边长，浮点数类型。</p></li>
+<li><p>yLen：仿射矩形的y边长，浮点数类型。</p></li>
+<li><p>xRotation：仿射矩形的旋转角度（弧度表示），scRadian类型。</p></li>
+<li><p>skew：仿射矩形的切变角（弧度表示），scRadian类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCornerPoLengthsRotAndSkew(cornerPo, xLen, yLen, xRotation, skew)</h3>
+
+<ul>
+<li><p>功能：设置仿射矩形原点为cornerPo，x边长为xLen，y边长为yLen，旋转角度为xRotation，切变角为skew。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>cornerPo：仿射矩形的原点，sc2Vector类型。</p></li>
+<li><p>xLen：仿射矩形的x边长，浮点数类型。</p></li>
+<li><p>yLen：仿射矩形的y边长，浮点数类型。</p></li>
+<li><p>xRotation：仿射矩形的旋转角度（弧度表示），scRadian类型。</p></li>
+<li><p>skew：仿射矩形的切变角（弧度表示），scRadian类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCenter (center)</h3>
+
+<ul>
+<li><p>功能：设置仿射矩形的中心。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>center：仿射矩形的中心，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCornerPo(Po)</h3>
+
+<ul>
+<li><p>功能：设置仿射矩形的原点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>Po：仿射矩形的原点，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetXLength(xLen)</h3>
+
+<ul>
+<li><p>功能：设置仿射矩形的x边长。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>xLen：仿射矩形的x边长，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetYLength(yLen)</h3>
+
+<ul>
+<li><p>功能：设置仿射矩形的y边长。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>yLen：仿射矩形的y边长，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetXRotation(xRot)</h3>
+
+<ul>
+<li><p>功能：设置仿射矩形的x边旋转角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>xRot：仿射矩形的x边旋转角度，scRadian类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetSkew(skew)</h3>
+
+<ul>
+<li><p>功能：设置仿射矩形的切变角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>skew：仿射矩形的切变角度，scRadian类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetAffineRectFromUnitSq()</h3>
+
+<ul>
+<li><p>功能：获取仿射变换。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射变换，sc2XformLinear类型。</p></li>
+</ul>
+
+
+<h3>GetCornerPo()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形的原点坐标。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形的原点坐标，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetCornerPx()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形的Px角点坐标。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形的Px角点坐标，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetCornerPy()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形的Py角点坐标。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形的Py角点坐标，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetCornerPopp()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形的对角点坐标。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形的对角点坐标，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetCenter()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形的中心。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形的中心，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetXLength()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形的x边长。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形的x边长，浮点数类型。</p></li>
+</ul>
+
+
+<h3>GetYLength()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形的y边长。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形的y边长，浮点数类型。</p></li>
+</ul>
+
+
+<h3>GetXRotaion()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形的x边旋转角度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形的x边旋转角度，scRadian类型。</p></li>
+</ul>
+
+
+<h3>GetYRotaion()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形的y边旋转角度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形的y边旋转角度，scRadian类型。</p></li>
+</ul>
+
+
+<h3>GetSkew()</h3>
+
+<ul>
+<li><p>功能：获取仿射矩形的切变角度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：仿射矩形的切变角度，scRadian类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

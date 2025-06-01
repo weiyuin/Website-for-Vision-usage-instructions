@@ -1,0 +1,112 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>相机状态恢复工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     相机状态工具是在相机掉线或者连接失败的时候用于尝试连接相机使图像采集工具可以继续工作完成后续流程。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     主要用于图像采集工具的防呆，当相机连接不稳定或偶尔掉线，相机工具会尝试连接相机完成后续流程。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     当相机掉线运行该工具后会在设置的时间内循环查看相机是否连接，如果相机连接上返回true跳出该工具，如果在设定的时间内没有连接上相机则返回false。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media\GcCamRecoverTool_4_1.png" alt="GcCamRecoverTool_4_1" /></p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述           </th>
+<th> 解决方法                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 报错未找到置顶相机 </td>
+<td> 在相机管理中查看相机是否连接，如果连接看一下名称是否写错，如果没连接按照FAQ排查问题； </td>
+</tr>
+<tr>
+<td> 相机在多处使用弹框 </td>
+<td> 查看并行中有没有图像采集工具、相机状态恢复工具或者相机工作模式工具在同时使用； </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 相机名称 </td>
+<td> 输入在相机管理中设置的相机的名称。 </td>
+</tr>
+<tr>
+<td> 恢复时间 </td>
+<td> 该工具尝试连接相机的时间。         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 执行结果 </td>
+<td> 该工具执行完后相机有没有连接成功。 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 该工具执行消耗的时间。             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​ 参见“\Samples\相机状态恢复工具.gvp”。</p>

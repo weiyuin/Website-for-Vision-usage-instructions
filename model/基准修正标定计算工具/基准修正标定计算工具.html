@@ -1,0 +1,115 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>基准修正标定计算工具</h1>
+
+<h2>功能</h2>
+
+<p>基准修正标定计算工具是修改标定结果中的基准，即对标定结果中的图像坐标和平台坐标进行修改。修正的平台坐标是由工具输入的图像坐标向量根据原始标定结果计算得出，即将图像坐标转换为平台坐标。该工具的输入“图像坐标向量”是基准点的图像坐标，类型是GcCoordPos类型。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属性窗口</td>
+<td> 无 </td>
+<td> 无                                                             </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                             </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 图像坐标向量           </td>
+<td> 新基准点的图像坐标，类型为GcCoordPos。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 标定结果 </td>
+<td> 待修改的原始标定结果。                                         </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td>  无</td>
+<td> 无                                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 修正后标定结果 </td>
+<td> 修改基准点后的标定结果。                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 执行结果       </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 修正后标定结果 </td>
+<td> 输出修改基准点后的标定结果，供其他工具使用，同监视窗口“修正后标定结果”参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\单相机对位.gvp”。</p>

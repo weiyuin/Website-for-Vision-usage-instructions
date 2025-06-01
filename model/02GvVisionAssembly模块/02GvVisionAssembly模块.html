@@ -1,0 +1,116 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1><strong>GvVisionAssembly</strong>模块</h1>
+
+<p>该模块提供了访问和操作工具的方法，包含了工具涉及到的一些数据类型，例如sc2Vector,GcCoordPos,GcPlatformAxisPos等。</p>
+
+<ul>
+<li><p>GvVisionAssembly.GcCoordPos</p>
+
+<p>表示位置姿态。</p></li>
+<li><p>GvVisionAssembly.GcPlatformAxisPos</p>
+
+<p>表示轴位置。</p></li>
+<li><p>GvVisionAssembly.GcScriptGuiArray</p>
+
+<p>要显示到视图的GUI数组。添加的GUI对象，如果想要显示到视图窗口，必须添加到GcScriptGuiArray数组。</p></li>
+<li><p>GvVisionAssembly.GcScriptGuiDataAgent</p>
+
+<p>视图窗口代理。GcScriptGuiArray需要通过该代理将GUI对象添加到视图窗口。</p></li>
+<li><p>GvVisionAssembly.GsScriptGuiText</p>
+
+<p>文本GUI。</p></li>
+<li><p>GvVisionAssembly.GsScriptGuiCross</p>
+
+<p>十字GUI。</p></li>
+<li><p>GvVisionAssembly.GsScriptGuiRect</p>
+
+<p>矩形GUI。</p></li>
+<li><p>GvVisionAssembly.GsScriptGuiPolyline</p>
+
+<p>多边形GUI。</p></li>
+<li><p>GvVisionAssembly.GsScriptGuiCircle</p>
+
+<p>圆形GUI。</p></li>
+<li><p>GvVisionAssembly.GsScriptGuiStyle</p>
+
+<p>GUI风格。</p></li>
+<li><p>GvVisionAssembly.GeMsgReportType</p>
+
+<p>消息报告类型。</p></li>
+<li><p>GvVisionAssembly. ReportMessage</p>
+
+<p>生成消息报告，根据不同的消息报告类型，在对应位置生成消息，例如警告、错误消息。</p>
+
+<p>```python</p>
+
+<h2>消息报告函数，相当于消息报告工具。</h2>
+
+<h2>strMsg: 要输出的消息；</h2>
+
+<h2>eType: 消息类型，参见GeMsgReportType的说明。</h2>
+
+<h2>bIsForbid: 是否禁止弹窗，仅对有弹窗的消息类型有作用。True:禁止弹窗, False:允许弹窗。</h2>
+
+<p>GvVisionAssembly.ReportMessage(str strMsg, GeMsgReportType eType, boolbIsForbid)
+```</p></li>
+<li><p>GvVisionAssembly.sc2Vector</p>
+
+<p>二维向量，表示定位结果的搜索坐标或者找圆结果的圆心。</p></li>
+<li><p>GvVisionAssembly.sc2VectorVec</p>
+
+<p>二维向量的std::vector形式。如果要获取其中的元素，需要使用__getitem__(index)，index从0开始，例如获取第二个元素。</p>
+
+<p><code>python
+vecGeomResult = GvTool.GetToolData("几何定位_001.搜索坐标数组")
+geomResult0 = vecGeomResult.__getitem__(1)
+</code></p></li>
+<li><p>GvVisionAssembly.sc2XformLinear</p>
+
+<p>二维线性变换，通常出现在定位工具的输出参数中。</p></li>
+<li><p>GvVisionAssembly.scRadian</p></li>
+<li><p>GvVisionAssembly.scRect</p>
+
+<p>表示矩形，例如几何定位的搜索区域，Blob工具的矩形ROI区域。</p></li>
+<li><p>GvVisionAssembly.scAffineRect</p>
+
+<p>表示仿射矩形，例如几何定位的训练区域，Blob工具的仿射矩形ROI区域。</p></li>
+<li><p>GvVisionAssembly.scCircle</p>
+
+<p>表示圆形，例如找圆工具的圆结果，Blob工具的圆形ROI区域。</p></li>
+<li><p>GvVisionAssembly.scCircularArc</p>
+
+<p>表示圆弧。</p></li>
+<li><p>GvVisionAssembly.scAnnulus</p>
+
+<p>表示圆环。</p></li>
+<li><p>GvVisionAssembly.scEllipse</p>
+
+<p>表示椭圆，例如Blob工具的椭圆ROI区域，灰度检测工具的椭圆检测区域。</p></li>
+<li><p>GvVisionAssembly.scLine</p>
+
+<p>表示直线，例如找线工具的找线结果。</p></li>
+<li><p>GvVisionAssembly.scLineSeg</p>
+
+<p>表示线段。</p></li>
+<li><p>GvVisionAssembly.scPolyline</p>
+
+<p>表示多边形，例如Bolb工具的多边形ROI。</p></li>
+</ul>
+

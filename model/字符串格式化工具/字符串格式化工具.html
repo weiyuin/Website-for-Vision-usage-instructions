@@ -1,0 +1,150 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>字符串格式化工具</h1>
+
+<h2>功能</h2>
+
+<p>对输入的字符串，按照一定的格式要求进行格式化。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 字符串格式 </td>
+<td> 输入指定的格式化字符串。<a href="#%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F"><img src="media/wps4.jpg" alt="img" /></a> </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无  </td>
+<td> 无                                                         </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 数据       </td>
+<td> 输入格式化的数据。                             </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无 </td>
+<td> 无                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 格式化结果     </td>
+<td> 输出格式化后的结果。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无  </td>
+<td> 无                                                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 格式化结果     </td>
+<td> 输出格式化后的结果，供后序工具使用，同监视窗口的格式化结果参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>字符串格式</h3>
+
+<p>字符串格式输入的指定格式为：%[flags] [width] [.precision] [h | l]type，其中type是唯一必需的字段，其他为可选字段，各字段的说明如表1所示。</p>
+
+<p>表1 指定输入字符串格式</p>
+
+<table>
+<thead>
+<tr>
+<th> 格式      </th>
+<th> 说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> [flags]      </td>
+<td> 控制输出的对齐和输出的符号，十六进制前缀。-指定参数向左对齐，默认是向右对齐。+/-正负号。#与0x、0X一起使用，表示以十六进制格式化。输入#时格式化带有十六进制前缀，反之没有前缀，格式化输出的位数可以设置，范围为0~9，例如%04x，输出为四位。 </td>
+</tr>
+<tr>
+<td> [width]      </td>
+<td> 指定被格式化的值所占的宽度，输入值得范围0~99。               </td>
+</tr>
+<tr>
+<td> [.precision] </td>
+<td> 对于浮点数指定精度，输入范围0~9。                            </td>
+</tr>
+<tr>
+<td> [h | l]     </td>
+<td> 指定相应参数的大小，long、double可以加l，short可以加h。      </td>
+</tr>
+<tr>
+<td> type         </td>
+<td> 转换说明符，指定转换为字符、字符串、整数或浮点数，是唯一必需的格式字符，可放在任意可选字段之后；float：%f；double：%f/%lf；string：%s；int/ bool：%d； long：%ld； short：%d/%hd；char：%c。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<ul>
+<li><p>字符串格式化工具没有配置数据参数时，输出为格式化字符串。</p></li>
+<li><p>字符串配置数据参数时，与数据包生成工具配合使用。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\TXT文本写入工具.gvp”。</p>

@@ -1,0 +1,167 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云旋转镜像工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云旋转镜像工具主要是对输入点云图像进行旋转、镜像变换。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量中，将原始输入点云图像进行旋转、镜像等操作，以便后续处理。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4></li>
+</ul>
+
+
+<p><img src="media/GcCloudRotateMirrorTool_3_1.png" alt="" /></p>
+
+<p><imgnote>图3_1 点云旋转镜像工具流程</imgnote></p>
+
+<ul>
+<li><h4>参数设置</h4>
+
+<ul>
+<li>① 数据链链接点云图像；</li>
+<li>② 属性参数设置旋转、镜像类型；</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 输入待处理的点云图像 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 旋转类型                                   </td>
+<td> 将点云图像旋转一定角度，分为4种绕Z轴旋转的特殊角度，0度、90度、180度、270度和绕XYZ旋转的自定义角度 </td>
+</tr>
+<tr>
+<td> 绕X/Y/Z轴旋转角度 </td>
+<td> 用户自定义的旋转角度，取值范围[-360, 360] </td>
+</tr>
+<tr>
+<td> 是否平移 </td>
+<td> 选择“是”，则在旋转之后进行平移变换 </td>
+</tr>
+<tr>
+<td> X/Y/Z方向平移量 </td>
+<td> 平移变换中X/Y/Z方向的平移量，取值范围[-1000000, 1000000]，单位为mm </td>
+</tr>
+<tr>
+<td> 镜像类型 </td>
+<td> 对点云图像进行镜像操作，分为4种类型，无、水平、垂直和水平垂直 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云图像                                            </td>
+<td> 输出旋转镜像后的点云图像 </td>
+</tr>
+<tr>
+<td> 旋转矩阵     </td>
+<td> 根据旋转角度输出旋转矩阵   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云图像                                            </td>
+<td> 输出旋转镜像后的点云图像 </td>
+</tr>
+<tr>
+<td> 旋转矩阵 </td>
+<td> 根据旋转角度输出旋转矩阵 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间           </td>
+<td> 工具执行时间                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点云测量.gvp”。</p>
+
+<h2>7. 特殊说明</h2>
+
+<p>工具按照旋转、平移、镜像的顺序执行。</p>

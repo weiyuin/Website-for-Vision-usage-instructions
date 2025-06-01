@@ -1,0 +1,83 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GvGuiDataAgent</h1>
+
+<h2>功能</h2>
+
+<p>用来将GvGuiDataAgent中存储的GUI对象数组显示到视图窗口的GcScriptGuiDataAgent类的对象，禁止自己定义一个GcScriptGuiDataAgent对象。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                          </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 函数 </td>
+<td> SetGraphicDisplay(str, value) </td>
+<td> 将要显示的GUI对象添加到视图窗口。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>SetGraphicDisplay(str, value)</h3>
+
+<ul>
+<li><p>功能：将要显示的GUI对象数组添加到视图窗口。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>str: str类型，视图名称。例如”View-1”。</p></li>
+<li><p>value: GcScriptGuiArray类型，要添加的GUI对象数组。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否添加成功。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<ol>
+<li>禁止自己定义一个GcScriptGuiDataAgent对象，内部已经定义了GvGuiDataAgent对象，可以直接使用。</li>
+</ol>
+
+
+<h2>示例代码</h2>
+
+<p>1、添加GUI</p>
+
+<p><code>python
+guiArray = GvVisionAssembly.GcScriptGuiArray()
+guiText = GvVisionAssembly.GsScriptGuiText()
+guiText.sScriptGuiStyle = guiStyle
+guiText.strText ="text"
+guiText.posX = 0.0
+guiText.posY = 0.0
+guiText.deg = 0.0
+guiArray.Add(guiText)
+GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
+</code></p>

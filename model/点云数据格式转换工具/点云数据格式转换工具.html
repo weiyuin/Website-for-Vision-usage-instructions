@@ -1,0 +1,210 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云数据格式转换工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​         该工具主要解决不同的数据类型转换需求，以替换脚本或表达式的实现方式。</p>
+
+<h2>2.使用向导</h2>
+
+<ul>
+<li><h3>工具添加，参数调节</h3>
+
+<p><strong>Step1:</strong> 添加点云数据格式工具，选择转换类型，如图3-1所示；</p></li>
+</ul>
+
+
+<div align="center">
+<img src="media/GcCloudDataTransTool_3_1.png" style="zoom:100%;"/>
+    <center>图3_1 添加点云数据格式转换工具</center>
+</div>
+
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入刚体变换1/2                         </td>
+<td> 输入变换矩阵     </td>
+</tr>
+<tr>
+<td> 输入6自由度位姿 </td>
+<td> 输入位姿，沿x、y、z三个直角坐标轴方向的移动自由度和绕这三个坐标轴的转动自由度，常用Tx,Ty,Tz,Rx,Ry,Rz表示 </td>
+</tr>
+<tr>
+<td> 输入点云点集 </td>
+<td> 点集数据，类型为std::vector&lt;stVW_PointXYZ> </td>
+</tr>
+<tr>
+<td> 输入点云数据 </td>
+<td> 点云数据，类型为scVoxelPointCloud&lt;> </td>
+</tr>
+<tr>
+<td> 输入深度图点集 </td>
+<td> 输入深度图点集，类型为std::vector<scVoxelVector> </td>
+</tr>
+<tr>
+<td> 输入向量 </td>
+<td> 输入待旋转的向量 </td>
+</tr>
+<tr>
+<td> 输入旋转轴向量 </td>
+<td> 输入旋转轴向量 </td>
+</tr>
+<tr>
+<td> 输入欧拉角 </td>
+<td> 输入欧拉角度，绕坐标轴的多次旋转 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 转换类型                            </td>
+<td>目前支持刚体变换矩阵相乘、刚体变换求逆、刚体变换旋转矩阵求逆、刚体变换转6自由度、6自由度转刚体变换、点云转点集、点集转点云、点云转深度图点集、深度图点集转点云、向量转换、欧拉角转四元数</td>
+</tr>
+<tr>
+<td> 机械臂旋转顺序 </td>
+<td> 支持X-Y-Z或Z-Y-X </td>
+</tr>
+<tr>
+<td> 旋转角度 </td>
+<td> 旋转的角度 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输出刚体变换   </td>
+<td>刚性变换矩阵：Trans，平移矩阵<br />刚性变换矩阵：Matrix，旋转矩阵</td>
+</tr>
+<tr>
+<td>输出6自由度位姿 </td>
+<td>输出位姿，常用Tx,Ty,Tz,Rx,Ry,Rz表示</td>
+</tr>
+<tr>
+<td>输出3D点集 </td>
+<td>输出点云图点集，类型为std::vector&lt;stVW_PointXYZ></td>
+</tr>
+<tr>
+<td>输出点云数据 </td>
+<td>点云数据，类型为scVoxelPointCloud&lt;></td>
+</tr>
+<tr>
+<td>输出深度图点集 </td>
+<td>输出深度图点集，类型为std::vector<scVoxelVector></td>
+</tr>
+<tr>
+<td>输出向量 </td>
+<td>输出旋转后的向量，类型为scVoxelVector</td>
+</tr>
+<tr>
+<td>输出四元数 </td>
+<td>输出转换后的四元数，绕某一旋转轴旋转一定的角度，类型为std::vector<double></td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输出刚体变换   </td>
+<td>刚性变换矩阵：Trans，平移矩阵<br />刚性变换矩阵：Matrix，旋转矩阵</td>
+</tr>
+<tr>
+<td>输出6自由度位姿 </td>
+<td>输出位姿，常用Tx,Ty,Tz,Rx,Ry,Rz表示</td>
+</tr>
+<tr>
+<td>输出3D点集 </td>
+<td>输出点云图点集，类型为std::vector&lt;stVW_PointXYZ></td>
+</tr>
+<tr>
+<td>输出点云数据 </td>
+<td>点云数据，类型为scVoxelPointCloud&lt;></td>
+</tr>
+<tr>
+<td>输出深度图点集 </td>
+<td>输出深度图点集，类型为std::vector<scVoxelVector></td>
+</tr>
+<tr>
+<td>输出向量 </td>
+<td>输出旋转后的向量</td>
+</tr>
+<tr>
+<td>输出四元数 </td>
+<td>输出转换后的四元数</td>
+</tr>
+<tr>
+<td>执行时间 </td>
+<td>工具执行时间</td>
+</tr>
+<tr>
+<td>执行结果 </td>
+<td>工具执行结果</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云数据格式转换工具.gvp”。</p>

@@ -1,0 +1,207 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云模型对齐工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​          点云模型对齐工具<strong>基于CAD模型（stl格式）和点云数据中几何特征</strong>完成快速对齐，建立基准坐标系，以协助后续3D测量和检测任务。</p>
+
+<h2>2.使用场景</h2>
+
+<p>​        典型的应用场景如：手机零部件尺寸规格检测、产品曲面轮廓度检测。在基准坐标系下对工件进行尺寸规格质量检测，完成3D测量和检测任务。</p>
+
+<p><img src="media/GvCloudModelAlignmentTool_2_1.png" alt="img" /></p>
+
+<p><imgnote>图2_1 基于基准坐标系，选取特定点位下的平面度测量</imgnote></p>
+
+<p><img src="media/GvCloudModelAlignmentTool_2_2.png" alt="img" /></p>
+
+<p><imgnote>图2_2 模型对齐过程</imgnote></p>
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>添加工具、导入图像</h3>
+
+<p><img src="media/GvCloudModelAlignmentTool_3_1.png" alt="img" /></p>
+
+<p><imgnote>图3_1</imgnote></p></li>
+<li><h3>参数设置</h3></li>
+</ul>
+
+
+<h4>Step1：模型对齐模式选择</h4>
+
+<p><img src="media/GvCloudModelAlignmentTool_3_2.png" alt="img" /></p>
+
+<p><imgnote>图3_2 预对齐参数</imgnote></p>
+
+<p><img src="media/GvCloudModelAlignmentTool_3_3.png" alt="img" /></p>
+
+<p><imgnote>图3_3 最佳拟合对齐参数</imgnote></p>
+
+<p>1、<strong>预对齐</strong>设置流程：载入模型→训练模型→执行匹配。</p>
+
+<p>（1）点击“载入模型”：会弹出打开文件窗口，选择本地STL文件；</p>
+
+<p>（2）点击“训练模型”：进行训练；</p>
+
+<p>（3）根据设定的参数返回相应的匹配结果。</p>
+
+<p>2、<strong>最佳拟合对齐</strong>设置流程：载入模型→设置参数→执行匹配。</p>
+
+<p>（1）点击“载入模型”：会弹出打开文件窗口，选择本地STL文件；</p>
+
+<p>（2）设置参数：设置工具参数、约束和初始矩阵；</p>
+
+<p>（3）根据设定的参数返回相应的匹配结果。</p>
+
+<h4>Step2：导出结果</h4>
+
+<p>​  执行成功后可以导出对齐结果矩阵到本地，对齐结果如图3_4所示。</p>
+
+<p><img src="media/GvCloudModelAlignmentTool_3_4.png" alt="img" /></p>
+
+<p><imgnote>图3_4 设置测量子项</imgnote></p>
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 输入待模型对齐的点云图像                  </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 模型文件路径 </td>
+<td> 加载模型文件路径                          </td>
+</tr>
+<tr>
+<td> 开启预对齐   </td>
+<td> 是否开启预对齐功能                      </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致。</p>
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> RMS误差      </td>
+<td> 模型对齐执行后的匹配误差       </td>
+</tr>
+<tr>
+<td> 刚性变换矩阵 </td>
+<td> 模型对齐执行的旋转平移矩阵结果 </td>
+</tr>
+<tr>
+<td> 输出点云数据 </td>
+<td> 供其他工具输入使用的点云数据   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> RMS误差      </td>
+<td> 模型对齐执行后的匹配误差       </td>
+</tr>
+<tr>
+<td> 刚性变换矩阵 </td>
+<td> 模型对齐执行的旋转平移矩阵结果 </td>
+</tr>
+<tr>
+<td> 输出点云数据 </td>
+<td> 模型对齐后输出的点云数据       </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td> 工具执行结果                   </td>
+</tr>
+<tr>
+<td> 执行时间     </td>
+<td> 工具执行时间                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云模型对齐工具.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>对齐参数说明</h3>
+
+<p>​ a、 <strong>形状复杂度</strong>：用于指定模型训练的精细程度，分为：最简单（默认值）、简单、一般、复杂、最复杂。一般情况下，<strong>最简单和简单</strong>适用于模型形状结构分明的场景，<strong>一般</strong>可适用于扁平狭长的模型，<strong>复杂和最复杂</strong>可针对旋转对称的模型；</p>
+
+<p>​ b、 <strong>搜索时间</strong>：目标匹配过程中，用于指定对齐大致计算可持续的时间，分为：超短（默认值）、短、普通、长、超长。一般情况下，<strong>超短和短</strong>适用于一般的结构分明的零部件，<strong>普通</strong>可适用于平坦特征的目标，<strong>长和超长</strong>可针对旋转对称的物体；</p>
+
+<p>​ c、 <strong>点云法向量是否取反</strong>：指定是否修正目标点云法线的方向，若启用时，目标匹配过程中其法线方向会反向，默认不启用该参数；</p>
+
+<p>​ d、 <strong>是否执行最佳拟合对齐</strong>：目标快速匹配后，可设置是否执行一次最佳拟合对齐以<strong>提高匹配精度</strong>，默认启用该参数；</p>
+
+<p>​ e、<strong>约束条件：</strong>约束条件是指对齐过程中各自由度的约束，若锁定x轴旋转，则对齐过程中不考虑x旋转变换。</p>

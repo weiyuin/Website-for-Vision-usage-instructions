@@ -1,0 +1,261 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云多目标匹配</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>点云多目标匹配工具用于将模型点云和场景点云进行匹配，以得到场景点云中与模型点云相似度较高的点云。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>主要用于在无序抓取或引导类项目中进行物料的匹配，以得到最合适的抓取或引导位置。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>无</p>
+
+<h2>4. 使用向导</h2>
+
+<p>工具执行流程：加载模型点云→加载场景点云→设置匹配参数→执行匹配。</p>
+
+<p><img src="media/GcCloudModelMatchTool_4_1.png" alt="img" /></p>
+
+<p><imgnote>图1 使用向导示意图</imgnote></p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 注意事项                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1、匹配过程中，需要保证场景点云和目标点云的法向量一致，否则匹配为无效 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th style="text-align:left;"> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入模型点云 </td>
+<td style="text-align:left;"> 输入模型点云 </td>
+</tr>
+<tr>
+<td> 输入场景点云 </td>
+<td style="text-align:left;"> 输入场景点云 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th style="text-align:left;"> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 模型参考点个数 </td>
+<td style="text-align:left;"> 取值范围[10, 2000]，默认为1000；该参数影响粗配准精度，建议参考点在1000个左右，若效果不理想可考虑增加 </td>
+</tr>
+<tr>
+<td> 场景参考点个数 </td>
+<td style="text-align:left;"> 取值范围[10, 2000]，默认为1000；该参数影响粗配准精度，建议参考点在1000个左右，若效果不理想可考虑增加 </td>
+</tr>
+<tr>
+<td> 特征点类型 </td>
+<td style="text-align:left;"> 分为所有点和边缘点 </td>
+</tr>
+<tr>
+<td> KNN邻域搜索点数 </td>
+<td style="text-align:left;"> 取值范围[3,100]，默认为20 </td>
+</tr>
+<tr>
+<td> 边缘阈值 </td>
+<td style="text-align:left;"> 取值范围[-10.0, 10.0]，默认为1 </td>
+</tr>
+<tr>
+<td> 启用高级参数 </td>
+<td style="text-align:left;"> 是否开启高级参数设置 </td>
+</tr>
+<tr>
+<td> 场景法向量取反 </td>
+<td style="text-align:left;"> 当场景法向量与模型不一致时需要取反 </td>
+</tr>
+<tr>
+<td> 场景点采样步长 </td>
+<td style="text-align:left;"> 取值范围[-1,100]，默认为3 </td>
+</tr>
+<tr>
+<td> 稠密匹配采样步长 </td>
+<td style="text-align:left;"> 取值范围[-1,100]，默认为3 </td>
+</tr>
+<tr>
+<td> 稀疏匹配迭代次数 </td>
+<td style="text-align:left;"> 取值范围[1,200]，默认为50 </td>
+</tr>
+<tr>
+<td> 粗匹配最小角度 </td>
+<td style="text-align:left;"> 取值范围[0,90]，默认为5 </td>
+</tr>
+<tr>
+<td> 粗匹配姿态筛选优化 </td>
+<td style="text-align:left;"> 效率优化策略，开启后并调整策略相关参数，内部将对粗匹配的输出姿态进行优化 </td>
+</tr>
+<tr>
+<td> 稀疏匹配使用最小迭代偏差结果 </td>
+<td style="text-align:left;"> 精度优化策略，开启后并调整策略相关参数，内部将对稀疏匹配的输出姿态进行优化 </td>
+</tr>
+<tr>
+<td> 倾斜角度筛选         </td>
+<td style="text-align:left;"> 启用后可过滤倾斜角度较大的姿态                               </td>
+</tr>
+<tr>
+<td> 遮挡比例筛选         </td>
+<td style="text-align:left;"> 启用后可过滤姿态遮挡                                         </td>
+</tr>
+<tr>
+<td> 最大倾角                     </td>
+<td style="text-align:left;"> 取值范围[0,90]， 默认值为 45.0                               </td>
+</tr>
+<tr>
+<td> 最大遮挡比例                 </td>
+<td style="text-align:left;"> 取值范围[0,1]， 默认值为 0.2                                 </td>
+</tr>
+<tr>
+<td> 是否开启超时退出 </td>
+<td style="text-align:left;"> 是否开启超时退出 </td>
+</tr>
+<tr>
+<td> 超时上限 </td>
+<td style="text-align:left;"> 取值范围[1, 3600.0]， 默认值为30.0 </td>
+</tr>
+<tr>
+<td> 最大结果个数 </td>
+<td style="text-align:left;"> 取值范围[1,10000]，默认为1；输出匹配结果的个数 </td>
+</tr>
+<tr>
+<td> 最小得分 </td>
+<td style="text-align:left;"> 取值范围[0,1]， 默认值为 0.4；大于该得分的结果才能输出 </td>
+</tr>
+<tr>
+<td> 相似位姿重叠率 </td>
+<td style="text-align:left;"> 取值范围[0,1]，默认值为 0.8；匹配后，模型和场景的重叠程度，大于这个的默认为重叠姿态，只选其中一个输出 </td>
+</tr>
+<tr>
+<td> 相似位姿过滤阈值             </td>
+<td style="text-align:left;"> 取值范围[0.0001, 1]，默认值为0.05；过滤相似姿态              </td>
+</tr>
+<tr>
+<td> 得分系数                     </td>
+<td style="text-align:left;"> 取值范围(0,50]， 默认值为 5.0                                </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th style="text-align:left;"> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出变换矩阵 </td>
+<td style="text-align:left;"> 匹配后的刚性变换矩阵 </td>
+</tr>
+<tr>
+<td> 输出变换矩阵数组 </td>
+<td style="text-align:left;"> 匹配后的刚性变换矩阵数组 </td>
+</tr>
+<tr>
+<td> 结果对应得分 </td>
+<td style="text-align:left;"> 匹配得分，取值范围[0,1] </td>
+</tr>
+<tr>
+<td> 输出点云数据 </td>
+<td style="text-align:left;"> 模型变换后的点云数据 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th style="text-align:left;"> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出变换矩阵 </td>
+<td style="text-align:left;"> 匹配后的刚性变换矩阵 </td>
+</tr>
+<tr>
+<td> 输出变换矩阵数组 </td>
+<td style="text-align:left;"> 匹配后的刚性变换矩阵数组 </td>
+</tr>
+<tr>
+<td> 结果对应得分 </td>
+<td style="text-align:left;"> 匹配得分，取值范围[0,1] </td>
+</tr>
+<tr>
+<td> 输出点云数据 </td>
+<td style="text-align:left;"> 模型变换后的点云数据 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td style="text-align:left;"> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td style="text-align:left;"> 工具执行时间 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云多目标匹配工具.gvp”。</p>

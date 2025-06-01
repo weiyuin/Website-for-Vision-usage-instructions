@@ -1,0 +1,190 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点集距离计算工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     点集距离计算工具的主要作用是计算图像上两个点集对应点之间的直线距离，并可以将图像上的距离换算成实际的距离。</p>
+
+<p><img src="media/GvDistanceVctPoint2PointTool_1_1.png" alt="img" /></p>
+
+<p><imgnote>图1 点集距离计算工具示意图</imgnote></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     常用于检测多个点位到边缘线的距离是否符合规格或要求。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     <strong>距离计算方法</strong></p>
+
+<p>​     点集A和点集B中对应两点的欧式距离，即</p>
+
+<p><imgnote><em>L<sub>0</sub> = sqrt{(PA[0].x - PB[0].x)<sup>2</sup> +(PA[0].y - PB[0].y)<sup>2</sup>}</em></imgnote></p>
+
+<p><imgnote>&hellip;&hellip;</imgnote></p>
+
+<p><imgnote>L<sub>n</sub>  = sqrt((PA[n].x - PB[n].x)<sup>2</sup> +(PA[n].y - PB[n].y)<sup>2</sup>)</imgnote></p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GvDistanceVctPoint2PointTool_4_1.png" alt="img" /></p>
+
+<ul>
+<li><h4>定距离值上限/下限等</h4></li>
+</ul>
+
+
+<p><img src="media/GvDistanceVctPoint2PointTool_4_2.png" alt="img" /></p>
+
+<p><strong>距离值上限、距离值下限</strong></p>
+
+<p>对于输出参数<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC%E9%9B%86%E5%90%88">距离值集合</a>的所有距离值的有效范围进行限定，上下限可取值范围为[0, 999999.999999]，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对距离值上限或下限不进行限定。</p>
+
+<p>使用距离值上限或/和距离值下限对<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC%E9%9B%86%E5%90%88">距离值集合</a>中的所有距离值的有效范围进行设定后，执行此测量工具。</p>
+
+<p>当输出结果距离值集合](#距离值集合)中的所有距离值在设定的有效范围内时，显示工具执行结果成功；否则，任意距离值不在限定的范围内时，显示工具执行结果失败。</p>
+
+<ul>
+<li><h4>查看结果</h4></li>
+</ul>
+
+
+<p><img src="media/GvDistanceVctPoint2PointTool_4_3.png" alt="img" /></p>
+
+<p><img src="media/GvDistanceVctPoint2PointTool_4_4.png" alt="img" /></p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 两个点集的点数应相同，否则工具执行失败。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称       </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像       </td>
+<td> 待测量多点到直线距离的图像。                                 </td>
+</tr>
+<tr>
+<td> 点集1          </td>
+<td> 输出点集1中每个点的坐标值。                                  </td>
+</tr>
+<tr>
+<td> 点集2          </td>
+<td> 输出点集2中每个点的坐标值。                                  </td>
+</tr>
+<tr>
+<td> 像素当量       </td>
+<td> 每个像素代表的实际物理尺寸，单位mm。                         </td>
+</tr>
+<tr>
+<td> 距离值上限     </td>
+<td> 取值范围[0,999999.999999]，输出参数<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC%E9%9B%86%E5%90%88">距离值集合</a>的上限阈值。 </td>
+</tr>
+<tr>
+<td> 距离值下限     </td>
+<td> 取值范围[0,999999.999999]，输出参数<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC%E9%9B%86%E5%90%88">距离值集合</a>的下限阈值。 </td>
+</tr>
+<tr>
+<td> 距离值固定补偿 </td>
+<td> 测量结果固定补偿。一般为0，用于补偿成效等系统误差。          </td>
+</tr>
+<tr>
+<td> 距离值系数补偿 </td>
+<td> 测量结果系数补偿。一般为1，用于补偿成像等系统误差。          </td>
+</tr>
+<tr>
+<td> 高级界面       </td>
+<td> 无                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                            </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像                            </td>
+<td> 输出图像宽度、高度、像素大小。                           </td>
+</tr>
+<tr>
+<td> 点集1                               </td>
+<td> 输出点集1中每个点的坐标值。                                  </td>
+</tr>
+<tr>
+<td> 点集2                               </td>
+<td> 输出点集2中每个点的坐标值。                                  </td>
+</tr>
+<tr>
+<td> 距离集合                            </td>
+<td> 两个点集中对应点（下标相同）的实际距离值，毫米为单位。                                                                 </td>
+</tr>
+<tr>
+<td> 点集长度                            </td>
+<td> 点集中所包含的点的总数。                                                                                               </td>
+</tr>
+<tr>
+<td> 执行结果                            </td>
+<td> 工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 执行时间                            </td>
+<td> 工具执行时间。                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\点集距离计算工具.gvp”。</p>

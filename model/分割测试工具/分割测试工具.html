@@ -1,0 +1,220 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>分割测试工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     分割测试工具用于检测异常或者外观异常，该工具的输入为单张图像及训练好的网络模型，输出为分割结果图像和矩形结果或者多边形结果。</p>
+
+<p>​     如下图，图a中的黑色片状斑点是要检测出来的目标，图b中的红色标记区域是分割测试工具检测的结果。</p>
+
+<p><img src="media/GcSegmentationTestTool_1_1.png" alt="GcSegmentationTestTool_1_1" style="zoom:50%;" /></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     找出输入图像中可能为缺陷的<strong>像素点</strong>，如可用于检测LCD模组背光表面中点状、斑状、划伤以及灰尘等缺陷的尺寸。</p>
+
+<p>​</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     <strong>模型训练：</strong>通过训练来学习输入图像特征到输出像素类别间的映射关系，这种映射关系是通过卷积神经网络来建立的。分割网络一般由下采样部分和上采样部分组成，下采样部分一般采用分类主干网络学习图像由低级到高级的特征，得到低分辨率的特征图，然后经过上采样层再逐步恢复到原始图像大小，输出与原图大小相同的高分辨图像结果。上采样部分和下采样部分均有许多参数，训练中会学习这些参数。</p>
+
+<p>​     <strong>分割测试：</strong>实时图像被输入到网络中，网络会输出该图像每一个像素对应的类别，根据这些类别可以构造出结果图像。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入模型</h4>
+
+<p><img src="media/GcSegmentationTestTool_4_1.png" alt="GcSegmentationTestTool_4_1" style="zoom:50%;" /></p></li>
+<li><h4>设置图像数据链接</h4>
+
+<p>双击“分割测试工具”，在弹出的数据链接对话框中，选择输入图像。</p>
+
+<p><img src="media/GcSegmentationTestTool_4_2.png" alt="GcSegmentationTestTool_4_2" style="zoom:50%;" /></p></li>
+<li><h4>执行，查看结果</h4>
+
+<p><img src="media/GcSegmentationTestTool_4_3.png" alt="GcSegmentationTestTool_4_3" style="zoom:90%;" /></p>
+
+<p><img src="media/GcSegmentationTestTool_4_4.png" alt="GcSegmentationTestTool_4_4" style="zoom:100%;" /></p></li>
+</ul>
+
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述                         </th>
+<th> 解决方法                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 工具运行失败，提示“获取图像错误” </td>
+<td> 检查输入图像是否设置，双击工具即可设置输入图像               </td>
+</tr>
+<tr>
+<td> 工具运行失败，提示“调用深度学习算法错误”   </td>
+<td> 1、检查模型管理器中模型是否初始化成功；2、检查输入图像通道和宽高是否与模型相同 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 使用RGB输入图像    </td>
+<td> “是”：数据链接中显示输入图像RGB参数；“否”：数据链接中显示输入图像参数 </td>
+</tr>
+<tr>
+<td>启用掩膜</td>
+<td>“是”：数据链接中显示输入掩膜图像参数；“否”：数据链接中不显示输入掩膜图像参数 </td>
+</tr>
+<tr>
+<td> 使用模型           </td>
+<td> 要使用的分割模型名称                                         </td>
+</tr>
+<tr>
+<td> 是否获取概率图 </td>
+<td> “是”：获取概率图；“否”：不获取概率图   </td>
+</tr>
+<tr>
+<td> 是否获取结果标记图像 </td>
+<td> “是”：获取结果标记图像；“否”：不获取结果标记图像   </td>
+</tr>
+<tr>
+<td> 是否使用差异模式 </td>
+<td> “是”：工具启用差异分割模式，数据链接中提供背景图像输入；“否”：工具启用普通分割模式，参数链中不提供背景图像输入   </td>
+</tr>
+<tr>
+<td> 是否启用效率优先 </td>
+<td> “是”：启用效率优先模式；“否”：不启用效率优先模式   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称   </th>
+<th> 参数说明                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像   </td>
+<td> 输入的检测图像                     </td>
+</tr>
+<tr>
+<td> 结果个数   </td>
+<td> 检测结果个数                     </td>
+</tr>
+<tr>
+<td> 检测结果   </td>
+<td> 检测结果的集合                    </td>
+</tr>
+<tr>
+<td> 结果类别   </td>
+<td> 类别的索引                       </td>
+</tr>
+<tr>
+<td> 类别名称   </td>
+<td> 类别的名称                       </td>
+</tr>
+<tr>
+<td> 结果矩形   </td>
+<td> 检测出的目标的左上角点坐标，尺寸 </td>
+</tr>
+<tr>
+<td> 结果置信度 </td>
+<td> 暂无意义                         </td>
+</tr>
+<tr>
+<td> 结果面积   </td>
+<td> 检测出的目标的面积 </td>
+</tr>
+<tr>
+<td> 结果标记图像   </td>
+<td> 检测获取的结果标记图像 </td>
+</tr>
+<tr>
+<td> 模型路径   </td>
+<td> 检测时使用的模型路径 </td>
+</tr>
+<tr>
+<td> 执行结果   </td>
+<td> 工具执行是否成功 </td>
+</tr>
+<tr>
+<td> 执行时间   </td>
+<td> 工具执行耗时 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>视图参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称   </th>
+<th> 参数说明           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像   </td>
+<td> 显示输入的检测图像 </td>
+</tr>
+<tr>
+<td> 结果矩形块 </td>
+<td> 显示结果矩形       </td>
+</tr>
+<tr>
+<td> 结果多边形 </td>
+<td> 显示结果多边形     </td>
+</tr>
+<tr>
+<td> 执行结果   </td>
+<td> 显示工具的执行结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​ 参见“\Samples\分割测试工具.gvp”。</p>

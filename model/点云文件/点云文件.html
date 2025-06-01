@@ -1,0 +1,138 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云文件</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云文件主要是加载文件夹中点云格式的图像。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量及检测项目中，经常涉及将离线的点云图像加载进来复测，因此需要加载点云图像的功能。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4></li>
+</ul>
+
+
+<p><img src="media/GcCloudFromFileTool_3_1.png" alt="" /></p>
+
+<p><imgnote>图3_1 点云文件添加</imgnote></p>
+
+<ul>
+<li><h4>参数设置</h4>
+
+<ul>
+<li>① 属性参数：文件路径，目前支持ply和txt格式，可以在属性栏选择，也可以用脚本设置；</li>
+</ul>
+</li>
+</ul>
+
+
+<p><img src="media/GcCloudFromFileTool_3_2.png" alt="" /></p>
+
+<p><imgnote>图3_1 点云文件路径设置</imgnote></p>
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 文件路径 </td>
+<td> 文件加载的路径，目前支持ply和txt格式，此路径可以在脚本中动态修改 </td>
+</tr>
+<tr>
+<td> 启用索引 </td>
+<td> 是：需要设置“索引文件路径”，输出栏中显示加载的有效点索引；否：不加载点云图像有效索引 </td>
+</tr>
+<tr>
+<td> 索引文件路径 </td>
+<td> 索引文件加载的路径，文件名称后缀为index                      </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 点云图像 </td>
+<td> 加载的点云图像 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 点云图像 </td>
+<td> 加载的点云图像 </td>
+</tr>
+<tr>
+<td> 有效点索引 </td>
+<td> 输出加载的点云索引 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间           </td>
+<td> 工具执行时间                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点云图像源配置工具.gvp”。</p>
+
+<h2>7. 特殊说明</h2>

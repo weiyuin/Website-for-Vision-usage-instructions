@@ -1,0 +1,182 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云曲面延伸点生成工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>   点云曲面延伸点生成工具主要将点云截面生成工具获取的截面点拟合成曲线，计算曲线和基平面（基准面需要与截平面垂直）的交点，即生成扩展点。</p>
+
+<p>  <img src="media/GcCloudCrossSectionTool_1_1.png" alt="" /></p>
+
+<p>  <imgnote>图1_1 </imgnote></p>
+
+<h2>2.使用场景</h2>
+
+<p>   该工具主要与截面生成工具搭配使用，用于计算截面生成工具截取到的点云数据与设置的基平面求交点的场景；</p>
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>添加工具、导入图像</h3>
+
+<p>添加“点云曲面延伸点生成工具”，并根据要求链接相关数据链，如图3.1所示；</p>
+
+<p><img src="media/GcCloudCrossSectionTool_3_1.png" alt="" /></p>
+
+<p><imgnote>图3_1 点云曲面延伸点生成工具数据链配置</imgnote></p></li>
+<li><h3>参数设置</h3>
+
+<ul>
+<li>①  输入截面数据数组：一般来自于截面生成工具的输出截面数据数组；</li>
+<li>②  输入三维平面数组：一般来自于截面生成工具的输出无界平面；</li>
+<li>③  基平面：需要与输入三维平面数组中各个平面垂直；</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4.常见问题</h2>
+
+<p>无</p>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入截面数据数组                                         </td>
+<td> 输入截面数据                                   </td>
+</tr>
+<tr>
+<td> 输入三维平面数组                                        </td>
+<td>输入截取点云数据时无界平面      </td>
+</tr>
+<tr>
+<td> 输入三维矩形平面数组 </td>
+<td>输入截取点云数据时三维矩形平面</td>
+</tr>
+<tr>
+<td>输入三维圆形平面数组</td>
+<td>输入截取点云数据时三维圆形平面</td>
+</tr>
+<tr>
+<td>基平面</td>
+<td>基准平面，需要与截平面（输入三维平面数组/输入三维矩形平面数组/输入三维圆形平面数组）垂直</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>截面模式</td>
+<td> 包括三种：无界平面、三维矩形平面、三维圆形平面 </td>
+</tr>
+<tr>
+<td> 拟合阶乘 </td>
+<td> 每个截平面的点集拟合曲线时拟合阶乘，范围为[1，10] </td>
+</tr>
+<tr>
+<td> 拟合迭代次数 </td>
+<td> 每个截平面的点集拟合曲线时迭代的次数，范围为[1，1000] </td>
+</tr>
+<tr>
+<td> 拟合点数量阈值 </td>
+<td> 参与拟合的最少点数量，范围为[1，100000000] </td>
+</tr>
+<tr>
+<td> 局外点距离阈值 </td>
+<td> 判定为局外点的距离极值，范围为(0，100000000] </td>
+</tr>
+<tr>
+<td> 开启并行运算 </td>
+<td> 否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算 </td>
+</tr>
+<tr>
+<td> 线程数百分比 </td>
+<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称</th>
+<th> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点集                                      </td>
+<td> 输出扩展点集 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称</th>
+<th> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点集                                      </td>
+<td> 输出扩展点集             </td>
+</tr>
+<tr>
+<td> 执行结果                                   </td>
+<td> 工具执行结果                                                                                       </td>
+</tr>
+<tr>
+<td> 执行时间                                   </td>
+<td> 工具执行时间 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云截面生成工具.gvp”。</p>

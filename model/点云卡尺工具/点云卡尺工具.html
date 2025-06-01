@@ -1,0 +1,264 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云卡尺工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>   点云卡尺工具主要应用于工件尺寸测量，如对工件厚度、长宽、圆柱外径、圆孔内径等进行测量或模拟三坐标测量机对物体表面进行探触取点；</p>
+
+<div align="center">
+<img src="media/3DProtrudeTool_1_1.png" style="zoom:50%;"/>
+<img src="media/3DProtrudeTool_1_2.png" style="zoom:50%;"/>
+    <center>图1_1</center>
+</div>
+
+
+<h2>2.使用场景</h2>
+
+<p>   模拟现实中探针测量数据的场景对点云数据进行测量；</p>
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>添加工具、导入图像</h3>
+
+<p>添加“点云卡尺工具”，设置属性参数、数据链接，如图3-1所示；
+<img src="media/3DProtrudeTool_3_1.png" alt="" /></p></li>
+</ul>
+
+
+<p><imgnote>图3_1 点添加点云卡尺工具</imgnote>
+- ### 参数设置</p>
+
+<ul>
+<li>① 计算方式为第一探触点时，支持的探触类型：球体、圆柱、模拟CMM，设置的ROI不能与输入点云有交集，从该位置按照测量方向进行探触求点；</li>
+<li>② 计算方式为均值/中值/最大值/最小值/投影均值时，针对全部点云数据，并在测量方向上按照过滤上下限进行过滤计算；</li>
+<li>③ 计算方式为ROI均值/ROI中值/ROI最大值/ROI最小值/ROI投影均值时，支持的ROI类型：球体、圆柱和长方体，针对ROI内部点云数据，并在测量方向上按照过滤上下限进行过滤计算；
+
+<h2>4.常见问题</h2></li>
+</ul>
+
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称</th>
+<th style="text-align:left;"> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入点云数据 </td>
+<td style="text-align:left;">链接需要做测量的点云数据图像      </td>
+</tr>
+<tr>
+<td>测量方向 </td>
+<td style="text-align:left;">输入点云卡尺工具的探测方向，探针会沿着测量方向对点云数据进行探测或测量</td>
+</tr>
+<tr>
+<td>输入球体/圆柱/长方体</td>
+<td style="text-align:left;">第一探触点模式下探头的形状或ROI模式下ROI形状，可以链接其他工具（元素生成工具：球体、圆柱、长方体）的输出</td>
+</tr>
+<tr>
+<td>参考点</td>
+<td style="text-align:left;">仅当卡尺点计算方法为投影均值/ROI投影均值时生效，参考点和方向向量构建直线，用于点云投影</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称</th>
+<th style="text-align:left;"> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 计算方式 </td>
+<td style="text-align:left;"> 第一探触点：输入的球体，圆柱等作为探触体，均值/中值/最大/最小/投影均值针对全部点云，ROI均值/ROI中值/ROI最大/ROI最小/ROI投影均值针对ROI内部点云 </td>
+</tr>
+<tr>
+<td>                                                      卡尺类型</td>
+<td style="text-align:left;"> 选择测量卡尺（探头）的类型，包括：球形、圆柱、模拟CMM三种类型 </td>
+</tr>
+<tr>
+<td> ROI类型                                                      </td>
+<td style="text-align:left;"> ROI类型包括三种：球体、圆柱、长方体。仅在计算方式存在ROI模式下有效 </td>
+</tr>
+<tr>
+<td> 过滤下限~过滤上限 </td>
+<td style="text-align:left;"> 设置卡尺点计算时使用的数据起始和终止比例（第一探触点模式外生效） </td>
+</tr>
+<tr>
+<td> CMM拟合类型      </td>
+<td style="text-align:left;"> 模拟复杂几何图形的实际接触测量。包括：三维平面、球体、圆柱、圆锥 </td>
+</tr>
+<tr>
+<td> 搜索深度          </td>
+<td style="text-align:left;"> 搜索深度为卡尺初始位置沿探触方向定义的搜索区域深度（第一探触点模式生效），范围[0，1000000]，如图7-1所示 </td>
+</tr>
+<tr>
+<td> 球体卡尺参数              </td>
+<td style="text-align:left;"> 卡尺余隙：卡尺类型为球体卡尺或圆柱卡尺时，余隙为球或圆柱初始位置沿探触方向移动的距离。蓝色为球形卡尺初始位置，橙色为球形卡尺沿探触方向移动后的位置，即两球心之间的距离；如图7-1所示 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致。</p>
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称</th>
+<th> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 卡点坐标数组                                              </td>
+<td> 使用卡尺工具获取的探测点的三维坐标数组                       </td>
+</tr>
+<tr>
+<td> 卡点坐标 </td>
+<td> 使用卡尺工具获取的探测点的第一组三维坐标 </td>
+</tr>
+<tr>
+<td> 候选点数                         </td>
+<td> 指探触点接触时获取的所有三维点的点数                                           </td>
+</tr>
+<tr>
+<td> 拟合平面/圆柱/球/圆锥                     </td>
+<td> CMM不同不可类型，输出对应的平面/圆柱/球/圆锥 </td>
+</tr>
+<tr>
+<td> 拟合误差                               </td>
+<td> 拟合平面误差，指所有参与平面拟合的点的RMS结果               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称</th>
+<th> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 卡点坐标数组                                              </td>
+<td> 使用卡尺工具获取的探测点的三维坐标数组                       </td>
+</tr>
+<tr>
+<td> 卡点坐标 </td>
+<td> 使用卡尺工具获取的探测点的第一组三维坐标 </td>
+</tr>
+<tr>
+<td> 候选点数                         </td>
+<td> 指探触点接触时获取的所有三维点的点数                                           </td>
+</tr>
+<tr>
+<td> 拟合平面/圆柱/球/圆锥                     </td>
+<td> CMM不同不可类型，输出对应的平面/圆柱/球/圆锥 </td>
+</tr>
+<tr>
+<td> 拟合误差                               </td>
+<td> 拟合平面误差，指所有参与平面拟合的点的RMS结果               </td>
+</tr>
+<tr>
+<td> 执行结果                                   </td>
+<td> 工具执行结果                                                                                       </td>
+</tr>
+<tr>
+<td> 执行时间                                   </td>
+<td> 工具执行时间 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\点云卡尺工具.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>原理说明</h3>
+
+<p><strong>1、第一探触点</strong>：以当前位置沿着测量方向与点云接触，计算第一个探触点位置；</p>
+
+<p><strong>探触类型</strong>：目前支持：球体、圆柱和模拟CMM；</p>
+
+<p><strong>测量方向</strong>：即卡尺测量方向，卡尺沿该方向与点云数据接触取点；</p>
+
+<p><strong>搜索深度</strong>：搜索深度为卡尺初始位置沿探触方向定义的搜索区域深度，如图7-1所示；<br/>
+<strong>搜索半径</strong>：当探触类型为模拟CMM点时，搜索半径为卡尺参考点沿探触方向定义的搜索区域半径，如图7-1所示；
+<strong>余隙</strong>：当探触类型为球体卡尺或圆柱卡尺时，余隙为球或圆柱初始位置沿测量方向移动的距离，如图7-1所示。蓝色为球体卡尺初始位置，橙色为球体卡尺沿探触方向移动后的位置，即两球心之间的距离，后续计算会按照橙色球体位置进行计算，即实现不移动ROI实际位置达到移动ROI位置的计算效果；</p>
+
+<p> <div align="center">
+  <img src="media/3DProtrudeTool_7_1.png" style="zoom:100%;"/>
+  <img src="media/3DProtrudeTool_7_2.png" style="zoom:100%;"/>
+      <center>图7_1 参数示意图介绍</center>
+  </div></p>
+
+<p><strong>球体/圆柱卡尺</strong>：根据构造的球/圆柱位置，沿测量方向与点云接触，输出接触到的第一个点；
+<img src="media/3DProtrudeTool_7_3.png" alt="" /></p>
+
+<p><imgnote>图7-2 球体卡尺</imgnote></p>
+
+<p><img src="media/3DProtrudeTool_7_4.png" alt="" /></p>
+
+<p><imgnote>图7-3 圆柱卡尺</imgnote></p>
+
+<p>  <font color = "red">注：圆柱卡尺是圆柱侧面与点云接触取点；</font></p>
+
+<p><strong>模拟CMM点</strong>：根据半径和深度确定一个搜索范围，将此范围内的点拟合成对应平面/球/圆柱/圆锥面，输出参考点沿搜索方向构成的射线与拟合面的交点；</p>
+
+<p><img src="media/3DProtrudeTool_7_5.png" alt="" /></p>
+
+<p><imgnote>图7-4 模拟CMM</imgnote></p>
+
+<p><strong>2、均值/中值/最大值/最小值/投影均值</strong>：针对全部点云，计算均值/中值/最大值/最小值/投影均值；</p>
+
+<p><strong>过滤上下限</strong>：将输入点云投影到测量方向上，在按照上下限对点云过滤处理后再计算；</p>
+
+<p><strong>参考点</strong>：投影均值时有效，计算出均值后投影到参考点+方向向量构成的直线上；</p>
+
+<p><strong>3、ROI均值/ROI中值/ROI最大值/ROI最小值/ROI投影均值</strong>：针对ROI内部点云，计算ROI内部均值/中值/最大值/最小值/投影均值；</p>
+
+<p><strong>ROI类型</strong>：目前支持：球体、圆柱和长方体；
+<img src="media/3DProtrudeTool_7_6.png" alt="" /></p>
+
+<p><imgnote>图7-5 ROI均值</imgnote></p>

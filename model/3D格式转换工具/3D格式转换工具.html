@@ -1,0 +1,231 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>3D格式转化</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     3D格式转化工具能够将点云数据（asc、csv)转换为深度图像，或将深度图像转换为点云图像（ply、pcd、csv、txt）。</p>
+
+<p><img src="media/Gc3DFormatConvertTool_1_1.png" alt="" /></p>
+
+<p><imgnote>图1_1 3D格式转换工具</imgnote></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     在3D工程项目中，使用到视觉软件未兼容的传感器采集的3D数据格式，因此就需要使用到一个对目前使用最广泛的3D数据格式转换为视觉软件可以兼容的深度图像模式的工具，方便视觉软件对前场硬件的兼容性，另外视觉软件使用的深度图像导出，传递给其他软件使用，因此需要一个工具将深度图像转换成目前被广泛采用的3D数据格式。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     3D格式转换工具的主要功能是：</p>
+
+<ul>
+<li><p>对输入的深度图像进行指定点云格式的转换，输出点云文件；</p></li>
+<li><p>对输入的点云文件，按照不同传感器型号的深度图像参数进行转换，转换为深度图像；</p></li>
+</ul>
+
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入点云文件，执行点云转深度图转换</h4></li>
+</ul>
+
+
+<p><img src="media/Gc3DFormatConvertTool_4_1.png" alt="" /></p>
+
+<p><imgnote>图4_1 3D格式转换工具</imgnote></p>
+
+<p><strong>读取csv文件路径</strong></p>
+
+<p>​     选择需要转换的CSV格式3D点云文件路径；</p>
+
+<p><strong>读取asc文件路径</strong></p>
+
+<p>​     选择需要转换的ASC格式3D点云文件路径；</p>
+
+<p><strong>传感器</strong></p>
+
+<p>​     选择传感器的品牌，主要是为了设置传感器驱动参数，目前支持（SmartRay、Keyence、LMI、Precitec）四种传感器品牌；</p>
+
+<p><strong>传感器型号</strong></p>
+
+<p>​     选择传感器为SmartRay时，可以设置传感器的型号，主要是为了便捷设置默认深度图像参数；</p>
+
+<p><strong>跳过行数</strong></p>
+
+<p>​     选择传感器为Keyence时，如果待转换文件中带有分辨率等参数，可以选择跳过传感器分辨率信息号；不带有分辨率信息选择跳过行数为0；</p>
+
+<p><strong>深度图像参数</strong></p>
+
+<p>​     设置深度图像的XYZ三个方向分辨率和XYZ三个方向偏移量；</p>
+
+<ul>
+<li><h4>添加工具，载入图像，执行深度图转点云转换</h4></li>
+</ul>
+
+
+<p><img src="media/Gc3DFormatConvertTool_4_2.png" alt="" /></p>
+
+<p><imgnote>图4_2 3D格式转换工具</imgnote></p>
+
+<p> <strong>输出点云格式</strong></p>
+
+<p>​     选择深度图像要转换的点云文件的类型，分为CSV、PCD、PLY、TXT。</p>
+
+<p><strong>输出PLY格式</strong></p>
+
+<p>​     当输出点云格式设置为PLY时，PLY分为两种格式：ASCII、BINARY可以选择输出。</p>
+
+<p><strong>是否覆盖</strong></p>
+
+<p>​     可以设置要转换保存的点云文件是否覆盖掉上次转换的结果，选择“是”，输出点云文件名称会是工具名称，下次执行会重新刷新；选择“否”，输出的点云文件名称会是工具名称+日期时间，下次执行会生成新的点云文件；</p>
+
+<p><strong>保存点云文件路径</strong></p>
+
+<p>​     选择点云文件保存的文件夹路径；</p>
+
+<h2>5. 常见问题</h2>
+
+<p>无</p>
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                 </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 转换类型                 </td>
+<td> 包括两种，深度图转点云和点云转深度图                         </td>
+</tr>
+<tr>
+<td> 读取3D文件路径           </td>
+<td> 点云转深度图像时，设置点云文件路径                           </td>
+</tr>
+<tr>
+<td> 相机品牌                 </td>
+<td> 设置传感器厂商名称                                           </td>
+</tr>
+<tr>
+<td> 跳过行数                 </td>
+<td> 设置跳过文件中分辨路信息行数                                 </td>
+</tr>
+<tr>
+<td> 缩放比例                 </td>
+<td> 点云文件单位和转换后像素单位之间的转换比例                   </td>
+</tr>
+<tr>
+<td> 图像分辨率               </td>
+<td> 深度图像的XYZ三个方向分辨率                                  </td>
+</tr>
+<tr>
+<td> 手动设置偏移参数         </td>
+<td> 是：可以手动修改深度图像参数；否：使用传感器型号默认参数     </td>
+</tr>
+<tr>
+<td> 图像偏移                 </td>
+<td> 深度图像的XYZ三个方向偏移量                                  </td>
+</tr>
+<tr>
+<td> 输出点云格式             </td>
+<td> 设置输出保存点云的格式，包括csv、pcd、ply和txt格式           </td>
+</tr>
+<tr>
+<td> 输出PLY格式              </td>
+<td> 设置输出的PLY文件的ASCII、BINARY类型                         </td>
+</tr>
+<tr>
+<td> 自动命名                 </td>
+<td> 保存的文件是否自动命名，是：系统自动命名；否：数据链接输入文件名 </td>
+</tr>
+<tr>
+<td> 是否覆盖上次文件         </td>
+<td> 设置转换点云文件是否覆盖上次文件                             </td>
+</tr>
+<tr>
+<td> 点云保存路径             </td>
+<td> 设置转换点云文件的保存文件夹路径                             </td>
+</tr>
+<tr>
+<td> 文件名                   </td>
+<td> 深度图转点云模式下：设置保存点云文件的名称                   </td>
+</tr>
+<tr>
+<td> 文件路径与文件名         </td>
+<td> 深度图像转点云图像时，输出保存点云文件的路径与文件名         </td>
+</tr>
+<tr>
+<td> 输入深度图像（图像窗口） </td>
+<td> 显示输入的深度图像                                           </td>
+</tr>
+<tr>
+<td> 输入深度图像（数据链）   </td>
+<td> 用来获取需要比对的深度图像参数                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                 </th>
+<th> 参数说明                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出深度图像             </td>
+<td> 输出转换后的深度图像大小、深度图像参数     </td>
+</tr>
+<tr>
+<td> 文件路径与文件名         </td>
+<td> 深度图转点云模式下，显示保存文件路径和名称 </td>
+</tr>
+<tr>
+<td> 执行结果                 </td>
+<td> 工具执行结果                               </td>
+</tr>
+<tr>
+<td> 执行时间                 </td>
+<td> 工具执行时间                               </td>
+</tr>
+<tr>
+<td> 输出深度图像（图像窗口） </td>
+<td> 显示转换后的深度图像                       </td>
+</tr>
+<tr>
+<td> 输出深度图像（数据链）   </td>
+<td> 输出转换后的深度图像大小、深度图像参数     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\深度图\3D格式转换工具.gvp”。</p>

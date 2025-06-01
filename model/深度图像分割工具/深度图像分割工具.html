@@ -1,0 +1,170 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>深度图像分割工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     深度图像分割工具主要是将深度图像中感兴趣区域内的深度信息分割出来。图1所示为，将深度图像中的物体从背景中分割出来。</p>
+
+<p><img src="media/GcRangeSegmentTool_1_1.png" alt="" /></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     深度图像分割工具在3D项目，比如平面度检测、焊点检测中用于目标提取（如选定ROI以及阈值，提取出圆形焊点部分）或者预处理（去掉不需要的部分）。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     深度图像分割工具根据深度图像的感兴趣区域以及所选定的分割模式以及分割依据，在深度图像的感兴趣区域内进行分割。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcRangeSegmentTool_4_1.png" alt="" /></p>
+
+<ul>
+<li><h4>设置感兴趣区域和深度图像分割参数</h4></li>
+</ul>
+
+
+<p><img src="media/GcRangeSegmentTool_4_2.png" alt="" /></p>
+
+<p>​     1）<strong>分割区域</strong></p>
+
+<p>​     深度图像中待分割的区域，目前支持全图，矩形，仿射矩形，圆形，椭圆和多边形。</p>
+
+<p>​     2）<strong>分割模式</strong></p>
+
+<p>​     深度图像的分割方法大类，目前仅支持硬阈值分割模式。</p>
+
+<p>​     3）<strong><span id="硬阈值分割依据">硬阈值分割依据</span></strong></p>
+
+<p>​     硬阈值分割依据为对深度图像进行硬阈值分割时的基本判据。目前，硬阈值分割依据支持：深度值依据和平面偏移依据。如图2所示，深度值依据直接利用深度图像的深度值信息对图像进行分割，而平面偏移依据是利用深度图像的像素点到指定平面的偏移信息对图像进行分割。</p>
+
+<p><img src="media/GcRangeSegmentTool_4_3.png" alt="" /></p>
+
+<p>​     4）<strong>阈值模式</strong></p>
+
+<p>​     对深度图像进行硬阈值分割时采用的阈值模式，通过指定阈值模式，可得到分割阈值的区间范围。阈值模式支持阈值范围内和阈值范围外两种，若给定的分割阈值1和分割阈值2分别为a和b（a≤b），则阈值范围内代表的分割阈值区间为[a, b]，阈值范围外代表的分割阈值区间为(-∞,a]U[b, +∞)。</p>
+
+<ul>
+<li><h4>使用分割结果，以平面拟合工具为例，链接上述分割结果输出深度图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcRangeSegmentTool_4_4.png" alt="" /></p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述           </th>
+<th> 解决方法                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 分割不到想要的区域 </td>
+<td> 看一下阈值模式选取是否正确、阈值范围是否设置正确 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> ROI类型                     </td>
+<td> 分割区域，共5种：整幅图像、矩形ROI、仿射矩形ROI、多仿射矩形ROI、圆形ROI、椭圆形ROI。 </td>
+</tr>
+<tr>
+<td> 分割方法                    </td>
+<td> 目前仅支持硬阈值分割。                                       </td>
+</tr>
+<tr>
+<td> 是否输出分割区域点集        </td>
+<td> 选择“是”，则ROI的分割区域输出点集结果；选择“否”，则不输出ROI的分割区域点集结果； </td>
+</tr>
+<tr>
+<td> <a href="#%E7%A1%AC%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2%E4%BE%9D%E6%8D%AE">阈值模式</a> </td>
+<td> 共2种：深度值和平面偏移。选择“深度值”模式时，会根据“阈值范围内”参数，“阈值下限、上限”参数，选择/排除掉图像Z坐标在阈值范围内的点；选择“平面偏移”模式，则会根据“阈值范围内”参数，“阈值下限、上限”参数，选择/排除掉到某一个平面的距离在阈值范围内的点。 </td>
+</tr>
+<tr>
+<td> 阈值范围                    </td>
+<td> 选择“阈值范围内”，则选择阈值范围内的点；选择“阈值范围外”，则排除阈值范围内的点，选取范围外的点；选择“全部”，则忽略阈值范围，选取全部点。 </td>
+</tr>
+<tr>
+<td> 阈值下限                    </td>
+<td> 阈值范围的下限，取值范围为[-100, 100]，且小于等于硬阈值2，单位mm。 </td>
+</tr>
+<tr>
+<td> 阈值上限                    </td>
+<td> 阈值范围的上限，取值范围为[-100, 100]，且大于等于硬阈值1，单位mm。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出深度图像 </td>
+<td> 输出深度图像的长宽和像素大小，以及深度数据参数。 </td>
+</tr>
+<tr>
+<td> 输出ROI点集  </td>
+<td> 输出分割区域点集结果                             </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td> 工具执行结果                                     </td>
+</tr>
+<tr>
+<td> 执行时间     </td>
+<td> 工具执行时间                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\深度图像分割工具.gvp”。</p>

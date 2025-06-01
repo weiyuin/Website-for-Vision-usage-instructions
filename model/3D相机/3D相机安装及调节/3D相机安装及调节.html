@@ -1,0 +1,1086 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>3D相机安装及调节</h1>
+
+<p>本部分介绍不同型号3D相机安装调试步骤，包括每个步骤需要注意的内容。</p>
+
+<h2>1. SmartRay安装及调节</h2>
+
+<ul>
+<li><p><strong>Step1</strong>：相机PIN线与机构插口连线；</p>
+
+<p><img src="media/1660648894284.png" alt="" /></p></li>
+<li><p><strong>Step2</strong>：点击任务栏右下角处小地球标志；</p>
+
+<p><img src="media/1660648960888.png" alt="" /></p></li>
+<li><p><strong>Step3</strong>：在右侧会弹出网络设置点击“网络和Internet设置”；</p>
+
+<p><img src="media/1660648928198.png" alt="" /></p></li>
+<li><p><strong>Step4</strong>：在设置界面，先点击以太网，在点击更改适配器选项；找到相机连接的网卡，双击或者右键属性打开；</p>
+
+<p><img src="media/1660648984195.png" alt="" /></p></li>
+<li><p><strong>Step5</strong>：双击红框“Internet协议版本4（TCP/IPv4）”进入IP设置界面；</p>
+
+<p><img src="media/1660649005784.png" alt="" /></p></li>
+<li><p><strong>Step6</strong>：设置静态IP，只需要按照规定设置IP地址和子网掩码；</p>
+
+<p><img src="media/1660649026891.png" alt="" /></p></li>
+</ul>
+
+
+<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+
+<p>SmartRay的IP设置如下图所示。</p>
+
+<ul>
+<li><p><strong>设置好之后，相机需要断电重启</strong></p></li>
+<li><p>若采用多个网络端口来连接相机，则需要将网络设置在不同的网络段内，其他设置一样，例如在一台工站上链接两台相机时， IPv4 设置分别为： 192.168.178.10、 192.168.179.10。</p></li>
+<li><p>为方便调试，修改的 IP 及端口号需要写在标签上，并粘贴到相机上。</p></li>
+</ul>
+</blockquote>
+
+<p><img src="media/1660649167765.png" alt="" /></p>
+
+<ul>
+<li><p><strong>Step7</strong>：打开VA软件，点击“设置”→“管理设备上连接的3D相机”打开3D相机管理界面，然后在相机列表栏鼠标右击然后点击“添加相机”，相机品牌选择“SmartRay”，然后设置相机IP（与图3-30所示，IP设置为：192.168.179.200），然后点击确定，等待相机连接成功；</p>
+
+<p><img src="media/1660649310433.png" alt="" /></p></li>
+<li><p><strong>Step8</strong>：相机连接成功后点击相机名称，然后点选“触发设置”table页，在该页内设置参数来调整相机的工作距离和成像；</p>
+
+<p>①：设置相机的触发模式为“自由”，在该模式下相机激光可以一直出光，该模式下便于根据激光来调整相机的工作距离；</p>
+
+<p>②：设置“曝光1”，该参数可以根据材料的材质进行设置，目的使得激光线的亮度；</p>
+
+<p>③：点击“激光亮度图”，再点击开始，根据视图界面是否有激光线来调整相机的工作距离，然后根据激光线的质量来调整相机成像：激光线连贯、在重要测量区域激光线无缺失；；</p>
+
+<p><img src="media/1660649387646.png" alt="" /></p></li>
+<li><p><strong>Step9</strong>：调整好相机的工作距离和成像后，在“触发设置”table页设置相机采集参数；</p>
+
+<p>①：设置扫描行数；该参数与相机的采集频率、物料的扫描长度、移动轴的移动速度有关（具体计算方式可参考SSZN调试步骤所示）；</p>
+
+<p>②：Y分辨率；该参数的计算方式可参考SSZN调试步骤；</p>
+
+<p>③：启用；启用该参数时相机可进行外触发模式；</p>
+
+<p>④：选择相机的触发模式；包括：自由、内触发、外触发；其中自由模式为连续模式，该模式下相机根据自己内部时序运行；内触发：相机可设置频率，然后根据设置的频率进行运行；外触发：相机根据外部的触发信号进行运行；</p>
+
+<p>⑤：选择外触发源；根据实际项目中相机的触发方式来选择触发源；</p>
+
+<p>⑥：若外触发源为编码器触发时，该参数可启用，该参数的设置可参考SSZN调试步骤；</p>
+
+<p>⑦：激光模式：脉冲、连续；该参数主要根据物料的材质特性进行设置；若连续模式下激光太亮则可选择脉冲模式使得激光亮度弱些；</p>
+
+<p><img src="media/2.png" alt="" /></p></li>
+<li><p><strong>Step10</strong>：退出3D相机管理界面，然后在VA工程师界面，添加3D相机采集工具；然后在工具属性栏“相机名称”选择调试好的相机；</p></li>
+</ul>
+
+
+<h3>1.1 SmartRay相机相关问题</h3>
+
+<p><strong>问题1：VA软件连接不上相机</strong></p>
+
+<p><span style="color:blue"><strong>现象描述：</strong></span></p>
+
+<p>VA软件“3D相机设置工具”、“3D相机采集工具”中“相机名称”参数下拉框无内容，并且在“设置”→“3D相机”界面下相机列表中没有显示相机信息；</p>
+
+<p><span style="color:blue"><strong>解决方案：</strong></span></p>
+
+<table>
+<thead>
+<tr>
+<th> 序号 </th>
+<th> 可能原因                                         </th>
+<th> 排查手段                                                    </th>
+<th> 排查结果（现象）                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1    </td>
+<td> 相机没通电：电源损坏、供电电压不稳或供电处未插好 </td>
+<td> 1：查看SmartRay相机后板电源指示灯状态；2：更换其他电源测试  </td>
+<td> 1：指示灯不亮                    </td>
+</tr>
+<tr>
+<td> 2    </td>
+<td> 网络未连接：IP设置不对                           </td>
+<td> 查看SmartRay指示灯状态                                      </td>
+<td> 网络指示灯慢闪耀（约2s/次）      </td>
+</tr>
+<tr>
+<td> 3    </td>
+<td> LCubor 3D相机SDK安装不正确                       </td>
+<td> 1：查看已安装SDK版本，并于1.1.1处相机驱动版本信息进行对照； </td>
+<td> 1：LCubor 3D SDK也无法检测到相机 </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>常见问题2：3D相机频繁掉线</strong></p>
+
+<p><span style="color:blue"><strong>现象描述：</strong></span></p>
+
+<p>现场工程运行工程中遇到工程运行到“3D相机设置工具”或者“3D图像采集工具”时就一直卡在该工具处，相机处于频繁掉线-连接状态；</p>
+
+<p><span style="color:blue"><strong>解决方案：</strong></span></p>
+
+<table>
+<thead>
+<tr>
+<th> 序号  </th>
+<th> <span style="display:inline-block;width: 80px"> 可能原因</span>       </th>
+<th> 排查手段                                                     </th>
+<th> 排查结果（现象）                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1    </td>
+<td> 相机供电不稳定 </td>
+<td> 1：查看相机指示灯状态；2：查看相机电源连接位置；3：查看相机供电电缆是否完好； </td>
+<td> 1：指示灯灭后再亮，循环往复；2：相机供电使用工站供电，工站时长停机；3：相机供电线使用的是第三方电缆，柔韧性不好导致断裂。 </td>
+</tr>
+<tr>
+<td> 2    </td>
+<td> 固件版本不适合 </td>
+<td> 点击查看VA→设置→3D相机界面相机列表选项处，查看相机固件版本，如图23所示 </td>
+<td> 固件版本不合适：具体查看1.1.1 中VA软件支持的3D相机驱动版本内容 </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><img src="media/3.png" alt="" /></p>
+
+<p><strong>常见问题3：VA软件上图像显示正常，但相机无法触发</strong></p>
+
+<p><span style="color:blue"><strong>现象描述：</strong></span></p>
+
+<p>3D相机采集过程中不出光，必须重新停止，再点击运行按钮才会恢复采集。</p>
+
+<p><span style="color:blue"><strong>解决方案：</strong></span></p>
+
+<table>
+<thead>
+<tr>
+<th> 序号 </th>
+<th> 可能原因                           </th>
+<th> 排查手段                                                     </th>
+<th> 排查结果（现象） </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1    </td>
+<td> 相机在采集准备阶段或采集过程中掉线 </td>
+<td> 在确认SDK和VA安装正常以及相关硬件都完好的情况下，请确认当前应用环境下的相机触发模式和相关信号输入是否正常以及相应的触发模式下的连线是否正常 </td>
+<td>                  </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>常见问题4：3D相机不出光</strong></p>
+
+<p><span style="color:blue"><strong>现象描述：</strong></span></p>
+
+<p>3D相机不出光，下一个物料来的时候又出光。</p>
+
+<p><span style="color:blue"><strong>解决方案：</strong></span></p>
+
+<table>
+<thead>
+<tr>
+<th> 序号 </th>
+<th> <span style="display:inline-block;width: 80px"> 可能原因</span> </th>
+<th> 排查手段 </th>
+<th> 排查结果（现象）                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1    </td>
+<td> 相机开始触发信号接收异常，不同步导致， </td>
+<td> 1：查看PLC与相机的信号传送时序；                             </td>
+<td> 1.相机运行前加上与PLC通讯协议，准备好再给触发；2. 对齐发送触发的时间，对应的CT时间也需要进行排查，会不会因为处理时间过长，导致硬件脉冲没有及时捕捉； </td>
+</tr>
+<tr>
+<td> 2    </td>
+<td> 相机固件版本不匹配                     </td>
+<td> 使用VA软件3D控制界面，点击相机（点击界面左侧相机SN，左侧下方会显示相机固件信息）查看固件信息； </td>
+<td> 固件版本非：5.1.1.3;                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>常见问题5：无法找回SmartRay相机IP</strong></p>
+
+<p><span style="color:blue"><strong>现象描述：</strong></span></p>
+
+<p>在设置IP时部分使用者设置的IP可能不是192.168.178，而是其他IP地址，但是经过很长时间之后（或者更换工控机后），使用者忘记了当时设置的IP，导致无法连接相机；</p>
+
+<p><span style="color:blue"><strong>解决方案：</strong></span></p>
+
+<table>
+<thead>
+<tr>
+<th> 序号 </th>
+<th> 可能原因 </th>
+<th> 排查手段                                                     </th>
+<th> 排查结果（现象）         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1    </td>
+<td> &mdash;-     </td>
+<td> 1：下载安装第三方IP查看软件（软件名称：wireshark），然后连接相机使用第三方软件寻回相机IP </td>
+<td> 具体步骤与现象如下图所示 </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>SmartRay相机IP找回步骤</strong></p>
+
+<ul>
+<li><p><strong>Step1</strong>：下载安装第三方软件：wireshark；</p></li>
+<li><p><strong>Step2</strong>：以管理员的身份运行Wireshark软件，然后点击软件中如图19所示的按钮，选择对应的网口，若连接传感器，则选择对应的local Area Connection. 然后点击开始，这时传感器是没上电的！！</p>
+
+<p><img src="media/1660651425410.png" alt="" /></p>
+
+<p><img src="media/1660651525721.png" alt="" /></p></li>
+<li><p><strong>Step3</strong>：传感器上电，查看到对应所连接设备的IP，只需查看第二列即可，如下图所示，192.168.179.10即为我们设置的IP。</p>
+
+<p><img src="media/1660651591850.png" alt="" /></p></li>
+</ul>
+
+
+<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+
+<p>为方便调试，修改的 IP 及端口号需要写在标签上，并粘贴到相机上<em>；</em></p></blockquote>
+
+<p>  <img src="media/wps169A.tmp.png" alt="" /></p>
+
+<h2>2. KEYENCE LJ-X8000系列相机安装、调试</h2>
+
+<p>接下来介绍KEYENCE LJ-X8000系列相机直接在VISIONAssembly6.5.xxx版本中调试步骤；</p>
+
+<ul>
+<li><strong>Step1</strong>：双击VISIONAssemby软件图标打开软件，依次点击“设置”→“管理设备上连接的3D相机”，打开“3D相机管理界面”，步骤如图所示：</li>
+</ul>
+
+
+<p><img src="media/1660652553553.png" alt="" /></p>
+
+<ul>
+<li><strong>Step2</strong>：在相机列表栏右键点击添加相机，选择Keyence相机，设置好相机IP，点击确定，等待相机连接成功提示（注意：界面左下角显示相机的连接状态），具体步骤如下图所示；</li>
+</ul>
+
+
+<p><img src="media/1660652553554.png" alt="" /></p>
+
+<ul>
+<li><p><strong>Step3</strong>：成像效果调节；</p>
+
+<p>我们使用VISIONAssembly6.5版本软件调节成像，使用编码器触发时，设置参数如图所示；</p>
+
+<p><img src="media/1660652553555.png" alt="" /></p>
+
+<ul>
+<li><p><strong>输入模式选择</strong>：1相1递增（该选项主要控制控制盒接收的编码器信号的输出形式，没有特殊要求，建议使用“1相1递增”即可）；</p></li>
+<li><p><strong>细化点数</strong>：该参数也称“分频”，分频数的计算方式与编码器的信号频率以及编码器的移动速度有关；距离说明计算方式；</p></li>
+<li><p><strong>比如</strong>：编码器移动1mm输出1000个信号、此相机参数下的最大采集频率5000fps，移动轴的移动速度60mm/s，移动轴移动距离：120mm；该情况下的细化点数计算方式如下：</p>
+
+<ul>
+<li><p>轴移动1mm耗时：1/60s；</p></li>
+<li><p>编码器输出信号频率：1000/（1/60s）=60000Hz</p></li>
+<li><p>则分频数：60000/5000=12</p></li>
+</ul>
+</li>
+<li><p><strong>最大频率</strong>：编码器触发模式下的实际采集频率不大于该参数，实际采集频率与移动轴的输出信号频率以及细化点数有关；该下拉框最大值与Z方向设置的测量范围（VA软件目前版本不支持该参数设置，您可在KEYENCE软件中设置该参数）、曝光时间参数有关（Z方向设置的测量范围越小、曝光时间越短则可设置的“最大频率”越大）；</p></li>
+</ul>
+
+
+<p>设置好参数之后点击“完成”退出LJ-X软件；接下来打开VA软件来完成图像采集；</p></li>
+<li><p><strong>Step4</strong>：在工程界面设置图像采集工程，如图3-36所示；</p>
+
+<p><img src="media/1660652553556.png" alt="" /></p></li>
+</ul>
+
+
+<h2>3. LCubor 3D相机网口及连接设置</h2>
+
+<p><strong>输出与供电结构描述</strong></p>
+
+<p><img src="media/1660702445521.png" alt="" /></p>
+
+<p><strong>LCubor 3D输入输出供电接口及接口含义</strong></p>
+
+<p><img src="media/1660702466568.png" alt="" /></p>
+
+<p><strong>LCubor 3D相机指示灯含义及状态说明</strong></p>
+
+<p><img src="media/1660702518248.png" alt="" /></p>
+
+<p><img src="media/1660702554913.png" alt="" /></p>
+
+<p><strong>LCubor 3D相机连接设置</strong></p>
+
+<ul>
+<li><p>请先将相机连接到工控机上：网线一端连接相机，另一端连接工控机网口，同时连接电源给相机独立供电。</p></li>
+<li><p>要求网线是超五类的高柔线。</p></li>
+<li><p>连接后，确认相机一端的网线是安装到位的，相机上有指示灯，根据上述给出的指示灯含义来确认相机的连接情况。</p></li>
+</ul>
+
+
+<h2>4. SSZN相机</h2>
+
+<h3>4.1 SSZN相机及控制器说明</h3>
+
+<p><strong>SSZN相机实物图及结构图</strong></p>
+
+<p><img src="media/1660702763943.png" alt="" /></p>
+
+<p><img src="media/1660702779536.png" alt="" /></p>
+
+<table>
+<thead>
+<tr>
+<th> 序号 </th>
+<th> 名称             </th>
+<th> 功能说明                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1    </td>
+<td> 激光发射LED      </td>
+<td> 绿灯长亮：物体在Z轴中心附近（±5%量程）                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td>                  </td>
+<td> 黄灯长亮：物体在Z轴范围内                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td>                  </td>
+<td> 黄灯闪耀：物体超出Z轴范围                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td>                  </td>
+<td> 黄灯或者绿灯亮：激光器正在工作                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td>                  </td>
+<td> 灭灯：未通电                                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td>                  </td>
+<td> 红灯亮：传感器故障警告                                 </td>
+</tr>
+<tr>
+<td> 2    </td>
+<td> 安装专用螺丝孔   </td>
+<td> 安装传感头时可使用该螺丝孔                             </td>
+</tr>
+<tr>
+<td> 3    </td>
+<td> 安装孔           </td>
+<td> 使用附带的六角带孔螺栓安装传感头                       </td>
+</tr>
+<tr>
+<td> 4    </td>
+<td> 遮光金属板安装孔 </td>
+<td> 将遮光金属板等安装至传感头时使用；禁止用于固定传感头。 </td>
+</tr>
+<tr>
+<td> 5    </td>
+<td> 传感头感光窗口   </td>
+<td> 接收测量所使用的激光                                   </td>
+</tr>
+<tr>
+<td> 6    </td>
+<td> 激光发射窗口     </td>
+<td> 发射测量所使用的激光                                   </td>
+</tr>
+<tr>
+<td> 7    </td>
+<td> 传感头线缆接口   </td>
+<td>                                                        </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>SSZN控制器及其引脚说明</strong></p>
+
+<p><img src="media/1660702940560.png" alt="" /></p>
+
+<p><img src="media/1660702955624.png" alt="" /></p>
+
+<table>
+<thead>
+<tr>
+<th> <strong>引脚</strong> </th>
+<th> <strong>信号</strong>            </th>
+<th> <strong>说明</strong>                                                     </th>
+<th> <strong>参考</strong> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1~10     </td>
+<td> 保留                </td>
+<td>                                                              </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 11       </td>
+<td> LEVELCONTROL_ENABLE </td>
+<td> 批处理测量开始信号电平控制使能。用于切换引脚14“批处理测量开始”的输入信号为电平控制模式，同时引脚15“批处理停止”输入无效。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 12       </td>
+<td> 保留                </td>
+<td>                                                              </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 13       </td>
+<td> 保留                </td>
+<td>                                                              </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 14       </td>
+<td> MEASURE_START       </td>
+<td> 批处理测量开始输入，开始批处理测量。（数字信号输入，光隔离，低电平有效。） </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 15       </td>
+<td> MEASURE_STOP        </td>
+<td> 批处理测量停止输入，停止批处理测量。（数字信号输入，光隔离，低电平有效。） </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 16       </td>
+<td> 保留                </td>
+<td>                                                              </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 17       </td>
+<td> TRG                 </td>
+<td> 触发输入，激活外部触发。（高速数字信号输入，光隔离，低电平有效。） </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 18       </td>
+<td> COM_OUT             </td>
+<td> 输出信号公共端子                                             </td>
+<td> COM_OUT  </td>
+</tr>
+<tr>
+<td> 19       </td>
+<td> COM_IN              </td>
+<td> 输入信号公共端子                                             </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 20       </td>
+<td> COM_OUT             </td>
+<td> 输出信号公共端子                                             </td>
+<td> COM_OUT  </td>
+</tr>
+<tr>
+<td> 21~32    </td>
+<td> 保留                </td>
+<td>                                                              </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 33       </td>
+<td> READY               </td>
+<td> 批处理状态输出。批处理过程中输出低电平，非批处理时输出高电平。 </td>
+<td> COM_OUT  </td>
+</tr>
+<tr>
+<td> 34       </td>
+<td> 保留                </td>
+<td>                                                              </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 35       </td>
+<td> 保留                </td>
+<td>                                                              </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 36       </td>
+<td> 保留                </td>
+<td>                                                              </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 37       </td>
+<td> ENC_A1+             </td>
+<td> 差分编码器A相输入正极，光隔离，RS-422规范差分输入（内置AM26LS32相当品）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 38       </td>
+<td> ENC_A1-             </td>
+<td> 差分编码器A相输入负极，光隔离，RS-422规范差分输入（内置AM26LS32相当品）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 39       </td>
+<td> ENC_B1+             </td>
+<td> 差分编码器B相输入正极，光隔离，RS-422规范差分输入（内置AM26LS32相当品）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 40       </td>
+<td> ENC_B1-             </td>
+<td> 差分编码器B相输入负极，光隔离，RS-422规范差分输入（内置AM26LS32相当品）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 41       </td>
+<td> ENC_Z1+             </td>
+<td> 差分编码器Z相输入正极，光隔离，RS-422规范差分输入（内置AM26LS32相当品）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 42       </td>
+<td> ENC_Z1-             </td>
+<td> 差分编码器Z相输入负极，光隔离，RS-422规范差分输入（内置AM26LS32相当品）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 43       </td>
+<td> ENC_A2_+24V         </td>
+<td> 单端编码器A相输入正极，24V电压端，光隔离。（注：当编码器是NPN集电极开路输出时，接24V电源正极；当编码器是PNP集电极开路输出时，接编码器A相输出极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 44       </td>
+<td> ENC_A2_+12V         </td>
+<td> 单端编码器A相输入正极，12V电压端，光隔离。（注：当编码器是NPN集电极开路输出时，接12V电源正极；当编码器是PNP集电极开路输出时，接编码器A相输出极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 45       </td>
+<td> ENC_A2_+5V          </td>
+<td> 单端编码器A相输入正极，5V电压端，光隔离。（注：当编码器是NPN集电极开路输出时，接5V电源正极；当编码器是PNP集电极开路输出时，接编码器A相输出极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 46       </td>
+<td> ENC_A2_COM-         </td>
+<td> 单端编码器A相输入负极,公共端，光隔离。（注：当编码器是NPN集电极开路输出时，接编码器A相输出极；当编码器是PNP集电极开路输出时，接5V或12V或24V电源负极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 47       </td>
+<td> ENC_B2_+24V         </td>
+<td> 单端编码器B相输入正极，24V电压端，光隔离。（注：当编码器是NPN集电极开路输出时，接24V电源正极；当编码器是PNP集电极开路输出时，接编码器B相输出极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 48       </td>
+<td> ENC_B2_+12V         </td>
+<td> 单端编码器B相输入正极，12V电压端，光隔离。（注：当编码器是NPN集电极开路输出时，接12V电源正极；当编码器是PNP集电极开路输出时，接编码器B相输出极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 49       </td>
+<td> ENC_B2_+5V          </td>
+<td> 单端编码器B相输入正极，5V电压端，光隔离。（注：当编码器是NPN集电极开路输出时，接5V电源正极；当编码器是PNP集电极开路输出时，接编码器B相输出极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 50       </td>
+<td> ENC_B2_COM-         </td>
+<td> 单端编码器B相输入负极,公共端，光隔离。（注：当编码器是NPN集电极开路输出时，接编码器B相输出极；当编码器是PNP集电极开路输出时，接5V或12V或24V电源负极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 51       </td>
+<td> ENC_Z2_+24V         </td>
+<td> 单端编码器Z相输入正极，24V电压端，光隔离。（注：当编码器是NPN集电极开路输出时，接24V电源正极；当编码器是PNP集电极开路输出时，接编码器Z相输出极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 52       </td>
+<td> ENC_Z2_+12V         </td>
+<td> 单端编码器Z相输入正极，12V电压端，光隔离。（注：当编码器是NPN集电极开路输出时，接12V电源正极；当编码器是PNP集电极开路输出时，接编码器Z相输出极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 53       </td>
+<td> ENC_Z2_+5V          </td>
+<td> 单端编码器Z相输入正极，5V电压端，光隔离。（注：当编码器是NPN集电极开路输出时，接5V电源正极；当编码器是PNP集电极开路输出时，接编码器Z相输出极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 54       </td>
+<td> ENC_Z2_COM-         </td>
+<td> 单端编码器Z相输入负极,公共端，光隔离。（注：当编码器是NPN集电极开路输出时，接编码器Z相输出极；当编码器是PNP集电极开路输出时，接5V或12V或24V电源负极）。 </td>
+<td>          </td>
+</tr>
+<tr>
+<td> 55~60    </td>
+<td> 保留                </td>
+<td>                                                              </td>
+<td>          </td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>4.2 编码器触发模式下的接线方式</h3>
+
+<ul>
+<li><p>测量开始使用软件信号触发</p>
+
+<p><img src="media/1660703272241.png" alt="" /></p></li>
+<li><p>测量开始使用边沿信号触发</p>
+
+<p><img src="media/1660703316698.png" alt="" /></p></li>
+<li><p>测量开始使用持续的电平信号触发</p>
+
+<p><img src="media/1660703356293.png" alt="" /></p></li>
+</ul>
+
+
+<h3>4.3 相机安装</h3>
+
+<ul>
+<li><p><strong>安装示意图</strong></p>
+
+<p><img src="media/1660703552462.png" alt="" /></p>
+
+<p><img src="media/1660703569112.png" alt="" /></p>
+
+<p><img src="media/1660703586523.png" alt="" /></p></li>
+<li><p><strong>注意事项</strong></p>
+
+<ul>
+<li><p>测量死角</p>
+
+<p><img src="media/1660703425228.png" alt="" /></p></li>
+<li><p>杂散光</p>
+
+<p><img src="media/1660703459802.png" alt="" /></p></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>4.4 SSZN控制盒与相机连接、调试</h3>
+
+<ul>
+<li><p><strong>Step1</strong>：将传感器线缆连接到空着数据通信接口上；</p>
+
+<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+
+<p>若仅使用1个传感器，应连接到CAM A连接器上，用一字螺丝刀拧紧连接器两侧的螺丝。</p></blockquote>
+
+<p><img src="media/1660704187418.png" alt="" /></p></li>
+<li><p><strong>Step2：连接传感器线缆</strong></p>
+
+<ul>
+<li><p>传感器线缆连接示意图</p>
+
+<p><img src="media/1660704212058.png" alt="" /></p></li>
+<li><p>实际项目中编码器触发模式下控制盒的连线</p>
+
+<p><img src="media/1660704288951.png" alt="" /></p>
+
+<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+
+<ul>
+<li><p>线缆连接时应断电操作</p></li>
+<li><p>请使用AWG14~AWG20的电缆</p></li>
+<li><p>DC24V电源功率要求不小于36W</p></li>
+<li><p>端子台为压接端子时，请使用如下大小，是和M3螺丝的产品</p></li>
+</ul>
+</blockquote>
+
+<p><img src="media/1660704655642.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p><strong>Step3</strong>：SSZN相机IP设置；</p>
+
+<p><img src="media/1660704903334.png" alt="" /></p>
+
+<p>接下来介绍SSZN系列相机直接在VISIONAssembly6.5.xxx版本中调试步骤；</p></li>
+<li><p><strong>Step4</strong>：双击VISIONAssemby软件图标打开软件，依次点击“设置”→“管理设备上连接的3D相机”，打开“3D相机管理界面”，步骤如图所示：</p>
+
+<p><img src="media/1660707509291.png" alt="" /></p></li>
+<li><p><strong>Step5</strong>：在相机列表栏右键点击添加相机，选择SSZN相机，设置好相机IP，点击确定，等待相机连接成功提示（注意：界面左下角显示相机的连接状态），具体步骤如下图所示；</p>
+
+<p><img src="media/1660707509292.png" alt="" /></p></li>
+<li><p><strong>Step6</strong>：成像效果调节；</p>
+
+<p>我们使用VISIONAssembly6.5版本软件调节成像，使用编码器触发时，设置参数如图所示；</p>
+
+<p><img src="media/1660707509293.png" alt="" /></p>
+
+<ul>
+<li><p><strong>输入模式选择</strong>：1相1递增（该选项主要控制控制盒接收的编码器信号的输出形式，没有特殊要求，建议使用“1相1递增”即可）；</p></li>
+<li><p><strong>细化点数</strong>：该参数也称“分频”，分频数的计算方式与编码器的信号频率以及编码器的移动速度有关；距离说明计算方式；</p></li>
+<li><p><strong>比如</strong>：编码器移动1mm输出1000个信号、此相机参数下的最大采集频率5000fps，移动轴的移动速度60mm/s，移动轴移动距离：120mm；该情况下的细化点数计算方式如下：</p>
+
+<ul>
+<li><p>轴移动1mm耗时：1/60s；</p></li>
+<li><p>编码器输出信号频率：1000/（1/60s）=60000Hz</p></li>
+<li><p>则分频数：60000/5000=12</p></li>
+</ul>
+</li>
+<li><p><strong>最大频率</strong>：编码器触发模式下的实际采集频率不大于该参数，实际采集频率与移动轴的输出信号频率以及细化点数有关；该下拉框最大值与Z方向设置的测量范围（VA软件目前版本不支持该参数设置，您可在KEYENCE软件中设置该参数）、曝光时间参数有关（Z方向设置的测量范围越小、曝光时间越短则可设置的“最大频率”越大）；</p></li>
+</ul>
+
+
+<p>设置好参数之后点击“完成”退出LJ-X软件；接下来打开VA软件来完成图像采集；</p></li>
+<li><p><strong>Step7</strong>：退出3D相机管理界面，然后在VA工程师界面，添加3D相机采集工具；然后在工具属性栏“相机名称”选择调试好的相机；</p></li>
+</ul>
+
+
+<h2>5. FOCALSPEC相机连接设置</h2>
+
+<ul>
+<li>工控机配置推荐：</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th> <strong>硬件</strong> </th>
+<th> <strong>基本要求</strong>                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> CPU      </td>
+<td> Intel i7 5代以上（i7，i9，Xeon）               </td>
+</tr>
+<tr>
+<td> ARM      </td>
+<td> 16GB以上                                       </td>
+</tr>
+<tr>
+<td> GPU      </td>
+<td> 核显、独显均可，推荐Intel和Nvidia显卡          </td>
+</tr>
+<tr>
+<td> HHD      </td>
+<td> SSD 256G以上（不推荐使用机械硬盘）             </td>
+</tr>
+<tr>
+<td> 网卡     </td>
+<td> 千兆网卡，支持9014Bytes巨型帧                  </td>
+</tr>
+<tr>
+<td> 系统     </td>
+<td> 推荐Windows10（windows7需要安装kb3033929补丁） </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>8PIN针介绍</li>
+</ul>
+
+
+<p><img src="media/1660707635160.png" alt="" /></p>
+
+<table>
+<thead>
+<tr>
+<th> <strong>PIN号</strong> </th>
+<th> <strong>颜色</strong> </th>
+<th> <strong>名称</strong>  </th>
+<th> <strong>含义</strong>           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1             </td>
+<td> 白橙色   </td>
+<td> Input 1   </td>
+<td> 触发信号+          </td>
+</tr>
+<tr>
+<td> 2             </td>
+<td> 橙色     </td>
+<td> input GND </td>
+<td> 信号输入公共地     </td>
+</tr>
+<tr>
+<td> 3             </td>
+<td> 白绿色   </td>
+<td> RS485-B   </td>
+<td> RS485 B线          </td>
+</tr>
+<tr>
+<td> 4             </td>
+<td> 绿色     </td>
+<td> RS485-A   </td>
+<td> RS485 A线          </td>
+</tr>
+<tr>
+<td> 5             </td>
+<td> 蓝色     </td>
+<td> Input 3   </td>
+<td> Location信号清零线 </td>
+</tr>
+<tr>
+<td> 6             </td>
+<td> 白色     </td>
+<td> GND       </td>
+<td> 24V电源负          </td>
+</tr>
+<tr>
+<td> 7             </td>
+<td> 棕色     </td>
+<td> 24V       </td>
+<td> 24V电源正          </td>
+</tr>
+<tr>
+<td> 8             </td>
+<td> 黑色     </td>
+<td> Input 2   </td>
+<td> 触发使能/禁用线    </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>17 PIN IO线介绍</li>
+</ul>
+
+
+<p><img src="media/1660707673645.png" alt="" /></p>
+
+<table>
+<thead>
+<tr>
+<th> <strong>PIN号</strong> </th>
+<th> <strong>颜色</strong> </th>
+<th> <strong>名称</strong>   </th>
+<th> <strong>含义</strong>                      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1             </td>
+<td> 棕色     </td>
+<td> Output 1   </td>
+<td> 24V输出1（500mA）             </td>
+</tr>
+<tr>
+<td> 2             </td>
+<td> 蓝色     </td>
+<td> Output 2   </td>
+<td> 24V输出2（500mA）             </td>
+</tr>
+<tr>
+<td> 3             </td>
+<td> 白色     </td>
+<td> Output 3   </td>
+<td> 24V输出3（500mA）             </td>
+</tr>
+<tr>
+<td> 4             </td>
+<td> 绿色     </td>
+<td> Output 4   </td>
+<td> 24V输出4（500mA）             </td>
+</tr>
+<tr>
+<td> 5             </td>
+<td> 粉色     </td>
+<td> Input 4    </td>
+<td> 输入4（24V）                  </td>
+</tr>
+<tr>
+<td> 6             </td>
+<td> 黄色     </td>
+<td> Not in use </td>
+<td>                               </td>
+</tr>
+<tr>
+<td> 7             </td>
+<td> 黑色     </td>
+<td> Output GND </td>
+<td> 输出公共接地                  </td>
+</tr>
+<tr>
+<td> 8             </td>
+<td> 灰色     </td>
+<td> Output GND </td>
+<td> 输出公共接地                  </td>
+</tr>
+<tr>
+<td> 9             </td>
+<td> 红色     </td>
+<td> Not in use </td>
+<td>                               </td>
+</tr>
+<tr>
+<td> 10            </td>
+<td> 紫色     </td>
+<td> Not in use </td>
+<td>                               </td>
+</tr>
+<tr>
+<td> 11            </td>
+<td> 灰-粉色  </td>
+<td> 24V Out    </td>
+<td> 来自 X2 的 24 V 输出 24 V输出 </td>
+</tr>
+<tr>
+<td> 12            </td>
+<td> 红-蓝色  </td>
+<td> 24V Out    </td>
+<td> 来自 X2 的 24 V 输出 24 V输入 </td>
+</tr>
+<tr>
+<td> 13            </td>
+<td> 白-绿色  </td>
+<td> Input GND  </td>
+<td> 输入公共接地                  </td>
+</tr>
+<tr>
+<td> 14            </td>
+<td> 棕-绿色  </td>
+<td> Not in use </td>
+<td>                               </td>
+</tr>
+<tr>
+<td> 15            </td>
+<td> 白-黄色  </td>
+<td> Not in use </td>
+<td>                               </td>
+</tr>
+<tr>
+<td> 16            </td>
+<td> 黄-棕色  </td>
+<td> Not in use </td>
+<td>                               </td>
+</tr>
+<tr>
+<td> 17            </td>
+<td> 白-灰色  </td>
+<td> Not in use </td>
+<td>                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><p>LMI FOCALSPEC相机尺寸与连线</p>
+
+<ul>
+<li>相机尺寸示意图</li>
+</ul>
+
+
+<p><img src="media/1660707705484.png" alt="" /></p>
+
+<ul>
+<li>相机连线示意图</li>
+</ul>
+
+
+<p><img src="media/1660707728059.png" alt="" /></p></li>
+</ul>
+
+
+<h2>6.RVC相机</h2>
+
+<h4>6.1 连接设置</h4>
+
+<ul>
+<li><p><strong>Step1</strong>：点击任务栏右下角处小地球标志；</p>
+
+<p><img src="media/1660648960888.png" alt="" /></p></li>
+<li><p><strong>Step2</strong>：在右侧会弹出网络设置点击“网络和Internet设置”；</p>
+
+<p><img src="media/1660648928198.png" alt="" /></p></li>
+<li><p><strong>Step3</strong>：在设置界面，先点击以太网，在点击更改适配器选项；找到相机连接的网卡，双击或者右键属性打开；</p>
+
+<p><img src="media/1660648984195.png" alt="" /></p></li>
+<li><p><strong>Step4</strong>：双击红框“Internet协议版本4（TCP/IPv4）”进入IP设置界面；</p>
+
+<p><img src="media/1660649005784.png" alt="" /></p></li>
+<li><p><strong>Step5</strong>：设置静态IP，只需要按照规定设置IP地址和子网掩码；</p>
+
+<p><img src="media/RVC_IP%E5%9C%B0%E5%9D%80.png" alt="" /></p></li>
+<li><p><strong>Step6</strong>：打开VA软件，点击“设置”→“管理设备上连接的3D相机”打开3D相机管理界面，即可看到RVC相机已自动连接上。</p></li>
+</ul>
+
+
+<h4>6.2 相机状态指示灯</h4>
+
+<p><img src="media/RVC%E7%8A%B6%E6%80%81%E7%81%AF.png" alt="" /></p>
+
+<h2>7.LVM相机</h2>
+
+<h4>7.1 相机状态指示灯</h4>
+
+<p><img src="media/LVM%E5%99%A8%E4%BB%B6%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="" /></p>
+
+<h4>7.2 接线注意事项</h4>
+
+<ul>
+<li>传感器EARTH_GND应接地：传感器的EARTH_GND信号和传感器外壳保持连通，此信号应和安装传感器的机架设备共同接地。请使用万用表检查接地的正确性。</li>
+<li>降低电源地（GND信号）和传感器接地（EARTH_GND信号）之间的电压：请将电源地（I/O 信号的参考地）和传感器接地之间的电压降至最低。为保证设备正常工作，此电压差应小于2V。</li>
+<li>使用合适的电源：传感器所用的电源应为具有浪涌电流保护的隔离电源，开启和关闭时能够适应高容性负载。</li>
+</ul>
+
+
+<h2>8.HIK相机</h2>
+
+<h4>8.1 相机状态指示灯</h4>
+
+<p><img src="media/HIK_1.png" alt="" /></p>
+
+<p><img src="media/HIK_2.png" alt="" /></p>
+
+<h4>8.2 相机IP配置</h4>
+
+<p><img src="media/HIK_3.png" alt="" /></p>
+
+<p><img src="media/HIK_4.png" alt="" /></p>

@@ -1,0 +1,389 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>多功能深度学习工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 多功能深度学习工具是单一深度学习工具（分类测试工具、检测测试工具、分割测试工具）的扩展版本，除了可以实现单一深度学习工具的功能外，还集成了子图获取功能、掩膜功能，同时支持对切割子图区域使用多个模型同时计算，可以对结果进行并集获取或进行投票操作。工具还支持多个工具间的串联操作，可以将一个工具的输出结果作为另一个工具的输入参数，从而对图片进行更复杂的深度学习计算。</p>
+
+<h2>2. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4>
+
+<p><img src="media/GcDeepLearningExTool_2_1.png" alt="GcDeepLearningExTool_2_1" style="zoom:100%;" /></p></li>
+<li><h4>设置图像数据链接</h4>
+
+<p><img src="media/GcDeepLearningExTool_2_2.png" alt="GcDeepLearningExTool_2_2" style="zoom:100%;" /></p></li>
+<li><h4>添加ROI区域</h4></li>
+</ul>
+
+
+<p>​ 输入所需要ROI信息后，点击添加ROI区域按钮可以添加ROI区域，同时可以在ROI列表和右侧图像展示区域看见所绘制的ROI区域信息和子图区域信息。
+​ 可以在列表中或右侧图像显示区域中选中某个ROI区域，ROI区域设置区的相关参数会更新成被选择的ROI区域的相关信息，进行修改后点击更新ROI区域按钮可以将更新后的信息更新到所选ROI区域对象中。
+​ 可以在右侧拖动或改变ROI区域的大小，结果会实时更新到ROI区域对象中。
+​ 可以选择某个ROI区域，点击删除ROI区域按钮将ROI区域删除。
+​ 工具有保护措施，在有图像的情况下，无论怎么绘制，ROI区域不会绘制到图像外部。无图像的情况下，因无法得知图像大小，可以任意绘制ROI区域，故不建议在无图像时对ROI参数进行操作。</p>
+
+<p>  <img src="media/GcDeepLearningExTool_2_3.png" alt="GcDeepLearningExTool_2_3" style="zoom:100%;" /></p>
+
+<ul>
+<li><h4>引用模型</h4>
+
+<p><img src="media/GcDeepLearningExTool_2_4.png" alt="GcDeepLearningExTool_2_4" style="zoom:100%;" /></p></li>
+<li><h4>执行，查看结果</h4>
+
+<p><img src="media/GcDeepLearningExTool_2_5.png" alt="GcDeepLearningExTool_2_5" style="zoom:100%;" /></p></li>
+<li><h4>在高级界面界面中查看结果</h4>
+
+<p><img src="media/GcDeepLearningExTool_2_6.png" alt="GcDeepLearningExTool_2_6" style="zoom:100%;" /></p></li>
+<li><h4>使用输入结果位置数组</h4></li>
+</ul>
+
+
+<p>​ 可以在高级界面中选择是否使用输入结果位置数组效果同属性中选择使用输入结果位置数组。参数连引入结果数组后，必须成功执行一次被引用的工具，并在工具中选择输入的结果类别，设置子图宽高，工具才可正常执行，可以查看结果位置数组中包含的位置信息，可以修改使用位置数组生成子图的宽度和高度。工具会使用列表中引入结果的每个小区域的中心点为新子图的中心点，使用配置的宽高为新子图的宽高重新切分子图，送给模型进行评估计算处理。</p>
+
+<p>  <img src="media/GcDeepLearningExTool_2_7.png" alt="GcDeepLearningExTool_2_7" style="zoom:100%;" />
+  <img src="media/GcDeepLearningExTool_2_8.png" alt="GcDeepLearningExTool_2_8" style="zoom:100%;" /></p>
+
+<ul>
+<li><h4>使用投票功能</h4></li>
+</ul>
+
+
+<p>​ 可以选择是否启用投票，并设置获票类别和投票阈值。</p>
+
+<p>  <img src="media/GcDeepLearningExTool_2_10.png" alt="GcDeepLearningExTool_2_10" style="zoom:100%;" /></p>
+
+<ul>
+<li><h4>使用结果筛选</h4></li>
+</ul>
+
+
+<p>​ 可以筛选输出的结果类别，无选择则默认全部输出。</p>
+
+<p>  <img src="media/GcDeepLearningExTool_2_11.png" alt="GcDeepLearningExTool_2_11" style="zoom:100%;" /></p>
+
+<h2>3. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述                         </th>
+<th> 解决方法                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 获取输入结果数组错误，输入结果数组为空 </td>
+<td>检查参数链中输入的结果位置数组是否正确</td>
+</tr>
+<tr>
+<td> 图像掩膜错误 </td>
+<td>检查是否在工具中设置了掩膜信息</td>
+</tr>
+<tr>
+<td> 获取子图错误 </td>
+<td>检查当前输入图中的ROI区域是否有效</td>
+</tr>
+<tr>
+<td> 调用深度学习算法错误，请检查模型管理器中模型是否初始化成功 </td>
+<td>检查模型管理器中模型是否初始化成功</td>
+</tr>
+<tr>
+<td> 调用深度学习算法错误，请检查模型管理器中模型与图像通道是否相同 </td>
+<td>请检查模型管理器中模型与图像通道是否相同 </td>
+</tr>
+<tr>
+<td> 调用深度学习算法错误，子图队列为空 </td>
+<td>检查是否在工具中添加了ROI区域</td>
+</tr>
+<tr>
+<td> 调用深度学习算法错误，计算超时 </td>
+<td>模型评估子图超时，检查模型管理器中模型是否工作正常</td>
+</tr>
+<tr>
+<td> 调用深度学习算法错误，模型列表为空 </td>
+<td>检查工具中是否引用模型</td>
+</tr>
+<tr>
+<td> 获取输入图像失败，请检查参数配置 </td>
+<td>检查输入图像是否有效</td>
+</tr>
+<tr>
+<td> 调用深度学习算法错误，请检查子图宽高是否与模型要求匹配 </td>
+<td>检查输入的图像宽高和通道是否和模型匹配</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>4. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 使用RGB输入图像      </td>
+<td> “是”：数据链接中显示输入图像RGB参数；“否”：数据链接中显示输入图像参数 </td>
+</tr>
+<tr>
+<td> 使用输入结果位置数组 </td>
+<td> “是”：数据链接中显示输入结果数组参数；“否”：数据链中不显示输入结果数组参数 </td>
+</tr>
+<tr>
+<td> 位置数组生成子图宽度 </td>
+<td> 使用输入结果位置数组的位置信息生成的子图的宽度。             </td>
+</tr>
+<tr>
+<td> 位置数组生成子图高度 </td>
+<td> 使用输入结果位置数组的位置信息生成的子图的高度。             </td>
+</tr>
+<tr>
+<td> 启用掩膜             </td>
+<td> “是”：启用掩膜功能；“否”：不启用掩膜功能                     </td>
+</tr>
+<tr>
+<td> 启用投票             </td>
+<td> “是”：启用投票功能；“否”：不启用投票功能                     </td>
+</tr>
+<tr>
+<td> 是否使用差异模式 </td>
+<td> “是”：工具内分割模型启用差异分割模式，数据链接中提供背景图像输入；“否”：工具内分割模型启用普通分割模式，参数链中不提供背景图像输入   </td>
+</tr>
+<tr>
+<td> 是否获取结果标记图像 </td>
+<td> “是”：分割模型获取结果标记图像；“否”：分割模型不获取结果标记图像   </td>
+</tr>
+<tr>
+<td> 是否启用效率优先 </td>
+<td> “是”：启用效率优先模式；“否”：不启用效率优先模式   </td>
+</tr>
+<tr>
+<td> 是否显示多边形结果 </td>
+<td> “是”：结果视图中显示多边形结果；“否”：结果视图中显示矩形结果   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>高级界面参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 使用输入结果位置数组 </td>
+<td> 选中：数据链接中显示输入结果数组参数；非选中：数据链中不显示输入结果数组参数 </td>
+</tr>
+<tr>
+<td> 选择输入类别 </td>
+<td> 选择结果数组中作为输入的类别             </td>
+</tr>
+<tr>
+<td> 位置数组生成子图宽度 </td>
+<td> 使用输入结果位置数组的位置信息生成的子图的宽度。             </td>
+</tr>
+<tr>
+<td> 位置数组生成子图高度 </td>
+<td> 使用输入结果位置数组的位置信息生成的子图的高度。             </td>
+</tr>
+<tr>
+<td> ROI X </td>
+<td>   ROI 区域的X坐标  </td>
+</tr>
+<tr>
+<td> ROI Y </td>
+<td>   ROI 区域的Y坐标  </td>
+</tr>
+<tr>
+<td> ROI 高度 </td>
+<td> ROI 区域的高度  </td>
+</tr>
+<tr>
+<td> ROI 宽度 </td>
+<td> ROI 区域的宽度  </td>
+</tr>
+<tr>
+<td> 子图高度 </td>
+<td> ROI 区域生成子图的高度  </td>
+</tr>
+<tr>
+<td> 子图宽度 </td>
+<td> ROI 区域生成子图的宽度  </td>
+</tr>
+<tr>
+<td> 横向叠加 </td>
+<td>    ROI 区域生成子图时横向叠加  </td>
+</tr>
+<tr>
+<td> 纵向叠加 </td>
+<td>    ROI 区域生成子图时纵向叠加  </td>
+</tr>
+<tr>
+<td> 横向最小叠加 </td>
+<td> 自动计算叠加时使用的横向最小叠加参数  </td>
+</tr>
+<tr>
+<td> 纵向最小叠加 </td>
+<td> 自动计算叠加时使用的纵向最小叠加参数  </td>
+</tr>
+<tr>
+<td> 启用自动计算叠加 </td>
+<td> ROI 区域生成子图时是否将使用最小叠加从新计算叠加参数。  </td>
+</tr>
+<tr>
+<td> ROI名称             </td>
+<td> ROI 的名称标识                     </td>
+</tr>
+<tr>
+<td> 子图超出图像边界处理方式</td>
+<td>子图超出图像边界后的处理方式，分为填充掩膜颜色和退回到图像区域内两种方式。 </td>
+</tr>
+<tr>
+<td> 模型引用列表</td>
+<td>工具引用了哪些模型 </td>
+</tr>
+<tr>
+<td> 启用投票             </td>
+<td> 选中：启用投票功能；非选中：不启用投票功能                     </td>
+</tr>
+<tr>
+<td> 选择获票类别     </td>
+<td> 如果进行投票操作，结果为获票类别时为真，否则为假。</td>
+</tr>
+<tr>
+<td> 投票阈值             </td>
+<td> 使用多个模型后可以配置投票阈值，大于等于投票阈值则认为结果为真。 </td>
+</tr>
+<tr>
+<td> 筛选结果类别             </td>
+<td> 非启用投票下可以对结果类别进行筛选，结果数组中只记录筛选后的结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称   </th>
+<th> 参数说明                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像   </td>
+<td> 输入的检测图像                     </td>
+</tr>
+<tr>
+<td> 输出结果数组   </td>
+<td> 输出的结果数组信息，按照类别进行分类，包括结果类别、类别名称、置信度、相对于原图的位置信息。                 </td>
+</tr>
+<tr>
+<td> 结果类别   </td>
+<td> 类别的索引                       </td>
+</tr>
+<tr>
+<td> 类别名称   </td>
+<td> 类别的名称                       </td>
+</tr>
+<tr>
+<td> 结果矩形   </td>
+<td> 检测出的目标的左上角点坐标，尺寸 </td>
+</tr>
+<tr>
+<td> 结果置信度 </td>
+<td> 暂无意义                         </td>
+</tr>
+<tr>
+<td> 子图索引   </td>
+<td> 子图的顺序索引 </td>
+</tr>
+<tr>
+<td> 结果面积   </td>
+<td> 检测出的目标的面积 </td>
+</tr>
+<tr>
+<td> 结果多边形   </td>
+<td> 输出的多边形集合，内部包含所有结果的多边形信息                     </td>
+</tr>
+<tr>
+<td> 子图数组   </td>
+<td> 输出检测时切分的子图集合                    </td>
+</tr>
+<tr>
+<td> 结果标记图像   </td>
+<td> 检测获取的结果标记图像 </td>
+</tr>
+<tr>
+<td> 执行结果   </td>
+<td> 工具执行是否成功 </td>
+</tr>
+<tr>
+<td> 执行时间   </td>
+<td> 工具执行耗时 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>视图参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称   </th>
+<th> 参数说明           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像   </td>
+<td> 显示输入的检测图像 </td>
+</tr>
+<tr>
+<td> 输出结果数组 </td>
+<td> 显示结果图形       </td>
+</tr>
+<tr>
+<td> 执行结果   </td>
+<td> 显示工具的执行结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>5. 示例工程</h2>
+
+<p>​ 参见“\Samples\多功能深度学习工具.gvp”。</p>

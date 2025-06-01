@@ -1,0 +1,148 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>视觉控制器选型指南</h1>
+
+<h2>1. 深度学习</h2>
+
+<h3>1.1 工控机</h3>
+
+<ul>
+<li><p><strong>工控机型号</strong></p>
+
+<p><img src="media/ControllerType.png" alt="" /></p></li>
+<li><p><strong>显卡GPU型号</strong></p>
+
+<p><img src="media/GPUType.png" alt="" /></p></li>
+<li><p><strong>网卡POE型号</strong></p>
+
+<p><img src="media/POEType.png" alt="" /></p></li>
+</ul>
+
+
+<h3>1.2 控制器硬件选型指南</h3>
+
+<h4>1.2.1 显卡GPU选型指南</h4>
+
+<ul>
+<li><p><strong>GPU显存计算方法步骤</strong></p>
+
+<ul>
+<li><p>首先根据项目检测项需求，评估项目方案，明确以下几点</p>
+
+<ul>
+<li><p>确定使用哪种分类模型（S/M/L）</p>
+
+<ul>
+<li><p>确定分类模型使用个数<strong><em>N<sub>c</sub></em></strong></p></li>
+<li><p>确定输入图像尺寸大小</p></li>
+</ul>
+</li>
+<li><p>确定使用哪种检测模型（XS/S/M）</p>
+
+<ul>
+<li><p>确定检测模型使用个数<strong><em>N<sub>D</sub></em></strong></p></li>
+<li><p>确定输入图像尺寸大小</p></li>
+</ul>
+</li>
+<li><p>确定使用哪种分割模型（S/M）</p>
+
+<ul>
+<li><p>确定分割模型使用个数<strong><em>N<sub>S</sub></em></strong></p></li>
+<li><p>确定输入图像尺寸大小</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>其次根据附录来线性查找并大致估计出 <strong><em>GPU 显存计算公式</em></strong> 中需要的参数值</p></li>
+<li><p>最后计算出公式的结果，并根据 <strong><em>GPU 选型策略</em></strong> 确定 GPU 型号</p></li>
+</ul>
+</li>
+<li><p><strong>GPU 显存计算公式</strong></p>
+
+<p><img src="media/GPUCalculation.png" alt="" /></p>
+
+<p>其中：</p>
+
+<p><strong><em>Z<sub>Vm</sub></em></strong> 代表部署阶段 GPU 显存占用量</p>
+
+<p><strong><em>C<sub>Vminitial</sub></em></strong> 代表第 1 个分类模型 GPU 显存占用量</p>
+
+<p><strong><em>C<sub>Vm</sub></em></strong> 代表第 2 ~ <strong><em>N<sub>C</sub></em></strong> 个分类模型 GPU 平均显存占用量</p>
+
+<p><strong><em>N<sub>C</sub></em></strong> 代表需要分类模型总数量</p>
+
+<p><strong><em>D<sub>Vminitial</sub></em></strong> 代表第 1 个检测模型 GPU 显存占用量</p>
+
+<p><strong><em>D<sub>Vm</sub></em></strong> 代表第 2 ~ <strong><em>N<sub>D</sub></em></strong> 个检测模型 GPU 平均显存占用量</p>
+
+<p><strong><em>N<sub>D</sub></em></strong> 代表需要检测模型数量</p>
+
+<p><strong><em>S<sub>Vminitial</sub></em></strong> 代表第 1 个分割模型 GPU 显存占用量</p>
+
+<p><strong><em>S<sub>Vm</sub></em></strong> 代表第 2 ~ <strong><em>N<sub>S</sub></em></strong> 个分割模型 GPU 平均显存占用量</p>
+
+<p><strong><em>N<sub>S</sub></em></strong> 代表需要分割模型数量</p></li>
+<li><p><strong>GPU 选型策略</strong></p>
+
+<p>如果 <strong><em>Z<sub>Vm</sub></em></strong> ≥ 9G，建议选择 NVIDIA GTX3090(24G) 显卡</p>
+
+<p>如果 <strong><em>Z<sub>Vm</sub></em></strong> &lt; 9G，建议选择 NVIDIA GTX3060(12G) 显卡</p>
+
+<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+
+<p>如果初期评估后已经达到 9G 左右的显存时，一定跟客户说清楚：一旦新增检测项或其他需求后，会升级 GPU 显卡。</p></blockquote></li>
+</ul>
+
+
+<h4>1.2.2 处理器CPU选型指南</h4>
+
+<p>由于影响 CPU 因素过多，情况非常复杂，主要影响因素有 <strong>CT 扫描时间</strong>、<strong>相机分辨率及相机个数</strong>、<strong>畸变矫正工具</strong>、<strong>定位工具</strong>、<strong>拼接工具</strong>、<strong>存图</strong>、<strong>模型数量</strong>等， 详下表。</p>
+
+<p>目前的深度学习项目只有 Imac 项目用到了 i9-9900K 处理器， 其他苹果、模组项目的相关影响因素的统计项见下表，作为选择 CPU 型号的综合参考。</p>
+
+<p><img src="media/CPUGuide.png" alt="" /></p>
+
+<h4>1.2.3 POE 网卡选型指南</h4>
+
+<p>如果光学方案中需要的相机数量小于等于 4，则选择一块 POE 网卡；</p>
+
+<p>如果光学方案中需要的相机数量大于 4，则选择两块 POE 网卡。</p>
+
+<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+
+<p>深度学习项目最多不会超过 1 托 8。</p></blockquote>
+
+<h4>1.2.4 使用深度学习OCR工具时候硬件选型和系统要求</h4>
+
+<p>深度学习OCR工具算法对于硬件和系统有具体要求为：工控机CPU要求在5代以上，系统要求是Win10。</p>
+
+<h2>附录</h2>
+
+<ul>
+<li><p>分类模型</p>
+
+<p><img src="media/Classify.png" alt="" /></p></li>
+<li><p>检测模型</p>
+
+<p><img src="media/Detection.png" alt="" /></p></li>
+<li><p>分割模型</p>
+
+<p><img src="media/Segmentation.png" alt="" /></p></li>
+</ul>
+

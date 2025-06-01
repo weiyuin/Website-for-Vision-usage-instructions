@@ -1,0 +1,199 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>直线到直线角度工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     直线到直线角度工具主要用来计算输入图像中两条直线之间的角度，并输出两条直线的角度。其实际应用效果如图1所示。</p>
+
+<p><img src="media\GcAngleLineLineTool_1_1.png" alt="" /></p>
+
+<p><imgnote>图1 直线到直线角度工具应用示意图</imgnote></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     直线到直线角度工具主要用于计算目标物边缘线的夹角，判断目标边缘角度是否符合规范。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     <strong>直线到直线角度</strong></p>
+
+<p>​     计算方法：直线A与直线B的角度α可以描述为：假设直线的方向为向上、向右为正，直线A旋转α度后与直线B平行（或重合），其中α的方向为顺时针为正，逆时针为负。其示意图如图2所示。</p>
+
+<p><img src="media\GcAngleLineLineTool_1_2.png" alt="" /><img src="media\GcAngleLineLineTool_1_3.png" alt="" /></p>
+
+<p><imgnote>(a) 角度为正</imgnote> <imgnote>(b) 角度为负</imgnote></p>
+
+<p><imgnote>图2 直线到直线角度示意图</imgnote></p>
+
+<p>​     <strong>无方向角度</strong></p>
+
+<p>​     计算方法：首先取角度的绝对值β，对于绝对值β小于90，β即为无方向角度；对于绝对值β大于90，无方向角度等于180-β。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media\GcAngleLineLineTool_1_4.png" alt="" /></p>
+
+<ul>
+<li><h4>定角度上下限、无方向角度上下限等</h4></li>
+</ul>
+
+
+<p><img src="media\GcAngleLineLineTool_1_5.png" alt="" /></p>
+
+<p><strong>角度上限、角度下限</strong></p>
+
+<p>对于输出参数<a href="#%E8%A7%92%E5%BA%A6">角度</a>的有效范围进行设定，角度上限、角度下限的可取值范围为[-180,180]，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对角度上限或下限不进行限定。</p>
+
+<p>使用角度上限或/和角度下限对角度数值的有效范围进行设定后，执行此距离工具。</p>
+
+<p>当输出结果角度在设定的有效范围内时，显示工具执行成功；否则，显示工具执行失败。</p>
+
+<p><strong>无方向角度上限、无方向角度下限</strong></p>
+
+<p>对于输出参数<a href="#%E6%97%A0%E6%96%B9%E5%90%91%E8%A7%92%E5%BA%A6">无方向角度</a>的有效范围进行设定，无方向角度上限、无方向角度下限的可取值范围为[0,90]，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对无方向角度上限或下限不进行限定。</p>
+
+<p>使用角度上限或/和角度下限对角度数值的有效范围进行设定后，执行此距离工具。</p>
+
+<p>当输出结果角度在设定的有效范围内时，显示工具执行成功；否则，显示工具执行失败。</p>
+
+<ul>
+<li><h4>查看结果</h4></li>
+</ul>
+
+
+<p><img src="media\GcAngleLineLineTool_1_6.png" alt="" /></p>
+
+<p><img src="media\GcAngleLineLineTool_1_7.png" alt="" /></p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 数据链窗口中直线A与直线B参数来源相同时，工具执行成功，但两条直线的的角度为0。 </td>
+</tr>
+<tr>
+<td> 当数据链窗口中没有指定直线A与直线B参数来源时，直线A与直线B由图像窗口的直线GUI确定；当数据链窗口中已经指定直线A与直线B参数来源时，以该参数来源为优先，图像窗口直线GUI确定的直线无效。 </td>
+</tr>
+<tr>
+<td> 如果直线A与直线B由图像窗口的直线GUI确定，则每次打开工程时需重新确定直线。 </td>
+</tr>
+<tr>
+<td> 数据源顺序的不同会影响角度结果的正负。                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称          </th>
+<th> 参数说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像       </td>
+<td> 显示待检测的图像。 </td>
+</tr>
+<tr>
+<td> 直线A          </td>
+<td> 将要求角度的两条直线中的第一条。                             </td>
+</tr>
+<tr>
+<td> 直线B          </td>
+<td> 将要求角度的两条直线中的第二条。                             </td>
+</tr>
+<tr>
+<td> 角度上限       </td>
+<td> 输出参数<a href="#%E8%A7%92%E5%BA%A6">角度</a>的上限阈值，取值范围[-180,180]。        </td>
+</tr>
+<tr>
+<td> 角度下限 </td>
+<td> 输出参数<a href="#%E8%A7%92%E5%BA%A6">角度</a>的下限阈值，取值范围[-180,180]。 </td>
+</tr>
+<tr>
+<td> 无方向角度上限 </td>
+<td> 输出参数<a href="#%E6%97%A0%E6%96%B9%E5%90%91%E8%A7%92%E5%BA%A6">无方向角度</a>的下限阈值，取值范围[0,90]。 </td>
+</tr>
+<tr>
+<td> 无方向角度下限 </td>
+<td> 输出参数<a href="#%E6%97%A0%E6%96%B9%E5%90%91%E8%A7%92%E5%BA%A6">无方向角度</a>的下限阈值，取值范围[0,90]。 </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td>    无      </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                </th>
+<th> 参数说明                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像                                </td>
+<td> 输出图像宽度、高度、像素大小。 </td>
+</tr>
+<tr>
+<td> 角度                                    </td>
+<td> 直线A与直线B的夹角             </td>
+</tr>
+<tr>
+<td> 无方向角度                              </td>
+<td> 直线A与直线B所夹的锐角。       </td>
+</tr>
+<tr>
+<td> 执行结果                                </td>
+<td> 工具执行结果。                 </td>
+</tr>
+<tr>
+<td> 执行时间                                </td>
+<td> 工具执行时间。                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

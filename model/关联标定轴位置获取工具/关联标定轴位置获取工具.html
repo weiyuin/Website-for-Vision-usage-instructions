@@ -1,0 +1,271 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>关联标定轴位置获取</h1>
+
+<h2>功能</h2>
+
+<p>关联工具的基本原理是，通过机械手和平台的反向对位运动，将对象产品从对象相机多次转移到目标相机，并结合对象相机标定结果，建立目标图像坐标系和平台坐标系的转换关系。</p>
+
+<p><img src="media/wps125.jpg" alt="img" /></p>
+
+<p><imgnote>图1 关联标定运动</imgnote></p>
+
+<p>如图1所示位置变换流程，关联标定的转移运动与对位运动相反，对象相机在（c）位置先对对象拍照，机械手和平台在（b）位置完成组装或贴合，目标相机在（a）位置再对对象拍照，以上步骤依据步数重复多次。关联标定轴位置获取工具就是用于生成在关联标定过程中相应步数对应的相对轴位置。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 平台类型                                                     </td>
+<td> 有XY/X/Y三种类型选项，即关联标定中不存在D轴偏移。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 标定运动步数 </td>
+<td> 设置关联标定中轴的运动步数，单X或Y轴运动2步即可，而XY轴运动可选2/3/4步。<img src="media/wps127.jpg" alt="img" />                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 轴正方向     </td>
+<td> 用于根据实际项目设置X/Y轴方向。                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 轴运动步长   </td>
+<td> 用于根据实际项目设置X/Y轴的运动步长。                                                                           </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无     </td>
+<td> 无                                                                                                              </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 索引值                                                       </td>
+<td> 输入步数索引，用来决定输出该索引对应的轴位置。    </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td>  无    </td>
+<td> 无                                                                                                              </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口     </td>
+<td> 轴位置                                             </td>
+<td> 索引值对应的轴位置结果。                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 交互运动步长 </td>
+<td> 输出轴的交互运动步长。                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 轴方向       </td>
+<td> 输出轴正方向。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果     </td>
+<td> 工具执行结果。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间     </td>
+<td> 工具执行时间。                                                                                               </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 轴位置                                             </td>
+<td> 索引值对应的轴位置结果，供后序工具使用，同监视窗口参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 交互运动步长 </td>
+<td> 轴的交互运动步长，供后序工具使用，同监视窗口参数。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 轴方向       </td>
+<td> 轴正方向，供后序工具使用，同监视窗口参数。                                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>标定运动步数</h3>
+
+<p>在关联标定运动中，轴类型的不同，则关联点不同，对应的反向运动转移次数也不同。对于独立X或Y轴等单轴平台，适用于进行两点关联标定，机械手进行两次转移运动；对于XYD平台，则可以进行两点、三点或四点的关联标定，机械手进行相应次数的运动。具体如下：</p>
+
+<p>1.两点关联标定是指，机械手进行两次转移运动，建立目标图像坐标系与平台坐标系的转换关系，包括旋转、缩放和平移。两点关联标定适用于机械手，以及独立X或Y轴等单轴平台。两点关联标定的转移运动路径，如图2所示。</p>
+
+<p><img src="media/wps130.jpg" alt="img" /></p>
+
+<p><imgnote>图2 两点关联标定转移运动路径</imgnote></p>
+
+<p>表1是图2对应的位置列表，X<sub>0</sub>和Y<sub>0</sub>是机械手预设的拍照位置，即基准位置，D<sub>X</sub>和D<sub>Y</sub>是机械手在X和Y方向的单位运动步长。</p>
+
+<p><imgnote>表1 单轴平台两点关联标定位置列表</imgnote></p>
+
+<table>
+<thead>
+<tr>
+<th> 索引 </th>
+<th> 位置             </th>
+<th> XY轴坐标                                                     </th>
+<th> X轴坐标                       </th>
+<th> Y轴坐标                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 0    </td>
+<td> 基准位置的负方向 </td>
+<td> (X<sub>0</sub> - D<sub>X</sub>, Y<sub>0</sub> - D<sub>Y</sub>) </td>
+<td> X<sub>0</sub> - D<sub>X</sub> </td>
+<td> Y<sub>0</sub> - D<sub>Y</sub> </td>
+</tr>
+<tr>
+<td> 1    </td>
+<td> 基准位置的正方向 </td>
+<td> (X<sub>0</sub> + D<sub>X</sub>, Y<sub>0</sub> + D<sub>Y</sub>) </td>
+<td> X<sub>0</sub> + D<sub>X</sub> </td>
+<td> Y<sub>0</sub> + D<sub>Y</sub> </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>2.三点关联标定是指，机械手进行三次转移运动，建立目标图像坐标系与平台坐标系的转换关系，包括旋转、缩放和平移。三点关联标定的转移运动路径，如图3所示。</p>
+
+<p><img src="media/wps131.jpg" alt="img" /></p>
+
+<p><imgnote>图3 三点关联标定转移运动路径</imgnote></p>
+
+<p>表2是图3对应的位置列表，X<sub>0</sub>和Y<sub>0</sub>是机械手预设的拍照位置，即基准位置，D<sub>X</sub>和D<sub>Y</sub>是机械手在X和Y方向的单位运动步长。</p>
+
+<p><imgnote>表2 三点关联标定位置列表</imgnote></p>
+
+<table>
+<thead>
+<tr>
+<th> 索引 </th>
+<th> 位置           </th>
+<th> XY轴坐标                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 0    </td>
+<td> 基准位置的左上 </td>
+<td> (X<sub>0</sub> - D<sub>X</sub>, Y<sub>0</sub> - D<sub>Y</sub>) </td>
+</tr>
+<tr>
+<td> 1    </td>
+<td> 基准位置的左下 </td>
+<td> (X<sub>0</sub> - D<sub>X</sub>, Y<sub>0</sub> + D<sub>Y</sub>) </td>
+</tr>
+<tr>
+<td> 2    </td>
+<td> 基准位置的右下 </td>
+<td> (X<sub>0</sub> + D<sub>X</sub>, Y<sub>0</sub> + D<sub>Y</sub>) </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>3.四点关联标定是指，机械手进行四次转移运动，建立目标图像坐标系与平台坐标系的转换关系，包括旋转、缩放和平移。四点关联标定的转移运动路径，如图4所示。</p>
+
+<p><img src="media/wps132.jpg" alt="img" /></p>
+
+<p><imgnote>图4 四点关联标定转移运动路径</imgnote></p>
+
+<p>表3是图4对应的位置列表，X<sub>0</sub>和Y<sub>0</sub>是机械手预设的拍照位置，即基准位置，D<sub>X</sub>和D<sub>Y</sub>是机械手在X和Y方向的单位运动步长。</p>
+
+<p><imgnote>表3 四点关联标定位置列表</imgnote></p>
+
+<table>
+<thead>
+<tr>
+<th> 索引 </th>
+<th> 位置           </th>
+<th> XY轴坐标                                        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 0    </td>
+<td> 基准位置的正右 </td>
+<td> (X<sub>0</sub> + D<sub>X</sub>, Y<sub>0</sub>)  </td>
+</tr>
+<tr>
+<td> 1    </td>
+<td> 基准位置的正左 </td>
+<td> (X<sub>0</sub> - D<sub>X</sub>, Y<sub>0</sub>)  </td>
+</tr>
+<tr>
+<td> 2    </td>
+<td> 基准位置的正下 </td>
+<td> (X<sub>0</sub> , Y<sub>0</sub> + D<sub>Y</sub>) </td>
+</tr>
+<tr>
+<td> 3    </td>
+<td> 基准位置的正上 </td>
+<td> (X<sub>0</sub> , Y<sub>0</sub> - D<sub>Y</sub>) </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<ul>
+<li>关联标定位置获取工具即计算在当前相机下的一定步数的相对轴位置，从而驱动轴在当前相机下相对偏移并定位。配置流程中，在当前相机下轴每次相对偏移运动后，均要保持相对路径（即轴由当前相机运动至关联相机的路径向量）不变的情况下，运动至关联相机下进行定位。以上重复的次数取决于所选择的关联标定运动步数。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\XY轴4步关联标定+对位计算.gvp”</p>

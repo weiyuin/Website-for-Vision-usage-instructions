@@ -1,0 +1,473 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scBlob</h1>
+
+<h2>功能</h2>
+
+<p>表示Blob结果。包含在Blob工具的输出参数Blob结果GsSingleBlobResult类型中，是其BlobResult属性的类型。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                             </th>
+<th> 接口描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scBlob                                               </td>
+<td> scBlob()默认构造函数。                                       </td>
+</tr>
+<tr>
+<td> 属性 </td>
+<td> lChildNum                             </td>
+<td> 子节点个数。                                                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> label                                     </td>
+<td> 连通标记，即区域的类别标记。对灰度图像，Blob标记为1，Hole标记为0。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> area                                       </td>
+<td> 面积                                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> centerMassX/Y                     </td>
+<td> 质心                                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> imageBoundCenterX/Y         </td>
+<td> 外接矩形中心X/Y                                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> imageBoundMinX/Y               </td>
+<td> 外接矩形最小X/Y                                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> imageBoundMaxX/Y               </td>
+<td> 外接矩形最大X/Y                                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> imageBoundWidth                 </td>
+<td> 外接矩形宽度                                                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> imageBoundHeight           </td>
+<td> 外接矩形高度                                                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> imageBoundAspect           </td>
+<td> 外接矩形长宽比                                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> diagonalLength                   </td>
+<td> 最小外接矩形对角线长度。                                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> dMassToBoundOffsetX/Y     </td>
+<td> 质心到最小外接矩形的中心偏移X/Y。                            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> dMinPixelValue                   </td>
+<td> 最小灰度。指Blob内部所有点的最小灰度值。                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> dMaxPixelValue                   </td>
+<td> 最大灰度。指Blob内部所有点的最大灰度值。                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> dAvergPixelValue               </td>
+<td> 平均灰度。指Blob内部所有点的平均灰度值。                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> dAvergPixelValueMax         </td>
+<td> 基于事件的平均灰度的最大值。这里基于事件应该理解为基于游程。所以基于事件的平均灰度的最大值即基于游程的平均灰度的最大值。也就是Blob内部所有的游程平均灰度的最大值。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> dAvergPixelValueMin         </td>
+<td> 基于事件的平均灰度的最小值。这里基于事件应该理解为基于游程。所以基于事件的平均灰度的最小值即基于游程的平均灰度的最小值。也就是Blob内部所有的游程平均灰度的最小值。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> inertiaX/Y                           </td>
+<td> 关于X/Y轴的惯性二阶矩                                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> inertiaMin                           </td>
+<td> 最小惯性二阶矩                                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> inertiaMax                           </td>
+<td> 最大惯性二阶矩                                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> angle                                     </td>
+<td> 方向                                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> elongation                           </td>
+<td> 延长度Elongation。最大惯性二阶矩与最小惯性二阶矩的比值。圆的延长度为1，其为延长度的下限。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> boundPrincipalCenterX/Y </td>
+<td> 主轴外接矩形中心X/Y                                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> boundPrincipalMinX/Y       </td>
+<td> 主轴外接矩形最小X/Y                                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> boundPrincipalMaxX/Y       </td>
+<td> 主轴外接矩形最大X/Y                                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> boundPrincipalWidth         </td>
+<td> 主轴外接矩形宽度                                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> boundPrincipalHeight       </td>
+<td> 主轴外接矩形高度                                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> boundPrincipalAspect       </td>
+<td> 主轴外接矩形长宽比                                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> density                                 </td>
+<td> 稠密度。描述Blob内部点分布的紧凑程度，其定义为总面积/主轴最小外接矩形面积。取值范围为(0,1]。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scartchness                         </td>
+<td> 划伤度Scratchness。指主轴最小外接矩形宽度平方与面积的比值，反映了属于划伤的可能性，该值越大，则越可能是划伤。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> eccentricity                       </td>
+<td> 圆度，越大越扁平，反之越接近圆形。                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> boundaryPixelLength         </td>
+<td> 边界像素长度                                                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> perimeter                             </td>
+<td> 周长                                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> acircularity                       </td>
+<td> 圆度，越大越扁平，反之越接近圆形。                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> acircularityRms                 </td>
+<td> 归一化圆度                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>lChildNum</h3>
+
+<ul>
+<li>功能：表示子节点个数，整型，可读写。</li>
+</ul>
+
+
+<h3>label</h3>
+
+<ul>
+<li>功能：表示连通标记，整型，可读写。</li>
+</ul>
+
+
+<h3>area</h3>
+
+<ul>
+<li>功能：表示面积，浮点型，可读写。</li>
+</ul>
+
+
+<h3>centerMassX/Y</h3>
+
+<ul>
+<li>功能：表示质心位置，浮点型，可读写。</li>
+</ul>
+
+
+<h3>imageBoundCenterX/Y</h3>
+
+<ul>
+<li>功能：表示外接矩形中心X/Y，浮点型，可读写。</li>
+</ul>
+
+
+<h3>imageBoundMinX/Y</h3>
+
+<ul>
+<li>功能：表示外接矩形最小X/Y，整型，可读写。</li>
+</ul>
+
+
+<h3>imageBoundMaxX/Y</h3>
+
+<ul>
+<li>功能：表示外接矩形最大X/Y，整型，可读写。</li>
+</ul>
+
+
+<h3>imageBoundWidth</h3>
+
+<ul>
+<li>功能：表示外接矩形宽度，整型，可读写。</li>
+</ul>
+
+
+<h3>imageBoundHeight</h3>
+
+<ul>
+<li>功能：表示外接矩形高度，整型，可读写。</li>
+</ul>
+
+
+<h3>imageBoundAspect</h3>
+
+<ul>
+<li>功能：表示外接矩形长宽比，浮点型，可读写。</li>
+</ul>
+
+
+<h3>diagonalLength</h3>
+
+<ul>
+<li>功能：表示最小外接矩形对角线长度，浮点型，可读写。</li>
+</ul>
+
+
+<h3>dMassToBoundOffsetX/Y</h3>
+
+<ul>
+<li>功能：表示质心到最小外接矩形的中心偏移X/Y，浮点型，可读写。</li>
+</ul>
+
+
+<h3>dMinPixelValue</h3>
+
+<ul>
+<li>功能：表示最小灰度。指Blob内部所有点的最小灰度值，浮点型，可读写。</li>
+</ul>
+
+
+<h3>dMaxPixelValue</h3>
+
+<ul>
+<li>功能：表示最大灰度。指Blob内部所有点的最大灰度值，浮点型，可读写。</li>
+</ul>
+
+
+<h3>dAvergPixelValue</h3>
+
+<ul>
+<li>功能：表示平均灰度。指Blob内部所有点的平均灰度值，浮点型，可读写。</li>
+</ul>
+
+
+<h3>dAvergPixelValueMax</h3>
+
+<ul>
+<li>功能：基于事件的平均灰度的最大值。这里基于事件应该理解为基于游程。所以基于事件的平均灰度的最大值即基于游程的平均灰度的最大值。也就是Blob内部所有的游程平均灰度的最大值。浮点型，可读写。</li>
+</ul>
+
+
+<h3>dAvergPixelValueMin</h3>
+
+<ul>
+<li>功能：表示基于事件的平均灰度的最小值。这里基于事件应该理解为基于游程。所以基于事件的平均灰度的最小值即基于游程的平均灰度的最小值。也就是Blob内部所有的游程平均灰度的最小值。浮点型，可读写。</li>
+</ul>
+
+
+<h3>inertiaX/Y</h3>
+
+<ul>
+<li>功能：表示关于X/Y轴的惯性二阶矩，浮点型，可读写。</li>
+</ul>
+
+
+<h3>inertiaMin</h3>
+
+<ul>
+<li>功能：表示最小惯性二阶矩，浮点型，可读写。</li>
+</ul>
+
+
+<h3>inertiaMax</h3>
+
+<ul>
+<li>功能：表示最大惯性二阶矩，浮点型，可读写。</li>
+</ul>
+
+
+<h3>angle</h3>
+
+<ul>
+<li>功能：表示方向，浮点型，可读写。</li>
+</ul>
+
+
+<h3>elongation</h3>
+
+<ul>
+<li>功能：表示延长度Elongation。最大惯性二阶矩与最小惯性二阶矩的比值。圆的延长度为1，其为延长度的下限。浮点型，可读写。</li>
+</ul>
+
+
+<h3>boundPrincipalCenterX/Y</h3>
+
+<ul>
+<li>功能：表示主轴外接矩形中心X/Y，浮点型，可读写。</li>
+</ul>
+
+
+<h3>boundPrincipalMinX/Y</h3>
+
+<ul>
+<li>功能：表示主轴外接矩形最小X/Y，浮点型，可读写。</li>
+</ul>
+
+
+<h3>boundPrincipalMaxX/Y</h3>
+
+<ul>
+<li>功能：表示主轴外接矩形最大X/Y，浮点型，可读写。</li>
+</ul>
+
+
+<h3>boundPrincipalWidth</h3>
+
+<ul>
+<li>功能：表示主轴外接矩形宽度，浮点型，可读写。</li>
+</ul>
+
+
+<h3>boundPrincipalHeight</h3>
+
+<ul>
+<li>功能：表示主轴外接矩形高度，浮点型，可读写。</li>
+</ul>
+
+
+<h3>boundPrincipalAspect</h3>
+
+<ul>
+<li>功能：表示主轴外接矩形长宽比，浮点型，可读写。</li>
+</ul>
+
+
+<h3>density</h3>
+
+<ul>
+<li>功能：表示稠密度。描述Blob内部点分布的紧凑程度，其定义为总面积/主轴最小外接矩形面积。取值范围为(0,1]。浮点型，可读写。</li>
+</ul>
+
+
+<h3>scartchness</h3>
+
+<ul>
+<li>功能：表示划伤度Scratchness。指主轴最小外接矩形宽度平方与面积的比值，反映了属于划伤的可能性，该值越大，则越可能是划伤。浮点型，可读写。</li>
+</ul>
+
+
+<h3>eccentricity</h3>
+
+<ul>
+<li>功能：表示圆度，越大越扁平，反之越接近圆形。浮点型，可读写。</li>
+</ul>
+
+
+<h3>boundaryPixelLength</h3>
+
+<ul>
+<li>功能：表示边界像素长度，整型，可读写。</li>
+</ul>
+
+
+<h3>perimeter</h3>
+
+<ul>
+<li>功能：表示周长，浮点型，可读写。</li>
+</ul>
+
+
+<h3>acircularity</h3>
+
+<ul>
+<li>功能：表示圆度，越大越扁平，反之越接近圆形。，浮点型，可读写。</li>
+</ul>
+
+
+<h3>acircularityRms</h3>
+
+<ul>
+<li>功能：表示归一化圆度，浮点型，可读写。</li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

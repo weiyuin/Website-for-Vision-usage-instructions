@@ -1,0 +1,220 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GcShape</h1>
+
+<h2>功能</h2>
+
+<p>表示图形。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                   </th>
+<th> 接口描述                </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 函数 </td>
+<td> GetShape                   </td>
+<td> 获取图形对象。          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetShapeType           </td>
+<td> 获取图形对象的类型。    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRect                     </td>
+<td> 设置基础图形 矩形。     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetAffineRect         </td>
+<td> 设置基础图形 仿射矩形。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCircle                 </td>
+<td> 设置基础图形 圆形。     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetAnnulusSection </td>
+<td> 设置基础图形 圆环段。   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetEllipse               </td>
+<td> 设置基础图形 椭圆形。   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetPolyline             </td>
+<td> 设置基础图形 多边形。   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>GetShape()</h3>
+
+<ul>
+<li><p>功能：获取图形对象。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：图形对象，数据类型为：scRect、scAffineRect、scCircle、scAnnulusSection、scEllipse、scPolyline之一。</p></li>
+</ul>
+
+
+<h3>GetShapeType()</h3>
+
+<ul>
+<li><p>功能：获取图形对象的类型。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：图形对象的类型，数据类型为ShapeType。</p></li>
+</ul>
+
+
+<h3>SetRect()</h3>
+
+<ul>
+<li><p>功能：设置基础图形 矩形。</p></li>
+<li><p>参数：scRect</p></li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetAffineRect()</h3>
+
+<ul>
+<li><p>功能：设置基础图形 仿射矩形。</p></li>
+<li><p>参数：scAffineRect</p></li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCircle()</h3>
+
+<ul>
+<li><p>功能：设置基础图形 圆形。</p></li>
+<li><p>参数：scCircle</p></li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetAnnulusSection()</h3>
+
+<ul>
+<li><p>功能：设置基础图形 圆环段。</p></li>
+<li><p>参数：scAnnulusSection</p></li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetEllipse()</h3>
+
+<ul>
+<li><p>功能：设置基础图形 椭圆形。</p></li>
+<li><p>参数：scEllipse</p></li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetPolyline()</h3>
+
+<ul>
+<li><p>功能：设置基础图形 多边形。</p></li>
+<li><p>参数：scPolyline</p></li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<ol>
+<li><p>该类型的C++数据类型为std::shared_ptr\&lt;scShape>，主要应用于平面拟合工具2、高度测量工具的ROI参数，在使用时一定要通过GetShape函数获取具体的图形对象。</p></li>
+<li><p>ROI的类型分为7种：全图、矩形、仿射矩形、圆形、圆环段、椭圆、多边形，GetShapeType函数的返回结果分别为eFull、eRect、eAffineRect、eCircle、eAnnulusSection、eEllipse、ePolyline。eFull时为空指针，使用时应注意。</p></li>
+</ol>
+
+
+<h2>示例代码</h2>
+
+<ul>
+<li>示例1</li>
+</ul>
+
+
+<p>```python</p>
+
+<h1>获取平面拟合工具2_002的ROI区域（ROI区域是一个数组）</h1>
+
+<p>Roi=GvTool.GetToolData(&ldquo;平面拟合工具2_002.ROI&rdquo;)</p>
+
+<h1>获取第一个ROI区域（矩形区域，数据类型为scRect）</h1>
+
+<p>shape=Roi[0].GetShape()</p>
+
+<h1>获取矩形区域的左上角点（数据类型为sc2Vector）</h1>
+
+<p>origin=shape.GetOrigin()</p>
+
+<h2>获取矩形区域的左上角点的X坐标（数据类型为浮点型）</h2>
+
+<p>origin_x=origin.GetX()</p>
+
+<h2>获取矩形区域的左上角点的Y坐标（数据类型为浮点型）</h2>
+
+<p>origin_y=origin.GetY()
+```</p>
+
+<ul>
+<li>示例2</li>
+</ul>
+
+
+<p>```python</p>
+
+<h2>初始化图形数组和图形</h2>
+
+<p>vctShape = GvVisionAssembly.GcShapeVec()</p>
+
+<h2>设置第一个图形 矩形</h2>
+
+<p>shape1 = GvVisionAssembly.GcShape()
+rect =GvVisionAssembly.scRect(GvVisionAssembly.sc2Vector(100,100),GvVisionAssembly.sc2Vector(200,300))
+shape1.SetRect(rect)
+vctShape.append(shape1)</p>
+
+<h2>设置第二个图形 圆形</h2>
+
+<p>shape2 = GvVisionAssembly.GcShape()
+circle = GvVisionAssembly.scCircle(GvVisionAssembly.sc2Vector(100, 100), 50)
+shape2.SetCircle(circle)
+vctShape.append(shape2)</p>
+
+<h2>使用脚本构建的ROI设置平面拟合工具2的ROI参数</h2>
+
+<p>vct=GvTool.SetToolData(&ldquo;平面拟合工具2_002.ROI&rdquo;,vctShape)
+```</p>

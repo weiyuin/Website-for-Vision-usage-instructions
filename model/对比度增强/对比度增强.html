@@ -1,0 +1,181 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>对比度增强</h1>
+
+<h2>功能</h2>
+
+<p>对比度增强是常用的图像预处理方法之一，主要任务是通过灰度拉伸变换来增强图像对比度。</p>
+
+<p><img src="media/wps41.jpg" alt="img" /></p>
+
+<p><imgnote>图1 对比度增强示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 增强方法                 </td>
+<td> 主要有线性模式和非线性模式。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 最小值   </td>
+<td> 用于线性模式设置最大值。                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 最大值   </td>
+<td> 用于线性模式设置最小值。                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 明暗阈值 </td>
+<td> 参见工作原理。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 拉伸强度 </td>
+<td> 参见工作原理。                                         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像                 </td>
+<td> 需要进行对比度增强的图像。   </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入图像                 </td>
+<td> 需要进行对比度增强的图像。   </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无 </td>
+<td> 无                                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 需要进行对比度增强的图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像 </td>
+<td> 进行对比度增强后的图像。                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                           </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 进行对比度增强后的图像。   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                             </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像                                                     </td>
+<td> 进行对比度增强后的图像。   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>工作原理</h3>
+
+<p><img src="media/wps45.jpg" alt="img" /></p>
+
+<p><imgnote>图2 对比度增强原理示意图</imgnote></p>
+
+<p>对比度增强工具的实质是对图像进行灰度拉伸变换，包括两种模式：线性模式（对应线性拉伸）和非线性模式（对应非线性拉伸），基本原理如图2所示。线性拉伸是根据指定的最小值和最大值，将最小值与最大值之间的值通过线性映射函数拉伸到0~255，非线性拉伸则根据给定的m值和E值所确定的“S型”映射函数来调整灰度值，小于m对应暗部分，大于m对应亮部分，m以下（以上）的值被压缩到一个较窄的范围内，接近黑（白）色。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>对比度增强工具的应用场景及各场景下参数调整情况如下表所示</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th> 应用场景           </th>
+<th> 想达到的效果             </th>
+<th> 需要调整的参数                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 低对比度图像       </td>
+<td> 线性增加某一范围的对比度 </td>
+<td> 调整最小值和最大值为相应的值       </td>
+</tr>
+<tr>
+<td> 对比度低，图像偏暗 </td>
+<td> 调高亮度，增加对比度     </td>
+<td> 调整m为一个较小的值，必要时增大E值 </td>
+</tr>
+<tr>
+<td> 对比度低，图像偏亮 </td>
+<td> 调低亮度，增加对比度     </td>
+<td> 调整m为一个较大的值，必要时增大E值 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\对比度变换相关.gvp”。</p>

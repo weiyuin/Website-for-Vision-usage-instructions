@@ -1,0 +1,138 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>文本生成工具</h1>
+
+<h2>功能</h2>
+
+<p>按照给定的位置、偏移生成图像显示文本。其实际显示效果如图1所示。</p>
+
+<p><img src="media/wps19.png" alt="img" /></p>
+
+<p><imgnote>图1 文本生成工具应用示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数描述   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 无         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无         </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 无         </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 见详细说明 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 执行结果       </td>
+<td> 工具执行结果。     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                     </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 显示文本       </td>
+<td> 输出显示的字符串。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>文本生成工具的高级界面如图2所示。</p>
+
+<p><img src="media/wps23.png" alt="img" /></p>
+
+<p><imgnote>图2 文本生成工具高级界面示意图</imgnote></p>
+
+<h3>风格设置</h3>
+
+<p>支持风格管理，风格管理中提供一种预设风格（不可修改）及最多16种的自定义风格，用户可点击右侧的风格管理按钮（如图2所示），进入风格管理界面，添加、删除、重命名风格，或者对文本默认颜色，OK/NG状态的颜色，文本的背景颜色和背景透明度，字体和字号，文本边框等文本风格进行自定义设置。</p>
+
+<p>选择基准类型，基于图像或基于窗口。基于图像，则显示的文本随图像平移缩放变化；基于窗口，则显示的文本大小固定，位置根据图像视图窗口位置确定，不随图像平移缩放而改变。</p>
+
+<h3>位置设置</h3>
+
+<p>用户可以对文本的显示位置进行设置。用户可输入常数，生成位置固定的文本；也可输入变量（不支持bool类型和string类型），文本的位置根据变量的值变化。</p>
+
+<p>位置、偏移设置支持弹框提示，用户输入时，可弹出符合输入的变量列表供用户选择，如图3所示。</p>
+
+<p><img src="media/wps24.png" alt="img" /></p>
+
+<p><imgnote>图3 位置、偏移提示示意图</imgnote></p>
+
+<h3>标记</h3>
+
+<p>用户可在编辑框中输入需要显示的文本。特别注意，若用户需要显示变量或工具参数的值，需在变量和工具参数两端加上$。</p>
+
+<p>用户选择需要标记的字符串，点击添加标记按钮，将标记字符串加入到标记列表，在标记列表中选择关联状态变量，则可对对应的字符串关联一个状态值。标记的字符串，可根据关联状态变量的值显示不同的颜色。如图4所示。</p>
+
+<p><img src="media/wps25.png" alt="img" /></p>
+
+<p><imgnote>图4 文本生成工具标记示意图</imgnote></p>
+
+<h3>视图</h3>
+
+<p>高级界面的视图风格与工程中的视图风格相同。工程中设置视图风格后，文本生成工具高级界面的视图风格同步刷新。</p>
+
+<p>文本生成工具高级界面支持加载自定义图像。在工程中未添加视图时，可通过加载自定义图像观察文本的显示效果。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>文本生成工具显示字符串时，需要将显示结果拖拽添加到有图片显示的View视图中。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\文本生成工具.gvp”，运行结果见View-1。</p>

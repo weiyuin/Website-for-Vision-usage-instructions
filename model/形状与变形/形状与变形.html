@@ -1,0 +1,463 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>形状与变形</h1>
+
+<h2>功能</h2>
+
+<p>使用脚本实现部分形状与变形的功能。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th> 接口名称                         </th>
+<th> 接口描述                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> ScShapeLineCross4Lines </td>
+<td> 两横两纵四条边的交点 </td>
+</tr>
+<tr>
+<td> ScShapeLineCross </td>
+<td> 两条线交点 含防呆 </td>
+</tr>
+<tr>
+<td> ScShapeTransPolyline </td>
+<td> 对blob工具的多边形ROI区域做位置变换 </td>
+</tr>
+<tr>
+<td> ScShapeTransAffinRec </td>
+<td> 对blob工具的仿射矩形ROI区域做位置变换 </td>
+</tr>
+<tr>
+<td> ScShapeTransRec </td>
+<td> 对blob工具的矩形ROI区域做位置变换 </td>
+</tr>
+<tr>
+<td> ScShapeTransCircle </td>
+<td> 对blob工具的圆ROI区域做位置变换            </td>
+</tr>
+<tr>
+<td> ScShapeTransAnnulus </td>
+<td> 对blob工具的圆环ROI区域做位置变换 </td>
+</tr>
+<tr>
+<td> ScShapeTransCircleSearchAnn </td>
+<td> 对找圆工具的圆环ROI区域做位置变换 </td>
+</tr>
+<tr>
+<td> ScShapeTranslineSearchRec </td>
+<td> 对找圆工具的圆环ROI区域做位置变换 </td>
+</tr>
+<tr>
+<td> ScShapeLineGetAngle </td>
+<td> 获取直线的角度 </td>
+</tr>
+<tr>
+<td> ScRotateVector </td>
+<td> 任意一个点在图像坐标系下旋转到另一个点位置 </td>
+</tr>
+<tr>
+<td> ScaxDisVecToLine </td>
+<td> 计算点数组到直线的最大距离 </td>
+</tr>
+<tr>
+<td> fScDisPointToLine </td>
+<td> 显示一个点到一条直线的距离的线段 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>ScShapeLineCross4Lines（self,lineup,linedn,linelt,linert,GcCoodPosVec,bFoolProof=False,dangleLimit=1）</h3>
+
+<ul>
+<li><p>功能：两横两纵四条边的交点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>self：ScShape类本身。</li>
+<li>lineup：输入线1  scLine类型 上横线。</li>
+<li>linedn：输入线2  scLine类型 下横线。</li>
+<li>linelt：输入线3  scLine类型 左竖线。</li>
+<li>linert：输入线4  scLine类型 右竖线。</li>
+<li>GcCoodPosVec：GcCoodPos类型数组，本地定义。</li>
+<li>bFoolProof：BOOL类型  是否防呆  默认Flase。</li>
+<li>dangleLimit：防呆数值大小，±value。</li>
+</ul>
+</li>
+<li><p>返回值：errorcode int类型  1，表示正常（含不防呆），21左上角异常，22右下角异常，23右上角异常，24左下角异常。</p></li>
+<li><p>示例代码：</p>
+
+<p>```python
+PosVec=(GvVisionAssembly.GcCoordPos(),GvVisionAssembly.GcCoordPos(),GvVisionAssembly.GcCoordPos(),GvVisionAssembly.GcCoordPos(),GvVisionAssembly.GcCoordPos())
+line0=GvTool.GetToolData(&ldquo;找线工具<em>004.直线结果&rdquo;)
+line3=GvTool.GetToolData(&ldquo;找线工具</em>006.直线结果&rdquo;)
+line1=GvTool.GetToolData(&ldquo;找线工具<em>007.直线结果&rdquo;)
+line4=GvTool.GetToolData(&ldquo;找线工具</em>008.直线结果&rdquo;)
+cross=ScShape.ScShapeLineCross4Lines(ScShape,line0,line3,line1,line4,PosVec)</p>
+
+<h2>多元数组生成工具的类型是GcCoorPos</h2>
+
+GvTool.SetToolData(&ldquo;多元数组生成工具<em>001.输入数据0&rdquo;,PosVec[0])
+GvTool.SetToolData(&ldquo;多元数组生成工具</em>001.输入数据1&rdquo;,PosVec[1])
+GvTool.SetToolData(&ldquo;多元数组生成工具<em>001.输入数据2&rdquo;,PosVec[2])
+GvTool.SetToolData(&ldquo;多元数组生成工具</em>001.输入数据3&rdquo;,PosVec[3])
+GvTool.SetToolData(&ldquo;多元数组生成工具_001.输入数据4&rdquo;,PosVec[4])
+
+<h2>PosVec[4]是中点坐标</h2>
+
+<p>```</p></li>
+</ul>
+
+
+<h3>ScShapeLineCross(line0,line1,GcCoodPos,bFoolProof=False,stdAngle=90,AngleLimit=1,strlabel=<strong>&ldquo;L1&amp;L2&rdquo;</strong>)</h3>
+
+<ul>
+<li><p>功能：两条线交点  含防呆。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>line0：输入线1  scLine类型 线1  坐标的角度与线1 的角度相同。</li>
+<li>line1：输入线2  scLine类型 线2。</li>
+<li>GcCoodPos：GcCoodPos类型，本地定义。</li>
+<li>bFoolProof：BOOL类型  是否防呆  默认Flase。</li>
+<li>stdAngle：标准设定角度   正常角度0-180°  默认90.0°。</li>
+<li>AngleLimit：标准设定公差  正常角度0-180°  默认1.0°。</li>
+<li>strlabel：标识 默认"L1&amp;L2"。</li>
+</ul>
+</li>
+<li><p>返回值：Bool类型  True，表示正常（含不防呆），False 表示异常。</p></li>
+<li><p>示例代码：</p>
+
+<p><code>python
+GcCoodPos=GvVisionAssembly.GcCoordPos()
+line0=GvTool.GetToolData("找线工具_003.直线结果")
+line1=GvTool.GetToolData("找线工具_002.直线结果")
+ScShape.ScShapeLineCross(line0,line1,GcCoodPos)
+print(GcCoodPos.X,GcCoodPos.Y,GcCoodPos.D)
+</code></p></li>
+</ul>
+
+
+<h3>ScShapeTransPolyline(self,Polyline,VectorVec,transx=0,transy=0,transd=0)</h3>
+
+<ul>
+<li><p>功能：一般用来对blob工具的多边形ROI区域做位置变换。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>self：ScShape类本身。</li>
+<li>Polyline：获取blob工具的 “多边形ROI”。</li>
+<li>VectorVec：生成的标准检测区域的点阵。</li>
+<li>transx，transy，transd：需要偏移的特征点的位置坐标，相对于标准检测区域。</li>
+</ul>
+</li>
+<li><p>返回值：Polyline  多边形ROI 区域。</p></li>
+<li><p>示例代码：</p>
+
+<p>```python</p>
+
+<h1>添加构成多边形的点//典型应用场景，生成比较特殊的查找区域，检测区域等，可以跟随特征点的位置变化而变化</h1>
+
+<p>p0 = GvVisionAssembly.sc2Vector(0,-100)
+p1 = GvVisionAssembly.sc2Vector(0,100)
+p2 = GvVisionAssembly.sc2Vector(0,0)
+p3 = GvVisionAssembly.sc2Vector(-100,0)
+p4 = GvVisionAssembly.sc2Vector(100,0)
+p5 = GvVisionAssembly.sc2Vector(0,0)
+VectorVec = GvVisionAssembly.sc2VectorVec()
+ScShape.ScShapePolylineAddPoint(VectorVec,p0)
+ScShape.ScShapePolylineAddPoint(VectorVec,p1)
+ScShape.ScShapePolylineAddPoint(VectorVec,p2)
+ScShape.ScShapePolylineAddPoint(VectorVec,p3)
+ScShape.ScShapePolylineAddPoint(VectorVec,p4)
+ScShape.ScShapePolylineAddPoint(VectorVec,p5)
+ScShape.ScShapePolylineAddArc(VectorVec,p2,100,90,0)#增加一段圆弧
+rec3=GvTool.GetToolData(&ldquo;Blob工具<em>033.多边形ROI&rdquo;)
+print(type(rec3))
+rec3=ScShape.ScShapeTransPolyline(ScShape,rec3,VectorVec,10,10,3)
+GvTool.SetToolData(&ldquo;Blob工具</em>033.多边形ROI&rdquo;,rec3)
+```</p></li>
+</ul>
+
+
+<h3>ScShapeTransAffinRec(Rec,center,transd=0.0,dw=0,dh=0)</h3>
+
+<ul>
+<li><p>功能：一般用来对blob工具的仿射矩形ROI区域做位置变换。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>Rec：获取blob工具的 “仿射矩形ROI”</li>
+<li>center：sc2vector类型，表示仿射矩形中点坐标</li>
+<li>transd：需要旋转的角度，默认为0。</li>
+<li>dw，dh：矩形长宽值，默认为0的情况下为原始的长宽（不改变）。</li>
+</ul>
+</li>
+<li><p>返回值：Rec  仿射矩形区域 。</p></li>
+<li><p>示例代码：</p>
+
+<p><code>python
+rec2=GvTool.GetToolData("Blob工具_012.仿射矩形ROI")
+pos = GvVisionAssembly.sc2Vector(300,300)
+print(type(rec2))
+rec2=ScShape.ScShapeTransAffinRec(rec2,pos,45)
+GvTool.SetToolData("Blob工具_012.仿射矩形ROI",rec2)
+</code></p></li>
+</ul>
+
+
+<h3>ScShapeTransRec(Rec,center,dw=0,dh=0)</h3>
+
+<ul>
+<li><p>功能：一般用来对blob工具的矩形ROI区域做位置变换。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>Rec：获取blob工具的 “矩形ROI”。</li>
+<li>center：sc2vector类型，表示仿射矩形中点坐标。</li>
+<li>dw=0，dh=0：矩形长宽值，默认为0的情况下为原始的长宽（不改变）。</li>
+</ul>
+</li>
+<li><p>返回值：Rec  矩形区域。</p></li>
+<li><p>示例代码：</p>
+
+<p><code>python
+rec=GvTool.GetToolData("Blob工具_011.矩形ROI")
+pos = GvVisionAssembly.sc2Vector(300,300)
+print(type(rec))
+rec=ScShape.ScShapeTransRec(rec,pos,100,100)
+GvTool.SetToolData("Blob工具_011.矩形ROI",rec)
+</code></p></li>
+</ul>
+
+
+<h3>ScShapeTransCircle(Circle,center,stdRadius=0)</h3>
+
+<ul>
+<li><p>功能：一般用来对blob工具的圆ROI区域做位置变换。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>Circle：获取blob工具的 “圆形ROI”。</li>
+<li>center：sc2vector类型，表示圆心坐标。</li>
+<li>stdRadius：矩形长宽值，默认为0的情况下为原始的半径（不改变）。</li>
+</ul>
+</li>
+<li><p>返回值：Circle  圆形区域。</p></li>
+<li><p>示例代码：</p>
+
+<p><code>python
+cir3=GvTool.GetToolData("Blob工具_010.圆形ROI")
+pos = GvVisionAssembly.sc2Vector(300,300)
+print(type(cir3))
+cir3=ScShape.ScShapeTransCircle(cir3,pos,80)
+GvTool.SetToolData("Blob工具_010.圆形ROI",cir3)
+</code></p></li>
+</ul>
+
+
+<h3>ScShapeTransAnnulus(Annulus,center,stdRadius=0,RadialScale=0.0)</h3>
+
+<ul>
+<li><p>功能：对blob工具的圆环ROI区域做位置变换。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>Annulus：获取blob工具的 “圆环ROI”。</li>
+<li>center：sc2vector类型，表示圆心坐标。</li>
+<li>stdRadius：半径值，默认为0的情况下为原始的半径（不改变）。</li>
+<li>RadialScale：径向比例。</li>
+</ul>
+</li>
+<li><p>示例代码：</p>
+
+<p><code>python
+cir2=GvTool.GetToolData("Blob工具_008.圆环ROI")
+pos = GvVisionAssembly.sc2Vector(300,300)
+cir2=ScShape.ScShapeTransAnnulus(cir2,pos,100,0.2)
+GvTool.SetToolData("Blob工具_008.圆环ROI",cir2)
+</code></p></li>
+</ul>
+
+
+<h3>ScShapeTransCircleSearchAnn(GuiFindCircleEx,center,startPhi=0.0,spanPhi=360.0,stdRadius=0,RadialScale=0.0)</h3>
+
+<ul>
+<li><p>功能：一般用来对找圆工具的圆环ROI区域做位置变换。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>GuiFindCircleEx：获取找圆工具的 “查找区域”。</li>
+<li>center：sc2vector类型，表示圆心坐标。</li>
+<li>startPhi：起始角度。</li>
+<li>spanPhi：默认转角。</li>
+<li>stdRadius：半径值，默认为0的情况下为原始的半径（不改变）。</li>
+<li>RadialScale：径向比例。</li>
+</ul>
+</li>
+<li><p>返回值：GuiFindCircleEx  圆环形查找区域。</p></li>
+<li><p>示例代码：</p>
+
+<p><code>python
+cir=GvTool.GetToolData("找圆工具_009.查找区域")
+pos = GvVisionAssembly.sc2Vector(300,300)
+cir=ScShape.ScShapeTransCircleSearchAnn(cir,pos,90,-270,100,0.2)
+GvTool.SetToolData("找圆工具_009.查找区域",cir)
+</code></p></li>
+</ul>
+
+
+<h3>ScShapeTranslineSearchRec(GuiFindLineEx,transx=0,transy=0,transd=0)</h3>
+
+<ul>
+<li><p>功能：一般用来对找圆工具的圆环ROI区域做位置变换。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>GuiFindLineEx：获取找圆工具的 “查找区域”。</li>
+<li>transx，transy，transd：位置偏移值。</li>
+</ul>
+</li>
+<li><p>返回值：GuiFindLineEx  找线工具查找区域</p></li>
+<li><p>示例代码：</p>
+
+<p><code>python
+rec=GvTool.GetToolData("找线工具_007.查找区域")
+pos = GvVisionAssembly.sc2Vector(300,300)
+rec=ScShape.ScShapeTranslineSearchRec(rec,pos.GetX(),pos.GetY())
+GvTool.SetToolData("找线工具_007.查找区域",rec)
+</code></p></li>
+</ul>
+
+
+<h3>ScShapeLineGetAngle(self,line,dAngle=0)</h3>
+
+<ul>
+<li><p>功能：获取直线的角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>self：类型 ScShape。</li>
+<li>line：输入直线。</li>
+<li>dAngle：直线预设角度，比如返回一个90度附近的角度（固定取值90/-90/0/180/270）其余返回本值。</li>
+</ul>
+</li>
+<li><p>返回值：resAngle  double类型，返回角度</p></li>
+</ul>
+
+
+<h3>ScRotateVector(self,VecP,dangle=0,Veccenter=GvVisionAssembly.sc2Vector(0,0))</h3>
+
+<ul>
+<li><p>功能：任意一个点在图像坐标系下旋转到另一个点位置。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>self：类型 ScShape。</li>
+<li>VecP：图像上任意一点 scvector 类型。</li>
+<li>dangle：角度值。±180.0。</li>
+<li>Veccenter：scvector 类型。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>ScaxDisVecToLine(self,Vec,benchline,bonesidetype=1,bfoolproof=False,dLimit=10.0)</h3>
+
+<ul>
+<li><p>功能：计算点数组到直线的最大距离。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>self：类型 ScShape。</li>
+<li>Vec：数组点。</li>
+<li>benchline：基准线。</li>
+<li>bonesidetype：测量类型，0=检测绝对位置上下左右不分，1=左右检测右边，2=左右检测左边，3=上下检测下边，4=上下检测上边。</li>
+<li>bfoolproof：是否防呆，默认不防呆。</li>
+<li>dLimit：防呆spec。</li>
+</ul>
+</li>
+<li><p>返回值：【最大距离，最大距离对应的序号，最大距离是否满足要求，【【变换前点坐标，是否满足距离范围】，【】，……】】。</p></li>
+</ul>
+
+
+<h3>ScDisPointToLine(self,VecP, benchline)</h3>
+
+<ul>
+<li><p>功能：显示一个点到一条直线的距离的线段。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>self：类型 ScShape。</li>
+<li>VecP：点scvector类型。</li>
+<li>benchline：基准线 Sclinel类型。</li>
+</ul>
+</li>
+<li><p>返回值：SclineSeg 线段类型</p></li>
+<li><p>示例代码：</p>
+
+<p>```python
+from ScShape import ScShape
+from ScImageShow import ScImageShow
+import math</p>
+
+<p>Vec=GvTool.GetToolData(&ldquo;探测点解析工具<em>019.探测点坐标&rdquo;)
+benchline=GvTool.GetToolData(&ldquo;找线工具</em>016.直线结果&rdquo;)
+guiArray = GvVisionAssembly.GcScriptGuiArray()</p>
+
+<p>Vect= ScShape.ScaxDisVecToLine(ScShape,Vec,benchline,1,True,5)</p>
+
+<p>print(Vect[0]) #最大距离
+print(Vect[1]) #最大距离对应的点序号
+print(Vect[2]) #最大距离是否满足要求</p>
+
+<h1>Vect[3][i][0]表示输入的坐标</h1>
+
+<h1>Vect[3][i][1]表示输入的坐标到对应直线的距离是否满足要求</h1>
+
+<h1>显示</h1>
+
+ScImageShow.ImageShowLineSeg(ScImageShow,guiArray,ScShape.ScDisPointToLine(ScShape,Vec[Vect[1]],benchline), [255, 255, 0], 5)
+for i in range(len(Vect[3])):
+    if Vect[3][i][1]:
+        ScImageShow.ImagechowCrossVec(ScImageShow,guiArray,Vect[3][i][0], [0, 255, 0], 1)#显示十字交点
+    else:
+        ScImageShow.ImagechowCrossVec(ScImageShow,guiArray,Vect[3][i][0], [255, 0, 0], 1)#显示十字交点
+
+<h1>将 GUI 数组设置到视图</h1>
+
+<p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiArray)
+```</p></li>
+</ul>
+
+
+<h2>注意：</h2>
+
+<p>from ScShape import ScShape</p>
+
+<p>引用库：ScShape</p>
+
+<p>类名称：class ScShape</p>

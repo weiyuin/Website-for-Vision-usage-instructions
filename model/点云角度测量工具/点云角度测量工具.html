@@ -1,0 +1,244 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云角度测量工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​          该工具主要完成线线角度、线面角度、面面角度的计算</p>
+
+<h2>2.使用场景</h2>
+
+<p>​          1.计算两个三维直线角度的问题；
+​          2.计算三维直线与三维平面角度的问题；
+​          3.计算两个三维平面角度的问题；</p>
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>3.1 线线角度测量</h3>
+
+<p><strong>step1：</strong>添加点云文件、元素生成工具、点云角度测量工具，并双击打开工具参数链，链接点云数据和输入线1、输入线2，如图3-1所示；</p>
+
+<p><strong>step2：</strong>右击元素生成工具点击“属性”打开工具高级界面，如图3-2所示，分别生成两条直线；</p>
+
+<p><strong>Step3：</strong>右击点云角度测量工具点击“属性”打开工具高级界面，系数补偿设置’1‘，固定补偿设置’0‘，然后点击运行即可得到这两条直线的角度，如图3-3所示；</p></li>
+</ul>
+
+
+<div align="center">
+<img src="media/GvCloudAngleMeasurementTool_3_1.png" style="zoom:70%;"/>
+    <center>图3_1 点云角度测量：线线角度测量链接数据</center>
+</div>
+
+
+
+
+<div align="center">
+<img src="media/GvCloudAngleMeasurementTool_3_2.gif" style="zoom:70%;"/>
+    <center>图3_2 点云角度测量：线线角度测量中设置三维直线操作</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudAngleMeasurementTool_3_3.gif" style="zoom:70%;"/>
+    <center>图3_3 点云角度测量：线线角度测量</center>
+</div>
+
+
+<ul>
+<li><h3>3.2 线面角度测量</h3>
+
+<p><strong>step1：</strong>添加点云文件、元素生成工具、点云角度测量工具，并双击打开工具参数链，链接点云数据、输入线和输入面，如图3-4所示；</p>
+
+<p><strong>step2：</strong>右击元素生成工具点击“属性”打开工具高级界面，如图3-5所示，分别生成一条直线和一个平面；</p>
+
+<p><strong>Step3：</strong>右击点云角度测量工具点击“属性”打开工具高级界面，系数补偿设置’1‘，固定补偿设置’0‘，然后点击运行即可得到这一条直线和一个平面的角度，如图3-6所示；</p>
+
+<div align="center">
+<img src="media/GvCloudAngleMeasurementTool_3_4.png" style="zoom:70%;"/>
+    <center>图3_4 点云角度测量：线面角度测量链接数据</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudAngleMeasurementTool_3_5.gif" style="zoom:70%;"/>
+    <center>图3_5 点云角度测量：线面角度测量中设置三维直线和三维平面操作</center>
+</div>
+
+
+<div align="center">
+<img src="media/GvCloudAngleMeasurementTool_3_6.gif" style="zoom:70%;"/>
+    <center>图3_6 点云角度测量：线面角度测量</center>
+</div>
+</li>
+<li><h3>3.3 面面角度测量</h3>
+
+<p><strong>step1：</strong>添加点云文件、元素生成工具、点云角度测量工具，并双击打开工具参数链，链接点云数据和输入面1、输入面2，如图3-7所示；</p>
+
+<p><strong>step2：</strong>右击元素生成工具点击“属性”打开工具高级界面，如图3-8所示，分别生成两个平面；</p>
+
+<p><strong>Step3：</strong>右击点云角度测量工具点击“属性”打开工具高级界面，系数补偿设置’1‘，固定补偿设置’0‘，然后点击运行即可得到这两个平面的角度，如图3-9所示；</p>
+
+<div align="center">
+<img src="media/GvCloudAngleMeasurementTool_3_7.png" style="zoom:70%;"/>
+    <center>图3_7 点云角度测量：面面角度测量链接数据</center>
+</div>
+</li>
+</ul>
+
+
+<div align="center">
+<img src="media/GvCloudAngleMeasurementTool_3_8.gif" style="zoom:70%;"/>
+    <center>图3_8 点云角度测量：面面角度测量中设置三维平面操作</center>
+</div>
+
+
+
+
+<div align="center">
+<img src="media/GvCloudAngleMeasurementTool_3_9.gif" style="zoom:70%;"/>
+    <center>图3_9 点云角度测量：面面角度测量</center>
+</div>
+
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 链接外部的点云图像 </td>
+</tr>
+<tr>
+<td> 输入线1      </td>
+<td> 链接外部的直线     </td>
+</tr>
+<tr>
+<td> 输入线2      </td>
+<td> 链接外部的直线     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明                                          </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 角度测量类型 </td>
+<td> 包括：线线角度、线面角度、面面角度                </td>
+</tr>
+<tr>
+<td> 系数补偿     </td>
+<td> 测量结果系数补偿。一般为1，用于补偿成像等系统误差 </td>
+</tr>
+<tr>
+<td> 固定补偿     </td>
+<td> 测量结果固定补偿。一般为0，用于补偿成像等系统误差 </td>
+</tr>
+<tr>
+<td> 角度下限     </td>
+<td> 取值范围为[-360,360]，且下限应小于等于上限        </td>
+</tr>
+<tr>
+<td> 角度上限     </td>
+<td> 取值范围为[-360,360]，且下限应小于等于上限        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致。</p>
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 角度结果 </td>
+<td> 角度测量结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 角度结果 </td>
+<td> 角度测量结果 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云测量.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>角度测量类型说明</h3>
+
+<p><strong>线线角度：</strong>输入点云数据，获取两条直线，计算两条直线之间的角度；</p>
+
+<p><strong>线面角度：</strong>输入点云数据，获取一条直线和一个平面，计算直线和平面之间的角度；</p>
+
+<p><strong>面面角度：</strong>输入点云数据，获取两个平面，计算两个平面之间的角度；</p>
