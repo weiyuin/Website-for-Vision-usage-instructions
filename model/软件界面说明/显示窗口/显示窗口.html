@@ -16,91 +16,87 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>显示区域</h1>
+<h1>Khu vực hiển thị</h1>
 
-<p>分为视图显示区域、输出窗口、状态栏和监视窗口。</p>
+<p>Gồm có khu vực hiển thị chế độ xem, cửa sổ đầu ra, thanh trạng thái và cửa sổ giám sát.</p>
 
-<h2>视图显示区域</h2>
-
-<ul>
-<li><p>Edit：工具输入图像显示区域，同时显示工具的GUI，可手动修改GUI参数；</p></li>
-<li><p>Result：工具结果图像显示区域，同时显示工具的结果GUI；</p></li>
-<li><p>Cloud：点云工具图像显示区域，同时显示工具的GUI，当点云工具既有输入又有输出，仅显示输出，可手动切换点云显示的视角，并调整点的尺寸大小及线宽；</p></li>
-<li><p>View：自定义视图。将工具拖拽至View视图窗口中，可弹出列表勾选将该工具的部分信息（输出图像、执行结果等）显示在View视图中；双击视图空白区域，通过“视图编辑”对话框设置控件的线型、线宽、字体、字号、颜色和标签等，也可以启用自动控件颜色功能，软件会自动设置当前工程或者整个解决方案的视图控件颜色。</p>
-
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+<h2>Khu vực hiển thị chế độ xem</h2>
 
 <ul>
-<li>对于探测点类型，不支持自动控件颜色功能。</li>
-<li>涉及到工具有：找圆工具、找线工具、高级找线工具、找任意曲线工具、找腰形工具、多圆多线查找工具、多圆多线定位工具、自动标定工具和DM码靶标关联标定计算工具等等。</li>
+<li><p>Edit: Khu vực hiển thị hình ảnh đầu vào của công cụ, đồng thời hiển thị giao diện GUI của công cụ, có thể chỉnh sửa thủ công các tham số GUI;</p></li>
+<li><p>Result: Khu vực hiển thị hình ảnh kết quả của công cụ, đồng thời hiển thị GUI kết quả của công cụ;</p></li>
+<li><p>Cloud: Khu vực hiển thị hình ảnh của công cụ điểm mây, đồng thời hiển thị GUI của công cụ. Khi công cụ điểm mây có cả đầu vào và đầu ra, chỉ hiển thị đầu ra. Có thể điều chỉnh góc nhìn điểm mây và thay đổi kích thước điểm, độ rộng đường;</p></li>
+<li><p>View: Chế độ xem tùy chỉnh. Kéo công cụ vào cửa sổ View sẽ hiện danh sách tùy chọn cho phép hiển thị một phần thông tin (ảnh đầu ra, kết quả thực thi, v.v.) của công cụ đó. Nhấp đúp vào vùng trống trong chế độ xem để mở hộp thoại “Chỉnh sửa chế độ xem”, tại đây có thể chỉnh sửa kiểu đường, độ rộng đường, phông chữ, cỡ chữ, màu sắc, nhãn,... Cũng có thể bật chức năng “màu tự động của điều khiển” để phần mềm tự động thiết lập màu sắc điều khiển cho dự án hiện tại hoặc toàn bộ giải pháp.</p>
+
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
+
+<ul>
+<li>Với kiểu điểm kiểm tra, không hỗ trợ chức năng màu điều khiển tự động.</li>
+<li>Các công cụ liên quan: công cụ tìm hình tròn, tìm đường thẳng, tìm đường thẳng nâng cao, tìm đường cong bất kỳ, tìm hình elip, công cụ tìm nhiều vòng và nhiều đường, công cụ định vị nhiều vòng và nhiều đường, công cụ hiệu chỉnh tự động và công cụ tính hiệu chỉnh liên kết bia mã DM,...</li>
 </ul>
 </blockquote></li>
-<li><p>CloudView：自定义点云视图。将点云工具拖拽至CloudView视图窗口中，可弹出列表勾选将该工具的部分信息（输出图像、执行结果等）显示在CloudView视图中；右键视图空白区域，通过“视图编辑”对话框设置控件的字号、颜色和标签等，也可以启用自动控件颜色功能，软件会自动设置当前工程或者整个解决方案的视图控件颜色。</p>
 
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+<li><p>CloudView: Chế độ xem điểm mây tùy chỉnh. Kéo công cụ điểm mây vào cửa sổ CloudView để bật danh sách chọn hiển thị một phần thông tin của công cụ (ảnh đầu ra, kết quả thực thi, v.v.) trong chế độ CloudView. Nhấp chuột phải vào vùng trống để mở hộp thoại “Chỉnh sửa chế độ xem”, có thể điều chỉnh cỡ chữ, màu sắc, nhãn,... Đồng thời hỗ trợ chức năng “màu điều khiển tự động”.</p>
+
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
 
 <ul>
-<li>对于点云多目标匹配工具，不支持颜色条功能。</li>
+<li>Đối với công cụ ghép nhiều mục tiêu điểm mây, không hỗ trợ thanh màu.</li>
 </ul>
 </blockquote></li>
 </ul>
 
-
-<h2>输出窗口</h2>
+<h2>Cửa sổ đầu ra</h2>
 
 <ul>
-<li><p>监视：显示工具执行的输出结果信息，包括执行状态和耗时；</p></li>
-<li><p>错误：工程运行过程中，提示工程中存在的Error，工程终止运行；</p></li>
-<li><p>警告：工程运行过程中，提示工程中存在的不合理，但不影响工程运行；</p></li>
-<li><p>提示：软件使用过程中，对常见操作（如工程保存等）的结果状态提示通知，不需要用户处理；</p></li>
-<li><p>查找：支持位置查找和引用查找，即支持查找工具、控制类图元或分支标签在流程图的位置；支持查找工具、工具参数或变量的引用查找。使用鼠标右键、查找或者按快捷键Ctrl+f打开。</p>
+<li><p>Giám sát: Hiển thị thông tin kết quả đầu ra khi thực thi công cụ, bao gồm trạng thái và thời gian thực thi;</p></li>
+<li><p>Lỗi: Khi chạy dự án, nếu có lỗi sẽ hiển thị trong mục này và dừng toàn bộ dự án;</p></li>
+<li><p>Cảnh báo: Hiển thị các vấn đề không hợp lý nhưng không ảnh hưởng đến việc chạy dự án;</p></li>
+<li><p>Thông báo: Hiển thị thông báo về trạng thái của các thao tác phổ biến trong phần mềm (như lưu dự án), không yêu cầu người dùng xử lý;</p></li>
+<li><p>Tìm kiếm: Hỗ trợ tìm kiếm vị trí và tìm kiếm tham chiếu, tức là có thể tìm vị trí của công cụ, hình khối điều khiển, nhãn nhánh,... trong lưu đồ; cũng hỗ trợ tìm tham chiếu công cụ, tham số công cụ hoặc biến. Nhấp chuột phải, chọn Tìm kiếm hoặc nhấn phím tắt Ctrl+F để mở.</p>
 
-<blockquote><p>具体使用可见“流程图”中“查找”部分。</p></blockquote>
+<blockquote><p>Xem chi tiết phần “Tìm kiếm” trong mục “Lưu đồ”.</p></blockquote>
 
 <p><img src="media/DisplayWindow_01.png" alt="" /></p></li>
 </ul>
 
+<h2>Cửa sổ giám sát</h2>
 
-<h2>监视窗口</h2>
-
-<p>可以将变量和工具输出的参数添加到监视窗口。会显示工具输出的名称或者变量名称、取值、类型和来源，如果是全局变量会显示“全局”。</p>
+<p>Có thể thêm biến và tham số đầu ra của công cụ vào cửa sổ giám sát. Sẽ hiển thị tên đầu ra hoặc tên biến, giá trị, kiểu dữ liệu và nguồn gốc. Nếu là biến toàn cục sẽ ghi chú “toàn cục”.</p>
 
 <ul>
-<li><p>监视窗口的显示和隐藏：切到“选项”选项卡，勾选或者不勾选监视，即会显示或者不显示监视窗口</p></li>
-<li><p>具输出参数添加到监视：原监视窗口改名为“自动”，可以右键，显示“添加到监视”，如下图所示：</p>
+<li><p>Hiển thị/ẩn cửa sổ giám sát: Chuyển sang tab “Tùy chọn”, đánh dấu hoặc bỏ đánh dấu mục giám sát để bật/tắt cửa sổ giám sát;</p></li>
+<li><p>Thêm tham số đầu ra vào giám sát: Cửa sổ giám sát cũ đổi tên thành “Tự động”, nhấp chuột phải để chọn “Thêm vào giám sát” như hình bên dưới:</p>
 
 <p><img src="media/DisplayWindow_02.png" alt="" /></p></li>
-<li><p>变量添加到监视：右键添加到监视，如下图所示。</p>
+<li><p>Thêm biến vào giám sát: Nhấp chuột phải và chọn “Thêm vào giám sát”, như hình dưới:</p>
 
 <p><img src="media/DisplayWindow_03.png" alt="" /></p></li>
-<li><p>从监视移除</p>
+<li><p>Gỡ khỏi giám sát:</p>
 
 <p><img src="media/DisplayWindow_04.png" alt="" /></p></li>
-<li><p>监视窗口的刷新</p>
+<li><p>Làm mới cửa sổ giám sát:</p>
 
 <ul>
-<li>工具参数取值或者类型发生变化或者工程重命名时</li>
+<li>Khi giá trị hoặc kiểu của tham số công cụ thay đổi, hoặc khi đổi tên dự án</li>
 </ul>
-
 
 <p><img src="media/DisplayWindow_05.png" alt="" /></p>
 
 <ul>
-<li>变量取值变化、数据类型变化、变量名称变化</li>
+<li>Khi giá trị biến, kiểu dữ liệu, tên biến thay đổi</li>
 </ul>
-
 
 <p><img src="media/DisplayWindow_06.png" alt="" /></p></li>
 </ul>
 
+<h2>Thanh trạng thái</h2>
 
-<h2>状态栏</h2>
+<p>Hiển thị các nội dung bao gồm: mức sử dụng CPU, bộ nhớ, đĩa, công việc hiện tại, trạng thái hệ thống, phiên bản phần mềm, thời gian hiện tại,...</p>
 
-<p>显示内容包括：CPU使用率、内存使用率、磁盘使用率、当前作业、系统状态、版本号、当前时间等。</p>
+<p>Trong đó, mức sử dụng CPU, bộ nhớ và đĩa được hiển thị theo thời gian thực.</p>
 
-<p>其中，CPU使用率、内存使用率和磁盘使用率实时显示CPU、内存和磁盘的使用情况。</p>
-
-<p>CPU和内存点击可切换查看VA进程使用情况和系统整体使用情况。磁盘点击可切换磁盘整体使用率和各磁盘的使用率。</p>
+<p>Nhấp vào mục CPU hoặc bộ nhớ có thể chuyển đổi giữa chế độ hiển thị mức sử dụng của tiến trình VA và tổng quan hệ thống. Nhấp vào đĩa có thể chuyển giữa hiển thị tổng mức sử dụng đĩa và từng ổ đĩa riêng lẻ.</p>
 
 <p><img src="media/DisplayWindow_07.png" alt="" /></p>
 

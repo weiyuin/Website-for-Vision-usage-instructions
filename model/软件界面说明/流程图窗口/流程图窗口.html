@@ -16,211 +16,204 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>流程图</h1>
+<h1>Lưu đồ</h1>
 
-<p>流程图是工程的核心，了解流程图的各个功能，根据实际需求，配出功能完善的工程，是软件使用的重中之重。</p>
+<p>Lưu đồ là phần cốt lõi của dự án. Hiểu rõ các chức năng của lưu đồ và cấu hình theo nhu cầu thực tế sẽ giúp xây dựng nên một dự án hoàn chỉnh. Đây là phần quan trọng nhất trong việc sử dụng phần mềm.</p>
 
-<p>在流程图中有2种元素，图元和link线。例如：<img src="media/Flow_1_1.png" alt="" />为图元；link线为带箭头的线。在流程图的图元或link线上右键，弹出流程图的功能菜单，如下图。各个功能有对应的快捷键，用户可使用快捷键轻松高效的配置流程图。</p>
+<p>Trong lưu đồ có 2 loại phần tử: hình khối và đường link. Ví dụ: <img src="media/Flow_1_1.png" alt="" /> là hình khối; đường link là đường có mũi tên. Nhấp chuột phải vào hình khối hoặc đường link trong lưu đồ sẽ bật ra menu chức năng, như hình bên dưới. Mỗi chức năng đều có phím tắt tương ứng, giúp người dùng dễ dàng và hiệu quả khi cấu hình lưu đồ.</p>
 
 <p><img src="media/Flow_1_2.png" alt="" /></p>
 
-<h2>图元编辑</h2>
+<h2>Chỉnh sửa hình khối</h2>
 
 <ul>
-<li><p>新增/删除：新增/删除图元；</p></li>
-<li><p>新增/移除分支：控制流中，可新增/移除分支（移除时，需要选中待移除的分支）；</p></li>
-<li><p>拖放：选中一个或多个图元，按住鼠标左键将其拖拽至流程图中的目标位置，拖拽过程中，鼠标显示为<img src="media/Flow_1_3.png" alt="" />；</p></li>
-<li><p>工具拖入：工具箱中选中一个工具，按住鼠标左键将其拖拽至流程图中的目标位置；</p></li>
-<li><p>复制/粘贴：可对选中的图元进行复制，并粘贴在流程图中的目标位置，重复使用；</p></li>
+<li><p>Thêm/Xóa: Thêm hoặc xóa hình khối;</p></li>
+<li><p>Thêm/Xóa nhánh: Trong luồng điều khiển, có thể thêm hoặc xóa nhánh (khi xóa, cần chọn đúng nhánh cần xóa);</p></li>
+<li><p>Kéo thả: Chọn một hoặc nhiều hình khối, giữ chuột trái và kéo đến vị trí mong muốn trong lưu đồ, trong quá trình kéo chuột sẽ hiển thị biểu tượng <img src="media/Flow_1_3.png" alt="" />;</p></li>
+<li><p>Kéo công cụ vào: Chọn công cụ trong hộp công cụ, giữ chuột trái và kéo vào vị trí mong muốn trong lưu đồ;</p></li>
+<li><p>Sao chép/Dán: Có thể sao chép hình khối đã chọn và dán vào vị trí khác trong lưu đồ để tái sử dụng;</p></li>
 </ul>
 
-
-<h2>UI操作</h2>
-
-<ul>
-<li><p>单选与多选：可选择一个图元或连续的多个图元进行整体的移动、复制粘贴、组合、加密、保存模块等操作；</p></li>
-<li><p>双击操作：双击图元，可进行数据链编辑，链接工具所需的输入参数；</p></li>
-<li><p>缩放：按住Ctrl键，滚动鼠标滚轮，可对流程图进行缩放显示；</p></li>
-<li><p>滚动条：流程图下边缘、右边缘分别有滚动条，方便流程图内图元较多时仍可全部呈现；</p></li>
-<li><p>右键菜单：鼠标在图元或link线上右键，弹出流程图的功能菜单，包含新增、删除、组合等；</p></li>
-<li><p>折叠与展开：只对组合、加密模块等进行折叠与展开。</p>
+<h2>Thao tác giao diện (UI)</h2>
 
 <ul>
-<li><p>组合：双击组合线，折叠为Group；双击Group，展开组合；</p>
+<li><p>Chọn đơn/lặp: Có thể chọn một hoặc nhiều hình khối để thực hiện các thao tác như di chuyển, sao chép, dán, nhóm, mã hóa, lưu mô-đun,...;</p></li>
+<li><p>Nhấp đúp: Nhấp đúp vào hình khối để chỉnh sửa chuỗi dữ liệu, kết nối tham số đầu vào của công cụ;</p></li>
+<li><p>Thu phóng: Giữ phím Ctrl và lăn chuột để thu phóng lưu đồ;</p></li>
+<li><p>Thanh cuộn: Thanh cuộn nằm ở cạnh dưới và phải của lưu đồ, tiện cho việc xem khi có nhiều hình khối;</p></li>
+<li><p>Menu chuột phải: Nhấp chuột phải vào hình khối hoặc đường link để bật menu chức năng, bao gồm thêm, xóa, nhóm,...;</p></li>
+<li><p>Thu gọn/Mở rộng: Chỉ áp dụng với nhóm, mô-đun mã hóa,...</p>
 
 <ul>
-<li><p>分支/并行：单击分支或并行起始图元的左上角减号<img src="media/Flow_2_1.png" alt="" />，可折叠；折叠后，单击折叠后图元左上角加号可展开。</p></li>
-<li><p>加密模块：加密后，折叠为Group；输入密码，展开加密模块；</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>组合/解除组合：</p></li>
-<li><p>添加组合：对部分内容或特定功能的部分进行组合，方便折叠，使流程图更简洁。选中某些需要组合的图元（按住Shift键可选中多个），在任意选中图元上右键，弹出菜单中选择“组合”（或Ctrl+G快捷键），可完成组合。</p></li>
-<li><p>解除组合：在组合展开的情况下，选中组合线，右键弹出菜单中选择“解除组合”（或选中组合线后Alt+G键）。</p></li>
-<li><p>快捷键：可快速实现组合、加密等操作，具体可见右键菜单；</p></li>
-<li><p>属性设置：</p>
+<li><p>Nhóm: Nhấp đúp vào đường nhóm để thu gọn thành Group; nhấp đúp vào Group để mở rộng;</p>
 
 <ul>
-<li><p>工具图元的属性：右键单击工具图元，弹出菜单中点击“属性”，可打开包含高级属性界面工具的高级界面（不包含高级界面的工具菜单中的属性不可用）；</p>
-
-<ul>
-<li>流程图中空白区域的属性：右键单击流程图点击“属性”，可打开流程图的设置界面。在该界面可以设置首元位置、图元横向/纵向间距、图元宽度/高度、图元名称长度阈值、显示数据链相关图标等；</li>
+<li><p>Nhánh/Chạy song song: Nhấp vào biểu tượng dấu trừ <img src="media/Flow_2_1.png" alt="" /> ở góc trên bên trái của hình khối đầu nhánh để thu gọn; sau khi thu gọn, nhấp vào dấu cộng để mở rộng.</p></li>
+<li><p>Mô-đun mã hóa: Sau khi mã hóa, sẽ thu gọn thành Group; nhập mật khẩu để mở mô-đun mã hóa;</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>重命名：为标识工具，可对流程图中除“开始”“结束”外的图元，重新命名；其中，编号保留不变，不可修改；</p></li>
-<li><p>查找：</p>
+<li><p>Nhóm/Bỏ nhóm:</p></li>
+<li><p>Thêm nhóm: Nhóm một số hình khối lại để dễ thu gọn, làm lưu đồ gọn gàng hơn. Chọn các hình khối cần nhóm (giữ phím Shift để chọn nhiều), nhấp chuột phải vào bất kỳ hình khối nào đã chọn, chọn “Nhóm” (hoặc phím tắt Ctrl+G);</p></li>
+<li><p>Bỏ nhóm: Khi nhóm đang mở rộng, chọn đường nhóm, nhấp chuột phải và chọn “Bỏ nhóm” (hoặc chọn đường nhóm rồi nhấn Alt+G);</p></li>
+<li><p>Phím tắt: Có thể nhanh chóng thao tác nhóm, mã hóa,... chi tiết xem trong menu chuột phải;</p></li>
+<li><p>Cài đặt thuộc tính:</p>
 
 <ul>
-<li><p>位置查找：在流程图中查找图元的位置，可查找工具、控制类图元、分支标签等，支持模糊查找（即关键字查找），不支持变量查找，如果输入变量名称，提示查找结果为0。按名称查找指按照图元当前名称查找，输入图元名称关键字或全称，查找窗口中输出包含输入内容的图元；按类型查找指按照图元原名称查找，如输入“图像采集工具”，查找窗口中输出所有的图像采集工具；</p>
+<li><p>Thuộc tính hình khối công cụ: Nhấp chuột phải vào hình khối công cụ, chọn “Thuộc tính” để mở giao diện nâng cao (nếu công cụ không có giao diện nâng cao thì tùy chọn này sẽ không khả dụng);</p>
 
 <ul>
-<li>引用查找：查找工具、工具参数、变量的引用，只能输入完整工具名称或变量名称（或在下拉提示列表中选择），查找窗口中输出引用该工具或工具参数或变量的信息，如果输入名称不完整，提示查找结果为0；</li>
+<li>Thuộc tính vùng trống: Nhấp chuột phải vào vùng trống của lưu đồ, chọn “Thuộc tính” để mở giao diện cài đặt lưu đồ. Có thể thiết lập vị trí hình khối bắt đầu, khoảng cách ngang/dọc giữa các hình khối, kích thước hình khối, độ dài tối đa tên hình khối, hiển thị biểu tượng chuỗi dữ liệu,...</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>转换为自定义工具：选中流程图中一系列图元，右键菜单点击"转换为自定义工具"，可以将选中的流程转换为一个自定义工具；转换之后，选中的图元将被删除，生成一个新的自定义工具，自定义工具展开后的子流程与选中流程功能一致；详细可见自定义工具说明。</p></li>
-</ul>
-
-
-<h2>高级功能</h2>
+<li><p>Đổi tên: Có thể đổi tên các hình khối (trừ “Bắt đầu” và “Kết thúc”) để dễ nhận biết; số thứ tự không thể thay đổi;</p></li>
+<li><p>Tìm kiếm:</p>
 
 <ul>
-<li><p>撤销与重做：流程图支持撤销、重做，减少误操作带来的困扰；</p></li>
-<li><p>模块加密与解密：对有加密需求的特殊模块可进行加密保护。</p></li>
-<li><p>加密/解密对象：折叠状态的模块：分支/并行/组合</p></li>
-<li><p>模块加密：右键折叠状态的模块，点击“模块加密设置”弹出“加密信息设置”对话框，输入4位以上的数字，点击“加密”完成加密。加密后的模块左下角会呈现带锁标志，表示加密成功。</p>
+<li><p>Tìm theo vị trí: Tìm vị trí của hình khối trong lưu đồ. Có thể tìm theo công cụ, hình khối điều khiển, nhãn nhánh,... hỗ trợ tìm mờ (theo từ khóa), không hỗ trợ tìm theo biến. Nếu nhập tên biến, kết quả tìm kiếm là 0. Tìm theo tên hiện tại là tìm theo tên hình khối hiện tại, nhập từ khóa hoặc tên đầy đủ sẽ hiển thị các hình khối phù hợp. Tìm theo loại là tìm theo tên gốc của hình khối, ví dụ nhập “Công cụ thu thập ảnh” sẽ hiển thị tất cả các công cụ thu thập ảnh;</p>
+
+<ul>
+<li>Tìm tham chiếu: Tìm tham chiếu công cụ, tham số công cụ, biến... Chỉ hỗ trợ nhập tên đầy đủ hoặc chọn từ danh sách gợi ý. Nếu tên không đầy đủ, kết quả là 0;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Chuyển thành công cụ tùy chỉnh: Chọn một loạt hình khối trong lưu đồ, nhấp chuột phải chọn “Chuyển thành công cụ tùy chỉnh”, lưu đồ sẽ được chuyển thành một công cụ mới. Sau khi chuyển, các hình khối được chọn sẽ bị xóa và tạo thành một công cụ tùy chỉnh có chức năng giống với phần đã chọn. Chi tiết xem mục công cụ tùy chỉnh.</p></li>
+</ul>
+
+<h2>Chức năng nâng cao</h2>
+
+<ul>
+<li><p>Hoàn tác và Làm lại: Lưu đồ hỗ trợ hoàn tác và làm lại, tránh thao tác sai ngoài ý muốn;</p></li>
+<li><p>Mã hóa/Giải mã mô-đun: Có thể mã hóa các mô-đun đặc biệt để bảo vệ nội dung;</p></li>
+<li><p>Đối tượng có thể mã hóa: Mô-đun thu gọn: Nhánh/Chạy song song/Nhóm;</p></li>
+<li><p>Mã hóa mô-đun: Nhấp chuột phải vào mô-đun đã thu gọn, chọn “Cài đặt mã hóa mô-đun”, nhập mật khẩu ít nhất 4 chữ số, nhấn “Mã hóa” để hoàn tất. Sau khi mã hóa, góc dưới trái mô-đun sẽ hiển thị biểu tượng khóa;</p>
 
 <p><img src="media/Flow_3_1.png" alt="" /><img src="media/Flow_3_2.png" alt="" /></p></li>
-<li><p>模块解密：双击加密状态的模块，输入密码，即可解开模块。再次折叠模块后，再展开会再次询问密码。</p></li>
-<li><p>修改与移除密码：右键加密模块，点击“模块加密设置”，在设置对话框中输入密码，输入正确后无需点击任何按钮，对话框则解开“修改”和“移除”按钮权限，之后进行对应设置即可。</p></li>
-<li><p>运行时状态显示：</p>
+<li><p>Giải mã mô-đun: Nhấp đúp vào mô-đun đã mã hóa, nhập mật khẩu để mở. Sau khi thu gọn lại, lần mở tiếp theo cũng cần nhập lại mật khẩu;</p></li>
+<li><p>Đổi/xóa mật khẩu: Nhấp chuột phải vào mô-đun đã mã hóa, chọn “Cài đặt mã hóa mô-đun”, nhập đúng mật khẩu, hệ thống sẽ bật quyền cho các nút “Đổi” và “Xóa”;</p></li>
+<li><p>Hiển thị trạng thái khi chạy:</p>
 
 <ul>
-<li><p>运行选中：工具执行失败时，图元显示为红色；</p>
+<li><p>Chạy hình khối đã chọn: Nếu công cụ thực thi thất bại, hình khối sẽ hiển thị màu đỏ;</p>
 
 <ul>
-<li><p>单步调试、暂停：下一个待运行的工具图元显示为绿色；</p></li>
-<li><p>连续运行：流程图中第一个执行失败的工具图元，显示为红色；下一个待运行的工具图元显示为绿色（由于速度较快，可能不是很明显）；</p></li>
+<li><p>Chạy từng bước hoặc tạm dừng: Hình khối công cụ tiếp theo sẽ hiển thị màu xanh lá;</p></li>
+<li><p>Chạy liên tục: Hình khối công cụ đầu tiên thực thi thất bại sẽ hiển thị màu đỏ; công cụ tiếp theo hiển thị màu xanh (do tốc độ nhanh, có thể không rõ ràng);</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>部分模块保存/插入：对部分内容或特定功能的模块进行保存，方便保存和插入复用；</p></li>
+<li><p>Lưu/chèn mô-đun: Có thể lưu mô-đun chứa một phần nội dung hoặc chức năng để dễ dàng tái sử dụng;</p></li>
 </ul>
 
-
-<h2>快捷键使用</h2>
+<h2>Sử dụng phím tắt</h2>
 
 <ul>
-<li>流程图快捷键一览表</li>
+<li>Bảng phím tắt của lưu đồ</li>
 </ul>
-
 
 <table>
 <thead>
 <tr>
-<th> 功能名称      </th>
-<th> 快捷键 </th>
-<th> 功能名称   </th>
-<th> 快捷键     </th>
+<th>Chức năng</th>
+<th>Phím tắt</th>
+<th>Chức năng</th>
+<th>Phím tắt</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 复制         </td>
-<td> Ctrl+C </td>
-<td> 重命名   </td>
-<td> F2     </td>
+<td>Sao chép</td>
+<td>Ctrl+C</td>
+<td>Đổi tên</td>
+<td>F2</td>
 </tr>
 <tr>
-<td> 粘贴         </td>
-<td> Ctrl+V </td>
-<td> 查找     </td>
-<td> Ctrl+F </td>
+<td>Dán</td>
+<td>Ctrl+V</td>
+<td>Tìm kiếm</td>
+<td>Ctrl+F</td>
 </tr>
 <tr>
-<td> 删除         </td>
-<td> Ctrl+D </td>
-<td> 插入模块 </td>
-<td> Alt+O  </td>
+<td>Xóa</td>
+<td>Ctrl+D</td>
+<td>Chèn mô-đun</td>
+<td>Alt+O</td>
 </tr>
 <tr>
-<td> 组合         </td>
-<td> Ctrl+G </td>
-<td> 保存模块 </td>
-<td> Alt+S  </td>
+<td>Nhóm</td>
+<td>Ctrl+G</td>
+<td>Lưu mô-đun</td>
+<td>Alt+S</td>
 </tr>
 <tr>
-<td> 解除组合     </td>
-<td> Alt+G  </td>
-<td> 属性     </td>
-<td> Alt+P  </td>
+<td>Bỏ nhóm</td>
+<td>Alt+G</td>
+<td>Thuộc tính</td>
+<td>Alt+P</td>
 </tr>
 <tr>
-<td> 模块加密设置 </td>
-<td> Alt+E  </td>
-<td>  </td>
-<td>  </td>
+<td>Mã hóa mô-đun</td>
+<td>Alt+E</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
-
 <ul>
-<li>菜单栏快捷键一览表</li>
+<li>Bảng phím tắt của thanh menu</li>
 </ul>
-
 
 <table>
 <thead>
 <tr>
-<th> 功能名称      </th>
-<th> 快捷键 </th>
-<th> 功能名称   </th>
-<th> 快捷键     </th>
+<th>Chức năng</th>
+<th>Phím tắt</th>
+<th>Chức năng</th>
+<th>Phím tắt</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 重做 </td>
-<td> Ctrl+Y </td>
-<td> 连续运行         </td>
-<td> F5        </td>
+<td>Làm lại</td>
+<td>Ctrl+Y</td>
+<td>Chạy liên tục</td>
+<td>F5</td>
 </tr>
 <tr>
-<td> 撤销 </td>
-<td> Ctrl+Z </td>
-<td> 运行选中         </td>
-<td> F7        </td>
+<td>Hoàn tác</td>
+<td>Ctrl+Z</td>
+<td>Chạy hình khối đã chọn</td>
+<td>F7</td>
 </tr>
 <tr>
-<td> 新建 </td>
-<td> Ctrl+N </td>
-<td> 连续运行选中内容 </td>
-<td> Ctrl+F5   </td>
+<td>Tạo mới</td>
+<td>Ctrl+N</td>
+<td>Chạy liên tục phần chọn</td>
+<td>Ctrl+F5</td>
 </tr>
 <tr>
-<td> 打开 </td>
-<td> Ctrl+O </td>
-<td> 单次运行         </td>
-<td> F6        </td>
+<td>Mở</td>
+<td>Ctrl+O</td>
+<td>Chạy một lần</td>
+<td>F6</td>
 </tr>
 <tr>
-<td> 保存 </td>
-<td> Ctrl+S </td>
-<td> 全部停止 </td>
-<td> Shift+F5 </td>
+<td>Lưu</td>
+<td>Ctrl+S</td>
+<td>Dừng tất cả</td>
+<td>Shift+F5</td>
 </tr>
 <tr>
-<td> 暂停当前工程 </td>
-<td> Shift+F10 </td>
-<td> 继续当前工程 </td>
-<td> Shift+F10 </td>
+<td>Tạm dừng</td>
+<td>Shift+F10</td>
+<td>Tiếp tục</td>
+<td>Shift+F10</td>
 </tr>
 </tbody>
 </table>
-
