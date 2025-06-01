@@ -18,116 +18,113 @@
            </head>
 <h1>GcScriptGuiDataAgent</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>用来将GcScriptGuiArray中存储的GUI对象数组显示到视图窗口，禁止自己定义一个GcScriptGuiDataAgent对象，内部已经定义了GvGuiDataAgent对象，可以直接使用。</p>
+<p>Dùng để hiển thị mảng đối tượng GUI được lưu trong GcScriptGuiArray lên cửa sổ xem. Cấm tự định nghĩa đối tượng GcScriptGuiDataAgent, bên trong đã định nghĩa sẵn đối tượng GvGuiDataAgent có thể dùng trực tiếp.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                     </th>
-<th> 接口描述                                       </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> GcScriptGuiDataAgent </td>
-<td> GcScriptGuiDataAgent(strName, strID)构造函数。 </td>
+<td>Khởi tạo</td>
+<td>GcScriptGuiDataAgent</td>
+<td>Hàm khởi tạo GcScriptGuiDataAgent(strName, strID).</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> SetGraphicDisplay(str, value) </td>
-<td> 将要显示的GUI对象添加到视图窗口。              </td>
+<td>Hàm</td>
+<td>SetGraphicDisplay(str, value)</td>
+<td>Thêm đối tượng GUI cần hiển thị vào cửa sổ xem.</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> AddGraphicToContainer(nIndex, value) </td>
-<td> 将要显示的GUI对象添加到自定义工具的图形数组输出中。              </td>
+<td>Hàm</td>
+<td>AddGraphicToContainer(nIndex, value)</td>
+<td>Thêm đối tượng GUI cần hiển thị vào mảng đồ họa đầu ra của công cụ tùy chỉnh.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Chi tiết</h2>
 
 <h3>GcScriptGuiDataAgent(strName, strID)</h3>
 
 <ul>
-<li><p><strong>功能</strong>：构造GcScriptGuiDataAgent对象。</p></li>
-<li><p><strong>参数</strong>：</p>
-
-<ul>
-<li><p>strName: str类型，当前工程名。例如”工程-1”。</p></li>
-<li><p>strID: str类型，脚本工具ID。</p></li>
-</ul>
+<li><strong>Chức năng</strong>: Khởi tạo đối tượng GcScriptGuiDataAgent.</li>
+<li><strong>Tham số</strong>:
+  <ul>
+    <li>strName: kiểu str, tên dự án hiện tại, ví dụ "工程-1" (Dự án-1).</li>
+    <li>strID: kiểu str, ID của công cụ script.</li>
+  </ul>
 </li>
-<li><p><strong>返回值</strong>：无</p></li>
+<li><strong>Trả về</strong>: Không có</li>
 </ul>
-
 
 <h3>SetGraphicDisplay(str, value)</h3>
 
 <ul>
-<li><p><strong>功能</strong>：将要显示的GUI对象数组添加到视图窗口。</p></li>
-<li><p><strong>参数</strong>：</p>
+<li><strong>Chức năng</strong>: Thêm mảng đối tượng GUI cần hiển thị vào cửa sổ xem.</li>
+<li><strong>Tham số</strong>:
+  <ul>
+    <li>str: kiểu str, tên cửa sổ xem, ví dụ "View-1".</li>
+    <li>value: kiểu GcScriptGuiArray, mảng đối tượng GUI cần thêm.</li>
+  </ul>
+</li>
+<li><strong>Trả về</strong>: bool, biểu thị việc thêm có thành công hay không.</li>
+</ul>
+
+<h3>AddGraphicToContainer(nIndex, value)</h3>
 
 <ul>
-<li><p>str: str类型，视图名称。例如”View-1”。</p></li>
-<li><p>value: GcScriptGuiArray类型，要添加的GUI对象数组。</p></li>
-</ul>
+<li><strong>Chức năng</strong>: Thêm đối tượng GUI cần hiển thị vào mảng đồ họa đầu ra của công cụ tùy chỉnh.</li>
+<li><strong>Tham số</strong>:
+  <ul>
+    <li>nIndex: kiểu int, chỉ số mảng đồ họa, phạm vi [0,5], ví dụ 0.</li>
+    <li>value: kiểu GcScriptGuiArray, mảng đối tượng GUI cần thêm.</li>
+  </ul>
 </li>
-<li><p><strong>返回值</strong>：bool类型，表示是否添加成功。</p>
-
-<h3>AddGraphicToContainer(nIndex, value)</h3></li>
-<li><p><strong>功能</strong>：将要显示的GUI对象添加到自定义工具的图形数组输出中。</p></li>
-<li><p><strong>参数</strong>：</p>
-
-<ul>
-<li><p>nIndex: int类型，图形数组的索引，范围为[0,5]。例如:0。</p></li>
-<li><p>value: GcScriptGuiArray类型，要添加的GUI对象数组。</p></li>
-</ul>
-</li>
-<li><p><strong>返回值</strong>：bool类型，表示是否添加成功。</p></li>
+<li><strong>Trả về</strong>: bool, biểu thị việc thêm có thành công hay không.</li>
 </ul>
 
-
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ol>
-<li>禁止自己定义一个GcScriptGuiDataAgent对象，内部已经定义了GvGuiDataAgent对象，可以直接使用。</li>
-<li>自定义工具内部脚本工具不能使用SetGraphicDisplay函数，只有普通工程里面可以使用。</li>
-<li>普通工程中脚本工具不能使用AddGraphicToContainer，只有自定义工具内部可以使用。</li>
+<li>Cấm tự định nghĩa đối tượng GcScriptGuiDataAgent, đã có GvGuiDataAgent bên trong có thể dùng luôn.</li>
+<li>Công cụ script bên trong công cụ tùy chỉnh không dùng được hàm SetGraphicDisplay, chỉ dùng được trong dự án bình thường.</li>
+<li>Công cụ script trong dự án bình thường không dùng được AddGraphicToContainer, chỉ công cụ tùy chỉnh mới dùng được.</li>
 </ol>
 
+<h2>Mã ví dụ</h2>
 
-<h2>示例代码</h2>
+<p>1. Thêm GUI trong dự án bình thường</p>
 
-<p>1、普通工程内部添加GUI</p>
-
-<p><code>python
+<pre><code class="python">
 guiArray = GvVisionAssembly.GcScriptGuiArray()
 guiText = GvVisionAssembly.GsScriptGuiText()
-guiText.strText ="text"
+guiText.strText = "văn bản"
 guiText.posX = 0.0
 guiText.posY = 0.0
 guiText.deg = 0.0
 guiArray.Add(guiText)
 GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
-</code>
-2、自定义工具内部添加GUI</p>
+</code></pre>
 
-<p><code>python
+<p>2. Thêm GUI trong công cụ tùy chỉnh</p>
+
+<pre><code class="python">
 guiArray = GvVisionAssembly.GcScriptGuiArray()
 guiText = GvVisionAssembly.GsScriptGuiText()
-guiText.strText ="text"
+guiText.strText = "văn bản"
 guiText.posX = 0.0
 guiText.posY = 0.0
 guiText.deg = 0.0
 guiArray.Add(guiText)
 GvGuiDataAgent.AddGraphicToContainer(0, guiArray)
 GvGuiDataAgent.AddGraphicToContainer(1, guiArray)
-</code></p>
+</code></pre>
