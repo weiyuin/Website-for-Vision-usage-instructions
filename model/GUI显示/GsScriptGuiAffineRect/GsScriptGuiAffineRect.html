@@ -18,78 +18,75 @@
            </head>
 <h1>GsScriptGuiAffineRect</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>要在视图窗口显示的仿射矩形。</p>
+<p>Hiển thị hình chữ nhật affine trong cửa sổ xem.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                             </th>
-<th> 接口描述                           </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
-<td> sScriptGuiStyle </td>
-<td> 显示风格，包括字体，大小，颜色等。 </td>
+<td>Thuộc tính</td>
+<td>sScriptGuiStyle</td>
+<td>Kiểu hiển thị, bao gồm font chữ, kích thước, màu sắc, v.v.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> affineRect           </td>
-<td> 要显示的仿射矩形。                 </td>
+<td></td>
+<td>affineRect</td>
+<td>Hình chữ nhật affine cần hiển thị.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>sScriptGuiStyle</h3>
 
 <ul>
-<li><strong>功能</strong>：显示风格，GsScriptGuiStyle类型。</li>
+<li><strong>Chức năng</strong>: Kiểu hiển thị, thuộc kiểu GsScriptGuiStyle.</li>
 </ul>
-
 
 <h3>affineRect</h3>
 
 <ul>
-<li><strong>功能</strong>：要显示的仿射矩形，scAffineRect类型。</li>
+<li><strong>Chức năng</strong>: Hình chữ nhật affine cần hiển thị, thuộc kiểu scAffineRect.</li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
 
-<p>无。</p>
-
-<h2>示例代码</h2>
+<h2>Mã ví dụ</h2>
 
 <p>```python
 affinerect = GvTool.GetToolData(&ldquo;几何定位_024.搜索位置&rdquo;)</p>
 
-<h1>Gui风格</h1>
+<h1>Kiểu hiển thị GUI</h1>
 
-<p>guistyle = GvVisionAssembly.GsScriptGuiStyle()
-guistyle.nLineWidth = 10
+<p>guistyle = GvVisionAssembly.GsScriptGuiStyle()<br>
+guistyle.nLineWidth = 10<br>
 guistyle.clrLineColor = [0, 255, 0]</p>
 
-<h1>仿射矩形Gui对象</h1>
+<h1>Đối tượng GUI hình chữ nhật affine</h1>
 
-<p>affinerect_gui = GvVisionAssembly.GsScriptGuiAffineRect()
-affinerect_gui.sScriptGuiStyle = guistyle
+<p>affinerect_gui = GvVisionAssembly.GsScriptGuiAffineRect()<br>
+affinerect_gui.sScriptGuiStyle = guistyle<br>
 affinerect_gui.affineRect = affinerect</p>
 
-<h1>Gui数组</h1>
+<h1>Mảng GUI</h1>
 
-<p>guiarray = GvVisionAssembly.GcScriptGuiArray()
-guiarray.Add(affinerect_gui)   # 将Gui对象添加到Gui数组</p>
+<p>guiarray = GvVisionAssembly.GcScriptGuiArray()<br>
+guiarray.Add(affinerect_gui)   # Thêm đối tượng GUI vào mảng GUI</p>
 
-<h1>将Gui数组添加到视图</h1>
+<h1>Thêm mảng GUI vào cửa sổ xem</h1>
 
 <p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiarray)
 ```</p>

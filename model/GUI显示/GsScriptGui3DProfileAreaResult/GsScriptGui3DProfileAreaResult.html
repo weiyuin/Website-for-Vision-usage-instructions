@@ -18,82 +18,80 @@
            </head>
 <h1>GsScriptGui3DProfileAreaResult</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>要在视图窗口显示的轮廓面积。</p>
+<p>Hiển thị diện tích biên dạng trong cửa sổ xem.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                             </th>
-<th> 接口描述                           </th>
+<th>      Phân loại </th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
-<td> sScriptGuiStyle </td>
-<td> 显示风格，包括字体，大小，颜色等。 </td>
+<td>Thuộc tính</td>
+<td>sScriptGuiStyle</td>
+<td>Kiểu hiển thị, bao gồm font chữ, kích thước, màu sắc, v.v.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> areaResult           </td>
-<td> 要显示的轮廓面积。                 </td>
+<td></td>
+<td>areaResult</td>
+<td>Diện tích biên dạng cần hiển thị.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>sScriptGuiStyle</h3>
 
 <ul>
-<li><strong>功能</strong>：显示风格，GsScriptGuiStyle类型。</li>
+<li><strong>Chức năng</strong>: Kiểu hiển thị, thuộc kiểu GsScriptGuiStyle.</li>
 </ul>
-
 
 <h3>areaResult</h3>
 
 <ul>
-<li><strong>功能</strong>：要显示的轮廓图像，scGui3DProfileAreaResult类型.</li>
+<li><strong>Chức năng</strong>: Biên dạng ảnh cần hiển thị, thuộc kiểu scGui3DProfileAreaResult.</li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
-
-<h2>示例代码</h2>
+<h2>Mã ví dụ</h2>
 
 <p>```python
 gui = GvTool.GetToolData(&ldquo;轮廓面积工具_006.面积GUI&rdquo;)</p>
 
-<h1>Gui风格</h1>
+<h1>Kiểu hiển thị GUI</h1>
 
-<p>guiStyle = GvVisionAssembly.GsScriptGuiStyle()
-guiStyle.nLineStyle = 0 # 线型 0:实线 1:虚线 2:点线
-guiStyle.nLineWidth = 2 # 线宽
+<p>guiStyle = GvVisionAssembly.GsScriptGuiStyle()<br>
+guiStyle.nLineStyle = 0 # Kiểu đường: 0 - liền, 1 - đứt, 2 - chấm<br>
+guiStyle.nLineWidth = 2 # Độ dày đường<br>
 guiStyle.clrLineColor = [255, 0, 0]</p>
 
-<h1>Gui数组</h1>
+<h1>Mảng GUI</h1>
 
 <p>guiArray = GvVisionAssembly.GcScriptGuiArray()</p>
 
-<h1>Gui轮廓面积</h1>
+<h1>GUI diện tích biên dạng</h1>
 
-<p>guiArea = GvVisionAssembly.GsScriptGui3DProfileAreaResult()
-guiArea .areaResult = gui
-guiArea .sScriptGuiStyle = guiStyle</p>
+<p>guiArea = GvVisionAssembly.GsScriptGui3DProfileAreaResult()<br>
+guiArea.areaResult = gui<br>
+guiArea.sScriptGuiStyle = guiStyle</p>
 
-<h1>将面积Gui添加到Gui数组</h1>
+<h1>Thêm GUI diện tích vào mảng GUI</h1>
 
 <p>guiArray.Add(guiArea )</p>
 
-<h1>将Gui数组添加到View显示</h1>
+<h1>Hiển thị mảng GUI trong View</h1>
 
 <p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiArray)
 ```</p>
