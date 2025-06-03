@@ -16,182 +16,178 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>圆拟合工具</h1>
+<h1>Công Cụ Nội Suy Hình Tròn</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>对输入的点集进行圆拟合，得到最匹配的圆。其应用效果如图1所示。</p>
+<p>Thực hiện nội suy hình tròn cho tập hợp điểm đầu vào để tìm ra đường tròn phù hợp nhất. Hiệu quả áp dụng như Hình 1 bên dưới.</p>
 
 <p><img src="media/wps3.jpg" alt="img" />  <img src="media/wps4.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 输入轮廓点集</imgnote> <imgnote>(b) 圆拟合结果</imgnote></p>
+<p><imgnote>(a) Tập điểm đường viền đầu vào</imgnote> <imgnote>(b) Kết quả nội suy hình tròn</imgnote></p>
 
-<p><imgnote>图1 圆拟合工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa ứng dụng của công cụ nội suy hình tròn</imgnote></p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口           </td>
-<td> 拟合方法                                                     </td>
-<td> 拟合方法分为2种，代数距离和几何距离。<img src="media/wps6.jpg" alt="img" /> </td>
-</tr>
-<tr>
-<td></td>
-<td> 启用全局最优拟合   </td>
-<td> 是否启用全局最优拟合，默认为“否”。如果选否，则使用效率优先的拟合方式；如果选是，则使用全局最优拟合。                                                              </td>
-</tr>
-<tr>
-<td></td>
-<td> 考虑局外点         </td>
-<td> 圆拟合过程中是否考虑偏离曲线较远的点(局外点)，选择“是”，显示局外点方法和局外点个数参数。                                                              </td>
-</tr>
-<tr>
-<td></td>
-<td> 局外点个数         </td>
-<td> 不参与圆拟合的点个数，局外点个数小于总点数减3。                                                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 自动调整局外点个数 </td>
-<td> 是否启用自动调整局外点个数，选择“是”，则会自动调整局外点数目，使得拟合结果的RMS降低。该参数能有效改善“局外点数目满足大多数数据，但在个别数据下其设置偏少1、2个使得RMS很大”的情况。                                                              </td>
-</tr>
-<tr>
-<td></td>
-<td> 约束半径           </td>
-<td> 决定拟合圆的半径大小。                                                                                                    </td>
-</tr>
-<tr>
-<td> 图像窗口           </td>
-<td> 输入图像                                                     </td>
-<td> 显示待检测的图像。                                          </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入点集           </td>
-<td> 显示输入点集。                                                                                                            </td>
-</tr>
-<tr>
-<td> 数据链             </td>
-<td> 输入图像                                                     </td>
-<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。    </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入点集           </td>
-<td> 输入拟合的点集，同图像窗口的输入点集参数。                                                                                </td>
-</tr>
-<tr>
-<td>高级界面</td>
-<td> 无                 </td>
-<td> 无                                                                                                                        </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称   </th>
-<th> 参数描述                                                                                                               </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口   </td>
-<td> 输入图像                                                     </td>
-<td> 输出图像宽度、高度、像素大小。                           </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Phương pháp nội suy</td>
+<td>Gồm hai loại: khoảng cách đại số và khoảng cách hình học. <img src="media/wps6.jpg" alt="img" /></td>
 </tr>
 <tr>
 <td></td>
-<td> 圆形结果   </td>
-<td> 输出拟合圆的圆心和半径。                                                                                               </td>
+<td>Bật nội suy tối ưu toàn cục</td>
+<td>Chọn bật hay không nội suy tối ưu toàn cục, mặc định là "Không". Nếu chọn Không, sử dụng phương pháp ưu tiên hiệu suất; nếu chọn Có, sử dụng phương pháp tối ưu toàn cục.</td>
 </tr>
 <tr>
 <td></td>
-<td> 均方根误差 </td>
-<td> 输出拟合结果的误差，值越小，拟合效果越好。                                                                             </td>
+<td>Xem xét điểm ngoại lai</td>
+<td>Có xét đến các điểm lệch khỏi đường cong trong quá trình nội suy không. Chọn “Có” sẽ hiển thị phương pháp xử lý và số lượng điểm ngoại lai.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果   </td>
-<td> 工具执行结果。                                                                                                         </td>
+<td>Số lượng điểm ngoại lai</td>
+<td>Số điểm không tham gia nội suy hình tròn, số này phải nhỏ hơn tổng số điểm trừ đi 3.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间   </td>
-<td> 工具执行时间。                                                                                                         </td>
-</tr>
-<tr>
-<td> 图像窗口   </td>
-<td> 圆形结果                                                     </td>
-<td> 显示圆拟合结果，同监视窗口的圆形结果参数。               </td>
+<td>Tự động điều chỉnh số điểm ngoại lai</td>
+<td>Cho phép tự động điều chỉnh số điểm ngoại lai để giảm sai số RMS. Hữu ích trong trường hợp số lượng điểm ngoại lai phù hợp với phần lớn dữ liệu nhưng thiếu 1–2 điểm ở một vài dữ liệu gây sai số RMS cao.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果   </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                           </td>
+<td>Ràng buộc bán kính</td>
+<td>Xác định kích thước bán kính của đường tròn nội suy.</td>
 </tr>
 <tr>
-<td> 数据链    </td>
-<td> 圆形结果   </td>
-<td> 输出圆拟合结果，供后序工具使用，同监视窗口的圆形结果参数。                                                             </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Hình ảnh đầu vào</td>
+<td>Hiển thị hình ảnh cần kiểm tra.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập điểm đầu vào</td>
+<td>Hiển thị tập hợp điểm đầu vào.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Hình ảnh đầu vào</td>
+<td>Thông tin về chiều rộng, chiều cao, kích thước điểm ảnh của hình ảnh – giống với tham số hình ảnh đầu vào trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập điểm đầu vào</td>
+<td>Tập điểm nội suy – giống với tham số tập điểm đầu vào trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Hình ảnh đầu vào</td>
+<td>Xuất chiều rộng, chiều cao, kích thước điểm ảnh của hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hình tròn</td>
+<td>Xuất tọa độ tâm và bán kính của đường tròn được nội suy.</td>
+</tr>
+<tr>
+<td></td>
+<td>Sai số bình phương trung bình (RMS)</td>
+<td>Độ sai số của kết quả nội suy, giá trị càng nhỏ thì kết quả càng chính xác.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian chạy công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Kết quả hình tròn</td>
+<td>Hiển thị kết quả nội suy đường tròn – giống tham số kết quả hình tròn trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi: “OK” nếu thành công, “NG” nếu thất bại – giống tham số kết quả thực thi trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Kết quả hình tròn</td>
+<td>Xuất kết quả nội suy để dùng cho công cụ kế tiếp – giống tham số kết quả hình tròn trong cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
 
-<h3>拟合方法</h3>
+<h2>Giải thích chi tiết</h2>
 
-<p>根据误差函数定义的不同，曲线拟合分为基于代数距离的拟合和基于几何距离的拟合两种类型。假定待拟合的曲线方程为：</p>
+<h3>Phương pháp nội suy</h3>
+
+<p>Tùy theo định nghĩa của hàm sai số, nội suy đường cong chia thành hai loại: dựa trên khoảng cách đại số và dựa trên khoảng cách hình học. Giả sử phương trình đường cong cần nội suy là:</p>
 
 <p><img src="media/wps9.png" alt="img" />               (1)</p>
 
-<p>拟合数据点为(x<sub>i</sub> , y<sub>i</sub>)，i=1,2,…,n(n>1)，基于代数距离的拟合误差函数为：</p>
+<p>Tập điểm dữ liệu là (x<sub>i</sub> , y<sub>i</sub>), i=1,2,…,n (n>1), thì hàm sai số dựa trên khoảng cách đại số là:</p>
 
 <p><img src="media/wps10.png" alt="img" />                 (2)</p>
 
-<p>其中向量P=(P<sub>ab</sub>)为曲线方程中待求解的参数，Q(x<sub>i</sub> , y<sub>i</sub>)表示点(x<sub>i</sub> , y<sub>i</sub>)到曲线Q(x , y) = 0的代数距离。</p>
+<p>Trong đó, vectơ P=(P<sub>ab</sub>) là các tham số cần tìm trong phương trình đường cong, Q(x<sub>i</sub> , y<sub>i</sub>) là khoảng cách đại số từ điểm (x<sub>i</sub> , y<sub>i</sub>) đến đường cong Q(x , y) = 0.</p>
 
-<p>基于几何距离的拟合误差函数为：</p>
+<p>Hàm sai số dựa trên khoảng cách hình học là:</p>
 
 <p><img src="media/wps11.png" alt="img" />                   (3)</p>
 
-<p>其中向量P=(P<sub>ab</sub>)为曲线方程中待求解的参数，d<sub>i </sub>表示点(x<sub>i</sub> , y<sub>i</sub>)到曲线Q(x , y) = 0的几何距离。</p>
+<p>Trong đó, vectơ P=(P<sub>ab</sub>) là các tham số cần tìm trong phương trình đường cong, d<sub>i</sub> là khoảng cách hình học từ điểm (x<sub>i</sub> , y<sub>i</sub>) đến đường cong Q(x , y) = 0.</p>
 
-<p>基于代数距离的拟合方法与基于几何距离的拟合方法各有优缺点。</p>
+<p>Mỗi phương pháp đều có ưu và nhược điểm riêng.</p>
 
-<p>基于代数距离的拟合方法一般都能转换为线性模型参数估计的问题，求解过程简单直接。在大部分情况下，基于代数距离的拟合都能满足要求，但是它得到的并不是最优解，这主要由两方面因素造成：</p>
-
-<ul>
-<li><p>代数距离不具备欧式变换不变性；</p></li>
-<li><p>在基于代数距离的拟合方法中，曲线上各点对拟合的贡献不相同。</p></li>
-</ul>
-
-
-<p>基于几何距离的拟合方法能很好的克服上述两方面问题，然而，由于几何距离di 的表达式复杂导致基于几何距离的拟合方法成为一个非线性模型参数估计的问题，使得基于几何距离的拟合方法计算过程比较复杂。在基于几何距离的拟合方法中提供了考虑参数约束(约束半径、角度)的拟合。</p>
-
-<h2>注意</h2>
+<p>Phương pháp dựa trên khoảng cách đại số thường có thể chuyển thành bài toán ước lượng tham số tuyến tính, nên quá trình tính toán đơn giản và trực tiếp. Trong nhiều trường hợp, phương pháp này là đủ, tuy nhiên nó không cho kết quả tối ưu vì hai lý do sau:</p>
 
 <ul>
-<li>拟合方法为几何距离，开启局外点时，启用全局最优拟合参数为是，不可更改。</li>
+<li><p>Khoảng cách đại số không có tính bất biến đối với phép biến đổi Euclid;</p></li>
+<li><p>Các điểm trên đường cong đóng góp không đồng đều vào kết quả nội suy.</p></li>
 </ul>
 
+<p>Phương pháp dựa trên khoảng cách hình học khắc phục được các vấn đề trên, nhưng vì biểu thức d<sub>i</sub> phức tạp nên đây là bài toán ước lượng tham số phi tuyến, khiến tính toán trở nên phức tạp hơn. Phương pháp này hỗ trợ nội suy có ràng buộc như bán kính hoặc góc.</p>
 
-<h2>示例工程</h2>
+<h2>Lưu ý</h2>
 
-<p>参见“\Samples\形状间距及相关点.gvp”。</p>
+<ul>
+<li>Khi chọn phương pháp nội suy là “khoảng cách hình học” và bật xử lý điểm ngoại lai, thì tham số “nội suy tối ưu toàn cục” sẽ được tự động bật và không thể thay đổi.</li>
+</ul>
+
+<h2>Dự án mẫu</h2>
+
+<p>Xem tại “\Samples\形状间距及相关点.gvp”。</p>

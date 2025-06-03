@@ -16,74 +16,71 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>软件安装问题处理</h1>
+<h1>Phần xử lý sự cố khi cài đặt phần mềm</h1>
 
-<h2>1. 主软件包安装过程中问题</h2>
+<h2>1. Vấn đề trong quá trình cài đặt gói phần mềm chính</h2>
 
 <ul>
-<li><p>弹出“安装程序已经在运行”窗口，VISIONAssembly程序正在运行，请先关闭软件在进行安装。</p>
+<li><p>Hiện cửa sổ “Trình cài đặt đang chạy”, phần mềm VISIONAssembly đang chạy, vui lòng đóng phần mềm trước khi tiến hành cài đặt.</p>
 
 <p><img src="media/1-1.jpg" alt="" /></p></li>
-<li><p>弹出“操作系统版本过低，请升级到win7 Service Pack 1或者联系VISIONAssembly开发人员”窗口，请使用win7以上版本的操作系统安装软件。</p>
+<li><p>Hiện cửa sổ “Phiên bản hệ điều hành quá thấp, vui lòng nâng cấp lên Win7 Service Pack 1 hoặc liên hệ nhân viên phát triển VISIONAssembly”, vui lòng sử dụng hệ điều hành Win7 trở lên để cài đặt phần mềm.</p>
 
 <p><img src="media/1-2.jpg" alt="" /></p></li>
-<li><p>弹出“请在64位操作系统下运行”窗口，使用的是64位安装包，不能安装在32位系统上，请使用64位win7以上系统或者获取32位安装包。</p>
+<li><p>Hiện cửa sổ “Vui lòng chạy trên hệ điều hành 64-bit”, bạn đang sử dụng gói cài đặt 64-bit, không thể cài trên hệ điều hành 32-bit, vui lòng dùng Win7 64-bit trở lên hoặc lấy gói cài đặt 32-bit.</p>
 
 <p><img src="media/1-3.jpg" alt="" /></p></li>
-<li><p>下面三种安装软件服务失败，请将“C:\Windows\System32”手动设置到系统环境变量中，并以管理员权限重新安装软件，重新安装失败请联系我们。</p>
+<li><p>Ba trường hợp cài đặt dịch vụ phần mềm thất bại dưới đây, vui lòng thêm thủ công “C:\Windows\System32” vào biến môi trường hệ thống và cài đặt lại bằng quyền quản trị. Nếu vẫn thất bại, hãy liên hệ chúng tôi.</p>
 
 <ul>
-<li><p>第一种：弹出“GvCacheService服务运行失败，请重新安装软件！”窗口，文件清理服务安装失败。</p>
+<li><p>Trường hợp 1: Hiện cửa sổ “Dịch vụ GvCacheService chạy thất bại, vui lòng cài lại phần mềm!”, lỗi dịch vụ dọn dẹp file.</p>
 
 <p><img src="media/1-4.jpg" alt="" /></p></li>
-<li><p>第二种：弹出" GvFileService服务运行失败，请重新安装软件！"窗口，文件存储服务安装失败。</p>
+<li><p>Trường hợp 2: Hiện cửa sổ “Dịch vụ GvFileService chạy thất bại, vui lòng cài lại phần mềm!”, lỗi dịch vụ lưu trữ file.</p>
 
 <p><img src="media/1-5.jpg" alt="" /></p></li>
-<li><p>第三种：弹出" GvWatchdog服务运行失败，请重新安装软件！"窗口，文件保存监控服务安装失败。</p>
+<li><p>Trường hợp 3: Hiện cửa sổ “Dịch vụ GvWatchdog chạy thất bại, vui lòng cài lại phần mềm!”, lỗi dịch vụ giám sát lưu file.</p>
 
 <p><img src="media/1-6.jpg" alt="" /></p></li>
 </ul>
 </li>
 </ul>
 
-
-<h2>2. 加密狗驱动安装问题</h2>
+<h2>2. Vấn đề khi cài đặt driver khóa bảo mật (dongle)</h2>
 
 <ul>
-<li><p>弹出“已存在加密狗驱动进程，手动终止进程或重启电脑，再重装软件！”窗口，需要手动终止加密狗驱动进程（senseshield.exe）或重启电脑后，尝试重装软件。</p>
+<li><p>Hiện cửa sổ “Đã tồn tại tiến trình driver khóa bảo mật, vui lòng tắt tiến trình hoặc khởi động lại máy rồi cài lại phần mềm!”, cần thủ công tắt tiến trình driver (tên tiến trình: senseshield.exe) hoặc khởi động lại máy rồi thử cài lại.</p>
 
 <p><img src="media/2-1.jpg" alt="" /></p></li>
-<li><p>弹出“加密狗驱动安装文件丢失，请确认关闭安全卫士、杀毒软件等，再重装软件！”窗口，加密狗驱动安装文件在安装时，可能被360、腾讯电脑管家、2345等安全卫士、杀毒软件、桌面小助手一系列软件误删，关闭此类软件后，尝试重装软件。</p>
+<li><p>Hiện cửa sổ “File cài đặt driver khóa bảo mật bị mất, vui lòng tắt các phần mềm bảo vệ như 360, Tencent PC Manager, 2345, sau đó cài lại phần mềm!”, file driver có thể bị các phần mềm diệt virus, bảo vệ xóa nhầm, hãy tắt các phần mềm này rồi thử cài lại.</p>
 
 <p><img src="media/2-2.jpg" alt="" /></p></li>
-<li><p>弹出“驱动安装失败，请确认关闭安全卫士、杀毒软件等，再重装软件！”窗口，加密狗驱动安装文件在安装时，可能被360、腾讯电脑管家、2345等安全卫士、杀毒软件、桌面小助手一系列软件拦截，关闭此类软件后，尝试重装软件。</p>
+<li><p>Hiện cửa sổ “Cài đặt driver thất bại, vui lòng tắt các phần mềm bảo vệ rồi cài lại!”, có thể bị chặn bởi phần mềm bảo vệ, tắt chúng rồi thử lại.</p>
 
 <p><img src="media/2-3.jpg" alt="" /></p></li>
-<li><p>弹出“加密狗驱动或服务安装失败，请联系凌云光！”窗口，可以先不要点击“确定”，按照下面步骤进行检测修复。</p>
+<li><p>Hiện cửa sổ “Cài đặt driver hoặc dịch vụ khóa bảo mật thất bại, vui lòng liên hệ Lingyun!”, có thể không nhấn “OK”, làm theo các bước kiểm tra sửa lỗi dưới đây.</p>
 
 <p><img src="media/2-4.jpg" alt="" /></p>
 
 <ul>
-<li><p>第一步：进入VISIONAssembly安装路径，以管理员权限打开“加密狗修复工具.exe”</p></li>
-<li><p>第二步：关闭杀毒软件、安全卫士等软件。点击“一键检测修复”，可有效检测如下常见问题：</p>
+<li><p>Bước 1: Vào thư mục cài đặt VISIONAssembly, chạy “加密狗修复工具.exe” với quyền quản trị.</p></li>
+<li><p>Bước 2: Tắt các phần mềm diệt virus, bảo vệ. Nhấn “Một cú nhấp phát hiện và sửa chữa”, có thể phát hiện và sửa các lỗi phổ biến như dưới đây.</p>
 
 <p><img src="media/2-5.jpg" alt="" /></p></li>
-<li><p>第三步：检测结果如下，说明没有此类问题，请联系我们排查问题。</p>
+<li><p>Bước 3: Nếu kết quả kiểm tra như hình dưới, có nghĩa không phát hiện lỗi, vui lòng liên hệ chúng tôi để hỗ trợ xử lý.</p>
 
 <p><img src="media/2-6.jpg" alt="" /></p></li>
 </ul>
 </li>
 </ul>
 
-
-<h2>3. 扩展包安装过程中问题</h2>
+<h2>3. Vấn đề trong quá trình cài đặt gói mở rộng</h2>
 
 <ul>
-<li><p>弹出“未安装VISIONAssembly软件，不能使用此组件的安装包！”窗口，扩展包安装前需要安装与其版本相同的主软件包，请先安装主软件包后，重新安装扩展包。</p>
+<li><p>Hiện cửa sổ “Chưa cài đặt phần mềm VISIONAssembly, không thể sử dụng gói mở rộng này!”, gói mở rộng cần phải cài đặt gói phần mềm chính cùng phiên bản trước, vui lòng cài gói chính rồi cài lại gói mở rộng.</p>
 
 <p><img src="media/3-1.jpg" alt="" /></p></li>
-<li><p>弹出“对不起，XX扩展包只针对XXX版本的VISIONAssembly软件”窗口，扩展包版本需要与主软件包相同，请选择与主软件包相同的扩展包进行安装。</p>
+<li><p>Hiện cửa sổ “Xin lỗi, gói mở rộng XX chỉ dành cho phiên bản XXX của phần mềm VISIONAssembly”, gói mở rộng phải cùng phiên bản với phần mềm chính, vui lòng chọn đúng phiên bản tương ứng để cài đặt.</p>
 
 <p><img src="media/3-2.jpg" alt="" /></p></li>
 </ul>
-

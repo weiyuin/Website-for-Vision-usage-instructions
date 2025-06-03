@@ -16,419 +16,422 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>运动标定工具</h1>
+<h1>Công Cụ Hiệu Chuẩn Chuyển Động</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng Quan Chức Năng</h2>
 
-<p>​     本工具用于运动平台的相机的标定，可以计算出相机和平台坐标系的关系，相机的像素当量等，标定计算一般分为平移标定和旋转标定，本工具支持XYD、XY、XD、YD、X、Y等6种平台类型，上述XYD、XD、YD平台集成了平移和旋转标定，XY、X、Y平台只进行平移标定。以上运动标定工具可以在属性窗口进行选择。</p>
+<p>​     Công cụ này được dùng để hiệu chuẩn camera trên nền tảng chuyển động, có thể tính toán mối quan hệ giữa hệ tọa độ của camera và nền tảng, cũng như hệ số quy đổi pixel của camera. Việc hiệu chuẩn thường được chia thành hiệu chuẩn tịnh tiến và hiệu chuẩn xoay. Công cụ này hỗ trợ 6 loại nền tảng: XYD, XY, XD, YD, X, Y. Trong đó, các nền tảng XYD, XD, YD tích hợp cả hiệu chuẩn tịnh tiến và xoay, còn các nền tảng XY, X, Y chỉ thực hiện hiệu chuẩn tịnh tiến. Các loại nền tảng có thể được lựa chọn trong cửa sổ thuộc tính.</p>
 
-<p>​     在运动标定过程中，通过一定步数的标定运动，可以得到每一拍照位置下特征点图像坐标组成的坐标向量。该坐标向量与已知的交互运动步长一起作为输入，运动标定工具即可进行标定计算，得到图像坐标系与平台坐标系的旋转平移映射关系。</p>
+<p>​     Trong quá trình hiệu chuẩn chuyển động, thông qua số bước hiệu chuẩn nhất định, có thể thu được vectơ tọa độ bao gồm tọa độ hình ảnh của điểm đặc trưng tại mỗi vị trí chụp. Vectơ tọa độ này cùng với bước di chuyển đã biết được dùng làm đầu vào cho công cụ hiệu chuẩn chuyển động, từ đó tính toán được mối quan hệ ánh xạ xoay và tịnh tiến giữa hệ tọa độ hình ảnh và hệ tọa độ của nền tảng.</p>
 
-<p>​     典型的平台为XYD平台，标定过程为12步标定：在每个位置都会进行拍照定位，前9个位置的定位结果，用于进行平移标定计算，后3个位置的定位结果用于旋转标定计算，平台类型属性选择“XYD”；如果平台为XY平台，标定过程为9步平移标定；如果平台为XD/YD平台，标定过程为6步平移旋转标定；如果平台为X/Y平台，标定过程为3步平移标定。</p>
+<p>​     Nền tảng điển hình là nền tảng XYD, quá trình hiệu chuẩn bao gồm 12 bước: tại mỗi vị trí đều thực hiện chụp ảnh định vị, kết quả định vị của 9 vị trí đầu tiên được dùng để tính toán hiệu chuẩn tịnh tiến, còn kết quả của 3 vị trí sau được dùng để tính toán hiệu chuẩn xoay, loại nền tảng được chọn là “XYD”; nếu là nền tảng XY thì quá trình hiệu chuẩn gồm 9 bước tịnh tiến; nếu là nền tảng XD/YD thì hiệu chuẩn gồm 6 bước (tịnh tiến + xoay); nếu là nền tảng X/Y thì quá trình hiệu chuẩn là 3 bước tịnh tiến.</p>
 
-<p>​     本工具输入每个位置的机械坐标索引及相应的坐标值。</p>
+<p>​     Công cụ này nhập vào chỉ mục tọa độ cơ khí và giá trị tọa độ tương ứng tại mỗi vị trí.</p>
 
-<h2>2. 应用场景</h2>
-
-<ul>
-<li><h4>XYD平台</h4></li>
-</ul>
-
-
-<p>​     本工具的典型应用场景为XYD平台（如机械手、模组等）双相机对位/三相机取料引导对位，能够兼容相机固定安装和随动安装两种方式，常见的标定应用场景为：</p>
-
-<p>1）相机固定安装在机台上，并且运动机构末端能够直接移动到相机视野内，由机械手/模组的末端执行结构（如吸嘴/夹爪）抓取具有固定特征的东西（如产品/靶标）在相机视野下移动完成标定。在这种应用场景下最常见的标定类型为XYD标定；</p>
-
-<p>2）相机安装在运动机构上，如机械手或者模组上，在其视野内固定放置具有固定特征的东西，由运动机构带动相机移动完成标定。在这种应用场景下最常见的标定类型为XY标定；</p>
-
-<p>3）相机固定安装在机台上，但是运动机构末端无法直接移动到相机视野内，此时需要运动机构抓取具有一定长度的东西（现场常用的物品为条状铁片、较大的靶标等），将其固定特征移动到视野内进行移动完成标定。在这种场景下最产检的标定类型为XY标定。注：也可以使用“通用关联标定工具”进行多点关联，其标定方式见“通用关联标定工具”说明文档。</p>
+<h2>2. Kịch Bản Ứng Dụng</h2>
 
 <ul>
-<li><h4>UVW平台</h4></li>
+<li><h4>Nền Tảng XYD</h4></li>
 </ul>
 
+<p>​     Ứng dụng điển hình của công cụ này là nền tảng XYD (như tay máy, mô-đun, v.v.) dùng trong căn chỉnh hai hoặc ba camera để lấy và dẫn hướng chính xác. Nó tương thích với cả hai cách lắp đặt camera: cố định hoặc di chuyển theo. Các kịch bản hiệu chuẩn phổ biến bao gồm:</p>
+
+<p>1) Camera được lắp cố định trên máy, và đầu cuối của cơ cấu chuyển động có thể di chuyển trực tiếp vào trong vùng nhìn của camera. Đầu cuối của tay máy/mô-đun (chẳng hạn như đầu hút/kẹp) sẽ gắp vật có đặc điểm cố định (như sản phẩm/mục tiêu) và di chuyển trong vùng nhìn của camera để hoàn thành hiệu chuẩn. Trong kịch bản này, loại hiệu chuẩn phổ biến nhất là hiệu chuẩn XYD;</p>
+
+<p>2) Camera được lắp trên cơ cấu chuyển động như tay máy hoặc mô-đun. Một vật có đặc điểm cố định được đặt cố định trong vùng nhìn, và camera sẽ di chuyển nhờ cơ cấu chuyển động để thực hiện hiệu chuẩn. Loại hiệu chuẩn phổ biến nhất trong kịch bản này là hiệu chuẩn XY;</p>
+
+<p>3) Camera được lắp cố định trên máy, nhưng đầu cuối của cơ cấu chuyển động không thể trực tiếp vào vùng nhìn của camera. Lúc này, cơ cấu chuyển động cần gắp một vật có chiều dài nhất định (thường là thanh kim loại, mục tiêu lớn, v.v.) để đưa đặc điểm cố định của nó vào vùng nhìn, hoàn thành hiệu chuẩn qua việc di chuyển. Trong kịch bản này, loại hiệu chuẩn phổ biến nhất cũng là hiệu chuẩn XY. Ghi chú: cũng có thể sử dụng “Công cụ hiệu chuẩn liên kết phổ dụng” để thực hiện liên kết đa điểm, chi tiết xem trong tài liệu hướng dẫn của công cụ đó.</p>
+
+<ul>
+<li><h4>Nền Tảng UVW</h4></li>
+</ul>
 
 <p><img src="media/GcGeneralMoveCalibTool_2_1.png" alt="GcGeneralMoveCalibTool_2_1" /></p>
 
-<p>​     UVW平台本质上类似于XYD平台，可以实现世界坐标系下的XYD运动，但是其运动方式是向控制系统中输入一组UVW值，从而实现XYD方向的运动。所以在使用UVW平台进行标定时，需要工具内部将UVW值转换为XYD值完成标定，而在进行对位时需要将XYD值转换为UVW值完成对位。</p>
+<p>​     Bản chất nền tảng UVW tương tự với XYD, có thể thực hiện chuyển động XYD trong hệ tọa độ thế giới. Tuy nhiên, cách thức hoạt động của nó là nhập một tập giá trị UVW vào hệ điều khiển để thực hiện chuyển động theo hướng XYD. Do đó, khi sử dụng nền tảng UVW để hiệu chuẩn, công cụ sẽ cần chuyển đổi nội bộ từ giá trị UVW sang XYD để hoàn thành hiệu chuẩn, và khi căn chỉnh, sẽ cần chuyển đổi ngược lại từ XYD sang UVW để thực hiện căn chỉnh.</p>
 
-<p>​     如上图所示为本工具对UVW平台进行参数配置的界面，其中第1步到第4步均为UVW平台出厂时已经确定的，用户仅需要根据相关手册进行配置即可，然后再根据平台的实际安装角度进行第5步的配置，从而完成整个UVW平台的参数设置。</p>
+<p>​     Như hình trên cho thấy, đây là giao diện cấu hình tham số của công cụ đối với nền tảng UVW. Trong đó, các bước từ 1 đến 4 là các thông số đã được xác định từ nhà sản xuất. Người dùng chỉ cần cấu hình theo tài liệu hướng dẫn, sau đó dựa vào góc lắp đặt thực tế của nền tảng để thực hiện bước 5, từ đó hoàn tất thiết lập tham số cho nền tảng UVW.</p>
 
-<p>​     备注：点击“确定”按钮后，本次的修改才会生效，点击“取消”按钮时，本次的修改不会生效。（主要是考虑到大多数用户对UVW平台不熟悉，可能只是想修改某些参数以观察右侧示意图的变化，并不想真正修改参数）。</p>
+<p>​     Ghi chú: Sau khi nhấn nút “Xác nhận”, các thay đổi lần này mới có hiệu lực. Nếu nhấn “Hủy bỏ”, các thay đổi sẽ không có hiệu lực (chủ yếu để tránh việc người dùng không quen với nền tảng UVW vô tình thay đổi tham số khi chỉ muốn quan sát sự thay đổi của hình minh họa bên phải).</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải Thích Nguyên Lý</h2>
 
-<p>​     位于同一平面的两个坐标系，可以通过一定的数学转换关系将坐标系A中的任一点的坐标值转换到坐标系B下。运动标定工具是通过收集N个Mark点的图像坐标以及对应的机械坐标值，进行一定的数学运算，从而计算出图像坐标系和机械坐标系之间的转换关系，使用户能够将图像中任意一点转换到机械坐标系下。用户可以利用此转换关系进行后续的一些应用。</p>
+<p>​     Hai hệ tọa độ nằm trên cùng một mặt phẳng có thể được chuyển đổi qua lại thông qua một quan hệ toán học nhất định. Công cụ hiệu chuẩn chuyển động sẽ thu thập tọa độ hình ảnh của N điểm Mark và các tọa độ cơ khí tương ứng, sau đó thực hiện tính toán toán học để xác định mối quan hệ chuyển đổi giữa hệ tọa độ hình ảnh và hệ tọa độ cơ khí. Nhờ đó, người dùng có thể chuyển bất kỳ điểm nào trong ảnh sang hệ tọa độ cơ khí. Mối quan hệ chuyển đổi này có thể được dùng cho các ứng dụng tiếp theo.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng Dẫn Sử Dụng</h2>
+
 
 <ul>
-<li><h4>添加工具，链接相关参数</h4></li>
+<li><h4>Thêm công cụ, liên kết tham số liên quan</h4></li>
 </ul>
-
 
 <p><img src="media/GcGeneralMoveCalibTool_4_1.png" alt="GcGeneralMoveCalibTool_4_1" /></p>
 
 <ul>
-<li><h4>设置工具属性参数</h4></li>
+<li><h4>Thiết lập tham số thuộc tính công cụ</h4></li>
 </ul>
-
 
 <p><img src="media/GcGeneralMoveCalibTool_4_2.png" alt="GcGeneralMoveCalibTool_4_2" /></p>
 
-<p><strong><span id="jump1">平台类型</span></strong></p>
+<p><strong><span id="jump1">Loại nền tảng</span></strong></p>
 
-<p>​     包含7种平台类型，分别为XYD，XY，XD，YD，X、Y、UVW。进行标定时，需要根据实际应用场景选择不同的平台类型。当相机对应的末端执行机构能够沿XYD3个方向进行移动时，选择XYD类型，此时运动12步；当相机对应的末端执行机构能够沿XY2个方向进行移动时，选择XY类型，此时运动9步；同理，X或Y类型表明相机对应的末端执行机构仅能够沿X或者Y1个方向移动，此时运动3步。</p>
+<p>Gồm 7 loại nền tảng: XYD, XY, XD, YD, X, Y, UVW. Khi thực hiện hiệu chuẩn, cần chọn loại nền tảng phù hợp với ứng dụng thực tế. Nếu cơ cấu chấp hành ở đầu có thể di chuyển theo 3 hướng XYD thì chọn loại XYD, lúc này thực hiện hiệu chuẩn với 12 bước; nếu chỉ có thể di chuyển theo 2 hướng XY thì chọn loại XY, lúc này di chuyển 9 bước; tương tự, loại X hoặc Y nghĩa là chỉ có thể di chuyển theo 1 hướng X hoặc Y, lúc này thực hiện hiệu chuẩn 3 bước.</p>
 
-<p><strong><span id="jump1">平移点位数量</span></strong></p>
+<p><strong><span id="jump1">Số lượng điểm hiệu chuẩn tịnh tiến</span></strong></p>
 
-<p>​     包含2种平移点位数量，分别为9和5，仅在平台类型为XYD，XY，UVW时有效，用于标识标定过程中X方向和Y方向的走位轨迹，其中9点平移走位的运动轨迹为“回”字形，5点走位为“X”字形，如下图所示。</p>
+<p>Có 2 lựa chọn là 9 điểm và 5 điểm, chỉ áp dụng cho các loại nền tảng XYD, XY và UVW. Dùng để xác định quỹ đạo di chuyển hiệu chuẩn theo phương X và Y, trong đó 9 điểm sẽ tạo thành quỹ đạo hình chữ “回”, còn 5 điểm là hình chữ “X” như hình dưới đây.</p>
 
 <p><img src="media/GcGeneralMoveCalibTool_4_8.png" alt="GcGeneralMoveCalibTool_4_8" /></p>
 
-<p><strong><span id="jump2">是否输出下一步走位</span></strong></p>
+<p><strong><span id="jump2">Có xuất vị trí di chuyển bước tiếp theo hay không</span></strong></p>
 
-<p>​     进行运动标定时，需要运动机构带动目标Mark在相机视野内移动一定的轨迹，运动控制端设置好初始的拍照位置，运动控制端也可根据需要运动的轨迹自行设置下一步的走位，也可以由视觉端根据当前的索引值以及用户设置的补偿，计算出下一步需要的走位位置，并在工具的输出列表中进行输出。</p>
+<p>Khi hiệu chuẩn, cần điều khiển cơ cấu di chuyển Mark trong tầm nhìn của camera theo một quỹ đạo nhất định. Bộ điều khiển chuyển động có thể tự đặt vị trí chụp ban đầu và quỹ đạo tiếp theo, hoặc bên thị giác có thể tính toán vị trí bước tiếp theo dựa trên chỉ số hiện tại và bù trừ do người dùng thiết lập, và xuất ra trong danh sách đầu ra của công cụ.</p>
 
-<p><strong><span id="jump4">图像获取</span></strong></p>
+<p><strong><span id="jump4">Thu nhận ảnh</span></strong></p>
 
-<p>​     在进行图像获取时，运动标定工具支持在线图像和离线图像两种模式。当用户选择离线模式时，需要同时选择图像文件夹的路径；当用户选择在线图像时，需要选择相机的名称，并确定是否使用独立参数，当使用独立参数时，需要同时设置曝光、Gamma和增益3个参数。</p>
+<p>Khi thu ảnh, công cụ hỗ trợ hai chế độ: ảnh trực tuyến và ảnh ngoại tuyến. Nếu chọn ảnh ngoại tuyến, cần chỉ định đường dẫn thư mục ảnh; nếu chọn ảnh trực tuyến, cần chọn tên camera và xác định có sử dụng tham số độc lập hay không. Nếu có, cần thiết lập các tham số: phơi sáng, Gamma và độ lợi (gain).</p>
 
-<p><strong><span id="jump5">Mark定位模式</span></strong></p>
+<p><strong><span id="jump5">Chế độ định vị Mark</span></strong></p>
 
-<p>​     共包含3中模式：手动模式、DM码模式、标准靶标模式。当用户使用自定义的产品（如物料等）作为Mark时，需要选择手动模式，同时需要选择定位工具的类型（几何定位、区域定位等），并根据实际的精度要求等，确定是否启用查找工具。当用户使用标准产品（凌云标准靶标）进行标定时，可以选择DM码模式或者标准靶标模式，这两种模式的主要区别在于，使用DM码模式进行标定时，工具内部会自动定位DM码原点处的靶标角点，并使用此角点作为Mark点，当使用标准靶标模式时，工具内部会搜索所有图像中共有的靶标角点，并使用共有的靶标角点作为Mark点进行相机坐标系和运动坐标系关系计算。</p>
+<p>Có 3 chế độ: chế độ thủ công, chế độ mã DM, và chế độ bia tiêu chuẩn.  
+Nếu sử dụng vật thể tự chế (như sản phẩm) làm Mark thì chọn chế độ thủ công và chọn loại công cụ định vị (định vị hình học, định vị khu vực, v.v.), đồng thời xác định có bật công cụ tìm kiếm hay không tùy theo yêu cầu độ chính xác.  
+Nếu sử dụng bia tiêu chuẩn (như bia tiêu chuẩn Lingyun) thì có thể chọn chế độ mã DM hoặc bia tiêu chuẩn. Khác biệt chính:  
+- Trong chế độ mã DM, công cụ sẽ tự động định vị góc chuẩn tại gốc mã DM và dùng nó làm điểm Mark.  
+- Trong chế độ bia tiêu chuẩn, công cụ tìm tất cả các góc bia chung trong ảnh và dùng chúng làm Mark để tính toán quan hệ giữa hệ tọa độ camera và hệ tọa độ cơ khí.</p>
 
 <ul>
-<li><h4>定位模板设置</h4></li>
+<li><h4>Thiết lập mẫu định vị</h4></li>
 </ul>
-
 
 <p><img src="media/GcGeneralMoveCalibTool_4_3.png" alt="GcGeneralMoveCalibTool_4_3" /></p>
 
-<p>​     如图所示为运动标定工具的属性界面，当用户进入属性界面后，需要点击按钮“定位模板设置”，如果此时用户选择的手动模式，则工具会根据用户选择的定位工具类型弹出相应的定位工具属性窗口，供用户设置模板，具体定位工具的模板设置操作流程，参照相应的工具说明文档即可。当用户选择DM码模式或标准靶标模式时，会弹出DM码设置窗口，如下图所示，供用户设置相应的读码参数，当不用不做任何设置时，会使用工具内部默认的读码参数。</p>
+<p>Giao diện thuộc tính công cụ như hình. Sau khi vào giao diện, cần nhấn “Thiết lập mẫu định vị”.  
+- Nếu chọn chế độ thủ công, công cụ sẽ hiện cửa sổ thiết lập tương ứng với loại công cụ định vị.  
+- Nếu chọn chế độ mã DM hoặc bia tiêu chuẩn, sẽ hiện cửa sổ thiết lập mã DM như hình dưới. Nếu không cài đặt gì thêm, công cụ sẽ dùng tham số mặc định.</p>
 
 <p><img src="media/GcGeneralMoveCalibTool_4_4.png" alt="GcGeneralMoveCalibTool_4_4" /></p>
 
 <ul>
-<li><h4>查看结果、属性界面操作说明</h4></li>
+<li><h4>Xem kết quả và hướng dẫn giao diện thuộc tính</h4></li>
 </ul>
-
 
 <p><img src="media/GcGeneralMoveCalibTool_4_5.png" alt="GcGeneralMoveCalibTool_4_5" /></p>
 
-<p><strong><span id="jump6">相机安装方式</span></strong></p>
+<p><strong><span id="jump6">Phương thức lắp đặt camera</span></strong></p>
 
 <p><img src="media/GcGeneralMoveCalibTool_4_6.png" alt="GcGeneralMoveCalibTool_4_6" /></p>
 
-<p>​     点击此按钮后，会弹出相机安装方式的配置界面，用户可以根据相机的实际安装方式进行选择。</p>
+<p>Nhấn nút này để mở giao diện cấu hình lắp đặt camera. Người dùng chọn theo thực tế lắp đặt.</p>
 
-<p><strong><span id="jump7">UVW参数设置</span></strong></p>
+<p><strong><span id="jump7">Thiết lập tham số UVW</span></strong></p>
 
-<p>​     点击此按钮后，会弹出第二章节中关于UVW平台参数设置的界面，用户可以在此界面进行UVW平台参数的相关设置。</p>
+<p>Nhấn nút này sẽ mở giao diện thiết lập UVW đã giới thiệu trong chương 2. Người dùng có thể cài đặt các tham số liên quan đến nền tảng UVW tại đây.</p>
 
-<p><strong><span id="jump8">旋转角度最大误差</span></strong></p>
+<p><strong><span id="jump8">Sai số góc quay tối đa</span></strong></p>
 
-<p>​     当标定过程中3D旋转的Mark点位夹角误差超过此数值时，会导致旋转标定失败。由于角度误差对最终的标定结果影响较大，所以增加此限制。</p>
+<p>Nếu trong quá trình hiệu chuẩn, góc giữa 3 điểm Mark quay 3D vượt quá giá trị này thì hiệu chuẩn quay sẽ thất bại. Vì sai số góc ảnh hưởng lớn đến kết quả nên cần hạn chế.</p>
 
-<p>​     举例说明：如用户将此值设置为1°，进行旋转标定时分别沿顺时针旋转了3°，沿逆时针方向旋转了5°，则3个Mark组成的夹角理论值为174°，如下图所示。当图像中实际定位计算的角度和理论角度超过1°时，会标定失败。</p>
+<p>Ví dụ: nếu đặt giới hạn là 1°, và quay theo chiều kim đồng hồ 3°, ngược lại 5°, góc giữa 3 điểm Mark lý thuyết là 174°. Nếu góc tính được từ ảnh vượt quá 1°, hiệu chuẩn sẽ thất bại.</p>
 
 <p><img src="media/GcGeneralMoveCalibTool_4_7.png" alt="GcGeneralMoveCalibTool_4_7" /></p>
 
-<p><strong><span id="jump9">上一步/下一步</span></strong></p>
+<p><strong><span id="jump9">Bước trước / Bước tiếp theo</span></strong></p>
 
-<p>​     通过点击此按钮，可以查看整个标定过程中每一步的Mark定位结果，以及接收的机械坐标值，以确定定位及数据接收是否正确。</p>
+<p>Nhấn nút này để xem kết quả định vị Mark và giá trị tọa độ cơ khí nhận được của từng bước trong quá trình hiệu chuẩn, để xác nhận định vị và thu nhận dữ liệu có chính xác hay không.</p>
 
-<p><strong><span id="jump10">定位模板设置</span></strong></p>
+<p><strong><span id="jump10">Thiết lập mẫu định vị</span></strong></p>
 
-<p>​     根据工具属性窗口的不同类型，弹出相应的定位工具界面。当Mark定位模式为“手动模式”时，会弹出几何定位/区域定位/高级几何定位/高级区域定位中的一种，当Mark定位模式为“DM码模式/标准靶标模式”时，会弹出DM码配置界面。</p>
+<p>Tùy theo loại chế độ định vị, giao diện công cụ định vị tương ứng sẽ hiển thị.  
+- Với “chế độ thủ công”, sẽ hiện một trong các công cụ định vị: hình học / khu vực / hình học nâng cao / khu vực nâng cao.  
+- Với “mã DM” hoặc “bia tiêu chuẩn”, sẽ hiện giao diện cấu hình mã DM.</p>
 
-<p><strong><span id="jump11">特征查找设置</span></strong></p>
+<p><strong><span id="jump11">Thiết lập tìm đặc trưng</span></strong></p>
 
-<p>​     当属性窗口选择的Mark定位模式为“手动模式”，且启用查找工具时，可以通过点击此按钮弹出“多圆多线查找工具”的界面，由用户根据产品形态配置不同的找圆找线位置，并配置输出点集，以此作为标定过程中的Mark点。</p>
+<p>Nếu chế độ định vị Mark là “thủ công” và đã bật công cụ tìm kiếm, nhấn nút này sẽ mở giao diện công cụ “Tìm nhiều vòng tròn & đường thẳng”, để người dùng thiết lập vị trí tìm vòng / tìm đường và cấu hình tập hợp điểm đầu ra làm điểm Mark.</p>
 
-<p><strong><span id="jump12">更新标定数据</span></strong></p>
+<p><strong><span id="jump12">Cập nhật dữ liệu hiệu chuẩn</span></strong></p>
 
-<p>​     当用户在进行标定过程查看时，如果发现某一步的定位结果有异常，可以针对某一步修改定位模板参数或特征查找参数，然后点击此按钮，工具会将当前Mark的定位结果更新到标定工具中，并根据更新后的数据重新计算标定结果。</p>
+<p>Nếu phát hiện kết quả định vị của một bước có sai sót, có thể sửa lại mẫu định vị hoặc thiết lập tìm đặc trưng cho bước đó, sau đó nhấn nút này để cập nhật kết quả và tính toán lại.</p>
 
-<p>​     其典型的应用场景如下描述：当用户完成运动标定后（以12步独立标定为例），进入属性界面查看标定过程定位结果，发现某一步（以第3步为例）的定位或者特征查找结果不理想，而这种情况主要是由于外界不可控因素导致的（如视野边界处光源亮度较弱等），即使再次进行标定，还是可能发生类似的情况。那此时用户可以针对第3步进行专属的调整，如点击“特征查找设置”按钮，进行找圆或找线位置的调整（如将搜索框设置窄一些，改变查找参数等），使第3步能够较好的进行特征定位，然后点击“更新标定数据”按钮，此时工具内部会将原有标定数据中第3步的数据替换为最新的定位数据，然后重新进行标定结果计算。</p>
+<p>Ví dụ: sau khi hoàn tất hiệu chuẩn (12 bước), khi xem lại thì phát hiện bước thứ 3 định vị không tốt do ảnh hưởng ngoại cảnh (như ánh sáng yếu ở biên ảnh), người dùng có thể tinh chỉnh riêng bước 3 (thu hẹp khung tìm kiếm, chỉnh tham số...), sau đó nhấn “Cập nhật dữ liệu hiệu chuẩn” để thay thế dữ liệu cũ và tính toán lại.</p>
 
-<p><strong><span id="jump13">更新工具参数</span></strong></p>
+<p><strong><span id="jump13">Cập nhật tham số công cụ</span></strong></p>
 
-<p>​     在属性界面进行定位工具及特征查找工具（多圆多线）的参数修改时，仅在属性界面生效，从而将用户针对某一步的特有操作（如某一步图像成像效果不好影响定位结果，可以人为手动拖到找线GUI位置等）和主工具的参数隔离开，当用户想将当前的操作同步至主工具时，可以勾选属性界面的“更新模板参数”。</p>
+<p>Khi chỉnh tham số định vị hoặc tìm đặc trưng (nhiều vòng tròn / đường thẳng) trong giao diện thuộc tính, các thay đổi chỉ áp dụng trong giao diện đó.  
+Nếu muốn đồng bộ sang công cụ chính, cần đánh dấu “Cập nhật tham số mẫu” trước khi đóng giao diện nâng cao.</p>
 
-<p>​     其典型的应用场景如下描述：当用户第一次添加此工具时，需要应用模板参数和特征查找参数，此时关闭属性界面时，一定要勾选此选项，否则模板参数将不会更新到工具内部；当用户完成标定后，发现所做的模板并不是最好的选择，此时用户需要重新设置模板参数，并勾选此选项，然后关闭高级属性界面，否则工具内部依然使用以前的模板参数。总结为，当用户希望将属性界面的操作更新到工具内部时，则在关闭高级属性界面时勾选此选项，否则则不勾选。</p>
+<p>Ví dụ: lần đầu thêm công cụ, cần đồng bộ mẫu và tham số tìm đặc trưng thì phải đánh dấu tùy chọn này.  
+Hoặc sau khi hiệu chuẩn, phát hiện mẫu cũ không phù hợp, người dùng cần sửa và đánh dấu rồi đóng giao diện để cập nhật.  
+Tóm lại: nếu muốn áp dụng các thay đổi vào công cụ chính → đánh dấu khi đóng giao diện nâng cao; ngược lại thì không cần.</p>
 
 <ul>
-<li><h4>使用标定结果</h4></li>
+<li><h4>Sử dụng kết quả hiệu chuẩn</h4></li>
 </ul>
+
 
 
 <p><img src="media/GcGeneralMoveCalibTool_4_10.png" alt="GcGeneralMoveCalibTool_4_10" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Vấn đề thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述               </th>
-<th> 解决方法                                                     </th>
+<th>Mô tả hiện tượng</th>
+<th>Phương pháp giải quyết</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 标定工具未输出标定结果 </td>
-<td> 查看选择的平台类型是否正确，当选择XYD平台时，会进行11步（共计12个位置）标定，其它平台类型类似，当用户选择错误的平台类型时，会导致无法输出正确的标定结果。 </td>
+<td>Công cụ hiệu chuẩn không xuất ra kết quả hiệu chuẩn</td>
+<td>Kiểm tra xem loại nền tảng được chọn có đúng hay không. Khi chọn nền tảng XYD, sẽ thực hiện hiệu chuẩn 11 bước (tổng cộng 12 vị trí). Các loại nền tảng khác tương tự. Nếu người dùng chọn sai loại nền tảng sẽ dẫn đến việc không thể xuất kết quả hiệu chuẩn chính xác.</td>
 </tr>
 <tr>
-<td> 标定结果异常           </td>
-<td> 进入属性界面，利用上一步/下一步按钮，查看每一步标定结果是否存在Mark定位异常，当存在定位异常时，用户可以针对当前位置进行专门的调整 </td>
+<td>Kết quả hiệu chuẩn bất thường</td>
+<td>Vào giao diện thuộc tính, sử dụng nút “Bước trước” / “Bước tiếp theo” để xem kết quả từng bước hiệu chuẩn có xảy ra lỗi định vị Mark hay không. Nếu có lỗi, người dùng có thể điều chỉnh riêng tại vị trí đó.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>6. Giải thích tham số</h2>
+
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chỉ số tọa độ nền tảng</td>
+<td>Xác định bước hiện tại trong quá trình hiệu chuẩn</td>
+</tr>
+<tr>
+<td>Tọa độ X của nền tảng</td>
+<td>Vị trí tuyệt đối trục X của cơ cấu chuyển động tại bước hiện tại trong quá trình hiệu chuẩn</td>
+</tr>
+<tr>
+<td>Tọa độ Y của nền tảng</td>
+<td>Vị trí tuyệt đối trục Y của cơ cấu chuyển động tại bước hiện tại trong quá trình hiệu chuẩn</td>
+</tr>
+<tr>
+<td>Tọa độ D của nền tảng</td>
+<td>Vị trí tuyệt đối trục D của cơ cấu chuyển động tại bước hiện tại trong quá trình hiệu chuẩn</td>
+</tr>
+<tr>
+<td>Tọa độ U của nền tảng</td>
+<td>Vị trí tuyệt đối trục U của cơ cấu chuyển động tại bước hiện tại trong quá trình hiệu chuẩn</td>
+</tr>
+<tr>
+<td>Tọa độ V của nền tảng</td>
+<td>Vị trí tuyệt đối trục V của cơ cấu chuyển động tại bước hiện tại trong quá trình hiệu chuẩn</td>
+</tr>
+<tr>
+<td>Tọa độ W của nền tảng</td>
+<td>Vị trí tuyệt đối trục W của cơ cấu chuyển động tại bước hiện tại trong quá trình hiệu chuẩn</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
-
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (Thanh thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明                              </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 平台坐标索引 </td>
-<td> 标识标定过程中当前位置所处的步数      </td>
+<td>Loại nền tảng</td>
+<td>Loại nền tảng cần hiệu chuẩn hiện tại, hỗ trợ các loại XYD, XY, XD, YD, X, Y, UVW</td>
 </tr>
 <tr>
-<td> 平台坐标X    </td>
-<td> 标定过程中当前位置运动机构的绝对位置X </td>
+<td>Xuất vị trí bước tiếp theo</td>
+<td>Chọn có hay không để công cụ này xuất ra vị trí di chuyển tiếp theo của robot</td>
 </tr>
 <tr>
-<td> 平台坐标Y    </td>
-<td> 标定过程中当前位置运动机构的绝对位置Y </td>
+<td>Bước X</td>
+<td>Hiển thị khi “Xuất vị trí bước tiếp theo” là "Có", thiết lập bước hiệu chuẩn theo hướng X</td>
 </tr>
 <tr>
-<td> 平台坐标D    </td>
-<td> 标定过程中当前位置运动机构的绝对位置D </td>
+<td>Bước Y</td>
+<td>Hiển thị khi “Xuất vị trí bước tiếp theo” là "Có", thiết lập bước hiệu chuẩn theo hướng Y</td>
 </tr>
 <tr>
-<td> 平台坐标U    </td>
-<td> 标定过程中当前位置运动机构的绝对位置U </td>
+<td>Bước D</td>
+<td>Hiển thị khi “Xuất vị trí bước tiếp theo” là "Có", thiết lập bước hiệu chuẩn theo hướng D</td>
 </tr>
 <tr>
-<td> 平台坐标V    </td>
-<td> 标定过程中当前位置运动机构的绝对位置V </td>
+<td>Ảnh online</td>
+<td>Chọn “Có” để sử dụng ảnh chụp từ camera, chọn “Không” để sử dụng ảnh offline từ tệp ảnh</td>
 </tr>
 <tr>
-<td> 平台坐标W    </td>
-<td> 标定过程中当前位置运动机构的绝对位置W </td>
+<td>Đường dẫn thư mục</td>
+<td>Hiển thị khi “Ảnh online” là "Không", thiết lập đường dẫn đến ảnh offline</td>
+</tr>
+<tr>
+<td>Tên camera</td>
+<td>Hiển thị khi “Ảnh online” là "Có", chọn tên camera</td>
+</tr>
+<tr>
+<td>Sử dụng tham số độc lập</td>
+<td>Hiển thị khi “Ảnh online” là "Có", thiết lập có sử dụng tham số độc lập của camera hay không</td>
+</tr>
+<tr>
+<td>Phơi sáng</td>
+<td>Hiển thị khi “Sử dụng tham số độc lập” là "Có", thiết lập mức phơi sáng của camera</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>Hiển thị khi “Sử dụng tham số độc lập” là "Có", thiết lập giá trị Gamma của camera</td>
+</tr>
+<tr>
+<td>Gain</td>
+<td>Hiển thị khi “Sử dụng tham số độc lập” là "Có", thiết lập độ khuếch đại (gain) của camera</td>
+</tr>
+<tr>
+<td>Loại xoay</td>
+<td>Thực hiện xoay ảnh thu được, phạm vi là 0, 90, 180, 270 độ, chỉ áp dụng trong chế độ online</td>
+</tr>
+<tr>
+<td>Loại gương</td>
+<td>Thực hiện gương ảnh thu được, phạm vi gồm: không, ngang, dọc, ngang+dọc, chỉ áp dụng trong chế độ online</td>
+</tr>
+<tr>
+<td>Chế độ định vị Mark</td>
+<td>Chọn loại định vị Mark, hỗ trợ ba chế độ: thủ công, mã DM, bia tiêu</td>
+</tr>
+<tr>
+<td>Chọn công cụ định vị</td>
+<td>Chọn công cụ định vị, hỗ trợ 4 loại: định vị hình học, định vị vùng, định vị hình học nâng cao, định vị vùng nâng cao (2 loại sau phụ thuộc vào quyền của USB bảo mật)</td>
+</tr>
+<tr>
+<td>Bật công cụ tìm đường</td>
+<td>Thiết lập có bật công cụ tìm đường (Line finding tool) hay không</td>
+</tr>
+<tr>
+<td>Hiệu chỉnh méo ảnh</td>
+<td>Hiển thị khi chế độ Mark là “bia tiêu”, thực hiện hiệu chỉnh méo ảnh đầu vào</td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>输入参数（属性栏）</h4>
+<h4>Tham số đầu ra (Cửa sổ giám sát)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称       </th>
-<th> 参数说明                                                     </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 平台类型       </td>
-<td> 当前要标定的平台类型，支持XYD, XY, XD, YD, X, Y, UVW几种类型 </td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh xám thu từ camera hoặc tải từ tệp ảnh</td>
 </tr>
 <tr>
-<td> 输出下一步走位 </td>
-<td> 选择是否由此工具输出机械手下一步要走的位置                   </td>
+<td>Ảnh màu đầu vào</td>
+<td>Ảnh màu thu từ camera hoặc tải từ tệp ảnh</td>
 </tr>
 <tr>
-<td> X方向步长      </td>
-<td> 当输出下一步走位为"是"时显示，设置标定时X方向的步长          </td>
+<td>Kết quả hiệu chuẩn</td>
+<td>Mối quan hệ chuyển đổi giữa camera và cơ cấu chuyển động hiện tại</td>
 </tr>
 <tr>
-<td> Y方向步长      </td>
-<td> 当输出下一步走位为"是"时显示，设置标定时Y方向的步长          </td>
+<td>Tỷ lệ pixel bia tiêu</td>
+<td>Khi sử dụng hiệu chuẩn bằng bia tiêu, đây là tỷ lệ pixel được tính từ hiệu chuẩn</td>
 </tr>
 <tr>
-<td> D方向步长      </td>
-<td> 当输出下一步走位为"是"时显示，设置标定时Y方向的步长          </td>
+<td>Tập hợp điểm Mark hiệu chuẩn</td>
+<td>Tập hợp điểm Mark trong suốt quá trình hiệu chuẩn</td>
 </tr>
 <tr>
-<td> 在线图像       </td>
-<td> 选择是则使用相机采集在线图像，选择否则使用图像文件加载离线图像 </td>
+<td>Tập hợp điểm Mark hiện tại</td>
+<td>Tập hợp điểm Mark tại chỉ số hiện tại</td>
 </tr>
 <tr>
-<td> 文件夹路径     </td>
-<td> 在线图像为"否"时显示，设置离线文件路径                       </td>
+<td>RMS</td>
+<td>Độ lệch RMS của kết quả hiệu chuẩn</td>
 </tr>
 <tr>
-<td> 相机名称       </td>
-<td> 在线图像为"是"时显示，选择相机名称                           </td>
+<td>Chỉ số tối đa</td>
+<td>Giá trị chỉ số tối đa được hỗ trợ bởi loại nền tảng mà người dùng chọn, bắt đầu từ 0</td>
 </tr>
 <tr>
-<td> 使用独立参数   </td>
-<td> 在线图像为"是"时显示，设置是否启用相机的独立参数             </td>
+<td>Vị trí X bước tiếp theo</td>
+<td>Xuất vị trí trục X mà cơ cấu chuyển động cần đi tới nếu bật “bước tiếp theo”</td>
 </tr>
 <tr>
-<td> 曝光           </td>
-<td> 使用独立参数为"是"时显示，设置相机的曝光                     </td>
+<td>Vị trí Y bước tiếp theo</td>
+<td>Xuất vị trí trục Y mà cơ cấu chuyển động cần đi tới nếu bật “bước tiếp theo”</td>
 </tr>
 <tr>
-<td> Gamma          </td>
-<td> 使用独立参数为"是"时显示，设置相机的Camma值                  </td>
+<td>Vị trí D bước tiếp theo</td>
+<td>Xuất vị trí trục D mà cơ cấu chuyển động cần đi tới nếu bật “bước tiếp theo”</td>
 </tr>
 <tr>
-<td> 增益           </td>
-<td> 使用独立参数为"是"时显示，设置相机的增益                     </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ</td>
 </tr>
 <tr>
-<td> 旋转类型       </td>
-<td> 对采集到的图像做旋转操作，范围为0，90，180，270，仅在在线模式下启用 </td>
-</tr>
-<tr>
-<td> 镜像类型       </td>
-<td> 对采集到的图像做镜像操作，范围为无，水平，垂直，水平垂直，仅在在线模式下启用 </td>
-</tr>
-<tr>
-<td> Mark定位模式   </td>
-<td> 选择Mark的定位类型，支持手动、DM码、靶标3中模式              </td>
-</tr>
-<tr>
-<td> 定位工具选择   </td>
-<td> 选择定位工具，支持几何定位、区域定位、高级几何定位、高级区域定位4中类型，其中后两种是否支持要看加密狗的权限 </td>
-</tr>
-<tr>
-<td> 启用查找工具   </td>
-<td> 设置是否启用找线工具                                         </td>
-</tr>
-<tr>
-<td> 是否畸变校正   </td>
-<td> 当Mark定位模式为"靶标模式"时显示，对输入的图像进行畸变校正   </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ</td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>输出参数（监视窗口）</h4>
+<h4>Tham số đầu ra (Chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称      </th>
-<th> 参数说明                                                </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像      </td>
-<td> 相机采集或图像文件加载的灰度图像                        </td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh xám thu từ camera hoặc tải từ tệp ảnh, giống với cửa sổ giám sát</td>
 </tr>
 <tr>
-<td> 输入彩色图像  </td>
-<td> 相机采集或图像文件加载的彩色图像                        </td>
+<td>Ảnh màu đầu vào</td>
+<td>Ảnh màu thu từ camera hoặc tải từ tệp ảnh, giống với cửa sổ giám sát</td>
 </tr>
 <tr>
-<td> 标定结果      </td>
-<td> 当前相机和运动机构的转换关系                            </td>
+<td>Kết quả hiệu chuẩn</td>
+<td>Mối quan hệ chuyển đổi giữa camera và cơ cấu chuyển động hiện tại, giống với cửa sổ giám sát</td>
 </tr>
 <tr>
-<td> 靶标像素当量  </td>
-<td> 使用靶标标定时，通过靶标标定的像素当量                  </td>
+<td>Tỷ lệ pixel bia tiêu</td>
+<td>Khi sử dụng hiệu chuẩn bằng bia tiêu, đây là tỷ lệ pixel được tính từ hiệu chuẩn, giống với cửa sổ giám sát</td>
 </tr>
 <tr>
-<td> 标定Mark点集  </td>
-<td> 整个标定过程中所有的Mark点集                            </td>
+<td>Tập hợp điểm Mark hiệu chuẩn</td>
+<td>Tập hợp điểm Mark trong suốt quá trình hiệu chuẩn, giống với cửa sổ giám sát</td>
 </tr>
 <tr>
-<td> 当前Mark点集  </td>
-<td> 当前索引下的Mark点集                                    </td>
+<td>Tập hợp điểm Mark hiện tại</td>
+<td>Tập hợp điểm Mark tại chỉ số hiện tại, giống với cửa sổ giám sát</td>
 </tr>
 <tr>
-<td> RMS           </td>
-<td> 标定结果的RMS误差                                       </td>
+<td>RMS</td>
+<td>Độ lệch RMS của kết quả hiệu chuẩn, giống với cửa sổ giám sát</td>
 </tr>
 <tr>
-<td> 最大索引      </td>
-<td> 用户当前所选择的平台类型所支持的最大索引值，从0开始计数 </td>
-</tr>
-<tr>
-<td> 下一步X轴位置 </td>
-<td> 启用下一步走位时，输出的下一步运动机构需要移动的X位置   </td>
-</tr>
-<tr>
-<td> 下一步Y轴位置 </td>
-<td> 启用下一步走位时，输出的下一步运动机构需要移动的Y位置   </td>
-</tr>
-<tr>
-<td> 下一步D轴位置 </td>
-<td> 启用下一步走位时，输出的下一步运动机构需要移动的D位置   </td>
-</tr>
-<tr>
-<td> 执行结果      </td>
-<td> 工具的执行结果                                          </td>
-</tr>
-<tr>
-<td> 执行时间      </td>
-<td> 工具的执行时间                                          </td>
+<td>Chỉ số tối đa</td>
+<td>Giá trị chỉ số tối đa được hỗ trợ bởi loại nền tảng mà người dùng chọn, bắt đầu từ 0, giống với cửa sổ giám sát</td>
 </tr>
 </tbody>
 </table>
 
+<h2>7. Dự án mẫu</h2>
 
-<h4>输出参数（参数链）</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称     </th>
-<th> 参数说明                                                     </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 输入图像     </td>
-<td> 相机采集或图像文件加载的灰度图像，同监视窗口                 </td>
-</tr>
-<tr>
-<td> 输入彩色图像 </td>
-<td> 相机采集或图像文件加载的彩色图像，同监视窗口                 </td>
-</tr>
-<tr>
-<td> 标定结果     </td>
-<td> 当前相机和运动机构的转换关系，同监视窗口                     </td>
-</tr>
-<tr>
-<td> 靶标像素当量 </td>
-<td> 使用靶标标定时，通过靶标标定的像素当量，同监视窗口           </td>
-</tr>
-<tr>
-<td> 标定Mark点集 </td>
-<td> 整个标定过程中所有的Mark点集，同监视窗口                     </td>
-</tr>
-<tr>
-<td> 当前Mark点集 </td>
-<td> 当前索引下的Mark点集，同监视窗口                             </td>
-</tr>
-<tr>
-<td> RMS          </td>
-<td> 标定结果的RMS误差，同监视窗口                                </td>
-</tr>
-<tr>
-<td> 最大索引     </td>
-<td> 用户当前所选择的平台类型所支持的最大索引值，从0开始计数，同监视窗口 </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>7. 示例工程</h2>
-
-<p>参见“\Samples\应用案例\对位类项目\Mesh贴Box项目\Mesh贴Box工程.gvp” 及其说明文档“应用案例\对位类项目\Mesh贴Box项目”。</p>
+<p>Tham khảo tệp “\Samples\应用案例\对位类项目\Mesh贴Box项目\Mesh贴Box工程.gvp” và tài liệu hướng dẫn tương ứng “应用案例\对位类项目\Mesh贴Box项目”。</p>

@@ -16,146 +16,104 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>系统选项</h1>
+<h1>Tùy Chọn Hệ Thống</h1>
 
-<p>  可勾选配置需要记录的信息、报告的错误、图像和数据路径设置、历史图片缓存设置、开启远程系统控制、自动切换到操作员权限、生产界面开启虚拟键盘等。其中报告工具错误、报告错误、报告警告、报告提示、刷新流程图执行状态、记录日志信息、记录问题追踪信息、记录相机采集提示信息、记录通信提示信息、记录提示信息、记录用户操作信息、记录工具CT和工程版本管理在第一次安装时默认是选中状态，其他为非选中状态。重装或升级软件会保留重装前的选中状态。</p>
+<p>Có thể đánh dấu chọn cấu hình các thông tin cần ghi lại, báo cáo lỗi công cụ, thiết lập đường dẫn hình ảnh và dữ liệu, cấu hình bộ nhớ đệm hình ảnh lịch sử, bật điều khiển hệ thống từ xa, tự động chuyển sang quyền vận hành, bật bàn phím ảo trên giao diện sản xuất, v.v. Trong đó các mục như báo cáo lỗi công cụ, báo cáo lỗi, báo cáo cảnh báo, báo cáo nhắc nhở, làm mới trạng thái thực thi lưu đồ, ghi thông tin nhật ký, ghi thông tin theo dõi sự cố, ghi thông tin nhắc nhở thu thập camera, ghi thông tin nhắc nhở truyền thông, ghi thông tin nhắc nhở chung, ghi thông tin thao tác người dùng, ghi CT công cụ và quản lý phiên bản dự án khi cài đặt lần đầu mặc định được chọn, các mục còn lại mặc định không chọn. Khi cài lại hoặc nâng cấp phần mềm sẽ giữ nguyên trạng thái chọn trước đó.</p>
 
 <p><img src="media/SystemOption_01.png" alt="" /></p>
 
-<h2>信息记录</h2>
+<h2>Ghi Thông Tin</h2>
 
 <ul>
-<li>报告工具错误：将工具内部的报错信息输出到监视窗口和生产界面的日志窗口。</li>
-<li>报告错误：将系统中报告工具外的报错信息输出到监视窗口和生产界面的日志窗口。</li>
-<li>报告警告：将系统中所有的警告信息输出到监视窗口和生产界面的日志窗口。</li>
-<li>报告提示：将系统中所有的提示信息输出到监视窗口和生产界面的日志窗口。</li>
-<li>刷新流程图执行状态：在工程运行过程中会时时刷新流程图的运行状态。</li>
-<li>记录日志信息：记录系统运行过程中产生的日志信息，记录位置在“LusterCache/日志类型”文件夹下的"记录日志类型+当前日期".txt文件。如：D:\LusterCache\RecordGraphGUIErrorLog\RecordGraphGUIErrorLog_2021-12-20.txt。</li>
-<li>记录问题追踪信息：记录软件加载过程，模块的创建、注册、销毁过程详细日志信息，记录位置在“LusterCache”文件夹下的TraceLog1.txt文件，当文件过大时会建立TraceLog2.txt文件，以此类推。</li>
-<li>记录相机采集提示信息：记录相机采集提示信息，解决方案自动备份信息等，记录位置在“LusterCache”文件夹下的NoteLog1.txt文件，当文件过大时会建立NoteLog2.txt文件，以此类推。</li>
-<li>记录通信提示信息：记录通信提示信息，记录位置在“LusterCache/CommLog”文件夹下的"CommLog+当前日期".txt文件。</li>
-<li>记录提示信息：记录系统运行过程中产生的提示信息，记录位置与相机采集相同。</li>
-<li>记录用户操作信息：记录用户运行、暂停、停止工程等操作信息，记录位置在“LusterCache”文件夹下的CustomerOperatorLog.txt文件。</li>
-<li>双屏显示生产界面：将生产（编辑）界面显示在多个显示器上，每个显示器显示生产（编辑）界面的一部分，显示内容由系统显示中的显示器排列决定。</li>
-<li>记录工具CT：工程运行时记录工具执行起始时间、终止时间、名称、CT、工具所属组合名称等信息，记录位置在“LusterCache\CTLog”文件夹下。</li>
-<li>工程版本管理：当开启工程版本管理时，每次保存工程时，弹出对话框写入版本信息并进行保存，否则将不弹框直接完成保存工程。</li>
-<li>工程自动保存：当开启工程自动保存时，工程会定时进行自动备份，在异常退出时提示是否加载自动备份工程，否则工程不会进行自动备份。</li>
+<li>Báo cáo lỗi công cụ: Xuất thông tin lỗi bên trong công cụ ra cửa sổ giám sát và cửa sổ nhật ký giao diện sản xuất.</li>
+<li>Báo cáo lỗi: Xuất các lỗi ngoài công cụ trong hệ thống ra cửa sổ giám sát và cửa sổ nhật ký giao diện sản xuất.</li>
+<li>Báo cáo cảnh báo: Xuất tất cả cảnh báo trong hệ thống ra cửa sổ giám sát và cửa sổ nhật ký giao diện sản xuất.</li>
+<li>Báo cáo nhắc nhở: Xuất tất cả thông báo nhắc nhở trong hệ thống ra cửa sổ giám sát và cửa sổ nhật ký giao diện sản xuất.</li>
+<li>Làm mới trạng thái thực thi lưu đồ: Trong quá trình chạy dự án sẽ liên tục làm mới trạng thái chạy của lưu đồ.</li>
+<li>Ghi thông tin nhật ký: Ghi lại nhật ký hoạt động hệ thống, vị trí ghi tại thư mục “LusterCache/Loại nhật ký” với tên file "Loại nhật ký + ngày hiện tại".txt. Ví dụ: D:\LusterCache\RecordGraphGUIErrorLog\RecordGraphGUIErrorLog_2021-12-20.txt.</li>
+<li>Ghi thông tin theo dõi sự cố: Ghi nhật ký chi tiết quá trình tải phần mềm, tạo, đăng ký và hủy các module, vị trí ghi tại thư mục “LusterCache” với file TraceLog1.txt. Khi file quá lớn sẽ tạo thêm TraceLog2.txt, lần lượt như vậy.</li>
+<li>Ghi thông tin nhắc nhở thu thập camera: Ghi thông tin nhắc nhở liên quan đến thu thập camera, sao lưu tự động giải pháp, vị trí ghi tại thư mục “LusterCache” với file NoteLog1.txt, quá lớn sẽ tạo NoteLog2.txt, v.v.</li>
+<li>Ghi thông tin nhắc nhở truyền thông: Ghi thông tin nhắc nhở truyền thông, vị trí ghi tại “LusterCache/CommLog” với file "CommLog + ngày hiện tại".txt.</li>
+<li>Ghi thông tin nhắc nhở: Ghi thông tin nhắc nhở trong quá trình chạy hệ thống, vị trí ghi giống thu thập camera.</li>
+<li>Ghi thông tin thao tác người dùng: Ghi lại các thao tác như chạy, tạm dừng, dừng dự án, vị trí ghi tại thư mục “LusterCache” với file CustomerOperatorLog.txt.</li>
+<li>Hiển thị giao diện sản xuất trên hai màn hình: Hiển thị giao diện sản xuất (hoặc chỉnh sửa) trên nhiều màn hình, mỗi màn hình hiển thị một phần giao diện, nội dung hiển thị dựa trên cách sắp xếp màn hình trong hệ thống.</li>
+<li>Ghi CT công cụ: Khi chạy dự án, ghi lại thời gian bắt đầu, kết thúc thực thi công cụ, tên, CT, tên tổ hợp công cụ, vị trí ghi tại thư mục “LusterCache\CTLog”.</li>
+<li>Quản lý phiên bản dự án: Khi bật, mỗi lần lưu dự án sẽ hiện hộp thoại để nhập thông tin phiên bản rồi lưu, nếu không bật sẽ lưu trực tiếp không hiện hộp thoại.</li>
+<li>Tự động lưu dự án: Khi bật, dự án sẽ được tự động sao lưu định kỳ, khi phần mềm thoát bất thường sẽ hỏi có tải lại bản sao lưu tự động hay không, nếu không bật thì không tự động sao lưu.</li>
 </ul>
 
+<h2>Cài Đặt Thư Mục Lưu Trữ</h2>
 
-<h2>存储目录设置</h2>
+<p>Thiết lập thư mục lưu dữ liệu và thư mục lưu hình ảnh.</p>
 
-<p>设置数据目录和图片保存目录。</p>
+<h2>Cài Đặt Bộ Nhớ Đệm Ảnh Lịch Sử</h2>
 
-<h2>历史图片缓存设置</h2>
-
-<p>指自动清理历史图像的一些配置，自动清理历史图片缓存分为按时间清理和按大小清理。</p>
+<p>Cấu hình tự động xóa ảnh lịch sử, có thể xóa theo thời gian hoặc theo dung lượng.</p>
 
 <ul>
-<li><p><strong>按时间清理：</strong>系统自动清理超过设置天数的较早历史图片。</p></li>
-<li><p><strong>按GB清理：</strong>系统自动清理超过设置大小的较早历史图片。</p></li>
+<li><p><strong>Xóa theo thời gian:</strong> Hệ thống tự động xóa các ảnh lịch sử cũ hơn số ngày đã thiết lập.</p></li>
+<li><p><strong>Xóa theo dung lượng GB:</strong> Hệ thống tự động xóa các ảnh lịch sử cũ khi tổng dung lượng vượt quá mức đã thiết lập.</p></li>
 </ul>
 
-
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
 
 <ol>
-<li><p>磁盘剩余空间不足10%清理：当磁盘剩余空间不足10%时自动清理较早历史图片。以避免由于磁盘空间不足导致的软件或系统不稳定。</p></li>
-<li><p>图像文件会放在GVIMAGES文件夹里面。再删除图像的时候，会将GVIMAGES文件夹里面的数据都进行删除，请不要将重要数据放到GVIMAGES文件夹里面。</p></li>
+<li><p>Tự động xóa khi dung lượng ổ đĩa còn lại dưới 10%: Khi dung lượng trống ổ đĩa còn dưới 10%, hệ thống sẽ tự động xóa ảnh lịch sử cũ nhằm tránh phần mềm hoặc hệ thống bị lỗi do thiếu dung lượng.</p></li>
+<li><p>Các file ảnh sẽ được lưu trong thư mục GVIMAGES. Khi xóa ảnh, toàn bộ dữ liệu trong thư mục GVIMAGES sẽ bị xóa, vì vậy không nên lưu dữ liệu quan trọng trong thư mục này.</p></li>
 </ol>
 </blockquote>
 
-<h2>其它设置</h2>
+<h2>Các Cài Đặt Khác</h2>
 
-<h3>启用远程控制</h3>
+<h3>Bật Điều Khiển Từ Xa</h3>
 
-<p>即开启自动切换工程功能：可以根据PLC发过来的条码（一串数字）自动切换此条码对应的产品工程（即gvp文件），自动保存原来的工程，切换的新工程进入生产界面连续运行状态。对切换的结果进行发送，发送结果可以自定义，只支持命令格式，暂不支持数据发送。</p>
+<p>Bật chức năng tự động chuyển đổi dự án: có thể tự động chuyển sang dự án sản phẩm tương ứng dựa vào mã vạch (chuỗi số) gửi từ PLC, tự động lưu dự án hiện tại, chuyển sang dự án mới và chạy liên tục trên giao diện sản xuất. Kết quả chuyển đổi được gửi đi, nội dung gửi có thể tùy chỉnh, hiện chỉ hỗ trợ định dạng lệnh, chưa hỗ trợ gửi dữ liệu.</p>
 
 <ul>
-<li><p>远程控制通信使用描述：</p>
+<li><p>Mô tả giao tiếp điều khiển từ xa:</p>
 
 <ol>
-<li><p>PLC作为通信的客户端，VISIONAssembly软件作为通信的服务端。</p></li>
-<li><p>PLC使用的欧姆龙和三菱无通信协议；VISIONAssembly软件也是使用无通信协议，可以通过配置文件约定双方通信端口默认（506）、监听数目（默认为1）和通信终止符（默认为none）。此功能的协议只支持无协议通信。通过配置NoProRemSvrComm.xml文件设置。</p></li>
-<li><p>VISIONAssembly软件将对切换结果进行发送，可以设置发送的指令。通过配置NoProRemSvrComm.xml文件设置。</p></li>
-<li><p>VISIONAssembly软件需要设置接收数据的指令格式。即系统选项->远程系统控制设置->（输入）指令格式->OK，也可以直接修改配置文件SysConfig.gcfg。</p></li>
-<li><p>切换功能</p></li>
-<li><p>自动保存之前的工程，即gvp文件。</p></li>
-<li><p>切换之后进入生产界面，连续运行状态。（未考虑权限问题）</p></li>
-<li><p>一种产品对应一个工程。通过识别条码，判断所属的产品，找到对应的工程。通过配置ProductSolution.xml文件设置。</p></li>
+<li><p>PLC làm client giao tiếp, phần mềm VISIONAssembly làm server.</p></li>
+<li><p>PLC dùng Omron và Mitsubishi không giao thức; phần mềm VISIONAssembly cũng dùng không giao thức, có thể cấu hình qua file, quy định cổng mặc định (506), số lượng kết nối lắng nghe (mặc định 1) và ký tự kết thúc giao tiếp (mặc định none). Chức năng chỉ hỗ trợ không giao thức. Cấu hình qua file NoProRemSvrComm.xml.</p></li>
+<li><p>Phần mềm sẽ gửi kết quả chuyển đổi, có thể cấu hình lệnh gửi trong NoProRemSvrComm.xml.</p></li>
+<li><p>Phần mềm cần cấu hình định dạng lệnh nhận dữ liệu: Hệ thống chọn -> cài đặt điều khiển từ xa -> nhập định dạng lệnh -> OK, hoặc sửa trực tiếp file SysConfig.gcfg.</p></li>
+<li><p>Chức năng chuyển đổi:</p></li>
+<li><p>Tự động lưu dự án trước (file gvp).</p></li>
+<li><p>Chuyển sang giao diện sản xuất trạng thái chạy liên tục (chưa xét đến quyền hạn).</p></li>
+<li><p>Một sản phẩm tương ứng một dự án, nhận dạng mã vạch để xác định sản phẩm và tìm dự án tương ứng. Cấu hình trong file ProductSolution.xml.</p></li>
 </ol>
 </li>
-<li><p><span id = "Description">远程控制通信配置文件描述：</span></p>
+<li><p><span id = "Description">Mô tả file cấu hình giao tiếp điều khiển từ xa:</span></p>
 
 <ol>
-<li>SysConfig.gcfg文件，EnableRemoteRunCtrl字段必须为1，RemoteSysCtrlPortName默认为NoProRemSvrComPort，可以重命名，但必须与NoProRemSvrComm.xml文件里面的Port节点的Name属性名称一致。默认的指令格式为：^([0-9]{10,})\$</li>
+<li>File SysConfig.gcfg, trường EnableRemoteRunCtrl phải là 1, RemoteSysCtrlPortName mặc định là NoProRemSvrComPort, có thể đổi tên nhưng phải trùng với thuộc tính Name trong nút Port của file NoProRemSvrComm.xml. Định dạng lệnh mặc định là: ^([0-9]{10,})\$</li>
 </ol>
-
 
 <p><img src="media/SystemOption_02.png" alt="" /></p>
 
 <ol>
-<li>ProductSolution.xml文件，LINK节点的属性保存的是条码模式与工程文件的关联信息。其中ProType表示一种条码模式，表示的一种产品。例如ProType=&ldquo;****2234**"，标识的产品类型为2234，其中的*为任意数字；必须保证配置里面长度数和条码长度一致。           SolPath="C:\Users\Q02814\Desktop\产品一.gvp"，SolPath属性为与之关联的工程的绝对路径。</li>
+<li>File ProductSolution.xml, thuộc tính LINK lưu thông tin liên kết mẫu mã vạch và file dự án. Trong đó ProType là mẫu mã vạch tương ứng sản phẩm. Ví dụ ProType="****2234**" đại diện cho sản phẩm loại 2234, * là số bất kỳ; độ dài trong cấu hình phải khớp độ dài mã vạch. Thuộc tính SolPath là đường dẫn tuyệt đối đến file dự án tương ứng.</li>
 </ol>
-
 
 <p><img src="media/SystemOption_03.png" alt="" /></p>
 
 <ol>
-<li><p>NoProRemSvrComm.xml文件，保存的是PLC与VISIONAssembly软件通信的配置信息。Port节点即为无通信协议的一些配置，只可修改ListenPort，ListenNum，CommStop和Name属性。Name属性的值需要与SysConfig.gcfg文件里面的RemoteSysCtrlPortName字段的值一致。</p></li>
-<li><p>ResponseResult字段，OK的CmdStr值表示工程切换成功，向PLC发送的指令；NG的CmdStr值表示工程切换失败，向PLC发送的指令；KS的CmdStr值表示工程不需要切换，向PLC发送的指令。可以自定义切换成功或失败需要发送的命令格式。目前只支持命令格式。（KS= Keep State）</p></li>
+<li>File NoProRemSvrComm.xml, lưu cấu hình giao tiếp PLC với phần mềm VISIONAssembly. Nút Port chứa các cấu hình không giao thức, chỉ được chỉnh ListenPort, ListenNum, CommStop và Name. Giá trị Name phải trùng với RemoteSysCtrlPortName trong SysConfig.gcfg.</li>
+<li>Trường ResponseResult, CmdStr của OK là lệnh gửi khi chuyển đổi dự án thành công, CmdStr của NG là lệnh khi thất bại, CmdStr của KS là lệnh khi không cần chuyển đổi. Có thể tùy chỉnh định dạng lệnh gửi thành công hoặc thất bại. Hiện chỉ hỗ trợ định dạng lệnh (KS = giữ trạng thái).</li>
 </ol>
-
 
 <p><img src="media/SystemOption_04.png" alt="" /></p>
 
 <ol>
-<li>远程控制，运行和停止工程功能，发送指令101，可连续运行工程；指令100，可停止运行工程，指令执行成功，向PLC发送OK指令，执行失败，向PLC发送NG指令。</li>
+<li>Chức năng điều khiển từ xa chạy/dừng dự án, gửi lệnh 101 để chạy liên tục, lệnh 100 để dừng chạy. Khi lệnh thực thi thành công gửi lệnh OK về PLC, thất bại gửi lệnh NG.</li>
 </ol>
 </li>
 </ul>
 
-
-<blockquote><p><strong>远程控制通信注意事项</strong></p>
+<blockquote><p><strong>Lưu ý khi giao tiếp điều khiển từ xa</strong></p>
 
 <ol>
-<li><p>确保远程控制端口的名称保持一致，或者修改“<a href="#%20Description">配置文件描述</a>”修改SysConfig.gcfg文件里面的RemoteSysCtrlPortName字段，与NoProRemSvrComm.xml的Name一样。</p></li>
-<li><p>PLC发过来的条码最后一位和第一位不能是空格；如果中间有空格也算一位。</p></li>
-<li><p>ProductSolution.xml文件里面的ProType值必须唯一，不能存在重复。</p></li>
-<li><p>默认指令格式可以不写，建议写上。比如每个条码最少10个数字，那么格式指令可以表示为：^([0-9]{10,})\$，如果存在字母，请参考正则表达式的写法。</p></li>
-</ol>
-</blockquote>
-
-<h3>切换到操作员权限</h3>
-
-<p>指的是开启此选项时，在没有外部硬件输入设备键盘和鼠标的操作时（时间可以设置从1分钟到60分钟不等），软件会自动切换到操作员权限，防止其他人员修改工程逻辑。</p>
-
-<h3>生产界面开启虚拟键盘</h3>
-
-<p>指的是生产界面是否开启虚拟键盘，只有不勾选此项并且有外接键盘的情况下不开启，其他情况都开启。</p>
-
-<ul>
-<li><p><strong>数字键盘：</strong>生产界面里面的窗口的Edit和地址控件都支持，对于只能输入数字类型的控件，当此控件获得焦点时，会弹出数字键盘；此控件失去焦点时，或者点击Enter键，此数字键盘会隐藏。见下图。</p>
-
-<p>Enter键的作用类似于外接键盘的Enter键的作用+隐藏窗口的作用。</p>
-
-<p><img src="media/SystemOption_05.png" alt="" /></p>
-
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
-
-<p>点击地址控件的分割符“.”才会获取焦点；失去焦点的情况不知，只能点击其他控件，或者点击  Enter键关闭。</p>
-
-<p><img src="media/SystemOption_06.png" alt="" /></p></blockquote></li>
-<li><p><strong>全键盘：</strong>生产界面里面的窗口的Edit控件都支持，对于不是数字类型的控件，当此控件获得焦点时，会弹出数字键盘；失去焦点时，此键盘会隐藏，见下图。</p>
-
-<ul>
-<li><p>Caps键的作用类似于外接键盘的Caps Lock键的作用，会切换键盘的大小写；</p></li>
-<li><p>Close键的作用是隐藏窗口的作用；</p></li>
-<li><p>Enter键的作用类似于外接键盘的Enter键的作用；</p></li>
-<li><p>其他键和外接键盘的键的作用一样，比如Tab也是切换光标位置。</p></li>
-</ul>
-
-
-<p><img src="media/SystemOption_07.png" alt="" /></p></li>
-</ul>
-
+<li><p>Đảm bảo tên cổng điều khiển từ xa trùng khớp hoặc sửa trường RemoteSysCtrlPortName trong file SysConfig.gcfg cho trùng với tên thuộc tính Name trong NoProRemSvrComm.xml.</p></li>
+<li><p>Ký tự đầu và cuối của mã vạch gửi từ PLC không được là khoảng trắng; khoảng trắng giữa cũng tính là một ký tự.</p></li>
+<li><p>Giá trị ProType trong ProductSolution.xml phải duy nhất, không trùng lặp.</p></li>
+<li><p>Định dạng lệnh mặc định có thể để trống nhưng nên viết, ví dụ mã vạch ít nhất 10 số thì định dạng

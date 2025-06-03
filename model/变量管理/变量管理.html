@@ -16,80 +16,79 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>变量管理</h1>
+<h1>Quản lý Biến</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>工程/解决方案中使用的变量，通过功能区-主面板里面的“变量管理”进行管理。</p>
+<p>Các biến được sử dụng trong Dự án/Giải pháp có thể được quản lý thông qua nút “Quản lý biến” trên bảng điều khiển chính trong vùng chức năng.</p>
 
-<p>如图所示为变量管理窗口，显示当前解决方案中的所有变量信息。变量可分为局部变量、全局变量，用户可对已添加的变量进行自定义分组。窗口下方的按钮实现变量新增、删除、修改、导入、导出、管理分组等功能。</p>
+<p>Hình dưới là cửa sổ quản lý biến, hiển thị toàn bộ thông tin biến trong giải pháp hiện tại. Biến được chia thành biến cục bộ và biến toàn cục. Người dùng có thể tự tạo nhóm biến tùy ý. Các nút ở dưới cửa sổ cho phép thêm mới, xóa, chỉnh sửa, nhập, xuất, quản lý nhóm, v.v.</p>
 
 <p><img src="media/VariableManage_1_1.PNG" alt="VariableManage_1_1" /></p>
 
-<h2>2. 使用向导</h2>
+<h2>2. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><p>新增</p>
+<li><p>Thêm mới</p>
 
-<p>一次可新增一个变量。点击“新增”按钮，弹出新增变量窗口，其中可定义变量名称、类型、取值、属性、说明信息。</p>
+<p>Chỉ thêm một biến tại một thời điểm. Nhấn nút “Thêm mới” để mở cửa sổ tạo biến mới, nơi có thể đặt tên biến, kiểu, giá trị, thuộc tính và mô tả.</p>
 
 <p><img src="media/VariableManage_2_1.png" alt="VariableManage_2_1" /></p></li>
-<li><p>批量新增</p>
+<li><p>Thêm hàng loạt</p>
 
-<p>一次可新增多个变量。点击“批量新增”按钮，弹出批量新增窗口，可定义批量新增的个数、命名规则、类型、取值、属性。</p>
+<p>Có thể thêm nhiều biến cùng lúc. Nhấn nút “Thêm hàng loạt” để mở cửa sổ thêm hàng loạt, nơi có thể đặt số lượng, quy tắc đặt tên, kiểu, giá trị và thuộc tính.</p>
 
 <p><img src="media/VariableManage_2_2.png" alt="VariableManage_2_2" /></p></li>
-<li><p>修改/删除/复制/粘贴</p>
+<li><p>Chỉnh sửa/Xóa/Sao chép/Dán</p>
 
-<p>对已定义的变量进行修改、删除，复制选定变量。</p>
+<p>Chỉnh sửa hoặc xóa các biến đã định nghĩa, hoặc sao chép các biến được chọn.</p>
 
 <ul>
-<li><p>修改：双击想要修改的变量，弹出修改变量对话框，直接修改即可。</p></li>
-<li><p>删除：选中想要删除的变量，鼠标右击，选择删除即可。或者选中变量后，直接按<kbd>Del</kbd>键删除也可。</p></li>
-<li><p>复制/粘贴：选中变量，鼠标右键选择复制/粘贴；或者直接使用快捷键<kbd>Ctrl</kbd>+<kbd>C</kbd>/<kbd>Ctrl</kbd>+<kbd>V</kbd></p></li>
+<li><p>Chỉnh sửa: Nhấp đúp vào biến cần sửa, cửa sổ chỉnh sửa biến sẽ xuất hiện để chỉnh sửa trực tiếp.</p></li>
+<li><p>Xóa: Chọn biến cần xóa, nhấn chuột phải chọn xóa, hoặc nhấn phím <kbd>Del</kbd>.</p></li>
+<li><p>Sao chép/Dán: Chọn biến, nhấn chuột phải chọn sao chép/dán hoặc dùng tổ hợp phím <kbd>Ctrl</kbd>+<kbd>C</kbd>/<kbd>Ctrl</kbd>+<kbd>V</kbd>.</p></li>
 </ul>
 </li>
-<li><p>新增分组/管理分组</p>
+<li><p>Thêm nhóm/Quản lý nhóm</p>
 
-<p>新增分组可增加用户自定义组别，默认组名为“自定义X”，支持最多添加40个分组。可选中变量右键将其添加到指定分组，或从某个分组中移除，从分组中移除的变量仍然存在局部变量或全局变量中。</p>
+<p>Thêm nhóm cho phép người dùng tạo nhóm tùy chỉnh, tên mặc định là “Tùy chỉnhX”, tối đa 40 nhóm. Có thể nhấp chuột phải vào biến để thêm vào hoặc xóa khỏi nhóm. Việc xóa khỏi nhóm không làm mất biến trong danh sách biến chính.</p>
 
-<p>对用户新增的分组进行管理。点击“管理分组”按钮，弹出“管理分组”窗口，其中可设置分组是否显示、显示顺序、新增/删除分组，双击分组名称列，可直接编辑。</p>
+<p>Quản lý các nhóm người dùng đã tạo. Nhấn nút “Quản lý nhóm” để mở cửa sổ quản lý nhóm, có thể thiết lập hiển thị, thay đổi thứ tự, thêm/xóa nhóm. Nhấp đúp vào tên nhóm để chỉnh sửa trực tiếp.</p>
 
 <p><img src="media/VariableManage_2_3.png" alt="VariableManage_2_3" /></p></li>
-<li><p>添加到监视</p>
+<li><p>Thêm vào giám sát</p>
 
-<p>选中某个或多个变量，右键弹出快捷菜单，可将变量添加到监视窗口，工程运行过程中，可通过监视窗口实时查看变量变化。</p>
+<p>Chọn một hoặc nhiều biến, nhấp chuột phải để thêm vào cửa sổ giám sát. Khi chạy dự án, có thể xem giá trị biến theo thời gian thực qua cửa sổ giám sát.</p>
 
 <p><img src="media/VariableManage_2_4.png" alt="" /></p></li>
-<li><p>添加到分组</p>
+<li><p>Thêm vào nhóm</p>
 
-<p>选中某个或多个变量，右键弹出快捷菜单，可将变量添加到自定义分组，每个分组支持最多添加40个变量。</p>
+<p>Chọn một hoặc nhiều biến, nhấp chuột phải để thêm vào nhóm tùy chỉnh. Mỗi nhóm hỗ trợ tối đa 40 biến.</p>
 
 <p><img src="media/VariableManage_2_5.png" alt="VariableManage_2_5" /></p></li>
-<li><p>变量命名说明</p>
+<li><p>Giải thích quy tắc đặt tên biến</p>
 
-<p>点击变量管理窗口上方的“变量命名说明”按钮，可增加变量命名规则说明信息。</p></li>
-<li><p>变量搜索</p>
+<p>Nhấn nút “Giải thích quy tắc đặt tên biến” phía trên cửa sổ quản lý biến để hiển thị thông tin về quy tắc đặt tên biến.</p></li>
+<li><p>Tìm kiếm biến</p>
 
-<p>变量管理窗口上方的变量搜索编辑框中输入变量名称或关键字，实时搜索并显示目标变量。</p></li>
-<li><p>检查未用变量</p>
+<p>Nhập tên biến hoặc từ khóa vào ô tìm kiếm ở đầu cửa sổ quản lý biến để tìm kiếm theo thời gian thực.</p></li>
+<li><p>Kiểm tra biến không sử dụng</p>
 
-<p>点击变量管理窗口上方的“检查未用变量”按钮，可一键筛选未使用的变量及变量信息，根据用户选择删除指定变量，精简工程。</p></li>
+<p>Nhấn nút “Kiểm tra biến không sử dụng” để tự động lọc các biến chưa được sử dụng. Người dùng có thể chọn và xóa chúng để tinh gọn dự án.</p></li>
 </ul>
-
 
 <p><img src="media/VariableManage_2_6.png" alt="VariableManage_2_6" /></p>
 
-<p>​ 注意：脚本中用格式化方式动态生成的变量名（如下图所示），在检查未用变量时候是检查不出来的，可能会造成误删除，所以暂时先禁用掉“删除全部”和“删除选中”按钮。</p>
+<p>​Lưu ý: Các biến được tạo động theo định dạng trong script (như hình dưới) sẽ không được phát hiện là đã sử dụng khi kiểm tra, điều này có thể dẫn đến xóa nhầm. Do đó, chức năng “Xóa tất cả” và “Xóa được chọn” hiện đang bị vô hiệu hóa.</p>
 
 <p><img src="media/Script.jpg" alt="VariableManage_2_6" /></p>
 
-<h2>3. 参数说明</h2>
+<h2>3. Giải thích tham số</h2>
 
-<h4>局部变量</h4>
+<h4>Biến cục bộ</h4>
 
-<p>仅当前工程可以使用的变量。</p>
+<p>Chỉ có thể sử dụng trong dự án hiện tại.</p>
 
-<h4>全局变量</h4>
+<h4>Biến toàn cục</h4>
 
-<p>当前解决方案内所有工程都可以使用的变量。</p>
+<p>Có thể sử dụng trong tất cả các dự án thuộc cùng một giải pháp.</p>
