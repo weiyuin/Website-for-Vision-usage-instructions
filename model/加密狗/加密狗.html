@@ -16,24 +16,24 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>加密狗SOP及故障排查手册</h1>
+<h1>Hướng Dẫn SOP và Xử Lý Sự Cố USB Bảo Mật (Dongle)</h1>
 
-<h2>1. 适用加密狗</h2>
+<h2>1. USB bảo mật áp dụng</h2>
 
 <table>
 <thead>
 <tr>
-<th> 厂商  </th>
-<th> 匹配产品</th>
-<th> 临时狗（限时狗</th>
-<th> 永久狗（产品狗) </th>
-<th> 驱动名称 </th>
+<th> Nhà sản xuất </th>
+<th> Sản phẩm tương thích </th>
+<th> USB tạm thời (giới hạn thời gian) </th>
+<th> USB vĩnh viễn (sản phẩm) </th>
+<th> Tên trình điều khiển </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> Sense </td>
-<td> 仅支持VISIONAssembly6.3.200及之后的版本 </td>
+<td> Chỉ hỗ trợ phiên bản VISIONAssembly 6.3.200 trở lên </td>
 <td> <img src="media/1-1.jpg" alt="" /> </td>
 <td> <img src="media/1-2.png" alt="" /> </td>
 <td> sense_shield_installer_pub_XXXX.exe </td>
@@ -41,96 +41,93 @@
 </tbody>
 </table>
 
-
-<p>加密狗序号与权限一览</p>
+<p>Danh sách số hiệu và quyền hạn của USB bảo mật</p>
 
 <table>
 <thead>
 <tr>
-<th> 编号  </th>
-<th> 名称                                                   </th>
+<th> Số hiệu </th>
+<th> Tên quyền hạn </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 1-7   </td>
-<td> 基础功能，包括查找、定位、检测、二维测量、标定、读码等 </td>
+<td> 1-7 </td>
+<td> Chức năng cơ bản bao gồm tìm kiếm, định vị, phát hiện, đo lường 2D, hiệu chuẩn, đọc mã, v.v. </td>
 </tr>
 <tr>
 <td> 17-18 </td>
-<td> 3D功能                                                 </td>
+<td> Chức năng 3D </td>
 </tr>
 <tr>
-<td> 19    </td>
-<td> 深度学习                                               </td>
+<td> 19 </td>
+<td> Học sâu (Deep Learning) </td>
 </tr>
 <tr>
-<td> 20    </td>
-<td> OCR                                                    </td>
+<td> 20 </td>
+<td> OCR </td>
 </tr>
 <tr>
-<td> 100   </td>
-<td> VisionAssembly产品权限                                 </td>
+<td> 100 </td>
+<td> Quyền truy cập sản phẩm VisionAssembly </td>
 </tr>
 <tr>
-<td> 101   </td>
-<td> VisionLASER产品权限                                    </td>
+<td> 101 </td>
+<td> Quyền truy cập sản phẩm VisionLASER </td>
 </tr>
 <tr>
-<td> 188   </td>
-<td> 工程与项目加密绑定授权                                 </td>
+<td> 188 </td>
+<td> Cấp phép liên kết mã hóa dự án và công trình </td>
 </tr>
 </tbody>
 </table>
 
-
 <h2>2. Sense</h2>
 
-<h3>2.1 常用操作</h3>
+<h3>2.1 Thao tác thường dùng</h3>
 
-<h4>1)  加密狗查看工具</h4>
+<h4>1) Công cụ kiểm tra USB bảo mật</h4>
 
-<p>第一步：进入VA安装路径，双击打开“加密狗查看工具.exe”（用于查看加密狗SN、固件版本、权限、到期时间、错误码等）</p>
+<p>Bước 1: Vào thư mục cài đặt VA, nhấp đúp để mở “加密狗查看工具.exe” (Công cụ kiểm tra USB bảo mật) – dùng để xem SN, phiên bản firmware, quyền hạn, thời hạn sử dụng, mã lỗi, v.v.</p>
 
-<p>第二步：点击左侧功能区“硬件锁”，“本地加密锁”即显示当前连接的加密狗的SN（此SN可用于回传管理员，进行远程升级）</p>
+<p>Bước 2: Nhấn vào khu vực chức năng bên trái “硬件锁” (Khóa phần cứng), “本地加密锁” (Khóa mã hóa cục bộ) sẽ hiển thị SN của USB bảo mật đang kết nối (SN này có thể gửi cho quản trị viên để nâng cấp từ xa).</p>
 
-<p>第三步：选择需要查看的加密狗，右侧显示详细信息</p>
+<p>Bước 3: Chọn USB bảo mật cần kiểm tra, thông tin chi tiết sẽ hiển thị bên phải.</p>
 
 <ul>
-<li><p>固件版本：方便提供给研发端，进行问题排查</p></li>
-<li><p>许可情况总览：可查看所有许可、正常许可、已过期许可的情况</p></li>
+<li><p>Phiên bản firmware: cung cấp cho bộ phận R&D để hỗ trợ xử lý sự cố.</p></li>
+<li><p>Tổng quan về trạng thái cấp phép: có thể xem toàn bộ giấy phép, giấy phép hợp lệ, giấy phép đã hết hạn.</p></li>
 </ul>
 
 
 <p><img src="media/2-1.jpg" alt="" /></p>
 
-<p>第四步：点击左侧功能区“我的软件”，点击右上角<img src="media/wps181.jpg" alt="" />查看许可授权的具体情况，如下，</p>
+<p>Bước 4: Nhấp vào khu vực chức năng bên trái “我的软件” (Phần mềm của tôi), sau đó nhấn vào góc trên bên phải <img src="media/wps181.jpg" alt="" /> để xem chi tiết tình trạng cấp phép, như hình dưới,</p>
 
 <p><img src="media/2-2.jpg" alt="" /></p>
 
 <ul>
-<li><p>17-3D：表示授权模块为17号权限，功能描述为“支持3D功能”</p>
+<li><p>17-3D: Biểu thị mô-đun được cấp phép mang mã quyền 17, mô tả chức năng là “Hỗ trợ chức năng 3D”</p>
 
-<p><img src="media/2-3.jpg" alt="" />：过期</p>
+<p><img src="media/2-3.jpg" alt="" />: Đã hết hạn</p>
 
-<p><img src="media/2-4.jpg" alt="" />：正常</p></li>
-<li><p>详情：可查看许可状态、许可开始/结束时间、初次使用时间、时间跨度、剩余次数等详细信息，如下图，</p></li>
+<p><img src="media/2-4.jpg" alt="" />: Còn hiệu lực</p></li>
+<li><p>Chi tiết: Có thể xem trạng thái cấp phép, thời gian bắt đầu/kết thúc, thời điểm sử dụng lần đầu, thời hạn hiệu lực, số lần sử dụng còn lại, v.v., như hình minh họa bên dưới,</p></li>
 </ul>
-
 
 <p><img src="media/2-5.jpg" alt="" /></p>
 
-<p>​ 还可通过左下角“高级”查询错误码，错误码清单详见<span style="background:pink">2.1-3）加密狗报错清单。</span></p>
+<p> Bạn cũng có thể truy cập mục “高级” (Nâng cao) ở góc dưới bên trái để tra mã lỗi. Danh sách mã lỗi chi tiết xem tại <span style="background:pink">2.1-3）Danh sách lỗi của USB bảo mật.</span></p>
 
-<h4>2)  加密狗远程升级</h4>
+<h4>2) Nâng cấp USB bảo mật từ xa</h4>
 
 <p><img src="media/2-6.jpg" alt="" /></p>
 
-<p>第一步：按照<span style="background:pink">2.1-1）加密狗查看工具。</span>查询到加密狗SN，告知管理员</p>
+<p>Bước 1: Theo hướng dẫn tại <span style="background:pink">2.1-1）Công cụ kiểm tra USB bảo mật</span>, tra cứu số SN của USB bảo mật rồi gửi cho quản trị viên</p>
 
-<p>第二步：得到管理员发回的d2c升级文件，拷贝到已插入待升级加密狗的电脑上</p>
+<p>Bước 2: Nhận tệp nâng cấp d2c do quản trị viên cung cấp, sao chép vào máy tính có cắm USB bảo mật cần nâng cấp</p>
 
-<p>第三步：双击d2c文件，弹出如下界面，显示“数据包升级成功！”表示升级成功，点击“关闭”即可</p>
+<p>Bước 3: Nhấn đúp vào tệp d2c, cửa sổ sau sẽ hiện ra. Nếu xuất hiện thông báo “数据包升级成功！” (Gói dữ liệu nâng cấp thành công!) thì nghĩa là đã nâng cấp thành công. Nhấn “关闭” (Đóng) để thoát</p>
 
 <p><img src="media/2-7.jpg" alt="" /></p>
 
@@ -584,123 +581,121 @@
 </table>
 
 
-<h4>4)  加密狗日志回传</h4>
+<h4>4) Gửi lại nhật ký khóa bảo vệ</h4>
 
-<p>为更方便的定位加密狗问题，需要用户找到并回传加密狗的日志，方法如下：将C:\Program Files (x86)\senseshield\ss路径下的log文件夹及install.log文件一并发回</p>
+<p>Để thuận tiện hơn trong việc xác định lỗi khóa bảo vệ, người dùng cần tìm và gửi lại nhật ký của khóa theo cách sau: Hãy gửi thư mục log và tệp install.log trong đường dẫn C:\Program Files (x86)\senseshield\ss</p>
 
 <p><img src="media/2-8.jpg" alt="" /></p>
 
-<p>如果提示log在占用，无法直接压缩，可将log文件夹拷到别处，再压缩回传。</p>
+<p>Nếu có thông báo log đang bị chiếm dụng và không thể nén trực tiếp, hãy sao chép thư mục log sang vị trí khác rồi nén và gửi lại.</p>
 
-<h4>5)  加密狗修复工具</h4>
+<h4>5) Công cụ sửa lỗi khóa bảo vệ</h4>
 
-<p>第一步：进入VA安装路径，以<span style="color:red;background:pink"><strong>管理员权限</strong></span>打开“加密狗修复工具.exe”</p>
+<p>Bước 1: Truy cập vào thư mục cài đặt VA, mở “加密狗修复工具.exe” với <span style="color:red;background:pink"><strong>quyền quản trị viên</strong></span></p>
 
-<p>第二步：关闭杀毒软件、安全卫士等软件。点击“一键检测修复”，可有效检测如下常见问题</p>
+<p>Bước 2: Tắt phần mềm diệt virus, phần mềm bảo vệ hệ thống,... Nhấn “Một nút kiểm tra & sửa lỗi”, có thể kiểm tra được các lỗi phổ biến sau</p>
 
 <p><img src="media/2-9.jpg" alt="" /></p>
 
-<p>第三步：检测结果如下，说明没有此类问题，需要反馈给研发</p>
+<p>Bước 3: Nếu kết quả kiểm tra như hình dưới thì nghĩa là không có các lỗi dạng này, cần liên hệ bộ phận R&D</p>
 
 <p><img src="media/2-10.jpg" alt="" /></p>
 
-<h4>6)  显示/隐藏系统托盘</h4>
+<h4>6) Hiển thị/Ẩn biểu tượng khay hệ thống</h4>
 
-<p>正常情况下，VA软件安装时，会主动安装加密狗驱动（当驱动版本一致时，不再重复安装），此时是静默安装，用户无感知，也没有系统托盘（电脑桌面右下角显示的小图标<img src="media/2-11.jpg" alt="" />）。</p>
+<p>Thông thường, khi cài đặt phần mềm VA, trình điều khiển của khóa bảo vệ sẽ được cài đặt tự động (nếu phiên bản trình điều khiển giống nhau sẽ không cài lại), lúc này là chế độ cài đặt ẩn, người dùng sẽ không thấy và cũng không có biểu tượng ở khay hệ thống (góc dưới bên phải màn hình <img src="media/2-11.jpg" alt="" />)。</p>
 
-<p>如果客户想显示系统托盘，或显示了系统托盘后又想隐藏，可以通过修改配置文件来控制。</p>
+<p>Nếu khách hàng muốn hiển thị biểu tượng khay hệ thống, hoặc muốn ẩn lại sau khi đã hiển thị, có thể chỉnh sửa tập tin cấu hình để điều chỉnh.</p>
 
-<p>S1：找到C:\ProgramData\senseshield\ss\config.ini并打开</p>
+<p>S1: Mở tập tin C:\ProgramData\senseshield\ss\config.ini</p>
 
-<p>S2：找到如下位置，将值改为需要的值即可（1：隐藏，0：显示）</p>
+<p>S2: Tìm đến mục như hình dưới, chỉnh giá trị theo nhu cầu (1: Ẩn, 0: Hiển thị)</p>
 
 <p><img src="media/2-12.jpg" alt="" /></p>
 
-<h3>2.2 故障排查</h3>
+<h3>2.2 Xử lý sự cố</h3>
 
-<h4>1)  没有插入加密狗或加密狗权限不足</h4>
+<h4>1) Không cắm khóa bảo vệ hoặc quyền khóa không đủ</h4>
 
-<p><span style="color:blue"><span style="color:blue"><strong>现象：</strong></span></span>打开软件时，报错“没有插入加密狗或加密狗权限不足，点击确定退出软件。”</p>
+<p><span style="color:blue"><strong>Hiện tượng:</strong></span> Khi mở phần mềm, xuất hiện thông báo lỗi: “Chưa cắm khóa bảo vệ hoặc quyền khóa không đủ, nhấn OK để thoát phần mềm.”</p>
 
 <p><img src="media/3-1.jpg" alt="" /></p>
 
-<p><span style="color:blue"><strong>原因及解决方案：</strong></span></p>
+<p><span style="color:blue"><strong>Nguyên nhân và cách xử lý:</strong></span></p>
 
 <ul>
-<li><p>没有插入加密狗：插入加密狗即可解决</p></li>
-<li><p>加密狗权限不足：使用<span style="background:pink">2.1-1）加密狗查看工具</span>进行权限查询，若为权限不足，使用<span style="background:pink">2.1-2）加密狗远程升级</span>进行远程升级</p></li>
-<li><p>未安装新版加密狗驱动：使用<span style="background:pink">2.1-5）加密狗修复工具</span>查看驱动是否安装正常可用</p></li>
+<li><p>Chưa cắm khóa bảo vệ: Cắm khóa vào để giải quyết</p></li>
+<li><p>Quyền khóa không đủ: Dùng <span style="background:pink">2.1-1）Công cụ kiểm tra khóa bảo vệ</span> để kiểm tra quyền, nếu thiếu quyền, dùng <span style="background:pink">2.1-2）Cập nhật khóa từ xa</span> để cập nhật</p></li>
+<li><p>Chưa cài trình điều khiển khóa phiên bản mới: Dùng <span style="background:pink">2.1-5）Công cụ sửa lỗi khóa bảo vệ</span> để kiểm tra trình điều khiển có hoạt động bình thường hay không</p></li>
 </ul>
 
+<h4>2) Mã lỗi 13000020: Không tìm thấy giấy phép</h4>
 
-<h4>2)  错误码13000020：找不到许可</h4>
-
-<p><span style="color:blue"><span style="color:blue"><strong>现象：</strong></span></span>软件使用过程中，突然报错如下：</p>
+<p><span style="color:blue"><strong>Hiện tượng:</strong></span> Trong quá trình sử dụng phần mềm, bất ngờ xuất hiện lỗi như sau:</p>
 
 <p><img src="media/3-2.jpg" alt="" /></p>
 
-<p><span style="color:blue"><strong>原因及解决方案：</strong></span></p>
+<p><span style="color:blue"><strong>Nguyên nhân và cách xử lý:</strong></span></p>
 
 <ul>
-<li><p>加密狗掉线：检查加密狗的连接状态或按<span style="background:pink">2.1-5）加密狗修复工具</span>进行检测修复</p></li>
-<li><p>加密狗某权限到期：使用<span style="background:pink">2.1-1）加密狗查看工具</span>进行权限查询，如权限到期，按<span style="background:pink">2.1-2）加密狗远程升级</span>进行远程升级</p></li>
+<li><p>Khóa bảo vệ bị ngắt kết nối: Kiểm tra tình trạng kết nối của khóa hoặc dùng <span style="background:pink">2.1-5）Công cụ sửa lỗi khóa bảo vệ</span> để kiểm tra và sửa lỗi</p></li>
+<li><p>Một quyền nào đó trên khóa đã hết hạn: Dùng <span style="background:pink">2.1-1）Công cụ kiểm tra khóa bảo vệ</span> để kiểm tra quyền, nếu đã hết hạn, dùng <span style="background:pink">2.1-2）Cập nhật khóa từ xa</span> để cập nhật</p></li>
 </ul>
 
+<h4>3) Cảnh báo sắp hết hạn khóa bảo vệ</h4>
 
-<h4>3)  加密狗到期提醒</h4>
-
-<p><span style="color:blue"><span style="color:blue"><strong>现象：</strong></span></span>软件打开或使用过程中，报错“剩余使用时间：X天”</p>
+<p><span style="color:blue"><strong>Hiện tượng:</strong></span> Khi mở phần mềm hoặc đang sử dụng, báo lỗi: “Thời gian sử dụng còn lại: X ngày”</p>
 
 <p><img src="media/3-3.jpg" alt="" /></p>
 
-<p><span style="color:blue"><strong>原因及解决方案：</strong></span>软件中做了到期提醒，当剩余使用时间不足10天时，打开软件就会提醒，正常使用中不再提醒，直到到期前会再次提醒。使用<span style="background:pink">2.1-2）加密狗远程升级</span>进行远程升级</p>
+<p><span style="color:blue"><strong>Nguyên nhân và cách xử lý:</strong></span> Phần mềm sẽ nhắc trước khi hết hạn, khi còn dưới 10 ngày sẽ nhắc lúc mở phần mềm, trong quá trình sử dụng bình thường sẽ không nhắc lại cho đến khi sắp hết hạn. Dùng <span style="background:pink">2.1-2）Cập nhật khóa từ xa</span> để cập nhật</p>
 
-<h4>4)  加密狗驱动安装错误</h4>
+<h4>4) Lỗi cài đặt trình điều khiển khóa bảo vệ</h4>
 
-<p><span style="color:blue"><strong>现象：</strong></span>安装VA安装包时，最后会静默安装加密狗驱动，当安装加密狗驱动返回异常时，会报错中止安装过程</p>
+<p><span style="color:blue"><strong>Hiện tượng:</strong></span> Khi cài đặt bộ cài VA, bước cuối cùng sẽ tiến hành cài trình điều khiển khóa bảo vệ (chế độ ẩn). Nếu gặp lỗi khi cài, sẽ hiện thông báo và hủy quá trình cài đặt.</p>
 
-<p>(1) 返回值：4：</p>
+<p>(1) Giá trị trả về: 4：</p>
 
 <p><img src="media/3-4.jpg" alt="" /></p>
 
-<p>(2) 返回值：5：</p>
+<p>(2) Giá trị trả về: 5：</p>
 
 <p><img src="media/3-5.jpg" alt="" /></p>
 
-<p>(3) 返回值：6：</p>
+<p>(3) Giá trị trả về: 6：</p>
 
 <p><img src="media/3-6.jpg" alt="" /></p>
 
-<p>(4) 返回值：7：</p>
+<p>(4) Giá trị trả về: 7：</p>
 
 <p><img src="media/3-7.jpg" alt="" /></p>
 
-<p>(5) 返回值：8：</p>
+<p>(5) Giá trị trả về: 8：</p>
 
 <p><img src="media/3-8.jpg" alt="" /></p>
 
-<p>(6) 返回值：50：</p>
+<p>(6) Giá trị trả về: 50：</p>
 
 <p><img src="media/3-9.jpg" alt="" /></p>
 
-<p>(7) 返回值：55：</p>
+<p>(7) Giá trị trả về: 55：</p>
 
 <p><img src="media/3-10.jpg" alt="" /></p>
 
-<p><span style="color:blue"><span style="color:blue"><strong>原因及解决方案：</strong></span></span></p>
+<p><span style="color:blue"><strong>Nguyên nhân và cách xử lý:</strong></span></p>
 
-<p><strong>(1) 返回值：4</strong>，已存在加密狗驱动进程，手动终止进程或重启电脑，再重装软件！</p>
+<p><strong>(1) Giá trị trả về: 4</strong>: Đã có tiến trình cài đặt khóa bảo vệ đang chạy, hãy kết thúc thủ công hoặc khởi động lại máy rồi cài lại phần mềm!</p>
 
-<p>不明原因导致加密狗驱动安装进程未正常结束关闭，需要手动终止进程或重启电脑后，尝试重装软件！</p>
+<p>Do nguyên nhân không rõ, quá trình cài đặt trình điều khiển khóa chưa kết thúc bình thường, hãy kết thúc thủ công tiến trình hoặc khởi động lại rồi thử cài lại.</p>
 
-<p><strong>(2) 返回值：5</strong>，加密狗驱动安装文件丢失，请确认关闭安全卫士、杀毒软件等，再重装软件！</p>
+<p><strong>(2) Giá trị trả về: 5</strong>: Thiếu tập tin cài đặt trình điều khiển, hãy tắt phần mềm bảo vệ hệ thống, rồi cài lại phần mềm!</p>
 
-<p>加密狗驱动安装文件在安装时，可能被360、腾讯电脑管家、2345等安全卫士、杀毒软件、桌面小助手一系列软件拦截，关闭此类软件后，尝试重装软件。</p>
+<p>Trình điều khiển có thể bị chặn bởi các phần mềm như 360, Tencent PC Manager, 2345, các phần mềm bảo vệ hệ thống khác,... Hãy tắt chúng rồi thử cài lại phần mềm.</p>
 
-<p><strong>(3) 返回值：6</strong>，驱动安装失败，请确认关闭安全卫士、杀毒软件等，再重装软件！</p>
+<p><strong>(3) Giá trị trả về: 6</strong>: Cài đặt trình điều khiển thất bại, hãy tắt phần mềm bảo vệ rồi thử lại!</p>
 
-<p>加密狗驱动安装文件在安装时，可能被360、腾讯电脑管家、2345等安全卫士、杀毒软件、桌面小助手一系列软件拦截，关闭此类软件后，尝试重装软件。</p>
+<p>Nguyên nhân tương tự (2), cần tắt các phần mềm bảo vệ rồi cài lại.</p>
 
-<p><strong>(4) 返回值：7\8\50\55</strong>，加密狗驱动或服务安装失败，请联系凌云光！</p>
+<p><strong>(4) Giá trị trả về: 7\8\50\55</strong>: Lỗi cài đặt trình điều khiển hoặc dịch vụ liên quan, vui lòng liên hệ Lingyun!</p>
 
-<p>可先按照<span style="background:pink">2.1-5）加密狗修复工具</span>进行检测修复，修复后再次尝试重装软件；如果仍无法安装成功，联系研发。</p>
+<p>Hãy thử dùng <span style="background:pink">2.1-5）Công cụ sửa lỗi khóa bảo vệ</span> để kiểm tra và sửa lỗi, sau đó thử cài lại. Nếu vẫn không được, hãy liên hệ R&D.</p>

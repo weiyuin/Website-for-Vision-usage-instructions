@@ -16,299 +16,303 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>数据输出工具</h1>
+<h1>Công Cụ Xuất Dữ Liệu</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng Quan Chức Năng</h2>
 
-<p>​     数据输出工具的主要功能是对不同类型和来源的数据灵活地进行字符串转化，生成的字符串可以输出给其他工具，也可以写入TXT、输出到消息窗口、通信发送。另外，数据输出工具还可以用来保存图像及截图。</p>
+<p>​     Chức năng chính của công cụ xuất dữ liệu là linh hoạt chuyển đổi các loại dữ liệu khác nhau từ nhiều nguồn thành chuỗi ký tự. Chuỗi được tạo ra có thể được xuất cho các công cụ khác, ghi vào tệp TXT, hiển thị trên cửa sổ thông báo, hoặc gửi qua giao tiếp. Ngoài ra, công cụ xuất dữ liệu còn có thể dùng để lưu ảnh và chụp màn hình.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch Bản Ứng Dụng</h2>
 
-<p>​     数据输出工具的应用场景主要分为两个：一是字符串格式化并输出，二是图像保存。</p>
+<p>​     Các kịch bản ứng dụng chính của công cụ xuất dữ liệu được chia thành hai loại: một là định dạng và xuất chuỗi ký tự, hai là lưu ảnh.</p>
 
-<p>​     字符串格式化并输出。之前关于字符串相关操作过于复杂，如通信、消息报告、写日志、通信发送等，需要数据打包工具对数据进行打包，然后通过格式化工具进行格式化，拿到格式化结果后才能继续工作。过程繁琐，流程图复杂且冗余，尤其是在多个分支时：</p>
+<p>​     Định dạng và xuất chuỗi ký tự. Trước đây, các thao tác liên quan đến chuỗi khá phức tạp, như giao tiếp, báo cáo thông báo, ghi nhật ký, gửi dữ liệu,... cần dùng công cụ đóng gói dữ liệu để đóng gói trước, sau đó dùng công cụ định dạng để định dạng, rồi mới có thể tiếp tục các bước tiếp theo. Quá trình này rườm rà, lưu đồ phức tạp và dư thừa, đặc biệt khi có nhiều nhánh xử lý:</p>
 
 <p><img src="media/GcDataOutputTool_1_1.png" alt="GcDataOutputTool_1_1" /></p>
 
-<p>通过数据输出工具实现操作上的简化，只需添加一个数据输出工具即可完成。</p>
+<p>Việc sử dụng công cụ xuất dữ liệu giúp đơn giản hóa thao tác, chỉ cần thêm một công cụ xuất dữ liệu là có thể hoàn thành.</p>
 
-<p>​     图像保存功能。之前当需要保存不同图像采集工具的图像或同时保存图像及截图时，不得不新建多个图像保存工具或屏幕截图工具才能实现。数据输出工具的图像保存功能，支持多幅图像同时进行保存，同时支持原图和截图同时保存。</p>
+<p>​     Chức năng lưu ảnh. Trước đây, khi cần lưu ảnh từ các công cụ thu ảnh khác nhau hoặc cần lưu ảnh và chụp màn hình đồng thời, phải tạo nhiều công cụ lưu ảnh hoặc công cụ chụp màn hình. Chức năng lưu ảnh của công cụ xuất dữ liệu hỗ trợ lưu nhiều ảnh cùng lúc, đồng thời hỗ trợ lưu cả ảnh gốc và ảnh chụp màn hình.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên Lý Hoạt Động</h2>
 
-<p>​     文本输出是将字符串引用的工具参数及变量插入到文本编辑框中，通过对文本的解析，生成格式化字符串，然后进行输出。图像保存是将要保存的图像数据或视图插入到保存列表中，然后一次性进行图像存储。</p>
+<p>​     Việc xuất văn bản là đưa các tham số công cụ và biến được tham chiếu vào chuỗi vào hộp chỉnh sửa văn bản, sau đó phân tích nội dung văn bản để tạo chuỗi đã định dạng, rồi thực hiện xuất dữ liệu. Việc lưu ảnh là thêm dữ liệu ảnh hoặc giao diện cần lưu vào danh sách lưu, sau đó tiến hành lưu ảnh hàng loạt.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng Dẫn Sử Dụng</h2>
 
 <ul>
-<li><h4>添加工具，右键高级属性窗口，显示初始化窗口</h4></li>
+<li><h4>Thêm công cụ, nhấp chuột phải vào cửa sổ thuộc tính nâng cao để hiển thị cửa sổ khởi tạo</h4></li>
 </ul>
 
 
 <p><img src="media/GcDataOutputTool_4_1.png" alt="GcDataOutputTool_4_1" /></p>
 
-<p><strong>输出选择</strong></p>
+<p><strong>Lựa Chọn Xuất</strong></p>
 
-<p>输出选择可选仅格式化、日志、消息报告、通信和图像保存。选择仅格式化，工具将仅起到格式化字符串的作用，生成的字符串输出给其他工具使用；选择日志，工具生成的字符串可以写到日志文件中；选择消息报告，工具生成的字符串将输出到消息窗口；选择通信，工具将作为发送端将生成的字符串发送给通信接收端，只支持无协议通信；选择图像保存，工具将用来进行图像保存，支持原图保存和截图保存。</p>
+<p>Lựa chọn xuất có thể là chỉ định dạng, ghi nhật ký, báo cáo thông báo, giao tiếp và lưu ảnh. Chọn chỉ định dạng, công cụ sẽ chỉ thực hiện chức năng định dạng chuỗi, chuỗi tạo ra sẽ được xuất cho các công cụ khác sử dụng; chọn ghi nhật ký, chuỗi tạo ra sẽ được ghi vào file nhật ký; chọn báo cáo thông báo, chuỗi tạo ra sẽ được xuất ra cửa sổ thông báo; chọn giao tiếp, công cụ sẽ đóng vai trò bên gửi, gửi chuỗi đến bên nhận giao tiếp, chỉ hỗ trợ giao tiếp không có giao thức; chọn lưu ảnh, công cụ sẽ dùng để lưu ảnh, hỗ trợ lưu ảnh gốc và ảnh chụp màn hình.</p>
 
-<p><strong>启用多情境功能</strong></p>
+<p><strong>Kích Hoạt Chức Năng Nhiều Tình Huống</strong></p>
 
-<p>情境是可单独设置执行条件和输出内容的分支，启用多情境，即可以添加多个分支，每个分支可以单独设置执行条件；这样将多分支集成到了工具内部。当多个情境都满足执行条件时，第一个执行的情境的输出结果作为数据输出工具的输出。</p>
+<p>Tình huống là các nhánh có thể thiết lập điều kiện thực thi và nội dung xuất riêng biệt, khi kích hoạt nhiều tình huống, bạn có thể thêm nhiều nhánh, mỗi nhánh có thể thiết lập điều kiện thực thi riêng; như vậy sẽ tích hợp nhiều nhánh bên trong công cụ. Khi có nhiều tình huống cùng thỏa mãn điều kiện thực thi, kết quả xuất của tình huống thực thi đầu tiên sẽ là kết quả xuất của công cụ xuất dữ liệu.</p>
 
 <ul>
-<li><h4>输出选择后，进入主界面</h4></li>
+<li><h4>Sau khi lựa chọn xuất, vào giao diện chính</h4></li>
 </ul>
-
 
 <p><img src="media/GcDataOutputTool_4_2.png" alt="GcDataOutputTool_4_2" /></p>
 
-<p><strong>执行</strong></p>
+<p><strong>Thực Thi</strong></p>
 
-<p>手动执行数据输出工具。</p>
+<p>Thực thi thủ công công cụ xuất dữ liệu.</p>
 
-<p><strong>设置</strong></p>
+<p><strong>Cài Đặt</strong></p>
 
-<p>设置数据输出工具的通用参数，包括小数的保留位数和整数的宽度。</p>
+<p>Cài đặt các tham số chung của công cụ xuất dữ liệu, bao gồm số chữ số thập phân giữ lại và độ rộng của số nguyên.</p>
 
-<p><strong>添加</strong></p>
+<p><strong>Thêm</strong></p>
 
-<p>在启用多情境功能时，添加情境。</p>
+<p>Khi kích hoạt chức năng nhiều tình huống, dùng để thêm tình huống.</p>
 
-<p><strong>删除</strong></p>
+<p><strong>Xóa</strong></p>
 
-<p>用来删除当前情境。</p>
+<p>Dùng để xóa tình huống hiện tại.</p>
 
-<p><strong>条件控制</strong></p>
+<p><strong>Điều Khiển Điều Kiện</strong></p>
 
-<p>执行，该情境总是会执行；</p>
+<p>Thực thi: tình huống này luôn được thực thi;</p>
 
-<p>不执行，该情境不会被执行；</p>
+<p>Không thực thi: tình huống này sẽ không được thực thi;</p>
 
-<p>表达式，通过表达式来控制该情境是否会执行。</p>
+<p>Biểu thức: kiểm soát việc thực thi tình huống thông qua biểu thức.</p>
 
-<p><strong>文本编辑</strong></p>
+<p><strong>Chỉnh Sửa Văn Bản</strong></p>
 
-<p>编辑要输出的内容，可以通过数据插入窗口插入一些数据，编辑的文本最终会被解析生成字符串。</p>
+<p>Chỉnh sửa nội dung muốn xuất, có thể chèn thêm dữ liệu qua cửa sổ chèn dữ liệu, văn bản chỉnh sửa cuối cùng sẽ được phân tích và tạo thành chuỗi ký tự.</p>
 
-<p><strong>预览</strong></p>
+<p><strong>Xem Trước</strong></p>
 
-<p>实时显示文本编辑的内容的解析结果。</p>
+<p>Hiển thị kết quả phân tích nội dung văn bản chỉnh sửa theo thời gian thực.</p>
 
 <ul>
-<li><h4>参数设置</h4></li>
+<li><h4>Cài Đặt Tham Số</h4></li>
 </ul>
 
 
-<p>输出选择不同，窗口会显示不同的参数。选择仅格式化时，无参数。当输出选择为日志时，参数窗口如下：</p>
+<p>Lựa chọn xuất khác nhau, cửa sổ sẽ hiển thị các tham số khác nhau. Khi chọn chỉ định dạng, không có tham số nào.</p>
+
+<p>Khi lựa chọn xuất là ghi nhật ký, cửa sổ tham số như sau:</p>
 
 <p><img src="media/GcDataOutputTool_4_3.png" alt="GcDataOutputTool_4_3" /></p>
 
-<p>文件路径，设置日志文件的生成路径；</p>
+<p>Đường dẫn file, thiết lập đường dẫn tạo file nhật ký;</p>
 
-<p>文本名称，设置日志文件的名称；</p>
+<p>Tên văn bản, thiết lập tên file nhật ký;</p>
 
-<p>是否覆盖，是否覆盖之前生成的同名文件。不选中时输出的内容添加到已存在文件的后面。</p>
+<p>Có ghi đè hay không, có ghi đè file cùng tên đã tạo trước đó hay không. Nếu không chọn, nội dung xuất sẽ được thêm vào cuối file đã tồn tại.</p>
 
-<p>当输出选择为消息报告时，参数窗口如下：</p>
+<p>Khi lựa chọn xuất là báo cáo thông báo, cửa sổ tham số như sau:</p>
 
 <p><img src="media/GcDataOutputTool_4_4.png" alt="GcDataOutputTool_4_4" /></p>
 
-<p>报告类型，设值消息报告的类型，包括提示、警告、错误、致命错误、弹出提示、选项提示和自定义提示；</p>
+<p>Loại báo cáo, thiết lập loại báo cáo thông báo, bao gồm: thông tin, cảnh báo, lỗi, lỗi nghiêm trọng, thông báo bật lên, thông báo tùy chọn và thông báo tùy chỉnh;</p>
 
-<p>禁用弹窗，设置消息提示时，是否禁止弹窗。</p>
+<p>Vô hiệu hóa cửa sổ bật lên, thiết lập khi hiển thị thông báo có cấm bật cửa sổ hay không.</p>
 
-<p>当输出选择为通信时，参数窗口如下：</p>
+<p>Khi lựa chọn xuất là giao tiếp, cửa sổ tham số như sau:</p>
 
 <p><img src="media/GcDataOutputTool_4_5.png" alt="GcDataOutputTool_4_5" /></p>
 
-<p>通信端口，设置用来数据发送的端口，仅支持无协议的端口。</p>
+<p>Cổng giao tiếp, thiết lập cổng dùng để gửi dữ liệu, chỉ hỗ trợ cổng không có giao thức.</p>
 
-<p>通信管理，点击通信管理按钮，将弹出通信管理对话框。</p>
+<p>Quản lý giao tiếp, nhấn nút quản lý giao tiếp sẽ hiện ra hộp thoại quản lý giao tiếp.</p>
 
 <ul>
-<li><h4>数据插入窗口</h4></li>
+<li><h4>Cửa Sổ Chèn Dữ Liệu</h4></li>
 </ul>
+
 
 
 <p><img src="media/GcDataOutputTool_4_6.png" alt="GcDataOutputTool_4_6" /></p>
 
-<p>双击数据列表中的数据项，对应的数据将被插入到编辑框内。</p>
+<p>Nhấp đúp vào mục dữ liệu trong danh sách, dữ liệu tương ứng sẽ được chèn vào ô chỉnh sửa.</p>
 
-<p><strong>关键字搜索</strong></p>
+<p><strong>Tìm kiếm bằng từ khóa</strong></p>
 
-<p>通过编辑文本框的关键字，来过滤数据列表中显示的数据项。</p>
+<p>Thông qua từ khóa nhập vào ô chỉnh sửa văn bản để lọc các mục dữ liệu hiển thị trong danh sách.</p>
 
-<p><strong>工具</strong></p>
+<p><strong>Công cụ</strong></p>
 
-<p>选择工具后，列表中将显示工具相关参数。</p>
+<p>Khi chọn công cụ, danh sách sẽ hiển thị các tham số liên quan đến công cụ đó.</p>
 
-<p><strong>变量</strong></p>
+<p><strong>Biến</strong></p>
 
-<p>选择变量后，变量将显示到列表中。</p>
+<p>Khi chọn biến, biến đó sẽ được hiển thị trong danh sách.</p>
 
-<p><strong>全局参数</strong></p>
+<p><strong>Tham số toàn cục</strong></p>
 
-<p>选择全局参数后，所有全局参数将被显示到列表中。</p>
+<p>Khi chọn tham số toàn cục, tất cả các tham số toàn cục sẽ được hiển thị trong danh sách.</p>
 
 <ul>
-<li><h4>图像保存功能</h4></li>
+<li><h4>Chức năng lưu ảnh</h4></li>
 </ul>
+
 
 
 <p><img src="media/GcDataOutputTool_4_7.png" alt="GcDataOutputTool_4_7" /></p>
 
-<p>输出选择为图像保存时，执行控制与情景管理部分，与数据输出工具的其他功能相同。</p>
+<p>Khi lựa chọn xuất là lưu ảnh, phần điều khiển thực thi và quản lý tình huống giống với các chức năng khác của công cụ xuất dữ liệu.</p>
 
-<p>下拉列表可以选择原图保存或截图保存，只有列表为空时才可以切换选择，目的是防止同一情景下原图保存和截图保存数据混合。</p>
+<p>Danh sách thả xuống có thể chọn lưu ảnh gốc hoặc lưu ảnh chụp màn hình, chỉ khi danh sách trống mới có thể chuyển đổi lựa chọn, nhằm tránh dữ liệu lưu ảnh gốc và ảnh chụp màn hình bị trộn lẫn trong cùng một tình huống.</p>
 
-<p>原图保存时，当点击增加按钮时，弹出原图数据编辑窗口，如下图。</p>
+<p>Khi lưu ảnh gốc, nhấn nút thêm sẽ hiện cửa sổ chỉnh sửa dữ liệu ảnh gốc, như hình dưới đây.</p>
 
 <p><img src="media/GcDataOutputTool_4_8.png" alt="GcDataOutputTool_4_8" /></p>
 
-<p>截图保存时，点击增加按钮时，弹出截图数据编辑窗口，如下图。</p>
+<p>Khi lưu ảnh chụp màn hình, nhấn nút thêm sẽ hiện cửa sổ chỉnh sửa dữ liệu ảnh chụp màn hình, như hình dưới đây.</p>
 
 <p><img src="media/GcDataOutputTool_4_9.png" alt="GcDataOutputTool_4_9" /></p>
 
-<p><strong>删除</strong></p>
+<p><strong>Xóa</strong></p>
 
-<p>当列表中有一条或多条数据被选中时，删除按钮可用。点击删除按钮后，选中的数据会被删除。</p>
+<p>Khi trong danh sách có một hoặc nhiều dữ liệu được chọn, nút xóa sẽ khả dụng. Nhấn nút xóa, các dữ liệu được chọn sẽ bị xóa.</p>
 
-<p><strong>修改</strong></p>
+<p><strong>Sửa</strong></p>
 
-<p>当列表中仅有一条数据被选中时，修改按钮可用。点击修改按钮，弹出数据编辑窗口，如果是原图保存数据，弹出原图保存数据编辑窗口，如果是截图保存数据，弹出截图数据编辑窗口。</p>
+<p>Khi trong danh sách chỉ có một dữ liệu được chọn, nút sửa sẽ khả dụng. Nhấn nút sửa, cửa sổ chỉnh sửa dữ liệu sẽ hiện ra, nếu là dữ liệu lưu ảnh gốc thì hiện cửa sổ chỉnh sửa dữ liệu lưu ảnh gốc, nếu là dữ liệu lưu ảnh chụp màn hình thì hiện cửa sổ chỉnh sửa dữ liệu lưu ảnh chụp màn hình.</p>
 
-<p><strong>数据名</strong></p>
+<p><strong>Tên dữ liệu</strong></p>
 
-<p>数据参数名，图像类型的数据，支持灰度图像、RGB图像、深度图像和轮廓图像的保存，当鼠标切入编辑框时，将自动显示图像数据插入窗口，如下图。双击列表中的数据，对应的数据名将被插入到数据名编辑框内。双击其他选项，之前编辑框内的数据将被覆盖。</p>
+<p>Tên tham số dữ liệu, đối với loại dữ liệu ảnh hỗ trợ lưu ảnh xám, ảnh RGB, ảnh chiều sâu và ảnh đường viền. Khi di chuột vào ô chỉnh sửa, cửa sổ chèn dữ liệu ảnh sẽ tự động hiện ra, như hình dưới. Nhấp đúp vào dữ liệu trong danh sách, tên dữ liệu tương ứng sẽ được chèn vào ô tên dữ liệu. Nhấp đúp vào mục khác sẽ ghi đè dữ liệu cũ trong ô chỉnh sửa.</p>
 
 <p><img src="media/GcDataOutputTool_4_10.png" alt="GcDataOutputTool_4_10" /></p>
 
-<p><strong>截屏窗口</strong></p>
+<p><strong>Cửa sổ chụp màn hình</strong></p>
 
-<p>选择要截屏的窗口，比如View-1。</p>
+<p>Chọn cửa sổ muốn chụp màn hình, ví dụ View-1.</p>
 
-<p><strong>自动命名</strong></p>
+<p><strong>Tự động đặt tên</strong></p>
 
-<p>是否使用系统给文件的命名，不选中的话，就需要在编辑框中编辑文件名，编辑框支持数据插入窗口插入文本。选中时，数据列表中文件名显示为自动命名。</p>
+<p>Có sử dụng tên file do hệ thống đặt hay không, nếu không chọn, cần nhập tên file trong ô chỉnh sửa, ô này hỗ trợ chèn văn bản từ cửa sổ chèn dữ liệu. Nếu chọn, tên file trong danh sách sẽ hiển thị là tự động đặt tên.</p>
 
-<p><strong>文件路径</strong></p>
+<p><strong>Đường dẫn file</strong></p>
 
-<p>设置保存图像的路径。在系统路径下。</p>
+<p>Thiết lập đường dẫn lưu ảnh. Đường dẫn thuộc hệ thống.</p>
 
-<p><strong>文件格式</strong></p>
+<p><strong>Định dạng file</strong></p>
 
-<p>原图保存可选择自动、BMP、JPG、RDB、FDB、PNG；JPG需要设置压缩比例和质量，默认为BMP；截图保存可选自动、BMP、JPG，默认为BMP。</p>
+<p>Đối với lưu ảnh gốc có thể chọn tự động, BMP, JPG, RDB, FDB, PNG; với JPG cần cài đặt tỉ lệ nén và chất lượng, mặc định là BMP; đối với lưu ảnh chụp màn hình có thể chọn tự động, BMP, JPG, mặc định là BMP.</p>
 
-<p><strong>压缩比例</strong></p>
+<p><strong>Tỉ lệ nén</strong></p>
 
-<p>仅文件格式为JPG时可用，其他格式时界面隐藏，设置图片压缩比例，只支持1、2、4、8，其他数据无效，默认值为1。</p>
+<p>Chỉ dùng khi định dạng file là JPG, các định dạng khác sẽ ẩn giao diện này, dùng để thiết lập tỉ lệ nén ảnh, chỉ hỗ trợ các giá trị 1, 2, 4, 8, các giá trị khác không hợp lệ, mặc định là 1.</p>
 
-<p><strong>压缩质量</strong></p>
+<p><strong>Chất lượng nén</strong></p>
 
-<p>仅文件格式为JPG时可用，其他格式时界面隐藏，设置图片的压缩质量，取值为1~100，默认值为80。</p>
+<p>Chỉ dùng khi định dạng file là JPG, các định dạng khác sẽ ẩn giao diện này, dùng để thiết lập chất lượng nén ảnh, giá trị từ 1 đến 100, mặc định là 80.</p>
 
-<p><strong>缩放比例</strong></p>
+<p><strong>Tỉ lệ phóng to</strong></p>
 
-<p>屏幕的缩放比例，取值范围0.001~1.00，默认值为0.25。</p>
+<p>Tỉ lệ phóng to màn hình, giá trị từ 0.001 đến 1.00, mặc định là 0.25.</p>
 
-<p><strong>添加水印</strong></p>
+<p><strong>Thêm watermark</strong></p>
 
-<p>是否添加水印，不选中时，水印模式和水印信息不可编辑。选中时，继续选择水印模式。</p>
+<p>Có thêm watermark hay không, nếu không chọn thì chế độ watermark và thông tin watermark không thể chỉnh sửa. Nếu chọn thì có thể tiếp tục chọn chế độ watermark.</p>
 
-<p><strong>水印模式</strong></p>
+<p><strong>Chế độ watermark</strong></p>
 
-<p>水印模式有三种，Product，Vendor和Product and Vendor，选择其中一种模式并编辑水印信息。</p>
+<p>Chế độ watermark gồm ba loại: Product, Vendor và Product and Vendor, chọn một trong các chế độ này và chỉnh sửa thông tin watermark.</p>
 
-<p><strong>产品水印</strong></p>
+<p><strong>Watermark sản phẩm</strong></p>
 
-<p>水印模式为Product或Product and Vendor时，可编辑，选择想要的水印信息。</p>
+<p>Khi chế độ watermark là Product hoặc Product and Vendor thì có thể chỉnh sửa, chọn thông tin watermark mong muốn.</p>
 
-<p><strong>供应商水印</strong></p>
+<p><strong>Watermark nhà cung cấp</strong></p>
 
-<p>水印模式为Vendor或Product and Vendor时，可编辑，选择想要的水印信息。</p>
+<p>Khi chế độ watermark là Vendor hoặc Product and Vendor thì có thể chỉnh sửa, chọn thông tin watermark mong muốn.</p>
 
-<p><strong>覆盖保存</strong></p>
+<p><strong>Ghi đè khi lưu</strong></p>
 
-<p>自动命名不选中文件名参数不为空时，是否覆盖同名文件保存。自动命名时禁用。</p>
+<p>Khi không chọn tự động đặt tên và tên file không rỗng, có ghi đè file cùng tên khi lưu hay không. Khi tự động đặt tên thì tính năng này bị vô hiệu hóa.</p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Các vấn đề thường gặp</h2>
+
 
 <table>
 <thead>
 <tr>
-<th> 现象描述                                         </th>
-<th> 解决方法                                                     </th>
+<th>Mô tả hiện tượng</th>
+<th>Phương pháp giải quyết</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 工具执行报输出选择为空                           </td>
-<td> 在工程中右键选中，点击属性，在弹出的初始化窗口中选择输出     </td>
+<td>Công cụ thực thi báo lựa chọn xuất bị trống</td>
+<td>Trong dự án, nhấp chuột phải chọn, bấm thuộc tính, trong cửa sổ khởi tạo hiện ra chọn phần xuất</td>
 </tr>
 <tr>
-<td> 工具输出的字符串为空，高级属性界面预览内容也为空 </td>
-<td> 所引用的参数或变量值可能为空，查一下参数或变量的值           </td>
+<td>Chuỗi xuất của công cụ bị trống, phần xem trước trong giao diện thuộc tính nâng cao cũng trống</td>
+<td>Tham số hoặc giá trị biến được tham chiếu có thể bị trống, kiểm tra lại giá trị tham số hoặc biến</td>
 </tr>
 <tr>
-<td> 工具输出的字符串为乱码                           </td>
-<td> 查看预览窗口，若预览窗口也是乱码，则编辑框输入字符串格式存在问题，可删除乱码对应的数据重新编辑 </td>
+<td>Chuỗi xuất của công cụ bị mã hóa sai (ký tự rối)</td>
+<td>Xem cửa sổ xem trước, nếu cửa sổ xem trước cũng bị mã hóa sai thì chuỗi nhập vào ô chỉnh sửa có định dạng sai, có thể xóa dữ liệu bị lỗi rồi chỉnh sửa lại</td>
 </tr>
 <tr>
-<td> 当选择为通信发送时，报发送失败                   </td>
-<td> 查看通信连接状态及端口状态是否正常，若连接状态或端口状态异常，先解决连接问题 </td>
+<td>Khi chọn gửi qua giao tiếp, báo gửi thất bại</td>
+<td>Kiểm tra trạng thái kết nối giao tiếp và trạng thái cổng có bình thường không, nếu trạng thái kết nối hoặc cổng bất thường thì xử lý vấn đề kết nối trước</td>
 </tr>
 <tr>
-<td> 当启用多情境时，报所有情境都未执行               </td>
-<td> 查看各个情境的执行条件，是否都是false，若都未false，修改执行条件，否则工具处于无效状态 </td>
+<td>Khi bật đa tình huống, báo tất cả các tình huống đều không thực thi</td>
+<td>Kiểm tra điều kiện thực thi của từng tình huống, xem có phải tất cả đều là false không, nếu đều false thì sửa điều kiện thực thi, nếu không thì công cụ đang ở trạng thái vô hiệu</td>
 </tr>
 <tr>
-<td> 当数据输出工具保存图像时，保存图像失败           </td>
-<td> 查看图像列表中所插入的图像数据是否正常                       </td>
+<td>Khi công cụ xuất dữ liệu lưu ảnh bị lỗi lưu ảnh</td>
+<td>Kiểm tra dữ liệu ảnh đã chèn trong danh sách ảnh có bình thường không</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
 
-<h4>输入参数</h4>
+<h2>6. Giải thích tham số</h2>
 
-<p>无</p>
+<h4>Tham số đầu vào</h4>
 
-<h4>输出参数</h4>
+<p>Không có</p>
+
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称         </th>
-<th> 参数说明                                                     </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 执行结果         </td>
-<td> 工具执行结果。                                               </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
 </tr>
 <tr>
-<td> 执行时间         </td>
-<td> 工具执行时间。                                               </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
 </tr>
 <tr>
-<td> 输出文本         </td>
-<td> 输出格式化后的字符串。                                       </td>
+<td>Văn bản xuất</td>
+<td>Chuỗi đã được định dạng sau khi xuất.</td>
 </tr>
 <tr>
-<td> 原图保存路径1~16 </td>
-<td> 数据链依次输出原图的保存路径，注意只输出第一个执行的原图保存的情境的图像路径，且只输出实际保存图像的路径，如情境1执行时只保存的5幅图像，那么原图保存路径6至原图保存路径16都为空。 </td>
+<td>Đường dẫn lưu ảnh gốc 1~16</td>
+<td>Chuỗi dữ liệu lần lượt xuất ra đường dẫn lưu ảnh gốc, lưu ý chỉ xuất đường dẫn ảnh gốc của tình huống lưu ảnh gốc được thực thi đầu tiên, và chỉ xuất các đường dẫn ảnh thực tế được lưu, ví dụ khi tình huống 1 thực thi chỉ lưu 5 ảnh thì đường dẫn lưu ảnh gốc 6 đến 16 sẽ trống.</td>
 </tr>
 <tr>
-<td> 截图保存路径1~16 </td>
-<td> 数据链依次输出截图的保存路径，注意只输出第一个执行的截图保存的情境的图像路径，且只输出实际保存图像的路径，如情境1执行只保存的1幅截图图像，那么截图保存路径2至截图保存路径16都为空。 </td>
+<td>Đường dẫn lưu ảnh chụp màn hình 1~16</td>
+<td>Chuỗi dữ liệu lần lượt xuất ra đường dẫn lưu ảnh chụp màn hình, lưu ý chỉ xuất đường dẫn ảnh của tình huống lưu ảnh chụp được thực thi đầu tiên, và chỉ xuất các đường dẫn ảnh thực tế được lưu, ví dụ khi tình huống 1 thực thi chỉ lưu 1 ảnh chụp màn hình thì đường dẫn lưu ảnh chụp màn hình 2 đến 16 sẽ trống.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>7. Ví dụ dự án</h2>
 
-<h2>7. 示例工程</h2>
-
-<p>参见“\Samples\数据输出工具.gvp”。</p>
+<p>Tham khảo “\Samples\数据输出工具.gvp”.</p>
