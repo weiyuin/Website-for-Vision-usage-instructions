@@ -16,160 +16,159 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>屏幕截图工具</h1>
+<h1>Công cụ chụp ảnh màn hình</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>对某一个新增的视图View进行截屏，并保存成jpg或者bmp格式的图片。</p>
+<p>Chụp ảnh màn hình của một View mới thêm và lưu thành ảnh định dạng jpg hoặc bmp.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                                   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口     </td>
-<td> 截屏窗口                                                     </td>
-<td> 选择需要截屏的窗口，比如，View-1等。注意，如果没有View视图，需要新增一个视图，将要截屏保存图像的拖进View里面。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 自动命名     </td>
-<td> 是否使用系统给截图命的名，选择否的话，就需要在数据链中给出文件名，如果文件名为空则按自动命名保存。                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 覆盖保存     </td>
-<td> 自动名选择“否”，文件名参数不为空时，是否覆盖同名文件保存。                                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 文件格式     </td>
-<td> 有自动，BMP和JPG三种，其中自动和BMP都是保存成BMP格式。JPG格式需要设置压缩比例和压缩质量。                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 缩放比例     </td>
-<td> 对保存后图片整体大小的缩放。                                                                                          </td>
-</tr>
-<tr>
-<td></td>
-<td> 压缩比例     </td>
-<td> 只有JPG图像格式需要设置压缩比例。                                                                                          </td>
-</tr>
-<tr>
-<td></td>
-<td> 压缩质量     </td>
-<td> 只有JPG图像格式需要设置压缩质量。压缩质量最好是80以上，不会影响图像的清晰度。                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 是否获取子图 </td>
-<td> 截图是否用子图。如果不是全屏的情况下，图像的左上角为坐标原点；如果是全屏的模式下，View窗口的左上角为坐标原点。                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> X            </td>
-<td> 子图的起始X坐标。                                                                                                          </td>
-</tr>
-<tr>
-<td></td>
-<td> Y            </td>
-<td> 子图的起始Y坐标                                                                                                            </td>
-</tr>
-<tr>
-<td></td>
-<td> W            </td>
-<td> 子图的宽度。                                                                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> H            </td>
-<td> 子图的高度。                                                                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 输出文件路径 </td>
-<td> 截图输出的文件路径。                                                                                                       </td>
-</tr>
-<tr>
-<td></td>
-<td> 是否保存图像 </td>
-<td> 控制截图图像是否保存到指定路径。                                                                                           </td>
-</tr>
-<tr>
-<td> 图像窗口     </td>
-<td> 无    </td>
-<td> 无 </td>
-</tr>
-<tr>
-<td> 数据链       </td>
-<td> 启用                                                         </td>
-<td> 是否启用截图，默认启用。                                     </td>
-</tr>
-<tr>
-<td></td>
-<td> 文件名       </td>
-<td> 截图之后保存的图像文件名称。                                                                                               </td>
-</tr>
-<tr>
-<td> 高级界面     </td>
-<td> 无     </td>
-<td> 无 </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                       </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 执行结果       </td>
-<td> 工具执行结果。 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Cửa sổ chụp màn hình</td>
+<td>Chọn cửa sổ cần chụp màn hình, ví dụ như View-1. Lưu ý, nếu không có View, cần thêm một View mới, kéo hình ảnh cần chụp vào View đó.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                 </td>
+<td>Đặt tên tự động</td>
+<td>Có sử dụng tên file do hệ thống đặt cho ảnh chụp màn hình hay không. Nếu chọn không, cần cung cấp tên file trong chuỗi dữ liệu; nếu tên file để trống thì lưu theo tên tự động.</td>
 </tr>
 <tr>
-<td> 图像窗口     </td>
-<td> 无 </td>
-<td> 无                             </td>
+<td></td>
+<td>Ghi đè khi lưu</td>
+<td>Khi đặt tên tự động là “Không” và tham số tên file không trống, có ghi đè lên file cùng tên hay không.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 无   </td>
-<td> 无                             </td>
+<td></td>
+<td>Định dạng file</td>
+<td>Có các tùy chọn: tự động, BMP và JPG; trong đó tự động và BMP đều lưu dưới định dạng BMP. Định dạng JPG cần thiết lập tỉ lệ nén và chất lượng nén.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỉ lệ thu phóng</td>
+<td>Phóng to hoặc thu nhỏ kích thước tổng thể của ảnh lưu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỉ lệ nén</td>
+<td>Chỉ áp dụng cho ảnh định dạng JPG.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chất lượng nén</td>
+<td>Chỉ áp dụng cho ảnh định dạng JPG. Nên đặt trên 80 để không ảnh hưởng đến độ nét của ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Có lấy ảnh con không</td>
+<td>Chọn chụp ảnh con hay không. Nếu không phải toàn màn hình, góc trên bên trái của ảnh là gốc tọa độ; nếu toàn màn hình, góc trên bên trái cửa sổ View là gốc tọa độ.</td>
+</tr>
+<tr>
+<td></td>
+<td>X</td>
+<td>Tọa độ X bắt đầu của ảnh con.</td>
+</tr>
+<tr>
+<td></td>
+<td>Y</td>
+<td>Tọa độ Y bắt đầu của ảnh con.</td>
+</tr>
+<tr>
+<td></td>
+<td>W</td>
+<td>Chiều rộng của ảnh con.</td>
+</tr>
+<tr>
+<td></td>
+<td>H</td>
+<td>Chiều cao của ảnh con.</td>
+</tr>
+<tr>
+<td></td>
+<td>Đường dẫn file xuất</td>
+<td>Đường dẫn lưu file ảnh chụp màn hình.</td>
+</tr>
+<tr>
+<td></td>
+<td>Có lưu ảnh không</td>
+<td>Điều khiển ảnh chụp màn hình có được lưu vào đường dẫn chỉ định hay không.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Bật</td>
+<td>Có bật chức năng chụp ảnh màn hình hay không, mặc định bật.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tên file</td>
+<td>Tên file ảnh được lưu sau khi chụp màn hình.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>Lưu ý</h2>
 
-<h2>示例工程</h2>
+<p>Không có</p>
 
-<p>参见“\Samples\图像源配置工具.gvp”。</p>
+<h2>Dự án mẫu</h2>
+
+<p>Tham khảo “\Samples\图像源配置工具.gvp”.</p>
+
