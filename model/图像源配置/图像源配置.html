@@ -16,115 +16,113 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>图像源配置工具</h1>
+<h1>Công Cụ Cấu Hình Nguồn Ảnh</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>可以输入三个RGB或者灰色的图像或者深度图像，根据索引值输出一个图像。</p>
+<p>Có thể nhập vào ba ảnh RGB, ảnh xám hoặc ảnh độ sâu, sau đó xuất ra một ảnh dựa trên chỉ số được chọn.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称   </th>
-<th> 参数描述                                                                                         </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口   </td>
-<td> 图像类型                           </td>
-<td> 输入图像的数据类型可以为RGB彩色图像，灰度图像，深度图像，轮廓图像。 </td>
-</tr>
-<tr>
-<td> 图像窗口   </td>
-<td> 无  </td>
-<td> 无                     </td>
-</tr>
-<tr>
-<td> 数据链     </td>
-<td> 图像源1                            </td>
-<td> 图像数据来源1，最多支持3个图像源，可以是图像文件夹，图像文件，图像采集数据源等等。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 图像源2    </td>
-<td> 图像数据来源2，同上。                                                                            </td>
-</tr>
-<tr>
-<td></td>
-<td> 图像源3    </td>
-<td> 图像数据来源3，同上。                                                                            </td>
-</tr>
-<tr>
-<td></td>
-<td> 图像源索引 </td>
-<td> 输出的索引值范围为1~3，默认值为1。                                                               </td>
-</tr>
-<tr>
-<td> 高级界面   </td>
-<td> 无   </td>
-<td> 无                     </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                           </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输入图像                                                     </td>
-<td> 输出图像宽度、高度、像素大小。                       </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Loại ảnh</td>
+<td>Loại dữ liệu của ảnh đầu vào có thể là ảnh màu RGB, ảnh xám, ảnh độ sâu, hoặc ảnh đường viền.</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Nguồn ảnh 1</td>
+<td>Nguồn dữ liệu ảnh thứ nhất, hỗ trợ tối đa 3 nguồn ảnh. Có thể là thư mục ảnh, tệp ảnh, hoặc nguồn ảnh thu thập được,...</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                                                     </td>
+<td>Nguồn ảnh 2</td>
+<td>Nguồn dữ liệu ảnh thứ hai, tương tự như trên.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                                                     </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 输出图像                                                     </td>
-<td> 根据索引值，选择输出的图像，默认为第一个数据源图像。 </td>
+<td>Nguồn ảnh 3</td>
+<td>Nguồn dữ liệu ảnh thứ ba, tương tự như trên.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                       </td>
+<td>Chỉ số nguồn ảnh</td>
+<td>Phạm vi giá trị chỉ số đầu ra là từ 1~3, giá trị mặc định là 1.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出图像                                                     </td>
-<td> 按照索引值输出的图像。                               </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Xuất ra chiều rộng, chiều cao và kích thước điểm ảnh của ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực hiện tác vụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Xuất ra ảnh được chọn theo chỉ số, mặc định là ảnh từ nguồn dữ liệu đầu tiên.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ: “OK” nếu thành công, “NG” nếu thất bại — giống với tham số kết quả thực thi trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh đầu ra tương ứng với chỉ số được chọn.</td>
+</tr>
+</tbody>
+</table>
 
-<p>无。</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
 
-<p>无。</p>
+<h2>Lưu ý</h2>
 
-<h2>示例工程</h2>
+<p>Không có.</p>
 
-<p>参见“\Samples\图像源配置工具.gvp”。</p>
+<h2>Dự án mẫu</h2>
+
+<p>Tham khảo tại “\Samples\图像源配置工具.gvp”。</p>

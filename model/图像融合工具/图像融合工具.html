@@ -16,138 +16,136 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>图像融合工具</h1>
+<h1>Công Cụ Trộn Ảnh</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>由于图像在获取的过程中，会出现一部分偏暗，一部分偏亮；整体亮度不一致，所以要求两张图像进行融合，简单地说，就是将源图像的一部分区域拼接到目的图像中，输出融合后的图像，这个区域可以是矩形、仿射矩形、多边形和圆形。</p>
+<p>Trong quá trình thu nhận hình ảnh, có thể xảy ra hiện tượng một phần ảnh bị tối, phần khác lại quá sáng, dẫn đến độ sáng tổng thể không đồng đều. Vì vậy cần trộn hai ảnh lại với nhau. Nói đơn giản, đó là việc ghép một vùng cụ thể của ảnh nguồn vào ảnh đích để xuất ra ảnh đã trộn. Vùng này có thể là hình chữ nhật, hình chữ nhật biến đổi affine, đa giác hoặc hình tròn.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称    </th>
-<th> 参数描述                                                                                        </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口    </td>
-<td> ROI区域类型                       </td>
-<td> 用于源图像进行融合ROI区域类型，主要有矩形、仿射矩形、多边形和圆形四种类型。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 矩形ROI     </td>
-<td> 根据ROI区域类型，出现相应的类型。                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 仿射矩形ROI </td>
-<td> 同上。                                                                                          </td>
-</tr>
-<tr>
-<td></td>
-<td> 多边形ROI   </td>
-<td> 同上。                                                                                          </td>
-</tr>
-<tr>
-<td></td>
-<td> 圆形ROI     </td>
-<td> 同上。                                                                                          </td>
-</tr>
-<tr>
-<td> 图像窗口    </td>
-<td> 目的图像                          </td>
-<td> 被融合的图像。                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 源图像      </td>
-<td> 获取ROI区域的图像。                                                                             </td>
-</tr>
-<tr>
-<td> 数据链      </td>
-<td> 目的图像                          </td>
-<td> 同上。                                                       </td>
-</tr>
-<tr>
-<td></td>
-<td> 源图像      </td>
-<td> 同上。                                                                                          </td>
-</tr>
-<tr>
-<td></td>
-<td> 线性变换    </td>
-<td> 相应ROI区域的线性变换                                                                           </td>
-</tr>
-<tr>
-<td> 高级界面    </td>
-<td> 无   </td>
-<td> 无                                                                                              </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                           </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出图像                                                     </td>
-<td> 融合之后的结果图像。 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Loại vùng ROI</td>
+<td>Loại vùng ROI dùng để trộn ảnh nguồn, gồm 4 loại chính: hình chữ nhật, hình chữ nhật affine, đa giác và hình tròn.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                     </td>
+<td>ROI hình chữ nhật</td>
+<td>Xuất hiện tùy theo loại vùng ROI được chọn.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                     </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 输出图像                                                     </td>
-<td> 融合之后的结果图像。 </td>
+<td>ROI hình chữ nhật affine</td>
+<td>Tương tự như trên.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                       </td>
+<td>ROI đa giác</td>
+<td>Tương tự như trên.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出图像                                                     </td>
-<td> 融合之后的结果图像。 </td>
+<td></td>
+<td>ROI hình tròn</td>
+<td>Tương tự như trên.</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Ảnh đích</td>
+<td>Ảnh sẽ được trộn với ảnh nguồn.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh nguồn</td>
+<td>Ảnh được lấy dữ liệu từ vùng ROI.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đích</td>
+<td>Tương tự như trên.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh nguồn</td>
+<td>Tương tự như trên.</td>
+</tr>
+<tr>
+<td></td>
+<td>Biến đổi tuyến tính</td>
+<td>Biến đổi tuyến tính được áp dụng lên vùng ROI tương ứng.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi trộn.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực hiện tác vụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi trộn.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ: hiển thị “OK” nếu thành công, hiển thị “NG” nếu thất bại — giống như tham số kết quả thực thi ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi trộn.</td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li>ROI区域首先会进行线性变换（由数据链给出），然后再对源图像进行区域拷贝，复制到目的图像里面。</li>
+<li>Vùng ROI trước tiên sẽ được thực hiện biến đổi tuyến tính (do chuỗi dữ liệu cung cấp), sau đó mới thực hiện sao chép vùng tương ứng từ ảnh nguồn vào ảnh đích.</li>
 </ul>
 
+<h2>Dự án mẫu</h2>
 
-<h2>示例工程</h2>
+<p>Tham khảo tại “\Samples\图像融合工具.gvp”。</p>
 
-<p>参见“\Samples\图像融合工具.gvp”。</p>
