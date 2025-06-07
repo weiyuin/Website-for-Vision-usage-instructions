@@ -16,278 +16,280 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>专业几何定位</h1>
+<h1>Định vị hình học chuyên nghiệp</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>专业几何定位工具能够在实时图像中进行一个到多个实时模式与训练模式之间的匹配，定位结果包含了匹配分数、位置、角度等诸多信息。</p>
+<p>Công cụ định vị hình học chuyên nghiệp có thể thực hiện việc khớp từ một đến nhiều mẫu theo thời gian thực giữa ảnh thực tế và ảnh huấn luyện, kết quả định vị bao gồm điểm khớp, vị trí, góc xoay và nhiều thông tin khác.</p>
 
-<p>图1是一种典型定位案例，图中十字标记作为训练模式特征，训练位置坐标(320,240)。其中：a为训练原图；b为训练原图经过平移(10,10)；c为训练原图旋转-10°；d为训练原图旋转10°；e为低信噪比图像；f为低对比度图像；g为低亮度图像；h为高亮度图像；i为部分缺失图像。上述多种情况下，定位工具均能给出高精度定位结果。</p>
+<p>Hình 1 là một ví dụ định vị điển hình. Dấu cộng trong hình là đặc trưng mẫu huấn luyện với tọa độ huấn luyện là (320,240). Trong đó: a là ảnh gốc huấn luyện; b là ảnh gốc sau khi tịnh tiến (10,10); c là ảnh gốc xoay -10°; d là ảnh gốc xoay 10°; e là ảnh có tỉ lệ tín hiệu/nhiễu thấp; f là ảnh độ tương phản thấp; g là ảnh độ sáng thấp; h là ảnh độ sáng cao; i là ảnh bị thiếu một phần. Trong các trường hợp trên, công cụ định vị đều có thể đưa ra kết quả định vị với độ chính xác cao.</p>
 
 <p><img src="media/GvGeomSearchAdvancedExTool_1_1.png" alt="img" /></p>
 
-<p><imgnote>图1 专业几何定位工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ định vị hình học chuyên nghiệp</imgnote></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Các tình huống ứng dụng</h2>
 
-<p>根据训练的几何特征，找出匹配几何的位置，给出结果个数、结果数组。</p>
+<p>Dựa trên đặc trưng hình học huấn luyện, tìm ra vị trí hình học khớp, đưa ra số lượng kết quả và mảng kết quả.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên lý</h2>
 
-<h3>定位原理</h3>
+<h3>Nguyên lý định vị</h3>
 
-<p>专业几何定位工具通过模式训练来获取目标的几何特征描述，几何特征可以精确、快速的进行旋转、缩放等变换，且对图像灰度线性、灰度非线性变化具有良好的适应性。专业几何定位工具在实时图像中搜索训练模式，计算实时图像中结果模式的位置、其相对于训练模式的角度和相对于训练模式的缩放。</p>
+<p>Công cụ định vị hình học chuyên nghiệp thu được mô tả đặc trưng hình học của đối tượng thông qua huấn luyện mẫu. Đặc trưng hình học có thể thực hiện các phép biến đổi như xoay, thu phóng một cách chính xác và nhanh chóng, đồng thời có khả năng thích ứng tốt với các thay đổi tuyến tính và phi tuyến của mức xám ảnh. Công cụ định vị này tìm kiếm mẫu huấn luyện trong ảnh thời gian thực, tính toán vị trí của mẫu tìm được, góc xoay và tỷ lệ thu phóng so với mẫu gốc.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
-<p>工具执行流程：配置输入→设定属性→训练图像→执行搜索。</p>
+<p>Quy trình thực hiện công cụ: Cấu hình đầu vào → Thiết lập thuộc tính → Huấn luyện ảnh → Thực hiện tìm kiếm.</p>
 
-<h3>配置输入</h3>
+<h3>Cấu hình đầu vào</h3>
 
-<p>双击工具在弹出窗口中配置输入图像，如图2</p>
+<p>Nhấp đúp vào công cụ để cấu hình ảnh đầu vào trong cửa sổ bật lên, như Hình 2</p>
 
 <p><img src="media/GvGeomSearchAdvancedExTool_4_11.png" alt="img" /></p>
 
-<p><imgnote>图2 配置输入示意图</imgnote></p>
+<p><imgnote>Hình 2 Minh họa cấu hình đầu vào</imgnote></p>
 
-<h3>设定属性</h3>
+<h3>Thiết lập thuộc tính</h3>
 
-<p>属性栏设置如图3，右键工具→属性→打开高级界面设置如图4</p>
+<p>Thiết lập trong thanh thuộc tính như Hình 3, nhấp chuột phải vào công cụ → Thuộc tính → Mở giao diện nâng cao như Hình 4</p>
 
 <p><img src="media/GvGeomSearchAdvancedExTool_4_10.png" alt="" /></p>
 
-<p><imgnote>图3 属性栏设定属性示意图</imgnote></p>
+<p><imgnote>Hình 3 Minh họa thiết lập thuộc tính trong thanh thuộc tính</imgnote></p>
 
 <p><img src="media/GvGeomSearchAdvancedExTool_4_12.png" alt="img" /></p>
 
-<p><imgnote>图4 高级界面设定属性示意图</imgnote></p>
+<p><imgnote>Hình 4 Minh họa thiết lập thuộc tính trong giao diện nâng cao</imgnote></p>
 
-<h4><strong>掩膜属性</strong></h4>
+<h4><strong>Thuộc tính mặt nạ</strong></h4>
 
-<p>高级界面中点击“启动掩膜”以及“设置掩膜图像”后，就可以在模板训练过程中，屏蔽掉不参与模式训练的区域，减少参与模式训练的几何特征。</p>
+<p>Trong giao diện nâng cao, sau khi nhấp “Bật mặt nạ” và “Thiết lập ảnh mặt nạ”, bạn có thể loại trừ những vùng không tham gia huấn luyện mẫu trong quá trình tạo mẫu, từ đó giảm các đặc trưng hình học không cần thiết.</p>
 
 <p><img src="media/GvGeomSearchAdvancedExTool_4_5.jpg" alt="img" /> <img src="media/GvGeomSearchAdvancedExTool_4_6.jpg" alt="img" /> <img src="media/GvGeomSearchAdvancedExTool_4_7.jpg" alt="img" /></p>
 
-<p><imgnote>( a ) 原始特征</imgnote> <imgnote>( b ) 掩膜区域</imgnote> <imgnote>( c ) 掩膜后特征</imgnote></p>
+<p><imgnote>(a) Đặc trưng gốc</imgnote> <imgnote>(b) Vùng mặt nạ</imgnote> <imgnote>(c) Đặc trưng sau khi mặt nạ</imgnote></p>
 
-<p><imgnote>图5 掩膜示例</imgnote></p>
+<p><imgnote>Hình 5 Ví dụ mặt nạ</imgnote></p>
 
-<p>图5 ( a )：原始的特征图像，当现场定位只需要白边轮廓而不需要使用向内凹的突起时，可使用掩膜。</p>
+<p>Hình 5 (a): Ảnh đặc trưng ban đầu, khi định vị chỉ cần đường viền ngoài màu trắng mà không cần phần lồi lõm bên trong, có thể dùng mặt nạ.</p>
 
-<p>图5 ( b )：掩膜工具中被红色覆盖的区域是不参与特征训练的。掩膜好之后，点击“应用”，该掩膜区域就设置成功。</p>
+<p>Hình 5 (b): Vùng được tô đỏ trong công cụ mặt nạ là vùng không tham gia huấn luyện đặc trưng. Sau khi thiết lập xong mặt nạ, nhấn “Áp dụng” để hoàn tất.</p>
 
-<p>图5 ( c )：掩膜完之后，点击高级界面中的“执行模式训练”，则会生成新的训练模板。</p>
+<p>Hình 5 (c): Sau khi tạo mặt nạ, nhấn “Huấn luyện mẫu” trong giao diện nâng cao để tạo mẫu huấn luyện mới.</p>
 
-<h4><strong>图像金字塔</strong></h4>
+<h4><strong>Kim tự tháp ảnh</strong></h4>
 
-<p>图像金字塔是由原图像逐层滤波下采样得到，上层图像长宽是下层图像的1/2。如图6(a)为图像金字塔抽取示意，图6(b)为实际图像经过抽取金字塔后特征变化。随着金字塔层数的增加，图像分辨率逐步减小，同时随着金字塔层数增加，模式特征减少，细节特征消失。</p>
+<p>Kim tự tháp ảnh được tạo bằng cách lọc và lấy mẫu giảm dần từ ảnh gốc, mỗi lớp phía trên có kích thước bằng 1/2 lớp phía dưới. Hình 6(a) là sơ đồ trích xuất kim tự tháp ảnh, Hình 6(b) là thay đổi đặc trưng sau khi ảnh thực tế được xử lý theo kim tự tháp. Khi tăng số lớp, độ phân giải ảnh giảm dần, đồng thời đặc trưng và chi tiết ảnh cũng bị giảm.</p>
 
 <p><img src="media/GvGeomSearchAdvancedExTool_4_2.png" alt="img" /><img src="media/GvGeomSearchAdvancedExTool_4_3.png" alt="img" /><img src="media/GvGeomSearchAdvancedExTool_4_4.png" alt="img" /></p>
 
-<p><imgnote>(a)图像金字塔</imgnote> <imgnote>(b)模式</imgnote></p>
+<p><imgnote>(a) Kim tự tháp ảnh</imgnote> <imgnote>(b) Mẫu</imgnote></p>
 
-<p><imgnote>图6 金字塔</imgnote></p>
+<p><imgnote>Hình 6 Kim tự tháp</imgnote></p>
 
-<p>抽取图像金字塔的目标：</p>
+<p>Mục tiêu trích xuất kim tự tháp ảnh:</p>
 
-<p>1.加速，在顶层搜索到结果后逐层向下传递并求精，比在原图搜索的计算量大大减少。理论上层数越大越好，但实际到达一定层数后对耗时影响不大，同时层数越大可能会丢失细节信息造成定位不稳定，一般设置为3到5层即可。搜索时可以设置搜索区间，比如一共4层金字塔，可以设置为（4，4）、（4，3）、（4，2）、（3，3）、（3，2）等，（4，4）比（4，2）耗时少。</p>
+<p>1. Tăng tốc: Sau khi tìm được kết quả ở lớp trên cùng, truyền xuống lớp dưới để tinh chỉnh, giúp giảm khối lượng tính toán so với tìm trực tiếp trên ảnh gốc. Lý thuyết càng nhiều lớp càng tốt, nhưng thực tế sau một số lớp sẽ không tiết kiệm thêm thời gian, và có thể mất chi tiết khiến định vị không ổn định. Thường thiết lập 3~5 lớp. Có thể thiết lập phạm vi tìm kiếm như (4,4), (4,3), (4,2), (3,3), (3,2)... trong đó (4,4) nhanh hơn (4,2).</p>
 
-<p>2.对于磨砂面或者模糊图像，最底层图像无法训练到理想模式，但在其他层可以获得优质的模式，图6(b)为一磨砂面图像，左图绿色线条为底层图像模式，右图绿色线条为第四层顶层图像模式。实际定位时左图模式将失败（杂乱不堪），右图模式则很稳定。当然，右图为第4层则搜索时金字塔搜索区间设置为（4，4），如果右图为第三层则设置为（4，3），实际搜索过程我们可以设置任意的金字塔搜索区间。</p>
+<p>2. Với bề mặt mờ hoặc ảnh bị mờ, lớp dưới cùng có thể không đủ để huấn luyện mẫu, nhưng các lớp khác có thể tạo được mẫu tốt. Hình 6(b) là ảnh bề mặt mờ, đường xanh bên trái là mẫu lớp dưới cùng, bên phải là mẫu lớp thứ tư. Trong thực tế, mẫu trái sẽ thất bại (rối), còn mẫu phải sẽ ổn định. Nếu ảnh bên phải là lớp 4 thì tìm kiếm đặt là (4,4), nếu là lớp 3 thì đặt (4,3), bạn có thể tùy chọn phạm vi kim tự tháp khi tìm kiếm.</p>
 
-<h3>训练图像</h3>
+<h3>Huấn luyện ảnh</h3>
 
-<p>右键工具→属性→打开高级界面→训练参数，如图7；</p>
+<p>Nhấp chuột phải công cụ → Thuộc tính → Mở giao diện nâng cao → Tham số huấn luyện như Hình 7;</p>
 
 <p><img src="media/GvGeomSearchAdvancedExTool_4_13.png" alt="img" /></p>
 
-<p><imgnote>图7 训练图像示意图</imgnote></p>
+<p><imgnote>Hình 7 Minh họa huấn luyện ảnh</imgnote></p>
 
-<p>（1）首先选择“训练图像”来源：</p>
+<p>(1) Trước tiên chọn nguồn “ảnh huấn luyện”:</p>
 
-<p>​ a.&ldquo;输入图像"：训练图像从参数链“输入图像”获取；</p>
+<p>​ a. “Ảnh đầu vào”: Ảnh huấn luyện lấy từ chuỗi tham số “ảnh đầu vào”;</p>
 
-<p>​ b.&ldquo;加载图像"：训练图像由离线加载方式从文件获取；</p>
+<p>​ b. “Tải ảnh”: Ảnh huấn luyện được tải từ tệp offline;</p>
 
-<p>（2）点击“获取训练图像”：更新训练图像，点击后会先进行弹框提示；</p>
+<p>(2) Nhấn “Lấy ảnh huấn luyện”: cập nhật ảnh huấn luyện, sau khi nhấn sẽ hiện thông báo;</p>
 
-<p>（3）点击“执行模式训练”：进行训练；</p>
+<p>(3) Nhấn “Thực hiện huấn luyện mẫu”: tiến hành huấn luyện;</p>
 
-<h3>执行搜索</h3>
+<h3>Thực hiện tìm kiếm</h3>
 
-<p>根据设定的搜索参数和判定结果参数返回相应的搜索结果，如图8；</p>
+<p>Dựa vào tham số tìm kiếm và tham số đánh giá đã thiết lập để trả về kết quả tìm kiếm tương ứng, như Hình 8;</p>
 
 <p><img src="media/GvGeomSearchAdvancedExTool_4_14.png" alt="img" /></p>
 
-<p><imgnote>图8 执行搜索示意图</imgnote></p>
+<p><imgnote>Hình 8 Minh họa thực hiện tìm kiếm</imgnote></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Các vấn đề thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 注意事项                                                     </th>
+<th> Lưu ý </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 1. 如果有多个定位结果，可以通过脚本工具来获取专业几何定位结果的搜索结果数组中某个搜索结果。 </td>
+<td> 1. Nếu có nhiều kết quả định vị, có thể dùng công cụ script để lấy từng kết quả trong mảng kết quả tìm kiếm của công cụ định vị hình học chuyên nghiệp. </td>
 </tr>
 <tr>
-<td> 2. 专业几何定位的多个二维变换结果还可以使用脚本工具获得。    </td>
+<td> 2. Kết quả của nhiều phép biến đổi 2D trong định vị hình học chuyên nghiệp cũng có thể được lấy bằng công cụ script. </td>
 </tr>
 <tr>
-<td> 3. 当手动输入金字塔层数过高，执行训练时达不到时，训练结束会返回一个最高的金字塔层数。 </td>
+<td> 3. Khi số lớp kim tự tháp nhập tay quá cao, nếu huấn luyện không đạt tới thì kết thúc huấn luyện sẽ trả về lớp cao nhất có thể. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
 
-<h3>输入参数</h3>
+<h2>6. Giải thích Tham số</h2>
+
+<h3>Tham số đầu vào</h3>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
+<th> Tên tham số             </th>
+<th style="text-align:left;"> Giải thích tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 训练区域             </td>
-<td style="text-align:left;"> 模板图像中参与训练的仿射矩形区域。                                                                         </td>
+<td> Vùng huấn luyện             </td>
+<td style="text-align:left;"> Vùng hình chữ nhật biến hình trong ảnh mẫu tham gia vào quá trình huấn luyện.                                                                         </td>
 </tr>
 <tr>
-<td> 训练标记点      </td>
-<td style="text-align:left;"> 手动输入标记点的X轴、Y轴坐标。                                                               </td>
+<td> Điểm đánh dấu huấn luyện      </td>
+<td style="text-align:left;"> Nhập thủ công tọa độ trục X và trục Y của điểm đánh dấu.                                                               </td>
 </tr>
 <tr>
-<td> 保存训练图像 </td>
-<td style="text-align:left;"> 保存工程时，是否保存训练图像。 </td>
+<td> Lưu ảnh huấn luyện </td>
+<td style="text-align:left;"> Khi lưu dự án, có lưu ảnh huấn luyện hay không. </td>
 </tr>
 <tr>
-<td> 自动金字塔 </td>
-<td style="text-align:left;"> 是否由算法自动确定金字塔层数。选择否，则在属性窗口显示金字塔层数参数。 </td>
+<td> Kim tự tháp tự động </td>
+<td style="text-align:left;"> Có để thuật toán tự động xác định số tầng kim tự tháp hay không. Nếu chọn Không, thì hiển thị tham số số tầng kim tự tháp trong cửa sổ thuộc tính. </td>
 </tr>
 <tr>
-<td> 金字塔层数 </td>
-<td style="text-align:left;"> 随着金字塔层数的增加，图像分辨率逐步减小，同时随着金字塔层数增加，模式特征减少，细节特征消失。一般按默认值即可。取值范围[1,16]，取值为整数。只有在自动金字塔为否的时候，显示此属性。 </td>
+<td> Số tầng kim tự tháp </td>
+<td style="text-align:left;"> Khi số tầng kim tự tháp tăng, độ phân giải ảnh giảm dần; đồng thời, đặc trưng mẫu giảm và chi tiết mất đi. Thông thường dùng giá trị mặc định. Phạm vi giá trị [1,16], giá trị nguyên. Chỉ hiển thị thuộc tính này khi kim tự tháp tự động là Không. </td>
 </tr>
 <tr>
-<td> 自动噪声          </td>
-<td style="text-align:left;"> 是否由算法自动确定噪声阈值。选择否，则在属性窗口显示噪声阈值参数。                                                               </td>
+<td> Tự động ngưỡng nhiễu          </td>
+<td style="text-align:left;"> Có để thuật toán tự động xác định ngưỡng nhiễu hay không. Nếu chọn Không, thì hiển thị tham số ngưỡng nhiễu trong cửa sổ thuộc tính.                                                               </td>
 </tr>
 <tr>
-<td> 噪声阈值              </td>
-<td style="text-align:left;"> 在图像中，像素值低于噪声阈值的部分被认为是噪声，不参与模板训练；像素值高于噪声阈值的部分被认为是图像特征，参与模板训练。一般按默认值即可。取值范围[0,255]，支持小数。只有在自动噪声阈值为否的时候，显示此属性。                                                              </td>
+<td> Ngưỡng nhiễu              </td>
+<td style="text-align:left;"> Trong ảnh, phần có giá trị điểm ảnh thấp hơn ngưỡng nhiễu được xem là nhiễu và không tham gia huấn luyện mẫu; phần cao hơn ngưỡng nhiễu được xem là đặc trưng ảnh và sẽ tham gia huấn luyện mẫu. Thường dùng giá trị mặc định. Phạm vi giá trị [0,255], hỗ trợ số thập phân. Chỉ hiển thị khi ngưỡng nhiễu tự động là Không.                                                              </td>
 </tr>
 <tr>
-<td> 自动边缘强度          </td>
-<td style="text-align:left;"> 是否由算法自动确定边缘强度。选择否，则在属性窗口显示边缘强度参数。                                                              </td>
+<td> Tự động cường độ biên          </td>
+<td style="text-align:left;"> Có để thuật toán tự động xác định cường độ biên hay không. Nếu chọn Không, thì hiển thị tham số cường độ biên trong cửa sổ thuộc tính.                                                              </td>
 </tr>
 <tr>
-<td> 边缘强度阈值            </td>
-<td style="text-align:left;"> 模式中所有边界点的幅值的总和。一般按默认值即可。取值范围[1, +∞），取值为整数。只有在自动边缘强度为否的时候，显示此属性。                                                               </td>
+<td> Ngưỡng cường độ biên            </td>
+<td style="text-align:left;"> Tổng độ lớn của tất cả các điểm biên trong mẫu. Thường dùng giá trị mặc định. Phạm vi giá trị [1, +∞), giá trị nguyên. Chỉ hiển thị khi cường độ biên tự động là Không.                                                               </td>
 </tr>
 <tr>
-<td> 接受阈值              </td>
-<td style="text-align:left;"> 训练模板与实时搜索结果之间有一个匹配程度的分数，当匹配分数高于接收阈值时表明实时搜索成功。接收阈值的取值范围是(0,1)。                                                               </td>
+<td> Ngưỡng chấp nhận              </td>
+<td style="text-align:left;"> Mức độ phù hợp giữa mẫu huấn luyện và kết quả tìm kiếm thực tế. Khi điểm số phù hợp cao hơn ngưỡng chấp nhận, nghĩa là tìm kiếm thực tế thành công. Phạm vi giá trị (0,1).                                                               </td>
 </tr>
 <tr>
-<td> 对比度阈值            </td>
-<td style="text-align:left;"> 对比度定义为模式中所有边界点的幅值的平均。用户可以通过设置对比度阈值删除对比度较低的模式。取值范围[1,255]，支持小数。                                                               </td>
+<td> Ngưỡng độ tương phản            </td>
+<td style="text-align:left;"> Độ tương phản được định nghĩa là trung bình độ lớn biên của tất cả các điểm biên trong mẫu. Người dùng có thể đặt ngưỡng để loại bỏ mẫu có độ tương phản thấp. Phạm vi giá trị [1,255], hỗ trợ số thập phân.                                                               </td>
 </tr>
 <tr>
-<td> 重叠比例阈值          </td>
-<td style="text-align:left;"> 如果存在多个模式，模式的重复度必须小于重叠比例阈值，否则将删除重复模式。取值范围(0,1]，支持小数                                                             </td>
+<td> Ngưỡng tỷ lệ chồng lặp          </td>
+<td style="text-align:left;"> Nếu có nhiều mẫu, mức độ trùng lặp giữa các mẫu phải nhỏ hơn ngưỡng tỷ lệ chồng lặp, nếu không mẫu bị loại bỏ. Phạm vi giá trị (0,1], hỗ trợ số thập phân.                                                             </td>
 </tr>
 <tr>
-<td> 贪婪度 </td>
-<td style="text-align:left;"> 贪婪度表示搜索时的激进程度，主要用于搜索提速。取值范围[0,1]，越接近1速度越快，同时也越不稳定，默认值取0.9。实际使用时与接受阈值配合使用，接受阈值越高，适当降低贪婪度以提高定位稳定性；接受阈值越低，适当提高贪婪度以提升速度。此参数一般不需要调整，调整其他参数达不到需求情况下才考虑调整此参数。 </td>
+<td> Mức độ tham lam </td>
+<td style="text-align:left;"> Tham số thể hiện mức độ quyết liệt khi tìm kiếm, chủ yếu để tăng tốc tìm kiếm. Phạm vi giá trị [0,1], càng gần 1 thì tốc độ càng nhanh nhưng độ ổn định giảm. Mặc định là 0.9. Trong thực tế, dùng kết hợp với ngưỡng chấp nhận: ngưỡng chấp nhận càng cao thì nên giảm mức độ tham lam để tăng ổn định; ngưỡng chấp nhận càng thấp thì nên tăng mức độ tham lam để tăng tốc độ. Thường không cần điều chỉnh tham số này, chỉ cân nhắc khi các tham số khác không đạt yêu cầu. </td>
 </tr>
 <tr>
-<td> 搜索个数              </td>
-<td style="text-align:left;"> 设置最多的搜索结果个数。                                                                          </td>
+<td> Số lượng tìm kiếm              </td>
+<td style="text-align:left;"> Thiết lập số lượng kết quả tìm kiếm tối đa.                                                                          </td>
 </tr>
 <tr>
-<td> 是否开启全图搜索      </td>
-<td style="text-align:left;"> 开启全图搜索的开关。当选择“是”时，整幅实时采集的图像都是该工具的搜索范围；当选择“否”时，Edit视图中的“搜索区域”仿射矩形是该工具的搜索范围。搜索区域要大于训练区域。                                                               </td>
+<td> Có bật tìm toàn ảnh      </td>
+<td style="text-align:left;"> Công tắc bật/tắt tìm kiếm toàn bộ ảnh. Khi chọn “Có”, toàn bộ ảnh thu được từ camera là phạm vi tìm kiếm; khi chọn “Không”, vùng hình chữ nhật biến hình “vùng tìm kiếm” trong chế độ xem Edit là phạm vi tìm kiếm. Vùng tìm kiếm cần lớn hơn vùng huấn luyện.                                                               </td>
 </tr>
 <tr>
-<td> 搜索模式              </td>
-<td style="text-align:left;"> 包含快速、高精两种形式，耗时依次增加，精度依次提升。                                                              </td>
+<td> Chế độ tìm kiếm              </td>
+<td style="text-align:left;"> Bao gồm hai chế độ: Nhanh và Chính xác, thời gian xử lý tăng dần và độ chính xác cũng tăng theo.                                                              </td>
 </tr>
 <tr>
-<td> 任意极性              </td>
-<td style="text-align:left;"> 极性指模式的几何特征的灰度级过渡形式，即从亮到暗或从暗到亮。                                                               </td>
+<td> Đa cực tính              </td>
+<td style="text-align:left;"> Cực tính chỉ hình thức chuyển tiếp mức xám của đặc trưng hình học mẫu, tức là từ sáng sang tối hoặc từ tối sang sáng.                                                               </td>
 </tr>
 <tr>
-<td> 搜索最低/最高角度     </td>
-<td style="text-align:left;"> 搜索的角度范围，最低角度>=-360°，最高角度&lt;=360°，最低角度&lt;=最高角度。                                       </td>
+<td> Góc quay nhỏ nhất/lớn nhất     </td>
+<td style="text-align:left;"> Phạm vi góc quay tìm kiếm, góc nhỏ nhất >= -360°, góc lớn nhất <= 360°, góc nhỏ nhất <= góc lớn nhất.                                       </td>
 </tr>
 <tr>
-<td> 搜索最低/最高缩放     </td>
-<td style="text-align:left;"> 搜索时的缩放范围，最低缩放>0，最低缩放&lt;=最高缩放。                                                     </td>
+<td> Tỷ lệ thu phóng nhỏ nhất/lớn nhất     </td>
+<td style="text-align:left;"> Phạm vi thu phóng khi tìm kiếm, tỷ lệ thu nhỏ > 0, và tỷ lệ nhỏ <= tỷ lệ lớn.                                                     </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>输出参数</h3>
+
+<h3>Tham số đầu ra</h3>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
+<th> Tên tham số             </th>
+<th style="text-align:left;"> Giải thích tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像         </td>
-<td style="text-align:left;"> 输入图像宽度、高度、像素大小。                                                                                   </td>
+<td> Ảnh đầu vào         </td>
+<td style="text-align:left;"> Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu vào.                                                                                   </td>
 </tr>
 <tr>
-<td> 训练标记点坐标       </td>
-<td style="text-align:left;"> 标记点用于辅助定位。                                                                                             </td>
+<td> Tọa độ điểm đánh dấu huấn luyện       </td>
+<td style="text-align:left;"> Điểm đánh dấu được dùng để hỗ trợ định vị.                                                                                             </td>
 </tr>
 <tr>
-<td> 结果个数         </td>
-<td style="text-align:left;"> 搜索结果个数。                                                                                                   </td>
+<td> Số lượng kết quả         </td>
+<td style="text-align:left;"> Số lượng kết quả tìm kiếm được.                                                                                                   </td>
 </tr>
 <tr>
-<td> 搜索结果数组 </td>
-<td style="text-align:left;"> 搜索结果组成的数组。                                                                                             </td>
+<td> Mảng kết quả tìm kiếm </td>
+<td style="text-align:left;"> Mảng bao gồm các kết quả tìm kiếm.                                                                                             </td>
 </tr>
 <tr>
-<td> 二维线性变换数组 </td>
-<td style="text-align:left;"> 二维线性变换是指目标相对于模板的平移、旋转、缩放变换。二维线性变换数组是指在该工具在某一次执行完之后，所有二维线性变换所组成的数组。                                                     </td>
+<td> Mảng biến đổi tuyến tính 2D </td>
+<td style="text-align:left;"> Biến đổi tuyến tính 2D là sự dịch chuyển, xoay và thu phóng của đối tượng so với mẫu. Mảng biến đổi tuyến tính 2D là tập hợp tất cả các biến đổi sau khi công cụ được thực thi một lần.                                                     </td>
 </tr>
 <tr>
-<td> 搜索坐标数组     </td>
-<td style="text-align:left;"> 搜索坐标是指标记点实时搜索结果，搜索坐标数组是指该工具在某一次执行完后，所有搜索标记点所组成的数组。                                                     </td>
+<td> Mảng tọa độ tìm kiếm     </td>
+<td style="text-align:left;"> Tọa độ tìm kiếm là kết quả tìm được của điểm đánh dấu. Mảng tọa độ tìm kiếm là tập hợp các tọa độ điểm đánh dấu sau khi công cụ thực thi một lần.                                                     </td>
 </tr>
 <tr>
-<td> 二维线性变换     </td>
-<td style="text-align:left;"> 该工具输出的二维线性变换是指该工具二维线性变换数组中的第一组值。                                                     </td>
+<td> Biến đổi tuyến tính 2D     </td>
+<td style="text-align:left;"> Biến đổi tuyến tính 2D do công cụ xuất ra là bộ giá trị đầu tiên trong mảng biến đổi tuyến tính 2D.                                                     </td>
 </tr>
 <tr>
-<td> 搜索坐标         </td>
-<td style="text-align:left;"> 该工具输出的搜索坐标是指搜索坐标数组的第一组值。它与输出的二维线性变换针对同一个搜索结果。                                                     </td>
+<td> Tọa độ tìm kiếm         </td>
+<td style="text-align:left;"> Tọa độ tìm kiếm xuất ra là bộ giá trị đầu tiên trong mảng tọa độ tìm kiếm. Nó tương ứng với cùng một kết quả tìm kiếm như biến đổi tuyến tính 2D đã xuất ra.                                                     </td>
 </tr>
 <tr>
-<td> 执行结果         </td>
-<td style="text-align:left;"> 工具执行结果。                                                                                                   </td>
+<td> Kết quả thực thi         </td>
+<td style="text-align:left;"> Kết quả thực thi của công cụ.                                                                                                   </td>
 </tr>
 <tr>
-<td> 执行时间         </td>
-<td style="text-align:left;"> 工具执行时间。                                                                                                   </td>
+<td> Thời gian thực thi         </td>
+<td style="text-align:left;"> Thời gian công cụ thực thi.                                                                                                   </td>
 </tr>
 </tbody>
 </table>
 
+<h2>7. Dự án mẫu</h2>
 
-<h2>7. 示例工程</h2>
+<p>Tham khảo “\Samples\Công cụ định vị hình học chuyên nghiệp.gvp”。</p>
 
-<p>参见“\Samples\专业几何定位工具.gvp”。</p>
