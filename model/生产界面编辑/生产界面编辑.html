@@ -16,203 +16,209 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>生产界面编辑</h1>
+<h1>Chỉnh sửa giao diện sản xuất</h1>
 
-<h2>功能概述</h2>
+<h2>Tổng quan chức năng</h2>
 
-<p>生产界面编辑：对本软件系统在生产时的生产界面进行编辑、管理。</p>
+<p>Chỉnh sửa giao diện sản xuất: chỉnh sửa và quản lý giao diện sản xuất trong quá trình sử dụng hệ thống phần mềm này.</p>
 
-<h2>界面概览</h2>
+<h2>Tổng quan giao diện</h2>
 
-<p>启动<strong>生产界面编辑</strong>界面</p>
+<p>Khởi động giao diện <strong>Chỉnh sửa giao diện sản xuất</strong></p>
 
 <p><img src="media/EditMainRun_01.png" alt="" /></p>
 
-<p>进入生产界面编辑，如图所示：</p>
+<p>Vào giao diện chỉnh sửa giao diện sản xuất, như hình minh họa:</p>
 
 <p><img src="media/EditMainRun_02.png" alt="" /></p>
 
-<h2>界面操作与说明</h2>
+<h2>Thao tác và mô tả giao diện</h2>
 
 <ul>
-<li><p>工具箱：显示可添加自定义控件的列表，包括：编辑框、文本框、自定义按钮、单选框、下拉框、图像区域、视图、显示窗口、功能按钮、设备状态。</p></li>
-<li><p>属性设置对话框：修改自定义控件的大小、位置、风格以及关联信息。</p></li>
-<li><p>工具栏：控件排列分布以及布局操作的功能按钮，包括：左对齐、右对齐、上对齐、下对齐、相同大小、横向分布、纵向分布、视图阵列排布、重做、撤销、布局管理、保存布局、打开布局、删除当前布局和生产界面状态栏配置。</p></li>
-<li><p>撤销/重做：撤销、重做支持的操作包括控件大小、位置以及关联信息的改变。撤销/重做的上限为40次。</p></li>
-<li><p>视图阵列排布：按照输入的列数，对视图进行排布，输入列数的上限添加视图的个数。</p></li>
-<li><p>布局管理：新建空白布局、新建默认布局，从模板新建，保存为模板，复制布局，删除布局，设为主布局等。</p>
+<li><p>Hộp công cụ: hiển thị danh sách các điều khiển tùy chỉnh có thể thêm, bao gồm: ô nhập liệu, hộp văn bản, nút tùy chỉnh, nút chọn đơn, hộp thả xuống, vùng ảnh, khung nhìn, cửa sổ hiển thị, nút chức năng, trạng thái thiết bị.</p></li>
+<li><p>Hộp thoại thiết lập thuộc tính: chỉnh sửa kích thước, vị trí, kiểu dáng và thông tin liên kết của các điều khiển tùy chỉnh.</p></li>
+<li><p>Thanh công cụ: các nút chức năng cho bố trí và sắp xếp điều khiển, bao gồm: canh trái, canh phải, canh trên, canh dưới, cùng kích thước, phân bố ngang, phân bố dọc, bố trí ma trận khung nhìn, hoàn tác, làm lại, quản lý bố cục, lưu bố cục, mở bố cục, xóa bố cục hiện tại và cấu hình thanh trạng thái giao diện sản xuất.</p></li>
+<li><p>Hoàn tác/Làm lại: hỗ trợ hoàn tác/làm lại các thao tác như thay đổi kích thước, vị trí và thông tin liên kết của điều khiển. Giới hạn thao tác hoàn tác/làm lại là 40 lần.</p></li>
+<li><p>Bố trí ma trận khung nhìn: sắp xếp các khung nhìn theo số cột nhập vào, số cột tối đa tương ứng với số khung nhìn được thêm.</p></li>
+<li><p>Quản lý bố cục: tạo bố cục trống mới, tạo bố cục mặc định mới, tạo từ mẫu, lưu làm mẫu, sao chép bố cục, xóa bố cục, đặt làm bố cục chính, v.v.</p>
 
 <ul>
-<li>新建空白布局：新建1个布局，布局中包括6个布局切换按钮、布局切换、运行、暂停、停止、保存、权限管理、系统状态、工程师界面功能按钮和Logo。</li>
-<li>新建默认布局：新建6个布局，分别为Home、Alarm、Config、Data、Vision和Setting，其中Home是主布局，并且6个布局已关联好。每个布局中内容和空白布局保持一致。</li>
-<li>新建新风格布局：和新建空白布局一致。</li>
-<li>从模板新建：新建一个保存过的布局。</li>
-<li>保存为模板：选择一个布局进行保存。</li>
-<li>复制布局：复制当前选中的布局，如果布局总数超过20个，则无法复制。</li>
-<li>删除布局：删除当前选中的布局。</li>
-<li>设为主布局：设置选中的布局为生产界面第一个显示的布局。</li>
-<li>转为新风格布局：针对旧风格布局或者A风格（定制版本中）可转为新风格布局。该转换不可逆。</li>
+<li>Tạo bố cục trống mới: tạo một bố cục mới gồm 6 nút chuyển đổi bố cục, nút chuyển bố cục, chạy, tạm dừng, dừng, lưu, quản lý quyền, trạng thái hệ thống, giao diện kỹ sư và logo.</li>
+<li>Tạo bố cục mặc định mới: tạo 6 bố cục mới gồm Home, Alarm, Config, Data, Vision và Setting. Trong đó, Home là bố cục chính và cả 6 bố cục đã được liên kết sẵn. Nội dung trong mỗi bố cục giống với bố cục trống.</li>
+<li>Tạo bố cục phong cách mới: giống với tạo bố cục trống mới.</li>
+<li>Tạo từ mẫu: tạo một bố cục đã được lưu dưới dạng mẫu.</li>
+<li>Lưu làm mẫu: chọn một bố cục để lưu lại làm mẫu.</li>
+<li>Sao chép bố cục: sao chép bố cục đang được chọn. Nếu tổng số bố cục vượt quá 20, sẽ không thể sao chép thêm.</li>
+<li>Xóa bố cục: xóa bố cục đang được chọn.</li>
+<li>Đặt làm bố cục chính: đặt bố cục được chọn làm bố cục đầu tiên hiển thị trong giao diện sản xuất.</li>
+<li>Chuyển sang bố cục phong cách mới: áp dụng cho bố cục phong cách cũ hoặc phong cách A (trong phiên bản tùy chỉnh), có thể chuyển sang phong cách mới. Lưu ý: chuyển đổi này là không thể đảo ngược.</li>
 </ul>
 
-
 <p><img src="media/EditMainRun_03.png" alt="" /></p></li>
-<li><p>保存布局：保存当前解决方案中的所有布局。</p></li>
-<li><p>打开布局：打开保存的布局，此时会覆盖当前解决方案的布局。</p></li>
-<li><p>删除当前布局：删除当前显示的布局。</p></li>
-<li><p>画布：显示当前的布局，可以通过切换tab来更换当前布局。</p></li>
-<li><p>关闭按钮：关闭生产界面编辑。</p></li>
-<li><p>状态栏：显示提示信息。</p></li>
-<li><p>控件</p>
+<li><p>Lưu bố cục: lưu tất cả các bố cục trong giải pháp hiện tại.</p></li>
+<li><p>Mở bố cục: mở bố cục đã lưu, thao tác này sẽ ghi đè lên bố cục hiện tại trong giải pháp.</p></li>
+<li><p>Xóa bố cục hiện tại: xóa bố cục đang hiển thị.</p></li>
+<li><p>Canvas: hiển thị bố cục hiện tại, có thể chuyển đổi bố cục bằng cách chuyển tab.</p></li>
+<li><p>Nút đóng: đóng giao diện chỉnh sửa giao diện sản xuất.</p></li>
+<li><p>Thanh trạng thái: hiển thị thông tin nhắc nhở.</p></li>
+<li><p>Điều khiển</p>
 
 <ul>
-<li><p>控件添加：鼠标左键单击工具箱要添加的控件，移动鼠标到画布，鼠标左键拖动控件至合适大小，即可完成控件的添加。</p></li>
-<li><p>编辑框<img src="media/Edit.png" alt="" />：控件大小、位置和关联信息。</p>
+<li><p>Thêm điều khiển: nhấp chuột trái vào điều khiển muốn thêm trong hộp công cụ, di chuyển chuột đến canvas, kéo chuột trái để thay đổi kích thước điều khiển, là hoàn tất thao tác thêm điều khiển.</p></li>
+<li><p>Ô nhập liệu <img src="media/Edit.png" alt="" />: kích thước, vị trí và thông tin liên kết của điều khiển.</p>
 
 <ul>
-<li><p>控件的位置和大小可以使用鼠标拖拉或者修改属性的数值来修改。每个布局最多添加100个。</p></li>
-<li><p>控件风格包括：字体、字号、字体颜色、背景颜色。</p></li>
-<li><p>可以关联的数据类型有：char、double、float、int、int64、long、short、string、unsigned char、unsigned long、unsigned short。</p></li>
-<li><p>只读：表示在生产界面不能修改其值，勾选代表是只读的，默认不勾选。</p></li>
-<li><p>变量：表示关联的是变量，不是工具参数，勾选代表关联变量，默认不勾选。</p></li>
-<li><p>输出：表示关联的工具参数为输出/输入参数，勾选代表输出参数，默认不勾选。</p>
+<li><p>Vị trí và kích thước của điều khiển có thể được chỉnh sửa bằng cách kéo chuột hoặc thay đổi giá trị trong thuộc tính. Mỗi bố cục tối đa thêm được 100 điều khiển.</p></li>
+<li><p>Kiểu điều khiển bao gồm: font chữ, cỡ chữ, màu chữ, màu nền.</p></li>
+<li><p>Các kiểu dữ liệu có thể liên kết gồm: char, double, float, int, int64, long, short, string, unsigned char, unsigned long, unsigned short.</p></li>
+<li><p>Chỉ đọc: nghĩa là không thể chỉnh sửa giá trị trong giao diện sản xuất. Nếu được chọn, điều khiển là chỉ đọc. Mặc định không chọn.</p></li>
+<li><p>Biến: biểu thị liên kết với biến chứ không phải tham số công cụ. Nếu được chọn, liên kết là biến. Mặc định không chọn.</p></li>
+<li><p>Đầu ra: biểu thị tham số công cụ được liên kết là tham số đầu ra/đầu vào. Nếu được chọn, là tham số đầu ra. Mặc định không chọn.</p>
 
 <p><img src="media/EditMainRun_04.png" alt="" /><img src="media/EditMainRun_05.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>文本框<img src="media/Text.png" alt="" />：控件大小、位置和关联信息。</p>
+<li><p>Hộp văn bản <img src="media/Text.png" alt="" />: kích thước, vị trí và thông tin liên kết của điều khiển.</p>
 
 <ul>
-<li><p>名称，即Caption属性。每个布局最多添加200个。</p></li>
-<li><p>控件风格包括：字体、字号、字体颜色、背景颜色，新建的文本框是默认没有背景颜色的，颜色设置后不可再设置为无背景颜色。</p>
+<li><p>Tên hiển thị, tức là thuộc tính Caption. Mỗi bố cục tối đa thêm được 200 điều khiển.</p></li>
+<li><p>Kiểu điều khiển bao gồm: font chữ, cỡ chữ, màu chữ, màu nền. Hộp văn bản mới tạo mặc định không có màu nền, sau khi thiết lập màu nền sẽ không thể thay đổi thành không màu.</p>
 
 <p><img src="media/EditMainRun_06.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>按钮<img src="media/Button.png" alt="" />：控件大小、位置和关联信息。</p>
+<li><p>Nút bấm <img src="media/Button.png" alt="" />: kích thước, vị trí và thông tin liên kết của điều khiển.</p>
 
 <ul>
-<li><p>名称，即Caption属性，按钮是控制面板里面的添加的按钮。每个布局最多添加200个。</p></li>
-<li><p>控件风格包括：字体、字号、字体颜色、背景颜色。</p></li>
-<li><p>可关联的操作有执行指定流程、停止所选工程、打开高级属性界面。</p>
+<li><p>Tên hiển thị, tức là thuộc tính Caption. Nút bấm được thêm từ bảng điều khiển. Mỗi bố cục tối đa thêm được 200 nút.</p></li>
+<li><p>Kiểu điều khiển bao gồm: font chữ, cỡ chữ, màu chữ, màu nền.</p></li>
+<li><p>Các thao tác có thể liên kết gồm: thực thi quy trình chỉ định, dừng project đã chọn, mở giao diện thuộc tính nâng cao.</p>
 
 <p><img src="media/EditMainRun_07.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>单选框<img src="media/Radio.png" alt="" />：控件大小、位置和关联信息。</p>
+<li><p>Hộp chọn đơn <img src="media/Radio.png" alt="" />: kích thước, vị trí và thông tin liên kết của điều khiển.</p>
 
 <ul>
-<li><p>名称，即Caption属性，工程为选中需要关联属性所在的工程，如果是全局变量，不需要选择。只能关联bool类型的数据。每个布局最多添加100个。</p></li>
-<li><p>控件风格包括：字体、字号、字体颜色、背景颜色，新建的文本框是默认没有背景颜色的，颜色设置后不可再设置为无背景颜色。</p>
+<li><p>Tên hiển thị, tức là thuộc tính Caption. "Project" là nơi chọn thuộc tính liên kết. Nếu là biến toàn cục thì không cần chọn. Chỉ có thể liên kết với dữ liệu kiểu bool. Mỗi bố cục tối đa thêm được 100 hộp chọn đơn.</p></li>
+<li><p>Kiểu điều khiển bao gồm: font chữ, cỡ chữ, màu chữ, màu nền. Hộp mới tạo mặc định không có màu nền, sau khi thiết lập màu nền sẽ không thể đổi lại thành không màu.</p>
 
 <p><img src="media/EditMainRun_08.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>下拉框<img src="media/ComboBox.png" alt="" />：控件大小、位置和关联信息。</p>
+<li><p>Hộp thả xuống <img src="media/ComboBox.png" alt="" />: kích thước, vị trí và thông tin liên kết của điều khiển.</p>
 
 <ul>
-<li><p>名称，即Caption属性，工程为选中需要关联属性所在的工程，工具为所选工程里面的工具。只能关联枚举类型的数据。</p></li>
-<li><p>默认是非“只读”属性。每个布局最多添加100个。</p></li>
-<li><p>控件风格包括：字体、字号、字体颜色、背景颜色。该控件的字号不支持修改。</p>
+<li><p>Tên hiển thị, tức là thuộc tính Caption. "Project" là nơi chọn thuộc tính liên kết. "Tool" là công cụ trong project được chọn. Chỉ có thể liên kết với dữ liệu kiểu liệt kê (enum).</p></li>
+<li><p>Mặc định không phải thuộc tính "Chỉ đọc". Mỗi bố cục tối đa thêm được 100 hộp thả xuống.</p></li>
+<li><p>Kiểu điều khiển bao gồm: font chữ, cỡ chữ, màu chữ, màu nền. Cỡ chữ của điều khiển này không hỗ trợ chỉnh sửa.</p>
 
 <p><img src="media/EditMainRun_09.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>图像区域<img src="media/Image.png" alt="" />：控件位置、大小。每个布局最多只能添加1个。</p>
+<li><p>Vùng ảnh <img src="media/Image.png" alt="" />: vị trí, kích thước điều khiển. Mỗi bố cục chỉ có thể thêm 1 vùng ảnh.</p>
 
 <p><img src="media/EditMainRun_10.png" alt="" /></p></li>
-<li><p>视图<img src="media/View.png" alt="" />：控件大小、位置和关联属性。视图为关联的view。</p>
+<li><p>Khung nhìn <img src="media/View.png" alt="" />: kích thước, vị trí và thuộc tính liên kết của điều khiển. Khung nhìn là đối tượng view được liên kết.</p>
 
 <ul>
-<li>每个布局最多添加所有工程的view的总数。只能往Image控件上面添加。</li>
+<li>Mỗi bố cục có thể thêm tối đa bằng tổng số view của tất cả project. Chỉ có thể thêm lên trên điều khiển Image.</li>
 </ul>
+
 
 
 <p><img src="media/EditMainRun_11.png" alt="" /></p>
 
 <ul>
-<li><p>参数修改如下图</p>
+<li><p>Chỉnh sửa tham số như hình dưới:</p>
 
-<blockquote><p>其中，编辑的工具列表分为两类，一种是在视图中添加的工具（视图中添加的工具有两种状态，即生产界面时，工具在弹出的参数列表显示或者隐藏），一种是通过搜索功能添加的工具。
- 1.  搜索添加：添加经常需要修改参数的工具。
-2.  已添加列表：显示生产界面时，可修改参数的工具列表。参数顺序默认为添加顺序。
-3.  已删除列表：显示生产界面时，视图里面不需要做参数修改的工具列表。
-4.  删除、撤销按钮：通过此按钮调整生产界面时，需要修改参数的工具列表。</p></blockquote>
+<blockquote><p>Trong đó, danh sách công cụ được chỉnh sửa chia làm hai loại: một là công cụ được thêm vào trong khung nhìn (công cụ này trong khung nhìn có hai trạng thái, tức là trong giao diện sản xuất, tham số có thể được hiển thị hoặc ẩn); hai là công cụ được thêm vào bằng chức năng tìm kiếm.  
+1. Thêm bằng tìm kiếm: thêm công cụ thường xuyên cần chỉnh sửa tham số.  
+2. Danh sách đã thêm: hiển thị danh sách công cụ có thể chỉnh sửa tham số trong giao diện sản xuất. Thứ tự tham số mặc định là theo thứ tự thêm vào.  
+3. Danh sách đã xóa: hiển thị danh sách công cụ trong khung nhìn không cần chỉnh sửa tham số trong giao diện sản xuất.  
+4. Nút xóa và hoàn tác: sử dụng để điều chỉnh danh sách công cụ cần chỉnh sửa tham số trong giao diện sản xuất.</p></blockquote>
 
 <p><img src="media/EditMainRun_12.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>显示窗口<img src="media/Window.png" alt="" />：控件大小、位置和关联属性。显示窗口为生产日志和统计分析两种。每个布局最多只能添加10个。每个布局最多只能关联一个生产日志。每个布局中的每个统计分析窗口独立显示内容。</p>
+
+<li><p>Cửa sổ hiển thị <img src="media/Window.png" alt="" />: kích thước, vị trí và thuộc tính liên kết của điều khiển. Cửa sổ hiển thị gồm hai loại: nhật ký sản xuất và phân tích thống kê. Mỗi bố cục chỉ có thể thêm tối đa 10 cửa sổ hiển thị. Mỗi bố cục chỉ có thể liên kết một nhật ký sản xuất. Mỗi cửa sổ phân tích thống kê trong bố cục hiển thị nội dung độc lập.</p>
 
 <p><img src="media/EditMainRun_13.png" alt="" /></p></li>
-<li><p>功能按钮<img src="media/SpecialButton.png" alt="" />：控件大小、位置和关联属性。可关联生产界面的功能按钮，每个布局最多只能添加17个。</p>
+
+<li><p>Nút chức năng <img src="media/SpecialButton.png" alt="" />: kích thước, vị trí và thuộc tính liên kết của điều khiển. Có thể liên kết với các nút chức năng trong giao diện sản xuất. Mỗi bố cục tối đa chỉ được thêm 17 nút chức năng.</p>
 
 <p><img src="media/EditMainRun_14.png" alt="" /></p></li>
-<li><p>表格<img src="media/Table.png" alt="" />：控件大小、位置、表格设置、表格行列设置、表格项编辑、关联信息、结果上下限判定、风格和控件可见性设置。</p>
+
+<li><p>Bảng <img src="media/Table.png" alt="" />: kích thước, vị trí điều khiển, thiết lập bảng, thiết lập hàng/cột, chỉnh sửa ô, thông tin liên kết, kiểm tra giới hạn kết quả, cài đặt kiểu và hiển thị điều khiển.</p>
 
 <ul>
-<li><p>控件的位置和大小：可以使用鼠标拖拉或者修改属性的数值来修改。每个布局最多添加10个。</p></li>
-<li><p>表格设置：可以选择是否启用表格标题，当启用标题后，可设置标题内容和行高。</p></li>
-<li><p>表格行列设置：可以设置表格的行列个数、行宽和列宽，行、列宽度可通过自定义或拖拽表格来控制，隐藏列用来设置生产界面中不需要显示的列，多列用英文逗号隔开。</p></li>
-<li><p>表格项编辑：行、列表示当前表格项，可通过上、下、左、右调整当前表格项。</p></li>
-<li><p>只读：表示在生产界面不能修改其值，勾选代表是只读的，默认不勾选。</p></li>
-<li><p>变量：表示关联的是变量，不是工具参数，勾选代表关联变量，默认不勾选。</p></li>
-<li><p>输出：表示关联的工具参数为输出/输入参数，勾选代表输出参数，默认不勾选。</p></li>
-<li><p>关联信息：可以关联的数据类型有bool、char、double、float、int、int64、long、short、string、unsigned char、unsigned long、unsigned short。</p></li>
-<li><p>结果上下限判定：用户可以设置结果列、上限列和下限列，当结果列数据在对应的上、下限数据间时，当前结果数据字体显示为黑色，否则为红色。</p></li>
-<li><p>风格：选择需要设置风格的类别（包括：标题、行列和关联数据），设置项包括字体、字号、字体颜色、背景颜色。</p></li>
-<li><p>控件可见性：用于设置控件在工程中是否可见。</p></li>
-<li><p>功能说明：简述控件作用。</p>
+<li><p>Vị trí và kích thước điều khiển: có thể kéo chuột hoặc thay đổi giá trị thuộc tính để điều chỉnh. Mỗi bố cục tối đa thêm 10 bảng.</p></li>
+<li><p>Thiết lập bảng: có thể chọn có bật tiêu đề bảng hay không. Khi bật, có thể thiết lập nội dung tiêu đề và chiều cao dòng tiêu đề.</p></li>
+<li><p>Thiết lập hàng/cột: có thể thiết lập số lượng hàng và cột, chiều rộng hàng/cột. Chiều rộng có thể tùy chỉnh hoặc kéo trực tiếp. Cột ẩn dùng để ẩn cột không cần hiển thị trong giao diện sản xuất. Nhiều cột cách nhau bằng dấu phẩy (,).</p></li>
+<li><p>Chỉnh sửa ô: hàng/cột đại diện cho ô hiện tại. Có thể dùng các nút lên/xuống/trái/phải để điều chỉnh vị trí ô hiện tại.</p></li>
+<li><p>Chỉ đọc: biểu thị ô không thể chỉnh sửa trong giao diện sản xuất. Mặc định không chọn.</p></li>
+<li><p>Biến: biểu thị liên kết với biến, không phải tham số công cụ. Mặc định không chọn.</p></li>
+<li><p>Đầu ra: biểu thị tham số công cụ liên kết là đầu ra/đầu vào. Mặc định không chọn.</p></li>
+<li><p>Thông tin liên kết: các kiểu dữ liệu có thể liên kết gồm: bool, char, double, float, int, int64, long, short, string, unsigned char, unsigned long, unsigned short.</p></li>
+<li><p>Kiểm tra giới hạn kết quả: người dùng có thể thiết lập cột kết quả, cột giới hạn trên và cột giới hạn dưới. Khi giá trị kết quả nằm trong khoảng giới hạn thì hiển thị màu chữ đen, nếu không thì hiển thị màu đỏ.</p></li>
+<li><p>Kiểu dáng: chọn danh mục cần thiết lập (gồm: tiêu đề, hàng/cột và dữ liệu liên kết). Các mục thiết lập gồm: font, cỡ chữ, màu chữ, màu nền.</p></li>
+<li><p>Hiển thị điều khiển: thiết lập điều khiển có hiển thị trong project hay không.</p></li>
+<li><p>Giải thích chức năng: mô tả ngắn gọn chức năng của điều khiển.</p>
 
 <p><img src="media/EditMainRun_15.png" alt="" /><img src="media/EditMainRun_16.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>布局切换<img src="media/EditMainRun_20.png" alt="" />：控件大小、位置、关联布局、关联图标、控件可见性和功能说明。可关联生产编辑界面的布局，每个布局最多只能添加6个。</p>
+
+<li><p>Chuyển đổi bố cục <img src="media/EditMainRun_20.png" alt="" />: kích thước, vị trí, bố cục liên kết, biểu tượng liên kết, hiển thị điều khiển và giải thích chức năng. Có thể liên kết với các bố cục của giao diện sản xuất. Mỗi bố cục chỉ có thể thêm tối đa 6 nút chuyển đổi.</p>
 
 <ul>
-<li>控件的位置和大小：可以使用鼠标拖拉或者修改属性的数值来修改。</li>
-<li>关联布局：用于“布局切换”控件关联布局名称。</li>
-<li>关联图标：用于“布局切换”控件关联显示图标。</li>
-<li>控件可见性：用于设置控件在工程中是否可见。</li>
-<li>功能说明：简述控件作用。</li>
+<li>Vị trí và kích thước điều khiển: có thể dùng chuột kéo hoặc thay đổi giá trị thuộc tính.</li>
+<li>Bố cục liên kết: thiết lập bố cục được liên kết với điều khiển "Chuyển đổi bố cục".</li>
+<li>Biểu tượng liên kết: thiết lập biểu tượng hiển thị được liên kết với điều khiển.</li>
+<li>Hiển thị điều khiển: thiết lập có hiển thị điều khiển trong project hay không.</li>
+<li>Giải thích chức năng: mô tả ngắn gọn chức năng của điều khiển.</li>
 </ul>
-
 
 <p><img src="media/EditMainRun_19.png" alt="" /></p></li>
-<li><p>显示图标<img src="media/EditMainRun_21.png" alt="" />：控件大小、位置、关联图标、控件可见性和功能说明。可用于在生产界面显示图标，每个布局最多只能添加1个。</p>
+
+<li><p>Hiển thị biểu tượng <img src="media/EditMainRun_21.png" alt="" />: kích thước, vị trí, biểu tượng liên kết, hiển thị điều khiển và giải thích chức năng. Dùng để hiển thị biểu tượng trong giao diện sản xuất. Mỗi bố cục chỉ thêm được 1 cái.</p>
 
 <ul>
-<li>控件的位置和大小：可以使用鼠标拖拉或者修改属性的数值来修改。</li>
-<li>关联图标：用于“显示图标”控件关联显示图标，用于在生产界面显示。</li>
-<li>控件可见性：用于设置控件在工程中是否可见。</li>
-<li>功能说明：简述控件作用。</li>
+<li>Vị trí và kích thước điều khiển: có thể dùng chuột kéo hoặc thay đổi giá trị thuộc tính.</li>
+<li>Biểu tượng liên kết: thiết lập biểu tượng hiển thị liên kết cho điều khiển, dùng để hiển thị trong giao diện sản xuất.</li>
+<li>Hiển thị điều khiển: thiết lập có hiển thị điều khiển trong project hay không.</li>
+<li>Giải thích chức năng: mô tả ngắn gọn chức năng của điều khiển.</li>
 </ul>
-
 
 <p><img src="media/EditMainRun_22.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>菜单</p>
+
+<li><p>Menu</p>
+
 
 <ul>
-<li><p>复制：复制当前选中的控件，支持快捷键。控件选择时支持框选和跳选，跳选时按住<kbd>Ctrl</kbd>键，鼠标单击控件。</p></li>
-<li><p>粘贴：粘贴已复制的控件。</p></li>
-<li><p>剪切：剪切当前选中的控件。</p></li>
-<li><p>删除：删除当前选中的控件。</p>
+<li><p>Sao chép: sao chép điều khiển hiện đang được chọn, hỗ trợ phím tắt. Việc chọn điều khiển hỗ trợ chọn theo vùng và chọn rời. Khi chọn rời, nhấn giữ <kbd>Ctrl</kbd> và nhấp chuột vào điều khiển.</p></li>
+<li><p>Dán: dán điều khiển đã sao chép.</p></li>
+<li><p>Cắt: cắt điều khiển hiện đang được chọn.</p></li>
+<li><p>Xóa: xóa điều khiển hiện đang được chọn.</p>
 
 <p><img src="media/EditMainRun_17.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>生产界面配置</p>
 
-<p>其作用主要为通过配置相关选项来控制生产界面状态栏内容的显示：</p>
+<li><p>Cấu hình giao diện sản xuất</p>
+
+<p>Chức năng chủ yếu là cấu hình các tùy chọn liên quan để điều khiển nội dung hiển thị của thanh trạng thái trong giao diện sản xuất:</p>
 
 <ul>
-<li><p>自动切换布局；勾选自动切换布局后，需要选择关联的全局变量，通过脚本或者表达式修改全局变量的数值，已达到自动切换布局的目的。</p></li>
-<li><p>选择是否显示状态栏；</p></li>
-<li>选择显示状态栏配置项；</li>
+<li><p>Tự động chuyển bố cục: khi chọn mục này, cần chọn biến toàn cục liên kết. Thông qua script hoặc biểu thức thay đổi giá trị của biến toàn cục để đạt được mục đích chuyển đổi bố cục tự động.</p></li>
+<li><p>Chọn hiển thị thanh trạng thái hay không;</p></li>
+<li>Chọn các mục cấu hình hiển thị của thanh trạng thái;</li>
 </ul>
 </li>
 </ul>
 
-
 <p><img src="media/EditMainRun_18.png" alt="" /></p>
+
