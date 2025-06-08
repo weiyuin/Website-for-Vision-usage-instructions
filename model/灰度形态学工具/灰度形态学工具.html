@@ -16,150 +16,150 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>灰度形态学工具</h1>
+<h1>Công cụ Hình thái học mức xám</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Giới thiệu chức năng</h2>
 
-<p>​     灰度形态学工具主要用来对输入图像进行灰度形态学处理，支持的灰度形态学操作有膨胀、腐蚀、开启、闭合、白色Top-Hat变换、黑色Top-Hat变换、形态学梯度、中值滤波。</p>
+<p>​     Công cụ hình thái học mức xám chủ yếu được dùng để xử lý hình ảnh đầu vào bằng các phép toán hình thái học mức xám. Các thao tác được hỗ trợ bao gồm giãn, co, mở, đóng, biến đổi Top-Hat trắng, biến đổi Top-Hat đen, gradient hình thái học, và lọc trung vị.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Bối cảnh ứng dụng</h2>
 
-<p>​     输入图像进行灰度形态学处理</p>
+<p>​     Áp dụng xử lý hình thái học mức xám cho hình ảnh đầu vào.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>​     灰度形态学工具支持的形态学操作分为8种：灰度膨胀、灰度腐蚀、灰度开启、灰度闭合、白色Top-Hat变换、黑色Top-Hat变换、形态学梯度、中值滤波。</p>
+<p>​     Công cụ hình thái học mức xám hỗ trợ 8 loại thao tác: giãn mức xám, co mức xám, mở mức xám, đóng mức xám, biến đổi Top-Hat trắng, biến đổi Top-Hat đen, gradient hình thái học, và lọc trung vị.</p>
 
-<p><strong>膨胀与腐蚀：</strong>膨胀能够扩展图像中亮区，减小图像中暗区；腐蚀能够减小图像中亮区，扩展图像中暗区。</p>
+<p><strong>Giãn và Co:</strong> Giãn giúp mở rộng vùng sáng trong ảnh, thu nhỏ vùng tối; Co giúp thu nhỏ vùng sáng và mở rộng vùng tối.</p>
 
-<p><strong>开启与闭合：</strong>开启为对图像进行腐蚀后膨胀，能够消除图像中亮的细节或小区域；闭合为对图像进行膨胀后腐蚀，能够消除图像中暗的细节或小区域。</p>
+<p><strong>Mở và Đóng:</strong> Mở là thực hiện co rồi giãn, giúp loại bỏ các chi tiết hoặc vùng nhỏ sáng; Đóng là thực hiện giãn rồi co, giúp loại bỏ các chi tiết hoặc vùng nhỏ tối.</p>
 
-<p><strong>白色和黑色Top-Hat变换：</strong>白色Top-Hat变换为原图减去开启图像，能够增强图像中的尺寸小于结构元素的亮细节；黑色Top-Hat变换为闭合图像减去原图，能够增强图像中的尺寸小于结构元素的暗细节。</p>
+<p><strong>Biến đổi Top-Hat trắng và đen:</strong> Biến đổi Top-Hat trắng là lấy ảnh gốc trừ ảnh sau khi mở, giúp làm nổi bật chi tiết sáng nhỏ hơn phần tử cấu trúc; Biến đổi Top-Hat đen là lấy ảnh sau khi đóng trừ ảnh gốc, giúp làm nổi bật chi tiết tối nhỏ hơn phần tử cấu trúc.</p>
 
-<p><strong>形态学梯度：</strong>形态学梯度操作为膨胀图像减去腐蚀图像，能够保留图像边缘。</p>
+<p><strong>Gradient hình thái học:</strong> Là phép trừ ảnh giãn và ảnh co, có thể giữ lại biên của ảnh.</p>
 
-<p><strong>中值滤波：</strong>中值滤波操作将图像的每个像素用邻域（以当前像素为中心的区域）像素的中值替代，用于图像去除噪声、低通滤波等。</p>
+<p><strong>Lọc trung vị:</strong> Thay thế giá trị của mỗi điểm ảnh bằng giá trị trung vị của vùng lân cận (vùng có điểm ảnh làm tâm), dùng để khử nhiễu, lọc thông thấp cho ảnh.</p>
 
 <p><img src="media/wps16.jpg" alt="img" /><img src="media/wps17.jpg" alt="img" /><img src="media/wps18.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 原图</imgnote> <imgnote>(b) 膨胀</imgnote> <imgnote>&copy; 腐蚀</imgnote></p>
+<p><imgnote>(a) Ảnh gốc</imgnote> <imgnote>(b) Giãn</imgnote> <imgnote>(c) Co</imgnote></p>
 
 <p><img src="media/wps19.jpg" alt="img" /><img src="media/wps20.jpg" alt="img" /><img src="media/wps21.jpg" alt="img" /></p>
 
-<p><imgnote>(d) 开启</imgnote> <imgnote>(e) 闭合</imgnote> <imgnote>(f) 白色Top-Hat变换</imgnote></p>
+<p><imgnote>(d) Mở</imgnote> <imgnote>(e) Đóng</imgnote> <imgnote>(f) Biến đổi Top-Hat trắng</imgnote></p>
 
 <p><img src="media/wps22.jpg" alt="img" /><img src="media/wps23.jpg" alt="img" /><img src="media/wps24.jpg" alt="img" /></p>
 
-<p><imgnote>(g) 黑色Top-Hat变换</imgnote> <imgnote>(h) 形态学梯度</imgnote> <imgnote>(i) 中值滤波</imgnote></p>
+<p><imgnote>(g) Biến đổi Top-Hat đen</imgnote> <imgnote>(h) Gradient hình thái học</imgnote> <imgnote>(i) Lọc trung vị</imgnote></p>
 
-<p><imgnote>图1 形态学示意图</imgnote></p>
+<p><imgnote>Hình 1: Minh họa hình thái học</imgnote></p>
 
-<h2>4. 使用向导</h2>
 
-<h3>工具配置</h3>
+<h2>4. Hướng dẫn sử dụng</h2>
 
-<p>1、链接参数链</p>
+<h3>Cấu hình công cụ</h3>
 
-<p>2、设定属性</p>
+<p>1. Liên kết chuỗi tham số</p>
+
+<p>2. Thiết lập thuộc tính</p>
 
 <p><img src="media/wps12.jpg" alt="img" />!</p>
 
-<p><imgnote>图2 配置示意图</imgnote></p>
+<p><imgnote>Hình 2: Sơ đồ cấu hình</imgnote></p>
 
-<h3>结构元素</h3>
+<h3>Phần tử cấu trúc</h3>
 
-<p>在灰度形态学操作中，结构元素相当于图像滤波中的滤波器，工具除了支持如图2所示的预定义结构元素外，也支持N×M的结构元素计算，其中中值滤波的最大范围为99×99。</p>
+<p>Trong các thao tác hình thái học mức xám, phần tử cấu trúc tương tự như bộ lọc trong xử lý ảnh. Ngoài các phần tử cấu trúc được định nghĩa sẵn như trong Hình 2, công cụ còn hỗ trợ phần tử cấu trúc có kích thước N×M. Riêng đối với lọc trung vị, kích thước tối đa được hỗ trợ là 99×99.</p>
 
 <p><img src="media/wps25.jpg" alt="img" />          <img src="media/wps26.jpg" alt="img" />          <img src="media/wps27.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 1×3横线</imgnote> <imgnote>(b) 1×3竖线</imgnote> <imgnote>&copy; 1×3对角线（45度方向）</imgnote></p>
+<p><imgnote>(a) Đường ngang 1×3</imgnote> <imgnote>(b) Đường dọc 1×3</imgnote> <imgnote>(c) Đường chéo 1×3 (hướng 45 độ)</imgnote></p>
 
 <p><img src="media/wps28.jpg" alt="img" />          <img src="media/wps29.jpg" alt="img" />        <img src="media/wps30.jpg" alt="img" /></p>
 
-<p><imgnote>(d) 1×3对角线（135方向）</imgnote> <imgnote>(e) 3×3菱形</imgnote> <imgnote>(f) 3×3正方形</imgnote></p>
+<p><imgnote>(d) Đường chéo 1×3 (hướng 135 độ)</imgnote> <imgnote>(e) Hình thoi 3×3</imgnote> <imgnote>(f) Hình vuông 3×3</imgnote></p>
 
-<p><imgnote>图3 结构元素示意图</imgnote></p>
-
-<h2>5. 常见问题</h2>
-
-<h3>注意</h3>
-
-<p>​     形态学操作选择为中值滤波时，结构元素参数失效。</p>
-
-<h2>6. 参数说明</h2>
-
-<h4>输入参数</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称                   </th>
-<th> 参数说明                                                  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 是否开启并行    </td>
-<td> 是：开启并行优化；否：不开启并行优化    </td>
-</tr>
-<tr>
-<td> 目标跟随    </td>
-<td> 是：可以连接二维线性变换；否：按照链接进的ROI区域执行工具    </td>
-</tr>
-<tr>
-<td> ROI区域 </td>
-<td> 工具执行检测的区域，分为10种：整幅图像、矩形ROI、仿射矩形ROI、圆形ROI、圆环（段）ROI、椭圆ROI、多边形ROI、可变拆线ROI、自由形状  ROI和多区域ROI。 </td>
-</tr>
-<tr>
-<td> 形态学操作       </td>
-<td> 灰度形态学工具支持的形态学操作分为8种：灰度膨胀、灰度腐蚀、灰度开启、灰度闭合、白色Top-Hat变换、黑色Top-Hat变换、形态学梯度、中值滤波。</td>
-</tr>
-<tr>
-<td> 结构元素         </td>
-<td> 具有一定的形态，用以量度和提取图像中的对应形状以达到对图像的结构特点进行分析和识别的目的。当选择的元素类型为半径为r的圆形时,会弹出参数半径r以及二值化输入图像等参数。</td>
-</tr>
-<tr>
-<td> 操作次数 </td>
-<td> 对输入图像进行灰度形态学处理的次数，并使用前一次的结果图像作为下一次的输入图像。</td>
-</tr>
-<tr>
-<td> 输入图像    </td>
-<td> 输入待处理的图像。  </td>
-</tr>
-</tbody>
-</table>
+<p><imgnote>Hình 3: Minh họa phần tử cấu trúc</imgnote></p>
 
 
-<h4>输出参数</h4>
+<h2>5. Vấn đề thường gặp</h2>
+
+<h3>Lưu ý</h3>
+
+<p> Khi thao tác hình thái học được chọn là lọc trung vị, tham số phần tử cấu trúc sẽ không còn hiệu lực.</p>
+
+<h2>6. Giải thích tham số</h2>
+
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数说明                                                    </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像            </td>
-<td> 输入图像宽度、高度、像素大小。</td>
+<td>Bật song song</td>
+<td>Có: bật tối ưu hóa song song; Không: không bật tối ưu hóa song song</td>
 </tr>
 <tr>
-<td> 输出图像 </td>
-<td> 输出图像宽度、高度、像素大小。    </td>
+<td>Theo dõi mục tiêu</td>
+<td>Có: có thể kết nối biến đổi tuyến tính 2D; Không: thực hiện công cụ theo vùng ROI được liên kết</td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果。  </td>
+<td>Vùng ROI</td>
+<td>Vùng công cụ thực hiện kiểm tra, gồm 10 loại: toàn bộ ảnh, ROI hình chữ nhật, ROI hình chữ nhật biến đổi, ROI hình tròn, ROI hình vòng (cung), ROI hình elip, ROI hình đa giác, ROI polyline biến đổi, ROI hình tự do và ROI đa vùng.</td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 工具执行时间。  </td>
+<td>Phép toán hình thái học</td>
+<td>Các phép toán hình thái học mức xám được hỗ trợ gồm 8 loại: giãn xám, xói xám, mở xám, đóng xám, biến đổi Top-Hat trắng, biến đổi Top-Hat đen, gradient hình thái, lọc trung vị.</td>
+</tr>
+<tr>
+<td>Phần tử cấu trúc</td>
+<td>Có hình dạng nhất định, dùng để đo lường và trích xuất hình dạng tương ứng trong ảnh nhằm phục vụ phân tích và nhận dạng đặc điểm cấu trúc ảnh. Khi chọn loại phần tử là hình tròn bán kính r, các tham số như bán kính r và nhị phân hóa ảnh đầu vào sẽ xuất hiện.</td>
+</tr>
+<tr>
+<td>Số lần thao tác</td>
+<td>Số lần thực hiện xử lý hình thái học mức xám trên ảnh đầu vào; ảnh kết quả của lần trước sẽ làm đầu vào cho lần kế tiếp.</td>
+</tr>
+<tr>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần xử lý.</td>
 </tr>
 </tbody>
 </table>
 
+<h4>Tham số đầu ra</h4>
 
-<h2>7. 示例工程</h2>
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu vào.</td>
+</tr>
+<tr>
+<td>Ảnh đầu ra</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu ra.</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực hiện công cụ.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>7. Dự án mẫu</h2>
 
 <p>​     参见“\Samples\灰度形态学工具.gvp”。</p>
