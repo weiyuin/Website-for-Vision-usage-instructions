@@ -16,7 +16,7 @@ Trang web tổng hợp các **hướng dẫn sử dụng phần mềm Vision Ass
 ## 📘 Nội dung chính
 
 - ✅ Hướng dẫn cơ bản về giao diện phần mềm Vision Assembly
-- 🧰 Cách sử dụng các công cụ kiểm tra (GluePath, FindLine, Point, Match…)
+- 🧰 Cách sử dụng các công cụ kiểm tra, định vị, hiệu chuẩn, ... (GluePath, FindLine, Point, Match…)
 - 🧪 Cách kiểm tra keo dán, căn chỉnh, đo kích thước
 - 💾 Lưu trữ và xử lý kết quả kiểm tra
 - 🌐 Tích hợp MES, ghi log và quản lý hình ảnh
@@ -24,10 +24,8 @@ Trang web tổng hợp các **hướng dẫn sử dụng phần mềm Vision Ass
 ---
 
 ## 🛠 Công nghệ sử dụng
-
-- 🔹 **HTML / CSS / JavaScript**
 - 🔹 Static Web Hosting bằng **GitHub Pages**
-- 🔹 Nội dung dịch từ bản gốc tiếng Trung do Luster cung cấp
+- 🔹 Nội dung dịch từ bản gốc tiếng Trung sang tiếng Việt bởi Nguyễn Công Tùng do Luster cung cấp
 
 ---
 
@@ -38,15 +36,3 @@ Trang web tổng hợp các **hướng dẫn sử dụng phần mềm Vision Ass
 - Người học tự do muốn tìm hiểu phần mềm **Vision Assembly**
 
 ---
-
-## 📂 Cấu trúc thư mục
-
-```bash
-Website-for-Vision-usage-instructions/
-│
-├── index.html             # Trang chủ
-├── /assets                # Hình ảnh, biểu tượng
-├── /pages                 # Các trang nội dung: hướng dẫn, công cụ, câu hỏi thường gặp
-├── style.css              # Giao diện chính
-├── README.md              # File giới thiệu (bạn đang xem)
-└── ...
