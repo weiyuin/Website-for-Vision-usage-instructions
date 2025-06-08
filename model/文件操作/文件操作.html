@@ -16,144 +16,131 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>文件操作</h1>
+<h1>Thao tác với Tệp</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>使用脚本实现文件的部分功能。</p>
+<p>Sử dụng script để thực hiện một số thao tác liên quan đến tệp.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th> 接口名称                         </th>
-<th> 接口描述                           </th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> mkdirFolder </td>
-<td> 新建一个文件夹                         </td>
+<td>mkdirFolder</td>
+<td>Tạo một thư mục mới</td>
 </tr>
 <tr>
-<td> mkdirDate </td>
-<td> 在一个文件夹下面建一个当天日期的文件夹 </td>
+<td>mkdirDate</td>
+<td>Tạo thư mục theo ngày hiện tại trong một thư mục gốc</td>
 </tr>
 <tr>
-<td> ScReadCSVRowCol </td>
-<td> 读CSV的某一行某一列的值 </td>
+<td>ScReadCSVRowCol</td>
+<td>Đọc giá trị tại một hàng và cột cụ thể trong tệp CSV</td>
 </tr>
 <tr>
-<td> Sczip_file </td>
-<td> 压缩文件夹 </td>
+<td>Sczip_file</td>
+<td>Nén thư mục</td>
 </tr>
 <tr>
-<td> Scunzip_file </td>
-<td> 解压压缩文件 </td>
+<td>Scunzip_file</td>
+<td>Giải nén tệp nén</td>
 </tr>
 <tr>
-<td> Scget_dir_size </td>
-<td> 获取文件夹大小 </td>
+<td>Scget_dir_size</td>
+<td>Lấy kích thước thư mục</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>mkdirFolder(rootpath)</h3>
 
 <ul>
-<li>功能： 新建一个文件夹。</li>
-<li>参数：
-
+<li>Chức năng: Tạo một thư mục mới.</li>
+<li>Tham số:
 <ul>
-<li>rootpath：要新建的文件夹路径。</li>
+<li>rootpath: Đường dẫn đến thư mục cần tạo.</li>
 </ul>
 </li>
 </ul>
-
 
 <h3>mkdirDate(rootpath)</h3>
 
 <ul>
-<li>功能：在一个文件夹下面建一个当天日期的文件夹（用于防止脚本工具本身没有建文件夹的权限）。</li>
-<li>参数：
-
+<li>Chức năng: Tạo một thư mục con theo ngày hiện tại bên trong thư mục gốc (dùng trong trường hợp công cụ script không có quyền tạo thư mục trực tiếp).</li>
+<li>Tham số:
 <ul>
-<li>rootpath：要新建的文件夹路径。</li>
+<li>rootpath: Đường dẫn đến thư mục gốc nơi tạo thư mục theo ngày.</li>
 </ul>
 </li>
 </ul>
 
-
-<h3>ScReadCSVRowCol(self,filepath,Row,Col,encode=&lsquo;gbk&rsquo;)</h3>
-
-<ul>
-<li>功能：读CSV的某一行某一列的值。</li>
-<li>参数：
+<h3>ScReadCSVRowCol(self, filepath, Row, Col, encode=‘gbk’)</h3>
 
 <ul>
-<li>filepath：CSV文件路径。</li>
-<li>Row：int类型，表示行。</li>
-<li>Col：int类型，表示列。</li>
-<li>encode:打开CSV文件的编码格式。</li>
+<li>Chức năng: Đọc giá trị tại một hàng và cột trong tệp CSV.</li>
+<li>Tham số:
+<ul>
+<li>filepath: Đường dẫn tệp CSV.</li>
+<li>Row: Kiểu int, chỉ số hàng.</li>
+<li>Col: Kiểu int, chỉ số cột.</li>
+<li>encode: Định dạng mã hóa khi mở tệp CSV.</li>
 </ul>
 </li>
 </ul>
 
-
-<h3>Sczip_file(src_dir,zip_name = <strong>&lsquo;&rsquo;</strong>)</h3>
-
-<ul>
-<li>功能：压缩文件夹。</li>
-<li>参数：
+<h3>Sczip_file(src_dir, zip_name = ‘’)</h3>
 
 <ul>
-<li>src_dir：要压缩的文件夹的路径。</li>
-<li>zip_name：压缩后zip文件的路径及名称。</li>
+<li>Chức năng: Nén thư mục.</li>
+<li>Tham số:
+<ul>
+<li>src_dir: Đường dẫn thư mục cần nén.</li>
+<li>zip_name: Đường dẫn và tên tệp zip sau khi nén.</li>
 </ul>
 </li>
 </ul>
-
 
 <h3>Scunzip_file(zip_src, dst_dir)</h3>
 
 <ul>
-<li>功能：解压压缩文件。</li>
-<li>参数：
-
+<li>Chức năng: Giải nén tệp nén.</li>
+<li>Tham số:
 <ul>
-<li>zip_src：<em>zip文件的全路径</em>。</li>
-<li>dst_dir：要解压到的目的文件夹。</li>
+<li>zip_src: <em>Đường dẫn đầy đủ của tệp zip</em>.</li>
+<li>dst_dir: Thư mục đích để giải nén.</li>
 </ul>
 </li>
 </ul>
 
-
-<h3>Scget_dir_size(dir_path,SizeFormat=<strong>&ldquo;MB&rdquo;</strong>)</h3>
-
-<ul>
-<li><p>功能：获取文件夹大小。</p></li>
-<li><p>参数：</p>
+<h3>Scget_dir_size(dir_path, SizeFormat=“MB”)</h3>
 
 <ul>
-<li>dir_path：要获取的文件夹路径。</li>
-<li>SizeFormat：获取文件夹大小的单位。</li>
+<li><p>Chức năng: Lấy kích thước thư mục.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>dir_path: Đường dẫn thư mục cần lấy kích thước.</li>
+<li>SizeFormat: Đơn vị của kích thước thư mục (mặc định là MB).</li>
 </ul>
 </li>
 </ul>
 
-
-<h2>注意：</h2>
+<h2>Lưu ý:</h2>
 
 <p>from ScFile import ScFile</p>
 
-<p>引用库：ScFile</p>
+<p>Thư viện cần import: ScFile</p>
 
-<p>类名称： class ScFile</p>
+<p>Tên lớp: class ScFile</p>
 
-<h2>示例代码：</h2>
+<h2>Mã ví dụ:</h2>
 
-<p>无</p>
+<p>Không có</p>
