@@ -16,145 +16,144 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>孔洞填充工具</h1>
+<h1>Công cụ điền lỗ</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>孔洞填充是图像预处理方法之一，主要任务是对因打光问题或噪声污染得到的图像进行填充，得到消除打光影响或噪声后的填充孔洞后的图像。根据待填充孔洞与其边界像素的关系，孔洞填充分为深色孔填充和浅色孔填充。</p>
+<p>Điền lỗ là một trong những phương pháp xử lý ảnh trước, nhiệm vụ chính là điền các vùng lỗ trong ảnh do vấn đề chiếu sáng hoặc nhiễu gây ra, tạo ra ảnh đã được loại bỏ ảnh hưởng của chiếu sáng hoặc nhiễu sau khi điền lỗ. Tùy theo quan hệ giữa vùng lỗ cần điền và các điểm ảnh biên giới của nó, điền lỗ được chia thành điền lỗ màu tối và điền lỗ màu sáng.</p>
 
 <p><img src="media/wps3.jpg" alt="img" /></p>
 
-<p><imgnote>图1 深色孔填充</imgnote></p>
+<p><imgnote>Hình 1 Điền lỗ màu tối</imgnote></p>
 
 <p><img src="media/wps4.jpg" alt="img" /></p>
 
-<p><imgnote>图2 浅色孔填充</imgnote></p>
+<p><imgnote>Hình 2 Điền lỗ màu sáng</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                              </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口 </td>
-<td> 孔洞填充ROI                                             </td>
-<td> 全图还是矩形，全图就是将全图的孔洞都进行填充，矩形的话就是只对矩形框里面的孔洞进行填充。<img src="media/wps6.jpg" alt="img" /> </td>
+<td>Cửa sổ thuộc tính</td>
+<td>ROI điền lỗ</td>
+<td>Toàn ảnh hay hình chữ nhật, toàn ảnh nghĩa là điền lỗ trên toàn bộ ảnh, hình chữ nhật nghĩa là chỉ điền lỗ trong khung hình chữ nhật.<img src="media/wps6.jpg" alt="img" /></td>
 </tr>
 <tr>
 <td></td>
-<td> 矩形ROI  </td>
-<td> 当孔洞填充为矩形的时候，需要设置矩形ROI。即X、Y、W和H。                                                               </td>
+<td>ROI hình chữ nhật</td>
+<td>Khi điền lỗ chọn hình chữ nhật thì cần thiết lập ROI hình chữ nhật, bao gồm X, Y, W và H.</td>
 </tr>
 <tr>
 <td></td>
-<td> 填充类型 </td>
-<td> 深色孔填充和浅色孔填充。<img src="media/wps7.jpg" alt="img" />                                                                        </td>
+<td>Loại điền lỗ</td>
+<td>Điền lỗ màu tối và điền lỗ màu sáng.<img src="media/wps7.jpg" alt="img" /></td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输入图像                                                </td>
-<td> 待进行孔洞填充的图片。                                       </td>
+<td>Cửa sổ ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần thực hiện điền lỗ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 矩形GUI  </td>
-<td> 用于孔洞填充ROI为矩形时，设置矩形区域。                                                                               </td>
+<td>GUI hình chữ nhật</td>
+<td>Dùng để thiết lập vùng hình chữ nhật khi ROI điền lỗ là hình chữ nhật.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输入图像                                                </td>
-<td> 待进行孔洞填充的图片。                                       </td>
+<td>Dữ liệu chuỗi</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần thực hiện điền lỗ.</td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无 </td>
-<td> 无                                                                                                                    </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                               </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出图像                                                     </td>
-<td> 进行孔洞填充的结果图像。 </td>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi điền lỗ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                         </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi công cụ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                         </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi công cụ.</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输出图像                                                     </td>
-<td> 进行孔洞填充的结果图像。 </td>
+<td>Cửa sổ ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi điền lỗ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                           </td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi công cụ, nếu thành công hiển thị “OK”, thất bại hiển thị “NG”, giống tham số kết quả thực thi ở cửa sổ giám sát.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出图像                                                     </td>
-<td> 进行孔洞填充的结果图像。 </td>
+<td>Dữ liệu chuỗi</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi điền lỗ.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Giải thích chi tiết</h2>
 
-<h2>详细说明</h2>
+<h3>Điền lỗ màu tối</h3>
 
-<h3>深色孔填充</h3>
+<p>Chuyển các điểm ảnh tối bị bao quanh bởi điểm ảnh sáng thành điểm ảnh sáng, trong ảnh đầu ra sẽ điền các lỗ màu tối.</p>
 
-<p>将浅色像素所包围的深色像素转换为浅色像素，在输出图像中会填充深色孔。</p>
+<h3>Điền lỗ màu sáng</h3>
 
-<h3>浅色孔填充</h3>
+<p>Chuyển các điểm ảnh sáng bị bao quanh bởi điểm ảnh tối thành điểm ảnh tối, trong ảnh đầu ra sẽ điền các lỗ màu sáng.</p>
 
-<p>将深色像素所包围的浅色像素转换为深色像素，在输出图像中会填充浅色孔。</p>
+<h3>Nguyên lý cơ bản</h3>
 
-<h3>基本原理</h3>
-
-<p>深色孔和浅色孔填充工具原理是膨胀和腐蚀的灰度形态学重建。浅色孔填充和深色孔填充的原理相似，这里只以深色孔填充工具为例，说明孔洞填充的基本原理。</p>
+<p>Nguyên lý công cụ điền lỗ màu tối và màu sáng dựa trên sự tái cấu trúc hình thái học xám của phép giãn nở (dilation) và ăn mòn (erosion). Điền lỗ màu sáng và điền lỗ màu tối có nguyên lý tương tự nhau, ở đây lấy ví dụ công cụ điền lỗ màu tối để giải thích nguyên lý cơ bản.</p>
 
 <p><img src="media/wps10.jpg" alt="img" /></p>
 
-<p><imgnote>图3 一维灰度图像深色孔填充原理图</imgnote></p>
+<p><imgnote>Hình 3: Sơ đồ nguyên lý điền lỗ màu tối trên ảnh xám 1 chiều</imgnote></p>
 
-<p>图3为一维灰度图像深色孔填充的原理图。以输入图像的非作为模板图像。标记图像的边界与模板图像边界相同，其余部分为0。利用标记图像对模板图像反复进行测地膨胀操作，直到稳定状态。将稳定状态结果求非即为对原图像进行深色孔洞填充的结果，即图3中（a）-（h）的过程。</p>
+<p>Hình 3 là sơ đồ nguyên lý điền lỗ màu tối trên ảnh xám 1 chiều. Lấy ảnh đầu vào đảo bit (phủ định) làm ảnh mẫu. Biên ảnh đánh dấu có cùng biên với ảnh mẫu, phần còn lại bằng 0. Dùng ảnh đánh dấu này để thực hiện phép giãn nở đo địa lý trên ảnh mẫu nhiều lần cho đến trạng thái ổn định. Kết quả trạng thái ổn định sau khi phủ định là kết quả điền lỗ màu tối trên ảnh gốc, tương ứng với các bước (a) đến (h) trong hình 3.</p>
 
 <p><img src="media/wps11.jpg" alt="img" /></p>
 
-<p><imgnote>图4 二维灰度图像深色孔填充原理图</imgnote></p>
+<p><imgnote>Hình 4: Sơ đồ nguyên lý điền lỗ màu tối trên ảnh xám 2 chiều</imgnote></p>
 
-<p>图4为二维灰度图像深色孔填充示意图。根据图3的过程很容易将一维算法推广到二维灰度图像的情况，图4中只对边界迭代一次后部分位置做了说明，具体可参照一维灰度图像填充进行推广。</p>
+<p>Hình 4 là sơ đồ minh họa điền lỗ màu tối trên ảnh xám 2 chiều. Dựa vào quá trình trong hình 3, thuật toán 1 chiều dễ dàng mở rộng sang ảnh xám 2 chiều. Trong hình 4, chỉ minh họa một lần lặp biên giới cùng vài vị trí cụ thể, bạn có thể tham khảo nguyên lý trên ảnh xám 1 chiều để hiểu chi tiết.</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không có.</p>
 
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
-<p>参见“\Samples\孔洞填充工具.gvp”。</p>
+<p>Tham khảo “\Samples\孔洞填充工具.gvp”.</p>

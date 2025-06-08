@@ -16,347 +16,330 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>装机引导</h1>
+<h1>Hướng dẫn lắp đặt</h1>
 
-<p>在苹果产线用于对位、机器人引导等项目，使用到了相机和光源作为视觉系统的一部分。在产线的相机及光源安装时，需要现在样机上打样，然后将样机上的相机及光源作为参考，在产线其他机台上进行复制，复制参数包括：相机及光源的安装位姿、相机的设置参数和光源的亮度。每台机器都需要参考样机的安装结果，此过程需要在其他机器上高效准确地复制样机信息。 但复制过程，可能是由经验有限的人员来执行。 因此，需要一个视觉设置工具，可以使复制过程程序化，视觉安装结果可验证，帮助AE/客服工程师高效、准确地安装相机和光源。</p>
+<p>Trong dây chuyền sản xuất của Apple, hệ thống thị giác được sử dụng cho các dự án căn chỉnh, dẫn hướng robot,... bao gồm camera và đèn chiếu sáng. Khi lắp đặt camera và đèn trên dây chuyền, cần phải lấy mẫu từ máy mẫu, sau đó sử dụng vị trí lắp đặt của camera và đèn trên máy mẫu làm tham chiếu để sao chép sang các máy khác trên dây chuyền. Các thông số cần sao chép bao gồm: vị trí và tư thế lắp đặt của camera và đèn, thông số thiết lập của camera và độ sáng của đèn. Mỗi máy đều cần tham khảo kết quả lắp đặt của máy mẫu, vì vậy cần phải sao chép thông tin mẫu một cách hiệu quả và chính xác trên các máy khác. Tuy nhiên, quá trình sao chép có thể do người có ít kinh nghiệm thực hiện. Do đó, cần có một công cụ thiết lập thị giác, giúp quá trình sao chép được lập trình hóa, có thể kiểm tra được kết quả lắp đặt thị giác, hỗ trợ kỹ sư AE/kỹ sư dịch vụ khách hàng lắp đặt camera và đèn một cách hiệu quả và chính xác.</p>
 
-<h2>1. 记录样机设置</h2>
+<h2>1. Ghi lại thiết lập mẫu</h2>
 
-<h4>检测项信息采集</h4>
+<h4>Thu thập thông tin hạng mục kiểm tra</h4>
 
-<p>点击“文件”菜单中的“记录样机设置”按钮，如下图所示：</p>
+<p>Nhấn nút “Ghi lại thiết lập mẫu” trong menu “Tập tin”, như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_1.png" alt="SetupTool_1_1" /></p>
 
-<div align = "center">图1-1</div>
+<div align = "center">Hình 1-1</div>
 
-
-<p>打开“记录样机设置”对话框，如下图所示：</p>
+<p>Mở hộp thoại “Ghi lại thiết lập mẫu”, như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_2.png" alt="SetupTool_1_2" /></p>
 
-<div align = "center">图1-2</div>
+<div align = "center">Hình 1-2</div>
 
-
-<p>点击“记录样机设置”窗口中的“增加”按钮，弹出对话框，如下图所示：</p>
+<p>Nhấn nút “Thêm” trong cửa sổ “Ghi lại thiết lập mẫu”, hộp thoại bật lên như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_3.png" alt="SetupTool_1_3" /></p>
 
-<div align = "center">图1-3</div>
+<div align = "center">Hình 1-3</div>
 
-
-<p>选择检测项使用的图像源（采集）工具，编辑检测项、序列码、图像旋转和图像镜像信息，如果该检测项使用到了光源，需要编辑光源信息，点击上述对话框中的“＋”，添加光源，用户可双击光源，编辑光源控制器、通道和亮度，编辑结果，如下图所示：</p>
+<p>Chọn công cụ nguồn hình ảnh (thu thập) được sử dụng cho hạng mục kiểm tra, chỉnh sửa hạng mục kiểm tra, mã sê-ri, thông tin xoay ảnh và lật ảnh. Nếu hạng mục kiểm tra này sử dụng đèn chiếu sáng, cần chỉnh sửa thông tin đèn. Nhấn nút “+” trong hộp thoại trên để thêm đèn. Người dùng có thể nhấp đúp vào đèn để chỉnh sửa bộ điều khiển đèn, kênh và độ sáng. Kết quả chỉnh sửa như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_4.png" alt="SetupTool_1_4" /></p>
 
-<div align = "center">图1-4</div>
+<div align = "center">Hình 1-4</div>
 
 
-<p>选中一个光源，点击上述对话框中的“－”，可删除光源，如图1-5所示，删除2号光源，如下图所示：</p>
+<p>Chọn một đèn, nhấn nút “－” trong hộp thoại trên để xóa đèn, như Hình 1-5 dưới đây, ví dụ xóa đèn số 2:</p>
 
 <p><img src="media/SetupTool_1_5.png" alt="SetupTool_1_5" /></p>
 
-<div align = "center">图1-5</div>
+<div align = "center">Hình 1-5</div>
 
-
-<p>点击上图对话框中的“确定”按钮，增加一个检测项，点击“取消”或对话框的“×”，取消增加检测项。
-点击图1-2中的“采集图像”按钮，使用当前采集工具采集一张图像，并在图像上生成一个“定位ROI”区域和“光源ROI-1”区域，点击上图中的“＋”号，再增加两个“光源位姿调整ROI”，拖动至感兴趣区域（依据项目需要而定），如下图所示如下图所示：</p>
+<p>Nhấn nút “OK” trong hộp thoại trên để thêm một hạng mục kiểm tra. Nhấn “Hủy” hoặc nút “×” của hộp thoại để hủy thao tác thêm hạng mục kiểm tra.<br>
+Nhấn nút “Thu thập hình ảnh” trong Hình 1-2 để sử dụng công cụ thu thập hiện tại chụp một hình ảnh, đồng thời tạo một vùng “ROI định vị” và một vùng “ROI ánh sáng-1” trên hình ảnh. Nhấn biểu tượng “＋” trong hình trên để thêm hai vùng “ROI điều chỉnh vị trí đèn”, sau đó kéo đến khu vực quan tâm (tùy theo yêu cầu dự án), như Hình dưới:</p>
 
 <p><img src="media/SetupTool_1_6.png" alt="SetupTool_1_6" /></p>
 
-<div align = "center">图1-6</div>
+<div align = "center">Hình 1-6</div>
 
+<p>Vùng “ROI định vị” và “ROI ánh sáng-1” có thể kéo thả được. “ROI định vị” dùng để điều chỉnh vị trí cuối cùng của camera trên máy, còn “ROI ánh sáng-1” dùng để điều chỉnh vị trí của đèn cho hạng mục kiểm tra hiện tại. Số lượng tối đa các vùng “ROI ánh sáng” là 5.</p>
 
-<p> “定位ROI”区域和“光源ROI-1”区域可拖动。“定位ROI”用于调整机台相机的最终位置，“光源ROI-1”用于调整当前检测项光源位姿。“光源ROI”个数上限为5。</p>
-
-<p>选中一个光源ROI，点击“－”按钮，可删除选中的光源ROI。点击“取消”按钮，弹出提示框，如下图所示：</p>
+<p>Chọn một ROI ánh sáng, nhấn nút “－” để xóa ROI ánh sáng đã chọn. Nhấn nút “Hủy”, sẽ bật ra hộp thoại cảnh báo như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_9.png" alt="SetupTool_1_9" /></p>
 
-<div align = "center">图1-7</div>
+<div align = "center">Hình 1-7</div>
 
-
-<p>选中检测项列表中需要删除的检测项，点击“删除”按钮弹出对话框，如下图所示：</p>
+<p>Chọn hạng mục kiểm tra cần xóa trong danh sách, nhấn nút “Xóa”, hộp thoại xác nhận sẽ bật ra như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_10.png" alt="SetupTool_1_10" /></p>
 
-<div align = "center">图1-8</div>
+<div align = "center">Hình 1-8</div>
 
-
-<p>选择“是”，则删除选中的检测项，选择“否”，退出删除检测项窗口。双击检测项列表中的检测项，弹出修改检测项对话框，如下图所示：</p>
+<p>Chọn “Có” để xóa hạng mục đã chọn, chọn “Không” để thoát khỏi cửa sổ xóa. Nhấp đúp vào một hạng mục kiểm tra trong danh sách để mở hộp thoại chỉnh sửa, như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_11.png" alt="SetupTool_1_11" /></p>
 
-<div align = "center">图1-9</div>
+<div align = "center">Hình 1-9</div>
 
+<p>Cách thao tác trong hộp thoại chỉnh sửa tương tự như thao tác trong hộp thoại thêm mới.<br>
+Hạng mục kiểm tra dùng để ghi lại vị trí chụp ảnh của máy mẫu. Có bao nhiêu vị trí chụp thì tạo bấy nhiêu hạng mục kiểm tra.</p>
 
-<p>修改检测项对话框操作可参考增加对话框操作步骤。
-检测项是为了记录样机的拍照位，有多少个拍照位就记录多少个检测项。</p>
+<h4>Thu thập thông tin bia hiệu chuẩn</h4>
 
-<h4>靶标信息采集</h4>
-
-<p>点击上图中的下一步按钮，进入靶标信息采集界面，如下图所示：</p>
+<p>Nhấn nút “Tiếp theo” trong hình trên để vào giao diện thu thập thông tin bia hiệu chuẩn, như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_13.png" alt="SetupTool_1_13" /></p>
 
-<div align = "center">图1-10</div>
+<div align = "center">Hình 1-10</div>
 
-
-<p>在上图中，相机列表显示当前机台连接的相机，双击相机，弹出修改靶标信息窗口，如下图所示：</p>
+<p>Trong hình trên, danh sách camera hiển thị các camera đang kết nối với máy hiện tại. Nhấp đúp vào một camera để bật hộp thoại chỉnh sửa thông tin bia hiệu chuẩn, như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_14.png" alt="SetupTool_1_14" /></p>
 
-<div align = "center">图1-11</div>
+<div align = "center">Hình 1-11</div>
 
 
-<p>用户可修改当前相机的光圈、倍率、曝光、增益、Gamma和光源信息。
-点击“采集图像”按钮，使用当前相机采集图像，在下图中，可以看到一个“靶标ROI”和“图像质量ROI”的区域，“图像质量ROI”用于复制样机设置过程中与实时采集图像中对应位置的ROI进行质量评价，将ROI拖动至靶标处，点击“获取靶标序列码”按钮，结果如下图所示：</p>
+<p>Người dùng có thể chỉnh sửa các thông số hiện tại của camera như khẩu độ, độ phóng đại, thời gian phơi sáng, độ lợi, Gamma và thông tin đèn chiếu sáng.<br>
+Nhấn nút “Thu thập hình ảnh” để dùng camera hiện tại chụp hình ảnh. Trong hình dưới, có thể thấy hai vùng là “ROI bia hiệu chuẩn” và “ROI đánh giá chất lượng ảnh”. ROI chất lượng ảnh được dùng để đánh giá chất lượng giữa hình ảnh thu thập được và ROI tương ứng trong mẫu máy. Kéo vùng ROI này đến vị trí bia hiệu chuẩn, nhấn nút “Lấy mã số tuần tự của bia hiệu chuẩn”, kết quả như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_15.png" alt="SetupTool_1_15" /></p>
 
-<div align = "center">图1-12</div>
+<div align = "center">Hình 1-12</div>
 
-
-<p>再次点击“采集图像”按钮，提示如下图所示：</p>
+<p>Nhấn lại nút “Thu thập hình ảnh”, hệ thống sẽ hiện thông báo như sau:</p>
 
 <p><img src="media/SetupTool_1_17.png" alt="SetupTool_1_17" /></p>
 
-<div align = "center">图1-13</div>
+<div align = "center">Hình 1-13</div>
 
+<p>Nhấn “Có” để chụp lại hình ảnh; nhấn “Không” để hủy thao tác chụp lại.<br>
+Nhấn nút “Bước trước” để quay lại giao diện thu thập thông tin hạng mục kiểm tra; nhấn “Bước tiếp” để vào giao diện “Hình ảnh chuẩn”.</p>
 
-<p>点击“是”，重新采集图像；点击“否”，退出重新采集。
-点击“上一步”按钮，回到检测项信息采集窗口，点击“下一步”按钮，进入“基准图像”窗口。</p>
+<h4>Thu thập thông tin hình ảnh chuẩn</h4>
 
-<h4>基准图像信息采集</h4>
-
-<p>点击上图中的下一步按钮，进入基准图像信息采集界面，如下图所示：</p>
+<p>Nhấn nút “Bước tiếp” ở hình trên để vào giao diện thu thập thông tin hình ảnh chuẩn, như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_21.png" alt="SetupTool_1_17" /></p>
 
-<div align = "center">图1-14</div>
+<div align = "center">Hình 1-14</div>
 
+<p>Các bước thao tác như sau:</p>
 
-<p>操作步骤如下：</p>
+<p>Bước 1: Nhấn vào dòng danh sách CCD1;</p>
 
-<p>Step 1：点击CCD1列表行；</p>
+<p>Bước 2: Chọn hạng mục kiểm tra dưới CCD1;</p>
 
-<p>Step 2：选中CCD1下的检测项；</p>
+<p>Bước 3: Nhấn nút “Thu thập hình ảnh chuẩn”;</p>
 
-<p>Step 3：点击“采集基准图像”按钮；</p>
+<p>Bước 4: Kéo vùng ROI_Train trên hình ảnh — vùng ROI này dùng để huấn luyện nên cần đặt tại các đặc trưng cố định của sản phẩm, như hình minh họa;</p>
 
-<p>Step 4：在图像中拖动“ROI_Train”ROI,此处的ROI用于训练，所以需要拖动到产品的固有特征处，如果所示；</p>
+<p>Bước 5: Thêm 1~12 vùng ROI đánh giá độ sáng (tùy vào yêu cầu dự án), thông thường chỉ cần thêm 3~4 vùng;</p>
 
-<p>Step 5：添加1~12个亮度ROI（根据项目需要），一般添加3~4个即可；</p>
+<p>Bước 6: Kéo các ROI đánh giá độ sáng vào các vùng quan tâm trên sản phẩm. Các ROI này dùng để so sánh độ sáng với các máy mới, nhằm kiểm tra máy mới có giống mẫu máy hay không. Mục đích chính là điều chỉnh giá trị tỷ lệ cân bằng trắng của máy mới;</p>
 
-<p>Step 6：将亮度ROI拖动到产品上，放置在关注的区域上，用于与其他新机台进行对比，检测新机台是否与样机上对应亮度ROI的亮度信息一致，此处主要用于调整新机台的白平衡比率值；</p>
+<p>Nhấn nút “Bước trước” để quay lại giao diện thu thập thông tin bia hiệu chuẩn; nhấn “Bước tiếp” để vào giao diện “Lưu thông tin mẫu máy”.</p>
 
-<p>点击“上一步”按钮，回到靶标信息采集窗口，点击“下一步”按钮，进入“样机信息保存”窗口。</p>
+<h4>Lưu thông tin mẫu máy</h4>
 
-<h4>样机信息保存</h4>
-
-<p>点击记录样机设置中的“完成”按钮，进入样机信息保存界面，如下图所示：</p>
+<p>Nhấn nút “Hoàn tất” trong giao diện ghi lại cài đặt mẫu máy để vào giao diện lưu thông tin mẫu máy, như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_18.png" alt="SetupTool_1_18" /></p>
 
-<div align = "center">图1-15</div>
+<div align = "center">Hình 1-15</div>
 
 
-<p>操作步骤解释如下：</p>
+<p>Giải thích các bước thao tác như sau：</p>
 
-<p>Step 1：机台信息用于记录本机台的项目名称、工站名称、工站序列码、视觉负责人和视觉供应商，根据实际项目需要填写；</p>
+<p>Bước 1: Thông tin máy dùng để ghi lại tên dự án, tên công đoạn, mã số công đoạn, người phụ trách thị giác và nhà cung cấp thị giác của máy hiện tại. Điền thông tin theo yêu cầu thực tế của dự án;</p>
 
-<p>Step 2：X、Y为新机台与样机的拍照位允许的最大偏移量，单位为像素；</p>
+<p>Bước 2: X, Y là độ lệch tối đa cho phép (đơn vị: pixel) giữa vị trí chụp của máy mới và mẫu máy;</p>
 
-<p>Step 3：Rx、Ry、Rz为新机台与样机相机允许的最大偏移角度；</p>
+<p>Bước 3: Rx, Ry, Rz là các góc lệch tối đa cho phép giữa camera của máy mới và mẫu máy;</p>
 
-<p>Step 4：Min、Max、Contrast为新机台与样机拍照位的亮度ROI允许的最大误差，分别为亮度最小、最大和对比度误差；</p>
+<p>Bước 4: Min, Max, Contrast là sai số độ sáng tối đa cho phép của các vùng ROI sáng giữa máy mới và mẫu máy, bao gồm: độ sáng nhỏ nhất, lớn nhất và độ tương phản;</p>
 
-<p>Step 5：R、G、B通道均值为新机台与样机的基准图像中的亮度ROI允许的各个通道均值的最大误差；</p>
+<p>Bước 5: Giá trị trung bình kênh R, G, B là độ lệch tối đa cho phép về giá trị trung bình từng kênh màu trong ROI ảnh chuẩn giữa máy mới và mẫu máy;</p>
 
-<p>Step 6：点击“导出参考信息”，导出收集的样机标准信息；</p>
+<p>Bước 6: Nhấn nút “Xuất thông tin tham chiếu” để xuất toàn bộ thông tin chuẩn đã thu thập từ mẫu máy;</p>
 
-<p>点击上图中的“取消”按钮，关闭“样机信息保存”窗口，当关闭后，已编辑信息丢失；点击“导出参考信息”按钮，弹出保存保存对话框，如下图所示：</p>
+<p>Nhấn nút “Hủy” trong hình trên để đóng cửa sổ “Lưu thông tin mẫu máy”. Khi đóng cửa sổ này, mọi thông tin đã chỉnh sửa sẽ bị mất.<br>
+Nhấn nút “Xuất thông tin tham chiếu”, hộp thoại lưu tệp sẽ bật lên như hình dưới:</p>
 
 <p><img src="media/SetupTool_1_20.png" alt="SetupTool_1_20" /></p>
 
-<div align = "center">图1-16</div>
+<div align = "center">Hình 1-16</div>
 
+<h2>2. Sao chép cài đặt mẫu máy</h2>
 
-<h2>2. 复制样机设置</h2>
+<h4>Nhập thông tin tham chiếu từ mẫu máy</h4>
 
-<h4>导入参考样机信息</h4>
-
-<p>点击“文件”菜单中的“记录样机设置”按钮，弹出打开样机收集信息窗口，如下图所示：</p>
+<p>Nhấn nút “Ghi lại cài đặt mẫu máy” trong menu “Tệp”, hộp thoại mở tệp thông tin mẫu máy sẽ bật lên như hình dưới:</p>
 
 <p><img src="media/SetupTool_2_1.png" alt="SetupTool_2_1" /></p>
 
-<div align = "center">图2-1</div>
+<div align = "center">Hình 2-1</div>
 
+<p>Chọn tệp thông tin mẫu máy đã lưu và nhấn nút “Mở” để nhập dữ liệu tham chiếu.</p>
 
-<p>选择已保存的样机信息，点击打开按钮，导入参考数据。</p>
+<h4>Điều chỉnh camera theo bia hiệu chuẩn</h4>
 
-<h4>靶标调整相机</h4>
-
-<p>在导入参考样机数据后，打开复制样机设置界面，选择相机为当前机台连接的所有相机（在线），并显示该相机在参考样机上的靶标序列码、光圈、倍率、曝光、增益、Gamma、误差（X、Y、Pixel Size、Rx、Ry、Rz）信息，如下图所示：</p>
+<p>Sau khi nhập dữ liệu tham chiếu mẫu máy, giao diện sao chép cài đặt mẫu máy sẽ được mở ra. Chọn camera từ danh sách tất cả các camera (đang online) kết nối với máy hiện tại. Hệ thống sẽ hiển thị các thông tin của camera này trên mẫu máy, bao gồm: mã số bia hiệu chuẩn, khẩu độ, độ phóng đại, thời gian phơi sáng, độ lợi, Gamma và các sai số (X, Y, kích thước điểm ảnh, Rx, Ry, Rz), như hình dưới:</p>
 
 <p><img src="media/SetupTool_2_2.png" alt="SetupTool_2_2" /></p>
 
-<div align = "center">图2-2</div>
+<div align = "center">Hình 2-2</div>
 
 
-<p>当实时靶标图像中的靶标识别完成（成功或失败）后，停止实时采集图像，如需再次识别靶标，需点击“刷新实时图像”按钮，点击“下一步”按钮，进入“清晰度调整”界面。</p>
 
-<p>点击“实用功能”按钮，进入实用功能界面 ，如图2-3所示。
-“调试状态”表格信息解释如下（通过，指实时靶标参数与参考靶标参数差的绝对值小于等于允许误差）：    <br/>
-相机，相机名；</p>
+<p>Sau khi nhận diện bia hiệu chuẩn trong ảnh thời gian thực (thành công hoặc thất bại), việc thu ảnh thời gian thực sẽ dừng lại. Nếu cần nhận diện lại bia hiệu chuẩn, cần nhấn nút “Làm mới ảnh thời gian thực”, sau đó nhấn nút “Tiếp theo” để vào giao diện “Điều chỉnh độ nét”.</p>
 
-<p>使用靶标调整相机位姿，“是”表示使用靶标调整相机已通过；</p>
+<p>Nhấn nút “Chức năng tiện ích” để vào giao diện chức năng tiện ích, như Hình 2-3 dưới đây.<br/>
+Giải thích thông tin trong bảng “Trạng thái gỡ lỗi” như sau (Đạt: nghĩa là sai số tuyệt đối giữa tham số bia hiệu chuẩn thời gian thực và tham số tham chiếu nhỏ hơn hoặc bằng sai số cho phép):<br/>
+Camera: tên camera;</p>
 
-<p>使用产品调整相机位姿，“是”表示使用产品调整相机已通过；</p>
+<p>Sử dụng bia hiệu chuẩn để điều chỉnh tư thế camera: “Có” nghĩa là đã điều chỉnh thành công tư thế camera bằng bia hiệu chuẩn;</p>
 
-<p>使用产品调整光源，“是”表示使用产品调整光源已通过。</p>
+<p>Sử dụng sản phẩm để điều chỉnh tư thế camera: “Có” nghĩa là đã điều chỉnh thành công tư thế camera bằng sản phẩm thực tế;</p>
 
-<p>“光源控制”表格信息解释如下：</p>
+<p>Sử dụng sản phẩm để điều chỉnh đèn chiếu sáng: “Có” nghĩa là đã điều chỉnh thành công đèn chiếu sáng bằng sản phẩm thực tế.</p>
 
-<p>搜索结果表格中显示为指定工程中的“通信发送工具”，双击通信发送工具，可将工具添加至“待执行通信发送工具列表”中；</p>
+<p>Giải thích thông tin trong bảng “Điều khiển đèn chiếu sáng”:</p>
 
-<p>点击“执行”按钮，执行“待执行通信发送工具列表”中的通信发送工具。</p>
+<p>Bảng kết quả tìm kiếm sẽ hiển thị “Công cụ gửi lệnh giao tiếp” trong dự án đã chỉ định. Nhấn đúp vào công cụ gửi lệnh, công cụ này sẽ được thêm vào danh sách “Công cụ gửi lệnh chờ thực thi”;</p>
+
+<p>Nhấn nút “Thực thi” để thực hiện tất cả các công cụ gửi lệnh trong danh sách.</p>
 
 <p><img src="media/SetupTool_2_3.png" alt="SetupTool_2_3" /></p>
 
-<div align = "center">图2-3</div>
+<div align = "center">Hình 2-3</div>
 
+<h4>Điều chỉnh độ nét</h4>
 
-<h4>清晰度调整</h4>
+<p>Nhấn nút “Tiếp theo” trong cửa sổ sao chép cài đặt mẫu máy để vào giao diện “Điều chỉnh độ nét”. Trong giao diện này, người dùng có thể xem độ nét và độ tương phản của vùng ROI trong ảnh bia hiệu chuẩn hiện tại so với ảnh bia hiệu chuẩn của máy mẫu. Đồng thời có thể thay đổi ảnh thời gian thực hiện tại của máy mới bằng cách điều chỉnh tỷ lệ kênh cân bằng trắng của camera, từ đó điều chỉnh độ nét và độ tương phản của ảnh bia hiệu chuẩn hiện tại. Xem hình dưới:</p>
 
-<p>点击复制样机设置窗口中的“下一步”按钮，进入“清晰度调整”界面，在界面中用户可以查看当前靶标图像和标准机台靶标图像ROI的清晰度和对比度，同时可以通过修改相机白平衡通道比率更改当前机台实时图像，以修改当前机台靶标图像的清晰度和对比度，如下图所示：</p>
+<p>Chế độ cân bằng trắng: thiết lập chế độ cân bằng trắng, chỉ có hiệu lực với camera màu LBAS, giá trị có thể là Continuous (liên tục), Once (một lần), Off (tắt);</p>
 
-<p>白平衡模式：设置白平衡的模式，只对LBAS彩色相机有效，取值有Continuous、Once、Off；</p>
+<p>Tỷ lệ kênh R: thiết lập giá trị tỷ lệ của kênh R trong cân bằng trắng;</p>
 
-<p>R通道比例：设置平衡通道值的R值；</p>
+<p>Tỷ lệ kênh G: thiết lập giá trị tỷ lệ của kênh G trong cân bằng trắng;</p>
 
-<p>G通道比例：设置平衡通道值的G值；</p>
+<p>Tỷ lệ kênh B: thiết lập giá trị tỷ lệ của kênh B trong cân bằng trắng;</p>
 
-<p>B通道比例：设置平衡通道值的B值；</p>
-
-<p>存储通道：保存相机指定通道的通道比率。</p>
+<p>Lưu kênh: lưu lại tỷ lệ kênh đã chỉ định của camera.</p>
 
 <p><img src="media/SetupTool_2_4.png" alt="SetupTool_2_4" /></p>
 
-<div align = "center">图2-4</div>
+<div align = "center">Hình 2-4</div>
 
 
-<h4>产品调整相机</h4>
+<h4>Điều chỉnh camera bằng sản phẩm</h4>
 
-<p>点击复制样机设置窗口中的“下一步”按钮，进入“图像色差校正”界面，在界面中用户可以选择“检测项”，所有检测项为当前待调试相机的检测项，可以看到每一个检测项对应的产品序列码和光源信息，如下图所示：</p>
+<p>Nhấn nút “Tiếp theo” trong cửa sổ sao chép cài đặt mẫu máy để vào giao diện “Hiệu chỉnh sai lệch màu sắc ảnh”. Trong giao diện này, người dùng có thể chọn “Hạng mục kiểm tra”, tất cả hạng mục là của camera hiện tại đang chờ hiệu chỉnh. Có thể thấy mã sản phẩm và thông tin đèn chiếu tương ứng với từng hạng mục kiểm tra như hình dưới:</p>
 
-<p>检测项：检测项名称，用户在“记录样机设置”阶段自定义；</p>
+<p>Hạng mục kiểm tra: Tên hạng mục kiểm tra, do người dùng tùy chỉnh trong giai đoạn “Ghi lại cài đặt mẫu máy”;</p>
 
-<p>序列码：产品序列码，用户在“记录样机设置”阶段自定义；</p>
+<p>Mã số: Mã số sản phẩm, do người dùng tùy chỉnh trong giai đoạn “Ghi lại cài đặt mẫu máy”;</p>
 
-<p>相机旋转：逆时针将原始图像旋转一定角度，分为4种角度类型，0度、90度、180度和270度；</p>
+<p>Xoay camera: Xoay ảnh gốc theo chiều ngược kim đồng hồ với các góc 0°, 90°, 180° và 270°;</p>
 
-<p>相机镜像： 对原始图像进行镜像操作，分为4种类型，无、水平、垂直和水平垂直；</p>
+<p>Gương ảnh camera: Thực hiện gương ảnh đối với ảnh gốc, có bốn chế độ: không, ngang, dọc và cả ngang lẫn dọc;</p>
 
-<p>曝光：相机的曝光时间，单位为毫秒；</p>
+<p>Phơi sáng: Thời gian phơi sáng của camera, đơn vị: mili giây (ms);</p>
 
-<p>增益：相机的增益，单位为分贝（dB）；</p>
+<p>Khuếch đại (Gain): Mức khuếch đại của camera, đơn vị: decibel (dB);</p>
 
-<p>Gamma：用于调整相机对比度；</p>
+<p>Gamma: Dùng để điều chỉnh độ tương phản của camera;</p>
 
-<p>相机位姿：X为定位ROI的中心坐标X方向值，Y为定位ROI的中心坐标Y方向值，Rz为定位ROI绕Z轴顺时针方向的旋转角度。</p>
+<p>Tư thế camera: X là giá trị tọa độ trung tâm vùng ROI định vị theo trục X, Y là theo trục Y, Rz là góc quay quanh trục Z theo chiều kim đồng hồ.</p>
 
 <p><img src="media/SetupTool_2_5.png" alt="SetupTool_2_5" /></p>
 
-<div align = "center">图2-5</div>
+<div align = "center">Hình 2-5</div>
 
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
 
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+<p>Trong hình trên, vùng ROI màu xanh lá trong ảnh bên phải là ROI ở cùng vị trí với ảnh bên trái, vùng ROI màu đỏ là ROI định vị thời gian thực (vùng khung đỏ trùng với khung xanh lá).</p></blockquote>
 
-<p>上图中，右边图像中的绿色ROI代表与左图中相同位置的ROI，红色ROI为实时定位ROI（上图中红框与绿框重合）。</p></blockquote>
+<h4>Điều chỉnh đèn chiếu sáng bằng sản phẩm</h4>
 
-<h4>产品调整光源</h4>
+<p>Hạng mục kiểm tra: Tên hạng mục kiểm tra, do người dùng tùy chỉnh trong giai đoạn “Ghi lại cài đặt mẫu máy”;</p>
 
-<p>检测项：检测项名称，用户在“记录样机设置”阶段自定义；</p>
+<p>Mã số: Mã số sản phẩm, do người dùng tùy chỉnh trong giai đoạn “Ghi lại cài đặt mẫu máy”;</p>
 
-<p>序列码：产品序列码，用户在“记录样机设置”阶段自定义；</p>
+<p>Xoay camera: Xoay ảnh gốc theo chiều ngược kim đồng hồ với các góc 0°, 90°, 180° và 270°;</p>
 
-<p>相机旋转：逆时针将原始图像旋转一定角度，分为4种角度类型，0度、90度、180度和270度；</p>
+<p>Gương ảnh camera: Thực hiện gương ảnh đối với ảnh gốc, có bốn chế độ: không, ngang, dọc và cả ngang lẫn dọc;</p>
 
-<p>相机镜像： 对原始图像进行镜像操作，分为4种类型，无、水平、垂直和水平垂直；</p>
+<p>Phơi sáng: Thời gian phơi sáng của camera, đơn vị: mili giây (ms);</p>
 
-<p>曝光：相机的曝光时间，单位为毫秒；</p>
+<p>Khuếch đại (Gain): Mức khuếch đại của camera, đơn vị: decibel (dB);</p>
 
-<p>增益：相机的增益，单位为分贝（dB）；</p>
+<p>Gamma: Dùng để điều chỉnh độ tương phản của camera;</p>
 
-<p>Gamma：用于调整相机对比度；</p>
-
-<p>相机位姿：X为定位ROI的中心坐标X方向值，Y为定位ROI的中心坐标Y方向值，Rz为定位ROI绕Z轴顺时针方向的旋转角度。</p>
+<p>Tư thế camera: X là giá trị tọa độ trung tâm vùng ROI định vị theo trục X, Y là theo trục Y, Rz là góc quay quanh trục Z theo chiều kim đồng hồ.</p>
 
 <p><img src="media/SetupTool_2_6.png" alt="SetupTool_2_6" /></p>
 
-<div align = "center">图2-6</div>
+<div align = "center">Hình 2-6</div>
 
+<h4>Hiệu chỉnh sai lệch màu sắc ảnh</h4>
 
-<h4>图像色差校正</h4>
+<p>Người dùng có thể chọn chế độ tự động hoặc thủ công để hiệu chỉnh sai lệch màu sắc ảnh giữa máy sao chép và máy mẫu, sau đó lưu kết quả vào camera.</p>
 
-<p>用户可选用自动模式和手动模式进行复制机台成像色差校正，然后将结果保存至相机中。</p>
+<p>Phương pháp tính trong chế độ thủ công:</p>
 
-<p>手动模式计算如下：</p>
+<p>1. Thay đổi thủ công tỷ lệ kênh R/G/B;</p>
 
-<p>1.手动更改R/G/B通道比率值；</p>
+<p>2. Làm mới ảnh thời gian thực và hiển thị kết quả tính toán.</p>
 
-<p>2.实时刷新图像，并显示计算结果；</p>
+<p>Trong chế độ tự động:</p>
 
-<p>自动模式下：</p>
+<p>Nhấn nút “Tính toán” để tự động tính tỷ lệ kênh R/G/B tối ưu.</p>
 
-<p>点击“计算”按钮，可以自动计算最佳的R/G/B通道比率值。</p>
+<p>Nhấn nút “Lưu” trong chế độ thủ công hoặc tự động để lưu tỷ lệ kênh R/G/B hiện tại vào camera.</p>
 
-<p>点击手动/自动模式下的保存按钮，将当前相机的R/G/B通道比率值保存至相机。</p>
+<p>Danh sách kết quả tính toán: hiển thị kết quả tính toán ảnh thời gian thực.</p>
 
-<p>计算结果列表：实时显示图像计算结果。</p>
+<p><span style="color:red"><strong>Lưu ý</strong></span></p>
 
-<p><span style="color:red"><strong>注意</strong></span></p>
+<p>Trong vùng hiển thị ảnh đôi, ảnh trên là ảnh chuẩn, ảnh dưới là ảnh thời gian thực. Khi kết quả tính toán của ảnh thời gian thực nằm trong phạm vi sai số tối đa cho phép so với ảnh chuẩn, thông số ảnh thời gian thực sẽ hiển thị màu xanh lá, nếu vượt quá thì hiển thị màu đỏ (quy tắc này áp dụng cho tất cả các giao diện hiển thị vùng ảnh đôi).</p>
 
-<p>双图像显示区域中，上图为基准图像，下图为实时图像，当实时图像的计算结果与基准图像的计算结果在允许的最大误差范围内时，实时图像对应的参数显示为绿色，否则为红色（此规则适应所有双图像区域显示的界面）。</p>
+<p>Xoay camera: Xoay ảnh gốc theo chiều ngược kim đồng hồ với các góc 0°, 90°, 180° và 270°;</p>
 
-<p>相机旋转：逆时针将原始图像旋转一定角度，分为4种角度类型，0度、90度、180度和270度；</p>
+<p>Gương ảnh camera: Thực hiện gương ảnh đối với ảnh gốc, có bốn chế độ: không, ngang, dọc và cả ngang lẫn dọc;</p>
 
-<p>相机镜像： 对原始图像进行镜像操作，分为4种类型，无、水平、垂直和水平垂直；</p>
+<p>Phơi sáng: Thời gian phơi sáng của camera, đơn vị: mili giây (ms);</p>
 
-<p>曝光：相机的曝光时间，单位为毫秒；</p>
+<p>Khuếch đại (Gain): Mức khuếch đại của camera, đơn vị: decibel (dB);</p>
 
-<p>增益：相机的增益，单位为分贝（dB）；</p>
+<p>Gamma: Dùng để điều chỉnh độ tương phản của camera;</p>
 
-<p>Gamma：用于调整相机对比度；</p>
-
-<p>相机位姿：X为定位ROI的中心坐标X方向值，Y为定位ROI的中心坐标Y方向值，Rz为定位ROI绕Z轴顺时针方向的旋转角度。</p>
+<p>Tư thế camera: X là giá trị tọa độ trung tâm vùng ROI định vị theo trục X, Y là theo trục Y, Rz là góc quay quanh trục Z theo chiều kim đồng hồ.</p>
 
 <p><img src="media/SetupTool_2_7.png" alt="SetupTool_2_7" /></p>
 
-<div align = "center">图2-7</div>
+<div align = "center">Hình 2-7</div>
 
 
-<h2>3. 常见问题</h2>
-
-<ul>
-<li><h4>记录样机设置</h4></li>
-</ul>
-
-
-<p>​ 当工程中无图像采集工具/图像源工具（系统在线）时，无法添加检测项；</p>
-
-<p>​ 当软件未连接相机时，功能无法使用。</p>
+<h2>3. Các vấn đề thường gặp</h2>
 
 <ul>
-<li><h4>复制样机设置</h4></li>
+<li><h4>Ghi lại cài đặt mẫu máy</h4></li>
 </ul>
 
+<p>Khi trong dự án không có công cụ thu thập ảnh / công cụ nguồn ảnh (hệ thống đang online), sẽ không thể thêm hạng mục kiểm tra;</p>
 
-<p>​ 在新机台上导入样机数据时，需要保证新机台与样机所连接的相机个数和名称一一对应；</p>
+<p>Khi phần mềm chưa kết nối với camera, chức năng không thể sử dụng.</p>
 
-<p>​ 当使用到光源时，工程中需要有通信发送工具；</p>
+<ul>
+<li><h4>Sao chép cài đặt mẫu máy</h4></li>
+</ul>
 
-<p>​ 当靶标识别完成后，停止实时采集图像，需手动刷新再次采集靶标图像；如果进入产品调整界面，则自动刷新图像；</p>
+<p>Khi nhập dữ liệu mẫu máy vào máy mới, cần đảm bảo số lượng và tên camera kết nối với máy mới khớp hoàn toàn với mẫu máy;</p>
 
-<p>​ 当软件未连接相机时，功能无法使用。</p>
+<p>Khi sử dụng đến đèn chiếu, dự án cần có công cụ gửi thông tin truyền thông;</p>
+
+<p>Sau khi nhận diện xong bia mục tiêu, việc thu thập ảnh thời gian thực sẽ dừng lại, cần làm mới thủ công để tiếp tục thu thập ảnh bia mục tiêu; nếu chuyển sang giao diện điều chỉnh sản phẩm, hệ thống sẽ tự động làm mới ảnh;</p>
+
+<p>Khi phần mềm chưa kết nối với camera, chức năng không thể sử dụng.</p>
