@@ -16,138 +16,136 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>相机参数设置工具</h1>
+<h1>Công cụ thiết lập tham số camera</h1> 
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     相机参数设置工具是在一些场景中需要提前设置相机参数用于拍摄，不能直接在图像采集工具中设置的情况。</p>
+<p>​     Công cụ thiết lập tham số camera dùng trong một số trường hợp cần thiết lập trước các tham số camera để chụp ảnh, không thể thiết lập trực tiếp trong công cụ thu thập hình ảnh.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Ứng dụng</h2>
 
-<p>​     相机参数设置工具是在一些场景中需要提前设置相机参数用于拍摄，不能直接在图像采集工具中设置的情况；设置好参数后可以提前拍摄图片，在图像采集工具中运行时直接获取就可以了。</p>
+<p>​     Công cụ thiết lập tham số camera dùng trong một số trường hợp cần thiết lập trước các tham số camera để chụp ảnh, không thể thiết lập trực tiếp trong công cụ thu thập hình ảnh; sau khi thiết lập xong tham số, có thể chụp ảnh trước, khi chạy trong công cụ thu thập hình ảnh sẽ trực tiếp lấy ảnh đã chụp.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>​     相机参数设置工具在填好相机名称后，在执行到这个工具的时候就可以把设置好的增益和曝光设置进相机里，在相机拍图的时候就可以使用设置好的参数进行拍摄。</p>
+<p>​     Khi điền tên camera, công cụ thiết lập tham số camera sẽ thực hiện thiết lập các tham số gain và phơi sáng đã đặt sẵn vào camera khi công cụ này được chạy, giúp camera sử dụng các tham số đã thiết lập khi chụp ảnh.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像</h4></li>
+<li><h4>Thêm công cụ, tải hình ảnh</h4></li>
 </ul>
-
 
 <p><img src="media/GcCamParamSetTool_4_1.png" alt="GcCamParamSetTool_4_1" /></p>
 
-<p>先在相机管理中找到使用的相机，然后把相机的名称填写到“相机名称”，然后设置相机增益和曝光就可以了，在该工具执行的时候会按照工具属性中设置的参数对相机进行设置。</p>
+<p>Trước tiên tìm camera sử dụng trong quản lý camera, sau đó điền tên camera vào mục “Tên camera”, rồi thiết lập gain và phơi sáng cho camera, khi công cụ này chạy sẽ thiết lập camera theo tham số đã đặt trong thuộc tính công cụ.</p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Các câu hỏi thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述           </th>
-<th> 解决方法                                                     </th>
+<th>Mô tả hiện tượng</th>
+<th>Cách giải quyết</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 报错未找到指定相机 </td>
-<td> 在相机管理中查看相机是否连接，如果连接看一下名称是否写错，如果没连接按照FAQ排查问题； </td>
+<td> Lỗi không tìm thấy camera chỉ định </td>
+<td> Kiểm tra camera có kết nối trong quản lý camera hay không, nếu có kết nối thì kiểm tra tên có viết sai không, nếu không kết nối thì kiểm tra theo FAQ để xử lý vấn đề; </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
+<h2>6. Giải thích tham số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数说明                           </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 相机名称 </td>
-<td> 输入在相机管理中设置的相机的名称。 </td>
+<td>Tên camera</td>
+<td>Nhập tên camera đã được thiết lập trong quản lý camera.</td>
 </tr>
 <tr>
-<td> 是否开启基础参数     </td>
-<td> 设置曝光、增益、Gamma的开关。       </td>
+<td>Có bật tham số cơ bản</td>
+<td>Bật/tắt các tham số phơi sáng, gain, Gamma.</td>
 </tr>
 <tr>
-<td> 曝光     </td>
-<td> 需要设置给相机的曝光参数值。       </td>
+<td>Phơi sáng</td>
+<td>Giá trị tham số phơi sáng cần thiết lập cho camera.</td>
 </tr>
 <tr>
-<td> 增益     </td>
-<td> 需要设置给相机的增益参数值。       </td>
+<td>Gain</td>
+<td>Giá trị tham số gain cần thiết lập cho camera.</td>
 </tr>
 <tr>
-<td> Gamma     </td>
-<td> 需要设置给相机的Gamma参数值。       </td>
+<td>Gamma</td>
+<td>Giá trị tham số Gamma cần thiết lập cho camera.</td>
 </tr>
 <tr>
-<td> 设置白平衡     </td>
-<td> 设置白平衡的开关。       </td>
+<td>Thiết lập cân bằng trắng</td>
+<td>Bật/tắt tính năng cân bằng trắng.</td>
 </tr>
 <tr>
-<td> 红色     </td>
-<td> 需要设置给彩色相机红色通道参数值。       </td>
+<td>Màu đỏ</td>
+<td>Giá trị tham số kênh đỏ cần thiết lập cho camera màu.</td>
 </tr>
 <tr>
-<td> 绿色     </td>
-<td> 需要设置给彩色相机绿色通道参数值。       </td>
+<td>Màu xanh lá</td>
+<td>Giá trị tham số kênh xanh lá cần thiết lập cho camera màu.</td>
 </tr>
 <tr>
-<td> 蓝色     </td>
-<td> 需要设置给彩色相机蓝色通道参数值。       </td>
+<td>Màu xanh dương</td>
+<td>Giá trị tham số kênh xanh dương cần thiết lập cho camera màu.</td>
 </tr>
 <tr>
-<td> 是否开启ROI设置     </td>
-<td> 设置相机ROI的开关。       </td>
+<td>Có bật thiết lập ROI</td>
+<td>Bật/tắt thiết lập vùng quan tâm (ROI) của camera.</td>
 </tr>
 <tr>
-<td> X     </td>
-<td> 需要设置给相机ROI的X参数值。       </td>
+<td>X</td>
+<td>Giá trị tham số X của ROI cần thiết lập cho camera.</td>
 </tr>
 <tr>
-<td> Y     </td>
-<td> 需要设置给相机ROI的Y参数值。       </td>
+<td>Y</td>
+<td>Giá trị tham số Y của ROI cần thiết lập cho camera.</td>
 </tr>
 <tr>
-<td> Width     </td>
-<td> 需要设置给相机ROI的Width参数值。       </td>
+<td>Chiều rộng (Width)</td>
+<td>Giá trị tham số chiều rộng của ROI cần thiết lập cho camera.</td>
 </tr>
 <tr>
-<td> Height     </td>
-<td> 需要设置给相机ROI的Height参数值。       </td>
+<td>Chiều cao (Height)</td>
+<td>Giá trị tham số chiều cao của ROI cần thiết lập cho camera.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数说明                                          </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 执行结果 </td>
-<td> 该工具执行完 相机的曝光和增益同时设置成功或失败。 </td>
+<td>Kết quả thực thi</td>
+<td>Công cụ này sau khi chạy cho biết phơi sáng và gain của camera được thiết lập thành công hay thất bại.</td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 该工具执行消耗的时间。                            </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
 </tr>
 </tbody>
 </table>

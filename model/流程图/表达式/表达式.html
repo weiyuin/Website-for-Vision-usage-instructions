@@ -16,72 +16,70 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>表达式</h1>
+<h1>Biểu thức</h1>
 
-<p>表达式用于流程图中的逻辑判断或变量赋值等，在流程图的运行中起着非常重要的作用。</p>
+<p>Biểu thức được dùng trong lưu đồ để thực hiện các phép toán logic hoặc gán biến, đóng vai trò rất quan trọng trong quá trình chạy lưu đồ.</p>
 
 <ul>
-<li><p>表达式的添加：</p></li>
-<li><p>控制流：直接在控制流中双击link线添加，如分支汇合，双击下图中红色箭头起始位置的link线，即可弹出表达式编辑框；支持在分支条件编辑界面批量处理分支条件的设置，在当前分支条件未完成前，不可点选设置其他分支。支持分支条件的命名，如“图像采集”分支。</p></li>
+<li><p>Thêm biểu thức:</p></li>
+<li><p>Dòng điều khiển: trực tiếp nhấp đúp vào đường link trong dòng điều khiển để thêm, ví dụ như nhánh hội tụ, nhấp đúp vào vị trí bắt đầu của đường link mũi tên đỏ trong hình dưới đây, sẽ hiện ra hộp thoại chỉnh sửa biểu thức; hỗ trợ xử lý hàng loạt điều kiện nhánh trong giao diện chỉnh sửa điều kiện nhánh, trước khi hoàn thành điều kiện nhánh hiện tại không thể chọn để thiết lập nhánh khác. Hỗ trợ đặt tên cho điều kiện nhánh, ví dụ nhánh “Thu thập hình ảnh”.</p></li>
 </ul>
-
 
 <p><img src="media/Expression_1_1.png" alt="" /></p>
 
 <ul>
-<li><p>表达式计算工具：在流程图中右键，选择“新增-控制-表达式计算”，添加表达式计算工具，双击工具，进行表达式的编辑；</p></li>
-<li><p>表达式的种类：赋值表达式、算术表达式、逻辑表达式；</p></li>
-<li><p>表达式的元素：包含操作数和操作符；</p></li>
-<li><p>操作数：</p>
+<li><p>Công cụ tính toán biểu thức: trong lưu đồ nhấp chuột phải, chọn “Thêm mới - Điều khiển - Tính toán biểu thức”, thêm công cụ tính toán biểu thức, nhấp đúp công cụ để chỉnh sửa biểu thức;</p></li>
+<li><p>Loại biểu thức: biểu thức gán, biểu thức số học, biểu thức logic;</p></li>
+<li><p>Thành phần biểu thức: gồm toán hạng và toán tử;</p></li>
+<li><p>Toán hạng:</p>
 
 <ul>
-<li><p>来自变量：输入#会检索出所有局部变量；输入@会检索出所有全局变量；</p></li>
-<li><p>来自工具参数或执行结果：输入工具编号或名称，会检索出该工具可用的参数或执行结果；</p></li>
+<li><p>Đến từ biến: nhập # sẽ tìm kiếm tất cả biến cục bộ; nhập @ sẽ tìm kiếm tất cả biến toàn cục;</p></li>
+<li><p>Đến từ tham số công cụ hoặc kết quả thực thi: nhập số hiệu hoặc tên công cụ, sẽ tìm ra các tham số hoặc kết quả thực thi có thể dùng của công cụ đó;</p></li>
 </ul>
 </li>
-<li><p>操作符：</p></li>
-<li><p>逻辑与（A&amp;&amp;B）、逻辑或（A||B）、逻辑非（!A）；</p></li>
-<li><p>等于（A==B）、不等于（A!=B）、大于（A>B）、小于（A\&lt;B）、大于等于（A>=B）、小于等于（A\&lt;=B）；</p></li>
-<li><p>加（A+B）、减（A-B）、乘（A*B）、除（A/B）、模（A%B）；</p></li>
-<li><p>赋值（A=B）；</p></li>
-<li><p>负号（-A）。</p></li>
-<li><p>操作符的优先级（从上到下，优先级从高到低）：</p>
+<li><p>Toán tử:</p></li>
+<li><p>Logic và (A&amp;&amp;B), logic hoặc (A||B), logic phủ định (!A);</p></li>
+<li><p>Bằng (A==B), khác (A!=B), lớn hơn (A>B), nhỏ hơn (A&lt;B), lớn hơn hoặc bằng (A>=B), nhỏ hơn hoặc bằng (A&lt;=B);</p></li>
+<li><p>Cộng (A+B), trừ (A-B), nhân (A*B), chia (A/B), chia lấy dư (A%B);</p></li>
+<li><p>Gán (A=B);</p></li>
+<li><p>Dấu âm (-A).</p></li>
+<li><p>Ưu tiên của toán tử (từ trên xuống dưới, ưu tiên giảm dần):</p>
 
 <blockquote><ol>
-<li>（）</li>
-<li>!， -(负号)</li>
-<li>*， /， %</li>
-<li>+，-</li>
-<li>&lt;， &lt;=， >， >=</li>
-<li>==，!=</li>
-<li>&amp;， ^， |</li>
-<li>&amp;&amp;，||</li>
-<li>=（赋值）</li>
+<li>()</li>
+<li>!, - (dấu âm)</li>
+<li>*, /, %</li>
+<li>+, -</li>
+<li>&lt;, &lt;=, >, >=</li>
+<li>==, !=</li>
+<li>&amp;, ^, |</li>
+<li>&amp;&amp;, ||</li>
+<li>= (gán)</li>
 </ol>
 </blockquote></li>
-<li><p>数据类型转换</p>
+<li><p>Chuyển đổi kiểu dữ liệu</p>
 
 <ul>
-<li><p>表达式支持double，float，long，int，short，char等数据类型之间的隐式转换。</p></li>
-<li><p>隐式转换规则</p>
+<li><p>Biểu thức hỗ trợ chuyển đổi ngầm giữa các kiểu dữ liệu double, float, long, int, short, char, v.v.;</p></li>
+<li><p>Quy tắc chuyển đổi ngầm</p>
 
-<p>1.在赋值表达式中，右侧运算对象转换成左侧运算对象的数据类型。如果是高级向低级转换时会发生精度损失或截断，使用中应避免。</p>
+<p>1. Trong biểu thức gán, toán hạng bên phải sẽ được chuyển sang kiểu dữ liệu của toán hạng bên trái. Nếu chuyển từ kiểu cao cấp sang thấp cấp sẽ có mất mát độ chính xác hoặc cắt bớt, nên tránh sử dụng trong thực tế.</p>
 
-<p>2.在算数表达式中，如果其中一个操作数是double类型，则其他操作数都被转换成double类型。</p>
+<p>2. Trong biểu thức số học, nếu có một toán hạng là kiểu double, các toán hạng còn lại sẽ được chuyển sang kiểu double.</p>
 
-<p>3.在算数表达式中若操作数中无double类型，且其中一个操作数是float类型，则其他操作数都被转换成float类型。</p>
+<p>3. Trong biểu thức số học nếu không có toán hạng kiểu double mà có một toán hạng kiểu float, các toán hạng còn lại sẽ được chuyển sang kiểu float.</p>
 
-<p>4.在混合类型的算数表达式中，short和char类型被提升为int类型。</p></li>
+<p>4. Trong biểu thức số học hỗn hợp kiểu, các kiểu short và char sẽ được nâng lên kiểu int.</p></li>
 </ul>
 </li>
-<li><p>其他</p>
+<li><p>Khác</p>
 
 <ul>
-<li><p>操作数的补全：当使用关键字检索操作数时，可使用Tab键补全检索结果，会自动填充在表达式编辑框中；</p></li>
-<li><p>操作数的选中、填充：鼠标单击选中；双击填充在表达式编辑框中；</p></li>
-<li><p>操作数的浏览：可拖动右侧滑动条，也可使用键盘↑↓键进行浏览；</p></li>
-<li><p>保存退出：点击“确定”或按键盘Enter键；</p></li>
+<li><p>Hoàn thiện toán hạng: khi dùng từ khóa tìm kiếm toán hạng, có thể dùng phím Tab để hoàn thiện kết quả tìm kiếm, tự động điền vào hộp chỉnh sửa biểu thức;</p></li>
+<li><p>Chọn và điền toán hạng: nhấp chuột để chọn; nhấp đúp để điền vào hộp chỉnh sửa biểu thức;</p></li>
+<li><p>Duyệt toán hạng: có thể kéo thanh cuộn bên phải hoặc dùng phím mũi tên lên xuống trên bàn phím để duyệt;</p></li>
+<li><p>Lưu và thoát: nhấp “Xác nhận” hoặc nhấn phím Enter trên bàn phím;</p></li>
 </ul>
 </li>
 </ul>
-
