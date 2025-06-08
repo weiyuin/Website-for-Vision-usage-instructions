@@ -16,138 +16,136 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>时间格式化工具</h1>
+<h1>Công cụ định dạng thời gian</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>对当前系统时间按照一定的格式要求进行格式化。</p>
+<p>Định dạng thời gian hệ thống hiện tại theo một mẫu định dạng nhất định.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                      </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口 </td>
-<td> 时间格式 </td>
-<td> 输入指定的时间格式化字符串。<img src="media/wps43.jpg" alt="img" /> </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Định dạng thời gian</td>
+<td>Nhập chuỗi định dạng thời gian được chỉ định.<img src="media/wps43.jpg" alt="img" /> </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无 </td>
-<td> 无  </td>
+<td>Cửa sổ ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td>数据链   </td>
-<td> 无    </td>
-<td> 无</td>
+<td>Dữ liệu chuỗi</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td> 高级界面 </td>
-<td> 无 </td>
-<td> 无  </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                     </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 格式化结果     </td>
-<td> 输出格式化后时间结果。                                       </td>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả định dạng</td>
+<td>Xuất kết quả thời gian đã được định dạng.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                               </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi công cụ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                               </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无 </td>
-<td> 无                                                                           </td>
+<td>Cửa sổ ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 格式化结果     </td>
-<td> 输出格式化后时间结果，供后序工具使用，同监视窗口的格式化结果参数。 </td>
+<td>Dữ liệu chuỗi</td>
+<td>Kết quả định dạng</td>
+<td>Xuất kết quả thời gian định dạng để công cụ tiếp theo sử dụng, giống với tham số kết quả định dạng ở cửa sổ giám sát.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Giải thích chi tiết</h2>
 
-<h2>详细说明</h2>
+<h3>Định dạng thời gian</h3>
 
-<h3>时间格式</h3>
+<p>Chuỗi định dạng thời gian được chỉ định theo bảng 1 dưới đây.</p>
 
-<p>时间格式输入的指定格式如表1所示。</p>
-
-<p>表1 指定输入时间格式</p>
+<p>Bảng 1: Định dạng thời gian đầu vào được chỉ định</p>
 
 <table>
 <thead>
 <tr>
-<th> %a：星期缩写，例如Thu。                                   </th>
-<th> %A：星期全写，例如Thursday。                          </th>
+<th>%a: Viết tắt ngày trong tuần, ví dụ Thu.</th>
+<th>%A: Viết đầy đủ ngày trong tuần, ví dụ Thursday.</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> %b：月份缩写，例如Aug。                                   </td>
-<td> %B：月份全写，例如August。                            </td>
+<td>%b: Viết tắt tháng, ví dụ Aug.</td>
+<td>%B: Viết đầy đủ tháng, ví dụ August.</td>
 </tr>
 <tr>
-<td> %c：日期和时间表示，例如Thu Aug 23 14:55:02 2001。        </td>
-<td> %D：月份中的第几天，01-31。                           </td>
+<td>%c: Hiển thị ngày và giờ, ví dụ Thu Aug 23 14:55:02 2001.</td>
+<td>%D: Ngày trong tháng, 01-31.</td>
 </tr>
 <tr>
-<td> %H：24小时制中的第几个小时，00-23。                       </td>
-<td> %j：一年中的第几天，001-366。                         </td>
+<td>%H: Giờ theo 24h, 00-23.</td>
+<td>%j: Ngày trong năm, 001-366.</td>
 </tr>
 <tr>
-<td> %m：十进制的月份序号，01-12。                             </td>
-<td> %M：分钟，00-59。                                     </td>
+<td>%m: Tháng số thập phân, 01-12.</td>
+<td>%M: Phút, 00-59.</td>
 </tr>
 <tr>
-<td> %S：秒，00-61。                                           </td>
-<td> %U：周编号，以第一个星期日作为第一周的第一天，00-53。 </td>
+<td>%S: Giây, 00-61.</td>
+<td>%U: Số tuần, bắt đầu tuần đầu tiên từ Chủ Nhật, 00-53.</td>
 </tr>
 <tr>
-<td> %w：工作日编号，以星期日作为第一天0，0-6。                </td>
-<td> %W：周编号，以第一个星期一作为第一周的第一天，00-53。 </td>
+<td>%w: Số ngày trong tuần, Chủ Nhật là 0, 0-6.</td>
+<td>%W: Số tuần, bắt đầu tuần đầu tiên từ Thứ Hai, 00-53.</td>
 </tr>
 <tr>
-<td> %x：日期表示，月/日/年，例如2017年1月11日表示为01/11/17。 </td>
-<td> %X：时间表示，例如14:55:02。                          </td>
+<td>%x: Hiển thị ngày, tháng/ngày/năm, ví dụ ngày 11/1/2017 sẽ là 01/11/17.</td>
+<td>%X: Hiển thị giờ, ví dụ 14:55:02.</td>
 </tr>
 <tr>
-<td> %y：年的最后两位数，例如2017年表示为17。                  </td>
-<td> %Y：年的完整表示，例如2017。                          </td>
+<td>%y: Hai số cuối của năm, ví dụ 2017 sẽ là 17.</td>
+<td>%Y: Hiển thị năm đầy đủ, ví dụ 2017.</td>
 </tr>
 <tr>
-<td> %p：上午或下午，AM或PM。                                  </td>
-<td> %ms：毫秒的表示，目前只支持在字符串最后添加使用       </td>
+<td>%p: AM hoặc PM.</td>
+<td>%ms: Hiển thị mili giây, hiện chỉ hỗ trợ đặt ở cuối chuỗi.</td>
 </tr>
 </tbody>
 </table>

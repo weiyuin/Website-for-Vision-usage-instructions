@@ -16,98 +16,98 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>流程图删除向导</h1>
+<h1>Trình hướng dẫn xóa biểu đồ luồng</h1>
 
-<p>流程图删除向导是对原删除功能的拓展。</p>
+<p>Trình hướng dẫn xóa biểu đồ luồng là phần mở rộng của chức năng xóa ban đầu.</p>
 
-<p>在删除图元（工具实例）的同时，删除或替换此工具被其他工具使用的所有引用/链接项。</p>
+<p>Khi xóa đối tượng công cụ (ví dụ trường hợp là công cụ), sẽ xóa hoặc thay thế tất cả các tham chiếu/liên kết sử dụng công cụ đó bởi các công cụ khác.</p>
 
-<p>如”图像文件 _ 001“的”输出图像“被链接到"灰度形态学工具 _ 002"的“输入图像”，作为其输入参数，删除“图像文件 _ 001”时，会调用“流程图删除向导”，"灰度形态学工具 _ 002"的“输入图像”可置为空或替换为其他(“图像文件 _ 001”)同类工具。</p>
+<p>Ví dụ, “Tệp ảnh _ 001” với “Ảnh đầu ra” được liên kết tới “Công cụ hình thái học mức xám _ 002” với “Ảnh đầu vào” làm tham số đầu vào, khi xóa “Tệp ảnh _ 001”, sẽ gọi “Trình hướng dẫn xóa biểu đồ luồng”, và “Ảnh đầu vào” của “Công cụ hình thái học mức xám _ 002” có thể được đặt thành trống hoặc thay thế bằng công cụ cùng loại khác (thay vì “Tệp ảnh _ 001”).</p>
 
-<p>“流程图删除向导”覆盖的引用项包括：</p>
+<p>“Trình hướng dẫn xóa biểu đồ luồng” xử lý các tham chiếu bao gồm:</p>
 
 <ul>
-<li>参数链</li>
-<li>表达式引用（分支条件、并行、循环、循环中止）</li>
-<li>脚本工具引用</li>
-<li>文本生成工具和数据输出工具的引用</li>
-<li>生产界面引用。</li>
+<li>Chuỗi tham số</li>
+<li>Tham chiếu biểu thức (điều kiện nhánh, song song, vòng lặp, dừng vòng lặp)</li>
+<li>Tham chiếu công cụ script</li>
+<li>Tham chiếu công cụ tạo văn bản và công cụ xuất dữ liệu</li>
+<li>Tham chiếu giao diện sản xuất</li>
 </ul>
 
+<h3>Giao diện chính của trình hướng dẫn xóa biểu đồ luồng</h3>
 
-<h3>流程图删除向导主视图</h3>
-
-<p>当删除被其他工具的引用的工具图元时，会弹出”流程图删除向导“窗口，如下。</p>
+<p>Khi xóa đối tượng công cụ được tham chiếu bởi công cụ khác, sẽ hiện cửa sổ “Trình hướng dẫn xóa biểu đồ luồng” như hình dưới.</p>
 
 <p><img src="media/FlowWizard_1_1.png" alt="" /></p>
 
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+<blockquote><p><span style="color:red"><strong>Chú ý</strong></span></p>
 
 <ul>
-<li><p>选择多个图元，进行删除时，如果存在多个待删除的工具图元被其他工具引用的情况（除去删除工具的相互引用），将给出如下弹窗提示：</p>
+<li><p>Khi chọn nhiều đối tượng công cụ để xóa, nếu có nhiều đối tượng được tham chiếu bởi công cụ khác (ngoại trừ tham chiếu chéo giữa các đối tượng trong nhóm xóa), sẽ có thông báo popup như sau:</p>
 
 <ul>
-<li><p>选择“是”，直接删除选择的多个工具</p></li>
-<li><p>选择“否”，取消删除操作，软件右下角“查找窗口”给出提示，告知被引用的工具图元，后续需要手动逐个删除这些被引用的图元。</p></li>
+<li><p>Chọn “Có” sẽ xóa trực tiếp tất cả đối tượng chọn</p></li>
+<li><p>Chọn “Không” sẽ hủy thao tác xóa, phần “Cửa sổ tìm kiếm” góc phải dưới sẽ hiển thị cảnh báo các đối tượng bị tham chiếu, cần xóa thủ công từng cái.</p></li>
 </ul>
 </li>
-<li><p>如果删除的多个工具中只存在一个工具被外部引用，那么会显示删除向导窗口，可使用直接删除或替换的方式删除此工具。</p></li>
+<li><p>Nếu trong nhóm xóa chỉ có 1 đối tượng bị tham chiếu bên ngoài, cửa sổ trình hướng dẫn xóa sẽ hiển thị, cho phép xóa trực tiếp hoặc thay thế tham chiếu để xóa.</p></li>
 </ul>
-
 
 <p><img src="media/FlowWizard_1_8.png" alt="" /></p></blockquote>
 
-<h3>向导步骤如下</h3>
+<h3>Các bước của trình hướng dẫn</h3>
 
 <ol>
-<li><p>选择替换模式：直接删除或用其他工具替换引用</p>
+<li><p>Chọn chế độ thay thế: xóa trực tiếp hoặc thay thế tham chiếu bằng công cụ khác</p>
 
 <ul>
-<li>直接删除：将删除当前工具，并将工具的所有被引用项置为空。*注意：对于脚本工具只将引用的工具及参数删除，可能造成脚本语法错误，需要手动修改。</li>
-<li>用其他工具替换引用：将删除当前工具，并将此工具的所有引用替换为所选工具。</li>
+<li>Xóa trực tiếp: xóa công cụ hiện tại và đặt tất cả tham chiếu đến công cụ này thành trống. *Lưu ý: Với công cụ script, chỉ xóa công cụ và tham số được tham chiếu, có thể gây lỗi cú pháp script cần chỉnh sửa thủ công.</li>
+<li>Thay thế tham chiếu bằng công cụ khác: xóa công cụ hiện tại và thay thế tất cả tham chiếu tới công cụ này bằng công cụ được chọn.</li>
 </ul>
 
-
 <p><img src="media/FlowWizard_1_1.png" alt="" /></p></li>
-<li><p>参数链链接置空或替换，未匹配参数将断开原参数链：</p>
+
+<li><p>Chuỗi tham số được đặt trống hoặc thay thế, tham số không khớp sẽ bị ngắt chuỗi:</p>
 
 <p><img src="media/FlowWizard_1_2.png" alt="" /></p></li>
-<li><p>表达式引用置空或替换，一个表达式工具可能引用多个工具参数，如果存在未匹配参数，表达式将执行部分替换，即未匹配的引用参数不进行修改：</p>
+
+<li><p>Tham chiếu biểu thức được đặt trống hoặc thay thế, một công cụ biểu thức có thể tham chiếu nhiều tham số công cụ, nếu có tham số không khớp, chỉ thay thế một phần, tham số không khớp giữ nguyên:</p>
 
 <p><img src="media/FlowWizard_1_3.png" alt="" /></p></li>
-<li><p>脚本工具引用置空或替换：与表达式工具类似，未匹配参数引用不修改：</p>
+
+<li><p>Tham chiếu công cụ script đặt trống hoặc thay thế: tương tự công cụ biểu thức, tham số không khớp không chỉnh sửa:</p>
 
 <p><img src="media/FlowWizard_1_4.png" alt="" /></p></li>
-<li><p>文本生成工具和数据输出工具引用置空或替换，未匹配参数直接删除：</p>
+
+<li><p>Tham chiếu công cụ tạo văn bản và xuất dữ liệu đặt trống hoặc thay thế, tham số không khớp sẽ xóa:</p>
 
 <p><img src="media/FlowWizard_1_5.png" alt="" /></p></li>
-<li><p>生产界面引用置空或替换，未匹配参数清空控件引用：</p>
+
+<li><p>Tham chiếu giao diện sản xuất đặt trống hoặc thay thế, tham số không khớp sẽ xóa tham chiếu điều khiển:</p>
 
 <p><img src="media/FlowWizard_1_6.png" alt="" /></p></li>
-<li><p>完成引用删除/替换操作，查看所有替换项：</p>
+
+<li><p>Hoàn tất xóa/thay thế tham chiếu, xem lại tất cả các mục thay thế:</p>
 
 <p><img src="media/FlowWizard_1_7.png" alt="" /></p></li>
 </ol>
 
-
-<h3>操作细节</h3>
+<h3>Chi tiết thao tác</h3>
 
 <ol>
-<li>引用筛选：选择输出参数列表中的参数项，可筛选引用列表中对应的引用此参数的内容，如下图</li>
+<li>Lọc tham chiếu: chọn tham số đầu ra trong danh sách tham số để lọc danh sách các tham chiếu tương ứng đến tham số đó, ví dụ hình dưới</li>
 </ol>
-
 
 <p><img src="media/FlowWizard_2_1.png" alt="" /></p>
 
-<ol>
-<li>未匹配参数处理：当使用其他工具替换删除工具的引用时，会根据参数类型和名称自动匹配可替换为的参数，当无法找到可以的参数时，会展示为“未匹配”状态的引用项，如下图。</li>
+<ol start="2">
+<li>Xử lý tham số không khớp: Khi dùng công cụ khác thay thế tham chiếu của công cụ bị xóa, hệ thống sẽ tự động so khớp tham số theo kiểu và tên tham số, nếu không tìm thấy tham số phù hợp sẽ hiện trạng thái “không khớp”:</li>
 </ol>
-
 
 <p><img src="media/FlowWizard_2_2.png" alt="" /></p>
 
-<p>在输出参数列表中选择某一输出参数（如图，选择“工具执行结果”），那么替换参数列表中会显示潜在的可替换参数项（如图），选择某一替换参数（下图中，选择“执行结果”），执行参数替换操作（表达式中原“区域定位_035.工具执行结果”替换为“几何定位__003.执行结果”）。</p>
+<p>Khi chọn một tham số đầu ra (ví dụ “Kết quả thực thi công cụ”), danh sách tham số thay thế sẽ hiển thị các tham số có thể thay thế được (ví dụ “Kết quả thực thi”), chọn tham số thay thế (ví dụ “Kết quả thực thi”), thực hiện thay thế tham số (biểu thức ban đầu “Vị trí vùng_035.Kết quả thực thi công cụ” được thay bằng “Định vị hình học__003.Kết quả thực thi”).</p>
 
-<p><strong>如果替换参数列表中无任何项，即无可替换参数，无法进行替换操作，需要后续手动处理。</strong></p>
+<p><strong>Nếu danh sách tham số thay thế trống, không có tham số nào có thể thay thế, không thể thực hiện thay thế, cần xử lý thủ công.</strong></p>
 
 <p><img src="media/FlowWizard_2_3.png" alt="" /></p>

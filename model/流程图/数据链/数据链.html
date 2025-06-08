@@ -16,56 +16,53 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>数据链</h1>
+<h1>Chuỗi dữ liệu</h1>
 
-<p>数据链，为流程图各工具间的数据链接，用于工具与工具、工具与变量之间的数据传递。</p>
+<p>Chuỗi dữ liệu là liên kết dữ liệu giữa các công cụ trong biểu đồ luồng, dùng để truyền dữ liệu giữa công cụ với công cụ, công cụ với biến.</p>
 
-<h2>数据链编辑窗口介绍</h2>
+<h2>Giới thiệu cửa sổ chỉnh sửa chuỗi dữ liệu</h2>
 
 <ul>
-<li>打开编辑窗口：在任意一个工具上双击，则弹出该工具的数据链编辑窗口，如图所示:包括输入数据、输出数据、输入数据备选项1和2、展开子项复选框、筛选及常量添加等内容。</li>
+<li>Mở cửa sổ chỉnh sửa: Nhấp đúp vào bất kỳ công cụ nào sẽ hiện cửa sổ chỉnh sửa chuỗi dữ liệu của công cụ đó, như hình minh họa: bao gồm dữ liệu đầu vào, dữ liệu đầu ra, các lựa chọn dự phòng dữ liệu đầu vào 1 và 2, checkbox mở rộng mục con, lọc và thêm hằng số, v.v.</li>
 </ul>
-
 
 <p><img src="media/Pipe_1_1.png" alt="" /></p>
 
 <ul>
-<li>展开子项：勾选“展开子项”复选框，如上图显示，某工具的像素当量链接某标定结果的x轴像素当量。默认不勾选，如下图显示。如果需要工具的某个参数的展开子项，而又不想找到这个工具再设置展开子项，这时候可以勾选这个复选框，将会显示当前工程满足条件的所有工具及其当前选中工具的可以链接的所有参数和某些参数的展开子项。</li>
+<li>Mở rộng mục con: Tích chọn checkbox “Mở rộng mục con”, như hình trên, một công cụ có thông số pixel tương đương liên kết tới kết quả hiệu chuẩn trục x pixel tương đương. Mặc định không tích chọn, như hình dưới đây. Nếu muốn xem các mục con của tham số nào đó của công cụ mà không cần mở công cụ đó để bật mở rộng mục con, có thể tích checkbox này, khi đó sẽ hiển thị tất cả các công cụ thỏa điều kiện trong dự án hiện tại, cùng các tham số có thể liên kết và một số mục con của tham số đó.</li>
 </ul>
-
 
 <p><img src="media/Pipe_1_12.png" alt="" /></p>
 
 <ul>
-<li><p>选择参数：在输入参数中选中某一参数，如上图中的“输入图像”，右边的“输入数据备选项”列表中将列出与当前选中参数类型相匹配的所有参数。参数的来源有工具参数、变量、常量几种。</p></li>
-<li><p>添加参数链接：在输入数据备选项中选中相应参数后，双击鼠标即完成链接。链接的参数会自动添加到输入参数列表中相应参数后以&ndash;>显示。</p></li>
+<li><p>Chọn tham số: Trong danh sách tham số đầu vào chọn một tham số, ví dụ “Ảnh đầu vào” như hình, bên phải danh sách “Lựa chọn dữ liệu đầu vào” sẽ liệt kê tất cả các tham số cùng loại có thể phù hợp. Nguồn tham số có thể là tham số công cụ, biến, hằng số.</p></li>
+<li><p>Thêm liên kết tham số: Trong danh sách lựa chọn dữ liệu đầu vào, nhấp đúp chuột vào tham số mong muốn sẽ tạo liên kết. Tham số liên kết sẽ tự động thêm vào danh sách tham số đầu vào, hiển thị dạng → sau tham số tương ứng.</p></li>
 </ul>
-
 
 <p><img src="media/Pipe_1_2.png" alt="" /></p>
 
 <ul>
-<li><p>删除参数链接：选中待删除的参数链，在右键弹出的菜单中点击“删除”即可。</p></li>
-<li><p>筛选功能：当参数来源较多时，可使用编辑框进行筛选，如图所示：</p>
+<li><p>Xóa liên kết tham số: Chọn chuỗi tham số muốn xóa, chuột phải chọn “Xóa” để gỡ liên kết.</p></li>
+<li><p>Chức năng lọc: Khi có nhiều nguồn tham số, có thể dùng ô nhập để lọc, như hình:</p>
 
 <ul>
-<li><p>筛选前</p>
+<li><p>Trước khi lọc</p>
 
 <p><img src="media/Pipe_1_3.png" alt="" /></p></li>
-<li><p>筛选后</p>
+<li><p>Sau khi lọc</p>
 
 <p><img src="media/Pipe_1_4.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>链接规则说明：为了数据流的正确传递，不造成时序混乱，数据链接做了如下的限定，不符合约束条件的数据将不会出现在备选参数中。</p>
+<li><p>Giải thích quy tắc liên kết: Để đảm bảo truyền dữ liệu đúng thứ tự, tránh hỗn loạn về thời gian, quy định các giới hạn sau, dữ liệu không thỏa sẽ không xuất hiện trong danh sách lựa chọn tham số.</p>
 
 <ul>
-<li><p>顺序流程，工具允许链接上方工具的参数</p>
+<li><p>Luồng tuần tự, công cụ chỉ được phép liên kết tham số từ công cụ phía trên</p>
 
 <ul>
-<li><p>分支流程，工具允许链接上方工具和其它分支工具的参数</p></li>
-<li><p>并行流程，工具允许链接上方工具参数，不允许链接其它分支的参数</p></li>
-<li><p>循环流程，工具允许链接上方工具参数</p></li>
+<li><p>Luồng phân nhánh, công cụ được phép liên kết tham số từ công cụ phía trên và công cụ trong các nhánh khác</p></li>
+<li><p>Luồng song song, công cụ chỉ được phép liên kết tham số công cụ phía trên, không được phép liên kết tham số từ các nhánh khác</p></li>
+<li><p>Luồng vòng lặp, công cụ chỉ được phép liên kết tham số công cụ phía trên</p></li>
 </ul>
 </li>
 </ul>
@@ -76,42 +73,39 @@
 <p><img src="media/Pipe_1_5.png" alt="" /></p>
 
 <ul>
-<li>常量功能：如果工具需要输入一个不再改变的值，则常量添加编辑框中输入数值，点击添加常量按钮即可，如图所示。</li>
+<li>Chức năng hằng số: Nếu công cụ cần nhập một giá trị không thay đổi, có thể nhập giá trị đó vào ô thêm hằng số, rồi nhấn nút thêm hằng số như hình minh họa.</li>
 </ul>
-
 
 <p><img src="media/Pipe_1_6.png" alt="" /></p>
 
 <ul>
-<li><p>全局参数功能：如果需要跨工程传递参数，则需要使用全局参数功能（跨工程传递变量，使用全局变量即可）。</p>
+<li><p>Chức năng tham số toàn cục: Nếu cần truyền tham số giữa các dự án, phải sử dụng tham số toàn cục (truyền biến toàn cục giữa các dự án).</p>
 
 <ul>
-<li><p>制作一个全局参数：打开数据链编辑，在输出参数中右键需要作为全局参数的参数，点击“公开为全局参数”即可。若需要取消该参数的全局参数功能，同样右键该参数，点击“取消公开”即可。</p></li>
-<li><p>公开为全局参数</p>
+<li><p>Tạo một tham số toàn cục: Mở cửa sổ chỉnh sửa chuỗi dữ liệu, trong danh sách tham số đầu ra nhấp chuột phải vào tham số cần dùng làm tham số toàn cục, chọn “Công khai thành tham số toàn cục”. Nếu muốn hủy chức năng toàn cục của tham số này, cũng nhấp chuột phải và chọn “Hủy công khai”.</p></li>
+<li><p>Công khai thành tham số toàn cục</p>
 
 <p><img src="media/Pipe_1_7.png" alt="" /></p></li>
-<li><p>取消公开</p>
+<li><p>Hủy công khai</p>
 
 <p><img src="media/Pipe_1_8.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>链接全局参数：在另一个工程中，如果需要用到上图中的全局参数“测量终点”，双击需要使用该参数的工具，在输入数据备选项中查找到该参数后双击添加即可。</p>
+<li><p>Liên kết tham số toàn cục: Trong một dự án khác, nếu cần sử dụng tham số toàn cục “Điểm kết thúc đo” như hình trên, nhấp đúp công cụ cần dùng tham số, tìm tham số trong danh sách dữ liệu đầu vào dự phòng, nhấp đúp để thêm.</p>
 
 <p><img src="media/Pipe_1_9.png" alt="" /></p></li>
-<li><p>子参数扩展功能：如果遇到工具的参数无法被其他工具直接使用，需要解析、生成等中间转换过程的情况时，可使用子参数扩展功能。</p>
+<li><p>Chức năng mở rộng tham số con: Khi tham số của công cụ không thể dùng trực tiếp bởi công cụ khác mà cần xử lý phân tích, tạo mới, chuyển đổi trung gian, có thể dùng chức năng mở rộng tham số con.</p>
 
 <ul>
-<li><p>扩展子参数：打开数据链编辑，右键需要扩展子参数的参数，若弹出菜单中包含“展开子项”，则该参数支持子参数扩展，只需单击选中展开子项中</p>
-
-<p>需要扩展的子参数即可，该参数会自动添加到参数列表中；若弹出菜单中没有“展开子项”，则该参数不支持子参数扩展。</p>
+<li><p>Mở rộng tham số con: Mở cửa sổ chỉnh sửa chuỗi dữ liệu, nhấp chuột phải vào tham số cần mở rộng, nếu menu hiện “Mở rộng mục con” thì tham số này hỗ trợ mở rộng tham số con, chỉ cần chọn tham số con muốn mở rộng trong mục con đó là tham số sẽ tự thêm vào danh sách tham số; nếu không có “Mở rộng mục con” trong menu, tham số này không hỗ trợ mở rộng.</p>
 
 <p><img src="media/Pipe_1_10.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>链接子参数：添加到参数列表中的子参数使用方法与其他参数一致。</p>
+<li><p>Liên kết tham số con: Tham số con đã thêm vào danh sách sử dụng như tham số khác.</p>
 
 <ul>
-<li><p>删除子参数：打开数据链编辑，右键需要删除的子参数，点击弹出菜单中的“删除子项”即可，该参数会从参数列表中移除。</p>
+<li><p>Xóa tham số con: Mở cửa sổ chỉnh sửa chuỗi dữ liệu, nhấp chuột phải tham số con cần xóa, chọn “Xóa mục con” trong menu để loại bỏ tham số đó khỏi danh sách.</p>
 
 <p><img src="media/Pipe_1_11.png" alt="" /></p></li>
 </ul>
@@ -119,1044 +113,799 @@
 </ul>
 
 
-<h2>参数类型子项详表1（基本数据结构）</h2>
+<h2>Bảng chi tiết các loại tham số con 1 (Cấu trúc dữ liệu cơ bản)</h2>
 
 <table>
 <thead>
 <tr>
-<th> 参数类型                </th>
-<th> 参数说明     </th>
-<th> 子参数名称    </th>
-<th> 子参数类型          </th>
-<th> 子参数说明             </th>
+<th> Loại tham số             </th>
+<th> Mô tả tham số             </th>
+<th> Tên tham số con           </th>
+<th> Loại tham số con          </th>
+<th> Mô tả tham số con         </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> scLineSegment           </td>
-<td> 线段         </td>
-<td> P1            </td>
-<td> scPlanarVector      </td>
-<td> 线段端点               </td>
+<td> Đoạn thẳng              </td>
+<td> P1                      </td>
+<td> scPlanarVector          </td>
+<td> Điểm đầu đoạn thẳng      </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> P2            </td>
-<td> scPlanarVector      </td>
-<td> 线段端点               </td>
+<td>                         </td>
+<td> P2                      </td>
+<td> scPlanarVector          </td>
+<td> Điểm cuối đoạn thẳng     </td>
 </tr>
 <tr>
 <td> GcCoordPos              </td>
-<td> 位置姿态     </td>
-<td> PosX          </td>
-<td> double              </td>
-<td> 位置X坐标              </td>
+<td> Vị trí và tư thế         </td>
+<td> PosX                    </td>
+<td> double                  </td>
+<td> Tọa độ X vị trí          </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> PosY          </td>
-<td> double              </td>
-<td> 位置Y坐标              </td>
+<td>                         </td>
+<td> PosY                    </td>
+<td> double                  </td>
+<td> Tọa độ Y vị trí          </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> PosD          </td>
-<td> double              </td>
-<td> 位置角度               </td>
+<td>                         </td>
+<td> PosD                    </td>
+<td> double                  </td>
+<td> Góc vị trí               </td>
 </tr>
 <tr>
 <td> GcPlatformAxisDirection </td>
-<td> 轴方向       </td>
-<td> DirX          </td>
-<td> bool                </td>
-<td> X轴方向                </td>
+<td> Hướng trục              </td>
+<td> DirX                    </td>
+<td> bool                    </td>
+<td> Hướng trục X            </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> DirY          </td>
-<td> bool                </td>
-<td> Y轴方向                </td>
+<td>                         </td>
+<td> DirY                    </td>
+<td> bool                    </td>
+<td> Hướng trục Y            </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> DirD          </td>
-<td> bool                </td>
-<td> D轴方向                </td>
+<td>                         </td>
+<td> DirD                    </td>
+<td> bool                    </td>
+<td> Hướng trục D            </td>
 </tr>
 <tr>
 <td> scSquareMatrix2X2       </td>
-<td> 二阶矩阵     </td>
-<td> M00           </td>
-<td> double              </td>
-<td> 0行0列数值             </td>
+<td> Ma trận cấp 2           </td>
+<td> M00                     </td>
+<td> double                  </td>
+<td> Giá trị hàng 0 cột 0     </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> M01           </td>
-<td> double              </td>
-<td> 0行1列数值             </td>
+<td>                         </td>
+<td> M01                     </td>
+<td> double                  </td>
+<td> Giá trị hàng 0 cột 1     </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> M10           </td>
-<td> double              </td>
-<td> 1行0列数值             </td>
+<td>                         </td>
+<td> M10                     </td>
+<td> double                  </td>
+<td> Giá trị hàng 1 cột 0     </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> M11           </td>
-<td> double              </td>
-<td> 1行1列数值             </td>
+<td>                         </td>
+<td> M11                     </td>
+<td> double                  </td>
+<td> Giá trị hàng 1 cột 1     </td>
 </tr>
 <tr>
 <td> scCircle                </td>
-<td> 圆           </td>
-<td> Center        </td>
-<td> scPlanarVector      </td>
-<td> 圆心                   </td>
+<td> Hình tròn                </td>
+<td> Center                  </td>
+<td> scPlanarVector          </td>
+<td> Tâm hình tròn           </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> Radius        </td>
-<td> double              </td>
-<td> 半径                   </td>
+<td>                         </td>
+<td> Radius                  </td>
+<td> double                  </td>
+<td> Bán kính                </td>
 </tr>
 <tr>
 <td> scCircularArc           </td>
-<td> 圆弧         </td>
-<td> Circle        </td>
-<td> scCircle            </td>
-<td> 圆弧所在圆             </td>
+<td> Cung tròn                </td>
+<td> Circle                  </td>
+<td> scCircle                </td>
+<td> Hình tròn chứa cung     </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> StartPhi      </td>
-<td> scRadian            </td>
-<td> 起始角（弧度）         </td>
+<td>                         </td>
+<td> StartPhi                </td>
+<td> scRadian                </td>
+<td> Góc bắt đầu (radian)     </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> SpanPhi       </td>
-<td> scRadian            </td>
-<td> 中止角（弧度）         </td>
+<td>                         </td>
+<td> SpanPhi                 </td>
+<td> scRadian                </td>
+<td> Góc kết thúc (radian)    </td>
 </tr>
 <tr>
 <td> scEllipse               </td>
-<td> 椭圆         </td>
-<td> Center        </td>
-<td> scPlanarVector      </td>
-<td> 椭圆中心               </td>
+<td> Hình elip                </td>
+<td> Center                  </td>
+<td> scPlanarVector          </td>
+<td> Tâm elip                </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> Radii         </td>
-<td> scPlanarVector      </td>
-<td> 长轴和短轴长度         </td>
+<td>                         </td>
+<td> Radii                   </td>
+<td> scPlanarVector          </td>
+<td> Chiều dài trục lớn và nhỏ</td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> Rotation      </td>
-<td> scRadian            </td>
-<td> 旋转角度（弧度）       </td>
+<td>                         </td>
+<td> Rotation                </td>
+<td> scRadian                </td>
+<td> Góc xoay (radian)        </td>
 </tr>
 <tr>
 <td> scGeomSearchResult      </td>
-<td> 几何定位结果 </td>
-<td> t2XFormLinear </td>
-<td> sc2XformLinear      </td>
-<td> 二维线性变换           </td>
+<td> Kết quả định vị hình học  </td>
+<td> t2XFormLinear           </td>
+<td> sc2XformLinear          </td>
+<td> Biến đổi tuyến tính 2D   </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> MatchRegion   </td>
-<td> scAffineRectangular </td>
-<td> 匹配区域               </td>
+<td>                         </td>
+<td> MatchRegion             </td>
+<td> scAffineRectangular     </td>
+<td> Vùng khớp               </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> MatchPoint    </td>
-<td> scPlanarVector      </td>
-<td> 匹配点                 </td>
+<td>                         </td>
+<td> MatchPoint              </td>
+<td> scPlanarVector          </td>
+<td> Điểm khớp               </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> Score         </td>
-<td> double              </td>
-<td> 分数                   </td>
+<td>                         </td>
+<td> Score                   </td>
+<td> double                  </td>
+<td> Điểm số                 </td>
 </tr>
 <tr>
 <td> scLine                  </td>
-<td> 直线         </td>
-<td> Dir           </td>
-<td> scPlanarVector      </td>
-<td> 直线方向向量           </td>
+<td> Đường thẳng              </td>
+<td> Dir                     </td>
+<td> scPlanarVector          </td>
+<td> Vector hướng đường thẳng</td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> Pos           </td>
-<td> scPlanarVector      </td>
-<td> 直线经过的点           </td>
+<td>                         </td>
+<td> Pos                     </td>
+<td> scPlanarVector          </td>
+<td> Điểm đi qua đường thẳng </td>
 </tr>
 <tr>
 <td> scRectangular           </td>
-<td> 矩形         </td>
-<td> UpLeft        </td>
-<td> scPlanarVector      </td>
-<td> 矩形左上点             </td>
+<td> Hình chữ nhật            </td>
+<td> UpLeft                  </td>
+<td> scPlanarVector          </td>
+<td> Góc trên bên trái hình chữ nhật</td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> Size          </td>
-<td> scPlanarVector      </td>
-<td> 矩形尺寸               </td>
+<td>                         </td>
+<td> Size                    </td>
+<td> scPlanarVector          </td>
+<td> Kích thước hình chữ nhật</td>
 </tr>
 <tr>
 <td> scAffineRectangular     </td>
-<td> 仿射矩形     </td>
-<td> OriginPoint   </td>
-<td> scPlanarVector      </td>
-<td> 仿射矩形原点（左上点） </td>
+<td> Hình chữ nhật affine     </td>
+<td> OriginPoint             </td>
+<td> scPlanarVector          </td>
+<td> Gốc hình chữ nhật affine (góc trên trái)</td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> XLen          </td>
-<td> double              </td>
-<td> X方向长度              </td>
+<td>                         </td>
+<td> XLen                    </td>
+<td> double                  </td>
+<td> Chiều dài theo hướng X  </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> YLen          </td>
-<td> double              </td>
-<td> Y方向长度              </td>
+<td>                         </td>
+<td> YLen                    </td>
+<td> double                  </td>
+<td> Chiều dài theo hướng Y  </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> Rotation      </td>
-<td> scRadian            </td>
-<td> 旋转量（弧度）         </td>
+<td>                         </td>
+<td> Rotation                </td>
+<td> scRadian                </td>
+<td> Góc xoay (radian)        </td>
 </tr>
 <tr>
 <td>                         </td>
-<td>              </td>
-<td> Skew          </td>
-<td> scRadian            </td>
-<td> 切变（弧度）           </td>
+<td>                         </td>
+<td> Skew                    </td>
+<td> scRadian                </td>
+<td> Độ cắt xéo (radian)      </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>参数类型子项详表2（工具输出结果）</h2>
+
+<h2>Bảng chi tiết các loại tham số 2 (Kết quả công cụ đầu ra)</h2>
 
 <table>
 <thead>
 <tr>
-<th> 参数类型               </th>
-<th> 参数说明           </th>
-<th> 子参数名称              </th>
-<th> 子参数类型               </th>
-<th> 子参数说明                       </th>
+<th> Loại tham số               </th>
+<th> Mô tả tham số           </th>
+<th> Tên tham số con              </th>
+<th> Loại tham số con               </th>
+<th> Mô tả tham số con                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> DMSingleReaderResult   </td>
-<td> DM码读码结果       </td>
+<td> Kết quả đọc mã DM       </td>
 <td> Area                    </td>
 <td> scPolyline               </td>
-<td> 多边形区域                       </td>
+<td> Vùng đa giác                       </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> P0                      </td>
 <td> scPlanarVector           </td>
-<td> DM码0点                          </td>
+<td> Điểm 0 của mã DM                          </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> String                  </td>
 <td> string                   </td>
-<td> 解码字符串                       </td>
+<td> Chuỗi giải mã                       </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> StringType              </td>
 <td> string                   </td>
-<td> 解码字符串类型                   </td>
+<td> Loại chuỗi giải mã                   </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> IsLightOnDark           </td>
 <td> bool                     </td>
-<td> 是否两条码在暗背景上             </td>
+<td> Có phải mã sáng trên nền tối             </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> DMSize                  </td>
 <td> string                   </td>
-<td> 2D尺寸                           </td>
+<td> Kích thước 2D                           </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> DMEccType               </td>
 <td> string                   </td>
-<td> ECC类型                          </td>
+<td> Loại ECC                          </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> DMCellSize              </td>
 <td> int                      </td>
-<td> CELL尺寸                         </td>
+<td> Kích thước ô CELL                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> StringLen               </td>
 <td> int                      </td>
-<td> 解码字符串长度                   </td>
+<td> Độ dài chuỗi giải mã                   </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Grade                   </td>
 <td> string                   </td>
-<td> 条码等级                         </td>
+<td> Cấp độ mã vạch                         </td>
 </tr>
 <tr>
 <td> VW_EdgeDeviation       </td>
-<td> 边检测结果         </td>
+<td> Kết quả phát hiện biên         </td>
 <td> PosX                    </td>
 <td> double                   </td>
-<td> 偏差位置的X坐标                  </td>
+<td> Tọa độ X vị trí lệch                  </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> PosY                    </td>
 <td> double                   </td>
-<td> 偏差位置的Y坐标                  </td>
+<td> Tọa độ Y vị trí lệch                  </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Area                    </td>
 <td> double                   </td>
-<td> 偏差面积                         </td>
+<td> Diện tích lệch                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Size                    </td>
 <td> double                   </td>
-<td> 偏差尺寸                         </td>
+<td> Kích thước lệch                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> StartCalipIndex         </td>
 <td> int                      </td>
-<td> 偏差起始卡尺序号                 </td>
+<td> Số thứ tự thước đo bắt đầu lệch                 </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> EndCalipIndex           </td>
 <td> int                      </td>
-<td> 偏差结束卡尺序号                 </td>
+<td> Số thứ tự thước đo kết thúc lệch                 </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> DeviationType           </td>
 <td> DeviationType            </td>
-<td> 偏差类型                         </td>
+<td> Loại lệch                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> EndCalipIndex           </td>
 <td> int                      </td>
-<td> 偏差类型序号                     </td>
+<td> Số thứ tự loại lệch                     </td>
 </tr>
 <tr>
 <td> GcCalibrateResult      </td>
-<td> 标定结果           </td>
+<td> Kết quả hiệu chuẩn           </td>
 <td> PosImage                </td>
 <td> GcCoordPos               </td>
-<td> 参考点图像坐标                   </td>
+<td> Tọa độ điểm tham chiếu trên ảnh                   </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> PosPlatform             </td>
 <td> GcCoordPos               </td>
-<td> 参考点平台坐标                   </td>
+<td> Tọa độ điểm tham chiếu trên nền tảng                   </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> ImgRadioX               </td>
 <td> double                   </td>
-<td> X方向像素当量                    </td>
+<td> Đơn vị điểm ảnh hướng X                    </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> ImgRadioY               </td>
 <td> double                   </td>
-<td> Y方向像素当量                    </td>
+<td> Đơn vị điểm ảnh hướng Y                    </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> AngleImgPlat            </td>
 <td> double                   </td>
-<td> 图像坐标系X轴在平台坐标系中角度  </td>
+<td> Góc giữa trục X hệ ảnh và hệ nền tảng  </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> AnglePlatformShear      </td>
 <td> double                   </td>
-<td> 平台坐标系Y轴偏离垂直90度角度    </td>
+<td> Góc lệch trục Y hệ nền tảng với vuông góc 90 độ    </td>
 </tr>
 <tr>
 <td> SingleLinearCodeResult </td>
-<td> 条码识别结果       </td>
+<td> Kết quả nhận dạng mã vạch       </td>
 <td> OutLineSeg              </td>
 <td> scLineSegment            </td>
-<td> 条码所在线段                     </td>
+<td> Đoạn thẳng trên mã vạch                     </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Result                  </td>
 <td> string                   </td>
-<td> 条码识别结果                     </td>
+<td> Kết quả nhận dạng                     </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Type                    </td>
 <td> string                   </td>
-<td> 条码识别结果类型                 </td>
+<td> Loại kết quả nhận dạng                 </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> IsLightInDark           </td>
 <td> bool                     </td>
-<td> 条码极性（是否亮条码在暗背景上） </td>
+<td> Cực tính mã vạch (mã sáng trên nền tối) </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> CodeType                </td>
 <td> string                   </td>
-<td> 条码类型                         </td>
+<td> Loại mã vạch                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Grade                   </td>
 <td> string                   </td>
-<td> 条码等级                         </td>
+<td> Cấp độ mã vạch                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Orientation             </td>
 <td> float                    </td>
-<td> 条码方向                         </td>
+<td> Hướng mã vạch                         </td>
 </tr>
 <tr>
 <td> scPatSearchMaxResult   </td>
-<td> 区域定位结果       </td>
+<td> Kết quả định vị vùng       </td>
 <td> Pos                     </td>
 <td> scPlanarVector           </td>
-<td> 匹配中心                         </td>
+<td> Tâm khớp                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Rotate                  </td>
 <td> double                   </td>
-<td> 旋转角度                         </td>
+<td> Góc xoay                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Scale                   </td>
 <td> double                   </td>
-<td> 缩放系数                         </td>
+<td> Hệ số tỉ lệ                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> MatchRegion             </td>
 <td> scAffineRectangular      </td>
-<td> 匹配区域                         </td>
+<td> Vùng khớp                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> t2XFormLinear           </td>
 <td> sc2XformLinear           </td>
-<td> 二维线性变换                     </td>
+<td> Biến đổi tuyến tính 2D                     </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Score                   </td>
 <td> double                   </td>
-<td> 匹配分数                         </td>
+<td> Điểm khớp                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> Accepted                </td>
 <td> bool                     </td>
-<td> 是否达到接受条件                 </td>
+<td> Có đạt điều kiện chấp nhận không                 </td>
 </tr>
 <tr>
 <td> scCaliperOneEdgeResult </td>
-<td> 单边卡尺结果       </td>
+<td> Kết quả thước đo một bên       </td>
 <td> Score                   </td>
 <td> double                   </td>
-<td> 评价分数                         </td>
+<td> Điểm đánh giá                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> CenterX                 </td>
 <td> double                   </td>
-<td> 中心点坐标X                      </td>
+<td> Tọa độ trung tâm X                      </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
 <td> CenterY                 </td>
 <td> double                   </td>
-<td> 中心点坐标Y                      </td>
+<td> Tọa độ trung tâm Y                      </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> Offset                  </td>
+<td> EdgePos                 </td>
 <td> double                   </td>
-<td> 中心位置相对于投影区域中心移量   </td>
+<td> Vị trí cạnh đo                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> Contrast                </td>
-<td> double                   </td>
-<td> 中心两侧像素灰度差               </td>
-</tr>
-<tr>
-<td> scCaliperTwoEdgeResult </td>
-<td> 双边卡尺结果       </td>
-<td> Score                   </td>
-<td> double                   </td>
-<td> 评价分数                         </td>
+<td> EdgeType                </td>
+<td> scCaliperEdgeType        </td>
+<td> Loại cạnh đo                          </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> CenterX                 </td>
+<td> EdgeGray                </td>
 <td> double                   </td>
-<td> 中心点坐标X                      </td>
+<td> Độ sáng cạnh đo                       </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> CenterY                 </td>
+<td> PeakToPeak              </td>
 <td> double                   </td>
-<td> 中心点坐标Y                      </td>
+<td> Độ tương phản đo                        </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> CenterOffset            </td>
+<td> EdgeScore               </td>
 <td> double                   </td>
-<td> 中心位置相对于投影区域中心移量   </td>
+<td> Điểm cạnh đo                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> EdgeWidth               </td>
+<td> LowEdgeScore            </td>
 <td> double                   </td>
-<td> 边缘宽度                         </td>
+<td> Điểm cạnh thấp                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> Edge1X                  </td>
+<td> EdgePosGuessed          </td>
 <td> double                   </td>
-<td> 点1坐标X                         </td>
+<td> Vị trí đo đoán                             </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> Edge1Y                  </td>
+<td> EdgePosSearched         </td>
 <td> double                   </td>
-<td> 点1坐标Y                         </td>
+<td> Vị trí đo tìm được                           </td>
 </tr>
 <tr>
-<td>                        </td>
-<td>                    </td>
-<td> Edge1Offset             </td>
-<td> double                   </td>
-<td> 点1相对于投影区域中心移量        </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Edge1Contrast           </td>
-<td> double                   </td>
-<td> 点1两侧像素灰度差                </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Edge2X                  </td>
-<td> double                   </td>
-<td> 点2坐标X                         </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Edge2Y                  </td>
-<td> double                   </td>
-<td> 点2坐标Y                         </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Edge2Offset             </td>
-<td> double                   </td>
-<td> 点2相对于投影区域中心移量        </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Edge2Contrast           </td>
-<td> double                   </td>
-<td> 点2两侧像素灰度差                </td>
-</tr>
-<tr>
-<td> GsGlueDetectResult     </td>
-<td> 固体胶位置检测结果 </td>
-<td> IsQualified             </td>
+<td> scAOIResult            </td>
+<td> Kết quả tổng thể vùng AOI     </td>
+<td> bEnableFailType          </td>
 <td> bool                     </td>
-<td> 是否合格                         </td>
+<td> Cho phép kết quả loại lỗi (NG)               </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> ObjName                 </td>
-<td> string                   </td>
-<td> 目标特征名称                     </td>
+<td> nFailTypeCount           </td>
+<td> int                      </td>
+<td> Số loại lỗi                       </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> BaseName                </td>
-<td> string                   </td>
-<td> 基准线名称                       </td>
+<td> nFailTypeArray           </td>
+<td> int[]                    </td>
+<td> Mảng các loại lỗi                       </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> DisResult               </td>
-<td> double                   </td>
-<td> 测量距离                         </td>
+<td> bEnableResult            </td>
+<td> bool                     </td>
+<td> Cho phép kết quả tổng thể                    </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> MinDis                  </td>
-<td> double                   </td>
-<td> 最小距离                         </td>
+<td> bResult                  </td>
+<td> bool                     </td>
+<td> Kết quả tổng thể                       </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> MaxDis                  </td>
-<td> double                   </td>
-<td> 最大距离                         </td>
-</tr>
-<tr>
-<td> GsMultiCLOutputResult  </td>
-<td> 多圆多线定位结果   </td>
-<td> t2XFormLinear           </td>
-<td> sc2XformLinear           </td>
-<td> 二维线性变换                     </td>
+<td> ResultCount              </td>
+<td> int                      </td>
+<td> Số kết quả con                       </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> ResAbsAngle             </td>
-<td> double                   </td>
-<td> 旋转角度(绝对角度)               </td>
+<td> ResultArray              </td>
+<td> object[]                 </td>
+<td> Mảng kết quả con                       </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> ResAngle                </td>
-<td> double                   </td>
-<td> 旋转角度(相对角度)               </td>
+<td> ResultType               </td>
+<td> int                      </td>
+<td> Loại kết quả tổng thể                     </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> Searched                </td>
+<td> bEnableOverlay           </td>
+<td> bool                     </td>
+<td> Cho phép ghi đè lên ảnh                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> OverlayColor             </td>
+<td> int                      </td>
+<td> Màu ghi đè                          </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> OverlayLineWidth         </td>
+<td> int                      </td>
+<td> Độ dày nét ghi đè                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> OverlayTextSize          </td>
+<td> int                      </td>
+<td> Kích thước chữ ghi đè                    </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> OverlayTextPoint         </td>
 <td> scPlanarVector           </td>
-<td> 最终定位点                       </td>
+<td> Tọa độ điểm ghi đè chữ                  </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> Score                   </td>
-<td> double                   </td>
-<td> 定位分数                         </td>
+<td> OverlayText              </td>
+<td> string                   </td>
+<td> Nội dung chữ ghi đè                   </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> PrincipalCircleResult   </td>
-<td> vector\&lt;scCircle>       </td>
-<td> 圆结果数组                       </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> PrincipalCircularResult </td>
-<td> vector\&lt;scCircularArc>  </td>
-<td> 圆弧结果数组                     </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> PrincipalLineResult     </td>
-<td> vector\&lt;scLine>         </td>
-<td> 线结果数组                       </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> PrincipalLineSegResult  </td>
-<td> vector\&lt;scLineSegment>  </td>
-<td> 线段结果数组                     </td>
-</tr>
-<tr>
-<td> GsSingleBlobResult     </td>
-<td> Blob结果           </td>
-<td> CInertia                </td>
+<td> bEnableSerialText        </td>
 <td> bool                     </td>
-<td> 计算矩相关特性                   </td>
+<td> Cho phép chữ số seri                    </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> CContour                </td>
+<td> SerialTextSize           </td>
+<td> int                      </td>
+<td> Kích thước chữ số seri                   </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialTextColor          </td>
+<td> int                      </td>
+<td> Màu chữ số seri                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialTextPoint          </td>
+<td> scPlanarVector           </td>
+<td> Tọa độ điểm chữ số seri                    </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialTextString         </td>
+<td> string                   </td>
+<td> Nội dung chữ số seri                    </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> bEnableSerialNumber      </td>
 <td> bool                     </td>
-<td> 计算轮廓相关特性                 </td>
+<td> Cho phép số seri                         </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> CGrayValue              </td>
+<td> SerialNumber             </td>
+<td> int                      </td>
+<td> Số seri                             </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> bEnableSerialImage       </td>
 <td> bool                     </td>
-<td> 计算灰度相关特性                 </td>
+<td> Cho phép ảnh số seri                       </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> Area                    </td>
-<td> double                   </td>
-<td> 面积                             </td>
+<td> SerialImage              </td>
+<td> IntPtr                   </td>
+<td> Ảnh số seri                          </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> Label                   </td>
-<td> BYTE                     </td>
-<td> 标记                             </td>
+<td> SerialImageWidth         </td>
+<td> int                      </td>
+<td> Chiều rộng ảnh số seri                      </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> CenterMx                </td>
-<td> double                   </td>
-<td> 质心X坐标                        </td>
+<td> SerialImageHeight        </td>
+<td> int                      </td>
+<td> Chiều cao ảnh số seri                      </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> CenterMy                </td>
-<td> double                   </td>
-<td> 质心Y坐标                        </td>
+<td> SerialImageStride        </td>
+<td> int                      </td>
+<td> Bước nhảy ảnh số seri                     </td>
 </tr>
 <tr>
 <td>                        </td>
 <td>                    </td>
-<td> ChildNum                </td>
-<td> long                     </td>
-<td> 子节点个数                       </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> DiagLength              </td>
-<td> double                   </td>
-<td> 最小外接矩形对角线长度           </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> MassToBOffX             </td>
-<td> double                   </td>
-<td> 质心与最小外界矩形X方向的偏差量  </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> MassToBOffY             </td>
-<td> double                   </td>
-<td> 质心与最小外界矩形Y方向的偏差量  </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> InertiaX                </td>
-<td> double                   </td>
-<td> 关于坐标轴X的惯性二阶矩          </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> InertiaY                </td>
-<td> double                   </td>
-<td> 关于坐标轴Y的惯性二阶矩          </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> InertiaMin              </td>
-<td> double                   </td>
-<td> 最小惯性二阶矩                   </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> InertiaMax              </td>
-<td> double                   </td>
-<td> 最大惯性二阶矩                   </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Angle                   </td>
-<td> double                   </td>
-<td> 区域方向                         </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Elongation              </td>
-<td> double                   </td>
-<td> 延长度                           </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Density                 </td>
-<td> double                   </td>
-<td> 稠密度                           </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Scartchaness            </td>
-<td> double                   </td>
-<td> 划伤度                           </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Eccentricity            </td>
-<td> double                   </td>
-<td> 离心率                           </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> PixelLength             </td>
-<td> long                     </td>
-<td> 像素边界长度                     </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Perimeter               </td>
-<td> double                   </td>
-<td> 周长                             </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> Acircularity            </td>
-<td> double                   </td>
-<td> 圆度                             </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> AcircularityRms         </td>
-<td> double                   </td>
-<td> 归一化圆度                       </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> MinPixelValue           </td>
-<td> double                   </td>
-<td> 最小灰度                         </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> MaxPixelValue           </td>
-<td> double                   </td>
-<td> 最大灰度                         </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> AvergPixelValue         </td>
-<td> double                   </td>
-<td> 平均灰度                         </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> AvergPixelValueMax      </td>
-<td> double                   </td>
-<td> 平均灰度的最大值                 </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> AvergPixelValueMin      </td>
-<td> double                   </td>
-<td> 平均灰度的最小值                 </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> ImgBoundMaxX            </td>
-<td> long                     </td>
-<td> 外接矩形MinX                     </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> ImgBoundMinY            </td>
-<td> long                     </td>
-<td> 外接矩形MaxX                     </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> ImgBoundMinY            </td>
-<td> long                     </td>
-<td> 外接矩形MinY                     </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> ImgBoundMaxY            </td>
-<td> long                     </td>
-<td> 外接矩形MaxY                     </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> ImgBoundAspect          </td>
-<td> double                   </td>
-<td> 外接矩形长宽比                   </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> RectBound               </td>
-<td> scAffineRectangular      </td>
-<td> 外接矩形                         </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> PrincipalWidth          </td>
-<td> double                   </td>
-<td> 主轴外接矩形长度                 </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> PrincipalHeight         </td>
-<td> double                   </td>
-<td> 主轴外接矩形高度                 </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> PrincipalContour        </td>
-<td> vector\&lt;scPlanarVector> </td>
-<td> 轮廓边界点                       </td>
-</tr>
-<tr>
-<td> GcBoardPoints          </td>
-<td> 标定角点           </td>
-<td> ImgCorners              </td>
-<td> vector\&lt;scPlanarVector> </td>
-<td> 角点图像坐标                     </td>
-</tr>
-<tr>
-<td>                        </td>
-<td>                    </td>
-<td> ObjCorners              </td>
-<td> vector\&lt;scPlanarVector> </td>
-<td> 角点物理坐标                     </td>
+<td> SerialImageFormat       </td>
+<td> int                      </td>
+<td> Định dạng ảnh số seri                    </td>
 </tr>
 </tbody>
 </table>
-

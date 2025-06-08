@@ -16,66 +16,63 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>控制流</h1>
+<h1>Luồng điều khiển</h1>
 
-<p>控制流用于流程图中的流程逻辑处理，分为并行运算、分支汇合、循环、循环中止。</p>
-
-<ul>
-<li><p>并行运算</p>
+<p>Luồng điều khiển dùng để xử lý logic trong biểu đồ luồng, gồm có vận hành song song, phân nhánh hợp nhất, vòng lặp và dừng vòng lặp.</p>
 
 <ul>
-<li><p>各个分支间独立同步运行，每次执行所有分支；</p></li>
-<li><p>无需设置执行条件；</p></li>
+<li><p>Vận hành song song</p>
+
+<ul>
+<li><p>Các nhánh độc lập chạy đồng bộ, mỗi lần thực hiện tất cả các nhánh;</p></li>
+<li><p>Không cần thiết lập điều kiện thực thi;</p></li>
 </ul>
 </li>
 </ul>
-
 
 <p><img src="media/ControlFlow_1_1.png" alt="" /></p>
 
 <ul>
-<li><p>分支汇合</p>
+<li><p>Phân nhánh hợp nhất</p>
 
 <ul>
-<li><p>各个分支的执行是互斥的，每次最多执行1个分支；</p></li>
-<li><p>每个分支都需要设置执行条件，满足预设条件时，才执行该分支；</p></li>
-<li><p>双击每个分支的第一个link线，添加条件表达式，满足此条件时，执行该分支；</p></li>
+<li><p>Các nhánh thực thi độc lập lẫn nhau, mỗi lần thực thi tối đa 1 nhánh;</p></li>
+<li><p>Mỗi nhánh cần thiết lập điều kiện thực thi, chỉ khi thỏa điều kiện mới thực thi;</p></li>
+<li><p>Nhấp đúp vào đường link đầu tiên của mỗi nhánh để thêm biểu thức điều kiện, khi thỏa điều kiện sẽ thực thi nhánh đó;</p></li>
 </ul>
 </li>
 </ul>
 
-
 <p><img src="media/ControlFlow_1_2.png" alt="" /></p>
 
 <ul>
-<li>循环
+<li>Vòng lặp
 
 <ul>
-<li><p>需要设置循环变量、循环条件、循环结束条件；</p>
+<li><p>Cần thiết lập biến vòng lặp, điều kiện vòng lặp và điều kiện kết thúc vòng lặp;</p>
 
 <p><img src="media/ControlFlow_1_3.png" alt="" /></p></li>
-<li><p>双击①处图元、②处link线或③处图元，打开循环设置界面；</p>
+<li><p>Nhấp đúp vào vị trí ① của đối tượng, vị trí ② của đường link hoặc vị trí ③ của đối tượng để mở giao diện thiết lập vòng lặp;</p>
 
 <p><img src="media/ControlFlow_1_4.png" alt="" /></p>
 
-<blockquote><p>循环语法规则</p>
+<blockquote><p>Quy tắc cú pháp vòng lặp</p>
 
-<p>(1) 遵守表达式书写规则，支持”=、+、-“等三元数学操作，支持”==、!=“二元判断操作，不支持”++，&ndash;“自增自减一元操作；</p>
+<p>(1) Tuân thủ quy tắc viết biểu thức, hỗ trợ các phép toán ba ngôi như ”=, +, -“, hỗ trợ các phép so sánh hai ngôi như ”==, !=“, không hỗ trợ phép tăng giảm một ngôi như ”++, –“;</p>
 
-<p>(2) 支持全局变量@、局域变量#、工具输入输出，支持联想输入;</p>
+<p>(2) Hỗ trợ biến toàn cục @, biến cục bộ #, đầu vào/đầu ra công cụ, hỗ trợ gợi ý nhập;</p>
 
-<p>(3) 表达式输入完成后，会进行语法和句法检查，不能输入无意义字符和特殊符合（比如”;“）；</p>
+<p>(3) Sau khi nhập biểu thức sẽ kiểm tra cú pháp và ngữ pháp, không được nhập ký tự vô nghĩa hoặc ký tự đặc biệt (ví dụ “;”);</p>
 
-<p>(4) 所有表达式设置不能为空；</p>
+<p>(4) Tất cả các thiết lập biểu thức không được để trống;</p>
 
-<p>(5) 新建”循环“控制，所有循环配置项为空，默认不执行。</p></blockquote></li>
-<li><p>设置成功，流程图中①处图元、②处link线或③处图元处显示✓。</p>
+<p>(5) Khi tạo mới điều khiển ”vòng lặp“, tất cả các thiết lập vòng lặp để trống sẽ không thực thi.</p></blockquote></li>
+<li><p>Khi thiết lập thành công, trong biểu đồ luồng tại vị trí ①, ② và ③ sẽ hiển thị dấu ✓.</p>
 
 <p><img src="media/ControlFlow_1_5.png" alt="" /></p></li>
-<li><p>循环中止：设置条件，用于中止循环；双击图元即可添加表达式条件。</p>
+<li><p>Dừng vòng lặp: Thiết lập điều kiện để dừng vòng lặp; nhấp đúp vào đối tượng để thêm biểu thức điều kiện.</p>
 
 <p><img src="media/ControlFlow_1_6.png" alt="" /></p></li>
 </ul>
 </li>
 </ul>
-

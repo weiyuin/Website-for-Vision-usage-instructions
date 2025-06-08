@@ -16,55 +16,50 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>工具使用说明</h1>
+<h1>Hướng dẫn sử dụng công cụ</h1>
 
 <ul>
-<li><p>工具使用流程：添加工具→配置输入→设置参数→执行工具。</p></li>
-<li><p>添加工具</p>
+<li><p>Quy trình sử dụng công cụ: Thêm công cụ → Cấu hình đầu vào → Thiết lập tham số → Thực thi công cụ.</p></li>
 
-<ul>
-<li><p>工程栏流程图中右键新增；</p></li>
-<li><p>工具箱中拖拽至流程图中；</p></li>
-</ul>
+<li><p>Thêm công cụ</p>
+  <ul>
+    <li><p>Nhấp chuột phải trong biểu đồ luồng của thanh công trình để thêm mới;</p></li>
+    <li><p>Kéo thả công cụ từ hộp công cụ vào biểu đồ luồng;</p></li>
+  </ul>
 </li>
-<li><p>配置工具的输入参数（双击工具）</p>
 
-<p>如果流程图中此工具上方没有对应的输入参数类型（来自工具或变量），可手动添加或修改（支持通过关键字检索参数来源）。</p>
-
-<p><img src="media/ToolInstruction_01.png" alt="" /></p></li>
-<li><p>设置GUI</p>
-
-<ul>
-<li><p>可手动拖拽GUI进行调整；</p></li>
-<li><p>可双击GUI，进行参数设置。</p>
-
-<ul>
-<li>中心 X、中心 Y：GUI的中心点坐标；</li>
-<li>长度 X、长度 Y：GUI的长、宽；</li>
-<li><p>旋转角度(deg)：GUI旋转的角度；</p></li>
-<li><p>倾斜角度(deg)：GUI仿射的角度；</p></li>
-</ul>
-
-
-<p><img src="media/ToolInstruction_02.png" alt="" /></p></li>
-</ul>
+<li><p>Cấu hình tham số đầu vào cho công cụ (nhấp đúp vào công cụ)</p>
+  <p>Nếu phía trên công cụ trong biểu đồ luồng không có kiểu tham số đầu vào tương ứng (từ công cụ hoặc biến), có thể thêm hoặc sửa thủ công (hỗ trợ tìm kiếm nguồn tham số theo từ khóa).</p>
+  <p><img src="media/ToolInstruction_01.png" alt="" /></p>
 </li>
-<li><p>编辑视图显示（<strong><em>前提：已有View视图</em></strong>）</p>
 
-<ul>
-<li><p>添加显示：使用鼠标拖拽待显示的工具图元至对应的View视图界面中，弹出添加显示窗口，列出此工具支持显示的可图形化参数，勾选需要显示的内容即可</p></li>
-<li><p>编辑显示内容：双击视图窗口。</p>
+<li><p>Thiết lập GUI</p>
+  <ul>
+    <li><p>Có thể kéo thả GUI để điều chỉnh vị trí;</p></li>
+    <li><p>Nhấp đúp vào GUI để thiết lập các tham số:</p>
+      <ul>
+        <li>Trung tâm X, Trung tâm Y: tọa độ điểm trung tâm GUI;</li>
+        <li>Chiều dài X, chiều dài Y: chiều dài và chiều rộng GUI;</li>
+        <li>Góc quay (deg): góc quay của GUI;</li>
+        <li>Góc nghiêng (deg): góc biến đổi affine của GUI;</li>
+      </ul>
+      <p><img src="media/ToolInstruction_02.png" alt="" /></p>
+    </li>
+  </ul>
+</li>
 
-<ul>
-<li><p>支持删除、撤销编辑显示内容；</p></li>
-<li><p>支持对GUI控件类内容进行显示线型、线宽、字体、字号、显示颜色的编辑；</p></li>
-<li><p>自动设置当前视图颜色：当前视图中控件的颜色根据所属工具的执行结果显示红色或绿色，如果工具执行OK，则显示绿色，否则显示红色；</p></li>
-<li><p>自动设置所有视图颜色：所有用户添加的视图中的控件都根据所属工具的执行结果显示红色或绿色，如果工具执行OK，则显示绿色，否则显示红色。</p></li>
-</ul>
-
-
-<p><img src="media/ToolInstruction_03.png" alt="" /></p></li>
-</ul>
+<li><p>Hiển thị trong View ( <strong><em>Điều kiện: đã có View</em></strong> )</p>
+  <ul>
+    <li><p>Thêm hiển thị: dùng chuột kéo thả đối tượng công cụ cần hiển thị vào giao diện View tương ứng, cửa sổ thêm hiển thị bật lên, liệt kê các tham số có thể hiển thị dưới dạng đồ họa, chọn các tham số cần hiển thị.</p></li>
+    <li><p>Chỉnh sửa nội dung hiển thị: nhấp đúp vào cửa sổ View.</p>
+      <ul>
+        <li>Hỗ trợ xóa, hoàn tác chỉnh sửa nội dung hiển thị;</li>
+        <li>Hỗ trợ chỉnh sửa kiểu nét, độ dày nét, font chữ, cỡ chữ, màu sắc hiển thị cho các nội dung GUI;</li>
+        <li>Chỉnh màu tự động cho View hiện tại: màu các điều khiển trong View dựa trên kết quả thực thi công cụ, nếu công cụ OK thì màu xanh lá, ngược lại màu đỏ;</li>
+        <li>Chỉnh màu tự động cho tất cả View: tất cả điều khiển trong các View do người dùng thêm cũng đổi màu theo kết quả công cụ (xanh lá khi OK, đỏ khi lỗi).</li>
+      </ul>
+      <p><img src="media/ToolInstruction_03.png" alt="" /></p>
+    </li>
+  </ul>
 </li>
 </ul>
-
