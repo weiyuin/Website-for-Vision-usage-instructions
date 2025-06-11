@@ -16,204 +16,205 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>数组生成工具</h1>
+<h1>Công Cụ Tạo Mảng</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>数组生成工具可以用来将相同类型的一组独立的数据，按照对应的索引号，生成数组；其作用与数组解析工具相反。</p>
+<p>Công cụ tạo mảng được dùng để tạo một mảng từ một nhóm dữ liệu độc lập cùng kiểu, dựa theo chỉ số tương ứng; công cụ này có chức năng ngược lại với công cụ phân tích mảng.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                   </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口     </td>
-<td> 数据类型                                     </td>
-<td> 选择生成数组的数据类型，根据实际使用情况选择对应的数据类型。 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Kiểu dữ liệu</td>
+<td>Chọn kiểu dữ liệu của mảng được tạo, lựa chọn dựa theo tình huống sử dụng thực tế.</td>
 </tr>
 <tr>
 <td></td>
-<td> 是否清空数组 </td>
-<td> 选择“是”，则在向数组中添加数据前，清空数组。                                                               </td>
+<td>Có xóa mảng hay không</td>
+<td>Nếu chọn “Có”, mảng sẽ được xóa trước khi thêm dữ liệu mới.</td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无           </td>
-<td> 无                                                                                                         </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td> 数据链       </td>
-<td> 输入数据索引                                 </td>
-<td> 输入生成数组的索引号（int型），通常是自定义的变量。          </td>
+<td>Chuỗi dữ liệu</td>
+<td>Chỉ số dữ liệu đầu vào</td>
+<td>Chỉ số dùng để tạo mảng (kiểu int), thường là biến do người dùng tự định nghĩa.</td>
 </tr>
 <tr>
 <td></td>
-<td> 输入数据     </td>
-<td> 输入数据（与属性窗口数据类型相同）。                                                                       </td>
+<td>Dữ liệu đầu vào</td>
+<td>Dữ liệu đầu vào (cùng kiểu với kiểu dữ liệu trong cửa sổ thuộc tính).</td>
 </tr>
 <tr>
-<td> 高级界面     </td>
-<td> 无 </td>
-<td> 无                                </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                     </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出数组       </td>
-<td> 输出生成的数组信息。                                         </td>
+<td>Cửa sổ giám sát</td>
+<td>Mảng đầu ra</td>
+<td>Thông tin mảng được tạo ra.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                               </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực hiện của công cụ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                               </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực hiện công cụ.</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无 </td>
-<td> 无 </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出数组       </td>
-<td> 输出生成的数组信息，供后序工具使用，同监视窗口的输出数组参数。 </td>
+<td>Chuỗi dữ liệu</td>
+<td>Mảng đầu ra</td>
+<td>Thông tin mảng được tạo ra để các công cụ sau sử dụng, giống với tham số mảng đầu ra trong cửa sổ giám sát.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
 
-<p>数组生成工具提供的数据类型如下所示。</p>
+<h2>Chi tiết mô tả</h2>
+
+<p>Các kiểu dữ liệu mà công cụ tạo mảng hỗ trợ như sau:</p>
 
 <table>
 <thead>
 <tr>
-<th>  bool                   </th>
-<th> 布尔             </th>
-<th>  int                    </th>
-<th> 整型             </th>
+<th>bool</th>
+<th>Kiểu Boolean</th>
+<th>int</th>
+<th>Kiểu số nguyên</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>  double                 </td>
-<td> 双精度浮点型     </td>
-<td>  float                  </td>
-<td> 单精度浮点型     </td>
+<td>double</td>
+<td>Kiểu số thực kép</td>
+<td>float</td>
+<td>Kiểu số thực đơn</td>
 </tr>
 <tr>
-<td>  long                   </td>
-<td> 长整型           </td>
-<td>  sc2Vector              </td>
-<td> 二维向量         </td>
+<td>long</td>
+<td>Kiểu số nguyên dài</td>
+<td>sc2Vector</td>
+<td>Vector hai chiều</td>
 </tr>
 <tr>
-<td>  GcCalibrateResult      </td>
-<td> 标定结果         </td>
-<td>  GcCoordPos             </td>
-<td> 位置姿态         </td>
+<td>GcCalibrateResult</td>
+<td>Kết quả hiệu chuẩn</td>
+<td>GcCoordPos</td>
+<td>Vị trí và tư thế</td>
 </tr>
 <tr>
-<td>  GcPlatformAxisPos      </td>
-<td> 轴位置           </td>
-<td>  GcBoardPoints          </td>
-<td> 靶标角点坐标     </td>
+<td>GcPlatformAxisPos</td>
+<td>Vị trí trục</td>
+<td>GcBoardPoints</td>
+<td>Tọa độ điểm góc bảng</td>
 </tr>
 <tr>
-<td>  sc2XformLinear         </td>
-<td> 二维线性变换     </td>
-<td>  scCaliperOneEdgeResult </td>
-<td> 单边卡尺结果     </td>
+<td>sc2XformLinear</td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>scCaliperOneEdgeResult</td>
+<td>Kết quả đo một cạnh</td>
 </tr>
 <tr>
-<td>  scCaliperTwoEdgeResult </td>
-<td> 双边卡尺结果     </td>
-<td>  scCircle               </td>
-<td> 找圆工具结果     </td>
+<td>scCaliperTwoEdgeResult</td>
+<td>Kết quả đo hai cạnh</td>
+<td>scCircle</td>
+<td>Kết quả tìm hình tròn</td>
 </tr>
 <tr>
-<td>  scGeomSearchResult     </td>
-<td> 几何定位结果     </td>
-<td>  scImage24              </td>
-<td> 24位彩色图像     </td>
+<td>scGeomSearchResult</td>
+<td>Kết quả định vị hình học</td>
+<td>scImage24</td>
+<td>Ảnh màu 24-bit</td>
 </tr>
 <tr>
-<td>  scImage8               </td>
-<td> 8位灰度图像      </td>
-<td>  scLine                 </td>
-<td> 找线工具结果     </td>
+<td>scImage8</td>
+<td>Ảnh xám 8-bit</td>
+<td>scLine</td>
+<td>Kết quả tìm đường thẳng</td>
 </tr>
 <tr>
-<td>  scPatSearchMaxResult   </td>
-<td> PatSearchMax结果 </td>
-<td>  scGcCoordPosVector     </td>
-<td> 位置姿态向量     </td>
+<td>scPatSearchMaxResult</td>
+<td>Kết quả PatSearchMax</td>
+<td>scGcCoordPosVector</td>
+<td>Vector vị trí & tư thế</td>
 </tr>
 <tr>
-<td>  scSc2vectorVector      </td>
-<td> 二维向量向量     </td>
-<td>  scFeatureletVector     </td>
-<td> 特征链           </td>
+<td>scSc2vectorVector</td>
+<td>Vector hai chiều lồng nhau</td>
+<td>scFeatureletVector</td>
+<td>Chuỗi đặc trưng</td>
 </tr>
 <tr>
-<td>  GsTextDisplayParam     </td>
-<td> 文本显示参数     </td>
-<td>  DefectResultInfo       </td>
-<td> 瑕疵检测结果     </td>
+<td>GsTextDisplayParam</td>
+<td>Tham số hiển thị văn bản</td>
+<td>DefectResultInfo</td>
+<td>Kết quả kiểm tra khuyết tật</td>
 </tr>
 <tr>
-<td>  DMSingleReaderResult   </td>
-<td> 单个DM读码结果   </td>
-<td>  GsGlueDetectResult     </td>
-<td> 胶体位置检测结果 </td>
+<td>DMSingleReaderResult</td>
+<td>Kết quả đọc DM đơn</td>
+<td>GsGlueDetectResult</td>
+<td>Kết quả phát hiện vị trí keo</td>
 </tr>
 <tr>
-<td>  GsSingleBlobResult     </td>
-<td> 单个Blob结果     </td>
-<td>  GsGlueMeasureResult    </td>
-<td> 胶体尺寸测量结果 </td>
+<td>GsSingleBlobResult</td>
+<td>Kết quả blob đơn</td>
+<td>GsGlueMeasureResult</td>
+<td>Kết quả đo kích thước keo</td>
 </tr>
 <tr>
-<td>  scCrossSearchResult    </td>
-<td> 十字定位结果     </td>
-<td>  QRSingleReaderResult   </td>
-<td> 单个QR读码结果   </td>
+<td>scCrossSearchResult</td>
+<td>Kết quả định vị chữ thập</td>
+<td>QRSingleReaderResult</td>
+<td>Kết quả đọc QR đơn</td>
 </tr>
 <tr>
-<td>  GsMultiCLOutputResult  </td>
-<td> 多圆多线定位结果 </td>
-<td>  SingleLinearCodeResult </td>
-<td> 一维读码结果     </td>
+<td>GsMultiCLOutputResult</td>
+<td>Kết quả định vị nhiều tròn & đường</td>
+<td>SingleLinearCodeResult</td>
+<td>Kết quả đọc mã vạch 1D</td>
 </tr>
 <tr>
-<td> EdgeDeviation    </td>
-<td> 边缘检测结果                               </td>
+<td>EdgeDeviation</td>
+<td>Kết quả phát hiện cạnh</td>
 <td></td>
 <td></td>
 </tr>
@@ -221,17 +222,19 @@
 </table>
 
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li><p>数据链窗口输入数据的类型和属性窗口的数据类型必须一致，否则数据链参数找不到来源，数组生成工具不能执行。</p></li>
-<li><p>数组生成工具同时只能向数组中写入一个数据。</p></li>
-<li><p>数据类型中的GcCalibrateResult 标定结果为 标准/高精度/触碰/相机轴标定计算工具的标定结果，是计算图像、平台及轴坐标系间的转换关系；而靶标相机标定工具的标定结果是scCalibrateResult类型，是计算图像坐标系与世界坐标系的关系。</p></li>
+<li><p>Kiểu dữ liệu đầu vào từ cửa sổ chuỗi dữ liệu phải giống với kiểu dữ liệu đã chọn trong cửa sổ thuộc tính, nếu không tham số chuỗi dữ liệu sẽ không tìm được nguồn, công cụ tạo mảng sẽ không thể thực thi.</p></li>
+<li><p>Công cụ tạo mảng chỉ có thể ghi một dữ liệu vào mảng tại một thời điểm.</p></li>
+<li><p>Trong các kiểu dữ liệu, kiểu <strong>GcCalibrateResult</strong> là kết quả hiệu chuẩn của các công cụ hiệu chuẩn chuẩn/thấp/tiếp xúc/trục camera, dùng để tính toán mối quan hệ chuyển đổi giữa hệ tọa độ ảnh, nền tảng và trục; trong khi kết quả hiệu chuẩn của công cụ hiệu chuẩn camera với bảng mục tiêu là kiểu <strong>scCalibrateResult</strong>, dùng để tính toán mối quan hệ giữa hệ tọa độ ảnh và hệ tọa độ thế giới.</p></li>
 </ul>
+
 
 
 <h2>示例工程</h2>
 
 <p>参见“\Samples\数组生成工具.gvp”。</p>
 
-<p>该工程通过循环，使用数组生成工具，生成了一个类型为double，大小为10的一维数组。</p>
+<p>Dự án này thông qua vòng lặp, sử dụng công cụ tạo mảng để tạo ra một mảng một chiều có kiểu <code>double</code> và kích thước là 10.</p>
+

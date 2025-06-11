@@ -16,124 +16,122 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>矩形生成工具</h1>
+<h1>Công cụ Tạo Hình Chữ Nhật</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>矩形生成工具是根据输入的左上点和右下点坐标生成矩形的操作。其实际生成的矩形如图1所示。</p>
+<p>Công cụ tạo hình chữ nhật dùng để tạo một hình chữ nhật dựa trên tọa độ điểm trái trên và điểm phải dưới được nhập vào. Hình chữ nhật được tạo như hình minh họa trong Hình 1.</p>
 
 <p><img src="media/wps55.jpg" alt="img" /></p>
 
-<p><imgnote>图1 矩形生成工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ tạo hình chữ nhật</imgnote></p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                             </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>属性窗口</td>
-<td> 是否拖动生成矩形 </td>
-<td> 是否通过拖动方式生成矩形                                                     </td>
-</tr>
-<tr>
-<td></td>
-<td> 矩形图形 </td>
-<td> 输入左上点坐标值和矩形宽高 </td>
-</tr>
-<tr>
-<td>图像窗口</td>
-<td> 无 </td>
-<td> 无                                                                   </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 左上点X                           </td>
-<td> 输入左上点X轴坐标值，double类型。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 左上点Y  </td>
-<td> 输入左上点Y轴坐标值，double类型。                                    </td>
-</tr>
-<tr>
-<td></td>
-<td> 右下点X  </td>
-<td> 输入右下点X轴坐标值，double类型。                                    </td>
-</tr>
-<tr>
-<td></td>
-<td> 右下点Y  </td>
-<td> 输入右下点Y轴坐标值，double类型。                                    </td>
-</tr>
-<tr>
-<td>高级界面</td>
-<td> 无 </td>
-<td> 无                                                                   </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                                 </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 矩形结果                                                     </td>
-<td> 输出形成矩形的左上点坐标、宽度和高度。                     </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Có kéo để tạo hình chữ nhật</td>
+<td>Chọn có hoặc không tạo hình chữ nhật bằng thao tác kéo chuột.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                                                           </td>
+<td>Hình chữ nhật</td>
+<td>Nhập tọa độ điểm trái trên và chiều rộng, chiều cao của hình chữ nhật.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Tọa độ X điểm trái trên</td>
+<td>Nhập tọa độ trục X của điểm trái trên, kiểu double.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                                                           </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 矩形结果                                                     </td>
-<td> 显示生成的矩形，同监视窗口的矩形结果参数。                 </td>
+<td>Tọa độ Y điểm trái trên</td>
+<td>Nhập tọa độ trục Y của điểm trái trên, kiểu double.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                             </td>
+<td>Tọa độ X điểm phải dưới</td>
+<td>Nhập tọa độ trục X của điểm phải dưới, kiểu double.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 矩形结果                                                     </td>
-<td> 输出生成的矩形，供后序工具使用，同监视窗口的矩形结果参数。 </td>
+<td></td>
+<td>Tọa độ Y điểm phải dưới</td>
+<td>Nhập tọa độ trục Y của điểm phải dưới, kiểu double.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả hình chữ nhật</td>
+<td>Xuất ra tọa độ điểm trái trên, chiều rộng và chiều cao của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Kết quả hình chữ nhật</td>
+<td>Hiển thị hình chữ nhật được tạo, giống tham số kết quả hình chữ nhật ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi công cụ: nếu thành công hiển thị "OK", nếu thất bại hiển thị "NG", giống tham số kết quả thực thi ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Kết quả hình chữ nhật</td>
+<td>Xuất ra hình chữ nhật đã tạo, dùng cho các công cụ phía sau, giống tham số kết quả hình chữ nhật ở cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li>矩形生成工具显示生成的矩形结果时，需要将显示结果加到有图片显示的View视图中。</li>
+<li>Để hiển thị kết quả hình chữ nhật, cần thêm kết quả này vào View có chứa hình ảnh.</li>
 </ul>
 
 
