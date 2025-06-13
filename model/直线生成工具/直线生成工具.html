@@ -16,125 +16,123 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>直线生成工具</h1>
+<h1>Công cụ tạo đường thẳng</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>直线生成工具是基于两点式、点斜式两种形式进行直线生成操作。</p>
+<p>Công cụ tạo đường thẳng thực hiện thao tác tạo đường thẳng dựa trên hai phương thức: hai điểm và điểm - góc nghiêng.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称  </th>
-<th> 参数描述                                                                       </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口  </td>
-<td> 创建方式                                               </td>
-<td> 分为点斜式和两点式。   </td>
-</tr>
-<tr>
-<td>图像窗口</td>
-<td> 无        </td>
-<td> 无                                                                             </td>
-</tr>
-<tr>
-<td> 数据链    </td>
-<td> 线段端点1                                              </td>
-<td> 输入形成直线的点坐标。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 线段端点2 </td>
-<td> 创建方式为“两点式”时，输入形成直线的另一点坐标。                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 线段角度  </td>
-<td> 创建方式为“点斜式”时，输入形成直线的角度，double类型。                         </td>
-</tr>
-<tr>
-<td>高级界面</td>
-<td> 无        </td>
-<td> 无                                                                             </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称       </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口       </td>
-<td> 直线结果                                                     </td>
-<td> 输出生成直线的坐标点、直线的方向向量和旋转角度（与x轴正向的夹角）。 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Phương thức tạo</td>
+<td>Gồm hai phương thức: điểm - góc nghiêng và hai điểm.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Điểm đầu đoạn thẳng</td>
+<td>Nhập tọa độ điểm để tạo đường thẳng.</td>
 </tr>
 <tr>
 <td></td>
-<td> 线段结果       </td>
-<td> 创建方式为“两点式”时，输出生成线段的两点坐标。                                                                             </td>
+<td>Điểm cuối đoạn thẳng</td>
+<td>Khi phương thức là "hai điểm", nhập tọa độ điểm thứ hai để tạo đường thẳng.</td>
 </tr>
 <tr>
 <td></td>
-<td> 生成的线段角度 </td>
-<td> 创建方式为“两点式”时，输出线段的角度。                                                                                     </td>
+<td>Góc đoạn thẳng</td>
+<td>Khi phương thức là "điểm - góc nghiêng", nhập góc tạo đường thẳng, kiểu double.</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行结果       </td>
-<td> 工具执行结果。                                                                                                             </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行时间       </td>
-<td> 工具执行时间。                                                                                                             </td>
-</tr>
-<tr>
-<td> 图像窗口       </td>
-<td> 无   </td>
-<td> 无                                                                                                                         </td>
-</tr>
-<tr>
-<td> 数据链         </td>
-<td> 直线结果                                                     </td>
-<td> 输出生成的直线，供后序工具使用，同监视窗口的直线结果参数。   </td>
-</tr>
-<tr>
-<td></td>
-<td> 线段结果       </td>
-<td> 创建方式为“两点式”时，输出生成的线段，供后序工具使用，同监视窗口的线段结果参数。                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 生成的线段角度 </td>
-<td> 创建方式为“两点式”时，输出生成的线段角度，供后序工具使用，同监视窗口生成的线段角度参数。                                                               </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả đường thẳng</td>
+<td>Xuất tọa độ điểm của đường thẳng đã tạo, vector hướng và góc xoay (góc hợp với trục X dương).</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả đoạn thẳng</td>
+<td>Khi phương thức là "hai điểm", xuất tọa độ hai điểm của đoạn thẳng đã tạo.</td>
+</tr>
+<tr>
+<td></td>
+<td>Góc của đoạn thẳng đã tạo</td>
+<td>Khi phương thức là "hai điểm", xuất góc của đoạn thẳng đã tạo.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Kết quả đường thẳng</td>
+<td>Xuất đường thẳng đã tạo để các công cụ sau sử dụng, giống với tham số kết quả đường thẳng trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả đoạn thẳng</td>
+<td>Khi phương thức là "hai điểm", xuất đoạn thẳng đã tạo để các công cụ sau sử dụng, giống với tham số kết quả đoạn thẳng trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Góc của đoạn thẳng đã tạo</td>
+<td>Khi phương thức là "hai điểm", xuất góc của đoạn thẳng để các công cụ sau sử dụng, giống với tham số góc đoạn thẳng trong cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li>直线生成工具显示生成的直线或线段时，需要将显示结果加到有图片显示的View视图中。</li>
+<li>Khi công cụ tạo đường thẳng hiển thị đường thẳng hoặc đoạn thẳng đã tạo, cần thêm kết quả hiển thị vào khung View có hình ảnh.</li>
 </ul>
 
 

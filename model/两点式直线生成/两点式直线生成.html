@@ -16,97 +16,96 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>两点式直线生成</h1>
+<h1>Tạo Đường Thẳng Qua Hai Điểm</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>本工具用于计算由两个GcCoordPos类型的平台坐标决定的scLine型直线结果。</p>
+<p>Công cụ này dùng để tính toán kết quả đường thẳng kiểu <code>scLine</code> được xác định bởi hai tọa độ nền kiểu <code>GcCoordPos</code>.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                               </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>属性窗口</td>
-<td>  无 </td>
-<td> 无                                                     </td>
-</tr>
-<tr>
-<td>图像窗口</td>
-<td>  无 </td>
-<td> 无                                                     </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 平台坐标向量 </td>
-<td> 由两个GcCoordPos类型的平台坐标组成的向量 </td>
-</tr>
-<tr>
-<td>高级界面</td>
-<td>  无 </td>
-<td> 无                                                     </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                       </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出直线     </td>
-<td> scLine型直线结果数据                             </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果                                                   </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间                                                   </td>
+<td>Chuỗi dữ liệu</td>
+<td>Vector tọa độ nền</td>
+<td>Vector gồm hai tọa độ nền kiểu <code>GcCoordPos</code></td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td>  无 </td>
-<td> 无                                                             </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 输出直线     </td>
-<td> scLine型直线结果数据，供后序工具使用，同监视窗口 </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Đường thẳng đầu ra</td>
+<td>Dữ liệu kết quả đường thẳng kiểu <code>scLine</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực hiện công cụ</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực hiện công cụ</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Đường thẳng đầu ra</td>
+<td>Dữ liệu kết quả đường thẳng kiểu <code>scLine</code>, được sử dụng cho các công cụ tiếp theo, giống với cửa sổ giám sát</td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Mô tả chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li><p>两点式直线生成是由两点坐标连接来构建直线。由于GcCoordPos型平台坐标是三个double型的X、Y、D坐标组成的结构体，所以两点式直线生成工具所用两点坐标分别为X、Y组成的二维点坐标。</p></li>
-<li><p>直线生成工具的应用场景主要是将平台坐标练成直线，从而为多点线对位计算工具的目标/对象直线向量输入。</p></li>
+<li><p>Tạo đường thẳng qua hai điểm được thực hiện bằng cách nối hai điểm tọa độ. Do tọa độ nền kiểu <code>GcCoordPos</code> là một cấu trúc gồm ba giá trị kiểu <code>double</code> (X, Y, D), nên công cụ tạo đường thẳng qua hai điểm chỉ sử dụng các tọa độ X và Y để tạo điểm 2D.</p></li>
+<li><p>Công cụ tạo đường thẳng được dùng chủ yếu để chuyển đổi các tọa độ nền thành đường thẳng, từ đó cung cấp vector đường thẳng mục tiêu hoặc đối tượng cho công cụ tính toán căn chỉnh nhiều điểm.</p></li>
 </ul>
+
 
 
 <h2>示例工程</h2>

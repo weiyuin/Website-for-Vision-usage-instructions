@@ -16,158 +16,158 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>仿射矩形生成工具</h1>
+<h1>Công cụ tạo hình chữ nhật affine</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>仿射矩形生成工具是根据输入的中心点坐标、宽度和高度，生成仿射矩形的操作。效果如图1</p>
+<p>Công cụ tạo hình chữ nhật affine thực hiện thao tác tạo hình chữ nhật affine dựa trên tọa độ điểm trung tâm đầu vào, chiều rộng và chiều cao. Hiệu quả như Hình 1.</p>
 
 <p><img src="media/wps3.jpg" alt="img" /></p>
 
-<p><imgnote>图1 仿射矩形生成工具应用示意图（虚线为标注）</imgnote></p>
+<p><imgnote>Hình 1: Sơ đồ minh họa ứng dụng công cụ tạo hình chữ nhật affine (đường nét đứt là phần chú thích)</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>属性窗口</td>
-<td> 是否拖动生成 </td>
-<td> 选择是否拖动生成仿射矩形。当选择“是”时，属性窗口会出现“仿射矩形图形”属性。                                      </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Có kéo để tạo hay không</td>
+<td>Chọn có hay không việc kéo để tạo hình chữ nhật affine. Khi chọn "Có", cửa sổ thuộc tính sẽ xuất hiện thuộc tính "Hình dạng hình chữ nhật affine".</td>
 </tr>
 <tr>
 <td></td>
-<td> 仿射矩形图形 </td>
-<td> 拖动生成仿射矩形的参数。 </td>
+<td>Hình dạng hình chữ nhật affine</td>
+<td>Tham số để kéo tạo hình chữ nhật affine.</td>
 </tr>
 <tr>
-<td> 图像窗口         </td>
-<td> 输入图像                                      </td>
-<td> 显示待检测的图像。                                       </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Hiển thị ảnh cần kiểm tra.</td>
 </tr>
 <tr>
-<td> 数据链           </td>
-<td> 输入图像                                      </td>
-<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 仿射矩形中心X    </td>
-<td> 输入形成仿射矩形的中心点X轴坐标，double类型。                                                           </td>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao, và kích thước điểm ảnh của ảnh đầu vào, giống như tham số ảnh đầu vào trong cửa sổ hình ảnh.</td>
 </tr>
 <tr>
 <td></td>
-<td> 仿射矩形中心Y    </td>
-<td> 输入形成仿射矩形的中心点Y轴坐标，double类型。                                                           </td>
+<td>Tọa độ X trung tâm hình chữ nhật affine</td>
+<td>Nhập tọa độ X của điểm trung tâm tạo thành hình chữ nhật affine, kiểu double.</td>
 </tr>
 <tr>
 <td></td>
-<td> 仿射矩形宽度     </td>
-<td> 输入形成仿射矩形的宽度，double类型。                                                                    </td>
+<td>Tọa độ Y trung tâm hình chữ nhật affine</td>
+<td>Nhập tọa độ Y của điểm trung tâm tạo thành hình chữ nhật affine, kiểu double.</td>
 </tr>
 <tr>
 <td></td>
-<td> 仿射矩形高度     </td>
-<td> 输入形成仿射矩形的高度，double类型。                                                                    </td>
+<td>Chiều rộng hình chữ nhật affine</td>
+<td>Nhập chiều rộng của hình chữ nhật affine, kiểu double.</td>
 </tr>
 <tr>
 <td></td>
-<td> 仿射矩形旋转角度 </td>
-<td> 输入形成仿射矩形的旋转角度，double类型。                                                                </td>
+<td>Chiều cao hình chữ nhật affine</td>
+<td>Nhập chiều cao của hình chữ nhật affine, kiểu double.</td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无        </td>
-<td> 无                                                                                                      </td>
+<td></td>
+<td>Góc xoay của hình chữ nhật affine</td>
+<td>Nhập góc xoay để tạo hình chữ nhật affine, kiểu double.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称      </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口      </td>
-<td> 仿射矩形x角点                                                </td>
-<td> 输出x角点坐标。                                              </td>
+<td>Cửa sổ giám sát</td>
+<td>Góc X của hình chữ nhật affine</td>
+<td>Xuất tọa độ điểm góc theo trục X.</td>
 </tr>
 <tr>
 <td></td>
-<td> 仿射矩形y角点 </td>
-<td> 输出y角点坐标。                                                                                                            </td>
+<td>Góc Y của hình chữ nhật affine</td>
+<td>Xuất tọa độ điểm góc theo trục Y.</td>
 </tr>
 <tr>
 <td></td>
-<td> 仿射矩形结果  </td>
-<td> 输出形成仿射矩形的中心点坐标、宽度、高度、旋转角度和切变角度。                                                               </td>
+<td>Kết quả hình chữ nhật affine</td>
+<td>Xuất tọa độ điểm trung tâm, chiều rộng, chiều cao, góc xoay và góc nghiêng (shear) của hình chữ nhật affine được tạo ra.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果      </td>
-<td> 工具执行结果。                                                                                                             </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间      </td>
-<td> 工具执行时间。                                                                                                             </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
 </tr>
 <tr>
-<td> 图像窗口      </td>
-<td> 仿射矩形结果                                                 </td>
-<td> 显示生成的仿射矩形，同监视窗口的仿射矩形结果参数。           </td>
-</tr>
-<tr>
-<td></td>
-<td> 输出图像      </td>
-<td> 输出根据图像大小生成一个掩膜图像(二值)。                                                                                   </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Kết quả hình chữ nhật affine</td>
+<td>Hiển thị hình chữ nhật affine được tạo ra, giống với tham số kết quả trong cửa sổ giám sát.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果      </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                               </td>
-</tr>
-<tr>
-<td> 数据链        </td>
-<td> 仿射矩形x角点                                                </td>
-<td> 输出x角点坐标，供后序工具使用，同监视窗口的PointCornerX参数。 </td>
+<td>Ảnh đầu ra</td>
+<td>Xuất một ảnh mặt nạ (ảnh nhị phân) dựa trên kích thước ảnh.</td>
 </tr>
 <tr>
 <td></td>
-<td> 仿射矩形y角点 </td>
-<td> 输出y角点坐标，供后序工具使用，同监视窗口的PointCornerY参数。                                                               </td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ: “OK” nếu thành công, “NG” nếu thất bại, giống với tham số kết quả trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Góc X của hình chữ nhật affine</td>
+<td>Xuất tọa độ điểm góc theo trục X, dùng cho các công cụ tiếp theo, giống tham số PointCornerX trong cửa sổ giám sát.</td>
 </tr>
 <tr>
 <td></td>
-<td> 仿射矩形结果  </td>
-<td> 输出生成的仿射矩形，供后序工具使用，同监视窗口的仿射矩形结果参数。                                                               </td>
+<td>Góc Y của hình chữ nhật affine</td>
+<td>Xuất tọa độ điểm góc theo trục Y, dùng cho các công cụ tiếp theo, giống tham số PointCornerY trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hình chữ nhật affine</td>
+<td>Xuất hình chữ nhật affine được tạo ra, dùng cho các công cụ tiếp theo, giống với tham số kết quả trong cửa sổ giám sát.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Giải thích chi tiết</h2>
 
-<h2>详细说明</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
 
 <h2>示例工程</h2>
 

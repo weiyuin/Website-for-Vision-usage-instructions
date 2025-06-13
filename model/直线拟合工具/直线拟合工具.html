@@ -16,150 +16,151 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>直线拟合工具</h1>
+<h1>Công Cụ Nội Suy Đường Thẳng</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>对输入的点集进行直线拟合，得到最匹配的直线。其应用效果如图1所示。</p>
+<p>Thực hiện nội suy đường thẳng trên tập hợp các điểm đầu vào để thu được đường thẳng phù hợp nhất. Hiệu quả ứng dụng như minh họa ở Hình 1.</p>
 
 <p><img src="media/wps186.jpg" alt="img" /> <img src="media/wps187.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 输入轮廓点集</imgnote> <imgnote>(b) 直线拟合结果</imgnote></p>
+<p><imgnote>(a) Tập hợp điểm đường viền đầu vào</imgnote> <imgnote>(b) Kết quả nội suy đường thẳng</imgnote></p>
 
-<p><imgnote>图1 直线拟合工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ nội suy đường thẳng</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称   </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口   </td>
-<td> 启用全局最优拟合                                             </td>
-<td> 是否启用全局最优拟合，默认为“否”。如果选否，则使用效率优先的拟合方式；如果选是，则使用全局最优拟合。 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Bật nội suy tối ưu toàn cục</td>
+<td>Có bật chế độ nội suy tối ưu toàn cục hay không, mặc định là “Không”. Nếu chọn “Không”, sử dụng phương pháp ưu tiên hiệu suất; nếu chọn “Có”, sử dụng phương pháp tối ưu toàn cục.</td>
 </tr>
 <tr>
 <td></td>
-<td> 考虑局外点 </td>
-<td> 直线拟合过程中是否考虑偏离曲线较远的点(局外点)，选择“是”，显示局外点方法和局外点个数参数。                                                               </td>
+<td>Xét đến điểm ngoại lai</td>
+<td>Có xét đến các điểm nằm xa đường (điểm ngoại lai) trong quá trình nội suy hay không. Chọn “Có” thì sẽ hiển thị các tham số phương pháp và số lượng điểm ngoại lai.</td>
 </tr>
 <tr>
 <td></td>
-<td> 局外点方法 </td>
-<td> 局外点方法分为4种，Combination(全组合)、Ransac(随机抽样)、Robust(权重)和RansacRobust(随机抽样权重)。Robust提供稳定高效的拟合结果，Combination的结果最优但效率极低，Ransac与RansacRobust的结果具有随机性。                                                               </td>
+<td>Phương pháp điểm ngoại lai</td>
+<td>Gồm 4 phương pháp: Combination (Tổ hợp đầy đủ), Ransac (Lấy mẫu ngẫu nhiên), Robust (Trọng số), và RansacRobust (Lấy mẫu ngẫu nhiên có trọng số). Robust cho kết quả ổn định và hiệu quả; Combination cho kết quả tối ưu nhất nhưng hiệu suất thấp; Ransac và RansacRobust có tính ngẫu nhiên.</td>
 </tr>
 <tr>
 <td></td>
-<td> 局外点个数 </td>
-<td> 不参与直线拟合的点个数，局外点个数小于总点数减2。                                                                          </td>
+<td>Số điểm ngoại lai</td>
+<td>Số lượng điểm không tham gia vào quá trình nội suy đường thẳng. Phải nhỏ hơn tổng số điểm trừ đi 2.</td>
 </tr>
 <tr>
-<td> 图像窗口   </td>
-<td> 输入图像                                                     </td>
-<td> 显示待检测的图像。                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入点集   </td>
-<td> 显示输入点集。                                                                                                             </td>
-</tr>
-<tr>
-<td> 数据链     </td>
-<td> 输入图像                                                     </td>
-<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。     </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Hình ảnh đầu vào</td>
+<td>Hiển thị hình ảnh cần kiểm tra.</td>
 </tr>
 <tr>
 <td></td>
-<td> 输入点集   </td>
-<td> 输入拟合的点集，同图像窗口的输入点集参数。                                                                                 </td>
+<td>Tập hợp điểm đầu vào</td>
+<td>Hiển thị tập hợp các điểm đầu vào.</td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无               </td>
-<td> 无                                                                                                                         </td>
+<td>Chuỗi dữ liệu</td>
+<td>Hình ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu vào, giống với tham số ảnh đầu vào ở cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập hợp điểm đầu vào</td>
+<td>Tập hợp điểm đầu vào dùng để nội suy, giống với tham số tập hợp điểm đầu vào ở cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称   </th>
-<th> 参数描述                                                                                                               </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口   </td>
-<td> 输入图像                                                     </td>
-<td> 输出图像宽度、高度、像素大小。                           </td>
-</tr>
-<tr>
-<td>  </td>
-<td> 参与拟合的点集 </td>
-<td> 参与拟合的所有点的坐标集合 </td>
+<td>Cửa sổ giám sát</td>
+<td>Hình ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu ra.</td>
 </tr>
 <tr>
 <td></td>
-<td> 直线结果   </td>
-<td> 输出拟合直线的位置坐标，直线方向向量和旋转角度。                                                                       </td>
+<td>Tập hợp điểm tham gia nội suy</td>
+<td>Tập hợp tọa độ của tất cả các điểm tham gia vào quá trình nội suy.</td>
 </tr>
 <tr>
 <td></td>
-<td> 均方根误差 </td>
-<td> 输出拟合结果的误差，值越小，拟合效果越好。                                                                             </td>
+<td>Kết quả đường thẳng</td>
+<td>Toạ độ vị trí của đường thẳng nội suy, vector hướng và góc quay của đường thẳng.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果   </td>
-<td> 工具执行结果。                                                                                                         </td>
+<td>Lỗi căn bậc hai trung bình (RMSE)</td>
+<td>Độ sai lệch của kết quả nội suy, giá trị càng nhỏ thì kết quả nội suy càng tốt.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间   </td>
-<td> 工具执行时间。                                                                                                         </td>
-</tr>
-<tr>
-<td> 图像窗口   </td>
-<td> 直线结果                                                     </td>
-<td> 显示直线拟合结果，同监视窗口的直线结果参数。             </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực hiện của công cụ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果   </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                           </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực hiện công cụ.</td>
 </tr>
 <tr>
-<td> 数据链    </td>
-<td> 参与拟合的点集   </td>
-<td> 参与拟合直线的点数组。                                                          </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Kết quả đường thẳng</td>
+<td>Hiển thị kết quả nội suy đường thẳng, giống với tham số kết quả đường thẳng ở cửa sổ giám sát.</td>
 </tr>
 <tr>
-<td>     </td>
-<td> 直线结果   </td>
-<td> 输出直线拟合结果，供后序工具使用，同监视窗口的直线结果参数。                                                           </td>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực hiện công cụ, nếu thành công hiển thị “OK”, nếu thất bại hiển thị “NG”, giống với tham số kết quả thực thi ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Tập hợp điểm tham gia nội suy</td>
+<td>Mảng điểm tham gia nội suy đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả đường thẳng</td>
+<td>Kết quả nội suy đường thẳng, cung cấp cho các công cụ phía sau sử dụng, giống với tham số kết quả đường thẳng ở cửa sổ giám sát.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Mô tả chi tiết</h2>
 
-<h2>详细说明</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
 
 <h2>示例工程</h2>
 
