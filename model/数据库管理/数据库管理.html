@@ -16,42 +16,42 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>数据库管理</h1>
+<h1>Quản lý cơ sở dữ liệu</h1>
 
-<p>工程中收集的数据，通过功能区-设置里的数据库管理，进行参数设置及管理。数据库的数据，来自于数据收集工具，所以数据库管理模块需要和数据收集工具一起使用。当链接数据库成功后，工程中每添加一个数据收集工具，数据库中就会生成一个与之对应的表。</p>
+<p>Dữ liệu được thu thập trong dự án có thể được thiết lập và quản lý thông qua mục "Quản lý cơ sở dữ liệu" trong vùng chức năng - Cài đặt. Dữ liệu của cơ sở dữ liệu đến từ công cụ thu thập dữ liệu, vì vậy mô-đun quản lý cơ sở dữ liệu cần được sử dụng cùng với công cụ thu thập dữ liệu. Sau khi kết nối cơ sở dữ liệu thành công, mỗi khi thêm một công cụ thu thập dữ liệu trong dự án, một bảng tương ứng sẽ được tạo ra trong cơ sở dữ liệu.</p>
 
 <p><img src="media/DataBase_1_1.png" alt="" /></p>
 
-<p>通过数据收集工具的高级属性窗口，可以对表增加和删除数据源（即表中的列），设置数据源类型，重命名表的名称等。见下图。</p>
+<p>Thông qua cửa sổ thuộc tính nâng cao của công cụ thu thập dữ liệu, có thể thêm hoặc xóa nguồn dữ liệu (tức là các cột trong bảng), thiết lập loại nguồn dữ liệu, đổi tên bảng, v.v. Xem hình bên dưới.</p>
 
 <p><img src="media/DataBase_1_2.png" alt="" /></p>
 
 <ul>
-<li><p>数据库名称：显示当前数据库的完整路径；</p></li>
-<li><p>链接数据库：数据库名称不为空时，标明数据库链接成功，按钮禁用；</p>
+<li><p>Tên cơ sở dữ liệu: Hiển thị đường dẫn đầy đủ của cơ sở dữ liệu hiện tại;</p></li>
+<li><p>Kết nối cơ sở dữ liệu: Khi tên cơ sở dữ liệu không rỗng, thể hiện rằng kết nối cơ sở dữ liệu đã thành công, nút sẽ bị vô hiệu hóa;</p>
 
 <ul>
-<li><p>当前解决方案有数据库时，打开数据库（下方显示数据库里的数据表）；如果数据库文件查找失败或数据库内容不匹配，均链接失败；</p></li>
-<li><p>当前解决方案没有数据库时，新增空数据库（下方初始状态没有数据表，需要新增数据收集工具才可新增数据表）；</p></li>
+<li><p>Khi giải pháp hiện tại có cơ sở dữ liệu, sẽ mở cơ sở dữ liệu (hiển thị các bảng dữ liệu bên dưới); nếu không tìm thấy tệp cơ sở dữ liệu hoặc nội dung cơ sở dữ liệu không khớp, kết nối sẽ thất bại;</p></li>
+<li><p>Khi giải pháp hiện tại không có cơ sở dữ liệu, sẽ tạo mới một cơ sở dữ liệu trống (trạng thái ban đầu không có bảng dữ liệu bên dưới, cần thêm công cụ thu thập dữ liệu để thêm bảng);</p></li>
 </ul>
 </li>
-<li><p>数据表名称：显示当前数据库里的所有数据表名称，每个表对应一个数据收集工具；</p></li>
-<li><p>清空表记录：清空当前数据表的数据记录；</p></li>
-<li><p>导出表记录：导出当前数据表的数据记录；</p></li>
-<li><p>导出所有表：将所有的数据表全部导出；</p></li>
-<li><p>清空30天前所有表记录：清空30天前当前数据库里所有数据表的数据记录；</p></li>
-<li><p>清空所有表记录：清空当前数据库里所有数据表的所有数据；</p></li>
-<li><p>数据表自动导出设置</p></li>
-<li><p>锁定：只有在不锁定的情况下，才可以设置数据表的自动导出。</p></li>
-<li><p>自动导出数据表：如果选中，软件会按照时间间隔自动保存数据库到相应的目录。</p></li>
-<li><p>时间间隔：用于自动导出数据库设置的时间间隔。</p></li>
-<li><p>从数据库中删除已导出数据：此项决定是否删除已经导出的数据。</p></li>
-<li><p>导出列：可以选择导出的一个或者多个列，默认是全部导出。</p></li>
-<li><p>导出列标题：导出的表是否添加列名称。</p></li>
-<li><p>导出条件：可以设置一列或者多列的条件，将符合条件的记录进行导出。如上图所示的表，可以设置“Channel0>100”,这样，表中Channel0这一列大于100的行都会被筛选出来并导出。</p></li>
-<li><p>字符串包含双引号：数据库里面如果有字符串，导出的时候是否添加双引号</p></li>
-<li><p>时间列格式：默认的是按照年月日时分秒进行的设置的。也可以按照自己需要的格式设置。</p></li>
-<li><p>文件名和格式：设置导出数据表的名称，默认是会在末尾添加.csv文件名后缀。</p></li>
-<li><p>目录路径/浏览:使用浏览按钮选择导出的目录路径。</p></li>
+<li><p>Tên bảng dữ liệu: Hiển thị tất cả tên bảng dữ liệu trong cơ sở dữ liệu hiện tại, mỗi bảng tương ứng với một công cụ thu thập dữ liệu;</p></li>
+<li><p>Xóa sạch bản ghi bảng: Xóa sạch dữ liệu của bảng dữ liệu hiện tại;</p></li>
+<li><p>Xuất bản ghi bảng: Xuất dữ liệu của bảng dữ liệu hiện tại;</p></li>
+<li><p>Xuất tất cả bảng: Xuất toàn bộ dữ liệu của tất cả các bảng;</p></li>
+<li><p>Xóa sạch bản ghi của tất cả bảng trước 30 ngày: Xóa tất cả dữ liệu của các bảng trong cơ sở dữ liệu hiện tại cũ hơn 30 ngày;</p></li>
+<li><p>Xóa sạch tất cả bản ghi bảng: Xóa toàn bộ dữ liệu trong tất cả các bảng dữ liệu của cơ sở dữ liệu hiện tại;</p></li>
+<li><p>Cài đặt tự động xuất bảng dữ liệu</p></li>
+<li><p>Khóa: Chỉ khi không bị khóa mới có thể thiết lập tự động xuất bảng dữ liệu.</p></li>
+<li><p>Tự động xuất bảng dữ liệu: Nếu được chọn, phần mềm sẽ tự động lưu cơ sở dữ liệu vào thư mục tương ứng theo khoảng thời gian đã định.</p></li>
+<li><p>Khoảng thời gian: Thiết lập khoảng thời gian cho việc tự động xuất cơ sở dữ liệu.</p></li>
+<li><p>Xóa dữ liệu đã xuất khỏi cơ sở dữ liệu: Mục này quyết định có xóa dữ liệu đã được xuất hay không.</p></li>
+<li><p>Cột xuất: Có thể chọn một hoặc nhiều cột để xuất, mặc định là xuất toàn bộ.</p></li>
+<li><p>Tiêu đề cột xuất: Có thêm tiêu đề cột trong bảng xuất hay không.</p></li>
+<li><p>Điều kiện xuất: Có thể thiết lập điều kiện cho một hoặc nhiều cột, chỉ xuất các bản ghi thỏa mãn điều kiện. Ví dụ, với bảng trong hình, có thể thiết lập điều kiện “Channel0 > 100”, khi đó tất cả các dòng có giá trị Channel0 lớn hơn 100 sẽ được lọc và xuất.</p></li>
+<li><p>Chuỗi có dấu ngoặc kép: Nếu trong cơ sở dữ liệu có chuỗi, khi xuất có thêm dấu ngoặc kép hay không.</p></li>
+<li><p>Định dạng cột thời gian: Mặc định là thiết lập theo năm, tháng, ngày, giờ, phút, giây. Cũng có thể thiết lập theo định dạng tùy chỉnh.</p></li>
+<li><p>Tên và định dạng tệp: Thiết lập tên của tệp dữ liệu được xuất, mặc định phần mềm sẽ thêm đuôi .csv vào cuối.</p></li>
+<li><p>Đường dẫn thư mục / Duyệt: Sử dụng nút duyệt để chọn đường dẫn thư mục xuất dữ liệu.</p></li>
 </ul>
 
