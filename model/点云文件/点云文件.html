@@ -16,119 +16,115 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云文件</h1>
+<h1>Tệp Điểm Mây (Point Cloud)</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 点云文件主要是加载文件夹中点云格式的图像。</p>
+<p>​ Tệp điểm mây chủ yếu dùng để tải ảnh định dạng điểm mây từ thư mục.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>​ 在3D测量及检测项目中，经常涉及将离线的点云图像加载进来复测，因此需要加载点云图像的功能。</p>
+<p>​ Trong các dự án đo lường và kiểm tra 3D, thường cần tải ảnh điểm mây offline để kiểm tra lại, vì vậy cần có chức năng tải ảnh điểm mây.</p>
 
-<h2>3. 使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具</h4></li>
+<li><h4>Thêm công cụ</h4></li>
 </ul>
-
 
 <p><img src="media/GcCloudFromFileTool_3_1.png" alt="" /></p>
 
-<p><imgnote>图3_1 点云文件添加</imgnote></p>
+<p><imgnote>Hình 3_1 Thêm công cụ tệp điểm mây</imgnote></p>
 
 <ul>
-<li><h4>参数设置</h4>
-
+<li><h4>Cài đặt tham số</h4>
 <ul>
-<li>① 属性参数：文件路径，目前支持ply和txt格式，可以在属性栏选择，也可以用脚本设置；</li>
+<li>① Tham số thuộc tính: Đường dẫn tệp, hiện hỗ trợ định dạng ply và txt, có thể chọn trong khung thuộc tính hoặc đặt qua script;</li>
 </ul>
 </li>
 </ul>
 
-
 <p><img src="media/GcCloudFromFileTool_3_2.png" alt="" /></p>
 
-<p><imgnote>图3_1 点云文件路径设置</imgnote></p>
+<p><imgnote>Hình 3_2 Cài đặt đường dẫn tệp điểm mây</imgnote></p>
 
-<h2>4. 常见问题</h2>
+<h2>4. Vấn đề thường gặp</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>5. 参数说明</h2>
+<h2>5. Mô tả tham số</h2>
 
-<h4>输入参数（属性窗口）</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 文件路径 </td>
-<td> 文件加载的路径，目前支持ply和txt格式，此路径可以在脚本中动态修改 </td>
-</tr>
-<tr>
-<td> 启用索引 </td>
-<td> 是：需要设置“索引文件路径”，输出栏中显示加载的有效点索引；否：不加载点云图像有效索引 </td>
-</tr>
-<tr>
-<td> 索引文件路径 </td>
-<td> 索引文件加载的路径，文件名称后缀为index                      </td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu vào (Cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
+<th> Tên tham số           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 点云图像 </td>
-<td> 加载的点云图像 </td>
+<td> Đường dẫn tệp </td>
+<td> Đường dẫn tải tệp, hiện hỗ trợ định dạng ply và txt, có thể được thay đổi động bằng script </td>
+</tr>
+<tr>
+<td> Bật chỉ mục </td>
+<td> Có: cần cài đặt "Đường dẫn tệp chỉ mục", phần đầu ra sẽ hiển thị chỉ mục điểm hợp lệ được tải; Không: không tải chỉ mục điểm ảnh mây hợp lệ </td>
+</tr>
+<tr>
+<td> Đường dẫn tệp chỉ mục </td>
+<td> Đường dẫn để tải tệp chỉ mục, phần mở rộng tên tệp là `.index`                      </td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (Chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 点云图像 </td>
-<td> 加载的点云图像 </td>
-</tr>
-<tr>
-<td> 有效点索引 </td>
-<td> 输出加载的点云索引 </td>
-</tr>
-<tr>
-<td> 执行结果 </td>
-<td> 工具执行结果 </td>
-</tr>
-<tr>
-<td> 执行时间           </td>
-<td> 工具执行时间                                               </td>
+<td> Ảnh điểm mây </td>
+<td> Ảnh điểm mây đã tải </td>
 </tr>
 </tbody>
 </table>
+
+<h4>Tham số đầu ra (Cửa sổ đầu ra)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh điểm mây </td>
+<td> Ảnh điểm mây đã tải </td>
+</tr>
+<tr>
+<td> Chỉ mục điểm hợp lệ </td>
+<td> Xuất chỉ mục điểm mây đã tải </td>
+</tr>
+<tr>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ </td>
+</tr>
+<tr>
+<td> Thời gian thực thi           </td>
+<td> Thời gian thực thi của công cụ                                               </td>
+</tr>
+</tbody>
+</table>
+
 
 
 <h2>6. 示例工程</h2>

@@ -16,475 +16,509 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>元素生成工具</h1>
+<h1>Công Cụ Tạo Phần Tử</h1>
 
-<h2>1.功能概述</h2>
+<h2>1. Tổng Quan Chức Năng</h2>
 
-<p>   生成空间中的基本元素：空间点、空间直线、空间线段、空间平面、长方体、圆柱体等，为后续其他点云工具的数据链参数做准备。元素的生成方式可以人工输入数据生成，也可以拾取已有点数据来完成。</p>
+<p>   Tạo ra các phần tử cơ bản trong không gian: điểm 3D, đường thẳng 3D, đoạn thẳng 3D, mặt phẳng, hình hộp chữ nhật, hình trụ,... để chuẩn bị dữ liệu chuỗi tham số cho các công cụ xử lý điểm mây khác. Các phần tử này có thể được tạo bằng cách nhập tay hoặc trích chọn từ dữ liệu điểm đã có.</p>
 
-<h2>2.使用场景</h2>
+<h2>2. Kịch Bản Sử Dụng</h2>
 
-<p>   元素生成工具主要用于生成空间几何基本元素，为其他工具提供链接；</p>
+<p>   Công cụ tạo phần tử chủ yếu dùng để tạo các phần tử hình học cơ bản trong không gian, cung cấp liên kết cho các công cụ khác.</p>
 
-<h2>3.使用向导</h2>
+<h2>3. Hướng Dẫn Sử Dụng</h2>
 
 <ul>
-<li><h3>3.1 点元素生成</h3></li>
-<li><p><strong>方法一：XYZ坐标模式：手动输入三维点坐标（X,Y,Z）生成点元素</strong><br/>
-<strong>Step1:</strong>双击元素生成工具，分别在“三维点X坐标”、“三维点Y坐标”、“三维点Z坐标”处输入三维点的坐标值；<br/>
-<strong>Step2:</strong>运行选中的元素生成工具，输出窗口可以看到生成的三维点坐标；</p></li>
+<li><h3>3.1 Tạo phần tử điểm</h3></li>
+<li><p><strong>Phương pháp 1: Chế độ tọa độ XYZ – Nhập tay tọa độ điểm 3D (X, Y, Z)</strong><br/>
+<strong>Bước 1:</strong> Nhấn đúp vào công cụ tạo phần tử, nhập các giá trị tọa độ X, Y, Z tại các trường tương ứng;<br/>
+<strong>Bước 2:</strong> Chạy công cụ, tọa độ điểm 3D sẽ hiển thị trong cửa sổ đầu ra;</p></li>
 </ul>
-
 
 <p><img src="media/PointCloudGenerate_2_1.png" alt="" /></p>
-
-<p><imgnote>图2_1 手动生成三维点</imgnote></p>
+<p><imgnote>Hình 2_1 Tạo điểm 3D bằng tay</imgnote></p>
 
 <ul>
-<li><p><strong>方法二：点偏移 + 三维点获取方式拾取：参考拾取到的点进行固定偏移来生成点元素</strong><br/>
-<strong>Step1:</strong>添加元素生成工具，在属性界面“三维点生成模式”：点偏移，三维点获取方式：拾取；<br/>
-<strong>Step2:</strong>双击元素生成工具进行数据链接，输入点云数据（需要设置输入图像进行三维点拾取）、偏移量设置；<br/>
-<strong>Step3:</strong>打开高级界面，点击”点1拾取“按钮，可以在视图中点击想要设置的特征点；<br/>
-<strong>Step4:</strong>点击执行按钮，可以在视图中看到固定偏移后的特征点；</p>
-
-<p><font color = "red">注：高级界面中红色点表示拾取的点，白色点表示偏移后的点；</font></p></li>
+<li><p><strong>Phương pháp 2: Dịch chuyển điểm + Trích chọn điểm 3D</strong><br/>
+<strong>Bước 1:</strong> Thêm công cụ tạo phần tử, tại giao diện thuộc tính chọn chế độ tạo điểm: Dịch chuyển điểm, phương thức lấy điểm: Trích chọn;<br/>
+<strong>Bước 2:</strong> Nhấn đúp công cụ để cấu hình chuỗi dữ liệu đầu vào, chọn dữ liệu điểm mây và đặt giá trị dịch chuyển;<br/>
+<strong>Bước 3:</strong> Mở giao diện nâng cao, nhấn “Điểm 1 Trích chọn”, chọn điểm đặc trưng trên ảnh 3D;<br/>
+<strong>Bước 4:</strong> Nhấn nút chạy, điểm sau dịch chuyển sẽ hiển thị trên giao diện;</p>
+<p><font color = "red">Chú thích: Trong giao diện nâng cao, điểm đỏ là điểm trích chọn, điểm trắng là điểm sau khi dịch chuyển;</font></p></li>
 </ul>
-
 
 <p><img src="media/PointCloudGenerate_2_2.png" alt="" /></p>
-
-<p><imgnote>图2_2 参考拾取到的点进行固定偏移来生成点元素</imgnote></p>
+<p><imgnote>Hình 2_2 Dịch chuyển từ điểm được trích chọn</imgnote></p>
 
 <ul>
-<li><strong>方法三：点偏移 + 三维点获取方式引用：直接引用其他工具的三维点进行固定偏移来生成点元素</strong><br/>
-<strong>Step1:</strong>添加元素生成工具，在属性界面“三维点生成模式”：点偏移，三维点获取方式：引用；<br/>
-<strong>Step2:</strong>双击工具打开数据链界面，在“原始点”数据链处选中一个三维点，并进行偏移量设置；<br/>
-<strong>Step3:</strong>选中工具运行，即可生成固定偏移点；</li>
+<li><strong>Phương pháp 3: Dịch chuyển điểm + Tham chiếu điểm 3D</strong><br/>
+<strong>Bước 1:</strong> Thêm công cụ tạo phần tử, trong thuộc tính chọn: chế độ tạo điểm là dịch chuyển, phương thức lấy điểm: Tham chiếu;<br/>
+<strong>Bước 2:</strong> Nhấn đúp công cụ để mở giao diện chuỗi tham số, chọn một điểm 3D và cấu hình giá trị dịch chuyển;<br/>
+<strong>Bước 3:</strong> Chạy công cụ để tạo điểm dịch chuyển;</li>
 </ul>
-
 
 <p><img src="media/PointCloudGenerate_2_3.png" alt="" /></p>
-
-<p><imgnote>图2_3 拾取已有点云数据中的某个点</imgnote></p>
+<p><imgnote>Hình 2_3 Tham chiếu điểm trong dữ liệu điểm mây</imgnote></p>
 
 <ul>
-<li><p><strong>方法四：方向偏移 + 三维点获取方式拾取：参考拾取到的点进行方向偏移来生成点元素</strong><br/>
-<strong>Step1:</strong>添加元素生成工具，在属性界面“三维点生成模式”：方向偏移，三维点获取方式：拾取；<br/>
-<strong>Step2:</strong>双击元素生成工具进行数据链接，输入点云数据（需要设置输入图像进行三维点拾取）、方向向量(可以是直线或线段的方向向量，或三维点作为方向向量)、偏移量设置；<br/>
-<strong>Step3:</strong>打开高级界面，点击”点1拾取“按钮，可以在视图中点击想要设置的特征点；<br/>
-<strong>Step4:</strong>点击执行按钮，可以在视图中看到特定方向偏移后的特征点；</p>
-
-<p><font color = "red">注：高级界面中红色点表示拾取的点，白色点表示偏移后的点；</font></p></li>
+<li><p><strong>Phương pháp 4: Dịch chuyển theo hướng + Trích chọn điểm 3D</strong><br/>
+<strong>Bước 1:</strong> Thêm công cụ tạo phần tử, chọn chế độ tạo điểm: Dịch chuyển theo hướng, phương thức lấy điểm: Trích chọn;<br/>
+<strong>Bước 2:</strong> Nhấn đúp để cấu hình chuỗi dữ liệu, chọn điểm mây, cấu hình vector hướng và độ dịch chuyển (vector hướng có thể là đường thẳng, đoạn thẳng hoặc điểm 3D);<br/>
+<strong>Bước 3:</strong> Mở giao diện nâng cao, trích chọn điểm đặc trưng;<br/>
+<strong>Bước 4:</strong> Nhấn chạy để thấy kết quả dịch chuyển theo hướng;</p>
+<p><font color = "red">Chú thích: Điểm đỏ là điểm trích chọn, điểm trắng là điểm đã dịch chuyển;</font></p></li>
 </ul>
-
 
 <p><img src="media/PointCloudGenerate_2_4.png" alt="" /></p>
-
-<p><imgnote>图2_4 参考拾取到的点进行固定偏移来生成点元素</imgnote></p>
+<p><imgnote>Hình 2_4 Dịch chuyển theo hướng từ điểm trích chọn</imgnote></p>
 
 <ul>
-<li><p><strong>方法五：方向偏移 + 三维点获取方式引用：参考引用到的点进行特定方向偏移来生成点元素</strong><br/>
-<strong>Step1:</strong>添加元素生成工具，在属性界面“三维点生成模式”：方向偏移，三维点获取方式：引用；<br/>
-<strong>Step2:</strong>双击工具打开数据链界面，设置方向向量(可以是直线或线段的方向向量，或三维点作为方向向量)和偏移量；<br/>
-<strong>Step3:</strong>选中工具运行，即可生成特定方向上的偏移点；</p></li>
-<li><h3>3.2 三维直线元素生成</h3></li>
-<li><p><strong>方法一：两点式生成三维直线</strong></p></li>
-<li><p><strong>Step1:</strong>在工具属性界面选中三维直线生成模式：两点式，三维点获取方式：引用</p></li>
-<li><p><strong>Step2:</strong>双击工具打开参数链界面，然后链接“起始点”、“终止点”，然后点击运行工具；</p></li>
-</ul>
+<li><p><strong>Phương pháp 5: Dịch chuyển theo hướng + Tham chiếu điểm 3D</strong><br/>
+<strong>Bước 1:</strong> Thêm công cụ, chọn chế độ: Dịch chuyển theo hướng, phương thức lấy điểm: Tham chiếu;<br/>
+<strong>Bước 2:</strong> Nhấn đúp mở chuỗi tham số, cấu hình vector hướng và giá trị dịch chuyển;<br/>
+<strong>Bước 3:</strong> Chạy công cụ để tạo điểm đã dịch chuyển theo hướng;</p></li>
 
+<li><h3>3.2 Tạo phần tử đường thẳng 3D</h3></li>
+
+<li><p><strong>Phương pháp 1: Tạo đường thẳng bằng hai điểm</strong></p></li>
+<li><p><strong>Bước 1:</strong> Trong thuộc tính công cụ, chọn chế độ tạo đường thẳng 3D: Hai điểm, phương thức lấy điểm: Tham chiếu;</p></li>
+<li><p><strong>Bước 2:</strong> Nhấn đúp mở chuỗi tham số, liên kết “Điểm bắt đầu” và “Điểm kết thúc”, rồi nhấn chạy công cụ;</p></li>
+</ul>
 
 <p><img src="media/PointCloudGenerate_2_5.png" alt="" /></p>
-
-<p><imgnote>图2_5 两点式生成三维直线(1)</imgnote></p>
+<p><imgnote>Hình 2_5 Tạo đường thẳng từ hai điểm (1)</imgnote></p>
 
 <ul>
-<li><strong>Step3:</strong>在工具属性界面选中三维直线生成模式：两点式，三维点获取方式：拾取;</li>
-<li><strong>Step4:</strong>右键打开工具高级界面，点击“点1拾取”，然后选取三维点1；点击“点2拾取”，然后选取三维点2；点击执行；</li>
+<li><strong>Bước 3:</strong> Trong thuộc tính công cụ, chọn chế độ tạo đường: Hai điểm, phương thức lấy điểm: Trích chọn;</li>
+<li><strong>Bước 4:</strong> Mở giao diện nâng cao, nhấn “Điểm 1 Trích chọn” và “Điểm 2 Trích chọn”, rồi nhấn chạy;</li>
 </ul>
-
 
 <p><img src="media/PointCloudGenerate_2_6.png" alt="" /></p>
-
-<p><imgnote>图2_6 两点式生成三维直线(2)</imgnote></p>
+<p><imgnote>Hình 2_6 Tạo đường thẳng từ hai điểm (2)</imgnote></p>
 
 <ul>
-<li><strong>方法二：点斜式生成三维直线</strong></li>
-<li><strong>Step1：</strong>添加元素生成工具，在属性界面设置：元素生成类型：三维直线、三维直线生成模式：点斜式、三维点获取方式：引用；</li>
-<li><strong>Step2：</strong>双击打开该工具参数链配置界面，配置各个参数链后点击运行工具；</li>
+<li><strong>Phương pháp 2: Tạo đường thẳng theo điểm và vector</strong></li>
+<li><strong>Bước 1:</strong> Thêm công cụ tạo phần tử, chọn loại phần tử: Đường thẳng 3D, chế độ: Điểm - vector, phương thức lấy điểm: Tham chiếu;</li>
+<li><strong>Bước 2:</strong> Mở chuỗi tham số, cấu hình các tham số và nhấn chạy công cụ;</li>
 </ul>
-
 
 <p><img src="media/PointCloudGenerate_2_7.png" alt="" /></p>
-
-<p><imgnote>图2_7 点斜式生成三维直线</imgnote></p>
+<p><imgnote>Hình 2_7 Tạo đường thẳng từ điểm và vector</imgnote></p>
 
 <ul>
-<li><strong>方法三：位置+倾斜角+旋转角生成三维直线</strong></li>
-<li><strong>Step1：</strong>添加元素生成工具，在属性界面设置：元素生成类型：三维直线、三维直线生成模式：位置+倾斜角+旋转角、三维点获取方式：引用；</li>
-<li><strong>Step2：</strong>双击打开工具参数链界面，链接一个三维点，输入倾斜角、旋转角，然后点击运行工具；</li>
+<li><strong>Phương pháp 3: Tạo từ vị trí + góc nghiêng + góc quay</strong></li>
+<li><strong>Bước 1:</strong> Chọn loại phần tử: Đường thẳng 3D, chế độ: Vị trí + Góc nghiêng + Góc quay, phương thức lấy điểm: Tham chiếu;</li>
+<li><strong>Bước 2:</strong> Cấu hình chuỗi tham số với một điểm 3D, nhập các góc và nhấn chạy;</li>
 </ul>
-
 
 <p><img src="media/PointCloudGenerate_2_8.png" alt="" /></p>
-
-<p><imgnote>图2_8 位置+倾斜角+旋转角生成三维直线</imgnote></p>
+<p><imgnote>Hình 2_8 Tạo đường thẳng từ vị trí + góc nghiêng + góc quay</imgnote></p>
 
 <ul>
-<li><strong>方法四：参考平行直线生成三维直线</strong></li>
-<li><strong>Step1：</strong>添加元素生成工具，在属性界面设置：元素生成类型：三维直线、三维直线生成模式：平行直线；</li>
-<li><strong>Step2：</strong>双击打开工具参数链界面，链接方向向量、给定直线，偏移量（偏移量可以不设置链接）；</li>
+<li><strong>Phương pháp 4: Tạo đường song song</strong></li>
+<li><strong>Bước 1:</strong> Chọn loại phần tử: Đường thẳng 3D, chế độ: Đường song song;</li>
+<li><strong>Bước 2:</strong> Liên kết vector hướng, đường cho sẵn và độ dịch chuyển (nếu cần);</li>
 </ul>
-
 
 <p><img src="media/PointCloudGenerate_2_9.png" alt="" /></p>
-
-<p><imgnote>图2_9 参考平行直线生成三维直线</imgnote></p>
+<p><imgnote>Hình 2_9 Tạo đường song song</imgnote></p>
 
 <ul>
-<li><strong>方法五：参考垂直直线生成三维直线</strong></li>
-<li><strong>Step1：</strong>添加元素生成工具，在属性界面设置：元素生成类型：三维直线、三维直线生成模式：垂直线；</li>
-<li><strong>Step2：</strong>双击打开工具参数链界面，链接三维点、给定直线；</li>
+<li><strong>Phương pháp 5: Tạo đường thẳng vuông góc</strong></li>
+<li><strong>Bước 1:</strong> Chọn loại phần tử: Đường thẳng 3D, chế độ: Đường vuông góc;</li>
+<li><strong>Bước 2:</strong> Liên kết điểm 3D và đường thẳng đã cho;</li>
 </ul>
-
 
 <p><img src="media/PointCloudGenerate_2_10.png" alt="" /></p>
-
-<p><imgnote>图2_10 参考垂直直线生成三维直线</imgnote></p>
+<p><imgnote>Hình 2_10 Tạo đường vuông góc</imgnote></p>
 
 <ul>
-<li><h3>3.3 其他元素生成</h3>
+<li><h3>3.3 Tạo các phần tử khác</h3>
 
-<p>  其他元素生成的操作方式原理与点、线的生成方式相似，在此不在赘述，使用者可自行设置；</p></li>
+<p>  Nguyên lý và cách thực hiện tương tự như tạo điểm và đường thẳng, người dùng có thể tự cấu hình theo nhu cầu.</p></li>
 </ul>
 
 
-<h2>4.常见问题</h2>
 
-<h2>5.参数说明</h2>
+<h2>4. Câu hỏi thường gặp</h2>
 
-<h4>输入参数（参数链）</h4>
+<h2>5. Giải thích tham số</h2>
+
+<h4>Tham số đầu vào (Chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数描述 </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入点云数据                                                 </td>
-<td> 输入点云图像                                               </td>
+<td> Dữ liệu đám mây điểm đầu vào </td>
+<td> Hình ảnh đám mây điểm đầu vào </td>
 </tr>
 <tr>
-<td> 三维点X/Y/Z坐标                                              </td>
-<td> 三维点生成模式下，XYZ坐标                                  </td>
+<td> Tọa độ X/Y/Z điểm 3D </td>
+<td> Trong chế độ tạo điểm 3D, sử dụng tọa độ XYZ </td>
 </tr>
 <tr>
-<td> 原始点                                                       </td>
-<td> 三维点生成模式下，点偏移、方向偏移时原始点坐标                  </td>
+<td> Điểm gốc </td>
+<td> Trong chế độ tạo điểm 3D, khi có dịch chuyển điểm hoặc hướng thì dùng tọa độ gốc </td>
 </tr>
 <tr>
-<td> 偏移X/Y/Z                                                    </td>
-<td> 三维点生成模式下，点偏移时的偏移量                      </td>
+<td> Dịch chuyển X/Y/Z </td>
+<td> Trong chế độ tạo điểm 3D, sử dụng khi có dịch chuyển điểm </td>
 </tr>
 <tr>
-<td> 起始点                                                       </td>
-<td> 三维直线生成模式下，两点式时使用<br />三维线段生成模式下，两点式、点+方向向量+线段长度、点+倾斜+旋转+线段长度、垂线段时使用 </td>
+<td> Điểm bắt đầu </td>
+<td> Trong chế độ tạo đường thẳng 3D bằng hai điểm<br />Trong chế độ tạo đoạn thẳng 3D: hai điểm, điểm+hướng+chiều dài, điểm+góc nghiêng+xoay+chiều dài, đoạn vuông góc </td>
 </tr>
 <tr>
-<td> 终止点                                                       </td>
-<td> 三维直线生成模式下，两点式时使用<br />三维线段生成模式下，两点式时使用 </td>
+<td> Điểm kết thúc </td>
+<td> Trong chế độ tạo đường thẳng 3D bằng hai điểm<br />Trong chế độ tạo đoạn thẳng 3D bằng hai điểm </td>
 </tr>
 <tr>
-<td> 三维点                                                       </td>
-<td> 三维直线生成模式下，点斜式、位置+倾斜角+旋转角、垂直线时使用<br />三维平面生成模式下，点+法向量时使用 </td>
+<td> Điểm 3D </td>
+<td> Trong chế độ tạo đường thẳng 3D: điểm+hướng, vị trí+góc nghiêng+góc xoay, đường vuông góc<br />Trong chế độ tạo mặt phẳng 3D: điểm + vector pháp tuyến </td>
 </tr>
 <tr>
-<td> 方向向量                                                     </td>
-<td> 三维点生成模式下，方向偏移时使用<br />三维直线生成模式下，点斜式、平行直线时使用<br />三维线段生成模式下，点+方向向量+线段长度、平行线段时使用 </td>
+<td> Vector hướng </td>
+<td> Trong chế độ tạo điểm 3D: khi có dịch chuyển theo hướng<br />Trong chế độ tạo đường thẳng 3D: điểm+hướng, đường song song<br />Trong chế độ tạo đoạn thẳng 3D: điểm+hướng+chiều dài, đoạn song song </td>
 </tr>
 <tr>
-<td> 倾斜角                                                       </td>
-<td> 三维直线生成模式下，位置+倾斜角+旋转角时使用<br />三维线段生成模式下，点+倾斜角+旋转角+线段长度时使用<br />三维圆形生成模式下，倾斜角+旋转角+圆心+半径、倾斜角+旋转角+偏移量+半径时使用 </td>
+<td> Góc nghiêng </td>
+<td> Trong chế độ tạo đường thẳng 3D: vị trí+góc nghiêng+xoay<br />Trong chế độ tạo đoạn thẳng 3D: điểm+góc nghiêng+xoay+chiều dài<br />Trong chế độ tạo hình tròn 3D: góc nghiêng+xoay+tâm+bán kính hoặc dịch chuyển+xoay+ bán kính </td>
 </tr>
 <tr>
-<td> 旋转角                                                       </td>
-<td> 三维直线生成模式下，位置+倾斜角+旋转角时使用<br />三维线段生成模式下，点+倾斜角+旋转角+线段长度时使用<br />三维圆形生成模式下，倾斜角+旋转角+圆心+半径、倾斜角+旋转角+偏移量+半径时使用 </td>
+<td> Góc xoay </td>
+<td> Trong chế độ tạo đường thẳng 3D: vị trí+góc nghiêng+xoay<br />Trong chế độ tạo đoạn thẳng 3D: điểm+góc nghiêng+xoay+chiều dài<br />Trong chế độ tạo hình tròn 3D: góc nghiêng+xoay+tâm+ bán kính hoặc dịch chuyển+xoay+ bán kính </td>
 </tr>
 <tr>
-<td> 给定直线                                                     </td>
-<td> 三维直线生成模式下，平行直线、垂直线时使用<br />三维线段生成模式下，垂线段时使用 </td>
+<td> Đường thẳng cho trước </td>
+<td> Trong chế độ tạo đường thẳng 3D: đường song song hoặc vuông góc<br />Trong chế độ tạo đoạn thẳng 3D: đoạn vuông góc </td>
 </tr>
 <tr>
-<td> 给定线段                                                     </td>
-<td> 三维线段生成模式下，平行线段时使用 </td>
+<td> Đoạn thẳng cho trước </td>
+<td> Trong chế độ tạo đoạn thẳng 3D: đoạn song song </td>
 </tr>
 <tr>
-<td> 偏移量                                                       </td>
-<td> 三维点生成模式下，方向偏移时使用<br />三维直线生成模式下，平行直线时使用<br />三维线段生成模式下，平行线段时使用<br />三维平面生成模式下，法向量+偏移、平行平面时使用<br />三维圆形生成模式下，法向量+偏移+半径、倾斜角+旋转角+偏移+半径时使用 </td>
+<td> Giá trị dịch chuyển </td>
+<td> Trong chế độ tạo điểm 3D: dịch chuyển theo hướng<br />Trong chế độ tạo đường thẳng 3D: đường song song<br />Trong chế độ tạo đoạn thẳng 3D: đoạn song song<br />Trong chế độ tạo mặt phẳng 3D: vector pháp tuyến + dịch chuyển, mặt phẳng song song<br />Trong chế độ tạo hình tròn 3D: vector pháp tuyến + dịch chuyển + bán kính, hoặc góc nghiêng + xoay + dịch chuyển + bán kính </td>
 </tr>
 <tr>
-<td> 线段长度                                                     </td>
-<td> 三维线段生成模式下，点+方向向量+线段长度、点+倾斜+旋转+线段长度时使用 </td>
+<td> Chiều dài đoạn </td>
+<td> Trong chế độ tạo đoạn thẳng 3D: điểm+hướng+chiều dài, điểm+góc nghiêng+xoay+chiều dài </td>
 </tr>
 <tr>
-<td> 三维点1/2/3                                                  </td>
-<td> 三维平面生成模式下，三点式时使用<br />三维圆形生成模式下，三点式时使用 </td>
+<td> Điểm 3D 1/2/3 </td>
+<td> Trong chế độ tạo mặt phẳng 3D: kiểu 3 điểm<br />Trong chế độ tạo hình tròn 3D: kiểu 3 điểm </td>
 </tr>
 <tr>
-<td> 半径                                                         </td>
-<td> 三维圆形生成模式下，平面+半径、法向量+圆心+半径、法向量+偏移+半径、倾斜角+旋转角+圆心+半径、倾斜角+旋转角+偏移+半径时使用<br />圆柱体生成模式下，基于点、基于线时使用<br />球体生成模式下，基于球心+半径时使用 </td>
+<td> Bán kính </td>
+<td> Trong chế độ tạo hình tròn 3D: mặt phẳng + bán kính, vector pháp tuyến + tâm + bán kính, vector + dịch chuyển + bán kính, góc nghiêng + xoay + tâm + bán kính, góc nghiêng + xoay + dịch chuyển + bán kính<br />Trong chế độ tạo trụ: dùng theo điểm hoặc theo đường<br />Trong chế độ tạo cầu: theo tâm + bán kính </td>
 </tr>
 <tr>
-<td> 平面                                                         </td>
-<td> 三维圆形生成模式下，平面+半径时使用 </td>
+<td> Mặt phẳng </td>
+<td> Trong chế độ tạo hình tròn 3D: mặt phẳng + bán kính </td>
 </tr>
 <tr>
-<td> 法向量                                                       </td>
-<td> 三维平面生成模式下，点+法向量、法向量+偏移时使用<br />三维圆形生成模式下，法向量+圆心+半径、法向量+偏移+半径时使用 </td>
+<td> Vector pháp tuyến </td>
+<td> Trong chế độ tạo mặt phẳng 3D: điểm + vector pháp tuyến, vector + dịch chuyển<br />Trong chế độ tạo hình tròn 3D: vector + tâm + bán kính, vector + dịch chuyển + bán kính </td>
 </tr>
 <tr>
-<td> 给定平面                                                     </td>
-<td> 三维平面生成模式下，平行平面、垂直平面时使用 </td>
+<td> Mặt phẳng cho trước </td>
+<td> Trong chế độ tạo mặt phẳng 3D: mặt phẳng song song hoặc vuông góc </td>
 </tr>
 <tr>
-<td> 三维直线                                                     </td>
-<td> 三维平面生成模式下，垂直平面时使用 </td>
+<td> Đường thẳng 3D </td>
+<td> Trong chế độ tạo mặt phẳng 3D: vuông góc với đường thẳng </td>
 </tr>
 <tr>
-<td> 中心点                                                       </td>
-<td> 三维矩形生成模式下，中心点+方向向量+尺寸时使用<br />长方体生成模式下使用 </td>
+<td> Điểm trung tâm </td>
+<td> Trong chế độ tạo hình chữ nhật 3D: tâm + hướng + kích thước<br />Dùng trong tạo khối hộp </td>
 </tr>
 <tr>
-<td> 左上角点                                                     </td>
-<td> 三维矩形生成模式下，左上点+方向向量+尺寸时使用 </td>
+<td> Điểm góc trên trái </td>
+<td> Trong chế độ tạo hình chữ nhật 3D: góc trên trái + hướng + kích thước </td>
 </tr>
 <tr>
-<td> 长/宽/高方向向量                                             </td>
-<td> 三维矩形生成模式下使用 </td>
+<td> Vector phương dài/rộng/cao </td>
+<td> Dùng trong tạo hình chữ nhật 3D </td>
 </tr>
 <tr>
-<td> 长/宽/高尺寸                                                 </td>
-<td> 三维矩形/长方体生成模式下使用 </td>
+<td> Kích thước dài/rộng/cao </td>
+<td> Dùng trong tạo hình chữ nhật hoặc khối hộp </td>
 </tr>
 <tr>
-<td> 圆心                                                         </td>
-<td> 三维圆形生成模式下，法向量+圆心+半径、倾斜角+旋转角+圆心+半径时使用 </td>
+<td> Tâm hình tròn </td>
+<td> Trong chế độ tạo hình tròn 3D: vector pháp tuyến + tâm + bán kính hoặc góc nghiêng + xoay + tâm + bán kính </td>
 </tr>
 <tr>
-<td> 长方体长/宽/高正方向向量                                     </td>
-<td> 长方体生成模式下，基于中心点+长宽高正方向向量+尺寸使用 </td>
+<td> Vector hướng dương của chiều dài/rộng/cao khối hộp </td>
+<td> Dùng trong tạo khối hộp: tâm + vector hướng dương + kích thước </td>
 </tr>
 <tr>
-<td> 输入坐标系 </td>
-<td> 长方体生成模式下，基于坐标系+尺寸使用 </td>
+<td> Hệ tọa độ đầu vào </td>
+<td> Dùng trong tạo khối hộp: dựa vào hệ tọa độ + kích thước </td>
 </tr>
 <tr>
-<td> 轴线一点                                                     </td>
-<td> 圆柱体生成模式下，基于点时使用 </td>
+<td> Một điểm trên trục </td>
+<td> Dùng trong tạo trụ: tạo theo điểm </td>
 </tr>
 <tr>
-<td> 轴线方向                                                     </td>
-<td> 圆柱体生成模式下，基于点时使用 </td>
+<td> Hướng trục </td>
+<td> Dùng trong tạo trụ: tạo theo điểm </td>
 </tr>
 <tr>
-<td> 轴线                                                         </td>
-<td> 圆柱体生成模式下，基于线时使用 </td>
+<td> Trục </td>
+<td> Dùng trong tạo trụ: tạo theo đường thẳng </td>
 </tr>
 <tr>
-<td> 球心                                                         </td>
-<td> 球体生成模式下使用 </td>
+<td> Tâm cầu </td>
+<td> Dùng trong tạo hình cầu </td>
 </tr>
 <tr>
-<td> 球上一点                                                     </td>
-<td> 球体生成模式下，基于球心+球上一点时使用 </td>
+<td> Một điểm trên mặt cầu </td>
+<td> Dùng trong tạo hình cầu: tâm + điểm trên mặt cầu </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数描述 </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 元素生成类型                                          </td>
-<td> 选择想要生成的基本元素，基本元素包括：三维点、三维直线、三维线段、三维平面、三维矩形、三维圆形、长方体、圆柱体、球体 </td>
+<td> Loại phần tử cần tạo </td>
+<td> Chọn phần tử cơ bản muốn tạo, bao gồm: điểm 3D, đường thẳng 3D, đoạn thẳng 3D, mặt phẳng 3D, hình chữ nhật 3D, hình tròn 3D, khối hộp, hình trụ, hình cầu </td>
 </tr>
 <tr>
-<td> 三维元素生成模式           </td>
-<td> 指元素的生成模式，不同元素的生成方式有多种，具体如下： <br />三维点生成模式：XYZ坐标、点偏移、方向偏移<br />三维直线生成模式：两点式、点斜式、位置+倾斜角+旋转角、平行直线、垂直线<br />三维线段生成模式：两点式、点+方向向量+线段长度、点+倾斜角+旋转角+线段长度、平行线段、垂线段<br />三维平面生成模式：三点式、点+法向量、法向量+平移、平行平面、垂直平面<br />三维矩形生成模式：左上点+方向向量+尺寸、中心点+方向向量+尺寸<br />三维圆形生成模式：三点式、平面+半径、法向量+圆心+半径、法向量+偏移+半径、倾斜角+旋转角+圆心+半径、倾斜角+旋转角+偏移+半径<br />长方体生成模式：中心点+长宽高方向向量+尺寸、坐标系+尺寸<br />圆柱体生成模式：基于点、基于线<br />球体生成模式：基于球心+半径、基于球心+球上一点 </td>
+<td> Chế độ tạo phần tử 3D </td>
+<td> Chỉ định cách tạo phần tử. Mỗi phần tử có nhiều phương pháp tạo khác nhau, cụ thể như sau：<br />
+Chế độ tạo điểm 3D: tọa độ XYZ, điểm + dịch chuyển, dịch chuyển theo hướng<br />
+Chế độ tạo đường thẳng 3D: hai điểm, điểm + vector hướng, vị trí + góc nghiêng + góc xoay, đường song song, đường vuông góc<br />
+Chế độ tạo đoạn thẳng 3D: hai điểm, điểm + hướng + chiều dài, điểm + góc nghiêng + xoay + chiều dài, đoạn song song, đoạn vuông góc<br />
+Chế độ tạo mặt phẳng 3D: ba điểm, điểm + vector pháp tuyến, vector pháp tuyến + dịch chuyển, mặt phẳng song song, mặt phẳng vuông góc<br />
+Chế độ tạo hình chữ nhật 3D: điểm góc trên trái + hướng + kích thước, điểm trung tâm + hướng + kích thước<br />
+Chế độ tạo hình tròn 3D: ba điểm, mặt phẳng + bán kính, vector pháp tuyến + tâm + bán kính, vector + dịch chuyển + bán kính, góc nghiêng + xoay + tâm + bán kính, góc nghiêng + xoay + dịch chuyển + bán kính<br />
+Chế độ tạo khối hộp: tâm + hướng chiều dài/rộng/cao + kích thước, hệ tọa độ + kích thước<br />
+Chế độ tạo hình trụ: tạo theo điểm, tạo theo đường<br />
+Chế độ tạo hình cầu: tâm + bán kính, tâm + điểm trên mặt cầu
+</td>
 </tr>
 <tr>
-<td> 三维点获取方式     </td>
-<td> 引用：引用其他工具的输出结果；拾取：使用交互式的方式来选取三维点 </td>
+<td> Cách lấy điểm 3D </td>
+<td> Tham chiếu: sử dụng kết quả đầu ra từ công cụ khác; Chọn: dùng tương tác để chọn điểm 3D </td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu vào (giao diện nâng cao)</h4>
+
+<p>Các tham số giao diện nâng cao giống với cửa sổ thuộc tính, các tham số liên quan đến tương tác như sau：</p>
+
+<table>
+<thead>
+<tr>
+<th> Tên nút </th>
+<th> Mô tả tham số </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Chọn điểm 1/2/3 </td>
+<td> Trong giao diện nâng cao, nhấn vào vị trí tương ứng trên hình ảnh để lấy tọa độ điểm tại vị trí đó </td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Xuất điểm 3D </td>
+<td> Xuất tọa độ X, Y, Z của điểm 3D </td>
+</tr>
+<tr>
+<td> Xuất đường thẳng 3D </td>
+<td> Xuất đường thẳng 3D </td>
+</tr>
+<tr>
+<td> Vector hướng của đường thẳng </td>
+<td> Xuất vector hướng của đường thẳng 3D </td>
+</tr>
+<tr>
+<td> Xuất đoạn thẳng 3D </td>
+<td> Xuất đoạn thẳng 3D </td>
+</tr>
+<tr>
+<td> Vector hướng của đoạn thẳng </td>
+<td> Xuất vector hướng của đoạn thẳng 3D </td>
+</tr>
+<tr>
+<td> Mặt phẳng 3D </td>
+<td> Xuất mặt phẳng 3D </td>
+</tr>
+<tr>
+<td> Hình chữ nhật 3D </td>
+<td> Xuất hình chữ nhật 3D </td>
+</tr>
+<tr>
+<td> Hình tròn 3D </td>
+<td> Xuất hình tròn 3D </td>
+</tr>
+<tr>
+<td> Khối hộp </td>
+<td> Xuất khối hộp 3D </td>
+</tr>
+<tr>
+<td> Hình trụ </td>
+<td> Xuất hình trụ </td>
+</tr>
+<tr>
+<td> Hình cầu </td>
+<td> Xuất hình cầu </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
 
-<p>高级界面参数与属性窗口参数一致，交互相关参数如下：</p>
-
-<table>
-<thead>
-<tr>
-<th> 按钮名称           </th>
-<th> 参数描述                                                                                                                  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 点1/2/3拾取                                   </td>
-<td> 在高级界面图像中，相应位置点击即可拾取到该位置的点 </td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出三维点                                            </td>
-<td> 输出三维点的X、Y、Z坐标值 </td>
+<td> Xuất điểm 3D </td>
+<td> Xuất giá trị tọa độ X, Y, Z của điểm 3D </td>
 </tr>
 <tr>
-<td> 输出三维直线                               </td>
-<td> 输出三维直线 </td>
+<td> Xuất đường thẳng 3D </td>
+<td> 
+Đường thẳng 3D: StartPoint – tọa độ điểm bắt đầu khi tạo bằng hai điểm<br />
+Đường thẳng 3D: EndPoint – tọa độ điểm kết thúc khi tạo bằng hai điểm<br />
+Đường thẳng 3D: Direction – hướng của đường thẳng 3D<br />
+Đường thẳng 3D: Tilt – góc nghiêng của đường<br />
+Đường thẳng 3D: Rotation – góc xoay của đường<br />
+Đường thẳng 3D: Vector hướng – vector chỉ hướng của đường
+</td>
 </tr>
 <tr>
-<td> 输出直线方向向量 </td>
-<td> 输出三维直线的方向向量 </td>
+<td> Vector hướng của đường </td>
+<td> Xuất vector hướng của đường thẳng 3D </td>
 </tr>
 <tr>
-<td>输出三维线段        </td>
-<td>输出三维线段</td>
+<td> Xuất đoạn thẳng 3D </td>
+<td>
+Đoạn thẳng 3D: Pos – điểm bắt đầu của đoạn<br />
+Đoạn thẳng 3D: Dir – hướng của đoạn thẳng<br />
+Đoạn thẳng 3D: Tilt – góc nghiêng<br />
+Đoạn thẳng 3D: Rotation – góc xoay<br />
+Đường thẳng 3D: Vector hướng – vector hướng của đường
+</td>
 </tr>
 <tr>
-<td>输出线段方向向量 </td>
-<td>输出三维线段的方向向量</td>
+<td> Vector hướng đoạn thẳng </td>
+<td> Xuất vector hướng của đoạn thẳng 3D </td>
 </tr>
 <tr>
-<td>三维平面   </td>
-<td>输出三维平面</td>
+<td> Mặt phẳng 3D </td>
+<td>
+Mặt phẳng 3D: điểm mặt phẳng – điểm đi qua mặt phẳng được khớp<br />
+Mặt phẳng 3D: vector pháp tuyến – hướng vuông góc của mặt phẳng<br />
+Mặt phẳng 3D: độ lệch – khoảng cách giữa mặt phẳng và mặt phẳng gốc<br />
+Mặt phẳng 3D: góc nghiêng – góc giữa vector pháp tuyến và trục Z<br />
+Mặt phẳng 3D: góc xoay – góc giữa hình chiếu của vector pháp tuyến lên mặt phẳng XOY và trục X
+</td>
 </tr>
 <tr>
-<td>三维矩形     </td>
-<td>输出三维矩形</td>
+<td> Hình chữ nhật 3D </td>
+<td>
+Hình chữ nhật 3D: Center – tọa độ tâm hình chữ nhật (tọa độ 3D)<br />
+Hình chữ nhật 3D: NormalWidth – chiều rộng theo hướng vuông góc<br />
+Hình chữ nhật 3D: NormalHeight – chiều dài theo hướng vuông góc<br />
+Hình chữ nhật 3D: Width – chiều rộng<br />
+Hình chữ nhật 3D: Height – chiều dài
+</td>
 </tr>
 <tr>
-<td>三维圆形      </td>
-<td>输出三维圆形</td>
+<td> Hình tròn 3D </td>
+<td>
+Hình tròn 3D: Center – tọa độ tâm hình tròn<br />
+Hình tròn 3D: Normal – vector pháp tuyến của mặt phẳng chứa hình tròn<br />
+Hình tròn 3D: Radius – bán kính hình tròn
+</td>
 </tr>
 <tr>
-<td>长方体       </td>
-<td>输出三维立方体        </td>
+<td> Khối hộp </td>
+<td>
+Khối hộp 3D: Center – tọa độ tâm<br />
+Khối hộp 3D: NormalLength – chiều dài theo không gian<br />
+Khối hộp 3D: NormalWidth – chiều rộng theo không gian<br />
+Khối hộp 3D: NormalHeight – chiều cao theo không gian<br />
+Khối hộp 3D: Length – chiều dài của hình chiếu lên mặt phẳng theo hướng khối hộp<br />
+Khối hộp 3D: Width – chiều rộng của hình chiếu<br />
+Khối hộp 3D: Height – chiều cao của hình chiếu
+</td>
 </tr>
 <tr>
-<td>圆柱体</td>
-<td>输出圆柱体</td>
+<td> Hình trụ </td>
+<td>
+Hình trụ: Pos – tọa độ tâm hình trụ<br />
+Hình trụ: Normal – hướng của vector pháp tuyến đáy hình trụ<br />
+Hình trụ: Radius – bán kính đáy hình trụ
+</td>
 </tr>
 <tr>
-<td>球体  </td>
-<td>输出球体</td>
+<td> Hình cầu </td>
+<td>
+Hình cầu: Center – tọa độ tâm<br />
+Hình cầu: Radius – bán kính hình cầu
+</td>
+</tr>
+<tr>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ </td>
+</tr>
+<tr>
+<td> Thời gian thực thi </td>
+<td> Thời gian công cụ thực thi </td>
 </tr>
 </tbody>
 </table>
 
+<h2>6. Dự án mẫu</h2>
 
-<h4>输出参数（输出窗口）</h4>
+<p>Tham khảo: “\Samples\3D\点云\点云卡尺工具.gvp”.</p>
 
-<table>
-<thead>
-<tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 输出三维点                                            </td>
-<td> 输出三维点的X、Y、Z坐标值 </td>
-</tr>
-<tr>
-<td> 输出三维直线                               </td>
-<td> 三维直线：StartPoint，两点式生成直线时起始点三维坐标值<br />三维直线：EndPoint，两点式生成直线时终止点三维坐标值<br />三维直线：Direction，三维直线的方向<br />三维直线：Tilt，直线倾斜角<br />三维直线：Rotation，直线旋转角<br />三维直线：方向向量，直线的方向向量 </td>
-</tr>
-<tr>
-<td> 输出直线方向向量 </td>
-<td> 输出三维直线的方向向量； </td>
-</tr>
-<tr>
-<td>输出三维线段        </td>
-<td>三维线段：Pos，三维线段的起始点<br />三维线段：Dir，三维线段的方向<br />三维线段：Tilt，三维线段倾斜角<br />三维线段：Rotation，三维线段的旋转角<br />三维直线：方向向量，直线的方向向量</td>
-</tr>
-<tr>
-<td>输出线段方向向量 </td>
-<td>输出三维线段的方向向量</td>
-</tr>
-<tr>
-<td>三维平面   </td>
-<td>三维平面：平面点，拟合平面经过的点<br />三维平面：法向量，拟合平面的法向量<br />三维平面：偏移量，拟合平面相对于零平面的偏移量<br />三维平面：倾斜角，拟合平面法向量与Z轴的夹角<br />三维平面：旋转角，拟合平面法向量在XOY平面的投影向量与X轴的夹角</td>
-</tr>
-<tr>
-<td>三维矩形     </td>
-<td>三维矩形：Center,三维平面中心坐标(三维坐标)<br />三维矩形：NormalWidth，矩形平面的宽度<br />三维矩形：NormalHeight，矩形平面的长度<br />三维矩形：Width，矩形平面的宽度<br />三维矩形：Height，矩形平面的长度</td>
-</tr>
-<tr>
-<td>三维圆形      </td>
-<td>三维圆形：Center，三维圆形圆心三维坐标<br />三维圆形：Normal，三维圆形平面的法向量<br />三维圆形：Radius，三维圆形的半径</td>
-</tr>
-<tr>
-<td>长方体       </td>
-<td>三维立方体：Center，三维立方体的中心坐标<br />三维立方体：NormalLength，三维立方体空间上的长度<br />三维立方体：NormalWidht，三维立方体空间上的宽度<br />三维立方体：NormalHeight，三维立方体空间上的高度<br />三维立方体：Length，三维立方体在沿立方体方向上的投影矩形的长度<br />三维立方体：Width，三维立方体在沿立方体方向上的投影矩形的宽度<br />三维立方体：Height，三维立方体在沿立方体方向上的投影矩形的高度        </td>
-</tr>
-<tr>
-<td>圆柱体</td>
-<td>圆柱体：Pos，圆柱体中心位置的三维坐标<br />圆柱体：Normal，圆柱体底部平面法向量的方向<br />圆柱体：Radius，圆柱体中圆形半径</td>
-</tr>
-<tr>
-<td>球体  </td>
-<td>球体：Center，球体球心的三维坐标<br />球体：Radius，球体的半径</td>
-</tr>
-<tr>
-<td> 执行结果         </td>
-<td> 工具执行结果                                               </td>
-</tr>
-<tr>
-<td> 执行时间         </td>
-<td> 工具执行时间                                               </td>
-</tr>
-</tbody>
-</table>
+<h2>7. Ghi chú đặc biệt</h2>
 
-
-<h2>6.示例工程</h2>
-
-<p>参见“\Samples\3D\点云\点云卡尺工具.gvp”。</p>
-
-<h2>7.特殊说明</h2>
-
-<h3>原理说明</h3>
+<h3>Giải thích nguyên lý</h3>
 
 <ul>
-<li><h3>7.1 三维直线生成原理：</h3></li>
+<li><h3>7.1 Nguyên lý tạo đường thẳng 3D：</h3></li>
 </ul>
 
 

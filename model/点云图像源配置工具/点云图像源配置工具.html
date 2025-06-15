@@ -16,116 +16,113 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云图像源配置工具</h1>
+<h1>Công Cụ Cấu Hình Nguồn Ảnh Điểm Mây</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng Quan Chức Năng</h2>
 
-<p>​ 点云图像源配置工具主要是根据输入的三个点云图像以及索引，输出索引值对应的点云图像。</p>
+<p>​ Công cụ cấu hình nguồn ảnh điểm mây chủ yếu dùng để xuất ảnh điểm mây tương ứng theo chỉ số được nhập từ ba ảnh điểm mây và chỉ mục chỉ định.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch Bản Ứng Dụng</h2>
 
-<p>​ 在3D测量中，经常会存在不同工位采集点云图像，而处理流程完全一致的情况，那么需要点云图像源配置切换不同工位的采集图像，进而达到共用处理流程的作用。</p>
+<p>​ Trong đo lường 3D, thường có tình huống nhiều trạm làm việc thu thập ảnh điểm mây nhưng quy trình xử lý là giống nhau. Khi đó cần cấu hình nguồn ảnh điểm mây để chuyển đổi giữa các ảnh thu thập từ các trạm nhằm tái sử dụng cùng một quy trình xử lý.</p>
 
-<h2>3. 使用向导</h2>
+<h2>3. Hướng Dẫn Sử Dụng</h2>
 
 <ul>
-<li><h4>添加工具</h4></li>
+<li><h4>Thêm công cụ</h4></li>
 </ul>
-
 
 <p><img src="media/GcCloudSourceConfigTool_3_1.png" alt="" /></p>
 
-<p><imgnote>图3_1 点云图像源配置工具流程</imgnote></p>
+<p><imgnote>Hình 3_1 Quy trình công cụ cấu hình nguồn ảnh điểm mây</imgnote></p>
 
 <ul>
-<li><h4>参数设置</h4>
+<li><h4>Cài đặt tham số</h4>
 
 <ul>
-<li>① 数据链中点云图像源1、2、3，根据需要分别设置；</li>
-<li>② 数据链中图像源索引设置，默认索引为1；</li>
+<li>① Trong chuỗi dữ liệu, cấu hình ảnh điểm mây nguồn 1, 2, 3 theo nhu cầu;</li>
+<li>② Thiết lập chỉ số ảnh nguồn trong chuỗi dữ liệu, chỉ số mặc định là 1;</li>
 </ul>
 </li>
 </ul>
 
+<h2>4. Vấn Đề Thường Gặp</h2>
 
-<h2>4. 常见问题</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>5. Mô Tả Tham Số</h2>
 
-<h2>5. 参数说明</h2>
-
-<h4>输入参数（参数链）</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 点云图像源1 </td>
-<td> 图像数据来源1，最多支持3个图像源，可以是点云文件夹，点云文件，3D图像采集工具等点云文件           </td>
-</tr>
-<tr>
-<td> 点云图像源2                                       </td>
-<td> 图像数据来源2，同上                    </td>
-</tr>
-<tr>
-<td> 点云图像源3 </td>
-<td> 图像数据来源3，同上 </td>
-</tr>
-<tr>
-<td> 图像源索引 </td>
-<td> 输出的索引值范围为1~3，默认值为1                                                                    </td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>输出参数（参数链）</h4>
+<h4>Tham Số Đầu Vào (Chuỗi Tham Số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
+<th> Tên tham số           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云图像 </td>
-<td> 按照索引值输出对应点云图像 </td>
+<td> Ảnh điểm mây nguồn 1 </td>
+<td> Nguồn dữ liệu ảnh 1, hỗ trợ tối đa 3 nguồn ảnh, có thể là thư mục điểm mây, tệp điểm mây, công cụ thu thập ảnh 3D, v.v. </td>
+</tr>
+<tr>
+<td> Ảnh điểm mây nguồn 2 </td>
+<td> Nguồn dữ liệu ảnh 2, tương tự như trên </td>
+</tr>
+<tr>
+<td> Ảnh điểm mây nguồn 3 </td>
+<td> Nguồn dữ liệu ảnh 3, tương tự như trên </td>
+</tr>
+<tr>
+<td> Chỉ số nguồn ảnh </td>
+<td> Giá trị chỉ mục xuất ra nằm trong khoảng 1~3, mặc định là 1 </td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham Số Đầu Ra (Chuỗi Tham Số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云图像                                            </td>
-<td> 按照索引值输出对应点云图像 </td>
-</tr>
-<tr>
-<td> 执行结果 </td>
-<td> 工具执行结果 </td>
-</tr>
-<tr>
-<td> 执行时间           </td>
-<td> 工具执行时间                                               </td>
+<td> Ảnh điểm mây xuất ra </td>
+<td> Xuất ảnh điểm mây tương ứng với chỉ số đã cho </td>
 </tr>
 </tbody>
 </table>
+
+<h4>Tham Số Đầu Ra (Cửa Sổ Đầu Ra)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh điểm mây xuất ra </td>
+<td> Xuất ảnh điểm mây tương ứng với chỉ số đã cho </td>
+</tr>
+<tr>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ </td>
+</tr>
+<tr>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ </td>
+</tr>
+</tbody>
+</table>
+
 
 
 <h2>6. 示例工程</h2>
