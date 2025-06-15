@@ -16,211 +16,214 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>3D相机相关知识</h1>
+<h1>Kiến thức liên quan đến Camera 3D</h1>
 
-<h2>1. 基本情况</h2>
+<h2>1. Thông tin cơ bản</h2>
 
-<p>目前 VISIONAsswmbly（后文简称 VA）软件中支持了许多厂商的相机，下文将对各种相机的兼容情况做以说明。</p>
+<p>Hiện tại phần mềm VISIONAssembly (gọi tắt là VA) hỗ trợ nhiều loại camera từ các nhà sản xuất khác nhau. Dưới đây là mô tả về khả năng tương thích của từng loại camera.</p>
 
-<h3>1.1 软件支持相机说明</h3>
+<h3>1.1 Giới thiệu các loại camera được phần mềm hỗ trợ</h3>
 
-<p>VA 软件中现在支持的3D相机种类如下表所示，详细信息可以参考：<strong>附录/支持3D相机列表</strong></p>
+<p>Hiện tại, phần mềm VA hỗ trợ các loại camera 3D như bảng dưới đây. Thông tin chi tiết có thể tham khảo tại: <strong>Phụ lục / Danh sách camera 3D được hỗ trợ</strong></p>
 
 <table>
 <thead>
 <tr>
-<th> 相机类型 </th>
-<th> 厂商           </th>
-<th> 物理接口 </th>
-<th> 支持型号     </th>
-<th> sdk版本     </th>
-<th> 固件版本 </th>
+<th> Loại camera </th>
+<th> Nhà sản xuất </th>
+<th> Giao diện vật lý </th>
+<th> Mẫu được hỗ trợ </th>
+<th> Phiên bản SDK </th>
+<th> Phiên bản firmware </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 线激光   </td>
-<td> SmartRay       </td>
-<td> 网口     </td>
-<td> 多数型号     </td>
-<td> 5.5.0.91    </td>
-<td> 5.1.1.3  </td>
+<td> Laser tuyến tính </td>
+<td> SmartRay </td>
+<td> Cổng mạng </td>
+<td> Hầu hết các mẫu </td>
+<td> 5.5.0.91 </td>
+<td> 5.1.1.3 </td>
 </tr>
 <tr>
-<td>          </td>
-<td> 深视SSZN       </td>
-<td> 网口     </td>
-<td> 部分型号     </td>
-<td> 3.3.2.45    </td>
+<td> </td>
+<td> SSZN (ShenShi) </td>
+<td> Cổng mạng </td>
+<td> Một số mẫu </td>
+<td> 3.3.2.45 </td>
 <td> 3.3.2.54 </td>
 </tr>
 <tr>
-<td>          </td>
-<td> FocalSpec      </td>
-<td> 网口     </td>
-<td> 所有型号     </td>
-<td>             </td>
-<td>          </td>
+<td> </td>
+<td> FocalSpec </td>
+<td> Cổng mạng </td>
+<td> Tất cả mẫu </td>
+<td> </td>
+<td> </td>
 </tr>
 <tr>
-<td>          </td>
-<td> LMI            </td>
-<td> 网口     </td>
-<td> 多数型号     </td>
+<td> </td>
+<td> LMI </td>
+<td> Cổng mạng </td>
+<td> Hầu hết các mẫu </td>
 <td> FSSDK_2.0.1 </td>
-<td>          </td>
+<td> </td>
 </tr>
 <tr>
-<td>          </td>
-<td> Keyence        </td>
-<td> 网口     </td>
-<td> LJ-X系列     </td>
-<td>             </td>
-<td>          </td>
+<td> </td>
+<td> Keyence </td>
+<td> Cổng mạng </td>
+<td> Dòng LJ-X </td>
+<td> </td>
+<td> </td>
 </tr>
 <tr>
-<td>          </td>
-<td> 翌视LVM        </td>
-<td> 网口     </td>
-<td> 所有型号     </td>
-<td>             </td>
-<td>          </td>
+<td> </td>
+<td> LVM (YiShi) </td>
+<td> Cổng mạng </td>
+<td> Tất cả mẫu </td>
+<td> </td>
+<td> </td>
 </tr>
 <tr>
-<td>          </td>
-<td> 海康HIK        </td>
-<td> 网口     </td>
-<td> DP系列       </td>
-<td>             </td>
-<td>          </td>
+<td> </td>
+<td> HIK (Hải Khẩu) </td>
+<td> Cổng mạng </td>
+<td> Dòng DP </td>
+<td> </td>
+<td> </td>
 </tr>
 <tr>
-<td> 结构光   </td>
-<td> LCubor         </td>
-<td> 网口     </td>
-<td> 所有型号     </td>
-<td> 1.8.4       </td>
-<td>          </td>
+<td> Ánh sáng cấu trúc </td>
+<td> LCubor </td>
+<td> Cổng mạng </td>
+<td> Tất cả mẫu </td>
+<td> 1.8.4 </td>
+<td> </td>
 </tr>
 <tr>
-<td>          </td>
-<td> 如本RVC        </td>
-<td> 网口/U3  </td>
-<td> 所有型号     </td>
-<td> 1.6.2       </td>
-<td>          </td>
+<td> </td>
+<td> RVC (Như Bản) </td>
+<td> Cổng mạng / USB3 </td>
+<td> Tất cả mẫu </td>
+<td> 1.6.2 </td>
+<td> </td>
 </tr>
 <tr>
-<td>          </td>
-<td> 盛相MPS        </td>
-<td> 网口/U3  </td>
-<td> M、S系列     </td>
-<td>             </td>
-<td>          </td>
+<td> </td>
+<td> MPS (ShengXiang) </td>
+<td> Cổng mạng / USB3 </td>
+<td> Dòng M, S </td>
+<td> </td>
+<td> </td>
 </tr>
 <tr>
-<td> 点激光   </td>
-<td> 海博森Hypersen </td>
-<td> 网口/U3  </td>
-<td> HPS-2000系列 </td>
-<td>             </td>
-<td>          </td>
+<td> Laser điểm </td>
+<td> Hypersen (Hải Bá Sơn) </td>
+<td> Cổng mạng / USB3 </td>
+<td> Dòng HPS-2000 </td>
+<td> </td>
+<td> </td>
 </tr>
 </tbody>
 </table>
 
 
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+
+<blockquote><p><span style="color:red"><strong>Chú ý</strong></span></p>
 
 <ul>
-<li><p>关于LCubor相机：1.6.9版本与1.8.2版本硬件、SDK存在比较大的变动，项目中核实一下硬件版本信息，使用对应的驱动和VA软件，避免报错、闪退等。</p></li>
-<li><p>目前VA 6.5版本软件支持1.8.3以上的相机驱动，使用6.5软件时请确认现场使用的LCubor相机驱动版本。</p></li>
-<li><p>SmarRay相机固件版本有5.0.1.1、5.1.1.3、Plus5.1.1.3（ECCO95+系列）、5.2.0.2版本，95/95+系列相机固件版本建议使用5.1.1.3版本；</p></li>
+<li><p>Về camera LCubor: Phiên bản 1.6.9 và 1.8.2 có sự thay đổi lớn về phần cứng và SDK. Trong dự án cần xác nhận thông tin phần cứng, sử dụng driver và phần mềm VA tương ứng để tránh lỗi, crash, v.v.</p></li>
+<li><p>Hiện tại phần mềm VA phiên bản 6.5 hỗ trợ driver camera từ phiên bản 1.8.3 trở lên, khi sử dụng phần mềm 6.5 vui lòng xác nhận phiên bản driver của camera LCubor đang sử dụng tại hiện trường.</p></li>
+<li><p>Firmware của camera SmartRay có các phiên bản: 5.0.1.1, 5.1.1.3, Plus5.1.1.3 (dòng ECCO95+), 5.2.0.2. Đối với camera dòng 95/95+, khuyến nghị sử dụng phiên bản 5.1.1.3.</p></li>
 </ul>
 </blockquote>
 
-<h2>2. 3D相机选型介绍</h2>
+<h2>2. Giới thiệu lựa chọn mẫu camera 3D</h2>
 
-<p><strong>选型案例：</strong></p>
+<p><strong>Ví dụ lựa chọn:</strong></p>
 
-<p><strong>产品描述：</strong></p>
+<p><strong>Mô tả sản phẩm:</strong></p>
 
-<p>​        屏蔽罩尺寸23×12mm, 需要在屏蔽罩的边缘上选择15个点测量其平面度，边缘宽度为0.5mm，物料高度为2mm，检测要求：相关性&lt;0.015mm，物料共2种材质：均为低反光材料，CT&lt;4s；同时客户也希望后期可以兼顾其他大尺寸（最大窄边：14mm）；工作距离大于20mm。产品的图片如图：
+<p>​        Kích thước vỏ chắn: 23×12mm, cần chọn 15 điểm ở mép vỏ chắn để đo độ phẳng, chiều rộng mép là 0.5mm, chiều cao vật liệu là 2mm. Yêu cầu kiểm tra: độ tương quan &lt;0.015mm. Có hai loại vật liệu, đều có độ phản xạ thấp, CT &lt; 4s; đồng thời khách hàng cũng mong muốn có thể dùng chung cho sản phẩm có kích thước lớn hơn (cạnh hẹp lớn nhất: 14mm); khoảng cách làm việc > 20mm. Hình ảnh sản phẩm như sau:
 <img src="media/1660644462271.png" alt="" /></p>
 
-<p><strong>产品信息和产品图片，关键点梳理如下：</strong></p>
+<p><strong>Thông tin sản phẩm và hình ảnh sản phẩm, các điểm mấu chốt được tổng hợp như sau:</strong></p>
 
-<p>1.产品尺寸为23×12×2mm；</p>
+<p>1. Kích thước sản phẩm: 23×12×2mm;</p>
 
-<p>2.物料分两种材质：均为低反光材料；</p>
+<p>2. Hai loại vật liệu: đều có độ phản xạ thấp;</p>
 
-<p>3.CT&lt;4s;</p>
+<p>3. CT &lt; 4s;</p>
 
-<p>4.相关性&lt;0.015mm；</p>
+<p>4. Độ tương quan &lt; 0.015mm;</p>
 
-<p>5.触发方式暂时不知;</p>
+<p>5. Phương thức trigger chưa xác định;</p>
 
-<p>6.客户希望后期可以兼顾其他大尺寸（最大窄边：14mm）；</p>
+<p>6. Khách mong muốn có thể dùng cho sản phẩm lớn hơn (cạnh hẹp nhất tối đa 14mm);</p>
 
-<p>7.工作距离大于20mm。</p>
+<p>7. Khoảng cách làm việc > 20mm.</p>
 
-<p><strong>因此，根据上述技术点，选型分析如下：</strong></p>
+<p><strong>Dựa trên các điểm kỹ thuật trên, phân tích lựa chọn như sau:</strong></p>
 
-<p>根据产品尺寸，如果以14mm的长度方向扫描，现在所有的相机都能满足测量要求。</p>
+<p>Dựa trên kích thước sản phẩm, nếu quét theo chiều dài 14mm thì tất cả các camera hiện tại đều đáp ứng yêu cầu đo lường.</p>
 
-<p>1.考虑到屏蔽罩边缘宽度为0.1mm, ，根据工程应用经验，至少要5~10个像素宽度的面积才能稳定测量，因此，建议的XY向分辨率都为0.01mm，可以选择：SSZN SR8020、KEYENCE LJ-X8020、LMI： Gocator 2512/2510，</p>
+<p>1. Xét đến chiều rộng mép vỏ chắn là 0.1mm, theo kinh nghiệm ứng dụng kỹ thuật, cần ít nhất 5~10 pixel chiều rộng để đo ổn định, do đó khuyến nghị độ phân giải theo XY là 0.01mm. Có thể chọn: SSZN SR8020, KEYENCE LJ-X8020, LMI: Gocator 2512/2510,</p>
 
-<p>2.考虑到工作距离必须大于20mm，则排除LMI： Gocator 2512/2510；</p>
+<p>2. Xét đến yêu cầu khoảng cách làm việc > 20mm, loại bỏ LMI: Gocator 2512/2510;</p>
 
-<p>3.SSZN SR8020以及KEYENCE LJ-X8020测量相关性&lt;0.01mm;考虑到竞争以及其他因素关系我们最终选择SSZN SR8020.
+<p>3. SSZN SR8020 và KEYENCE LJ-X8020 đều có độ tương quan đo &lt; 0.01mm; xét đến yếu tố cạnh tranh và các yếu tố khác, cuối cùng lựa chọn SSZN SR8020.
 <img src="media/1660644462272.png" alt="" />
 ​</p>
 
-<p>综上所述，使用者可以根据以上选型思路针对自己的实际项目来完成3D相机的相关选型；
-同时，为了帮助大家更好的评估3D项目，我们制作了3D项目收集表，可以根据里边要求的收集项来综合判断3D相机的选型；
+<p>Tổng kết lại, người dùng có thể dựa vào cách tư duy chọn thiết bị ở trên để lựa chọn camera 3D phù hợp với dự án thực tế của mình;
+đồng thời, để hỗ trợ mọi người đánh giá dự án 3D tốt hơn, chúng tôi đã chuẩn bị bảng thu thập thông tin dự án 3D, có thể dựa theo nội dung thu thập trong đó để đánh giá tổng thể và chọn camera 3D;
 <img src="media/1660644462273.png" alt="" /></p>
 
-<p>​         接下来的部分我们将对VA-3D模块中所支持的不同厂商的相机技术产生进行一一介绍，使用者可结合该技术参数参考选型部分的内容来完成相机的选型工作。</p>
+<p>​         Phần tiếp theo, chúng tôi sẽ giới thiệu từng loại công nghệ của các dòng camera khác nhau được VA-3D hỗ trợ, người dùng có thể kết hợp thông tin kỹ thuật này với phần lựa chọn ở trên để hoàn thành việc chọn thiết bị.</p>
 
-<h2>3. 3D相机技术参数</h2>
+<h2>3. Thông số kỹ thuật camera 3D</h2>
 
-<h3>3.1 SmartRay相机技术参数</h3>
+<h3>3.1 Thông số kỹ thuật camera SmartRay</h3>
 
-<p>SmartRay相机视场参数如下图所示</p>
+<p>Thông số vùng nhìn (FOV) của camera SmartRay như hình dưới:</p>
 
 <p><img src="media/1660646933980.png" alt="" /></p>
 
-<blockquote><p><span style = "color:red"><strong>注意</strong></span></p>
+<blockquote><p><span style = "color:red"><strong>Chú ý</strong></span></p>
 
-<p><strong>FOV</strong>：相机视场宽度，可以理解为：相机可以拍摄的物体的最大宽度，超出这个宽度的部分相机无法拍摄到。</p></blockquote>
+<p><strong>FOV</strong>: Vùng nhìn của camera, hiểu đơn giản là: chiều rộng tối đa mà camera có thể chụp được; phần vượt quá chiều rộng này sẽ không nằm trong khung hình.</p></blockquote>
 
-<p>VA软件支持的SmartRay ECCO95/95+系列相机技术参数如下表</p>
+<p>Thông số kỹ thuật dòng camera SmartRay ECCO95/95+ được VA hỗ trợ như bảng dưới:</p>
 
 <p><img src="media/1660647109725.png" alt="" /></p>
 
-<p>VA中SmartRay相机采集CT参考表，单位：<em>ms</em></p>
+<p>Bảng tham khảo thời gian chụp CT của camera SmartRay trong VA, đơn vị: <em>ms</em></p>
 
 <p><img src="media/1660647229290.png" alt="" /></p>
 
-<blockquote><p><span style = "color:red"><strong>注意</strong></span></p>
+<blockquote><p><span style = "color:red"><strong>Chú ý</strong></span></p>
 
-<p>表中每个CT是10次采集CT统计的结果；</p></blockquote>
+<p>CT trong bảng là kết quả thống kê của 10 lần chụp;</p></blockquote>
 
-<p>使用者也可以通过下边的方式简单估算VA中图像采集CT，</p>
+<p>Người dùng cũng có thể ước lượng nhanh thời gian chụp ảnh CT trong VA như sau,</p>
 
-<p>VA中图像采集耗时CT<img src="media/wps1605.tmp.jpg" alt="" /></p>
+<p>Thời gian chụp ảnh CT trong VA <img src="media/wps1605.tmp.jpg" alt="" /></p>
 
-<blockquote><p><span style = "color:red"><strong>注意</strong></span></p>
+<blockquote><p><span style = "color:red"><strong>Chú ý</strong></span></p>
 
-<p><img src="media/wps1606.tmp.jpg" alt="" />与轮廓数有关</p>
+<p><img src="media/wps1606.tmp.jpg" alt="" /> Có liên quan đến số lượng biên dạng</p>
+</blockquote>
+
 
 <table>
 <thead>
 <tr>
-<th> 扫描频率  </th>
-<th> CT       </th>
-<th> 扫描频率  </th>
-<th> CT        </th>
+<th> Tần số quét </th>
+<th> CT </th>
+<th> Tần số quét </th>
+<th> CT </th>
 </tr>
 </thead>
 <tbody>
@@ -228,7 +231,7 @@
 <td> 1000 <em>Hz</em> </td>
 <td> 500 <em>ms</em> </td>
 <td> 5000 <em>Hz</em> </td>
-<td> 900 <em>ms</em>  </td>
+<td> 900 <em>ms</em> </td>
 </tr>
 <tr>
 <td> 2000 <em>Hz</em> </td>
@@ -244,59 +247,58 @@
 </tr>
 <tr>
 <td> 4000 <em>Hz</em> </td>
-<td> 800 <em>ms</em>  </td>
+<td> 800 <em>ms</em> </td>
 <td> 8000 <em>Hz</em> </td>
 <td> 1200 <em>ms</em> </td>
 </tr>
 </tbody>
 </table>
 
+<p>Thời gian chụp ảnh chính xác <strong>CT</strong> cần xác định theo tình hình thực tế khi thu thập hình ảnh.</p></blockquote>
 
-<p>精确的图像采集<strong>CT</strong>以实际采集情况确定。</p></blockquote>
+<h3>3.2 Thông số kỹ thuật camera SSZN</h3>
 
-<h3>3.2 SSZN相机技术参数</h3>
-
-<p>VA软件支持的SSZN SR6000系列相机技术参数</p>
+<p>Thông số kỹ thuật của dòng camera SSZN SR6000 được VA hỗ trợ</p>
 
 <p><img src="media/1660647758819.png" alt="" /></p>
 
-<p>VA软件支持的SSZN SR7000/8000系列相机技术参数</p>
+<p>Thông số kỹ thuật của dòng camera SSZN SR7000/8000 được VA hỗ trợ</p>
 
 <p><img src="media/1660647782994.png" alt="" />
 <img src="media/1660647782995.png" alt="" /></p>
 
-<h3>3.3 LMI FOCALSPEC相机技术参数</h3>
+<h3>3.3 Thông số kỹ thuật camera LMI FOCALSPEC</h3>
 
-<p>VA软件支持的LMI FOCALSPEC系列相机技术参数</p>
+<p>Thông số kỹ thuật của dòng camera LMI FOCALSPEC được VA hỗ trợ</p>
 
 <p><img src="media/1660647810498.png" alt="" /></p>
 
 <p><img src="media/1660647868797.png" alt="" /></p>
 
-<h3>3.4 KEYENCE相机技术参数</h3>
+<h3>3.4 Thông số kỹ thuật camera KEYENCE</h3>
 
-<p>VA软件支持的KEYENCE相机技术参数表</p>
+<p>Bảng thông số kỹ thuật camera KEYENCE được VA hỗ trợ</p>
 
 <p><img src="media/1660647948537.png" alt="1660647948537" />
 <img src="media/1660647948538.png" alt="1660647948537" /></p>
 
-<h3>3.5 Lcubor 3D相机技术参数</h3>
+<h3>3.5 Thông số kỹ thuật camera Lcubor 3D</h3>
 
-<p>VA软件支持的Lcubor 3D相机技术参数表</p>
+<p>Bảng thông số kỹ thuật camera Lcubor 3D được VA hỗ trợ</p>
 
 <p><img src="media/1660648036202.png" alt="" /></p>
 
-<h3>3.6 Hypersen相机技术参数</h3>
+<h3>3.6 Thông số kỹ thuật camera Hypersen</h3>
 
-<p>VA软件支持的海博森相机技术参数</p>
+<p>Thông số kỹ thuật của camera Hypersen (Hải Bác Sơn) được VA hỗ trợ</p>
 
 <p><img src="media/1660648079843.png" alt="" /></p>
 
 <p><img src="media/1660648093874.png" alt="" /></p>
 
-<h3>3.7 RVC相机技术参数</h3>
+<h3>3.7 Thông số kỹ thuật camera RVC</h3>
 
-<p>VA软件支持的如本相机技术参数</p>
+<p>Thông số kỹ thuật camera RVC (Như Bổn) được VA hỗ trợ</p>
 
 <p><img src="media/RVC_I%E7%B3%BB%E5%88%97.png" alt="" /></p>
 
@@ -304,9 +306,9 @@
 
 <p><img src="media/RVC_G%E7%B3%BB%E5%88%97.png" alt="" /></p>
 
-<h3>3.8 LVM相机技术参数</h3>
+<h3>3.8 Thông số kỹ thuật camera LVM</h3>
 
-<p>VA软件支持的翌视相机技术参数</p>
+<p>Thông số kỹ thuật camera LVM (Dự Thị) được VA hỗ trợ</p>
 
 <p><img src="media/LVM2000.png" alt="" /></p>
 
@@ -318,14 +320,15 @@
 
 <p><img src="media/LVM3700.png" alt="" /></p>
 
-<h3>3.9 MPS相机技术参数</h3>
+<h3>3.9 Thông số kỹ thuật camera MPS</h3>
 
-<p>VA软件支持盛相M、S028、S162三个系列：</p>
+<p>VA hỗ trợ ba dòng camera MPS: M, S028, S162</p>
 
 <p><img src="media/MPS%E5%85%A8%E7%B3%BB%E5%88%97.png" alt="" /></p>
 
-<h3>3.10 HIK相机技术参数</h3>
+<h3>3.10 Thông số kỹ thuật camera HIK</h3>
 
 <p><img src="media/HIK_2000.png" alt="" /></p>
 
 <p><img src="media/HIK_3000.png" alt="" /></p>
+

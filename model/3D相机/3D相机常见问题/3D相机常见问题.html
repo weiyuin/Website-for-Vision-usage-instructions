@@ -16,153 +16,144 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>3D相机常见问题</h1>
+<h1>Vấn đề thường gặp với Camera 3D</h1>
 
-<h3><strong>问题1：连不上相机</strong></h3>
+<h3><strong>Vấn đề 1: Không kết nối được camera</strong></h3>
 
-<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+<p><span style = "color:blue"><strong>Mô tả hiện tượng:</strong></span></p>
 
-<p>VA软件无法连接相机设备；</p>
+<p>Phần mềm VA không thể kết nối với thiết bị camera;</p>
 
-<p><span style = "color:blue"><strong>排查方向：</strong></span></p>
+<p><span style = "color:blue"><strong>Hướng kiểm tra:</strong></span></p>
 
 <ol>
-<li><p>检查相机电源连接是否正常（观察LED指示灯）</p></li>
-<li><p>安装对应的相机驱动软件</p></li>
-<li><p>关闭windows防火墙</p>
+<li><p>Kiểm tra kết nối nguồn điện của camera có bình thường không (quan sát đèn LED chỉ thị)</p></li>
+<li><p>Cài đặt phần mềm trình điều khiển (driver) tương ứng với loại camera</p></li>
+<li><p>Tắt tường lửa của Windows</p>
 
 <p><img src="media/%E9%98%B2%E7%81%AB%E5%A2%99.png" alt="" /></p></li>
-<li><p>检查本地IP与相机IP是否在同一网段，多个相机连接时建议一个相机对应一个IP段（192.168.<span style = "color:blue"><strong>XXX</strong></span>.XXX）</p>
+<li><p>Kiểm tra IP máy tính có cùng dải mạng với IP của camera hay không. Khi kết nối nhiều camera, nên đặt mỗi camera trên một dải IP riêng (192.168.<span style = "color:blue"><strong>XXX</strong></span>.XXX)</p>
 
 <p><img src="media/3_1.png" alt="" /></p></li>
-<li><p>确认相机是否已被驱动软件控制占用，部分相机在相机驱动软件打开的情况下，无法再用VA软件连接控制</p></li>
+<li><p>Xác nhận camera có đang bị phần mềm điều khiển chiếm quyền sử dụng không. Một số camera khi đã được mở bằng phần mềm điều khiển sẽ không thể được kết nối từ phần mềm VA</p></li>
 </ol>
 
+<h3><strong>Vấn đề 2: Ở chế độ kích hoạt IO, đôi khi camera không chụp ảnh</strong></h3>
 
-<h3><strong>问题2：IO触发模式下相机偶尔出现不采集现象</strong></h3>
+<p><span style = "color:blue"><strong>Mô tả hiện tượng:</strong></span></p>
 
-<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+<p>Trong giao diện điều khiển camera 3D của phần mềm VA có thể hiển thị hình ảnh bình thường, nhưng sau khi PLC gửi tín hiệu thì camera không chụp được hình.</p>
 
-<p>在VA软件3D相机控制界面中可以看到正常图像，但是PLC发出信号后相机没有采集图像。</p>
-
-<p><span style = "color:blue"><strong>排查方向：</strong></span></p>
+<p><span style = "color:blue"><strong>Hướng kiểm tra:</strong></span></p>
 
 <ol>
-<li><p>IO触发接线是否松动、断裂等</p></li>
-<li><p>排查相机的触发时序，确保采集工具运行后，PLC再给IO触发，</p>
+<li><p>Kiểm tra dây tín hiệu IO có bị lỏng, đứt hay không</p></li>
+<li><p>Kiểm tra thứ tự kích hoạt (trigger sequence) của camera. Đảm bảo công cụ thu thập đã hoạt động rồi PLC mới gửi tín hiệu IO</p>
 
 <p><img src="media/%E9%87%87%E9%9B%86%E6%97%B6%E5%BA%8F.png" alt="" /></p></li>
 </ol>
 
-
-<p>  针对采集时序问题，给出以下两种解决方法：
-  a) CT允许的情况下可让PLC端在IO信号输出前添加延时；
-  b) 添加相机与PLC触发时许通讯即可解决该问题，如下图；</p>
+<p>Đối với vấn đề thứ tự kích hoạt, có hai giải pháp như sau:<br/>
+a) Nếu thời gian chu kỳ (CT) cho phép, có thể thêm thời gian trễ ở đầu ra IO của PLC;<br/>
+b) Thiết lập giao tiếp tín hiệu phản hồi giữa camera và PLC để đảm bảo đúng thời điểm, như hình bên dưới:</p>
 
 <p><img src="media/3_2.png" alt="" /></p>
 
 <ol>
-<li>边沿触发模式下，继电器吸合瞬间会有类似干扰出现，导致部分相机把此信号当干扰信号给屏蔽了。给出以下两种解决方法：</li>
+<li>Ở chế độ kích hoạt cạnh (edge-trigger), khi rơ-le đóng/mở tức thời có thể xuất hiện nhiễu, khiến một số camera hiểu nhầm là tín hiệu nhiễu và bỏ qua. Có hai hướng xử lý:</li>
 </ol>
 
+<p>a) Đổi sang đầu ra IO loại quang cách ly (optocoupler) để loại bỏ nhiễu;<br/>
+b) Một số camera (như SSZN) hỗ trợ chế độ kích hoạt mức điện áp (level-trigger), có thể đổi từ kích hoạt cạnh sang kích hoạt mức.</p>
 
-<p>  a) 更换为光耦端子输出IO信号以解决信号干扰问题</p>
+<h3><strong>Vấn đề 3: Kích hoạt bằng encoder gặp lỗi</strong></h3>
 
-<p>  b) 部分相机(如sszn)支持电平模式触发，可将边沿模式触发更改为电平模式触发</p>
+<p><span style = "color:blue"><strong>Hiện tượng 1:</strong></span></p>
 
-<h3><strong>问题3：编码器触发异常</strong></h3>
+<p>Công cụ thu thập 3D bị giật, đứng, không có hình ảnh đầu ra</p>
 
-<p><span style = "color:blue"><strong>现象1：</strong></span></p>
-
-<p>3D采集工具卡顿、停滞，无图像输出</p>
-
-<p><span style = "color:blue"><strong>排查方向：</strong></span></p>
+<p><span style = "color:blue"><strong>Hướng kiểm tra:</strong></span></p>
 
 <ol>
-<li><p>排查编码器接线是否正确，接线是否有松动、断裂等异常情况，下图为sszn相机编码器触发接线图</p>
+<li><p>Kiểm tra dây kết nối encoder có đúng không, có bị lỏng hoặc đứt không. Hình dưới là sơ đồ dây kết nối encoder cho camera SSZN</p>
 
 <p><img src="media/%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="" /></p></li>
-<li><p>确认分频大小是否合适，编码器触发频率不能大于相机设定的扫描频率</p></li>
-<li><p>增加轴扫描的行程，确保扫描行程内给出了足够的编码器信号</p></li>
+<li><p>Xác nhận tỉ lệ chia xung (dividing ratio) có phù hợp không. Tần số kích hoạt của encoder không được vượt quá tần số quét của camera</p></li>
+<li><p>Tăng hành trình trục quét, đảm bảo trong hành trình đó có đủ tín hiệu encoder được gửi</p></li>
 </ol>
 
+<p><span style = "color:blue"><strong>Hiện tượng 2:</strong></span></p>
 
-<p><span style = "color:blue"><strong>现象2：</strong></span></p>
+<p>Công cụ thu thập kết thúc sớm, hình ảnh đầu ra bị lỗi</p>
 
-<p>3D采集工具提前结束，且输出图像异常</p>
-
-<p><span style = "color:blue"><strong>排查方向：</strong></span></p>
+<p><span style = "color:blue"><strong>Hướng kiểm tra:</strong></span></p>
 
 <ol>
-<li>确认分频大小是否合适，编码器触发频率不能大于相机设定的扫描频率</li>
-<li>一般为干扰信号误触发导致，需排查信号干扰屏蔽情况。屏蔽线接地、套上磁环防止受到其他线路的电磁干扰；编码器信号明线接入时，尽量不要引线太长；</li>
+<li>Xác nhận tỉ lệ chia xung có phù hợp – tần số kích hoạt của encoder không được vượt quá tần số quét của camera</li>
+<li>Thường là do tín hiệu nhiễu gây ra. Cần kiểm tra việc chống nhiễu của tín hiệu: nối đất dây chắn, thêm lõi từ để chống nhiễu điện từ từ dây khác. Nếu tín hiệu encoder được đưa vào qua dây trần, thì nên hạn chế độ dài dây dẫn</li>
 </ol>
 
+<h3><strong>Vấn đề 4: Thời gian thu thập quá dài</strong></h3>
 
-<h3><strong>问题4：采集耗时过大</strong></h3>
+<p><span style = "color:blue"><strong>Mô tả hiện tượng:</strong></span></p>
 
-<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+<p>Công cụ thu thập 3D thực thi chậm, không đáp ứng được tần số yêu cầu</p>
 
-<p>3D采集工具执行时间较长，与设定的频率不符</p>
-
-<p><span style = "color:blue"><strong>排查方向：</strong></span></p>
+<p><span style = "color:blue"><strong>Hướng kiểm tra:</strong></span></p>
 
 <ol>
-<li>检查网线以及传感头与控制器线缆的连接情况，必要时可更换线缆测试</li>
-<li>查看采集时电脑内存占用是否过高</li>
-<li>检查网卡巨型帧设置，需开启巨型帧并调至最大</li>
-<li>检查SSZN相机的数据通信设置，相机高频采集时需将数据大小设置为16bit</li>
+<li>Kiểm tra cáp mạng và dây kết nối giữa đầu cảm biến với bộ điều khiển. Nếu cần có thể thay dây thử nghiệm</li>
+<li>Xem xét mức sử dụng bộ nhớ RAM của máy tính khi đang thu thập</li>
+<li>Kiểm tra cấu hình khung jumbo (Jumbo Frame) của card mạng – cần bật và đặt mức tối đa</li>
+<li>Kiểm tra cấu hình truyền dữ liệu của camera SSZN – khi chụp tốc độ cao, nên thiết lập dữ liệu là 16bit</li>
 </ol>
-
 
 <p><img src="media/16bit.png" alt="" /></p>
 
-<p>5.若还未排查到问题，查看采集日志导出，进一步分析根因。日志存放路径：&hellip;\LusterCache\3DCameraLog\3DCameraLog_20XX-XX-XX.txt</p>
+<p>5. Nếu chưa tìm ra nguyên nhân, có thể xem log thu thập để phân tích chi tiết. Đường dẫn log: …\LusterCache\3DCameraLog\3DCameraLog_20XX-XX-XX.txt</p>
 
-<h3><strong>问题5：相机经常掉线，出现参数丢失的现象</strong></h3>
+<h3><strong>Vấn đề 5: Camera thường xuyên bị mất kết nối, mất tham số</strong></h3>
 
-<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+<p><span style = "color:blue"><strong>Mô tả hiện tượng:</strong></span></p>
 
-<p>相机经常掉线，出现参数丢失的现象</p>
+<p>Camera thường xuyên bị mất kết nối, tham số cài đặt bị mất</p>
 
-<p><span style = "color:blue"><strong>排查方向：</strong></span></p>
-
-<ol>
-<li>确认相机供电是否稳定，尽量配上独立电源。相机电源与PLC供电板相连，会出现电压不稳定导致的经常性掉线问题！</li>
-</ol>
-
-
-<h3>问题6：图像被拉长或者压缩</h3>
-
-<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
-
-<p>视图中采集的图像被拉长或者压缩</p>
-
-<p><span style = "color:blue"><strong>排查方向：</strong></span></p>
-
-<p>通常是使用仿射采样后出现，确认相机Y分辨率、图像分辨率是否异常</p>
-
-<p>排查相机供电情况，是否会经常掉线</p>
-
-<h3><strong>问题7：采集成功，但是没图像</strong></h3>
-
-<p><span style = "color:blue"><strong>现象1：</strong></span></p>
-
-<p>采集工具执行成功，但输出图像全黑</p>
-
-<p><span style = "color:blue"><strong>排查方向：</strong></span></p>
+<p><span style = "color:blue"><strong>Hướng kiểm tra:</strong></span></p>
 
 <ol>
-<li>有没有出激光</li>
-<li>曝光是否过低，</li>
-<li>产品是否在相机工作范围内</li>
+<li>Xác nhận nguồn cấp cho camera có ổn định hay không. Nên dùng nguồn riêng biệt. Nếu camera dùng chung nguồn với bảng cấp nguồn PLC có thể gây sụt áp dẫn đến mất kết nối</li>
 </ol>
 
+<h3>Vấn đề 6: Hình ảnh bị kéo dãn hoặc nén lại</h3>
 
-<p><span style = "color:blue"><strong>现象2：</strong></span></p>
+<p><span style = "color:blue"><strong>Mô tả hiện tượng:</strong></span></p>
 
-<p>采集工具执行成功，但输出视图完全没有图像</p>
+<p>Hình ảnh hiển thị trong giao diện bị kéo dài hoặc nén lại</p>
 
-<p><span style = "color:blue"><strong>排查方向：</strong></span></p>
+<p><span style = "color:blue"><strong>Hướng kiểm tra:</strong></span></p>
 
-<p>确认相机驱动权限是否过期</p>
+<p>Thường xuất hiện sau khi dùng lấy mẫu affine (affine sampling). Kiểm tra độ phân giải trục Y hoặc tổng thể độ phân giải ảnh có bất thường không</p>
+
+<p>Kiểm tra nguồn cấp của camera xem có hay bị ngắt kết nối không</p>
+
+<h3><strong>Vấn đề 7: Thu thập thành công nhưng không có hình ảnh</strong></h3>
+
+<p><span style = "color:blue"><strong>Hiện tượng 1:</strong></span></p>
+
+<p>Công cụ thu thập thực thi thành công, nhưng hình ảnh đầu ra toàn màu đen</p>
+
+<p><span style = "color:blue"><strong>Hướng kiểm tra:</strong></span></p>
+
+<ol>
+<li>Có phát tia laser hay không</li>
+<li>Giá trị phơi sáng có quá thấp không</li>
+<li>Sản phẩm có nằm trong phạm vi làm việc của camera không</li>
+</ol>
+
+<p><span style = "color:blue"><strong>Hiện tượng 2:</strong></span></p>
+
+<p>Công cụ thu thập thực thi thành công, nhưng không có hình ảnh nào hiển thị</p>
+
+<p><span style = "color:blue"><strong>Hướng kiểm tra:</strong></span></p>
+
+<p>Xác nhận quyền truy cập driver của camera có bị hết hạn không</p>
