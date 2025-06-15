@@ -16,211 +16,208 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>3D格式转化</h1>
+<h1>Công Cụ Chuyển Đổi Định Dạng 3D</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng Quan Chức Năng</h2>
 
-<p>​     3D格式转化工具能够将点云数据（asc、csv)转换为深度图像，或将深度图像转换为点云图像（ply、pcd、csv、txt）。</p>
+<p>Công cụ chuyển đổi định dạng 3D có thể chuyển đổi dữ liệu đám mây điểm (asc, csv) thành ảnh độ sâu, hoặc chuyển đổi ảnh độ sâu thành ảnh đám mây điểm (ply, pcd, csv, txt).</p>
 
 <p><img src="media/Gc3DFormatConvertTool_1_1.png" alt="" /></p>
 
-<p><imgnote>图1_1 3D格式转换工具</imgnote></p>
+<p><imgnote>Hình 1_1: Công cụ chuyển đổi định dạng 3D</imgnote></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Bối Cảnh Ứng Dụng</h2>
 
-<p>​     在3D工程项目中，使用到视觉软件未兼容的传感器采集的3D数据格式，因此就需要使用到一个对目前使用最广泛的3D数据格式转换为视觉软件可以兼容的深度图像模式的工具，方便视觉软件对前场硬件的兼容性，另外视觉软件使用的深度图像导出，传递给其他软件使用，因此需要一个工具将深度图像转换成目前被广泛采用的3D数据格式。</p>
+<p>Trong các dự án kỹ thuật 3D, đôi khi phải sử dụng dữ liệu 3D thu được từ các cảm biến mà phần mềm thị giác hiện tại không hỗ trợ trực tiếp. Do đó, cần một công cụ chuyển đổi các định dạng 3D phổ biến sang ảnh độ sâu – định dạng mà phần mềm thị giác có thể xử lý được. Đồng thời, cũng cần một công cụ để chuyển ảnh độ sâu xuất ra từ phần mềm thị giác thành các định dạng 3D phổ biến để chia sẻ với các phần mềm khác.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên Lý Hoạt Động</h2>
 
-<p>​     3D格式转换工具的主要功能是：</p>
+<p>Chức năng chính của công cụ chuyển đổi định dạng 3D bao gồm:</p>
 
 <ul>
-<li><p>对输入的深度图像进行指定点云格式的转换，输出点云文件；</p></li>
-<li><p>对输入的点云文件，按照不同传感器型号的深度图像参数进行转换，转换为深度图像；</p></li>
+<li><p>Chuyển đổi ảnh độ sâu đầu vào thành tệp đám mây điểm ở định dạng được chỉ định;</p></li>
+<li><p>Chuyển đổi tệp đám mây điểm đầu vào thành ảnh độ sâu, dựa trên các thông số ảnh độ sâu tương ứng với từng loại cảm biến;</p></li>
 </ul>
 
 
-<h2>4. 使用向导</h2>
+
+<h2>4. Hướng Dẫn Sử Dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入点云文件，执行点云转深度图转换</h4></li>
+<li><h4>Thêm công cụ, nạp tệp đám mây điểm, thực hiện chuyển đổi từ đám mây điểm sang ảnh độ sâu</h4></li>
 </ul>
-
 
 <p><img src="media/Gc3DFormatConvertTool_4_1.png" alt="" /></p>
 
-<p><imgnote>图4_1 3D格式转换工具</imgnote></p>
+<p><imgnote>Hình 4_1: Công cụ chuyển đổi định dạng 3D</imgnote></p>
 
-<p><strong>读取csv文件路径</strong></p>
+<p><strong>Đường dẫn tệp CSV</strong></p>
+<p>Chọn đường dẫn đến tệp dữ liệu đám mây điểm 3D định dạng CSV cần chuyển đổi;</p>
 
-<p>​     选择需要转换的CSV格式3D点云文件路径；</p>
+<p><strong>Đường dẫn tệp ASC</strong></p>
+<p>Chọn đường dẫn đến tệp dữ liệu đám mây điểm 3D định dạng ASC cần chuyển đổi;</p>
 
-<p><strong>读取asc文件路径</strong></p>
+<p><strong>Cảm biến</strong></p>
+<p>Chọn thương hiệu cảm biến, chủ yếu để thiết lập các tham số điều khiển phù hợp. Hiện hỗ trợ bốn thương hiệu cảm biến: SmartRay, Keyence, LMI và Precitec;</p>
 
-<p>​     选择需要转换的ASC格式3D点云文件路径；</p>
+<p><strong>Mẫu cảm biến</strong></p>
+<p>Khi chọn cảm biến là SmartRay, có thể tiếp tục chọn mẫu cảm biến cụ thể để dễ dàng thiết lập các tham số ảnh độ sâu mặc định;</p>
 
-<p><strong>传感器</strong></p>
+<p><strong>Số dòng bỏ qua</strong></p>
+<p>Khi chọn cảm biến là Keyence, nếu tệp cần chuyển đổi có chứa thông tin độ phân giải thì có thể bỏ qua các dòng chứa thông tin này; nếu không có, thì đặt số dòng bỏ qua là 0;</p>
 
-<p>​     选择传感器的品牌，主要是为了设置传感器驱动参数，目前支持（SmartRay、Keyence、LMI、Precitec）四种传感器品牌；</p>
-
-<p><strong>传感器型号</strong></p>
-
-<p>​     选择传感器为SmartRay时，可以设置传感器的型号，主要是为了便捷设置默认深度图像参数；</p>
-
-<p><strong>跳过行数</strong></p>
-
-<p>​     选择传感器为Keyence时，如果待转换文件中带有分辨率等参数，可以选择跳过传感器分辨率信息号；不带有分辨率信息选择跳过行数为0；</p>
-
-<p><strong>深度图像参数</strong></p>
-
-<p>​     设置深度图像的XYZ三个方向分辨率和XYZ三个方向偏移量；</p>
+<p><strong>Tham số ảnh độ sâu</strong></p>
+<p>Thiết lập độ phân giải theo ba trục XYZ và độ lệch theo ba trục XYZ cho ảnh độ sâu;</p>
 
 <ul>
-<li><h4>添加工具，载入图像，执行深度图转点云转换</h4></li>
+<li><h4>Thêm công cụ, nạp ảnh, thực hiện chuyển đổi từ ảnh độ sâu sang đám mây điểm</h4></li>
 </ul>
 
 
 <p><img src="media/Gc3DFormatConvertTool_4_2.png" alt="" /></p>
 
-<p><imgnote>图4_2 3D格式转换工具</imgnote></p>
+<p><imgnote>Hình 4_2: Công cụ chuyển đổi định dạng 3D</imgnote></p>
 
-<p> <strong>输出点云格式</strong></p>
+<p><strong>Định dạng đám mây điểm đầu ra</strong></p>
 
-<p>​     选择深度图像要转换的点云文件的类型，分为CSV、PCD、PLY、TXT。</p>
+<p>Chọn định dạng tệp đám mây điểm được xuất ra từ ảnh độ sâu. Các định dạng bao gồm: CSV, PCD, PLY, TXT.</p>
 
-<p><strong>输出PLY格式</strong></p>
+<p><strong>Định dạng PLY đầu ra</strong></p>
 
-<p>​     当输出点云格式设置为PLY时，PLY分为两种格式：ASCII、BINARY可以选择输出。</p>
+<p>Khi định dạng đầu ra là PLY, có thể chọn giữa hai định dạng: ASCII (dạng văn bản) và BINARY (dạng nhị phân).</p>
 
-<p><strong>是否覆盖</strong></p>
+<p><strong>Ghi đè hay không</strong></p>
 
-<p>​     可以设置要转换保存的点云文件是否覆盖掉上次转换的结果，选择“是”，输出点云文件名称会是工具名称，下次执行会重新刷新；选择“否”，输出的点云文件名称会是工具名称+日期时间，下次执行会生成新的点云文件；</p>
+<p>Có thể thiết lập việc tệp đám mây điểm xuất ra có ghi đè lên kết quả trước đó hay không.  
+Nếu chọn “Có”, tệp xuất ra sẽ có tên giống tên công cụ và sẽ được ghi đè khi chạy lại.  
+Nếu chọn “Không”, tên tệp xuất ra sẽ là tên công cụ + ngày giờ, mỗi lần chạy sẽ tạo tệp mới.</p>
 
-<p><strong>保存点云文件路径</strong></p>
+<p><strong>Đường dẫn lưu tệp đám mây điểm</strong></p>
 
-<p>​     选择点云文件保存的文件夹路径；</p>
+<p>Chọn thư mục nơi lưu trữ tệp đám mây điểm sau khi chuyển đổi.</p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Vấn Đề Thường Gặp</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>6. 参数说明</h2>
+<h2>6. Giải Thích Tham Số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham Số Đầu Vào</h4>
+
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                 </th>
-<th> 参数说明                                                     </th>
+<th> Tên tham số                 </th>
+<th> Giải thích tham số                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 转换类型                 </td>
-<td> 包括两种，深度图转点云和点云转深度图                         </td>
+<td> Loại chuyển đổi             </td>
+<td> Gồm hai loại: chuyển ảnh độ sâu sang đám mây điểm và ngược lại </td>
 </tr>
 <tr>
-<td> 读取3D文件路径           </td>
-<td> 点云转深度图像时，设置点云文件路径                           </td>
+<td> Đường dẫn tệp 3D cần đọc    </td>
+<td> Khi chuyển đám mây điểm thành ảnh độ sâu, cần đặt đường dẫn tệp đám mây điểm </td>
 </tr>
 <tr>
-<td> 相机品牌                 </td>
-<td> 设置传感器厂商名称                                           </td>
+<td> Thương hiệu camera         </td>
+<td> Thiết lập tên hãng sản xuất cảm biến                           </td>
 </tr>
 <tr>
-<td> 跳过行数                 </td>
-<td> 设置跳过文件中分辨路信息行数                                 </td>
+<td> Số dòng bỏ qua             </td>
+<td> Thiết lập số dòng thông tin cần bỏ qua trong tệp                </td>
 </tr>
 <tr>
-<td> 缩放比例                 </td>
-<td> 点云文件单位和转换后像素单位之间的转换比例                   </td>
+<td> Tỷ lệ thu phóng            </td>
+<td> Tỷ lệ chuyển đổi giữa đơn vị trong tệp đám mây điểm và đơn vị pixel sau chuyển đổi </td>
 </tr>
 <tr>
-<td> 图像分辨率               </td>
-<td> 深度图像的XYZ三个方向分辨率                                  </td>
+<td> Độ phân giải ảnh           </td>
+<td> Độ phân giải theo ba trục XYZ của ảnh độ sâu                    </td>
 </tr>
 <tr>
-<td> 手动设置偏移参数         </td>
-<td> 是：可以手动修改深度图像参数；否：使用传感器型号默认参数     </td>
+<td> Thiết lập thủ công tham số dịch chuyển </td>
+<td> Có: cho phép chỉnh sửa thủ công các tham số ảnh độ sâu; Không: dùng mặc định theo model cảm biến </td>
 </tr>
 <tr>
-<td> 图像偏移                 </td>
-<td> 深度图像的XYZ三个方向偏移量                                  </td>
+<td> Dịch chuyển ảnh            </td>
+<td> Giá trị dịch chuyển theo ba trục XYZ của ảnh độ sâu             </td>
 </tr>
 <tr>
-<td> 输出点云格式             </td>
-<td> 设置输出保存点云的格式，包括csv、pcd、ply和txt格式           </td>
+<td> Định dạng đám mây điểm đầu ra </td>
+<td> Thiết lập định dạng đám mây điểm đầu ra: csv, pcd, ply hoặc txt </td>
 </tr>
 <tr>
-<td> 输出PLY格式              </td>
-<td> 设置输出的PLY文件的ASCII、BINARY类型                         </td>
+<td> Định dạng PLY đầu ra       </td>
+<td> Thiết lập kiểu tệp PLY đầu ra: ASCII hoặc BINARY               </td>
 </tr>
 <tr>
-<td> 自动命名                 </td>
-<td> 保存的文件是否自动命名，是：系统自动命名；否：数据链接输入文件名 </td>
+<td> Tự động đặt tên             </td>
+<td> Có: hệ thống tự động đặt tên tệp; Không: dùng tên từ liên kết dữ liệu đầu vào </td>
 </tr>
 <tr>
-<td> 是否覆盖上次文件         </td>
-<td> 设置转换点云文件是否覆盖上次文件                             </td>
+<td> Ghi đè tệp trước đó        </td>
+<td> Thiết lập có ghi đè tệp đám mây điểm được chuyển đổi lần trước hay không </td>
 </tr>
 <tr>
-<td> 点云保存路径             </td>
-<td> 设置转换点云文件的保存文件夹路径                             </td>
+<td> Đường dẫn lưu đám mây điểm </td>
+<td> Thiết lập thư mục lưu trữ tệp đám mây điểm sau khi chuyển đổi  </td>
 </tr>
 <tr>
-<td> 文件名                   </td>
-<td> 深度图转点云模式下：设置保存点云文件的名称                   </td>
+<td> Tên tệp                   </td>
+<td> Khi chuyển ảnh độ sâu sang đám mây điểm: thiết lập tên tệp xuất ra </td>
 </tr>
 <tr>
-<td> 文件路径与文件名         </td>
-<td> 深度图像转点云图像时，输出保存点云文件的路径与文件名         </td>
+<td> Đường dẫn và tên tệp       </td>
+<td> Khi chuyển ảnh độ sâu sang đám mây điểm: thiết lập đường dẫn và tên tệp đầu ra </td>
 </tr>
 <tr>
-<td> 输入深度图像（图像窗口） </td>
-<td> 显示输入的深度图像                                           </td>
+<td> Ảnh độ sâu đầu vào (cửa sổ hình ảnh) </td>
+<td> Hiển thị ảnh độ sâu đầu vào                                    </td>
 </tr>
 <tr>
-<td> 输入深度图像（数据链）   </td>
-<td> 用来获取需要比对的深度图像参数                               </td>
+<td> Ảnh độ sâu đầu vào (chuỗi dữ liệu) </td>
+<td> Dùng để lấy các tham số của ảnh độ sâu cần so sánh              </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                 </th>
-<th> 参数说明                                   </th>
+<th> Tên tham số                   </th>
+<th> Giải thích tham số                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出深度图像             </td>
-<td> 输出转换后的深度图像大小、深度图像参数     </td>
+<td> Ảnh độ sâu đầu ra             </td>
+<td> Kích thước ảnh độ sâu sau khi chuyển đổi và các tham số liên quan </td>
 </tr>
 <tr>
-<td> 文件路径与文件名         </td>
-<td> 深度图转点云模式下，显示保存文件路径和名称 </td>
+<td> Đường dẫn và tên tệp         </td>
+<td> Ở chế độ chuyển đổi từ ảnh độ sâu sang đám mây điểm, hiển thị đường dẫn và tên tệp đã lưu </td>
 </tr>
 <tr>
-<td> 执行结果                 </td>
-<td> 工具执行结果                               </td>
+<td> Kết quả thực thi               </td>
+<td> Kết quả thực thi của công cụ                         </td>
 </tr>
 <tr>
-<td> 执行时间                 </td>
-<td> 工具执行时间                               </td>
+<td> Thời gian thực thi             </td>
+<td> Thời gian công cụ thực thi                         </td>
 </tr>
 <tr>
-<td> 输出深度图像（图像窗口） </td>
-<td> 显示转换后的深度图像                       </td>
+<td> Ảnh độ sâu đầu ra (cửa sổ hình ảnh) </td>
+<td> Hiển thị ảnh độ sâu sau khi chuyển đổi            </td>
 </tr>
 <tr>
-<td> 输出深度图像（数据链）   </td>
-<td> 输出转换后的深度图像大小、深度图像参数     </td>
+<td> Ảnh độ sâu đầu ra (chuỗi dữ liệu) </td>
+<td> Kích thước ảnh độ sâu sau khi chuyển đổi và các tham số liên quan </td>
 </tr>
 </tbody>
 </table>

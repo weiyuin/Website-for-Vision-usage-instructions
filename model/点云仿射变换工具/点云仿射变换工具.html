@@ -16,154 +16,155 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云仿射变换工具</h1>
+<h1>Công Cụ Biến Đổi Affine Đám Mây Điểm</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>点云仿射变换工具主要用来对输入深度图像进行仿射变换，输出仿射变换后图，以便对其进行后续处理。支持的仿射变换操作有：平移、旋转、缩放。</p>
+<p>Công cụ biến đổi affine đám mây điểm chủ yếu được dùng để thực hiện biến đổi affine trên ảnh độ sâu đầu vào, xuất ra ảnh sau khi biến đổi để phục vụ xử lý tiếp theo. Các thao tác affine hỗ trợ bao gồm: tịnh tiến, xoay, và thu phóng.</p>
 
 <p><img src="media/wps3.jpg" alt="img" /><img src="media/wps4.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 输入图像</imgnote> <imgnote>(b) 输出图像</imgnote>
-<imgnote>图1 点云仿射变换工具示意图</imgnote></p>
+<p><imgnote>(a) Ảnh đầu vào</imgnote> <imgnote>(b) Ảnh đầu ra</imgnote>
+<imgnote>Hình 1 Minh họa công cụ biến đổi affine đám mây điểm</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称    </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số    </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口    </td>
-<td> 旋转角度类型                                                   </td>
-<td> 逆时针将原始深度图像旋转一定角度，分为5种角度类型，0度、90度、180度、270度和自定义角度。 </td>
+<td> Cửa sổ thuộc tính </td>
+<td> Loại góc xoay </td>
+<td> Xoay ảnh độ sâu gốc theo góc ngược chiều kim đồng hồ, có 5 kiểu góc: 0 độ, 90 độ, 180 độ, 270 độ và góc tùy chỉnh. </td>
 </tr>
 <tr>
 <td></td>
-<td> 旋转角度    </td>
-<td> 用户自定义的旋转角度，当旋转类型为“自定义角度”开启。                                                                       </td>
+<td> Góc xoay </td>
+<td> Góc xoay do người dùng tự thiết lập, chỉ áp dụng khi chọn “góc tùy chỉnh”. </td>
 </tr>
 <tr>
 <td></td>
-<td> 镜像类型    </td>
-<td> 对原始深度图像进行镜像操作，分为4种类型，无、水平、垂直和水平垂直。                                                               </td>
+<td> Loại phản chiếu </td>
+<td> Áp dụng phản chiếu cho ảnh độ sâu gốc, gồm 4 kiểu: không phản chiếu, phản chiếu ngang, phản chiếu dọc và cả ngang + dọc. </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否平移    </td>
-<td> 选择“是”，则在旋转、镜像之后进行平移变换。                                                                                 </td>
+<td> Có tịnh tiến không </td>
+<td> Chọn “Có” để thực hiện tịnh tiến sau xoay và phản chiếu. </td>
 </tr>
 <tr>
 <td></td>
-<td> X方向平移量 </td>
-<td> 平移变换中，X方向的平移量，单位为像素。                                                                                    </td>
+<td> Độ tịnh tiến theo trục X </td>
+<td> Mức độ dịch chuyển theo hướng X trong phép tịnh tiến, đơn vị pixel. </td>
 </tr>
 <tr>
 <td></td>
-<td> Y方向平移量 </td>
-<td> 平移变换中，Y方向的平移量，单位为像素。                                                                                    </td>
+<td> Độ tịnh tiến theo trục Y </td>
+<td> Mức độ dịch chuyển theo hướng Y trong phép tịnh tiến, đơn vị pixel. </td>
 </tr>
 <tr>
 <td></td>
-<td> 像素填充类型    </td>
-<td> 分为3种，不填充、固定值填充和邻近值填充，即通过填充类型，对深度图像仿射变换后的无效区域进行填充。当平移或自定义角度旋转变换启用时开启。                                                               </td>
+<td> Kiểu điền pixel </td>
+<td> Có 3 kiểu: không điền, điền giá trị cố định, điền theo giá trị lân cận. Dùng để lấp đầy vùng không hợp lệ sau biến đổi affine. Kích hoạt khi có xoay tùy chỉnh hoặc tịnh tiến. </td>
 </tr>
 <tr>
 <td></td>
-<td> 像素填充值  </td>
-<td> 填充类型为固定值填充时有效，取值范围[-32768,32767]。                                                                       </td>
+<td> Giá trị điền pixel </td>
+<td> Có hiệu lực khi kiểu điền là “giá trị cố định”, giá trị trong khoảng [-32768, 32767]. </td>
 </tr>
 <tr>
 <td></td>
-<td> 开启缩放    </td>
-<td> 选择“是”，则在旋转、镜像、平移之后进行缩放变换。                                                                           </td>
+<td> Bật thu phóng </td>
+<td> Chọn “Có” để thực hiện thu phóng sau các biến đổi khác. </td>
 </tr>
 <tr>
 <td></td>
-<td> X方向缩放系数   </td>
-<td> X方向缩放系数，取值范围[0.01,2]。                                                                                          </td>
+<td> Hệ số thu phóng X </td>
+<td> Hệ số thu phóng theo trục X, giá trị nằm trong khoảng [0.01, 2]. </td>
 </tr>
 <tr>
 <td></td>
-<td> Y方向缩放系数   </td>
-<td> Y方向缩放系数，取值范围[0.01,2]                                                                                            </td>
+<td> Hệ số thu phóng Y </td>
+<td> Hệ số thu phóng theo trục Y, giá trị nằm trong khoảng [0.01, 2]. </td>
 </tr>
 <tr>
-<td> 图像窗口    </td>
-<td> 输入深度图像                                                 </td>
-<td> 显示待变换的深度图像。                                       </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Ảnh độ sâu đầu vào </td>
+<td> Hiển thị ảnh độ sâu cần biến đổi. </td>
 </tr>
 <tr>
-<td> 数据链      </td>
-<td> 输入深度图像                                                 </td>
-<td> 输入待变换的深度图像。                                       </td>
+<td> Chuỗi dữ liệu </td>
+<td> Ảnh độ sâu đầu vào </td>
+<td> Ảnh độ sâu cần được thực hiện biến đổi. </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无     </td>
-<td> 无                                                   </td>
+<td> Giao diện nâng cao </td>
+<td> Không có </td>
+<td> Không có </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                           </th>
+<th>Phân loại </th>
+<th>Tên tham số </th>
+<th>Mô tả tham số                                                                                                           </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出深度图像                                                 </td>
-<td> 输出深度图像的长宽和像素大小，以及深度数据参数。     </td>
+<td> Cửa sổ giám sát </td>
+<td> Ảnh độ sâu đầu ra </td>
+<td> Kích thước chiều dài, chiều rộng và độ phân giải của ảnh độ sâu đầu ra, cùng với các tham số dữ liệu độ sâu. </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                                                     </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ. </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                                                     </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ. </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输出深度图像                                                 </td>
-<td> 显示工具执行结果图像，同监视窗口的输出深度图像参数。 </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Ảnh độ sâu đầu ra </td>
+<td> Hiển thị ảnh kết quả thực thi của công cụ, giống với thông số ảnh độ sâu đầu ra trong cửa sổ giám sát. </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                       </td>
+<td> Kết quả thực thi </td>
+<td> Hiển thị kết quả thực thi của công cụ, nếu thành công sẽ hiển thị "OK", thất bại hiển thị "NG", giống với tham số kết quả thực thi trong cửa sổ giám sát. </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出深度图像                                                 </td>
-<td> 输出的旋转之后的深度图像，供其他工具使用。           </td>
+<td> Chuỗi dữ liệu </td>
+<td> Ảnh độ sâu đầu ra </td>
+<td> Ảnh độ sâu sau khi xoay được xuất ra để sử dụng cho các công cụ khác. </td>
 </tr>
 </tbody>
 </table>
 
+<h2>Giải thích chi tiết</h2>
 
-<h2>详细说明</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
 
 <h2>示例工程</h2>
 

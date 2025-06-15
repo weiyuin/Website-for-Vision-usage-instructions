@@ -16,120 +16,120 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>3D图像采集工具</h1>
+<h1>Công Cụ Thu Thập Ảnh 3D</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>用于与之相连的3D相机采集图像。</p>
+<p>Dùng để thu thập ảnh từ camera 3D được kết nối.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                                   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口         </td>
-<td> 相机名称                                                     </td>
-<td> 采集图像的3D相机的名称，又称序列号                         </td>
-</tr>
-<tr>
-<td></td>
-<td> 输出数据类型    </td>
-<td> 选择3D相机采集输出的数据类型，有输出深度图像、输出点云图像、全部输出三种类型可选         </td>
-</tr>
-<tr>
-<td></td>
-<td> 采集等待时间 </td>
-<td> -1为一直等待，大于-1为等待的时间，单位为毫秒              </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                   </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口     </td>
-<td> 点云图像   </td>
-<td> 采集到的点云图像，以及点云数据量             </td>
-</tr>
-<tr>
-<td>  </td>
-<td> 有效点索引 </td>
-<td> 相机采集点云图像的所有有效点索引号           </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Tên camera</td>
+<td>Tên của camera 3D dùng để thu ảnh, còn gọi là số sê-ri.</td>
 </tr>
 <tr>
 <td></td>
-<td> 深度图像   </td>
-<td> 深度图像的长宽和像素大小，以及深度数据参数 </td>
+<td>Loại dữ liệu đầu ra</td>
+<td>Chọn loại dữ liệu đầu ra từ camera 3D: có thể chọn ảnh độ sâu, ảnh đám mây điểm, hoặc cả hai.</td>
 </tr>
 <tr>
 <td></td>
-<td> 灰度图像   </td>
-<td> 灰度图像的长宽和像素大小                     </td>
-</tr>
-<tr>
-<td></td>
-<td> Snap发送完成标志 </td>
-<td> 当相机为Keyence且相机在线时输出，开始状态为false，当发送完成snap信号开始采集时，状态变为true </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果     </td>
-<td> 工具执行结果                                                                                             </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行时间     </td>
-<td> 工具执行时间                                                                                             </td>
-</tr>
-<tr>
-<td> 图像窗口     </td>
-<td> 深度图像                                                     </td>
-<td> 显示采集到的深度图像                         </td>
-</tr>
-<tr>
-<td></td>
-<td> 点云图像   </td>
-<td> 显示采集到的点云图像（Cloud视图）            </td>
-</tr>
-<tr>
-<td> 数据链       </td>
-<td> 点云图像   </td>
-<td> 采集到的点云图像 </td>
-</tr>
-<tr>
-<td></td>
-<td> 有效点索引 </td>
-<td> 相机采集点云图像的所有有效点索引号                                            </td>
-</tr>
-<tr>
-<td></td>
-<td> 深度图像   </td>
-<td> 相机采集到的深度图像                         </td>
-</tr>
-<tr>
-<td>          </td>
-<td> 灰度图像   </td>
-<td> 相机采集的灰度图像                           </td>
+<td>Thời gian chờ thu thập</td>
+<td>-1 nghĩa là luôn chờ, giá trị > -1 là thời gian chờ cụ thể (đơn vị: mili giây).</td>
 </tr>
 </tbody>
 </table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đám mây điểm</td>
+<td>Ảnh đám mây điểm được thu thập và số lượng điểm dữ liệu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chỉ số điểm hợp lệ</td>
+<td>Chỉ số của tất cả các điểm hợp lệ trong ảnh đám mây điểm từ camera.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh độ sâu</td>
+<td>Kích thước (chiều dài, chiều rộng), kích thước điểm ảnh, và dữ liệu độ sâu của ảnh độ sâu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh xám</td>
+<td>Kích thước và kích thước điểm ảnh của ảnh xám.</td>
+</tr>
+<tr>
+<td></td>
+<td>Cờ báo hiệu Snap gửi xong</td>
+<td>Chỉ áp dụng với camera Keyence đang online: ban đầu là false, khi gửi xong tín hiệu snap để bắt đầu thu ảnh thì chuyển thành true.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực hiện của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực hiện công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh độ sâu</td>
+<td>Hiển thị ảnh độ sâu đã thu thập.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đám mây điểm</td>
+<td>Hiển thị ảnh đám mây điểm đã thu thập (dạng xem Cloud).</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đám mây điểm</td>
+<td>Ảnh đám mây điểm thu được.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chỉ số điểm hợp lệ</td>
+<td>Chỉ số của tất cả các điểm hợp lệ trong ảnh đám mây điểm từ camera.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh độ sâu</td>
+<td>Ảnh độ sâu thu được từ camera.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh xám</td>
+<td>Ảnh xám thu được từ camera.</td>
+</tr>
+</tbody>
+</table>
+
 
 
 <h2>详细说明</h2>

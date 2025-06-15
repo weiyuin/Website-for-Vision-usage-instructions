@@ -16,280 +16,279 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>3D相机设置</h1>
+<h1>Cài đặt Camera 3D</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     3D相机设置工具能够对选择的3D相机采集相关常用参数进行设置，例如：曝光、相机有效ROI、采集图像行数等参数。</p>
+<p>​     Công cụ cài đặt Camera 3D cho phép thiết lập các tham số phổ biến liên quan đến việc chụp ảnh của camera 3D đã chọn, ví dụ: thời gian phơi sáng, vùng ROI hiệu dụng của camera, số dòng ảnh thu được, v.v.</p>
 
-<p>​     下图是3D相机设置工具常规使用流程：</p>
+<p>​     Hình dưới đây minh họa quy trình sử dụng thông thường của công cụ cài đặt Camera 3D:</p>
 
 <p><img src="media/Gc3DCameraSettingTool_1_1.png" alt="Gc3DCameraSettingTool_1_1" /></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>​     3D图像采集过程中，同一个相机，采集不同位置的图像过程中，可能要使用不同的相机采集参数，呈现出产品的不同特征，例如曝光、相机有效ROI、采集图像行数、是否使用开始拍照触发信号等相机可修改参数。</p>
+<p>​     Trong quá trình thu nhận ảnh 3D, cùng một camera nhưng khi chụp ảnh tại các vị trí khác nhau có thể cần sử dụng các tham số khác nhau nhằm thể hiện các đặc trưng khác nhau của sản phẩm, ví dụ: thời gian phơi sáng, ROI hiệu dụng, số dòng ảnh thu được, có sử dụng tín hiệu kích chụp ảnh hay không, v.v.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên lý hoạt động</h2>
 
-<p>​     3D相机设置工具通过获取选择的3D相机常用参数和工具属性栏参数进行对比，将不相等的属性栏参数通过3D相机设置API接口，写入相机。</p>
+<p>​     Công cụ cài đặt Camera 3D so sánh các tham số phổ biến lấy từ camera 3D đã chọn với các tham số trong bảng thuộc tính của công cụ, và ghi những tham số không trùng khớp vào camera thông qua giao diện API cài đặt camera 3D.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，相机参数设置</h4></li>
+<li><h4>Thêm công cụ, thiết lập tham số camera</h4></li>
 </ul>
-
 
 <p><img src="media/Gc3DCameraSettingTool_4_1.png" alt="Gc3DCameraSettingTool_4_1" /></p>
 
 <ul>
-<li><h4>相机设置完成，使用3D相机采集工具，获取图像</h4></li>
+<li><h4>Hoàn tất thiết lập camera, sử dụng công cụ chụp ảnh 3D để lấy ảnh</h4></li>
 </ul>
-
 
 <p><img src="media/Gc3DCameraSettingTool_4_2.png" alt="Gc3DCameraSettingTool_4_2" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Các vấn đề thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述                                                     </th>
-<th> 解决方法                                                     </th>
+<th> Mô tả hiện tượng </th>
+<th> Cách khắc phục </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 设置完成后，保存工程，重新打开工程，属性栏没有参数显示，或只有相机SN显示 </td>
-<td> 检查相机连接异常，重新连接相机                               </td>
+<td> Sau khi cài đặt xong, lưu dự án, mở lại dự án thì bảng thuộc tính không hiển thị tham số, hoặc chỉ hiển thị SN của camera </td>
+<td> Kiểm tra xem camera có bị ngắt kết nối không, thử kết nối lại camera </td>
 </tr>
 <tr>
-<td> 工具执行失败                                                 </td>
-<td> 检查参数是否合理、相机是否掉线、相机是否处于正常状态、参数文件路径是否存在 </td>
+<td> Công cụ thực thi thất bại </td>
+<td> Kiểm tra các tham số có hợp lý không, camera có bị mất kết nối không, trạng thái camera có bình thường không, và đường dẫn đến file tham số có tồn tại không </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
 
-<h4>输入参数</h4>
+<h2>6. Giải thích Tham Số</h2>
+
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称         </th>
-<th> 参数说明                                               </th>
+<th> Tên Tham Số         </th>
+<th> Mô Tả Tham Số                                         </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 相机名称         </td>
-<td> 输入的相机SN编号                                       </td>
+<td> Tên Camera          </td>
+<td> Mã số SN của camera được nhập                          </td>
 </tr>
 <tr>
-<td> 扫描行数_SR      </td>
-<td> 3D相机采集工具采集截止行数                             </td>
+<td> Số dòng quét_SR     </td>
+<td> Số dòng kết thúc thu nhận của công cụ camera 3D        </td>
 </tr>
 <tr>
-<td> 启用多ROI模式_SR </td>
-<td> 是：显示导入多ROI文件_SR；否：显示ROI设置参数；        </td>
+<td> Bật chế độ nhiều ROI_SR </td>
+<td> Có: Hiển thị tệp nhiều ROI đã nhập; Không: Hiển thị các tham số cài đặt ROI; </td>
 </tr>
 <tr>
-<td> 导入多ROI文件_SR </td>
-<td> 选择多ROI文件的路径                                    </td>
+<td> Nhập tệp nhiều ROI_SR </td>
+<td> Chọn đường dẫn tới tệp nhiều ROI                        </td>
 </tr>
 <tr>
-<td> 采集ROI原点X_SR  </td>
-<td> 相机采集范围ROI左上角原点X值                           </td>
+<td> Gốc ROI X_SR        </td>
+<td> Giá trị X tại góc trên bên trái của vùng ROI thu nhận   </td>
 </tr>
 <tr>
-<td> 采集ROI原点Y_SR  </td>
-<td> 相机采集范围ROI左上角原点Y值                           </td>
+<td> Gốc ROI Y_SR        </td>
+<td> Giá trị Y tại góc trên bên trái của vùng ROI thu nhận   </td>
 </tr>
 <tr>
-<td> 采集ROI宽度_SR   </td>
-<td> 相机有效采集范围ROI宽度                                </td>
+<td> Chiều rộng ROI_SR   </td>
+<td> Chiều rộng vùng ROI có hiệu lực của camera             </td>
 </tr>
 <tr>
-<td> 采集ROI高度_SR   </td>
-<td> 相机有效采集范围ROI高度                                </td>
+<td> Chiều cao ROI_SR    </td>
+<td> Chiều cao vùng ROI có hiệu lực của camera              </td>
 </tr>
 <tr>
-<td> 启用开始触发_SR  </td>
-<td> 开启/关闭开始触发条件                                  </td>
+<td> Bật kích hoạt bắt đầu_SR </td>
+<td> Bật/tắt điều kiện kích hoạt bắt đầu                    </td>
 </tr>
 <tr>
-<td> 开始触发源_SR    </td>
-<td> 0-Input0; 1-Input1; 2-Input2;  3-Input3; -1-无触发输入 </td>
+<td> Nguồn kích hoạt bắt đầu_SR </td>
+<td> 0-Input0; 1-Input1; 2-Input2;  3-Input3; -1-Không có kích hoạt </td>
 </tr>
 <tr>
-<td> 开始触发沿_SR    </td>
-<td> 0-上升沿; 1-下降沿; 2-任意;                            </td>
+<td> Cạnh kích hoạt bắt đầu_SR </td>
+<td> 0-Cạnh lên; 1-Cạnh xuống; 2-Bất kỳ                     </td>
 </tr>
 <tr>
-<td> 曝光次数_SR      </td>
-<td> 相机曝光次数，大于等于1，小于等于4                     </td>
+<td> Số lần phơi sáng_SR </td>
+<td> Số lần phơi sáng của camera, từ 1 đến 4                </td>
 </tr>
 <tr>
-<td> 曝光时间1_SR     </td>
-<td> 第一次曝光的值                                         </td>
+<td> Thời gian phơi sáng 1_SR </td>
+<td> Giá trị phơi sáng lần đầu                              </td>
 </tr>
 <tr>
-<td> 曝光时间2_SR     </td>
-<td> 第二次曝光的值                                         </td>
+<td> Thời gian phơi sáng 2_SR </td>
+<td> Giá trị phơi sáng lần hai                              </td>
 </tr>
 <tr>
-<td> 曝光时间3_SR     </td>
-<td> 第三次曝光的值                                         </td>
+<td> Thời gian phơi sáng 3_SR </td>
+<td> Giá trị phơi sáng lần ba                               </td>
 </tr>
 <tr>
-<td> 曝光时间4_SR     </td>
-<td> 第四次曝光的值                                         </td>
+<td> Thời gian phơi sáng 4_SR </td>
+<td> Giá trị phơi sáng lần bốn                              </td>
 </tr>
 <tr>
-<td> 相机增益_SR      </td>
-<td> 相机增益                                               </td>
+<td> Độ lợi camera_SR    </td>
+<td> Độ lợi (Gain) của camera                               </td>
 </tr>
 <tr>
-<td> 相机触发模式_SR  </td>
-<td> 0-自由模式；1-内触发；2-外触发                         </td>
+<td> Chế độ kích hoạt camera_SR </td>
+<td> 0-Chế độ tự do; 1-Kích hoạt nội bộ; 2-Kích hoạt ngoài  </td>
 </tr>
 <tr>
-<td> 内触发频率_SR    </td>
-<td> 内触发频率                                             </td>
+<td> Tần số kích hoạt nội bộ_SR </td>
+<td> Tần số kích hoạt nội bộ                                </td>
 </tr>
 <tr>
-<td> 外触发源_SR      </td>
-<td> 0-Input0; 1-Input1; 2-输入组合模式;  4-编码器          </td>
+<td> Nguồn kích hoạt ngoài_SR </td>
+<td> 0-Input0; 1-Input1; 2-Chế độ kết hợp đầu vào; 4-Encoder </td>
 </tr>
 <tr>
-<td> 外触发沿设置_SR  </td>
-<td> 0-上升沿; 1-下降沿; 2-任意                             </td>
+<td> Cạnh kích hoạt ngoài_SR </td>
+<td> 0-Cạnh lên; 1-Cạnh xuống; 2-Bất kỳ                     </td>
 </tr>
 <tr>
-<td> 外触发分频_SR    </td>
-<td> 数据触发差分                                           </td>
+<td> Tỷ lệ phân chia kích hoạt ngoài_SR </td>
+<td> Chênh lệch kích hoạt dữ liệu                           </td>
 </tr>
 <tr>
-<td> 外触发延时_SR    </td>
-<td> 数据触发延时                                           </td>
+<td> Trễ kích hoạt ngoài_SR </td>
+<td> Độ trễ khi kích hoạt dữ liệu                            </td>
 </tr>
 <tr>
-<td> Y方向分辨率_SR   </td>
-<td> 相机扫描间隔距离，单位：毫米                           </td>
+<td> Độ phân giải trục Y_SR </td>
+<td> Khoảng cách quét của camera theo trục Y, đơn vị: mm    </td>
 </tr>
 <tr>
-<td> 工作模式_MP      </td>
-<td> 0-快速；1-标准；2-精准；3-超准；                       </td>
+<td> Chế độ làm việc_MP  </td>
+<td> 0-Nhanh; 1-Tiêu chuẩn; 2-Chính xác; 3-Siêu chính xác   </td>
 </tr>
 <tr>
-<td> 触发模式_MP      </td>
-<td> 0-软件触发；1-内部连续触发；2-Input0；3-Input1         </td>
+<td> Chế độ kích hoạt_MP </td>
+<td> 0-Kích hoạt phần mềm; 1-Kích hoạt liên tục nội bộ; 2-Input0; 3-Input1 </td>
 </tr>
 <tr>
-<td> 曝光时间_MP      </td>
-<td> 范围：[500,50000],单位：us                             </td>
+<td> Thời gian phơi sáng_MP </td>
+<td> Phạm vi: [500,50000], đơn vị: us                       </td>
 </tr>
 <tr>
-<td> 照明次数_MP      </td>
-<td> 照明次数设置从1开始，范围：[1,3]                       </td>
+<td> Số lần chiếu sáng_MP </td>
+<td> Số lần chiếu sáng, bắt đầu từ 1, phạm vi: [1,3]         </td>
 </tr>
 <tr>
-<td> 照明亮度1_MP     </td>
-<td> 范围：[0,255]                                          </td>
+<td> Độ sáng chiếu sáng 1_MP </td>
+<td> Phạm vi: [0,255]                                       </td>
 </tr>
 <tr>
-<td> 照明亮度2_MP     </td>
-<td> 范围：[0,255]                                          </td>
+<td> Độ sáng chiếu sáng 2_MP </td>
+<td> Phạm vi: [0,255]                                       </td>
 </tr>
 <tr>
-<td> 照明亮度3_MP     </td>
-<td> 范围：[0,255]                                          </td>
+<td> Độ sáng chiếu sáng 3_MP </td>
+<td> Phạm vi: [0,255]                                       </td>
 </tr>
 <tr>
-<td> 参数配置编号_SS  </td>
-<td> 范围：[0,63]                                           </td>
+<td> Mã cấu hình tham số_SS </td>
+<td> Phạm vi: [0,63]                                        </td>
 </tr>
 <tr>
-<td> 扫描行数_SS        </td>
-<td> 3D相机采集工具采集截止行数，范围：[50,15000]           </td>
+<td> Số dòng quét_SS    </td>
+<td> Số dòng kết thúc thu nhận, phạm vi: [50,15000]         </td>
 </tr>
 <tr>
-<td> Y方向分辨率_SS  </td>
-<td> 相机扫描间隔距离，单位：毫米                           </td>
+<td> Độ phân giải trục Y_SS </td>
+<td> Khoảng cách quét của camera theo trục Y, đơn vị: mm    </td>
 </tr>
 <tr>
-<td> 触发模式_LC      </td>
-<td> 0-软件触发；1-连续触发；2-Input0;                      </td>
+<td> Chế độ kích hoạt_LC </td>
+<td> 0-Kích hoạt phần mềm; 1-Kích hoạt liên tục; 2-Input0    </td>
 </tr>
 <tr>
-<td> 启用ROI_LC       </td>
+<td> Bật ROI_LC         </td>
 <td>                                                        </td>
 </tr>
 <tr>
-<td> ROI原点X_LC      </td>
-<td> 相机采集有效区域ROIX                                   </td>
+<td> Gốc ROI X_LC       </td>
+<td> Giá trị X vùng hiệu lực thu nhận của camera             </td>
 </tr>
 <tr>
-<td> ROI原点Y_LC      </td>
-<td> 相机采集有效区域ROIY                                   </td>
+<td> Gốc ROI Y_LC       </td>
+<td> Giá trị Y vùng hiệu lực thu nhận của camera             </td>
 </tr>
 <tr>
-<td> ROI宽度_LC       </td>
-<td> 相机采集有效区域ROI宽度                                </td>
+<td> Chiều rộng ROI_LC  </td>
+<td> Chiều rộng vùng hiệu lực thu nhận của camera            </td>
 </tr>
 <tr>
-<td> ROI高度_LC       </td>
-<td> 相机采集有效区域ROI高度                                </td>
+<td> Chiều cao ROI_LC   </td>
+<td> Chiều cao vùng hiệu lực thu nhận của camera             </td>
 </tr>
 <tr>
-<td> 曝光时间_LC      </td>
-<td> 范围：[8333,100000]                                    </td>
+<td> Thời gian phơi sáng_LC </td>
+<td> Phạm vi: [8333,100000]                                 </td>
 </tr>
 <tr>
-<td> 照明次数_LC      </td>
-<td> 照明次数设置从1开始，范围：[1,3]                       </td>
+<td> Số lần chiếu sáng_LC </td>
+<td> Số lần chiếu sáng, bắt đầu từ 1, phạm vi: [1,3]         </td>
 </tr>
 <tr>
-<td> 照明亮度1_LC   </td>
-<td> 范围：[0,100]                                          </td>
+<td> Độ sáng chiếu sáng 1_LC </td>
+<td> Phạm vi: [0,100]                                       </td>
 </tr>
 <tr>
-<td> 照明亮度2_LC   </td>
-<td> 范围：[0,100]                                          </td>
+<td> Độ sáng chiếu sáng 2_LC </td>
+<td> Phạm vi: [0,100]                                       </td>
 </tr>
 <tr>
-<td> 照明亮度3_LC   </td>
-<td> 范围：[0,100]                                          </td>
+<td> Độ sáng chiếu sáng 3_LC </td>
+<td> Phạm vi: [0,100]                                       </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数说明 </th>
+<th> Tên Tham Số </th>
+<th> Mô Tả Tham Số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 执行结果 </td>
-<td> 执行结果 </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi </td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 执行时间 </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi </td>
 </tr>
 </tbody>
 </table>
 
+<h2>7. Dự án mẫu</h2>
 
-<h2>7. 示例工程</h2>
-
-<p>​     无</p>
+<p>​     Không có</p>
