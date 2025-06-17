@@ -18,107 +18,106 @@
            </head>
 <h1>GvVar</h1>
 
-<h2>功能</h2>
+<h2>Chức Năng</h2>
 
-<p>GvVar是GcVisionAssemblyVar类对象，用来操作变量管理中的。禁止自己定义一个GcVisionAssemblyVar对象。</p>
+<p>GvVar là đối tượng của lớp GcVisionAssemblyVar, dùng để thao tác trong quản lý biến. Cấm tự định nghĩa một đối tượng GcVisionAssemblyVar.</p>
 
-<h2>接口</h2>
+<h2>Giao Diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                     </th>
-<th> 接口描述                           </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 函数 </td>
-<td> GetVar(str, is_raw_string) </td>
-<td> 获取变量的拷贝，返回值是一份拷贝。 </td>
+<td>Hàm</td>
+<td>GetVar(str, is_raw_string)</td>
+<td>Lấy bản sao của biến, giá trị trả về là một bản sao.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetVar(str, value, is_raw_string) </td>
-<td> 设置变量。                         </td>
+<td></td>
+<td>SetVar(str, value, is_raw_string)</td>
+<td>Thiết lập biến.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải Thích Chi Tiết</h2>
 
 <h3>GvVar.GetVar(str, is_raw_string)</h3>
 
 <ul>
-<li><p>功能：获取变量。获取的是一份拷贝，对拷贝修改，不会自动同步到变量管理中的变量。例如，</p>
+<li><p>Chức năng: Lấy biến. Biến lấy được là một bản sao, việc sửa đổi trên bản sao sẽ không đồng bộ lại với biến trong trình quản lý biến. Ví dụ:</p>
 
 <p><code>python
-num = GvVar.GetVar(“#L1”) ## 此时#L1为1
-num = 5 ## 此时#L1仍然为1
+num = GvVar.GetVar("#L1") ## lúc này #L1 là 1
+num = 5 ## lúc này #L1 vẫn là 1
 </code></p>
 
-<p>用GvVar.GetVar获取的变量如果想将修改同步到变量管理，就要配合使用GvVar.SetVar.</p></li>
-<li><p>参数：</p>
+<p>Nếu muốn đồng bộ thay đổi lên trình quản lý biến thì cần dùng thêm GvVar.SetVar.</p></li>
+
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>str：变量名。例如“#L1”、 “@G1”。</p></li>
-<li><p>is_raw_string：布尔型。默认不显示该参数，值为False（除获取原始字符串外，均使用默认值即可，即不需要设置该参数），获取变量一般很少使用该参数。</p>
+<li><p>str: Tên biến, ví dụ “#L1”, “@G1”.</p></li>
+<li><p>is_raw_string: Kiểu boolean. Tham số này thường không cần hiển thị, giá trị mặc định là False (trừ khi cần lấy chuỗi gốc thì mới cần dùng đến tham số này). Thông thường không cần thiết lập tham số này khi lấy biến.</p>
 
 <ul>
-<li>True表示获取原始字符串，并且返回值为bytes类型。</li>
-<li>False表示获取的字符串会转换为UTF-8。</li>
+<li>True: Lấy chuỗi gốc, giá trị trả về là kiểu bytes.</li>
+<li>False: Chuỗi được chuyển sang UTF-8.</li>
 </ul>
 
-
-<p>例如变量管理中字符串变量的内容是05 4c 4d 11 00 51，这时数据中有00，如果按照普通字符串处理，在遇到00时会被截断，获取到的字符串就只有05
-4c 4d 11，长度为4；如果想获取完整的长度为6的数据05 4c 4d 11 00 51，就需要使用True。</p></li>
+<p>Ví dụ trong trình quản lý biến có giá trị chuỗi là 05 4c 4d 11 00 51, nếu xử lý như chuỗi thông thường thì sẽ bị cắt tại 00, chỉ lấy được 05 4c 4d 11, dài 4 byte. Nếu muốn lấy đủ 6 byte thì cần đặt is_raw_string=True.</p></li>
 </ul>
 </li>
-<li><p>返回值：变量管理中对应变量的拷贝。</p></li>
-</ul>
 
+<li><p>Giá trị trả về: Bản sao của biến tương ứng trong trình quản lý biến.</p></li>
+</ul>
 
 <h3>GvVar.SetVar(str, value, is_raw_string)</h3>
 
 <ul>
-<li><p>功能：设置变量，配合GetVar使用。例如，</p>
+<li><p>Chức năng: Thiết lập giá trị cho biến, sử dụng kết hợp với GetVar. Ví dụ:</p>
 
 <p><code>python
-num = GvVar.SetVar(“#L1”) #此时#L1为1
-num = 5 ## 此时#L1仍然为1
-GvVar.SetVar(“#L1”, num) ## 此时#L1个数为5
+num = GvVar.SetVar("#L1") # lúc này #L1 là 1
+num = 5 ## lúc này #L1 vẫn là 1
+GvVar.SetVar("#L1", num) ## lúc này #L1 có giá trị là 5
 </code></p></li>
-<li><p>参数：</p>
+
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>str：变量名。例如“#L1”、 “@G1”</p></li>
-<li><p>value: 要设置的值。</p></li>
-<li><p>is_raw_string：布尔型。默认不显示该参数，值为False（除设置原始字符串外，均使用默认值即可，即不需要设置该参数），设置变量一般很少使用该参数。</p>
+<li><p>str: Tên biến, ví dụ “#L1”, “@G1”.</p></li>
+<li><p>value: Giá trị cần thiết lập.</p></li>
+<li><p>is_raw_string: Kiểu boolean. Tham số này thường không cần hiển thị, giá trị mặc định là False (trừ khi cần thiết lập chuỗi gốc). Thông thường không cần thiết lập tham số này.</p>
 
 <ul>
-<li>True表示设置原始字符串，并且返回值为bytes类型。</li>
+<li>True: Thiết lập chuỗi gốc, giá trị là kiểu bytes.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>False表示设置的字符串会转换为GBK。</li>
+
+<li>False: Chuỗi sẽ được chuyển thành mã hóa GBK.</li>
 </ul>
 
-
-<p>  例如GvTool.SetVar(“#L0”, b’\xAA’)。如果设置最后一个参数is_raw_string为False，则赋值结果为3F，而设置为True，则赋值结果为AA</p>
+<p>Ví dụ: GvTool.SetVar("#L0", b'\xAA') — nếu đặt is_raw_string=False thì kết quả sẽ là 3F, còn nếu đặt là True thì kết quả sẽ là AA.</p>
 
 <ul>
-<li>返回值：bool类型，表示是否设置成功。</li>
+<li>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</li>
 </ul>
 
+<h2>Lưu Ý</h2>
 
-<h2>注意</h2>
+<p>1. Cấm tự định nghĩa đối tượng GcVisionAssemblyVar, hệ thống đã có sẵn đối tượng GvVar có thể sử dụng trực tiếp.</p>
 
-<p>1、禁止自己定义一个GcVisionAssemblyVar对象，内部已经定义了GvVar对象，可以直接使用。</p>
+<p>2. Nếu dùng GetVar để lấy biến mà muốn thay đổi được cập nhật lên trình quản lý biến thì cần kết hợp với SetVar.</p>
 
-<p>2、用GetVar获取的变量如果想将修改同步到变量管理，就要配合使用SetVar。</p>
 
 <h2>示例代码</h2>
 

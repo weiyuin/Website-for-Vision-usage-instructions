@@ -18,171 +18,158 @@
            </head>
 <h1>sc2Vector</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示二维向量，例如几何定位工具的输出参数搜索坐标，找圆工具的输出参数圆心，二维向量生成工具的输出，位置姿态生成工具的输入参数位置坐标都是该类型。</p>
+<p>Đại diện cho vector hai chiều. Ví dụ: tọa độ tìm kiếm là đầu ra của công cụ định vị hình học, tâm hình tròn là đầu ra của công cụ tìm hình tròn, đầu ra của công cụ tạo vector 2D, hoặc tọa độ vị trí đầu vào của công cụ tạo vị trí tư thế — đều là kiểu này.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                      </th>
-<th> 接口描述                                         </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> sc2Vector   </td>
-<td> sc2Vector()默认构造函数，XY初始化为0.0           </td>
+<td>Khởi tạo</td>
+<td>sc2Vector</td>
+<td>Hàm tạo mặc định sc2Vector(), giá trị XY được khởi tạo là 0.0</td>
 </tr>
 <tr>
-<td>      </td>
-<td> sc2Vector </td>
-<td> sc2Vector (x, y)构造函数                         </td>
+<td></td>
+<td>sc2Vector</td>
+<td>Hàm tạo sc2Vector(x, y)</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> GetX             </td>
-<td> 获取X坐标                                        </td>
+<td>Hàm</td>
+<td>GetX</td>
+<td>Lấy tọa độ X</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetY             </td>
-<td> 获取Y坐标                                        </td>
+<td></td>
+<td>GetY</td>
+<td>Lấy tọa độ Y</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetX          </td>
-<td> 设置X坐标                                        </td>
+<td></td>
+<td>SetX</td>
+<td>Thiết lập tọa độ X</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetY         </td>
-<td> 设置Y坐标                                        </td>
+<td></td>
+<td>SetY</td>
+<td>Thiết lập tọa độ Y</td>
 </tr>
 <tr>
-<td>      </td>
-<td> a + b              </td>
-<td> sc2Vector类型的加法，a和b都是sc2Vector类型的对象 </td>
+<td></td>
+<td>a + b</td>
+<td>Phép cộng giữa hai đối tượng kiểu sc2Vector</td>
 </tr>
 <tr>
-<td>      </td>
-<td> a - b              </td>
-<td> sc2Vector类型的减法，a和b都是sc2Vector类型的对象 </td>
+<td></td>
+<td>a - b</td>
+<td>Phép trừ giữa hai đối tượng kiểu sc2Vector</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Chi tiết</h2>
 
-<h2>详细说明</h2>
-
-<h3>sc2Vector( )</h3>
+<h3>sc2Vector()</h3>
 
 <ul>
-<li><p>功能：构造sc2Vector对象，坐标初始化为0.0。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：无</p></li>
+<li>Chức năng: Khởi tạo đối tượng sc2Vector với tọa độ mặc định là 0.0</li>
+<li>Tham số: Không có</li>
+<li>Giá trị trả về: Không có</li>
 </ul>
-
 
 <h3>sc2Vector(x, y)</h3>
 
 <ul>
-<li><p>功能：构造sc2Vector对象。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li><p>x：X坐标，浮点数类型。</p></li>
-<li><p>y：Y坐标，浮点数类型。</p></li>
-</ul>
+<li>Chức năng: Khởi tạo đối tượng sc2Vector</li>
+<li>Tham số:
+  <ul>
+    <li>x: Tọa độ X, kiểu số thực (float)</li>
+    <li>y: Tọa độ Y, kiểu số thực (float)</li>
+  </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li>Giá trị trả về: Không có</li>
 </ul>
 
-
-<h3>GetX( )</h3>
+<h3>GetX()</h3>
 
 <ul>
-<li><p>功能：获取X坐标。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：浮点数类型。</p></li>
+<li>Chức năng: Lấy tọa độ X</li>
+<li>Tham số: Không có</li>
+<li>Giá trị trả về: Kiểu số thực</li>
 </ul>
 
-
-<h3>GetY( )</h3>
+<h3>GetY()</h3>
 
 <ul>
-<li><p>功能：获取Y坐标。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：浮点数类型。</p></li>
+<li>Chức năng: Lấy tọa độ Y</li>
+<li>Tham số: Không có</li>
+<li>Giá trị trả về: Kiểu số thực</li>
 </ul>
 
-
-<h3>SetX(newX )</h3>
-
-<ul>
-<li><p>功能：设置X坐标。</p></li>
-<li><p>参数：</p>
+<h3>SetX(newX)</h3>
 
 <ul>
-<li>newX：新的X坐标，浮点数类型。</li>
-</ul>
+<li>Chức năng: Thiết lập tọa độ X</li>
+<li>Tham số:
+  <ul>
+    <li>newX: Giá trị X mới, kiểu số thực</li>
+  </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không</li>
 </ul>
 
-
-<h3>SetY(newY )</h3>
-
-<ul>
-<li><p>功能：设置Y坐标。</p></li>
-<li><p>参数：</p>
+<h3>SetY(newY)</h3>
 
 <ul>
-<li>newY：新的Y坐标，浮点数类型。</li>
-</ul>
+<li>Chức năng: Thiết lập tọa độ Y</li>
+<li>Tham số:
+  <ul>
+    <li>newY: Giá trị Y mới, kiểu số thực</li>
+  </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không</li>
 </ul>
-
 
 <h3>a + b</h3>
 
 <ul>
-<li><p>功能：sc2Vector类型的加法。如：c = a + b</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li><p>a：sc2Vector类型对象。</p></li>
-<li><p>b：sc2Vector类型对象。</p></li>
-</ul>
+<li>Chức năng: Phép cộng hai vector sc2Vector. Ví dụ: <code>c = a + b</code></li>
+<li>Tham số:
+  <ul>
+    <li>a: Đối tượng kiểu sc2Vector</li>
+    <li>b: Đối tượng kiểu sc2Vector</li>
+  </ul>
 </li>
-<li><p>返回值：sc2Vector类型。</p></li>
+<li>Giá trị trả về: Đối tượng kiểu sc2Vector</li>
 </ul>
-
 
 <h3>a - b</h3>
 
 <ul>
-<li><p>功能：sc2Vector类型的减法。如：c = a – b。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li><p>a：sc2Vector类型对象。</p></li>
-<li><p>b：sc2Vector类型对象。</p></li>
-</ul>
+<li>Chức năng: Phép trừ hai vector sc2Vector. Ví dụ: <code>c = a - b</code></li>
+<li>Tham số:
+  <ul>
+    <li>a: Đối tượng kiểu sc2Vector</li>
+    <li>b: Đối tượng kiểu sc2Vector</li>
+  </ul>
 </li>
-<li><p>返回值：sc2Vector类型。</p></li>
+<li>Giá trị trả về: Đối tượng kiểu sc2Vector</li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>Mã ví dụ</h2>
 
-<h2>示例代码</h2>
+<p>Không có</p>
 
-<p>无</p>

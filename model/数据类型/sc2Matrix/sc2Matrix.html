@@ -18,114 +18,108 @@
            </head>
 <h1>sc2Matrix</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示2*2矩阵，例如二维线性变换中的矩阵，标定结果中的矩阵。</p>
+<p>Đại diện cho ma trận 2×2, ví dụ như ma trận trong biến đổi tuyến tính hai chiều, hoặc ma trận trong kết quả hiệu chuẩn.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                     </th>
-<th> 接口描述                              </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> sc2Matrix                  </td>
-<td> sc2Matrix()默认构造函数。             </td>
+<td>Khởi tạo</td>
+<td>sc2Matrix</td>
+<td>Hàm khởi tạo mặc định sc2Matrix()</td>
 </tr>
 <tr>
-<td>      </td>
-<td> sc2Matrix </td>
-<td> sc2Matrix(a00, a01, a10, a11)构造函数 </td>
+<td></td>
+<td>sc2Matrix</td>
+<td>Hàm khởi tạo sc2Matrix(a00, a01, a10, a11)</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> GetElement         </td>
-<td> 获取矩阵元素。                        </td>
+<td>Hàm</td>
+<td>GetElement</td>
+<td>Lấy phần tử trong ma trận</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetElement   </td>
-<td> 设置矩阵元素。                        </td>
+<td></td>
+<td>SetElement</td>
+<td>Gán giá trị cho phần tử trong ma trận</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Chi tiết</h2>
 
-<h2>详细说明</h2>
-
-<h3>sc2Matrix( )</h3>
+<h3>sc2Matrix()</h3>
 
 <ul>
-<li><p>功能：构造sc2Matrix对象，矩阵元素初始化为1.0 0.0 0.0 1.0。</p>
-
-<blockquote><p>|1.0 0.0|</p>
-
-<p>|0.0 1.0|</p></blockquote></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：无</p></li>
+<li>Chức năng: Tạo đối tượng sc2Matrix, các phần tử của ma trận được khởi tạo mặc định như sau:
+<blockquote>
+<p>|1.0  0.0|</p>
+<p>|0.0  1.0|</p>
+</blockquote>
+</li>
+<li>Tham số: Không có</li>
+<li>Trả về: Không có</li>
 </ul>
-
 
 <h3>sc2Matrix(a00, a01, a10, a11)</h3>
 
 <ul>
-<li><p>功能：构造sc2Vector对象，矩阵元素初始化为a00 a01 a10 a11。</p>
-
-<blockquote><p>|a00 a01|</p>
-
-<p>|a10 a11|</p></blockquote></li>
-<li><p>参数：</p>
-
-<ul>
-<li><p>a00：矩阵第一行第一列元素，浮点数类型。</p></li>
-<li><p>a01：矩阵第一行第二列元素，浮点数类型。</p></li>
-<li><p>a10：矩阵第二行第一列元素，浮点数类型。</p></li>
-<li><p>a11：矩阵第二行第二列元素，浮点数类型。</p></li>
-</ul>
+<li>Chức năng: Tạo đối tượng sc2Matrix với các phần tử cụ thể:
+<blockquote>
+<p>|a00  a01|</p>
+<p>|a10  a11|</p>
+</blockquote>
 </li>
-<li><p>返回值：无</p></li>
+<li>Tham số:
+  <ul>
+    <li>a00: Phần tử hàng 1 cột 1, kiểu float</li>
+    <li>a01: Phần tử hàng 1 cột 2, kiểu float</li>
+    <li>a10: Phần tử hàng 2 cột 1, kiểu float</li>
+    <li>a11: Phần tử hàng 2 cột 2, kiểu float</li>
+  </ul>
+</li>
+<li>Trả về: Không có</li>
 </ul>
-
 
 <h3>GetElement(row, col)</h3>
 
 <ul>
-<li><p>功能：获取矩阵第row行第col列元素，行号列号都是从0开始。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li><p>row：要获取的元素所在行数，索引从0开始，整型。</p></li>
-<li><p>col：要获取的元素所在列数，索引从0开始，整型。</p></li>
+<li>Chức năng: Lấy giá trị phần tử ở hàng <code>row</code>, cột <code>col</code> trong ma trận. Chỉ số bắt đầu từ 0.</li>
+<li>Tham số:
+  <ul>
+    <li>row: Số thứ tự hàng (bắt đầu từ 0), kiểu int</li>
+    <li>col: Số thứ tự cột (bắt đầu từ 0), kiểu int</li>
+  </ul>
+</li>
+<li>Ví dụ: Lấy phần tử hàng 1 cột 1 → <code>GetElement(0, 0)</code></li>
+<li>Trả về: Kiểu float</li>
 </ul>
-
-
-<p>例如获取第一行第一列元素GetElement(0, 0)。</p></li>
-<li><p>返回值：浮点数类型。</p></li>
-</ul>
-
 
 <h3>SetElement(row, col, value)</h3>
 
 <ul>
-<li><p>功能：设置矩阵元素。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li><p>row：要设置的元素所在行数，索引从0开始，整型。</p></li>
-<li><p>col：要设置的元素所在列数，索引从0开始，整型。</p></li>
-<li><p>value：要设置的值，浮点数类型。</p></li>
+<li>Chức năng: Thiết lập giá trị cho phần tử trong ma trận</li>
+<li>Tham số:
+  <ul>
+    <li>row: Số thứ tự hàng cần đặt, bắt đầu từ 0, kiểu int</li>
+    <li>col: Số thứ tự cột cần đặt, bắt đầu từ 0, kiểu int</li>
+    <li>value: Giá trị cần đặt, kiểu float</li>
+  </ul>
+</li>
+<li>Ví dụ: Đặt giá trị 0.5 cho phần tử hàng 2 cột 1 → <code>SetElement(1, 0, 0.5)</code></li>
+<li>Trả về: Kiểu bool, thể hiện thiết lập có thành công hay không</li>
 </ul>
 
-
-<p>例如设置第二行第一列元素SetElement(1, 0, 0.5)。</p></li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
-</ul>
 
 
 <h2>注意</h2>

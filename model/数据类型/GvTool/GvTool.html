@@ -18,102 +18,104 @@
            </head>
 <h1>GvTool</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>GvTool用来和工具参数交互的GcVisionAssemblyTool类的对象。禁止自己定义一个GcVisionAssemblyTool对象。</p>
+<p>GvTool là đối tượng của lớp GcVisionAssemblyTool, dùng để tương tác với tham số của công cụ. Cấm tự định nghĩa một đối tượng GcVisionAssemblyTool.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                     </th>
-<th> 接口描述                         </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 函数 </td>
-<td> GetToolData(str, is_raw_string) </td>
-<td> 获取工具参数，返回值是一份拷贝。 </td>
+<td>Hàm</td>
+<td>GetToolData(str, is_raw_string)</td>
+<td>Lấy tham số của công cụ, trả về một bản sao.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetToolData(str, value, is_raw_string) </td>
-<td> 设置工具参数。                   </td>
+<td></td>
+<td>SetToolData(str, value, is_raw_string)</td>
+<td>Thiết lập tham số của công cụ.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>GvTool.GetToolData(str, is_raw_string)</h3>
 
 <ul>
-<li><p>功能：获取工具的参数。获取的是一份拷贝，对拷贝修改，不会自动同步到对应的工具参数。例如，</p>
+<li><p>Chức năng: Lấy tham số của công cụ. Giá trị lấy được là một bản sao, việc sửa đổi bản sao sẽ không tự động đồng bộ lại với tham số gốc của công cụ. Ví dụ:</p>
 
 <p><code>python
-searchNum = GvTool.GetToolData("几何定位_001.搜索个数") #此时搜索个数为1
-searchNum = 5 ## 此时工具的搜索个数仍然为1
+searchNum = GvTool.GetToolData("几何定位_001.搜索个数") # Lúc này số lượng tìm kiếm là 1
+searchNum = 5 # Lúc này tham số tìm kiếm của công cụ vẫn là 1
 </code></p>
 
-<p>用GvTool.GetToolData()获取的工具参数如果想将修改同步到工具，就要配合使用GvTool.SetToolData()。</p></li>
-<li><p>参数：</p>
+<p>Nếu muốn cập nhật thay đổi lên công cụ, cần kết hợp sử dụng GvTool.SetToolData().</p></li>
+
+<li><p>Tham số:</p>
+<ul>
+<li><p><strong>str</strong>: Tên tham số công cụ. Ví dụ: “几何定位_001.执行结果”, “几何定位_001.搜索坐标”.</p></li>
+
+<li><p><strong>is_raw_string</strong>: Kiểu boolean. Mặc định không hiển thị tham số này, giá trị là False (trừ khi cần lấy chuỗi gốc thì mới cần thiết lập tham số này).</p>
 
 <ul>
-<li><p>str：工具参数名。例如“几何定位<em>001.执行结果”、“几何定位</em>001.搜索坐标”。</p></li>
-<li><p>is_raw_string：布尔型。默认不显示该参数，值为False（除获取原始字符串外，均使用默认值即可，即不需要设置该参数）。</p>
-
-<ul>
-<li><p>True表示获取原始字符串，并且返回值为bytes类型。</p></li>
-<li><p>False表示获取的字符串会转换为UTF-8。</p></li>
+<li><strong>True</strong>: Lấy chuỗi gốc, kết quả trả về là kiểu <code>bytes</code>.</li>
+<li><strong>False</strong>: Chuỗi được chuyển mã sang UTF-8.</li>
 </ul>
 
-
-<p>例如通信接收工具的接收字符串，如果接收的是十六进制，如05 4c 4d 11 00 51，这时接收的数据中有00，如果按照普通字符串处理，在遇到00时会被截断，获取到的字符串就只有05 4c 4d 11，长度为4；如果想获取完整的长度为6的数据05 4c 4d 11 00 51，就需要使用True。</p></li>
+<p>Ví dụ: Công cụ nhận dữ liệu là chuỗi hex như 05 4C 4D 11 00 51. Nếu dùng dạng chuỗi thông thường, khi gặp 00 thì chuỗi sẽ bị cắt, chỉ còn 05 4C 4D 11 (dài 4 byte). Để lấy đủ 6 byte, phải dùng <code>is_raw_string=True</code>.</p>
+</li>
 </ul>
 </li>
-<li><p>返回值：对应工具参数的拷贝。</p></li>
-</ul>
 
+<li><p>Giá trị trả về: Bản sao của tham số công cụ tương ứng.</p></li>
+</ul>
 
 <h3>GvTool.SetToolData(str, value, is_raw_string)</h3>
 
 <ul>
-<li><p>功能：设置工具的参数，配合GvTool.GetToolData()使用。例如,</p>
+<li><p>Chức năng: Thiết lập tham số cho công cụ, sử dụng kết hợp với GvTool.GetToolData(). Ví dụ:</p>
 
 <p><code>python
-searchNum = GvTool.GetToolData(“几何定位_001.搜索个数”)#此时搜索个数为1
-searchNum = 5 ## 此时工具的搜索个数仍然为1
-GvTool.SetToolData(“几何定位_001.搜索个数”, searchNum) #此时工具的搜索个数为5
-</code></p></li>
-<li><p>参数：</p>
+searchNum = GvTool.GetToolData("几何定位_001.搜索个数") # Số lượng tìm kiếm hiện tại là 1
+searchNum = 5 # Tham số công cụ vẫn là 1
+GvTool.SetToolData("几何定位_001.搜索个数", searchNum) # Lúc này số lượng tìm kiếm được cập nhật thành 5
+</code></p>
+</li>
+
+<li><p>Tham số:</p>
+<ul>
+<li><p><strong>str</strong>: Tên tham số công cụ. Ví dụ: “几何定位_001.搜索个数”, “几何定位_001.搜索坐标”.</p></li>
+<li><p><strong>value</strong>: Giá trị cần thiết lập.</p></li>
+<li><p><strong>is_raw_string</strong>: Kiểu boolean. Mặc định không hiển thị tham số này, giá trị là False (trừ khi cần thiết lập chuỗi gốc).</p>
 
 <ul>
-<li><p>str：工具参数名。例如“几何定位<em>001.搜索个数”、“几何定位</em>001.搜索坐标”。</p></li>
-<li><p>value: 要设置的值。</p></li>
-<li><p>is_raw_string：布尔型。默认不显示该参数，值为False（除设置原始字符串外，均使用默认值即可，即不需要设置该参数）。</p>
-
-<ul>
-<li><p>True表示设置原始字符串，并且返回值为bytes类型。</p></li>
-<li><p>False表示设置的字符串会转换为GBK。</p></li>
+<li><strong>True</strong>: Thiết lập chuỗi gốc, giá trị là kiểu <code>bytes</code>.</li>
+<li><strong>False</strong>: Chuỗi sẽ được chuyển mã sang GBK.</li>
 </ul>
 
-
-<p>例如GvTool.SetToolData(“数据包解析工具_002.输入数据0”, b’\xAA’)。如果设置最后一个参数is_raw_string为False，则赋值结果为3F，而设置为True，则赋值结果为AA</p></li>
+<p>Ví dụ: <code>GvTool.SetToolData("数据包解析工具_002.输入数据0", b'\xAA')</code> — Nếu <code>is_raw_string=False</code> thì gán giá trị sẽ là <code>3F</code>; nếu <code>True</code> thì giá trị sẽ là <code>AA</code>.</p>
+</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+
+<li><p>Giá trị trả về: Kiểu <code>bool</code>, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>1. Cấm tự định nghĩa đối tượng GcVisionAssemblyTool, hệ thống đã có sẵn đối tượng <code>GvTool</code> để dùng trực tiếp.</p>
 
-<p>1、禁止自己定义一个GcVisionAssemblyTool对象，内部已经定义了GvTool对象，可以直接使用。</p>
+<p>2. Nếu dùng <code>GvTool.GetToolData()</code> để lấy tham số mà muốn cập nhật thay đổi lên công cụ, phải kết hợp với <code>GvTool.SetToolData()</code>.</p>
 
-<p>2、用GvTool.GetToolData()获取的工具参数如果想将修改同步到工具，就要配合使用GvTool.SetToolData()。</p>
 
 <h2>示例代码</h2>
 

@@ -18,203 +18,189 @@
            </head>
 <h1>GcShape</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示图形。</p>
+<p>Đại diện cho một đối tượng hình học (đồ họa).</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                   </th>
-<th> 接口描述                </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 函数 </td>
-<td> GetShape                   </td>
-<td> 获取图形对象。          </td>
+<td>Hàm</td>
+<td>GetShape</td>
+<td>Lấy đối tượng hình học.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetShapeType           </td>
-<td> 获取图形对象的类型。    </td>
+<td></td>
+<td>GetShapeType</td>
+<td>Lấy kiểu loại của đối tượng hình học.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetRect                     </td>
-<td> 设置基础图形 矩形。     </td>
+<td></td>
+<td>SetRect</td>
+<td>Thiết lập hình học cơ bản: hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetAffineRect         </td>
-<td> 设置基础图形 仿射矩形。 </td>
+<td></td>
+<td>SetAffineRect</td>
+<td>Thiết lập hình học cơ bản: hình chữ nhật biến dạng (hình chữ nhật affine).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetCircle                 </td>
-<td> 设置基础图形 圆形。     </td>
+<td></td>
+<td>SetCircle</td>
+<td>Thiết lập hình học cơ bản: hình tròn.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetAnnulusSection </td>
-<td> 设置基础图形 圆环段。   </td>
+<td></td>
+<td>SetAnnulusSection</td>
+<td>Thiết lập hình học cơ bản: đoạn vành khuyên (hình tròn rỗng một phần).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetEllipse               </td>
-<td> 设置基础图形 椭圆形。   </td>
+<td></td>
+<td>SetEllipse</td>
+<td>Thiết lập hình học cơ bản: hình elip.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetPolyline             </td>
-<td> 设置基础图形 多边形。   </td>
+<td></td>
+<td>SetPolyline</td>
+<td>Thiết lập hình học cơ bản: hình đa giác (nhiều cạnh nối nhau).</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+
+<h2>Chi tiết</h2>
 
 <h3>GetShape()</h3>
 
 <ul>
-<li><p>功能：获取图形对象。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：图形对象，数据类型为：scRect、scAffineRect、scCircle、scAnnulusSection、scEllipse、scPolyline之一。</p></li>
+<li><p>Chức năng: Lấy đối tượng hình học.</p></li>
+<li><p>Tham số: Không có</p></li>
+<li><p>Giá trị trả về: Đối tượng hình học, kiểu dữ liệu là một trong các loại sau: scRect, scAffineRect, scCircle, scAnnulusSection, scEllipse, scPolyline.</p></li>
 </ul>
-
 
 <h3>GetShapeType()</h3>
 
 <ul>
-<li><p>功能：获取图形对象的类型。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：图形对象的类型，数据类型为ShapeType。</p></li>
+<li><p>Chức năng: Lấy loại của đối tượng hình học.</p></li>
+<li><p>Tham số: Không có</p></li>
+<li><p>Giá trị trả về: Loại hình học, kiểu dữ liệu là ShapeType.</p></li>
 </ul>
-
 
 <h3>SetRect()</h3>
 
 <ul>
-<li><p>功能：设置基础图形 矩形。</p></li>
-<li><p>参数：scRect</p></li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Chức năng: Thiết lập hình cơ bản là hình chữ nhật.</p></li>
+<li><p>Tham số: scRect</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetAffineRect()</h3>
 
 <ul>
-<li><p>功能：设置基础图形 仿射矩形。</p></li>
-<li><p>参数：scAffineRect</p></li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Chức năng: Thiết lập hình cơ bản là hình chữ nhật biến dạng (affine).</p></li>
+<li><p>Tham số: scAffineRect</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetCircle()</h3>
 
 <ul>
-<li><p>功能：设置基础图形 圆形。</p></li>
-<li><p>参数：scCircle</p></li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Chức năng: Thiết lập hình cơ bản là hình tròn.</p></li>
+<li><p>Tham số: scCircle</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetAnnulusSection()</h3>
 
 <ul>
-<li><p>功能：设置基础图形 圆环段。</p></li>
-<li><p>参数：scAnnulusSection</p></li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Chức năng: Thiết lập hình cơ bản là đoạn vành khuyên (một phần của hình tròn rỗng).</p></li>
+<li><p>Tham số: scAnnulusSection</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetEllipse()</h3>
 
 <ul>
-<li><p>功能：设置基础图形 椭圆形。</p></li>
-<li><p>参数：scEllipse</p></li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Chức năng: Thiết lập hình cơ bản là hình elip.</p></li>
+<li><p>Tham số: scEllipse</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetPolyline()</h3>
 
 <ul>
-<li><p>功能：设置基础图形 多边形。</p></li>
-<li><p>参数：scPolyline</p></li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Chức năng: Thiết lập hình cơ bản là đa giác (nhiều đoạn thẳng nối liên tiếp).</p></li>
+<li><p>Tham số: scPolyline</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
 
-
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
 <ol>
-<li><p>该类型的C++数据类型为std::shared_ptr\&lt;scShape>，主要应用于平面拟合工具2、高度测量工具的ROI参数，在使用时一定要通过GetShape函数获取具体的图形对象。</p></li>
-<li><p>ROI的类型分为7种：全图、矩形、仿射矩形、圆形、圆环段、椭圆、多边形，GetShapeType函数的返回结果分别为eFull、eRect、eAffineRect、eCircle、eAnnulusSection、eEllipse、ePolyline。eFull时为空指针，使用时应注意。</p></li>
+<li><p>Kiểu dữ liệu C++ của đối tượng này là <code>std::shared_ptr&lt;scShape&gt;</code>, thường được sử dụng trong tham số ROI của các công cụ như: Công cụ khớp mặt phẳng 2D, Công cụ đo chiều cao. Khi sử dụng cần gọi hàm <code>GetShape()</code> để lấy đối tượng hình học cụ thể.</p></li>
+<li><p>ROI có 7 loại: toàn ảnh, hình chữ nhật, hình chữ nhật biến dạng, hình tròn, đoạn vành khuyên, hình elip, đa giác. Hàm <code>GetShapeType()</code> sẽ trả về các giá trị tương ứng là: <code>eFull</code>, <code>eRect</code>, <code>eAffineRect</code>, <code>eCircle</code>, <code>eAnnulusSection</code>, <code>eEllipse</code>, <code>ePolyline</code>. Trường hợp <code>eFull</code> sẽ trả về con trỏ rỗng (null), cần chú ý khi sử dụng.</p></li>
 </ol>
 
 
-<h2>示例代码</h2>
+
+<h2>Mã ví dụ</h2>
 
 <ul>
-<li>示例1</li>
+<li>Ví dụ 1</li>
 </ul>
 
+<pre><code class="language-python">
+# Lấy vùng ROI của công cụ khớp mặt phẳng 2_002 (ROI là một mảng đối tượng)
+Roi = GvTool.GetToolData("平面拟合工具2_002.ROI")
 
-<p>```python</p>
+# Lấy vùng ROI đầu tiên (là hình chữ nhật, kiểu dữ liệu scRect)
+shape = Roi[0].GetShape()
 
-<h1>获取平面拟合工具2_002的ROI区域（ROI区域是一个数组）</h1>
+# Lấy điểm góc trên bên trái của hình chữ nhật (kiểu dữ liệu sc2Vector)
+origin = shape.GetOrigin()
 
-<p>Roi=GvTool.GetToolData(&ldquo;平面拟合工具2_002.ROI&rdquo;)</p>
+# Lấy tọa độ X của góc trên bên trái (kiểu float)
+origin_x = origin.GetX()
 
-<h1>获取第一个ROI区域（矩形区域，数据类型为scRect）</h1>
-
-<p>shape=Roi[0].GetShape()</p>
-
-<h1>获取矩形区域的左上角点（数据类型为sc2Vector）</h1>
-
-<p>origin=shape.GetOrigin()</p>
-
-<h2>获取矩形区域的左上角点的X坐标（数据类型为浮点型）</h2>
-
-<p>origin_x=origin.GetX()</p>
-
-<h2>获取矩形区域的左上角点的Y坐标（数据类型为浮点型）</h2>
-
-<p>origin_y=origin.GetY()
-```</p>
+# Lấy tọa độ Y của góc trên bên trái (kiểu float)
+origin_y = origin.GetY()
+</code></pre>
 
 <ul>
-<li>示例2</li>
+<li>Ví dụ 2</li>
 </ul>
 
+<pre><code class="language-python">
+# Khởi tạo mảng hình học và các hình học
+vctShape = GvVisionAssembly.GcShapeVec()
 
-<p>```python</p>
-
-<h2>初始化图形数组和图形</h2>
-
-<p>vctShape = GvVisionAssembly.GcShapeVec()</p>
-
-<h2>设置第一个图形 矩形</h2>
-
-<p>shape1 = GvVisionAssembly.GcShape()
-rect =GvVisionAssembly.scRect(GvVisionAssembly.sc2Vector(100,100),GvVisionAssembly.sc2Vector(200,300))
+# Thiết lập hình đầu tiên là hình chữ nhật
+shape1 = GvVisionAssembly.GcShape()
+rect = GvVisionAssembly.scRect(
+    GvVisionAssembly.sc2Vector(100, 100),
+    GvVisionAssembly.sc2Vector(200, 300)
+)
 shape1.SetRect(rect)
-vctShape.append(shape1)</p>
+vctShape.append(shape1)
 
-<h2>设置第二个图形 圆形</h2>
-
-<p>shape2 = GvVisionAssembly.GcShape()
-circle = GvVisionAssembly.scCircle(GvVisionAssembly.sc2Vector(100, 100), 50)
+# Thiết lập hình thứ hai là hình tròn
+shape2 = GvVisionAssembly.GcShape()
+circle = GvVisionAssembly.scCircle(
+    GvVisionAssembly.sc2Vector(100, 100), 50
+)
 shape2.SetCircle(circle)
-vctShape.append(shape2)</p>
+vctShape.append(shape2)
 
-<h2>使用脚本构建的ROI设置平面拟合工具2的ROI参数</h2>
-
-<p>vct=GvTool.SetToolData(&ldquo;平面拟合工具2_002.ROI&rdquo;,vctShape)
-```</p>
+# Gán tập ROI đã thiết lập bằng script vào tham số ROI của công cụ khớp mặt phẳng 2
+vct = GvTool.SetToolData("平面拟合工具2_002.ROI", vctShape)
+</code></pre>
