@@ -18,179 +18,170 @@
            </head>
 <h1>scLineSeg</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示线段。</p>
+<p>Đại diện cho đoạn thẳng.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                       </th>
-<th> 接口描述                                  </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> scLineSeg     </td>
-<td> scLineSeg()默认构造函数。                 </td>
+<td>Khởi tạo</td>
+<td>scLineSeg</td>
+<td>Hàm khởi tạo mặc định scLineSeg().</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scLineSeg  </td>
-<td> scLineSeg(sc2Vector, sc2Vector)构造函数。 </td>
+<td></td>
+<td>scLineSeg</td>
+<td>Hàm khởi tạo scLineSeg(sc2Vector, sc2Vector).</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> Set          </td>
-<td> 设置线段起始点和终止点。                  </td>
+<td>Hàm</td>
+<td>Set</td>
+<td>Thiết lập điểm bắt đầu và điểm kết thúc của đoạn thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetP1            </td>
-<td> 设置线段起始点。                          </td>
+<td></td>
+<td>SetP1</td>
+<td>Thiết lập điểm bắt đầu của đoạn thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetP2            </td>
-<td> 设置线段终止点。                          </td>
+<td></td>
+<td>SetP2</td>
+<td>Thiết lập điểm kết thúc của đoạn thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetP1            </td>
-<td> 获取线段起始点。                          </td>
+<td></td>
+<td>GetP1</td>
+<td>Lấy điểm bắt đầu của đoạn thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetP2            </td>
-<td> 获取线段终止点。                          </td>
+<td></td>
+<td>GetP2</td>
+<td>Lấy điểm kết thúc của đoạn thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetLine         </td>
-<td> 获取当前线段所在的直线。                  </td>
+<td></td>
+<td>GetLine</td>
+<td>Lấy đường thẳng mà đoạn thẳng đang nằm trên đó.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetRotation </td>
-<td> 获取线段的旋转角度。                      </td>
+<td></td>
+<td>GetRotation</td>
+<td>Lấy góc quay của đoạn thẳng.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>scLineSeg()</h3>
 
 <ul>
-<li><p>功能：构造scLineSeg对象，默认构造函。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng: Khởi tạo đối tượng scLineSeg, là hàm khởi tạo mặc định.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scLine(p1, p2)</h3>
 
 <ul>
-<li><p>功能：用起始点p1和终止点p2构造线段对象。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Tạo đối tượng đoạn thẳng bằng điểm bắt đầu p1 và điểm kết thúc p2.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>p1：线段的起始点，sc2Vector类型。</p></li>
-<li><p>p2：线段的终止点，sc2Vector类型。</p></li>
+<li><p>p1: Điểm bắt đầu của đoạn thẳng, kiểu sc2Vector.</p></li>
+<li><p>p2: Điểm kết thúc của đoạn thẳng, kiểu sc2Vector.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
 
-
-<h3>Set (p1, p2)</h3>
-
-<ul>
-<li><p>功能：设置线段的起始点p1和终止点p2。</p></li>
-<li><p>参数：</p>
+<h3>Set(p1, p2)</h3>
 
 <ul>
-<li><p>p1：线段的起始点，sc2Vector类型。</p></li>
-<li><p>p2：线段的终止点，sc2Vector类型。</p></li>
+<li><p>Chức năng: Thiết lập điểm bắt đầu p1 và điểm kết thúc p2 của đoạn thẳng.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>p1: Điểm bắt đầu của đoạn thẳng, kiểu sc2Vector.</p></li>
+<li><p>p2: Điểm kết thúc của đoạn thẳng, kiểu sc2Vector.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetP1(p)</h3>
 
 <ul>
-<li><p>功能：设置线段的起始点。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập điểm bắt đầu của đoạn thẳng.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>p：线段的起始点，sc2Vector类型。</li>
+<li>p: Điểm bắt đầu của đoạn thẳng, kiểu sc2Vector.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetP2(p)</h3>
 
 <ul>
-<li><p>功能：设置线段的终止点。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập điểm kết thúc của đoạn thẳng.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>p：线段的终止点，sc2Vector类型。</li>
+<li>p: Điểm kết thúc của đoạn thẳng, kiểu sc2Vector.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
 
-
-<h3>GetP1 ()</h3>
+<h3>GetP1()</h3>
 
 <ul>
-<li><p>功能：获取线段的起始点。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：线段的起始点，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy điểm bắt đầu của đoạn thẳng.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Điểm bắt đầu của đoạn thẳng, kiểu sc2Vector.</p></li>
 </ul>
 
-
-<h3>GetP2 ()</h3>
+<h3>GetP2()</h3>
 
 <ul>
-<li><p>功能：获取线段的终止点。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：线段的终止点，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy điểm kết thúc của đoạn thẳng.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Điểm kết thúc của đoạn thẳng, kiểu sc2Vector.</p></li>
 </ul>
-
 
 <h3>GetLine()</h3>
 
 <ul>
-<li><p>功能：获取当前线段所在的直线。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：线段所在的直线，scLine类型。</p></li>
+<li><p>Chức năng: Lấy đường thẳng mà đoạn thẳng hiện tại nằm trên đó.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Đường thẳng, kiểu scLine.</p></li>
 </ul>
-
 
 <h3>GetRotation()</h3>
 
 <ul>
-<li><p>功能：获取线段的旋转角度。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：线段的旋转角度，scRadian类型。</p></li>
+<li><p>Chức năng: Lấy góc quay của đoạn thẳng.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Góc quay, kiểu scRadian.</p></li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>Mã ví dụ</h2>
 
-<h2>示例代码</h2>
+<p>Không có</p>
 
-<p>无</p>

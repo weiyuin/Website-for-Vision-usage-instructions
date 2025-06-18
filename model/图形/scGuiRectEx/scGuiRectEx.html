@@ -18,285 +18,265 @@
            </head>
 <h1>scGuiRectEx</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示可变矩形的Gui控件类，即在视图中可见的图形，可变换为矩形或者圆环段，如果要获取可变矩形控件Gui的四个角点可以通过GetRectEx成员函数获取可变矩形scRectEx，然后利用可变矩形scRectEx获取角点。例如边宽检测工具的线边宽区域（对应属性栏中边宽检测类型为直线）、圆边宽区域（对应属性栏中边宽检测类型为圆）。</p>
+<p>Đại diện cho lớp điều khiển hình chữ nhật có thể thay đổi trong giao diện người dùng (GUI), tức là các đối tượng hình học hiển thị trên giao diện, có thể chuyển đổi thành hình chữ nhật hoặc đoạn hình vành khăn. Nếu cần lấy bốn điểm góc của hình chữ nhật có thể thay đổi này thì có thể dùng hàm thành viên <code>GetRectEx</code> để lấy đối tượng <code>scRectEx</code>, sau đó sử dụng <code>scRectEx</code> để lấy các điểm góc. Ví dụ như vùng đo chiều rộng cạnh trong công cụ đo chiều rộng cạnh (tương ứng loại đo chiều rộng cạnh là đường thẳng trong thanh thuộc tính) hoặc vùng đo chiều rộng cạnh hình tròn (tương ứng loại đo chiều rộng cạnh là hình tròn trong thanh thuộc tính).</p>
 
 <p><img src="media/6a07bdbf80b7cec234a2aa21e25acd8f.png" alt="" /></p>
 
-<p><imgnote>图(a) 普通状态</imgnote></p>
+<p><imgnote>Hình (a) Trạng thái bình thường</imgnote></p>
 
 <p><img src="media/4f7f3a9ce50a3aa4e84f070d1c51aa22.png" alt="" /></p>
 
-<p><imgnote>图 (b) 显示卡尺和掩膜状态</imgnote></p>
+<p><imgnote>Hình (b) Trạng thái hiển thị thước đo và mặt nạ</imgnote></p>
 
-<p><imgnote>图1 可变矩形控件示意图<imgnote></p>
+<p><imgnote>Hình 1: Sơ đồ minh họa hình chữ nhật có thể thay đổi</imgnote></p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                    </th>
-<th> 接口描述                          </th>
+<th>      Phân loại </th>
+<th> Tên giao diện                                                    </th>
+<th> Mô tả giao diện                          </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
+<td> Khởi tạo </td>
 <td> scGuiRectEx                      </td>
-<td> scGuiRectEx(dof=15)默认构造函数。 </td>
+<td> scGuiRectEx(dof=15): Hàm khởi tạo mặc định. </td>
 </tr>
 <tr>
-<td> 函数 </td>
+<td> Hàm </td>
 <td> GetSearchDirectionDOF          </td>
-<td> 获取搜索方向自由度。              </td>
+<td> Lấy bậc tự do của hướng tìm kiếm.              </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetRectEx                                  </td>
-<td> 获取可变矩形。                    </td>
+<td> Lấy hình chữ nhật có thể thay đổi.                    </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetRectEx                            </td>
-<td> 设置可变矩形。                    </td>
+<td> Thiết lập hình chữ nhật có thể thay đổi.                    </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetRectExCaliper                </td>
-<td> 获取可变矩形卡尺。                </td>
+<td> Lấy thước đo của hình chữ nhật có thể thay đổi.                </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetRectExCaliper       </td>
-<td> 设置可变矩形卡尺。                </td>
+<td> Thiết lập thước đo cho hình chữ nhật có thể thay đổi.                </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetCaliperWidth                      </td>
-<td> 获取卡尺宽度。                    </td>
+<td> Lấy độ rộng của thước đo.                    </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetCaliperWidth                 </td>
-<td> 设置卡尺宽度。                    </td>
+<td> Thiết lập độ rộng của thước đo.                    </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetCaliperSpace                  </td>
-<td> 获取卡尺间隔。                    </td>
+<td> Lấy khoảng cách giữa các thước đo.                    </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetCaliperSpace                 </td>
-<td> 设置卡尺间隔。                    </td>
+<td> Thiết lập khoảng cách giữa các thước đo.                    </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetCaliperID                            </td>
-<td> 获取卡尺ID。                      </td>
+<td> Lấy ID thước đo.                      </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetCaliperID                   </td>
-<td> 设置卡尺ID。                      </td>
+<td> Thiết lập ID thước đo.                      </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetSearchDirection            </td>
-<td> 获取卡尺搜索方向。                </td>
+<td> Lấy hướng tìm kiếm của thước đo.                </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetSearchDirection </td>
-<td> 设置卡尺搜索方向。                </td>
+<td> Thiết lập hướng tìm kiếm của thước đo.                </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetCaliperNum                      </td>
-<td> 获取卡尺数目。                    </td>
+<td> Lấy số lượng thước đo.                    </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+
+<h2>Giải thích chi tiết</h2>
 
 <h3>scGuiRectEx(dof = 15)</h3>
 
 <ul>
-<li><p>功能：构造scGuiRectEx对象，默认搜索方向自由度为15，此参数可以不用设置，直接使用scGuiRectEx()即可。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng: Khởi tạo đối tượng scGuiRectEx, mặc định bậc tự do của hướng tìm kiếm là 15, có thể không cần truyền tham số, chỉ cần dùng scGuiRectEx() là đủ.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>GetSearchDirectionDOF()</h3>
 
 <ul>
-<li><p>功能：获取搜索方向自由度。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：搜索方向自由度，整型。</p></li>
+<li><p>Chức năng: Lấy bậc tự do của hướng tìm kiếm.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Bậc tự do của hướng tìm kiếm, kiểu số nguyên.</p></li>
 </ul>
-
 
 <h3>GetRectEx()</h3>
 
 <ul>
-<li><p>功能：获取可变矩形。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：可变矩形，scRectEx类型。</p></li>
+<li><p>Chức năng: Lấy hình chữ nhật có thể thay đổi.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Hình chữ nhật có thể thay đổi, kiểu scRectEx.</p></li>
 </ul>
-
 
 <h3>SetRectEx(rectEx)</h3>
 
 <ul>
-<li><p>功能：设置可变矩形。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập hình chữ nhật có thể thay đổi.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>rectEx：可变矩形，scRectEx类型。</li>
+<li>rectEx: Hình chữ nhật có thể thay đổi, kiểu scRectEx.</li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>GetRectExCaliper()</h3>
 
 <ul>
-<li><p>功能：获取可变矩形卡尺。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：可变矩形卡尺，scRectExCaliper类型。</p></li>
+<li><p>Chức năng: Lấy thước đo của hình chữ nhật có thể thay đổi.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Thước đo hình chữ nhật, kiểu scRectExCaliper.</p></li>
 </ul>
-
 
 <h3>SetRectExCaliper(rectExCaliper)</h3>
 
 <ul>
-<li><p>功能：获取可变矩形卡尺。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập thước đo của hình chữ nhật có thể thay đổi.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>rectExCaliper：可变矩形卡尺，scRectExCaliper类型。</li>
+<li>rectExCaliper: Thước đo hình chữ nhật, kiểu scRectExCaliper.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>GetCaliperWidth()</h3>
 
 <ul>
-<li><p>功能：获取卡尺宽度。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：卡尺宽度，整型。</p></li>
+<li><p>Chức năng: Lấy độ rộng của thước đo.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Độ rộng của thước đo, kiểu số nguyên.</p></li>
 </ul>
-
 
 <h3>SetCaliperWidth(width)</h3>
 
 <ul>
-<li><p>功能：设置卡尺宽度。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập độ rộng của thước đo.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>width：卡尺宽度，整型。</li>
+<li>width: Độ rộng của thước đo, kiểu số nguyên.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>GetCaliperSpace()</h3>
 
 <ul>
-<li><p>功能：获取卡尺间隔。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：卡尺间隔，整型。</p></li>
+<li><p>Chức năng: Lấy khoảng cách giữa các thước đo.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Khoảng cách giữa các thước đo, kiểu số nguyên.</p></li>
 </ul>
-
 
 <h3>SetCaliperSpace(space)</h3>
 
 <ul>
-<li><p>功能：设置卡尺间隔。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập khoảng cách giữa các thước đo.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>space：卡尺间隔，整型。</li>
+<li>space: Khoảng cách giữa các thước đo, kiểu số nguyên.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>GetCaliperID()</h3>
 
 <ul>
-<li><p>功能：获取卡尺ID。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：卡尺ID，整型。</p></li>
+<li><p>Chức năng: Lấy ID của thước đo.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: ID của thước đo, kiểu số nguyên.</p></li>
 </ul>
-
 
 <h3>SetCaliperID(caliperID)</h3>
 
 <ul>
-<li><p>功能：设置卡尺ID。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập ID của thước đo.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>caliperID：卡尺ID，整型。</li>
+<li>caliperID: ID của thước đo, kiểu số nguyên.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>GetSearchDirection()</h3>
 
 <ul>
-<li><p>功能：获取卡尺搜索方向。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：卡尺搜索方向，整型。</p></li>
+<li><p>Chức năng: Lấy hướng tìm kiếm của thước đo.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Hướng tìm kiếm, kiểu số nguyên.</p></li>
 </ul>
-
 
 <h3>SetSearchDirection(searchdirection)</h3>
 
 <ul>
-<li><p>功能：设置卡尺搜索方向。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập hướng tìm kiếm của thước đo.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>searchdirection：卡尺搜索方向，整型。</li>
+<li>searchdirection: Hướng tìm kiếm, kiểu số nguyên.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>GetCaliperNum()</h3>
 
 <ul>
-<li><p>功能：获取卡尺数目。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：卡尺数目，整型。</p></li>
+<li><p>Chức năng: Lấy số lượng thước đo.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Số lượng thước đo, kiểu số nguyên.</p></li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
-
-<h2>示例代码</h2>
+<h2>Ví dụ mã</h2>
 
 <p>```python
-ROI_Line = GvTool.GetToolData(&ldquo;边检测工具_011.检测区域&rdquo;)
+ROI_Line = GvTool.GetToolData("边检测工具_011.检测区域")
 print(type(ROI_Line))</p>
 
 <p>rectex = ROI_Line.GetRectEx()

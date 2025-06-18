@@ -18,337 +18,292 @@
            </head>
 <h1>scRect</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示矩形，例如几何定位的搜索区域，Blob工具的矩形ROI区域。</p>
+<p>Đại diện cho hình chữ nhật, ví dụ như vùng tìm kiếm trong định vị hình học, hoặc vùng ROI hình chữ nhật trong công cụ Blob.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                      </th>
-<th> 接口描述                                   </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> scRect           </td>
-<td> scRect()默认构造函数。                     </td>
+<td>Khởi tạo</td>
+<td>scRect</td>
+<td>Hàm khởi tạo mặc định scRect().</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scRect    </td>
-<td> scRect(ul, sz)构造函数。                   </td>
+<td></td>
+<td>scRect</td>
+<td>Hàm khởi tạo scRect(ul, sz).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scRect      </td>
-<td> scRect(w, h)构造函数。                     </td>
+<td></td>
+<td>scRect</td>
+<td>Hàm khởi tạo scRect(w, h).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scRect </td>
-<td> scRect(x, y, w, h)构造函数。               </td>
+<td></td>
+<td>scRect</td>
+<td>Hàm khởi tạo scRect(x, y, w, h).</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> Set         </td>
-<td> Set(ul, sz)设置矩形左上角坐标和大小。      </td>
+<td>Hàm</td>
+<td>Set</td>
+<td>Set(ul, sz) Thiết lập tọa độ góc trên bên trái và kích thước của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> Set      </td>
-<td> Set(x, y, w, h) 设置矩形左上角坐标和大小。 </td>
+<td></td>
+<td>Set</td>
+<td>Set(x, y, w, h) Thiết lập tọa độ góc trên bên trái và kích thước của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetOrigin  </td>
-<td> 设置矩形左上角点。                         </td>
+<td></td>
+<td>SetOrigin</td>
+<td>Thiết lập điểm góc trên bên trái của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetOrigin    </td>
-<td> 获取矩形左上角点。                         </td>
+<td></td>
+<td>GetOrigin</td>
+<td>Lấy điểm góc trên bên trái của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetSize      </td>
-<td> 设置矩形的尺寸。                           </td>
+<td></td>
+<td>SetSize</td>
+<td>Thiết lập kích thước của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetSize        </td>
-<td> 获取矩形的尺寸。                           </td>
+<td></td>
+<td>GetSize</td>
+<td>Lấy kích thước của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetWidth     </td>
-<td> 设置矩形的宽。                             </td>
+<td></td>
+<td>SetWidth</td>
+<td>Thiết lập chiều rộng của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetWidth      </td>
-<td> 获取矩形的宽。                             </td>
+<td></td>
+<td>GetWidth</td>
+<td>Lấy chiều rộng của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetHeight   </td>
-<td> 设置矩形的高。                             </td>
+<td></td>
+<td>SetHeight</td>
+<td>Thiết lập chiều cao của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetHeight    </td>
-<td> 获取矩形的高。                             </td>
+<td></td>
+<td>GetHeight</td>
+<td>Lấy chiều cao của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetUL            </td>
-<td> 获取矩形左上角点。                         </td>
+<td></td>
+<td>GetUL</td>
+<td>Lấy điểm góc trên bên trái của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetUR            </td>
-<td> 获取矩形右上角点。                         </td>
+<td></td>
+<td>GetUR</td>
+<td>Lấy điểm góc trên bên phải của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetLR            </td>
-<td> 获取矩形右下角点。                         </td>
+<td></td>
+<td>GetLR</td>
+<td>Lấy điểm góc dưới bên phải của hình chữ nhật.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetLL            </td>
-<td> 获取矩形左下角点。                         </td>
+<td></td>
+<td>GetLL</td>
+<td>Lấy điểm góc dưới bên trái của hình chữ nhật.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+
+<h2>Giải thích chi tiết</h2>
 
 <h3>scRect()</h3>
-
 <ul>
-<li><p>功能：构造scRect对象。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng: Khởi tạo một đối tượng scRect.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scRect(ul, sz)</h3>
-
 <ul>
-<li><p>功能：构造scRect对象，左上角设置为ul，宽高为sz。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Khởi tạo đối tượng scRect với góc trên bên trái là ul và kích thước là sz.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>ul：矩形左上角位置，sc2Vector类型。</p></li>
-<li><p>sz：矩形的宽高，sc2Vector类型的sz中的x表示宽，y表示高。</p></li>
+<li><p>ul: Vị trí góc trên bên trái của hình chữ nhật, kiểu sc2Vector.</p></li>
+<li><p>sz: Kích thước (rộng và cao) của hình chữ nhật, kiểu sc2Vector. x là chiều rộng, y là chiều cao.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scRect(w, h)</h3>
-
 <ul>
-<li><p>功能：构造scRect对象，设置宽为w，高为h，左上角坐标为(0, 0)。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Khởi tạo đối tượng scRect với chiều rộng w, chiều cao h, và góc trên trái là (0, 0).</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>w：矩形的宽，浮点数类型。</p></li>
-<li><p>h：矩形的高，浮点数类型。</p></li>
+<li><p>w: Chiều rộng của hình chữ nhật, kiểu float.</p></li>
+<li><p>h: Chiều cao của hình chữ nhật, kiểu float.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scRect(x, y, w, h)</h3>
-
 <ul>
-<li><p>功能：构造scRect对象，设置左上角位置为(x, y)，宽为w，高为h。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Khởi tạo đối tượng scRect với vị trí góc trên trái (x, y), chiều rộng w và chiều cao h.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>x：矩形的左上角x坐标，浮点数类型。</p></li>
-<li><p>y：矩形的左上角y坐标，浮点数类型。</p></li>
-<li><p>w：矩形的宽，浮点数类型。</p></li>
-<li><p>h：矩形的高，浮点数类型。</p></li>
+<li><p>x: Tọa độ x của góc trên trái, kiểu float.</p></li>
+<li><p>y: Tọa độ y của góc trên trái, kiểu float.</p></li>
+<li><p>w: Chiều rộng của hình chữ nhật, kiểu float.</p></li>
+<li><p>h: Chiều cao của hình chữ nhật, kiểu float.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>Set (ul, sz)</h3>
-
 <ul>
-<li><p>功能：设置矩形的左上角点和宽高。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập góc trên trái và kích thước của hình chữ nhật.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>ul：矩形左上角位置，sc2Vector类型。</p></li>
-<li><p>sz：矩形的宽高，sc2Vector类型的sz中的x表示宽，y表示高。</p></li>
+<li><p>ul: Vị trí góc trên trái, kiểu sc2Vector.</p></li>
+<li><p>sz: Kích thước, kiểu sc2Vector (x là chiều rộng, y là chiều cao).</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết có thiết lập thành công hay không.</p></li>
 </ul>
-
 
 <h3>Set (x, y, w, h)</h3>
-
 <ul>
-<li><p>功能：设置矩形左上角点和宽高。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập góc trên trái và kích thước của hình chữ nhật.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>x：矩形的左上角x坐标，浮点数类型。</p></li>
-<li><p>y：矩形的左上角y坐标，浮点数类型。</p></li>
-<li><p>w：矩形的宽，浮点数类型。</p></li>
-<li><p>h：矩形的高，浮点数类型。</p></li>
+<li><p>x: Tọa độ x của góc trên trái, kiểu float.</p></li>
+<li><p>y: Tọa độ y của góc trên trái, kiểu float.</p></li>
+<li><p>w: Chiều rộng, kiểu float.</p></li>
+<li><p>h: Chiều cao, kiểu float.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool.</p></li>
 </ul>
-
 
 <h3>SetOrigin(ul)</h3>
-
 <ul>
-<li><p>功能：设置矩形的左上角点。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập điểm góc trên trái của hình chữ nhật.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>ul：矩形左上角位置，sc2Vector类型。</li>
+<li>ul: Vị trí góc trên trái, kiểu sc2Vector.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool.</p></li>
 </ul>
-
 
 <h3>GetOrigin()</h3>
-
 <ul>
-<li><p>功能：获取矩形的左上角点。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：矩形的左上角点，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy tọa độ góc trên trái.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector.</p></li>
 </ul>
-
 
 <h3>SetSize(sz)</h3>
-
 <ul>
-<li><p>功能：设置矩形的宽高。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập kích thước (rộng và cao).</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>sz：矩形的宽高，sc2Vector类型的sz中的x表示宽，y表示高。</li>
+<li>sz: Kích thước, kiểu sc2Vector. x là rộng, y là cao.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool.</p></li>
 </ul>
-
 
 <h3>GetSize()</h3>
-
 <ul>
-<li><p>功能：获取矩形的宽高。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：矩形的宽高，sc2Vector类型，x表示宽，y表示高。</p></li>
+<li><p>Chức năng: Lấy kích thước của hình chữ nhật.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector (x là rộng, y là cao).</p></li>
 </ul>
-
 
 <h3>SetWidth(w)</h3>
-
 <ul>
-<li><p>功能：设置矩形的宽。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập chiều rộng.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>w：矩形的宽，浮点数类型。</li>
+<li>w: Chiều rộng, kiểu float.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool.</p></li>
 </ul>
 
-
-<h3>Getwidth()</h3>
-
+<h3>GetWidth()</h3>
 <ul>
-<li><p>功能：获取矩形的宽。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：矩形的宽，浮点数类型。</p></li>
+<li><p>Chức năng: Lấy chiều rộng.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu float.</p></li>
 </ul>
-
 
 <h3>SetHeight(h)</h3>
-
 <ul>
-<li><p>功能：设置矩形的高。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập chiều cao.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>h：矩形的高，浮点数类型。</li>
+<li>h: Chiều cao, kiểu float.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool.</p></li>
 </ul>
-
 
 <h3>GetHeight()</h3>
-
 <ul>
-<li><p>功能：获取矩形的高。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：矩形的高，浮点数类型。</p></li>
+<li><p>Chức năng: Lấy chiều cao.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu float.</p></li>
 </ul>
-
 
 <h3>GetUL()</h3>
-
 <ul>
-<li><p>功能：获取矩形左上角点。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：矩形的左上角点，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy điểm góc trên bên trái.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector.</p></li>
 </ul>
-
 
 <h3>GetUR()</h3>
-
 <ul>
-<li><p>功能：获取矩形的右上角点。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：矩形的右上角点，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy điểm góc trên bên phải.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector.</p></li>
 </ul>
-
 
 <h3>GetLR()</h3>
-
 <ul>
-<li><p>功能：获取矩形的右下角点。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：矩形的右下角点，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy điểm góc dưới bên phải.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector.</p></li>
 </ul>
-
 
 <h3>GetLL()</h3>
-
 <ul>
-<li><p>功能：获取矩形的左下角点。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：矩形的左下角点，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy điểm góc dưới bên trái.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector.</p></li>
 </ul>
 
+<h2>Lưu ý</h2>
+<p>Không có</p>
 
-<h2>注意</h2>
+<h2>Mã ví dụ</h2>
+<p>Không có</p>
 
-<p>无</p>
-
-<h2>示例代码</h2>
-
-<p>无</p>

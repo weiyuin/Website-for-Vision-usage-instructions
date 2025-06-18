@@ -18,335 +18,321 @@
            </head>
 <h1>scLine</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示直线，例如找线工具的找线结果。</p>
+<p>Đại diện cho một đường thẳng, ví dụ như kết quả của công cụ tìm đường thẳng.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                             </th>
-<th> 接口描述                                                 </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> scLine                                 </td>
-<td> scLine()默认构造函数。                                   </td>
+<td>Khởi tạo</td>
+<td>scLine</td>
+<td>scLine() — Hàm tạo mặc định.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scLine                         </td>
-<td> scLine(sc2Vector, sc2Vector)构造函数。                   </td>
+<td></td>
+<td>scLine</td>
+<td>scLine(sc2Vector, sc2Vector) — Hàm tạo với hai vector.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scLine                         </td>
-<td> scLine(sc2Vector, scRadian)构造函数。                    </td>
+<td></td>
+<td>scLine</td>
+<td>scLine(sc2Vector, scRadian) — Hàm tạo với một vector và góc xoay.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scLine                                </td>
-<td> scLine(sc2Vector)构造函数。                              </td>
+<td></td>
+<td>scLine</td>
+<td>scLine(sc2Vector) — Hàm tạo với một vector.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scLine                        </td>
-<td> scLine(double, scRadian)构造函数。                       </td>
+<td></td>
+<td>scLine</td>
+<td>scLine(double, scRadian) — Hàm tạo với khoảng cách và góc xoay.</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> SetPosDirection       </td>
-<td> 设置直线所经过点的位置坐标和直线方向向量。               </td>
+<td>Hàm</td>
+<td>SetPosDirection</td>
+<td>Thiết lập tọa độ điểm đi qua và vector hướng của đường thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetPosRotation         </td>
-<td> 设置直线所经过点的位置坐标和直线旋转角度。               </td>
+<td></td>
+<td>SetPosRotation</td>
+<td>Thiết lập tọa độ điểm đi qua và góc xoay của đường thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetDistRotation      </td>
-<td> 用原点到直线的距离和旋转角度来设置直线。                 </td>
+<td></td>
+<td>SetDistRotation</td>
+<td>Thiết lập đường thẳng bằng khoảng cách từ gốc tọa độ đến đường thẳng và góc xoay.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetFromStartEnd </td>
-<td> 设置直线的起始点和终止点。                               </td>
+<td></td>
+<td>SetFromStartEnd</td>
+<td>Thiết lập điểm đầu và điểm cuối của đường thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetFromLineSeg          </td>
-<td> 用线段lineSeg来构造直线。                                </td>
+<td></td>
+<td>SetFromLineSeg</td>
+<td>Tạo đường thẳng từ đoạn thẳng lineSeg.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetPos                              </td>
-<td> 设置直线经过的点位置坐标。                               </td>
+<td></td>
+<td>SetPos</td>
+<td>Thiết lập tọa độ điểm đi qua của đường thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetRotation                    </td>
-<td> 设置直线的旋转角度，范围是(-π,π]。                       </td>
+<td></td>
+<td>SetRotation</td>
+<td>Thiết lập góc xoay của đường thẳng, phạm vi (-π, π]。</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetPos                                </td>
-<td> 获取直线所经过的点位置坐标。                             </td>
+<td></td>
+<td>GetPos</td>
+<td>Lấy tọa độ điểm đi qua của đường thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetDir                                 </td>
-<td> 获取直线的方向向量。                                     </td>
+<td></td>
+<td>GetDir</td>
+<td>Lấy vector hướng của đường thẳng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetRotation                       </td>
-<td> 获取直线的旋转角度,范围是(-π,π]。                        </td>
+<td></td>
+<td>GetRotation</td>
+<td>Lấy góc xoay của đường thẳng, phạm vi (-π, π]。</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetAngle                        </td>
-<td> 计算从当前直线到给定直线other的旋转角度（-π&lt; a \&lt;=π）。 </td>
+<td></td>
+<td>GetAngle</td>
+<td>Tính góc xoay từ đường thẳng hiện tại đến đường thẳng khác (−π &lt; a ≤ π)。</td>
 </tr>
 <tr>
-<td>      </td>
-<td> Intersect                      </td>
-<td> 计算当前直线与给定直线line的交点。                       </td>
+<td></td>
+<td>Intersect</td>
+<td>Tính giao điểm giữa đường thẳng hiện tại và đường thẳng khác.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+
+<h2>Chi tiết mô tả</h2>
 
 <h3>scLine()</h3>
 
 <ul>
-<li><p>功能：构造scLine对象，默认构造函数，经过原点的水平直线。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng: Khởi tạo đối tượng scLine, là hàm khởi tạo mặc định, tạo đường thẳng ngang đi qua gốc tọa độ.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scLine(pos, dir)</h3>
 
 <ul>
-<li><p>功能：根据直线所经过点的位置坐标pos和直线方向向量dir构造直线。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Khởi tạo đường thẳng dựa trên tọa độ điểm pos mà đường đi qua và vector hướng dir của đường.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>pos：直线所经过点的位置坐标，sc2Vector类型。</p></li>
-<li><p>dir：直线的方向向量，sc2Vector类型。</p></li>
+<li><p>pos: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</p></li>
+<li><p>dir: Vector hướng của đường thẳng, kiểu sc2Vector.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scLine(pos, rot)</h3>
 
 <ul>
-<li><p>功能：根据直线所经过点的位置坐标pos和直线旋转角度rot构造直线。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Khởi tạo đường thẳng dựa trên tọa độ điểm pos mà đường đi qua và góc quay rot của đường thẳng.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>pos：直线所经过点的位置坐标，sc2Vector类型。</p></li>
-<li><p>rot：直线的旋转角度，scRadian类型。</p></li>
+<li><p>pos: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</p></li>
+<li><p>rot: Góc quay của đường thẳng, kiểu scRadian.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scLine(v)</h3>
 
 <ul>
-<li><p>功能：根据二维向量v构造直线，直线角度为向量v的角度，直线经过向量v所表示的点。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Khởi tạo đường thẳng từ vector hai chiều v, góc của đường thẳng là góc của vector v, và đi qua điểm do v biểu diễn.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>v：二维向量，sc2Vector类型。</li>
+<li>v: Vector hai chiều, kiểu sc2Vector.</li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scLine(dist, rot)</h3>
 
 <ul>
-<li><p>功能：用原点到直线的距离dist和旋转角度rot来构造直线。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Khởi tạo đường thẳng dựa vào khoảng cách từ gốc tọa độ đến đường thẳng (dist) và góc quay (rot).</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>dist：原点到直线的距离，浮点数类型。</p></li>
-<li><p>rot：直线的旋转角度，scRadian类型。</p></li>
+<li><p>dist: Khoảng cách từ gốc tọa độ đến đường thẳng, kiểu float.</p></li>
+<li><p>rot: Góc quay của đường thẳng, kiểu scRadian.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>SetPosDirection(pos, dir)</h3>
 
 <ul>
-<li><p>功能：设置直线所经过点的位置坐标pos和直线方向向量dir。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập tọa độ điểm mà đường đi qua (pos) và vector hướng của đường (dir).</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>pos：直线所经过点的位置坐标，sc2Vector类型。</p></li>
-<li><p>dir：直线的方向向量，sc2Vector类型。</p></li>
+<li><p>pos: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</p></li>
+<li><p>dir: Vector hướng của đường, kiểu sc2Vector.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetPosRotation(pos, rot)</h3>
 
 <ul>
-<li><p>功能：据直线所经过点的位置坐标pos和直线旋转角度rot设置直线。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập đường thẳng dựa vào tọa độ điểm pos mà đường đi qua và góc quay rot.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>pos：直线所经过点的位置坐标，sc2Vector类型。</p></li>
-<li><p>rot：直线的旋转角度，scRadian类型。</p></li>
+<li><p>pos: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</p></li>
+<li><p>rot: Góc quay của đường, kiểu scRadian.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetDistRotation(dist, rot)</h3>
 
 <ul>
-<li><p>功能：用原点到直线的距离dist和旋转角度rot来设置直线。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập đường thẳng dựa trên khoảng cách từ gốc tọa độ đến đường thẳng (dist) và góc quay (rot).</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>dist：原点到直线的距离，浮点数类型。</p></li>
-<li><p>rot：直线的旋转角度，scRadian类型。</p></li>
+<li><p>dist: Khoảng cách từ gốc tọa độ đến đường thẳng, kiểu float.</p></li>
+<li><p>rot: Góc quay của đường thẳng, kiểu scRadian.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetFromStartEnd(point1, point2)</h3>
 
 <ul>
-<li><p>功能：设置直线的起始点和终止点。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập đường thẳng bằng cách chỉ định điểm bắt đầu và điểm kết thúc.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>point1：起始点，sc2Vector类型。</p></li>
-<li><p>point2：终止点，sc2Vector类型。</p></li>
+<li><p>point1: Điểm bắt đầu, kiểu sc2Vector.</p></li>
+<li><p>point2: Điểm kết thúc, kiểu sc2Vector.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetFromLineSeg(lineSeg)</h3>
 
 <ul>
-<li><p>功能：用线段lineSeg来设置直线。</p></li>
-<li><p>参数：无</p>
+<li><p>Chức năng: Thiết lập đường thẳng dựa vào đoạn thẳng lineSeg.</p></li>
+<li><p>Tham số: Không có</p>
 
 <ul>
-<li>lineSeg：线段，scLineSeg类型。</li>
+<li>lineSeg: Đoạn thẳng, kiểu scLineSeg.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetPos(pos)</h3>
 
 <ul>
-<li><p>功能：设置直线经过的点位置坐标pos。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập tọa độ điểm mà đường đi qua là pos.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>pos：直线所经过点的位置坐标，sc2Vector类型。</li>
+<li>pos: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetRotation(rot)</h3>
 
 <ul>
-<li><p>功能：设置直线的旋转角度。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập góc quay của đường thẳng.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>rot：直线的旋转角度，scRadian类型。</li>
+<li>rot: Góc quay của đường thẳng, kiểu scRadian.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>GetPos ()</h3>
 
 <ul>
-<li><p>功能：获取直线所经过的点位置坐标。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：直线所经过点的位置坐标，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy tọa độ điểm mà đường thẳng đi qua.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</p></li>
 </ul>
-
 
 <h3>GetDir()</h3>
 
 <ul>
-<li><p>功能：获取直线的方向向量。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：直线的方向向量，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy vector hướng của đường thẳng.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Vector hướng của đường, kiểu sc2Vector.</p></li>
 </ul>
-
 
 <h3>GetRotation()</h3>
 
 <ul>
-<li><p>功能：获取直线的旋转角度,范围是(-π,π]。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：直线的旋转角度，scRadian类型。</p></li>
+<li><p>Chức năng: Lấy góc quay của đường thẳng, phạm vi là (-π,π]。</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Góc quay của đường thẳng, kiểu scRadian.</p></li>
 </ul>
-
 
 <h3>GetAngle(other)</h3>
 
 <ul>
-<li><p>功能：计算从当前直线到给定直线other的旋转角度（-π&lt; a \&lt;=π）。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Tính toán góc quay từ đường hiện tại đến đường thẳng cho trước other (−π&lt; a &lt;=π)。</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>other：给定的直线，scLine类型。</li>
+<li>other: Đường thẳng cho trước, kiểu scLine.</li>
 </ul>
 </li>
-<li><p>返回值：当前直线到给定直线other的旋转角度，scRadian类型。</p></li>
+<li><p>Giá trị trả về: Góc quay từ đường hiện tại đến other, kiểu scRadian.</p></li>
 </ul>
-
 
 <h3>Intersect(other)</h3>
 
 <ul>
-<li><p>功能：计算从当前直线到给定直线other的交点。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Tính giao điểm giữa đường hiện tại và đường thẳng cho trước other.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>other：给定的直线，scLine类型。</li>
+<li>other: Đường thẳng cho trước, kiểu scLine.</li>
 </ul>
 </li>
-<li><p>返回值：交点，sc2VectorVec类型。</p></li>
+<li><p>Giá trị trả về: Giao điểm, kiểu sc2VectorVec.</p></li>
 </ul>
+
 
 
 <h2>注意</h2>
