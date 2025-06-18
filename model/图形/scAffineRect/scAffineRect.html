@@ -18,457 +18,444 @@
            </head>
 <h1>scAffineRect</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示仿射矩形，例如几何定位的训练区域，Blob工具的仿射矩形ROI区域。</p>
+<p>Đại diện cho hình chữ nhật biến hình (affine rectangle), ví dụ như vùng huấn luyện trong định vị hình học, vùng ROI hình chữ nhật biến hình của công cụ Blob.</p>
 
 <p><img src="media/d991a54662aeaa5ab555cd264709fdb9.png" alt="" /></p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                     </th>
-<th> 接口描述                                                     </th>
+<th> Phân loại </th>
+<th> Tên giao diện </th>
+<th> Mô tả giao diện </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> scAffineRect                              </td>
-<td> scAffineRect()默认构造函数。                                 </td>
-</tr>
-<tr>
-<td>      </td>
-<td> scAffineRect                </td>
-<td> scAffineRect(sc2XformLinear)构造函数。                       </td>
-</tr>
-<tr>
-<td>      </td>
+<td> Hàm khởi tạo </td>
 <td> scAffineRect </td>
-<td> scAffineRect(sc2Vector, sc2Vector,sc2Vector)构造函数。       </td>
+<td> Hàm khởi tạo mặc định scAffineRect(). </td>
 </tr>
 <tr>
-<td>      </td>
+<td> </td>
 <td> scAffineRect </td>
-<td> scAffineRect(sc2Vector, double, double, scRadian, scRadian)构造函数。 </td>
+<td> Hàm khởi tạo scAffineRect(sc2XformLinear). </td>
 </tr>
 <tr>
-<td> 函数 </td>
+<td> </td>
+<td> scAffineRect </td>
+<td> Hàm khởi tạo scAffineRect(sc2Vector, sc2Vector, sc2Vector). </td>
+</tr>
+<tr>
+<td> </td>
+<td> scAffineRect </td>
+<td> Hàm khởi tạo scAffineRect(sc2Vector, double, double, scRadian, scRadian). </td>
+</tr>
+<tr>
+<td> Hàm </td>
 <td> SetAffineRectFromUnitSq </td>
-<td> 设置仿射变换。                                               </td>
+<td> Thiết lập biến hình affine. </td>
 </tr>
 <tr>
-<td>      </td>
+<td> </td>
 <td> SetCornersPoPxPy </td>
-<td> 设置仿射矩形原点cornerPo，x角点cornerPx，y角点cornerPy。     </td>
+<td> Thiết lập điểm gốc cornerPo, điểm góc x là cornerPx, điểm góc y là cornerPy của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
+<td> </td>
 <td> SetCenterLengthsRotAndSkew </td>
-<td> 设置仿射矩形中心center，x边长xLen，y边长yLen，x边旋转角度xRotation和切变角skew。 </td>
+<td> Thiết lập tâm, độ dài cạnh x (xLen), độ dài cạnh y (yLen), góc quay cạnh x (xRotation) và góc nghiêng (skew) của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
+<td> </td>
 <td> SetCornerPoLengthsRotAndSkew </td>
-<td> 设置仿射矩形原点cornerPo，x边长xLen，y边长yLen，x边旋转角度xRotation和切变角skew </td>
+<td> Thiết lập điểm gốc cornerPo, độ dài cạnh x (xLen), độ dài cạnh y (yLen), góc quay cạnh x (xRotation) và góc nghiêng (skew). </td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetCenter                            </td>
-<td> 设置仿射矩形的中心。                                         </td>
+<td> </td>
+<td> SetCenter </td>
+<td> Thiết lập tâm của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetCornerPo                             </td>
-<td> 设置仿射矩形的原点Po。                                       </td>
+<td> </td>
+<td> SetCornerPo </td>
+<td> Thiết lập điểm gốc Po của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetXLength                             </td>
-<td> 设置仿射矩形的x边长。                                        </td>
+<td> </td>
+<td> SetXLength </td>
+<td> Thiết lập độ dài cạnh x của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetYLength                             </td>
-<td> 设置仿射矩形的y边长。                                        </td>
+<td> </td>
+<td> SetYLength </td>
+<td> Thiết lập độ dài cạnh y của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetXRotation                         </td>
-<td> 设置仿射矩形的x边旋转角度。                                  </td>
+<td> </td>
+<td> SetXRotation </td>
+<td> Thiết lập góc quay cạnh x của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetSkew                                   </td>
-<td> 设置仿射矩形的切变角度。                                     </td>
+<td> </td>
+<td> SetSkew </td>
+<td> Thiết lập góc nghiêng (shear) của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetAffineRectFromUnitSq       </td>
-<td> 获取仿射变换。                                               </td>
+<td> </td>
+<td> GetAffineRectFromUnitSq </td>
+<td> Lấy biến hình affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCornerPo                               </td>
-<td> 获取仿射矩形的原点Po。                                       </td>
+<td> </td>
+<td> GetCornerPo </td>
+<td> Lấy điểm gốc Po của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCornerPx                               </td>
-<td> 获取仿射矩形的x角点Px。                                      </td>
+<td> </td>
+<td> GetCornerPx </td>
+<td> Lấy điểm góc Px (cạnh x) của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCornerPy                           </td>
-<td> 获取仿射矩形的y角点Py。                                      </td>
+<td> </td>
+<td> GetCornerPy </td>
+<td> Lấy điểm góc Py (cạnh y) của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCornerPopp                           </td>
-<td> 获取仿射矩形对角点坐标。                                     </td>
+<td> </td>
+<td> GetCornerPopp </td>
+<td> Lấy tọa độ điểm góc đối diện của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCenter                                   </td>
-<td> 获取仿射矩形的中心。                                         </td>
+<td> </td>
+<td> GetCenter </td>
+<td> Lấy tâm của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetXLength                                 </td>
-<td> 获取仿射矩形的x边长。                                        </td>
+<td> </td>
+<td> GetXLength </td>
+<td> Lấy độ dài cạnh x của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetYLength                                 </td>
-<td> 获取仿射矩形的y边长。                                        </td>
+<td> </td>
+<td> GetYLength </td>
+<td> Lấy độ dài cạnh y của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetXRotation                              </td>
-<td> 获取仿射矩形的x边旋转角度。                                  </td>
+<td> </td>
+<td> GetXRotation </td>
+<td> Lấy góc quay cạnh x của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetYRotation                              </td>
-<td> 获取仿射矩形的y边旋转角度。                                  </td>
+<td> </td>
+<td> GetYRotation </td>
+<td> Lấy góc quay cạnh y của hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetSkew                                       </td>
-<td> 获取仿射矩形的切变角度。                                     </td>
+<td> </td>
+<td> GetSkew </td>
+<td> Lấy góc nghiêng (shear) của hình chữ nhật affine. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Chi tiết mô tả</h2>
 
 <h3>scAffineRect()</h3>
 
 <ul>
-<li><p>功能：构造scAffineRect对象。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng: Khởi tạo đối tượng scAffineRect.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scAffineRect(affRectFromUS)</h3>
 
 <ul>
-<li><p>功能：根据二维仿射变换构造scAffineRect对象，。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Khởi tạo đối tượng scAffineRect dựa trên phép biến đổi affine 2 chiều.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>affRectFromUS：二维仿射变换，sc2XformLinear类型。</li>
+<li>affRectFromUS: Phép biến đổi affine 2 chiều, kiểu sc2XformLinear.</li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scAffineRect(cornerPo, cornerPx, cornerPy)</h3>
 
 <ul>
-<li><p>功能：构造scAffineRect对象，设置原点为cornerPo，Px角点为conerPx和Py角点为cornerPy。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Khởi tạo đối tượng scAffineRect, thiết lập điểm gốc là cornerPo, điểm góc Px là cornerPx và điểm góc Py là cornerPy.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>cornerPo：仿射矩形的原点，sc2Vector类型。</p></li>
-<li><p>cornerPx：仿射矩形的Px点，sc2Vector类型。</p></li>
-<li><p>cornerPy：仿射矩形的Py点，sc2Vector类型.</p></li>
+<li><p>cornerPo: Điểm gốc của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>cornerPx: Điểm Px của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>cornerPy: Điểm Py của hình chữ nhật affine, kiểu sc2Vector.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>scAffineRect(center, xLen, yLen, xRotation, skew)</h3>
 
 <ul>
-<li><p>功能：构造scAffineRect对象，设置中心为center，x边长为xLen，y边长为yLen，旋转角度为xRotation，切变角为skew。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Khởi tạo đối tượng scAffineRect, thiết lập tâm là center, độ dài cạnh x là xLen, độ dài cạnh y là yLen, góc xoay là xRotation và góc nghiêng là skew.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>center：仿射矩形的中心，sc2Vector类型。</p></li>
-<li><p>xLen：仿射矩形的x边长，浮点数类型。</p></li>
-<li><p>yLen：仿射矩形的y边长，浮点数类型。</p></li>
-<li><p>xRotation：仿射矩形的旋转角度（弧度表示），scRadian类型。</p></li>
-<li><p>skew：仿射矩形的切变角（弧度表示），scRadian类型。</p></li>
+<li><p>center: Tâm của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>xLen: Độ dài cạnh x của hình chữ nhật affine, kiểu số thực.</p></li>
+<li><p>yLen: Độ dài cạnh y của hình chữ nhật affine, kiểu số thực.</p></li>
+<li><p>xRotation: Góc xoay cạnh x (đơn vị radian), kiểu scRadian.</p></li>
+<li><p>skew: Góc nghiêng (shear) của hình chữ nhật affine (đơn vị radian), kiểu scRadian.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>SetAffineRectFromUnitSq(affRectFromUS)</h3>
 
 <ul>
-<li><p>功能：设置仿射变换。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập phép biến hình affine.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>affRectFromUS：仿射变换，sc2XformLinear类型.</li>
+<li>affRectFromUS: Phép biến đổi affine, kiểu sc2XformLinear.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetCornersPoPxPy(cornerPo, cornerPx, cornerPy)</h3>
 
 <ul>
-<li><p>功能：设置仿射矩形的原点，Px角点和Py角点。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập điểm gốc, điểm góc Px và điểm góc Py của hình chữ nhật affine.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>cornerPo：仿射矩形的原点，sc2Vector类型。</p></li>
-<li><p>cornerPx：仿射矩形的Px点，sc2Vector类型。</p></li>
-<li><p>cornerPy：仿射矩形的Py点，sc2Vector类型.</p></li>
+<li><p>cornerPo: Điểm gốc của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>cornerPx: Điểm Px của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>cornerPy: Điểm Py của hình chữ nhật affine, kiểu sc2Vector.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetCenterLengthsRotAndSkew(center, xLen, yLen, xRotation, skew)</h3>
 
 <ul>
-<li><p>功能：设置仿射矩形中心为center，x边长为xLen，y边长为yLen，旋转角度为xRotation，切变角为skew。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập tâm hình chữ nhật affine là center, cạnh x dài xLen, cạnh y dài yLen, góc xoay là xRotation và góc nghiêng là skew.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>center：仿射矩形的中心，sc2Vector类型。</p></li>
-<li><p>xLen：仿射矩形的x边长，浮点数类型。</p></li>
-<li><p>yLen：仿射矩形的y边长，浮点数类型。</p></li>
-<li><p>xRotation：仿射矩形的旋转角度（弧度表示），scRadian类型。</p></li>
-<li><p>skew：仿射矩形的切变角（弧度表示），scRadian类型。</p></li>
+<li><p>center: Tâm của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>xLen: Độ dài cạnh x, kiểu số thực.</p></li>
+<li><p>yLen: Độ dài cạnh y, kiểu số thực.</p></li>
+<li><p>xRotation: Góc xoay cạnh x (đơn vị radian), kiểu scRadian.</p></li>
+<li><p>skew: Góc nghiêng (shear) (đơn vị radian), kiểu scRadian.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetCornerPoLengthsRotAndSkew(cornerPo, xLen, yLen, xRotation, skew)</h3>
 
 <ul>
-<li><p>功能：设置仿射矩形原点为cornerPo，x边长为xLen，y边长为yLen，旋转角度为xRotation，切变角为skew。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập điểm gốc của hình chữ nhật affine là cornerPo, cạnh x dài xLen, cạnh y dài yLen, góc xoay là xRotation và góc nghiêng là skew.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>cornerPo：仿射矩形的原点，sc2Vector类型。</p></li>
-<li><p>xLen：仿射矩形的x边长，浮点数类型。</p></li>
-<li><p>yLen：仿射矩形的y边长，浮点数类型。</p></li>
-<li><p>xRotation：仿射矩形的旋转角度（弧度表示），scRadian类型。</p></li>
-<li><p>skew：仿射矩形的切变角（弧度表示），scRadian类型。</p></li>
+<li><p>cornerPo: Điểm gốc, kiểu sc2Vector.</p></li>
+<li><p>xLen: Độ dài cạnh x, kiểu số thực.</p></li>
+<li><p>yLen: Độ dài cạnh y, kiểu số thực.</p></li>
+<li><p>xRotation: Góc xoay cạnh x (đơn vị radian), kiểu scRadian.</p></li>
+<li><p>skew: Góc nghiêng (shear) (đơn vị radian), kiểu scRadian.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không.</p></li>
 </ul>
+
 
 
 <h3>SetCenter (center)</h3>
 
 <ul>
-<li><p>功能：设置仿射矩形的中心。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập tâm của hình chữ nhật affine.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>center：仿射矩形的中心，sc2Vector类型。</li>
+<li>center：Tâm của hình chữ nhật affine, kiểu sc2Vector。</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>SetCornerPo(Po)</h3>
 
 <ul>
-<li><p>功能：设置仿射矩形的原点。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập gốc của hình chữ nhật affine。</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>Po：仿射矩形的原点，sc2Vector类型。</li>
+<li>Po：Gốc của hình chữ nhật affine, kiểu sc2Vector。</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>SetXLength(xLen)</h3>
 
 <ul>
-<li><p>功能：设置仿射矩形的x边长。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập chiều dài cạnh x của hình chữ nhật affine。</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>xLen：仿射矩形的x边长，浮点数类型。</li>
+<li>xLen：Chiều dài cạnh x, kiểu số thực。</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>SetYLength(yLen)</h3>
 
 <ul>
-<li><p>功能：设置仿射矩形的y边长。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập chiều dài cạnh y của hình chữ nhật affine。</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>yLen：仿射矩形的y边长，浮点数类型。</li>
+<li>yLen：Chiều dài cạnh y, kiểu số thực。</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>SetXRotation(xRot)</h3>
 
 <ul>
-<li><p>功能：设置仿射矩形的x边旋转角度。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập góc xoay của cạnh x。</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>xRot：仿射矩形的x边旋转角度，scRadian类型。</li>
+<li>xRot：Góc xoay cạnh x (đơn vị radian), kiểu scRadian。</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>SetSkew(skew)</h3>
 
 <ul>
-<li><p>功能：设置仿射矩形的切变角度。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Thiết lập góc nghiêng (skew) của hình chữ nhật affine。</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>skew：仿射矩形的切变角度，scRadian类型。</li>
+<li>skew：Góc nghiêng (đơn vị radian), kiểu scRadian。</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>GetAffineRectFromUnitSq()</h3>
 
 <ul>
-<li><p>功能：获取仿射变换。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射变换，sc2XformLinear类型。</p></li>
+<li><p>Chức năng: Lấy phép biến đổi affine từ hình vuông đơn vị。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Phép biến đổi affine, kiểu sc2XformLinear。</p></li>
 </ul>
 
 
 <h3>GetCornerPo()</h3>
 
 <ul>
-<li><p>功能：获取仿射矩形的原点坐标。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射矩形的原点坐标，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy tọa độ gốc Po của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Tọa độ gốc, kiểu sc2Vector。</p></li>
 </ul>
 
 
 <h3>GetCornerPx()</h3>
 
 <ul>
-<li><p>功能：获取仿射矩形的Px角点坐标。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射矩形的Px角点坐标，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy tọa độ điểm Px của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Tọa độ điểm Px, kiểu sc2Vector。</p></li>
 </ul>
 
 
 <h3>GetCornerPy()</h3>
 
 <ul>
-<li><p>功能：获取仿射矩形的Py角点坐标。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射矩形的Py角点坐标，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy tọa độ điểm Py của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Tọa độ điểm Py, kiểu sc2Vector。</p></li>
 </ul>
 
 
 <h3>GetCornerPopp()</h3>
 
 <ul>
-<li><p>功能：获取仿射矩形的对角点坐标。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射矩形的对角点坐标，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy tọa độ điểm đối diện với gốc Po của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Tọa độ điểm đối đỉnh, kiểu sc2Vector。</p></li>
 </ul>
 
 
 <h3>GetCenter()</h3>
 
 <ul>
-<li><p>功能：获取仿射矩形的中心。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射矩形的中心，sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy tọa độ tâm của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Tâm, kiểu sc2Vector。</p></li>
 </ul>
 
 
 <h3>GetXLength()</h3>
 
 <ul>
-<li><p>功能：获取仿射矩形的x边长。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射矩形的x边长，浮点数类型。</p></li>
+<li><p>Chức năng: Lấy chiều dài cạnh x。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Chiều dài cạnh x, kiểu float。</p></li>
 </ul>
 
 
 <h3>GetYLength()</h3>
 
 <ul>
-<li><p>功能：获取仿射矩形的y边长。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射矩形的y边长，浮点数类型。</p></li>
+<li><p>Chức năng: Lấy chiều dài cạnh y。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Chiều dài cạnh y, kiểu float。</p></li>
 </ul>
 
 
 <h3>GetXRotaion()</h3>
 
 <ul>
-<li><p>功能：获取仿射矩形的x边旋转角度。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射矩形的x边旋转角度，scRadian类型。</p></li>
+<li><p>Chức năng: Lấy góc xoay của cạnh x。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Góc xoay cạnh x, kiểu scRadian。</p></li>
 </ul>
 
 
 <h3>GetYRotaion()</h3>
 
 <ul>
-<li><p>功能：获取仿射矩形的y边旋转角度。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射矩形的y边旋转角度，scRadian类型。</p></li>
+<li><p>Chức năng: Lấy góc xoay của cạnh y。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Góc xoay cạnh y, kiểu scRadian。</p></li>
 </ul>
 
 
 <h3>GetSkew()</h3>
 
 <ul>
-<li><p>功能：获取仿射矩形的切变角度。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：仿射矩形的切变角度，scRadian类型。</p></li>
+<li><p>Chức năng: Lấy góc nghiêng (skew) của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Góc nghiêng, kiểu scRadian。</p></li>
 </ul>
 
 

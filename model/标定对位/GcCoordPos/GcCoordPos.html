@@ -18,105 +18,101 @@
            </head>
 <h1>GcCoordPos</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示位置姿态，例如位置姿态生成工具的输出，标定结果（标准标定计算工具）的图像坐标和平台坐标。</p>
+<p>Đại diện cho vị trí và tư thế, ví dụ như đầu ra của công cụ tạo vị trí và tư thế, kết quả hiệu chuẩn (công cụ tính toán hiệu chuẩn tiêu chuẩn) bao gồm tọa độ ảnh và tọa độ nền tảng.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 接口名称 </th>
-<th> 接口描述                                                     </th>
-<th>                                           </th>
+<th> Phân loại </th>
+<th> Tên giao diện </th>
+<th> Mô tả giao diện </th>
+<th> </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造     </td>
-<td> GcCoordPos                                </td>
-<td> GcCoordPos()默认构造函数，XYD初始化为0.0  </td>
-<td></td>
-</tr>
-<tr>
-<td>          </td>
+<td> Hàm khởi tạo </td>
 <td> GcCoordPos </td>
-<td> GcCoordPos (double,double,double)构造函数 </td>
+<td> Hàm khởi tạo mặc định GcCoordPos(), khởi tạo XYD là 0.0 </td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> GcCoordPos   </td>
-<td> GcCoordPos (sc2Vector,double)构造函数     </td>
+<td> </td>
+<td> GcCoordPos </td>
+<td> Hàm khởi tạo GcCoordPos(double, double, double) </td>
 <td></td>
 </tr>
 <tr>
-<td> 属性     </td>
-<td> X                                                 </td>
-<td> X坐标                                     </td>
+<td> </td>
+<td> GcCoordPos </td>
+<td> Hàm khởi tạo GcCoordPos(sc2Vector, double) </td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> Y                                                 </td>
-<td> Y坐标                                     </td>
+<td> Thuộc tính </td>
+<td> X </td>
+<td> Tọa độ X </td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> D                                               </td>
-<td> D坐标，角度                               </td>
+<td> </td>
+<td> Y </td>
+<td> Tọa độ Y </td>
+<td></td>
+</tr>
+<tr>
+<td> </td>
+<td> D </td>
+<td> Tọa độ D, đại diện cho góc </td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Chi tiết</h2>
 
 <h3>GcCoordPos( )</h3>
 
 <ul>
-<li><p>功能：构造GcCoordPos对象。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：无</p></li>
+<li><p>Chức năng: Khởi tạo một đối tượng GcCoordPos.</p></li>
+<li><p>Tham số: Không có</p></li>
+<li><p>Giá trị trả về: Không có</p></li>
 </ul>
-
 
 <h3>GcCoordPos( double dPosX, double dPosY, double dAngle )</h3>
 
 <ul>
-<li><p>功能：构造GcCoordPos对象。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Khởi tạo một đối tượng GcCoordPos.</p></li>
+<li><p>Tham số:</p>
 
-<p>dPosX：X坐标</p>
+<p>dPosX: Tọa độ X</p>
 
-<p>dPosY：Y坐标</p>
+<p>dPosY: Tọa độ Y</p>
 
-<p>dAngle：D坐标，表示角度</p></li>
-<li><p>返回值：无</p></li>
+<p>dAngle: Tọa độ D, biểu thị góc</p></li>
+<li><p>Giá trị trả về: Không có</p></li>
 </ul>
-
 
 <h3>GcCoordPos( sc2Vector Pos, double dAngle )</h3>
 
 <ul>
-<li><p>功能：构造GcCoordPos对象。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: Khởi tạo một đối tượng GcCoordPos.</p></li>
+<li><p>Tham số:</p>
 
-<p>Pos：X，Y坐标</p>
+<p>Pos: Tọa độ X và Y</p>
 
-<p>dAngle：D坐标，表示角度</p></li>
-<li><p>返回值：无</p></li>
+<p>dAngle: Tọa độ D, biểu thị góc</p></li>
+<li><p>Giá trị trả về: Không có</p></li>
 </ul>
-
 
 <h3>X/Y/D</h3>
 
 <ul>
-<li>功能：X坐标/Y坐标/D坐标。浮点型，可读写。</li>
+<li>Chức năng: Tọa độ X / Tọa độ Y / Tọa độ D. Kiểu số thực, có thể đọc/ghi.</li>
 </ul>
 
 

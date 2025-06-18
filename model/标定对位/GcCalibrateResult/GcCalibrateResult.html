@@ -18,134 +18,127 @@
            </head>
 <h1>GcCalibrateResult</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示位置姿态，例如位置姿态生成工具的输出，标定结果（标准标定计算工具）的图像坐标和平台坐标。</p>
+<p>Đại diện cho vị trí và tư thế, ví dụ như đầu ra của công cụ tạo vị trí và tư thế, kết quả hiệu chuẩn (công cụ tính toán hiệu chuẩn tiêu chuẩn) bao gồm tọa độ ảnh và tọa độ nền tảng.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 接口名称 </th>
-<th> 接口描述                                         </th>
-<th>                                                     </th>
+<th> Phân loại </th>
+<th> Tên giao diện </th>
+<th> Mô tả giao diện </th>
+<th> </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造     </td>
-<td> GcCalibrateResult     </td>
-<td> GcCalibrateResult默认构造函数                       </td>
+<td> Hàm khởi tạo </td>
+<td> GcCalibrateResult </td>
+<td> Hàm khởi tạo mặc định của GcCalibrateResult </td>
 <td></td>
 </tr>
 <tr>
-<td> 属性     </td>
+<td> Thuộc tính </td>
 <td> matrixImageToPlatform </td>
-<td> 图像坐标和平台坐标之间的转换矩阵                    </td>
+<td> Ma trận chuyển đổi giữa tọa độ ảnh và tọa độ nền tảng </td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> coordPosImage             </td>
-<td> 标记点在初始位置时的图像坐标                        </td>
+<td> </td>
+<td> coordPosImage </td>
+<td> Tọa độ ảnh của điểm đánh dấu tại vị trí ban đầu </td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> coordPosPlatform           </td>
-<td> 标记点在初始位置时的平台坐标                        </td>
+<td> </td>
+<td> coordPosPlatform </td>
+<td> Tọa độ nền tảng của điểm đánh dấu tại vị trí ban đầu </td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> dImagePixelRadioX         </td>
-<td> X方向像素当量                                       </td>
+<td> </td>
+<td> dImagePixelRadioX </td>
+<td> Tỷ lệ pixel theo hướng X </td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> dImagePixelRadioY         </td>
-<td> Y方向像素当量                                       </td>
+<td> </td>
+<td> dImagePixelRadioY </td>
+<td> Tỷ lệ pixel theo hướng Y </td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
+<td> </td>
 <td> dAngleImageInPlatform </td>
-<td> 图像坐标系X轴正方向在平台坐标系中的角度（单位是度） </td>
+<td> Góc giữa trục X dương của hệ tọa độ ảnh với hệ tọa độ nền tảng (đơn vị: độ) </td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> dAnglePlatformShear     </td>
-<td> 平台坐标系Y轴偏离垂直90度的角度（单位是度）         </td>
+<td> </td>
+<td> dAnglePlatformShear </td>
+<td> Góc lệch của trục Y hệ tọa độ nền tảng so với phương vuông góc 90 độ (đơn vị: độ) </td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Chi tiết</h2>
 
 <h3>GcCalibrateResult ( )</h3>
 
 <ul>
-<li><p>功能：构造GcCalibrateResult对象。</p>
+<li><p>Chức năng: Khởi tạo một đối tượng GcCalibrateResult.</p>
 
-<p>初始化dImagePixelRadioX和dImagePixelRadioY为1.0，初始化dAngleImageInPlatform和dAnglePlatformShear为0.0</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：无</p></li>
+<p>Khởi tạo dImagePixelRadioX và dImagePixelRadioY là 1.0, dAngleImageInPlatform và dAnglePlatformShear là 0.0</p></li>
+<li><p>Tham số: Không có</p></li>
+<li><p>Giá trị trả về: Không có</p></li>
 </ul>
-
 
 <h3>matrixImageToPlatform</h3>
 
 <ul>
-<li>功能：图像坐标和平台坐标之间的转换矩阵。sc2Matrix类型，可读写。</li>
+<li>Chức năng: Ma trận chuyển đổi giữa tọa độ ảnh và tọa độ nền tảng. Kiểu dữ liệu: sc2Matrix, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>coordPosImage</h3>
 
 <ul>
-<li>功能：标记点在初始位置时的图像坐标。GcCoordPos类型，可读写。</li>
+<li>Chức năng: Tọa độ ảnh của điểm đánh dấu tại vị trí ban đầu. Kiểu dữ liệu: GcCoordPos, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>coordPosPlatform</h3>
 
 <ul>
-<li>功能：标记点在初始位置时的平台坐标。GcCoordPos类型，可读写。</li>
+<li>Chức năng: Tọa độ nền tảng của điểm đánh dấu tại vị trí ban đầu. Kiểu dữ liệu: GcCoordPos, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>dImagePixelRadioX</h3>
 
 <ul>
-<li>功能：X方向像素当量。浮点型，可读写。</li>
+<li>Chức năng: Tỷ lệ pixel theo hướng X. Kiểu dữ liệu: số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>dImagePixelRadioY</h3>
 
 <ul>
-<li>功能：Y方向像素当量。浮点型，可读写。</li>
+<li>Chức năng: Tỷ lệ pixel theo hướng Y. Kiểu dữ liệu: số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>dAngleImageInPlatform</h3>
 
 <ul>
-<li>功能：图像坐标系X轴正方向在平台坐标系中的角度（单位是度）。浮点型，可读写。</li>
+<li>Chức năng: Góc giữa trục X dương của hệ tọa độ ảnh với hệ tọa độ nền tảng (đơn vị: độ). Kiểu dữ liệu: số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>dAnglePlatformShear</h3>
 
 <ul>
-<li>功能：平台坐标系Y轴偏离垂直90度的角度（单位是度）。浮点型，可读写。</li>
+<li>Chức năng: Góc lệch của trục Y hệ tọa độ nền tảng so với phương vuông góc 90 độ (đơn vị: độ). Kiểu dữ liệu: số thực, có thể đọc/ghi.</li>
 </ul>
+
 
 
 <h2>注意</h2>

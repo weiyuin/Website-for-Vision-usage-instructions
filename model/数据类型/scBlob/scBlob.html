@@ -18,450 +18,418 @@
            </head>
 <h1>scBlob</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示Blob结果。包含在Blob工具的输出参数Blob结果GsSingleBlobResult类型中，是其BlobResult属性的类型。</p>
+<p>Đại diện cho kết quả Blob. Được chứa trong tham số đầu ra "Kết quả Blob" của công cụ Blob, thuộc kiểu <code>GsSingleBlobResult</code>, và là kiểu dữ liệu của thuộc tính <code>BlobResult</code>.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                             </th>
-<th> 接口描述                                                     </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> scBlob                                               </td>
-<td> scBlob()默认构造函数。                                       </td>
+<td>Khởi tạo</td>
+<td>scBlob</td>
+<td>Hàm khởi tạo mặc định scBlob().</td>
 </tr>
 <tr>
-<td> 属性 </td>
-<td> lChildNum                             </td>
-<td> 子节点个数。                                                 </td>
+<td>Thuộc tính</td>
+<td>lChildNum</td>
+<td>Số lượng nút con.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> label                                     </td>
-<td> 连通标记，即区域的类别标记。对灰度图像，Blob标记为1，Hole标记为0。 </td>
+<td></td>
+<td>label</td>
+<td>Nhãn liên thông, tức là loại vùng. Với ảnh xám: Blob được đánh dấu là 1, Hole là 0.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> area                                       </td>
-<td> 面积                                                         </td>
+<td></td>
+<td>area</td>
+<td>Diện tích.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> centerMassX/Y                     </td>
-<td> 质心                                                         </td>
+<td></td>
+<td>centerMassX/Y</td>
+<td>Trọng tâm (tọa độ X/Y).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> imageBoundCenterX/Y         </td>
-<td> 外接矩形中心X/Y                                              </td>
+<td></td>
+<td>imageBoundCenterX/Y</td>
+<td>Tâm của hình chữ nhật bao ngoài (X/Y).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> imageBoundMinX/Y               </td>
-<td> 外接矩形最小X/Y                                              </td>
+<td></td>
+<td>imageBoundMinX/Y</td>
+<td>Giá trị X/Y nhỏ nhất của hình chữ nhật bao ngoài.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> imageBoundMaxX/Y               </td>
-<td> 外接矩形最大X/Y                                              </td>
+<td></td>
+<td>imageBoundMaxX/Y</td>
+<td>Giá trị X/Y lớn nhất của hình chữ nhật bao ngoài.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> imageBoundWidth                 </td>
-<td> 外接矩形宽度                                                 </td>
+<td></td>
+<td>imageBoundWidth</td>
+<td>Chiều rộng của hình chữ nhật bao ngoài.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> imageBoundHeight           </td>
-<td> 外接矩形高度                                                 </td>
+<td></td>
+<td>imageBoundHeight</td>
+<td>Chiều cao của hình chữ nhật bao ngoài.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> imageBoundAspect           </td>
-<td> 外接矩形长宽比                                               </td>
+<td></td>
+<td>imageBoundAspect</td>
+<td>Tỷ lệ dài rộng của hình chữ nhật bao ngoài.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> diagonalLength                   </td>
-<td> 最小外接矩形对角线长度。                                     </td>
+<td></td>
+<td>diagonalLength</td>
+<td>Độ dài đường chéo của hình chữ nhật bao ngoài nhỏ nhất.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> dMassToBoundOffsetX/Y     </td>
-<td> 质心到最小外接矩形的中心偏移X/Y。                            </td>
+<td></td>
+<td>dMassToBoundOffsetX/Y</td>
+<td>Độ lệch X/Y từ trọng tâm đến tâm hình chữ nhật bao ngoài nhỏ nhất.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> dMinPixelValue                   </td>
-<td> 最小灰度。指Blob内部所有点的最小灰度值。                     </td>
+<td></td>
+<td>dMinPixelValue</td>
+<td>Giá trị xám nhỏ nhất trong toàn bộ điểm của Blob.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> dMaxPixelValue                   </td>
-<td> 最大灰度。指Blob内部所有点的最大灰度值。                     </td>
+<td></td>
+<td>dMaxPixelValue</td>
+<td>Giá trị xám lớn nhất trong toàn bộ điểm của Blob.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> dAvergPixelValue               </td>
-<td> 平均灰度。指Blob内部所有点的平均灰度值。                     </td>
+<td></td>
+<td>dAvergPixelValue</td>
+<td>Giá trị xám trung bình của toàn bộ điểm trong Blob.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> dAvergPixelValueMax         </td>
-<td> 基于事件的平均灰度的最大值。这里基于事件应该理解为基于游程。所以基于事件的平均灰度的最大值即基于游程的平均灰度的最大值。也就是Blob内部所有的游程平均灰度的最大值。 </td>
+<td></td>
+<td>dAvergPixelValueMax</td>
+<td>Giá trị lớn nhất của giá trị xám trung bình theo từng đoạn (run). Dựa trên khái niệm “sự kiện” tức là theo đoạn – tức là giá trị trung bình lớn nhất của từng đoạn trong Blob.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> dAvergPixelValueMin         </td>
-<td> 基于事件的平均灰度的最小值。这里基于事件应该理解为基于游程。所以基于事件的平均灰度的最小值即基于游程的平均灰度的最小值。也就是Blob内部所有的游程平均灰度的最小值。 </td>
+<td></td>
+<td>dAvergPixelValueMin</td>
+<td>Giá trị nhỏ nhất của giá trị xám trung bình theo từng đoạn (run). Dùng để xác định vùng có điểm tối nhất.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> inertiaX/Y                           </td>
-<td> 关于X/Y轴的惯性二阶矩                                        </td>
+<td></td>
+<td>inertiaX/Y</td>
+<td>Moment quán tính bậc hai theo trục X/Y.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> inertiaMin                           </td>
-<td> 最小惯性二阶矩                                               </td>
+<td></td>
+<td>inertiaMin</td>
+<td>Moment quán tính bậc hai nhỏ nhất.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> inertiaMax                           </td>
-<td> 最大惯性二阶矩                                               </td>
+<td></td>
+<td>inertiaMax</td>
+<td>Moment quán tính bậc hai lớn nhất.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> angle                                     </td>
-<td> 方向                                                         </td>
+<td></td>
+<td>angle</td>
+<td>Góc phương (hướng chính của vật thể).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> elongation                           </td>
-<td> 延长度Elongation。最大惯性二阶矩与最小惯性二阶矩的比值。圆的延长度为1，其为延长度的下限。 </td>
+<td></td>
+<td>elongation</td>
+<td>Độ kéo dài (Elongation): là tỷ số giữa moment quán tính lớn nhất và nhỏ nhất. Hình tròn có giá trị elongation bằng 1 (giá trị nhỏ nhất).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> boundPrincipalCenterX/Y </td>
-<td> 主轴外接矩形中心X/Y                                          </td>
+<td></td>
+<td>boundPrincipalCenterX/Y</td>
+<td>Tâm X/Y của hình chữ nhật bao ngoài theo trục chính.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> boundPrincipalMinX/Y       </td>
-<td> 主轴外接矩形最小X/Y                                          </td>
+<td></td>
+<td>boundPrincipalMinX/Y</td>
+<td>Giá trị nhỏ nhất X/Y của hình chữ nhật theo trục chính.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> boundPrincipalMaxX/Y       </td>
-<td> 主轴外接矩形最大X/Y                                          </td>
+<td></td>
+<td>boundPrincipalMaxX/Y</td>
+<td>Giá trị lớn nhất X/Y của hình chữ nhật theo trục chính.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> boundPrincipalWidth         </td>
-<td> 主轴外接矩形宽度                                             </td>
+<td></td>
+<td>boundPrincipalWidth</td>
+<td>Chiều rộng của hình chữ nhật theo trục chính.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> boundPrincipalHeight       </td>
-<td> 主轴外接矩形高度                                             </td>
+<td></td>
+<td>boundPrincipalHeight</td>
+<td>Chiều cao của hình chữ nhật theo trục chính.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> boundPrincipalAspect       </td>
-<td> 主轴外接矩形长宽比                                           </td>
+<td></td>
+<td>boundPrincipalAspect</td>
+<td>Tỷ lệ dài rộng của hình chữ nhật theo trục chính.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> density                                 </td>
-<td> 稠密度。描述Blob内部点分布的紧凑程度，其定义为总面积/主轴最小外接矩形面积。取值范围为(0,1]。 </td>
+<td></td>
+<td>density</td>
+<td>Mật độ. Mô tả mức độ tập trung của điểm bên trong Blob. Được định nghĩa là: diện tích tổng / diện tích hình chữ nhật bao ngoài nhỏ nhất theo trục chính. Giá trị trong khoảng (0, 1].</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scartchness                         </td>
-<td> 划伤度Scratchness。指主轴最小外接矩形宽度平方与面积的比值，反映了属于划伤的可能性，该值越大，则越可能是划伤。 </td>
+<td></td>
+<td>scartchness</td>
+<td>Độ xước (Scratchness): tỷ lệ giữa bình phương chiều rộng của hình chữ nhật nhỏ nhất theo trục chính và diện tích. Giá trị càng lớn, khả năng là vết xước càng cao.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> eccentricity                       </td>
-<td> 圆度，越大越扁平，反之越接近圆形。                           </td>
+<td></td>
+<td>eccentricity</td>
+<td>Độ lệch tâm: càng lớn thì hình càng dẹt; càng nhỏ thì càng gần tròn.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> boundaryPixelLength         </td>
-<td> 边界像素长度                                                 </td>
+<td></td>
+<td>boundaryPixelLength</td>
+<td>Chiều dài đường biên (số pixel biên).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> perimeter                             </td>
-<td> 周长                                                         </td>
+<td></td>
+<td>perimeter</td>
+<td>Chu vi của Blob.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> acircularity                       </td>
-<td> 圆度，越大越扁平，反之越接近圆形。                           </td>
+<td></td>
+<td>acircularity</td>
+<td>Độ lệch tròn: càng lớn thì càng dẹt, càng nhỏ thì càng tròn.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> acircularityRms                 </td>
-<td> 归一化圆度                                                   </td>
+<td></td>
+<td>acircularityRms</td>
+<td>Độ lệch tròn đã chuẩn hóa.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+
+<h2>Chi tiết</h2>
 
 <h3>lChildNum</h3>
 
 <ul>
-<li>功能：表示子节点个数，整型，可读写。</li>
+<li>Chức năng: Biểu thị số lượng nút con, kiểu số nguyên, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>label</h3>
 
 <ul>
-<li>功能：表示连通标记，整型，可读写。</li>
+<li>Chức năng: Biểu thị nhãn kết nối (liên thông), kiểu số nguyên, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>area</h3>
 
 <ul>
-<li>功能：表示面积，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị diện tích, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>centerMassX/Y</h3>
 
 <ul>
-<li>功能：表示质心位置，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị vị trí trọng tâm, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>imageBoundCenterX/Y</h3>
 
 <ul>
-<li>功能：表示外接矩形中心X/Y，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị tọa độ X/Y của tâm hình chữ nhật bao ngoài, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>imageBoundMinX/Y</h3>
 
 <ul>
-<li>功能：表示外接矩形最小X/Y，整型，可读写。</li>
+<li>Chức năng: Biểu thị X/Y nhỏ nhất của hình chữ nhật bao ngoài, kiểu số nguyên, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>imageBoundMaxX/Y</h3>
 
 <ul>
-<li>功能：表示外接矩形最大X/Y，整型，可读写。</li>
+<li>Chức năng: Biểu thị X/Y lớn nhất của hình chữ nhật bao ngoài, kiểu số nguyên, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>imageBoundWidth</h3>
 
 <ul>
-<li>功能：表示外接矩形宽度，整型，可读写。</li>
+<li>Chức năng: Biểu thị chiều rộng của hình chữ nhật bao ngoài, kiểu số nguyên, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>imageBoundHeight</h3>
 
 <ul>
-<li>功能：表示外接矩形高度，整型，可读写。</li>
+<li>Chức năng: Biểu thị chiều cao của hình chữ nhật bao ngoài, kiểu số nguyên, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>imageBoundAspect</h3>
 
 <ul>
-<li>功能：表示外接矩形长宽比，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị tỷ lệ chiều dài/rộng của hình chữ nhật bao ngoài, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>diagonalLength</h3>
 
 <ul>
-<li>功能：表示最小外接矩形对角线长度，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị độ dài đường chéo của hình chữ nhật bao nhỏ nhất, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>dMassToBoundOffsetX/Y</h3>
 
 <ul>
-<li>功能：表示质心到最小外接矩形的中心偏移X/Y，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị độ lệch của trọng tâm so với tâm của hình chữ nhật bao nhỏ nhất theo X/Y, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>dMinPixelValue</h3>
 
 <ul>
-<li>功能：表示最小灰度。指Blob内部所有点的最小灰度值，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị giá trị xám nhỏ nhất bên trong Blob, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>dMaxPixelValue</h3>
 
 <ul>
-<li>功能：表示最大灰度。指Blob内部所有点的最大灰度值，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị giá trị xám lớn nhất bên trong Blob, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>dAvergPixelValue</h3>
 
 <ul>
-<li>功能：表示平均灰度。指Blob内部所有点的平均灰度值，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị giá trị xám trung bình của tất cả các điểm trong Blob, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>dAvergPixelValueMax</h3>
 
 <ul>
-<li>功能：基于事件的平均灰度的最大值。这里基于事件应该理解为基于游程。所以基于事件的平均灰度的最大值即基于游程的平均灰度的最大值。也就是Blob内部所有的游程平均灰度的最大值。浮点型，可读写。</li>
+<li>Chức năng: Biểu thị giá trị xám trung bình lớn nhất dựa trên sự kiện (ở đây sự kiện được hiểu là đoạn chạy – run). Tức là giá trị trung bình lớn nhất của các đoạn chạy bên trong Blob. Kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>dAvergPixelValueMin</h3>
 
 <ul>
-<li>功能：表示基于事件的平均灰度的最小值。这里基于事件应该理解为基于游程。所以基于事件的平均灰度的最小值即基于游程的平均灰度的最小值。也就是Blob内部所有的游程平均灰度的最小值。浮点型，可读写。</li>
+<li>Chức năng: Biểu thị giá trị xám trung bình nhỏ nhất dựa trên sự kiện (ở đây sự kiện được hiểu là đoạn chạy – run). Tức là giá trị trung bình nhỏ nhất của các đoạn chạy bên trong Blob. Kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>inertiaX/Y</h3>
 
 <ul>
-<li>功能：表示关于X/Y轴的惯性二阶矩，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị mô men quán tính bậc hai quanh trục X/Y, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>inertiaMin</h3>
 
 <ul>
-<li>功能：表示最小惯性二阶矩，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị mô men quán tính bậc hai nhỏ nhất, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>inertiaMax</h3>
 
 <ul>
-<li>功能：表示最大惯性二阶矩，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị mô men quán tính bậc hai lớn nhất, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>angle</h3>
 
 <ul>
-<li>功能：表示方向，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị hướng, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>elongation</h3>
 
 <ul>
-<li>功能：表示延长度Elongation。最大惯性二阶矩与最小惯性二阶矩的比值。圆的延长度为1，其为延长度的下限。浮点型，可读写。</li>
+<li>Chức năng: Biểu thị độ giãn dài. Là tỷ số giữa mô men quán tính bậc hai lớn nhất và nhỏ nhất. Đối với hình tròn thì giá trị này là 1 – giá trị nhỏ nhất. Kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>boundPrincipalCenterX/Y</h3>
 
 <ul>
-<li>功能：表示主轴外接矩形中心X/Y，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị tọa độ tâm của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>boundPrincipalMinX/Y</h3>
 
 <ul>
-<li>功能：表示主轴外接矩形最小X/Y，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị X/Y nhỏ nhất của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>boundPrincipalMaxX/Y</h3>
 
 <ul>
-<li>功能：表示主轴外接矩形最大X/Y，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị X/Y lớn nhất của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>boundPrincipalWidth</h3>
 
 <ul>
-<li>功能：表示主轴外接矩形宽度，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị chiều rộng của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>boundPrincipalHeight</h3>
 
 <ul>
-<li>功能：表示主轴外接矩形高度，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị chiều cao của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>boundPrincipalAspect</h3>
 
 <ul>
-<li>功能：表示主轴外接矩形长宽比，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị tỷ lệ dài/rộng của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>density</h3>
 
 <ul>
-<li>功能：表示稠密度。描述Blob内部点分布的紧凑程度，其定义为总面积/主轴最小外接矩形面积。取值范围为(0,1]。浮点型，可读写。</li>
+<li>Chức năng: Biểu thị mật độ – thể hiện mức độ phân bố dày đặc của điểm trong Blob. Được định nghĩa là diện tích tổng / diện tích hình chữ nhật bao quanh theo trục chính nhỏ nhất. Giá trị nằm trong khoảng (0,1], kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>scartchness</h3>
 
 <ul>
-<li>功能：表示划伤度Scratchness。指主轴最小外接矩形宽度平方与面积的比值，反映了属于划伤的可能性，该值越大，则越可能是划伤。浮点型，可读写。</li>
+<li>Chức năng: Biểu thị mức độ trầy xước. Là tỷ lệ giữa bình phương chiều rộng của hình chữ nhật bao quanh theo trục chính nhỏ nhất và diện tích. Giá trị càng lớn thì càng có khả năng là vết trầy. Kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>eccentricity</h3>
 
 <ul>
-<li>功能：表示圆度，越大越扁平，反之越接近圆形。浮点型，可读写。</li>
+<li>Chức năng: Biểu thị độ lệch tâm (độ méo). Giá trị càng lớn thì hình càng dẹt; giá trị nhỏ thì hình càng giống hình tròn. Kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>boundaryPixelLength</h3>
 
 <ul>
-<li>功能：表示边界像素长度，整型，可读写。</li>
+<li>Chức năng: Biểu thị độ dài đường viền (pixel), kiểu số nguyên, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>perimeter</h3>
 
 <ul>
-<li>功能：表示周长，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị chu vi, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>acircularity</h3>
 
 <ul>
-<li>功能：表示圆度，越大越扁平，反之越接近圆形。，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị độ tròn – càng lớn thì càng dẹt, càng nhỏ thì càng tròn. Kiểu số thực, có thể đọc/ghi.</li>
 </ul>
-
 
 <h3>acircularityRms</h3>
 
 <ul>
-<li>功能：表示归一化圆度，浮点型，可读写。</li>
+<li>Chức năng: Biểu thị độ tròn chuẩn hóa, kiểu số thực, có thể đọc/ghi.</li>
 </ul>
+
 
 
 <h2>注意</h2>
