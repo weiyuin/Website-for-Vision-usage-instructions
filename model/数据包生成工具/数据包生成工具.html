@@ -16,237 +16,148 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>数据包生成工具</h1>
+<h1>Công Cụ Tạo Gói Dữ Liệu</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>将指定个数的不同类型的数据打包输出一个数据包。个数上限为64个，可以支持多种数据类型：基本数据类型（int、double、long、float、bool 、sc2Vector）、图像数据（8位灰度图像和24位RGB图像）定位工具的结果解析、检测工具的结果和查找工具的结果解析等等，见详细说明。<img src="media/wps67.jpg" alt="img" /></p>
+<p>Đóng gói một số lượng chỉ định các loại dữ liệu khác nhau thành một gói dữ liệu đầu ra. Tối đa hỗ trợ 64 mục dữ liệu, có thể hỗ trợ nhiều kiểu dữ liệu: kiểu dữ liệu cơ bản (int, double, long, float, bool, sc2Vector), dữ liệu hình ảnh (ảnh xám 8 bit và ảnh RGB 24 bit), kết quả của công cụ định vị, kết quả của công cụ kiểm tra và công cụ tìm kiếm... Xem chi tiết ở phần giải thích chi tiết. <img src="media/wps67.jpg" alt="img" /></p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                                   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口             </td>
-<td> 输入数据个数                                                 </td>
-<td> 需要打包的数据的个数，最多支持64个数据。    </td>
-</tr>
-<tr>
-<td></td>
-<td> 开启全部应用         </td>
-<td> 此属性是开启一键修改成指定类型的功能，是将数据包里所有数据改成与“全部应用类型”一致的数据类型。                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 全部应用类型         </td>
-<td> 开启全部应用，然后选择对应的类型，可以将数据包所有数据改成相应的类型数据。                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入数据（0-63）类型 </td>
-<td> 对应于每个需要打包数据的数据类型。                                                                         </td>
-</tr>
-<tr>
-<td>图像窗口</td>
-<td> 无                   </td>
-<td> 无                                                                                                         </td>
-</tr>
-<tr>
-<td> 数据链               </td>
-<td> 输入数据                                                     </td>
-<td> 根据属性窗口输入的个数，显示需要设置的数据。 </td>
-</tr>
-<tr>
-<td>高级界面</td>
-<td> 无                   </td>
-<td> 无                                                                                                         </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                     </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出数据包     </td>
-<td> 输出打包数据生成的数据包。                                   </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Số lượng dữ liệu đầu vào</td>
+<td>Số lượng dữ liệu cần đóng gói, tối đa hỗ trợ 64 mục dữ liệu.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                               </td>
+<td>Bật áp dụng toàn bộ</td>
+<td>Thuộc tính này bật chức năng một nút để chuyển đổi toàn bộ dữ liệu về cùng một kiểu, tức là thay đổi tất cả dữ liệu trong gói thành cùng kiểu với “Loại áp dụng toàn bộ”.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                               </td>
+<td>Loại áp dụng toàn bộ</td>
+<td>Sau khi bật “áp dụng toàn bộ”, chọn kiểu tương ứng để chuyển đổi toàn bộ dữ liệu trong gói sang kiểu dữ liệu tương ứng.</td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无 </td>
-<td> 无                                                                           </td>
+<td></td>
+<td>Kiểu dữ liệu đầu vào (0-63)</td>
+<td>Kiểu dữ liệu tương ứng với từng mục dữ liệu cần đóng gói.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出数据包     </td>
-<td> 输出打包数据生成的数据包，供后序工具使用，同监视窗口的输出数据包参数。 </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Dữ liệu liên kết</td>
+<td>Dữ liệu đầu vào</td>
+<td>Hiển thị dữ liệu cần thiết lập dựa trên số lượng nhập từ cửa sổ thuộc tính.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th> 数据类型                </th>
-<th> 说明                                                         </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> scCircle                </td>
-<td> 圆形。找圆，圆拟合等工具的输出类型。                         </td>
+<td>Cửa sổ giám sát</td>
+<td>Gói dữ liệu đầu ra</td>
+<td>Xuất ra gói dữ liệu được đóng gói.</td>
 </tr>
 <tr>
-<td> scLine                  </td>
-<td> 直线。找线，线拟合等工具的输出类型。                         </td>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
 </tr>
 <tr>
-<td> scGeomSearchResult      </td>
-<td> 几何定位的结果。                                             </td>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
 </tr>
 <tr>
-<td> DMSingleReaderResult    </td>
-<td> 单个DM码读码结果。                                           </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td> SingleLinearCodeResult  </td>
-<td> 单个解码结果。                                               </td>
-</tr>
-<tr>
-<td> QRSingleReaderResult    </td>
-<td> 单个QR码读码结果。                                           </td>
-</tr>
-<tr>
-<td> DefectResultInfo        </td>
-<td> 瑕疵结果信息。                                               </td>
-</tr>
-<tr>
-<td> GsGlueDetectResult      </td>
-<td> 固体胶位置检测工具的结果。                                   </td>
-</tr>
-<tr>
-<td> scPatSearchMaxResult    </td>
-<td> 单个区域定位的结果。                                         </td>
-</tr>
-<tr>
-<td> GsSingleBlobResult      </td>
-<td> BLOB单个结果                                                 </td>
-</tr>
-<tr>
-<td> scCaliperOneEdgeResult  </td>
-<td> 单边卡尺工具输出结果类型。                                   </td>
-</tr>
-<tr>
-<td> scCaliperTwoEdgeResult  </td>
-<td> 双边卡尺工具输出结果类型。                                   </td>
-</tr>
-<tr>
-<td> GsLineSearchResult      </td>
-<td> 线定位单个结果。                                             </td>
-</tr>
-<tr>
-<td> GsCircleSearchResult    </td>
-<td> 圆定位工具单个结果。                                         </td>
-</tr>
-<tr>
-<td> scTriangleSearchResult  </td>
-<td> 三角形定位结果。                                             </td>
-</tr>
-<tr>
-<td> EdgeDeviation           </td>
-<td> 边缘偏差(边检测用)，曲线边宽检测工具的结果。                 </td>
-</tr>
-<tr>
-<td> scFeatureletVector      </td>
-<td> 特征点集，一般是轮廓提取的结果。                             </td>
-</tr>
-<tr>
-<td> GcCoordPos              </td>
-<td> 点坐标，可以为九圆关联标定工具的结果、多区域振镜位置计算工具等。 </td>
-</tr>
-<tr>
-<td> GcPlatformAxisPos       </td>
-<td> 轴位置，一般为轮廓与直线对位计算工具的结果。                 </td>
-</tr>
-<tr>
-<td> scCrossSearchResult     </td>
-<td> 十字定位工具的单个结果。                                     </td>
-</tr>
-<tr>
-<td> scRectangleSearchResult </td>
-<td> 矩形定位工具的单个结果。                                     </td>
-</tr>
-<tr>
-<td> GsGlueMeasureResult     </td>
-<td> 固体胶尺寸测量工具的测量结果。                               </td>
-</tr>
-<tr>
-<td> scGcCoordPosVector      </td>
-<td> 点坐标集，一系列点坐标。                                     </td>
-</tr>
-<tr>
-<td> scSc2vectorVector       </td>
-<td> 一系列二维向量。                                             </td>
-</tr>
-<tr>
-<td> GcBoardPoints           </td>
-<td> 靶标相机标定工具的结果输出。                                 </td>
-</tr>
-<tr>
-<td> GsTextDisplayParam      </td>
-<td> 文本显示数组工具输出的输出数组类型。                         </td>
-</tr>
-<tr>
-<td> GsMultiCLOutputResult   </td>
-<td> 多圆多线定位工具输出的搜索结果类型。                         </td>
-</tr>
-<tr>
-<td> GcCalibrateResult       </td>
-<td> 触碰标定计算工具的结果。                                     </td>
-</tr>
-<tr>
-<td> sc2XformLinear          </td>
-<td> 二维线性变换。                                               </td>
+<td>Dữ liệu liên kết</td>
+<td>Gói dữ liệu đầu ra</td>
+<td>Xuất ra gói dữ liệu để các công cụ tiếp theo sử dụng, giống với đầu ra trong cửa sổ giám sát.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>Giải thích</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>scCircle</td><td>Hình tròn. Là kiểu đầu ra của công cụ tìm hình tròn, khớp hình tròn...</td></tr>
+<tr><td>scLine</td><td>Đường thẳng. Là kiểu đầu ra của công cụ tìm đường thẳng, khớp đường thẳng...</td></tr>
+<tr><td>scGeomSearchResult</td><td>Kết quả định vị hình học.</td></tr>
+<tr><td>DMSingleReaderResult</td><td>Kết quả đọc mã DM đơn.</td></tr>
+<tr><td>SingleLinearCodeResult</td><td>Kết quả giải mã đơn.</td></tr>
+<tr><td>QRSingleReaderResult</td><td>Kết quả đọc mã QR đơn.</td></tr>
+<tr><td>DefectResultInfo</td><td>Thông tin kết quả khuyết tật.</td></tr>
+<tr><td>GsGlueDetectResult</td><td>Kết quả công cụ phát hiện vị trí keo đặc.</td></tr>
+<tr><td>scPatSearchMaxResult</td><td>Kết quả định vị vùng đơn.</td></tr>
+<tr><td>GsSingleBlobResult</td><td>Kết quả BLOB đơn.</td></tr>
+<tr><td>scCaliperOneEdgeResult</td><td>Loại kết quả đầu ra của công cụ đo một cạnh.</td></tr>
+<tr><td>scCaliperTwoEdgeResult</td><td>Loại kết quả đầu ra của công cụ đo hai cạnh.</td></tr>
+<tr><td>GsLineSearchResult</td><td>Kết quả định vị đường thẳng đơn.</td></tr>
+<tr><td>GsCircleSearchResult</td><td>Kết quả định vị đường tròn đơn.</td></tr>
+<tr><td>scTriangleSearchResult</td><td>Kết quả định vị tam giác.</td></tr>
+<tr><td>EdgeDeviation</td><td>Độ lệch cạnh (dùng cho phát hiện biên), kết quả của công cụ kiểm tra bề rộng đường cong.</td></tr>
+<tr><td>scFeatureletVector</td><td>Tập điểm đặc trưng, thường là kết quả trích biên.</td></tr>
+<tr><td>GcCoordPos</td><td>Tọa độ điểm, có thể là kết quả từ công cụ hiệu chuẩn liên kết 9 vòng tròn hoặc tính vị trí vùng rung nhiều vùng.</td></tr>
+<tr><td>GcPlatformAxisPos</td><td>Vị trí trục, thường là kết quả của công cụ căn chỉnh giữa biên dạng và đường thẳng.</td></tr>
+<tr><td>scCrossSearchResult</td><td>Kết quả định vị công cụ hình chữ thập đơn.</td></tr>
+<tr><td>scRectangleSearchResult</td><td>Kết quả định vị công cụ hình chữ nhật đơn.</td></tr>
+<tr><td>GsGlueMeasureResult</td><td>Kết quả đo kích thước keo đặc của công cụ đo keo.</td></tr>
+<tr><td>scGcCoordPosVector</td><td>Tập tọa độ điểm, một chuỗi điểm tọa độ.</td></tr>
+<tr><td>scSc2vectorVector</td><td>Một chuỗi vector 2 chiều.</td></tr>
+<tr><td>GcBoardPoints</td><td>Kết quả đầu ra của công cụ hiệu chuẩn camera mục tiêu.</td></tr>
+<tr><td>GsTextDisplayParam</td><td>Kiểu mảng đầu ra từ công cụ hiển thị văn bản.</td></tr>
+<tr><td>GsMultiCLOutputResult</td><td>Kiểu kết quả tìm kiếm của công cụ định vị nhiều đường tròn và nhiều đường thẳng.</td></tr>
+<tr><td>GcCalibrateResult</td><td>Kết quả từ công cụ tính hiệu chuẩn khi chạm.</td></tr>
+<tr><td>sc2XformLinear</td><td>Biến đổi tuyến tính 2D.</td></tr>
+</tbody>
+</table>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li>只有“开启全部应用”不开启时，才能修改某个特定数据的类型；开启时，增加数据的类型与“全部应用类型”的类型一样。</li>
+<li>Chỉ khi “Bật áp dụng toàn bộ” chưa được bật thì mới có thể thay đổi kiểu dữ liệu riêng lẻ; khi đã bật thì kiểu dữ liệu mới thêm sẽ giống với kiểu “Loại áp dụng toàn bộ”.</li>
 </ul>
+
 
 
 <h2>示例工程</h2>
