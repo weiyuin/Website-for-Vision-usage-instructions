@@ -16,151 +16,153 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>图像到平台坐标系转换</h1>
+<h1>Chuyển đổi từ tọa độ ảnh sang tọa độ hệ tọa độ nền tảng</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>在对位流程中，相机对产品拍照定位得到图像坐标，不能直接用于对位计算。需要根据标定结果，将图像坐标转换到全局的统一的平台坐标系下，才能进行对位偏移量的计算。本工具就是用于完成图像坐标到平台坐标系下坐标的转换，并输出转换后的平台坐标系下的坐标。</p>
+<p>Trong quy trình căn chỉnh, camera chụp ảnh sản phẩm và định vị ra tọa độ ảnh, nhưng không thể dùng trực tiếp để tính toán căn chỉnh. Cần dựa trên kết quả hiệu chuẩn để chuyển đổi tọa độ ảnh sang hệ tọa độ nền tảng toàn cục thống nhất, từ đó mới có thể tính toán sai lệch căn chỉnh. Công cụ này dùng để thực hiện việc chuyển đổi đó và xuất ra tọa độ trong hệ tọa độ nền tảng.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称                                                     </th>
-<th> 参数描述                                                                                                     </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>属性窗口 </td>
-<td> 旧标定类型 </td>
-<td> 选否时链接类型为GcCalibrateResult的标定结果，选是时链接类型为GeneralCalibResult的标定结果 </td>
-</tr>
-<tr>
-<td>                                                      </td>
-<td> 转换工具类型<img src="media/wps122.jpg" alt="img" />                         </td>
-<td> 不包含轴位置变化：标定与对位时的轴位置无变化。<br />包含平台轴位置变化：标定与对位时的平台轴位置变化。<br />包含相机轴位置变化：标定与对位时的相机轴位置变化。<br />包含平台与相机轴位置变化：标定与对位时的平台轴和相机轴位置均发生变化。 </td>
-</tr>
-<tr>
-<td>  </td>
-<td> 特征类型 </td>
-<td> 标识要对图像中的哪种特征类型做结果转换，可以选择点、线、圆三种类型 </td>
-</tr>
-<tr>
-<td>图像窗口</td>
-<td> 无                                                           </td>
-<td> 无                                                                                                           </td>
-</tr>
-<tr>
-<td> 数据链                                                       </td>
-<td> 图像坐标                                                     </td>
-<td> 待转换为平台坐标的原始图像坐标。               </td>
-</tr>
-<tr>
-<td></td>
-<td> 标定结果                                                     </td>
-<td> 标定计算过程输出的标定结果。                                                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 标定时平台轴位置                                             </td>
-<td> 标定时的平台轴位置，只在工具类型为“包含平台/平台与相机轴位置变化”时使用。                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 对位时平台轴位置                                             </td>
-<td> 对位时的平台轴位置，只在工具类型为“包含平台/平台与相机轴位置变化”时使用。                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 平台轴方向                                                   </td>
-<td> 平台各轴的正方向，只在工具类型为“包含平台/平台与相机轴位置变化”时使用。                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 标定时相机轴位置                                             </td>
-<td> 标定时的相机轴位置，只在工具类型为“包含相机/平台与相机轴位置变化”时使用。                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 对位时相机轴位置                                             </td>
-<td> 对位时的相机轴位置，只在工具类型为“包含相机/平台与相机轴位置变化”时使用。                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 相机轴方向                                                   </td>
-<td> 相机各轴的正方向，只在工具类型为“包含相机/平台与相机轴位置变化”时使用。                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 相机轴标定结果                                               </td>
-<td> 相机轴标定过程输出的标定结果，只在工具类型为“包含相机/平台与相机轴位置变化”时使用。                                                 </td>
-</tr>
-<tr>
-<td>高级界面</td>
-<td> 无                                                           </td>
-<td> 无                                                                                                           </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                               </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 平台坐标       </td>
-<td> 转换后的平台（向右向下）坐标结果。                     </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Loại hiệu chuẩn cũ</td>
+<td>Chọn "Không" sẽ liên kết với kết quả hiệu chuẩn kiểu GcCalibrateResult, chọn "Có" thì liên kết với kiểu GeneralCalibResult.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                         </td>
+<td>Loại công cụ chuyển đổi <img src="media/wps122.jpg" alt="img" /></td>
+<td>
+Không bao gồm thay đổi vị trí trục: Vị trí trục không thay đổi giữa lúc hiệu chuẩn và căn chỉnh.<br/>
+Bao gồm thay đổi vị trí trục nền tảng: Vị trí trục nền tảng thay đổi giữa lúc hiệu chuẩn và căn chỉnh.<br/>
+Bao gồm thay đổi vị trí trục camera: Vị trí trục camera thay đổi.<br/>
+Bao gồm cả thay đổi trục nền tảng và trục camera.
+</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                         </td>
+<td>Loại đặc trưng</td>
+<td>Xác định loại đặc trưng trên ảnh cần chuyển đổi kết quả: điểm, đường thẳng, hoặc đường tròn.</td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无       </td>
-<td> 无                                                                     </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 平台坐标       </td>
-<td> 输出转换后的平台坐标结果，供后序工具使用，同监视窗口。 </td>
+<td>Chuỗi dữ liệu</td>
+<td>Tọa độ ảnh</td>
+<td>Tọa độ ảnh gốc cần chuyển đổi sang tọa độ nền tảng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hiệu chuẩn</td>
+<td>Kết quả hiệu chuẩn được tạo ra từ quá trình hiệu chuẩn.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí trục nền tảng khi hiệu chuẩn</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục nền tảng / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí trục nền tảng khi căn chỉnh</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục nền tảng / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hướng trục nền tảng</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục nền tảng / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí trục camera khi hiệu chuẩn</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục camera / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí trục camera khi căn chỉnh</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục camera / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hướng trục camera</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục camera / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hiệu chuẩn trục camera</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục camera / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Tọa độ nền tảng</td>
+<td>Kết quả tọa độ nền tảng (hướng phải - dưới) sau khi chuyển đổi.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Tọa độ nền tảng</td>
+<td>Kết quả tọa độ sau khi chuyển đổi, dùng cho công cụ tiếp theo, giống như cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
 
-<h3>转换工具类型</h3>
+<h2>Giải thích chi tiết</h2>
 
-<p>如果标定初始轴位置与对位时的轴位置无变化，只有产品随机上料，那么直接从图像坐标转换得到平台坐标，可以直接代入对位计算，即选择“不包含轴位置变化”选项；如果存在轴位置变化，需要根据轴位置变化进行坐标修正，才能代入对位计算，即选择相应的“包含…轴位置变化”选项。</p>
+<h3>Loại công cụ chuyển đổi</h3>
 
-<h2>注意</h2>
+<p>Nếu vị trí trục ban đầu khi hiệu chuẩn và vị trí trục khi căn chỉnh không thay đổi, và chỉ có sản phẩm được đặt ngẫu nhiên, thì có thể trực tiếp chuyển đổi tọa độ ảnh thành tọa độ nền tảng để tính toán căn chỉnh, khi đó chọn "Không bao gồm thay đổi vị trí trục". Nếu có sự thay đổi vị trí trục, cần dựa vào sự thay đổi đó để hiệu chỉnh tọa độ, mới đưa vào tính toán căn chỉnh được – khi đó chọn loại "bao gồm thay đổi trục..." tương ứng.</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li><p>图像到平台坐标系转换工具的输出平台坐标结果并非为实际平台坐标系下的平台坐标，而是中间虚拟出的X轴方向向右，Y轴方向向下的虚拟平台坐标系下的坐标。</p></li>
-<li><p>输出的平台坐标可以作为二元数组、三元数组或者四元数组的输入，数组的数据类型选择“GcCoordPos”,之后进行作为对位计算工具的输入。</p></li>
+<li><p>Kết quả tọa độ nền tảng đầu ra của công cụ chuyển đổi không phải là tọa độ trong hệ nền tảng thực tế, mà là tọa độ trong một hệ tọa độ nền tảng ảo, với trục X hướng sang phải, trục Y hướng xuống dưới.</p></li>
+<li><p>Tọa độ nền tảng đầu ra có thể được dùng làm đầu vào cho mảng hai, ba hoặc bốn phần tử kiểu "GcCoordPos", sau đó dùng làm đầu vào cho công cụ tính toán căn chỉnh.</p></li>
 </ul>
 
+<h2>Dự án mẫu</h2>
 
-<h2>示例工程</h2>
-
-<p>参见“\Samples\标准标定+基准两点对位.gvp”。</p>
+<p>Tham khảo: “\Samples\标准标定+基准两点对位.gvp”.</p>

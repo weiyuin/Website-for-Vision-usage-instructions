@@ -16,135 +16,133 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>图像变换工具</h1>
+<h1>Công cụ biến đổi ảnh</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>对图像进行变换，主要包括：图像的加、减、绝对差、乘、非、与、或、右移、左移和像素值变化等变换。</p>
+<p>Thực hiện các phép biến đổi trên ảnh, chủ yếu bao gồm: cộng, trừ, sai tuyệt đối, nhân, phủ định, AND, OR, dịch phải, dịch trái và thay đổi giá trị pixel.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                                                   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口             </td>
-<td> 图像变化模式                                                 </td>
-<td> 加、减、绝对差、乘、非、与、或、右移、左移和像素值变化等模式。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 图像运算数值         </td>
-<td> 对图像进行的加、减、绝对差、乘、与、或的操作的值。                                                                         </td>
-</tr>
-<tr>
-<td></td>
-<td> 图像移位数值         </td>
-<td> 对图像进行的右移或者左移的操作的移位值。                                                                                   </td>
-</tr>
-<tr>
-<td></td>
-<td> 目标像素最小值       </td>
-<td> 进行变换目标像素的最小值。                                                                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 目标像素最大值       </td>
-<td> 进行变换目标像素的最大值。                                                                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 变换后像素值         </td>
-<td> 将一定范围内的像素值变换成某一个像素值。                                                                                   </td>
-</tr>
-<tr>
-<td></td>
-<td> 目标像素是否处于范围 </td>
-<td> 选择是，只对范围内的目标像素进行变换；否则，只对范围外面的像素进行变换。对像素目标进行变换就是为了突出某个特征。                                                               </td>
-</tr>
-<tr>
-<td> 图像窗口             </td>
-<td> 输入图像                                                     </td>
-<td> 需要变换的源图像。                                           </td>
-</tr>
-<tr>
-<td> 数据链               </td>
-<td> 输入图像                                                     </td>
-<td> 需要变换的源图像。                                           </td>
-</tr>
-<tr>
-<td>高级界面</td>
-<td> 无                   </td>
-<td> 无                                                                                                                         </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                         </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输入图像                                                     </td>
-<td> 需要变换的源图像。 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Chế độ biến đổi ảnh</td>
+<td>Các chế độ như: cộng, trừ, sai tuyệt đối, nhân, phủ định, AND, OR, dịch phải, dịch trái và thay đổi giá trị pixel.</td>
 </tr>
 <tr>
 <td></td>
-<td> 输出图像 </td>
-<td> 变换后的目的图像。                                                               </td>
+<td>Giá trị toán tử ảnh</td>
+<td>Giá trị sử dụng trong phép cộng, trừ, sai tuyệt đối, nhân, AND, OR trên ảnh.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                   </td>
+<td>Giá trị dịch ảnh</td>
+<td>Giá trị dịch dùng cho phép dịch phải hoặc dịch trái trên ảnh.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                   </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 输出图像                                                     </td>
-<td> 变换后的目的图像。 </td>
+<td>Giá trị pixel nhỏ nhất</td>
+<td>Giá trị nhỏ nhất của pixel sau khi biến đổi.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                     </td>
+<td>Giá trị pixel lớn nhất</td>
+<td>Giá trị lớn nhất của pixel sau khi biến đổi.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出图像 </td>
-<td> 变换后的目的图像。                                                               </td>
+<td></td>
+<td>Giá trị pixel sau biến đổi</td>
+<td>Chuyển đổi các pixel trong một khoảng nhất định thành một giá trị pixel cụ thể.</td>
+</tr>
+<tr>
+<td></td>
+<td>Pixel mục tiêu có nằm trong khoảng không</td>
+<td>Chọn “Có” thì chỉ biến đổi các pixel nằm trong khoảng; nếu chọn “Không” thì chỉ biến đổi các pixel nằm ngoài khoảng. Biến đổi pixel nhằm làm nổi bật một đặc trưng nào đó.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh gốc cần thực hiện biến đổi.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh gốc cần thực hiện biến đổi.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh gốc cần biến đổi.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi biến đổi.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực hiện.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi biến đổi.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ: “OK” nếu thành công, “NG” nếu thất bại. Giống với tham số kết quả trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi biến đổi.</td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>Lưu ý</h2>
 
-<h2>示例工程</h2>
+<p>Không có</p>
 
-<p>参见“\Samples\图像变换工具.gvp”。</p>
+<h2>Dự án mẫu</h2>
+
+<p>Tham khảo: “\Samples\图像变换工具.gvp”.</p>

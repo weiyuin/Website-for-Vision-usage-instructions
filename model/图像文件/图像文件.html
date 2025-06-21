@@ -16,120 +16,118 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>图像文件工具</h1>
+<h1>Công cụ tệp ảnh</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>图像文件就是根据文件路径加载一张图片，输出为加载的图片。文件路径可以是固定的，也可以是动态的，是根据数据链获取的字符串。</p>
+<p>Tệp ảnh là công cụ dùng để tải một ảnh từ đường dẫn tệp và xuất ra ảnh đã tải. Đường dẫn có thể là cố định hoặc động – nghĩa là đường dẫn có thể lấy từ chuỗi dữ liệu đầu vào.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                             </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口 </td>
-<td> 固定文件                                                     </td>
-<td> 选是，就是固定文件路径；否则，就是动态文件路径。       </td>
-</tr>
-<tr>
-<td></td>
-<td> 文件路径 </td>
-<td> 只有固定路径选择“是”，才会出现文件路径属性。默认是固定路径。                                                         </td>
-</tr>
-<tr>
-<td>图像窗口</td>
-<td> 无           </td>
-<td> 无                                                                                                                   </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 动态文件路径                                                 </td>
-<td> 只有固定路径选择“否”，才会出现动态路径的参数来源配置。 </td>
-</tr>
-<tr>
-<td> 高级界面     </td>
-<td> 无   </td>
-<td> 无                                           </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                         </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口     </td>
-<td> 输出图像                                                     </td>
-<td> 灰度图像输出，包括图像长宽和像素大小。             </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Tệp cố định</td>
+<td>Nếu chọn “Có”, sẽ dùng đường dẫn tệp cố định; nếu chọn “Không”, sẽ sử dụng đường dẫn động từ chuỗi dữ liệu.</td>
 </tr>
 <tr>
 <td></td>
-<td> 输出图像RGB  </td>
-<td> 彩色图像输出，包括图像长宽和像素大小。                                                                           </td>
+<td>Đường dẫn tệp</td>
+<td>Chỉ xuất hiện khi chọn “Tệp cố định = Có”. Mặc định là đường dẫn cố định.</td>
 </tr>
 <tr>
-<td></td>
-<td> 输出深度图像 </td>
-<td> 深度图像输出，包括图像长宽和像素大小。（可以右键查看3D效果）                                                     </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td></td>
-<td> 输出轮廓图像 </td>
-<td> 轮廓图像输出，包括轮廓总点数和有效点数。                                                                         </td>
+<td>Chuỗi dữ liệu</td>
+<td>Đường dẫn tệp động</td>
+<td>Chỉ khi “Tệp cố định = Không”, mới xuất hiện phần cấu hình tham số đường dẫn động.</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行结果     </td>
-<td> 工具执行结果。                                                                                                   </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行时间     </td>
-<td> 工具执行时间。                                                                                                   </td>
-</tr>
-<tr>
-<td> 图像窗口     </td>
-<td> 输出图像                                                     </td>
-<td> 显示路径加载的图像。                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果     </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                     </td>
-</tr>
-<tr>
-<td> 数据链       </td>
-<td> 输出图像                                                     </td>
-<td> 输出灰度图像或者彩色图像或者深度图像或者轮廓图像。 </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu ra</td>
+<td>Xuất ảnh xám, bao gồm chiều dài, chiều rộng và giá trị điểm ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra RGB</td>
+<td>Xuất ảnh màu, bao gồm chiều dài, chiều rộng và giá trị điểm ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra độ sâu</td>
+<td>Xuất ảnh độ sâu, bao gồm chiều dài, chiều rộng và giá trị điểm ảnh. (Có thể nhấp chuột phải để xem hiệu ứng 3D)</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra đường viền</td>
+<td>Xuất ảnh đường viền, bao gồm tổng số điểm và số điểm hợp lệ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Hiển thị hình ảnh được tải từ đường dẫn.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ. Nếu thành công hiển thị “OK”, nếu thất bại hiển thị “NG”. Giống với mục “Kết quả thực thi” ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Xuất ảnh xám hoặc ảnh màu hoặc ảnh độ sâu hoặc ảnh đường viền.</td>
+</tr>
+</tbody>
+</table>
 
-<p>无。</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
 
-<p>无。</p>
+<h2>Lưu ý</h2>
 
-<h2>示例工程</h2>
+<p>Không có.</p>
 
-<p>参见“\Samples\图像源配置工具.gvp”。</p>
+<h2>Dự án mẫu</h2>
+
+<p>Tham khảo: “\Samples\Công cụ cấu hình nguồn ảnh.gvp”.</p>
