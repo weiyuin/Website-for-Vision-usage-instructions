@@ -18,83 +18,80 @@
            </head>
 <h1>GsScriptGuiLine</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>要在视图窗口显示的直线。</p>
+<p>Đường thẳng được hiển thị trong cửa sổ xem.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                             </th>
-<th> 接口描述                           </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
-<td> sScriptGuiStyle </td>
-<td> 显示风格，包括字体，大小，颜色等。 </td>
+<td>Thuộc tính</td>
+<td>sScriptGuiStyle</td>
+<td>Kiểu hiển thị, bao gồm phông chữ, kích thước, màu sắc, v.v.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> line                       </td>
-<td> 要显示的直线。                     </td>
+<td></td>
+<td>line</td>
+<td>Đường thẳng cần hiển thị.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>sScriptGuiStyle</h3>
 
 <ul>
-<li>功能：显示风格，GsScriptGuiStyle类型。</li>
+<li>Chức năng: Kiểu hiển thị, kiểu dữ liệu GsScriptGuiStyle.</li>
 </ul>
-
 
 <h3>line</h3>
 
 <ul>
-<li>功能：要显示的直线，scLine类型</li>
+<li>Chức năng: Đường thẳng cần hiển thị, kiểu dữ liệu scLine.</li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
 
-<p>无。</p>
-
-<h2>示例代码</h2>
+<h2>Ví dụ mã</h2>
 
 <p>```python</p>
 
-<h2>Gui风格</h2>
+<h2>Kiểu hiển thị Gui</h2>
 
 <p>guiStyle = GvVisionAssembly.GsScriptGuiStyle()
-guiStyle.nLineStyle = 0 ## 线型 0:实线 1:虚线 2:点线
-guiStyle.nLineWidth = 2 ## 线宽
+guiStyle.nLineStyle = 0 ## Kiểu đường: 0 - liền, 1 - đứt, 2 - chấm
+guiStyle.nLineWidth = 2 ## Độ dày đường
 guiStyle.clrLineColor = [255, 0, 0]</p>
 
-<h2>Gui数组</h2>
+<h2>Mảng Gui</h2>
 
 <p>guiArray = GvVisionAssembly.GcScriptGuiArray()</p>
 
-<h2>Gui直线</h2>
+<h2>Đường thẳng Gui</h2>
 
 <p>guiLine = GvVisionAssembly.GsScriptGuiLine()
-line = GvTool.GetToolData(&ldquo;找线工具_002.直线结果&rdquo;)
+line = GvTool.GetToolData(“找线工具_002.直线结果”)
 guiLine.line = line
 guiLine.sScriptGuiStyle = guiStyle</p>
 
-<h2>将直线Gui添加到Gui数组</h2>
+<h2>Thêm đường thẳng Gui vào mảng Gui</h2>
 
 <p>guiArray.Add(guiLine)</p>
 
-<h2>将Gui数组添加的View-1显示</h2>
+<h2>Hiển thị mảng Gui trong View-1</h2>
 
-<p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiArray)</p>
+<p>GvGuiDataAgent.SetGraphicDisplay(“View-1”, guiArray)</p>
 
 <p>```</p>

@@ -18,169 +18,157 @@
            </head>
 <h1>scImageRGB</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示彩色图像。</p>
+<p>Đại diện cho ảnh màu.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                        </th>
-<th> 接口描述                  </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> scImageRGB                    </td>
-<td> scImageRGB ()默认构造函数 </td>
+<td>Khởi tạo</td>
+<td>scImageRGB</td>
+<td>scImageRGB() – hàm khởi tạo mặc định</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> Width                              </td>
-<td> 获取图像宽度              </td>
+<td>Hàm</td>
+<td>Width</td>
+<td>Lấy chiều rộng ảnh</td>
 </tr>
 <tr>
-<td>      </td>
-<td> Height                            </td>
-<td> 获取图像高度              </td>
+<td></td>
+<td>Height</td>
+<td>Lấy chiều cao ảnh</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetPixelValue          </td>
-<td> 获取指定位置的像素值      </td>
+<td></td>
+<td>GetPixelValue</td>
+<td>Lấy giá trị pixel tại vị trí chỉ định</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetPixelValue </td>
-<td> 设置指定位置的像素值      </td>
+<td></td>
+<td>SetPixelValue</td>
+<td>Thiết lập giá trị pixel tại vị trí chỉ định</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetSubImage         </td>
-<td> 获取子图像                </td>
+<td></td>
+<td>GetSubImage</td>
+<td>Lấy ảnh con</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>scImageRGB()</h3>
 
 <ul>
-<li><p>功能：默认构造函数。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：无</p></li>
+<li><p>Chức năng: Hàm khởi tạo mặc định.</p></li>
+<li><p>Tham số: Không có</p></li>
+<li><p>Giá trị trả về: Không có</p></li>
 </ul>
-
 
 <h3>Width()</h3>
 
 <ul>
-<li><p>功能：获取图像的宽度。</p></li>
-<li><p>返回值：图像宽度，整型。</p></li>
+<li><p>Chức năng: Lấy chiều rộng của ảnh.</p></li>
+<li><p>Giá trị trả về: Chiều rộng ảnh, kiểu số nguyên.</p></li>
 </ul>
-
 
 <h3>Height()</h3>
 
 <ul>
-<li><p>功能：获取图像的高度。</p></li>
-<li><p>返回值：图像高度，整型。</p></li>
+<li><p>Chức năng: Lấy chiều cao của ảnh.</p></li>
+<li><p>Giá trị trả về: Chiều cao ảnh, kiểu số nguyên.</p></li>
 </ul>
-
 
 <h3>GetPixelValue(x, y)</h3>
 
 <ul>
-<li><p>功能：获取(x, y)位置像素各个通道的值，返回结果为元组(r, g, b)，一定要注意图像大小，传入的x，y不能越界。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Lấy giá trị các kênh màu tại vị trí (x, y), trả về tuple (r, g, b). Lưu ý kích thước ảnh, không để x, y vượt ra ngoài phạm vi.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>x：图像坐标系x坐标，整型。</p></li>
-<li><p>y：图像坐标系y坐标，整型。</p></li>
+<li><p>x: Tọa độ x trong hệ tọa độ ảnh, kiểu số nguyên.</p></li>
+<li><p>y: Tọa độ y trong hệ tọa độ ảnh, kiểu số nguyên.</p></li>
 </ul>
 </li>
-<li><p>返回值：各个通道的值组合成的元组(r, g, b)，tuple类型。</p>
-
+<li><p>Giá trị trả về: Tuple (r, g, b), kiểu tuple.</p>
 <ul>
-<li><p>r：获取的r通道像素值，范围(0\~255)，整型。</p></li>
-<li><p>g：获取的g通道像素值，范围(0\~255)，整型。</p></li>
-<li><p>b：获取的b通道像素值，范围(0\~255)，整型。</p></li>
+<li><p>r: Giá trị pixel của kênh đỏ, từ 0~255, kiểu số nguyên.</p></li>
+<li><p>g: Giá trị pixel của kênh xanh lục, từ 0~255, kiểu số nguyên.</p></li>
+<li><p>b: Giá trị pixel của kênh xanh lam, từ 0~255, kiểu số nguyên.</p></li>
 </ul>
 </li>
 </ul>
-
 
 <h3>SetPixelValue(x, y, r, g, b)</h3>
 
 <ul>
-<li><p>功能：设置(x, y)位置像素的rgb值，一定要注意图像大小，传入的x，y不能越界。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập giá trị pixel rgb tại vị trí (x, y). Lưu ý kích thước ảnh, không để x, y vượt ra ngoài phạm vi.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>x：图像坐标系x坐标，整型。</p></li>
-<li><p>y：图像坐标系y坐标，整型。</p></li>
-<li><p>r：r通道像素值，范围(0\~255)，整型。</p></li>
-<li><p>g：g通道像素值，范围(0\~255)，整型。</p></li>
-<li><p>b：b通道像素值，范围(0\~255)，整型。</p></li>
+<li><p>x: Tọa độ x trong hệ tọa độ ảnh, kiểu số nguyên.</p></li>
+<li><p>y: Tọa độ y trong hệ tọa độ ảnh, kiểu số nguyên.</p></li>
+<li><p>r: Giá trị pixel của kênh đỏ, từ 0~255, kiểu số nguyên.</p></li>
+<li><p>g: Giá trị pixel của kênh xanh lục, từ 0~255, kiểu số nguyên.</p></li>
+<li><p>b: Giá trị pixel của kênh xanh lam, từ 0~255, kiểu số nguyên.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>GetSubImage(img, rect)</h3>
 
 <ul>
-<li><p>功能：获取ROI区域为rect的子图像。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Lấy ảnh con với vùng ROI là rect.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>img：获取的子图像，scImageRGB类型。</p></li>
-<li><p>rect：提取子图像的ROI区域，scRect类型。</p></li>
+<li><p>img: Ảnh con thu được, kiểu scImageRGB.</p></li>
+<li><p>rect: Vùng ROI để trích xuất ảnh con, kiểu scRect.</p></li>
 </ul>
 </li>
-<li><p>返回值：整型。</p>
-
+<li><p>Giá trị trả về: Kiểu số nguyên.</p>
 <ul>
-<li><p>0：执行成功。</p></li>
-<li><p>1025：图像内存为空或图像大小不合法。</p></li>
-<li><p>1541：内存分配失败。</p></li>
-<li><p>2049：无效的区域。</p></li>
+<li><p>0: Thực hiện thành công.</p></li>
+<li><p>1025: Bộ nhớ ảnh rỗng hoặc kích thước ảnh không hợp lệ.</p></li>
+<li><p>1541: Cấp phát bộ nhớ thất bại.</p></li>
+<li><p>2049: Vùng không hợp lệ.</p></li>
 </ul>
 </li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
 
-<p>无。</p>
-
-<h2>示例代码</h2>
+<h2>Ví dụ mã</h2>
 
 <p>```python
-raw_img = GvTool.GetToolData(&ldquo;彩色图像文件_004.输出图像RGB&rdquo;)</p>
+raw_img = GvTool.GetToolData("彩色图像文件_004.输出图像RGB")</p>
 
-<h2>获取像素值</h2>
+<h2>Lấy giá trị pixel</h2>
 
 <p>r, g, b = raw_img.GetPixelValue(1255, 575)
 print(r, g, b)</p>
 
-<h2>设置像素值</h2>
+<h2>Thiết lập giá trị pixel</h2>
 
 <p>raw_img.SetPixelValue(10, 10, 255, 255, 255)</p>
 
-<h2>获取子图像</h2>
+<h2>Lấy ảnh con</h2>
 
 <p>sub_img = GvVisionAssembly.scImageRGB()
 roi_rect = GvVisionAssembly.scRect(0, 0, 100, 100)
 status = raw_img.GetSubImage(sub_img, roi_rect)
 print(status)</p>
 
-<p>GvTool.SetToolData(&ldquo;彩色图像转灰度图像工具_006.输入图像&rdquo;,sub_img)
+<p>GvTool.SetToolData("彩色图像转灰度图像工具_006.输入图像", sub_img)
 ```</p>

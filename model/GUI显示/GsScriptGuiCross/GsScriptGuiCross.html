@@ -18,75 +18,72 @@
            </head>
 <h1>GsScriptGuiCross</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>要在视图窗口显示的十字。</p>
+<p>Dùng để hiển thị dấu thập trong cửa sổ xem.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                             </th>
-<th> 接口描述                           </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
-<td> sScriptGuiStyle </td>
-<td> 显示风格，包括字体，大小，颜色等。 </td>
+<td>Thuộc tính</td>
+<td>sScriptGuiStyle</td>
+<td>Kiểu hiển thị, bao gồm phông chữ, kích thước, màu sắc, v.v.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> cross                     </td>
-<td> 十字显示位置。                     </td>
+<td></td>
+<td>cross</td>
+<td>Vị trí hiển thị dấu thập.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>sScriptGuiStyle</h3>
 
 <ul>
-<li><strong>功能</strong>：显示风格，GsScriptGuiStyle类型。</li>
+<li><strong>Chức năng</strong>: Kiểu hiển thị, kiểu dữ liệu GsScriptGuiStyle.</li>
 </ul>
-
 
 <h3>cross</h3>
 
 <ul>
-<li><strong>功能</strong>：十字显示位置，sc2Vector类型</li>
+<li><strong>Chức năng</strong>: Vị trí hiển thị dấu thập, kiểu dữ liệu sc2Vector.</li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
 
-<p>无。</p>
-
-<h2>示例代码</h2>
+<h2>Ví dụ mã</h2>
 
 <p>```python</p>
 
-<h2>设置GUI格式</h2>
+<h2>Thiết lập kiểu hiển thị GUI</h2>
 
 <p>guiStyle = GvVisionAssembly.GsScriptGuiStyle()
 guiStyle.bVisible = True
 guiStyle.nLineStyle = 2
 guiStyle.nLineWidth = 2
-guiStyle.clrLineColor = [0,0,255]
+guiStyle.clrLineColor = [0, 0, 255]
 guiStyle.bLabelVisible = True
-guiStyle.strLabelFont = &ldquo;Arial&rdquo;
+guiStyle.strLabelFont = "Arial"
 guiStyle.lFontSize = 100</p>
 
-<h2>获取GUI显示数组</h2>
+<h2>Lấy mảng hiển thị GUI</h2>
 
 <p>guiArray = GvVisionAssembly.GcScriptGuiArray()</p>
 
-<h2>十字GUI显示设置</h2>
+<h2>Cài đặt hiển thị dấu thập GUI</h2>
 
 <p>guiCross = GvVisionAssembly.GsScriptGuiCross()
 guiCross.sScriptGuiStyle = guiStyle
@@ -94,7 +91,7 @@ guiCross.cross.SetX(500.0)
 guiCross.cross.SetY(200.0)
 guiArray.Add(guiCross)</p>
 
-<h2>将GUI数组设置到视图</h2>
+<h2>Hiển thị mảng GUI trong View</h2>
 
-<p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiArray)
+<p>GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
 ```</p>

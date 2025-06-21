@@ -18,56 +18,53 @@
            </head>
 <h1>GsScriptGuiCircle</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>要在视图窗口显示的圆形。</p>
+<p>Hiển thị hình tròn trong cửa sổ xem.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                             </th>
-<th> 接口描述                           </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
-<td> sScriptGuiStyle </td>
-<td> 显示风格，包括字体，大小，颜色等。 </td>
+<td>Thuộc tính</td>
+<td>sScriptGuiStyle</td>
+<td>Kiểu hiển thị, bao gồm phông chữ, kích thước, màu sắc, v.v.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> circle                    </td>
-<td> 要显示的圆形。                     </td>
+<td></td>
+<td>circle</td>
+<td>Hình tròn cần hiển thị.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>sScriptGuiStyle</h3>
 
 <ul>
-<li><strong>功能</strong>：显示风格，GsScriptGuiStyle类型。</li>
+<li><strong>Chức năng</strong>: Kiểu hiển thị, kiểu dữ liệu GsScriptGuiStyle.</li>
 </ul>
 
-
-<h3>cicle</h3>
+<h3>circle</h3>
 
 <ul>
-<li><strong>功能</strong>：要显示的圆形，scCircle类型</li>
+<li><strong>Chức năng</strong>: Hình tròn cần hiển thị, kiểu dữ liệu scCircle.</li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
 
-<p>无。</p>
-
-<h2>示例代码</h2>
+<h2>Ví dụ mã</h2>
 
 <p>```python
 guiStyle = GvVisionAssembly.GsScriptGuiStyle()
@@ -76,18 +73,18 @@ guiStyle.nLineStyle = 1
 guiStyle.nLineWidth = 2
 guiStyle.clrLineColor = [255, 0, 0]
 guiStyle.bLabelVisible = True
-guiStyle.strLabel = &ldquo;标签&rdquo;   # 如果不需要显示label标签，这一行代码可以删除
-guiStyle.strLabelFont = &ldquo;Arial&rdquo;
+guiStyle.strLabel = “标签”   # Nếu không cần hiển thị nhãn label, có thể xóa dòng này
+guiStyle.strLabelFont = “Arial”
 guiStyle.lFontSize = 20</p>
 
 <p>guiArray = GvVisionAssembly.GcScriptGuiArray()
 guiCircle = GvVisionAssembly.GsScriptGuiCircle()
-center = GvVisionAssembly.sc2Vector(100, 100)  # 圆心位置
+center = GvVisionAssembly.sc2Vector(100, 100)  # Vị trí tâm hình tròn
 guiCircle.circle = GvVisionAssembly.scCircle(center, 50)
 guiCircle.sScriptGuiStyle = guiStyle
 guiArray.Add(guiCircle)</p>
 
-<p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiArray)
+<p>GvGuiDataAgent.SetGraphicDisplay(“View-1”, guiArray)
 ```</p>
 
 <p><a href=""></a></p>
