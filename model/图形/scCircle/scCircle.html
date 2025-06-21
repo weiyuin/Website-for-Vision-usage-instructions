@@ -18,156 +18,144 @@
            </head>
 <h1>scCircle</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示圆形，例如找圆工具的圆结果，Blob工具的圆形ROI区域。</p>
+<p>Đại diện cho hình tròn, ví dụ như kết quả hình tròn từ công cụ tìm hình tròn, hoặc vùng ROI hình tròn của công cụ Blob.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                   </th>
-<th> 接口描述                              </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> scCircle               </td>
-<td> scCircle(sc2Vector, double)构造函数。 </td>
+<td>Khởi tạo</td>
+<td>scCircle</td>
+<td>Hàm tạo scCircle(sc2Vector, double).</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> SetCenterRadius </td>
-<td> 设置圆心和半径。                      </td>
+<td>Hàm</td>
+<td>SetCenterRadius</td>
+<td>Thiết lập tâm và bán kính hình tròn.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetCenter                      </td>
-<td> 设置圆心。                            </td>
+<td></td>
+<td>SetCenter</td>
+<td>Thiết lập tâm hình tròn.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetRadius                         </td>
-<td> 设置半径。                            </td>
+<td></td>
+<td>SetRadius</td>
+<td>Thiết lập bán kính.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCenter                                 </td>
-<td> 获取圆心。                            </td>
+<td></td>
+<td>GetCenter</td>
+<td>Lấy tâm hình tròn.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetRadius                                 </td>
-<td> 获取半径。                            </td>
+<td></td>
+<td>GetRadius</td>
+<td>Lấy bán kính.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetPoint                       </td>
-<td> 根据弧度参数获取圆上的点。            </td>
+<td></td>
+<td>GetPoint</td>
+<td>Lấy điểm trên hình tròn theo tham số góc (radian).</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>scCircle(sc2Vector c, double r)</h3>
 
 <ul>
-<li><p>功能：构造scCircle对象，设置圆心为c，半径为r。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Tạo đối tượng scCircle, thiết lập tâm là c, bán kính là r.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>c：圆心位置。</p></li>
-<li><p>r：半径。</p></li>
+<li><p>c: Vị trí tâm hình tròn.</p></li>
+<li><p>r: Bán kính.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
 </ul>
-
 
 <h3>SetCenterRadius(sc2Vector c, double r)</h3>
 
 <ul>
-<li><p>功能：设置圆心和半径。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập tâm và bán kính hình tròn.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>c：圆心位置。</p></li>
-<li><p>r：半径。</p></li>
+<li><p>c: Vị trí tâm.</p></li>
+<li><p>r: Bán kính.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetCenter(sc2Vector c)</h3>
 
 <ul>
-<li><p>功能：设置圆心。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập tâm hình tròn.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>c：圆心位置。</li>
+<li>c: Vị trí tâm.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>SetRadius(double r)</h3>
 
 <ul>
-<li><p>功能：设置半径。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Thiết lập bán kính.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>r：半径。</li>
+<li>r: Bán kính.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
-
 
 <h3>GetCenter()</h3>
 
 <ul>
-<li><p>功能：获取圆心位置。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：sc2Vector类型，获取的圆心。</p></li>
+<li><p>Chức năng: Lấy vị trí tâm hình tròn.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector, là tâm được lấy ra.</p></li>
 </ul>
-
 
 <h3>GetRadius()</h3>
 
 <ul>
-<li><p>功能：获取半径。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：double类型，获取的半径。</p></li>
+<li><p>Chức năng: Lấy bán kính.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu double, là bán kính được lấy ra.</p></li>
 </ul>
-
 
 <h3>GetPoint(scRadian phi)</h3>
 
 <ul>
-<li><p>功能：根据弧度参数phi获取圆上的点。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Lấy điểm trên hình tròn theo tham số góc (radian) phi.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>phi：弧度参数。</li>
+<li>phi: Tham số góc radian.</li>
 </ul>
 </li>
-<li><p>返回值：sc2Vector类型，获取的点。</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector, là điểm lấy được trên hình tròn.</p></li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>Ví dụ mã</h2>
 
-<h2>示例代码</h2>
+<p>Không có</p>
 
-<p>无</p>
