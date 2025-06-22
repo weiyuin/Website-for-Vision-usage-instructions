@@ -16,103 +16,100 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>中点生成工具</h1>
+<h1>Công cụ tạo trung điểm</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>中点生成工具可以用来获得图像上两个点的中点，并输出该点的图像坐标，供后序工具使用。</p>
+<p>Công cụ tạo trung điểm được dùng để lấy trung điểm của hai điểm trên hình ảnh và xuất ra tọa độ ảnh của điểm đó để các công cụ tiếp theo sử dụng.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                           </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口 </td>
-<td> 无 </td>
-<td> 无                                                 </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 无 </td>
-<td> 无                                                 </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 输入点1                  </td>
-<td> 输入第一个点的图像坐标。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入点2  </td>
-<td> 输入第二个点的图像坐标。                           </td>
-</tr>
-<tr>
-<td> 高级界面 </td>
-<td> 无 </td>
-<td> 无                                                 </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                     </th>
+<th>Phân loại </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出中点       </td>
-<td> 输出输入点1和输入点2的中点图像坐标。                         </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Điểm vào 1</td>
+<td>Tọa độ hình ảnh của điểm thứ nhất.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                               </td>
+<td>Điểm vào 2</td>
+<td>Tọa độ hình ảnh của điểm thứ hai.</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                               </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 无</td>
-<td> 无                                                                           </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 输出中点       </td>
-<td> 输出输入点1和输入点2的中点图像坐标，供后序工具使用，同监视窗口的输出中点参数。 </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Trung điểm đầu ra</td>
+<td>Tọa độ trung điểm hình ảnh của điểm vào 1 và điểm vào 2.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Trung điểm đầu ra</td>
+<td>Tọa độ trung điểm hình ảnh của điểm vào 1 và điểm vào 2, dùng cho công cụ tiếp theo, giống với tham số trung điểm đầu ra trong cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li>中点生成工具的参数来源一般为交点工具输出的交点。</li>
+<li>Tham số đầu vào của công cụ tạo trung điểm thường là giao điểm được xuất ra từ công cụ giao điểm.</li>
 </ul>
 
-
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
 <p>参见“\Samples\形状间距及相关点.gvp”。</p>
