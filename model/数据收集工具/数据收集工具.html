@@ -16,153 +16,150 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>数据收集工具</h1>
+<h1>Công cụ thu thập dữ liệu</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>数据收集工具主要的用途是收集数据，将收集的数据保存在数据库里。同时，还可以对收集的数据进行统计分析等。它一共可以收集12种的数据类型。主要可以收集的数据类型有：double、int、bool、string、int64、char、float、long、short、unsigned char、unsigned long和 unsigned short类型。</p>
+<p>Công cụ thu thập dữ liệu chủ yếu dùng để thu thập dữ liệu và lưu vào cơ sở dữ liệu. Đồng thời, còn có thể thực hiện phân tích thống kê đối với dữ liệu đã thu thập. Tổng cộng có thể thu thập 12 loại dữ liệu. Các loại dữ liệu chính có thể thu thập bao gồm: kiểu <strong>double</strong>, <strong>int</strong>, <strong>bool</strong>, <strong>string</strong>, <strong>int64</strong>, <strong>char</strong>, <strong>float</strong>, <strong>long</strong>, <strong>short</strong>, <strong>unsigned char</strong>, <strong>unsigned long</strong> và <strong>unsigned short</strong>.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                             </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口     </td>
-<td> 无  </td>
-<td> 无                                          </td>
-</tr>
-<tr>
-<td> 图像窗口     </td>
-<td> 无    </td>
-<td> 无                                           </td>
-</tr>
-<tr>
-<td> 数据链       </td>
-<td> 输入数据（0~255）                                         </td>
-<td> 高级属性里面的数据源，最多可以新建256路，每一路相当于数据库表里面的一列。 </td>
-</tr>
-<tr>
-<td> 高级界面     </td>
-<td> 数据源                                                 </td>
-<td> 显示可用的数据源，从Channel0- Channel255。                  </td>
-</tr>
-<tr>
-<td></td>
-<td> 数据名称     </td>
-<td> 每个数据源的对应的名称。                                                                                             </td>
-</tr>
-<tr>
-<td></td>
-<td> 数据类型     </td>
-<td> 每个数据源的类型。12种类型之一。                                                                                    </td>
-</tr>
-<tr>
-<td></td>
-<td> 数据类型是否可修改 </td>
-<td> 是否允许修改数据类型。                                                                                    </td>
-</tr>
-<tr>
-<td></td>
-<td> 重命名数据表 </td>
-<td> 对连接的数据库里面的数据表进行重命名。                                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 添加数据源   </td>
-<td> 新增加一个数据源，最多支持256个数据源。                                                                              </td>
-</tr>
-<tr>
-<td></td>
-<td> 删除         </td>
-<td> 删除一个指定的数据源。                                                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 确定         </td>
-<td> 保存所进行的设置，并退出，请查看消息输出窗口。                                                                       </td>
-</tr>
-<tr>
-<td></td>
-<td> 取消         </td>
-<td> 不保存所进行的设置，并退出。                                                                                         </td>
-</tr>
-<tr>
-<td></td>
-<td> 消息输出窗口 </td>
-<td> 当“确定”时，如果出现错误会在此窗口显示，窗口暂不关闭。                                                               </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述（参数的含义）                                 </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 表名称           </td>
-<td> 与之相连的数据库里面表的名称。 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Dữ liệu đầu vào (0~255)</td>
+<td>Nguồn dữ liệu trong phần thuộc tính nâng cao, có thể tạo tối đa 256 kênh, mỗi kênh tương ứng với một cột trong bảng dữ liệu.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Nguồn dữ liệu</td>
+<td>Hiển thị các nguồn dữ liệu khả dụng, từ Channel0 đến Channel255.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                         </td>
+<td>Tên dữ liệu</td>
+<td>Tên tương ứng của mỗi nguồn dữ liệu.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                         </td>
+<td>Kiểu dữ liệu</td>
+<td>Kiểu dữ liệu của từng nguồn, thuộc một trong 12 loại.</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无 </td>
-<td> 无                                                     </td>
+<td></td>
+<td>Cho phép sửa kiểu dữ liệu</td>
+<td>Có cho phép chỉnh sửa kiểu dữ liệu hay không.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 表名称          </td>
-<td> 与之相连的数据库里面表的名称。 </td>
+<td></td>
+<td>Đổi tên bảng dữ liệu</td>
+<td>Đổi tên bảng dữ liệu đã kết nối trong cơ sở dữ liệu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thêm nguồn dữ liệu</td>
+<td>Thêm một nguồn dữ liệu mới, tối đa hỗ trợ 256 nguồn dữ liệu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Xóa</td>
+<td>Xóa một nguồn dữ liệu cụ thể.</td>
+</tr>
+<tr>
+<td></td>
+<td>OK</td>
+<td>Lưu các thiết lập đã thực hiện và thoát. Hãy kiểm tra cửa sổ xuất thông báo.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hủy</td>
+<td>Không lưu thiết lập và thoát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Cửa sổ xuất thông báo</td>
+<td>Khi nhấn “OK”, nếu có lỗi sẽ hiển thị trong cửa sổ này, cửa sổ sẽ không đóng ngay lập tức.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Tên bảng</td>
+<td>Tên bảng trong cơ sở dữ liệu được kết nối.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Tên bảng</td>
+<td>Tên bảng trong cơ sở dữ liệu được kết nối.</td>
+</tr>
+</tbody>
+</table>
 
-<p>无。</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li><p>此工具是需要和数据库一起使用的工具。为了实现数据收集的目的，先要连接数据库，如下图1所示，数据库管理的UI。</p></li>
-<li><p>数据源支持的个数最大是256个。一个数据收集工具对应于数据库里面的一个表，而数据收集工具的数据源就相当于一个表里面的一个列，数据源名称就相当于列名，数据源的个数也就决定了一个表里面列的个数。</p></li>
-<li><p>当连接上数据库时，每次添加一个数据收集工具，就会在数据库里面生成一个表，表名是唯一的。通过数据收集工具的高级属性，可以对这个表进行添加和删除数据源（即表中的列），设置数据源数据类型（表的数据类型），重命名表的名称等。见下图2所示，高级属性。</p>
+<li><p>Công cụ này cần sử dụng cùng với cơ sở dữ liệu. Để thực hiện thu thập dữ liệu, trước tiên cần kết nối với cơ sở dữ liệu. Như hình 1 bên dưới, giao diện quản lý cơ sở dữ liệu.</p></li>
+<li><p>Số lượng nguồn dữ liệu hỗ trợ tối đa là 256. Một công cụ thu thập dữ liệu tương ứng với một bảng trong cơ sở dữ liệu, mỗi nguồn dữ liệu tương ứng với một cột trong bảng. Tên nguồn dữ liệu tương đương với tên cột. Số lượng nguồn quyết định số lượng cột trong bảng.</p></li>
+<li><p>Sau khi kết nối với cơ sở dữ liệu, mỗi khi thêm một công cụ thu thập dữ liệu, một bảng sẽ được tạo trong cơ sở dữ liệu. Tên bảng là duy nhất. Thông qua thuộc tính nâng cao của công cụ thu thập dữ liệu, có thể thêm/xóa nguồn dữ liệu (tức là cột), đặt kiểu dữ liệu cho nguồn (kiểu dữ liệu của cột), đổi tên bảng, v.v. Xem hình 2 bên dưới, thuộc tính nâng cao.</p>
 
 <p><img src="media/wps25.png" alt="img" /></p>
 
-<p><imgnote>图1 数据库管理</imgnote></p>
+<p><imgnote>Hình 1: Giao diện quản lý cơ sở dữ liệu</imgnote></p>
 
 <p><img src="media/wps26.png" alt="img" /></p>
 
-<p><imgnote>图2 高级属性</imgnote></p></li>
+<p><imgnote>Hình 2: Thuộc tính nâng cao</imgnote></p></li>
 </ul>
 
-
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
 <p>参见“\Samples\数据库相关工具.gvp”。</p>

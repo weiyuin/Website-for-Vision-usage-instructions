@@ -18,114 +18,109 @@
            </head>
 <h1>GcPlatformAxisDirection</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示轴方向，例如标准标定轴位置获取工具的输出参数轴方向，图像到平台坐标转换工具的输入参数平台轴方向。</p>
+<p>Biểu thị hướng trục, ví dụ như tham số đầu ra "hướng trục" của công cụ lấy vị trí trục chuẩn hóa, hoặc tham số đầu vào "hướng trục nền tảng" của công cụ chuyển đổi tọa độ từ hình ảnh sang nền tảng.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 接口名称 </th>
-<th> 接口描述                                                     </th>
-<th>                                                            </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造     </td>
-<td> GcPlatformAxisDirection       </td>
-<td> GcPlatformxisDirection ()默认构造函数，XYD方向初始化为True </td>
+<td>Hàm khởi tạo</td>
+<td>GcPlatformAxisDirection</td>
+<td>GcPlatformAxisDirection() – Hàm tạo mặc định, khởi tạo hướng XYD là True</td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> GcPlatformAxisDirection </td>
-<td> GcPlatformxisDirection (bool,bool,bool)构造函数            </td>
+<td></td>
+<td>GcPlatformAxisDirection</td>
+<td>GcPlatformAxisDirection(bool, bool, bool) – Hàm tạo có tham số</td>
 <td></td>
 </tr>
 <tr>
-<td> 属性     </td>
-<td> bDirectionX                                 </td>
-<td> X轴方向                                                    </td>
+<td>Thuộc tính</td>
+<td>bDirectionX</td>
+<td>Hướng trục X</td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> bDirectionY                                 </td>
-<td> Y轴方向                                                    </td>
+<td></td>
+<td>bDirectionY</td>
+<td>Hướng trục Y</td>
 <td></td>
 </tr>
 <tr>
-<td>          </td>
-<td> bDirectionD                                 </td>
-<td> D轴方向                                                    </td>
+<td></td>
+<td>bDirectionD</td>
+<td>Hướng trục D</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
+<h2>Giải thích chi tiết</h2>
 
-<h2>详细说明</h2>
-
-<h3>GcPlatformxisDirection( )</h3>
+<h3>GcPlatformAxisDirection()</h3>
 
 <ul>
-<li><p>功能：构造GcPlatformxisDirection对象。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：无</p></li>
+<li><p>Chức năng: Khởi tạo đối tượng GcPlatformAxisDirection.</p></li>
+<li><p>Tham số: Không</p></li>
+<li><p>Giá trị trả về: Không</p></li>
 </ul>
 
-
-<h3>GcPlatformxisDirection(bDirX, bDirY, bDirD)</h3>
-
-<ul>
-<li><p>功能：构造GcPlatformxisDirection对象。</p></li>
-<li><p>参数：</p>
+<h3>GcPlatformAxisDirection(bDirX, bDirY, bDirD)</h3>
 
 <ul>
-<li><p>bDirX：X轴方向</p></li>
-<li><p>bDirY：Y轴方向</p></li>
-<li><p>bDirD：D轴方向</p></li>
+<li><p>Chức năng: Khởi tạo đối tượng GcPlatformAxisDirection với các tham số chỉ định.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>bDirX: Hướng trục X</p></li>
+<li><p>bDirY: Hướng trục Y</p></li>
+<li><p>bDirD: Hướng trục D</p></li>
 </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li><p>Giá trị trả về: Không</p></li>
 </ul>
-
 
 <h3>bDirectionX</h3>
 
 <ul>
-<li><p>功能：X轴方向，布尔型，可读写。</p>
+<li><p>Chức năng: Hướng trục X, kiểu boolean, có thể đọc/ghi.</p>
 
-<p>正方向为True，负方向为False。一般向右或向下为正方向。</p></li>
+<p>Hướng dương là True, hướng âm là False. Thông thường, hướng sang phải hoặc xuống dưới được coi là dương.</p></li>
 </ul>
-
 
 <h3>bDirectionY</h3>
 
 <ul>
-<li><p>功能：Y轴方向，布尔型，可读写。</p>
+<li><p>Chức năng: Hướng trục Y, kiểu boolean, có thể đọc/ghi.</p>
 
-<p>正方向为True，负方向为False。一般向右或向下为正方向。</p></li>
+<p>Hướng dương là True, hướng âm là False. Thông thường, hướng sang phải hoặc xuống dưới được coi là dương.</p></li>
 </ul>
-
 
 <h3>bDirectionD</h3>
 
 <ul>
-<li><p>功能：D轴方向，布尔型，可读写。</p>
+<li><p>Chức năng: Hướng trục D, kiểu boolean, có thể đọc/ghi.</p>
 
-<p>正方向为True，负方向为False。顺时针为正方向。</p></li>
+<p>Hướng dương là True, hướng âm là False. Hướng quay theo chiều kim đồng hồ là dương.</p></li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>Mã ví dụ</h2>
 
-<h2>示例代码</h2>
+<p>Không có</p>
 
-<p>无</p>
