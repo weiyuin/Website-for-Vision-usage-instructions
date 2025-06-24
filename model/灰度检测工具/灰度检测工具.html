@@ -16,165 +16,160 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>灰度检测工具</h1>
+<h1>Công cụ kiểm tra mức xám</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     灰度检测工具主要用来对输入图像或输入图像的某一区域内的灰度进行合格率检测。</p>
+<p>​     Công cụ kiểm tra mức xám chủ yếu được dùng để kiểm tra tỷ lệ đạt yêu cầu của mức xám trong toàn bộ ảnh đầu vào hoặc một vùng cụ thể của ảnh.</p>
 
 <p><img src="media/GcGrayDetectTool_1_1.png" alt="" /></p>
 
-<p><imgnote>图1 灰度检测工具 应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ kiểm tra mức xám</imgnote></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Bối cảnh ứng dụng</h2>
 
-<p>​     灰度检测工具可获取图像或图像ROI内的区域灰度特征，合格百分比（灰度区间内的像素占比)、区域平均灰度等，适用于目标与背景灰度差异较大时，检测区域内目标物是否存在。</p>
+<p>​     Công cụ kiểm tra mức xám có thể lấy được đặc trưng mức xám trong ảnh hoặc trong vùng ROI của ảnh, như tỷ lệ đạt (tỷ lệ điểm ảnh nằm trong khoảng mức xám), giá trị mức xám trung bình của vùng,… Phù hợp với các trường hợp mục tiêu và nền có sự khác biệt rõ ràng về mức xám để xác định có mục tiêu tồn tại trong vùng kiểm tra hay không.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên lý</h2>
 
-<p>​     <strong>合格百分比</strong></p>
+<p>​     <strong>Tỷ lệ đạt</strong></p>
 
-<p>​     ROI区域内在灰度上下限范围内的像素点的数目（如图2中红色表示，灰度阈值上限设置为255，灰度阈值下限设为100），与像素总数的比值。</p>
+<p>​     Số lượng điểm ảnh trong vùng ROI có mức xám nằm trong khoảng giới hạn trên và dưới (như hình 2, phần đỏ là điểm ảnh có mức xám nằm trong khoảng từ 100 đến 255) chia cho tổng số điểm ảnh.</p>
 
 <p><img src="media/GcGrayDetectTool_1_2.png" alt="img" /></p>
 
-<p><imgnote>图2 灰度检测工具 计算示意图</imgnote></p>
+<p><imgnote>Hình 2 Minh họa tính toán công cụ kiểm tra mức xám</imgnote></p>
 
-<p>​     <strong>平均灰度值</strong></p>
+<p>​     <strong>Giá trị mức xám trung bình</strong></p>
 
-<p>​     ROI区域内像素灰度总和除以像素总数。</p>
+<p>​     Tổng mức xám của tất cả điểm ảnh trong ROI chia cho số lượng điểm ảnh.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像</h4></li>
+<li><h4>Thêm công cụ, nạp ảnh</h4></li>
 </ul>
-
 
 <p><img src="media/GcGrayDetectTool_1_3.png" alt="" /></p>
 
 <ul>
-<li><h4>定检测区域、灰度上限阈值、灰度下限阈值、合格百分上限、合格百分比下限</h4></li>
+<li><h4>Thiết lập vùng kiểm tra, ngưỡng mức xám trên, ngưỡng mức xám dưới, giới hạn trên và dưới của tỷ lệ đạt</h4></li>
 </ul>
-
 
 <p><img src="media/GcGrayDetectTool_1_4.png" alt="" /></p>
 
 <p><img src="media/GcGrayDetectTool_1_5.png" alt="" /></p>
 
-<p><strong>检测区域</strong></p>
+<p><strong>Vùng kiểm tra</strong></p>
 
-<p>工具执行检测的区域，分为3种：椭圆、多边形、仿射矩形。</p>
+<p>Vùng thực hiện kiểm tra của công cụ, có 3 loại: hình elip, đa giác, và hình chữ nhật biến dạng (affine rectangle).</p>
 
-<p>可通过Edit视图（如上图，为仿射矩形界面设置）和ParameterList 参数列表进行设置，仿射矩形可使用外部链入。</p>
+<p>Có thể thiết lập bằng chế độ Edit (như hình trên là giao diện thiết lập hình chữ nhật biến dạng) hoặc qua bảng thông số ParameterList. Hình chữ nhật biến dạng có thể liên kết từ bên ngoài.</p>
 
-<p><strong>灰度上限阈值、灰度下限阈值</strong></p>
+<p><strong>Ngưỡng mức xám trên và dưới</strong></p>
 
-<p>目标灰度区间，一般根据目标物的灰度值或区域均值进行设置。</p>
+<p>Khoảng mức xám mục tiêu, thường thiết lập dựa theo mức xám của vật thể hoặc giá trị trung bình của vùng.</p>
 
-<p><strong>合格百分上限、合格百分比下限</strong></p>
+<p><strong>Giới hạn trên và dưới của tỷ lệ đạt</strong></p>
 
-<p>对于输出参数<a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">合格百分比</a>的有效范围进行设定，合格百分上限、合格百分比下限的取值范围为[0.0,1.0]，浮点型，精度1E-6，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对<a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">合格百分比</a>上限或下限不进行限定。</p>
+<p>Thiết lập phạm vi hợp lệ cho tham số đầu ra <a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">tỷ lệ đạt</a>, giá trị nằm trong khoảng [0.0, 1.0], kiểu số thực, độ chính xác 1E-6. Ngoài ra có thể đặt là “--.--” nghĩa là không giới hạn.</p>
 
-<p>使用合格百分上限/合格百分比下限对<a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">合格百分比</a>的有效范围进行设定后，执行此距离工具。</p>
+<p>Sau khi thiết lập giới hạn trên và dưới cho <a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">tỷ lệ đạt</a>, tiến hành thực thi công cụ.</p>
 
-<p>当输出结果<a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">合格百分比</a>在设定的有效范围内时，显示工具执行成功；否则，显示工具执行失败。</p>
+<p>Khi kết quả <a href="#%E5%90%88%E6%A0%BC%E7%99%BE%E5%88%86%E6%AF%94">tỷ lệ đạt</a> nằm trong phạm vi hợp lệ, công cụ báo thực thi thành công; ngược lại báo lỗi.</p>
 
 <ul>
-<li><h4>查看结果</h4></li>
+<li><h4>Xem kết quả</h4></li>
 </ul>
-
 
 <p><img src="media/GcGrayDetectTool_1_6.png" alt="" /></p>
 
 <p><img src="media/GcGrayDetectTool_1_7.png" alt="" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>6. 参数说明</h2>
+<h2>6. Mô tả tham số</h2>
 
-<h4>输入参数</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称 </th>
-<th> 参数说明 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 输入图像       </td>
-<td> 待检测的图像（图像宽度、高度、像素大小）。                   </td>
-</tr>
-<tr>
-<td> 二维线性变换   </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                       </td>
-</tr>
-<tr>
-<td> 检测区域类型   </td>
-<td> 工具执行检测的区域，分为3种：椭圆、多边形、仿射矩形。其中椭圆的参数Rotation以及仿射矩形的参数Rotation和Skew的角度输入范围是[-180,180)，可在Edit视图观察和拖动。 </td>
-</tr>
-<tr>
-<td> 合格百分比上限 </td>
-<td> 取值范围为[0.0, 1.0]，合格率小于合格百分比时工具的执行结果显示为true，否则为false。 </td>
-</tr>
-<tr>
-<td> 合格百分比下限 </td>
-<td> 取值范围为[0.0, 1.0]，合格率大于合格百分比时工具的执行结果显示为true，否则为false。 </td>
-</tr>
-<tr>
-<td> 灰度上限阈值   </td>
-<td> 取值范围为[0, 255]，在上限阈值和下限阈值之间的灰度判定为合格的灰度，且下限阈值不大于上限阈值。 </td>
-</tr>
-<tr>
-<td> 灰度下限阈值   </td>
-<td> 取值范围为[0, 255]，在上限阈值和下限阈值之间的灰度判定为合格的灰度，且下限阈值不大于上限阈值。 </td>
-</tr>
-<tr>
-<td> 高级界面       </td>
-<td> 无</td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>输出参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                </th>
-<th> 参数说明                           </th>
+<th> Tên tham số </th>
+<th> Mô tả </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像                                </td>
-<td> 输出图像宽度、高度、像素大小。     </td>
+<td> Ảnh đầu vào </td>
+<td> Ảnh cần kiểm tra (chiều rộng, chiều cao, kích thước pixel). </td>
 </tr>
 <tr>
-<td> 合格百分比结果</td>
-<td> 输出实际计算所得的合格百分比结果。 </td>
+<td> Biến đổi tuyến tính 2D </td>
+<td> Phép tịnh tiến, quay, thu phóng của vật thể so với mẫu. </td>
 </tr>
 <tr>
-<td> 平均灰度值                              </td>
-<td> 输出计算区域内的平均灰度值。       </td>
+<td> Loại vùng kiểm tra </td>
+<td> Có 3 loại: hình elip, đa giác, hình chữ nhật biến dạng. Đối với hình elip, tham số góc quay (Rotation), và đối với hình chữ nhật biến dạng là Rotation và Skew có dải giá trị [-180,180), có thể quan sát và chỉnh trong chế độ Edit. </td>
 </tr>
 <tr>
-<td> 执行结果                                </td>
-<td> 工具执行结果。                     </td>
+<td> Giới hạn trên tỷ lệ đạt </td>
+<td> Giá trị trong khoảng [0.0, 1.0]. Nếu tỷ lệ đạt nhỏ hơn giới hạn này, kết quả công cụ là true, ngược lại là false. </td>
 </tr>
 <tr>
-<td> 执行时间                                </td>
-<td> 工具执行时间。                     </td>
+<td> Giới hạn dưới tỷ lệ đạt </td>
+<td> Giá trị trong khoảng [0.0, 1.0]. Nếu tỷ lệ đạt lớn hơn giới hạn này, kết quả công cụ là true, ngược lại là false. </td>
+</tr>
+<tr>
+<td> Ngưỡng mức xám trên </td>
+<td> Giá trị từ 0 đến 255. Mức xám trong khoảng này được tính là hợp lệ. Ngưỡng dưới không lớn hơn ngưỡng trên. </td>
+</tr>
+<tr>
+<td> Ngưỡng mức xám dưới </td>
+<td> Giá trị từ 0 đến 255. Mức xám trong khoảng này được tính là hợp lệ. Ngưỡng dưới không lớn hơn ngưỡng trên. </td>
+</tr>
+<tr>
+<td> Giao diện nâng cao </td>
+<td> Không có </td>
 </tr>
 </tbody>
 </table>
 
+<h4>Tham số đầu ra</h4>
 
-<h2>7. 示例工程</h2>
+<table>
+<thead>
+<tr>
+<th> Tên tham số </th>
+<th> Mô tả </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh đầu vào </td>
+<td> Xuất thông tin chiều rộng, chiều cao, kích thước pixel của ảnh. </td>
+</tr>
+<tr>
+<td> Kết quả tỷ lệ đạt </td>
+<td> Tỷ lệ hợp lệ thực tế sau khi tính toán. </td>
+</tr>
+<tr>
+<td> Mức xám trung bình </td>
+<td> Giá trị trung bình mức xám của vùng được tính toán. </td>
+</tr>
+<tr>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ. </td>
+</tr>
+<tr>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ. </td>
+</tr>
+</tbody>
+</table>
+
+<h2>7. Dự án mẫu</h2>
 
 <p>参见“\Samples\灰度检测工具.gvp”。</p>

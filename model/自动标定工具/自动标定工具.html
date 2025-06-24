@@ -16,138 +16,129 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>自动标定工具</h1>
+<h1>Công Cụ Gán Nhãn Tự Động</h1>
 
-<h2>1.功能概述</h2>
+<h2>1. Mô Tả Chức Năng</h2>
 
-<p>​ 本工具用于对输入含有DM码的棋盘格图像进行标定。</p>
+<p>​ Công cụ này được sử dụng để hiệu chuẩn hình ảnh bàn cờ có chứa mã DM đầu vào.</p>
 
-<h2>2.应用场景</h2>
+<h2>2. Trường Hợp Ứng Dụng</h2>
 
-<p>​ 无</p>
+<p>​ Không có</p>
 
-<h2>3.原理说明</h2>
+<h2>3. Giải Thích Nguyên Lý</h2>
 
-<p>​ 读取其中一个DM码的字符串，含有位置信息和靶标尺寸（一个黑格或者白格实际的物理尺寸）。然后选取此DM码附近的某个位置，计算这个位置的实际物理坐标，即全局靶标；然后计算局部靶标与全局靶标的偏移，再根据靶标坐标系和图像坐标系的关系，将棋盘格输出的角点的局部靶标转换成全局靶标，最终进行标定计算。</p>
+<p>​ Đọc chuỗi ký tự từ một mã DM, chuỗi này chứa thông tin vị trí và kích thước mục tiêu (kích thước vật lý thực tế của một ô đen hoặc trắng). Sau đó chọn một vị trí gần mã DM này, tính toán tọa độ vật lý thực tế của vị trí đó, tức là tọa độ mục tiêu toàn cục; tiếp theo tính toán độ lệch giữa mục tiêu cục bộ và mục tiêu toàn cục, sau đó dựa vào mối quan hệ giữa hệ tọa độ mục tiêu và hệ tọa độ ảnh, chuyển đổi các điểm góc bàn cờ từ mục tiêu cục bộ sang mục tiêu toàn cục, cuối cùng thực hiện tính toán hiệu chuẩn.</p>
 
-<h2>4.使用向导</h2>
+<h2>4. Hướng Dẫn Sử Dụng</h2>
 
-<p>​ “自动标定工具”不需要设置任何参数，直接链入图像运行即可。</p>
+<p>​ “Công cụ gán nhãn tự động” không cần thiết lập tham số nào, chỉ cần liên kết với ảnh và chạy trực tiếp.</p>
 
 <p><img src="media\GvCalibDMCodeTool_4_1.png" alt="GvCalibDMCodeTool_4_1" /></p>
 
-<h2>5.常见问题</h2>
+<h2>5. Các Vấn Đề Thường Gặp</h2>
 
-<p>​ 如前文的原理说明中介绍，自动标定工具内部会自动读取DM码的信息，并依据此信息计算图像坐标系和靶标坐标系之间的关系，当用户在使用过程中发现自动标定工具的输出结果异常，如”像素当量“和理论值偏差过大，或者使用此标定结果进行畸变校正得到的图像明显不正确时，可以按照以下流程进行标定结果正确性验证：</p>
+<p>​ Như đã mô tả trong phần nguyên lý trước đó, công cụ gán nhãn tự động sẽ tự động đọc thông tin từ mã DM và sử dụng thông tin này để tính toán mối quan hệ giữa hệ tọa độ ảnh và hệ tọa độ mục tiêu. Khi người dùng nhận thấy kết quả đầu ra bất thường như “hệ số chuyển đổi pixel” lệch nhiều so với giá trị lý thuyết, hoặc hình ảnh hiệu chỉnh méo bị sai lệch rõ rệt, có thể tiến hành kiểm tra tính chính xác của kết quả hiệu chuẩn theo quy trình sau:</p>
 
 <ul>
-<li>自动标定验证流程图如下：</li>
+<li>Lưu đồ kiểm tra công cụ gán nhãn tự động như sau:</li>
 </ul>
-
 
 <p><img src="media\GvCalibDMCodeTool_5_1.png" alt="GvCalibDMCodeTool_5_1" /></p>
 
 <ul>
-<li>使用“高级DM读码工具”对“自动标定工具”所用DM码进行读码；</li>
+<li>Sử dụng “Công cụ đọc mã DM nâng cao” để đọc mã DM được sử dụng trong “Công cụ gán nhãn tự động”;</li>
 </ul>
-
 
 <p><img src="media\GvCalibDMCodeTool_5_2.png" alt="GvCalibDMCodeTool_5_2" /></p>
 
 <ul>
-<li>对码结果如下图所示，字符串解析出来的是全局靶标坐标(6,194)，0.5为1个黑格或者白格的实际物理尺寸0.5，单位为毫米；</li>
+<li>Kết quả giải mã như hình dưới, chuỗi ký tự cho kết quả là tọa độ mục tiêu toàn cục (6,194), 0.5 là kích thước thực tế (mm) của một ô trắng hoặc đen;</li>
 </ul>
-
 
 <p><img src="media\GvCalibDMCodeTool_5_3.png" alt="GvCalibDMCodeTool_5_3" /></p>
 
 <ul>
-<li>全局靶标坐标位置为下图上红点位置，即与二维码第0点最近的棋盘格位置。</li>
+<li>Vị trí tọa độ mục tiêu toàn cục là vị trí điểm đỏ trong hình dưới, tức là vị trí bàn cờ gần nhất với điểm 0 của mã QR.</li>
 </ul>
-
 
 <p><img src="media\GvCalibDMCodeTool_5_4.png" alt="GvCalibDMCodeTool_5_4" /></p>
 
 <ul>
-<li>使用脚本工具对读码结果进行解析，获取二维码0点图像坐标，并使用“二维向量生成工具”生成向量；</li>
+<li>Sử dụng công cụ script để phân tích kết quả giải mã, lấy tọa độ ảnh điểm 0 của mã QR và sử dụng “Công cụ tạo vector 2D” để tạo vector;</li>
 </ul>
-
 
 <p><img src="media\GvCalibDMCodeTool_5_5.png" alt="GvCalibDMCodeTool_5_5" /></p>
 
 <ul>
-<li>将二维码0点向量坐标与“自动标定工具”标定结果链接到“图像坐标反投影工具”中，获取二维码0点在全局坐标系下坐标；</li>
+<li>Liên kết tọa độ vector điểm 0 của mã QR và kết quả hiệu chuẩn từ “Công cụ gán nhãn tự động” với “Công cụ chiếu ngược tọa độ ảnh” để lấy tọa độ điểm 0 trong hệ tọa độ toàn cục;</li>
 </ul>
-
 
 <p><img src="media\GvCalibDMCodeTool_5_6.png" alt="GvCalibDMCodeTool_5_6" /></p>
 
 <ul>
-<li>比较读码结果中全局靶标坐标为(6,194)，二维码0点图像坐标反投影后在全局坐标系下坐标为(6.093,193.899)二者值相近，符合位置关系，代表自动标定结果正确。</li>
+<li>So sánh tọa độ mục tiêu toàn cục (6,194) trong kết quả giải mã và tọa độ điểm 0 của mã QR sau khi chiếu ngược là (6.093,193.899), hai giá trị này gần giống nhau, phù hợp về mặt vị trí, chứng tỏ kết quả hiệu chuẩn là chính xác.</li>
 </ul>
 
+<h2>6. Mô Tả Tham Số</h2>
 
-<h2>6.参数说明</h2>
-
-<p><strong>输入参数</strong></p>
-
-<table>
-<thead>
-<tr>
-<th> 分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                               </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口 </td>
-<td> 搜索区域 </td>
-<td> 用于设置待标定图像中DM码的搜索区域            </td>
-</tr>
-<tr>
-<td> 参数链 </td>
-<td> 输入图像 </td>
-<td> 带DM码的棋盘格图像读码区域接收二维线性变换以确保读码区域与DM码的相对固定 </td>
-</tr>
-</tbody>
-</table>
-
-
-<p><strong>输出参数</strong></p>
+<p><strong>Tham số đầu vào</strong></p>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称       </th>
-<th> 参数描述                                           </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 相机标定结果   </td>
-<td> 输出相机的标定结果                                 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Vùng tìm kiếm</td>
+<td>Dùng để thiết lập vùng tìm mã DM trong ảnh cần hiệu chuẩn</td>
 </tr>
 <tr>
-<td> 像素当量       </td>
-<td> 输出标定时，计算出的像素当量                       </td>
-</tr>
-<tr>
-<td> 靶标尺寸       </td>
-<td> 读取DM码时输出的靶标尺寸                         </td>
-</tr>
-<tr>
-<td> 执行结果       </td>
-<td> 工具执行结果                                       </td>
-</tr>
-<tr>
-<td> 执行时间       </td>
-<td> 工具执行时间                                       </td>
+<td>Chuỗi tham số</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh bàn cờ có mã DM, vùng đọc mã sẽ nhận biến đổi tuyến tính 2D để đảm bảo vùng đọc cố định so với mã DM</td>
 </tr>
 </tbody>
 </table>
 
+<p><strong>Tham số đầu ra</strong></p>
 
-<h2>7.示例工程</h2>
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kết quả hiệu chuẩn camera</td>
+<td>Kết quả hiệu chuẩn camera đầu ra</td>
+</tr>
+<tr>
+<td>Hệ số chuyển đổi pixel</td>
+<td>Hệ số chuyển đổi pixel được tính trong quá trình hiệu chuẩn</td>
+</tr>
+<tr>
+<td>Kích thước mục tiêu</td>
+<td>Kích thước mục tiêu được lấy khi đọc mã DM</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi công cụ</td>
+</tr>
+</tbody>
+</table>
+
+<h2>7. Dự án ví dụ</h2>
 
 <p>​ 参见“\Samples\DM码相机标定.gvp”。</p>

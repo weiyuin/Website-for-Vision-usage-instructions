@@ -16,441 +16,436 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>高级找线工具</h1>
+<h1>Công cụ tìm đường thẳng nâng cao</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Giới thiệu chức năng</h2>
 
-<p>高级找线工具主要是在指定的ROI区域内对目标直线边缘进行拟合获得直线边缘，一般与定位工具配合使用。其实际应用效果如图1所示。</p>
+<p>Công cụ tìm đường thẳng nâng cao chủ yếu dùng để khớp và tìm các cạnh đường thẳng trong vùng ROI đã chỉ định, thường được sử dụng kết hợp với các công cụ định vị. Hiệu quả ứng dụng thực tế như Hình 1 bên dưới.</p>
 
 <p><img src="media/wps39.jpg" alt="img" /> <img src="media/wps40.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 工具摆放示意图</imgnote> <imgnote>(b) 找线结果</imgnote></p>
+<p><imgnote>(a) Minh họa cách đặt công cụ</imgnote> <imgnote>(b) Kết quả tìm đường</imgnote></p>
 
-<p><imgnote>图1 高级找线工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ tìm đường thẳng nâng cao</imgnote></p>
 
-<h2>2. 算法说明</h2>
+<h2>2. Giải thích thuật toán</h2>
 
-<p>与找线工具原理相同，高级找线工具通过查找区域内卡尺参数的设置，寻找查找区域内的图像边缘点，然后对找到的边缘点进行直线拟合，从而寻找到一条目标直线，如下图所示。</p>
+<p>Nguyên lý tương tự như công cụ tìm đường, công cụ tìm đường nâng cao sử dụng các thông số caliper trong vùng tìm kiếm để phát hiện các điểm biên ảnh, sau đó khớp tuyến tính các điểm đó để tìm ra đường thẳng mục tiêu, như hình dưới.</p>
 
 <p><img src="media/GcFindLineAdvancedTool_2_1.png" alt="" /></p>
 
-<h2>3. 应用场景</h2>
+<h2>3. Ứng dụng</h2>
 
-<p>高级找线工具的应用场景可以分为以下三个</p>
+<p>Các tình huống ứng dụng của công cụ tìm đường thẳng nâng cao có thể được chia thành 3 loại:</p>
 
 <ul>
-<li><p>测量项目中可作为特征元素或中间元素参与尺寸测量，如测量线段与线段之间的距离，直线与直线之间的角度，或者通过线线、线圆求交点后，计算两点间距离等。</p></li>
-<li><p>配合几何定位工具，通过找线工具、找圆工具、交点工具、中点工具等工具查找物料某些固定特征作为参考特征来实现精确定位。</p></li>
-<li><p>在标定对位类项目中，可通过高级找线工具、找圆工具、交点工具，求取特定Mark点的图像坐标，配合对应机械坐标值，计算图像坐标系与机械坐标系的转换关系。</p></li>
+<li><p>Trong các dự án đo lường, có thể sử dụng như phần tử đặc trưng hoặc phần tử trung gian để đo khoảng cách giữa các đoạn thẳng, góc giữa các đường thẳng, hoặc tìm giao điểm của các đường để tính khoảng cách giữa các điểm.</p></li>
+<li><p>Kết hợp với công cụ định vị hình học để tìm các đặc trưng cố định của vật thể làm tham chiếu, đạt được định vị chính xác.</p></li>
+<li><p>Trong các dự án hiệu chỉnh/định vị, sử dụng công cụ tìm đường nâng cao cùng với công cụ tìm đường tròn, giao điểm... để tính toạ độ hình ảnh của các điểm Mark, kết hợp với toạ độ cơ khí để tính toán quan hệ giữa hệ toạ độ hình ảnh và hệ toạ độ cơ khí.</p></li>
 </ul>
 
+<p><strong>Khác biệt giữa công cụ tìm đường nâng cao và công cụ tìm đường thường: Công cụ tìm đường nâng cao hỗ trợ thêm tính năng loại bỏ điểm ngoại lai, lọc cạnh mảnh, ràng buộc điểm cạnh và góc cạnh để cải thiện độ chính xác và ổn định.</strong></p>
 
-<p><strong>高级找线工具与找线工具的区别：高级找线工具增加了考虑局外点、过滤细边缘、边缘得分约束和角度约束等功能，提高了查找的准确定和稳定性。</strong></p>
+<h2>4. Hướng dẫn sử dụng</h2>
 
-<h2>4. 使用向导</h2>
-
-<h3>添加工具，链接参数</h3>
+<h3>Thêm công cụ, liên kết tham số</h3>
 
 <ul>
-<li><p>输入图像：待检测的图像</p></li>
-<li><p>二维线性变换：该参数一般来源于定位工具，其表示为当前图像中的目标特征相对于模板图像中对应特征的平移、旋转、缩放变换。实时在线检测时，可通过该参数不断调整高级找线工具的查找区域。</p>
+<li><p>Ảnh đầu vào: ảnh cần kiểm tra</p></li>
+<li><p>Biến đổi tuyến tính 2D: thường lấy từ công cụ định vị, biểu thị sự biến đổi tịnh tiến, xoay, phóng to/thu nhỏ giữa đặc trưng trong ảnh hiện tại và mẫu chuẩn. Trong quá trình kiểm tra online, có thể dùng tham số này để điều chỉnh vùng tìm kiếm.</p>
 
 <p><img src="media/GcFindLineAdvancedTool_4_1.png" alt="" /></p></li>
 </ul>
 
-
-<h3>设置检测参数</h3>
+<h3>Cài đặt thông số kiểm tra</h3>
 
 <p><img src="media/GcFindLineAdvancedTool_4_2.png" alt="" /></p>
 
-<p>重点参数说明如下，其余参数可参考“5.参数说明”。</p>
+<p>Giải thích các thông số quan trọng như sau, các thông số khác tham khảo mục “5. Giải thích tham số”.</p>
 
-<h4>边缘模式</h4>
+<h4>Chế độ cạnh</h4>
 
-<p>单边缘和双边缘模式实际应用如图2和图3所示，采用单边缘模式时，其找线结果如图2(b)中的红色直线所示；若采用双边缘模式，卡尺摆放如图3(a)所示，卡尺的查找区域中包含两条边缘，找线结果为这两条边缘(图3(b)中绿色直线)的中线，如图3(b)中的红色直线所示。</p>
+<p>Chế độ cạnh đơn và cạnh đôi được minh hoạ trong Hình 2 và Hình 3. Khi dùng chế độ cạnh đơn, kết quả như đường đỏ trong Hình 2(b); chế độ cạnh đôi sẽ lấy trung tuyến của hai cạnh (đường đỏ trong Hình 3(b)).</p>
 
 <p><img src="media/wps56.jpg" alt="img" />  <img src="media/wps57.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 找线区域设置</imgnote> <imgnote>(b) 找线结果</imgnote></p>
+<p><imgnote>(a) Cài đặt vùng tìm đường</imgnote> <imgnote>(b) Kết quả tìm đường</imgnote></p>
 
-<p><imgnote>图2 单边缘模式示意图</imgnote></p>
+<p><imgnote>Hình 2 Minh hoạ chế độ cạnh đơn</imgnote></p>
 
 <p><img src="media/wps58.jpg" alt="img" />   <img src="media/wps59.png" alt="img" /></p>
 
-<p><imgnote>(a) 找线区域设置</imgnote> <imgnote>(b) 找线结果</imgnote></p>
+<p><imgnote>(a) Cài đặt vùng tìm đường</imgnote> <imgnote>(b) Kết quả tìm đường</imgnote></p>
 
-<p><imgnote>图3 双边缘模式示意图</imgnote></p>
+<p><imgnote>Hình 3 Minh hoạ chế độ cạnh đôi</imgnote></p>
 
-<h4>边缘极性</h4>
+<h4>Cực tính cạnh</h4>
 
-<p>卡尺的边缘极性是根据图像边缘的灰度级过渡形式来确定的。如图4所示，沿着卡尺Y轴正方向(红色箭头所指的方向)，图像边缘的灰度级过渡形式如果是从亮到暗，则边缘极性选择亮到暗，反之选择暗到亮，如果图像边缘的灰度级过渡形式不确定时选择任意极性。</p>
+<p>Cực tính cạnh dựa vào sự chuyển đổi cường độ pixel theo hướng dương trục Y của caliper. Ví dụ, từ sáng đến tối thì chọn “Sáng đến Tối”; ngược lại thì “Tối đến Sáng”; nếu không chắc, chọn “Bất kỳ”.</p>
 
 <p><img src="media/wps60.png" alt="img" />   <img src="media/wps61.png" alt="img" /></p>
 
-<p><imgnote>(a) 亮到暗</imgnote> <imgnote>(b) 暗到亮</imgnote></p>
+<p><imgnote>(a) Sáng đến tối</imgnote> <imgnote>(b) Tối đến sáng</imgnote></p>
 
-<p><imgnote>图4 边缘极性示意图</imgnote></p>
+<p><imgnote>Hình 4 Minh hoạ cực tính cạnh</imgnote></p>
 
-<h4>局外点比例</h4>
+<h4>Tỷ lệ điểm ngoại lai</h4>
 
-<p>如图5所示，其中红色十字点为局外点，局外点是不参与拟合的。其中局外点所占比例称为局外点比例，图5中局外点比例为0.2。一般在边缘干扰过大时，需要设置局外点比例。</p>
+<p>Như Hình 5, các điểm thập đỏ là điểm ngoại lai (không dùng để khớp). Tỷ lệ các điểm này gọi là tỷ lệ điểm ngoại lai. Khi nhiễu cạnh lớn, nên thiết lập tỷ lệ này.</p>
 
 <p><img src="media/wps62.jpg" alt="img" /></p>
 
-<p><imgnote>图5 局外点示意图</imgnote></p>
+<p><imgnote>Hình 5 Minh hoạ điểm ngoại lai</imgnote></p>
 
-<h4>边缘属性</h4>
+<h4>Thuộc tính cạnh</h4>
 
-<p>一般对于多边缘图像，需要设置合适的边缘属性。</p>
+<p>Đối với ảnh nhiều cạnh, cần chọn thuộc tính cạnh phù hợp.</p>
 
 <p><img src="media/wps63.jpg" alt="img" /></p>
 
-<p>  <imgnote>图6 边缘属性示意图</imgnote></p>
+<p><imgnote>Hình 6 Minh hoạ thuộc tính cạnh</imgnote></p>
 
-<p><strong>最佳边缘</strong>：在工具GUI中查找，边缘两侧的灰度对比度最强的边缘，强度需高于对比度阈值，边缘对比度越强，其边缘得分越高；</p>
+<p><strong>Cạnh tốt nhất</strong>: cạnh có độ tương phản mạnh nhất, điểm cao nhất;</p>
 
-<p><strong>第一条边缘</strong>：在工具GUI中查找，沿小箭头方向即卡尺Y轴的正方向，最早出现且满足对比度阈值并且符合边缘极性的边缘，边缘位置越靠前，其边缘得分越高；</p>
+<p><strong>Cạnh đầu tiên</strong>: cạnh xuất hiện đầu tiên theo trục Y caliper, phù hợp cực tính, điểm càng đầu càng cao;</p>
 
-<p><strong>最后一条边缘</strong>：在工具GUI中查找，沿小箭头方向即卡尺Y轴的正方向，最后出现且满足对比度阈值并且符合边缘极性的边缘，边缘位置越靠后，其边缘得分越高；</p>
+<p><strong>Cạnh cuối cùng</strong>: tương tự, nhưng là cạnh cuối cùng;</p>
 
-<p><strong>离中心最近边缘</strong>：在工具GUI中查找，最靠近黄色虚线位置且满足对比度阈值并且符合边缘极性的边缘，边缘位置越靠近中心，其边缘得分越高；</p>
+<p><strong>Cạnh gần tâm nhất</strong>: cạnh gần nhất với đường vàng trung tâm;</p>
 
-<p><strong>期望灰度边缘</strong>：在工具GUI中查找，两侧灰度最接近期望值的边缘，暗侧、亮侧与期望值绝对值差异越小，其边缘得分越高；建议暗侧期望灰度、亮侧期望灰度设置为与实际暗侧灰度、亮侧灰度相差在10以内，例如暗侧实际灰度值为195，则可以设置暗侧期望灰度为190。</p>
+<p><strong>Cạnh theo kỳ vọng xám</strong>: cạnh có cường độ gần với giá trị kỳ vọng. Ví dụ nếu bên tối có xám là 195, thì kỳ vọng khoảng 190–200.</p>
 
-<blockquote><p> <strong>注意</strong>：选择双边缘模式时，边缘属性不支持“期望灰度边缘”。当查找范围为整个图像区域，边缘模式为单边缘，边缘极性设置为任意极性，选择不同的边缘属性时，其对应的找线结果如图6所示。</p></blockquote>
+<blockquote><p><strong>Lưu ý</strong>: Trong chế độ cạnh đôi, không hỗ trợ chọn “Cạnh theo kỳ vọng xám”.</p></blockquote>
 
-<h4>暗侧期望灰度</h4>
+<h4>Giá trị xám kỳ vọng phía tối</h4>
 
-<p>期望边缘暗侧的灰度值，建议暗侧期望灰度设置为与实际暗侧灰度相差在10以内，例如暗侧实际灰度值为195，则可以设置暗侧期望灰度为190、193、200。</p>
+<p>Nên đặt cách biệt nhỏ hơn 10 so với thực tế, ví dụ thực tế là 195 thì đặt 190–200.</p>
 
-<h4>亮侧期望灰度</h4>
+<h4>Giá trị xám kỳ vọng phía sáng</h4>
 
-<p>期望边缘亮侧的灰度值，建议亮侧期望灰度设置为与实际亮侧灰度相差在10以内，例如亮侧实际灰度值为240，则可以设置亮侧期望灰度为230、246、250。</p>
+<p>Tương tự như phía tối.</p>
 
-<h4>边缘得分阈值</h4>
+<h4>Ngưỡng điểm cạnh</h4>
 
-<p>边缘得分阈值可以用来剔除不需要的探测点。</p>
+<p>Dùng để loại bỏ điểm không mong muốn.</p>
 
-<p><strong>边缘得分阈值模式：</strong>分为“绝对得分”和“相对得分”。一般情况下使用“绝对得分”即可，只有在光照强弱整体有变化时才使用“相对得分”。</p>
+<p><strong>Chế độ điểm cạnh</strong>: “Điểm tuyệt đối” hoặc “Điểm tương đối”. Dùng “Tuyệt đối” trong hầu hết các trường hợp, “Tương đối” khi ánh sáng thay đổi lớn.</p>
 
-<p><strong>得分阈值：</strong>过滤低于得分阈值的探测点。</p>
+<p><strong>Giá trị ngưỡng</strong>: điểm thấp hơn sẽ bị bỏ.</p>
 
-<p><strong>得分阈值GUI：</strong>如下图所示即为得分阈值GUI，其中横轴表示探测点编号，纵轴表示探测点得分，绿色直线为得分阈值，浅蓝色曲线为各个探测点得分连接起来得到的曲线。</p>
-
-<p>图中得分阈值为0.3，因此得分低于0.3的探测点会被剔除掉。</p>
+<p><strong>Giao diện ngưỡng điểm cạnh (GUI)</strong>: Trục X là điểm, trục Y là điểm số, đường xanh là ngưỡng.</p>
 
 <p><img src="media/wps64.jpg" alt="img" /></p>
 
-<p><imgnote>图7 得分阈值GUI</imgnote></p>
-
-<p>如下图所示为边缘得分阈值的应用示例，绿色直线为得分阈值直线，默认为0.0。</p>
+<p><imgnote>Hình 7 GUI ngưỡng điểm cạnh</imgnote></p>
 
 <p><img src="media/wps65.jpg" alt="img" /></p>
 
-<p><imgnote>图8</imgnote></p>
+<p><imgnote>Hình 8</imgnote></p>
 
 <p><img src="media/wps66.jpg" alt="img" /></p>
 
-<p><imgnote>图9</imgnote></p>
+<p><imgnote>Hình 9</imgnote></p>
 
-<h4>过滤细边缘</h4>
+<h4>Lọc cạnh mảnh</h4>
 
-<p>过滤细边缘可以将期望边缘附近的一条暗色或者亮色的长条区域的边缘剔除，防止影响找线结果精确度或者剔除不需要的边缘干扰。</p>
+<p>Loại bỏ đường sáng hoặc tối mảnh gần cạnh mong muốn để tránh nhiễu.</p>
 
-<p><strong>过滤边缘类型</strong>：是指干扰线条的类型，例如图中示例，干扰线条为暗类型，因此过滤边缘类型选择“暗类型”，如果过滤中间的那条亮色线条，则应该选择“亮类型”。</p>
+<p><strong>Loại cạnh lọc</strong>: Nếu nhiễu là đường tối, chọn “Tối”; nếu là đường sáng thì “Sáng”.</p>
 
-<p><strong>过滤边缘宽度</strong>：是一个过滤阈值，宽度小于该阈值的线条会被过滤掉，线条的边缘不会被查找。一般设置比实际要过滤的线条宽度大一些，例如过滤像素宽度是5的线条，可以设置为5.5、6、10等。</p>
+<p><strong>Chiều rộng cạnh lọc</strong>: thiết lập lớn hơn chiều rộng thực tế cần lọc. Ví dụ cần lọc đường rộng 5px, thiết lập 5.5, 6 hoặc 10.</p>
 
 <p><img src="media/wps67.jpg" alt="img" /></p>
 
-<p><imgnote>图10 过滤细边缘示例</imgnote></p>
+<p><imgnote>Hình 10 Ví dụ lọc cạnh mảnh</imgnote></p>
 
-<h4>开启平行偏移</h4>
+<h4>Bật dịch chuyển song song</h4>
 
-<p>开启平行偏移参数选择“是”时，若平行偏移量参数输入为正时，直线结果向上(右)偏移得到平行偏移直线结果；反之，平行偏移量为负时，直线结果向下(左)偏移平行偏移直线结果。如图7所示，分别为平行偏移量参数输入为10和-10的输出结果图。</p>
+<p>Chọn “Có”, nếu giá trị là dương thì dịch lên/phải, âm thì dịch xuống/trái. Xem Hình 11.</p>
 
 <p><img src="media/wps68.jpg" alt="img" />  <img src="media/wps69.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 平行偏移量参数输入正值</imgnote> <imgnote>(b) 平行偏移量参数输入负值</imgnote></p>
+<p><imgnote>(a) Dịch dương</imgnote> <imgnote>(b) Dịch âm</imgnote></p>
 
-<p><imgnote>图11 开启平行偏移示意图</imgnote></p>
+<p><imgnote>Hình 11 Minh hoạ dịch song song</imgnote></p>
 
-<h4>设置结果上下限阈值</h4>
+<h4>Thiết lập ngưỡng kết quả</h4>
 
-<p>找线工具增加了对检测结果（包括直线质心、直线绝对角度、直线变化角度）的判定功能，用户可开启或关闭对应检测结果的判定功能。当检测结果超出设置的上下限阈值时，判定工具运行失败，用户可根据此时工具的运行结果进行后续处理操作。如图12所示。</p>
+<p>Cho phép phán đoán kết quả kiểm tra như tâm đường, góc tuyệt đối, góc lệch có hợp lệ không. Nếu vượt ngưỡng thì công cụ báo lỗi (Xem Hình 12).</p>
 
 <p><img src="media/GcFindLineAdvancedTool_4_3.png" alt="" /></p>
 
-<p><imgnote>图12 高级找线工具结果判定</imgnote></p>
+<p><imgnote>Hình 12 Kiểm tra kết quả công cụ tìm đường nâng cao</imgnote></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述                </th>
-<th> 解决方法                                                     </th>
+<th> Mô tả sự cố </th>
+<th> Cách xử lý </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 找线ROI不能设置掩膜     </td>
-<td> 查看属性栏参数“掩膜模式”是否选择“是”，选择“是”时才可以设置掩膜。 </td>
+<td> ROI không cho phép thiết lập mặt nạ </td>
+<td> Kiểm tra tham số “Chế độ mặt nạ” có đặt là “Có” không. Chỉ khi chọn “Có” mới thiết lập được mặt nạ. </td>
 </tr>
 <tr>
-<td> 找线ROI不能设置卡尺参数 </td>
-<td> 查看属性栏参数“手动模式”是否选择“是”，选择“是”时才可以设置卡尺参数。 </td>
+<td> ROI không thiết lập được tham số caliper </td>
+<td> Kiểm tra tham số “Chế độ thủ công” có đặt là “Có” không. Chọn “Có” mới thiết lập caliper được. </td>
 </tr>
 <tr>
-<td> 找线失败                </td>
-<td> 1. 查找失败。可根据输出窗口错误栏的错误提示，修改对比度阈值、局外点比例、复检模式等参数。<br />2. 判定失败。质心、直线绝对角度、直线变化角度判定上下限阈值设置不合理，可根据实际情况修改其上下限阈值 </td>
+<td> Tìm đường thất bại </td>
+<td> 
+1. Tìm thất bại: Xem lỗi đầu ra, thử điều chỉnh ngưỡng tương phản, tỷ lệ điểm ngoại lai, chế độ kiểm tra lại...<br />
+2. Kiểm tra thất bại: các ngưỡng kết quả như tâm, góc vượt giới hạn – cần điều chỉnh ngưỡng hợp lý.
+</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
+<h2>6. Giải thích Tham số</h2>
 
-<h3>输入参数</h3>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称                       </th>
-<th> 参数描述                                                                                                                   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 输入图像         </td>
-<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。     </td>
-</tr>
-<tr>
-<td> 二维线性变换           </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。 </td>
-</tr>
-<tr>
-<td> 参考平行/垂直角度直线   </td>
-<td> 属性窗口开启参考直线参数，选择“是”时需要配置该参数。 </td>
-</tr>
-<tr>
-<td> 参考平行位置直线  </td>
-<td> 属性窗口开启参考直线参数，选择“是”时需要配置该参数。 </td>
-</tr>
-<tr>
-<td> 查找区域 </td>
-<td> 目标在图像中的查找范围，通过中心Center、尺寸Size和旋转Rotation对查找区域进行设置。 </td>
-</tr>
-<tr>
-<td> 目标跟随 </td>
-<td> 查找区域按照二维线性变换进行仿射变换。 </td>
-</tr>
-<tr>
-<td> 边缘模式    </td>
-<td> 卡尺工具的边缘模式有2种，单边缘和双边缘。<a href="#%20%E8%BE%B9%E7%BC%98%E6%A8%A1%E5%BC%8F"><img src="media/link.jpg" alt="img" /></a> </td>
-</tr>
-<tr>
-<td> 边缘极性                       </td>
-<td> 边缘极性是指图像边缘灰度级的过渡形式，分为3种，任意极性、亮到暗和暗到亮。<a href="#%20%E8%BE%B9%E7%BC%98%E6%9E%81%E6%80%A7"><img src="media/link.jpg" alt="img" /></a>                                                               </td>
-</tr>
-<tr>
-<td> 对比度阈值                     </td>
-<td> 卡尺工具默认只采用对比度评价分数，即按照边缘信号的强度来评分，输出边缘最强的点。对比度阈值的取值范围是0~255。                                                               </td>
-</tr>
-<tr>
-<td> 边缘属性                       </td>
-<td> 在查找区域内，卡尺根据不同的边缘属性，确定图像边缘的精确位置。<br />卡尺工具的边缘属性有5种，最佳边缘、第一条边缘、最后一条边缘、离中心最近边缘、期望灰度边缘。<a href="#%E8%BE%B9%E7%BC%98%E5%B1%9E%E6%80%A7"><img src="media/link.jpg" alt="img" /></a>                                                </td>
-</tr>
-<tr>
-<td> 暗侧期望灰度值                 </td>
-<td> 期望边缘暗侧的灰度值。边缘属性选择“期望灰度边缘”时才可用。<a href="#%E6%9A%97%E4%BE%A7%E6%9C%9F%E6%9C%9B%E7%81%B0%E5%BA%A6"><img src="media/link.jpg" alt="img" /></a>                                       </td>
-</tr>
-<tr>
-<td> 亮侧期望灰度值                 </td>
-<td> 期望边缘亮侧的灰度值。边缘属性选择“期望灰度边缘”时才可用。<a href="#%E4%BA%AE%E4%BE%A7%E6%9C%9F%E6%9C%9B%E7%81%B0%E5%BA%A6"><img src="media/link.jpg" alt="img" /></a>                                             </td>
-</tr>
-<tr>
-<td> 局外点比例                     </td>
-<td> 局外点就是偏离曲线较远的点。局外点比例即不参与直线拟合的点的比例，取值范围是0~0.5。<a href="#%E5%B1%80%E5%A4%96%E7%82%B9%E6%AF%94%E4%BE%8B"><img src="media/link.jpg" alt="img" /></a>                                                     </td>
-</tr>
-<tr>
-<td> 是否自动更新局外点比例         </td>
-<td> 自动调整局外点比例参数，使得拟合直线更符合期望结果。                                                                       </td>
-</tr>
-<tr>
-<td> 是否启用角度限制               </td>
-<td> 使用角度约束限制在设定的角度范围内找线。                                                                                   </td>
-</tr>
-<tr>
-<td> 期望角度                       </td>
-<td> 预期的直线角度                                                                                                             </td>
-</tr>
-<tr>
-<td> 最大角度偏差                   </td>
-<td> 和预期直线角度的误差。实际找线角度范围为：[期望角度-最大容差，期望角度+最大容差]，例如期望角度位10°，最大角度容差为5°，则实际查找范围为[5°，15°]，10±5°                                                               </td>
-</tr>
-<tr>
-<td> 是否启用边缘得分阈值           </td>
-<td> 使用得分阈值过滤探测点。<a href="#%E8%BE%B9%E7%BC%98%E5%BE%97%E5%88%86%E9%98%88%E5%80%BC"><img src="media/link.jpg" alt="img" /></a>                                                             </td>
-</tr>
-<tr>
-<td> 边缘得分阈值模式               </td>
-<td> 设置绝对得分阈值还是相对得分阈值，一般使用绝对得分阈值即可，在光照变换比较明显的情况下使用相对得分阈值。                                    </td>
-</tr>
-<tr>
-<td> 得分阈值                       </td>
-<td> 过滤低于得分阈值的探测点，可以通过显示探测点查看效果。                                                      </td>
-</tr>
-<tr>
-<td> 是否显示得分阈值GUI            </td>
-<td> 在Result显示得分阈值GUI，方便根据曲线选择合适的得分阈值。                                               </td>
-</tr>
-<tr>
-<td> 是否过滤细边缘                 </td>
-<td> 有些应用中，查找的产品实际边缘附近会有一条暗色或者亮色的长条区域影响找线，此时可以设置过滤细边缘，将干扰长条剔除。<a href="#%E8%BF%87%E6%BB%A4%E7%BB%86%E8%BE%B9%E7%BC%98"><img src="media/link.jpg" alt="img" /></a>                                                   </td>
-</tr>
-<tr>
-<td> 过滤边缘类型                   </td>
-<td> 要过滤的是暗边缘还是亮边边缘                                                                                               </td>
-</tr>
-<tr>
-<td> 过滤边缘宽度                   </td>
-<td> 将小于该值的边缘过滤掉，设置时可以比实际边缘宽度大一些，例如多设置0.5,1,2之类的，这样可以防止找线工具和边缘不平行时过滤宽度不准确的问题。                                                               </td>
-</tr>
-<tr>
-<td> 掩膜模式                       </td>
-<td> 掩膜设置是指在模板训练过程中，屏蔽掉不参与模式训练的区域，减少参与模式训练的几何特征。                                                               </td>
-</tr>
-<tr>
-<td> 手动模式                       </td>
-<td> 选择“是”，支持手动设置卡尺参数，鼠标右键点击卡尺，在弹出的对话框中可以改变卡尺参数；选择“否”，不支持手动设置卡尺参数。                                                               </td>
-</tr>
-<tr>
-<td> 实时显示结果                   </td>
-<td> 选择“是”，在修改工具参数后，不需要运行工具，就可以实时显示结果；选择“否”，改变参数后需要运行工具才会显示对应的结果。                                                               </td>
-</tr>
-<tr>
-<td> 显示探测点                     </td>
-<td> 选择“是”，显示卡尺的探测点，同时输出探测点，每个卡尺对应一个探测点，可以作为其他工具的输入参数；选择“否”，不显示卡尺的探测点。其中局外点用红色标注，其余用绿色标注。                                                               </td>
-</tr>
-<tr>
-<td> 复检模式                       </td>
-<td> 如果找线失败，且开启了复检选项，则根据卡尺的模板变换后的结果输出直线。                                                               </td>
-</tr>
-<tr>
-<td> 开启平行偏移                   </td>
-<td> 选择“是”，根据平行偏移量参数对结果直线，进行平移操作。<a href="#%E5%BC%80%E5%90%AF%E5%B9%B3%E8%A1%8C%E5%81%8F%E7%A7%BB"><img src="media/link.jpg" alt="img" /></a>                                                    </td>
-</tr>
-<tr>
-<td> 开启参考直线                   </td>
-<td> 以指定参考直线为依据，对仿射矩形的搜索区域进行位置限制。选择“是”，显示修正类型参数、参考允许的角度偏差参数和参考直线距离参数。注意：当参考直线距离为0.000000的时候，相当于不开启参考直线。                                                               </td>
-</tr>
-<tr>
-<td> 修正类型                       </td>
-<td> 修正类型分为2种，平行和垂直。                                                                                              </td>
-</tr>
-<tr>
-<td> 参考允许的角度偏差             </td>
-<td> 输入直线允许的角度偏差阈值，如果角度偏差超过阈值，以参考直线的角度修正。                                                               </td>
-</tr>
-<tr>
-<td> 参考直线距离 </td>
-<td> 输入参考直线的距离。其中：左、上方为负值；右、下方为正值。                                                                 </td>
-</tr>
-<tr>
-<td> 角度归一化                     </td>
-<td> 角度归一化是指对结果直线的角度进行转换，使之限定在一定的范围内。角度归一化有4种，[-90°, 90°)、[-180°, 180°)、[0°, 180°)和[0°, 360°)。                                                               </td>
-</tr>
-<tr>
-<td> 质心X上限 </td>
-<td> 测量结果质心位置坐标X的判断上限阈值，取值范围[0,999999.999999]， 且下限应小于等于上限。 </td>
-</tr>
-<tr>
-<td> 质心X下限 </td>
-<td> 测量结果质心位置坐标X的判断下限阈值，取值范围[0,999999.999999]， 且下限应小于等于上限。 </td>
-</tr>
-<tr>
-<td> 质心Y上限 </td>
-<td> 测量结果质心位置坐标Y的判断上限阈值，取值范围[0,999999.999999]， 且下限应小于等于上限。 </td>
-</tr>
-<tr>
-<td> 质心Y下限 </td>
-<td> 测量结果质心位置坐标Y的判断下限阈值，取值范围[0,999999.999999]， 且下限应小于等于上限。 </td>
-</tr>
-<tr>
-<td> 直线绝对角度上限 </td>
-<td> 测量结果直线绝对角度的判断上限阈值，取值范围[-180.0, 360.0)， 且下限应小于等于上限。 </td>
-</tr>
-<tr>
-<td> 直线绝对角度下限 </td>
-<td> 测量结果直线绝对角度的判断下限阈值，取值范围[-180.0, 360.0)， 且下限应小于等于上限。 </td>
-</tr>
-<tr>
-<td> 直线变化角度上限 </td>
-<td> 测量结果直线变化角度的判断上限阈值，取值范围[-90.0, 90.0)， 且下限应小于等于上限。 </td>
-</tr>
-<tr>
-<td> 直线变化角度下限 </td>
-<td> 测量结果直线变化角度的判断下限阈值，取值范围[-90.0, 90.0)， 且下限应小于等于上限。 </td>
-</tr>
-</tbody>
-</table>
-
-
-<h3>输出参数</h3>
+<h3>Tham số Đầu vào</h3>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                               </th>
+<th> Tên Tham số                       </th>
+<th> Mô tả Tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像                                                     </td>
-<td> 输出图像宽度、高度、像素大小。                           </td>
+<td> Ảnh đầu vào         </td>
+<td> Chiều rộng, chiều cao, kích thước pixel của ảnh đầu vào, giống như tham số ảnh trong cửa sổ hình ảnh.     </td>
 </tr>
 <tr>
-<td> 直线结果         </td>
-<td> 直线的所经过点的位置坐标、方向向量和旋转角度。                                                                         </td>
+<td> Biến đổi tuyến tính 2D           </td>
+<td> Phép tịnh tiến, xoay, phóng to/thu nhỏ so với ảnh mẫu. </td>
 </tr>
 <tr>
-<td> 线段结果         </td>
-<td> 线段的起始点坐标和终止点坐标。                                                                                         </td>
+<td> Đường thẳng tham chiếu song song/vuông góc   </td>
+<td> Nếu bật tham số đường thẳng tham chiếu trong cửa sổ thuộc tính, chọn “Có” thì cần cấu hình tham số này. </td>
 </tr>
 <tr>
-<td> 直线绝对角度     </td>
-<td> 输出直线的角度。                                                                                                       </td>
+<td> Đường thẳng vị trí tham chiếu  </td>
+<td> Nếu bật tham số đường thẳng tham chiếu trong cửa sổ thuộc tính, chọn “Có” thì cần cấu hình tham số này. </td>
 </tr>
 <tr>
-<td> 直线变化角度     </td>
-<td> 输出直线相对于基准变化的角度。                                                                                         </td>
+<td> Vùng tìm kiếm </td>
+<td> Phạm vi tìm kiếm mục tiêu trong ảnh, được thiết lập bằng Tâm (Center), Kích thước (Size) và Góc xoay (Rotation). </td>
 </tr>
 <tr>
-<td> 平行偏移直线结果 </td>
-<td> 平行偏移直线的起始点坐标和方向向量。                                                                                   </td>
+<td> Mục tiêu theo dõi </td>
+<td> Vùng tìm kiếm được biến đổi affine theo phép biến đổi tuyến tính 2D. </td>
 </tr>
 <tr>
-<td> 平行偏移线段结果 </td>
-<td> 平行偏移线段的起始点坐标和终止点坐标。                                                                                 </td>
+<td> Chế độ biên cạnh    </td>
+<td> Công cụ caliper có 2 chế độ biên cạnh: biên đơn và biên đôi. <a href="#%20%E8%BE%B9%E7%BC%98%E6%A8%A1%E5%BC%8F"><img src="media/link.jpg" alt="img" /></a> </td>
 </tr>
 <tr>
-<td> 质心         </td>
-<td> 线段的质心坐标。                                                                                                         </td>
+<td> Cực tính biên cạnh                       </td>
+<td> Cực tính là kiểu chuyển đổi mức xám của biên ảnh, gồm 3 loại: bất kỳ, sáng sang tối và tối sang sáng. <a href="#%20%E8%BE%B9%E7%BC%98%E6%9E%81%E6%80%A7"><img src="media/link.jpg" alt="img" /></a>                                                               </td>
 </tr>
 <tr>
-<td> 执行结果         </td>
-<td> 工具执行结果。                                                                                                         </td>
+<td> Ngưỡng tương phản                     </td>
+<td> Công cụ caliper mặc định dùng điểm số dựa trên tương phản, tức đánh giá độ mạnh của tín hiệu biên, đầu ra là điểm biên mạnh nhất. Giá trị ngưỡng: 0~255. </td>
 </tr>
 <tr>
-<td> 执行时间         </td>
-<td> 工具执行时间。                                       </td>
+<td> Thuộc tính biên cạnh                       </td>
+<td> Trong vùng tìm kiếm, caliper xác định vị trí chính xác của biên ảnh theo thuộc tính biên cạnh. <br />Có 5 loại: biên tốt nhất, biên đầu tiên, biên cuối cùng, biên gần tâm nhất, biên có mức xám kỳ vọng. <a href="#%E8%BE%B9%E7%BC%98%E5%B1%9E%E6%80%A7"><img src="media/link.jpg" alt="img" /></a>                                                </td>
+</tr>
+<tr>
+<td> Mức xám kỳ vọng phía tối                 </td>
+<td> Mức xám kỳ vọng phía tối của biên. Chỉ có hiệu lực khi thuộc tính biên là "biên có mức xám kỳ vọng". <a href="#%E6%9A%97%E4%BE%A7%E6%9C%9F%E6%9C%9B%E7%81%B0%E5%BA%A6"><img src="media/link.jpg" alt="img" /></a>                                       </td>
+</tr>
+<tr>
+<td> Mức xám kỳ vọng phía sáng                 </td>
+<td> Mức xám kỳ vọng phía sáng của biên. Chỉ có hiệu lực khi thuộc tính biên là "biên có mức xám kỳ vọng". <a href="#%E4%BA%AE%E4%BE%A7%E6%9C%9F%E6%9C%9B%E7%81%B0%E5%BA%A6"><img src="media/link.jpg" alt="img" /></a>                                             </td>
+</tr>
+<tr>
+<td> Tỷ lệ điểm ngoại lệ                     </td>
+<td> Điểm ngoại lệ là điểm lệch khỏi đường thẳng. Tỷ lệ điểm ngoại lệ là tỉ lệ các điểm không tham gia vào quá trình khớp đường thẳng. Phạm vi: 0~0.5. <a href="#%E5%B1%80%E5%A4%96%E7%82%B9%E6%AF%94%E4%BE%8B"><img src="media/link.jpg" alt="img" /></a>                                                     </td>
+</tr>
+<tr>
+<td> Tự động cập nhật tỷ lệ điểm ngoại lệ         </td>
+<td> Tự động điều chỉnh tham số tỷ lệ điểm ngoại lệ để khớp đường thẳng tốt hơn với kết quả kỳ vọng. </td>
+</tr>
+<tr>
+<td> Có sử dụng giới hạn góc hay không               </td>
+<td> Sử dụng ràng buộc góc để tìm đường trong phạm vi góc được thiết lập. </td>
+</tr>
+<tr>
+<td> Góc kỳ vọng                       </td>
+<td> Góc dự kiến của đường thẳng cần tìm. </td>
+</tr>
+<tr>
+<td> Sai số góc tối đa                   </td>
+<td> Độ sai lệch cho phép với góc kỳ vọng. Phạm vi tìm thực tế là [góc kỳ vọng - sai số, góc kỳ vọng + sai số]. </td>
+</tr>
+<tr>
+<td> Có sử dụng ngưỡng điểm số biên không           </td>
+<td> Lọc các điểm dò không đạt ngưỡng điểm số. <a href="#%E8%BE%B9%E7%BC%98%E5%BE%97%E5%88%86%E9%98%88%E5%80%BC"><img src="media/link.jpg" alt="img" /></a>                                                             </td>
+</tr>
+<tr>
+<td> Chế độ ngưỡng điểm số biên               </td>
+<td> Chọn giữa ngưỡng điểm số tuyệt đối hoặc tương đối. Thông thường dùng tuyệt đối. Trong điều kiện ánh sáng thay đổi lớn, dùng tương đối. </td>
+</tr>
+<tr>
+<td> Ngưỡng điểm số                       </td>
+<td> Lọc các điểm dò có điểm số thấp hơn ngưỡng. </td>
+</tr>
+<tr>
+<td> Hiển thị giao diện GUI ngưỡng điểm số            </td>
+<td> Hiển thị đồ thị GUI ngưỡng điểm số trong kết quả, thuận tiện để chọn ngưỡng phù hợp. </td>
+</tr>
+<tr>
+<td> Có lọc biên mảnh hay không                 </td>
+<td> Khi gần biên cần tìm có đường sáng/tối hẹp gây nhiễu, có thể lọc biên mảnh để loại bỏ nhiễu. <a href="#%E8%BF%87%E6%BB%A4%E7%BB%86%E8%BE%B9%E7%BC%98"><img src="media/link.jpg" alt="img" /></a> </td>
+</tr>
+<tr>
+<td> Loại biên cần lọc                   </td>
+<td> Lọc biên tối hay sáng. </td>
+</tr>
+<tr>
+<td> Độ rộng biên cần lọc                   </td>
+<td> Lọc các đường biên có độ rộng nhỏ hơn giá trị này. Nên đặt lớn hơn độ rộng thực tế một chút, ví dụ +0.5, +1, +2 để tránh sai số khi công cụ không song song với biên. </td>
+</tr>
+<tr>
+<td> Chế độ mặt nạ                       </td>
+<td> Trong quá trình huấn luyện mẫu, có thể dùng mặt nạ để loại trừ vùng không tham gia vào huấn luyện đặc trưng hình học. </td>
+</tr>
+<tr>
+<td> Chế độ thủ công                       </td>
+<td> Chọn “Có” để cho phép chỉnh tay tham số caliper (nhấp chuột phải để điều chỉnh). Chọn “Không” để không cho phép chỉnh tay. </td>
+</tr>
+<tr>
+<td> Hiển thị kết quả theo thời gian thực                   </td>
+<td> Chọn “Có” để hiển thị kết quả ngay khi thay đổi tham số mà không cần chạy công cụ. Chọn “Không” thì phải chạy lại công cụ để cập nhật kết quả. </td>
+</tr>
+<tr>
+<td> Hiển thị điểm dò                     </td>
+<td> Chọn “Có” để hiển thị điểm dò từ caliper. Mỗi caliper tương ứng một điểm dò, có thể dùng làm đầu vào cho công cụ khác. Điểm ngoại lệ hiển thị màu đỏ, còn lại màu xanh lá. </td>
+</tr>
+<tr>
+<td> Chế độ kiểm lại                       </td>
+<td> Nếu tìm đường thất bại và bật chế độ kiểm lại, kết quả sẽ được xuất từ mẫu caliper sau biến đổi. </td>
+</tr>
+<tr>
+<td> Bật dịch song song                   </td>
+<td> Chọn “Có” để dịch kết quả đường thẳng theo tham số dịch song song. <a href="#%E5%BC%80%E5%90%AF%E5%B9%B3%E8%A1%8C%E5%81%8F%E7%A7%BB"><img src="media/link.jpg" alt="img" /></a> </td>
+</tr>
+<tr>
+<td> Bật đường tham chiếu                   </td>
+<td> Dựa vào đường tham chiếu để giới hạn vùng tìm kiếm. Nếu chọn “Có” thì cần cấu hình kiểu hiệu chỉnh, sai số góc và khoảng cách đường tham chiếu. Nếu khoảng cách là 0.000000 thì coi như không bật. </td>
+</tr>
+<tr>
+<td> Kiểu hiệu chỉnh                       </td>
+<td> Gồm hai kiểu: song song và vuông góc. </td>
+</tr>
+<tr>
+<td> Sai số góc cho phép             </td>
+<td> Sai số góc cho phép so với đường tham chiếu, vượt quá sẽ dùng góc của đường tham chiếu để hiệu chỉnh. </td>
+</tr>
+<tr>
+<td> Khoảng cách đường tham chiếu </td>
+<td> Nhập khoảng cách từ đường tham chiếu. Trái và trên là giá trị âm; phải và dưới là giá trị dương. </td>
+</tr>
+<tr>
+<td> Chuẩn hóa góc                     </td>
+<td> Là việc giới hạn góc của đường kết quả trong một phạm vi nhất định. Có 4 dạng: [-90°, 90°)、[-180°, 180°)、[0°, 180°)、[0°, 360°)。 </td>
+</tr>
+<tr>
+<td> Ngưỡng trên tọa độ X trọng tâm </td>
+<td> Ngưỡng trên để đánh giá tọa độ X của trọng tâm đường thẳng, phạm vi [0,999999.999999], và phải ≥ ngưỡng dưới. </td>
+</tr>
+<tr>
+<td> Ngưỡng dưới tọa độ X trọng tâm </td>
+<td> Ngưỡng dưới để đánh giá tọa độ X của trọng tâm đường thẳng. </td>
+</tr>
+<tr>
+<td> Ngưỡng trên tọa độ Y trọng tâm </td>
+<td> Ngưỡng trên để đánh giá tọa độ Y của trọng tâm đường thẳng. </td>
+</tr>
+<tr>
+<td> Ngưỡng dưới tọa độ Y trọng tâm </td>
+<td> Ngưỡng dưới để đánh giá tọa độ Y của trọng tâm đường thẳng. </td>
+</tr>
+<tr>
+<td> Ngưỡng trên góc tuyệt đối của đường thẳng </td>
+<td> Ngưỡng trên của góc tuyệt đối đường thẳng, phạm vi [-180.0, 360.0)，và phải ≥ ngưỡng dưới. </td>
+</tr>
+<tr>
+<td> Ngưỡng dưới góc tuyệt đối của đường thẳng </td>
+<td> Ngưỡng dưới của góc tuyệt đối đường thẳng. </td>
+</tr>
+<tr>
+<td> Ngưỡng trên góc thay đổi của đường thẳng </td>
+<td> Ngưỡng trên của góc thay đổi đường thẳng, phạm vi [-90.0, 90.0)。 </td>
+</tr>
+<tr>
+<td> Ngưỡng dưới góc thay đổi của đường thẳng </td>
+<td> Ngưỡng dưới của góc thay đổi đường thẳng. </td>
 </tr>
 </tbody>
 </table>
 
+<h3>Tham số đầu ra</h3>
 
-<h2>7. 示例工程</h2>
+<table>
+<thead>
+<tr>
+<th> Tên tham số         </th>
+<th> Mô tả tham số                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh đầu vào                                                     </td>
+<td> Đầu ra chiều rộng, chiều cao và kích thước pixel của ảnh.                           </td>
+</tr>
+<tr>
+<td> Kết quả đường thẳng         </td>
+<td> Tọa độ điểm đi qua đường thẳng, vector hướng và góc xoay.                                                                         </td>
+</tr>
+<tr>
+<td> Kết quả đoạn thẳng         </td>
+<td> Tọa độ điểm bắt đầu và điểm kết thúc của đoạn thẳng.                                                                                         </td>
+</tr>
+<tr>
+<td> Góc tuyệt đối của đường thẳng     </td>
+<td> Đầu ra góc của đường thẳng.                                                                                                       </td>
+</tr>
+<tr>
+<td> Góc thay đổi của đường thẳng     </td>
+<td> Đầu ra góc thay đổi của đường thẳng so với đường tham chiếu.                                                                                         </td>
+</tr>
+<tr>
+<td> Kết quả đường thẳng dịch song song </td>
+<td> Tọa độ điểm bắt đầu và vector hướng của đường thẳng dịch song song.                                                                                   </td>
+</tr>
+<tr>
+<td> Kết quả đoạn thẳng dịch song song </td>
+<td> Tọa độ điểm bắt đầu và điểm kết thúc của đoạn thẳng dịch song song.                                                                                 </td>
+</tr>
+<tr>
+<td> Trọng tâm         </td>
+<td> Tọa độ trọng tâm của đoạn thẳng.                                                                                                         </td>
+</tr>
+<tr>
+<td> Kết quả thực thi         </td>
+<td> Kết quả thực thi của công cụ.                                                                                                         </td>
+</tr>
+<tr>
+<td> Thời gian thực thi         </td>
+<td> Thời gian thực thi của công cụ.                                       </td>
+</tr>
+</tbody>
+</table>
+
+<h2>7. Dự án ví dụ</h2>
 
 <p>参见“\Samples\高级找线工具.gvp”。</p>
