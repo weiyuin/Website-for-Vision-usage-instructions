@@ -16,100 +16,98 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>字符串解析工具</h1>
+<h1>Công cụ phân tích chuỗi ký tự</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>字符串解析工具利用正则表达式对目标数据进行解析，配合数据包解析工具将目标数据拆解成响应的数据格式，以供后续工具使用。一般的，当通信接收工具无法对数据正确的解析时，可以通过字符串解析工具再一次对通信数据分析，或者可以解析某些工具的结果中的一部分信息。</p>
+<p>Công cụ phân tích chuỗi ký tự sử dụng biểu thức chính quy để phân tích dữ liệu mục tiêu, kết hợp với công cụ phân tích gói dữ liệu để tách dữ liệu mục tiêu thành các định dạng dữ liệu tương ứng cho các công cụ phía sau sử dụng. Thông thường, khi công cụ nhận dữ liệu giao tiếp không thể phân tích dữ liệu một cách chính xác, công cụ phân tích chuỗi ký tự có thể được sử dụng để phân tích lại dữ liệu giao tiếp, hoặc trích xuất một phần thông tin từ kết quả của một số công cụ khác.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                             </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口     </td>
-<td> 字符串格式                           </td>
-<td> 正则表达式规则（可参考通信接收工具格式指令）。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 输出数据个数 </td>
-<td> 目标字符串中包含的数据个数。                                                         </td>
-</tr>
-<tr>
-<td></td>
-<td> 输出数据类型 </td>
-<td> 目标字符串中各个数据对应的数据类型。                                                 </td>
-</tr>
-<tr>
-<td> 数据链       </td>
-<td> 输入字符串                           </td>
-<td> 将要解析的字符串。                             </td>
-</tr>
-<tr>
-<td>高级界面</td>
-<td> 无           </td>
-<td> 无                                                                                   </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                     </th>
+<th>Phân loại </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出的数据     </td>
-<td> 经过格式转换后的输出数据，后续可以配合数据包解析工具进一步拆分成单个数据。 </td>
+<td> Cửa sổ thuộc tính     </td>
+<td> Định dạng chuỗi                           </td>
+<td> Quy tắc biểu thức chính quy (tham khảo định dạng chỉ thị của công cụ nhận dữ liệu giao tiếp). </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                               </td>
+<td> Số lượng dữ liệu đầu ra </td>
+<td> Số lượng dữ liệu có trong chuỗi mục tiêu.                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                               </td>
+<td> Kiểu dữ liệu đầu ra </td>
+<td> Kiểu dữ liệu tương ứng với từng phần dữ liệu trong chuỗi mục tiêu.                                                 </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无  </td>
-<td> 无                                                                           </td>
+<td> Chuỗi dữ liệu       </td>
+<td> Chuỗi đầu vào                           </td>
+<td> Chuỗi sẽ được phân tích.                             </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出的数据   </td>
-<td> 字符串解析工具接收到的数据（被转换为对应类型的数据）。       </td>
+<td>Giao diện nâng cao</td>
+<td> Không           </td>
+<td> Không                                                                                   </td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Cửa sổ giám sát </td>
+<td> Dữ liệu đầu ra     </td>
+<td> Dữ liệu đầu ra sau khi được định dạng lại, có thể tiếp tục tách thành từng dữ liệu riêng lẻ bằng công cụ phân tích gói dữ liệu. </td>
+</tr>
+<tr>
+<td></td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Thời gian thực thi </td>
+<td> Thời gian công cụ thực thi.                                                               </td>
+</tr>
+<tr>
+<td> Cửa sổ hình ảnh </td>
+<td> Không  </td>
+<td> Không                                                                           </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu   </td>
+<td> Dữ liệu đầu ra   </td>
+<td> Dữ liệu nhận được từ công cụ phân tích chuỗi (đã được chuyển đổi sang kiểu dữ liệu tương ứng).       </td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không</p>
 
-<p>无</p>
+<h2>Lưu ý</h2>
 
-<h2>示例工程</h2>
+<p>Không</p>
+
+<h2>Dự án mẫu</h2>
 
 <p>参见“\Samples\字符串相关工具.gvp”。</p>

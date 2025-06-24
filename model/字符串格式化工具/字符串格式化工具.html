@@ -16,94 +16,92 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>字符串格式化工具</h1>
+<h1>Công cụ định dạng chuỗi</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>对输入的字符串，按照一定的格式要求进行格式化。</p>
+<p>Công cụ này thực hiện định dạng chuỗi đầu vào theo một yêu cầu định dạng nhất định.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口 </td>
-<td> 字符串格式 </td>
-<td> 输入指定的格式化字符串。<a href="#%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F"><img src="media/wps4.jpg" alt="img" /></a> </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 无  </td>
-<td> 无                                                         </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 数据       </td>
-<td> 输入格式化的数据。                             </td>
-</tr>
-<tr>
-<td> 高级界面 </td>
-<td> 无 </td>
-<td> 无                                                         </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                     </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 格式化结果     </td>
-<td> 输出格式化后的结果。                                         </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Định dạng chuỗi</td>
+<td>Nhập chuỗi định dạng cụ thể. <a href="#%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F"><img src="media/wps4.jpg" alt="img" /></a></td>
 </tr>
 <tr>
-<td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                               </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                               </td>
+<td>Chuỗi dữ liệu</td>
+<td>Dữ liệu</td>
+<td>Dữ liệu đầu vào cần được định dạng.</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无  </td>
-<td> 无                                                                           </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 格式化结果     </td>
-<td> 输出格式化后的结果，供后序工具使用，同监视窗口的格式化结果参数。 </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả định dạng</td>
+<td>Kết quả sau khi định dạng chuỗi.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Kết quả định dạng</td>
+<td>Xuất ra kết quả định dạng, dùng cho các công cụ sau, giống với tham số kết quả định dạng trong cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
 
-<h3>字符串格式</h3>
+<h2>Giải thích chi tiết</h2>
 
-<p>字符串格式输入的指定格式为：%[flags] [width] [.precision] [h | l]type，其中type是唯一必需的字段，其他为可选字段，各字段的说明如表1所示。</p>
+<h3>Định dạng chuỗi</h3>
 
-<p>表1 指定输入字符串格式</p>
+<p>Chuỗi định dạng nhập vào tuân theo cấu trúc: %[flags] [width] [.precision] [h | l]type, trong đó <code>type</code> là trường bắt buộc duy nhất, các trường còn lại là tùy chọn. Mô tả chi tiết các trường xem Bảng 1 bên dưới.</p>
+
+<p>Bảng 1: Định dạng chuỗi đầu vào</p>
 
 <table>
 <thead>
@@ -115,34 +113,34 @@
 <tbody>
 <tr>
 <td> [flags]      </td>
-<td> 控制输出的对齐和输出的符号，十六进制前缀。-指定参数向左对齐，默认是向右对齐。+/-正负号。#与0x、0X一起使用，表示以十六进制格式化。输入#时格式化带有十六进制前缀，反之没有前缀，格式化输出的位数可以设置，范围为0~9，例如%04x，输出为四位。 </td>
+<td> Điều khiển việc căn lề đầu ra và hiển thị dấu, tiền tố hệ thập lục phân. - chỉ định căn trái, mặc định là căn phải. + / - hiển thị dấu dương/âm. # sử dụng cùng với 0x, 0X để định dạng ở dạng thập lục phân. Khi nhập # thì kết quả định dạng sẽ có tiền tố thập lục phân, nếu không thì không có. Số chữ số định dạng có thể được thiết lập, phạm vi từ 0~9, ví dụ: %04x sẽ xuất ra 4 chữ số. </td>
 </tr>
 <tr>
 <td> [width]      </td>
-<td> 指定被格式化的值所占的宽度，输入值得范围0~99。               </td>
+<td> Chỉ định độ rộng của giá trị được định dạng, phạm vi giá trị nhập vào là 0~99. </td>
 </tr>
 <tr>
 <td> [.precision] </td>
-<td> 对于浮点数指定精度，输入范围0~9。                            </td>
+<td> Đối với số thực, chỉ định độ chính xác, phạm vi nhập vào là 0~9. </td>
 </tr>
 <tr>
 <td> [h | l]     </td>
-<td> 指定相应参数的大小，long、double可以加l，short可以加h。      </td>
+<td> Chỉ định kích thước của tham số tương ứng, long hoặc double có thể thêm l, short có thể thêm h. </td>
 </tr>
 <tr>
 <td> type         </td>
-<td> 转换说明符，指定转换为字符、字符串、整数或浮点数，是唯一必需的格式字符，可放在任意可选字段之后；float：%f；double：%f/%lf；string：%s；int/ bool：%d； long：%ld； short：%d/%hd；char：%c。 </td>
+<td> Ký tự định dạng, chỉ định chuyển đổi thành ký tự, chuỗi, số nguyên hoặc số thực. Đây là trường bắt buộc duy nhất và có thể đặt sau bất kỳ trường tùy chọn nào; float: %f; double: %f/%lf; string: %s; int/bool: %d; long: %ld; short: %d/%hd; char: %c. </td>
 </tr>
 </tbody>
 </table>
 
-
 <h2>注意</h2>
 
 <ul>
-<li><p>字符串格式化工具没有配置数据参数时，输出为格式化字符串。</p></li>
-<li><p>字符串配置数据参数时，与数据包生成工具配合使用。</p></li>
+<li><p>Khi công cụ định dạng chuỗi không được cấu hình tham số dữ liệu, kết quả xuất ra sẽ là chuỗi đã định dạng sẵn.</p></li>
+<li><p>Khi chuỗi được cấu hình với tham số dữ liệu, hãy sử dụng cùng với công cụ tạo gói dữ liệu.</p></li>
 </ul>
+
 
 
 <h2>示例工程</h2>
