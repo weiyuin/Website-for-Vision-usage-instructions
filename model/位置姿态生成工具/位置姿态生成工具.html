@@ -16,103 +16,100 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>位置姿态生成</h1>
+<h1>Tạo vị trí và tư thế</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>本工具可将sc2Vector型的位置坐标数据与double型旋转量组合转换为GcCoordPos类型的位置姿态数据结果。</p>
+<p>Công cụ này dùng để kết hợp dữ liệu tọa độ vị trí dạng sc2Vector và giá trị xoay dạng double, chuyển đổi thành kết quả dữ liệu tư thế vị trí dạng GcCoordPos.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口 </td>
-<td> 无   </td>
-<td> 无                                        </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 无  </td>
-<td> 无                                        </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 位置坐标         </td>
-<td> sc2Vector型位置坐标数据 </td>
-</tr>
-<tr>
-<td></td>
-<td> 旋转量   </td>
-<td> double型的旋转量                          </td>
-</tr>
-<tr>
-<td> 高级界面 </td>
-<td> 无 </td>
-<td> 无                                        </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                               </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 位置姿态     </td>
-<td> GcCoordPos型的位置姿态数据结果                           </td>
+<td> Cửa sổ thuộc tính </td>
+<td> Không   </td>
+<td> Không                                        </td>
+</tr>
+<tr>
+<td> Cửa sổ hình ảnh </td>
+<td> Không  </td>
+<td> Không                                        </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu   </td>
+<td> Tọa độ vị trí         </td>
+<td> Dữ liệu tọa độ vị trí dạng sc2Vector </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果                                                           </td>
+<td> Góc xoay   </td>
+<td> Giá trị xoay dạng double                          </td>
 </tr>
 <tr>
-<td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间                                                           </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 无 </td>
-<td> 无  </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 位置姿态     </td>
-<td> GcCoordPos型的位置姿态数据结果，后序工具使用，同监视窗口 </td>
+<td> Giao diện nâng cao </td>
+<td> Không </td>
+<td> Không                                        </td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Cửa sổ giám sát </td>
+<td> Vị trí và tư thế     </td>
+<td> Kết quả dữ liệu tư thế vị trí dạng GcCoordPos                           </td>
+</tr>
+<tr>
+<td></td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ                                                           </td>
+</tr>
+<tr>
+<td> Cửa sổ hình ảnh </td>
+<td> Không </td>
+<td> Không  </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu   </td>
+<td> Vị trí và tư thế     </td>
+<td> Kết quả dữ liệu tư thế vị trí dạng GcCoordPos, dùng cho các công cụ tiếp theo, giống như tham số trong cửa sổ giám sát </td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li>该类型转换工具的主要应用在图像到平台坐标转换工具之前，将定位到的图像特征点坐标，并加上相应的旋转量，组合成位置姿态结果。该位置姿态结果作为图像到平台坐标转换工具的图像坐标输入。</li>
+<li>Công cụ chuyển đổi kiểu dữ liệu này chủ yếu được dùng trước công cụ chuyển đổi tọa độ hình ảnh sang tọa độ nền tảng, dùng để kết hợp tọa độ điểm đặc trưng trong ảnh với góc xoay tương ứng, tạo thành kết quả tư thế vị trí. Kết quả này sẽ làm đầu vào tọa độ hình ảnh cho công cụ chuyển đổi sang tọa độ nền tảng.</li>
 </ul>
 
-
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
 <p>参见“\Samples\标准标定+基准两点对位.gvp”</p>

@@ -16,172 +16,161 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>图像坐标偏移修正工具</h1>
+<h1>Công cụ hiệu chỉnh độ lệch tọa độ hình ảnh</h1>
 
-<h2>1.功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 本工具作用为将距离基准点的物理坐标转变为图像坐标，并可更加实际精度进行相应补偿。</p>
+<p>​ Công cụ này dùng để chuyển tọa độ vật lý so với điểm gốc tham chiếu thành tọa độ hình ảnh, đồng thời có thể bù trừ phù hợp theo độ chính xác thực tế.</p>
 
-<h2>2.应用场景</h2>
+<h2>2. Trường hợp ứng dụng</h2>
 
-<p>​ 比如在激光打标应用场景中，打标起始点往往不具有明显的视觉特征，但可以在其附近寻找明显特征点，此时可得起始点到特征点的相对坐标值（物理尺寸单位），成像后可在确定特征点图像坐标后，通过相机标定换算出起始点的图像坐标，如此可确定起始点在机构坐标系下坐标，完成打标任务。</p>
+<p>​ Ví dụ trong ứng dụng khắc laser, điểm bắt đầu khắc thường không có đặc trưng thị giác rõ ràng, nhưng có thể tìm thấy điểm đặc trưng gần đó, khi đó có thể lấy được tọa độ tương đối (đơn vị kích thước vật lý) từ điểm đặc trưng đến điểm bắt đầu, sau khi tạo ảnh có thể xác định tọa độ ảnh của điểm đặc trưng, thông qua hiệu chỉnh camera để chuyển đổi thành tọa độ ảnh của điểm bắt đầu, từ đó xác định được tọa độ trong hệ tọa độ thiết bị để thực hiện nhiệm vụ khắc.</p>
 
-<h2>3.原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>​ 如下图所示，<strong>P2</strong>点为待求点，在图像上难确定其特征，<strong>P1</strong>点为<strong>P2</strong>点附近某特征点，若以<strong>P1</strong>点为原点建立其相交直线边为轴建立坐标系，通过实际测量可得<strong>P2</strong>点到两轴距离，如此即可换算出<strong>P2</strong>点在图像上坐标，从而计算出在相关平台下坐标。</p>
+<p>​ Như hình dưới, điểm <strong>P2</strong> là điểm cần tính, nhưng khó xác định chính xác đặc trưng của nó trên ảnh, điểm <strong>P1</strong> là điểm đặc trưng gần <strong>P2</strong>, nếu lấy <strong>P1</strong> làm gốc tọa độ và các cạnh giao nhau làm trục tọa độ, thông qua đo đạc thực tế có thể biết được khoảng cách từ <strong>P2</strong> đến hai trục, từ đó suy ra tọa độ ảnh của <strong>P2</strong> và tính ra tọa độ trên nền tảng liên quan.</p>
 
 <p><img src="media\GvImgCrdProdOffsetTool_3_1.png" alt="GvImgCrdProdOffsetTool_3_1" /></p>
 
-<h2>4.使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
-<p>​ 详见“7.示例工程”中介绍</p>
+<p>​ Xem chi tiết tại phần “7. Dự án mẫu”</p>
 
-<h2>5.常见问题</h2>
+<h2>5. Vấn đề thường gặp</h2>
 
-<p>​ 无</p>
+<p>​ Không có</p>
 
-<h2>6.参数说明</h2>
+<h2>6. Giải thích tham số</h2>
 
 <ul>
-<li>输入参数</li>
+<li>Tham số đầu vào</li>
 </ul>
-
 
 <table>
 <thead>
 <tr>
-<th> 参数名称      </th>
-<th> 参数描述                                                     </th>
+<th> Tên tham số      </th>
+<th> Mô tả tham số                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 直线0         </td>
-<td> X轴距离偏移基准线                                            </td>
+<td> Đường thẳng 0         </td>
+<td> Đường tham chiếu lệch trục X                                            </td>
 </tr>
 <tr>
-<td> 直线1         </td>
-<td> Y轴距离偏移基准线                                            </td>
+<td> Đường thẳng 1         </td>
+<td> Đường tham chiếu lệch trục Y                                            </td>
 </tr>
 <tr>
-<td> 像素当量      </td>
-<td> 相机像素尺寸大小                                             </td>
+<td> Hệ số pixel      </td>
+<td> Kích thước điểm ảnh của camera                                             </td>
 </tr>
 <tr>
-<td> 修正基准线    </td>
-<td> 目标点计算时，角度选择基准线；0为输入直线0，1为输入直线1，只能输入0或1 </td>
+<td> Đường tham chiếu hiệu chỉnh    </td>
+<td> Khi tính toán điểm mục tiêu, chọn đường tham chiếu góc: 0 là đường thẳng 0, 1 là đường thẳng 1, chỉ có thể nhập 0 hoặc 1 </td>
 </tr>
 <tr>
-<td> X轴补偿方向   </td>
-<td> 0向左，1向右，只能输入0或1                                   </td>
+<td> Hướng bù trục X   </td>
+<td> 0 là trái, 1 là phải, chỉ có thể nhập 0 hoặc 1                                   </td>
 </tr>
 <tr>
-<td> Y轴补偿方向   </td>
-<td> 0向左，1向右，只能输入0或1                                   </td>
+<td> Hướng bù trục Y   </td>
+<td> 0 là trái, 1 là phải, chỉ có thể nhập 0 hoặc 1                                   </td>
 </tr>
 <tr>
-<td> X轴固定偏移量 </td>
-<td> 目标点到X轴距离，物理尺寸值                                  </td>
+<td> Độ lệch cố định trục X </td>
+<td> Khoảng cách từ điểm mục tiêu đến trục X, đơn vị vật lý                                  </td>
 </tr>
 <tr>
-<td> Y轴固定偏移量 </td>
-<td> 目标点到Y轴距离，物理尺寸值                                  </td>
+<td> Độ lệch cố định trục Y </td>
+<td> Khoảng cách từ điểm mục tiêu đến trục Y, đơn vị vật lý                                  </td>
 </tr>
 <tr>
-<td> X轴随机补偿量 </td>
-<td> 为与物理尺寸值一致所需补偿值                                 </td>
+<td> Bù ngẫu nhiên trục X </td>
+<td> Giá trị bù cần thiết để khớp với đơn vị vật lý                                 </td>
 </tr>
 <tr>
-<td> Y轴随机补偿量 </td>
-<td> 为与物理尺寸值一致所需补偿值                                 </td>
+<td> Bù ngẫu nhiên trục Y </td>
+<td> Giá trị bù cần thiết để khớp với đơn vị vật lý                                 </td>
 </tr>
 </tbody>
 </table>
 
-
 <ul>
-<li>输出参数</li>
+<li>Tham số đầu ra</li>
 </ul>
-
 
 <table>
 <thead>
 <tr>
-<th> 参数名称       </th>
-<th> 参数描述       </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 修正后图像坐标 </td>
-<td> 计算目标点坐标 </td>
+<td> Tọa độ ảnh sau hiệu chỉnh </td>
+<td> Tính toán tọa độ điểm mục tiêu </td>
 </tr>
 <tr>
-<td> 执行结果       </td>
-<td> 工具执行结果   </td>
+<td> Kết quả thực thi       </td>
+<td> Kết quả chạy của công cụ   </td>
 </tr>
 <tr>
-<td> 执行时间       </td>
-<td> 工具执行时间   </td>
+<td> Thời gian thực thi       </td>
+<td> Thời gian chạy công cụ   </td>
 </tr>
 </tbody>
 </table>
 
+<h2>7. Dự án mẫu</h2>
 
-<h2>7.示例工程</h2>
+<p>​ Tham khảo: “\Samples\图像坐标偏移修正工具.gvp”</p>
 
-<p>​ 参见“\Samples\图像坐标偏移修正工具.gvp”。</p>
-
-<p>​ 工程说明如下：</p>
+<p>​ Mô tả quy trình như sau:</p>
 
 <ul>
-<li>工程流程如下：</li>
+<li>Quy trình như sau:</li>
 </ul>
-
 
 <p><img src="media\GvImgCrdProdOffsetTool_7_1.png" alt="GvImgCrdProdOffsetTool_7_1" /></p>
 
 <ul>
-<li>为获取基准点，先进行找线操作；</li>
+<li>Để lấy điểm tham chiếu, cần thực hiện thao tác tìm đường trước;</li>
 </ul>
-
 
 <p><img src="media\GvImgCrdProdOffsetTool_7_2.png" alt="GvImgCrdProdOffsetTool_7_2" /></p>
 
 <ul>
-<li>“图像坐标偏移修正工具”链接找线结果和像素当量；</li>
-<li>根据目标点与特征点实际间距和方向，设置相关属性参数；</li>
+<li>“Công cụ hiệu chỉnh độ lệch tọa độ ảnh” liên kết với kết quả tìm đường và hệ số pixel;</li>
+<li>Theo khoảng cách và hướng thực tế giữa điểm mục tiêu và điểm đặc trưng, thiết lập các tham số liên quan;</li>
 </ul>
-
 
 <p><img src="media\GvImgCrdProdOffsetTool_7_3.png" alt="GvImgCrdProdOffsetTool_7_3" /></p>
 
 <ul>
-<li>修正后坐标点如下图所示；</li>
+<li>Tọa độ sau hiệu chỉnh như hình dưới:</li>
 </ul>
-
 
 <p><img src="media\GvImgCrdProdOffsetTool_7_4.png" alt="GvImgCrdProdOffsetTool_7_4" /></p>
 
 <ul>
-<li>目标点到直线0、直线1距离如下，从结果可看出与直线0距离存在一定误差，这是由于计算精度所导致的；</li>
+<li>Khoảng cách từ điểm mục tiêu đến đường thẳng 0 và đường thẳng 1 như sau, có thể thấy có sai số với đường thẳng 0, nguyên nhân do độ chính xác tính toán gây ra;</li>
 </ul>
-
 
 <p><img src="media\GvImgCrdProdOffsetTool_7_5.png" alt="GvImgCrdProdOffsetTool_7_5" /></p>
 
 <p><img src="media\GvImgCrdProdOffsetTool_7_6.png" alt="GvImgCrdProdOffsetTool_7_6" /></p>
 
 <ul>
-<li>对目标点到直线0的距离进行修正；</li>
+<li>Tiến hành hiệu chỉnh khoảng cách từ điểm mục tiêu đến đường thẳng 0;</li>
 </ul>
-
 
 <p><img src="media\GvImgCrdProdOffsetTool_7_7.png" alt="GvImgCrdProdOffsetTool_7_7" /></p>
 
 <ul>
-<li>修正后重新计算目标点到直线0距离；</li>
+<li>Sau hiệu chỉnh, tính lại khoảng cách từ điểm mục tiêu đến đường thẳng 0;</li>
 </ul>
-
 
 <p><img src="media\GvImgCrdProdOffsetTool_7_8.png" alt="GvImgCrdProdOffsetTool_7_8" /></p>
