@@ -16,113 +16,110 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Excel文件创建工具</h1>
+<h1>Công cụ tạo tệp Excel</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>EXCEL文件创建工具主要功能是将数据存储到Excel文件中保存。</p>
+<p>Công cụ tạo tệp EXCEL có chức năng chính là lưu trữ dữ liệu vào tệp Excel.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称      </th>
-<th> 参数描述                                                                                                                   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口      </td>
-<td> 自动命名                                                     </td>
-<td> 是否自动为excel文件命名（是-以序号+时间的格式自动命名；否-须在参数链中设置文件名）。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 输出文件路径  </td>
-<td> 文件存储路径。                                                                                                             </td>
-</tr>
-<tr>
-<td></td>
-<td> 图像窗口      </td>
-<td> 无                                                                                                                         </td>
-</tr>
-<tr>
-<td> 数据链        </td>
-<td> EXCEL文件名                                                  </td>
-<td> 属性窗口-自动命名选择为否时设置（命名格式：*.csv）。         </td>
-</tr>
-<tr>
-<td></td>
-<td> EXCEL表头数据 </td>
-<td> EXCEL文件表头,若要创建多个表头，则各个表头用逗号隔开（Head1，Head2&hellip;）。                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> EXCEL数据     </td>
-<td> 对应表头下的数据（对应表头格式，各列数据用逗号隔开）。<img src="media/wps77.jpg" alt="img" />                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 是否换行      </td>
-<td> 每次执行写入新数据时，是否换行写入。                                                                                        </td>
-</tr>
-<tr>
-<td></td>
-<td> 高级界面      </td>
-<td> 无                                                                                                                         </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                       </th>
+<th>Phân loại </th>
+<th> Tên tham số      </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出项 </td>
-<td> 执行结果       </td>
-<td> 工具执行结果。 </td>
+<td> Cửa sổ thuộc tính      </td>
+<td> Tự động đặt tên                                                     </td>
+<td> Có tự động đặt tên cho tệp Excel hay không (Có – tự động đặt tên theo định dạng số thứ tự + thời gian; Không – cần đặt tên tệp trong chuỗi tham số). </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                 </td>
+<td> Đường dẫn tệp đầu ra  </td>
+<td> Đường dẫn lưu trữ tệp.                                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像窗口 </td>
-<td> 无                             </td>
+<td> Cửa sổ hình ảnh      </td>
+<td> Không                                                                                                                         </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu        </td>
+<td> Tên tệp EXCEL                                                  </td>
+<td> Thiết lập khi thuộc tính tự động đặt tên là "Không" (Định dạng tên: *.csv).         </td>
 </tr>
 <tr>
 <td></td>
-<td> 数据链   </td>
-<td> 无                             </td>
+<td> Dữ liệu tiêu đề EXCEL </td>
+<td> Tiêu đề bảng trong tệp EXCEL, nếu muốn tạo nhiều tiêu đề thì dùng dấu phẩy để ngăn cách (Ví dụ: Head1，Head2&hellip;）。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Dữ liệu EXCEL     </td>
+<td> Dữ liệu tương ứng với từng tiêu đề (dữ liệu từng cột dùng dấu phẩy để phân tách).<img src="media/wps77.jpg" alt="img" />                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Có xuống dòng không      </td>
+<td> Mỗi lần ghi dữ liệu mới, có thực hiện xuống dòng hay không.                                                                                        </td>
+</tr>
+<tr>
+<td></td>
+<td> Giao diện nâng cao      </td>
+<td> Không                                                                                                                         </td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Mục đầu ra </td>
+<td> Kết quả thực thi       </td>
+<td> Kết quả thực thi của công cụ. </td>
+</tr>
+<tr>
+<td></td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                 </td>
+</tr>
+<tr>
+<td></td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không                             </td>
+</tr>
+<tr>
+<td></td>
+<td> Chuỗi dữ liệu   </td>
+<td> Không                             </td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li>由于各个表头名需要逗号隔开，因此创建多个表头时，可与数据包生成工具和字符串解析工具来管理、组合表头名。同时的，对应不同的表头，其数据也可以用相同的方式来组合。</li>
+<li>Do các tên tiêu đề cần được ngăn cách bằng dấu phẩy, khi tạo nhiều tiêu đề có thể kết hợp với công cụ tạo gói dữ liệu và công cụ phân tích chuỗi để quản lý, kết hợp các tiêu đề. Đồng thời, với các tiêu đề khác nhau, dữ liệu tương ứng cũng có thể được kết hợp theo cách tương tự.</li>
 </ul>
 
-
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
 <p>参见“\Samples\EXCEL文件创建工具.gvp”。</p>
