@@ -16,160 +16,159 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>椭圆拟合工具</h1>
+<h1>Công cụ Khớp Ellipse</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>对输入的点集进行椭圆拟合，得到最匹配的椭圆。其应用效果如图1所示。</p>
+<p>Tiến hành khớp ellipse với tập hợp điểm đầu vào để tìm ellipse phù hợp nhất. Hiệu quả ứng dụng được thể hiện trong Hình 1.</p>
 
 <p><img src="media/wps53.jpg" alt="img" /> <img src="media/wps54.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 输入轮廓点集</imgnote> <imgnote>(b) 椭圆拟合结果</imgnote></p>
+<p><imgnote>(a) Tập hợp điểm biên đầu vào</imgnote> <imgnote>(b) Kết quả khớp ellipse</imgnote></p>
 
-<p><imgnote>图1 椭圆拟合工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ khớp ellipse</imgnote></p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                               </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口         </td>
-<td> 拟合方法                                                     </td>
-<td> 拟合方法分为2种，代数距离和几何距离。                    </td>
-</tr>
-<tr>
-<td></td>
-<td> 启用全局最优拟合 </td>
-<td> 是否启用全局最优拟合，默认为“否”。如果选否，则使用效率优先的拟合方式；如果选是，则使用全局最优拟合。                                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 考虑局外点       </td>
-<td> 椭圆拟合过程中是否考虑偏离曲线较远的点(局外点)，选择“是”，显示局外点方法和局外点个数参数。                                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 局外点方法       </td>
-<td> 局外点方法分为3种，Combination(全组合)、Ransac(随机抽样)、Robust(权重)。Robust提供稳定高效的拟合结果，Combination的结果最优但效率极低，Ransac的结果具有随机性。                                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 局外点个数       </td>
-<td> 不参与椭圆拟合的点个数，局外点个数小于总点数减2。                                                                      </td>
-</tr>
-<tr>
-<td></td>
-<td> 约束角度         </td>
-<td> 约束拟合椭圆的角度，取值范围-180°~180°。                                                                               </td>
-</tr>
-<tr>
-<td> 图像窗口         </td>
-<td> 输入图像                                                     </td>
-<td> 显示待检测的图像。                                       </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入点集         </td>
-<td> 显示输入点集。                                                                                                         </td>
-</tr>
-<tr>
-<td> 数据链           </td>
-<td> 输入图像                                                     </td>
-<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入点集         </td>
-<td> 输入拟合的点集，同图像窗口的输入点集参数。                                                                             </td>
-</tr>
-<tr>
-<td> 高级界面         </td>
-<td> 无       </td>
-<td> 无   </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称   </th>
-<th> 参数描述                                                                                                               </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口   </td>
-<td> 输入图像                                                     </td>
-<td> 输出图像宽度、高度、像素大小。                           </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Phương pháp khớp</td>
+<td>Có 2 phương pháp khớp: khoảng cách đại số và khoảng cách hình học.</td>
 </tr>
 <tr>
 <td></td>
-<td> 椭圆结果   </td>
-<td> 输出拟合椭圆的圆心、半轴长度和角度。                                                                                   </td>
+<td>Bật khớp tối ưu toàn cục</td>
+<td>Chọn có hay không bật khớp tối ưu toàn cục, mặc định là “Không”. Nếu chọn “Không”, sử dụng phương pháp ưu tiên hiệu suất; nếu chọn “Có”, sử dụng khớp tối ưu toàn cục.</td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合点集   </td>
-<td> 输出参与拟合椭圆的点集（排除局外点）。                                                                                 </td>
+<td>Xét đến điểm ngoại lai</td>
+<td>Trong quá trình khớp ellipse có xét đến các điểm cách xa đường cong hay không (điểm ngoại lai). Nếu chọn “Có” thì hiển thị tham số phương pháp ngoại lai và số lượng điểm ngoại lai.</td>
 </tr>
 <tr>
 <td></td>
-<td> 均方根误差 </td>
-<td> 输出拟合结果的误差，值越小，拟合效果越好。                                                                             </td>
+<td>Phương pháp ngoại lai</td>
+<td>Có 3 phương pháp: Combination (toàn bộ tổ hợp), Ransac (lấy mẫu ngẫu nhiên), Robust (trọng số). Robust cho kết quả ổn định và hiệu quả, Combination có kết quả tốt nhất nhưng hiệu suất rất thấp, Ransac có tính ngẫu nhiên.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果   </td>
-<td> 工具执行结果。                                                                                                         </td>
+<td>Số điểm ngoại lai</td>
+<td>Số điểm không tham gia khớp ellipse, phải nhỏ hơn tổng số điểm trừ đi 2.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间   </td>
-<td> 工具执行时间。                                                                                                         </td>
+<td>Ràng buộc góc</td>
+<td>Ràng buộc góc của ellipse được khớp, phạm vi giá trị: -180°~180°.</td>
 </tr>
 <tr>
-<td> 图像窗口   </td>
-<td> 椭圆结果                                                     </td>
-<td> 显示椭圆拟合结果，同监视窗口的椭圆结果参数。             </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果   </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                           </td>
-</tr>
-<tr>
-<td> 数据链    </td>
-<td> 椭圆结果   </td>
-<td> 输出椭圆拟合结果，供后序工具使用，同监视窗口的椭圆结果参数。                                                           </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Hiển thị hình ảnh cần kiểm tra.</td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合点集   </td>
-<td> 输出参与拟合椭圆的点集，供后序工具使用，同监视窗口的拟合点集参数。                                                           </td>
+<td>Tập hợp điểm đầu vào</td>
+<td>Hiển thị tập hợp điểm đầu vào.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao, kích thước pixel của ảnh đầu vào, giống với tham số ảnh đầu vào của cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập hợp điểm đầu vào</td>
+<td>Tập hợp điểm dùng để khớp ellipse, giống với tham số tập hợp điểm đầu vào trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Xuất chiều rộng, chiều cao, kích thước pixel của ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả ellipse</td>
+<td>Xuất tâm ellipse, độ dài trục bán chính - bán phụ và góc quay.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập hợp điểm đã khớp</td>
+<td>Xuất các điểm đã tham gia vào quá trình khớp ellipse (không bao gồm điểm ngoại lai).</td>
+</tr>
+<tr>
+<td></td>
+<td>Lỗi bình phương trung bình</td>
+<td>Xuất lỗi khớp, giá trị càng nhỏ thì kết quả khớp càng tốt.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Kết quả ellipse</td>
+<td>Hiển thị kết quả khớp ellipse, giống với tham số kết quả ellipse trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi công cụ. Nếu thành công sẽ hiển thị “OK”, nếu thất bại sẽ hiển thị “NG”, giống với tham số kết quả thực thi trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Kết quả ellipse</td>
+<td>Xuất kết quả khớp ellipse để các công cụ phía sau sử dụng, giống với tham số kết quả ellipse trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập hợp điểm đã khớp</td>
+<td>Xuất tập hợp điểm đã tham gia khớp ellipse để các công cụ phía sau sử dụng, giống với tham số tập hợp điểm đã khớp trong cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Giải thích chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
 
 <h2>示例工程</h2>
 
