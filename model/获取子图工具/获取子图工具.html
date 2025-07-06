@@ -16,160 +16,155 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>获取子图工具</h1>
+<h1>Công cụ Lấy Ảnh Con</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     在输入图像上获取子图，可以将输入图像指定区域切割出来并输出，以实现对图像特定区域的截取。</p>
+<p>​     Thực hiện lấy ảnh con từ ảnh đầu vào, có thể cắt ra vùng chỉ định trong ảnh đầu vào để xuất ra, nhằm trích xuất vùng cụ thể trong ảnh.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>​     当需要对输入图像进行切割并提取时，会用到子图像获取工具。如图。</p>
+<p>​     Khi cần cắt và trích xuất ảnh đầu vào, công cụ lấy ảnh con sẽ được sử dụng. Như hình dưới:</p>
 
-<p>​     输入图像：</p>
+<p>​     Ảnh đầu vào:</p>
 
 <p><img src="media/GcGetSubImageTool_2_1.png" alt="GcGetSubImageTool_2_1" /></p>
 
-<p>​     结果图像：</p>
+<p>​     Ảnh kết quả:</p>
 
 <p><img src="media/GcGetSubImageTool_2_2.png" alt="GcGetSubImageTool_2_2" /></p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên lý</h2>
 
-<p>​     子图像获取就是在输入图像上将所设置的矩形区域截取出来，生成输出图像。</p>
+<p>​     Việc lấy ảnh con là cắt vùng hình chữ nhật đã được thiết lập trong ảnh đầu vào để tạo ra ảnh đầu ra.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，链入图像</h4></li>
+<li><h4>Thêm công cụ, liên kết ảnh vào</h4></li>
 </ul>
-
 
 <p><img src="media/GcGetSubImageTool_4_1.png" alt="GcGetSubImageTool_4_1" /></p>
 
 <ul>
-<li><h4>设置矩形区域</h4></li>
+<li><h4>Thiết lập vùng hình chữ nhật</h4></li>
 </ul>
-
 
 <p><img src="media/GcGetSubImageTool_4_2.png" alt="GcGetSubImageTool_4_2" /></p>
 
 <ul>
-<li><h4>链入二维线性变换，以几何定位为例</h4></li>
+<li><h4>Liên kết biến đổi tuyến tính 2D, ví dụ định vị hình học</h4></li>
 </ul>
-
 
 <p><img src="media/GcGetSubImageTool_4_3.png" alt="GcGetSubImageTool_4_3" /></p>
 
 <ul>
-<li><h4>查看结果</h4></li>
+<li><h4>Xem kết quả</h4></li>
 </ul>
-
 
 <p><img src="media/GcGetSubImageTool_4_4.png" alt="GcGetSubImageTool_4_4" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Vấn đề thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述                           </th>
-<th> 解决方法                                                     </th>
+<th>Mô tả hiện tượng</th>
+<th>Phương pháp giải quyết</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 错误栏输出图像数据为空             </td>
-<td> 检查数据链是否链入图像，以及图像数据是否正常                 </td>
+<td>Không có dữ liệu ảnh trong khu vực lỗi</td>
+<td>Kiểm tra xem chuỗi dữ liệu đã liên kết ảnh chưa, và dữ liệu ảnh có bình thường không</td>
 </tr>
 <tr>
-<td> 结果图像异常                       </td>
-<td> 检查数据链是否链入中心点，如果已链入，检查生成中心点的工具输出点是否正确 </td>
+<td>Ảnh kết quả bất thường</td>
+<td>Kiểm tra chuỗi dữ liệu có liên kết điểm trung tâm không; nếu có thì kiểm tra công cụ tạo điểm trung tâm có xuất đúng điểm không</td>
 </tr>
 <tr>
-<td> 错误栏输出中心点无效，不能超出图像 </td>
-<td> 所链入的中心点已超出图像范围，检查是否链错了属兔图像         </td>
+<td>Khu vực lỗi báo điểm trung tâm không hợp lệ, không được vượt quá phạm vi ảnh</td>
+<td>Điểm trung tâm đã vượt quá phạm vi ảnh, kiểm tra có liên kết sai ảnh thuộc tính không</td>
 </tr>
 </tbody>
 </table>
 
+<h2>6. Giải thích tham số</h2>
 
-<h2>6. 参数说明</h2>
-
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明                                                     </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像     </td>
-<td> 获取的子图像从输入图像上截取，由数据链链入。                 </td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh con sẽ được cắt ra từ ảnh đầu vào, liên kết qua chuỗi dữ liệu.</td>
 </tr>
 <tr>
-<td> 图像大小不变 </td>
-<td> 设置图像的大小是否不变，当选择是时，图像宽高确定，需手动输入图像宽高；当选择否时，图像宽高由所设置区域决定，无需手动输入。 </td>
+<td>Kích thước ảnh cố định</td>
+<td>Xác định ảnh có kích thước cố định hay không. Nếu chọn “Có”, chiều rộng và chiều cao ảnh phải nhập tay; nếu chọn “Không”, kích thước ảnh phụ thuộc vào vùng đã thiết lập, không cần nhập tay.</td>
 </tr>
 <tr>
-<td> 图像宽度     </td>
-<td> 图像大小固定时可编辑，设置图像的宽度。                       </td>
+<td>Chiều rộng ảnh</td>
+<td>Khi kích thước ảnh cố định, có thể chỉnh sửa, thiết lập chiều rộng ảnh.</td>
 </tr>
 <tr>
-<td> 图像高度     </td>
-<td> 图像大小固定时可编辑，设置图像的高度。                       </td>
+<td>Chiều cao ảnh</td>
+<td>Khi kích thước ảnh cố định, có thể chỉnh sửa, thiết lập chiều cao ảnh.</td>
 </tr>
 <tr>
-<td> 矩形区域     </td>
-<td> X为矩形区域的左上角X值，Y为矩形区域左上角Y值，W为矩形区域宽度，H为矩形区域高度。 </td>
+<td>Vùng hình chữ nhật</td>
+<td>X là tọa độ X của góc trên bên trái hình chữ nhật, Y là tọa độ Y, W là chiều rộng, H là chiều cao của vùng hình chữ nhật.</td>
 </tr>
 <tr>
-<td> 是否彩色图   </td>
-<td> 选择是时，支持在彩色图像上获取子图，数据链上可链入彩色输入图像。 </td>
+<td>Có phải ảnh màu không</td>
+<td>Chọn “Có” thì hỗ trợ lấy ảnh con từ ảnh màu, có thể liên kết ảnh màu trong chuỗi dữ liệu.</td>
 </tr>
 <tr>
-<td> 彩色输入图像 </td>
-<td> 当是否彩色选择时是，将从彩色图像上截取子图，由数据链链入。   </td>
+<td>Ảnh màu đầu vào</td>
+<td>Khi chọn là ảnh màu, ảnh con sẽ được cắt từ ảnh màu, liên kết qua chuỗi dữ liệu.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明                                         </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像     </td>
-<td> 获取的子图像尺寸，供数据链使用。     </td>
+<td>Ảnh đầu vào</td>
+<td>Kích thước ảnh con lấy được, dùng cho chuỗi dữ liệu.</td>
 </tr>
 <tr>
-<td> 输出图像     </td>
-<td> 获取的子图像输出。                               </td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh con được xuất ra.</td>
 </tr>
 <tr>
-<td> 彩色图像输出 </td>
-<td> 是否彩色图选择是时，输出从彩色图像上截取的子图。 </td>
+<td>Ảnh màu đầu ra</td>
+<td>Khi chọn là ảnh màu, xuất ảnh con cắt từ ảnh màu.</td>
 </tr>
 <tr>
-<td> 执行结果     </td>
-<td> 工具执行结果。                                   </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
 </tr>
 <tr>
-<td> 执行时间     </td>
-<td> 工具执行时间。                                   </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
 </tr>
 </tbody>
 </table>
+
 
 
 <h2>7. 示例工程</h2>
