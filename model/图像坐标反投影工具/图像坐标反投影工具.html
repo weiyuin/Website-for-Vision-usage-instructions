@@ -1,0 +1,118 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>图像坐标反投影工具</h1>
+
+<h2>功能</h2>
+
+<p>图像坐标反投影工具用于根据相机的靶标标定结果，将图像坐标反投影计算得到对应的靶标坐标。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称                   </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口                   </td>
+<td> 图像坐标类型                                                 </td>
+<td> 分为畸变图像坐标与校正图像坐标。畸变图像坐标，指未经过校正的原图像坐标；校正图像坐标，指校正后的图像坐标（目前未有该应用场景，一般不选）。 </td>
+</tr>
+<tr>
+<td> 图像窗口                   </td>
+<td> 无                                                           </td>
+<td> 无                                                           </td>
+</tr>
+<tr>
+<td> 数据链                     </td>
+<td> 图像坐标向量                                                 </td>
+<td> 输入待反投影的原图像坐标向量                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 相机标定结果               </td>
+<td> 相机的靶标标定结果                                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 局部靶标与全局靶标位置关系 </td>
+<td> 局部靶标与全局靶标位置关系，用于计算输出的反投影全局靶标坐标；若不链接，则表示局部靶标和全局靶标结果坐标一致。<img src="media/wps25.jpg" alt="img" />                                                               </td>
+</tr>
+<tr>
+<td> 高级界面                   </td>
+<td> 无                                                           </td>
+<td> 无                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 全局靶标坐标向量                                             </td>
+<td> 反投影的全局靶标坐标向量结果 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                               </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 全局靶标坐标向量                                             </td>
+<td> 反投影的全局靶标坐标向量结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>局部靶标与全局靶标位置关系</h3>
+
+<p>该参数反映的是局部靶标与全局靶标在X、Y方向上的偏差量。例如，局部靶标与全局靶标位置关系取值为(0.00, 0.00)时，左上角的角点的靶标坐标为(0.00, 0.00)；而局部靶标与全局靶标位置关系取值为(1.00, 1.00)时，左上角的角点的靶标坐标为(1.00, 1.00)，其它角点以此类推，如图1所示。</p>
+
+<p><img src="media/wps28.jpg" alt="img" />  <img src="media/wps29.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 局部靶标与全局靶标位置关系(0.00, 0.00)</imgnote> <imgnote>(b) 局部靶标与全局靶标位置关系(1.00,1,00)</imgnote></p>
+
+<p><imgnote>图1 局部靶标与全局靶标位置关系</imgnote></p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\图像坐标反投影工具.gvp”。</p>

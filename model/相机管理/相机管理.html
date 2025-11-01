@@ -1,0 +1,100 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Quản lý Camera</h1>
+
+<p>Camera sử dụng trong dự án được quản lý và thiết lập tham số thông qua khu vực chức năng - mục Cài đặt trong phần Quản lý Camera.</p>
+
+<p><img src="media/Camera_01.png" alt="" /></p>
+
+<ul>
+<li><p><strong>Danh sách Camera</strong></p></li>
+<li><p>Hiển thị số serial và trạng thái các camera có thể phát hiện được;</p></li>
+<li><p>Hiển thị thông tin về model, driver, độ phân giải của camera được chọn;</p></li>
+<li><p><strong>Khu vực hiển thị hình ảnh</strong></p>
+  <ul>
+    <li>Hiển thị hình ảnh thu được từ camera được chọn;</li>
+  </ul>
+</li>
+<li><p><strong>Cài đặt</strong></p>
+  <ul>
+    <li>Chế độ video: bao gồm độ phân giải, chế độ khung hình, có thể chọn theo nhu cầu thực tế. Chế độ khung hình chọn là giới hạn trên của dải điều chỉnh tốc độ khung hình;</li>
+    <li>Định dạng điểm ảnh: trong chế độ video tùy chỉnh Format7 có thể chọn các định dạng điểm ảnh khác nhau;</li>
+    <li>Khu vực ROI: thiết lập vị trí hiển thị hình ảnh, có thể căn giữa hoặc hiển thị tối đa hình ảnh;</li>
+    <li>Tốc độ khung hình: tốc độ thu hình của camera. Có thể điều chỉnh bằng thanh trượt;</li>
+    <li>Phơi sáng, tăng lợi: điều chỉnh để có ảnh chất lượng cao;</li>
+    <li>Gamma: hiệu chỉnh gamma cho hình ảnh;</li>
+    <li><p>Kênh lưu trữ: gồm Default, Channel1, Channel2 tổng cộng 3 kênh.</p>
+      <ul>
+        <li>Default là kênh lưu tham số mặc định xuất xưởng, chỉ có thể nạp lại tham số ở kênh này, không thể lưu tham số mới;</li>
+        <li>Channel1 và Channel2 là các kênh lưu tùy chỉnh, có thể lưu và nạp tham số tùy ý;</li>
+      </ul>
+    </li>
+    <li><p>Chế độ làm việc</p>
+      <ul>
+        <li>Gọi trigger bằng phần mềm: phần mềm gửi tín hiệu kích để camera chụp một khung hình;</li>
+        <li>Thu liên tục: camera thu hình liên tục;</li>
+        <li>Kích cứng (Hard Trigger): sử dụng tín hiệu kích cứng bên ngoài.</li>
+      </ul>
+    </li>
+    <li>Độ nét: đánh giá chất lượng hình ảnh thu được bằng phương pháp đánh giá độ nét;</li>
+    <li>Độ tương phản: đánh giá chất lượng hình ảnh bằng độ tương phản;</li>
+    <li>Tỷ lệ tín hiệu trên nhiễu (SNR): đánh giá chất lượng hình ảnh bằng tỷ lệ tín hiệu trên nhiễu;</li>
+    <li>Cao cấp: xem kích thước gói dữ liệu, thiết lập độ trễ gói, bộ đệm hình và cân bằng trắng;</li>
+    <li>Đánh giá độ đồng đều: đánh giá độ đồng đều của ảnh thu từ camera, hiển thị giá trị trung bình, đường cong và lưu dữ liệu đánh giá độ đồng đều;</li>
+  </ul>
+</li>
+<li><p><strong>Nút thao tác</strong></p>
+  <ul>
+    <li>Xóa tất cả các camera bị mất kết nối: phát hiện camera bị mất kết nối và xóa khỏi danh sách;</li>
+    <li>Làm mới: cập nhật lại danh sách camera;</li>
+    <li>Xác nhận: lưu cài đặt hiện tại và thoát quản lý camera;</li>
+    <li>Hủy: hủy cài đặt hiện tại và thoát quản lý camera.</li>
+  </ul>
+</li>
+<li><p><strong>Tham số nâng cao</strong></p>
+
+<p><img src="media/Camera_02.png" alt="" /></p>
+
+<ul>
+<li>Kích thước gói dữ liệu: kích thước gói dữ liệu truyền tải, thuộc loại chỉ đọc. Nếu là 1500 nghĩa là cài đặt card mạng hoặc các thiết lập cơ bản chưa đúng, giá trị chuẩn là 8164;</li>
+<li>Độ trễ gói dữ liệu: khoảng cách thời gian giữa các gói dữ liệu gửi đi, có thể cải thiện tình trạng mất gói, tuy nhiên nếu đặt quá lớn sẽ ảnh hưởng đến tốc độ khung hình;</li>
+<li>Bộ nhớ đệm hình ảnh: số lượng hình ảnh được lưu tạm, dùng cho chức năng chụp nhanh nhiều lần, số lần chụp nhanh được đặt bao nhiêu thì bộ nhớ đệm chứa bấy nhiêu hình;</li>
+<li>Chế độ cân bằng trắng tự động: thiết lập chế độ cân bằng trắng, chỉ áp dụng cho camera màu LBAS, các giá trị có thể chọn là Continuous (liên tục), Once (một lần), Off (tắt);</li>
+<li>Kênh cân bằng trắng: khi cân bằng trắng tự động tắt (Off) thì có thể chọn kênh R, G, hoặc B;</li>
+<li>Tỷ lệ cân bằng trắng: thiết lập giá trị cho kênh cân bằng trắng đã chọn;</li>
+</ul>
+</li>
+<li><p><strong>Đánh giá độ đồng đều hình ảnh</strong></p>
+
+<p><img src="media/Camera_03.png" alt="" /></p>
+
+<ul>
+<li>Khu vực hiển thị hình ảnh: hiển thị hình ảnh được làm mới và hiển thị hình ảnh trung bình hoặc biểu đồ đường cần thiết;</li>
+<li>Loại hình ảnh: hiển thị loại hình ảnh là Gray hay RGB, chỉ đọc;</li>
+<li>Làm mới hình ảnh: thu một ảnh, sau đó tính toán và hiển thị độ đồng đều hình ảnh theo các tham số đã thiết lập;</li>
+<li>Đánh giá: cách hiển thị độ đồng đều của hình ảnh, gồm 2 chế độ là trung bình và biểu đồ đường;</li>
+<li>Kênh: hiển thị theo từng kênh, chỉ áp dụng với ảnh RGB, giá trị trung bình có 3 loại R, G, B; biểu đồ đường có 4 loại R, G, B, RGB;</li>
+<li>Số dòng: khi tính độ đồng đều hình ảnh cần thiết lập số dòng chia;</li>
+<li>Số cột: khi tính độ đồng đều hình ảnh cần thiết lập số cột chia;</li>
+<li>Dòng (checkbox) và ô nhập liệu: trong chế độ biểu đồ đường, hiển thị theo dòng được chọn;</li>
+<li>Cột (checkbox) và ô nhập liệu: trong chế độ biểu đồ đường, hiển thị theo cột được chọn;</li>
+<li>Lưu dữ liệu: lưu kết quả tính giá trị trung bình của hình ảnh ra file Excel;</li>
+</ul>
+</li>
+</ul>

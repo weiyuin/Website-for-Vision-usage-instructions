@@ -1,0 +1,350 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>一维码读码工具</h1>
+
+<h2>功能</h2>
+
+<p>一维码读码工具用于对图像中的一维码进行识读。其实际效果如图1所示。</p>
+
+<p><img src="media/wps20.jpg" alt="img" /> <img src="media/wps21.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 读码区域</imgnote> <imgnote>(b) 读码结果</imgnote></p>
+
+<p><imgnote>图1 一维码读码工具应用示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称          </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口          </td>
+<td> 是否使用ROI                                                  </td>
+<td> ROI 为“读码区域”，可以通过修改 X、Y、W、H 值来设置，也可以在 Edit 窗口中手动拖拽来设置。不启用时，软件自动设置 ROI 区域。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 读码区域          </td>
+<td> 是否使用ROI参数选择“是”，输入读码区域的中心坐标、长度、宽度、旋转角度和切变角度。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Code128         </td>
+<td> 是否是Code128码。                                                                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> EAN_UPC     </td>
+<td> 是否是CodeEAN_UPC码。                                                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> 支持附加码 </td>
+<td> CodeEAN_UPC码相关参数，表示是否支持附加码。 </td>
+</tr>
+<tr>
+<td></td>
+<td> UPC-E扩展至EAN-13 </td>
+<td> CodeEAN_UPC码相关参数，表示是否支持UPC_E扩展至EAN_13。 </td>
+</tr>
+<tr>
+<td></td>
+<td> Code39 </td>
+<td> 是否是Code39码 </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否开启全ASCII </td>
+<td> Code39码相关参数，表示是否开启全ASCII </td>
+</tr>
+<tr>
+<td></td>
+<td> Code39校验码参数 </td>
+<td> Code39码相关参数，设置是否有校验码及是否传输 </td>
+</tr>
+<tr>
+<td></td>
+<td> Code93 </td>
+<td> 是否是Code93码 </td>
+</tr>
+<tr>
+<td></td>
+<td> ITF25 </td>
+<td> 是否是ITF25码                                                </td>
+</tr>
+<tr>
+<td></td>
+<td> ITF25校验码参数 </td>
+<td> ITF25码相关参数，设置是否有校验码及是否传输 </td>
+</tr>
+<tr>
+<td></td>
+<td> Codabar                    </td>
+<td> 是否是Codabar码                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否开启传输起始符和终止符 </td>
+<td> Codabar码相关参数，表示是否开启起始符和终止符                </td>
+</tr>
+<tr>
+<td></td>
+<td> Codabar校验码参数          </td>
+<td> Codabar 码相关参数，设置是否有校验码及是否传输 </td>
+</tr>
+<tr>
+<td></td>
+<td> Pharmacode                 </td>
+<td> 是否是Pharmacode码 </td>
+</tr>
+<tr>
+<td></td>
+<td> 译码方向                   </td>
+<td> Pharmacode码相关参数，设置解析的方向                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 条码最大个数      </td>
+<td> 指实际读码结果中包含的条码个数。支持同时读取图像中的多个条码，可设置图像中待读取的条码个数。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 对比度类型        </td>
+<td> 预处理的参数，包括提升信噪比、提升对比度两方面的操作。对于条码边缘模糊、对比度较差的图像，可进行提升对比度的操作，可选择的操作有对比度拉伸、直方图均衡化、二值化。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 信噪比类型        </td>
+<td> 预处理的参数，包括提升信噪比、提升对比度两方面的操作。对于条码内部有噪声的图像，可对其进行提升信噪比的操作，可选择的操作有中值滤波、形态学开操作、形态学闭操作。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 对比度范围        </td>
+<td> 对比度的范围为[1,255]。                                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 最小条码高度      </td>
+<td> 最小条码的高度，一般读取多个或者指定的条码的时候使用。                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 最大条码间距      </td>
+<td> 最大条码的间距，一般读取多个或者指定的条码的时候使用。                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 条码最小数目      </td>
+<td> 主要针对某些特殊的条码形态进行相应的手动设置。                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口          </td>
+<td> 输入图像                                                     </td>
+<td> 显示待检测的一维条形码。                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 读码区域          </td>
+<td> 是否使用ROI参数选择“是”，显示读码区域，同属性窗口的读码区域参数。                                                               </td>
+</tr>
+<tr>
+<td> 数据链            </td>
+<td> 输入图像                                                     </td>
+<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。     </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换      </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                                                                                     </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无                </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口     </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小。                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 结果数目     </td>
+<td> 工具实际读码数目。                                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 所有读码结果 </td>
+<td> 输出读码结果，包括条码区域、条码类型、条码方向、条码等级等。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果     </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间     </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 输入图像                                                     </td>
+<td> 显示工具执行结果图像，同监视窗口的输出图像参数。             </td>
+</tr>
+<tr>
+<td></td>
+<td> 条码区域     </td>
+<td> 显示条码的区域，同监视窗口所有读码结果参数中的条码区域项。                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果     </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                               </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 结果数目                                                     </td>
+<td> 输出工具实际读码数目，供后序工具使用，通过监视窗口结果数目参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 所有读码结果 </td>
+<td> 输出所有读码结果，供后序工具使用，同监视窗口的所有读码结果参数。                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>一维码类型</h3>
+
+<table>
+<thead>
+<tr>
+<th> 一维码类型          </th>
+<th> 类型                                                         </th>
+<th> 说明                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> WidthModulatedCode  </td>
+<td> Code_39                                                      </td>
+<td> 标准39码，能够对数字、英文字母及其他字符进行编码。 </td>
+</tr>
+<tr>
+<td></td>
+<td> Code_93             </td>
+<td> Code 93码与39码具有相同的字符集，但它的密度要比39码高。                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> Code_128            </td>
+<td> 128码是一种高密度条码，CODE128 码可表示从 ASCII 0 到ASCII 127 共128个字符)，故称128码。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> UPC_A/UPC_E         </td>
+<td> UPC码是美国统一代码委员会制定的一种商品用条码，主要用于美国和加拿大地区，我们在美国进口的商品上可以看到。只能表示数字，有A、B、C、D、E五个版本。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> EAN_8/ENA_13        </td>
+<td> EAN码是国际物品编码协会制定的一种商品用条码，通用于全世界。EAN码符号有标准版(EAN-13)和缩短版(EAN-8)两种。EAN-13码由13个数字组成，为EAN的标准编码型式；EAN- 8码由8个数字组成，属EAN的简易编码型式。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> ITF                 </td>
+<td> ITF码是一种连续型、定长、具有自校验功能，并且条、空都表示信息的双向条码)。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> BC_412              </td>
+<td> 用于晶圆标记的半导体工业。                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> Codabar             </td>
+<td> 库德巴码。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> Pharmacode          </td>
+<td> Pharmacode 条形码携带数据，空格不携带。较高的打印容限及用多种颜色打印条形码的选项使得Pharmacode 成为一种实用格式。Pharmacode 代码必须为数字，用于制药工业。                                                     </td>
+</tr>
+<tr>
+<td> HeightModulatedCode </td>
+<td> Postnet/Planet                                               </td>
+<td> 用于美国邮政服务。                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> OneCode             </td>
+<td> 也称为USPS 4客户条码，用于美国邮政服务信箱。                                                                     </td>
+</tr>
+<tr>
+<td> eRssCode            </td>
+<td> RssRegular/RssLimited/RssExpanded                            </td>
+<td> 用于有限空间内零售产品的标记。                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<h3>适应场景</h3>
+
+<p>为保证识别率，1D读码工具要求成像质量最好达到以下要求：</p>
+
+<ul>
+<li><p>所有条码总宽度必须大于50个像素，每个条码中的条或空的宽度不能超过10个像素。</p></li>
+<li><p>条的宽度至少要等于大于3个像素，高约为50个像素。</p></li>
+<li><p>空白区域必须存在。</p></li>
+<li><p>条和空的对比度至少要差32个灰度级。</p></li>
+<li><p>像素当量要保持在1-1.35倍之间，不能超过1.35。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\读码工具.gvp”。</p>

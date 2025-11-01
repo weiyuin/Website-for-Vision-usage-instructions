@@ -1,0 +1,240 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Tạo Mảng</h1>
+
+<h2>Chức năng</h2>
+
+<p>Công cụ tạo mảng được dùng để tạo một mảng từ một nhóm dữ liệu độc lập cùng kiểu, dựa theo chỉ số tương ứng; công cụ này có chức năng ngược lại với công cụ phân tích mảng.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Kiểu dữ liệu</td>
+<td>Chọn kiểu dữ liệu của mảng được tạo, lựa chọn dựa theo tình huống sử dụng thực tế.</td>
+</tr>
+<tr>
+<td></td>
+<td>Có xóa mảng hay không</td>
+<td>Nếu chọn “Có”, mảng sẽ được xóa trước khi thêm dữ liệu mới.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Chỉ số dữ liệu đầu vào</td>
+<td>Chỉ số dùng để tạo mảng (kiểu int), thường là biến do người dùng tự định nghĩa.</td>
+</tr>
+<tr>
+<td></td>
+<td>Dữ liệu đầu vào</td>
+<td>Dữ liệu đầu vào (cùng kiểu với kiểu dữ liệu trong cửa sổ thuộc tính).</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Mảng đầu ra</td>
+<td>Thông tin mảng được tạo ra.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực hiện của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực hiện công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Mảng đầu ra</td>
+<td>Thông tin mảng được tạo ra để các công cụ sau sử dụng, giống với tham số mảng đầu ra trong cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Chi tiết mô tả</h2>
+
+<p>Các kiểu dữ liệu mà công cụ tạo mảng hỗ trợ như sau:</p>
+
+<table>
+<thead>
+<tr>
+<th>bool</th>
+<th>Kiểu Boolean</th>
+<th>int</th>
+<th>Kiểu số nguyên</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>double</td>
+<td>Kiểu số thực kép</td>
+<td>float</td>
+<td>Kiểu số thực đơn</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Kiểu số nguyên dài</td>
+<td>sc2Vector</td>
+<td>Vector hai chiều</td>
+</tr>
+<tr>
+<td>GcCalibrateResult</td>
+<td>Kết quả hiệu chuẩn</td>
+<td>GcCoordPos</td>
+<td>Vị trí và tư thế</td>
+</tr>
+<tr>
+<td>GcPlatformAxisPos</td>
+<td>Vị trí trục</td>
+<td>GcBoardPoints</td>
+<td>Tọa độ điểm góc bảng</td>
+</tr>
+<tr>
+<td>sc2XformLinear</td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>scCaliperOneEdgeResult</td>
+<td>Kết quả đo một cạnh</td>
+</tr>
+<tr>
+<td>scCaliperTwoEdgeResult</td>
+<td>Kết quả đo hai cạnh</td>
+<td>scCircle</td>
+<td>Kết quả tìm hình tròn</td>
+</tr>
+<tr>
+<td>scGeomSearchResult</td>
+<td>Kết quả định vị hình học</td>
+<td>scImage24</td>
+<td>Ảnh màu 24-bit</td>
+</tr>
+<tr>
+<td>scImage8</td>
+<td>Ảnh xám 8-bit</td>
+<td>scLine</td>
+<td>Kết quả tìm đường thẳng</td>
+</tr>
+<tr>
+<td>scPatSearchMaxResult</td>
+<td>Kết quả PatSearchMax</td>
+<td>scGcCoordPosVector</td>
+<td>Vector vị trí & tư thế</td>
+</tr>
+<tr>
+<td>scSc2vectorVector</td>
+<td>Vector hai chiều lồng nhau</td>
+<td>scFeatureletVector</td>
+<td>Chuỗi đặc trưng</td>
+</tr>
+<tr>
+<td>GsTextDisplayParam</td>
+<td>Tham số hiển thị văn bản</td>
+<td>DefectResultInfo</td>
+<td>Kết quả kiểm tra khuyết tật</td>
+</tr>
+<tr>
+<td>DMSingleReaderResult</td>
+<td>Kết quả đọc DM đơn</td>
+<td>GsGlueDetectResult</td>
+<td>Kết quả phát hiện vị trí keo</td>
+</tr>
+<tr>
+<td>GsSingleBlobResult</td>
+<td>Kết quả blob đơn</td>
+<td>GsGlueMeasureResult</td>
+<td>Kết quả đo kích thước keo</td>
+</tr>
+<tr>
+<td>scCrossSearchResult</td>
+<td>Kết quả định vị chữ thập</td>
+<td>QRSingleReaderResult</td>
+<td>Kết quả đọc QR đơn</td>
+</tr>
+<tr>
+<td>GsMultiCLOutputResult</td>
+<td>Kết quả định vị nhiều tròn & đường</td>
+<td>SingleLinearCodeResult</td>
+<td>Kết quả đọc mã vạch 1D</td>
+</tr>
+<tr>
+<td>EdgeDeviation</td>
+<td>Kết quả phát hiện cạnh</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li><p>Kiểu dữ liệu đầu vào từ cửa sổ chuỗi dữ liệu phải giống với kiểu dữ liệu đã chọn trong cửa sổ thuộc tính, nếu không tham số chuỗi dữ liệu sẽ không tìm được nguồn, công cụ tạo mảng sẽ không thể thực thi.</p></li>
+<li><p>Công cụ tạo mảng chỉ có thể ghi một dữ liệu vào mảng tại một thời điểm.</p></li>
+<li><p>Trong các kiểu dữ liệu, kiểu <strong>GcCalibrateResult</strong> là kết quả hiệu chuẩn của các công cụ hiệu chuẩn chuẩn/thấp/tiếp xúc/trục camera, dùng để tính toán mối quan hệ chuyển đổi giữa hệ tọa độ ảnh, nền tảng và trục; trong khi kết quả hiệu chuẩn của công cụ hiệu chuẩn camera với bảng mục tiêu là kiểu <strong>scCalibrateResult</strong>, dùng để tính toán mối quan hệ giữa hệ tọa độ ảnh và hệ tọa độ thế giới.</p></li>
+</ul>
+
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\数组生成工具.gvp”。</p>
+
+<p>Dự án này thông qua vòng lặp, sử dụng công cụ tạo mảng để tạo ra một mảng một chiều có kiểu <code>double</code> và kích thước là 10.</p>
+

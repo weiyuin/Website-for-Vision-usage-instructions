@@ -1,0 +1,349 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GsDMSingleReaderResult</h1>
+
+<h2>功能</h2>
+
+<p>表示DM码读码结果，例如DM码读码工具的输出。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th> 分类 </th>
+<th> 接口名称 </th>
+<th> 接口描述                                             </th>
+<th>                                                              </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造     </td>
+<td> GsDMSingleReaderResult </td>
+<td> GsDMSingleReaderResult默认构造函数                           </td>
+<td></td>
+</tr>
+<tr>
+<td> 属性     </td>
+<td> polylineResult                   </td>
+<td> DM码所在的多边形区域                                         </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> resultString                        </td>
+<td> 解码字符串，即DM码结果字符串                                 </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> resultBytesString             </td>
+<td> 解码字符串，如果字符串中含有日文等编码，需要用该属性获取解码字符串 </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> resultStringType                </td>
+<td> 解码字符串类型                                               </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> resultIsLightOnDark          </td>
+<td> 是否是亮码暗背景                                             </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> resultDMSize                       </td>
+<td> DM码的2D尺寸                                                 </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> resultDMEccType                 </td>
+<td> DM码的Ecc类型                                                </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> resultDMCellSize               </td>
+<td> DM码的cell尺寸                                               </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> grade                                     </td>
+<td> DM码的等级                                                   </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> gradeVec                               </td>
+<td> DM码的所有等级                                               </td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>GsDMSingleReaderResult()</h3>
+
+<ul>
+<li><p>功能：构造GsDMSingleReaderResult对象。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>polylineResult</h3>
+
+<ul>
+<li>功能：DM码所在的多边形区域。scPolyline类型，可读写。</li>
+</ul>
+
+
+<h3>resultString</h3>
+
+<ul>
+<li>功能：解码字符串，即DM码包含的信息。字符串类型，可读写。</li>
+</ul>
+
+
+<h3>resultBytesString</h3>
+
+<ul>
+<li>功能：解码字符串，如果解码字符串类型为Mixed，JIS8，Kanji的话可能需要使用该属性获取解码字符串，或者使用resultString有类似下图错误产生时，就需要使用该属性。bytes类型类型，可读写。</li>
+</ul>
+
+
+<p>   <img src="media/e1dccc2befeeae758595838e6150fc49.png" alt="" /></p>
+
+<blockquote><p>说明：对于日文编码，可以使用” cp932”或” shift_jis”进行解码，例如：</p>
+
+<p>strResult. decode(&ldquo;shift_jis&rdquo;)</p></blockquote>
+
+<h3>resultStringType</h3>
+
+<ul>
+<li>功能：解码的字符串类型，包括：Unkown，Mixed，ANSI，JIS8，Unicode，Kanji。字符串类型，可读写。</li>
+</ul>
+
+
+<h3>resultIsLightOnDark</h3>
+
+<ul>
+<li>功能：是否是亮码暗背景。布尔类型，可读写。</li>
+</ul>
+
+
+<h3>resultDMSize</h3>
+
+<ul>
+<li>功能：DM码的2D尺寸。字符串类型，可读写。</li>
+</ul>
+
+
+<h3>resultDMEccType</h3>
+
+<ul>
+<li>功能：DM码的Ecc类型。字符串类型，可读写。</li>
+</ul>
+
+
+<h3>resultDMCellSize</h3>
+
+<ul>
+<li>功能：DM码的cell尺寸。整型，可读写。</li>
+</ul>
+
+
+<h3>grade</h3>
+
+<ul>
+<li>功能：DM码等级，在所有评价中等级最低的那一个。字符串类型，可读写。</li>
+</ul>
+
+
+<h3>gradeVec</h3>
+
+<ul>
+<li><p>功能：DM码评价标准等级，即在不同评价标准下对应的等级。stringVec类型，即可以当作python中list使用，只不过元素都是字符串。</p>
+
+<p>要获取对应评价标准下的评价结果可以使用索引来获取：</p></li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th> 索引 </th>
+<th> 评价分类                   </th>
+<th> ISO16022 </th>
+<th> ISO15415 </th>
+<th> AIM </th>
+<th> AS9132 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 0    </td>
+<td> SymbolContrastGrade        </td>
+<td> Y        </td>
+<td> Y        </td>
+<td> N   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 1    </td>
+<td> PrintGrowthGrade           </td>
+<td> Y        </td>
+<td> N        </td>
+<td> N   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 2    </td>
+<td> AxialNonuniformityGrade    </td>
+<td> Y        </td>
+<td> Y        </td>
+<td> Y   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 3    </td>
+<td> GridNonuniformityGrade     </td>
+<td> N        </td>
+<td> Y        </td>
+<td> Y   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 4    </td>
+<td> FixedPatternDamageGrade    </td>
+<td> N        </td>
+<td> Y        </td>
+<td> Y   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 5    </td>
+<td> UnusedErrorCorrectionGrade </td>
+<td> Y        </td>
+<td> Y        </td>
+<td> Y   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 6    </td>
+<td> ModulationGrade            </td>
+<td> N        </td>
+<td> Y        </td>
+<td> Y   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 7    </td>
+<td> ScanGrade                  </td>
+<td> N        </td>
+<td> Y        </td>
+<td> Y   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 8    </td>
+<td> OverallGrade               </td>
+<td> Y        </td>
+<td> N        </td>
+<td> N   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 9    </td>
+<td> CellContrastGrade          </td>
+<td> N        </td>
+<td> N        </td>
+<td> Y   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 10   </td>
+<td> MinimumReflectanceGrade    </td>
+<td> N        </td>
+<td> N        </td>
+<td> Y   </td>
+<td> N      </td>
+</tr>
+<tr>
+<td> 11   </td>
+<td> DotSizeGrade               </td>
+<td> N        </td>
+<td> N        </td>
+<td> N   </td>
+<td> Y      </td>
+</tr>
+<tr>
+<td> 12   </td>
+<td> DotCenterOffsetGrade       </td>
+<td> N        </td>
+<td> N        </td>
+<td> N   </td>
+<td> Y      </td>
+</tr>
+<tr>
+<td> 13   </td>
+<td> DotOvalityGrade            </td>
+<td> N        </td>
+<td> N        </td>
+<td> N   </td>
+<td> Y      </td>
+</tr>
+<tr>
+<td> 14   </td>
+<td> AngleDistortionGrade       </td>
+<td> N        </td>
+<td> N        </td>
+<td> N   </td>
+<td> Y      </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>```python
+result_DM_ls =GvTool.GetToolData(&ldquo;DM码读码工具_002.所有读码结果&rdquo;)
+result_DM = result_DM_ls[0]
+str_result = (&ldquo;解码字符串:{}\n解码字符串类型:{}\n是否亮码暗背景:{}\n&rdquo;
+&ldquo;尺寸:{}\nEcc类型:{}\ncell尺寸:{}\n条码等级:{}\n&rdquo;).format(
+    result_DM.resultString,result_DM.resultStringType,
+    result_DM.resultIsLightOnDark, result_DM.resultDMSize,
+    result_DM.resultDMEccType, result_DM.resultDMCellSize,
+    result_DM.grade)</p>
+
+<p>print(result_DM.gradeVec[0]) #输出SymbolContrastGrade评价下的等级
+```</p>

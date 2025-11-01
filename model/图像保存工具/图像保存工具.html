@@ -1,0 +1,193 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ lưu ảnh</h1>
+
+<h2>Chức năng</h2>
+
+<p>Lưu ảnh. Công cụ này có thể lưu toàn bộ ảnh hoặc chỉ lưu một phần của ảnh, tức là ảnh con.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Tự động đặt tên</td>
+<td>Đặt tên cho ảnh được lưu.<br />Khi chọn “Không”, trong chuỗi dữ liệu sẽ xuất hiện liên kết “Tên tệp”, cần liên kết tên đã đặt trước tại đây;<br />Khi chọn “Có”, ảnh lưu sẽ dùng tên do hệ thống tự định nghĩa.<br />Quy tắc đặt tên tự động của hệ thống: tên công cụ + thời gian (năm tháng ngày giờ phút giây mili giây). Ví dụ: Công cụ lưu ảnh_2_20171108093033803.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ghi đè khi lưu</td>
+<td>Khi chọn tự động đặt tên “Không” và tham số tên tệp không rỗng, có ghi đè lên tệp cùng tên hay không.</td>
+</tr>
+<tr>
+<td></td>
+<td>Định dạng tệp</td>
+<td>Chọn định dạng lưu ảnh. Có 4 loại: Tự động, JPG, BMP, PNG. Khi chọn JPG, cửa sổ thuộc tính sẽ hiển thị thêm “Tỷ lệ nén” và “Chất lượng nén”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỷ lệ nén</td>
+<td>Tỷ lệ nén ảnh, các giá trị chọn được là 1, 2, 4, 8, tương ứng ảnh nén còn 1/1, 1/2, 1/4, 1/8 kích thước ảnh gốc; mặc định là 1.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chất lượng nén</td>
+<td>Chất lượng nén ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Có cắt ảnh con không</td>
+<td>Chọn lưu toàn bộ ảnh hay chỉ lưu vùng ảnh quan tâm. Khi chọn “Có”, cửa sổ thuộc tính sẽ xuất hiện thuộc tính “Vùng ảnh con”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vùng ảnh con</td>
+<td>Chọn vùng trong ảnh gốc cần lưu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Đường dẫn file đầu ra</td>
+<td>Đường dẫn lưu ảnh. Nếu để trống, sẽ dùng đường dẫn mặc định trong thư mục cài đặt phần mềm: \Data\Image</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Vùng ảnh con</td>
+<td>Chọn vùng trong ảnh gốc cần lưu.</td>
+</tr>
+<tr>
+<td>Dữ liệu chuỗi</td>
+<td>Tên tệp</td>
+<td>Khi “Tự động đặt tên” trong cửa sổ thuộc tính chọn “Không” thì sẽ xuất hiện liên kết này. Liên kết tên đã đặt trước.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh đen trắng dùng để lưu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>Biến đổi tuyến tính 2D là biến đổi dịch chuyển, xoay, phóng to, thu nhỏ của đối tượng so với mẫu. Dùng để biến đổi vùng ảnh con.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh RGB đầu vào</td>
+<td>Ảnh màu dùng để lưu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh chiều sâu đầu vào</td>
+<td>Ảnh chiều sâu dùng để lưu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đường viền đầu vào</td>
+<td>Ảnh đường viền dùng để lưu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kích hoạt</td>
+<td>Có bật chức năng lưu ảnh hay không, chỉ khi biến liên kết là “true” thì mới lưu ảnh.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi công cụ, thành công hiển thị “OK”, thất bại hiển thị “NG”, giống với tham số kết quả thực thi ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Dữ liệu chuỗi</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh đen trắng dùng để lưu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh RGB đầu vào</td>
+<td>Ảnh màu dùng để lưu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh chiều sâu đầu vào</td>
+<td>Ảnh chiều sâu dùng để lưu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đường viền đầu vào</td>
+<td>Ảnh đường viền dùng để lưu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Đường dẫn và tên tệp</td>
+<td>Đường dẫn và tên tệp ảnh đã lưu sau khi công cụ thực thi xong.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Chi tiết</h2>
+
+<p>Thông qua sự kết hợp giữa công cụ này và file ảnh, có thể hiện thị ảnh lỗi lần trước. Ví dụ dự án chi tiết xem file “图像保存工具.gvp”.</p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li>Khi công cụ trước đó thực thi thất bại, công cụ này vẫn có thể thực thi bình thường.</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\图像源配置工具.gvp”。</p>

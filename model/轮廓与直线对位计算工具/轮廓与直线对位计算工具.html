@@ -1,0 +1,244 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>轮廓与直线对位计算</h1>
+
+<h2>功能</h2>
+
+<p>在对位应用中，如图1所示，当对位目标和对象其中之一是柔性轮廓，另一个是刚性直线时，需要用到轮廓与直线对位工具。</p>
+
+<p><img src="media/wps3.jpg" alt="img" /></p>
+
+<p><imgnote>图1 轮廓与直线对位</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 拍照模式                                                     </td>
+<td> 选择拍照模式：全图模式/对角模式（左上对右下）/对角模式（左下对右上）/左右对半模式/上下对半模式。<img src="media/wps5.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td></td>
+<td> 对位模式     </td>
+<td> 选择对位模式：当对象为直线，目标为轮廓时，选择直线对轮廓；当对象为轮廓，目标为直线时，选择轮廓对直线。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓对位方法 </td>
+<td> 选择轮廓对位方法：理想距离/均值距离/对应点距离差。<img src="media/wps6.jpg" alt="img" />                                                               </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td>    无  </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 水平理想距离                                                 </td>
+<td> 对位计算中的水平理想距离。                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 垂直理想距离 </td>
+<td> 对位计算中的垂直理想距离。                                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 平台轴方向   </td>
+<td> 平台各轴的正方向。                                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓点数据   </td>
+<td> 根据实际项目配置相应方向的轮廓点数据，具体参考详细说明。<img src="media/wps7.jpg" alt="img" />                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 直线数据     </td>
+<td> 根据实际项目配置相应方向的直线数据，具体参考详细说明。<img src="media/wps8.jpg" alt="img" />                                                               </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td>   无   </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 相对对位偏移量 </td>
+<td> 对位计算出的相对对位偏移量结果                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间                                                             </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td>无  </td>
+<td> 无                                                                       </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 相对对位偏移量 </td>
+<td> 对位计算的相对对位偏移量结果，供后序工具使用，同监视窗口 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>拍照模式</h3>
+
+<p>在轮廓与直线对位场景中，分为三种不同的成像模式。具体成像模式参见表1和图2。其中对角模式又可分为左上角和右下角对位、左下角和右上角对位，对半模式又分为左右对半模式和上下对半模式。</p>
+
+<p><img src="media/wps11.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 对角模式</imgnote> <imgnote>(b) 对半模式</imgnote> <imgnote>&copy; 全图模式</imgnote></p>
+
+<p> <imgnote>图2 轮廓对直线的成像模式分类</imgnote></p>
+
+<p>表1 成像模式分类</p>
+
+<table>
+<thead>
+<tr>
+<th> 产品模式 </th>
+<th> 特点                                               </th>
+<th> 有效信息 </th>
+<th> 对位精度 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 对角模式                     </td>
+<td> 成像系统拍摄物体对角，通过对角的轮廓与直线对齐完成对位       </td>
+<td> 少                 </td>
+<td> 低                 </td>
+</tr>
+<tr>
+<td> 对半模式                     </td>
+<td> 两相机各拍摄物体的一半轮廓，组合起来可获得物体四周整体的轮廓，由四周轮廓对齐进行对位，分为上下对半与左右对半 </td>
+<td> 中                 </td>
+<td> 中                 </td>
+</tr>
+<tr>
+<td> 全图模式                     </td>
+<td> 拍摄整个物体，由同一幅图像中物体的四周轮廓对齐完成对位       </td>
+<td> 高                 </td>
+<td> 高                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>从信息采集的角度来说，三种成像模式的有效信息依次递增。有效信息越多，对位精度越高，即三种成像模式的对位精度也依次递增。因此三种成像模式的对位精度排序是，对角模式小于对半模式，对半模式小于等于全图模式。</p>
+
+<h3>轮廓对位方法</h3>
+
+<p>轮廓对位工具的基本原理是，迭代优化对位偏移量，计算各个轮廓点到直线的距离与居中对位距离的差值，使得差值的平方和最小，对象和目标居中对准。</p>
+
+<p>轮廓对直线时，对位前，各个轮廓点到直线的距离不等；对位后，各个轮廓点到直线的距离近似相同，并达到居中对位状态，如图3所示。</p>
+
+<p><img src="media/wps12.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 对位前</imgnote> <imgnote>(b) 对位后</imgnote></p>
+
+<p><imgnote>图3 轮廓对位基本原理</imgnote></p>
+
+<p>因而在计算中居中对位距离不同，优化目标函数也不同：</p>
+
+<p><strong>理想距离：</strong>对位时以轮廓点到直线距离减去理想距离差值作为优化目标，将轮廓点到直线的距离调整到理想值。</p>
+
+<p><strong>平均距离：</strong>对位时以轮廓点到直线距离减去平均距离的差值作为优化目标，将轮廓点到直线的距离调整到一个稳定均值附近。</p>
+
+<p><strong>差值距离：</strong>对位时以差值距离作为优化目标，对位时将轮廓的对应点到直线的距离调整到对应点相等的居中状态。</p>
+
+<h3>轮廓点数据与直线数据</h3>
+
+<p>拍照模式为对角模式（左上对右下）/（左下对右上）时，需要配置的轮廓点数据与直线数据如图4（以左上对右下对角模式为例）。</p>
+
+<p><img src="media/wps13.jpg" alt="img" /></p>
+
+<p><imgnote>图4 对角模式轮廓点与直线数据配置</imgnote></p>
+
+<p>拍照模式为上下对半模式时，需要配置的轮廓点数据与直线数据如图5所示。</p>
+
+<p><img src="media/wps14.jpg" alt="img" /></p>
+
+<p><imgnote>图5 上下对半模式轮廓点与直线数据配置</imgnote></p>
+
+<p>拍照模式为左右对半模式时，需要配置的轮廓点数据与直线数据如图6所示。</p>
+
+<p><img src="media/wps15.jpg" alt="img" /></p>
+
+<p><imgnote>图6 左右对半模式轮廓点与直线数据配置</imgnote></p>
+
+<p>拍照模式为全图模式时，需要配置的轮廓点数据与直线数据如图7所示。</p>
+
+<p><img src="media/wps16.jpg" alt="img" /></p>
+
+<p> <imgnote>图7 全图模式轮廓点与直线数据配置</imgnote></p>
+
+<h2>注意</h2>
+
+<ul>
+<li>输入的轮廓点数据与直线数据需要依据对位模式属性的选项来决定是对象还是目标。  输入的轮廓点数据与直线数据的位置要一一对应，如左轮廓点0对应左直线0，右轮廓点1对应右直线1。</li>
+</ul>
+
+
+<p> 工程中，输入的轮廓点数据通常是由轮廓特征点定位工具定位到的轮廓特征点数据；输入的直线数据通常由直线生成工具生成。</p>
+
+<ul>
+<li>输出的偏移量可以通过轴位置解析工具解析和数据包生成工具打包，然后使用通信发送工具发送。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>用法参见“\Samples\标准标定+轮廓直线对位.gvp”的轮廓与直线对位计算工具。</p>

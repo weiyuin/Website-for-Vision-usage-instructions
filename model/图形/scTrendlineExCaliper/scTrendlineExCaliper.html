@@ -1,0 +1,206 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scTrendlineExCaliper</h1>
+
+<h2>功能</h2>
+
+<p>表示可变折线卡尺，对应的Gui图形控件为scGuiTrendlineEx，例如曲线边宽检测工具的检测区域、找腰形工具的查找区域。如下图所示，该可变折线中有两个可变矩形，即有两个分段。</p>
+
+<p><img src="media/06f43c9908066e3b05c191ae2b72d381.png" alt="" /></p>
+
+<p><imgnote>(a) 可变折线</imgnote></p>
+
+<p><img src="media/25f82a2c8da16e57998f22568c723aa7.png" alt="" /></p>
+
+<p><imgnote>(b) 可变折线显示卡尺</imgnote></p>
+
+<p><imgnote>图1 可变折线示意图</imgnote></p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scTrendlineExCaliper             </td>
+<td> scTrendlineExCaliper()默认构造函数。                 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> GetSubRectNum                           </td>
+<td> 获取可变折线中可变矩形数目（折线分段数目）。         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSubRectEx                     </td>
+<td> 获取指定序号的可变矩形。                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetSubRectEx             </td>
+<td> 设置指定序号的可变矩形。                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetAllRectExCaliperNum         </td>
+<td> 获取所有分段的卡尺数目和，即所有分段的卡尺数目总和。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSingleRectExCaliperNum </td>
+<td> 获取指定分段的卡尺数目。                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCalipers                               </td>
+<td> 获取所有的卡尺。                                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetIndexCaliper     </td>
+<td> 获取第rectExID分段的第caliperID卡尺。                </td>
+</tr>
+<tr>
+<td>      </td>
+<td> BoundingBox                               </td>
+<td> 获取可变折线卡尺的最小外接矩形。                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scTrendlineExCaliper()</h3>
+
+<ul>
+<li><p>功能：构造scTrendlineExCaliper对象。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetSubRectNum()</h3>
+
+<ul>
+<li><p>功能：获取可变折线中可变矩形个数。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变折线中可变矩形个数，整型。</p></li>
+</ul>
+
+
+<h3>GetSubRectEx(rectExID)</h3>
+
+<ul>
+<li><p>功能：获取可变折线中指定序号的可变矩形区域。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>rectExID：可变矩形序号，整型。</li>
+</ul>
+</li>
+<li><p>返回值：第rectExID个可变矩形，scRectEx类型。</p></li>
+</ul>
+
+
+<h3>SetSubRectEx(rectExID, rectEx)</h3>
+
+<ul>
+<li><p>功能：设置第rectExID分段的可变矩形。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：可变矩形序号，整型。</p></li>
+<li><p>rectEx: 可变矩形，scRectEx类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：第rectExID个可变矩形的卡尺数目，整型。</p></li>
+</ul>
+
+
+<h3>GetAllRectExCaliperNum()</h3>
+
+<ul>
+<li><p>功能：获取所有分段的卡尺数目总和。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：所有分段的卡尺数目总和，整型。</p></li>
+</ul>
+
+
+<h3>GetSingleRectExCaliperNum(rectExID)</h3>
+
+<ul>
+<li><p>功能：获取第rectExID分段的卡尺数目。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>rectExID：可变矩形序号，整型。</li>
+</ul>
+</li>
+<li><p>返回值：第rectExID个可变矩形的卡尺数目，整型。</p></li>
+</ul>
+
+
+<h3>GetCalipers()</h3>
+
+<ul>
+<li><p>功能：获取所有的卡尺。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：所有卡尺组成的向量，scRectEx类型的向量，相当于Python中的list。</p></li>
+</ul>
+
+
+<h3>GetIndexCaliper(rectExID, caliperID)</h3>
+
+<ul>
+<li><p>功能：获取第rectExID分段中的第caliperID个卡尺。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>rectExID：可变矩形序号，整型。</p></li>
+<li><p>caliperID：卡尺序号，整型。</p></li>
+</ul>
+</li>
+<li><p>返回值：第rectExID分段中的第caliperID个卡尺，scRectEx类型。</p></li>
+</ul>
+
+
+<h3>BoundingBox()</h3>
+
+<ul>
+<li><p>功能：获取可变折线的最小外接矩形。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：最小外接矩形，scRect类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

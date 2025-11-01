@@ -1,0 +1,136 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ thu thập dữ liệu sản xuất</h1>
+
+<h2>Chức năng</h2>
+
+<p>Công cụ thu thập dữ liệu sản xuất chủ yếu dùng để thu thập dữ liệu sản xuất và lưu dữ liệu đã thu thập vào cơ sở dữ liệu. Dữ liệu được lưu vào cơ sở dữ liệu một mặt có thể cung cấp cho giao diện xem lại lịch sử để thực hiện chức năng xem lại, mặt khác có thể cung cấp cho thống kê sản xuất để phân tích thống kê dữ liệu. Công cụ này có thể thu thập tổng cộng 13 loại dữ liệu cơ bản, gồm: double, int, bool, string, int64, char, float, long, short, wstring, unsigned char, unsigned long và unsigned short.</p>
+
+<p>Để đáp ứng nhu cầu của chức năng xem lại lịch sử, bổ sung thêm ba loại dữ liệu tùy chỉnh: SN, status và image, trong đó kiểu dữ liệu cơ bản tương ứng lần lượt là string, bool và string. Trong đó SN biểu thị mã định danh duy nhất của sản phẩm hiện tại, status biểu thị trạng thái sản xuất hiện tại, image biểu thị đường dẫn đầy đủ của hình ảnh để thực hiện việc xem lại hình ảnh trong lịch sử.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Dữ liệu đầu vào</td>
+<td>Nguồn dữ liệu được thiết lập trong giao diện quản lý dữ liệu sản xuất, tối đa có thể tồn tại 64 nguồn dữ liệu, mỗi nguồn tương đương với một cột trong bảng dữ liệu. Ngoài nguồn dữ liệu cố định SN và Status, các nguồn dữ liệu khác có thể được đổi tên và chỉnh sửa kiểu dữ liệu (khi thêm mới) trong giao diện quản lý dữ liệu sản xuất, và có thể thực hiện thao tác liên kết dữ liệu.</td>
+</tr>
+<tr>
+<td></td>
+<td>SN</td>
+<td>Nguồn dữ liệu cố định, liên kết với mã SN của sản phẩm.</td>
+</tr>
+<tr>
+<td></td>
+<td>Status</td>
+<td>Nguồn dữ liệu cố định, liên kết với trạng thái sản xuất.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Tên bảng</td>
+<td>Tên bảng dữ liệu trong cơ sở dữ liệu được liên kết.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Tên bảng</td>
+<td>Tên bảng dữ liệu trong cơ sở dữ liệu được liên kết.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Mô tả chi tiết</h2>
+
+<p>Không</p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li><p>Công cụ này cần sử dụng kết hợp với cơ sở dữ liệu. Để đạt được mục tiêu thu thập dữ liệu sản xuất, cần kết nối cơ sở dữ liệu trước, như hình 1 bên dưới cho thấy, giao diện quản lý cơ sở dữ liệu.</p></li>
+<li><p>Nguồn dữ liệu của công cụ thu thập dữ liệu sản xuất cần được cấu hình thông qua giao diện “Quản lý dữ liệu sản xuất”, như hình 2 cho thấy, tại giao diện này có thể thêm hoặc xóa nguồn dữ liệu, đổi tên nguồn dữ liệu và chỉnh sửa kiểu dữ liệu, cũng có thể thực hiện liên kết dữ liệu;</p></li>
+<li><p>Số lượng nguồn dữ liệu tối đa hỗ trợ là 64. Mỗi công cụ thu thập dữ liệu sản xuất tương ứng với một bảng dữ liệu trong cơ sở dữ liệu, nguồn dữ liệu của công cụ thu thập dữ liệu sản xuất tương đương với từng cột trong bảng, tên nguồn dữ liệu tương đương với tên cột, số lượng nguồn dữ liệu quyết định số lượng cột trong bảng.</p></li>
+<li><p>Để phối hợp với chức năng xem lại lịch sử, công cụ này bắt buộc thêm cột SN và status vào bảng dữ liệu, nếu không cần thông tin này thì không cần liên kết dữ liệu cho các nguồn này; công cụ này mặc định thêm cột JobName để biểu thị tên tác vụ sản xuất hiện tại, cột này không cần liên kết dữ liệu thủ công, hệ thống sẽ tự động lấy từ dự án và ghi vào bảng dữ liệu.</p></li>
+<li><p>Khi đã kết nối cơ sở dữ liệu, mỗi lần thêm một công cụ thu thập dữ liệu sẽ tạo ra một bảng mới trong cơ sở dữ liệu, tên bảng là duy nhất. Tên bảng hiện tại có dạng “TênCôngCụHiệnTại_MãĐịnhDanhDuyNhất”, trong đó mã định danh duy nhất do hệ thống tự động tạo để tránh trùng tên, tên công cụ hiện tại sẽ áp dụng cho cả khi đổi tên công cụ.</p></li>
+<li><p>Nếu cần hỗ trợ hiển thị xem lại hình ảnh trong chức năng xem lại lịch sử, nguồn dữ liệu hình ảnh được thêm vào công cụ này phải chọn loại dữ liệu image, và liên kết dữ liệu là đường dẫn đầy đủ của hình ảnh được lưu (đầu ra “đường dẫn và tên tệp” của công cụ lưu ảnh hoặc công cụ chụp màn hình).</p>
+
+<p><img src="media/wps17.png" alt="img" /></p>
+
+<p><imgnote>Hình 1 Quản lý cơ sở dữ liệu</imgnote></p>
+
+<p><img src="media/wps18.png" alt="img" /></p>
+
+<p><imgnote>Hình 2 Thuộc tính nâng cao</imgnote></p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\生产数据收集+历史回看.gvp”。</p>

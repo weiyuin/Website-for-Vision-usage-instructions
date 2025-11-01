@@ -1,0 +1,195 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>对比度转换</h1>
+
+<h2>功能</h2>
+
+<p>对比度转换是常用的图像预处理方法之一，主要任务是调节灰度图像的亮度来调节图像的整体对比度（增加或减小）。</p>
+
+<p><img src="media/wps51.jpg" alt="img" /></p>
+
+<p><imgnote>图1 对比度转换示意图（增加对比度）</imgnote></p>
+
+<p><img src="media/wps52.jpg" alt="img" /></p>
+
+<p><imgnote>图2 对比度转换示意图（减小对比度）</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 转换方法                                                   </td>
+<td> 主要有线性变换和非线性变换。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 跨度值   </td>
+<td> 用于设置线性变换的参数，见基本原理，相当于一次函数的斜率。                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 偏移值   </td>
+<td> 用于设置线性变换的参数，见基本原理。                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 幂次     </td>
+<td> 用于设置非线性变换的参数，见基本原理，相当于N次函数的N。                                 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像                                                   </td>
+<td> 进行对比度转换的输入图像。   </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入图像                                                   </td>
+<td> 进行对比度转换的输入图像。   </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无 </td>
+<td> 无                                                                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 进行对比度转换的输入图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像 </td>
+<td> 对比度转换后的输出图像。                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                           </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 对比度转换后的图像。       </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                             </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像                                                     </td>
+<td> 对比度转换后的图像。       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>工作原理</h3>
+
+<p><img src="media/wps56.jpg" alt="img" /></p>
+
+<p><imgnote>图3 对比度转换原理示意图</imgnote></p>
+
+<p>对比度转换工具的实质是对图像进行灰度变换，包括两种模式：线性模式（对应线性变换）和非线性模式（对应非线性变换），基本原理如图3所示。线性变换是将像素灰度按照一定的跨度和偏移量进行转换，非线性变换（即伽马变换）则根据不同幂次值所确定的曲线进行转换。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>对比度转换工具的应用场景及各场景下参数调整情况如下表所示</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th> 应用场景                 </th>
+<th> 想达到的效果         </th>
+<th> 需要调整的参数      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 对比度适中，图像整体偏亮 </td>
+<td> 调低整体亮度         </td>
+<td> 调整b为正值         </td>
+</tr>
+<tr>
+<td> 对比度适中，图像整体偏暗 </td>
+<td> 调高整体亮度         </td>
+<td> 调整b为负值         </td>
+</tr>
+<tr>
+<td> 对比度低，图像偏暗       </td>
+<td> 调高亮度，增加对比度 </td>
+<td> 调整k值，使k值大于1 </td>
+</tr>
+<tr>
+<td> 对比度适中，图像整体偏亮 </td>
+<td> 调低整体亮度         </td>
+<td> 调整b为正值         </td>
+</tr>
+<tr>
+<td> 对比度适中，图像整体偏暗 </td>
+<td> 调高整体亮度         </td>
+<td> 调整b为负值         </td>
+</tr>
+<tr>
+<td> 对比度低，图像偏暗       </td>
+<td> 调高亮度，增加对比度 </td>
+<td> 调整k值，使k值大于1 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\对比度变换相关.gvp”。</p>

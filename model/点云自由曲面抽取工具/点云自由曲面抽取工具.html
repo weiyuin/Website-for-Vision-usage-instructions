@@ -1,0 +1,146 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云自由曲面抽取工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     点云自由曲面抽取工具主要是对原深度数据图像中的部分曲面提取，以协助后续点云高度抽取工具和凹凸缺陷检测工具等操作。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     主要用于提供给点云高度抽取工具的自由曲面图像，或者凹凸缺陷检测工具的基准图像，进行缺陷判定等。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcFreeCurvedSurfaceTool_4_1.png" alt="" /></p>
+
+<ul>
+<li><h4>设置抽取方向、大小</h4></li>
+</ul>
+
+
+<p><img src="media/GcFreeCurvedSurfaceTool_4_2.png" alt="" /></p>
+
+<p><span id="jump"><strong>抽取方向</strong></span></p>
+
+<p>​     指定抽取自由曲面的方向，包括X、Y和XY方向。X方向指抽取面是按照对深度图像逐行进行计算获得自由曲面的；Y方向是按照对深度图像逐列进行计算获得自由曲面的；XY方向是指在X、Y方向都有计算深度图像数据获得自由曲面。</p>
+
+<p><strong>抽取大小</strong></p>
+
+<p>​     指定要抽取高度缺陷的大小，<strong>设置值越小，越能贴合起伏较大的曲面，从而抽取更细微的缺陷</strong>。</p>
+
+<p><img src="media/GcFreeCurvedSurfaceTool_4_3.png" alt="" /></p>
+
+<p><span id="jump"><strong>使用ROI外数据</strong></span></p>
+
+<p>​     该参数主要是应用在ROI情况下，选择是否参照范围外图像抽取自由曲面。若不参照，则范围外图像数据对范围内抽取的自由曲面的数据不造成影响。</p>
+
+<ul>
+<li><h4>使用自由曲面结果，作为高度抽取工具或凹凸缺陷检测工具的基准图像</h4></li>
+</ul>
+
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述         </th>
+<th> 解决方法                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 抽取后未发生变化 </td>
+<td> 调整抽取大小，越小越贴近曲面 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称        </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 抽取方向        </td>
+<td> 分为3种：X方向、Y方向和XY方向。                              </td>
+</tr>
+<tr>
+<td> ROI类型         </td>
+<td> 待检测区域，分为8种：整幅图像、矩形、仿射矩形、圆形、圆环、椭圆、多边形、多仿射矩形。 </td>
+</tr>
+<tr>
+<td> 仿射矩形ROI个数 </td>
+<td> 仿射矩形个数。                                               </td>
+</tr>
+<tr>
+<td> 抽取大小        </td>
+<td> 指定要抽取高度缺陷的大小。                                   </td>
+</tr>
+<tr>
+<td> 使用ROI外数据   </td>
+<td> 选择是否参照范围外图像抽取自由曲面。                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出深度图像 </td>
+<td> 输出抽取的深度图像。 </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td> 工具执行结果         </td>
+</tr>
+<tr>
+<td> 执行时间     </td>
+<td> 工具执行时间         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\点云高度抽取工具.gvp”。</p>

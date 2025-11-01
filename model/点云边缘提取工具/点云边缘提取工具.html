@@ -1,0 +1,215 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云边缘提取工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云边缘提取工具对输入的点云进行边缘提取，通过提取到点云边缘数据进行边缘检测或者线圆拟合等检测或测量项目。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量中，点云边缘提取应用较为广泛，如手机中框测量中需要先进行点云边缘提取，再进行直线的拟合等后续测量项。</p>
+
+<h2>3. 使用向导</h2>
+
+<p><strong>step1：</strong>添加点云文件、点云边缘提取工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p><strong>step2：</strong>右击点云边缘提取工具点击“属性”打开工具高级界面，如图3-2所示，ROI类型选择长方体，设置边缘提取参数，然后点击运行即可得到提取后的点云数据；</p>
+
+<p><strong>step3：</strong>如图3-3所示，点云提取后，可以将输出点云数据或输出点集，输出到后续点云线圆拟合工具；</p>
+
+<div align="center">
+<img src="media/GcCloudEdgeDetectTool3_1.png" style="zoom:100%;"/>
+    <center>图3_1 点云边缘提取流程</center>
+</div>
+
+
+
+
+<div align="center">
+<img src="media/GcCloudEdgeDetectTool3_2.png" style="zoom:100%;"/>
+    <center>图3_2 点云边缘提取</center>
+</div>
+
+
+
+
+<div align="center">
+<img src="media/GcCloudEdgeDetectTool3_3.png" style="zoom:100%;"/>
+    <center>图3_3 点云边缘提取结果使用</center>
+</div>
+
+
+<h2>4. 常见问题</h2>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 输入待提取的点云图像                                                                               </td>
+</tr>
+<tr>
+<td> 输入投影平面 </td>
+<td> 开启投影模式选“是”时，该参数有效 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> ROI类型                 </td>
+<td> 分为两种：长方体和球体 </td>
+</tr>
+<tr>
+<td> 开启投影模式 </td>
+<td> 是：开启投影模式；否：不开启投影模式 </td>
+</tr>
+<tr>
+<td> 局外点距离阈值 </td>
+<td> 设置范围：[0.0001, 1]，默认值0.005 </td>
+</tr>
+<tr>
+<td> 开启内部扩增建树模式 </td>
+<td> 开启后，将扩增用于建树的点 </td>
+</tr>
+<tr>
+<td> 边缘阈值 </td>
+<td> 设置范围：[-10.0, 10.0]，默认为1 </td>
+</tr>
+<tr>
+<td> 边缘膨胀程度 </td>
+<td> 设置范围：[1, 50]，默认为1，注：此参数需小于邻域搜索数 </td>
+</tr>
+<tr>
+<td> 邻域搜索数 </td>
+<td> 设置范围：[1, 200]，默认为12 </td>
+</tr>
+<tr>
+<td> 最大迭代次数 </td>
+<td> 设置范围：[1, 100]，默认为1 </td>
+</tr>
+<tr>
+<td> 输出投影后的边缘点 </td>
+<td> 开启投影模式选“是”时，该参数有效。是：输出源点云上的点；否：输出投影后的点 </td>
+</tr>
+<tr>
+<td> 剔除点云的重复点     </td>
+<td> 是：自动剔除点云的重复点，耗时会增长；否：不处理；对于普通点云图像建议不开启，对于重复点较多的点云图像建议开启 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+
+<table>
+<thead>
+<tr>
+<th> 按钮名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 开始绘制                                   </td>
+<td> 在高级界面图像中，相应位置点击并拖动鼠标即可绘制长方体ROI </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据                                            </td>
+<td> 输出边缘提取的点云数据 </td>
+</tr>
+<tr>
+<td> 输出边缘点 </td>
+<td> 输出边缘提取的点集 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据                                            </td>
+<td> 输出边缘提取的点云数据 </td>
+</tr>
+<tr>
+<td> 输出边缘点 </td>
+<td> 输出边缘提取的点集 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​ 参见“\Samples\3D\点云\点云边缘提取工具.gvp”。</p>
+
+<h2>7. 特殊说明</h2>

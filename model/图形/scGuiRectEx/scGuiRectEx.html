@@ -1,0 +1,292 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scGuiRectEx</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho lớp điều khiển hình chữ nhật có thể thay đổi trong giao diện người dùng (GUI), tức là các đối tượng hình học hiển thị trên giao diện, có thể chuyển đổi thành hình chữ nhật hoặc đoạn hình vành khăn. Nếu cần lấy bốn điểm góc của hình chữ nhật có thể thay đổi này thì có thể dùng hàm thành viên <code>GetRectEx</code> để lấy đối tượng <code>scRectEx</code>, sau đó sử dụng <code>scRectEx</code> để lấy các điểm góc. Ví dụ như vùng đo chiều rộng cạnh trong công cụ đo chiều rộng cạnh (tương ứng loại đo chiều rộng cạnh là đường thẳng trong thanh thuộc tính) hoặc vùng đo chiều rộng cạnh hình tròn (tương ứng loại đo chiều rộng cạnh là hình tròn trong thanh thuộc tính).</p>
+
+<p><img src="media/6a07bdbf80b7cec234a2aa21e25acd8f.png" alt="" /></p>
+
+<p><imgnote>Hình (a) Trạng thái bình thường</imgnote></p>
+
+<p><img src="media/4f7f3a9ce50a3aa4e84f070d1c51aa22.png" alt="" /></p>
+
+<p><imgnote>Hình (b) Trạng thái hiển thị thước đo và mặt nạ</imgnote></p>
+
+<p><imgnote>Hình 1: Sơ đồ minh họa hình chữ nhật có thể thay đổi</imgnote></p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>      Phân loại </th>
+<th> Tên giao diện                                                    </th>
+<th> Mô tả giao diện                          </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Khởi tạo </td>
+<td> scGuiRectEx                      </td>
+<td> scGuiRectEx(dof=15): Hàm khởi tạo mặc định. </td>
+</tr>
+<tr>
+<td> Hàm </td>
+<td> GetSearchDirectionDOF          </td>
+<td> Lấy bậc tự do của hướng tìm kiếm.              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRectEx                                  </td>
+<td> Lấy hình chữ nhật có thể thay đổi.                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRectEx                            </td>
+<td> Thiết lập hình chữ nhật có thể thay đổi.                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRectExCaliper                </td>
+<td> Lấy thước đo của hình chữ nhật có thể thay đổi.                </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRectExCaliper       </td>
+<td> Thiết lập thước đo cho hình chữ nhật có thể thay đổi.                </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperWidth                      </td>
+<td> Lấy độ rộng của thước đo.                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperWidth                 </td>
+<td> Thiết lập độ rộng của thước đo.                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperSpace                  </td>
+<td> Lấy khoảng cách giữa các thước đo.                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperSpace                 </td>
+<td> Thiết lập khoảng cách giữa các thước đo.                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperID                            </td>
+<td> Lấy ID thước đo.                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperID                   </td>
+<td> Thiết lập ID thước đo.                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSearchDirection            </td>
+<td> Lấy hướng tìm kiếm của thước đo.                </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetSearchDirection </td>
+<td> Thiết lập hướng tìm kiếm của thước đo.                </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperNum                      </td>
+<td> Lấy số lượng thước đo.                    </td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>scGuiRectEx(dof = 15)</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đối tượng scGuiRectEx, mặc định bậc tự do của hướng tìm kiếm là 15, có thể không cần truyền tham số, chỉ cần dùng scGuiRectEx() là đủ.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>GetSearchDirectionDOF()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy bậc tự do của hướng tìm kiếm.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Bậc tự do của hướng tìm kiếm, kiểu số nguyên.</p></li>
+</ul>
+
+<h3>GetRectEx()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy hình chữ nhật có thể thay đổi.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Hình chữ nhật có thể thay đổi, kiểu scRectEx.</p></li>
+</ul>
+
+<h3>SetRectEx(rectEx)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập hình chữ nhật có thể thay đổi.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>rectEx: Hình chữ nhật có thể thay đổi, kiểu scRectEx.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>GetRectExCaliper()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy thước đo của hình chữ nhật có thể thay đổi.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Thước đo hình chữ nhật, kiểu scRectExCaliper.</p></li>
+</ul>
+
+<h3>SetRectExCaliper(rectExCaliper)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập thước đo của hình chữ nhật có thể thay đổi.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>rectExCaliper: Thước đo hình chữ nhật, kiểu scRectExCaliper.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>GetCaliperWidth()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy độ rộng của thước đo.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Độ rộng của thước đo, kiểu số nguyên.</p></li>
+</ul>
+
+<h3>SetCaliperWidth(width)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập độ rộng của thước đo.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>width: Độ rộng của thước đo, kiểu số nguyên.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>GetCaliperSpace()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy khoảng cách giữa các thước đo.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Khoảng cách giữa các thước đo, kiểu số nguyên.</p></li>
+</ul>
+
+<h3>SetCaliperSpace(space)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập khoảng cách giữa các thước đo.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>space: Khoảng cách giữa các thước đo, kiểu số nguyên.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>GetCaliperID()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy ID của thước đo.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: ID của thước đo, kiểu số nguyên.</p></li>
+</ul>
+
+<h3>SetCaliperID(caliperID)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập ID của thước đo.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>caliperID: ID của thước đo, kiểu số nguyên.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>GetSearchDirection()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy hướng tìm kiếm của thước đo.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Hướng tìm kiếm, kiểu số nguyên.</p></li>
+</ul>
+
+<h3>SetSearchDirection(searchdirection)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập hướng tìm kiếm của thước đo.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>searchdirection: Hướng tìm kiếm, kiểu số nguyên.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>GetCaliperNum()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy số lượng thước đo.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Số lượng thước đo, kiểu số nguyên.</p></li>
+</ul>
+
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
+<h2>Ví dụ mã</h2>
+
+<p>```python
+ROI_Line = GvTool.GetToolData("边检测工具_011.检测区域")
+print(type(ROI_Line))</p>
+
+<p>rectex = ROI_Line.GetRectEx()
+po = rectex.GetOriginPoint()
+Px = rectex.GetCornerPx()
+Py = rectex.GetCornerPy()
+Popp = rectex.GetCornerPopp()</p>
+
+<p>print(po.GetX(),po.GetY())
+print(Px.GetX(),Px.GetY())
+print(Py.GetX(),Py.GetY())
+print(Popp.GetX(),Popp.GetY())
+```</p>

@@ -1,0 +1,131 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GeMsgReportType</h1>
+
+<h2>功能</h2>
+
+<p>表示要输出的消息类型，是枚举类型，和消息报告工具属性栏可选类型一致。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                               </th>
+<th> 接口描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性     </td>
+<td> eMRTNote         </td>
+<td> 提示消息，显示在提示窗口。               </td>
+</tr>
+<tr>
+<td>          </td>
+<td> eMRTWarning </td>
+<td> 警告消息，显示在警告窗口。               </td>
+</tr>
+<tr>
+<td>          </td>
+<td> eMRTError                   </td>
+<td> 错误消息，显示在错误窗口。               </td>
+</tr>
+<tr>
+<td>          </td>
+<td> eMRTFatalErr             </td>
+<td> 致命错误消息，会弹出一个错误提示对话框。 </td>
+</tr>
+<tr>
+<td>          </td>
+<td> eMRTPopupNote           </td>
+<td> 弹出提示消息，弹出一个普通提示对话框。   </td>
+</tr>
+<tr>
+<td>          </td>
+<td> eMRTResultOption     </td>
+<td> 弹出选项消息对话框，可选“是”或“否”。     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>eMRTNote</h3>
+
+<ul>
+<li>功能：消息报告函数输出结果为提示消息，在提示消息窗口显示。</li>
+</ul>
+
+
+<h3>eMRTWarning</h3>
+
+<ul>
+<li>功能：消息报告函数输出结果为警告消息，在警告消息窗口显示。</li>
+</ul>
+
+
+<h3>eMRTError</h3>
+
+<ul>
+<li>功能：消息报告函数输出结果为错误消息，在错误消息窗口显示。</li>
+</ul>
+
+
+<h3>eMRTFatalErr</h3>
+
+<ul>
+<li><p>功能：消息报告函数输出结果为致命错误消息，会弹出错误提示对话框。</p>
+
+<p><img src="media/f205aedf9489de7203686a3194756580.png" alt="" /></p></li>
+</ul>
+
+
+<h3>eMRTPopupNote</h3>
+
+<ul>
+<li><p>功能：消息报告函数输出结果为弹出提示消息，会弹出消息提示对话框。</p>
+
+<p><img src="media/210901d14d4a7143d8435b05fd0b5639.png" alt="" /></p></li>
+</ul>
+
+
+<h3>eMRTResultOption</h3>
+
+<ul>
+<li><p>功能：消息报告函数输出结果为弹出带有选项的对话框，会弹出带有是否选项的提示对话框。</p>
+
+<p><img src="media/d665326fc19fff115c9eda9e91f9dccb.png" alt="" /></p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无。</p>
+
+<h2>示例代码</h2>
+
+<p><code>python
+genote = GvVisionAssembly.GeMsgReportType
+noteType = genote.eMRTPopupNote
+bRe = GvVisionAssembly.ReportMessage("弹出提示消息", noteType, False)
+print(bRe)
+</code></p>

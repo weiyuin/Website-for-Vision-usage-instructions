@@ -1,0 +1,187 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>轮廓提取工具</h1>
+
+<h2>功能</h2>
+
+<p>轮廓提取工具实质是对图像进行亚像素边缘提取，获取边缘点，再对边缘点进行组织形成更具几何意义的轮廓表示，用于对图像或图像中指定区域进行轮廓提取。其实际应用效果如图1所示。</p>
+
+<p><img src="media/wps42.jpg" alt="img" />  <img src="media/wps43.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 搜索区域</imgnote> <imgnote>(b) 轮廓提取结果</imgnote></p>
+
+<p><imgnote>图1 轮廓提取工具应用示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 轮廓提取ROI                                                  </td>
+<td> 轮廓提取的区域，分为8种，整幅图像、矩形ROI、仿射矩形ROI、圆形ROI、圆环ROI、圆环段ROI、椭圆ROI、多边形ROI。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 噪声阈值     </td>
+<td> 边缘梯度幅值平均值，小于该值的会被当做噪声。                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓长度阈值 </td>
+<td> 轮廓长度用像素点个数来度量，小于该长度的轮廓将会被剔除，不作为轮廓提取结果的一部分显示。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 实时显示结果   </td>
+<td> 选择“是”，在改变搜索区域后，不需要运行工具，就可以实时显示结果；选择“否”，改变搜索区域后需要运行工具才会显示对应的结果。                                                           </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 输入图像                                                     </td>
+<td> 显示待检测的图像。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 矩形ROI      </td>
+<td> 图像中参与查找的矩形区域。<img src="media/wps45.jpg" alt="img" />                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形ROI  </td>
+<td> 图像中参与查找的仿射矩形区域。<img src="media/wps46.jpg" alt="img" />                                                                  </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入图像                                                     </td>
+<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 二维线性变换 </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 高级界面     </td>
+<td> 无                                                                                                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小。                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 所有轮廓 </td>
+<td> 输出满足预设条件的结果点坐标。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓链   </td>
+<td> 输出每个轮廓链的坐标点。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓总数 </td>
+<td> 输出轮廓的个数。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 显示与振镜坐标相关联的图像，同监视窗口的输出图像参数。   </td>
+</tr>
+<tr>
+<td></td>
+<td> 所有轮廓 </td>
+<td> 显示满足预设条件的轮廓，同监视窗口的所有轮廓参数。                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 所有轮廓 </td>
+<td> 输出满足预设条件的结果信息，供后序工具使用，同监视窗口的所有轮廓参数。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓链   </td>
+<td> 输出每个轮廓链的坐标点，供后序工具使用，同监视窗口的轮廓链参数。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓总数 </td>
+<td> 输出轮廓的总个数，同监视窗口的轮廓总数参数。                                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>矩形ROI</h3>
+
+<p>矩形ROI是指提供交互的矩形框，可在图像上选取感兴趣区域。用户可以调整矩形框的中心位置以及宽度和高度，通过鼠标拖动矩形框，可以调整矩形框的宽度和高度，选中矩形框的边可以调整矩形框的位置。</p>
+
+<h3>仿射矩形ROI</h3>
+
+<p>仿射矩形ROI是指提供交互的仿射矩形框，可在图像上选取感兴趣区域。用户可以调整仿射矩形的X、Y边长度，旋转角度、切变角度以及仿射矩形的位置，通过鼠标拖动仿射矩形框，可以调整仿射矩形框的宽度、高度、旋转角度和切变角度，选中矩形框的边可以调整仿射矩形框的位置。</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\轮廓提取工具.gvp”。</p>

@@ -1,0 +1,448 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>距离测量2D</h1>
+
+<h2>功能</h2>
+
+<p>2D距离测量主要是计算两个几何元素（点、线段、直线、圆与椭圆等）之间的距离，包括圆到圆距离、直线到圆距离、直线到椭圆距离、线段到圆距离工具、线段到椭圆距离、线段到线段距离、
+线段到直线距离、点到圆距离、点到椭圆距离、点到线段距离、点到直线距离、点到点距离、矩形同心度计算、矩形中线同心度计算、轮廓到轮廓定向距离、多点到直线距离、点集距离计算。</p>
+
+<p>其中多点到直线距离、点集距离计算的函数接口有像素当量参数，需要输入像素当量计算得到实际距离，如果像素当量等于1.0，则表示计算图像距离。</p>
+
+<p>除了多点到直线距离、点集距离计算，其他距离计算函数结果的含义和单位取决于输入几何元素所在的坐标系。如果是图像坐标系下，结果是图像上的距离，单位是像素（实际距离需要乘以像素当量进行转换）；平台坐标系下，结果是实际距离。例如线段到线段距离计算，输入的线段如果是图像坐标系下的，计算结果就是图像距离；如果是转换到平台坐标系下的，就是实际距离；对于点到点距离计算，输入的点如果是图像坐标系下的，计算结果就是图像距离；输入的点如果是转换到平台坐标下的，就是实际距离。</p>
+
+<p>对于和点相关的距离计算，计算结果DistanceResult中只有issucceed、distance和point1可用，point1表示参与距离计算的其他几何形状上计算距离的点坐标。对于两点之间距离计算，计算结果中只有只有issucceed、distance可用。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th> 接口名称                                                       </th>
+<th> 接口描述                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> DistanceCircle2Circle </td>
+<td> 圆到圆之间的距离测量         </td>
+</tr>
+<tr>
+<td> DistanceLine2Circle </td>
+<td> 直线到圆之间的距离测量       </td>
+</tr>
+<tr>
+<td> DistanceLine2Ellipse </td>
+<td> 直线到椭圆之间的距离测量     </td>
+</tr>
+<tr>
+<td> DistanceLineSeg2Circle </td>
+<td> 线段到圆之间的距离测量       </td>
+</tr>
+<tr>
+<td> DistanceLineSeg2Ellipse </td>
+<td> 线段到椭圆之间的距离测量     </td>
+</tr>
+<tr>
+<td> DistanceLineSeg2LineSeg </td>
+<td> 线段到线段之间的距离测量     </td>
+</tr>
+<tr>
+<td> DistanceLineSeg2Line </td>
+<td> 线段到直线之间的距离测量     </td>
+</tr>
+<tr>
+<td> DistancePoint2Circle </td>
+<td> 点到圆之间的距离测量         </td>
+</tr>
+<tr>
+<td> DistancePoint2Ellipse </td>
+<td> 点到椭圆之间的距离测量       </td>
+</tr>
+<tr>
+<td> DistancePoint2LineSeg </td>
+<td> 点到线段之间的距离测量       </td>
+</tr>
+<tr>
+<td> DistancePoint2Line </td>
+<td> 点到直线之间的距离测量       </td>
+</tr>
+<tr>
+<td> DistancePoint2Point </td>
+<td> 两点之间的距离测量           </td>
+</tr>
+<tr>
+<td> CalcRectConcentric </td>
+<td> 矩形同心度计算               </td>
+</tr>
+<tr>
+<td> CalcRectConcentricCL </td>
+<td> 矩形中线同心度计算           </td>
+</tr>
+<tr>
+<td> DistanceContour2Contour </td>
+<td> 轮廓到轮廓的定向距离         </td>
+</tr>
+<tr>
+<td> DistanceMulPoint2Line </td>
+<td> 多点到直线的距离             </td>
+</tr>
+<tr>
+<td> DistanceVctPoint2VctPoint </td>
+<td> 两个点集对应点之间的距离测量 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细描述</h2>
+
+<h3>DistanceCircle2Circle(circle1, circle2)</h3>
+
+<ul>
+<li><p>功能：计算圆到圆之间的距离。距离(DistanceResult.distance)的正负表示两个圆的关系，如果距离是正值表示两个圆无包含关系，如果距离是负值表示两个圆是包含关系，其中一个圆在另一个圆内。如果两个圆相交或相切，输出距离为0，不输出最小距离点的坐标；支持同心圆，输出距离是负值（两个圆半径的差值），输出结果中的两个点坐标都是nan。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>circle1：圆1，scCircle类型。</p></li>
+<li><p>circle2：圆2，scCircle类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistanceLine2Circle(line, circle)</h3>
+
+<ul>
+<li><p>功能：计算直线到圆之间的距离，对于和圆相交或相切的直线，距离值为0。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>line：直线，scLine类型。</p></li>
+<li><p>circle：圆，scCircle类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistanceLine2Ellipse(line, ellipse)</h3>
+
+<ul>
+<li><p>功能：计算直线到椭圆之间的距离，对于和椭圆相交或相切的直线，距离值为0。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>line：直线，scLine类型。</p></li>
+<li><p>ellipse：椭圆，scEllipse类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistanceLineSeg2Circle(lineSeg, circle)</h3>
+
+<ul>
+<li><p>功能：计算线段到圆之间的距离。距离(DistanceResult.distance)的正负表示线段和圆的位置关系，如果距离是正值表示线段在圆外，如果距离是负值表示线段在圆内。对于和圆相交的线段，距离值为0。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>lineSeg：线段，scLineSeg类型。</p></li>
+<li><p>circle：圆，scCircle类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistanceLineSeg2Ellipse(lineSeg, ellipse)</h3>
+
+<ul>
+<li><p>功能：计算线段到椭圆之间的距离。距离(DistanceResult.distance)的正负表示线段和椭圆的位置关系，如果距离是正值表示线段在椭圆外，如果距离是负值表示线段在椭圆内。对于和椭圆相交的线段，距离值为0。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>lineSeg：线段，scLineSeg类型。</p></li>
+<li><p>ellipse：椭圆，scEllipse类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistanceLineSeg2LineSeg(lineSeg, lineSeg)</h3>
+
+<ul>
+<li><p>功能：计算线段到线段之间的距离，计算的是线段1的中点到线段2的距离。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>lineSeg：线段1，scLineSeg类型。</p></li>
+<li><p>lineSeg：线段2，scLineSeg类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistanceLineSeg2Line(lineSeg, line)</h3>
+
+<ul>
+<li><p>功能：计算线段到直线之间的距离，对于和直线相交的线段，距离始终是0。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>lineSeg：线段，scLineSeg类型。</p></li>
+<li><p>line：直线，scLine类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistancePoint2Circle(point, circle)</h3>
+
+<ul>
+<li><p>功能：计算点到圆之间的距离。距离(DistanceResult.distance)的正负表示点和圆的位置关系，如果距离是正值表示点在圆外，如果距离是负值表示点在圆内。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>point：点，sc2Vector类型。</p></li>
+<li><p>circle：圆，scCircle类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistancePoint2Ellipse(point, ellipse)</h3>
+
+<ul>
+<li><p>功能：计算点到椭圆之间的距离。距离(DistanceResult.distance)的正负表示点和椭圆的位置关系，如果距离是正值表示点在椭圆外，如果距离是负值表示点在椭圆内。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>point：点，sc2Vector类型。</p></li>
+<li><p>ellipse：椭圆，scEllipse类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistancePoint2LineSeg(point, lineSeg)</h3>
+
+<ul>
+<li><p>功能：计算点到线段之间的距离。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>point：点，sc2Vector类型。</p></li>
+<li><p>lineSeg：线段，scLineSeg类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistancePoint2Line(point, lineSeg)</h3>
+
+<ul>
+<li><p>功能：计算点到直线之间的距离。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>point：点，sc2Vector类型。</p></li>
+<li><p>line：直线，scLine类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型。</p></li>
+</ul>
+
+
+<h3>DistancePoint2Point(point, point)</h3>
+
+<ul>
+<li><p>功能：计算点到点之间的距离。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>point：点1，sc2Vector类型。</p></li>
+<li><p>point：点2，sc2Vector类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，DistanceResult类型</p></li>
+</ul>
+
+
+<h3>CalcRectConcentric(top, right, bottom, left)</h3>
+
+<ul>
+<li><p>功能：根据矩形的上边距、下边距、左边距、右边距，计算出待检测物体外边框所组成的矩形与内边框所组成的矩形之间的同心度。</p>
+
+<p><img src="media/e63552e0dc1d2e378ee90abb49d2cb7d.png" alt="C:\Users\W02634\Desktop\无标题.png" /></p>
+
+<p><imgnote>图1 计算同心度示意图</imgnote></p>
+
+<p>同心度<img src="media/wps74.png" alt="img" /></p>
+
+<p>同心度Y=<img src="media/wps76.png" alt="img" /></p>
+
+<p>同心度=<img src="media/wps75.png" alt="img" /></p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>top：上边距Y1，浮点数类型。</p></li>
+<li><p>right：右边距X2，浮点数类型。</p></li>
+<li><p>bottom：下边距Y2，浮点数类型。</p></li>
+<li><p>left：左边距X1，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：矩形同心度计算结果，RectConcentricityResult类型</p></li>
+</ul>
+
+
+<h3>CalcRectConcentricCL(outRectTopLineSeg, outRectRightLineSeg, outRectBottomLineSeg, outRectLeftLineSeg, innerRectTopLineSeg, innerRectRightLineSeg, innerRectBottomLineSeg, innerRectLeftLineSeg)</h3>
+
+<ul>
+<li><p>功能：通过外矩形的四条边以及内矩形的四条边分别计算出外矩形的中心点以及内矩形的中心点，并通过这两个中心点计算出同心度。</p>
+
+<p><img src="media/09ef43561b14481eb3cb7d0de7b552fb.png" alt="C:\Users\W02634\Desktop\无标题.png" /></p>
+
+<p><imgnote>图2 矩形中线同心度计算工具示意图</imgnote></p>
+
+<p>X同心度=(外矩形同心度的X坐标) – (内矩形同心度的X坐标)；</p>
+
+<p>Y同心度=（外矩形同心度的Y坐标）- （内矩形同心度的Y坐标）；</p>
+
+<p>同心度=<img src="media/wps87.png" alt="img" /></p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>outRectTopLineSeg：外矩形上边，scLineSeg类型。</p></li>
+<li><p>outRectRightLineSeg：外矩形右边，scLineSeg类型。</p></li>
+<li><p>outRectBottomLineSeg：外矩形下边，scLineSeg类型。</p></li>
+<li><p>outRectLeftLineSeg：外矩形左边，scLineSeg类型。</p></li>
+<li><p>innerRectTopLineSeg：内矩形上边，scLineSeg类型。</p></li>
+<li><p>innerRectRightLineSeg：内矩形右边，scLineSeg类型。</p></li>
+<li><p>innerRectBottomLineSeg：内矩形下边，scLineSeg类型。</p></li>
+<li><p>innerRectLeftLineSeg：内矩形左边，scLineSeg类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：矩形中线同心度计算结果，RectConcentricityCLResult类型</p></li>
+</ul>
+
+
+<h3>DistanceContour2Contour(line, FeatureletChainSetA, FeatureletChainSetB)</h3>
+
+<ul>
+<li><p>功能：用于计算轮廓到轮廓之间的距离，主要是与轮廓提取工具一起使用。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>line：直线，scLine类型。</p></li>
+<li><p>FeatureletChainSetA：轮廓A，scFeatureletChainSet类型，可以从轮廓提取工具的输出参数所有轮廓获得。</p></li>
+<li><p>FeatureletChainSetB：轮廓B，scFeatureletChainSet类型，可以从轮廓提取工具的输出参数所有轮廓获得。</p></li>
+</ul>
+</li>
+<li><p>返回值：计算结果，PointsSet2PointsSetDisResult类型。</p>
+
+<blockquote><p>注意：</p>
+
+<p>轮廓A与轮廓B在投影直线上的位置关系分为3种：轮廓A、B相互分离，无重叠；轮廓A、B相互重叠；轮廓A（B）包含于轮廓B（A），轮廓A为最上面的红线，轮廓B为右侧圆，如图3所示。</p>
+
+<p><img src="media/00de8559b75611a4cea84e43c7258a84.png" alt="无重叠" /></p>
+
+<p><imgnote>图3(a) 无重叠</imgnote></p>
+
+<p><img src="media/f0d8a05ce3ec707721644d6550a4668b.png" alt="有重叠" /></p>
+
+<p><imgnote>图3(b) 有重叠</imgnote></p>
+
+<p><img src="media/6097fb55b27a2987f2b67ed76dd03b75.png" alt="包含" /></p>
+
+<p><imgnote>图3&copy; 包含</imgnote></p>
+
+<p><imgnote>图3 点集A、B位置关系示意图</imgnote></p>
+
+<p>对于图3(a)所示情况，正常计算距离的最大最小值；对于3(b)所示情况，正常计算最大值，规定最小值为0；对于3&copy;所示情况，规定最大值、最小值均为0；</p></blockquote></li>
+</ul>
+
+
+<h3>DistanceMulPoint2Line(points, line, ratio)</h3>
+
+<ul>
+<li>功能：多点到直线距离工具的主要作用是计算图像上多个点到一条直线的垂直距离，并将图像上的距离换算成实际的距离。</li>
+</ul>
+
+
+<p><img src="media/bac1ae107bc9b84706c8870f843554f7.png" alt="" /></p>
+
+<p> <imgnote> 图4 多点到直线距离工具示意图</imgnote></p>
+
+<ul>
+<li><p>参数：</p>
+
+<ul>
+<li><p>points：输入点集，vector\&lt;sc2Vector>类型。</p></li>
+<li><p>line：直线，scLine类型。</p></li>
+<li><p>ratio：像素当量，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：计算结果，MulPoint2LineDisResult类型。</p></li>
+</ul>
+
+
+<h3>DistanceVctPoint2VctPoint(points1, points2, ratio)</h3>
+
+<ul>
+<li><p>功能：点集距离计算工具的主要作用是计算图像上两个点集对应点之间的直线距离，并可以将图像上的距离换算成实际的距离，输入的两个点集长度必须相同，否则计算失败。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>points1：点集1，vector\&lt;sc2Vector>类型。</p></li>
+<li><p>points2：点集2，vector\&lt;sc2Vector>类型。</p></li>
+<li><p>ratio：像素当量，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：距离计算结果，VctPoint2VctPointResult类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<ul>
+<li>除了多点到直线距离、点集距离计算，其他距离计算函数结果的含义和单位取决于输入几何元素所在的坐标系。如果是图像坐标系下，结果是图像上的距离，单位是像素（实际距离需要乘以像素当量进行转换）；平台坐标系下，结果是实际距离。例如线段到线段距离计算，输入的线段如果是图像坐标系下的，计算结果就是图像距离；如果是转换到平台坐标系下的，就是实际距离；对于点到点距离计算，输入的点如果是图像坐标系下的，计算结果就是图像距离；输入的点如果是转换到平台坐标下的，就是实际距离。</li>
+</ul>
+
+
+<h2>示例代码</h2>
+
+<ul>
+<li><p>圆到圆之间的距离：参见“\Samples\脚本工具\脚本工具圆到圆距离.gvp”。</p></li>
+<li><p>直线、线段相关的距离计算：参见“\Samples\脚本工具\脚本工具直线_线段距离.gvp”。</p></li>
+<li><p>点相关的距离计算：参见“\Samples\脚本工具\脚本工具点距离.gvp”。</p></li>
+<li><p>矩形相关同心度计算：参见“\Samples\脚本工具\脚本工具矩形同心度距离.gvp”。</p></li>
+<li><p>轮廓到轮廓的定向距离计算：参见“\Samples\脚本工具\脚本工具轮廓到轮廓定向距离工具.gvp”。</p></li>
+<li><p>多点到直线的距离计算：参见“\Samples\脚本工具\脚本工具多点到直线距离.gvp”。</p></li>
+<li><p>点集距离计算：参见“\Samples\脚本工具\脚本工具点集距离计算.gvp”。</p></li>
+</ul>
+

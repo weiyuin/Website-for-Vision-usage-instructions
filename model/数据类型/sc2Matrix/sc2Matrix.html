@@ -1,0 +1,131 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>sc2Matrix</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho ma trận 2×2, ví dụ như ma trận trong biến đổi tuyến tính hai chiều, hoặc ma trận trong kết quả hiệu chuẩn.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Khởi tạo</td>
+<td>sc2Matrix</td>
+<td>Hàm khởi tạo mặc định sc2Matrix()</td>
+</tr>
+<tr>
+<td></td>
+<td>sc2Matrix</td>
+<td>Hàm khởi tạo sc2Matrix(a00, a01, a10, a11)</td>
+</tr>
+<tr>
+<td>Hàm</td>
+<td>GetElement</td>
+<td>Lấy phần tử trong ma trận</td>
+</tr>
+<tr>
+<td></td>
+<td>SetElement</td>
+<td>Gán giá trị cho phần tử trong ma trận</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Chi tiết</h2>
+
+<h3>sc2Matrix()</h3>
+
+<ul>
+<li>Chức năng: Tạo đối tượng sc2Matrix, các phần tử của ma trận được khởi tạo mặc định như sau:
+<blockquote>
+<p>|1.0  0.0|</p>
+<p>|0.0  1.0|</p>
+</blockquote>
+</li>
+<li>Tham số: Không có</li>
+<li>Trả về: Không có</li>
+</ul>
+
+<h3>sc2Matrix(a00, a01, a10, a11)</h3>
+
+<ul>
+<li>Chức năng: Tạo đối tượng sc2Matrix với các phần tử cụ thể:
+<blockquote>
+<p>|a00  a01|</p>
+<p>|a10  a11|</p>
+</blockquote>
+</li>
+<li>Tham số:
+  <ul>
+    <li>a00: Phần tử hàng 1 cột 1, kiểu float</li>
+    <li>a01: Phần tử hàng 1 cột 2, kiểu float</li>
+    <li>a10: Phần tử hàng 2 cột 1, kiểu float</li>
+    <li>a11: Phần tử hàng 2 cột 2, kiểu float</li>
+  </ul>
+</li>
+<li>Trả về: Không có</li>
+</ul>
+
+<h3>GetElement(row, col)</h3>
+
+<ul>
+<li>Chức năng: Lấy giá trị phần tử ở hàng <code>row</code>, cột <code>col</code> trong ma trận. Chỉ số bắt đầu từ 0.</li>
+<li>Tham số:
+  <ul>
+    <li>row: Số thứ tự hàng (bắt đầu từ 0), kiểu int</li>
+    <li>col: Số thứ tự cột (bắt đầu từ 0), kiểu int</li>
+  </ul>
+</li>
+<li>Ví dụ: Lấy phần tử hàng 1 cột 1 → <code>GetElement(0, 0)</code></li>
+<li>Trả về: Kiểu float</li>
+</ul>
+
+<h3>SetElement(row, col, value)</h3>
+
+<ul>
+<li>Chức năng: Thiết lập giá trị cho phần tử trong ma trận</li>
+<li>Tham số:
+  <ul>
+    <li>row: Số thứ tự hàng cần đặt, bắt đầu từ 0, kiểu int</li>
+    <li>col: Số thứ tự cột cần đặt, bắt đầu từ 0, kiểu int</li>
+    <li>value: Giá trị cần đặt, kiểu float</li>
+  </ul>
+</li>
+<li>Ví dụ: Đặt giá trị 0.5 cho phần tử hàng 2 cột 1 → <code>SetElement(1, 0, 0.5)</code></li>
+<li>Trả về: Kiểu bool, thể hiện thiết lập có thành công hay không</li>
+</ul>
+
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

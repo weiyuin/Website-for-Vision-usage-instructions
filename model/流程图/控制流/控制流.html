@@ -1,0 +1,78 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Luồng điều khiển</h1>
+
+<p>Luồng điều khiển dùng để xử lý logic trong biểu đồ luồng, gồm có vận hành song song, phân nhánh hợp nhất, vòng lặp và dừng vòng lặp.</p>
+
+<ul>
+<li><p>Vận hành song song</p>
+
+<ul>
+<li><p>Các nhánh độc lập chạy đồng bộ, mỗi lần thực hiện tất cả các nhánh;</p></li>
+<li><p>Không cần thiết lập điều kiện thực thi;</p></li>
+</ul>
+</li>
+</ul>
+
+<p><img src="media/ControlFlow_1_1.png" alt="" /></p>
+
+<ul>
+<li><p>Phân nhánh hợp nhất</p>
+
+<ul>
+<li><p>Các nhánh thực thi độc lập lẫn nhau, mỗi lần thực thi tối đa 1 nhánh;</p></li>
+<li><p>Mỗi nhánh cần thiết lập điều kiện thực thi, chỉ khi thỏa điều kiện mới thực thi;</p></li>
+<li><p>Nhấp đúp vào đường link đầu tiên của mỗi nhánh để thêm biểu thức điều kiện, khi thỏa điều kiện sẽ thực thi nhánh đó;</p></li>
+</ul>
+</li>
+</ul>
+
+<p><img src="media/ControlFlow_1_2.png" alt="" /></p>
+
+<ul>
+<li>Vòng lặp
+
+<ul>
+<li><p>Cần thiết lập biến vòng lặp, điều kiện vòng lặp và điều kiện kết thúc vòng lặp;</p>
+
+<p><img src="media/ControlFlow_1_3.png" alt="" /></p></li>
+<li><p>Nhấp đúp vào vị trí ① của đối tượng, vị trí ② của đường link hoặc vị trí ③ của đối tượng để mở giao diện thiết lập vòng lặp;</p>
+
+<p><img src="media/ControlFlow_1_4.png" alt="" /></p>
+
+<blockquote><p>Quy tắc cú pháp vòng lặp</p>
+
+<p>(1) Tuân thủ quy tắc viết biểu thức, hỗ trợ các phép toán ba ngôi như ”=, +, -“, hỗ trợ các phép so sánh hai ngôi như ”==, !=“, không hỗ trợ phép tăng giảm một ngôi như ”++, –“;</p>
+
+<p>(2) Hỗ trợ biến toàn cục @, biến cục bộ #, đầu vào/đầu ra công cụ, hỗ trợ gợi ý nhập;</p>
+
+<p>(3) Sau khi nhập biểu thức sẽ kiểm tra cú pháp và ngữ pháp, không được nhập ký tự vô nghĩa hoặc ký tự đặc biệt (ví dụ “;”);</p>
+
+<p>(4) Tất cả các thiết lập biểu thức không được để trống;</p>
+
+<p>(5) Khi tạo mới điều khiển ”vòng lặp“, tất cả các thiết lập vòng lặp để trống sẽ không thực thi.</p></blockquote></li>
+<li><p>Khi thiết lập thành công, trong biểu đồ luồng tại vị trí ①, ② và ③ sẽ hiển thị dấu ✓.</p>
+
+<p><img src="media/ControlFlow_1_5.png" alt="" /></p></li>
+<li><p>Dừng vòng lặp: Thiết lập điều kiện để dừng vòng lặp; nhấp đúp vào đối tượng để thêm biểu thức điều kiện.</p>
+
+<p><img src="media/ControlFlow_1_6.png" alt="" /></p></li>
+</ul>
+</li>
+</ul>

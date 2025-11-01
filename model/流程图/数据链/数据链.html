@@ -1,0 +1,911 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Chuỗi dữ liệu</h1>
+
+<p>Chuỗi dữ liệu là liên kết dữ liệu giữa các công cụ trong biểu đồ luồng, dùng để truyền dữ liệu giữa công cụ với công cụ, công cụ với biến.</p>
+
+<h2>Giới thiệu cửa sổ chỉnh sửa chuỗi dữ liệu</h2>
+
+<ul>
+<li>Mở cửa sổ chỉnh sửa: Nhấp đúp vào bất kỳ công cụ nào sẽ hiện cửa sổ chỉnh sửa chuỗi dữ liệu của công cụ đó, như hình minh họa: bao gồm dữ liệu đầu vào, dữ liệu đầu ra, các lựa chọn dự phòng dữ liệu đầu vào 1 và 2, checkbox mở rộng mục con, lọc và thêm hằng số, v.v.</li>
+</ul>
+
+<p><img src="media/Pipe_1_1.png" alt="" /></p>
+
+<ul>
+<li>Mở rộng mục con: Tích chọn checkbox “Mở rộng mục con”, như hình trên, một công cụ có thông số pixel tương đương liên kết tới kết quả hiệu chuẩn trục x pixel tương đương. Mặc định không tích chọn, như hình dưới đây. Nếu muốn xem các mục con của tham số nào đó của công cụ mà không cần mở công cụ đó để bật mở rộng mục con, có thể tích checkbox này, khi đó sẽ hiển thị tất cả các công cụ thỏa điều kiện trong dự án hiện tại, cùng các tham số có thể liên kết và một số mục con của tham số đó.</li>
+</ul>
+
+<p><img src="media/Pipe_1_12.png" alt="" /></p>
+
+<ul>
+<li><p>Chọn tham số: Trong danh sách tham số đầu vào chọn một tham số, ví dụ “Ảnh đầu vào” như hình, bên phải danh sách “Lựa chọn dữ liệu đầu vào” sẽ liệt kê tất cả các tham số cùng loại có thể phù hợp. Nguồn tham số có thể là tham số công cụ, biến, hằng số.</p></li>
+<li><p>Thêm liên kết tham số: Trong danh sách lựa chọn dữ liệu đầu vào, nhấp đúp chuột vào tham số mong muốn sẽ tạo liên kết. Tham số liên kết sẽ tự động thêm vào danh sách tham số đầu vào, hiển thị dạng → sau tham số tương ứng.</p></li>
+</ul>
+
+<p><img src="media/Pipe_1_2.png" alt="" /></p>
+
+<ul>
+<li><p>Xóa liên kết tham số: Chọn chuỗi tham số muốn xóa, chuột phải chọn “Xóa” để gỡ liên kết.</p></li>
+<li><p>Chức năng lọc: Khi có nhiều nguồn tham số, có thể dùng ô nhập để lọc, như hình:</p>
+
+<ul>
+<li><p>Trước khi lọc</p>
+
+<p><img src="media/Pipe_1_3.png" alt="" /></p></li>
+<li><p>Sau khi lọc</p>
+
+<p><img src="media/Pipe_1_4.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p>Giải thích quy tắc liên kết: Để đảm bảo truyền dữ liệu đúng thứ tự, tránh hỗn loạn về thời gian, quy định các giới hạn sau, dữ liệu không thỏa sẽ không xuất hiện trong danh sách lựa chọn tham số.</p>
+
+<ul>
+<li><p>Luồng tuần tự, công cụ chỉ được phép liên kết tham số từ công cụ phía trên</p>
+
+<ul>
+<li><p>Luồng phân nhánh, công cụ được phép liên kết tham số từ công cụ phía trên và công cụ trong các nhánh khác</p></li>
+<li><p>Luồng song song, công cụ chỉ được phép liên kết tham số công cụ phía trên, không được phép liên kết tham số từ các nhánh khác</p></li>
+<li><p>Luồng vòng lặp, công cụ chỉ được phép liên kết tham số công cụ phía trên</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p><img src="media/Pipe_1_5.png" alt="" /></p>
+
+<ul>
+<li>Chức năng hằng số: Nếu công cụ cần nhập một giá trị không thay đổi, có thể nhập giá trị đó vào ô thêm hằng số, rồi nhấn nút thêm hằng số như hình minh họa.</li>
+</ul>
+
+<p><img src="media/Pipe_1_6.png" alt="" /></p>
+
+<ul>
+<li><p>Chức năng tham số toàn cục: Nếu cần truyền tham số giữa các dự án, phải sử dụng tham số toàn cục (truyền biến toàn cục giữa các dự án).</p>
+
+<ul>
+<li><p>Tạo một tham số toàn cục: Mở cửa sổ chỉnh sửa chuỗi dữ liệu, trong danh sách tham số đầu ra nhấp chuột phải vào tham số cần dùng làm tham số toàn cục, chọn “Công khai thành tham số toàn cục”. Nếu muốn hủy chức năng toàn cục của tham số này, cũng nhấp chuột phải và chọn “Hủy công khai”.</p></li>
+<li><p>Công khai thành tham số toàn cục</p>
+
+<p><img src="media/Pipe_1_7.png" alt="" /></p></li>
+<li><p>Hủy công khai</p>
+
+<p><img src="media/Pipe_1_8.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p>Liên kết tham số toàn cục: Trong một dự án khác, nếu cần sử dụng tham số toàn cục “Điểm kết thúc đo” như hình trên, nhấp đúp công cụ cần dùng tham số, tìm tham số trong danh sách dữ liệu đầu vào dự phòng, nhấp đúp để thêm.</p>
+
+<p><img src="media/Pipe_1_9.png" alt="" /></p></li>
+<li><p>Chức năng mở rộng tham số con: Khi tham số của công cụ không thể dùng trực tiếp bởi công cụ khác mà cần xử lý phân tích, tạo mới, chuyển đổi trung gian, có thể dùng chức năng mở rộng tham số con.</p>
+
+<ul>
+<li><p>Mở rộng tham số con: Mở cửa sổ chỉnh sửa chuỗi dữ liệu, nhấp chuột phải vào tham số cần mở rộng, nếu menu hiện “Mở rộng mục con” thì tham số này hỗ trợ mở rộng tham số con, chỉ cần chọn tham số con muốn mở rộng trong mục con đó là tham số sẽ tự thêm vào danh sách tham số; nếu không có “Mở rộng mục con” trong menu, tham số này không hỗ trợ mở rộng.</p>
+
+<p><img src="media/Pipe_1_10.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p>Liên kết tham số con: Tham số con đã thêm vào danh sách sử dụng như tham số khác.</p>
+
+<ul>
+<li><p>Xóa tham số con: Mở cửa sổ chỉnh sửa chuỗi dữ liệu, nhấp chuột phải tham số con cần xóa, chọn “Xóa mục con” trong menu để loại bỏ tham số đó khỏi danh sách.</p>
+
+<p><img src="media/Pipe_1_11.png" alt="" /></p></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Bảng chi tiết các loại tham số con 1 (Cấu trúc dữ liệu cơ bản)</h2>
+
+<table>
+<thead>
+<tr>
+<th> Loại tham số             </th>
+<th> Mô tả tham số             </th>
+<th> Tên tham số con           </th>
+<th> Loại tham số con          </th>
+<th> Mô tả tham số con         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> scLineSegment           </td>
+<td> Đoạn thẳng              </td>
+<td> P1                      </td>
+<td> scPlanarVector          </td>
+<td> Điểm đầu đoạn thẳng      </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> P2                      </td>
+<td> scPlanarVector          </td>
+<td> Điểm cuối đoạn thẳng     </td>
+</tr>
+<tr>
+<td> GcCoordPos              </td>
+<td> Vị trí và tư thế         </td>
+<td> PosX                    </td>
+<td> double                  </td>
+<td> Tọa độ X vị trí          </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> PosY                    </td>
+<td> double                  </td>
+<td> Tọa độ Y vị trí          </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> PosD                    </td>
+<td> double                  </td>
+<td> Góc vị trí               </td>
+</tr>
+<tr>
+<td> GcPlatformAxisDirection </td>
+<td> Hướng trục              </td>
+<td> DirX                    </td>
+<td> bool                    </td>
+<td> Hướng trục X            </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> DirY                    </td>
+<td> bool                    </td>
+<td> Hướng trục Y            </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> DirD                    </td>
+<td> bool                    </td>
+<td> Hướng trục D            </td>
+</tr>
+<tr>
+<td> scSquareMatrix2X2       </td>
+<td> Ma trận cấp 2           </td>
+<td> M00                     </td>
+<td> double                  </td>
+<td> Giá trị hàng 0 cột 0     </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> M01                     </td>
+<td> double                  </td>
+<td> Giá trị hàng 0 cột 1     </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> M10                     </td>
+<td> double                  </td>
+<td> Giá trị hàng 1 cột 0     </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> M11                     </td>
+<td> double                  </td>
+<td> Giá trị hàng 1 cột 1     </td>
+</tr>
+<tr>
+<td> scCircle                </td>
+<td> Hình tròn                </td>
+<td> Center                  </td>
+<td> scPlanarVector          </td>
+<td> Tâm hình tròn           </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> Radius                  </td>
+<td> double                  </td>
+<td> Bán kính                </td>
+</tr>
+<tr>
+<td> scCircularArc           </td>
+<td> Cung tròn                </td>
+<td> Circle                  </td>
+<td> scCircle                </td>
+<td> Hình tròn chứa cung     </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> StartPhi                </td>
+<td> scRadian                </td>
+<td> Góc bắt đầu (radian)     </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> SpanPhi                 </td>
+<td> scRadian                </td>
+<td> Góc kết thúc (radian)    </td>
+</tr>
+<tr>
+<td> scEllipse               </td>
+<td> Hình elip                </td>
+<td> Center                  </td>
+<td> scPlanarVector          </td>
+<td> Tâm elip                </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> Radii                   </td>
+<td> scPlanarVector          </td>
+<td> Chiều dài trục lớn và nhỏ</td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> Rotation                </td>
+<td> scRadian                </td>
+<td> Góc xoay (radian)        </td>
+</tr>
+<tr>
+<td> scGeomSearchResult      </td>
+<td> Kết quả định vị hình học  </td>
+<td> t2XFormLinear           </td>
+<td> sc2XformLinear          </td>
+<td> Biến đổi tuyến tính 2D   </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> MatchRegion             </td>
+<td> scAffineRectangular     </td>
+<td> Vùng khớp               </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> MatchPoint              </td>
+<td> scPlanarVector          </td>
+<td> Điểm khớp               </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> Score                   </td>
+<td> double                  </td>
+<td> Điểm số                 </td>
+</tr>
+<tr>
+<td> scLine                  </td>
+<td> Đường thẳng              </td>
+<td> Dir                     </td>
+<td> scPlanarVector          </td>
+<td> Vector hướng đường thẳng</td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> Pos                     </td>
+<td> scPlanarVector          </td>
+<td> Điểm đi qua đường thẳng </td>
+</tr>
+<tr>
+<td> scRectangular           </td>
+<td> Hình chữ nhật            </td>
+<td> UpLeft                  </td>
+<td> scPlanarVector          </td>
+<td> Góc trên bên trái hình chữ nhật</td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> Size                    </td>
+<td> scPlanarVector          </td>
+<td> Kích thước hình chữ nhật</td>
+</tr>
+<tr>
+<td> scAffineRectangular     </td>
+<td> Hình chữ nhật affine     </td>
+<td> OriginPoint             </td>
+<td> scPlanarVector          </td>
+<td> Gốc hình chữ nhật affine (góc trên trái)</td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> XLen                    </td>
+<td> double                  </td>
+<td> Chiều dài theo hướng X  </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> YLen                    </td>
+<td> double                  </td>
+<td> Chiều dài theo hướng Y  </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> Rotation                </td>
+<td> scRadian                </td>
+<td> Góc xoay (radian)        </td>
+</tr>
+<tr>
+<td>                         </td>
+<td>                         </td>
+<td> Skew                    </td>
+<td> scRadian                </td>
+<td> Độ cắt xéo (radian)      </td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Bảng chi tiết các loại tham số 2 (Kết quả công cụ đầu ra)</h2>
+
+<table>
+<thead>
+<tr>
+<th> Loại tham số               </th>
+<th> Mô tả tham số           </th>
+<th> Tên tham số con              </th>
+<th> Loại tham số con               </th>
+<th> Mô tả tham số con                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> DMSingleReaderResult   </td>
+<td> Kết quả đọc mã DM       </td>
+<td> Area                    </td>
+<td> scPolyline               </td>
+<td> Vùng đa giác                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> P0                      </td>
+<td> scPlanarVector           </td>
+<td> Điểm 0 của mã DM                          </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> String                  </td>
+<td> string                   </td>
+<td> Chuỗi giải mã                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> StringType              </td>
+<td> string                   </td>
+<td> Loại chuỗi giải mã                   </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> IsLightOnDark           </td>
+<td> bool                     </td>
+<td> Có phải mã sáng trên nền tối             </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> DMSize                  </td>
+<td> string                   </td>
+<td> Kích thước 2D                           </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> DMEccType               </td>
+<td> string                   </td>
+<td> Loại ECC                          </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> DMCellSize              </td>
+<td> int                      </td>
+<td> Kích thước ô CELL                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> StringLen               </td>
+<td> int                      </td>
+<td> Độ dài chuỗi giải mã                   </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Grade                   </td>
+<td> string                   </td>
+<td> Cấp độ mã vạch                         </td>
+</tr>
+<tr>
+<td> VW_EdgeDeviation       </td>
+<td> Kết quả phát hiện biên         </td>
+<td> PosX                    </td>
+<td> double                   </td>
+<td> Tọa độ X vị trí lệch                  </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> PosY                    </td>
+<td> double                   </td>
+<td> Tọa độ Y vị trí lệch                  </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Area                    </td>
+<td> double                   </td>
+<td> Diện tích lệch                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Size                    </td>
+<td> double                   </td>
+<td> Kích thước lệch                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> StartCalipIndex         </td>
+<td> int                      </td>
+<td> Số thứ tự thước đo bắt đầu lệch                 </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> EndCalipIndex           </td>
+<td> int                      </td>
+<td> Số thứ tự thước đo kết thúc lệch                 </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> DeviationType           </td>
+<td> DeviationType            </td>
+<td> Loại lệch                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> EndCalipIndex           </td>
+<td> int                      </td>
+<td> Số thứ tự loại lệch                     </td>
+</tr>
+<tr>
+<td> GcCalibrateResult      </td>
+<td> Kết quả hiệu chuẩn           </td>
+<td> PosImage                </td>
+<td> GcCoordPos               </td>
+<td> Tọa độ điểm tham chiếu trên ảnh                   </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> PosPlatform             </td>
+<td> GcCoordPos               </td>
+<td> Tọa độ điểm tham chiếu trên nền tảng                   </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> ImgRadioX               </td>
+<td> double                   </td>
+<td> Đơn vị điểm ảnh hướng X                    </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> ImgRadioY               </td>
+<td> double                   </td>
+<td> Đơn vị điểm ảnh hướng Y                    </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> AngleImgPlat            </td>
+<td> double                   </td>
+<td> Góc giữa trục X hệ ảnh và hệ nền tảng  </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> AnglePlatformShear      </td>
+<td> double                   </td>
+<td> Góc lệch trục Y hệ nền tảng với vuông góc 90 độ    </td>
+</tr>
+<tr>
+<td> SingleLinearCodeResult </td>
+<td> Kết quả nhận dạng mã vạch       </td>
+<td> OutLineSeg              </td>
+<td> scLineSegment            </td>
+<td> Đoạn thẳng trên mã vạch                     </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Result                  </td>
+<td> string                   </td>
+<td> Kết quả nhận dạng                     </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Type                    </td>
+<td> string                   </td>
+<td> Loại kết quả nhận dạng                 </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> IsLightInDark           </td>
+<td> bool                     </td>
+<td> Cực tính mã vạch (mã sáng trên nền tối) </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> CodeType                </td>
+<td> string                   </td>
+<td> Loại mã vạch                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Grade                   </td>
+<td> string                   </td>
+<td> Cấp độ mã vạch                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Orientation             </td>
+<td> float                    </td>
+<td> Hướng mã vạch                         </td>
+</tr>
+<tr>
+<td> scPatSearchMaxResult   </td>
+<td> Kết quả định vị vùng       </td>
+<td> Pos                     </td>
+<td> scPlanarVector           </td>
+<td> Tâm khớp                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Rotate                  </td>
+<td> double                   </td>
+<td> Góc xoay                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Scale                   </td>
+<td> double                   </td>
+<td> Hệ số tỉ lệ                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> MatchRegion             </td>
+<td> scAffineRectangular      </td>
+<td> Vùng khớp                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> t2XFormLinear           </td>
+<td> sc2XformLinear           </td>
+<td> Biến đổi tuyến tính 2D                     </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Score                   </td>
+<td> double                   </td>
+<td> Điểm khớp                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> Accepted                </td>
+<td> bool                     </td>
+<td> Có đạt điều kiện chấp nhận không                 </td>
+</tr>
+<tr>
+<td> scCaliperOneEdgeResult </td>
+<td> Kết quả thước đo một bên       </td>
+<td> Score                   </td>
+<td> double                   </td>
+<td> Điểm đánh giá                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> CenterX                 </td>
+<td> double                   </td>
+<td> Tọa độ trung tâm X                      </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> CenterY                 </td>
+<td> double                   </td>
+<td> Tọa độ trung tâm Y                      </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> EdgePos                 </td>
+<td> double                   </td>
+<td> Vị trí cạnh đo                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> EdgeType                </td>
+<td> scCaliperEdgeType        </td>
+<td> Loại cạnh đo                          </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> EdgeGray                </td>
+<td> double                   </td>
+<td> Độ sáng cạnh đo                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> PeakToPeak              </td>
+<td> double                   </td>
+<td> Độ tương phản đo                        </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> EdgeScore               </td>
+<td> double                   </td>
+<td> Điểm cạnh đo                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> LowEdgeScore            </td>
+<td> double                   </td>
+<td> Điểm cạnh thấp                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> EdgePosGuessed          </td>
+<td> double                   </td>
+<td> Vị trí đo đoán                             </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> EdgePosSearched         </td>
+<td> double                   </td>
+<td> Vị trí đo tìm được                           </td>
+</tr>
+<tr>
+<td> scAOIResult            </td>
+<td> Kết quả tổng thể vùng AOI     </td>
+<td> bEnableFailType          </td>
+<td> bool                     </td>
+<td> Cho phép kết quả loại lỗi (NG)               </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> nFailTypeCount           </td>
+<td> int                      </td>
+<td> Số loại lỗi                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> nFailTypeArray           </td>
+<td> int[]                    </td>
+<td> Mảng các loại lỗi                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> bEnableResult            </td>
+<td> bool                     </td>
+<td> Cho phép kết quả tổng thể                    </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> bResult                  </td>
+<td> bool                     </td>
+<td> Kết quả tổng thể                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> ResultCount              </td>
+<td> int                      </td>
+<td> Số kết quả con                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> ResultArray              </td>
+<td> object[]                 </td>
+<td> Mảng kết quả con                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> ResultType               </td>
+<td> int                      </td>
+<td> Loại kết quả tổng thể                     </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> bEnableOverlay           </td>
+<td> bool                     </td>
+<td> Cho phép ghi đè lên ảnh                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> OverlayColor             </td>
+<td> int                      </td>
+<td> Màu ghi đè                          </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> OverlayLineWidth         </td>
+<td> int                      </td>
+<td> Độ dày nét ghi đè                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> OverlayTextSize          </td>
+<td> int                      </td>
+<td> Kích thước chữ ghi đè                    </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> OverlayTextPoint         </td>
+<td> scPlanarVector           </td>
+<td> Tọa độ điểm ghi đè chữ                  </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> OverlayText              </td>
+<td> string                   </td>
+<td> Nội dung chữ ghi đè                   </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> bEnableSerialText        </td>
+<td> bool                     </td>
+<td> Cho phép chữ số seri                    </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialTextSize           </td>
+<td> int                      </td>
+<td> Kích thước chữ số seri                   </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialTextColor          </td>
+<td> int                      </td>
+<td> Màu chữ số seri                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialTextPoint          </td>
+<td> scPlanarVector           </td>
+<td> Tọa độ điểm chữ số seri                    </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialTextString         </td>
+<td> string                   </td>
+<td> Nội dung chữ số seri                    </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> bEnableSerialNumber      </td>
+<td> bool                     </td>
+<td> Cho phép số seri                         </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialNumber             </td>
+<td> int                      </td>
+<td> Số seri                             </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> bEnableSerialImage       </td>
+<td> bool                     </td>
+<td> Cho phép ảnh số seri                       </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialImage              </td>
+<td> IntPtr                   </td>
+<td> Ảnh số seri                          </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialImageWidth         </td>
+<td> int                      </td>
+<td> Chiều rộng ảnh số seri                      </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialImageHeight        </td>
+<td> int                      </td>
+<td> Chiều cao ảnh số seri                      </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialImageStride        </td>
+<td> int                      </td>
+<td> Bước nhảy ảnh số seri                     </td>
+</tr>
+<tr>
+<td>                        </td>
+<td>                    </td>
+<td> SerialImageFormat       </td>
+<td> int                      </td>
+<td> Định dạng ảnh số seri                    </td>
+</tr>
+</tbody>
+</table>

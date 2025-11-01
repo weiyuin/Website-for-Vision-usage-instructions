@@ -1,0 +1,171 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Biến Đổi Affine Đám Mây Điểm</h1>
+
+<h2>Chức năng</h2>
+
+<p>Công cụ biến đổi affine đám mây điểm chủ yếu được dùng để thực hiện biến đổi affine trên ảnh độ sâu đầu vào, xuất ra ảnh sau khi biến đổi để phục vụ xử lý tiếp theo. Các thao tác affine hỗ trợ bao gồm: tịnh tiến, xoay, và thu phóng.</p>
+
+<p><img src="media/wps3.jpg" alt="img" /><img src="media/wps4.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Ảnh đầu vào</imgnote> <imgnote>(b) Ảnh đầu ra</imgnote>
+<imgnote>Hình 1 Minh họa công cụ biến đổi affine đám mây điểm</imgnote></p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th> Tên tham số    </th>
+<th> Mô tả tham số                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Cửa sổ thuộc tính </td>
+<td> Loại góc xoay </td>
+<td> Xoay ảnh độ sâu gốc theo góc ngược chiều kim đồng hồ, có 5 kiểu góc: 0 độ, 90 độ, 180 độ, 270 độ và góc tùy chỉnh. </td>
+</tr>
+<tr>
+<td></td>
+<td> Góc xoay </td>
+<td> Góc xoay do người dùng tự thiết lập, chỉ áp dụng khi chọn “góc tùy chỉnh”. </td>
+</tr>
+<tr>
+<td></td>
+<td> Loại phản chiếu </td>
+<td> Áp dụng phản chiếu cho ảnh độ sâu gốc, gồm 4 kiểu: không phản chiếu, phản chiếu ngang, phản chiếu dọc và cả ngang + dọc. </td>
+</tr>
+<tr>
+<td></td>
+<td> Có tịnh tiến không </td>
+<td> Chọn “Có” để thực hiện tịnh tiến sau xoay và phản chiếu. </td>
+</tr>
+<tr>
+<td></td>
+<td> Độ tịnh tiến theo trục X </td>
+<td> Mức độ dịch chuyển theo hướng X trong phép tịnh tiến, đơn vị pixel. </td>
+</tr>
+<tr>
+<td></td>
+<td> Độ tịnh tiến theo trục Y </td>
+<td> Mức độ dịch chuyển theo hướng Y trong phép tịnh tiến, đơn vị pixel. </td>
+</tr>
+<tr>
+<td></td>
+<td> Kiểu điền pixel </td>
+<td> Có 3 kiểu: không điền, điền giá trị cố định, điền theo giá trị lân cận. Dùng để lấp đầy vùng không hợp lệ sau biến đổi affine. Kích hoạt khi có xoay tùy chỉnh hoặc tịnh tiến. </td>
+</tr>
+<tr>
+<td></td>
+<td> Giá trị điền pixel </td>
+<td> Có hiệu lực khi kiểu điền là “giá trị cố định”, giá trị trong khoảng [-32768, 32767]. </td>
+</tr>
+<tr>
+<td></td>
+<td> Bật thu phóng </td>
+<td> Chọn “Có” để thực hiện thu phóng sau các biến đổi khác. </td>
+</tr>
+<tr>
+<td></td>
+<td> Hệ số thu phóng X </td>
+<td> Hệ số thu phóng theo trục X, giá trị nằm trong khoảng [0.01, 2]. </td>
+</tr>
+<tr>
+<td></td>
+<td> Hệ số thu phóng Y </td>
+<td> Hệ số thu phóng theo trục Y, giá trị nằm trong khoảng [0.01, 2]. </td>
+</tr>
+<tr>
+<td> Cửa sổ hình ảnh </td>
+<td> Ảnh độ sâu đầu vào </td>
+<td> Hiển thị ảnh độ sâu cần biến đổi. </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu </td>
+<td> Ảnh độ sâu đầu vào </td>
+<td> Ảnh độ sâu cần được thực hiện biến đổi. </td>
+</tr>
+<tr>
+<td> Giao diện nâng cao </td>
+<td> Không có </td>
+<td> Không có </td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th>Tên tham số </th>
+<th>Mô tả tham số                                                                                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Cửa sổ giám sát </td>
+<td> Ảnh độ sâu đầu ra </td>
+<td> Kích thước chiều dài, chiều rộng và độ phân giải của ảnh độ sâu đầu ra, cùng với các tham số dữ liệu độ sâu. </td>
+</tr>
+<tr>
+<td></td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ. </td>
+</tr>
+<tr>
+<td></td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ. </td>
+</tr>
+<tr>
+<td> Cửa sổ hình ảnh </td>
+<td> Ảnh độ sâu đầu ra </td>
+<td> Hiển thị ảnh kết quả thực thi của công cụ, giống với thông số ảnh độ sâu đầu ra trong cửa sổ giám sát. </td>
+</tr>
+<tr>
+<td></td>
+<td> Kết quả thực thi </td>
+<td> Hiển thị kết quả thực thi của công cụ, nếu thành công sẽ hiển thị "OK", thất bại hiển thị "NG", giống với tham số kết quả thực thi trong cửa sổ giám sát. </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu </td>
+<td> Ảnh độ sâu đầu ra </td>
+<td> Ảnh độ sâu sau khi xoay được xuất ra để sử dụng cho các công cụ khác. </td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\点云仿射变换工具.gvp”。</p>

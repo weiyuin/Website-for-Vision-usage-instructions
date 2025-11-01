@@ -1,0 +1,150 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Quản lý Camera 3D</h1>
+
+<h2>1. Giới thiệu chức năng</h2>
+
+<p>Module quản lý camera 3D tích hợp bộ công cụ phát triển (SDK) cho nhiều loại camera, giúp phần mềm VA hỗ trợ việc thu nhận ảnh và điều chỉnh tham số từ nhiều loại camera 3D.</p>
+
+<p>Hiện tại hỗ trợ 8 loại camera:<br />
+Camera quét dòng: SSZN, Keyence, SmartRay, LMI, FocalSpec;<br />
+Camera ma trận: LCubor, RVC;<br />
+Camera laser điểm: Dòng Hypersen SF2000.</p>
+
+<h2>2. Hướng dẫn sử dụng</h2>
+
+<h3>2.1 Kết nối camera</h3>
+
+<p>Có hai cách kết nối camera:</p>
+
+<p>- **Kết nối tự động**: Sau khi phần cứng camera được kết nối, phần mềm sẽ tự động nhận diện và kết nối camera, ví dụ các loại như FocalSpec, LCubor, RVC.</p>
+
+<p>- **Kết nối thủ công qua cấu hình IP**: Sau khi phần cứng camera được kết nối, cần mở giao diện cấu hình IP trong phần quản lý camera 3D để thiết lập loại camera và IP. Các bước như hình dưới:</p>
+
+<p><img src="media/手动配置IP.gif" alt="Cấu hình IP thủ công" /></p>
+
+<h3>2.2 Cài đặt tham số</h3>
+
+<p>Các tham số được chia làm 4 mục:</p>
+
+<ul>
+<li>**Thiết lập kích hoạt (Trigger)**: Bao gồm chế độ kích hoạt, số dòng quét, độ phân giải, IO trigger, data trigger,...</li>
+<li>**Thiết lập chụp ảnh**: Gồm các thông số hình ảnh như phơi sáng, độ lợi (gain), loại vật liệu,...</li>
+<li>**Thiết lập phần mềm**: Gồm các tiền xử lý như lọc, làm mượt, bù thiếu,...</li>
+<li>**Thiết lập khác**: Bao gồm chọn công thức, lưu file tham số, góc lắp đặt camera,...</li>
+</ul>
+
+<p>Khi di chuột đến tên tham số, phần mô tả ở góc dưới bên trái sẽ hiện giải thích đơn giản về chức năng, như hình:</p>
+
+<p><img src="media/2_2.gif" alt="" /></p>
+
+<h3>2.3 Hiển thị hình ảnh</h3>
+
+<p>Module quản lý camera 3D có thể hiển thị 5 loại hình ảnh (tùy camera sẽ hiển thị khác nhau):</p>
+
+<p>- **Ảnh độ sâu**: Hiển thị khung ảnh đơn lẻ, hiển thị thông tin chiều cao theo tọa độ XY.</p>
+<p><img src="media/2_3_1.jpg" alt="" /></p>
+
+<p>- **Ảnh độ sáng laser**: Ảnh laser từ camera quét dòng ở chế độ real-time, dạng ảnh xám, dùng để điều chỉnh khoảng cách làm việc.</p>
+<p><img src="media/2_3_2.jpg" alt="" /></p>
+
+<p>- **Ảnh biên dạng**: Ảnh biên từ camera quét dòng ở chế độ real-time, trục Y là chiều cao thực tế, cũng dùng điều chỉnh khoảng cách làm việc.</p>
+<p><img src="media/2_3_3.jpg" alt="" /></p>
+
+<p>- **Ảnh xám**: Ảnh khung đơn lẻ, hiển thị giá trị độ sáng tại các điểm XY.</p>
+<p><img src="media/2_3_4.jpg" alt="" /></p>
+
+<p>- **Dữ liệu chiều cao/độ dày**: Chỉ dùng cho camera laser điểm, hiển thị độ cao của điểm.</p>
+<p><img src="media/2_3_5.png" alt="" /></p>
+
+<h3>2.4 Lưu hình ảnh</h3>
+
+<p>Hỗ trợ lưu ảnh độ sâu và ảnh xám:</p>
+
+<p>- Sau khi camera thu ảnh độ sâu, nhấn nút "保存深度图像" (Lưu ảnh độ sâu) ở góc phải trên để lưu với định dạng BMP.</p>
+
+<p>- Đối với ảnh xám, click chuột phải vào cửa sổ ảnh và chọn “保存图像” (Lưu ảnh) để lưu lại (định dạng BMP).</p>
+
+<h2>3. Các sự cố thường gặp</h2>
+
+<h3>3.1 Không kết nối được camera</h3>
+
+<p>Các bước kiểm tra:</p>
+
+<ol>
+<li>Kiểm tra xem camera/bộ điều khiển đã cấp điện chưa</li>
+<li>Đảm bảo đã cài đúng phần mềm driver cho camera</li>
+<li>Kiểm tra IP máy tính có cùng lớp mạng với IP camera hay không</li>
+<li>Tắt tường lửa Windows</li>
+</ol>
+
+<p><img src="media/3_1.png" alt="" /></p>
+
+<h3>3.2 Chế độ IO trigger đôi khi không thu ảnh</h3>
+
+<p>Kiểm tra trình tự kích hoạt: cần đảm bảo công cụ thu ảnh đã khởi động xong trước khi gửi tín hiệu IO.</p>
+
+<p>Khuyến nghị thiết lập phản hồi đóng vòng. Lưu đồ minh họa như sau:</p>
+
+<p><img src="media/3_2.png" alt="" /></p>
+
+<h3>3.3 Lỗi trigger từ encoder</h3>
+
+<p>**Trường hợp 1**: Không nhận được tín hiệu từ encoder. Kiểm tra dây kết nối tín hiệu trigger camera. Đối với SSZN, tham khảo sơ đồ dưới.</p>
+
+<p>**Trường hợp 2**: Tín hiệu encoder nhận được quá ít. Kiểm tra dây lỏng, xác nhận thông số chia tần (có bị quá tần số không).</p>
+
+<p>**Trường hợp 3**: Tín hiệu nhận quá nhiều. Kiểm tra nhiễu, kiểm tra chia tần.</p>
+
+<p><img src="media/3_3_1.png" alt="" /></p>
+<p><img src="media/3_3_2.png" alt="" /></p>
+
+<h3>3.4 Vấn đề thời gian thu ảnh lâu</h3>
+
+<p>Xem log thu ảnh để phân tích đoạn nào tốn thời gian nhiều:</p>
+
+<p>Đường dẫn log: `...\LusterCache\3DCameraLog\3DCameraLog_2022-XX-XX.txt`</p>
+
+<ul>
+<li>Nếu do chờ tín hiệu IO lâu → là hiện tượng bình thường, vì thời gian chờ cũng tính vào thời gian thu ảnh.</li>
+<li>Nếu truyền dữ liệu lâu → kiểm tra:</li>
+<ul>
+<li>Kết nối dây mạng và cảm biến</li>
+<li>Bộ nhớ RAM máy có đang quá tải không</li>
+<li>Card mạng đã bật chế độ Jumbo Frame chưa</li>
+<li>SSZN có đang ở chế độ truyền dữ liệu 16bit không</li>
+</ul>
+</ul>
+
+<h3>3.5 Camera thường xuyên mất kết nối hoặc mất tham số</h3>
+
+<p>Kiểm tra nguồn cấp cho camera có ổn định không, khuyến nghị dùng nguồn độc lập.</p>
+
+<h3>3.6 Hình ảnh bị kéo giãn hoặc ép lệch</h3>
+
+<p>Thường xảy ra sau khi dùng phép biến đổi affine sampling. Kiểm tra lại độ phân giải trục Y và độ phân giải ảnh.</p>
+
+<p>Đồng thời kiểm tra nguồn cấp cho camera có ổn định không.</p>
+
+<h3>3.7 Thu ảnh thành công nhưng không hiển thị</h3>
+
+<p>**Trường hợp 1**: Ảnh toàn đen → kiểm tra laser có phát không, thông số phơi sáng có quá thấp không, sản phẩm có nằm trong vùng làm việc của camera không.</p>
+
+<p>**Trường hợp 2**: Không có ảnh → kiểm tra bản quyền driver camera có còn hiệu lực không.</p>
+

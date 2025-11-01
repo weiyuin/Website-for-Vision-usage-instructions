@@ -1,0 +1,148 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>十字坐标系工具</h1>
+
+<h2>功能</h2>
+
+<p>十字坐标系工具的作用是在自定义的视图里面添加一个十字坐标系GUI图形，可以作为参考点位置等，方便观察。初始旋转角度是0度，X轴是水平方向，Y轴是竖直方向。</p>
+
+<p><img src="media/wps33.jpg" alt="img" /></p>
+
+<p><imgnote>图1 十字坐标系工具示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称       </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口       </td>
+<td> 只绘制正半轴                                             </td>
+<td> 十字坐标系只显示X轴、Y轴的正半轴。                           </td>
+</tr>
+<tr>
+<td></td>
+<td> X轴正方向       </td>
+<td> 十字坐标系X轴正方向，向右或向左。                                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> Y轴正方向       </td>
+<td> 十字坐标系Y轴正方向，向下或向上。                                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> 显示坐标轴标签 </td>
+<td> 十字坐标系中显示X轴、Y轴标识。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 旋转角度       </td>
+<td> 十字坐标系的旋转角度，顺时针为正，单位为度。                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> X轴长度        </td>
+<td> 十字坐标系X轴长度，即“旋转角度”为0度时，水平方向的长度。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Y轴长度        </td>
+<td> 十字坐标系Y轴长度，即“旋转角度”为0度时，竖直方向的长度。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口       </td>
+<td> 无       </td>
+<td> 无 </td>
+</tr>
+<tr>
+<td> 数据链         </td>
+<td> 坐标系原点                                               </td>
+<td> 十字坐标系的原点在图像上的位置。输入是二维向量类型，向量元素是double类型。 </td>
+</tr>
+<tr>
+<td> 高级界面       </td>
+<td> 无      </td>
+<td> 无  </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称                                 </th>
+<th> 参数描述（参数的含义）                                                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口                                 </td>
+<td> 坐标原点                                                     </td>
+<td> 十字坐标系的原点在图像上的位置。                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果                                 </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间                                 </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口(显示在视图窗口里面的图形和文本) </td>
+<td> 十字坐标系                                                   </td>
+<td> 在自定义视图显示十字坐标系图形。和图像以及定位工具使用一样，拖拽到需要显示的视图。Edit和Result视图上不会显示十字坐标系图形。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果                                 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>十字坐标系工具的GUI图形结果只会显示在自定的视图窗口，不会在Edit和Result窗口上显示。要在那个窗口上显示十字坐标系GUI图形，就拖拽该十字坐标系工具到视图窗口，选择要显示的GUI图形。和显示图像，定位工具结果一样。</p></li>
+<li><p>属性里的“旋转角度”顺时针为正，初始旋转角度为0度，X轴指向水平方向，Y轴指向竖直方向。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\十字坐标系工具.gvp”。</p>

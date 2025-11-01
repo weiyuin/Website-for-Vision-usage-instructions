@@ -1,0 +1,129 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>通信</h1>
+
+<h2>1. 运行环境和适用范围</h2>
+
+<h3>1.1 通信协议支持列表</h3>
+
+<p><strong>PLC厂商列表及协议说明：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th> 协议        </th>
+<th> 通信方式  </th>
+<th> PLC厂商            </th>
+<th> 软件封装协议                                      </th>
+<th> 支持的数据区域                              </th>
+<th> 备注                                        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 三菱MX      </td>
+<td> 网口/串口 </td>
+<td> 三菱               </td>
+<td> MxComponent                                       </td>
+<td> M、D、X、Y                                  </td>
+<td> D、X、Y只支持单地址读写                     </td>
+</tr>
+<tr>
+<td> FINS        </td>
+<td> 网口      </td>
+<td> 欧姆龙             </td>
+<td> HostlinkFINS_TCP、HostlinkFINS_UDP                </td>
+<td> D、CIO                                      </td>
+<td> 无                                          </td>
+</tr>
+<tr>
+<td> KeyenceSWLU </td>
+<td> 网口      </td>
+<td> 基恩士             </td>
+<td> KeyenceSWLU                                       </td>
+<td> DM、EM、W、IM、CM、VM、R、B、MR、LR、CR、VB </td>
+<td> 无                                          </td>
+</tr>
+<tr>
+<td> Modbus      </td>
+<td> 网口/串口 </td>
+<td> 施耐德、汇川、台达 </td>
+<td> ModbusTCP、ModbusRTU（串口）、ModbusASCII（串口） </td>
+<td> 保持寄存器(4x)                              </td>
+<td> 暂不支持线圈、输入线圈、输入寄存器          </td>
+</tr>
+<tr>
+<td> MEWTOCOL    </td>
+<td> 串口      </td>
+<td> 松下               </td>
+<td> Mewtocol                                          </td>
+<td> N/A                                         </td>
+<td> 无                                          </td>
+</tr>
+<tr>
+<td> ADS         </td>
+<td> 网口      </td>
+<td> 倍福               </td>
+<td> ADS                                               </td>
+<td> N/A                                         </td>
+<td> ADS协议配置请参考”ADS通信环境搭建V1.0.docx” </td>
+</tr>
+<tr>
+<td> S7Comm      </td>
+<td> 网口      </td>
+<td> 西门子             </td>
+<td> S7Comm                                            </td>
+<td> I、M、Q、DB                                 </td>
+<td> 读写string类型数据时地址需要向后偏移2个字节 </td>
+</tr>
+</tbody>
+</table>
+
+
+<blockquote><p><span style = "color:red"><strong>注意</strong></span></p>
+
+<p>若待使用的PLC厂商或者使用的协议未在支持清单中，请按照现场实际使用状况将PLC硬件(包括通讯模块)、电源线、网线等成套寄回北京测试部，进行验证。</p></blockquote>
+
+<h2>2. 协议配置</h2>
+
+<ul>
+<li><p><strong>Mewtocol协议配置</strong></p>
+
+<p><img src="media/1660723577530.png" alt="1660723577530" /></p></li>
+<li><p><strong>ModbusTCP协议配置</strong></p>
+
+<p><img src="media/1660723599473.png" alt="1660723599473" /></p>
+
+<p>“其他参数“配置：</p>
+
+<p><img src="media/1660723618008.png" alt="1660723618008" /></p></li>
+<li><p><strong>ModbusRTU协议配置</strong></p>
+
+<p><img src="media/1660723644390.png" alt="1660723644390" /></p></li>
+<li><p><strong>KeyenceSWLU协议配置</strong></p>
+
+<p><img src="media/1660723661835.png" alt="1660723661835" /></p></li>
+<li><p><strong>HostlinkFINS_TCP协议配置</strong></p>
+
+<p><img src="media/1660723680850.png" alt="1660723680850" /></p></li>
+<li><p><strong>HostlinkFINS_UDP协议配置</strong></p>
+
+<p><img src="media/1660723699620.png" alt="1660723699620" /></p></li>
+</ul>
+

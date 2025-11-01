@@ -1,0 +1,207 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云椭圆拟合工具</h1>
+
+<h2>功能</h2>
+
+<p>在3D测量中，点云椭圆拟合工具是获取 XY 平面中样件形状的拟合椭圆，得到椭圆中心、长轴、短轴长度以及方向角等信息，以协助进行后续其他操作，如图1所示为一个ROI区域内满足深度限制的椭圆拟合结果。</p>
+
+<p> <img src="media/wps75.jpg" alt="img" /></p>
+
+<p><imgnote>图1 点云椭圆拟合工具示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                          </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 启用仿射矩形ROI                                              </td>
+<td> 选择“是”，则使用仿射矩形ROI检测区域，否则全图检测。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 启用深度限制 </td>
+<td> 选择“是”，则显示深度阈值参数。                                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 深度阈值     </td>
+<td> 椭圆拟合过程中对深度数据的深度约束条件，即将排除Z反向小于该深度阈值的深度数据。该约束为可选约束，仅在启用深度限制为是时有效。<img src="media/wps77.jpg" alt="img" />                                                      </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 深度图像                                                     </td>
+<td> 显示待检测的深度图像，显示为伪彩色图像。            </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域     </td>
+<td> 属性窗口启用仿射矩形ROI参数为是时，在图像上显示ROI区域。                                                          </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入深度图像                                                 </td>
+<td> 输入待检测的深度图像。                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                                                                            </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无    </td>
+<td> 无                                                                                                                </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入深度图像                                                 </td>
+<td> 输入图像的长宽和像素大小，以及深度数据参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 中心坐标 </td>
+<td> 椭圆的中心坐标。<img src="media/wps79.jpg" alt="img" />                                                                    </td>
+</tr>
+<tr>
+<td></td>
+<td> 长轴     </td>
+<td> 椭圆的长轴长度。                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 短轴     </td>
+<td> 椭圆的短轴长度。                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 长短轴比 </td>
+<td> XY平面内样件区域的拟合椭圆的短轴与长轴之比。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 方向     </td>
+<td> 椭圆长轴与X轴的夹角，其中方向角的正负分别表示按顺时针或逆时针旋转。                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> RMS误差  </td>
+<td> 椭圆的拟合误差。                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入深度图像                                                 </td>
+<td> 显示检测的深度图像，显示为伪彩色图像。       </td>
+</tr>
+<tr>
+<td></td>
+<td> 椭圆     </td>
+<td> 显示椭圆拟合结果及其中心。                                                                                 </td>
+</tr>
+<tr>
+<td>数据链</td>
+<td>        </td>
+<td> 同监视窗口参数，供后续工具使用。                            </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>使用向导</h3>
+
+<p><strong>Step 1 设置检测区域</strong></p>
+
+<p>默认情况下，点云椭圆拟合执行的是全图拟合，为了提高效率和精度，用户可以设置合适的仿射矩形ROI区域。</p>
+
+<p><strong>Step 2 设置深度限制可选参数</strong></p>
+
+<p>在需要更高拟合精度时，用户可根据需求设置适当的深度阈值，以排除干扰数据。</p>
+
+<p><strong>Step 3 执行拟合和输出结果</strong></p>
+
+<p>在设置好参数后就可以执行点云椭圆拟合，输出的结果包括：中心坐标、长短轴长度、方向角（如图2所示），以及RMS误差等。</p>
+
+<p><img src="media/wps81.jpg" alt="img" /></p>
+
+<p><imgnote>图2 椭圆参数</imgnote></p>
+
+<p>参数调整建议与说明</p>
+
+<table>
+<thead>
+<tr>
+<th> 序号 </th>
+<th> 参数 </th>
+<th> 应用场景                            </th>
+<th> 调整建议与说明                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1              </td>
+<td> 深度阈值       </td>
+<td> 复杂背景图像/深度阈值上，检测外形类似圆的目标 </td>
+<td> (1) 通过恰当的深度约束，可排除深度不符合需求的数据点，提高拟合效率和准确性；<br />(2) 深度限制不宜过大，否则不能起到深度约束作用； </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\3D测量工具.gvp”。</p>

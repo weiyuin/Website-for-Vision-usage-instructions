@@ -1,0 +1,103 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云包围盒</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>点云包围盒工具用于生成点云的外接长方体。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>主要服务于3D点云测量项目，工具包含获取最小体积包围框、主方向最小包围框、轴向平行包围框三种功能，用于3D测量项目预处理/后处理阶段。</p>
+
+<p><img src="media/GcCloudBoundingBoxTool_2_1.png" alt="img" /></p>
+
+<p><imgnote>图1 应用场景图</imgnote></p>
+
+<h2>3. 原理说明</h2>
+
+<p>无</p>
+
+<h2>4. 使用向导</h2>
+
+<p>工具执行流程：加载点云→设置包围类型→执行。</p>
+
+<p><img src="media/GcCloudBoundingBoxTool_4_1.png" alt="img" /></p>
+
+<p><imgnote>图1 使用向导示意图</imgnote></p>
+
+<h2>5. 常见问题</h2>
+
+<h2>6. 参数说明</h2>
+
+<h3>输入参数</h3>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th style="text-align:left;"> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 包围盒类型 </td>
+<td style="text-align:left;"> 轴向平行：效率较高；体积最小：物体最小包围盒；指定方向：控制包围盒的方向； </td>
+</tr>
+<tr>
+<td> 开启并行运算 </td>
+<td style="text-align:left;"> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+</tr>
+<tr>
+<td> 线程数百分比 </td>
+<td style="text-align:left;"> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>输出参数</h3>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th style="text-align:left;"> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出包围盒 </td>
+<td style="text-align:left;"> 得到的包围盒结果，类型为<strong>scVoxelCuboid</strong>，包含（中心点坐标、法向量长宽高、包围盒长宽高）， </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td style="text-align:left;"> 工具执行正确性       </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td style="text-align:left;"> 工具执行所需时间 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云包围盒工具.gvp”。</p>

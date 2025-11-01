@@ -1,0 +1,171 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>多点线对位计算</h1>
+
+<h2>功能</h2>
+
+<p>对位的其中一个重要的应用场景是点线对位点线，即根据线的角度进行旋转，根据点的位置进行平移。在实际应用项目中，点线对位点线的具体场景是，1个点和1条线，如图1所示。左上角点和上边是稳定特征，左边、下边和右边不是稳定的轮廓曲线，对位要求对象和目标的上边角度相同，并且左上角点位置相同。</p>
+
+<p>多点线对位计算工具就是用于在已知对象的点和线，目标的点和线的情况下，计算多点线间的对位偏移量。</p>
+
+<p><img src="media/wps12.jpg" alt="img" /></p>
+
+<p><imgnote>图1 多点线对位举例</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称               </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口               </td>
+<td> 坐标系类型<img src="media/wps14.jpg" alt="img" />                            </td>
+<td> 选择是XYD平台坐标系/XDY平台坐标系/DXY平台坐标系下对位。<img src="media/wps15.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td></td>
+<td> 校正范围是否会大于90度 </td>
+<td> 对位时校正范围是否大于90度。通常对位应用都是小范围校正，为提升易用性，计算时忽略了输入直线的方向性，工具输出角度范围为[-90, 90)；但在一些拾取应用中，产品可能会任意角度摆放，校正范围需要在[-180,180)，此时需要将该参数设置为“是”。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无</td>
+<td> 无 </td>
+</tr>
+<tr>
+<td> 数据链                 </td>
+<td> 对象点坐标向量    </td>
+<td> 对象点平台坐标组成的向量。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 对象直线向量           </td>
+<td> 对象直线组成的向量。</td>
+</tr>
+<tr>
+<td></td>
+<td> 目标点坐标向量         </td>
+<td> 目标点平台坐标组成的向量。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 目标直线向量           </td>
+<td> 目标直线组成的向量。</td>
+</tr>
+<tr>
+<td></td>
+<td> 平台轴方向             </td>
+<td> 平台各轴的正方向。</td>
+</tr>
+<tr>
+<td></td>
+<td> X补偿量          </td>
+<td> 输出的对位计算结果在X方向需要增加的补偿量 </td>
+</tr>
+<tr>
+<td></td>
+<td> Y补偿量          </td>
+<td> 输出的对位计算结果在Y方向需要增加的补偿量 </td>
+</tr>
+<tr>
+<td></td>
+<td> D补偿量          </td>
+<td> 输出的对位计算结果在D方向需要增加的补偿量 </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td>  无    </td>
+<td> 无                            </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 相对对位偏移量 </td>
+<td> 对位计算的相对对位偏移量结果。                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                             </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                                         </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 相对对位偏移量 </td>
+<td> 对位计算的相对对位偏移量结果，供后序工具使用，同监视窗口。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>坐标系类型</h3>
+
+<p>XYD平台：项目中最常见的平台类型，其XY轴呈垂直关系，旋转D轴直接对产品进行旋转，而对XY轴的角度关系无影响，如图2(a)所示。</p>
+
+<p>XDY平台：该平台类型的旋转D轴安装于X轴与Y轴之间，直接决定XY轴之间的夹角。如图2(b)所示。</p>
+
+<p>DXY平台：该平台的XY轴会随D轴旋转而旋转，但XY轴始终保持垂直关系，如图2&copy;所示。</p>
+
+<p>   <img src="media/wps18.jpg" alt="img" /><img src="media/wps19.jpg" alt="img" /><img src="media/wps20.jpg" alt="img" /></p>
+
+<p><imgnote>(a) XYD平台</imgnote> <imgnote>(b) XDY平台</imgnote> <imgnote>&copy; DXY平台</imgnote></p>
+
+<p><imgnote>图2 坐标系类型</imgnote></p>
+
+<h2>注意</h2>
+
+<ul>
+<li>对象点坐标向量与目标点坐标向量中的坐标点顺序需要保持一致，使对象点与目标点对应；同理，对象直线向量与目标直线向量中相应的直线顺序也要一致。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>用法参见“\Samples\标准标定+基准四点两线对位.gvp”的多点线对位计算工具</p>

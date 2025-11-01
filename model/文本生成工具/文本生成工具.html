@@ -1,0 +1,135 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ Tạo Văn bản</h1>
+
+<h2>Chức năng</h2>
+
+<p>Hiển thị văn bản lên ảnh theo vị trí và độ lệch được chỉ định. Hiệu ứng hiển thị thực tế như Hình 1.</p>
+
+<p><img src="media/wps19.png" alt="img" /></p>
+
+<p><imgnote>Hình 1 – Minh họa ứng dụng công cụ tạo văn bản</imgnote></p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Xem giải thích chi tiết</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Văn bản hiển thị</td>
+<td>Chuỗi ký tự được xuất ra để hiển thị.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<p>Giao diện nâng cao của công cụ tạo văn bản như minh họa trong Hình 2.</p>
+
+<p><img src="media/wps23.png" alt="img" /></p>
+
+<p><imgnote>Hình 2 – Minh họa giao diện nâng cao của công cụ tạo văn bản</imgnote></p>
+
+<h3>Thiết lập kiểu hiển thị</h3>
+
+<p>Hỗ trợ quản lý kiểu hiển thị. Trong quản lý kiểu hiển thị có sẵn một kiểu mặc định (không thể chỉnh sửa) và tối đa 16 kiểu tùy chỉnh. Người dùng có thể nhấp vào nút quản lý kiểu ở bên phải (như trong Hình 2) để mở giao diện quản lý kiểu, thêm/xóa/đổi tên kiểu hiển thị, hoặc tùy chỉnh các thuộc tính như màu văn bản mặc định, màu OK/NG, màu nền văn bản và độ trong suốt của nền, phông chữ và cỡ chữ, viền văn bản, v.v.</p>
+
+<p>Có thể chọn loại tham chiếu là “Dựa trên ảnh” hoặc “Dựa trên cửa sổ”. Nếu chọn “Dựa trên ảnh”, văn bản hiển thị sẽ thay đổi theo việc dịch chuyển/phóng to ảnh; nếu chọn “Dựa trên cửa sổ”, văn bản có kích thước cố định và vị trí được xác định theo vị trí trong cửa sổ hiển thị, không bị ảnh hưởng bởi phóng to/dịch chuyển ảnh.</p>
+
+<h3>Thiết lập vị trí</h3>
+
+<p>Người dùng có thể thiết lập vị trí hiển thị văn bản. Có thể nhập hằng số để cố định vị trí, hoặc nhập biến (không hỗ trợ kiểu bool và string) để văn bản thay đổi vị trí theo giá trị biến.</p>
+
+<p>Thiết lập vị trí và độ lệch hỗ trợ hộp gợi ý, khi nhập sẽ hiện danh sách biến phù hợp để người dùng chọn (xem Hình 3).</p>
+
+<p><img src="media/wps24.png" alt="img" /></p>
+
+<p><imgnote>Hình 3 – Gợi ý biến khi nhập vị trí, độ lệch</imgnote></p>
+
+<h3>Đánh dấu</h3>
+
+<p>Người dùng có thể nhập văn bản cần hiển thị vào ô chỉnh sửa. Lưu ý, nếu cần hiển thị giá trị biến hoặc tham số công cụ, phải đặt giữa hai dấu <code>$</code>.</p>
+
+<p>Người dùng có thể chọn chuỗi ký tự cần đánh dấu và nhấn nút “Thêm đánh dấu” để đưa vào danh sách đánh dấu. Trong danh sách này, nếu liên kết với một biến trạng thái, chuỗi ký tự tương ứng sẽ hiển thị màu khác nhau theo trạng thái. Xem Hình 4.</p>
+
+<p><img src="media/wps25.png" alt="img" /></p>
+
+<p><imgnote>Hình 4 – Minh họa đánh dấu trong công cụ tạo văn bản</imgnote></p>
+
+<h3>Chế độ xem</h3>
+
+<p>Kiểu hiển thị của giao diện nâng cao đồng bộ với kiểu hiển thị của toàn dự án. Khi dự án thay đổi kiểu hiển thị, giao diện nâng cao của công cụ cũng cập nhật theo.</p>
+
+<p>Giao diện nâng cao của công cụ hỗ trợ tải ảnh tùy chỉnh. Nếu dự án chưa thêm cửa sổ xem (View), người dùng có thể tải ảnh để quan sát hiệu ứng hiển thị văn bản.</p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li>Muốn hiển thị văn bản, cần kéo kết quả văn bản và thả vào một cửa sổ View có hình ảnh.</li>
+</ul>
+
+<h2>Dự án mẫu</h2>
+
+<p>Xem “\Samples\文本生成工具.gvp”, kết quả chạy hiển thị tại View-1.</p>

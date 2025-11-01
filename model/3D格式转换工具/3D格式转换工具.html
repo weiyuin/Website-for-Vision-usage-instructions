@@ -1,0 +1,228 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Chuyển Đổi Định Dạng 3D</h1>
+
+<h2>1. Tổng Quan Chức Năng</h2>
+
+<p>Công cụ chuyển đổi định dạng 3D có thể chuyển đổi dữ liệu đám mây điểm (asc, csv) thành ảnh độ sâu, hoặc chuyển đổi ảnh độ sâu thành ảnh đám mây điểm (ply, pcd, csv, txt).</p>
+
+<p><img src="media/Gc3DFormatConvertTool_1_1.png" alt="" /></p>
+
+<p><imgnote>Hình 1_1: Công cụ chuyển đổi định dạng 3D</imgnote></p>
+
+<h2>2. Bối Cảnh Ứng Dụng</h2>
+
+<p>Trong các dự án kỹ thuật 3D, đôi khi phải sử dụng dữ liệu 3D thu được từ các cảm biến mà phần mềm thị giác hiện tại không hỗ trợ trực tiếp. Do đó, cần một công cụ chuyển đổi các định dạng 3D phổ biến sang ảnh độ sâu – định dạng mà phần mềm thị giác có thể xử lý được. Đồng thời, cũng cần một công cụ để chuyển ảnh độ sâu xuất ra từ phần mềm thị giác thành các định dạng 3D phổ biến để chia sẻ với các phần mềm khác.</p>
+
+<h2>3. Nguyên Lý Hoạt Động</h2>
+
+<p>Chức năng chính của công cụ chuyển đổi định dạng 3D bao gồm:</p>
+
+<ul>
+<li><p>Chuyển đổi ảnh độ sâu đầu vào thành tệp đám mây điểm ở định dạng được chỉ định;</p></li>
+<li><p>Chuyển đổi tệp đám mây điểm đầu vào thành ảnh độ sâu, dựa trên các thông số ảnh độ sâu tương ứng với từng loại cảm biến;</p></li>
+</ul>
+
+
+
+<h2>4. Hướng Dẫn Sử Dụng</h2>
+
+<ul>
+<li><h4>Thêm công cụ, nạp tệp đám mây điểm, thực hiện chuyển đổi từ đám mây điểm sang ảnh độ sâu</h4></li>
+</ul>
+
+<p><img src="media/Gc3DFormatConvertTool_4_1.png" alt="" /></p>
+
+<p><imgnote>Hình 4_1: Công cụ chuyển đổi định dạng 3D</imgnote></p>
+
+<p><strong>Đường dẫn tệp CSV</strong></p>
+<p>Chọn đường dẫn đến tệp dữ liệu đám mây điểm 3D định dạng CSV cần chuyển đổi;</p>
+
+<p><strong>Đường dẫn tệp ASC</strong></p>
+<p>Chọn đường dẫn đến tệp dữ liệu đám mây điểm 3D định dạng ASC cần chuyển đổi;</p>
+
+<p><strong>Cảm biến</strong></p>
+<p>Chọn thương hiệu cảm biến, chủ yếu để thiết lập các tham số điều khiển phù hợp. Hiện hỗ trợ bốn thương hiệu cảm biến: SmartRay, Keyence, LMI và Precitec;</p>
+
+<p><strong>Mẫu cảm biến</strong></p>
+<p>Khi chọn cảm biến là SmartRay, có thể tiếp tục chọn mẫu cảm biến cụ thể để dễ dàng thiết lập các tham số ảnh độ sâu mặc định;</p>
+
+<p><strong>Số dòng bỏ qua</strong></p>
+<p>Khi chọn cảm biến là Keyence, nếu tệp cần chuyển đổi có chứa thông tin độ phân giải thì có thể bỏ qua các dòng chứa thông tin này; nếu không có, thì đặt số dòng bỏ qua là 0;</p>
+
+<p><strong>Tham số ảnh độ sâu</strong></p>
+<p>Thiết lập độ phân giải theo ba trục XYZ và độ lệch theo ba trục XYZ cho ảnh độ sâu;</p>
+
+<ul>
+<li><h4>Thêm công cụ, nạp ảnh, thực hiện chuyển đổi từ ảnh độ sâu sang đám mây điểm</h4></li>
+</ul>
+
+
+<p><img src="media/Gc3DFormatConvertTool_4_2.png" alt="" /></p>
+
+<p><imgnote>Hình 4_2: Công cụ chuyển đổi định dạng 3D</imgnote></p>
+
+<p><strong>Định dạng đám mây điểm đầu ra</strong></p>
+
+<p>Chọn định dạng tệp đám mây điểm được xuất ra từ ảnh độ sâu. Các định dạng bao gồm: CSV, PCD, PLY, TXT.</p>
+
+<p><strong>Định dạng PLY đầu ra</strong></p>
+
+<p>Khi định dạng đầu ra là PLY, có thể chọn giữa hai định dạng: ASCII (dạng văn bản) và BINARY (dạng nhị phân).</p>
+
+<p><strong>Ghi đè hay không</strong></p>
+
+<p>Có thể thiết lập việc tệp đám mây điểm xuất ra có ghi đè lên kết quả trước đó hay không.  
+Nếu chọn “Có”, tệp xuất ra sẽ có tên giống tên công cụ và sẽ được ghi đè khi chạy lại.  
+Nếu chọn “Không”, tên tệp xuất ra sẽ là tên công cụ + ngày giờ, mỗi lần chạy sẽ tạo tệp mới.</p>
+
+<p><strong>Đường dẫn lưu tệp đám mây điểm</strong></p>
+
+<p>Chọn thư mục nơi lưu trữ tệp đám mây điểm sau khi chuyển đổi.</p>
+
+<h2>5. Vấn Đề Thường Gặp</h2>
+
+<p>Không có</p>
+
+<h2>6. Giải Thích Tham Số</h2>
+
+<h4>Tham Số Đầu Vào</h4>
+
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số                 </th>
+<th> Giải thích tham số                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Loại chuyển đổi             </td>
+<td> Gồm hai loại: chuyển ảnh độ sâu sang đám mây điểm và ngược lại </td>
+</tr>
+<tr>
+<td> Đường dẫn tệp 3D cần đọc    </td>
+<td> Khi chuyển đám mây điểm thành ảnh độ sâu, cần đặt đường dẫn tệp đám mây điểm </td>
+</tr>
+<tr>
+<td> Thương hiệu camera         </td>
+<td> Thiết lập tên hãng sản xuất cảm biến                           </td>
+</tr>
+<tr>
+<td> Số dòng bỏ qua             </td>
+<td> Thiết lập số dòng thông tin cần bỏ qua trong tệp                </td>
+</tr>
+<tr>
+<td> Tỷ lệ thu phóng            </td>
+<td> Tỷ lệ chuyển đổi giữa đơn vị trong tệp đám mây điểm và đơn vị pixel sau chuyển đổi </td>
+</tr>
+<tr>
+<td> Độ phân giải ảnh           </td>
+<td> Độ phân giải theo ba trục XYZ của ảnh độ sâu                    </td>
+</tr>
+<tr>
+<td> Thiết lập thủ công tham số dịch chuyển </td>
+<td> Có: cho phép chỉnh sửa thủ công các tham số ảnh độ sâu; Không: dùng mặc định theo model cảm biến </td>
+</tr>
+<tr>
+<td> Dịch chuyển ảnh            </td>
+<td> Giá trị dịch chuyển theo ba trục XYZ của ảnh độ sâu             </td>
+</tr>
+<tr>
+<td> Định dạng đám mây điểm đầu ra </td>
+<td> Thiết lập định dạng đám mây điểm đầu ra: csv, pcd, ply hoặc txt </td>
+</tr>
+<tr>
+<td> Định dạng PLY đầu ra       </td>
+<td> Thiết lập kiểu tệp PLY đầu ra: ASCII hoặc BINARY               </td>
+</tr>
+<tr>
+<td> Tự động đặt tên             </td>
+<td> Có: hệ thống tự động đặt tên tệp; Không: dùng tên từ liên kết dữ liệu đầu vào </td>
+</tr>
+<tr>
+<td> Ghi đè tệp trước đó        </td>
+<td> Thiết lập có ghi đè tệp đám mây điểm được chuyển đổi lần trước hay không </td>
+</tr>
+<tr>
+<td> Đường dẫn lưu đám mây điểm </td>
+<td> Thiết lập thư mục lưu trữ tệp đám mây điểm sau khi chuyển đổi  </td>
+</tr>
+<tr>
+<td> Tên tệp                   </td>
+<td> Khi chuyển ảnh độ sâu sang đám mây điểm: thiết lập tên tệp xuất ra </td>
+</tr>
+<tr>
+<td> Đường dẫn và tên tệp       </td>
+<td> Khi chuyển ảnh độ sâu sang đám mây điểm: thiết lập đường dẫn và tên tệp đầu ra </td>
+</tr>
+<tr>
+<td> Ảnh độ sâu đầu vào (cửa sổ hình ảnh) </td>
+<td> Hiển thị ảnh độ sâu đầu vào                                    </td>
+</tr>
+<tr>
+<td> Ảnh độ sâu đầu vào (chuỗi dữ liệu) </td>
+<td> Dùng để lấy các tham số của ảnh độ sâu cần so sánh              </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Tham số đầu ra</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số                   </th>
+<th> Giải thích tham số                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh độ sâu đầu ra             </td>
+<td> Kích thước ảnh độ sâu sau khi chuyển đổi và các tham số liên quan </td>
+</tr>
+<tr>
+<td> Đường dẫn và tên tệp         </td>
+<td> Ở chế độ chuyển đổi từ ảnh độ sâu sang đám mây điểm, hiển thị đường dẫn và tên tệp đã lưu </td>
+</tr>
+<tr>
+<td> Kết quả thực thi               </td>
+<td> Kết quả thực thi của công cụ                         </td>
+</tr>
+<tr>
+<td> Thời gian thực thi             </td>
+<td> Thời gian công cụ thực thi                         </td>
+</tr>
+<tr>
+<td> Ảnh độ sâu đầu ra (cửa sổ hình ảnh) </td>
+<td> Hiển thị ảnh độ sâu sau khi chuyển đổi            </td>
+</tr>
+<tr>
+<td> Ảnh độ sâu đầu ra (chuỗi dữ liệu) </td>
+<td> Kích thước ảnh độ sâu sau khi chuyển đổi và các tham số liên quan </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\深度图\3D格式转换工具.gvp”。</p>

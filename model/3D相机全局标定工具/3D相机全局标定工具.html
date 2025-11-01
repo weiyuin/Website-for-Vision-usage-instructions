@@ -1,0 +1,165 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>3D相机全局标定工具</h1>
+
+<h2>功能</h2>
+
+<p>在工业生产中，3D引导应用非常广泛，如立体空间中引导打胶，机械手抓取不在同一个平面内的零部件等等，都会涉及到三维空间信息，那么就需要相应的标定技术。本工具用于运动平台的3D相机的全局标定，可以计算相机坐标系到世界坐标系的三维线性变换，分为平移矩阵和旋转矩阵，而计算方式分为SVD分解法和最小二乘法2种，可以在属性窗口进行选择。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 标定方法                               </td>
+<td> 包括SVD分解法和最小二乘法2种。       </td>
+</tr>
+<tr>
+<td></td>
+<td> 干扰点距离阈值 </td>
+<td> 在设定阈值范围外的判断为干扰点，不参与标定计算；                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否保存 </td>
+<td> 选择“是”，保存文件；选择“否”，不保存； </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否覆盖上次文件 </td>
+<td> 选择“是”，输出标定文件名称会是工具名称，下次执行会重新刷新<br />选择“否”，输出的标定文件名称会是工具名称+日期时间，下次执行会生成新的标定文件 </td>
+</tr>
+<tr>
+<td></td>
+<td> 标定文件保存路径 </td>
+<td> 3D相机全局标定文件保存的路径。 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无                                                                         </td>
+<td></td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 点集1                                </td>
+<td> 待计算的点集，为相机坐标系下的点集。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 点集2    </td>
+<td> 待计算的点集，为世界坐标系下的点集。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 高级界面 </td>
+<td> 无                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口     </td>
+<td> 点集1                                                        </td>
+<td> 输出点集1中每个点的坐标值。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 点集2        </td>
+<td> 输出点集2中每个点的坐标值。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 三维线性变换 </td>
+<td> 计算出相机坐标系到世界坐标系之间的变换关系，包括平移矩阵和旋转矩阵。                              </td>
+</tr>
+<tr>
+<td></td>
+<td> RMS误差      </td>
+<td> 误差结果。                                                                                </td>
+</tr>
+<tr>
+<td></td>
+<td> 变换后特征点坐标      </td>
+<td> 点集1变换后的坐标。                                                        </td>
+</tr>
+<tr>
+<td></td>
+<td> 点距      </td>
+<td> 点集1变换后的坐标与点集2的点距。                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果     </td>
+<td> 工具执行结果。                                                                            </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间     </td>
+<td> 工具执行时间。                                                                            </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td>              </td>
+<td> 无                                                                                        </td>
+</tr>
+<tr>
+<td>数据链</td>
+<td>        </td>
+<td> 同监视窗口参数，供后续工具使用。                                                          </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>点集1为3D相机拍摄的相机坐标系下的点集，而点集2为世界坐标系下的点集。</p></li>
+<li><p>点集1和点集2尺寸大小必须一致。</p></li>
+<li><p>SVD求解方法下，特征点数量需大于等于3；最小二乘求解方法下，特征点数量需大于等于4，且特征点不能共面。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\3D相机全局标定.gvp”。</p>

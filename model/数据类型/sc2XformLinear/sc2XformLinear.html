@@ -1,0 +1,149 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>sc2XformLinear</h1>
+
+<h2>功能</h2>
+
+<p>定位工具输出的二维线性变换结果。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                            </th>
+<th> 接口描述                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> sc2XformLinear                      </td>
+<td> sc2XformLinear()默认构造函数                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> sc2XformLinear                      </td>
+<td> sc2XformLinear(sc2Matrix, sc2Vector)构造函数 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> GetMatrix          </td>
+<td> 获取旋转矩阵                                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetTrans            </td>
+<td> 获取平移向量                                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetMatrix     </td>
+<td> SetMatrix(value)，设置二维线性变换的旋转矩阵 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetTrans       </td>
+<td> SetTrans(value)，设置二维线性变换的平移向量  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRotation </td>
+<td> GetRotation(value)，获取旋转角度             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>GetMatrix()</h3>
+
+<ul>
+<li><p>功能：获取二维线性变换的旋转矩阵。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：sc2Matrix类型。</p></li>
+</ul>
+
+
+<h3>GetTrans()</h3>
+
+<ul>
+<li><p>功能：获取二维线性变换的平移向量。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>SetMatrix(value)</h3>
+
+<ul>
+<li><p>功能：设置二维线性变换的旋转矩阵。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>value：二维线性变换的旋转矩阵，sc2Matrix类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示设置是否成功。</p></li>
+</ul>
+
+
+<h3>SetTrans(value)</h3>
+
+<ul>
+<li><p>功能：设置二维线性变换的平移向量。</p>
+
+<ul>
+<li>value：二维线性变换的平移向量，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示设置是否成功。</p></li>
+</ul>
+
+
+<h3>GetRotation(value)</h3>
+
+<ul>
+<li><p>功能：获取旋转角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>value：二维线性变换的平移向量，scRadian类型。</p>
+
+<blockquote><p><em>注意</em>：由于GetRotaion是将获取的弧度传入了参数value中，因此在使用前需要创建一个scRadian类型的对象，例如：</p>
+
+<p><code>python
+b = GvVisionAssembly.scRadian(0.0)
+a.GetRotation(b)
+</code></p></blockquote></li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

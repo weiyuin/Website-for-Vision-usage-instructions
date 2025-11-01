@@ -1,0 +1,141 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>数据库数组查询工具</h1>
+
+<h2>功能</h2>
+
+<p>对已经连接的数据库里面的表进行查询，查找期望的记录，可以输出多条记录，最多输出100个。如图1所示。</p>
+
+<p><img src="media/wps3.png" alt="img" /></p>
+
+<p><imgnote>图1 查询结果</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称      </th>
+<th> 参数描述                                                                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口      </td>
+<td> 数据表名称                                                   </td>
+<td> 需要查询的数据表的名称（前提是需要连接到表所在的数据库）。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 查询项        </td>
+<td> 需要查询的列名称。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 查询条件      </td>
+<td> 满足查询条件的逻辑表达式（多条件使用and、or或者()）。比如：半径>60 AND半径&lt;65，或者稍复杂的：列名1= &lsquo;Aa&rsquo; and 列名2= &lsquo;Bb &rsquo; and (列名3 = 888 or 列名4 = 888 )。                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出数据0类型 </td>
+<td> 输出结果的数据类型，最多支持16列的数据。                                                                                 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无   </td>
+<td> 无                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 无    </td>
+<td> 无                                              </td>
+</tr>
+<tr>
+<td> 高级界面      </td>
+<td> 无      </td>
+<td> 无 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出数据0      </td>
+<td> 查询结果显示。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无 </td>
+<td> 无                             </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 无  </td>
+<td> 无                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>执行查询的时候要保证数据表名称和查询项都是存在的，否则数据库会报错。在查询之前可以检查数据库里面表的名称和列的名称，做到拼写正确，尽量与表的名称和列名大小写拼写一致。</p></li>
+<li><p>查询的结果可以显示多列，最多16列数据，最多输出100个记录。</p></li>
+<li><p>关于多查询项和多条件查询的案例。</p></li>
+<li><p>如果显示多列，需要在查询项将列名与列名使用逗号隔开，最后一个列名不需要加逗号。注意必须是英文逗号，中文逗号数据库不认识。</p></li>
+<li><p>关于多条件查询可以使用“and”和“or”和“( )”，注意这些都是英文环境下的符号。其中，“and”和“or”不区分大小写。见图2，多查询项和多条件查询。</p>
+
+<p><img src="media/wps8.png" alt="img" /></p>
+
+<p><imgnote>图2 多查询项和多条件查询</imgnote></p></li>
+<li><p>在设置输出数据（0-15）类型的时候，要与查询项对应列名称的数据类型保持一致，这样，不会造成结果解析的困惑和输出不是想要的结果。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\数据库相关工具.gvp”。</p>

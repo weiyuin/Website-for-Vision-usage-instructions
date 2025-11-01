@@ -1,0 +1,134 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>轮廓滤波工具</h1>
+
+<h2>功能</h2>
+
+<p>轮廓滤波工具的主要功能是滤除轮廓中的干扰点。</p>
+
+<p> <img src="media/wps22.jpg" alt="img" /></p>
+
+<p><imgnote>图1 轮廓滤波工具示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> ROI类型                                                      </td>
+<td> 分为4种：整幅图像、矩形ROI、仿射矩形ROI和圆形。    </td>
+</tr>
+<tr>
+<td></td>
+<td> 滤波类型     </td>
+<td> 目前仅支持陡峭点滤波，即轮廓在上升沿或下降沿出的干扰点。                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 高度阈值     </td>
+<td> 相邻两点Z方向差值绝对值 >（高度阈值*两点中间间隔的点数+1） 的，将会滤除。                                                     </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 轮廓图像                                                     </td>
+<td> 显示待滤波的轮廓图像。                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域     </td>
+<td> 在图像上显示待检测区域。                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入轮廓数据                                                 </td>
+<td> 输入待检测的轮廓数据，该参数可来源于截面生成工具。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                                                                           </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无           </td>
+<td> 无                                                                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出轮廓数据                     </td>
+<td> 输出的轮廓数据，包括轮廓点数，有效点数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出轮廓数据                     </td>
+<td> 显示滤波后的轮廓图像。                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 数据链   </td>
+<td> 同监视窗口参数，供后续工具使用。                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\轮廓滤波工具.gvp”。</p>

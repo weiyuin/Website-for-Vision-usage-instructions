@@ -1,0 +1,126 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>距离差值计算</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​ 本工具应用于两距离之差的计算。</p>
+
+<h2>2.应用场景</h2>
+
+<p>​ 在激光打标等场景中，视觉引导相关机构工作，完成工作后需要复检效果，此时需要计算工作前后相关距离的差值，以判断工作效果；</p>
+
+<h2>3.原理说明</h2>
+
+<p>​ 距离差值=数据1-数据2+补偿值，判断距离差值是否在合理范围内，若在则证明OK，否则为NG。</p>
+
+<h2>4.使用向导</h2>
+
+<ul>
+<li>链接需要计算差值的两数据；</li>
+</ul>
+
+
+<p><img src="media\GvDistanceDifferenceTool_4_1.png" alt="GvDistanceDifferenceTool_4_1" /></p>
+
+<ul>
+<li>设置计算结果上限/下限及补偿值；</li>
+</ul>
+
+
+<p><img src="media\GvDistanceDifferenceTool_4_2.png" alt="GvDistanceDifferenceTool_4_2" /></p>
+
+<p>​ 设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对计算结果上限或下限不进行限定</p>
+
+<ul>
+<li>运行获取计算结果，其结果可被“表达式计算”和“脚本工具”使用；</li>
+</ul>
+
+
+<p><img src="media\GvDistanceDifferenceTool_4_3.png" alt="media\GvDistanceDifferenceTool_4_3" /></p>
+
+<h2>5.常见问题</h2>
+
+<p>​ 无</p>
+
+<h2>6.参数说明</h2>
+
+<p><strong>输入参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入数据1    </td>
+<td> 链接前距离工具计算结果                                       </td>
+</tr>
+<tr>
+<td> 输入数据2    </td>
+<td> 链接前距离工具计算结果                                       </td>
+</tr>
+<tr>
+<td> 计算结果上限 </td>
+<td> 取值范围[-999999.999999,999999.999999]，输出参数<a href="#%E8%AE%A1%E7%AE%97%E7%BB%93%E6%9E%9C">计算结果</a>的上限阈值。 </td>
+</tr>
+<tr>
+<td> 计算结果下限 </td>
+<td> 取值范围[-999999.999999,999999.999999]，输出参数<a href="#%E8%AE%A1%E7%AE%97%E7%BB%93%E6%9E%9C">计算结果</a>的下限阈值。 </td>
+</tr>
+<tr>
+<td> 补偿值       </td>
+<td> 与真值比对所需补偿                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>输出参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                            </th>
+<th> 参数说明                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> <span id="计算结果">计算结果</span> </td>
+<td> 如“原理说明”所述“距离差值”                           </td>
+</tr>
+<tr>
+<td> 执行结果                            </td>
+<td> OK代表“距离差值”在范围内，NG代表“距离差值”不在范围内 </td>
+</tr>
+<tr>
+<td> 执行时间                            </td>
+<td> 工具执行时间                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7.示例工程</h2>
+
+<p>​ 参见“\Samples\距离差值计算工具.gvp”。</p>

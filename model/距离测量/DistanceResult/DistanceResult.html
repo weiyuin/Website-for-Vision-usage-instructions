@@ -1,0 +1,101 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>DistanceResult</h1>
+
+<h2>功能</h2>
+
+<p>表示一般性的距离计算结果，例如直线到圆之间的距离，圆到圆之间的距离，线段到圆之间的距离，点到点之间的距离等。</p>
+
+<p>对于和点相关的距离计算，DistanceResult中只有issucceed、distance和point1可用，point1表示参与距离计算的其他几何形状上计算距离的点坐标。对于两点之间距离计算，计算结果中只有issucceed、distance可用。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                 </th>
+<th> 接口描述                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性 </td>
+<td> issucceed </td>
+<td> 表示计算是否成功         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> distance   </td>
+<td> 距离                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> point1       </td>
+<td> 端点1，用来计算距离的点1 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> point2       </td>
+<td> 端点2，用来计算距离的点2 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>issucceed</h3>
+
+<ul>
+<li>功能：表示计算是否成功，布尔类型。</li>
+</ul>
+
+
+<h3>distance</h3>
+
+<ul>
+<li>功能：距离，浮点型。</li>
+</ul>
+
+
+<h3>point1</h3>
+
+<ul>
+<li>功能：用来计算距离的点1，sc2Vector类型。</li>
+</ul>
+
+
+<h3>point2</h3>
+
+<ul>
+<li>功能：用来计算距离的点2，sc2Vector类型。对于和点相关的距离计算，由于输入的点是参与距离计算的其中一个点，因此在结果中point2点不需要在输出，只输出point1来表示参与距离计算的其他几何形状上的点即可。</li>
+</ul>
+
+
+<h2>注意</h2>
+
+<ul>
+<li>对于和点相关的距离计算，DistanceResult中只有issucceed、distance和point1可用，point1表示参与距离计算的其他几何形状上计算距离的点坐标。</li>
+</ul>
+
+
+<h2>示例代码</h2>
+
+<p>无</p>

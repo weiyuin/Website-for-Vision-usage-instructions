@@ -1,0 +1,401 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scGuiFindCircleEx</h1>
+
+<h2>功能</h2>
+
+<p>表示高级版圆探测控件，即在视图中可见的图形，例如找圆工具的查找区域，多圆多线工具的查找圆区域为该类型的向量。</p>
+
+<p><img src="media/098ec78d7e2d84440ecaea2ba9cc79ee.png" alt="" /></p>
+
+<p><imgnote>(a) 找圆控件升级普通状态</imgnote></p>
+
+<p><img src="media/f3a03ec96583987d51706347e2ac4120.png" alt="" /></p>
+
+<p><imgnote>(b) 找圆控件升级显示卡尺</imgnote></p>
+
+<p><imgnote>图1 圆探测控件升级示意图</imgnote></p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                    </th>
+<th> 接口描述                                </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scGuiFindCircleEx             </td>
+<td> scGuiFindCircleEx (dof=1)默认构造函数。 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> GetAnnulusSection                  </td>
+<td> 获取圆环段                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetAnnulusSection    </td>
+<td> 设置圆环段                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetMaskRegion                          </td>
+<td> 获取掩膜位置                            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetMaskRegion               </td>
+<td> 设置掩膜位置                            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSearchDirectionDOF          </td>
+<td> 获取搜索方向自由度。                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRectEx                                  </td>
+<td> 获取可变矩形。                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRectEx                            </td>
+<td> 设置可变矩形。                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRectExCaliper                    </td>
+<td> 获取可变矩形卡尺。                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRectExCaliper       </td>
+<td> 设置可变矩形卡尺。                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperWidth                      </td>
+<td> 获取卡尺宽度（仅在手动模式下有效）。    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperWidth                 </td>
+<td> 设置卡尺宽度（仅在手动模式下有效）。    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperSpace                      </td>
+<td> 获取卡尺间隔（仅在手动模式下有效）。    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperSpace                 </td>
+<td> 设置卡尺间隔（仅在手动模式下有效）。    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperID                            </td>
+<td> 获取卡尺ID。                            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCaliperID                   </td>
+<td> 设置卡尺ID。                            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSearchDirection                </td>
+<td> 获取卡尺搜索方向。                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetSearchDirection </td>
+<td> 设置卡尺搜索方向。                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperNum                          </td>
+<td> 获取卡尺数目。                          </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scGuiFindCircleEx(dof=1)</h3>
+
+<ul>
+<li><p>功能：构造scGuiFindCircleEx对象，默认搜索方向自由度为1，此参数可以不用设置，直接使用scGuiFindCircleEx()即可。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>dof：自由度，整型，可选参数。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetAnnulusSection()</h3>
+
+<ul>
+<li><p>功能：获取圆环段。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆环段，scAnnulusSection类型。</p></li>
+</ul>
+
+
+<h3>SetAnnulusSection(annulusSection)</h3>
+
+<ul>
+<li><p>功能：设置圆环段。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>annulusSection：圆环段，scAnnulusSection类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetMaskRegion()</h3>
+
+<ul>
+<li><p>功能：获取掩膜位置。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：掩膜位置，sc2Vector类型的向量，在Python中类似于list。</p></li>
+</ul>
+
+
+<h3>SetMaskRegion(vMaskRegion)</h3>
+
+<ul>
+<li><p>功能：设置掩膜位置。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>vMaskRegion：掩膜位置，sc2Vector类型的向量，在Python中类似于list。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetSearchDirectionDOF()</h3>
+
+<ul>
+<li><p>功能：获取搜索方向自由度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：搜索方向自由度，整型。</p></li>
+</ul>
+
+
+<h3>GetRectEx()</h3>
+
+<ul>
+<li><p>功能：获取可变矩形。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变矩形，scRectEx类型。</p></li>
+</ul>
+
+
+<h3>SetRectEx(rectEx)</h3>
+
+<ul>
+<li><p>功能：设置可变矩形。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>rectEx：可变矩形，scRectEx类型。</li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetRectExCaliper()</h3>
+
+<ul>
+<li><p>功能：获取可变矩形卡尺。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变矩形卡尺，scRectExCaliper类型。</p></li>
+</ul>
+
+
+<h3>SetRectExCaliper(rectExCaliper)</h3>
+
+<ul>
+<li><p>功能：获取可变矩形卡尺。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>rectExCaliper：可变矩形卡尺，scRectExCaliper类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperWidth()</h3>
+
+<ul>
+<li><p>功能：获取卡尺宽度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺宽度，整型。</p></li>
+</ul>
+
+
+<h3>SetCaliperWidth(width)</h3>
+
+<ul>
+<li><p>功能：设置卡尺宽度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>width：卡尺宽度，整型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperSpace()</h3>
+
+<ul>
+<li><p>功能：获取卡尺间隔。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺间隔，整型。</p></li>
+</ul>
+
+
+<h3>SetCaliperSpace(space)</h3>
+
+<ul>
+<li><p>功能：设置卡尺间隔。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>space：卡尺间隔，整型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperID()</h3>
+
+<ul>
+<li><p>功能：获取卡尺ID。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺ID，整型。</p></li>
+</ul>
+
+
+<h3>SetCaliperID(caliperID)</h3>
+
+<ul>
+<li><p>功能：设置卡尺ID。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>caliperID：卡尺ID，整型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetSearchDirection()</h3>
+
+<ul>
+<li><p>功能：获取卡尺搜索方向。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺搜索方向，整型。</p></li>
+</ul>
+
+
+<h3>SetSearchDirection(searchdirection)</h3>
+
+<ul>
+<li><p>功能：设置卡尺搜索方向。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>searchdirection：卡尺搜索方向，整型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCaliperNum()</h3>
+
+<ul>
+<li><p>功能：获取卡尺数目。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：卡尺数目，整型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>```python
+ROI_Circle_gui = GvTool.GetToolData(&ldquo;找圆工具_019.查找区域&rdquo;)
+ROI_Annulussection = ROI_Circle_gui.GetAnnulusSection() #找圆控件中的圆环段图形</p>
+
+<p>center = ROI_Annulussection.GetCenter()
+startangle = ROI_Annulussection.GetStartPhi() ## 起始角度，获取得是弧度
+startangle = startangle.Norm() ## 归一化到0\~360
+startangle = startangle.ToDouble() ## 获取归一化后的弧度值
+startangle = startangle * 180/3.1415926 ## 弧度转为角度
+endangle = ROI_Annulussection.GetEndPhi() ## 终止角度，获取得是弧度
+endangle = endangle.Norm() ## 归一化到0\~360
+endangle = endangle.ToDouble() ## 获取归一化后的弧度值
+endangle = endangle * 180/3.1415926 ## 弧度转为角度</p>
+
+<h2>获取内外圆半径 方法1</h2>
+
+<p>inner_radius1 = ROI_Annulussection.GetInnerCircle().GetRadius()
+outer_radius1 = ROI_Annulussection.GetOuterCircle().GetRadius()</p>
+
+<h2>获取内外圆半径 方法2</h2>
+
+<p>annulus = ROI_Annulussection.GetAnnulus()
+inner_radius2 = annulus.GetInnerRadius()
+outer_radius2 = annulus.GetOuterRadius()</p>
+
+<p>print(&ldquo;圆心:&rdquo;, center.GetX(), center.GetY())
+print(&ldquo;内圆半径1：&rdquo;, inner_radius1)
+print(&ldquo;外圆半径1：&rdquo;, outer_radius1)
+print(&ldquo;内圆半径2：&rdquo;, inner_radius2)
+print(&ldquo;外圆半径2：&rdquo;, outer_radius2)
+print(&ldquo;起始角：&rdquo;, startangle)
+print(&ldquo;终止角：&rdquo;, endangle)
+```</p>

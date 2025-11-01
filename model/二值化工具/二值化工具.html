@@ -1,0 +1,167 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ Nhị phân hóa</h1>
+
+<h2>Chức năng</h2>
+
+<p>Nhị phân hóa là một trong những phương pháp tiền xử lý ảnh phổ biến. Bản chất của công cụ nhị phân hóa là phân đoạn mức xám của hình ảnh, từ đó chuyển đổi ảnh xám thành ảnh nhị phân. Hình minh họa được thể hiện trong Hình 1.</p>
+
+<p><img src="media/wps65.jpg" alt="img" />      <img src="media/wps66.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Ảnh đầu vào</imgnote> <imgnote>(b) Ảnh kết quả</imgnote></p>
+
+<p><imgnote>Hình 1 Minh họa nhị phân hóa</imgnote></p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Có sử dụng ROI hay không</td>
+<td>Chọn “Có” để hiển thị vùng ROI trong cửa sổ Edit, dùng để chỉ định vùng ảnh cần nhị phân hóa; chọn “Không” thì toàn bộ ảnh sẽ được nhị phân hóa. Mặc định là Không.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vùng ROI</td>
+<td>Vùng ảnh được nhị phân hóa: toàn ảnh, hình chữ nhật, hình chữ nhật biến dạng (affine), ROI đa giác, ROI vành khuyên, ROI hình tròn, ROI vành khuyên (đoạn), bật mặt nạ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chế độ nhị phân hóa</td>
+<td>Công cụ nhị phân hóa cung cấp 2 chế độ: Chế độ ngưỡng tự động và Chế độ ngưỡng thủ công. Chọn ngưỡng tự động thì hiển thị các tham số tương ứng, chọn ngưỡng thủ công thì hiển thị tham số thủ công.</td>
+</tr>
+<tr>
+<td></td>
+<td>Phương pháp ngưỡng tự động</td>
+<td>Phương pháp ngưỡng tự động sử dụng thuật toán ngưỡng tự động, bao gồm phương pháp lặp và phương pháp phương sai giữa các lớp lớn nhất. Chỉ khả dụng khi chế độ nhị phân hóa được chọn là ngưỡng tự động. <a href="#_%E8%87%AA%E5%8A%A8%E9%98%88%E5%80%BC%E6%96%B9%E6%B3%95"><img src="media/wps68.jpg" alt="img" /></a></td>
+</tr>
+<tr>
+<td></td>
+<td>Ngưỡng thủ công</td>
+<td>Sử dụng giá trị ngưỡng thủ công để phân đoạn ảnh: các pixel có giá trị xám nhỏ hơn ngưỡng được đặt thành 0, lớn hơn ngưỡng được đặt thành 255. Chỉ có hiệu lực khi chọn chế độ nhị phân hóa là thủ công. Phạm vi 0–255.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Hiển thị ảnh cần được nhị phân hóa.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần nhị phân hóa.</td>
+</tr>
+<tr>
+<td></td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>Phép biến đổi tịnh tiến, xoay, phóng to/thu nhỏ của đối tượng so với mẫu.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Xuất các thông tin về chiều rộng, chiều cao và kích thước pixel của ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra</td>
+<td>Xuất các thông tin về chiều rộng, chiều cao và kích thước pixel của ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Hiển thị ảnh kết quả sau khi công cụ thực thi.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ, “OK” nếu thành công, “NG” nếu thất bại. Tương tự như tham số kết quả thực thi trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Xuất thông tin ảnh đầu ra (chiều rộng, chiều cao, kích thước pixel) để sử dụng cho các công cụ tiếp theo. Tương tự cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>Phương pháp ngưỡng tự động</h3>
+
+<p><strong>Phương pháp lặp</strong></p>
+
+<p>Dựa trên tư tưởng xấp xỉ: đầu tiên dựa vào phân bố mức xám của ảnh để chọn một giá trị ngưỡng gần đúng làm ngưỡng ban đầu, sau đó lặp lại quá trình phân đoạn và cập nhật ngưỡng cho đến khi đạt được ngưỡng tối ưu được công nhận.</p>
+
+<p><strong>Phương pháp phương sai giữa các lớp lớn nhất</strong></p>
+
+<p>Dựa trên đặc tính mức xám của ảnh, chia ảnh thành hai phần: tiền cảnh và hậu cảnh. Phương sai giữa hai lớp càng lớn thì sự khác biệt giữa hai phần càng rõ. Nếu một phần tiền cảnh bị phân nhầm sang hậu cảnh (hoặc ngược lại), sự khác biệt sẽ giảm. Do đó, chia ảnh sao cho phương sai giữa các lớp lớn nhất tức là giảm thiểu xác suất phân nhầm.</p>
+
+<p><img src="media/wps71.jpg" alt="img" />      <img src="media/wps72.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Phương pháp lặp</imgnote> <imgnote>(b) Phương pháp phương sai giữa các lớp lớn nhất</imgnote></p>
+
+<p><img src="media/wps73.jpg" alt="img" />      <img src="media/wps74.jpg" alt="img" /></p>
+
+<p><imgnote>&copy; Ngưỡng thủ công 120</imgnote> <imgnote>(d) Ngưỡng thủ công 140</imgnote></p>
+
+<p><imgnote>Hình 2 Ngưỡng tự động và ngưỡng thủ công</imgnote></p>
+
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
+<h2>Dự án mẫu</h2>
+
+<p>参见“\Samples\二值化工具.gvp”。</p>

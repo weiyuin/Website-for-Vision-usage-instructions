@@ -1,0 +1,492 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1><strong>Công cụ Tìm Nhiều Đường và Nhiều Hình Tròn</strong></h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>​ Công cụ Tìm Nhiều Đường và Nhiều Hình Tròn tích hợp các công cụ có sẵn trong phần mềm như: công cụ tìm đường nâng cao, tìm hình tròn, tính giao điểm, trung điểm, nối đường. Người dùng có thể lựa chọn công cụ phù hợp theo nhu cầu và xuất ra kết quả tương ứng.</p>
+
+<p>​ Hình 1 là ảnh chụp toàn bộ các chức năng của công cụ. Giao diện được chia thành bốn phần chính: a là trang chính giao diện nâng cao của công cụ, bên trái là trang thiết lập thông số cho việc thêm công cụ tìm đường và tìm hình tròn, bên phải là khu vực hiển thị ảnh đầu vào và đầu ra; b là trang tính giao điểm/trung điểm, thêm các điểm đặc trưng vào danh sách để xử lý; c là trang kiểm tra nối đường/trung tuyến, chọn điểm đặc trưng hoặc đường để tạo kết quả đường nối hoặc trung tuyến; d là trang chọn kết quả đầu ra.</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_1_1.png" alt="" /></p>
+
+<p><imgnote>Hình 1 Giải thích giao diện công cụ Tìm Nhiều Đường và Hình Tròn</imgnote></p>
+
+<h2>2. Kịch bản ứng dụng</h2>
+
+<p>​ Công cụ này được dùng để xuất trực tiếp dữ liệu đường, hình tròn hoặc điểm đặc trưng cho các dự án đo lường hoặc định vị. Với dự án đo lường, các phần tử đầu ra có thể được liên kết trực tiếp; với dự án định vị, các mảng gồm đường và điểm đặc trưng sẽ được xuất làm đầu vào cho công cụ hiệu chuẩn. Bên trong công cụ có thể thêm các thao tác tìm đường, tìm hình tròn để xác định vị trí sơ bộ vật liệu trong dự án thực tế, sau đó sử dụng các điểm đặc trưng từ kết quả tìm đường và hình tròn làm điểm tham chiếu để định vị chính xác. Công cụ này phù hợp với mọi tình huống cần tìm đường và hình tròn.</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_2_1.png" alt="" /></p>
+
+<h2>3. Giải thích nguyên lý</h2>
+
+<p>​ Công cụ sử dụng việc bố trí thước đo đường và hình tròn cơ bản để tìm ra các đường và hình tròn đặc trưng. Từ các đặc trưng này, công cụ có thể tính ra giao điểm, sau đó xác định trung điểm của các đường trong ảnh. Dựa trên các điểm đặc trưng đó, công cụ có thể tạo các đường nối mới, và tiếp tục tính toán góc giữa các đường để xác định góc trung tuyến. Thông qua các vòng lặp tính toán đặc trưng, công cụ tạo ra hàng loạt biến số quan trọng trong quá trình hiệu chuẩn hoặc định vị điểm tham chiếu. Kết quả đầu ra có thể được đặt tên, sắp xếp tùy ý, và xuất dưới dạng mảng hoặc số liệu để phù hợp với các dự án khác nhau.</p>
+
+<h2>4. Hướng dẫn sử dụng</h2>
+
+<ul>
+<li><h4>Thêm công cụ, tải ảnh lên</h4></li>
+</ul>
+
+
+<p><img src="media/GcMultiCircleLineFindTool_4_1.png" alt="" /></p>
+
+<ul>
+<li><h4>Tìm Đường/Hình Tròn</h4>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_2.png" alt="" /></p>
+
+<p>​    Trang này thay thế cho các công cụ tìm đường và tìm hình tròn truyền thống. Người dùng có thể chuyển đổi giữa lựa chọn Đường Thẳng/Hình Tròn bằng hộp chọn, sau đó nhấn vào dấu “+” để thêm một công cụ con tương ứng. Sau đó, kéo thước đo vào vị trí cần kiểm tra trên ảnh để tạo công cụ con mới, và tải thông số mặc định. Nếu người dùng muốn cấu hình thông số tùy chỉnh, hãy chọn công cụ tương ứng và chuyển đến giao diện thông số của công cụ đó để chỉnh sửa, như hình dưới:</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_3.png" alt="" /></p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_3_1.png" alt="" /></p>
+
+<p>​    “Làm mới theo thời gian thực”: Sau khi thay đổi thông số, nếu muốn xem kết quả ngay trên ảnh đầu vào, có thể chọn tùy chọn “Làm mới theo thời gian thực”. Nếu không chọn, sau khi chỉnh sửa thông số, cần bấm “Thực thi” để làm mới kết quả. Lưu ý: nếu có quá nhiều công cụ con, bật làm mới theo thời gian thực có thể gây hiện tượng chậm, nên sử dụng thận trọng; đồng thời, người dùng có thể sử dụng phím ↑↓ để điều chỉnh thứ tự thực thi của các mục, như hình minh họa dưới đây:</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_21.gif" alt="" /></p></li>
+
+<li><h4>Giao Diện Thiết Lập Giao Điểm/Trung Điểm</h4>
+
+<p>Trang này tích hợp công cụ tìm giao điểm giữa đường/hình tròn và công cụ tạo trung điểm. Các chức năng trên trang mặc định sẽ tắt, người dùng cần bật theo nhu cầu.</p>
+
+<p>Quy tắc thao tác với giao điểm:</p>
+
+<ol>
+<li>Có thể thêm giao điểm giữa đường–đường, đường–hình tròn, hình tròn–hình tròn.</li>
+<li>Không được thêm các giao điểm trùng lặp (tức điểm có cùng nguồn gốc).</li>
+<li>Khi sửa đổi mối quan hệ giữa đường/hình tròn hoặc giao điểm làm tăng số lượng giao điểm, hệ thống sẽ thêm điểm mới; nếu giảm số lượng, các điểm bị loại sẽ trở thành điểm không hợp lệ.</li>
+<li>Xóa một giao điểm sẽ đồng thời xóa cả các điểm có cùng nguồn.</li>
+</ol>
+
+<p>Dùng để tính giao điểm giữa đường–đường, đường–hình tròn, hình tròn–hình tròn. Thực hiện theo các bước sau để thao tác:</p>
+
+<p><strong>Bước 1</strong> Bật hạng mục kiểm tra tương ứng và nhấn dấu “＋”;</p>
+
+<p><strong>Bước 2</strong> Nhấp vào mục đầu vào thứ nhất trong cửa sổ hình ảnh;</p>
+
+<p><strong>Bước 3</strong> Nhấp vào mục đầu vào thứ hai trong cửa sổ hình ảnh;</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_5.png" alt="" /><img src="media\GcMultiCircleLineFindTool_4_4.png" alt="" /></p>
+
+<p><strong>Bước 4</strong> Công cụ sẽ tự động tạo mục đầu ra tương ứng, nhấp đúp chuột để đổi tên nếu cần;</p></li>
+</ul>
+
+
+
+<p><img src="media/GcMultiCircleLineFindTool_4_6.png" alt="" /></p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_6.png" alt="" /></p>
+
+<p> Dùng để tìm trung điểm của hai điểm. Theo hướng dẫn chọn hai phần tử đầu vào, công cụ sẽ xuất ra trung điểm, các bước thực hiện cụ thể như sau:</p>
+
+<p>  <strong>Bước 1</strong> Bật mục kiểm tra tương ứng và nhấn dấu “＋”;</p>
+
+<p>  <strong>Bước 2</strong> Trong cửa sổ hình ảnh, nhấp chọn phần tử đầu vào thứ nhất (giao điểm/trung điểm);</p>
+
+<p>  <strong>Bước 3</strong> Trong cửa sổ hình ảnh, nhấp chọn phần tử đầu vào thứ hai (giao điểm/trung điểm);</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_7.png" alt="" /><img src="media\GcMultiCircleLineFindTool_4_8.png" alt="" /></p>
+
+<p>  <strong>Bước 4</strong> Công cụ tự động tạo phần tử đầu ra tương ứng, nhấp đôi để đổi tên nếu cần;</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_9.png" alt="" /></p>
+
+<ul>
+<li><h4>Giao Diện Thiết Lập Kết Nối/Đường Trung Bình</h4>
+
+<p>Trang này bao gồm tính toán góc đường kết nối và góc đường trung bình. Chức năng mặc định tắt, người dùng bật theo nhu cầu.</p>
+
+<p>Dùng để tạo đường kết nối giữa hai điểm. Theo hướng dẫn chọn hai phần tử đầu vào, công cụ sẽ xuất ra kết quả đường kết nối, các bước thực hiện như sau:</p>
+
+<p><strong>Bước 1</strong> Bật mục kiểm tra tương ứng và nhấn dấu “＋”;</p>
+
+<p><strong>Bước 2</strong> Trong cửa sổ hình ảnh, nhấp chọn phần tử đầu vào thứ nhất (giao điểm/trung điểm);</p>
+
+<p><strong>Bước 3</strong> Trong cửa sổ hình ảnh, nhấp chọn phần tử đầu vào thứ hai (giao điểm/trung điểm);</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_10.png" alt="" /></p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_11.png" alt="" /></p>
+
+<p><strong>Bước 4</strong> Công cụ tự động tạo đường kết nối giữa hai điểm, nhấp đôi để đổi tên;</p>
+
+<p><strong>Bước 5</strong> Chọn đường kết nối trong danh sách (hoặc trên hình ảnh), thiết lập phạm vi chuẩn hóa góc;</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_13.png" alt="" /></p>
+
+<p>Dùng để tính góc trung bình của nhiều đường thẳng a, và xuất ra một đường thẳng đi qua gốc tọa độ hình ảnh (0,0) với góc a. Theo hướng dẫn thêm phần tử đường thẳng, công cụ sẽ xuất ra đường trung bình của tất cả các đường thẳng đầu vào, các bước như sau:</p>
+
+<p><strong>Bước 1</strong> Bật mục kiểm tra tương ứng và nhấn dấu “＋”;</p>
+
+<p><strong>Bước 2</strong> Trong cửa sổ hình ảnh, nhấp chọn phần tử đầu vào (đường thẳng/đường kết nối);</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_14.png" alt="" /></p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_15.png" alt="" /></p>
+
+<blockquote><p><span style="color:red">Lưu ý</span></p>
+
+<p>Nếu người dùng muốn chỉnh sửa cách tạo giao điểm, có thể chỉnh sửa theo cách dưới đây
+<img src="media/GcMultiCircleLineFindTool_4_20.gif" alt="" /></p></blockquote>
+
+<p><strong>Bước 3</strong> Nhấn lại dấu “＋”;</p>
+
+<p><strong>Bước 4</strong> Trong cửa sổ hình ảnh, nhấp chọn phần tử đầu vào (đường thẳng/đường kết nối);</p>
+
+<p><strong>Bước 5</strong> Công cụ tính góc trung bình và tự động tạo đường trung bình;</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_16.png" alt="" /></p></li>
+<li><h4>Giao Diện Thiết Lập Chọn Kết Quả Xuất</h4>
+
+<p>Trang này dùng để chọn phần tử đầu ra cuối cùng của công cụ. Ở danh sách phía trên, bên trái hiển thị các phần tử đường thẳng chờ chọn, bên phải hiển thị các phần tử đường thẳng đã chọn để xuất. Ở danh sách phía dưới, bên trái hiển thị các điểm và hình tròn chờ chọn, bên phải hiển thị các điểm và hình tròn đã chọn để xuất. Các phần tử xuất sẽ theo thứ tự được chọn.</p>
+
+<p>Trong danh sách xuất điểm và hình tròn, 8 phần tử đầu tương ứng xuất điểm, 8 phần tử sau tương ứng xuất hình tròn.</p>
+
+<p>Các bước thao tác cụ thể như sau:</p>
+
+<p><strong>Bước 1</strong> Chọn một phần tử, chuyển vào danh sách xuất:</p>
+
+<p>   Trong danh sách bên trái chọn phần tử cần xuất, trong danh sách bên phải chọn thứ tự xuất cho phần tử đó, nhấn nút => để chuyển; mỗi loại phần tử cố định xuất 8 phần tử; với hình tròn, khi chọn thứ tự xuất, chọn từ vị trí thứ 8 trở đi.</p>
+
+<p>Người dùng có thể sử dụng nút lên/xuống để thay đổi thứ tự xuất. Mảng xuất sẽ theo thứ tự cấu hình, bao gồm mảng đường thẳng, mảng đoạn thẳng, mảng điểm (bao gồm điểm và tâm hình tròn).</p></li>
+</ul>
+
+
+<p><img src="media/GcMultiCircleLineFindTool_4_17.png" alt="" /></p>
+
+<p><strong>Bước 2</strong> Sau khi công cụ thực thi, các hạng mục đã cấu hình đầu ra sẽ được xuất.</p>
+
+<p><img src="media/GcMultiCircleLineFindTool_4_19.png" alt="" /></p>
+
+<h2>5. Các Vấn Đề Thường Gặp</h2>
+
+<table>
+<thead>
+<tr>
+<th>Mô tả hiện tượng</th>
+<th>Phương pháp giải quyết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Khi chọn đường thẳng tham chiếu, nhấp vào hộp thả xuống để chọn đường thẳng cần tham chiếu, nhưng hộp thả xuống trống, không có đường thẳng nào để chọn;</td>
+<td>Do mục tham chiếu đường thẳng yêu cầu xác định vị trí của đường thẳng hiện tại trong danh sách, nên chỉ có thể tham chiếu kết quả của các đường thẳng đứng trước trong danh sách. Gặp trường hợp này, hãy nhấp vào danh sách hoặc nhấp vào đường thẳng tương ứng trong hình ảnh để làm mới nội dung trong danh sách tham chiếu.</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. Thuyết Minh Tham Số</h2>
+
+<h4>Tham Số Đầu Vào</h4>
+
+<table>
+<thead>
+<tr>
+<th>Tham số tìm đường thẳng</th>
+<th>Giải thích tham số tìm đường thẳng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chế độ biên</td>
+<td>Có hai chế độ biên của công cụ thước cặp: biên đơn và biên kép.</td>
+</tr>
+<tr>
+<td>Cực tính biên</td>
+<td>Cực tính biên là hình thức chuyển đổi mức xám của biên ảnh, bao gồm 3 loại: cực tính bất kỳ, từ sáng đến tối, và từ tối đến sáng.</td>
+</tr>
+<tr>
+<td>Ngưỡng độ tương phản</td>
+<td>Công cụ thước cặp mặc định sử dụng điểm đánh giá dựa trên độ tương phản, tức là đánh giá theo cường độ tín hiệu biên và xuất điểm có biên mạnh nhất. Giá trị ngưỡng độ tương phản nằm trong khoảng 0~255.</td>
+</tr>
+<tr>
+<td>Thuộc tính biên</td>
+<td>Trong vùng tìm kiếm, thước cặp sẽ xác định vị trí chính xác của biên ảnh dựa theo các thuộc tính biên khác nhau. Công cụ thước cặp có 5 loại thuộc tính biên: biên tốt nhất, biên đầu tiên, biên cuối cùng, biên gần tâm nhất, và biên có mức xám kỳ vọng. Biên có mức xám kỳ vọng chỉ dùng được khi chế độ biên chọn là “biên đơn”.</td>
+</tr>
+<tr>
+<td>Giá trị xám kỳ vọng phía tối</td>
+<td>Giá trị xám kỳ vọng phía tối của biên. Chỉ dùng được khi thuộc tính biên chọn là “biên có mức xám kỳ vọng”.</td>
+</tr>
+<tr>
+<td>Giá trị xám kỳ vọng phía sáng</td>
+<td>Giá trị xám kỳ vọng phía sáng của biên. Chỉ dùng được khi thuộc tính biên chọn là “biên có mức xám kỳ vọng”.</td>
+</tr>
+<tr>
+<td>Tỷ lệ điểm ngoại lai</td>
+<td>Điểm ngoại lai là các điểm lệch xa khỏi đường cong. Tỷ lệ điểm ngoại lai là tỷ lệ các điểm không tham gia vào việc khớp đường thẳng. Phạm vi giá trị là 0~0.5.</td>
+</tr>
+<tr>
+<td>Giới hạn góc</td>
+<td>Dùng giới hạn góc để ràng buộc phạm vi tìm đường thẳng.</td>
+</tr>
+<tr>
+<td>Góc kỳ vọng</td>
+<td>Góc đường thẳng dự kiến.</td>
+</tr>
+<tr>
+<td>Độ lệch tối đa</td>
+<td>Độ sai lệch cho phép so với góc đường thẳng kỳ vọng. Phạm vi tìm đường thực tế là: [Góc kỳ vọng - độ lệch tối đa, Góc kỳ vọng + độ lệch tối đa]. Ví dụ: góc kỳ vọng là 10°, độ lệch tối đa là 5°, thì phạm vi thực tế là [5°, 15°], tức là 10°±5°.</td>
+</tr>
+<tr>
+<td>Chế độ mặt nạ</td>
+<td>Thiết lập mặt nạ nghĩa là loại bỏ những vùng không tham gia huấn luyện mẫu trong quá trình huấn luyện, nhằm giảm các đặc trưng hình học không cần thiết.</td>
+</tr>
+<tr>
+<td>Chế độ thủ công</td>
+<td>Khi chọn “Có”, cho phép thiết lập thủ công tham số thước cặp. Nhấn chuột phải vào thước cặp để mở hộp thoại tùy chỉnh tham số. Khi chọn “Không”, không thể thiết lập thủ công.</td>
+</tr>
+<tr>
+<td>Hiển thị điểm dò</td>
+<td>Khi chọn “Có”, sẽ hiển thị điểm dò của thước cặp và xuất điểm dò ra ngoài. Mỗi thước cặp tương ứng với một điểm dò và có thể dùng làm đầu vào cho công cụ khác. Trong đó, điểm ngoại lai hiển thị màu đỏ, các điểm còn lại màu xanh lá.</td>
+</tr>
+<tr>
+<td>Bật dịch chuyển song song</td>
+<td>Khi chọn “Có”, sẽ dịch chuyển đường thẳng kết quả theo lượng dịch song song được thiết lập.</td>
+</tr>
+<tr>
+<td>Bật đường tham chiếu</td>
+<td>Dùng đường tham chiếu để giới hạn vị trí vùng tìm kiếm hình chữ nhật biến hình. Khi chọn “Có”, sẽ hiển thị các tham số kiểu hiệu chỉnh, sai số góc cho phép và khoảng cách tham chiếu. Lưu ý: nếu khoảng cách tham chiếu là 0.000000 thì tương đương như không bật đường tham chiếu.</td>
+</tr>
+<tr>
+<td>Kiểu hiệu chỉnh</td>
+<td>Có hai kiểu hiệu chỉnh: song song và vuông góc.</td>
+</tr>
+<tr>
+<td>Sai số góc tham chiếu cho phép</td>
+<td>Ngưỡng sai số góc cho đường thẳng đầu vào. Nếu vượt quá ngưỡng, sẽ hiệu chỉnh theo góc của đường thẳng tham chiếu.</td>
+</tr>
+<tr>
+<td>Khoảng cách đường thẳng tham chiếu (trái/trên là âm, phải/dưới là dương)</td>
+<td>Khoảng cách đường thẳng tham chiếu. Trong đó: bên trái, phía trên là giá trị âm; bên phải, phía dưới là giá trị dương.</td>
+</tr>
+<tr>
+<td>Chuẩn hóa góc</td>
+<td>Chuẩn hóa góc nghĩa là chuyển đổi góc đường thẳng về trong một phạm vi xác định. Có 3 phạm vi chuẩn hóa: [-90°, 90°), [-180°, 180°), và [0°, 180°).</td>
+</tr>
+<tr>
+<td>Giới hạn trên trọng tâm X</td>
+<td>Phạm vi giá trị: (0, 999999)</td>
+</tr>
+<tr>
+<td>Giới hạn dưới trọng tâm X</td>
+<td>Phạm vi giá trị: (0, 999999)</td>
+</tr>
+<tr>
+<td>Giới hạn trên trọng tâm Y</td>
+<td>Phạm vi giá trị: (0, 999999)</td>
+</tr>
+<tr>
+<td>Giới hạn dưới trọng tâm Y</td>
+<td>Phạm vi giá trị: (0, 999999)</td>
+</tr>
+<tr>
+<td>Giới hạn trên góc tuyệt đối đường thẳng</td>
+<td>Phạm vi giá trị: [-180.0, 360.0)</td>
+</tr>
+<tr>
+<td>Giới hạn dưới góc tuyệt đối đường thẳng</td>
+<td>Phạm vi giá trị: [-180.0, 360.0)</td>
+</tr>
+<tr>
+<td>Giới hạn trên góc biến thiên đường thẳng</td>
+<td>Phạm vi giá trị: [-90.0, 90.0)</td>
+</tr>
+<tr>
+<td>Giới hạn dưới góc biến thiên đường thẳng</td>
+<td>Phạm vi giá trị: [-90.0, 90.0)</td>
+</tr>
+</tbody>
+</table>
+
+
+<table>
+<thead>
+<tr>
+<th>Tham số tìm đường tròn</th>
+<th>Giải thích tham số tìm đường tròn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cực tính biên</td>
+<td>Cực tính biên là hình thức chuyển đổi mức xám của biên ảnh, bao gồm 3 loại: cực tính bất kỳ, từ sáng đến tối, và từ tối đến sáng.</td>
+</tr>
+<tr>
+<td>Chế độ biên</td>
+<td>Công cụ tìm đường tròn có 2 chế độ biên: biên đơn và biên kép.</td>
+</tr>
+<tr>
+<td>Ngưỡng độ tương phản</td>
+<td>Công cụ thước cặp mặc định sử dụng điểm đánh giá dựa trên độ tương phản, tức là đánh giá theo cường độ tín hiệu biên và xuất điểm có biên mạnh nhất. Giá trị ngưỡng độ tương phản nằm trong khoảng 0~255.</td>
+</tr>
+<tr>
+<td>Tỷ lệ điểm ngoại lai</td>
+<td>Điểm ngoại lai là các điểm lệch xa khỏi đường cong. Tỷ lệ điểm ngoại lai là tỷ lệ các điểm không tham gia vào việc khớp đường tròn. Phạm vi giá trị là 0~0.5.</td>
+</tr>
+<tr>
+<td>Thuộc tính biên</td>
+<td>Trong vùng tìm kiếm, thước cặp sẽ xác định vị trí chính xác của biên ảnh dựa theo các thuộc tính biên khác nhau. Công cụ thước cặp có 9 loại thuộc tính biên: biên tốt nhất, biên đầu tiên, biên cuối cùng, biên sáng nhất toàn cục, biên tối nhất toàn cục, biên sáng nhất phía sáng, biên tối nhất phía sáng, biên sáng nhất phía tối, và biên tối nhất phía tối.</td>
+</tr>
+<tr>
+<td>Bật khớp tối ưu toàn cục</td>
+<td>Có bật khớp tối ưu toàn cục hay không.</td>
+</tr>
+<tr>
+<td>Bật chấm điểm lại</td>
+<td>Có bật chức năng chấm điểm lại hay không.</td>
+</tr>
+<tr>
+<td>Cho phép giảm điểm ngoại lai</td>
+<td>Có cho phép giảm số lượng điểm ngoại lai hay không.</td>
+</tr>
+<tr>
+<td>Chế độ mặt nạ</td>
+<td>Thiết lập mặt nạ nghĩa là loại bỏ những vùng không tham gia huấn luyện mẫu trong quá trình huấn luyện, nhằm giảm các đặc trưng hình học không cần thiết.</td>
+</tr>
+<tr>
+<td>Chế độ thủ công</td>
+<td>Khi chọn “Có”, cho phép thiết lập thủ công tham số thước cặp. Nhấn chuột phải vào thước cặp để mở hộp thoại tùy chỉnh tham số. Khi chọn “Không”, không thể thiết lập thủ công.</td>
+</tr>
+<tr>
+<td>Hiển thị điểm dò</td>
+<td>Khi chọn “Có”, sẽ hiển thị điểm dò của thước cặp; chọn “Không”, sẽ không hiển thị. Trong đó, điểm ngoại lai hiển thị màu đỏ, các điểm còn lại màu xanh lá.</td>
+</tr>
+<tr>
+<td>Giới hạn trên tọa độ X tâm tròn</td>
+<td>Phạm vi giá trị: (0, 999999)</td>
+</tr>
+<tr>
+<td>Giới hạn dưới tọa độ X tâm tròn</td>
+<td>Phạm vi giá trị: (0, 999999)</td>
+</tr>
+<tr>
+<td>Giới hạn trên tọa độ Y tâm tròn</td>
+<td>Phạm vi giá trị: (0, 999999)</td>
+</tr>
+<tr>
+<td>Giới hạn dưới tọa độ Y tâm tròn</td>
+<td>Phạm vi giá trị: (0, 999999)</td>
+</tr>
+<tr>
+<td>Giới hạn trên bán kính</td>
+<td>Phạm vi giá trị: (0, 999999)</td>
+</tr>
+<tr>
+<td>Giới hạn dưới bán kính</td>
+<td>Phạm vi giá trị: (0, 999999)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h4>Tham số đầu ra</h4>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ảnh đầu ra</td>
+<td>Dữ liệu ảnh đầu ra, giống hệt với ảnh đầu vào;</td>
+</tr>
+<tr>
+<td>Mảng đường thẳng đầu ra</td>
+<td>Tập hợp các đường thẳng đầu ra, tối đa 8 đường thẳng</td>
+</tr>
+<tr>
+<td>Mảng đoạn thẳng đầu ra</td>
+<td>Tập hợp các đoạn thẳng đầu ra, tối đa 8 đoạn</td>
+</tr>
+<tr>
+<td>Mảng điểm đầu ra</td>
+<td>Tập hợp các điểm đầu ra, tối đa 8 điểm</td>
+</tr>
+<tr>
+<td>Mảng ROI đường thẳng lỗi đầu ra</td>
+<td>Tập hợp vùng ROI của các đường thẳng lỗi đầu ra</td>
+</tr>
+<tr>
+<td>Mảng ROI đường tròn lỗi đầu ra</td>
+<td>Tập hợp vùng ROI của các đường tròn lỗi đầu ra</td>
+</tr>
+<tr>
+<td>Đường 1-8</td>
+<td>Kết quả đường thẳng từ 1 đến 8</td>
+</tr>
+<tr>
+<td>Đoạn 1-8</td>
+<td>Kết quả đoạn thẳng từ 1 đến 8</td>
+</tr>
+<tr>
+<td>Góc 1-8</td>
+<td>Kết quả góc từ 1 đến 8</td>
+</tr>
+<tr>
+<td>Đường tròn 1-8</td>
+<td>Kết quả đường tròn từ 1 đến 8</td>
+</tr>
+<tr>
+<td>Điểm 1-8</td>
+<td>Kết quả điểm từ 1 đến 8</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Đơn vị thời gian: mili giây (ms);</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số (chế độ giá trị số)</th>
+<th>Giải thích tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ảnh đầu ra</td>
+<td>Dữ liệu ảnh đầu ra, giống hệt với ảnh đầu vào;</td>
+</tr>
+<tr>
+<td>Giá trị đầu ra</td>
+<td>Giá trị chủ yếu bao gồm kết quả đường thẳng, điểm và đường tròn; tên được xuất ra theo cách đặt tên tùy chỉnh trong danh sách</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi là kiểu Boolean: true (thành công), false (thất bại);</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Đơn vị thời gian: mili giây (ms);</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\多圆多线查找工具.gvp”。</p>

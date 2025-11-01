@@ -1,0 +1,220 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Hướng Dẫn Nhanh Công Cụ Script</h1>
+
+<p>Ngôn ngữ lập trình sử dụng trong công cụ script là Python, một ngôn ngữ lập trình đơn giản, dễ học và mạnh mẽ. Công cụ script hiện tại hỗ trợ các chức năng như lấy và thiết lập tham số công cụ, lấy và thiết lập biến trong quản lý biến, hiển thị GUI lên cửa sổ xem, v.v.</p>
+
+<h2>Cú pháp cơ bản của Python</h2>
+
+<p>Để học Python chi tiết, vui lòng tham khảo sách chuyên ngành hoặc các khóa học trực tuyến.</p>
+
+<p>Tham khảo quy chuẩn lập trình Python:</p>
+
+<p><a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p>
+
+<ul>
+<li><p>Câu lệnh Python không kết thúc bằng dấu chấm phẩy; phạm vi khối lệnh Python được xác định bằng thụt lề, không giống như một số ngôn ngữ cao cấp dùng dấu ngoặc nhọn {}. Do đó khi viết mã Python, cần chú ý thụt lề, nghiêm cấm sử dụng phím Tab mà phải dùng 4 dấu cách cho một cấp thụt lề.</p></li>
+<li><p>Kiểu dữ liệu Boolean trong Python là <strong>True</strong> và <strong>False</strong>, chú ý chữ cái đầu viết hoa.</p></li>
+<li><p>Điều kiện trong Python:</p>
+
+<p><code>python
+a = 1
+b = 0
+if a &gt; b:
+  print("a &gt; b")
+elif a == b:
+  print("a == b")
+else:
+  print("a &lt; b")
+</code></p></li>
+<li><p>Vòng lặp for trong Python:</p>
+
+<p><code>python
+for i in range(10):
+    print(i)
+</code></p></li>
+<li><p>Vòng lặp while trong Python:</p>
+
+<p><code>python
+i = 0
+while i &lt; 10:
+  print(i)
+  i = i + 2
+</code></p></li>
+<li><p>Toán tử logic trong Python:</p>
+
+<p>Và (AND): <strong>and</strong></p>
+
+<p>Hoặc (OR): <strong>or</strong></p>
+
+<p>Phủ định (NOT): <strong>not</strong></p>
+
+<p><code>python
+findline_result4 = GvTool.GetToolData("找线工具004.执行结果")
+findline_result5 = GvTool.GetToolData("找线工具005.执行结果")
+
+if findline_result4 and findline_result5:
+    print("找线工具004和找线工具005执行成功")
+elif not findline_result4:
+    print("找线工具004执行失败")
+</code></p></li>
+<li><p>Toán tử bit trong Python:</p>
+
+<p>AND bit: <strong>&amp;</strong></p>
+
+<p>OR bit: <strong>|</strong></p>
+
+<p>XOR bit: <strong>^</strong></p></li>
+</ul>
+
+<h2>Lấy và thiết lập tham số công cụ</h2>
+
+<p>Các thao tác liên quan đến công cụ thực hiện thông qua đối tượng <a href="../../%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/GvTool.htm">GvTool</a>, bao gồm các hàm GetToolData, SetToolData, RefToolData.</p>
+
+<ul>
+<li><p><strong>GetToolData</strong></p>
+
+<p>Dùng để lấy tham số công cụ, ví dụ lấy tọa độ tìm kiếm của công cụ định vị hình học:</p>
+
+<p><code>python
+pos = GvTool.GetToolData("几何定位_002.搜索坐标")
+</code></p></li>
+<li><p><strong>SetToolData</strong></p>
+
+<p>Dùng để thiết lập tham số công cụ. Nếu dùng SetToolData thiết lập tham số, thì <font color="red">không được phép liên kết tham số này trong chuỗi tham số</font> (không được thiết lập liên kết tham số trong hộp thoại chỉnh sửa chuỗi dữ liệu, khi nhấp đúp vào công cụ). Ví dụ thiết lập ngưỡng nhận của công cụ định vị hình học:</p>
+
+<p><code>python
+GvTool.SetToolData("几何定位_002.接受阈值", 0.8)
+</code></p>
+
+<blockquote><p><strong>Lưu ý:</strong> Nếu kiểu tham số truyền vào không phù hợp với kiểu tham số công cụ sẽ gây lỗi, nên khi thiết lập tham số cần truyền đúng kiểu.</p>
+
+<p><img src="media/8ebb8818339d4b873ac27c799a6b1aac.png" alt="" /></p></blockquote></li>
+<li><p><strong>RefToolData</strong></p>
+
+<p>Lấy tham chiếu tham số công cụ, tham số lấy được sẽ liên kết với biến, chỉnh sửa biến sẽ thay đổi tham số công cụ. Cách này không được khuyến khích vì dễ gây lỗi khi vô tình sửa tham số công cụ mà không mong muốn.</p></li>
+</ul>
+
+<h2>Thiết lập tham số giới hạn trên dưới của công cụ</h2>
+
+<p>Khi công cụ có tham số giới hạn trên dưới như tổng số pixel trên/dưới, số lượng kết quả trên/dưới, có thể thiết lập theo các cách sau:</p>
+
+<p>Cách 1: Thiết lập trực tiếp giá trị giới hạn mới</p>
+
+<p><code>python
+# Cách 1:
+# Sửa giới hạn trên tổng số pixel của công cụ Blob (kiểu số nguyên)
+GvTool.SetToolData("Blob工具_001.总像素数上限", GvVisionAssembly.Limit_Int(1000))
+# Sửa giới hạn trên góc biến đổi đường thẳng của công cụ tìm đường thẳng (kiểu số thực)
+GvTool.SetToolData("找线工具_003.直线变化角度上限", GvVisionAssembly.Limit_Double(10.0))
+</code></p>
+
+<p>Cách 2: Lấy tham số giới hạn, chỉnh sửa thuộc tính rồi thiết lập lại</p>
+
+<p><code>python
+# Cách 2: sửa giới hạn trên tổng số pixel công cụ Blob
+upper = GvTool.GetToolData("Blob工具_001.结果个数上限")  # lấy giới hạn trên
+upper.Value = 1000  # chỉnh giá trị giới hạn
+upper.Enable = True  # bật hiệu lực giới hạn
+GvTool.SetToolData("Blob工具_001.总像素数上限", upper)  # thiết lập lại
+</code></p>
+
+<h2>Lấy và thiết lập biến trong quản lý biến</h2>
+
+<p>Các thao tác liên quan thực hiện qua đối tượng GvVar, gồm GetVar, SetVar, RefVar (hiện không dùng).</p>
+
+<ul>
+<li><p><strong>Lấy biến</strong></p>
+
+<p><code>python
+a = GvVar.GetVar("#L0")
+</code></p></li>
+<li><p><strong>Thiết lập biến</strong></p>
+
+<p><code>python
+a = 50
+GvVar.SetVar("#L0", a)
+</code></p></li>
+</ul>
+
+<h2>Hiển thị GUI</h2>
+
+<p>Công cụ script có thể thêm GUI lên ảnh, gồm văn bản, hình chữ nhật, hình tròn, hình dấu cộng. Mỗi loại GUI gồm một đối tượng kiểu phong cách GUI (GUI style) và một đối tượng hình dạng. Ví dụ hình chữ nhật dùng loại GsScriptGuiRect có 2 thuộc tính sScriptGuiStyle (phong cách) và rect (hình chữ nhật hiển thị).</p>
+
+<p>GUI muốn hiển thị phải thêm vào mảng GUI GcScriptGuiArray, cuối cùng thiết lập mảng GUI lên cửa sổ xem bằng SetGraphicDisplay("tên cửa sổ", mảng GUI).</p>
+
+<ul>
+<li><p><strong>Thiết lập phong cách GUI</strong></p>
+
+<p>Phong cách GUI gồm thiết lập kiểu đường kẻ, độ dày, màu sắc,... Tham khảo tài liệu GsScriptGuiStyle. Trước hết định nghĩa biến kiểu GsScriptGuiStyle, chỉ cần chỉnh các thuộc tính cần thiết, ví dụ nếu không cần hiện nhãn thì không đặt. Nếu không cần chỉnh kiểu đường hoặc độ dày thì có thể bỏ qua.</p>
+
+<p><code>python
+guiStyle = GvVisionAssembly.GsScriptGuiStyle()
+guiStyle.bVisible = False
+guiStyle.nLineStyle = 3
+guiStyle.nLineWidth = 2
+guiStyle.clrLineColor = [255,0,0]
+guiStyle.bLabelVisible = True
+guiStyle.strLabelFont = "宋体"
+guiStyle.lSizeFont = 10
+</code></p></li>
+<li><p><strong>Đối tượng Gui</strong></p>
+
+<p>Ví dụ đối tượng Gui hình chữ nhật, các loại khác tham khảo tài liệu tương ứng.</p>
+
+<p><code>python
+guiRect = GvVisionAssembly.GsScriptGuiRect()
+rect0 = GvVisionAssembly.scRect(GvVisionAssembly.sc2Vector(100,100),
+                                GvVisionAssembly.sc2Vector(200,300))
+guiRect.rect = rect0
+guiStyle.strLabel = "矩形"  # Có thể không đặt
+guiRect.sScriptGuiStyle = guiStyle  # thiết lập phong cách GUI
+</code></p></li>
+<li><p><strong>Thiết lập mảng Gui hiển thị</strong></p>
+
+<p>Mảng Gui dùng để lưu tất cả Gui cần thêm lên cùng một cửa sổ xem, tiện thao tác cùng lúc.</p>
+
+<p>Muốn thêm Gui lên cửa sổ xem, phải thêm Gui vào mảng trước, sau đó thiết lập mảng lên cửa sổ xem qua proxy mới hiển thị được.</p>
+
+<p><code>python
+guiArray.Add(guiRect)
+
+GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
+</code></p></li>
+</ul>
+
+<h2>Báo cáo thông báo</h2>
+
+<p>Báo cáo thông báo thực hiện bằng hàm ReportMessage, tạo các loại thông báo khác nhau như nhắc nhở, cảnh báo, lỗi,... Loại thông báo xác định qua GeMsgReportType, xem tài liệu để biết chi tiết.</p>
+
+<p><code>python
+# Hàm báo cáo thông báo, tương đương công cụ báo cáo
+# strMsg: nội dung thông báo
+# eType: loại thông báo, xem GeMsgReportType
+# bIsForbid: có cho phép bật hộp thoại popup không, True: cấm popup, False: cho phép popup
+GvVisionAssembly.ReportMessage(str strMsg, GeMsgReportType eType, bool bIsForbid)
+</code></p>
+
+<p><strong>Ví dụ:</strong></p>
+
+<p><code>python
+Genote = GvVisionAssembly.GeMsgReportType
+noteType = Genote.eMRTFatalErr
+GvVisionAssembly.ReportMessage("123", noteType, False)
+</code></p>

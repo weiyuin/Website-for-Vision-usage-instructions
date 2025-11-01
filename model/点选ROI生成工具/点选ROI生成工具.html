@@ -1,0 +1,160 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点选ROI生成工具</h1>
+
+<h2>功能</h2>
+
+<p> 通过图像参照选点生成连续的点集并输出。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 无    </td>
+<td> 无                                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 输入图像                                                   </td>
+<td> 选点的输入图像 </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入图像                                                     </td>
+<td> 待选点的输入图像 </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 二维线性变换是指目标相对于模板的平移、旋转、缩放变换。选点区域接受二维线性变换以确保实时图像的选点位置保持相对固定。                 </td>
+</tr>
+<tr>
+<td> 高级界面     </td>
+<td> GUI显示                                               </td>
+<td> 获得参考位置的图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 确定         </td>
+<td> 此次选点操作有效。                                                                </td>
+</tr>
+<tr>
+<td></td>
+<td> 取消         </td>
+<td> 此次选点操作无效，仍然使用上次的选取点。                                </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>监视窗口 </td>
+<td> 结果点集 </td>
+<td> 监视执行后集合中点的数值 </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 输出图像                                                     </td>
+<td> 输出图像的宽度、高度、像素大小。   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                   </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 对输入图像执行选点之后的结果图像。 </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 结果点集 </td>
+<td> 对输入点处理后的点的集合 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                     </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像                                                     </td>
+<td> 对输入图像执行选点之后的结果图像。 </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 结果点集 </td>
+<td> 对输入点处理后的点的集合 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>点选ROI工具高级属性界面如图1所示，主要由控制、显示两部分组成。</p>
+
+<ul>
+<li><p>控制部分主要是对图像编辑选点相关部分的控制和显示的控制；</p></li>
+<li><p>显示部分则主要是显示参考图像和点集显示的相关GUI，以及显示鼠标位置及相应位置上参考图像的象素值，包括显示控件和状态显示栏。</p></li>
+<li><p>操作说明：</p>
+
+<p>设置 ：1.添加，此时启动选点添加，鼠标点击GUI图像增加选点，并刷新选点结果列表；2.修改，此时启动gui选点的拖拽与删除操作（两个删除按钮启用），并刷新结果列表；</p>
+
+<p>3.锁定，此时选点隐藏，通过GUI生成的任意折线GUI操作，并刷新结果列表。</p>
+
+<p><img src="media/GvPointsGainTool_1.jpg" alt="img" /></p>
+
+<p><imgnote>图1 工具高级属性界面</imgnote></p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>选点后需要点击确定，刷新工具参数，点击取消此次操作无效。</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\点选ROI生成工具.gvp”。</p>

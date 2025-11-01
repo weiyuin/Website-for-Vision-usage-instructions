@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10506203",
+      "name": "关闭文件夹",
+      "font_class": "huabanfuben",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "10506208",
+      "name": "打开文件夹",
+      "font_class": "huabanfuben1",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "14421193",
+      "name": "打开文件夹",
+      "font_class": "dakaiwenjianjia",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "14421204",
+      "name": "关闭文件夹",
+      "font_class": "guanbiwenjianjia",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "15644314",
+      "name": "打开文件夹",
+      "font_class": "dakaiwenjianjia1",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    }
+  ]
+}

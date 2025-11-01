@@ -1,0 +1,164 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云交点中点或投影点工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云交点中点或投影点工具主要是计算三维空间内线线交点、线面交点、三面交点、中点以及点在直线的投影点、点在平面的投影点和点集在平面的投影点集的功能。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量中，该工具可以计算三维空间内线线交点、线面交点、三面交点、中点以及点在直线的投影点、点在平面的投影点、点集到平面的投影点集的位置，得到点云图像中特征点的三维坐标信息，为后续距离测量等工具的测量提供输入。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4>
+
+<p><img src=".\media\GcCloudIntersectOrProjectedPointTool_3_1.png" style="zoom:70%;" /></p></li>
+<li><h4>参数设置</h4>
+
+<ul>
+<li>① 选择三维点类型：交点模式、中点模式、投影点模式；</li>
+<li>② 交点类型或投影点类型设置；</li>
+<li>③ 数据链接设置输入点云数据等；</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 三维点/三维点1/2                                  </td>
+<td> 输入待测量的三维点                               </td>
+</tr>
+<tr>
+<td> 三维点集 </td>
+<td> 输入待测量的三维点集 </td>
+</tr>
+<tr>
+<td> 三维直线/三维直线1/2 </td>
+<td> 输入待测量的三维直线                                                                                       </td>
+</tr>
+<tr>
+<td> 三维平面/三维平面1/2/3 </td>
+<td> 输入待测量的三维平面                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 三维点类型                    </td>
+<td> 分为三种：交点模式、中点模式和投影点模式 </td>
+</tr>
+<tr>
+<td> 交点类型       </td>
+<td> 分为三种：线线交点、线面交点、面面交点                           </td>
+</tr>
+<tr>
+<td> 投影点类型        </td>
+<td> 分为三种：点到线投影点、点到面投影点和点集到面投影点集                  </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出三维点                                                </td>
+<td> 输出三维点的位置坐标 </td>
+</tr>
+<tr>
+<td> 输出三维点集 </td>
+<td> 输出三维点集的位置坐标 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出三维点                                                </td>
+<td> 输出三维点的位置坐标 </td>
+</tr>
+<tr>
+<td> 输出三维点集 </td>
+<td> 输出三维点集的位置坐标 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间           </td>
+<td> 工具执行时间                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点云测量.gvp”。</p>
+
+<h2>7. 特殊说明</h2>

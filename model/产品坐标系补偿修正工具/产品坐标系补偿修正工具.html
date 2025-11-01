@@ -1,0 +1,180 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>产品坐标系补偿修正</h1>
+
+<h2>功能</h2>
+
+<p>如图1所示，对象与目标的产品长宽比不同时，直接进行两角点的对位，会造成目标和对象的外轮廓存在角度偏差，因而对位的偏移量需要一定的补偿才能达到理想的对位结果。而该产品坐标系下的补偿值还需要进行一定的修正，并最终转换到平台坐标系下。本工具就是用于根据目标的绝对角度，将产品坐标系下的补偿值修正到平台坐标系。</p>
+
+<p>   <img src="media/wps97.jpg" alt="img" /></p>
+
+<p><imgnote>图1 产品坐标系补偿修正</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 目标水平长度                                                 </td>
+<td> 目标产品的水平长度。<img src="media/wps99.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td></td>
+<td> 目标垂直长度 </td>
+<td> 目标产品的垂直长度。<img src="media/wps100.jpg" alt="img" />                                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 对象水平长度 </td>
+<td> 对象产品的水平长度。<img src="media/wps101.jpg" alt="img" />                                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 对象垂直长度 </td>
+<td> 对象产品的垂直长度。<img src="media/wps102.jpg" alt="img" />                                                              </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                                                                        </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 平台轴方向                                                   </td>
+<td> 平台各轴的正方向。                          </td>
+</tr>
+<tr>
+<td></td>
+<td> 目标绝对角度 </td>
+<td> 目标产品坐标系在平台坐标系下的绝对角度。<img src="media/wps103.jpg" alt="img" />                                              </td>
+</tr>
+<tr>
+<td></td>
+<td> X补偿值      </td>
+<td> 产品坐标系下的X轴方向补偿值。                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> Y补偿值      </td>
+<td> 产品坐标系下的Y轴方向补偿值。                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> D补偿值      </td>
+<td> 产品坐标系下的D轴补偿值。                                                                                 </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无 </td>
+<td> 无                                                                                                        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称    </th>
+<th> 参数描述                                                                                        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口    </td>
+<td> 固定补偿计算值D                   </td>
+<td> 对象到对位补偿后的对象固定旋转补偿值。<img src="media/wps105.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td></td>
+<td> 平台X补偿值 </td>
+<td> 平台坐标系下的X轴方向补偿值结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 平台Y补偿值 </td>
+<td> 平台坐标系下的Y轴方向补偿值结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 平台D补偿值 </td>
+<td> 平台坐标系下的D轴补偿值结果。                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果    </td>
+<td> 工具执行结果。                                                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间    </td>
+<td> 工具执行时间。                                                                                  </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                                                             </td>
+</tr>
+<tr>
+<td>数据链 </td>
+<td> 无 </td>
+<td> 无                                                                                              </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>固定补偿计算值D与目标水平/垂直长度和对象水平/垂直长度的关系</h3>
+
+<p>如图2所示，固定补偿计算值D可以理解为是当前对象到补偿后对象位置的固定旋转角度。</p>
+
+<p><img src="media/wps107.jpg" alt="img" /></p>
+
+<p><imgnote>图2 固定补偿D值计算</imgnote></p>
+
+<p>由属性中输入的目标与对象各方向的长度，可以计算该角度。公式为：</p>
+
+<p><img src="media/wps108.png" alt="img" /></p>
+
+<p>计算出固定补偿D之后，可以得出最终的平台坐标系下的旋转量为属性中D补偿值与固定补偿计算值D的和。</p>
+
+<h3>目标绝对角度</h3>
+
+<p>目标绝对角度为目标产品坐标系在平台坐标系下的绝对角度。产品坐标系下的X/Y补偿量均为以此角度来转换为平台坐标系下的X/Y补偿量的。</p>
+
+<h2>注意</h2>
+
+<p>属性窗口中的水平/垂直长度参数的水平/垂直是相对于平台坐标系而言的。其中固定补偿值D的计算只适用于目标/对象水平长度是相对于平台坐标系水平，目标/对象垂直长度是相对于平台坐标系垂直的情形下。</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\产品坐标系补偿修正工具.gvp”。</p>

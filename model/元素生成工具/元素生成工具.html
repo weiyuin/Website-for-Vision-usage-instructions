@@ -1,0 +1,576 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Tạo Phần Tử</h1>
+
+<h2>1. Tổng Quan Chức Năng</h2>
+
+<p>   Tạo ra các phần tử cơ bản trong không gian: điểm 3D, đường thẳng 3D, đoạn thẳng 3D, mặt phẳng, hình hộp chữ nhật, hình trụ,... để chuẩn bị dữ liệu chuỗi tham số cho các công cụ xử lý điểm mây khác. Các phần tử này có thể được tạo bằng cách nhập tay hoặc trích chọn từ dữ liệu điểm đã có.</p>
+
+<h2>2. Kịch Bản Sử Dụng</h2>
+
+<p>   Công cụ tạo phần tử chủ yếu dùng để tạo các phần tử hình học cơ bản trong không gian, cung cấp liên kết cho các công cụ khác.</p>
+
+<h2>3. Hướng Dẫn Sử Dụng</h2>
+
+<ul>
+<li><h3>3.1 Tạo phần tử điểm</h3></li>
+<li><p><strong>Phương pháp 1: Chế độ tọa độ XYZ – Nhập tay tọa độ điểm 3D (X, Y, Z)</strong><br/>
+<strong>Bước 1:</strong> Nhấn đúp vào công cụ tạo phần tử, nhập các giá trị tọa độ X, Y, Z tại các trường tương ứng;<br/>
+<strong>Bước 2:</strong> Chạy công cụ, tọa độ điểm 3D sẽ hiển thị trong cửa sổ đầu ra;</p></li>
+</ul>
+
+<p><img src="media/PointCloudGenerate_2_1.png" alt="" /></p>
+<p><imgnote>Hình 2_1 Tạo điểm 3D bằng tay</imgnote></p>
+
+<ul>
+<li><p><strong>Phương pháp 2: Dịch chuyển điểm + Trích chọn điểm 3D</strong><br/>
+<strong>Bước 1:</strong> Thêm công cụ tạo phần tử, tại giao diện thuộc tính chọn chế độ tạo điểm: Dịch chuyển điểm, phương thức lấy điểm: Trích chọn;<br/>
+<strong>Bước 2:</strong> Nhấn đúp công cụ để cấu hình chuỗi dữ liệu đầu vào, chọn dữ liệu điểm mây và đặt giá trị dịch chuyển;<br/>
+<strong>Bước 3:</strong> Mở giao diện nâng cao, nhấn “Điểm 1 Trích chọn”, chọn điểm đặc trưng trên ảnh 3D;<br/>
+<strong>Bước 4:</strong> Nhấn nút chạy, điểm sau dịch chuyển sẽ hiển thị trên giao diện;</p>
+<p><font color = "red">Chú thích: Trong giao diện nâng cao, điểm đỏ là điểm trích chọn, điểm trắng là điểm sau khi dịch chuyển;</font></p></li>
+</ul>
+
+<p><img src="media/PointCloudGenerate_2_2.png" alt="" /></p>
+<p><imgnote>Hình 2_2 Dịch chuyển từ điểm được trích chọn</imgnote></p>
+
+<ul>
+<li><strong>Phương pháp 3: Dịch chuyển điểm + Tham chiếu điểm 3D</strong><br/>
+<strong>Bước 1:</strong> Thêm công cụ tạo phần tử, trong thuộc tính chọn: chế độ tạo điểm là dịch chuyển, phương thức lấy điểm: Tham chiếu;<br/>
+<strong>Bước 2:</strong> Nhấn đúp công cụ để mở giao diện chuỗi tham số, chọn một điểm 3D và cấu hình giá trị dịch chuyển;<br/>
+<strong>Bước 3:</strong> Chạy công cụ để tạo điểm dịch chuyển;</li>
+</ul>
+
+<p><img src="media/PointCloudGenerate_2_3.png" alt="" /></p>
+<p><imgnote>Hình 2_3 Tham chiếu điểm trong dữ liệu điểm mây</imgnote></p>
+
+<ul>
+<li><p><strong>Phương pháp 4: Dịch chuyển theo hướng + Trích chọn điểm 3D</strong><br/>
+<strong>Bước 1:</strong> Thêm công cụ tạo phần tử, chọn chế độ tạo điểm: Dịch chuyển theo hướng, phương thức lấy điểm: Trích chọn;<br/>
+<strong>Bước 2:</strong> Nhấn đúp để cấu hình chuỗi dữ liệu, chọn điểm mây, cấu hình vector hướng và độ dịch chuyển (vector hướng có thể là đường thẳng, đoạn thẳng hoặc điểm 3D);<br/>
+<strong>Bước 3:</strong> Mở giao diện nâng cao, trích chọn điểm đặc trưng;<br/>
+<strong>Bước 4:</strong> Nhấn chạy để thấy kết quả dịch chuyển theo hướng;</p>
+<p><font color = "red">Chú thích: Điểm đỏ là điểm trích chọn, điểm trắng là điểm đã dịch chuyển;</font></p></li>
+</ul>
+
+<p><img src="media/PointCloudGenerate_2_4.png" alt="" /></p>
+<p><imgnote>Hình 2_4 Dịch chuyển theo hướng từ điểm trích chọn</imgnote></p>
+
+<ul>
+<li><p><strong>Phương pháp 5: Dịch chuyển theo hướng + Tham chiếu điểm 3D</strong><br/>
+<strong>Bước 1:</strong> Thêm công cụ, chọn chế độ: Dịch chuyển theo hướng, phương thức lấy điểm: Tham chiếu;<br/>
+<strong>Bước 2:</strong> Nhấn đúp mở chuỗi tham số, cấu hình vector hướng và giá trị dịch chuyển;<br/>
+<strong>Bước 3:</strong> Chạy công cụ để tạo điểm đã dịch chuyển theo hướng;</p></li>
+
+<li><h3>3.2 Tạo phần tử đường thẳng 3D</h3></li>
+
+<li><p><strong>Phương pháp 1: Tạo đường thẳng bằng hai điểm</strong></p></li>
+<li><p><strong>Bước 1:</strong> Trong thuộc tính công cụ, chọn chế độ tạo đường thẳng 3D: Hai điểm, phương thức lấy điểm: Tham chiếu;</p></li>
+<li><p><strong>Bước 2:</strong> Nhấn đúp mở chuỗi tham số, liên kết “Điểm bắt đầu” và “Điểm kết thúc”, rồi nhấn chạy công cụ;</p></li>
+</ul>
+
+<p><img src="media/PointCloudGenerate_2_5.png" alt="" /></p>
+<p><imgnote>Hình 2_5 Tạo đường thẳng từ hai điểm (1)</imgnote></p>
+
+<ul>
+<li><strong>Bước 3:</strong> Trong thuộc tính công cụ, chọn chế độ tạo đường: Hai điểm, phương thức lấy điểm: Trích chọn;</li>
+<li><strong>Bước 4:</strong> Mở giao diện nâng cao, nhấn “Điểm 1 Trích chọn” và “Điểm 2 Trích chọn”, rồi nhấn chạy;</li>
+</ul>
+
+<p><img src="media/PointCloudGenerate_2_6.png" alt="" /></p>
+<p><imgnote>Hình 2_6 Tạo đường thẳng từ hai điểm (2)</imgnote></p>
+
+<ul>
+<li><strong>Phương pháp 2: Tạo đường thẳng theo điểm và vector</strong></li>
+<li><strong>Bước 1:</strong> Thêm công cụ tạo phần tử, chọn loại phần tử: Đường thẳng 3D, chế độ: Điểm - vector, phương thức lấy điểm: Tham chiếu;</li>
+<li><strong>Bước 2:</strong> Mở chuỗi tham số, cấu hình các tham số và nhấn chạy công cụ;</li>
+</ul>
+
+<p><img src="media/PointCloudGenerate_2_7.png" alt="" /></p>
+<p><imgnote>Hình 2_7 Tạo đường thẳng từ điểm và vector</imgnote></p>
+
+<ul>
+<li><strong>Phương pháp 3: Tạo từ vị trí + góc nghiêng + góc quay</strong></li>
+<li><strong>Bước 1:</strong> Chọn loại phần tử: Đường thẳng 3D, chế độ: Vị trí + Góc nghiêng + Góc quay, phương thức lấy điểm: Tham chiếu;</li>
+<li><strong>Bước 2:</strong> Cấu hình chuỗi tham số với một điểm 3D, nhập các góc và nhấn chạy;</li>
+</ul>
+
+<p><img src="media/PointCloudGenerate_2_8.png" alt="" /></p>
+<p><imgnote>Hình 2_8 Tạo đường thẳng từ vị trí + góc nghiêng + góc quay</imgnote></p>
+
+<ul>
+<li><strong>Phương pháp 4: Tạo đường song song</strong></li>
+<li><strong>Bước 1:</strong> Chọn loại phần tử: Đường thẳng 3D, chế độ: Đường song song;</li>
+<li><strong>Bước 2:</strong> Liên kết vector hướng, đường cho sẵn và độ dịch chuyển (nếu cần);</li>
+</ul>
+
+<p><img src="media/PointCloudGenerate_2_9.png" alt="" /></p>
+<p><imgnote>Hình 2_9 Tạo đường song song</imgnote></p>
+
+<ul>
+<li><strong>Phương pháp 5: Tạo đường thẳng vuông góc</strong></li>
+<li><strong>Bước 1:</strong> Chọn loại phần tử: Đường thẳng 3D, chế độ: Đường vuông góc;</li>
+<li><strong>Bước 2:</strong> Liên kết điểm 3D và đường thẳng đã cho;</li>
+</ul>
+
+<p><img src="media/PointCloudGenerate_2_10.png" alt="" /></p>
+<p><imgnote>Hình 2_10 Tạo đường vuông góc</imgnote></p>
+
+<ul>
+<li><h3>3.3 Tạo các phần tử khác</h3>
+
+<p>  Nguyên lý và cách thực hiện tương tự như tạo điểm và đường thẳng, người dùng có thể tự cấu hình theo nhu cầu.</p></li>
+</ul>
+
+
+
+<h2>4. Câu hỏi thường gặp</h2>
+
+<h2>5. Giải thích tham số</h2>
+
+<h4>Tham số đầu vào (Chuỗi tham số)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Dữ liệu đám mây điểm đầu vào </td>
+<td> Hình ảnh đám mây điểm đầu vào </td>
+</tr>
+<tr>
+<td> Tọa độ X/Y/Z điểm 3D </td>
+<td> Trong chế độ tạo điểm 3D, sử dụng tọa độ XYZ </td>
+</tr>
+<tr>
+<td> Điểm gốc </td>
+<td> Trong chế độ tạo điểm 3D, khi có dịch chuyển điểm hoặc hướng thì dùng tọa độ gốc </td>
+</tr>
+<tr>
+<td> Dịch chuyển X/Y/Z </td>
+<td> Trong chế độ tạo điểm 3D, sử dụng khi có dịch chuyển điểm </td>
+</tr>
+<tr>
+<td> Điểm bắt đầu </td>
+<td> Trong chế độ tạo đường thẳng 3D bằng hai điểm<br />Trong chế độ tạo đoạn thẳng 3D: hai điểm, điểm+hướng+chiều dài, điểm+góc nghiêng+xoay+chiều dài, đoạn vuông góc </td>
+</tr>
+<tr>
+<td> Điểm kết thúc </td>
+<td> Trong chế độ tạo đường thẳng 3D bằng hai điểm<br />Trong chế độ tạo đoạn thẳng 3D bằng hai điểm </td>
+</tr>
+<tr>
+<td> Điểm 3D </td>
+<td> Trong chế độ tạo đường thẳng 3D: điểm+hướng, vị trí+góc nghiêng+góc xoay, đường vuông góc<br />Trong chế độ tạo mặt phẳng 3D: điểm + vector pháp tuyến </td>
+</tr>
+<tr>
+<td> Vector hướng </td>
+<td> Trong chế độ tạo điểm 3D: khi có dịch chuyển theo hướng<br />Trong chế độ tạo đường thẳng 3D: điểm+hướng, đường song song<br />Trong chế độ tạo đoạn thẳng 3D: điểm+hướng+chiều dài, đoạn song song </td>
+</tr>
+<tr>
+<td> Góc nghiêng </td>
+<td> Trong chế độ tạo đường thẳng 3D: vị trí+góc nghiêng+xoay<br />Trong chế độ tạo đoạn thẳng 3D: điểm+góc nghiêng+xoay+chiều dài<br />Trong chế độ tạo hình tròn 3D: góc nghiêng+xoay+tâm+bán kính hoặc dịch chuyển+xoay+ bán kính </td>
+</tr>
+<tr>
+<td> Góc xoay </td>
+<td> Trong chế độ tạo đường thẳng 3D: vị trí+góc nghiêng+xoay<br />Trong chế độ tạo đoạn thẳng 3D: điểm+góc nghiêng+xoay+chiều dài<br />Trong chế độ tạo hình tròn 3D: góc nghiêng+xoay+tâm+ bán kính hoặc dịch chuyển+xoay+ bán kính </td>
+</tr>
+<tr>
+<td> Đường thẳng cho trước </td>
+<td> Trong chế độ tạo đường thẳng 3D: đường song song hoặc vuông góc<br />Trong chế độ tạo đoạn thẳng 3D: đoạn vuông góc </td>
+</tr>
+<tr>
+<td> Đoạn thẳng cho trước </td>
+<td> Trong chế độ tạo đoạn thẳng 3D: đoạn song song </td>
+</tr>
+<tr>
+<td> Giá trị dịch chuyển </td>
+<td> Trong chế độ tạo điểm 3D: dịch chuyển theo hướng<br />Trong chế độ tạo đường thẳng 3D: đường song song<br />Trong chế độ tạo đoạn thẳng 3D: đoạn song song<br />Trong chế độ tạo mặt phẳng 3D: vector pháp tuyến + dịch chuyển, mặt phẳng song song<br />Trong chế độ tạo hình tròn 3D: vector pháp tuyến + dịch chuyển + bán kính, hoặc góc nghiêng + xoay + dịch chuyển + bán kính </td>
+</tr>
+<tr>
+<td> Chiều dài đoạn </td>
+<td> Trong chế độ tạo đoạn thẳng 3D: điểm+hướng+chiều dài, điểm+góc nghiêng+xoay+chiều dài </td>
+</tr>
+<tr>
+<td> Điểm 3D 1/2/3 </td>
+<td> Trong chế độ tạo mặt phẳng 3D: kiểu 3 điểm<br />Trong chế độ tạo hình tròn 3D: kiểu 3 điểm </td>
+</tr>
+<tr>
+<td> Bán kính </td>
+<td> Trong chế độ tạo hình tròn 3D: mặt phẳng + bán kính, vector pháp tuyến + tâm + bán kính, vector + dịch chuyển + bán kính, góc nghiêng + xoay + tâm + bán kính, góc nghiêng + xoay + dịch chuyển + bán kính<br />Trong chế độ tạo trụ: dùng theo điểm hoặc theo đường<br />Trong chế độ tạo cầu: theo tâm + bán kính </td>
+</tr>
+<tr>
+<td> Mặt phẳng </td>
+<td> Trong chế độ tạo hình tròn 3D: mặt phẳng + bán kính </td>
+</tr>
+<tr>
+<td> Vector pháp tuyến </td>
+<td> Trong chế độ tạo mặt phẳng 3D: điểm + vector pháp tuyến, vector + dịch chuyển<br />Trong chế độ tạo hình tròn 3D: vector + tâm + bán kính, vector + dịch chuyển + bán kính </td>
+</tr>
+<tr>
+<td> Mặt phẳng cho trước </td>
+<td> Trong chế độ tạo mặt phẳng 3D: mặt phẳng song song hoặc vuông góc </td>
+</tr>
+<tr>
+<td> Đường thẳng 3D </td>
+<td> Trong chế độ tạo mặt phẳng 3D: vuông góc với đường thẳng </td>
+</tr>
+<tr>
+<td> Điểm trung tâm </td>
+<td> Trong chế độ tạo hình chữ nhật 3D: tâm + hướng + kích thước<br />Dùng trong tạo khối hộp </td>
+</tr>
+<tr>
+<td> Điểm góc trên trái </td>
+<td> Trong chế độ tạo hình chữ nhật 3D: góc trên trái + hướng + kích thước </td>
+</tr>
+<tr>
+<td> Vector phương dài/rộng/cao </td>
+<td> Dùng trong tạo hình chữ nhật 3D </td>
+</tr>
+<tr>
+<td> Kích thước dài/rộng/cao </td>
+<td> Dùng trong tạo hình chữ nhật hoặc khối hộp </td>
+</tr>
+<tr>
+<td> Tâm hình tròn </td>
+<td> Trong chế độ tạo hình tròn 3D: vector pháp tuyến + tâm + bán kính hoặc góc nghiêng + xoay + tâm + bán kính </td>
+</tr>
+<tr>
+<td> Vector hướng dương của chiều dài/rộng/cao khối hộp </td>
+<td> Dùng trong tạo khối hộp: tâm + vector hướng dương + kích thước </td>
+</tr>
+<tr>
+<td> Hệ tọa độ đầu vào </td>
+<td> Dùng trong tạo khối hộp: dựa vào hệ tọa độ + kích thước </td>
+</tr>
+<tr>
+<td> Một điểm trên trục </td>
+<td> Dùng trong tạo trụ: tạo theo điểm </td>
+</tr>
+<tr>
+<td> Hướng trục </td>
+<td> Dùng trong tạo trụ: tạo theo điểm </td>
+</tr>
+<tr>
+<td> Trục </td>
+<td> Dùng trong tạo trụ: tạo theo đường thẳng </td>
+</tr>
+<tr>
+<td> Tâm cầu </td>
+<td> Dùng trong tạo hình cầu </td>
+</tr>
+<tr>
+<td> Một điểm trên mặt cầu </td>
+<td> Dùng trong tạo hình cầu: tâm + điểm trên mặt cầu </td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Loại phần tử cần tạo </td>
+<td> Chọn phần tử cơ bản muốn tạo, bao gồm: điểm 3D, đường thẳng 3D, đoạn thẳng 3D, mặt phẳng 3D, hình chữ nhật 3D, hình tròn 3D, khối hộp, hình trụ, hình cầu </td>
+</tr>
+<tr>
+<td> Chế độ tạo phần tử 3D </td>
+<td> Chỉ định cách tạo phần tử. Mỗi phần tử có nhiều phương pháp tạo khác nhau, cụ thể như sau：<br />
+Chế độ tạo điểm 3D: tọa độ XYZ, điểm + dịch chuyển, dịch chuyển theo hướng<br />
+Chế độ tạo đường thẳng 3D: hai điểm, điểm + vector hướng, vị trí + góc nghiêng + góc xoay, đường song song, đường vuông góc<br />
+Chế độ tạo đoạn thẳng 3D: hai điểm, điểm + hướng + chiều dài, điểm + góc nghiêng + xoay + chiều dài, đoạn song song, đoạn vuông góc<br />
+Chế độ tạo mặt phẳng 3D: ba điểm, điểm + vector pháp tuyến, vector pháp tuyến + dịch chuyển, mặt phẳng song song, mặt phẳng vuông góc<br />
+Chế độ tạo hình chữ nhật 3D: điểm góc trên trái + hướng + kích thước, điểm trung tâm + hướng + kích thước<br />
+Chế độ tạo hình tròn 3D: ba điểm, mặt phẳng + bán kính, vector pháp tuyến + tâm + bán kính, vector + dịch chuyển + bán kính, góc nghiêng + xoay + tâm + bán kính, góc nghiêng + xoay + dịch chuyển + bán kính<br />
+Chế độ tạo khối hộp: tâm + hướng chiều dài/rộng/cao + kích thước, hệ tọa độ + kích thước<br />
+Chế độ tạo hình trụ: tạo theo điểm, tạo theo đường<br />
+Chế độ tạo hình cầu: tâm + bán kính, tâm + điểm trên mặt cầu
+</td>
+</tr>
+<tr>
+<td> Cách lấy điểm 3D </td>
+<td> Tham chiếu: sử dụng kết quả đầu ra từ công cụ khác; Chọn: dùng tương tác để chọn điểm 3D </td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu vào (giao diện nâng cao)</h4>
+
+<p>Các tham số giao diện nâng cao giống với cửa sổ thuộc tính, các tham số liên quan đến tương tác như sau：</p>
+
+<table>
+<thead>
+<tr>
+<th> Tên nút </th>
+<th> Mô tả tham số </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Chọn điểm 1/2/3 </td>
+<td> Trong giao diện nâng cao, nhấn vào vị trí tương ứng trên hình ảnh để lấy tọa độ điểm tại vị trí đó </td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Xuất điểm 3D </td>
+<td> Xuất tọa độ X, Y, Z của điểm 3D </td>
+</tr>
+<tr>
+<td> Xuất đường thẳng 3D </td>
+<td> Xuất đường thẳng 3D </td>
+</tr>
+<tr>
+<td> Vector hướng của đường thẳng </td>
+<td> Xuất vector hướng của đường thẳng 3D </td>
+</tr>
+<tr>
+<td> Xuất đoạn thẳng 3D </td>
+<td> Xuất đoạn thẳng 3D </td>
+</tr>
+<tr>
+<td> Vector hướng của đoạn thẳng </td>
+<td> Xuất vector hướng của đoạn thẳng 3D </td>
+</tr>
+<tr>
+<td> Mặt phẳng 3D </td>
+<td> Xuất mặt phẳng 3D </td>
+</tr>
+<tr>
+<td> Hình chữ nhật 3D </td>
+<td> Xuất hình chữ nhật 3D </td>
+</tr>
+<tr>
+<td> Hình tròn 3D </td>
+<td> Xuất hình tròn 3D </td>
+</tr>
+<tr>
+<td> Khối hộp </td>
+<td> Xuất khối hộp 3D </td>
+</tr>
+<tr>
+<td> Hình trụ </td>
+<td> Xuất hình trụ </td>
+</tr>
+<tr>
+<td> Hình cầu </td>
+<td> Xuất hình cầu </td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Xuất điểm 3D </td>
+<td> Xuất giá trị tọa độ X, Y, Z của điểm 3D </td>
+</tr>
+<tr>
+<td> Xuất đường thẳng 3D </td>
+<td> 
+Đường thẳng 3D: StartPoint – tọa độ điểm bắt đầu khi tạo bằng hai điểm<br />
+Đường thẳng 3D: EndPoint – tọa độ điểm kết thúc khi tạo bằng hai điểm<br />
+Đường thẳng 3D: Direction – hướng của đường thẳng 3D<br />
+Đường thẳng 3D: Tilt – góc nghiêng của đường<br />
+Đường thẳng 3D: Rotation – góc xoay của đường<br />
+Đường thẳng 3D: Vector hướng – vector chỉ hướng của đường
+</td>
+</tr>
+<tr>
+<td> Vector hướng của đường </td>
+<td> Xuất vector hướng của đường thẳng 3D </td>
+</tr>
+<tr>
+<td> Xuất đoạn thẳng 3D </td>
+<td>
+Đoạn thẳng 3D: Pos – điểm bắt đầu của đoạn<br />
+Đoạn thẳng 3D: Dir – hướng của đoạn thẳng<br />
+Đoạn thẳng 3D: Tilt – góc nghiêng<br />
+Đoạn thẳng 3D: Rotation – góc xoay<br />
+Đường thẳng 3D: Vector hướng – vector hướng của đường
+</td>
+</tr>
+<tr>
+<td> Vector hướng đoạn thẳng </td>
+<td> Xuất vector hướng của đoạn thẳng 3D </td>
+</tr>
+<tr>
+<td> Mặt phẳng 3D </td>
+<td>
+Mặt phẳng 3D: điểm mặt phẳng – điểm đi qua mặt phẳng được khớp<br />
+Mặt phẳng 3D: vector pháp tuyến – hướng vuông góc của mặt phẳng<br />
+Mặt phẳng 3D: độ lệch – khoảng cách giữa mặt phẳng và mặt phẳng gốc<br />
+Mặt phẳng 3D: góc nghiêng – góc giữa vector pháp tuyến và trục Z<br />
+Mặt phẳng 3D: góc xoay – góc giữa hình chiếu của vector pháp tuyến lên mặt phẳng XOY và trục X
+</td>
+</tr>
+<tr>
+<td> Hình chữ nhật 3D </td>
+<td>
+Hình chữ nhật 3D: Center – tọa độ tâm hình chữ nhật (tọa độ 3D)<br />
+Hình chữ nhật 3D: NormalWidth – chiều rộng theo hướng vuông góc<br />
+Hình chữ nhật 3D: NormalHeight – chiều dài theo hướng vuông góc<br />
+Hình chữ nhật 3D: Width – chiều rộng<br />
+Hình chữ nhật 3D: Height – chiều dài
+</td>
+</tr>
+<tr>
+<td> Hình tròn 3D </td>
+<td>
+Hình tròn 3D: Center – tọa độ tâm hình tròn<br />
+Hình tròn 3D: Normal – vector pháp tuyến của mặt phẳng chứa hình tròn<br />
+Hình tròn 3D: Radius – bán kính hình tròn
+</td>
+</tr>
+<tr>
+<td> Khối hộp </td>
+<td>
+Khối hộp 3D: Center – tọa độ tâm<br />
+Khối hộp 3D: NormalLength – chiều dài theo không gian<br />
+Khối hộp 3D: NormalWidth – chiều rộng theo không gian<br />
+Khối hộp 3D: NormalHeight – chiều cao theo không gian<br />
+Khối hộp 3D: Length – chiều dài của hình chiếu lên mặt phẳng theo hướng khối hộp<br />
+Khối hộp 3D: Width – chiều rộng của hình chiếu<br />
+Khối hộp 3D: Height – chiều cao của hình chiếu
+</td>
+</tr>
+<tr>
+<td> Hình trụ </td>
+<td>
+Hình trụ: Pos – tọa độ tâm hình trụ<br />
+Hình trụ: Normal – hướng của vector pháp tuyến đáy hình trụ<br />
+Hình trụ: Radius – bán kính đáy hình trụ
+</td>
+</tr>
+<tr>
+<td> Hình cầu </td>
+<td>
+Hình cầu: Center – tọa độ tâm<br />
+Hình cầu: Radius – bán kính hình cầu
+</td>
+</tr>
+<tr>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ </td>
+</tr>
+<tr>
+<td> Thời gian thực thi </td>
+<td> Thời gian công cụ thực thi </td>
+</tr>
+</tbody>
+</table>
+
+<h2>6. Dự án mẫu</h2>
+
+<p>Tham khảo: “\Samples\3D\点云\点云卡尺工具.gvp”.</p>
+
+<h2>7. Ghi chú đặc biệt</h2>
+
+<h3>Giải thích nguyên lý</h3>
+
+<ul>
+<li><h3>7.1 Nguyên lý tạo đường thẳng 3D：</h3></li>
+</ul>
+
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_11.gif" style="zoom:50%;"/>
+    <center>图2_11 两点式空间直线生成原理</center>
+</div>
+
+
+<p></p>
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_12.gif" style="zoom:50%;"/>
+    <center>图2_12 点斜式直线生成原理</center>
+</div>
+
+
+<p></p>
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_13.gif" style="zoom:50%;"/>
+    <center>图2_13 点斜式直线生成原理</center>
+</div>
+
+
+<p></p>
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_14.gif" style="zoom:50%;"/>
+    <center>图2_14 点+平行线直线生成原理</center>
+</div>
+
+
+<p></p>
+
+<ul>
+<li><h3>7.2 平面生成原理：</h3></li>
+</ul>
+
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_15.gif" style="zoom:50%;"/>
+    <center>图2_15 三点生成平面原理</center>
+</div>
+
+
+<p></p>
+
+<div align="center">
+<img src="media/PointCloudGenerate_2_16.gif" style="zoom:50%;"/>
+    <center>图2_16 点+法向量生成原理</center>
+</div>
+
+
+<p></p>

@@ -1,0 +1,172 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ Lấy Ảnh Con</h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>​     Thực hiện lấy ảnh con từ ảnh đầu vào, có thể cắt ra vùng chỉ định trong ảnh đầu vào để xuất ra, nhằm trích xuất vùng cụ thể trong ảnh.</p>
+
+<h2>2. Kịch bản ứng dụng</h2>
+
+<p>​     Khi cần cắt và trích xuất ảnh đầu vào, công cụ lấy ảnh con sẽ được sử dụng. Như hình dưới:</p>
+
+<p>​     Ảnh đầu vào:</p>
+
+<p><img src="media/GcGetSubImageTool_2_1.png" alt="GcGetSubImageTool_2_1" /></p>
+
+<p>​     Ảnh kết quả:</p>
+
+<p><img src="media/GcGetSubImageTool_2_2.png" alt="GcGetSubImageTool_2_2" /></p>
+
+<h2>3. Nguyên lý</h2>
+
+<p>​     Việc lấy ảnh con là cắt vùng hình chữ nhật đã được thiết lập trong ảnh đầu vào để tạo ra ảnh đầu ra.</p>
+
+<h2>4. Hướng dẫn sử dụng</h2>
+
+<ul>
+<li><h4>Thêm công cụ, liên kết ảnh vào</h4></li>
+</ul>
+
+<p><img src="media/GcGetSubImageTool_4_1.png" alt="GcGetSubImageTool_4_1" /></p>
+
+<ul>
+<li><h4>Thiết lập vùng hình chữ nhật</h4></li>
+</ul>
+
+<p><img src="media/GcGetSubImageTool_4_2.png" alt="GcGetSubImageTool_4_2" /></p>
+
+<ul>
+<li><h4>Liên kết biến đổi tuyến tính 2D, ví dụ định vị hình học</h4></li>
+</ul>
+
+<p><img src="media/GcGetSubImageTool_4_3.png" alt="GcGetSubImageTool_4_3" /></p>
+
+<ul>
+<li><h4>Xem kết quả</h4></li>
+</ul>
+
+<p><img src="media/GcGetSubImageTool_4_4.png" alt="GcGetSubImageTool_4_4" /></p>
+
+<h2>5. Vấn đề thường gặp</h2>
+
+<table>
+<thead>
+<tr>
+<th>Mô tả hiện tượng</th>
+<th>Phương pháp giải quyết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Không có dữ liệu ảnh trong khu vực lỗi</td>
+<td>Kiểm tra xem chuỗi dữ liệu đã liên kết ảnh chưa, và dữ liệu ảnh có bình thường không</td>
+</tr>
+<tr>
+<td>Ảnh kết quả bất thường</td>
+<td>Kiểm tra chuỗi dữ liệu có liên kết điểm trung tâm không; nếu có thì kiểm tra công cụ tạo điểm trung tâm có xuất đúng điểm không</td>
+</tr>
+<tr>
+<td>Khu vực lỗi báo điểm trung tâm không hợp lệ, không được vượt quá phạm vi ảnh</td>
+<td>Điểm trung tâm đã vượt quá phạm vi ảnh, kiểm tra có liên kết sai ảnh thuộc tính không</td>
+</tr>
+</tbody>
+</table>
+
+<h2>6. Giải thích tham số</h2>
+
+<h4>Tham số đầu vào</h4>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ảnh đầu vào</td>
+<td>Ảnh con sẽ được cắt ra từ ảnh đầu vào, liên kết qua chuỗi dữ liệu.</td>
+</tr>
+<tr>
+<td>Kích thước ảnh cố định</td>
+<td>Xác định ảnh có kích thước cố định hay không. Nếu chọn “Có”, chiều rộng và chiều cao ảnh phải nhập tay; nếu chọn “Không”, kích thước ảnh phụ thuộc vào vùng đã thiết lập, không cần nhập tay.</td>
+</tr>
+<tr>
+<td>Chiều rộng ảnh</td>
+<td>Khi kích thước ảnh cố định, có thể chỉnh sửa, thiết lập chiều rộng ảnh.</td>
+</tr>
+<tr>
+<td>Chiều cao ảnh</td>
+<td>Khi kích thước ảnh cố định, có thể chỉnh sửa, thiết lập chiều cao ảnh.</td>
+</tr>
+<tr>
+<td>Vùng hình chữ nhật</td>
+<td>X là tọa độ X của góc trên bên trái hình chữ nhật, Y là tọa độ Y, W là chiều rộng, H là chiều cao của vùng hình chữ nhật.</td>
+</tr>
+<tr>
+<td>Có phải ảnh màu không</td>
+<td>Chọn “Có” thì hỗ trợ lấy ảnh con từ ảnh màu, có thể liên kết ảnh màu trong chuỗi dữ liệu.</td>
+</tr>
+<tr>
+<td>Ảnh màu đầu vào</td>
+<td>Khi chọn là ảnh màu, ảnh con sẽ được cắt từ ảnh màu, liên kết qua chuỗi dữ liệu.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu ra</h4>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ảnh đầu vào</td>
+<td>Kích thước ảnh con lấy được, dùng cho chuỗi dữ liệu.</td>
+</tr>
+<tr>
+<td>Ảnh đầu ra</td>
+<td>Ảnh con được xuất ra.</td>
+</tr>
+<tr>
+<td>Ảnh màu đầu ra</td>
+<td>Khi chọn là ảnh màu, xuất ảnh con cắt từ ảnh màu.</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\获取子图工具.gvp”。</p>

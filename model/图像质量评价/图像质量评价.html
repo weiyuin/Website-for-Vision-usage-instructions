@@ -1,0 +1,181 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>图像质量评价</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 计算图像的清晰度、对比度、信噪比来评价图像质量 。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 拍摄前期对拍摄图像质量的评价。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​ 链接好图像，可以设置计算清晰度、对比图、信噪比，其中信噪比需要输入配置图片文件夹来计算几张连续图片。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GvQualityEvaluationTool_4_1.png" alt="" /></p>
+
+<ul>
+<li><h4>参数设置</h4></li>
+</ul>
+
+
+<p>​ 可以设置链接参数的类型（灰度图像或者彩色图像）、设置ROI类型（全图，矩形ROI）、开启清晰度评价（包含清晰度相关的设置）、开启对比度评价、开启信噪比评价等。</p>
+
+<p><img src="media/GvQualityEvaluationTool_4_2.png" alt="" /></p>
+
+<h2>5. 常见问题</h2>
+
+<p>无</p>
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 类型               </td>
+<td> 待检测图像类型，选择支持链接灰度图或者彩色图；               </td>
+</tr>
+<tr>
+<td> ROI区域类型        </td>
+<td> 计算图像的区域类型，包括全图/矩阵；                          </td>
+</tr>
+<tr>
+<td> ROI                </td>
+<td> 在矩阵模式下输入的ROI                                        </td>
+</tr>
+<tr>
+<td> 是否开启清晰度评价 </td>
+<td> 计算图像清晰度评价的开关；                                   </td>
+</tr>
+<tr>
+<td> 清晰度评价模式     </td>
+<td> 4种清晰度度量模式：图像差异模式、自相关模式、边缘梯度模式、带通滤波模式； </td>
+</tr>
+<tr>
+<td> X方向偏移量        </td>
+<td> 图像差异模式下，设置/获取X方向的相对偏移量[0,lwidth-1]；     </td>
+</tr>
+<tr>
+<td> Y方向偏移量        </td>
+<td> 图像差异模式下，设置/获取X方向的相对偏移量[0,lHeight-1]；    </td>
+</tr>
+<tr>
+<td> X方向标准差        </td>
+<td> 边缘梯度模式下，高斯平滑的横向标准差                         </td>
+</tr>
+<tr>
+<td> Y方向标准差        </td>
+<td> 边缘梯度模式下，高斯平滑的纵向标准差                         </td>
+</tr>
+<tr>
+<td> 滤波频率下限       </td>
+<td> 带通滤波模式下，滤波频率下限                                 </td>
+</tr>
+<tr>
+<td> 滤波频率上限       </td>
+<td> 带通滤波模式下，滤波频率上限                                 </td>
+</tr>
+<tr>
+<td> 是否开启对比度评价 </td>
+<td> 计算图像对比度的开关；                                       </td>
+</tr>
+<tr>
+<td> 是否自动分割       </td>
+<td> 设置自动分割还是手动分割；                                   </td>
+</tr>
+<tr>
+<td> 手动分割阈值       </td>
+<td> 手动分割时输入分割阈值；                                     </td>
+</tr>
+<tr>
+<td> 是否开启信噪比评价 </td>
+<td> 计算信噪比的开关；                                           </td>
+</tr>
+<tr>
+<td> 文件夹路径         </td>
+<td> 输入一组用于信噪比计算的图像数据路径；                       </td>
+</tr>
+<tr>
+<td> 输入图像           </td>
+<td> 通过参数链输入灰度图或者彩色图；                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称       </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像       </td>
+<td> 输入图像宽度、高度、像素大小；                               </td>
+</tr>
+<tr>
+<td> 图像清晰度结果 </td>
+<td> 检测到的高斯线数量；                                         </td>
+</tr>
+<tr>
+<td> 对比度结果     </td>
+<td> 检测到的每条高斯线的位置；此参数用于将相关结果显示在图像缺陷（检测到的高斯线）位置处； </td>
+</tr>
+<tr>
+<td> 信噪比         </td>
+<td> 检测到的每条高斯线的平均线宽；                               </td>
+</tr>
+<tr>
+<td> 执行结果       </td>
+<td> 检测到的每条高斯线的最大线宽；                               </td>
+</tr>
+<tr>
+<td> 执行时间       </td>
+<td> 检测到的每条高斯线的最小线宽；                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​ 参见“\Samples\图像质量评价工具.gvp”。</p>
+
+<p>​</p>

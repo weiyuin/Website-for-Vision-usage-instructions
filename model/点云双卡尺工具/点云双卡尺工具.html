@@ -1,0 +1,227 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云双卡尺工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>   点云双卡尺工具主要根据三维点的初始位置、测量方向，探测点云图上的三维点，进而计算该三维点之间的长度、高度等，主要应用于工件尺寸测量，如对工件厚度、长宽、圆柱外径、圆孔内径等进行测量。</p>
+
+<p>  <img src="media/GcCloudDoubleCaliperTool_1_1.png" alt="" /></p>
+
+<p>  <imgnote>图1_1 </imgnote></p>
+
+<h2>2.使用场景</h2>
+
+<p>   模拟现实中探针测量数据的场景，对工件厚度、长宽、圆柱外径、圆孔内径等进行测量；</p>
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>添加工具、导入图像</h3>
+
+<p>添加“点云双卡尺工具”，并根据要求链接相关数据链，如图3.1所示；</p>
+
+<p><img src="media/GcCloudDoubleCaliperTool_3_1.png" alt="" /></p>
+
+<p><imgnote>图3_1 点云双卡尺工具数据链配置</imgnote></p></li>
+<li><h3>参数设置</h3>
+
+<p><img src="media/GcCloudDoubleCaliperTool_3_2.png" alt="" /></p>
+
+<p><imgnote>图3_2 点云双卡尺工具属性栏配置</imgnote></p></li>
+</ul>
+
+
+<h2>4.常见问题</h2>
+
+<p>无</p>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据                                                 </td>
+<td> 输入待测量的点云数据                                       </td>
+</tr>
+<tr>
+<td> 卡尺1初始位置                                                </td>
+<td>卡尺1初始位置，在此位置开始位置1的探测      </td>
+</tr>
+<tr>
+<td> 卡尺2初始位置 </td>
+<td>卡尺2初始位置，在此位置开始位置2的探测</td>
+</tr>
+<tr>
+<td>探触方向</td>
+<td>卡尺测量方向，卡尺沿该方向与点云数据接触取点</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>                                                      卡尺类型</td>
+<td> 包括三种：外卡尺、内卡尺，深度卡尺 </td>
+</tr>
+<tr>
+<td> 卡点搜索方式       </td>
+<td> 包括两种：光线交叉式、接触式；光线交叉式：将搜索区域内的点云拟合平面，求线面交点作为候选点；圆盘接触式：通过构建圆面，与候选点云接触，将接触到第一个点作为候选点 </td>
+</tr>
+<tr>
+<td> 搜索半径    </td>
+<td> 左右卡尺垂直于测量方向定义的搜索区域,范围为(0，10000] </td>
+</tr>
+<tr>
+<td> 搜索深度    </td>
+<td> 左右卡尺在初始位置沿测量方向搜索的最大距离,范围为(0，10000] </td>
+</tr>
+<tr>
+<td> 是否自动修正测量方向 </td>
+<td> 当产品位置存在偏移，建议启用该参数，若位置相对固定则不启用该参数，避免影响测量结果 </td>
+</tr>
+<tr>
+<td> 是否自动修正卡尺2位置 </td>
+<td> 如需保证卡尺1和卡尺2位置位于沿测量方向的同一直线上，则启用该参数。注意此时卡尺2位置会与实际输入位置不同，如需固定卡尺2位置，则不启用该参数 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称</th>
+<th> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 距离结果                                          </td>
+<td> 测量结果                   </td>
+</tr>
+<tr>
+<td> 卡点坐标数组 </td>
+<td> 使用卡尺工具获取的探测点的三维坐标 </td>
+</tr>
+<tr>
+<td> 卡点坐标1                    </td>
+<td> 指探触点接触时获取的三维点1                                           </td>
+</tr>
+<tr>
+<td> 卡点坐标2                             </td>
+<td> 指探触点接触时获取的三维点2 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称</th>
+<th> 参数描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 距离结果                                          </td>
+<td> 测量结果                   </td>
+</tr>
+<tr>
+<td> 卡点坐标数组 </td>
+<td> 使用卡尺工具获取的探测点的三维坐标 </td>
+</tr>
+<tr>
+<td> 卡点坐标1                    </td>
+<td> 指探触点接触时获取的三维点1                                           </td>
+</tr>
+<tr>
+<td> 卡点坐标2                             </td>
+<td> 指探触点接触时获取的三维点2 </td>
+</tr>
+<tr>
+<td> 执行结果                                   </td>
+<td> 工具执行结果                                                                                       </td>
+</tr>
+<tr>
+<td> 执行时间                                   </td>
+<td> 工具执行时间 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云卡尺工具.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>参数原理说明</h3>
+
+<p><strong>探触方向</strong>：即卡尺测量方向，卡尺沿该方向与点云数据接触取点；</p>
+
+<p><strong>搜索深度</strong>：搜索深度为左右在卡尺初始位置沿测量方向搜索的最大距离，如图7_1所示；</p>
+
+<p><strong>搜索半径</strong>：搜索半径为左右卡尺垂直于测量方向定义的搜索区域半径，如图7_1所示；</p>
+
+<p><img src="media/GcCloudDoubleCaliperTool_7_1.png" alt="" /></p>
+
+<p><imgnote>图7_1 </imgnote></p>
+
+<p><strong>卡点搜索方式</strong>：包括两种：光线交叉式、接触式；光线交叉式：将搜索区域内的点云拟合平面，求线面交点作为候选点；圆盘接触式：通过构建圆面，与候选点云接触，将接触到第一个点作为候选点，如图7_2所示为两种搜索方式的示意图；</p>
+
+<p><img src="media/GcCloudDoubleCaliperTool_7_2.png" alt="" /></p>
+
+<p><imgnote>图7_2 </imgnote></p>
+
+<p><strong>自动修正测量方向</strong>：当产品位置存在偏移，建议启用该参数，若位置相对固定则不启用该参数，避免影响测量结果；</p>
+
+<p><img src="media/GcCloudDoubleCaliperTool_7_3.png" alt="" /></p>
+
+<p><imgnote>图7_3 </imgnote></p>
+
+<p><strong>自动修正卡尺2位置</strong>：如需保证卡尺1和卡尺2位置位于沿测量方向的同一直线上，则启用该参数。注意此时卡尺2位置会与实际输入位置不同，如需固定卡尺2位置，则不启用该参数；</p>
+
+<p><img src="media/GcCloudDoubleCaliperTool_7_4.png" alt="" /></p>
+
+<p><imgnote>图7_4 </imgnote></p>

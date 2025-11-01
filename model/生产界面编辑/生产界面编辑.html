@@ -1,0 +1,224 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Chỉnh sửa giao diện sản xuất</h1>
+
+<h2>Tổng quan chức năng</h2>
+
+<p>Chỉnh sửa giao diện sản xuất: chỉnh sửa và quản lý giao diện sản xuất trong quá trình sử dụng hệ thống phần mềm này.</p>
+
+<h2>Tổng quan giao diện</h2>
+
+<p>Khởi động giao diện <strong>Chỉnh sửa giao diện sản xuất</strong></p>
+
+<p><img src="media/EditMainRun_01.png" alt="" /></p>
+
+<p>Vào giao diện chỉnh sửa giao diện sản xuất, như hình minh họa:</p>
+
+<p><img src="media/EditMainRun_02.png" alt="" /></p>
+
+<h2>Thao tác và mô tả giao diện</h2>
+
+<ul>
+<li><p>Hộp công cụ: hiển thị danh sách các điều khiển tùy chỉnh có thể thêm, bao gồm: ô nhập liệu, hộp văn bản, nút tùy chỉnh, nút chọn đơn, hộp thả xuống, vùng ảnh, khung nhìn, cửa sổ hiển thị, nút chức năng, trạng thái thiết bị.</p></li>
+<li><p>Hộp thoại thiết lập thuộc tính: chỉnh sửa kích thước, vị trí, kiểu dáng và thông tin liên kết của các điều khiển tùy chỉnh.</p></li>
+<li><p>Thanh công cụ: các nút chức năng cho bố trí và sắp xếp điều khiển, bao gồm: canh trái, canh phải, canh trên, canh dưới, cùng kích thước, phân bố ngang, phân bố dọc, bố trí ma trận khung nhìn, hoàn tác, làm lại, quản lý bố cục, lưu bố cục, mở bố cục, xóa bố cục hiện tại và cấu hình thanh trạng thái giao diện sản xuất.</p></li>
+<li><p>Hoàn tác/Làm lại: hỗ trợ hoàn tác/làm lại các thao tác như thay đổi kích thước, vị trí và thông tin liên kết của điều khiển. Giới hạn thao tác hoàn tác/làm lại là 40 lần.</p></li>
+<li><p>Bố trí ma trận khung nhìn: sắp xếp các khung nhìn theo số cột nhập vào, số cột tối đa tương ứng với số khung nhìn được thêm.</p></li>
+<li><p>Quản lý bố cục: tạo bố cục trống mới, tạo bố cục mặc định mới, tạo từ mẫu, lưu làm mẫu, sao chép bố cục, xóa bố cục, đặt làm bố cục chính, v.v.</p>
+
+<ul>
+<li>Tạo bố cục trống mới: tạo một bố cục mới gồm 6 nút chuyển đổi bố cục, nút chuyển bố cục, chạy, tạm dừng, dừng, lưu, quản lý quyền, trạng thái hệ thống, giao diện kỹ sư và logo.</li>
+<li>Tạo bố cục mặc định mới: tạo 6 bố cục mới gồm Home, Alarm, Config, Data, Vision và Setting. Trong đó, Home là bố cục chính và cả 6 bố cục đã được liên kết sẵn. Nội dung trong mỗi bố cục giống với bố cục trống.</li>
+<li>Tạo bố cục phong cách mới: giống với tạo bố cục trống mới.</li>
+<li>Tạo từ mẫu: tạo một bố cục đã được lưu dưới dạng mẫu.</li>
+<li>Lưu làm mẫu: chọn một bố cục để lưu lại làm mẫu.</li>
+<li>Sao chép bố cục: sao chép bố cục đang được chọn. Nếu tổng số bố cục vượt quá 20, sẽ không thể sao chép thêm.</li>
+<li>Xóa bố cục: xóa bố cục đang được chọn.</li>
+<li>Đặt làm bố cục chính: đặt bố cục được chọn làm bố cục đầu tiên hiển thị trong giao diện sản xuất.</li>
+<li>Chuyển sang bố cục phong cách mới: áp dụng cho bố cục phong cách cũ hoặc phong cách A (trong phiên bản tùy chỉnh), có thể chuyển sang phong cách mới. Lưu ý: chuyển đổi này là không thể đảo ngược.</li>
+</ul>
+
+<p><img src="media/EditMainRun_03.png" alt="" /></p></li>
+<li><p>Lưu bố cục: lưu tất cả các bố cục trong giải pháp hiện tại.</p></li>
+<li><p>Mở bố cục: mở bố cục đã lưu, thao tác này sẽ ghi đè lên bố cục hiện tại trong giải pháp.</p></li>
+<li><p>Xóa bố cục hiện tại: xóa bố cục đang hiển thị.</p></li>
+<li><p>Canvas: hiển thị bố cục hiện tại, có thể chuyển đổi bố cục bằng cách chuyển tab.</p></li>
+<li><p>Nút đóng: đóng giao diện chỉnh sửa giao diện sản xuất.</p></li>
+<li><p>Thanh trạng thái: hiển thị thông tin nhắc nhở.</p></li>
+<li><p>Điều khiển</p>
+
+<ul>
+<li><p>Thêm điều khiển: nhấp chuột trái vào điều khiển muốn thêm trong hộp công cụ, di chuyển chuột đến canvas, kéo chuột trái để thay đổi kích thước điều khiển, là hoàn tất thao tác thêm điều khiển.</p></li>
+<li><p>Ô nhập liệu <img src="media/Edit.png" alt="" />: kích thước, vị trí và thông tin liên kết của điều khiển.</p>
+
+<ul>
+<li><p>Vị trí và kích thước của điều khiển có thể được chỉnh sửa bằng cách kéo chuột hoặc thay đổi giá trị trong thuộc tính. Mỗi bố cục tối đa thêm được 100 điều khiển.</p></li>
+<li><p>Kiểu điều khiển bao gồm: font chữ, cỡ chữ, màu chữ, màu nền.</p></li>
+<li><p>Các kiểu dữ liệu có thể liên kết gồm: char, double, float, int, int64, long, short, string, unsigned char, unsigned long, unsigned short.</p></li>
+<li><p>Chỉ đọc: nghĩa là không thể chỉnh sửa giá trị trong giao diện sản xuất. Nếu được chọn, điều khiển là chỉ đọc. Mặc định không chọn.</p></li>
+<li><p>Biến: biểu thị liên kết với biến chứ không phải tham số công cụ. Nếu được chọn, liên kết là biến. Mặc định không chọn.</p></li>
+<li><p>Đầu ra: biểu thị tham số công cụ được liên kết là tham số đầu ra/đầu vào. Nếu được chọn, là tham số đầu ra. Mặc định không chọn.</p>
+
+<p><img src="media/EditMainRun_04.png" alt="" /><img src="media/EditMainRun_05.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p>Hộp văn bản <img src="media/Text.png" alt="" />: kích thước, vị trí và thông tin liên kết của điều khiển.</p>
+
+<ul>
+<li><p>Tên hiển thị, tức là thuộc tính Caption. Mỗi bố cục tối đa thêm được 200 điều khiển.</p></li>
+<li><p>Kiểu điều khiển bao gồm: font chữ, cỡ chữ, màu chữ, màu nền. Hộp văn bản mới tạo mặc định không có màu nền, sau khi thiết lập màu nền sẽ không thể thay đổi thành không màu.</p>
+
+<p><img src="media/EditMainRun_06.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p>Nút bấm <img src="media/Button.png" alt="" />: kích thước, vị trí và thông tin liên kết của điều khiển.</p>
+
+<ul>
+<li><p>Tên hiển thị, tức là thuộc tính Caption. Nút bấm được thêm từ bảng điều khiển. Mỗi bố cục tối đa thêm được 200 nút.</p></li>
+<li><p>Kiểu điều khiển bao gồm: font chữ, cỡ chữ, màu chữ, màu nền.</p></li>
+<li><p>Các thao tác có thể liên kết gồm: thực thi quy trình chỉ định, dừng project đã chọn, mở giao diện thuộc tính nâng cao.</p>
+
+<p><img src="media/EditMainRun_07.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p>Hộp chọn đơn <img src="media/Radio.png" alt="" />: kích thước, vị trí và thông tin liên kết của điều khiển.</p>
+
+<ul>
+<li><p>Tên hiển thị, tức là thuộc tính Caption. "Project" là nơi chọn thuộc tính liên kết. Nếu là biến toàn cục thì không cần chọn. Chỉ có thể liên kết với dữ liệu kiểu bool. Mỗi bố cục tối đa thêm được 100 hộp chọn đơn.</p></li>
+<li><p>Kiểu điều khiển bao gồm: font chữ, cỡ chữ, màu chữ, màu nền. Hộp mới tạo mặc định không có màu nền, sau khi thiết lập màu nền sẽ không thể đổi lại thành không màu.</p>
+
+<p><img src="media/EditMainRun_08.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p>Hộp thả xuống <img src="media/ComboBox.png" alt="" />: kích thước, vị trí và thông tin liên kết của điều khiển.</p>
+
+<ul>
+<li><p>Tên hiển thị, tức là thuộc tính Caption. "Project" là nơi chọn thuộc tính liên kết. "Tool" là công cụ trong project được chọn. Chỉ có thể liên kết với dữ liệu kiểu liệt kê (enum).</p></li>
+<li><p>Mặc định không phải thuộc tính "Chỉ đọc". Mỗi bố cục tối đa thêm được 100 hộp thả xuống.</p></li>
+<li><p>Kiểu điều khiển bao gồm: font chữ, cỡ chữ, màu chữ, màu nền. Cỡ chữ của điều khiển này không hỗ trợ chỉnh sửa.</p>
+
+<p><img src="media/EditMainRun_09.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p>Vùng ảnh <img src="media/Image.png" alt="" />: vị trí, kích thước điều khiển. Mỗi bố cục chỉ có thể thêm 1 vùng ảnh.</p>
+
+<p><img src="media/EditMainRun_10.png" alt="" /></p></li>
+<li><p>Khung nhìn <img src="media/View.png" alt="" />: kích thước, vị trí và thuộc tính liên kết của điều khiển. Khung nhìn là đối tượng view được liên kết.</p>
+
+<ul>
+<li>Mỗi bố cục có thể thêm tối đa bằng tổng số view của tất cả project. Chỉ có thể thêm lên trên điều khiển Image.</li>
+</ul>
+
+
+
+<p><img src="media/EditMainRun_11.png" alt="" /></p>
+
+<ul>
+<li><p>Chỉnh sửa tham số như hình dưới:</p>
+
+<blockquote><p>Trong đó, danh sách công cụ được chỉnh sửa chia làm hai loại: một là công cụ được thêm vào trong khung nhìn (công cụ này trong khung nhìn có hai trạng thái, tức là trong giao diện sản xuất, tham số có thể được hiển thị hoặc ẩn); hai là công cụ được thêm vào bằng chức năng tìm kiếm.  
+1. Thêm bằng tìm kiếm: thêm công cụ thường xuyên cần chỉnh sửa tham số.  
+2. Danh sách đã thêm: hiển thị danh sách công cụ có thể chỉnh sửa tham số trong giao diện sản xuất. Thứ tự tham số mặc định là theo thứ tự thêm vào.  
+3. Danh sách đã xóa: hiển thị danh sách công cụ trong khung nhìn không cần chỉnh sửa tham số trong giao diện sản xuất.  
+4. Nút xóa và hoàn tác: sử dụng để điều chỉnh danh sách công cụ cần chỉnh sửa tham số trong giao diện sản xuất.</p></blockquote>
+
+<p><img src="media/EditMainRun_12.png" alt="" /></p></li>
+</ul>
+</li>
+
+<li><p>Cửa sổ hiển thị <img src="media/Window.png" alt="" />: kích thước, vị trí và thuộc tính liên kết của điều khiển. Cửa sổ hiển thị gồm hai loại: nhật ký sản xuất và phân tích thống kê. Mỗi bố cục chỉ có thể thêm tối đa 10 cửa sổ hiển thị. Mỗi bố cục chỉ có thể liên kết một nhật ký sản xuất. Mỗi cửa sổ phân tích thống kê trong bố cục hiển thị nội dung độc lập.</p>
+
+<p><img src="media/EditMainRun_13.png" alt="" /></p></li>
+
+<li><p>Nút chức năng <img src="media/SpecialButton.png" alt="" />: kích thước, vị trí và thuộc tính liên kết của điều khiển. Có thể liên kết với các nút chức năng trong giao diện sản xuất. Mỗi bố cục tối đa chỉ được thêm 17 nút chức năng.</p>
+
+<p><img src="media/EditMainRun_14.png" alt="" /></p></li>
+
+<li><p>Bảng <img src="media/Table.png" alt="" />: kích thước, vị trí điều khiển, thiết lập bảng, thiết lập hàng/cột, chỉnh sửa ô, thông tin liên kết, kiểm tra giới hạn kết quả, cài đặt kiểu và hiển thị điều khiển.</p>
+
+<ul>
+<li><p>Vị trí và kích thước điều khiển: có thể kéo chuột hoặc thay đổi giá trị thuộc tính để điều chỉnh. Mỗi bố cục tối đa thêm 10 bảng.</p></li>
+<li><p>Thiết lập bảng: có thể chọn có bật tiêu đề bảng hay không. Khi bật, có thể thiết lập nội dung tiêu đề và chiều cao dòng tiêu đề.</p></li>
+<li><p>Thiết lập hàng/cột: có thể thiết lập số lượng hàng và cột, chiều rộng hàng/cột. Chiều rộng có thể tùy chỉnh hoặc kéo trực tiếp. Cột ẩn dùng để ẩn cột không cần hiển thị trong giao diện sản xuất. Nhiều cột cách nhau bằng dấu phẩy (,).</p></li>
+<li><p>Chỉnh sửa ô: hàng/cột đại diện cho ô hiện tại. Có thể dùng các nút lên/xuống/trái/phải để điều chỉnh vị trí ô hiện tại.</p></li>
+<li><p>Chỉ đọc: biểu thị ô không thể chỉnh sửa trong giao diện sản xuất. Mặc định không chọn.</p></li>
+<li><p>Biến: biểu thị liên kết với biến, không phải tham số công cụ. Mặc định không chọn.</p></li>
+<li><p>Đầu ra: biểu thị tham số công cụ liên kết là đầu ra/đầu vào. Mặc định không chọn.</p></li>
+<li><p>Thông tin liên kết: các kiểu dữ liệu có thể liên kết gồm: bool, char, double, float, int, int64, long, short, string, unsigned char, unsigned long, unsigned short.</p></li>
+<li><p>Kiểm tra giới hạn kết quả: người dùng có thể thiết lập cột kết quả, cột giới hạn trên và cột giới hạn dưới. Khi giá trị kết quả nằm trong khoảng giới hạn thì hiển thị màu chữ đen, nếu không thì hiển thị màu đỏ.</p></li>
+<li><p>Kiểu dáng: chọn danh mục cần thiết lập (gồm: tiêu đề, hàng/cột và dữ liệu liên kết). Các mục thiết lập gồm: font, cỡ chữ, màu chữ, màu nền.</p></li>
+<li><p>Hiển thị điều khiển: thiết lập điều khiển có hiển thị trong project hay không.</p></li>
+<li><p>Giải thích chức năng: mô tả ngắn gọn chức năng của điều khiển.</p>
+
+<p><img src="media/EditMainRun_15.png" alt="" /><img src="media/EditMainRun_16.png" alt="" /></p></li>
+</ul>
+</li>
+
+<li><p>Chuyển đổi bố cục <img src="media/EditMainRun_20.png" alt="" />: kích thước, vị trí, bố cục liên kết, biểu tượng liên kết, hiển thị điều khiển và giải thích chức năng. Có thể liên kết với các bố cục của giao diện sản xuất. Mỗi bố cục chỉ có thể thêm tối đa 6 nút chuyển đổi.</p>
+
+<ul>
+<li>Vị trí và kích thước điều khiển: có thể dùng chuột kéo hoặc thay đổi giá trị thuộc tính.</li>
+<li>Bố cục liên kết: thiết lập bố cục được liên kết với điều khiển "Chuyển đổi bố cục".</li>
+<li>Biểu tượng liên kết: thiết lập biểu tượng hiển thị được liên kết với điều khiển.</li>
+<li>Hiển thị điều khiển: thiết lập có hiển thị điều khiển trong project hay không.</li>
+<li>Giải thích chức năng: mô tả ngắn gọn chức năng của điều khiển.</li>
+</ul>
+
+<p><img src="media/EditMainRun_19.png" alt="" /></p></li>
+
+<li><p>Hiển thị biểu tượng <img src="media/EditMainRun_21.png" alt="" />: kích thước, vị trí, biểu tượng liên kết, hiển thị điều khiển và giải thích chức năng. Dùng để hiển thị biểu tượng trong giao diện sản xuất. Mỗi bố cục chỉ thêm được 1 cái.</p>
+
+<ul>
+<li>Vị trí và kích thước điều khiển: có thể dùng chuột kéo hoặc thay đổi giá trị thuộc tính.</li>
+<li>Biểu tượng liên kết: thiết lập biểu tượng hiển thị liên kết cho điều khiển, dùng để hiển thị trong giao diện sản xuất.</li>
+<li>Hiển thị điều khiển: thiết lập có hiển thị điều khiển trong project hay không.</li>
+<li>Giải thích chức năng: mô tả ngắn gọn chức năng của điều khiển.</li>
+</ul>
+
+<p><img src="media/EditMainRun_22.png" alt="" /></p></li>
+</ul>
+</li>
+
+<li><p>Menu</p>
+
+
+<ul>
+<li><p>Sao chép: sao chép điều khiển hiện đang được chọn, hỗ trợ phím tắt. Việc chọn điều khiển hỗ trợ chọn theo vùng và chọn rời. Khi chọn rời, nhấn giữ <kbd>Ctrl</kbd> và nhấp chuột vào điều khiển.</p></li>
+<li><p>Dán: dán điều khiển đã sao chép.</p></li>
+<li><p>Cắt: cắt điều khiển hiện đang được chọn.</p></li>
+<li><p>Xóa: xóa điều khiển hiện đang được chọn.</p>
+
+<p><img src="media/EditMainRun_17.png" alt="" /></p></li>
+</ul>
+</li>
+
+<li><p>Cấu hình giao diện sản xuất</p>
+
+<p>Chức năng chủ yếu là cấu hình các tùy chọn liên quan để điều khiển nội dung hiển thị của thanh trạng thái trong giao diện sản xuất:</p>
+
+<ul>
+<li><p>Tự động chuyển bố cục: khi chọn mục này, cần chọn biến toàn cục liên kết. Thông qua script hoặc biểu thức thay đổi giá trị của biến toàn cục để đạt được mục đích chuyển đổi bố cục tự động.</p></li>
+<li><p>Chọn hiển thị thanh trạng thái hay không;</p></li>
+<li>Chọn các mục cấu hình hiển thị của thanh trạng thái;</li>
+</ul>
+</li>
+</ul>
+
+<p><img src="media/EditMainRun_18.png" alt="" /></p>
+

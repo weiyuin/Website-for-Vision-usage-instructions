@@ -1,0 +1,120 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点阵识别工具</h1>
+
+<h2>功能</h2>
+
+<p>此工具为***现场项目定制开发工具，通过识别点阵编码信息获取物料生产机台信息及日期。点阵图像如下图1所示：</p>
+
+<p><img src="media/1.png" alt="img" /></p>
+
+<p><imgnote>图1 点阵图像</imgnote></p>
+
+<p>执行效果如下图所示：</p>
+
+<p><img src="media/2.png" alt="img" /></p>
+
+<p><imgnote>图2 输入图像部分区域</imgnote></p>
+
+<p><img src="media/3.png" alt="img" /></p>
+
+<p><imgnote>图3 识别结果</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称            </th>
+<th> 参数描述                                                                                                              </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口            </td>
+<td> ROI区域                                                 </td>
+<td> 工具执行识别区域，只支持仿射矩形ROI。 </td>
+</tr>
+<tr>
+<td> 数据链              </td>
+<td> 输入图像                                               </td>
+<td> 输入待识读的灰度图像                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换        </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                                                                                </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无                  </td>
+<td> 无                                                                                                                    </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出窗口 </td>
+<td> 输入图像                                             </td>
+<td> 输入图像宽度、高度、像素大小。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 识读结果字符串 </td>
+<td> 根据点阵解析出的结果字符串。格式：【点阵数串，楼栋，楼层，线体，机台编号，日期，班别 】 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果     </td>
+<td> 工具执行结果。                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间     </td>
+<td> 工具执行时间。                                                                                       </td>
+</tr>
+<tr>
+<td> 数据链 </td>
+<td> 识读结果字符串                                          </td>
+<td> 根据点阵解析出的结果字符串。格式：【点阵数串，楼栋，楼层，线体，机台编号，日期，班别 】 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<p>一般要求ROI大小为点阵区域1.2~2倍，ROI过大会导致识别失败，由于点阵位置固定，故ROI较容易选取，也可先使用几何定位获取ROI。</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\点阵识别工具.gvp”。</p>

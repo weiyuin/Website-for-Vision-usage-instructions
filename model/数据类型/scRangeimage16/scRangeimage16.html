@@ -1,0 +1,215 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scRangeImage16</h1>
+
+<h2>功能</h2>
+
+<p>表示深度图像。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                     </th>
+<th> 接口描述                                      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scRangeImage16         </td>
+<td> scRangeImage16()默认构造函数                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scRangeImage16 </td>
+<td> scRangeImage16(const scRangeImage16&amp;)构造函数 </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> IsValid                       </td>
+<td> 获取图像是否有效                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> Width                           </td>
+<td> 获取图像宽度                                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> Height                         </td>
+<td> 获取图像高度                                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRangeParam           </td>
+<td> 获取深度数据参数                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRangeParam           </td>
+<td> 设置深度数据参数                              </td>
+</tr>
+<tr>
+<td>      </td>
+<td> Get3DData       </td>
+<td> 获取图像坐标(x,y)处的三维坐标数据             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scRangeImage16()</h3>
+
+<ul>
+<li><p>功能：默认构造函数。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>scRangeImage16(imgRange)</h3>
+
+<ul>
+<li><p>功能：构造函数，以现有深度图像imgRange构造新的深度图像。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>imgRange：深度图像。</li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>IsValid()</h3>
+
+<ul>
+<li><p>功能：获取图像是否有效。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：图像是否有效，bool类型。</p></li>
+</ul>
+
+
+<h3>Width()</h3>
+
+<ul>
+<li><p>功能：获取图像的宽度。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：图像宽度，整型。</p></li>
+</ul>
+
+
+<h3>Height()</h3>
+
+<ul>
+<li><p>功能：获取图像的高度。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：图像高度，整型。</p></li>
+</ul>
+
+
+<h3>GetRangeParam()</h3>
+
+<ul>
+<li><p>功能：获取深度数据参数。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：深度数据参数，scRangeParam类型。</p></li>
+</ul>
+
+
+<h3>SetRangeParam(param)</h3>
+
+<ul>
+<li><p>功能：设置深度数据参数。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>param：深度图像参数，scRangeParam类型。</li>
+</ul>
+</li>
+<li><p>返回值：深度数据参数，scRangeParam类型。</p></li>
+</ul>
+
+
+<h3>Get3DData(dImgX, dImgY)</h3>
+
+<ul>
+<li><p>功能：获取图像坐标(x,y)处的三维坐标数据。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>dImgX：图像坐标X，浮点数类型。</p></li>
+<li><p>dImgY：图像坐标Y，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：tuple类型(point，bValid)。point,
+sc3Vector类型，表示三维坐标；bValid，bool类型，表示point是否是有效数据。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无。</p>
+
+<h2>示例代码</h2>
+
+<p>示例1</p>
+
+<p>```python</p>
+
+<h1>获取深度图像</h1>
+
+<p>img = GvTool.GetToolData(&ldquo;图像文件_001.深度图像&rdquo;)</p>
+
+<h1>获取图像上（100, 100）位置的三维坐标</h1>
+
+<p>param = imgOld.GetRangeParam()
+point, bValid = img.Get3DData(100, 100)</p>
+
+<p>```
+示例2</p>
+
+<p>```python</p>
+
+<h1>获取原图像</h1>
+
+<p>imgOld = GvTool.GetToolData(&ldquo;图像文件_001.深度图像&rdquo;)</p>
+
+<h1>获取原图像深度参数</h1>
+
+<p>param = imgOld.GetRangeParam()</p>
+
+<h1>Z向偏移增加1</h1>
+
+<p>param.ZOffset = param.ZOffset + 1</p>
+
+<h1>构建新深度图像，并设置深度参数</h1>
+
+<p>imgNew = GvVisionAssembly.scRangeImage16(imgOld)
+imgNew.SetRangeParam(param)</p>
+
+<h1>目标工具设置深度图像</h1>
+
+<p>GvTool.SetToolData(&ldquo;点云位置测量工具_002.输入深度图像&rdquo;, imgNew)
+```</p>

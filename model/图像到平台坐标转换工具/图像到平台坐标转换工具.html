@@ -1,0 +1,168 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Chuyển đổi từ tọa độ ảnh sang tọa độ hệ tọa độ nền tảng</h1>
+
+<h2>Chức năng</h2>
+
+<p>Trong quy trình căn chỉnh, camera chụp ảnh sản phẩm và định vị ra tọa độ ảnh, nhưng không thể dùng trực tiếp để tính toán căn chỉnh. Cần dựa trên kết quả hiệu chuẩn để chuyển đổi tọa độ ảnh sang hệ tọa độ nền tảng toàn cục thống nhất, từ đó mới có thể tính toán sai lệch căn chỉnh. Công cụ này dùng để thực hiện việc chuyển đổi đó và xuất ra tọa độ trong hệ tọa độ nền tảng.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Loại hiệu chuẩn cũ</td>
+<td>Chọn "Không" sẽ liên kết với kết quả hiệu chuẩn kiểu GcCalibrateResult, chọn "Có" thì liên kết với kiểu GeneralCalibResult.</td>
+</tr>
+<tr>
+<td></td>
+<td>Loại công cụ chuyển đổi <img src="media/wps122.jpg" alt="img" /></td>
+<td>
+Không bao gồm thay đổi vị trí trục: Vị trí trục không thay đổi giữa lúc hiệu chuẩn và căn chỉnh.<br/>
+Bao gồm thay đổi vị trí trục nền tảng: Vị trí trục nền tảng thay đổi giữa lúc hiệu chuẩn và căn chỉnh.<br/>
+Bao gồm thay đổi vị trí trục camera: Vị trí trục camera thay đổi.<br/>
+Bao gồm cả thay đổi trục nền tảng và trục camera.
+</td>
+</tr>
+<tr>
+<td></td>
+<td>Loại đặc trưng</td>
+<td>Xác định loại đặc trưng trên ảnh cần chuyển đổi kết quả: điểm, đường thẳng, hoặc đường tròn.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Tọa độ ảnh</td>
+<td>Tọa độ ảnh gốc cần chuyển đổi sang tọa độ nền tảng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hiệu chuẩn</td>
+<td>Kết quả hiệu chuẩn được tạo ra từ quá trình hiệu chuẩn.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí trục nền tảng khi hiệu chuẩn</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục nền tảng / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí trục nền tảng khi căn chỉnh</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục nền tảng / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hướng trục nền tảng</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục nền tảng / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí trục camera khi hiệu chuẩn</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục camera / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí trục camera khi căn chỉnh</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục camera / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hướng trục camera</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục camera / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hiệu chuẩn trục camera</td>
+<td>Chỉ sử dụng khi loại công cụ là “bao gồm thay đổi vị trí trục camera / nền tảng và camera”.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Tọa độ nền tảng</td>
+<td>Kết quả tọa độ nền tảng (hướng phải - dưới) sau khi chuyển đổi.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Tọa độ nền tảng</td>
+<td>Kết quả tọa độ sau khi chuyển đổi, dùng cho công cụ tiếp theo, giống như cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>Loại công cụ chuyển đổi</h3>
+
+<p>Nếu vị trí trục ban đầu khi hiệu chuẩn và vị trí trục khi căn chỉnh không thay đổi, và chỉ có sản phẩm được đặt ngẫu nhiên, thì có thể trực tiếp chuyển đổi tọa độ ảnh thành tọa độ nền tảng để tính toán căn chỉnh, khi đó chọn "Không bao gồm thay đổi vị trí trục". Nếu có sự thay đổi vị trí trục, cần dựa vào sự thay đổi đó để hiệu chỉnh tọa độ, mới đưa vào tính toán căn chỉnh được – khi đó chọn loại "bao gồm thay đổi trục..." tương ứng.</p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li><p>Kết quả tọa độ nền tảng đầu ra của công cụ chuyển đổi không phải là tọa độ trong hệ nền tảng thực tế, mà là tọa độ trong một hệ tọa độ nền tảng ảo, với trục X hướng sang phải, trục Y hướng xuống dưới.</p></li>
+<li><p>Tọa độ nền tảng đầu ra có thể được dùng làm đầu vào cho mảng hai, ba hoặc bốn phần tử kiểu "GcCoordPos", sau đó dùng làm đầu vào cho công cụ tính toán căn chỉnh.</p></li>
+</ul>
+
+<h2>Dự án mẫu</h2>
+
+<p>Tham khảo: “\Samples\标准标定+基准两点对位.gvp”.</p>

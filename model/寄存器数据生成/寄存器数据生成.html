@@ -1,0 +1,123 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>寄存器数据生成工具</h1>
+
+<h2>功能</h2>
+
+<p>将一组数据转换成待发送的十六进制数据格式。可以转换的数据类型包括char，short，int，long。例如，数据包工具生成的一组数据12866，12867，12868，字节顺序选择“高位在前”，转换结果为“2B2C2D”；字节顺序选择“低位在前”，转换结果为“B2C2D2”。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 字节顺序   </td>
+<td> <strong>低位在前：</strong>数据的低字节在前，具体参考详细说明。<img src="media/wps99.jpg" alt="img" /><strong>高位在前：</strong>数据的高字节在前，具体参考详细说明。 </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                                       </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入数据包 </td>
+<td> 待转换的一组数据。                                           </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td>  无</td>
+<td> 无                                                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 寄存器数据结果 </td>
+<td> 转换后的数据。                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 执行结果       </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 寄存器数据结果 </td>
+<td> 输出转换后的数据，供其他工具使用，同监视窗口寄存器数据结果参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>字节顺序</h3>
+
+<p><strong>低位在前：</strong>转换后数据的低字节在前面，如12866对应的十六进制为3242H，低字节是42H，高字节是32H。则转换后数据为4232H，用字符串表示就是“B2”。</p>
+
+<p><strong>高位在前：</strong>转换后数据的高字节在前面，如12866对应的十六进制为3242H，低字节是42H，高字节是32H。则转换后数据为3242H，用字符串表示就是“2B”。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>输入的数据类型只支持char，short，int，long。</p></li>
+<li><p>输入的数据，可以通过数据包生成工具获取，数据包生成工具属性选择相应的数据类型。</p></li>
+<li><p>输出的结果如果要发送的话，需要一个数据包生成工具，将数据打包，之后再使用通信发送工具发送，打包的数据。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\寄存器数据.gvp”。</p>
+
+<p>工程说明：</p>
+
+<p>  第一个“数据包生成工具<em>005”是生成一组待转换的数据，数据来源是变量里面定义的short类型。第二个“数据生成工具</em>007”是将“寄存器数据生成_001”工具的转换结果打包，用于发送。</p>

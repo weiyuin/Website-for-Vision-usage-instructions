@@ -1,0 +1,183 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>振镜打标位置计算工具</h1>
+
+<h2>功能</h2>
+
+<p>振镜打标位置计算工具是将输入的图像坐标经过计算后，得到转换后的振镜坐标。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称         </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属性窗口</td>
+<td> 是否忽略角度变化 </td>
+<td> 控制转换计算过程中是否忽略转换图像坐标的角度变化，选择“是”，计算过程中角度值设为0。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否采用多基准   </td>
+<td> 选择“是”，转换计算过程中，利用距离转换图像坐标最近的辅助点来计算对应的振镜坐标；选择“否”，利用九圆标定区域中的中间点(第5个辅助点)来计算对应的振镜坐标。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否采用绝对角度 </td>
+<td> 采用绝对角度指将输出振镜坐标的旋转角度规范化到[-PI/2,PI/2]。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td>输入角度归一化 </td>
+<td> 将输入的角度归一化，取值为[-90°,90°)、[-180°,180°)、[0°,180°)、[0°,360°)；比如归一化到-90~90°之间，输入的是92°，内部计算的时候会变成-88°。 </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无               </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链           </td>
+<td> 图像坐标                                                     </td>
+<td> 输入需要转换的图像坐标。                                     </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 产品上料角度 </td>
+<td> 链接能够标识产品角度的数据，通常为产品上某个特征的角度。 </td>
+</tr>
+<tr>
+<td></td>
+<td> X轴方向          </td>
+<td> 振镜X坐标轴方向。                                                                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> Y轴方向          </td>
+<td> 振镜Y坐标轴方向。                                                                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> 九圆标定结果     </td>
+<td> 输入图像坐标与振镜坐标关联后图像坐标点集，从九圆关联标定工具链接得到。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> X补偿值 </td>
+<td> 对计算结果中的X值做补偿。 </td>
+</tr>
+<tr>
+<td></td>
+<td> Y补偿值 </td>
+<td> 对计算结果中的Y值做补偿。 </td>
+</tr>
+<tr>
+<td></td>
+<td> D补偿值 </td>
+<td> 对计算结果中的D值做补偿。 </td>
+</tr>
+<tr>
+<td> 高级界面         </td>
+<td> 无         </td>
+<td> 无     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 振镜坐标X </td>
+<td> 输出转换后的振镜坐标X。                                      </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 振镜坐标Y </td>
+<td> 输出转换后的振镜坐标Y。             </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 振镜坐标D </td>
+<td> 输出转换后的振镜坐标D。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无           </td>
+<td> 无                                                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 振镜坐标X </td>
+<td> 输出转换后的振镜坐标X，同监视窗口。 </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 振镜坐标Y </td>
+<td> 输出转换后的振镜坐标Y，同监视窗口。 </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 振镜坐标D </td>
+<td> 输出转换后的振镜坐标D，同监视窗口。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>振镜打标位置计算工具与九圆关联标定工具配合使用。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\九圆关联标定工具.gvp”。</p>

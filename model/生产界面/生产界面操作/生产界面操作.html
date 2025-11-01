@@ -1,0 +1,90 @@
+<head> 
+  <meta charset="utf-8"> 
+  <link rel="stylesheet" href="../../css/main.css" /> 
+  <script src="../../js/jquery.js"></script> 
+  <script src="../../js/main.js"></script> 
+</head> 
+<head> 
+  <meta charset="utf-8"> 
+  <link rel="stylesheet" href="../../../css/main.css" /> 
+  <script src="../../../js/jquery.js"></script> 
+  <script src="../../../js/main.js"></script> 
+</head>  
+<head>  
+  <meta charset="utf-8"> 
+  <link rel="stylesheet" href="../../../../css/main.css" /> 
+  <script src="../../../../js/jquery.js"></script> 
+  <script src="../../../../js/main.js"></script> 
+</head>
+
+<h1>Thao tác giao diện sản xuất</h1>
+
+<p><img src="media/MainRunOpration_01.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>Thanh công cụ hiển thị: Hiển thị giao diện bật lên để chỉnh sửa tham số của công cụ và chỉnh sửa giao diện hiển thị (view).</p>
+  </li>
+  <li>
+    <p>Chỉnh sửa tham số: Nhấp chuột để chọn công cụ cần chỉnh sửa tham số, giao diện chỉnh sửa tham số sẽ bật lên. Hình dưới là ví dụ giao diện chỉnh sửa tham số của công cụ tìm đường thẳng.</p>
+    <p><img src="media/MainRunOpration_02.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Chỉnh sửa giao diện hiển thị (view): Có thể chỉnh sửa giao diện hiển thị trong view, bao gồm kiểu đường, độ rộng, phông chữ, cỡ chữ và màu sắc. Có thể xóa hoặc hoàn tác các đối tượng UI trong view, và có thể tùy chỉnh tọa độ văn bản liên kết cửa sổ.</p>
+    <p><img src="media/MainRunOpration_03.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Thêm tùy chọn:</p>
+    <p><img src="media/MainRunOpration_04.png" alt="" /></p>
+    <ul>
+      <li><p>Chuyển đổi kích thước toàn màn hình: Thay đổi kích thước giao diện sản xuất; chế độ toàn màn hình có thể hiển thị hoặc ẩn thanh tác vụ.</p></li>
+      <li>
+        <p>Ẩn vào khay hệ thống: Thu nhỏ giao diện và ẩn biểu tượng phần mềm vào khay hệ thống.</p>
+        <p><img src="media/1661247019172.png" alt="" /></p>
+      </li>
+      <li>
+        <p>Thủ công: Bảng điều khiển thủ công được tùy chỉnh trong phần “Điều khiển - Nhiều điều khiển hơn”, như hình minh họa bên dưới.</p>
+        <p><img src="media/MainRunOpration_05.png" alt="" /></p>
+      </li>
+      <li><p>Thoát: Thoát chương trình.</p></li>
+      <li><p>Tắt máy: Tắt máy tính.</p></li>
+    </ul>
+  </li>
+  <li><p>Lưu: Lưu giải pháp sau khi chỉnh sửa.</p></li>
+  <li>
+    <p>Cài đặt tham số: Hiển thị dữ liệu nhóm, có thể chỉnh sửa giá trị dữ liệu nhóm và biệt danh (tên hiển thị) của biến. Chọn dữ liệu, nhấp vào vùng “Giá trị biến” để chỉnh sửa giá trị. Cách chỉnh sửa biệt danh biến tương tự cách chỉnh sửa giá trị. Phần dưới hộp thoại sẽ hiển thị thông tin liên quan đến tham số đó.</p>
+    <p><img src="media/MainRunOpration_06.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Quản lý công việc: Quản lý tên công việc trong phần phân tích thống kê.</p>
+    <p>Tên công việc thực chất là một nhãn định danh, dùng để xác định dữ liệu thuộc về công việc nào. Có thể tạo mới, xóa hoặc đặt làm công việc hiện tại. Sau khi đặt làm công việc hiện tại, mô-đun thống kê – giao diện sản xuất sẽ lọc dữ liệu dựa trên tên công việc này.</p>
+
+    <blockquote>
+      <p><span style="color:red"><strong>Lưu ý</strong></span></p>
+      <p>Khi xóa một tên công việc, toàn bộ dữ liệu thuộc tên đó cũng sẽ bị xóa. Dữ liệu đã xóa sẽ được sao lưu tự động vào thư mục tương ứng LusterCache\DBfiles\thời_gian.csv, trong đó chứa tên công việc và dữ liệu liên quan đã bị xóa.</p>
+    </blockquote>
+
+    <p><img src="media/MainRunOpration_07.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Chuyển đổi bố cục: Có thể chuyển đổi giữa các bố cục.</p>
+    <p>Dấu tick trước bố cục biểu thị bố cục hiện đang hiển thị; in đậm biểu thị bố cục chính.</p>
+
+    <blockquote>
+      <p><span style="color:red"><strong>Lưu ý</strong></span></p>
+      <p>Nếu bật tính năng tự động chuyển bố cục, giao diện sản xuất trong trạng thái chạy sẽ tự động chuyển bố cục theo giá trị của các biến liên quan.  
+      Nếu phần mềm đang chạy, khi có xung đột giữa chuyển bố cục tự động và thủ công, sẽ lấy bố cục được chuyển lần cuối cùng làm chuẩn.  
+      Nếu xuất hiện hộp thoại cảnh báo, bố cục sẽ không được tự động chuyển cho đến khi hộp thoại được đóng hoặc vấn đề được xử lý.</p>
+    </blockquote>
+
+    <p><img src="media/MainRunOpration_08.png" alt="" /></p>
+  </li>
+  <li><p>Chạy: Chạy toàn bộ – thực thi tất cả các dự án.</p></li>
+  <li><p>Dừng: Dừng dự án.</p></li>
+  <li><p>Tạm dừng: Tạm dừng dự án; khi tất cả dự án ở trạng thái tạm dừng, có thể chỉnh sửa tham số.</p></li>
+  <li><p>Tiếp tục: Tiếp tục chạy dự án.</p></li>
+  <li><p>Giao diện kỹ sư: Thoát giao diện sản xuất và vào giao diện chỉnh sửa dự án chính.</p></li>
+  <li><p>Điều khiển: Bao gồm điều khiển chỉ đọc và không chỉ đọc. Điều khiển không chỉ đọc có thể thay đổi giá trị, qua đó sửa dữ liệu liên kết; điều khiển chỉ đọc chỉ hiển thị giá trị, không thể chỉnh sửa.</p></li>
+  <li><p>Phóng to tối đa một view: Nhấp đúp vào view cần phóng to; nếu muốn khôi phục, nhấp đúp lại view đó.</p></li>
+  <li><p>Thanh trạng thái: Hiển thị thông tin như số tài nguyên, số handle, CPU, bộ nhớ, tỷ lệ sử dụng đĩa, thời gian hệ thống, v.v.</p></li>
+</ul>

@@ -1,0 +1,96 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GsScriptGuiLineSeg</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đoạn thẳng sẽ được hiển thị trong cửa sổ xem.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thuộc tính</td>
+<td>sScriptGuiStyle</td>
+<td>Kiểu hiển thị, bao gồm phông chữ, kích thước, màu sắc, v.v.</td>
+</tr>
+<tr>
+<td></td>
+<td>lineSeg</td>
+<td>Đoạn thẳng cần hiển thị.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>sScriptGuiStyle</h3>
+
+<ul>
+<li>Chức năng: Kiểu hiển thị, kiểu dữ liệu GsScriptGuiStyle.</li>
+</ul>
+
+<h3>lineSeg</h3>
+
+<ul>
+<li>Chức năng: Đoạn thẳng cần hiển thị, kiểu dữ liệu scLineSeg.</li>
+</ul>
+
+<h2>Lưu ý</h2>
+
+<p>Không có.</p>
+
+<h2>Ví dụ mã</h2>
+
+<p>```python</p>
+
+<h2>Kiểu hiển thị GUI</h2>
+
+<p>guiStyle = GvVisionAssembly.GsScriptGuiStyle()
+guiStyle.nLineStyle = 0  ## Kiểu đường: 0 - liền, 1 - đứt, 2 - chấm
+guiStyle.nLineWidth = 2  ## Độ dày đường
+guiStyle.clrLineColor = [255, 0, 0]</p>
+
+<h2>Mảng GUI</h2>
+
+<p>guiArray = GvVisionAssembly.GcScriptGuiArray()</p>
+
+<h2>Đoạn thẳng GUI</h2>
+
+<p>guiLineSeg = GvVisionAssembly.GsScriptGuiLineSeg()
+lineSeg = GvTool.GetToolData("找线工具_002.线段结果")
+guiLineSeg.lineSeg = lineSeg
+guiLineSeg.sScriptGuiStyle = guiStyle</p>
+
+<h2>Thêm đoạn thẳng vào mảng GUI</h2>
+
+<p>guiArray.Add(guiLineSeg)</p>
+
+<h2>Hiển thị mảng GUI trên View-1</h2>
+
+<p>GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
+```</p>

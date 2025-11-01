@@ -1,0 +1,145 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>机械手拾取补偿工具</h1>
+
+<h2>功能</h2>
+
+<p>机械手拾取补偿工具适用于单点的补偿。机械手拾取应用中，假如定位的是整个屏幕，给出的坐标是屏幕的中心点坐标，实际拾取的时候需要靠下2mm，即产品坐标系Y轴正方向2mm，可以通过“机械手拾取补偿工具”增加Y轴方向的补偿实现；或者每次拾取都有固定的偏移，可以通过“机械手拾取补偿工具”将固定偏移补偿回来。</p>
+
+<p><img src="media/wps44.png" alt="img" /></p>
+
+<p><imgnote>图1 机械手拾取补偿示意图</imgnote></p>
+
+<p>机械手拾取补偿工具仅支持在高级属性界面设置X方向和Y方向的补偿值，完成设置后会同步到工具的属性栏参数中。</p>
+
+<p><img src="media/wps51.png" alt="img" /></p>
+
+<p><imgnote>图2 机械手拾取补偿属性界面</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口   </td>
+<td> 机械手拾取补偿类型         </td>
+<td> 始终为产品坐标系。   </td>
+</tr>
+<tr>
+<td></td>
+<td> 对位补偿量 </td>
+<td> 对位补偿值包括X,Y和旋转                          </td>
+</tr>
+<tr>
+<td></td>
+<td> X          </td>
+<td> “对位补偿值”中的X补偿值。                        </td>
+</tr>
+<tr>
+<td></td>
+<td> Y          </td>
+<td> “对位补偿值”中的Y补偿值。                        </td>
+</tr>
+<tr>
+<td></td>
+<td> Rotation   </td>
+<td> “对位补偿值”中的旋转角度。                       </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无  </td>
+<td> 无                                               </td>
+</tr>
+<tr>
+<td> 数据链     </td>
+<td> 机械手坐标                 </td>
+<td> 机械手拾取位置坐标。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 机械轴方向 </td>
+<td> 机械手实际轴方向。                               </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无  </td>
+<td> 无                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 补偿后机械手坐标 </td>
+<td> 补偿后的机械手坐标。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 执行结果         </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 补偿后机械手坐标 </td>
+<td> 输出补偿后的机械手坐标值，供其他工具使用，同监视窗口“补偿后机械手坐标”参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\机械手拾取补偿工具.gvp”。</p>

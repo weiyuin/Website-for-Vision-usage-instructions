@@ -1,0 +1,94 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Quản lý Biến</h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>Các biến được sử dụng trong Dự án/Giải pháp có thể được quản lý thông qua nút “Quản lý biến” trên bảng điều khiển chính trong vùng chức năng.</p>
+
+<p>Hình dưới là cửa sổ quản lý biến, hiển thị toàn bộ thông tin biến trong giải pháp hiện tại. Biến được chia thành biến cục bộ và biến toàn cục. Người dùng có thể tự tạo nhóm biến tùy ý. Các nút ở dưới cửa sổ cho phép thêm mới, xóa, chỉnh sửa, nhập, xuất, quản lý nhóm, v.v.</p>
+
+<p><img src="media/VariableManage_1_1.PNG" alt="VariableManage_1_1" /></p>
+
+<h2>2. Hướng dẫn sử dụng</h2>
+
+<ul>
+<li><p>Thêm mới</p>
+
+<p>Chỉ thêm một biến tại một thời điểm. Nhấn nút “Thêm mới” để mở cửa sổ tạo biến mới, nơi có thể đặt tên biến, kiểu, giá trị, thuộc tính và mô tả.</p>
+
+<p><img src="media/VariableManage_2_1.png" alt="VariableManage_2_1" /></p></li>
+<li><p>Thêm hàng loạt</p>
+
+<p>Có thể thêm nhiều biến cùng lúc. Nhấn nút “Thêm hàng loạt” để mở cửa sổ thêm hàng loạt, nơi có thể đặt số lượng, quy tắc đặt tên, kiểu, giá trị và thuộc tính.</p>
+
+<p><img src="media/VariableManage_2_2.png" alt="VariableManage_2_2" /></p></li>
+<li><p>Chỉnh sửa/Xóa/Sao chép/Dán</p>
+
+<p>Chỉnh sửa hoặc xóa các biến đã định nghĩa, hoặc sao chép các biến được chọn.</p>
+
+<ul>
+<li><p>Chỉnh sửa: Nhấp đúp vào biến cần sửa, cửa sổ chỉnh sửa biến sẽ xuất hiện để chỉnh sửa trực tiếp.</p></li>
+<li><p>Xóa: Chọn biến cần xóa, nhấn chuột phải chọn xóa, hoặc nhấn phím <kbd>Del</kbd>.</p></li>
+<li><p>Sao chép/Dán: Chọn biến, nhấn chuột phải chọn sao chép/dán hoặc dùng tổ hợp phím <kbd>Ctrl</kbd>+<kbd>C</kbd>/<kbd>Ctrl</kbd>+<kbd>V</kbd>.</p></li>
+</ul>
+</li>
+<li><p>Thêm nhóm/Quản lý nhóm</p>
+
+<p>Thêm nhóm cho phép người dùng tạo nhóm tùy chỉnh, tên mặc định là “Tùy chỉnhX”, tối đa 40 nhóm. Có thể nhấp chuột phải vào biến để thêm vào hoặc xóa khỏi nhóm. Việc xóa khỏi nhóm không làm mất biến trong danh sách biến chính.</p>
+
+<p>Quản lý các nhóm người dùng đã tạo. Nhấn nút “Quản lý nhóm” để mở cửa sổ quản lý nhóm, có thể thiết lập hiển thị, thay đổi thứ tự, thêm/xóa nhóm. Nhấp đúp vào tên nhóm để chỉnh sửa trực tiếp.</p>
+
+<p><img src="media/VariableManage_2_3.png" alt="VariableManage_2_3" /></p></li>
+<li><p>Thêm vào giám sát</p>
+
+<p>Chọn một hoặc nhiều biến, nhấp chuột phải để thêm vào cửa sổ giám sát. Khi chạy dự án, có thể xem giá trị biến theo thời gian thực qua cửa sổ giám sát.</p>
+
+<p><img src="media/VariableManage_2_4.png" alt="" /></p></li>
+<li><p>Thêm vào nhóm</p>
+
+<p>Chọn một hoặc nhiều biến, nhấp chuột phải để thêm vào nhóm tùy chỉnh. Mỗi nhóm hỗ trợ tối đa 40 biến.</p>
+
+<p><img src="media/VariableManage_2_5.png" alt="VariableManage_2_5" /></p></li>
+<li><p>Giải thích quy tắc đặt tên biến</p>
+
+<p>Nhấn nút “Giải thích quy tắc đặt tên biến” phía trên cửa sổ quản lý biến để hiển thị thông tin về quy tắc đặt tên biến.</p></li>
+<li><p>Tìm kiếm biến</p>
+
+<p>Nhập tên biến hoặc từ khóa vào ô tìm kiếm ở đầu cửa sổ quản lý biến để tìm kiếm theo thời gian thực.</p></li>
+<li><p>Kiểm tra biến không sử dụng</p>
+
+<p>Nhấn nút “Kiểm tra biến không sử dụng” để tự động lọc các biến chưa được sử dụng. Người dùng có thể chọn và xóa chúng để tinh gọn dự án.</p></li>
+</ul>
+
+<p><img src="media/VariableManage_2_6.png" alt="VariableManage_2_6" /></p>
+
+<p>​Lưu ý: Các biến được tạo động theo định dạng trong script (như hình dưới) sẽ không được phát hiện là đã sử dụng khi kiểm tra, điều này có thể dẫn đến xóa nhầm. Do đó, chức năng “Xóa tất cả” và “Xóa được chọn” hiện đang bị vô hiệu hóa.</p>
+
+<p><img src="media/Script.jpg" alt="VariableManage_2_6" /></p>
+
+<h2>3. Giải thích tham số</h2>
+
+<h4>Biến cục bộ</h4>
+
+<p>Chỉ có thể sử dụng trong dự án hiện tại.</p>
+
+<h4>Biến toàn cục</h4>
+
+<p>Có thể sử dụng trong tất cả các dự án thuộc cùng một giải pháp.</p>

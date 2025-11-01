@@ -1,0 +1,210 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>极坐标展开工具</h1>
+
+<h2>功能</h2>
+
+<p>极坐标展开工具主要将圆环区域或椭圆环区域图像展开为矩形区域图像，以对图像进行处理、分析和识别。下图为极坐标展开工具应用示例，其将圆环字符区域展开为矩形区域，以利于对字符进行识别。</p>
+
+<p><img src="media/wps20.png" alt="img" /></p>
+
+<p><imgnote>(a) 输入图像及相应圆环段区域</imgnote> <imgnote>(b) 极坐标展开结果图</imgnote></p>
+
+<p><imgnote>图1 极坐标展开工具应用示例</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称         </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口         </td>
+<td> 圆环段                                                       </td>
+<td> 描述了需要进行极坐标展开的区域。见图二。<img src="media/wps22.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td></td>
+<td> 圆心（X/Y）      </td>
+<td> 圆环段的圆心，圆心的横纵坐标。                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 圆半径           </td>
+<td> 圆环段的最大半径。                                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 起始角度         </td>
+<td> 圆环段的起始角度，按照顺时针方向。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 张角角度         </td>
+<td> 圆环段起始角度到终点角度之间的角度。                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 径向缩放比例     </td>
+<td> 圆弧段的径向缩放比例。                                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否设置采样长宽 </td>
+<td> 是否设置极坐标展开工具的采样的长宽，就是对展开后的图像进行长宽设置。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 采样长           </td>
+<td> 设置展开后显示的长度。                                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 采样宽           </td>
+<td> 设置展开后显示的宽度。                                                                                                     </td>
+</tr>
+<tr>
+<td> 图像窗口         </td>
+<td> 输入图像                                                     </td>
+<td> 需要进行极坐标展开的图像。                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 圆弧段GUI        </td>
+<td> 需要进行极坐标展开的图像的区域。                                                                                           </td>
+</tr>
+<tr>
+<td> 数据链           </td>
+<td> 输入图像                                                     </td>
+<td> 需要进行极坐标展开的图像。                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换     </td>
+<td> 需要进行极坐标展开的图像的区域的缩放平移旋转操作，默认不做操作，可以不进行设置。                                                               </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无        </td>
+<td> 无。                                                                                                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述（参数的含义）                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 需要进行极坐标展开的图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像 </td>
+<td> 极坐标展开后的目标图像。                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                           </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 进行极坐标展开的结果图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                             </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像 </td>
+<td> 极坐标展开后的目标图像。                                                                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>圆环段</h3>
+
+<p>圆环段各个参数的定义，见图2。</p>
+
+<p><img src="media/wps25.jpg" alt="img" /></p>
+
+<p><imgnote>图2 圆环段控件示意图</imgnote></p>
+
+<h3>圆环区域定义及展开原理</h3>
+
+<p>圆环区域可通过以下参数进行描述：原点、半径、径向尺度、起始角度、角度跨度。其中角度以顺时针为正。输出矩形图像规定水平方向为角度方向，垂直方向为径向方向，如图3所示：</p>
+
+<p><img src="media/wps26.png" alt="img" /></p>
+
+<p><imgnote>图3 圆环极坐标展开原理示意图</imgnote></p>
+
+<p>输出矩形缺省尺寸计算示意图如图4所示，即角度方向采样点数为外圆弧长和内圆弧长的平均值；径向方向采样点数为外圆半径和内圆半径之差。</p>
+
+<p><img src="media/wps27.png" alt="img" /></p>
+
+<p><imgnote>图4 圆环展开输出区域缺省尺寸计算示意图</imgnote></p>
+
+<h3>椭圆环区域定义及展开原理</h3>
+
+<p>椭圆环区域可通过以下参数进行描述：原点、X方向半径、Y方向半径、径向尺度、起始角度、角度跨度、旋转角度。其中角度以顺时针为正。如图5所示。径向尺度和角度跨度的含义及方向性和圆环区域相同。</p>
+
+<p><img src="media/wps28.png" alt="img" /></p>
+
+<p><imgnote>图5 椭圆环极坐标展开原理示意图</imgnote></p>
+
+<p>输出矩形缺省尺寸计算示意图如图6所示，即角度方向采样点数为外椭圆弧长和内椭圆弧长的平均值；径向方向采样点数为短轴外内半径之差和长轴外内半径之差的平均值。</p>
+
+<p><img src="media/wps29.png" alt="img" /></p>
+
+<p><imgnote>图6 椭圆环展开输出区域缺省尺寸计算示意图</imgnote></p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\极坐标展开工具.gvp”。</p>

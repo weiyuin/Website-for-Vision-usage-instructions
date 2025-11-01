@@ -1,0 +1,204 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ mặt nạ (Mask Tool)</h1>
+
+<h2>Chức năng</h2>
+
+<ul>
+<li><p>Chức năng mặt nạ: Che khuất các phần không quan tâm trong ảnh đầu vào;</p></li>
+<li><p>Chức năng tô màu: Có thể tô các vùng mặt nạ theo giá trị xám hoặc giá trị RGB đã thiết lập;</p></li>
+</ul>
+
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thuộc tính</td>
+<td>Loại ảnh</td>
+<td>Các loại có thể chọn: ảnh xám hoặc ảnh màu</td>
+</tr>
+<tr>
+<td></td>
+<td>Xuất ảnh nhị phân</td>
+<td>Chọn “Có” để xuất ảnh dưới dạng nhị phân, vùng mặt nạ sẽ là màu đen, phần còn lại màu trắng</td>
+</tr>
+<tr>
+<td></td>
+<td>Có tô vùng mặt nạ hay không</td>
+<td>Chọn “Có” để tô vùng mặt nạ bằng giá trị xám hoặc giá trị màu, thay đổi màu của vùng mặt nạ</td>
+</tr>
+<tr>
+<td></td>
+<td>Giá trị tô vùng mặt nạ</td>
+<td>Khi chọn ảnh xám, đây là giá trị xám để tô</td>
+</tr>
+<tr>
+<td></td>
+<td>Giá trị tô kênh đỏ vùng mặt nạ</td>
+<td>Khi chọn ảnh màu, đây là giá trị kênh đỏ để tô</td>
+</tr>
+<tr>
+<td></td>
+<td>Giá trị tô kênh xanh lá vùng mặt nạ</td>
+<td>Khi chọn ảnh màu, đây là giá trị kênh xanh lá để tô</td>
+</tr>
+<tr>
+<td></td>
+<td>Giá trị tô kênh xanh dương vùng mặt nạ</td>
+<td>Khi chọn ảnh màu, đây là giá trị kênh xanh dương để tô</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần áp dụng mặt nạ</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu vào RGB</td>
+<td>Ảnh màu cần áp dụng mặt nạ</td>
+</tr>
+<tr>
+<td>Dữ liệu chuỗi</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần áp dụng mặt nạ</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu vào RGB</td>
+<td>Ảnh màu cần áp dụng mặt nạ</td>
+</tr>
+<tr>
+<td></td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>Biến đổi tuyến tính 2D bao gồm tịnh tiến, xoay, và thu phóng của đối tượng so với mẫu. Vùng mặt nạ sẽ nhận biến đổi tuyến tính 2D để đảm bảo vùng mặt nạ trên ảnh thời gian thực giữ vị trí tương đối cố định.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Cập nhật ảnh</td>
+<td>Lấy ảnh cần áp dụng mặt nạ</td>
+</tr>
+<tr>
+<td></td>
+<td>Xác nhận</td>
+<td>Áp dụng mặt nạ lần này</td>
+</tr>
+<tr>
+<td></td>
+<td>Hủy</td>
+<td>Bỏ mặt nạ lần này, tiếp tục sử dụng mẫu mặt nạ trước đó</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu ra</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu ra.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra RGB</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh màu đầu ra.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi thực hiện che mặt nạ trên ảnh đầu vào.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra RGB</td>
+<td>Ảnh màu kết quả sau khi thực hiện che mặt nạ trên ảnh đầu vào màu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ: thành công hiển thị “OK”, thất bại hiển thị “NG”, giống tham số kết quả thực thi của cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi thực hiện che mặt nạ trên ảnh đầu vào.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra RGB</td>
+<td>Ảnh màu kết quả sau khi thực hiện che mặt nạ trên ảnh đầu vào màu.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<p>Giao diện thuộc tính nâng cao của công cụ mặt nạ được thể hiện ở Hình 1, chủ yếu gồm phần điều khiển và phần hiển thị.</p>
+
+<ul>
+<li><p>Phần điều khiển chủ yếu là điều khiển các phần liên quan đến chỉnh sửa ảnh mặt nạ và điều khiển hiển thị ảnh, bao gồm thanh công cụ điều khiển và thanh công cụ vẽ;</p></li>
+<li><p>Phần hiển thị chủ yếu là hiển thị ảnh tham chiếu và ảnh mặt nạ, cũng như hiển thị vị trí chuột và giá trị điểm ảnh tương ứng trên ảnh tham chiếu, bao gồm vùng hiển thị và thanh trạng thái.</p>
+
+<p><img src="media/wps6.png" alt="img" /></p>
+
+<p><imgnote>Hình 1 Giao diện thuộc tính nâng cao của công cụ mặt nạ</imgnote></p></li>
+</ul>
+
+<p>Việc sử dụng giao diện mặt nạ cụ thể có thể tham khảo tài liệu tương ứng với nút dấu hỏi ❓ trên giao diện mặt nạ.</p>
+
+<h2>Lưu ý</h2>
+
+<p>Ảnh mặt nạ nên nhỏ hơn 512MB. Nếu lớn hơn 512MB, cung cấp hai phương án:</p>
+
+<p>Phương án 1: Giảm mẫu ảnh rồi mới hiển thị để vẽ. Sau khi vẽ xong, phóng to ảnh mặt nạ về kích thước ban đầu (vùng vẽ được sẽ tương ứng với vùng mặt nạ), nhưng độ chính xác sẽ thấp hơn một chút (ví dụ: trước đây độ chính xác là 1 pixel, phương án này độ chính xác ~ 2 pixel), và thời gian xử lý sẽ tăng.</p>
+
+<p>Phương án 2: Cắt một phần ảnh, sau đó vẽ mặt nạ cho phần này, rồi dán lại phần này vào ảnh mặt nạ có kích thước bằng ảnh đầu vào.</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\掩膜工具.gvp”。</p>

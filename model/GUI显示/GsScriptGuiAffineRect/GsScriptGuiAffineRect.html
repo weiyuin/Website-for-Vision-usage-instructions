@@ -1,0 +1,92 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GsScriptGuiAffineRect</h1>
+
+<h2>Chức năng</h2>
+
+<p>Hiển thị hình chữ nhật affine trong cửa sổ xem.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thuộc tính</td>
+<td>sScriptGuiStyle</td>
+<td>Kiểu hiển thị, bao gồm font chữ, kích thước, màu sắc, v.v.</td>
+</tr>
+<tr>
+<td></td>
+<td>affineRect</td>
+<td>Hình chữ nhật affine cần hiển thị.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>sScriptGuiStyle</h3>
+
+<ul>
+<li><strong>Chức năng</strong>: Kiểu hiển thị, thuộc kiểu GsScriptGuiStyle.</li>
+</ul>
+
+<h3>affineRect</h3>
+
+<ul>
+<li><strong>Chức năng</strong>: Hình chữ nhật affine cần hiển thị, thuộc kiểu scAffineRect.</li>
+</ul>
+
+<h2>Lưu ý</h2>
+
+<p>Không có.</p>
+
+<h2>Mã ví dụ</h2>
+
+<p>```python
+affinerect = GvTool.GetToolData(&ldquo;几何定位_024.搜索位置&rdquo;)</p>
+
+<h1>Kiểu hiển thị GUI</h1>
+
+<p>guistyle = GvVisionAssembly.GsScriptGuiStyle()<br>
+guistyle.nLineWidth = 10<br>
+guistyle.clrLineColor = [0, 255, 0]</p>
+
+<h1>Đối tượng GUI hình chữ nhật affine</h1>
+
+<p>affinerect_gui = GvVisionAssembly.GsScriptGuiAffineRect()<br>
+affinerect_gui.sScriptGuiStyle = guistyle<br>
+affinerect_gui.affineRect = affinerect</p>
+
+<h1>Mảng GUI</h1>
+
+<p>guiarray = GvVisionAssembly.GcScriptGuiArray()<br>
+guiarray.Add(affinerect_gui)   # Thêm đối tượng GUI vào mảng GUI</p>
+
+<h1>Thêm mảng GUI vào cửa sổ xem</h1>
+
+<p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiarray)
+```</p>

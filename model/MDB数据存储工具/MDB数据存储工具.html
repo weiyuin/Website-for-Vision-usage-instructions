@@ -1,0 +1,149 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>MDB数据存储工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​  MDB数据存储工具能生产过程中收集的基础类型数据，并创建数据表，保存数据到数据表中，转储为*.mdb格数的数据库文件。它一共可以收集13种的数据类型。主要可以收集的数据类型有：double、int、bool、string、int64、char、float、long、short、wstring、unsigned char、unsigned long和 unsigned short类型。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 生产程序为通过通信上传数据至“MDB文件生成插件”实时上传，客户通过“数据上传软件”实时读取MDB文件中数据。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​ 按照命名创建MDB数据库文件，按照名称创建table表格，按照规则存储数据到table表格中。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4></li>
+</ul>
+
+
+<p><img src="media/GcDataExportTool_4_1.png" alt="GcDataExportTool_4_1" /></p>
+
+<ul>
+<li><h4>MDB配置</h4>
+
+<p>高级界面为MDB存储工具的数据表配置，配置完成后无法再次修改。配置完成后可使用数据链，进行数据关联。</p>
+
+<p><img src="media/GcDataExportTool_4_2.png" alt="GcDataExportTool_4_2" /></p></li>
+</ul>
+
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述 </th>
+<th> 解决方法 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 数据表名未设置 </td>
+<td> 工作表名称：不能含有特殊字符，不能以数字开头     </td>
+</tr>
+<tr>
+<td> 无效路径</td>
+<td>   重新设置MDB文件路径       </td>
+</tr>
+<tr>
+<td> 无效的文件名称         </td>
+<td>  设置 存储的文件名称。注：必须以.mdb为文件后缀       </td>
+</tr>
+<tr>
+<td> 运行失败         </td>
+<td>  检查 存储的文件名称。是否.mdb为文件后缀       </td>
+</tr>
+<tr>
+<td> 运行失败         </td>
+<td>  检查 数据库是否链接       </td>
+</tr>
+<tr>
+<td> 运行失败         </td>
+<td>  检查MDB模板文件是否存在   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MDB文件路径</td>
+<td>存储文件的位置，即路径。</td>
+</tr>
+<tr>
+<td>工作表名称  </td>
+<td>保存数据的表格名称。注：数据表不能以特殊字符和数字开头。</td>
+</tr>
+<tr>
+<td>是否使用模板   </td>
+<td>是，使用之前的模板；否，不使用模板。</td>
+</tr>
+<tr>
+<td>文件名称   </td>
+<td>存储的文件名称。注：必须以.mdb为文件后缀。</td>
+</tr>
+<tr>
+<td>数据链     </td>
+<td>高级属性里面的数据源，最多可以新建64路，每一路相当于数据库表里面的一列</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>执行时间</td>
+<td>工具执行的时间</td>
+</tr>
+<tr>
+<td>执行结果</td>
+<td>true：成功；false：失败</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\MDB数据存储工具.gvp”。</p>

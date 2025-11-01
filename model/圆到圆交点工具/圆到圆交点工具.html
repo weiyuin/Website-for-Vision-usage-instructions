@@ -1,0 +1,166 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>圆到圆交点工具</h1>
+
+<h2>功能</h2>
+
+<p>圆到圆交点工具主要用来计算输入图像中圆与圆之间的交点，并输出交点坐标。</p>
+
+<p><img src="media/wps68.jpg" alt="img" />     <img src="media/wps69.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 圆示意图</imgnote>  <imgnote>(b) 交点示意图</imgnote></p>
+
+<p><imgnote>图1 圆到圆交点工具应用示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 无   </td>
+<td> 无                                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像               </td>
+<td> 显示待检测的图像。                                       </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入图像               </td>
+<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 圆A      </td>
+<td> 将要求交点的第一个圆。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 圆B      </td>
+<td> 将要求交点的第二个圆。                                                           </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无   </td>
+<td> 无                                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小。                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点A    </td>
+<td> 圆A与圆B的第一个交点图像坐标。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点B    </td>
+<td> 圆A与圆B的第二个交点图像坐标。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 显示工具执行结果图像，同监视窗口的输入图像参数。         </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点A    </td>
+<td> 圆A与圆B的第一个交点图像坐标。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点B    </td>
+<td> 圆A与圆B的第二个交点图像坐标。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 交点A    </td>
+<td> 圆A与圆B的第一个交点图像坐标，供后序工具使用，同监视窗口的交点A参数。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点B    </td>
+<td> 圆A与圆B的第二个交点图像坐标，供后序工具使用，同监视窗口的交点B参数。                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>圆与圆无交点时，工具执行失败。</p></li>
+<li><p>当数据链窗口中没有指定圆参数来源时，圆由图像窗口的圆的GUI确定；当数据链窗口中已经指定圆参数来源时，以该参数来源为优先，图像窗口圆GUI确定的圆无效。</p></li>
+<li><p>如果圆由图像窗口的圆的GUI确定，则每次打开工程时需重新确定圆。</p></li>
+<li><p>数据链中圆A与圆B的参数来源，既可以是完整的圆，也可以是圆弧（如图2 所示）所在的圆。</p>
+
+<p><img src="media/wps74.jpg" alt="img" /></p>
+
+<p><imgnote>图2 圆与圆交点示意图</imgnote></p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

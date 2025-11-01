@@ -1,0 +1,172 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>直线到圆交点工具</h1>
+
+<h2>功能</h2>
+
+<p>直线到圆交点工具主要用来计算输入图像中一条直线与圆之间的交点，并输出交点坐标。</p>
+
+<p><img src="media/wps146.jpg" alt="img" />       <img src="media/wps147.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 直线与圆示意图</imgnote> <imgnote>(b) 交点示意图</imgnote></p>
+
+<p><imgnote>图1 直线到圆交点工具应用示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 交点排序依据       </td>
+<td> 直线与圆有多个交点时，根据所选择的依据对交点进行排序，共分为4种类型：X坐标从小到大，X坐标从大到小，Y坐标从小到大，Y坐标从大到小。 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像           </td>
+<td> 显示待检测的图像。                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 直线     </td>
+<td> 将要求交点的直线。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 圆       </td>
+<td> 将要求交点的圆。                                                                 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入图像           </td>
+<td> 待检测的图像。                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 直线     </td>
+<td> 将要求交点的直线。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 圆       </td>
+<td> 将要求交点的圆。                                                                 </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无  </td>
+<td> 无      </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像的宽度、高度、像素大小。                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点A    </td>
+<td> 直线与圆的第一个交点图像坐标。                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点B    </td>
+<td> 直线与圆的第二个交点图像坐标。                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 显示工具执行结果图像，同监视窗口的输入图像参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点A    </td>
+<td> 直线与圆的第一个交点。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点B    </td>
+<td> 直线与圆的第二个交点。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                   </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 交点A    </td>
+<td> 直线与圆的第一个交点图像坐标，sc2Vector类型，供后序工具使用，同监视窗口的交点A参数。                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点B    </td>
+<td> 直线与圆的第二个交点图像坐标，sc2Vector类型，供后序工具使用，同监视窗口的交点B参数。                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>直线与圆无交点时，工具执行失败。</p></li>
+<li><p>当数据链窗口中没有指定直线与圆参数来源时，直线与圆由图像窗口的直线与圆的GUI确定；当数据链窗口中已经指定直线与圆参数来源时，以该参数来源为优先，图像窗口直线与圆GUI确定的直线与圆无效。</p></li>
+<li><p>如果直线与圆由图像窗口的直线与圆的GUI确定，则每次打开工程时需重新确定直线与圆。</p></li>
+<li><p>工具输出的交点A、B可以作为位置姿态生成的输入，或者二维向量解析工具的输入。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

@@ -1,0 +1,87 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>DI输入工具</h1>
+
+<h2>概述</h2>
+
+<p>DI输入工具目前只能在包含有DIO硬件模块的工控机上可以正常使用。主要用来识别外部信号的触发(生效)状态。</p>
+
+<h2>DI接线说明</h2>
+
+<p>DI输入支持PNP和NPN两种接线方式。PNP指的是高电平有效(低电平无效)，NPN指的是低电平有效(高电平无效)。客户需要根据DI输入对接设备的接线方式来正确接线。<br/>
+PNP接线方式如下图所示：<br/>
+<img src="media/Connect_PNP.PNG" alt="" /><br/>
+PNP 型设备接 IO 输入, DI_COM1-2 接 PNP 型传感器的 GND， 信号线接 DI(1-8)， 电阻根据传感器的要求在信号线上 PULL DOWN 电阻。<br/>
+NPN接线方式如下图所示:<br/>
+<img src="media/Connect_NPN.PNG" alt="" /><br/>
+NPN 型设备接 IO 输入, DI_COM1-2 接 NPN 型传感器， 信号线接 DI(1-8)， 电阻根据传感器的要求在信号线上 PULL HIGH 电阻。</p>
+
+<h2>功能</h2>
+
+<p>工程中使用DIO通信，可以通过DI接收工具来获取所有(8~16路)DI输入引脚的触发(有效)状态。</p>
+
+<h2>输入参数</h2>
+
+<p>无</p>
+
+<h2>输出参数</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;"> 参数名称 </th>
+<th style="text-align:left;"> 参数描述          </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;"> DI1触发状态 </td>
+<td style="text-align:left;"> 显示DI引脚1的触发（有效）状态引脚输出结果，true代表触发（有效），false代表未触发（无效）</td>
+</tr>
+<tr>
+<td style="text-align:left;"> DI2~DI8触发状态 </td>
+<td style="text-align:left;">参考DI1触发状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left;"> 所有DI触发状态按位和结果 </td>
+<td style="text-align:left;">按位和指的是其bit0~bit7分别对应DI引脚1~8的触发状态，例如：结果是170代表引脚2、4、6、8处于触发（有效）状态，引脚1、3、5、7代表未触发(无效)状态</td>
+</tr>
+<tr>
+<td style="text-align:left;"> 执行结果 </td>
+<td style="text-align:left;"> 工具执行结果。                               </td>
+</tr>
+<tr>
+<td style="text-align:left;">执行时间 </td>
+<td style="text-align:left;"> 工具执行时间。                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<blockquote><ul>
+<li>工控机只有包含DIO硬件模块时该工具才能正常执行。</li>
+<li><font color="red">DI工具输出的触发状态不是高低电平的状态，而是结合接线方式之后的触发状态。</font> 例如：PNP接线方式并且接线正确的前提下，输出true代表当前是高电平，输出false代表低电平。NPN接线方式则相反。</li>
+</ul>
+</blockquote>
+
+<h2>示例工程</h2>
+
+<p>无</p>

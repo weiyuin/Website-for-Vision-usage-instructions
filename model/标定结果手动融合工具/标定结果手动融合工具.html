@@ -1,0 +1,130 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ hợp nhất kết quả hiệu chuẩn thủ công</h1>
+
+<h2>Chức năng</h2>
+
+<p>Kết hợp các tham số của kết quả hiệu chuẩn đã chỉnh sửa, chẳng hạn như tọa độ ảnh và tọa độ nền tảng, để tạo ra một kết quả hiệu chuẩn tổng thể, cung cấp cho các công cụ khác sử dụng, ví dụ như đầu vào chuỗi dữ liệu của “Công cụ chuyển đổi tọa độ từ ảnh sang nền tảng”.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Loại hiệu chuẩn cũ</td>
+<td>Xác định xem liên kết đến kết quả hiệu chuẩn cũ (GcCalibrateResult) hay kết quả hiệu chuẩn mới (GeneralCalibResult).</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Tọa độ ảnh</td>
+<td>Tọa độ ảnh trong kết quả hiệu chuẩn, thường là tọa độ ảnh của điểm Mark dùng để hiệu chuẩn, kiểu GcCoordPos.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tọa độ nền tảng</td>
+<td>Tọa độ nền tảng trong kết quả hiệu chuẩn, thường là tọa độ đã được chỉnh sửa, kiểu GcCoordPos.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hiệu chuẩn đầu vào</td>
+<td>Kết quả hiệu chuẩn gốc đã chỉnh sửa (kết quả hiệu chuẩn cũ).</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hiệu chuẩn di chuyển</td>
+<td>Kết quả hiệu chuẩn gốc đã chỉnh sửa (kết quả hiệu chuẩn mới).</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả hiệu chuẩn</td>
+<td>Kết quả hiệu chuẩn đã chỉnh sửa (kết quả hiệu chuẩn cũ).</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hiệu chuẩn đầu ra</td>
+<td>Kết quả hiệu chuẩn đã chỉnh sửa (kết quả hiệu chuẩn mới).</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ: nếu thành công hiển thị “OK”, nếu thất bại hiển thị “NG”, giống với tham số kết quả thực thi của cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Kết quả hiệu chuẩn</td>
+<td>Kết quả hiệu chuẩn đã chỉnh sửa, cung cấp cho các công cụ khác sử dụng, giống với tham số của cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li>Các <strong>“tọa độ ảnh”</strong> và <strong>“tọa độ nền tảng”</strong> trong chuỗi dữ liệu có thể được lấy bằng “Công cụ tạo vị trí tư thế”.</li>
+</ul>
+
+<h2>Dự án mẫu</h2>
+
+<p>Tham khảo “\Samples\双相机对位.gvp”.</p>

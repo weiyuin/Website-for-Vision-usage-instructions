@@ -1,0 +1,279 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scAnnulus</h1>
+
+<h2>功能</h2>
+
+<p>表示圆环。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scAnnulus                                  </td>
+<td> scAnnulus()构造函数。                                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scAnnulus                 </td>
+<td> scAnnulus(c, r, dRadialScale)构造函数。                </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scAnnulus              </td>
+<td> scAnnulus(circle, dRadialScale)构造函数。              </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> SetCenterRadiusRadialScale </td>
+<td> 设置圆环的中心c，基准半径r和径向缩放比例dRadialScale。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCenter                                  </td>
+<td> 设置圆环的圆心（中心）。                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRadius                                  </td>
+<td> 设置圆环的基准半径。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRadialScale             </td>
+<td> 设置圆环的径向缩放比例。                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRadius                                   </td>
+<td> 获取圆环的基准半径。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRadialScale                 </td>
+<td> 获取圆环的径向缩放比例。                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCenter                                   </td>
+<td> 获取圆环的圆心（中心）。                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetInnerRadius                         </td>
+<td> 获取内圆半径。                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetOuterRadius                         </td>
+<td> 获取外圆半径。                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetInnerCircle                         </td>
+<td> 获取内圆。                                             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetOuterCircle                         </td>
+<td> 获取外圆。                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scAnnulus ()</h3>
+
+<ul>
+<li><p>功能：构造scAnnulus对象。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scAnnulus (c, r, dRadialScale)</h3>
+
+<ul>
+<li><p>功能：用圆环圆心（中心）c，基准半径r和径向缩放比例dRadialScale来构造圆环。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>c：圆心位置，sc2Vector类型。</p></li>
+<li><p>r：基准半径，浮点数类型。</p></li>
+<li><p>dRadialScale：径向缩放比例，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scAnnulus (circle, dRadialScale)</h3>
+
+<ul>
+<li><p>功能：用基准圆circle和径向缩放比例dRadialScale来构造圆环。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>circle：基准圆，scCircle类型。</p></li>
+<li><p>dRadialScale：径向缩放比例，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>SetCenterRadiusRadialScale(c, r, dRadialScale)</h3>
+
+<ul>
+<li><p>功能：设置圆环的圆心c，基准半径r和径向缩放比例dRadialScale。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>c：圆心位置，sc2Vector类型。</p></li>
+<li><p>r：基准半径，浮点数类型。</p></li>
+<li><p>dRadialScale：径向缩放比例，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetCenter&copy;</h3>
+
+<ul>
+<li><p>功能：设置圆环的圆心（中心）。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>c：圆环圆形（中心），sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetRadius&reg;</h3>
+
+<ul>
+<li><p>功能：设置圆环的基准半径。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>r：半径。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>SetRadialScale(dRadialScale)</h3>
+
+<ul>
+<li><p>功能：设置圆环的基准半径。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>dRadialScale：径向缩放比例，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetRadius()</h3>
+
+<ul>
+<li><p>功能：获取圆环的基准半径。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆环的基准半径，浮点数类型。</p></li>
+</ul>
+
+
+<h3>GetRadialScale()</h3>
+
+<ul>
+<li><p>功能：获取圆环的径向缩放比例。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆环的径向缩放比例，浮点数类型。</p></li>
+</ul>
+
+
+<h3>GetCenter()</h3>
+
+<ul>
+<li><p>功能：获取圆环的圆心（中心）。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆环的圆心（中心），sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetInnerRadius()</h3>
+
+<ul>
+<li><p>功能：获取内圆半径。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：内圆半径，浮点数类型。</p></li>
+</ul>
+
+
+<h3>GetOuterRadius()</h3>
+
+<ul>
+<li><p>功能：获取外圆半径。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：外圆半径，浮点数类型。</p></li>
+</ul>
+
+
+<h3>GetInnerCircle()</h3>
+
+<ul>
+<li><p>功能：获取内圆。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆环内圆，scCircle类型。</p></li>
+</ul>
+
+
+<h3>GetOuterCircle()</h3>
+
+<ul>
+<li><p>功能：获取内圆半径。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆环外圆，scCircle类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

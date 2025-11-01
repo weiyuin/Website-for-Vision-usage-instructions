@@ -1,0 +1,144 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>寄存器数据解析工具</h1>
+
+<h2>功能</h2>
+
+<p>解析接收的数据，解析结果都是int型数据。</p>
+
+<p>例如接受的数据，字符串显示为“2B2C”，实际对应的内存中数据是0x32423243，寄存器数据解析工具属性中“字节顺序”选择<strong>“</strong>高位在前<strong>”，</strong>解析结果十进制数据是843199043，如图1所示。</p>
+
+<p><img src="media/wps85.png" alt="img" /></p>
+
+<p><imgnote>图1 接收到的数据，字符串显示为“2B2C”</imgnote></p>
+
+<p>如果接收的数据，字符串显示是“B2”，实际对应的内存中数据是0x4232，属性中“字节顺序”选择<strong>“</strong>低位在前<strong>”</strong>对应的十进制数据是12866，选择<strong>“</strong>低位在前<strong>”</strong>对应的十进制数据是16946，如图2所示。</p>
+
+<p><img src="media/wps86.png" alt="img" /></p>
+
+<p><imgnote>图2 接收到的数据，字符串显示为“B2”</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 字节顺序   </td>
+<td> <strong>低位在前：</strong>数据的低字节在前，具体参考详细说明。<strong>高位在前：</strong>数据的高字节在前，具体参考详细说明。<img src="media/wps88.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                                       </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 寄存器数据 </td>
+<td> 待解析的数据。                                               </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td>无  </td>
+<td> 无                                                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 整数结果       </td>
+<td> 解析后的int型整数结果。                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 执行结果       </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 整数结果       </td>
+<td> 输出解析后的int型整数结果，供其他工具使用，同监视窗口“整数结果”参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>字节顺序：</h3>
+
+<p>假设接收的数据是12866，十六进制表示是0x3242，数据在内存中的存放方式分大小端模式，小端模式：即低字节数据存放在低地址，高字节在高地址；大端模式：即低字节数据存放在高地址，高字节在低地址。</p>
+
+<p><strong>低位在前：</strong>即下位机是小端模式，下位机发送的数据的低字节在前，上位机先接收到数据的低字节，存放在低地址，如图3所示；</p>
+
+<p><img src="media/wps91.png" alt="img" /></p>
+
+<p><imgnote>图3 接收的数据，小端模式，字符串显示为“B2”</imgnote></p>
+
+<p><strong>高位在前：</strong>即下位机是大端模式，下位机发送的数据的高字节在前，上位机先接收到数据的高字节，存放在低地址，如图4所示。</p>
+
+<p><img src="media/wps92.png" alt="img" /></p>
+
+<p><imgnote>图4 接收的数据，大端模式，字符串显示为“2B”</imgnote></p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\寄存器数据.gvp”。</p>
+
+<p>工程说明：</p>
+
+<p>  “寄存器数据解析_002” 工具，演示的处理接收到的1字节数据，对应的是变量中的#strHEX1;</p>
+
+<p>  “寄存器数据解析_003” 工具，演示的处理接收到的2字节数据，对应的是变量中的#strHEX2;</p>
+
+<p>  “寄存器数据解析_004” 工具，演示的处理接收到的4字节数据，对应的是变量中的#strHEX4;</p>

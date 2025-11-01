@@ -1,0 +1,115 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1><strong>Mô-đun GvVisionAssembly</strong></h1>
+
+<p>Mô-đun này cung cấp các phương thức để truy cập và thao tác với công cụ, bao gồm một số kiểu dữ liệu liên quan, ví dụ như sc2Vector, GcCoordPos, GcPlatformAxisPos, v.v.</p>
+
+<ul>
+  <li><p>GvVisionAssembly.GcCoordPos</p>
+    <p>Biểu thị vị trí và tư thế.</p></li>
+
+  <li><p>GvVisionAssembly.GcPlatformAxisPos</p>
+    <p>Biểu thị vị trí trục.</p></li>
+
+  <li><p>GvVisionAssembly.GcScriptGuiArray</p>
+    <p>Mảng GUI được hiển thị trên giao diện. Để một đối tượng GUI hiển thị trên cửa sổ giao diện, phải thêm nó vào mảng GcScriptGuiArray.</p></li>
+
+  <li><p>GvVisionAssembly.GcScriptGuiDataAgent</p>
+    <p>Đại lý hiển thị giao diện. GcScriptGuiArray phải thông qua đối tượng này để thêm GUI vào cửa sổ hiển thị.</p></li>
+
+  <li><p>GvVisionAssembly.GsScriptGuiText</p>
+    <p>Giao diện văn bản.</p></li>
+
+  <li><p>GvVisionAssembly.GsScriptGuiCross</p>
+    <p>Giao diện dấu cộng (hình chữ thập).</p></li>
+
+  <li><p>GvVisionAssembly.GsScriptGuiRect</p>
+    <p>Giao diện hình chữ nhật.</p></li>
+
+  <li><p>GvVisionAssembly.GsScriptGuiPolyline</p>
+    <p>Giao diện đa giác (nhiều đoạn thẳng nối liền).</p></li>
+
+  <li><p>GvVisionAssembly.GsScriptGuiCircle</p>
+    <p>Giao diện hình tròn.</p></li>
+
+  <li><p>GvVisionAssembly.GsScriptGuiStyle</p>
+    <p>Phong cách giao diện GUI.</p></li>
+
+  <li><p>GvVisionAssembly.GeMsgReportType</p>
+    <p>Kiểu báo cáo thông báo.</p></li>
+
+  <li><p>GvVisionAssembly.ReportMessage</p>
+    <p>Hàm tạo thông báo, dùng để tạo thông báo ở vị trí tương ứng với kiểu thông báo, ví dụ như cảnh báo hoặc lỗi.</p>
+
+    <p><strong>Hàm báo cáo thông báo, tương đương với công cụ báo cáo thông báo:</strong></p>
+    <ul>
+      <li><strong>strMsg</strong>: Thông báo cần xuất.</li>
+      <li><strong>eType</strong>: Kiểu thông báo, tham khảo mô tả GeMsgReportType.</li>
+      <li><strong>bIsForbid</strong>: Có cấm hiện hộp thoại không. Chỉ áp dụng cho các loại thông báo có hộp thoại.<br>
+      True: Không hiện hộp thoại.<br>
+      False: Cho phép hiện hộp thoại.</li>
+    </ul>
+
+    <p><code>GvVisionAssembly.ReportMessage(str strMsg, GeMsgReportType eType, bool bIsForbid)</code></p>
+  </li>
+
+  <li><p>GvVisionAssembly.sc2Vector</p>
+    <p>Vector 2 chiều, biểu thị tọa độ tìm kiếm trong kết quả định vị hoặc tâm của hình tròn khi tìm hình tròn.</p></li>
+
+  <li><p>GvVisionAssembly.sc2VectorVec</p>
+    <p>Dạng std::vector của sc2Vector (vector 2 chiều). Để truy cập phần tử, sử dụng __getitem__(index), với index bắt đầu từ 0.</p>
+    <p><code>
+vecGeomResult = GvTool.GetToolData("几何定位_001.搜索坐标数组")<br>
+geomResult0 = vecGeomResult.__getitem__(1)
+    </code></p>
+  </li>
+
+  <li><p>GvVisionAssembly.sc2XformLinear</p>
+    <p>Biến đổi tuyến tính 2 chiều, thường xuất hiện trong đầu ra của công cụ định vị.</p></li>
+
+  <li><p>GvVisionAssembly.scRadian</p>
+    <p>Biểu thị góc (radian).</p></li>
+
+  <li><p>GvVisionAssembly.scRect</p>
+    <p>Biểu thị hình chữ nhật, ví dụ vùng tìm kiếm trong công cụ định vị hình học, hoặc ROI hình chữ nhật trong công cụ Blob.</p></li>
+
+  <li><p>GvVisionAssembly.scAffineRect</p>
+    <p>Biểu thị hình chữ nhật affine (biến đổi tự do), ví dụ vùng huấn luyện trong định vị hình học, hoặc ROI affine trong công cụ Blob.</p></li>
+
+  <li><p>GvVisionAssembly.scCircle</p>
+    <p>Biểu thị hình tròn, ví dụ kết quả tìm hình tròn, hoặc vùng ROI hình tròn trong công cụ Blob.</p></li>
+
+  <li><p>GvVisionAssembly.scCircularArc</p>
+    <p>Biểu thị cung tròn.</p></li>
+
+  <li><p>GvVisionAssembly.scAnnulus</p>
+    <p>Biểu thị hình vành khuyên (vòng tròn rỗng ở giữa).</p></li>
+
+  <li><p>GvVisionAssembly.scEllipse</p>
+    <p>Biểu thị hình elip, ví dụ ROI elip trong công cụ Blob hoặc vùng kiểm tra elip trong công cụ kiểm tra độ xám.</p></li>
+
+  <li><p>GvVisionAssembly.scLine</p>
+    <p>Biểu thị đường thẳng, ví dụ kết quả tìm đường thẳng từ công cụ tìm đường.</p></li>
+
+  <li><p>GvVisionAssembly.scLineSeg</p>
+    <p>Biểu thị đoạn thẳng.</p></li>
+
+  <li><p>GvVisionAssembly.scPolyline</p>
+    <p>Biểu thị đa giác (nhiều đoạn thẳng nối tiếp), ví dụ vùng ROI đa giác trong công cụ Blob.</p></li>
+</ul>

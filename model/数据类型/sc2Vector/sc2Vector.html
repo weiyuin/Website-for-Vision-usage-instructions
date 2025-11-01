@@ -1,0 +1,175 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>sc2Vector</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho vector hai chiều. Ví dụ: tọa độ tìm kiếm là đầu ra của công cụ định vị hình học, tâm hình tròn là đầu ra của công cụ tìm hình tròn, đầu ra của công cụ tạo vector 2D, hoặc tọa độ vị trí đầu vào của công cụ tạo vị trí tư thế — đều là kiểu này.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Khởi tạo</td>
+<td>sc2Vector</td>
+<td>Hàm tạo mặc định sc2Vector(), giá trị XY được khởi tạo là 0.0</td>
+</tr>
+<tr>
+<td></td>
+<td>sc2Vector</td>
+<td>Hàm tạo sc2Vector(x, y)</td>
+</tr>
+<tr>
+<td>Hàm</td>
+<td>GetX</td>
+<td>Lấy tọa độ X</td>
+</tr>
+<tr>
+<td></td>
+<td>GetY</td>
+<td>Lấy tọa độ Y</td>
+</tr>
+<tr>
+<td></td>
+<td>SetX</td>
+<td>Thiết lập tọa độ X</td>
+</tr>
+<tr>
+<td></td>
+<td>SetY</td>
+<td>Thiết lập tọa độ Y</td>
+</tr>
+<tr>
+<td></td>
+<td>a + b</td>
+<td>Phép cộng giữa hai đối tượng kiểu sc2Vector</td>
+</tr>
+<tr>
+<td></td>
+<td>a - b</td>
+<td>Phép trừ giữa hai đối tượng kiểu sc2Vector</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Chi tiết</h2>
+
+<h3>sc2Vector()</h3>
+
+<ul>
+<li>Chức năng: Khởi tạo đối tượng sc2Vector với tọa độ mặc định là 0.0</li>
+<li>Tham số: Không có</li>
+<li>Giá trị trả về: Không có</li>
+</ul>
+
+<h3>sc2Vector(x, y)</h3>
+
+<ul>
+<li>Chức năng: Khởi tạo đối tượng sc2Vector</li>
+<li>Tham số:
+  <ul>
+    <li>x: Tọa độ X, kiểu số thực (float)</li>
+    <li>y: Tọa độ Y, kiểu số thực (float)</li>
+  </ul>
+</li>
+<li>Giá trị trả về: Không có</li>
+</ul>
+
+<h3>GetX()</h3>
+
+<ul>
+<li>Chức năng: Lấy tọa độ X</li>
+<li>Tham số: Không có</li>
+<li>Giá trị trả về: Kiểu số thực</li>
+</ul>
+
+<h3>GetY()</h3>
+
+<ul>
+<li>Chức năng: Lấy tọa độ Y</li>
+<li>Tham số: Không có</li>
+<li>Giá trị trả về: Kiểu số thực</li>
+</ul>
+
+<h3>SetX(newX)</h3>
+
+<ul>
+<li>Chức năng: Thiết lập tọa độ X</li>
+<li>Tham số:
+  <ul>
+    <li>newX: Giá trị X mới, kiểu số thực</li>
+  </ul>
+</li>
+<li>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không</li>
+</ul>
+
+<h3>SetY(newY)</h3>
+
+<ul>
+<li>Chức năng: Thiết lập tọa độ Y</li>
+<li>Tham số:
+  <ul>
+    <li>newY: Giá trị Y mới, kiểu số thực</li>
+  </ul>
+</li>
+<li>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không</li>
+</ul>
+
+<h3>a + b</h3>
+
+<ul>
+<li>Chức năng: Phép cộng hai vector sc2Vector. Ví dụ: <code>c = a + b</code></li>
+<li>Tham số:
+  <ul>
+    <li>a: Đối tượng kiểu sc2Vector</li>
+    <li>b: Đối tượng kiểu sc2Vector</li>
+  </ul>
+</li>
+<li>Giá trị trả về: Đối tượng kiểu sc2Vector</li>
+</ul>
+
+<h3>a - b</h3>
+
+<ul>
+<li>Chức năng: Phép trừ hai vector sc2Vector. Ví dụ: <code>c = a - b</code></li>
+<li>Tham số:
+  <ul>
+    <li>a: Đối tượng kiểu sc2Vector</li>
+    <li>b: Đối tượng kiểu sc2Vector</li>
+  </ul>
+</li>
+<li>Giá trị trả về: Đối tượng kiểu sc2Vector</li>
+</ul>
+
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
+<h2>Mã ví dụ</h2>
+
+<p>Không có</p>
+

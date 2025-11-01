@@ -1,0 +1,309 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scRect</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho hình chữ nhật, ví dụ như vùng tìm kiếm trong định vị hình học, hoặc vùng ROI hình chữ nhật trong công cụ Blob.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Khởi tạo</td>
+<td>scRect</td>
+<td>Hàm khởi tạo mặc định scRect().</td>
+</tr>
+<tr>
+<td></td>
+<td>scRect</td>
+<td>Hàm khởi tạo scRect(ul, sz).</td>
+</tr>
+<tr>
+<td></td>
+<td>scRect</td>
+<td>Hàm khởi tạo scRect(w, h).</td>
+</tr>
+<tr>
+<td></td>
+<td>scRect</td>
+<td>Hàm khởi tạo scRect(x, y, w, h).</td>
+</tr>
+<tr>
+<td>Hàm</td>
+<td>Set</td>
+<td>Set(ul, sz) Thiết lập tọa độ góc trên bên trái và kích thước của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>Set</td>
+<td>Set(x, y, w, h) Thiết lập tọa độ góc trên bên trái và kích thước của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetOrigin</td>
+<td>Thiết lập điểm góc trên bên trái của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetOrigin</td>
+<td>Lấy điểm góc trên bên trái của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetSize</td>
+<td>Thiết lập kích thước của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetSize</td>
+<td>Lấy kích thước của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetWidth</td>
+<td>Thiết lập chiều rộng của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetWidth</td>
+<td>Lấy chiều rộng của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetHeight</td>
+<td>Thiết lập chiều cao của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetHeight</td>
+<td>Lấy chiều cao của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetUL</td>
+<td>Lấy điểm góc trên bên trái của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetUR</td>
+<td>Lấy điểm góc trên bên phải của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetLR</td>
+<td>Lấy điểm góc dưới bên phải của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetLL</td>
+<td>Lấy điểm góc dưới bên trái của hình chữ nhật.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>scRect()</h3>
+<ul>
+<li><p>Chức năng: Khởi tạo một đối tượng scRect.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scRect(ul, sz)</h3>
+<ul>
+<li><p>Chức năng: Khởi tạo đối tượng scRect với góc trên bên trái là ul và kích thước là sz.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>ul: Vị trí góc trên bên trái của hình chữ nhật, kiểu sc2Vector.</p></li>
+<li><p>sz: Kích thước (rộng và cao) của hình chữ nhật, kiểu sc2Vector. x là chiều rộng, y là chiều cao.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scRect(w, h)</h3>
+<ul>
+<li><p>Chức năng: Khởi tạo đối tượng scRect với chiều rộng w, chiều cao h, và góc trên trái là (0, 0).</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>w: Chiều rộng của hình chữ nhật, kiểu float.</p></li>
+<li><p>h: Chiều cao của hình chữ nhật, kiểu float.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scRect(x, y, w, h)</h3>
+<ul>
+<li><p>Chức năng: Khởi tạo đối tượng scRect với vị trí góc trên trái (x, y), chiều rộng w và chiều cao h.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>x: Tọa độ x của góc trên trái, kiểu float.</p></li>
+<li><p>y: Tọa độ y của góc trên trái, kiểu float.</p></li>
+<li><p>w: Chiều rộng của hình chữ nhật, kiểu float.</p></li>
+<li><p>h: Chiều cao của hình chữ nhật, kiểu float.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>Set (ul, sz)</h3>
+<ul>
+<li><p>Chức năng: Thiết lập góc trên trái và kích thước của hình chữ nhật.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>ul: Vị trí góc trên trái, kiểu sc2Vector.</p></li>
+<li><p>sz: Kích thước, kiểu sc2Vector (x là chiều rộng, y là chiều cao).</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết có thiết lập thành công hay không.</p></li>
+</ul>
+
+<h3>Set (x, y, w, h)</h3>
+<ul>
+<li><p>Chức năng: Thiết lập góc trên trái và kích thước của hình chữ nhật.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>x: Tọa độ x của góc trên trái, kiểu float.</p></li>
+<li><p>y: Tọa độ y của góc trên trái, kiểu float.</p></li>
+<li><p>w: Chiều rộng, kiểu float.</p></li>
+<li><p>h: Chiều cao, kiểu float.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool.</p></li>
+</ul>
+
+<h3>SetOrigin(ul)</h3>
+<ul>
+<li><p>Chức năng: Thiết lập điểm góc trên trái của hình chữ nhật.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>ul: Vị trí góc trên trái, kiểu sc2Vector.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool.</p></li>
+</ul>
+
+<h3>GetOrigin()</h3>
+<ul>
+<li><p>Chức năng: Lấy tọa độ góc trên trái.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector.</p></li>
+</ul>
+
+<h3>SetSize(sz)</h3>
+<ul>
+<li><p>Chức năng: Thiết lập kích thước (rộng và cao).</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>sz: Kích thước, kiểu sc2Vector. x là rộng, y là cao.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool.</p></li>
+</ul>
+
+<h3>GetSize()</h3>
+<ul>
+<li><p>Chức năng: Lấy kích thước của hình chữ nhật.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector (x là rộng, y là cao).</p></li>
+</ul>
+
+<h3>SetWidth(w)</h3>
+<ul>
+<li><p>Chức năng: Thiết lập chiều rộng.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>w: Chiều rộng, kiểu float.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool.</p></li>
+</ul>
+
+<h3>GetWidth()</h3>
+<ul>
+<li><p>Chức năng: Lấy chiều rộng.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu float.</p></li>
+</ul>
+
+<h3>SetHeight(h)</h3>
+<ul>
+<li><p>Chức năng: Thiết lập chiều cao.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>h: Chiều cao, kiểu float.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool.</p></li>
+</ul>
+
+<h3>GetHeight()</h3>
+<ul>
+<li><p>Chức năng: Lấy chiều cao.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu float.</p></li>
+</ul>
+
+<h3>GetUL()</h3>
+<ul>
+<li><p>Chức năng: Lấy điểm góc trên bên trái.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector.</p></li>
+</ul>
+
+<h3>GetUR()</h3>
+<ul>
+<li><p>Chức năng: Lấy điểm góc trên bên phải.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector.</p></li>
+</ul>
+
+<h3>GetLR()</h3>
+<ul>
+<li><p>Chức năng: Lấy điểm góc dưới bên phải.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector.</p></li>
+</ul>
+
+<h3>GetLL()</h3>
+<ul>
+<li><p>Chức năng: Lấy điểm góc dưới bên trái.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector.</p></li>
+</ul>
+
+<h2>Lưu ý</h2>
+<p>Không có</p>
+
+<h2>Mã ví dụ</h2>
+<p>Không có</p>
+

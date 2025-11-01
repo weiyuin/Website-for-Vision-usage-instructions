@@ -1,0 +1,149 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>直线到轮廓交点工具</h1>
+
+<h2>功能</h2>
+
+<p>直线到轮廓交点工具计算输入图像中一条直线与轮廓之间的交点，并输出交点坐标集合。其应用效果下图所示。</p>
+
+<p><img src="media/LineToContour.png" alt="img" />       <img src="media/Intersection.png" alt="img" /></p>
+
+<p><imgnote>(a) 输入直线与轮廓</imgnote> <imgnote>(b) 直线与轮廓交点结果</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th style="text-align:left;"> 参数名称 </th>
+<th> 参数描述                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属性窗口 </td>
+<td style="text-align:left;">排序方式 </td>
+<td>  用户根据实际需要选择“默认排序”、“X坐标从小到大”、“Y坐标从小到大”排序。   “默认排序”指按照直线与轮廓先后相交顺序输出所有交点。  “X坐标从小到大”指输出交点会按照所有交点X坐标从小到大依次输出。“Y坐标从小到大”指输出交点会按照所有交点Y坐标从小到大依次输出。                        </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td style="text-align:left;"> 输入图像                     </td>
+<td> 显示待检测的图像。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left;"> 直线 </td>
+<td> 将要求交点的直线。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left;"> 轮廓 </td>
+<td> 将要求交点的轮廓。                                                           </td>
+</tr>
+<tr>
+<td> 数据链  </td>
+<td style="text-align:left;"> 输入图像                     </td>
+<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left;"> 直线 </td>
+<td> 将将要求交点的直线。                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left;"> 轮廓 </td>
+<td> 将要求交点的轮廓。                                                           </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td style="text-align:left;"> 无   </td>
+<td> 无                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小。                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点集合   </td>
+<td> 直线与轮廓的交点集合。                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 显示工具执行结果图像，同监视窗口的输入图像参数。         </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点     </td>
+<td> 直线与轮廓的交点集合。                                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 交点集合     </td>
+<td> 直线与椭圆的交点图像坐标集合，供后序工具使用，同监视窗口的交点。                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\直线到轮廓交点工具.gvp”。</p>

@@ -1,0 +1,74 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Dự án Kiểm tra Keo</h1>
+
+<h2>1. Yêu cầu dự án</h2>
+
+<p> Dự án này chủ yếu kiểm tra chất lượng keo trên chi tiết, các lỗi kiểm tra bao gồm đứt keo, keo lệch.</p>
+
+<h2>2. Phân tích giải pháp</h2>
+
+<p> Hình dưới đây là sản phẩm chi tiết cần kiểm tra, vùng màu trắng dạng thanh là vùng điểm keo, yêu cầu keo phải liên tục, không được có hiện tượng đứt keo; đồng thời keo phải nằm trong vùng quy định, không được lệch keo, tức là vùng màu xanh lá không được có keo.</p>
+
+<p><img src="media/Glue_2_1.png" alt="" /></p>
+
+<h2>3. Triển khai giải pháp</h2>
+
+<h3>3.1 Quy trình kiểm tra</h3>
+
+<p><img src="media/Glue_3_5.png" alt="" /></p>
+
+<h3>3.2 Triển khai chi tiết kiểm tra</h3>
+
+<ul>
+<li>Toàn bộ sơ đồ quy trình</li>
+</ul>
+
+<p><img src="media\Glue_3_1.png" alt="Glue_3_1" /></p>
+
+<ul>
+<li><p>Xác định đặc điểm</p>
+
+<p>Xác định đặc điểm chọn đường viền cạnh keo, như hình dưới.</p></li>
+</ul>
+
+<p><img src="media\Glue_3_2.png" alt="Glue_3_2" /></p>
+
+<ul>
+<li><p>Kiểm tra đứt keo</p>
+
+<p>Kiểm tra đứt keo dùng “Công cụ kiểm tra bề rộng cạnh đường cong”, vùng kiểm tra là đường viền cạnh keo, như hình dưới.</p>
+
+<p><img src="media/Glue_3_3.png" alt="1615434457327" /></p></li>
+<li><p>Kiểm tra lệch keo</p>
+
+<p>Kiểm tra lệch keo dùng “Công cụ Blob”, vùng kiểm tra là vùng ranh giới trong ngoài đường viền keo, hình dưới là vùng kiểm tra phía ngoài cạnh trên, dùng nhiều công cụ Blob có thể bao phủ toàn vùng kiểm tra.</p></li>
+</ul>
+
+<p><img src="media\Glue_3_4.png" alt="Glue_3_4" /></p>
+
+<h2>4. Hiển thị kết quả</h2>
+
+<p> Kết quả chạy trên giao diện sản xuất như hình dưới.</p>
+
+<p><img src="media\Glue_4_1.png" alt="Glue_4_1" /></p>
+
+<h2>5. Ví dụ dự án</h2>
+
+<p>​     参见“\Samples\应用案例\点胶类项目\胶水检测项目\胶水检测.gvp”。</p>

@@ -1,0 +1,219 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云变换工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云变换工具根据内部或外部输入的刚体变换矩阵对输入的点云数据、长方体、坐标系、三维点集、向量进行空间变换，从而完成后期尺寸的测量。</p>
+
+<p><img src="media/PointCloudTransfore1_1.gif" alt="img" /></p>
+
+<p><imgnote>图1_1 点云分割：点云变换原理</imgnote></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量中，点云变换应用较为广泛，如手机中框检测，厚度测量、高度测量等项目中。</p>
+
+<h2>3. 使用向导</h2>
+
+<p>step1：添加点云文件、点云变换工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p>step2：根据矩阵来源选择不同方式获取变换矩阵，如点击工具属性“文件路径”，导入点云变换矩阵，然后点击运行该工具；</p>
+
+<p><img src="media/PointCloudTransform3_1.png" alt="img" /></p>
+
+<p><imgnote>图3_1 点云变换：点云数据变换</imgnote></p>
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称       </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 输入待变换的点云图像                                                                                 </td>
+</tr>
+<tr>
+<td> 输入长方体 </td>
+<td> 输入待变换的长方体 </td>
+</tr>
+<tr>
+<td> 输入坐标系 </td>
+<td> 输入待变换的坐标系 </td>
+</tr>
+<tr>
+<td> 输入三维点集 </td>
+<td> 输入待变换的三维点集 </td>
+</tr>
+<tr>
+<td> 输入向量1 </td>
+<td> 输入第一个向量 </td>
+</tr>
+<tr>
+<td> 输入向量2 </td>
+<td> 输入第二个向量 </td>
+</tr>
+<tr>
+<td> 刚性变换矩阵   </td>
+<td> 其他工具输出的变换矩阵：3×4矩阵                            </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称       </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 变换类型 </td>
+<td> 支持点云、长方体、坐标系、三维点集、向量 </td>
+</tr>
+<tr>
+<td> 矩阵来源 </td>
+<td> 包括三种：数据链接，属性外部导入和高级界面设置 </td>
+</tr>
+<tr>
+<td> 文件路径 </td>
+<td> 指点云变换矩阵文件路径                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面可以用于设置矩阵如下：</p>
+
+<table>
+<thead>
+<tr>
+<th> 名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 矩阵                                </td>
+<td> 在高级界面中输入变换矩阵 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据 </td>
+<td> 输出变换后的点云数据 </td>
+</tr>
+<tr>
+<td> 输出长方体 </td>
+<td> 输出变换后的长方体 </td>
+</tr>
+<tr>
+<td> 输出坐标系 </td>
+<td> 输出变换后的坐标系 </td>
+</tr>
+<tr>
+<td> 输出三维点集 </td>
+<td> 输出变换后的三维点集 </td>
+</tr>
+<tr>
+<td> 输出刚性变换矩阵 </td>
+<td> 输出刚性变换矩阵 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出点云数据 </td>
+<td> 输出变换后的点云数据 </td>
+</tr>
+<tr>
+<td> 输出长方体 </td>
+<td> 输出变换后的长方体 </td>
+</tr>
+<tr>
+<td> 输出坐标系 </td>
+<td> 输出变换后的坐标系 </td>
+</tr>
+<tr>
+<td> 输出三维点集 </td>
+<td> 输出变换后的三维点集 </td>
+</tr>
+<tr>
+<td> 输出刚性变换矩阵 </td>
+<td> 输出刚性变换矩阵 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​ 参见“\Samples\3D\点云\点云变换.gvp”。</p>
+
+<h2>7. 特殊说明</h2>
+
+<p>​ 无</p>

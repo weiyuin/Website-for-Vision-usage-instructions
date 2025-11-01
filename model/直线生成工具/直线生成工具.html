@@ -1,0 +1,141 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ tạo đường thẳng</h1>
+
+<h2>Chức năng</h2>
+
+<p>Công cụ tạo đường thẳng thực hiện thao tác tạo đường thẳng dựa trên hai phương thức: hai điểm và điểm - góc nghiêng.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Phương thức tạo</td>
+<td>Gồm hai phương thức: điểm - góc nghiêng và hai điểm.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Điểm đầu đoạn thẳng</td>
+<td>Nhập tọa độ điểm để tạo đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điểm cuối đoạn thẳng</td>
+<td>Khi phương thức là "hai điểm", nhập tọa độ điểm thứ hai để tạo đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Góc đoạn thẳng</td>
+<td>Khi phương thức là "điểm - góc nghiêng", nhập góc tạo đường thẳng, kiểu double.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả đường thẳng</td>
+<td>Xuất tọa độ điểm của đường thẳng đã tạo, vector hướng và góc xoay (góc hợp với trục X dương).</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả đoạn thẳng</td>
+<td>Khi phương thức là "hai điểm", xuất tọa độ hai điểm của đoạn thẳng đã tạo.</td>
+</tr>
+<tr>
+<td></td>
+<td>Góc của đoạn thẳng đã tạo</td>
+<td>Khi phương thức là "hai điểm", xuất góc của đoạn thẳng đã tạo.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Kết quả đường thẳng</td>
+<td>Xuất đường thẳng đã tạo để các công cụ sau sử dụng, giống với tham số kết quả đường thẳng trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả đoạn thẳng</td>
+<td>Khi phương thức là "hai điểm", xuất đoạn thẳng đã tạo để các công cụ sau sử dụng, giống với tham số kết quả đoạn thẳng trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Góc của đoạn thẳng đã tạo</td>
+<td>Khi phương thức là "hai điểm", xuất góc của đoạn thẳng để các công cụ sau sử dụng, giống với tham số góc đoạn thẳng trong cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li>Khi công cụ tạo đường thẳng hiển thị đường thẳng hoặc đoạn thẳng đã tạo, cần thêm kết quả hiển thị vào khung View có hình ảnh.</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

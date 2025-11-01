@@ -1,0 +1,226 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云法线生成工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​ 对于一个三维空间的正则曲面R(u, v), 点(u, v)处的切平面(Ru, Rv)的法向量即为曲面在点(u, v)的法向量。点云是曲面的一个点采样，采样曲面的法向量就是点云的法向量，线段的方向为法线方向。</p>
+
+<p>​ 点云法线是3D测量、检测等场景中的常用信息，点云法线工具提供法线计算和法线修正两部分功能，法线计算通过对输入点云、法线计算参数，输出点云对应的法线；法线修正通过输入点云及其法线，输出修正后的法线。  点云法线生成工具经常用于点云滤波、点云分割、以及点云对齐等算法中，来协助提高其他算法的准确性；</p>
+
+<div align="center">
+<img src="media/3DNormalTool_1_1.png" style="zoom:150%;"/>
+    <center>图1_1 法线生成</center>
+</div>
+
+
+<h2>2.使用场景</h2>
+
+<p>​          点云法线生成工具经常用于点云滤波、点云分割、以及点云对齐等算法中，来协助提高其他算法的准确性；</p>
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>工具添加，图像导入、参数调节</h3>
+
+<p><strong>Step1:</strong>添加点云文件工具、点云法线生成工具，并双击打开工具参数链，链接点云文件，如图3-1所示；<br/>
+<strong>Step2:</strong>右击工具点击“属性”打开工具高级界面，如图3-2所示；</p></li>
+</ul>
+
+
+<div align="center">
+<img src="media/3DNormalTool_3_1.png" style="zoom:100%;"/>
+    <center>图3_1 点云法线生成流程</center>
+</div>
+
+
+<div align="center">
+<img src="media/3DNormalTool_3_2.gif" style="zoom:100%;"/>
+    <center>图3_2 点云法线生成调参</center>
+</div>
+
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                  </th>
+<th> 参数描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据                                               </td>
+<td> 输入点云图像                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                  </th>
+<th> 参数描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 启用法线计算 </td>
+<td> 是：启用法线计算功能；否：不启用法线计算功能 </td>
+</tr>
+<tr>
+<td>搜索模式</td>
+<td>指计算法线时使用的拟合平面时选用哪些数据进行平面拟合，包括：近邻搜索、半径搜索</td>
+</tr>
+<tr>
+<td>搜索范围</td>
+<td>指计算法线时使用的拟合平面时选用哪些数据进行平面拟合 </td>
+</tr>
+<tr>
+<td>法线有效性检查</td>
+<td>对生成的法线的有效性使用内部算法进行检查，检查无效的法线会进行重新计算</td>
+</tr>
+<tr>
+<td>启用高级参数</td>
+<td>是：启用法线计算的高级参数设置；否：使用默认参数进行法线生成</td>
+</tr>
+<tr>
+<td>阶数 </td>
+<td> 设置使用几阶运算来计算法向量 </td>
+</tr>
+<tr>
+<td>投影方式</td>
+<td>指法向量的投影方式，包括：不投影、简单投影、垂直投影</td>
+</tr>
+<tr>
+<td>Sigma计算方式</td>
+<td>包括：默认、绝对、相对</td>
+</tr>
+<tr>
+<td>启用法线修正</td>
+<td>否：不启用法线修正功能；是：启用法线修正功能</td>
+</tr>
+<tr>
+<td>修正方式</td>
+<td>指定视点：修正后的法线指向视点；指向质心：修正后的法线指向点云数据的质心；指向Z轴正向：修正后的法线指向Z轴的正方向；翻转：修正后的法线与原始方向相反；指向中心：修正后的法线指向点云数据的中心</td>
+</tr>
+<tr>
+<td>开启并行运算</td>
+<td>是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。</td>
+</tr>
+<tr>
+<td>线程数百分比</td>
+<td>设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致。</p>
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输出法线   </td>
+<td>输出生成的法线的向量坐标</td>
+</tr>
+<tr>
+<td>有效法线数 </td>
+<td>有效的法线个数</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输出法线   </td>
+<td>输出生成的法线的向量坐标</td>
+</tr>
+<tr>
+<td>有效法线数 </td>
+<td>有效的法线个数</td>
+</tr>
+<tr>
+<td>执行结果 </td>
+<td>工具执行结果</td>
+</tr>
+<tr>
+<td> 执行时间   </td>
+<td> 工具执行时间             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云法线生成工具.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>算法原理说明</h3>
+
+<ul>
+<li><h3>7.1 点云法线计算原理：</h3></li>
+</ul>
+
+
+<p>​    <strong>法线计算</strong>主要思想是根据邻域搜索方式及搜索参数，获取点的邻域数据，进行平面拟合或曲面拟合，以平面或曲面的法线作为点的法线。工具不启用高阶参数时，默认是平面拟合方式计算法线，否则以曲面拟合方式计算法线。</p>
+
+<div align="center">
+<img src="media/3DNormalTool_7_1.png" style="zoom:120%;"/>
+    <center>图7-1 点云法线计算原理</center>
+</div>
+
+
+<p>​    <strong>法线修正</strong>主要思想是使点所在的法线与指定方向成锐角，支持指向视点、指向质心、指向z轴正向、翻转。</p>
+
+<div align="center">
+<img src="media/3DNormalTool_7_2.png" style="zoom:140%;"/>
+    <center>图7-2 点云法线修正原理</center>
+</div>
+

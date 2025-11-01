@@ -1,0 +1,296 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ phân tích kết quả Blob</h1>
+
+<h2>Chức năng</h2>
+
+<p>Công cụ phân tích kết quả Blob được sử dụng để phân tích và xử lý kết quả Blob từ công cụ Blob. Do kiểu dữ liệu kết quả Blob của công cụ Blob là <strong>struct_Gs_SingleBlobResult</strong>, cần phải sử dụng công cụ phân tích mảng trước để phân tích từng phần tử mảng thành một tập hợp dữ liệu, sau đó sử dụng công cụ phân tích kết quả Blob để tách tập dữ liệu đó thành từng kết quả đơn lẻ.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Kết quả Blob</td>
+<td>Tham số kết quả Blob từ công cụ Blob, sau khi được công cụ phân tích mảng xử lý thành một tập dữ liệu, sẽ được sử dụng làm đầu vào cho tham số này.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Tính toán đặc trưng liên quan đến mô-men</td>
+<td>Nếu tham số "Có tính toán đặc trưng liên quan đến mô-men" trong cửa sổ thuộc tính của công cụ Blob được chọn là “Có”, thì tham số này sẽ là true và thực hiện tính toán các đặc trưng liên quan đến mô-men.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tính toán đặc trưng liên quan đến đường viền</td>
+<td>Nếu tham số "Có tính toán đặc trưng liên quan đến đường viền" được chọn là “Có”, thì tham số này sẽ là true và thực hiện tính toán các đặc trưng liên quan đến đường viền.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tính toán đặc trưng liên quan đến mức xám</td>
+<td>Nếu tham số "Có tính toán đặc trưng liên quan đến mức xám" được chọn là “Có”, thì tham số này sẽ là true và thực hiện tính toán các đặc trưng mức xám.</td>
+</tr>
+<tr>
+<td></td>
+<td>Area</td>
+<td>Tổng trọng số của tất cả điểm ảnh khác 0 trong Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>Label</td>
+<td>Góc của đường thẳng sau khi được chuẩn hóa.</td>
+</tr>
+<tr>
+<td></td>
+<td>CenterMassX</td>
+<td>Tọa độ X của trọng tâm (centroid) Blob trong ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>CenterMassY</td>
+<td>Tọa độ Y của trọng tâm Blob trong ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>NumChildren</td>
+<td>Số lượng node con.</td>
+</tr>
+<tr>
+<td></td>
+<td>DiagonalLength</td>
+<td>Độ dài đường chéo của hình chữ nhật bao ngoài nhỏ nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>MassToBoundOffsetX</td>
+<td>Độ lệch giữa trọng tâm và hình bao ngoài theo hướng X.</td>
+</tr>
+<tr>
+<td></td>
+<td>MassToBoundOffsetY</td>
+<td>Độ lệch giữa trọng tâm và hình bao ngoài theo hướng Y.</td>
+</tr>
+<tr>
+<td></td>
+<td>InertiaX</td>
+<td>Mô-men quán tính bậc hai theo trục X.</td>
+</tr>
+<tr>
+<td></td>
+<td>InertiaY</td>
+<td>Mô-men quán tính bậc hai theo trục Y.</td>
+</tr>
+<tr>
+<td></td>
+<td>InertiaMin</td>
+<td>Mô-men quán tính bậc hai nhỏ nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>InertiaMax</td>
+<td>Mô-men quán tính bậc hai lớn nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>Angle</td>
+<td>Hướng của vùng, tương ứng với trục có mô-men quán tính nhỏ nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>Elongation</td>
+<td>Độ giãn dài, là tỷ lệ giữa mô-men quán tính lớn nhất và nhỏ nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>Density</td>
+<td>Độ đặc, biểu thị mức độ tập trung điểm bên trong Blob, được định nghĩa là diện tích/tổng diện tích hình bao ngoài nhỏ nhất theo trục chính, giá trị nằm trong khoảng (0,1].</td>
+</tr>
+<tr>
+<td></td>
+<td>Scartchaness</td>
+<td>Độ xước, được định nghĩa là tỷ lệ giữa bình phương độ rộng của hình bao ngoài theo trục chính và diện tích, phản ánh khả năng là vết xước. Giá trị càng lớn thì khả năng là vết xước càng cao.</td>
+</tr>
+<tr>
+<td></td>
+<td>Eccentricity</td>
+<td>Độ lệch tâm, biểu thị độ tròn của vật thể. Nếu độ lệch tâm càng lớn thì vật càng dẹt, ngược lại càng gần tròn.</td>
+</tr>
+<tr>
+<td></td>
+<td>BoundaryPixelLength</td>
+<td>Chiều dài biên điểm ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Perimeter</td>
+<td>Chu vi, là tổng trọng số điểm ảnh biên vùng Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>Acircularity</td>
+<td>Độ tròn, được định nghĩa là tỷ số giữa bình phương chu vi và tích 4π × diện tích. Nếu bằng 1 thì là hình tròn hoàn hảo.</td>
+</tr>
+<tr>
+<td></td>
+<td>AcircularityRms</td>
+<td>Độ tròn chuẩn hóa.</td>
+</tr>
+<tr>
+<td></td>
+<td>MinPixelValue</td>
+<td>Giá trị mức xám nhỏ nhất trong vùng Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>MaxPixelValue</td>
+<td>Giá trị mức xám lớn nhất trong vùng Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>AvergPixelValue</td>
+<td>Giá trị mức xám trung bình trong vùng Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>AvergPixelValueMax</td>
+<td>Giá trị mức xám trung bình lớn nhất theo sự kiện.</td>
+</tr>
+<tr>
+<td></td>
+<td>AvergPixelValueMin</td>
+<td>Giá trị mức xám trung bình nhỏ nhất theo sự kiện.</td>
+</tr>
+<tr>
+<td></td>
+<td>AvergPixelValueCore</td>
+<td>Giá trị mức xám lõi trung bình theo sự kiện.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hình chữ nhật bao ngoài</td>
+<td>Vùng hình chữ nhật bao ngoài nhỏ nhất theo tọa độ của Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>MinX hình chữ nhật bao</td>
+<td>Giá trị X lớn nhất của hình bao ngoài.</td>
+</tr>
+<tr>
+<td></td>
+<td>MaxX hình chữ nhật bao</td>
+<td>Giá trị X nhỏ nhất của hình bao ngoài.</td>
+</tr>
+<tr>
+<td></td>
+<td>MinY hình chữ nhật bao</td>
+<td>Giá trị Y lớn nhất của hình bao ngoài.</td>
+</tr>
+<tr>
+<td></td>
+<td>MaxY hình chữ nhật bao</td>
+<td>Giá trị Y nhỏ nhất của hình bao ngoài.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỷ lệ dài rộng hình bao</td>
+<td>Tỷ lệ giữa chiều dài và chiều rộng của hình bao ngoài nhỏ nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chiều rộng hình bao theo trục chính</td>
+<td>Chiều dài của hình bao ngoài nhỏ nhất theo trục chính.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chiều cao hình bao theo trục chính</td>
+<td>Chiều rộng của hình bao ngoài nhỏ nhất theo trục chính.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điểm biên đường viền</td>
+<td>Vector tọa độ điểm biên đường viền của Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Chi tiết mô tả</h2>
+
+<p>Vui lòng tham khảo các đặc trưng cơ bản, đặc trưng liên quan đến mô men, đặc trưng liên quan đến đường viền và đặc trưng liên quan đến mức xám của công cụ Blob.</p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li><p>Công cụ phân tích kết quả Blob không thể sử dụng độc lập, cần kết hợp với công cụ phân tích mảng. Công cụ phân tích mảng sẽ phân giải từng phần tử trong mảng kết quả của công cụ Blob thành một nhóm dữ liệu, sau đó công cụ phân tích kết quả Blob sẽ phân tích nhóm dữ liệu này thành dữ liệu kết quả đơn lẻ.</p></li>
+<li><p>Khi kết hợp công cụ phân tích mảng với công cụ phân tích kết quả Blob, trong cửa sổ thuộc tính của công cụ phân tích mảng, tham số kiểu dữ liệu cần được chọn là <strong>GsSingleBlobResult</strong>, nếu không sẽ không tìm thấy nguồn tham số khi cấu hình đầu vào trong cửa sổ chuỗi dữ liệu.</p></li>
+</ul>
+
+<h2>Dự án mẫu</h2>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\Blob工具.gvp”。</p>

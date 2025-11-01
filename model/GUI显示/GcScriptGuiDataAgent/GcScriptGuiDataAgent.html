@@ -1,0 +1,130 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GcScriptGuiDataAgent</h1>
+
+<h2>Chức năng</h2>
+
+<p>Dùng để hiển thị mảng đối tượng GUI được lưu trong GcScriptGuiArray lên cửa sổ xem. Cấm tự định nghĩa đối tượng GcScriptGuiDataAgent, bên trong đã định nghĩa sẵn đối tượng GvGuiDataAgent có thể dùng trực tiếp.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Khởi tạo</td>
+<td>GcScriptGuiDataAgent</td>
+<td>Hàm khởi tạo GcScriptGuiDataAgent(strName, strID).</td>
+</tr>
+<tr>
+<td>Hàm</td>
+<td>SetGraphicDisplay(str, value)</td>
+<td>Thêm đối tượng GUI cần hiển thị vào cửa sổ xem.</td>
+</tr>
+<tr>
+<td>Hàm</td>
+<td>AddGraphicToContainer(nIndex, value)</td>
+<td>Thêm đối tượng GUI cần hiển thị vào mảng đồ họa đầu ra của công cụ tùy chỉnh.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Chi tiết</h2>
+
+<h3>GcScriptGuiDataAgent(strName, strID)</h3>
+
+<ul>
+<li><strong>Chức năng</strong>: Khởi tạo đối tượng GcScriptGuiDataAgent.</li>
+<li><strong>Tham số</strong>:
+  <ul>
+    <li>strName: kiểu str, tên dự án hiện tại, ví dụ "工程-1" (Dự án-1).</li>
+    <li>strID: kiểu str, ID của công cụ script.</li>
+  </ul>
+</li>
+<li><strong>Trả về</strong>: Không có</li>
+</ul>
+
+<h3>SetGraphicDisplay(str, value)</h3>
+
+<ul>
+<li><strong>Chức năng</strong>: Thêm mảng đối tượng GUI cần hiển thị vào cửa sổ xem.</li>
+<li><strong>Tham số</strong>:
+  <ul>
+    <li>str: kiểu str, tên cửa sổ xem, ví dụ "View-1".</li>
+    <li>value: kiểu GcScriptGuiArray, mảng đối tượng GUI cần thêm.</li>
+  </ul>
+</li>
+<li><strong>Trả về</strong>: bool, biểu thị việc thêm có thành công hay không.</li>
+</ul>
+
+<h3>AddGraphicToContainer(nIndex, value)</h3>
+
+<ul>
+<li><strong>Chức năng</strong>: Thêm đối tượng GUI cần hiển thị vào mảng đồ họa đầu ra của công cụ tùy chỉnh.</li>
+<li><strong>Tham số</strong>:
+  <ul>
+    <li>nIndex: kiểu int, chỉ số mảng đồ họa, phạm vi [0,5], ví dụ 0.</li>
+    <li>value: kiểu GcScriptGuiArray, mảng đối tượng GUI cần thêm.</li>
+  </ul>
+</li>
+<li><strong>Trả về</strong>: bool, biểu thị việc thêm có thành công hay không.</li>
+</ul>
+
+<h2>Lưu ý</h2>
+
+<ol>
+<li>Cấm tự định nghĩa đối tượng GcScriptGuiDataAgent, đã có GvGuiDataAgent bên trong có thể dùng luôn.</li>
+<li>Công cụ script bên trong công cụ tùy chỉnh không dùng được hàm SetGraphicDisplay, chỉ dùng được trong dự án bình thường.</li>
+<li>Công cụ script trong dự án bình thường không dùng được AddGraphicToContainer, chỉ công cụ tùy chỉnh mới dùng được.</li>
+</ol>
+
+<h2>Mã ví dụ</h2>
+
+<p>1. Thêm GUI trong dự án bình thường</p>
+
+<pre><code class="python">
+guiArray = GvVisionAssembly.GcScriptGuiArray()
+guiText = GvVisionAssembly.GsScriptGuiText()
+guiText.strText = "văn bản"
+guiText.posX = 0.0
+guiText.posY = 0.0
+guiText.deg = 0.0
+guiArray.Add(guiText)
+GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
+</code></pre>
+
+<p>2. Thêm GUI trong công cụ tùy chỉnh</p>
+
+<pre><code class="python">
+guiArray = GvVisionAssembly.GcScriptGuiArray()
+guiText = GvVisionAssembly.GsScriptGuiText()
+guiText.strText = "văn bản"
+guiText.posX = 0.0
+guiText.posY = 0.0
+guiText.deg = 0.0
+guiArray.Add(guiText)
+GvGuiDataAgent.AddGraphicToContainer(0, guiArray)
+GvGuiDataAgent.AddGraphicToContainer(1, guiArray)
+</code></pre>

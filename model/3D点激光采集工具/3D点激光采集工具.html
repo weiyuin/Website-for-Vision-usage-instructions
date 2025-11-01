@@ -1,0 +1,105 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>3D点激光采集工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>用于与之相连的3D Hypersen点激光传感器采集点集数据，用于距离测量及厚度测量的项目。</p>
+
+<h2>2. 参数说明</h2>
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 点激光名称 </td>
+<td> 3D点激光传感器的名称，又称序列号 </td>
+</tr>
+<tr>
+<td> 采集等待时间 </td>
+<td> -1为一直等待，大于-1为等待的时间，单位为毫秒 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出数据数组 </td>
+<td> 采集到的点集合，即通道内测量的距离或厚度值 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出数据数组 </td>
+<td> 采集到的点集合，即通道内测量的距离或厚度值 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间           </td>
+<td> 工具执行时间                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>3. 常见问题</h2>
+
+<p>1.测量值不稳定、不正确时，可排查下传感头光纤是否损坏，测量对象或测量部分是否存在震动，是否有较强光干扰等；</p>
+
+<p>2.测量值显示偏移时，可排查下测量对象是否有倾斜或位置偏移等；</p>
+
+<h2>4. 示例工程</h2>
+
+<p>无</p>
+
+<h2>5. 特殊说明</h2>
+
+<p>无</p>

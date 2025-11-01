@@ -1,0 +1,112 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>short转string适配器工具</h1>
+
+<h2>功能</h2>
+
+<p>将short类型的数据，转换成两字节字符串。如short型数据12866，对应的十六进制为3242H，高低位调整选择“是”，则工具的转换结果为“2B”，高地位调整选择“否”，则工具的转换结果为“B2”。其中十六进制的32对应ASCII表中的字符2，十六进制的42对应ASCII表中的B。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 高低位调整 </td>
+<td> 是：高位在前；否：低位在前。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像窗口 </td>
+<td> 无                                       </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入数据   </td>
+<td> 需要转换的字符串。           </td>
+</tr>
+<tr>
+<td></td>
+<td> 高级界面 </td>
+<td> 无                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出数据       </td>
+<td> 输出转换之后的字符串结果                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 执行结果       </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出数据       </td>
+<td> 输出转换之后的字符串结果，供其他工具使用。同监视窗口输出数据参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\16进制字符串转10进制整数.gvp”。</p>
+
+<p>工程说明：第一个工具“short转strings适配器”，转换的输入数据，是变量里面定义的“sData”</p>

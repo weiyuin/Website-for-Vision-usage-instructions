@@ -1,0 +1,182 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>3D特征点提取</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     按照特征点类型，可以是多平面求交点，也可以是球体拟合得到的特征点，获得相机坐标系下的点集坐标。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​         在工业生产中，3D引导应用非常广泛，如立体空间中引导打胶，机械手抓取不在同一个平面内的零部件等等，都会涉及到三维空间信息，那么就需要相应的标定技术，将相机坐标系转换到世界坐标下。在标定时，需要知道相机坐标系下的点集和对应的世界坐标系下的点集，通过两个点集来计算相机坐标系和世界坐标系之间的三维线性变换关系。世界坐标系下的点集坐标，通常由标定物厂家确定，是已知的，而相机坐标系下的点集坐标，则可以通过<strong>3D特征点工具</strong>来获取。</p>
+
+<p>​ 如下图左所示，蓝框内为一个标定特征，通过图示四个平面可获得多个交点；如下图右所示，通过图示多个ROI拟合得到球心。整个产品中有多个标定特征，通过这些标定特征和<strong>3D特征点工具</strong>，即可获得相机坐标系下的点集坐标。</p>
+
+<p><img src=".\media\3D特征点工具_应用场景.png" style="zoom:80%;" /></p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4>
+
+<p><img src=".\media\GcRangeImageFeaturePointTool_3_1.png" style="zoom:70%;" /></p></li>
+<li><h4>设置特征点类型、图像中目标个数、获取点集需要的对象个数</h4>
+
+<p><img src=".\media\GcRangeImageFeaturePointTool_3_2.png" style="zoom:70%;" /></p>
+
+<ul>
+<li><h5><strong>多平面求交点</strong></h5>
+
+<p>1）设置平面拟合参数</p>
+
+<p>2）选择需要的三个平面求交点</p>
+
+<p>3）获取平面拟合结果</p>
+
+<p><img src=".\media\GcRangeImageFeaturePointTool_3_3.png" style="zoom:60%;" /></p></li>
+<li><p><strong>球心</strong></p>
+
+<p>1）设置球体拟合参数：</p>
+
+<p>2）球体拟合结果显示：</p>
+
+<p><img src=".\media\GcRangeImageFeaturePointTool_3_4.png" style="zoom:60%;" /></p></li>
+</ul>
+</li>
+<li><h4>使用特征点提取结果，作为3D相机全局标定等工具的输入点集</h4>
+
+<p><img src=".\media\GcRangeImageFeaturePointTool_3_5.png" style="zoom:70%;" /></p></li>
+</ul>
+
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述                   </th>
+<th> 解决方法                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 平面拟合的时候得不到特征点 </td>
+<td> 看列表中选择的平面索引是否对应 </td>
+</tr>
+<tr>
+<td> 球体拟合拟合不出球心       </td>
+<td> 一开始先放宽距离阈值           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称               </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入深度图像           </td>
+<td> 输入待提取特征点集的深度图像                                 </td>
+</tr>
+<tr>
+<td> 二维线性变换           </td>
+<td> 定位后的旋转平移矩阵                                         </td>
+</tr>
+<tr>
+<td> 特征点类型             </td>
+<td> 多平面求交点或者球心                                         </td>
+</tr>
+<tr>
+<td> 相同属性               </td>
+<td> 对于球体拟合，不同组的ROI大小类型保持一致；对于多平面求交点，同组内所有工具的属性参数相同，ROI的大小类型保持一致； </td>
+</tr>
+<tr>
+<td> 图像中目标个数         </td>
+<td> 深度图像中塔台个数或者需要提取的球心个数                     </td>
+</tr>
+<tr>
+<td> 目标索引               </td>
+<td> 当前选择第几个塔台或者球心                                   </td>
+</tr>
+<tr>
+<td> 获取点集需要的对象个数 </td>
+<td> 如果是塔台则一般设为5，如果是球心，则为1                     </td>
+</tr>
+<tr>
+<td> 对象索引               </td>
+<td> 当前选择第几个面或者第几个球体                               </td>
+</tr>
+<tr>
+<td> 多ROI拟合              </td>
+<td> 可切换多区域平面拟合/带局外点平面拟合                        </td>
+</tr>
+<tr>
+<td> 显示高级参数           </td>
+<td> 显示不常用的参数                                             </td>
+</tr>
+<tr>
+<td> 显示平面拟合结果       </td>
+<td> 是否显示每个面拟合的结果参数                                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数说明                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出深度图像 </td>
+<td> 拟合后的深度图像         </td>
+</tr>
+<tr>
+<td> 特征点       </td>
+<td> 工具执行后输出的特征点   </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td> 工具执行结果，true/false </td>
+</tr>
+<tr>
+<td> 执行时间     </td>
+<td> 工具执行完所需的时间     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\3D特征点提取工具.gvp”。</p>

@@ -1,0 +1,122 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GvTool</h1>
+
+<h2>Chức năng</h2>
+
+<p>GvTool là đối tượng của lớp GcVisionAssemblyTool, dùng để tương tác với tham số của công cụ. Cấm tự định nghĩa một đối tượng GcVisionAssemblyTool.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hàm</td>
+<td>GetToolData(str, is_raw_string)</td>
+<td>Lấy tham số của công cụ, trả về một bản sao.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetToolData(str, value, is_raw_string)</td>
+<td>Thiết lập tham số của công cụ.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>GvTool.GetToolData(str, is_raw_string)</h3>
+
+<ul>
+<li><p>Chức năng: Lấy tham số của công cụ. Giá trị lấy được là một bản sao, việc sửa đổi bản sao sẽ không tự động đồng bộ lại với tham số gốc của công cụ. Ví dụ:</p>
+
+<p><code>python
+searchNum = GvTool.GetToolData("几何定位_001.搜索个数") # Lúc này số lượng tìm kiếm là 1
+searchNum = 5 # Lúc này tham số tìm kiếm của công cụ vẫn là 1
+</code></p>
+
+<p>Nếu muốn cập nhật thay đổi lên công cụ, cần kết hợp sử dụng GvTool.SetToolData().</p></li>
+
+<li><p>Tham số:</p>
+<ul>
+<li><p><strong>str</strong>: Tên tham số công cụ. Ví dụ: “几何定位_001.执行结果”, “几何定位_001.搜索坐标”.</p></li>
+
+<li><p><strong>is_raw_string</strong>: Kiểu boolean. Mặc định không hiển thị tham số này, giá trị là False (trừ khi cần lấy chuỗi gốc thì mới cần thiết lập tham số này).</p>
+
+<ul>
+<li><strong>True</strong>: Lấy chuỗi gốc, kết quả trả về là kiểu <code>bytes</code>.</li>
+<li><strong>False</strong>: Chuỗi được chuyển mã sang UTF-8.</li>
+</ul>
+
+<p>Ví dụ: Công cụ nhận dữ liệu là chuỗi hex như 05 4C 4D 11 00 51. Nếu dùng dạng chuỗi thông thường, khi gặp 00 thì chuỗi sẽ bị cắt, chỉ còn 05 4C 4D 11 (dài 4 byte). Để lấy đủ 6 byte, phải dùng <code>is_raw_string=True</code>.</p>
+</li>
+</ul>
+</li>
+
+<li><p>Giá trị trả về: Bản sao của tham số công cụ tương ứng.</p></li>
+</ul>
+
+<h3>GvTool.SetToolData(str, value, is_raw_string)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập tham số cho công cụ, sử dụng kết hợp với GvTool.GetToolData(). Ví dụ:</p>
+
+<p><code>python
+searchNum = GvTool.GetToolData("几何定位_001.搜索个数") # Số lượng tìm kiếm hiện tại là 1
+searchNum = 5 # Tham số công cụ vẫn là 1
+GvTool.SetToolData("几何定位_001.搜索个数", searchNum) # Lúc này số lượng tìm kiếm được cập nhật thành 5
+</code></p>
+</li>
+
+<li><p>Tham số:</p>
+<ul>
+<li><p><strong>str</strong>: Tên tham số công cụ. Ví dụ: “几何定位_001.搜索个数”, “几何定位_001.搜索坐标”.</p></li>
+<li><p><strong>value</strong>: Giá trị cần thiết lập.</p></li>
+<li><p><strong>is_raw_string</strong>: Kiểu boolean. Mặc định không hiển thị tham số này, giá trị là False (trừ khi cần thiết lập chuỗi gốc).</p>
+
+<ul>
+<li><strong>True</strong>: Thiết lập chuỗi gốc, giá trị là kiểu <code>bytes</code>.</li>
+<li><strong>False</strong>: Chuỗi sẽ được chuyển mã sang GBK.</li>
+</ul>
+
+<p>Ví dụ: <code>GvTool.SetToolData("数据包解析工具_002.输入数据0", b'\xAA')</code> — Nếu <code>is_raw_string=False</code> thì gán giá trị sẽ là <code>3F</code>; nếu <code>True</code> thì giá trị sẽ là <code>AA</code>.</p>
+</li>
+</ul>
+</li>
+
+<li><p>Giá trị trả về: Kiểu <code>bool</code>, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h2>Lưu ý</h2>
+
+<p>1. Cấm tự định nghĩa đối tượng GcVisionAssemblyTool, hệ thống đã có sẵn đối tượng <code>GvTool</code> để dùng trực tiếp.</p>
+
+<p>2. Nếu dùng <code>GvTool.GetToolData()</code> để lấy tham số mà muốn cập nhật thay đổi lên công cụ, phải kết hợp với <code>GvTool.SetToolData()</code>.</p>
+
+
+<h2>示例代码</h2>
+
+<p>无</p>

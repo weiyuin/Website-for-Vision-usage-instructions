@@ -1,0 +1,174 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ tạo hình chữ nhật affine</h1>
+
+<h2>Chức năng</h2>
+
+<p>Công cụ tạo hình chữ nhật affine thực hiện thao tác tạo hình chữ nhật affine dựa trên tọa độ điểm trung tâm đầu vào, chiều rộng và chiều cao. Hiệu quả như Hình 1.</p>
+
+<p><img src="media/wps3.jpg" alt="img" /></p>
+
+<p><imgnote>Hình 1: Sơ đồ minh họa ứng dụng công cụ tạo hình chữ nhật affine (đường nét đứt là phần chú thích)</imgnote></p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Có kéo để tạo hay không</td>
+<td>Chọn có hay không việc kéo để tạo hình chữ nhật affine. Khi chọn "Có", cửa sổ thuộc tính sẽ xuất hiện thuộc tính "Hình dạng hình chữ nhật affine".</td>
+</tr>
+<tr>
+<td></td>
+<td>Hình dạng hình chữ nhật affine</td>
+<td>Tham số để kéo tạo hình chữ nhật affine.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Hiển thị ảnh cần kiểm tra.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao, và kích thước điểm ảnh của ảnh đầu vào, giống như tham số ảnh đầu vào trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tọa độ X trung tâm hình chữ nhật affine</td>
+<td>Nhập tọa độ X của điểm trung tâm tạo thành hình chữ nhật affine, kiểu double.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tọa độ Y trung tâm hình chữ nhật affine</td>
+<td>Nhập tọa độ Y của điểm trung tâm tạo thành hình chữ nhật affine, kiểu double.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chiều rộng hình chữ nhật affine</td>
+<td>Nhập chiều rộng của hình chữ nhật affine, kiểu double.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chiều cao hình chữ nhật affine</td>
+<td>Nhập chiều cao của hình chữ nhật affine, kiểu double.</td>
+</tr>
+<tr>
+<td></td>
+<td>Góc xoay của hình chữ nhật affine</td>
+<td>Nhập góc xoay để tạo hình chữ nhật affine, kiểu double.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Góc X của hình chữ nhật affine</td>
+<td>Xuất tọa độ điểm góc theo trục X.</td>
+</tr>
+<tr>
+<td></td>
+<td>Góc Y của hình chữ nhật affine</td>
+<td>Xuất tọa độ điểm góc theo trục Y.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hình chữ nhật affine</td>
+<td>Xuất tọa độ điểm trung tâm, chiều rộng, chiều cao, góc xoay và góc nghiêng (shear) của hình chữ nhật affine được tạo ra.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Kết quả hình chữ nhật affine</td>
+<td>Hiển thị hình chữ nhật affine được tạo ra, giống với tham số kết quả trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra</td>
+<td>Xuất một ảnh mặt nạ (ảnh nhị phân) dựa trên kích thước ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ: “OK” nếu thành công, “NG” nếu thất bại, giống với tham số kết quả trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Góc X của hình chữ nhật affine</td>
+<td>Xuất tọa độ điểm góc theo trục X, dùng cho các công cụ tiếp theo, giống tham số PointCornerX trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Góc Y của hình chữ nhật affine</td>
+<td>Xuất tọa độ điểm góc theo trục Y, dùng cho các công cụ tiếp theo, giống tham số PointCornerY trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hình chữ nhật affine</td>
+<td>Xuất hình chữ nhật affine được tạo ra, dùng cho các công cụ tiếp theo, giống với tham số kết quả trong cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

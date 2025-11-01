@@ -1,0 +1,228 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>背景校正工具</h1>
+
+<h2>功能</h2>
+
+<p>成像过程中，由于光照的强度不均匀、光源位置、角度等因素的影响，会在图像中出现不均匀的背景，影响图像的检测精度和分析结果。背景校正工具就是针对背景不均匀的图像，通过一定算法，消除不均匀光照对图像造成的影响，输出背景均匀的图像。</p>
+
+<p><img src="media/wps96.jpg" alt="img" /></p>
+
+<p><imgnote>图1 多光源多目标背景校正</imgnote></p>
+
+<p><img src="media/wps97.jpg" alt="img" /></p>
+
+<p><imgnote>图2 缺陷图像背景校正</imgnote></p>
+
+<p><img src="media/wps98.jpg" alt="img" /></p>
+
+<p><imgnote>图3 背景不均匀较大的校正</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称                  </th>
+<th> 参数描述                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口                  </td>
+<td> 背景校正方法                                </td>
+<td> 主要有：高斯滤波、均值滤波、中值滤波、形态学明和形态学暗方法。 </td>
+</tr>
+<tr>
+<td></td>
+<td> X/Y方向高斯滤波参数       </td>
+<td> 用于设置高斯滤波X/Y方向模糊强度。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 滤波器X/Y方向尺寸         </td>
+<td> 用于设置均值滤波或者中值滤波的X/Y方向尺寸。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 形态学结构元素X/Y方向尺寸 </td>
+<td> 用于设置形态学结构元素X/Y方向尺寸。                                                                       </td>
+</tr>
+<tr>
+<td> 图像窗口                  </td>
+<td> 输入图像                                    </td>
+<td> 用于背景校正的灰度图像。                                     </td>
+</tr>
+<tr>
+<td> 数据链                    </td>
+<td> 输入图像                                    </td>
+<td> 用于背景校正的灰度图像。                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 高级界面                  </td>
+<td> 无                                                                                                        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 背景校正后的图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                   </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 背景校正后的图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                     </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像                                                     </td>
+<td> 背景校正后的图像。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>基本原理</h3>
+
+<p>背景校正工具首先对输入图像使用低通滤波进行背景估计，从而得到估计背景图像，其次输入图像减去背景图像后进行灰度拉伸，使输出图像的灰度值范围为[0，255]，得到最终输出图像，其流程图如图4所示。</p>
+
+<p><img src="media/wps102.jpg" alt="img" /></p>
+
+<p><imgnote>图4 背景校正原理</imgnote></p>
+
+<p>工具实现了高斯、均值、中值、形态学明和形态学暗五种方法进行图像背景校正。每种方法的校正效果如下。</p>
+
+<p><img src="media/wps103.jpg" alt="img" /></p>
+
+<p><imgnote>图5 高斯背景校正</imgnote></p>
+
+<p>   <img src="media/wps104.jpg" alt="img" /></p>
+
+<p><imgnote>图6 均值背景校正</imgnote></p>
+
+<p><img src="media/wps105.jpg" alt="img" /></p>
+
+<p><imgnote>图7 中值背景校正</imgnote></p>
+
+<p><img src="media/wps106.jpg" alt="img" /></p>
+
+<p><imgnote>图8 形态学（暗）校正</imgnote></p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>建议处理以下特征背景不均匀图像：</p>
+
+<ul>
+<li><p>不均匀背景具有渐变过渡区域；</p></li>
+<li><p>目标区域边界明显，且目标简单、较小。</p></li>
+</ul>
+</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th> 校正方法       </th>
+<th> 边界保持度 </th>
+<th> 大尺寸目标适用能力（像素） </th>
+<th> 目标亮度 </th>
+<th> 效率 </th>
+<th> 典型应用场景                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 高斯           </td>
+<td> 较差       </td>
+<td> 好                         </td>
+<td> 多亮度   </td>
+<td> 较差 </td>
+<td> 缺省                                     </td>
+</tr>
+<tr>
+<td> 均值           </td>
+<td> 差         </td>
+<td> 差                         </td>
+<td> 多亮度   </td>
+<td> 好   </td>
+<td> 小尺度效果好，速度较快                   </td>
+</tr>
+<tr>
+<td> 中值           </td>
+<td> 较好       </td>
+<td> 较差                       </td>
+<td> 多亮度   </td>
+<td> 差   </td>
+<td> 边界保持度较好，支持多亮度               </td>
+</tr>
+<tr>
+<td> 形态学明（暗） </td>
+<td> 较好       </td>
+<td> 较好                       </td>
+<td> 单一亮度 </td>
+<td> 较好 </td>
+<td> 单亮度下边界保持度较好，相比中值速度更快 </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>背景校正改变了图像像素值，且图像对比度降低。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\背景校正工具.gvp”。</p>

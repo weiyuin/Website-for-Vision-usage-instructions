@@ -1,0 +1,167 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Nội Suy Đường Thẳng</h1>
+
+<h2>Chức năng</h2>
+
+<p>Thực hiện nội suy đường thẳng trên tập hợp các điểm đầu vào để thu được đường thẳng phù hợp nhất. Hiệu quả ứng dụng như minh họa ở Hình 1.</p>
+
+<p><img src="media/wps186.jpg" alt="img" /> <img src="media/wps187.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Tập hợp điểm đường viền đầu vào</imgnote> <imgnote>(b) Kết quả nội suy đường thẳng</imgnote></p>
+
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ nội suy đường thẳng</imgnote></p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Bật nội suy tối ưu toàn cục</td>
+<td>Có bật chế độ nội suy tối ưu toàn cục hay không, mặc định là “Không”. Nếu chọn “Không”, sử dụng phương pháp ưu tiên hiệu suất; nếu chọn “Có”, sử dụng phương pháp tối ưu toàn cục.</td>
+</tr>
+<tr>
+<td></td>
+<td>Xét đến điểm ngoại lai</td>
+<td>Có xét đến các điểm nằm xa đường (điểm ngoại lai) trong quá trình nội suy hay không. Chọn “Có” thì sẽ hiển thị các tham số phương pháp và số lượng điểm ngoại lai.</td>
+</tr>
+<tr>
+<td></td>
+<td>Phương pháp điểm ngoại lai</td>
+<td>Gồm 4 phương pháp: Combination (Tổ hợp đầy đủ), Ransac (Lấy mẫu ngẫu nhiên), Robust (Trọng số), và RansacRobust (Lấy mẫu ngẫu nhiên có trọng số). Robust cho kết quả ổn định và hiệu quả; Combination cho kết quả tối ưu nhất nhưng hiệu suất thấp; Ransac và RansacRobust có tính ngẫu nhiên.</td>
+</tr>
+<tr>
+<td></td>
+<td>Số điểm ngoại lai</td>
+<td>Số lượng điểm không tham gia vào quá trình nội suy đường thẳng. Phải nhỏ hơn tổng số điểm trừ đi 2.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Hình ảnh đầu vào</td>
+<td>Hiển thị hình ảnh cần kiểm tra.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập hợp điểm đầu vào</td>
+<td>Hiển thị tập hợp các điểm đầu vào.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Hình ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu vào, giống với tham số ảnh đầu vào ở cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập hợp điểm đầu vào</td>
+<td>Tập hợp điểm đầu vào dùng để nội suy, giống với tham số tập hợp điểm đầu vào ở cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Hình ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu ra.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập hợp điểm tham gia nội suy</td>
+<td>Tập hợp tọa độ của tất cả các điểm tham gia vào quá trình nội suy.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả đường thẳng</td>
+<td>Toạ độ vị trí của đường thẳng nội suy, vector hướng và góc quay của đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Lỗi căn bậc hai trung bình (RMSE)</td>
+<td>Độ sai lệch của kết quả nội suy, giá trị càng nhỏ thì kết quả nội suy càng tốt.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực hiện của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực hiện công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Kết quả đường thẳng</td>
+<td>Hiển thị kết quả nội suy đường thẳng, giống với tham số kết quả đường thẳng ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực hiện công cụ, nếu thành công hiển thị “OK”, nếu thất bại hiển thị “NG”, giống với tham số kết quả thực thi ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Tập hợp điểm tham gia nội suy</td>
+<td>Mảng điểm tham gia nội suy đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả đường thẳng</td>
+<td>Kết quả nội suy đường thẳng, cung cấp cho các công cụ phía sau sử dụng, giống với tham số kết quả đường thẳng ở cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Mô tả chi tiết</h2>
+
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

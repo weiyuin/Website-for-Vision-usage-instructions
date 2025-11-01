@@ -1,0 +1,210 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>仿射变换工具</h1>
+
+<h2>功能</h2>
+
+<p>仿射变换工具是常用的预处理工具之一，主要对输入图像进行仿射变换，输出仿射变换后图，以便对其进行后续处理。支持的仿射变换操作有：平移、旋转。</p>
+
+<p><img src="media/wps80.jpg" alt="img" /></p>
+
+<p><imgnote>图1 仿射变换示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称         </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口         </td>
+<td> 裁剪为原图像相同尺寸                                         </td>
+<td> 是：仿射变换后的图像和原图大小一样，如果仿射变换操作引起图像大小改变，最终结果会被裁剪为和原图像一样大小；否：仿射变换后的图像大小可以自定义。通过“输出图像宽度”和“输出图像高度”自定义。       </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像宽度     </td>
+<td> 用户自定义输出图像宽度。只在“裁剪为原图像相同尺寸”属性为“否”时起作用。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像高度     </td>
+<td> 用户自定义输出图像高度。只在“裁剪为原图像相同尺寸”属性为“否”时起作用。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 镜像     </td>
+<td> 变化后的图像做无、水平、垂直、水平垂直的镜像操作。     </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否缩放     </td>
+<td> 按照缩放点，进行X轴和Y轴缩放。     </td>
+</tr>
+<tr>
+<td></td>
+<td> x缩放系     </td>
+<td> 按X轴缩放系数。  </td>
+</tr>
+<tr>
+<td></td>
+<td> y缩放系     </td>
+<td> 按y轴缩放系数。  </td>
+</tr>
+<tr>
+<td></td>
+<td> Center X     </td>
+<td> 中心X轴坐标。  </td>
+</tr>
+<tr>
+<td></td>
+<td> Center y     </td>
+<td> 中心Y轴坐标。  </td>
+</tr>
+<tr>
+<td></td>
+<td> 旋转角度类型     </td>
+<td> 角度：数据链中“旋转角度”参数单位为度；弧度：数据链中“旋转角度”参数单位为弧度；                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口         </td>
+<td> Edit                                                         </td>
+<td> 显示原图像。                                                       </td>
+</tr>
+<tr>
+<td> 数据链           </td>
+<td> 输入图像                                                     </td>
+<td> 需要进行仿射变换操作的图像；                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 旋转中心         </td>
+<td> 二维向量类型，向量元素为double类型。表示旋转操作的中心。                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 水平方向平移大小 </td>
+<td> double类型。表示水平方向偏移量，单位是像素；                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 垂直方向平移大小 </td>
+<td> double类型。表示垂直方向偏移量，单位是像素；                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 旋转角度         </td>
+<td> double类型。表示旋转的角度，逆时针为正，单位与属性窗口“旋转角度类型”相同。                                                               </td>
+</tr>
+<tr>
+<td> 高级界面         </td>
+<td> 无                                                           </td>
+<td> 无                                                                </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口   </td>
+<td> 输入图像                                                     </td>
+<td> 输出原始图像宽度、高度、像素信息；           </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像   </td>
+<td> 输出放射变换后图像的宽度、高度、像素信息；                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 工具执行结果；                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间   </td>
+<td> 工具执行时间。                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口   </td>
+<td> Result                                                       </td>
+<td> 输出仿射变换后的图像；                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 自定义视图 </td>
+<td> 输出仿射变换后的图像；                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                               </td>
+</tr>
+<tr>
+<td> 数据链     </td>
+<td> 输出图像                                                     </td>
+<td> 输出经过仿射变换之后的图像，供其他工具使用。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>仿射变换工具数据链中的<strong>旋转中心</strong>，可以在仿射变换之前添加一个二维向量生成工具，二维向量成工具的输出结果作为仿射变换工具数据链中旋转中心的来源。</li>
+</ul>
+
+
+<p><img src="media/wps85.jpg" alt="img" /></p>
+
+<p><imgnote>图2 仿射变换工具。旋转中心数据链输入示意</imgnote></p>
+
+<ul>
+<li>其他数据链参数可以在变量里面定义相应类型的变量或者使用流程里对应类型的数据作为输入。</li>
+</ul>
+
+
+<p><img src="media/wps86.jpg" alt="img" /></p>
+
+<p><imgnote>图3 仿射变换工具。其他数据链输入示意</imgnote></p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\仿射变换工具.gvp”。</p>

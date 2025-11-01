@@ -1,0 +1,119 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>位置姿态转轴位置</h1>
+
+<h2>功能</h2>
+
+<p>本工具可将<strong>GcCoordPos</strong>型位置姿态数据转换为<strong>GcPlatformAxisPos</strong>类型的轴位置数据。工具输入可以是图像到平台坐标转换工具的平台坐标输出等，工具的输出可以作为轴位置解析工具的输入。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 无  </td>
+<td> 无                                             </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无  </td>
+<td> 无                                             </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 位置姿态 </td>
+<td> <strong>GcCoordPos</strong>型的位置姿态数据结果。 </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无</td>
+<td> 无                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 轴位置         </td>
+<td> <strong>GcPlatformAxisPos</strong>型的轴位置数据。                        </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无 </td>
+<td> 无  </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 轴位置         </td>
+<td> <strong>GcPlatformAxisPos</strong>型的轴位置数据，供后序工具使用，同监视窗口。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>轴位置</h3>
+
+<p><strong>GcPlatformAxisPos</strong>类型数据，该类型为三个<strong>double</strong>型坐标数据组成的结构体。在标定对位工程中，标定轴位置获取工具的初始轴位置输入与轴位置结果、交互运动步长、对位计算工具的对位偏移量结果等变量均为<strong>GcPlatformAxisPos</strong>类型。</p>
+
+<h3>位置姿态</h3>
+
+<p><strong>GcCoordPos</strong>类型数据，该类型同样为三个<strong>double</strong>型坐标数据组成的结构体。在标定对位工程中，标定计算工具的图像坐标、平台坐标输出，图像到平台坐标转换工具的图像坐标输入与位置姿态输出均为<strong>GcCoordPos</strong>类型数据。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>该工具将<strong>GcCoordPos</strong>型数据转换到<strong>GcPlatformAxisPos</strong>类型数据，可根据项目需要运用。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\位置姿态转轴位置.gvp”。</p>

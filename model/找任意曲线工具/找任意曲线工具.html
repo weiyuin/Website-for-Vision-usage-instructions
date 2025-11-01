@@ -1,0 +1,468 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Tìm Đường Cong Bất Kỳ</h1>
+
+<h2>Chức năng</h2>
+
+<p>Định vị là một trong những ứng dụng quan trọng trong thị giác máy, thường dựa vào các đặc trưng hình học cụ thể trên vật thể mục tiêu như đường thẳng, góc, đường tròn… để định vị. Trong một số ứng dụng, đặc trưng định vị không phải là đường thẳng hay đường tròn cố định, mà là một đường cong tạo bởi nhiều đoạn thẳng và cung tròn. Công cụ tìm đường cong bất kỳ có chức năng chính là xử lý trường hợp đường thẳng và đường tròn cùng tồn tại. Đồng thời, công cụ còn có các chức năng sau:</p>
+
+<ul>
+<li><p>Có thể sắp xếp kết quả thước cặp theo thứ tự hoặc ngược lại;</p></li>
+<li><p>Hỗ trợ điều khiển theo đoạn – bật/tắt và lựa chọn điểm mạnh nhất;</p></li>
+<li><p>Có thể thiết lập độ lệch kết quả phát hiện của thước cặp;</p></li>
+<li><p>Có thể xử lý tự động điểm cuối giữa các đoạn đường cong liền kề.</p></li>
+</ul>
+
+<p><img src="media/wps17.jpg" alt="img" />  <img src="media/wps18.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Ảnh đầu vào</imgnote> <imgnote>(b) Kết quả tìm đường cong bất kỳ</imgnote></p>
+
+<p><imgnote>Hình 1: Công cụ tìm đường cong bất kỳ</imgnote></p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Chế độ biên</td>
+<td>Thước cặp có hai chế độ biên: đơn và kép.</td>
+</tr>
+<tr>
+<td></td>
+<td>Độ lệch điểm phát hiện</td>
+<td>Kiểm soát việc điểm phát hiện có bị lệch hay không. Chọn “Có” để hiển thị tuỳ chọn lệch theo thước cặp.</td>
+</tr>
+<tr>
+<td></td>
+<td>Lệch theo thước cặp</td>
+<td>Phương thức lệch của điểm phát hiện. Chọn “Có” để lệch theo hướng của thước cặp; chọn “Không” để lệch theo hướng của đường cong khớp.</td>
+</tr>
+<tr>
+<td></td>
+<td>Khớp đường cong</td>
+<td>Cho biết điểm phát hiện có được khớp hay không. Chọn “Có” sẽ hiển thị các tham số như phương pháp khớp, tỉ lệ ngoại lệ, xử lý điểm cuối, khép kín đường viền, hiển thị điểm phát hiện của thước cặp, độ lệch ngoại lệ và có sửa điểm ngoại lệ hay không.</td>
+</tr>
+<tr>
+<td></td>
+<td>Phương pháp khớp</td>
+<td>Phương pháp khớp đường cong xét đến điểm ngoại lệ. Có 4 loại: Combination (Toàn tổ hợp), Ransac (Lấy mẫu ngẫu nhiên), Robust (Trọng số), RansacRobust (Ngẫu nhiên + trọng số).<br/>Thời gian khớp: Combination > RansacRobust > Ransac > Robust. Độ tin cậy: Combination > RansacRobust > Robust > Ransac.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chỉ dùng lọc</td>
+<td>Nếu đường cong khớp được lệch nhiều so với thực tế, chọn mục này để chỉ lọc điểm mà không sửa. <br/>Nếu không chọn: đầu tiên sẽ sửa các điểm quá xa đường khớp, sau đó lọc các điểm lân cận để làm mượt. <br/>Nếu chọn: chỉ lọc các điểm, không sửa.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỉ lệ điểm ngoại lệ</td>
+<td>Là tỉ lệ các điểm không tham gia vào quá trình khớp, nằm trong khoảng [0, 1).</td>
+</tr>
+<tr>
+<td></td>
+<td>Xử lý điểm cuối</td>
+<td>Kiểm soát việc xử lý điểm cuối của hai thước cặp liền kề, sẽ loại bỏ điểm không hợp lý.</td>
+</tr>
+<tr>
+<td></td>
+<td>Khép kín đường viền</td>
+<td>Kiểm soát việc khép kín các đường cong có xu hướng khép kín.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hiển thị điểm phát hiện của thước cặp</td>
+<td>Kiểm soát việc hiển thị các điểm vượt quá độ lệch ngoại lệ hoặc tất cả điểm đã được sửa.</td>
+</tr>
+<tr>
+<td></td>
+<td>Độ lệch ngoại lệ</td>
+<td>Khoảng cách lớn nhất mà điểm phát hiện bị lệch khỏi đường khớp nhưng vẫn không bị loại bỏ hoặc sửa.</td>
+</tr>
+<tr>
+<td></td>
+<td>Có sửa điểm ngoại lệ</td>
+<td>Kiểm soát việc có sửa các điểm bị lệch khỏi đường khớp hay không.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hiển thị điểm phát hiện</td>
+<td>Hiển thị tất cả điểm phát hiện của thước cặp, chưa bị loại bỏ hay sửa đổi.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hiển thị đường cong</td>
+<td>Kiểm soát việc hiển thị đường cong khớp được.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hiển thị trọng tâm</td>
+<td>Kiểm soát việc hiển thị trọng tâm. <img src="media/wps20.jpg" alt="img" /></td>
+</tr>
+<tr>
+<td></td>
+<td>Hiển thị hình chữ nhật bao ngoài</td>
+<td>Kiểm soát việc hiển thị hình chữ nhật bao quanh các điểm kết quả hợp lệ. Nếu không bật khớp, các điểm phát hiện là hợp lệ; nếu bật, các điểm tham gia khớp là hợp lệ. <img src="media/wps21.jpg" alt="img" /></td>
+</tr>
+<tr>
+<td></td>
+<td>Hiển thị đường nối điểm phát hiện</td>
+<td>Kiểm soát việc hiển thị đoạn thẳng nối giữa các điểm phát hiện.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hiển thị điểm phát hiện bị lệch</td>
+<td>Kiểm soát việc hiển thị các điểm phát hiện đã bị lệch.</td>
+</tr>
+<tr>
+<td></td>
+<td>Có tính toán nội suy</td>
+<td>Kiểm soát việc có thực hiện nội suy giữa hai điểm phát hiện liền kề để thêm điểm phát hiện hay không.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tính toán điểm phát hiện mô phỏng</td>
+<td>Kiểm soát việc tính các điểm tọa độ mô phỏng của kết quả khớp, được tạo bằng cách chia đều đường khớp.</td>
+</tr>
+<tr>
+<td></td>
+<td>Bước chia điểm mô phỏng</td>
+<td>Khi bật “Tính toán điểm phát hiện mô phỏng”, bạn có thể thiết lập bước chia đều. Bước càng nhỏ thì điểm càng dày đặc, bước càng lớn thì điểm càng thưa.</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Hiển thị hình ảnh cần kiểm tra.</td>
+</tr>
+<tr>
+<td></td>
+<td>GUI tìm đường cong</td>
+<td>Thước cặp dùng để tìm đường cong bất kỳ. <img src="media/wps22.jpg" alt="img" /></td>
+</tr>
+<tr>
+<td>Dữ liệu liên kết</td>
+<td>Ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao, kích thước pixel của ảnh đầu vào. Giống ảnh đầu vào của cửa sổ ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>Dịch chuyển, xoay và thu phóng ảnh mục tiêu so với ảnh mẫu.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Xuất độ rộng, chiều cao và kích thước điểm ảnh của ảnh đầu vào.</td>
+</tr>
+<tr>
+<td></td>
+<td>Số lượng điểm dò</td>
+<td>Số điểm viền được phát hiện bởi thước cặp.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tất cả điểm dò</td>
+<td>Xuất mảng tọa độ của tất cả các điểm dò.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điểm dò dùng để fitting</td>
+<td>Xuất mảng tọa độ của các điểm dò dùng để fitting (nội suy đường cong).</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí điểm dò của thước cặp</td>
+<td>Xuất tọa độ vị trí của các điểm dò bởi thước cặp.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí đoạn đường thẳng fitting</td>
+<td>Xuất tọa độ điểm đầu và điểm cuối của đoạn thẳng fitting.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí đường cong fitting</td>
+<td>Xuất tâm, bán kính và góc của cung tròn fitting.</td>
+</tr>
+<tr>
+<td></td>
+<td>Trọng tâm dò được</td>
+<td>Xuất tọa độ X, Y của trọng tâm.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hình chữ nhật bao ngoài dò được</td>
+<td>Xuất tọa độ góc trên trái, độ rộng và chiều cao của hình chữ nhật bao ngoài.</td>
+</tr>
+<tr>
+<td></td>
+<td>Loại cạnh của đường viền</td>
+<td>Xuất đặc trưng viền và số điểm của đoạn đầu và đoạn cuối của thước cặp.</td>
+</tr>
+<tr>
+<td></td>
+<td>Số lượng điểm dò fitting</td>
+<td>Số điểm đường viền được chọn dùng cho fitting.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tất cả điểm dò</td>
+<td>Tất cả các điểm dò của thước cặp được phát hiện.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điểm dò dùng để fitting</td>
+<td>Kết quả fitting từ tất cả các điểm dò được phát hiện.</td>
+</tr>
+<tr>
+<td></td>
+<td>Loại cạnh của đường viền</td>
+<td>Xuất đặc trưng viền và số điểm của đoạn đầu và đoạn cuối thước cặp, dùng cho công cụ ghép đường viền sau đó, giống với tham số ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Số lượng điểm dò fitting</td>
+<td>Số lượng kết quả fitting từ tất cả các điểm dò thước cặp được phát hiện.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Hiển thị ảnh kết quả thực thi công cụ, giống với tham số ảnh đầu ra của cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điểm dò của thước cặp</td>
+<td>Hiển thị các điểm dò bởi thước cặp.</td>
+</tr>
+<tr>
+<td></td>
+<td>GUI trọng tâm dò được</td>
+<td>Hiển thị trọng tâm của ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>GUI hình chữ nhật bao ngoài</td>
+<td>Hiển thị hình chữ nhật bao ngoài của các điểm kết quả hợp lệ.</td>
+</tr>
+<tr>
+<td></td>
+<td>GUI điểm dò</td>
+<td>Hiển thị các điểm viền dò được.</td>
+</tr>
+<tr>
+<td></td>
+<td>Đường cong fitting</td>
+<td>Hiển thị cung tròn fitting.</td>
+</tr>
+<tr>
+<td></td>
+<td>Đoạn thẳng fitting</td>
+<td>Hiển thị đoạn thẳng fitting.</td>
+</tr>
+<tr>
+<td></td>
+<td>Đường nối điểm dò</td>
+<td>Hiển thị đường nối giữa hai điểm dò liền kề.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điểm dò trước khi offset</td>
+<td>Khi bật tính năng offset, hiển thị các điểm dò trước khi offset.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi công cụ. Thành công hiển thị “OK”, thất bại hiển thị “NG”, giống với tham số kết quả thực thi trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>GUI trọng tâm dò được</td>
+<td>Xuất trọng tâm của ảnh, dùng cho các công cụ sau, giống với tham số GUI trọng tâm trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>GUI hình chữ nhật bao ngoài</td>
+<td>Xuất hình chữ nhật bao ngoài của điểm kết quả hợp lệ, dùng cho các công cụ sau, giống với tham số GUI hình chữ nhật bao ngoài trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tất cả điểm dò</td>
+<td>Xuất tất cả điểm dò, dùng cho các công cụ sau.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điểm dò fitting</td>
+<td>Xuất điểm dò dùng để fitting đường cong, dùng cho các công cụ sau.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điểm dò thước cặp</td>
+<td>Xuất điểm dò của thước cặp, dùng cho các công cụ sau, giống với tham số điểm dò thước cặp trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí điểm dò thước cặp</td>
+<td>Xuất vị trí điểm dò của thước cặp, dùng cho các công cụ sau, giống với tham số trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Đường cong fitting</td>
+<td>Xuất cung tròn fitting, dùng cho các công cụ sau, giống với tham số trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Đoạn thẳng fitting</td>
+<td>Xuất đoạn thẳng fitting, dùng cho các công cụ sau, giống với tham số trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Đường nối điểm dò</td>
+<td>Xuất đoạn nối giữa hai điểm dò liền kề, dùng cho các công cụ sau, giống với tham số trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điểm dò trước khi offset</td>
+<td>Xuất các điểm dò thước cặp trước khi offset, dùng cho các công cụ sau, giống với tham số trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí điểm dò</td>
+<td>Xuất các điểm viền dò được, dùng cho các công cụ sau, giống với tham số trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí đoạn thẳng fitting</td>
+<td>Xuất vị trí đoạn thẳng fitting, dùng cho các công cụ sau, giống với tham số trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí cung tròn fitting</td>
+<td>Xuất cung tròn fitting, dùng cho các công cụ sau, giống với tham số trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Trọng tâm dò được</td>
+<td>Xuất trọng tâm ảnh, dùng cho các công cụ sau, giống với tham số trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả điểm dò mô phỏng fitting</td>
+<td>Xuất kết quả điểm dò mô phỏng dùng cho fitting.</td>
+</tr>
+<tr>
+<td></td>
+<td>Loại cạnh của đường viền</td>
+<td>Xuất đặc trưng và số điểm của đoạn đầu và cuối thước cặp, dùng cho công cụ nối đường viền, giống với tham số trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vị trí điểm dò sau nội suy</td>
+<td>Xuất các điểm dò sau khi tính toán nội suy, dùng cho các công cụ sau, giống với tham số trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tất cả điểm dò</td>
+<td>Tất cả các điểm dò thước cặp được phát hiện.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điểm dò fitting</td>
+<td>Kết quả fitting từ tất cả các điểm dò thước cặp được phát hiện.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả điểm dò mô phỏng fitting</td>
+<td>Kết quả fitting từ tất cả các điểm dò mô phỏng được phát hiện.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Chi tiết</h2>
+
+<p><strong>Trọng tâm kết quả</strong></p>
+
+<p>Như hình 2(b) cho thấy, trọng tâm kết quả được định nghĩa là giá trị trung bình cộng tọa độ của các điểm kết quả hợp lệ.</p>
+
+<p><strong>Hình chữ nhật bao ngoài kết quả</strong></p>
+
+<p>Như hình 2(b) cho thấy, hình chữ nhật bao ngoài kết quả được định nghĩa là hình chữ nhật bao quanh các điểm kết quả hợp lệ.</p>
+
+<p><img src="media/wps25.jpg" alt="img" /><img src="media/wps26.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Ảnh đầu vào</imgnote>  <imgnote>(b) Trọng tâm và hình chữ nhật bao ngoài</imgnote></p>
+
+<p><imgnote>Hình 2 – Ví dụ tìm đường cong bất kỳ</imgnote></p>
+
+<p><strong>Giao diện GUI tìm đường cong</strong></p>
+
+<p>GUI tìm đường cong bao gồm nhiều đoạn thước cặp, có thể nhấp đúp chuột trái (hoặc chuột phải chọn Edit Param) để mở hộp thoại thiết lập các thông số cho mỗi đoạn thước cặp như Hình 3. Bao gồm số lượng thước cặp, độ dài tìm kiếm, hướng tìm kiếm, ngưỡng độ tương phản, sắp xếp theo điểm số, kết quả ngược, cực tính biên, bán kính bộ lọc, độ lệch điểm kết quả, ưu tiên điểm trung tâm và bật/tắt thước cặp; trong menu chuột phải GUI tìm đường cong có các mục thêm thước cặp (Add Element), xóa thước cặp (Remove Element), chỉnh sửa thông số thước cặp (Edit Param), lưu tham số (Save Param) và nhập tham số (Load Param).</p>
+
+<p><img src="media/wps27.JPG" alt="img" /></p>
+
+<p><imgnote>Hình 3 – Hộp thoại chỉnh sửa thông số thước cặp</imgnote></p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li><p>Nếu cần fitting đường cong, phải bật tùy chọn fitting đường cong.</p></li>
+<li><p>Xử lý điểm đầu cuối chỉ có hiệu lực khi fitting đường cong được bật.</p></li>
+</ul>
+
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

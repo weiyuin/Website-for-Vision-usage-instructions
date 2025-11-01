@@ -1,0 +1,110 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>多景深图像融合工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 本工具所用算法是基于液态镜头的景深扩展技术研究项目开发的多帧图像大景深融合算法，适用于液态远心镜头连续调焦拍摄的多幅图像融合得到一幅大景深图像。</p>
+
+<h2>2. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口   </td>
+<td>GPU加速</td>
+<td>是否启用GPU加速，若为是，则会用GPU进行处理（机器中没有GPU时算法会弹窗报错），若为否，则用CPU进行处理。</td>
+</tr>
+<tr>
+<td></td>
+<td> 采样倍数         </td>
+<td> 1.0-8.0，建议4.0；该参数用表明加速倍数，数值越大计算时间越短，相应会牺牲一部分图像融合的细节。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 滤波半径一 </td>
+<td> 3-31，建议5-13的奇数；改参数表明图像滤波细节，数值越小细节保留越多，该参数几乎不影响计算时间。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 滤波半径二 </td>
+<td> 3-31，建议5-13的奇数；改参数表明不同图像融合的边缘细节，数值越小图像过渡区域越小，可能会出现跳变，数值越大过渡区域越大，容易模糊，该参数几乎不影响计算时间。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 正则化系数       </td>
+<td> 避免0值图像导致计算异常，通常可以选取0.001*（最大值-最小值）=0.2~0.3。 </td>
+</tr>
+<tr>
+<td></td>
+<td>                  </td>
+<td>                                                                                                                          </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入图像组   </td>
+<td> 2-10幅的图像数组（目前只支持灰度图），依据实际需要的图像张数来设置，数量越多计算时间越长。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出图像 </td>
+<td> 输出融合后的图像。 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果。     </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间。     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>3. 使用向导</h2>
+
+<p>​ 使用时如下图所示，可以使用数组合并工具来收集多个图像文件(或者图像源采集到的)中的图像数据，数组合并工具数据类型选择scImage8，之后将数据合并工具的输出数组参数链接到多景深图像融合工具中输入图像组参数链中即可。
+<img src="media/1.jpg" alt="2" /></p>
+
+<h2>4. 示例工程</h2>
+
+<p>参见“\Samples\多景深图像融合工具.gvp”。</p>

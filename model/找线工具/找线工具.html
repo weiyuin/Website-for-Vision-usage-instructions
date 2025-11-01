@@ -1,0 +1,405 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Tìm Đường Thẳng</h1>
+
+<h2>1. Giới thiệu chức năng</h2>
+
+<p>Công cụ tìm đường thẳng chủ yếu dùng để khớp các cạnh thẳng thực tế của chi tiết trong vùng ROI chỉ định, từ đó thu được biểu thức đường thẳng của cạnh. Thường được sử dụng kết hợp với công cụ định vị, thông qua các tham số như cực tính biên để đạt được việc tìm đường thẳng chính xác cao. Hiệu quả ứng dụng thực tế được minh họa như Hình 1 dưới đây.</p>
+
+<p><img src="media/wps3.jpg" alt="img" /> <img src="media/wps4.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Sơ đồ bố trí công cụ</imgnote> <imgnote>(b) Kết quả tìm đường thẳng</imgnote></p>
+
+<p><imgnote>Hình 1: Minh họa ứng dụng công cụ tìm đường thẳng</imgnote></p>
+
+<h2>2. Mô tả thuật toán</h2>
+
+<p>Công cụ tìm đường thẳng sẽ tìm các điểm cạnh trong vùng tìm kiếm dựa trên các thiết lập tham số của thước kẹp (caliper), sau đó thực hiện khớp đường thẳng qua các điểm cạnh tìm được, từ đó xác định đường thẳng mục tiêu, như hình dưới đây.</p>
+
+<p><img src="media/GcFindLineTool_2_1.png" alt="" /></p>
+
+<h2>3. Kịch bản ứng dụng</h2>
+
+<p>Các kịch bản ứng dụng của công cụ tìm đường thẳng có thể chia làm ba loại sau:</p>
+
+<ul>
+<li>Trong các dự án đo lường, có thể được sử dụng làm phần tử đặc trưng hoặc phần tử trung gian để đo kích thước, ví dụ: đo khoảng cách giữa hai đoạn thẳng, góc giữa hai đường thẳng, hoặc tìm giao điểm giữa các đường thẳng hoặc giữa đường và đường tròn, rồi tính khoảng cách giữa hai điểm đó.</li>
+<li>Kết hợp với công cụ định vị hình học, sử dụng các công cụ như tìm đường thẳng, tìm đường tròn, công cụ giao điểm, công cụ trung điểm... để tìm các đặc trưng cố định của vật liệu làm đặc trưng tham chiếu, nhằm đạt được định vị chính xác.</li>
+<li>Trong các dự án hiệu chuẩn và căn chỉnh, có thể sử dụng công cụ tìm đường thẳng, tìm đường tròn, giao điểm để xác định tọa độ hình ảnh của các điểm Mark đặc biệt. Sau đó, kết hợp với tọa độ cơ khí tương ứng, tính toán mối quan hệ chuyển đổi giữa hệ tọa độ hình ảnh và hệ tọa độ cơ khí.</li>
+</ul>
+
+<h2>4. Hướng dẫn sử dụng</h2>
+
+<h3>Thêm công cụ, liên kết tham số</h3>
+
+<ul>
+<li><p>Ảnh đầu vào: Ảnh cần kiểm tra</p></li>
+<li><p>Biến đổi tuyến tính 2D: Tham số này thường lấy từ công cụ định vị, biểu thị phép biến đổi tịnh tiến, xoay và phóng to/thu nhỏ từ đặc trưng mục tiêu trong ảnh hiện tại so với đặc trưng tương ứng trong ảnh mẫu. Trong kiểm tra trực tuyến thời gian thực, tham số này có thể được sử dụng để điều chỉnh liên tục vùng tìm kiếm của công cụ tìm đường thẳng.</p></li>
+</ul>
+
+
+
+<p><img src="media/GcFindLineTool_4_1.png" alt="" /></p>
+
+<h3>Thiết lập tham số kiểm tra</h3>
+
+<p><img src="media/GcFindLineTool_4_2.png" alt="" /></p>
+
+<p>Giải thích các tham số quan trọng như sau, các tham số khác tham khảo mục “5. Giải thích tham số”.</p>
+
+<h4>Chế độ biên</h4>
+
+<p>Chế độ đơn biên và chế độ hai biên được minh họa trong Hình 2 và Hình 3. Khi sử dụng chế độ đơn biên, kết quả tìm đường thẳng như đường màu đỏ trong Hình 2(b); nếu sử dụng chế độ hai biên, bố trí thước kẹp như Hình 3(a), trong vùng tìm kiếm của thước kẹp chứa hai cạnh, kết quả tìm đường là đường trung tuyến giữa hai cạnh (đường màu xanh lá trong Hình 3(b)), thể hiện bằng đường màu đỏ trong Hình 3(b).</p>
+
+<p><img src="media/wps13.jpg" alt="img" />  <img src="media/wps14.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Thiết lập vùng tìm đường</imgnote> <imgnote>(b) Kết quả tìm đường</imgnote></p>
+
+<p><imgnote>Hình 2: Minh họa chế độ đơn biên</imgnote></p>
+
+<p><img src="media/wps15.jpg" alt="img" />   <img src="media/wps16.png" alt="img" /></p>
+
+<p><imgnote>(a) Thiết lập vùng tìm đường</imgnote> <imgnote>(b) Kết quả tìm đường</imgnote></p>
+
+<p><imgnote>Hình 3: Minh họa chế độ hai biên</imgnote></p>
+
+<h4>Cực tính biên</h4>
+
+<p>Cực tính biên của thước kẹp được xác định theo dạng chuyển tiếp cấp xám của cạnh ảnh. Như Hình 4 minh họa, dọc theo hướng dương trục Y của thước kẹp (hướng mũi tên đỏ), nếu cấp xám chuyển từ sáng sang tối thì chọn cực tính “sáng đến tối”, ngược lại chọn “tối đến sáng”. Nếu dạng chuyển tiếp không xác định rõ, thì chọn “cực tính bất kỳ”.</p>
+
+<p><img src="media/wps17.png" alt="img" />   <img src="media/wps18.png" alt="img" /></p>
+
+<p><imgnote>(a) Sáng đến tối</imgnote> <imgnote>(b) Tối đến sáng</imgnote></p>
+
+<p><imgnote>Hình 4: Minh họa cực tính biên</imgnote></p>
+
+<h4>Tỷ lệ điểm ngoại lai</h4>
+
+<p>Như Hình 5 minh họa, các điểm dấu cộng màu đỏ là điểm ngoại lai — không tham gia vào việc khớp đường. Tỷ lệ điểm ngoại lai là phần trăm các điểm bị loại bỏ. Trong Hình 5, tỷ lệ này là 0.2. Trong trường hợp cạnh bị nhiễu nặng, cần thiết lập tỷ lệ điểm ngoại lai để tăng độ chính xác.</p>
+
+<p><img src="media/wps19.jpg" alt="img" /></p>
+
+<p><imgnote>Hình 5: Minh họa điểm ngoại lai</imgnote></p>
+
+
+<h4>Thuộc tính biên</h4>
+
+<p>Đối với ảnh có nhiều biên, cần thiết lập thuộc tính biên phù hợp.</p>
+
+<p><img src="media/wps20.jpg" alt="img" /></p>
+
+<p><imgnote>Hình 6: Minh họa thuộc tính biên</imgnote></p>
+
+<p><strong>Biên tốt nhất:</strong> Trong vùng tìm kiếm, biên có độ chênh lệch mức xám lớn nhất giữa hai bên cạnh ảnh;</p>
+
+<p><strong>Biên đầu tiên:</strong> Trong vùng tìm kiếm, theo hướng dương trục Y của thước kẹp, là biên đầu tiên thỏa mãn cực tính biên;</p>
+
+<p><strong>Biên cuối cùng:</strong> Trong vùng tìm kiếm, theo hướng dương trục Y của thước kẹp, là biên cuối cùng thỏa mãn cực tính biên;</p>
+
+<p><strong>Biên sáng nhất toàn cục:</strong> Trong vùng tìm kiếm, biên có giá trị trung bình mức xám (độ sáng) của hai bên lớn nhất;</p>
+
+<p><strong>Biên tối nhất toàn cục:</strong> Trong vùng tìm kiếm, biên có giá trị trung bình mức xám của hai bên nhỏ nhất;</p>
+
+<p><strong>Biên sáng nhất phía sáng:</strong> Trong vùng tìm kiếm, biên có phía sáng (bên sáng hơn) với mức xám lớn nhất;</p>
+
+<p><strong>Biên tối nhất phía sáng:</strong> Trong vùng tìm kiếm, biên có phía sáng với mức xám nhỏ nhất;</p>
+
+<p><strong>Biên sáng nhất phía tối:</strong> Trong vùng tìm kiếm, biên có phía tối (bên tối hơn) với mức xám lớn nhất;</p>
+
+<p><strong>Biên tối nhất phía tối:</strong> Trong vùng tìm kiếm, biên có phía tối với mức xám nhỏ nhất.</p>
+
+<p>Khi chọn chế độ hai biên, các thuộc tính biên như: biên sáng nhất toàn cục, biên tối nhất toàn cục, biên sáng nhất phía sáng, biên tối nhất phía sáng, biên sáng nhất phía tối và biên tối nhất phía tối sẽ được xử lý giống như “biên tốt nhất”. Khi phạm vi tìm kiếm là toàn bộ ảnh, chế độ biên là đơn biên và cực tính biên được đặt là “cực tính bất kỳ”, thì kết quả tìm đường tương ứng với các thuộc tính biên khác nhau sẽ như minh họa trong Hình 6.</p>
+
+<h4>Bật dịch chuyển song song</h4>
+
+<p>Khi bật tham số “Dịch chuyển song song” và thiết lập là “Có”, nếu giá trị dịch chuyển song song là số dương thì kết quả đường thẳng sẽ dịch lên (hoặc sang phải) để tạo ra kết quả đường thẳng dịch song song; ngược lại, nếu giá trị dịch chuyển là số âm thì đường thẳng sẽ dịch xuống (hoặc sang trái). Như minh họa ở Hình 7, lần lượt là kết quả khi giá trị dịch chuyển được đặt là 10 và -10.</p>
+
+<p><img src="media/wps21.jpg" alt="" />  <img src="media/wps22.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Giá trị dịch chuyển song song là số dương</imgnote> <imgnote>(b) Giá trị dịch chuyển song song là số âm</imgnote></p>
+
+<p><imgnote>Hình 7: Minh họa bật dịch chuyển song song</imgnote></p>
+
+<h4>Bật đường thẳng tham chiếu</h4>
+
+<p>Sau khi bật đường thẳng tham chiếu, có thể chọn “Chỉnh song song” hoặc “Chỉnh vuông góc”.</p>
+
+<p>**Độ lệch góc cho phép của tham chiếu:** Là góc giữa đường thẳng kết quả và đường thẳng đã được chỉnh sửa. Khi góc nằm trong phạm vi giới hạn trên và dưới của độ lệch góc cho phép, hệ thống sẽ thực hiện chỉnh sửa song song hoặc vuông góc theo cài đặt; nếu không, sẽ không tiến hành chỉnh sửa.</p>
+
+<p>**Chỉnh song song:** Tính góc giữa đường tham chiếu và đường được chọn, chuẩn hóa vào khoảng (-90°, 90°). Khi góc này nằm trong phạm vi độ lệch góc cho phép, tìm điểm dò biên gần nhất với đường thẳng đã khớp, tại điểm này dùng góc của đường tham chiếu làm độ nghiêng để xác định đường chỉnh sửa. Các điểm đầu và cuối của đoạn thẳng gốc sẽ được chiếu lên đường chỉnh sửa để lấy các điểm mới, và những điểm này sẽ được dùng làm điểm đầu và cuối của đoạn thẳng sau chỉnh sửa.</p>
+
+<p><img src="media/wps23.JPG" alt="" /><img src="media/wps24.JPG" alt="img" /></p>
+
+<p><imgnote>(a) Ảnh gốc</imgnote> <imgnote>(b) Ảnh sau chỉnh song song</imgnote></p>
+
+<p><img src="media/wps27.JPG" alt="" /></p>
+
+<p><imgnote>Quy trình chỉnh song song</imgnote></p>
+
+<p>**Chỉnh vuông góc:** Tính góc giữa đường tham chiếu và đường được chọn, chuẩn hóa vào khoảng (-90°, 90°). Khi hiệu số giữa góc này và 90° nằm trong phạm vi độ lệch góc cho phép, sử dụng trung điểm giữa điểm đầu và cuối của đoạn kết quả làm điểm đi qua của đường chỉnh sửa, đồng thời lấy góc lệch 90° của đường tham chiếu làm độ nghiêng để xác định đường mới. Sau đó, các điểm đầu và cuối ban đầu được chiếu lên đường mới để lấy điểm mới và tạo đoạn thẳng sau chỉnh sửa.</p>
+
+<p><img src="media/wps25.JPG" alt="" /><img src="media/wps26.JPG" alt="img" /></p>
+
+<p><imgnote>(a) Ảnh gốc</imgnote> <imgnote>(b) Ảnh sau chỉnh vuông góc</imgnote></p>
+
+<p><img src="media/wps28.JPG" alt="" /></p>
+
+<p><imgnote>Quy trình chỉnh vuông góc</imgnote></p>
+
+<h4>Thiết lập ngưỡng giới hạn trên/dưới cho kết quả</h4>
+
+<p>Công cụ tìm đường hỗ trợ chức năng đánh giá kết quả phát hiện (bao gồm: trọng tâm của đường, góc tuyệt đối của đường thẳng, góc thay đổi của đường thẳng). Người dùng có thể bật hoặc tắt các mục đánh giá tương ứng. Khi kết quả vượt quá ngưỡng thiết lập, công cụ sẽ coi quá trình xử lý là thất bại. Người dùng có thể xử lý tiếp theo dựa trên kết quả công cụ tại thời điểm đó. Như minh họa ở Hình 8.</p>
+
+<p><img src="media/GcFindLineTool_4_3.png" alt="" /></p>
+
+<p><imgnote>Hình 8: Đánh giá kết quả của công cụ tìm đường</imgnote></p>
+
+<h2>5. Các vấn đề thường gặp</h2>
+
+<table>
+<thead>
+<tr>
+<th>Mô tả hiện tượng</th>
+<th>Phương pháp giải quyết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Không thể đặt mặt nạ cho ROI tìm đường</td>
+<td>Kiểm tra tham số “Chế độ mặt nạ” trong thanh thuộc tính đã chọn “Có” hay chưa. Chỉ khi chọn “Có” mới có thể đặt mặt nạ.</td>
+</tr>
+<tr>
+<td>Không thể thiết lập tham số thước cặp cho ROI tìm đường</td>
+<td>Kiểm tra tham số “Chế độ thủ công” trong thanh thuộc tính đã chọn “Có” hay chưa. Chỉ khi chọn “Có” mới có thể thiết lập tham số thước cặp.</td>
+</tr>
+<tr>
+<td>Tìm đường thất bại</td>
+<td>
+1. Tìm kiếm thất bại. Có thể căn cứ vào thông báo lỗi trong cửa sổ đầu ra để điều chỉnh các tham số như ngưỡng độ tương phản, tỷ lệ điểm ngoại lai, chế độ kiểm tra lại, v.v.<br />
+2. Đánh giá thất bại. Ngưỡng trên/dưới của các giá trị đánh giá như trọng tâm, góc tuyệt đối của đường thẳng, góc thay đổi của đường thẳng không hợp lý, có thể điều chỉnh lại theo tình hình thực tế.
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. Giải thích tham số</h2>
+
+<h3>Tham số đầu vào</h3>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số                                              </th>
+<th> Mô tả tham số </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh đầu vào                                               </td>
+<td> Chiều rộng, chiều cao, kích thước pixel của ảnh đầu vào, giống tham số ảnh đầu vào trong cửa sổ ảnh.     </td>
+</tr>
+<tr>
+<td> Biến đổi tuyến tính 2D                                     </td>
+<td> Biến đổi dịch chuyển, xoay, tỉ lệ của đối tượng so với mẫu. </td>
+</tr>
+<tr>
+<td> Đường thẳng tham chiếu song song/dọc                      </td>
+<td> Khi bật tham số đường thẳng tham chiếu trong cửa sổ thuộc tính và chọn “Có”, cần cấu hình tham số này.         </td>
+</tr>
+<tr>
+<td> Đường thẳng tham chiếu vị trí song song                     </td>
+<td> Khi bật tham số đường thẳng tham chiếu trong cửa sổ thuộc tính và chọn “Có”, cần cấu hình tham số này.         </td>
+</tr>
+<tr>
+<td> Vùng tìm kiếm                                             </td>
+<td> Phạm vi tìm kiếm của đối tượng trong ảnh, được thiết lập bằng trung tâm (Center), kích thước (Size) và góc xoay (Rotation). </td>
+</tr>
+<tr>
+<td> Theo dõi mục tiêu                                         </td>
+<td> Khi mục tiêu theo dõi được bật là bình thường, nó sẽ theo biến đổi tuyến tính 2D; nếu tắt thì dù liên kết biến đổi tuyến tính 2D cũng không sử dụng, có thể dùng để thiết lập vùng tìm kiếm động qua script. </td>
+</tr>
+<tr>
+<td> Chế độ cạnh                                               </td>
+<td> Chế độ cạnh của công cụ thước cặp có 2 loại: cạnh đơn và cạnh đôi. <a href="#%E8%BE%B9%E7%BC%98%E6%A8%A1%E5%BC%8F"><img src="media/link.jpg" alt="img" /></a> </td>
+</tr>
+<tr>
+<td> Cực tính cạnh                                             </td>
+<td> Cực tính cạnh chỉ hình thức chuyển đổi mức xám ở cạnh ảnh, gồm 3 loại: cực tính bất kỳ, sáng sang tối và tối sang sáng. <a href="#%E8%BE%B9%E7%BC%98%E6%9E%81%E6%80%A7"><img src="media/link.jpg" alt="img" /></a> </td>
+</tr>
+<tr>
+<td> Ngưỡng độ tương phản                                      </td>
+<td> Mặc định công cụ thước cặp chỉ dùng điểm số đánh giá độ tương phản, tức là đánh giá theo cường độ tín hiệu cạnh, xuất ra điểm cạnh mạnh nhất. Giá trị ngưỡng từ 0 đến 255. </td>
+</tr>
+<tr>
+<td> Tỷ lệ điểm ngoại lai                                      </td>
+<td> Điểm ngoại lai là điểm lệch xa khỏi đường cong. Tỷ lệ điểm ngoại lai là tỉ lệ điểm không tham gia vào việc phù hợp đường thẳng, giá trị từ 0 đến 0.5. <a href="#%E5%B1%80%E5%A4%96%E7%82%B9%E6%AF%94%E4%BE%8B"><img src="media/link.jpg" alt="img" /></a> </td>
+</tr>
+<tr>
+<td> Thuộc tính cạnh                                           </td>
+<td> Trong vùng tìm kiếm, thước cặp xác định vị trí chính xác của cạnh ảnh theo các thuộc tính cạnh khác nhau.<br />Công cụ thước cặp có 9 loại thuộc tính cạnh: cạnh tốt nhất, cạnh đầu tiên, cạnh cuối cùng, cạnh sáng nhất toàn bộ, cạnh tối nhất toàn bộ, cạnh sáng nhất bên sáng, cạnh tối nhất bên sáng, cạnh sáng nhất bên tối và cạnh tối nhất bên tối. <a href="#%E8%BE%B9%E7%BC%98%E5%B1%9E%E6%80%A7"><img src="media/link.jpg" alt="img" /></a> </td>
+</tr>
+<tr>
+<td> Bật phù hợp tối ưu toàn cục                                </td>
+<td> Có bật phù hợp tối ưu toàn cục hay không                                         </td>
+</tr>
+<tr>
+<td> Bật đánh giá lại điểm số                                 </td>
+<td> Có bật đánh giá lại điểm số hay không                                             </td>
+</tr>
+<tr>
+<td> Cho phép giảm điểm ngoại lai                             </td>
+<td> Có cho phép giảm điểm ngoại lai hay không                                           </td>
+</tr>
+<tr>
+<td> Chế độ mặt nạ                                            </td>
+<td> Cài đặt mặt nạ dùng để che đi vùng không tham gia huấn luyện mẫu, giảm các đặc trưng hình học tham gia huấn luyện mẫu. </td>
+</tr>
+<tr>
+<td> Chế độ thủ công                                          </td>
+<td> Chọn “Có” hỗ trợ thiết lập thủ công tham số thước cặp, nhấn chuột phải vào thước cặp, trong hộp thoại bật ra có thể thay đổi tham số; chọn “Không” thì không hỗ trợ thiết lập thủ công tham số thước cặp. </td>
+</tr>
+<tr>
+<td> Hiển thị kết quả thời gian thực                           </td>
+<td> Chọn “Có” để khi thay đổi tham số công cụ không cần chạy công cụ mà có thể hiển thị kết quả ngay; chọn “Không” thì sau khi thay đổi tham số phải chạy công cụ mới hiển thị kết quả tương ứng. </td>
+</tr>
+<tr>
+<td> Hiển thị điểm dò                                        </td>
+<td> Chọn “Có” để hiển thị điểm dò của thước cặp và xuất ra điểm dò, có thể dùng làm tham số đầu vào cho công cụ khác; chọn “Không” thì không hiển thị điểm dò của thước cặp. Điểm ngoại lai đánh dấu màu đỏ, các điểm khác đánh dấu màu xanh lá. </td>
+</tr>
+<tr>
+<td> Chế độ kiểm tra lại                                       </td>
+<td> Nếu tìm đường thất bại và bật tùy chọn kiểm tra lại, sẽ xuất ra đường thẳng dựa trên kết quả biến đổi mẫu của thước cặp. </td>
+</tr>
+<tr>
+<td> Bật dịch chuyển song song                                  </td>
+<td> Chọn “Có” để dịch chuyển đường thẳng kết quả theo tham số dịch chuyển song song. <a href="#%E5%BC%80%E5%90%AF%E5%B9%B3%E8%A1%8C%E5%81%8F%E7%A7%BB"><img src="media/link.jpg" alt="img" /></a> </td>
+</tr>
+<tr>
+<td> Bật đường thẳng tham chiếu                                </td>
+<td> Dùng đường thẳng tham chiếu được chỉ định để giới hạn vị trí vùng tìm kiếm hình chữ nhật affine. Chọn “Có” thì hiển thị các tham số kiểu hiệu chỉnh, ngưỡng lệch góc cho phép và khoảng cách với đường thẳng tham chiếu. Lưu ý: Khi khoảng cách đường thẳng tham chiếu là 0.000000 tương đương không bật đường thẳng tham chiếu. </td>
+</tr>
+<tr>
+<td> Loại hiệu chỉnh                                           </td>
+<td> Loại hiệu chỉnh có 2 loại: song song và vuông góc.                                </td>
+</tr>
+<tr>
+<td> Ngưỡng lệch góc cho phép của tham chiếu                   </td>
+<td> Ngưỡng lệch góc cho phép của đường thẳng, nếu lệch vượt ngưỡng sẽ hiệu chỉnh theo góc đường thẳng tham chiếu. </td>
+</tr>
+<tr>
+<td> Khoảng cách với đường thẳng tham chiếu                    </td>
+<td> Khoảng cách đến đường thẳng tham chiếu. Giá trị âm là bên trái hoặc trên; giá trị dương là bên phải hoặc dưới.   </td>
+</tr>
+<tr>
+<td> Bán kính lọc                                             </td>
+<td> Công cụ thước cặp thực hiện lọc cạnh ảnh, bán kính bộ lọc ảnh hưởng đến độ sắc nét cạnh ảnh. Độ sắc nét càng cao thì bán kính bộ lọc càng nhỏ. Giá trị từ 1 đến vô cùng. </td>
+</tr>
+<tr>
+<td> Chuẩn hóa góc                                            </td>
+<td> Chuẩn hóa góc là biến đổi góc đường thẳng kết quả để giới hạn trong khoảng nhất định. Có 4 kiểu chuẩn hóa: [-90°, 90°), [-180°, 180°), [0°, 180°) và [0°, 360°). </td>
+</tr>
+<tr>
+<td> Giới hạn trên tọa độ tâm khối X                            </td>
+<td> Ngưỡng giới hạn trên của tọa độ tâm khối X kết quả đo, phạm vi [0,999999.999999], ngưỡng dưới phải nhỏ hơn hoặc bằng ngưỡng trên. </td>
+</tr>
+<tr>
+<td> Giới hạn dưới tọa độ tâm khối X                            </td>
+<td> Ngưỡng giới hạn dưới của tọa độ tâm khối X kết quả đo, phạm vi [0,999999.999999], ngưỡng dưới phải nhỏ hơn hoặc bằng ngưỡng trên. <a href="#%E8%AE%BE%E7%BD%AE%E7%BB%93%E6%9E%9C%E4%B8%8A%E4%B8%8B%E9%99%90%E9%98%88%E5%80%BC"><img src="media/link.jpg" alt="img" /></a> </td>
+</tr>
+<tr>
+<td> Giới hạn trên tọa độ tâm khối Y                            </td>
+<td> Ngưỡng giới hạn trên của tọa độ tâm khối Y kết quả đo, phạm vi [0,999999.999999], ngưỡng dưới phải nhỏ hơn hoặc bằng ngưỡng trên. </td>
+</tr>
+<tr>
+<td> Giới hạn dưới tọa độ tâm khối Y                            </td>
+<td> Ngưỡng giới hạn dưới của tọa độ tâm khối Y kết quả đo, phạm vi [0,999999.999999], ngưỡng dưới phải nhỏ hơn hoặc bằng ngưỡng trên. </td>
+</tr>
+<tr>
+<td> Giới hạn trên góc tuyệt đối của đường thẳng                </td>
+<td> Ngưỡng giới hạn trên của góc tuyệt đối đường thẳng kết quả đo, phạm vi [-180.0, 360.0), ngưỡng dưới phải nhỏ hơn hoặc bằng ngưỡng trên. </td>
+</tr>
+<tr>
+<td> Giới hạn dưới góc tuyệt đối của đường thẳng                </td>
+<td> Ngưỡng giới hạn dưới của góc tuyệt đối đường thẳng kết quả đo, phạm vi [-180.0, 360.0), ngưỡng dưới phải nhỏ hơn hoặc bằng ngưỡng trên. </td>
+</tr>
+<tr>
+<td> Giới hạn trên góc biến đổi của đường thẳng                  </td>
+<td> Ngưỡng giới hạn trên của góc biến đổi đường thẳng kết quả đo, phạm vi [-90.0, 90.0), ngưỡng dưới phải nhỏ hơn hoặc bằng ngưỡng trên. </td>
+</tr>
+<tr>
+<td> Giới hạn dưới góc biến đổi của đường thẳng                  </td>
+<td> Ngưỡng giới hạn dưới của góc biến đổi đường thẳng kết quả đo, phạm vi [-90.0, 90.0), ngưỡng dưới phải nhỏ hơn hoặc bằng ngưỡng trên. </td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>Tham số đầu ra</h3>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số                                                 </th>
+<th> Mô tả tham số </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh đầu vào                                                     </td>
+<td> Chiều rộng, chiều cao, kích thước điểm ảnh của ảnh đầu ra.                           </td>
+</tr>
+<tr>
+<td> Kết quả đường thẳng         </td>
+<td> Tọa độ các điểm trên đường thẳng, vector hướng và góc quay.               </td>
+</tr>
+<tr>
+<td> Kết quả đoạn thẳng         </td>
+<td> Tọa độ điểm bắt đầu và điểm kết thúc của đoạn thẳng.                               </td>
+</tr>
+<tr>
+<td> Góc tuyệt đối đường thẳng     </td>
+<td> Góc của đường thẳng được xuất ra.                                             </td>
+</tr>
+<tr>
+<td> Góc biến đổi đường thẳng     </td>
+<td> Góc biến đổi của đường thẳng so với chuẩn mốc.                               </td>
+</tr>
+<tr>
+<td> Kết quả đường thẳng dịch song song </td>
+<td> Tọa độ điểm bắt đầu và vector hướng của đường thẳng dịch song song.                         </td>
+</tr>
+<tr>
+<td> Kết quả đoạn thẳng dịch song song </td>
+<td> Tọa độ điểm bắt đầu và điểm kết thúc của đoạn thẳng dịch song song.                       </td>
+</tr>
+<tr>
+<td> Kết quả thực thi         </td>
+<td> Kết quả thực thi công cụ.                                               </td>
+</tr>
+<tr>
+<td> Thời gian thực thi         </td>
+<td> Thời gian thực thi công cụ.                                               </td>
+</tr>
+</tbody>
+</table>
+
+<h2>7. Ví dụ dự án</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

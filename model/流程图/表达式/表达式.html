@@ -1,0 +1,85 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Biểu thức</h1>
+
+<p>Biểu thức được dùng trong lưu đồ để thực hiện các phép toán logic hoặc gán biến, đóng vai trò rất quan trọng trong quá trình chạy lưu đồ.</p>
+
+<ul>
+<li><p>Thêm biểu thức:</p></li>
+<li><p>Dòng điều khiển: trực tiếp nhấp đúp vào đường link trong dòng điều khiển để thêm, ví dụ như nhánh hội tụ, nhấp đúp vào vị trí bắt đầu của đường link mũi tên đỏ trong hình dưới đây, sẽ hiện ra hộp thoại chỉnh sửa biểu thức; hỗ trợ xử lý hàng loạt điều kiện nhánh trong giao diện chỉnh sửa điều kiện nhánh, trước khi hoàn thành điều kiện nhánh hiện tại không thể chọn để thiết lập nhánh khác. Hỗ trợ đặt tên cho điều kiện nhánh, ví dụ nhánh “Thu thập hình ảnh”.</p></li>
+</ul>
+
+<p><img src="media/Expression_1_1.png" alt="" /></p>
+
+<ul>
+<li><p>Công cụ tính toán biểu thức: trong lưu đồ nhấp chuột phải, chọn “Thêm mới - Điều khiển - Tính toán biểu thức”, thêm công cụ tính toán biểu thức, nhấp đúp công cụ để chỉnh sửa biểu thức;</p></li>
+<li><p>Loại biểu thức: biểu thức gán, biểu thức số học, biểu thức logic;</p></li>
+<li><p>Thành phần biểu thức: gồm toán hạng và toán tử;</p></li>
+<li><p>Toán hạng:</p>
+
+<ul>
+<li><p>Đến từ biến: nhập # sẽ tìm kiếm tất cả biến cục bộ; nhập @ sẽ tìm kiếm tất cả biến toàn cục;</p></li>
+<li><p>Đến từ tham số công cụ hoặc kết quả thực thi: nhập số hiệu hoặc tên công cụ, sẽ tìm ra các tham số hoặc kết quả thực thi có thể dùng của công cụ đó;</p></li>
+</ul>
+</li>
+<li><p>Toán tử:</p></li>
+<li><p>Logic và (A&amp;&amp;B), logic hoặc (A||B), logic phủ định (!A);</p></li>
+<li><p>Bằng (A==B), khác (A!=B), lớn hơn (A>B), nhỏ hơn (A&lt;B), lớn hơn hoặc bằng (A>=B), nhỏ hơn hoặc bằng (A&lt;=B);</p></li>
+<li><p>Cộng (A+B), trừ (A-B), nhân (A*B), chia (A/B), chia lấy dư (A%B);</p></li>
+<li><p>Gán (A=B);</p></li>
+<li><p>Dấu âm (-A).</p></li>
+<li><p>Ưu tiên của toán tử (từ trên xuống dưới, ưu tiên giảm dần):</p>
+
+<blockquote><ol>
+<li>()</li>
+<li>!, - (dấu âm)</li>
+<li>*, /, %</li>
+<li>+, -</li>
+<li>&lt;, &lt;=, >, >=</li>
+<li>==, !=</li>
+<li>&amp;, ^, |</li>
+<li>&amp;&amp;, ||</li>
+<li>= (gán)</li>
+</ol>
+</blockquote></li>
+<li><p>Chuyển đổi kiểu dữ liệu</p>
+
+<ul>
+<li><p>Biểu thức hỗ trợ chuyển đổi ngầm giữa các kiểu dữ liệu double, float, long, int, short, char, v.v.;</p></li>
+<li><p>Quy tắc chuyển đổi ngầm</p>
+
+<p>1. Trong biểu thức gán, toán hạng bên phải sẽ được chuyển sang kiểu dữ liệu của toán hạng bên trái. Nếu chuyển từ kiểu cao cấp sang thấp cấp sẽ có mất mát độ chính xác hoặc cắt bớt, nên tránh sử dụng trong thực tế.</p>
+
+<p>2. Trong biểu thức số học, nếu có một toán hạng là kiểu double, các toán hạng còn lại sẽ được chuyển sang kiểu double.</p>
+
+<p>3. Trong biểu thức số học nếu không có toán hạng kiểu double mà có một toán hạng kiểu float, các toán hạng còn lại sẽ được chuyển sang kiểu float.</p>
+
+<p>4. Trong biểu thức số học hỗn hợp kiểu, các kiểu short và char sẽ được nâng lên kiểu int.</p></li>
+</ul>
+</li>
+<li><p>Khác</p>
+
+<ul>
+<li><p>Hoàn thiện toán hạng: khi dùng từ khóa tìm kiếm toán hạng, có thể dùng phím Tab để hoàn thiện kết quả tìm kiếm, tự động điền vào hộp chỉnh sửa biểu thức;</p></li>
+<li><p>Chọn và điền toán hạng: nhấp chuột để chọn; nhấp đúp để điền vào hộp chỉnh sửa biểu thức;</p></li>
+<li><p>Duyệt toán hạng: có thể kéo thanh cuộn bên phải hoặc dùng phím mũi tên lên xuống trên bàn phím để duyệt;</p></li>
+<li><p>Lưu và thoát: nhấp “Xác nhận” hoặc nhấn phím Enter trên bàn phím;</p></li>
+</ul>
+</li>
+</ul>

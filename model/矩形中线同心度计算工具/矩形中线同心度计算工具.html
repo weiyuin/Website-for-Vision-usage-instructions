@@ -1,0 +1,246 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>矩形中线同心度计算工具</h1>
+
+<h1>矩形同心度计算工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     通过外矩形的四条边以及内矩形的四条边分别计算出外矩形的中心点以及内矩形的中心点，并通过这两个中心点计算出同心度。</p>
+
+<p><img src="media/GcRectConcentricityCLTool_1_1.png" alt="img" /></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     常应用于矩形内外框合规性检测。</p>
+
+<h2>3. 原理说明</h2>
+
+<p><img src="media/GcRectConcentricityCLTool_3_1.png" alt="img" /></p>
+
+<p><imgnote>图1 矩形中线同心度计算工具示意图</imgnote></p>
+
+<p>同心度X = (外矩形同心度的X坐标) – (内矩形同心度的X坐标)；</p>
+
+<p>同心度Y = (外矩形同心度的Y坐标) – (内矩形同心度的Y坐标)；</p>
+
+<p>同心度=<img src="/media/GcRectConcentricityCLTool_3_2.png" alt="img" /></p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcRectConcentricityCLTool_4_1.png" alt="img" /></p>
+
+<ul>
+<li><h4>定同心度上限/下限等</h4></li>
+</ul>
+
+
+<p><img src="media/GcRectConcentricityCLTool_4_2.png" alt="img" /></p>
+
+<p><strong>同心度上限、同心度下限</strong></p>
+
+<p>对于输出参数<a href="#%E5%90%8C%E5%BF%83%E5%BA%A6">同心度</a>的有效范围进行设定，距离值上限、距离值下限的可取值范围为[0, 999999.999999]，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对<a href="#%E5%90%8C%E5%BF%83%E5%BA%A6">同心度</a>上限或下限不进行限定。</p>
+
+<p>使用距离值上限或/和距离值下限对<a href="#%E5%90%8C%E5%BF%83%E5%BA%A6">同心度</a>数值的有效范围进行设定后，执行此测量工具。</p>
+
+<p>当输出结果<a href="#%E5%90%8C%E5%BF%83%E5%BA%A6">同心度</a>在设定的有效范围内时，显示工具执行成功；否则，显示工具执行失败。</p>
+
+<p><strong>同心度X上限、同心度X下限</strong></p>
+
+<p>针对<a href="#%E5%90%8C%E5%BF%83%E5%BA%A6X">同心度X</a>有效范围限定，可取值范围为[-999999.999999, 999999.999999]</p>
+
+<p>其他与同心度上/下限原理及设置方式相同。</p>
+
+<p><strong>同心度Y上限、同心度Y下限</strong></p>
+
+<p>针对<a href="#%E5%90%8C%E5%BF%83%E5%BA%A6Y">同心度Y</a>有效范围限定，可取值范围为[-999999.999999, 999999.999999]</p>
+
+<p>其他与同心度上/下限原理及设置方式相同。</p>
+
+<ul>
+<li><h4>查看结果</h4></li>
+</ul>
+
+
+<p><img src="media/GcRectConcentricityCLTool_4_3.png" alt="img" /></p>
+
+<p><img src="media/GcRectConcentricityCLTool_4_4.png" alt="img" /></p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入可以是找线工具的线段结果，输出的同心度结果是double类型。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称    </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 外矩形上边         </td>
+<td> 外边框矩形的上边。                 </td>
+</tr>
+<tr>
+<td> 外矩形右边 </td>
+<td> 外边框矩形的右边。                                     </td>
+</tr>
+<tr>
+<td> 外矩形下边 </td>
+<td> 外边框矩形的下边。                                     </td>
+</tr>
+<tr>
+<td> 外矩形左边 </td>
+<td> 外边框矩形的左边。                                     </td>
+</tr>
+<tr>
+<td> 内矩形上边 </td>
+<td> 内边框矩形的上边。                                     </td>
+</tr>
+<tr>
+<td> 内矩形右边 </td>
+<td> 内边框矩形的右边。                                     </td>
+</tr>
+<tr>
+<td> 内矩形下边 </td>
+<td> 内边框矩形的下边。                                     </td>
+</tr>
+<tr>
+<td> 内矩形左边 </td>
+<td> 内边框矩形的左边。                                     </td>
+</tr>
+<tr>
+<td> 像素当量 </td>
+<td> 图片上一个像素代表实际尺寸的大小（mm/px）。 </td>
+</tr>
+<tr>
+<td> 同心度X上限 </td>
+<td> 取值范围[-999999.999999,999999.999999]，输出参数同心度X的上限阈值。 </td>
+</tr>
+<tr>
+<td> 同心度X下限 </td>
+<td> 取值范围[-999999.999999,999999.999999]，输出参数同心度X的下限阈值。 </td>
+</tr>
+<tr>
+<td> 同心度Y上限 </td>
+<td> 取值范围[-999999.999999,999999.999999]，输出参数同心度Y的上限阈值。 </td>
+</tr>
+<tr>
+<td> 同心度Y下限 </td>
+<td> 取值范围[-999999.999999,999999.999999]，输出参数同心度Y的下限阈值。 </td>
+</tr>
+<tr>
+<td> 同心度上限  </td>
+<td> 取值范围[0,999999.999999]，输出参数同心度的上限阈值。        </td>
+</tr>
+<tr>
+<td> 同心度下限  </td>
+<td> 取值范围[0,999999.999999]，输出参数同心度的下限阈值。        </td>
+</tr>
+<tr>
+<td> 高级界面    </td>
+<td> 无                                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 外矩形垂直中线                                               </td>
+<td> 过外边框矩形的中心点并且平行于外矩形左边线或右边线的直线。   </td>
+</tr>
+<tr>
+<td> 外矩形水平中线 </td>
+<td> 过外边框矩形的中心点并且平行于外矩形上边线或下边线的直线。                                                                 </td>
+</tr>
+<tr>
+<td> 内矩形垂直中线 </td>
+<td> 过内边框矩形的中心点并且平行于内矩形左边线或右边线的直线。                                                                 </td>
+</tr>
+<tr>
+<td> 内矩形水平中线 </td>
+<td> 过内边框矩形的中心点并且平行于内矩形上边线或下边线的直线。                                                                 </td>
+</tr>
+<tr>
+<td> 同心度X </td>
+<td> 外矩形中心点与内矩形中心点在X轴方向上的距离偏差。                                                                          </td>
+</tr>
+<tr>
+<td> 同心度Y </td>
+<td> 外矩形中心点与内矩形中心点在Y轴方向上的距离偏差。                                                                          </td>
+</tr>
+<tr>
+<td> 同心度  </td>
+<td> 外矩形中心点与内矩形中心点的距离偏差。                                                                                     </td>
+</tr>
+<tr>
+<td> 外矩形中心点   </td>
+<td> 外边框矩形的中心点。                                                                                                       </td>
+</tr>
+<tr>
+<td> 内矩形中心点   </td>
+<td> 内边框矩形的中心点。                                                                                                       </td>
+</tr>
+<tr>
+<td> 执行结果       </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td> 执行时间       </td>
+<td> 工具执行时间。                                    </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\同心度计算.gvp”。</p>

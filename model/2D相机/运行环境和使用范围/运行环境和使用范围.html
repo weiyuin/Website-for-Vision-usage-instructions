@@ -1,0 +1,352 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h2>运行环境和使用范围</h2>
+
+<h3>1.1 相机支持列表</h3>
+
+<p>详细信息可以参考：<strong>附录/支持2D相机列表</strong>。这里截取部分以示说明</p>
+
+<p><strong>2D相机</strong></p>
+
+<table>
+<thead>
+<tr>
+<th> 相机厂商            </th>
+<th> 型号                        </th>
+<th> 支持方式         </th>
+<th> 分辨率        </th>
+<th> 黑白/彩色  </th>
+<th> 帧率     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> LUSTER              </td>
+<td> LBAS-GE/10GE系列LBAS-U3系列 </td>
+<td> SDK              </td>
+<td> 0.3-65M       </td>
+<td> Mono/Color </td>
+<td> NA       </td>
+</tr>
+<tr>
+<td> LUSTER              </td>
+<td> LBAS-GExx-02系列            </td>
+<td> SDK              </td>
+<td> 5M/12M/25M    </td>
+<td> Mono/Color </td>
+<td> NA       </td>
+</tr>
+<tr>
+<td> LUSTER              </td>
+<td> MO60                        </td>
+<td> CameraLink SDK   </td>
+<td> 12000 x 5000  </td>
+<td> Mono       </td>
+<td> 4.9 fps  </td>
+</tr>
+<tr>
+<td> Basler              </td>
+<td> acA2500-14gm                </td>
+<td> SDK              </td>
+<td> 2592 x 1944   </td>
+<td> Mono       </td>
+<td> 14 fps   </td>
+</tr>
+<tr>
+<td> Basler              </td>
+<td> acA3800-10gc                </td>
+<td> SDK              </td>
+<td> 3840 x 2748   </td>
+<td> Color      </td>
+<td> 10 fps   </td>
+</tr>
+<tr>
+<td> Basler              </td>
+<td> a2A4504-5gm                 </td>
+<td> SDK              </td>
+<td> 4504 x 4504   </td>
+<td> Mono       </td>
+<td> 5 fps    </td>
+</tr>
+<tr>
+<td> COGNEX              </td>
+<td> CAM-CIC-5000-24-G           </td>
+<td> GigE Vision      </td>
+<td> 2448 X 2048   </td>
+<td> Mono       </td>
+<td> 24 fps   </td>
+</tr>
+<tr>
+<td> COGNEX              </td>
+<td> CAM-CIC-5000R-14-G          </td>
+<td> GigE Vision      </td>
+<td> 2592 X 1944   </td>
+<td> Color      </td>
+<td> 14 fps   </td>
+</tr>
+<tr>
+<td> AVT                 </td>
+<td> Mako G-503B                 </td>
+<td> GigE Vision      </td>
+<td> 2592 x 1944   </td>
+<td> Mono       </td>
+<td> 14 fps   </td>
+</tr>
+<tr>
+<td> AVT                 </td>
+<td> Manta G-895B ASG            </td>
+<td> GigE Vision      </td>
+<td> 4112 x 2176   </td>
+<td> Mono       </td>
+<td> 13.4 fps </td>
+</tr>
+<tr>
+<td> AVT                 </td>
+<td> Stingray F-504B             </td>
+<td> SDK              </td>
+<td> 2452 x 2056   </td>
+<td> Mono       </td>
+<td> 9 fps    </td>
+</tr>
+<tr>
+<td> AVT                 </td>
+<td> Guppy PRO F-125C            </td>
+<td> SDK              </td>
+<td> 1292 x 964    </td>
+<td> Color      </td>
+<td> 31 fps   </td>
+</tr>
+<tr>
+<td> HIKROBOT            </td>
+<td> MV-CA003-20GC               </td>
+<td> SDK              </td>
+<td> 672 X 512     </td>
+<td> Color      </td>
+<td> 20 fps   </td>
+</tr>
+<tr>
+<td> Dahua               </td>
+<td> A5B51MG4                    </td>
+<td> SDK              </td>
+<td> 5120 x 5120   </td>
+<td> Mono       </td>
+<td> 4 fps    </td>
+</tr>
+<tr>
+<td> Dahua               </td>
+<td> A5B57MG200                  </td>
+<td> SDK              </td>
+<td> 5120 x 5120   </td>
+<td> Mono       </td>
+<td> 4 fps    </td>
+</tr>
+<tr>
+<td> Dahua               </td>
+<td> AX7Q00MK470                 </td>
+<td> CameraLink SDK   </td>
+<td> 14160 x 10640 </td>
+<td> Mono       </td>
+<td> 5 fps    </td>
+</tr>
+<tr>
+<td> Daheng              </td>
+<td> MER-500-14GM                </td>
+<td> GigE Vision      </td>
+<td> 2592 x 1944   </td>
+<td> Mono       </td>
+<td> 14 fps   </td>
+</tr>
+<tr>
+<td> FLIR                </td>
+<td> BFLY-PGE-50A2M-CS           </td>
+<td> SDK              </td>
+<td> 2592 x 1944   </td>
+<td> Mono       </td>
+<td> 13 fps   </td>
+</tr>
+<tr>
+<td> FLIR                </td>
+<td> BFLY-PGE-13S2M-CS           </td>
+<td> SDK              </td>
+<td> 1288 x 964    </td>
+<td> Mono       </td>
+<td> 30 fps   </td>
+</tr>
+<tr>
+<td> FLIR                </td>
+<td> BFLY-PGE-50H5M-C            </td>
+<td> SDK              </td>
+<td> 2448 x 2048   </td>
+<td> Mono       </td>
+<td> 8 fps    </td>
+</tr>
+<tr>
+<td> FLIR                </td>
+<td> BFLY-PGE-20E4M-CS           </td>
+<td> SDK              </td>
+<td> 1600 x 1200   </td>
+<td> Mono       </td>
+<td> 47 fps   </td>
+</tr>
+<tr>
+<td> FLIR                </td>
+<td> FL3-GE-50S5M-CS             </td>
+<td> SDK              </td>
+<td> 2448 x 2048   </td>
+<td> Mono       </td>
+<td> 8 fps    </td>
+</tr>
+<tr>
+<td> Imperx              </td>
+<td> GEV-B6620M-TF097            </td>
+<td> SDK              </td>
+<td> 6576 x 4384   </td>
+<td> Mono       </td>
+<td> 2.4 fps  </td>
+</tr>
+<tr>
+<td> The Imageing Source </td>
+<td> DMK 33GJ003e                </td>
+<td> GigE Vision      </td>
+<td> 3856 x 2764   </td>
+<td> Mono       </td>
+<td> 11 fps   </td>
+</tr>
+<tr>
+<td> Illunis             </td>
+<td> RMOD-71-TEC Mono CL         </td>
+<td> CameraLink SDK   </td>
+<td> 10000 x 7094  </td>
+<td> Mono       </td>
+<td> 4.2 fps  </td>
+</tr>
+<tr>
+<td> Illunis             </td>
+<td> CMV-120 Mono CL             </td>
+<td> CameraLink SDK   </td>
+<td> 13272 x 9176  </td>
+<td> Mono       </td>
+<td> 5.5 fps  </td>
+</tr>
+<tr>
+<td> Teledyne Dalsa      </td>
+<td> Nano G3-GC10-C1280          </td>
+<td> GigE Vision      </td>
+<td> 1280 x 1024   </td>
+<td> Color      </td>
+<td> 72 fps   </td>
+</tr>
+<tr>
+<td> LUSTER              </td>
+<td> SF6000-CL08K-90M-00         </td>
+<td> CameraLink SDK   </td>
+<td> 8K            </td>
+<td> Mono       </td>
+<td> 90KHz    </td>
+</tr>
+<tr>
+<td> Teledyne Dalsa      </td>
+<td> LA-CM-16K07A                </td>
+<td> CameraLink SDK   </td>
+<td> 16K           </td>
+<td> Mono       </td>
+<td> 71KHz    </td>
+</tr>
+<tr>
+<td> Teledyne Dalsa      </td>
+<td> LA-CM-08K08A                </td>
+<td> CameraLink SDK   </td>
+<td> 8K            </td>
+<td> Mono       </td>
+<td> 80KHz    </td>
+</tr>
+<tr>
+<td> Teledyne Dalsa      </td>
+<td> P4-CM-08K070                </td>
+<td> CameraLink SDK   </td>
+<td> 8k            </td>
+<td> Mono       </td>
+<td> 70KHz    </td>
+</tr>
+<tr>
+<td> Teledyne Dalsa      </td>
+<td> LA-GM-04K08A                </td>
+<td> CameraLink SDK   </td>
+<td> 4k            </td>
+<td> Mono       </td>
+<td> 80KHz    </td>
+</tr>
+<tr>
+<td> Teledyne Dalsa      </td>
+<td> ML-HM-16K30H                </td>
+<td> CameraLinkHS SDK </td>
+<td> 16k           </td>
+<td> Mono       </td>
+<td> 300KHz   </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>采集卡</strong></p>
+
+<table>
+<thead>
+<tr>
+<th> Teledyne Dalsa </th>
+<th> Xtium2-CLHS_PX8 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Teledyne Dalsa </td>
+<td> Xcelera-CL_PX4  </td>
+</tr>
+<tr>
+<td> Teledyne Dalsa </td>
+<td> Xtium-CLHS_PX8  </td>
+</tr>
+<tr>
+<td> Teledyne Dalsa </td>
+<td> Xtium-CL_MX4    </td>
+</tr>
+</tbody>
+</table>
+
+
+<blockquote><p><span style="color:red"><strong>说明</strong></span></p>
+
+<p>若待使用的相机未在支持清单中，请按照现场实际使用状况将相同数量的相机、电源线、网线等> 成套寄回北京测试部，进行验证。</p></blockquote>
+
+<h3>1.2 相机驱动</h3>
+
+<p>目前VISIONAssembly（后文简称VA）软件中支持了各个厂商的相机，下文将对各种相机的兼容情况做以下说明。</p>
+
+<p>VA软件中现在支持的相机种类如图所示，目前各个厂商的相机主要是支持网口类型的部分型号相机，其中Teledyne Dalsa还支持CameraLink接口的部分型号（大面阵）相机：</p>
+
+<p><img src="media/1.2.jpg" alt="" /></p>
+
+<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
+
+<ul>
+<li><p>支持方式为SDK的相机，如LBAS、Basler、Imperx等需要安装相对应的相机驱动；</p></li>
+<li><p>支持方式为GigEVision协议的相机，如AVT、Cognex、大华、大恒、映美精、Teledyne Dalsa相机，不强制要求安装相机自带驱动，若有查看/修改参数的需求，可以使用LusterCamViewer软件（免安装），现在已经给出定制版在实验局验证VISIONKit，待验证通过后会转到各个主版本中。</p></li>
+<li>LBAS CAPTURE3.1对应VA的版本是6.2.153之前，LBAS CAPTURE3.2对应的是6.2.153到6.3.200.255，LBAS CAPTURE3.3对应6.3.200.255以后版本。</li>
+</ul>
+</blockquote>

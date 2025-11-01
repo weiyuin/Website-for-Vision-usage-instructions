@@ -1,0 +1,138 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>轮廓点转空间点工具</h1>
+
+<h2>功能</h2>
+
+<p>根据输入的深度图像、轮廓图像以及向量ROI，计算轮廓点在深度图上的对应点坐标。即将二维坐标转为三维空间点，用于后续的点云测量等点云量测类工具中。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 无                                                           </td>
+<td> 无                                                       </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 无                                                           </td>
+<td> 无                                                       </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入深度图像                                                 </td>
+<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入轮廓图像 </td>
+<td> 输入待检测的轮廓图像的轮廓数据，该参数来源于截面生成工具的输出轮廓数据参数。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入向量ROI  </td>
+<td> 该参数来源于截面生成工具的向量交互ROI属性参数。                                                                        </td>
+</tr>
+<tr>
+<td></td>
+<td> 输入轮廓点 </td>
+<td> 输入轮廓图像中获取到的轮廓点坐标，该参数来源于轮廓位置测量工具的输出特征点坐标参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否清空数据 </td>
+<td> 每次计算时三维空间点数组结果清空。                           </td>
+</tr>
+<tr>
+<td> 高级界面     </td>
+<td> 无                                                           </td>
+<td> 无                                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称       </th>
+<th> 参数描述（参数的含义）                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口       </td>
+<td> 三维空间点                   </td>
+<td> 转换后的三维空间点坐标。                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 三维空间点数组 </td>
+<td> 转换后的三维空间点坐标数组。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果       </td>
+<td> 工具执行结果。                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间       </td>
+<td> 工具执行时间。                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口       </td>
+<td> 执行结果                     </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链         </td>
+<td> 无                           </td>
+<td> 无                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>“轮廓点转空间点工具”的输出结果<strong>“</strong>三维空间点<strong>”</strong>可以使用脚本工具GvTool.GetToolData得到并转出。具体参见“轮廓点转空间点.gvp”例程。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\轮廓点转空间点.gvp”。</p>

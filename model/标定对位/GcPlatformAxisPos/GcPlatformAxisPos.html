@@ -1,0 +1,111 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GcPlatformAxisPos</h1>
+
+<h2>功能</h2>
+
+<p>表示机械轴位置，例如轴位置生成工具的输出，图像到平台坐标转换工具可能使用到的平台轴位置、相机轴位置，标定结果中的交互步长都是该类型。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th> 分类 </th>
+<th> 接口名称 </th>
+<th> 接口描述                                                     </th>
+<th>                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造     </td>
+<td> GcPlatformAxisPos                  </td>
+<td> GcPlatformAxisPos()默认构造函数，XYD初始化为0.0  </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> GcPlatformAxisPos </td>
+<td> GcPlatformAxisPos (double,double,double)构造函数 </td>
+<td></td>
+</tr>
+<tr>
+<td> 属性     </td>
+<td> X                                                 </td>
+<td> X轴坐标                                          </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> Y                                                 </td>
+<td> Y轴坐标                                          </td>
+<td></td>
+</tr>
+<tr>
+<td>          </td>
+<td> D                                                 </td>
+<td> 旋转轴坐标                                       </td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>GcPlatformAxisPos( )</h3>
+
+<ul>
+<li><p>功能：构造GcPlatformPos对象。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>GcPlatformAxisPos( double dPosX, double dPosY, double dAngle )</h3>
+
+<ul>
+<li><p>功能：构造GcPlatformPos对象。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>dPosX：X轴坐标</p></li>
+<li><p>dPosY：Y轴坐标</p></li>
+<li><p>dAngle：旋转轴坐标，表示角度</p></li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>X/Y/D</h3>
+
+<ul>
+<li>功能：X轴坐标/Y轴坐标/旋转轴坐标。浮点型，可读写。</li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

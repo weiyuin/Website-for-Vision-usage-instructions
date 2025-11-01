@@ -1,0 +1,148 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ định dạng chuỗi</h1>
+
+<h2>Chức năng</h2>
+
+<p>Công cụ này thực hiện định dạng chuỗi đầu vào theo một yêu cầu định dạng nhất định.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Định dạng chuỗi</td>
+<td>Nhập chuỗi định dạng cụ thể. <a href="#%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F"><img src="media/wps4.jpg" alt="img" /></a></td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Dữ liệu</td>
+<td>Dữ liệu đầu vào cần được định dạng.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả định dạng</td>
+<td>Kết quả sau khi định dạng chuỗi.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Kết quả định dạng</td>
+<td>Xuất ra kết quả định dạng, dùng cho các công cụ sau, giống với tham số kết quả định dạng trong cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>Định dạng chuỗi</h3>
+
+<p>Chuỗi định dạng nhập vào tuân theo cấu trúc: %[flags] [width] [.precision] [h | l]type, trong đó <code>type</code> là trường bắt buộc duy nhất, các trường còn lại là tùy chọn. Mô tả chi tiết các trường xem Bảng 1 bên dưới.</p>
+
+<p>Bảng 1: Định dạng chuỗi đầu vào</p>
+
+<table>
+<thead>
+<tr>
+<th> 格式      </th>
+<th> 说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> [flags]      </td>
+<td> Điều khiển việc căn lề đầu ra và hiển thị dấu, tiền tố hệ thập lục phân. - chỉ định căn trái, mặc định là căn phải. + / - hiển thị dấu dương/âm. # sử dụng cùng với 0x, 0X để định dạng ở dạng thập lục phân. Khi nhập # thì kết quả định dạng sẽ có tiền tố thập lục phân, nếu không thì không có. Số chữ số định dạng có thể được thiết lập, phạm vi từ 0~9, ví dụ: %04x sẽ xuất ra 4 chữ số. </td>
+</tr>
+<tr>
+<td> [width]      </td>
+<td> Chỉ định độ rộng của giá trị được định dạng, phạm vi giá trị nhập vào là 0~99. </td>
+</tr>
+<tr>
+<td> [.precision] </td>
+<td> Đối với số thực, chỉ định độ chính xác, phạm vi nhập vào là 0~9. </td>
+</tr>
+<tr>
+<td> [h | l]     </td>
+<td> Chỉ định kích thước của tham số tương ứng, long hoặc double có thể thêm l, short có thể thêm h. </td>
+</tr>
+<tr>
+<td> type         </td>
+<td> Ký tự định dạng, chỉ định chuyển đổi thành ký tự, chuỗi, số nguyên hoặc số thực. Đây là trường bắt buộc duy nhất và có thể đặt sau bất kỳ trường tùy chọn nào; float: %f; double: %f/%lf; string: %s; int/bool: %d; long: %ld; short: %d/%hd; char: %c. </td>
+</tr>
+</tbody>
+</table>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>Khi công cụ định dạng chuỗi không được cấu hình tham số dữ liệu, kết quả xuất ra sẽ là chuỗi đã định dạng sẵn.</p></li>
+<li><p>Khi chuỗi được cấu hình với tham số dữ liệu, hãy sử dụng cùng với công cụ tạo gói dữ liệu.</p></li>
+</ul>
+
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\TXT文本写入工具.gvp”。</p>

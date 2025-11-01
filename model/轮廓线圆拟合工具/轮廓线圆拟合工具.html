@@ -1,0 +1,245 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>轮廓线圆拟合工具</h1>
+
+<h2>功能</h2>
+
+<p>在3D测量中，往往需要对检测区域内的轮廓数据进行直线拟合或者圆拟合，获取最佳拟合直线或者最佳拟合圆的参数。图1所示为轮廓线圆拟合工具的示意图。</p>
+
+<p><img src="media/wps107.jpg" alt="img" /> <img src="media/wps108.jpg" alt="img" /></p>
+
+<p><imgnote>图1 轮廓线圆拟合工具示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称       </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口       </td>
+<td> ROI类型                                                      </td>
+<td> 待检测区域，分为5种：整幅图像、矩形、仿射矩形、多仿射矩形、圆形。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 仿射矩形ROI个数 </td>
+<td> 仅在ROI类型为多仿射矩形时有效，用于指定仿射矩形的个数，取值范围[2,10]。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 拟合类型       </td>
+<td> 分为2种：直线拟合和圆拟合。                                                                                                </td>
+</tr>
+<tr>
+<td></td>
+<td> 拟合方法       </td>
+<td> 分为2种：效率最优和全局最优。<img src="media/wps110.jpg" alt="img" />                                                                      </td>
+</tr>
+<tr>
+<td></td>
+<td> 启用局外点     </td>
+<td> 选择“是”，则启用局外点，并显示局外点比例参数。                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 局外点比例     </td>
+<td> 局外点就是偏离曲线较远的点。局外点比例即不参与直线拟合或圆拟合的点的比例，取值范围[0,1]。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口       </td>
+<td> 轮廓图像                                                     </td>
+<td> 显示待检测的轮廓图像。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域       </td>
+<td> 显示待检测区域。                                                                                                           </td>
+</tr>
+<tr>
+<td> 数据链         </td>
+<td> 输入轮廓数据                                                 </td>
+<td> 输入待检测的轮廓图像的轮廓数据，该参数来源于截面生成工具的输出轮廓数据参数。 </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无             </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入轮廓数据                                                 </td>
+<td> 输入待检测的轮廓图像的轮廓数据，包括轮廓点数，有效点数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 直线     </td>
+<td> 直线拟合结果，包含拟合直线的位置坐标、方向向量、旋转角度等信息。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 直线集   </td>
+<td> 每一个ROI的直线拟合结果的集合。该参数主要用于轮廓面积工具的基准线参数。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 圆       </td>
+<td> 圆拟合结果，包含拟合圆的圆心、半径等信息。                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> RMS误差  </td>
+<td> 直线或圆拟合结果的RMS误差。                                                                                            </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 轮廓图像                                                     </td>
+<td> 显示待检测的轮廓图像。                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 直线/圆  </td>
+<td> 显示直线或圆的拟合结果。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 数据链   </td>
+<td> 同监视窗口参数，供后续工具使用。                                                                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>使用向导</h3>
+
+<p><strong>Step 1设置拟合类型和检测区域</strong></p>
+
+<p>对于轮廓线圆拟合工具，首先应根据需要设置拟合的类型和检测区域。其中，拟合类型有2种：直线拟合和圆拟合，检测区域有5种：整幅图像、矩形，仿射矩形，多仿射矩形，圆形。</p>
+
+<p><strong>Step 2 设置拟合方法和参数</strong></p>
+
+<p>完成拟合类型和检测区域的设置后，需要对拟合的方法和参数进行设置。这部分主要是根据实际需求，对局外点的模式，局外点的比例以及拟合方法进行设置。其中，对于直线拟合、圆拟合的各种拟合方法的性能及应用场合总结如下表所示。</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th> 拟合方法     </th>
+<th> 精度                  </th>
+<th> 效率 </th>
+<th> 应用场合                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 直线拟合               </td>
+<td> 不考虑局外点的效率最优/全局最优 </td>
+<td> 低             </td>
+<td> 高                                                           </td>
+<td> 要求效率高的场景 </td>
+</tr>
+<tr>
+<td></td>
+<td> 考虑局外点的效率最优   </td>
+<td> 较高                            </td>
+<td> 较高           </td>
+<td> 要求精度和效率比较高的场景                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 考虑局外点的全局最优   </td>
+<td> 高                              </td>
+<td> 低             </td>
+<td> 要求精度高的场景（ROI中轮廓点数量不应超过440）                   </td>
+</tr>
+<tr>
+<td> 圆拟合                 </td>
+<td> 不考虑局外点的效率最优          </td>
+<td> 低             </td>
+<td> 高                                                           </td>
+<td> 要求效率高的场景 </td>
+</tr>
+<tr>
+<td></td>
+<td> 不考虑局外点的全局最优 </td>
+<td> 较高                            </td>
+<td> 较低           </td>
+<td> 要求精度较高的场景                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 考虑局外点的效率最优   </td>
+<td> 较高                            </td>
+<td> 较高           </td>
+<td> 要求精度和效率比较高的场景                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 考虑局外点的全局最优   </td>
+<td> 高                              </td>
+<td> 低             </td>
+<td> 要求精度高的场景（ROI中轮廓点数量不应超过135）                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>Step 3 执行拟合和输出结果</strong></p>
+
+<p>在上述步骤之后，就可以执行拟合了。对于圆拟合，输出的结果包括：拟合圆的圆心、半径和拟合的均方差；对于直线拟合，输出的结果包括：拟合直线的位置坐标、方向向量、旋转角度和拟合的均方差。</p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\3D测量工具.gvp”。</p>

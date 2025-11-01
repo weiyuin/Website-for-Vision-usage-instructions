@@ -1,0 +1,128 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ Tạo Biến đổi Cứng</h1>
+
+<h2>Chức năng</h2>
+
+<p>Công cụ này chủ yếu dành cho các trường hợp trong thực tế khi ảnh mục tiêu không thể cung cấp thông tin định vị tốt để xuất kết quả biến đổi tuyến tính 2D, hoặc các phương pháp định vị truyền thống không thể cung cấp biến đổi tuyến tính 2D cho đối tượng chỉ định. Công cụ này có thể linh hoạt sử dụng các công cụ tìm đường, thước kẹp... để tạo ra thông tin dịch chuyển và xoay của mục tiêu dưới dạng biến đổi tuyến tính 2D cho các công cụ tiếp theo sử dụng.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th> Tên tham số   </th>
+<th> Mô tả tham số                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Cửa sổ thuộc tính   </td>
+<td> Đặt lại vị trí tham chiếu                                                 </td>
+<td> Tham số này cần chú ý cách thiết lập.<br />Chọn <strong>Có</strong>: lấy vị trí tham chiếu mới (thông thường chỉ đặt thành Có khi cần thiết lập vị trí tham chiếu. Đặc biệt, nếu vị trí tham chiếu luôn có nguồn dữ liệu độc lập, thì khi kiểm tra thực tế có thể đặt tham số này thành Không).<br />Chọn <strong>Không</strong>: khi kiểm tra thực tế cần đặt tham số này thành Không, lúc đó sẽ sử dụng dữ liệu tham chiếu trước đó (lần đầu thiết lập vị trí tham chiếu phải đặt thành Có để lấy tham số vị trí tham chiếu dùng trong huấn luyện).</td>
+</tr>
+<tr>
+<td></td>
+<td>Có kết hợp góc</td>
+<td> Không: dịch chuyển lấy riêng từ điểm tham chiếu; Có: dịch chuyển lấy từ dịch chuyển và góc xoay của điểm tham chiếu. </td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>       Không       </td>
+<td> Không                                                                                                                         </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu     </td>
+<td> Giá trị vị trí tham chiếu                                                   </td>
+<td> Tọa độ vị trí tham chiếu dùng để tính toán thay đổi vị trí thực tế (cách lấy vị trí tham chiếu liên quan đến tham số đặt lại vị trí tham chiếu), kiểu scVector. </td>
+</tr>
+<tr>
+<td></td>
+<td> Vị trí thực tế   </td>
+<td> Tọa độ vị trí thực tế dùng để tính toán thay đổi vị trí, kiểu scVector.                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> Giá trị góc tham chiếu </td>
+<td> Góc vị trí tham chiếu dùng để tính biến đổi góc thực tế (cách lấy vị trí tham chiếu liên quan tham số đặt lại vị trí tham chiếu), kiểu double.                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Góc thực tế   </td>
+<td> Góc vị trí thực tế dùng để tính biến đổi góc, kiểu double.                                                                         </td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>  Không  </td>
+<td> Không                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Cửa sổ giám sát </td>
+<td> Biến đổi tuyến tính 2D   </td>
+<td> Biến đổi dịch chuyển, xoay, thu phóng vị trí thực tế so với vị trí tham chiếu       </td>
+</tr>
+<tr>
+<td></td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                                                     </td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td> Không </td>
+<td> Không                                                                 </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu   </td>
+<td> Biến đổi tuyến tính 2D   </td>
+<td> Xuất biến đổi tuyến tính 2D để các công cụ khác sử dụng, tương tự tham số cửa sổ giám sát. </td>
+</tr>
+</tbody>
+</table>
+
+<h2>Chi tiết</h2>
+
+<p>Không</p>
+
+<h2>Lưu ý</h2>
+
+<p>Không</p>
+
+<h2>Dự án mẫu</h2>
+
+<p>Xem tại “\Samples\刚性变换生成工具.gvp”.</p>

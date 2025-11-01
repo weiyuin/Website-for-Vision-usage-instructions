@@ -1,0 +1,468 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scAffineRect</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho hình chữ nhật biến hình (affine rectangle), ví dụ như vùng huấn luyện trong định vị hình học, vùng ROI hình chữ nhật biến hình của công cụ Blob.</p>
+
+<p><img src="media/d991a54662aeaa5ab555cd264709fdb9.png" alt="" /></p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th> Phân loại </th>
+<th> Tên giao diện </th>
+<th> Mô tả giao diện </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Hàm khởi tạo </td>
+<td> scAffineRect </td>
+<td> Hàm khởi tạo mặc định scAffineRect(). </td>
+</tr>
+<tr>
+<td> </td>
+<td> scAffineRect </td>
+<td> Hàm khởi tạo scAffineRect(sc2XformLinear). </td>
+</tr>
+<tr>
+<td> </td>
+<td> scAffineRect </td>
+<td> Hàm khởi tạo scAffineRect(sc2Vector, sc2Vector, sc2Vector). </td>
+</tr>
+<tr>
+<td> </td>
+<td> scAffineRect </td>
+<td> Hàm khởi tạo scAffineRect(sc2Vector, double, double, scRadian, scRadian). </td>
+</tr>
+<tr>
+<td> Hàm </td>
+<td> SetAffineRectFromUnitSq </td>
+<td> Thiết lập biến hình affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> SetCornersPoPxPy </td>
+<td> Thiết lập điểm gốc cornerPo, điểm góc x là cornerPx, điểm góc y là cornerPy của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> SetCenterLengthsRotAndSkew </td>
+<td> Thiết lập tâm, độ dài cạnh x (xLen), độ dài cạnh y (yLen), góc quay cạnh x (xRotation) và góc nghiêng (skew) của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> SetCornerPoLengthsRotAndSkew </td>
+<td> Thiết lập điểm gốc cornerPo, độ dài cạnh x (xLen), độ dài cạnh y (yLen), góc quay cạnh x (xRotation) và góc nghiêng (skew). </td>
+</tr>
+<tr>
+<td> </td>
+<td> SetCenter </td>
+<td> Thiết lập tâm của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> SetCornerPo </td>
+<td> Thiết lập điểm gốc Po của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> SetXLength </td>
+<td> Thiết lập độ dài cạnh x của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> SetYLength </td>
+<td> Thiết lập độ dài cạnh y của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> SetXRotation </td>
+<td> Thiết lập góc quay cạnh x của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> SetSkew </td>
+<td> Thiết lập góc nghiêng (shear) của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetAffineRectFromUnitSq </td>
+<td> Lấy biến hình affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetCornerPo </td>
+<td> Lấy điểm gốc Po của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetCornerPx </td>
+<td> Lấy điểm góc Px (cạnh x) của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetCornerPy </td>
+<td> Lấy điểm góc Py (cạnh y) của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetCornerPopp </td>
+<td> Lấy tọa độ điểm góc đối diện của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetCenter </td>
+<td> Lấy tâm của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetXLength </td>
+<td> Lấy độ dài cạnh x của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetYLength </td>
+<td> Lấy độ dài cạnh y của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetXRotation </td>
+<td> Lấy góc quay cạnh x của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetYRotation </td>
+<td> Lấy góc quay cạnh y của hình chữ nhật affine. </td>
+</tr>
+<tr>
+<td> </td>
+<td> GetSkew </td>
+<td> Lấy góc nghiêng (shear) của hình chữ nhật affine. </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Chi tiết mô tả</h2>
+
+<h3>scAffineRect()</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đối tượng scAffineRect.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scAffineRect(affRectFromUS)</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đối tượng scAffineRect dựa trên phép biến đổi affine 2 chiều.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>affRectFromUS: Phép biến đổi affine 2 chiều, kiểu sc2XformLinear.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scAffineRect(cornerPo, cornerPx, cornerPy)</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đối tượng scAffineRect, thiết lập điểm gốc là cornerPo, điểm góc Px là cornerPx và điểm góc Py là cornerPy.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>cornerPo: Điểm gốc của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>cornerPx: Điểm Px của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>cornerPy: Điểm Py của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scAffineRect(center, xLen, yLen, xRotation, skew)</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đối tượng scAffineRect, thiết lập tâm là center, độ dài cạnh x là xLen, độ dài cạnh y là yLen, góc xoay là xRotation và góc nghiêng là skew.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>center: Tâm của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>xLen: Độ dài cạnh x của hình chữ nhật affine, kiểu số thực.</p></li>
+<li><p>yLen: Độ dài cạnh y của hình chữ nhật affine, kiểu số thực.</p></li>
+<li><p>xRotation: Góc xoay cạnh x (đơn vị radian), kiểu scRadian.</p></li>
+<li><p>skew: Góc nghiêng (shear) của hình chữ nhật affine (đơn vị radian), kiểu scRadian.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>SetAffineRectFromUnitSq(affRectFromUS)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập phép biến hình affine.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>affRectFromUS: Phép biến đổi affine, kiểu sc2XformLinear.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetCornersPoPxPy(cornerPo, cornerPx, cornerPy)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập điểm gốc, điểm góc Px và điểm góc Py của hình chữ nhật affine.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>cornerPo: Điểm gốc của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>cornerPx: Điểm Px của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>cornerPy: Điểm Py của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetCenterLengthsRotAndSkew(center, xLen, yLen, xRotation, skew)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập tâm hình chữ nhật affine là center, cạnh x dài xLen, cạnh y dài yLen, góc xoay là xRotation và góc nghiêng là skew.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>center: Tâm của hình chữ nhật affine, kiểu sc2Vector.</p></li>
+<li><p>xLen: Độ dài cạnh x, kiểu số thực.</p></li>
+<li><p>yLen: Độ dài cạnh y, kiểu số thực.</p></li>
+<li><p>xRotation: Góc xoay cạnh x (đơn vị radian), kiểu scRadian.</p></li>
+<li><p>skew: Góc nghiêng (shear) (đơn vị radian), kiểu scRadian.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetCornerPoLengthsRotAndSkew(cornerPo, xLen, yLen, xRotation, skew)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập điểm gốc của hình chữ nhật affine là cornerPo, cạnh x dài xLen, cạnh y dài yLen, góc xoay là xRotation và góc nghiêng là skew.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>cornerPo: Điểm gốc, kiểu sc2Vector.</p></li>
+<li><p>xLen: Độ dài cạnh x, kiểu số thực.</p></li>
+<li><p>yLen: Độ dài cạnh y, kiểu số thực.</p></li>
+<li><p>xRotation: Góc xoay cạnh x (đơn vị radian), kiểu scRadian.</p></li>
+<li><p>skew: Góc nghiêng (shear) (đơn vị radian), kiểu scRadian.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không.</p></li>
+</ul>
+
+
+
+<h3>SetCenter (center)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập tâm của hình chữ nhật affine.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>center：Tâm của hình chữ nhật affine, kiểu sc2Vector。</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
+</ul>
+
+
+<h3>SetCornerPo(Po)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập gốc của hình chữ nhật affine。</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>Po：Gốc của hình chữ nhật affine, kiểu sc2Vector。</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
+</ul>
+
+
+<h3>SetXLength(xLen)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập chiều dài cạnh x của hình chữ nhật affine。</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>xLen：Chiều dài cạnh x, kiểu số thực。</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
+</ul>
+
+
+<h3>SetYLength(yLen)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập chiều dài cạnh y của hình chữ nhật affine。</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>yLen：Chiều dài cạnh y, kiểu số thực。</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
+</ul>
+
+
+<h3>SetXRotation(xRot)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập góc xoay của cạnh x。</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>xRot：Góc xoay cạnh x (đơn vị radian), kiểu scRadian。</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
+</ul>
+
+
+<h3>SetSkew(skew)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập góc nghiêng (skew) của hình chữ nhật affine。</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>skew：Góc nghiêng (đơn vị radian), kiểu scRadian。</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, biểu thị việc thiết lập có thành công hay không。</p></li>
+</ul>
+
+
+<h3>GetAffineRectFromUnitSq()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy phép biến đổi affine từ hình vuông đơn vị。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Phép biến đổi affine, kiểu sc2XformLinear。</p></li>
+</ul>
+
+
+<h3>GetCornerPo()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy tọa độ gốc Po của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Tọa độ gốc, kiểu sc2Vector。</p></li>
+</ul>
+
+
+<h3>GetCornerPx()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy tọa độ điểm Px của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Tọa độ điểm Px, kiểu sc2Vector。</p></li>
+</ul>
+
+
+<h3>GetCornerPy()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy tọa độ điểm Py của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Tọa độ điểm Py, kiểu sc2Vector。</p></li>
+</ul>
+
+
+<h3>GetCornerPopp()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy tọa độ điểm đối diện với gốc Po của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Tọa độ điểm đối đỉnh, kiểu sc2Vector。</p></li>
+</ul>
+
+
+<h3>GetCenter()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy tọa độ tâm của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Tâm, kiểu sc2Vector。</p></li>
+</ul>
+
+
+<h3>GetXLength()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy chiều dài cạnh x。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Chiều dài cạnh x, kiểu float。</p></li>
+</ul>
+
+
+<h3>GetYLength()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy chiều dài cạnh y。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Chiều dài cạnh y, kiểu float。</p></li>
+</ul>
+
+
+<h3>GetXRotaion()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy góc xoay của cạnh x。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Góc xoay cạnh x, kiểu scRadian。</p></li>
+</ul>
+
+
+<h3>GetYRotaion()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy góc xoay của cạnh y。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Góc xoay cạnh y, kiểu scRadian。</p></li>
+</ul>
+
+
+<h3>GetSkew()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy góc nghiêng (skew) của hình chữ nhật affine。</p></li>
+<li><p>Tham số: Không。</p></li>
+<li><p>Giá trị trả về: Góc nghiêng, kiểu scRadian。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

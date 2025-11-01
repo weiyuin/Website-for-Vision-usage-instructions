@@ -1,0 +1,154 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>外部填充工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     外部填充是图像预处理方法之一，可以将输入图像指定多边形外部填充为特定灰度值，以实现对不感兴趣区域进行屏蔽。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     当需要对输入图像感兴趣的区域做提取时，会用到外部填充工具。如图。</p>
+
+<p><img src="media/GcFillExternalTool_2_1.png" alt="GcFillExternalTool_2_1" />  <img src="media/GcFillExternalTool_2_2.png" alt="GcFillExternalTool_2_2" /></p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     外部填充的过程是新建一幅和原图相同大小的图像，然后全部设置为指定的填充像素值。然后将原图上的指定区域截取出来，拷贝到新建的背景图像上，即生成了输出图像。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，链入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcFillExternalTool_4_1.png" alt="GcFillExternalTool_4_1" /></p>
+
+<ul>
+<li><h4>设置填充值</h4></li>
+</ul>
+
+
+<p><img src="media/GcFillExternalTool_4_2.png" alt="GcFillExternalTool_4_2" /></p>
+
+<ul>
+<li><h4>添加多元数组生成工具，配置点集，以取直线交点结果为例</h4></li>
+</ul>
+
+
+<p><img src="media/GcFillExternalTool_4_3.png" alt="GcFillExternalTool_4_3" /></p>
+
+<ul>
+<li><h4>外部填充工具链入输入点集</h4></li>
+</ul>
+
+
+<p><img src="media/GcFillExternalTool_4_4.png" alt="GcFillExternalTool_4_4" /></p>
+
+<ul>
+<li><h4>查看结果</h4></li>
+</ul>
+
+
+<p><img src="media/GcFillExternalTool_4_5.png" alt="GcFillExternalTool_4_5" /></p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述               </th>
+<th> 解决方法                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 错误栏输出图像数据为空 </td>
+<td> 检查数据链是否链入图像，以及图像数据是否正常              </td>
+</tr>
+<tr>
+<td> 错误栏输出点数至少为3  </td>
+<td> 检查输入点集是否链入，同时检查链入的点击个数是否大于等于3 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像 </td>
+<td> 工具的输入图像，在此基础上进行填充，由数据链链入。 </td>
+</tr>
+<tr>
+<td> 填充值   </td>
+<td> 外部填充的灰度值。                                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像 </td>
+<td> 工具的输入图像尺寸，供后续数据链使用。 </td>
+</tr>
+<tr>
+<td> 多边形ROI </td>
+<td>外部填充的多边形ROI点集。                            </td>
+</tr>
+<tr>
+<td> 输出图像 </td>
+<td> 进行外部填充后的结果图像。 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果。             </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间。             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\外部填充工具.gvp”。</p>

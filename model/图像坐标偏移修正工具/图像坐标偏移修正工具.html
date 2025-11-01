@@ -1,0 +1,176 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ hiệu chỉnh độ lệch tọa độ hình ảnh</h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>​ Công cụ này dùng để chuyển tọa độ vật lý so với điểm gốc tham chiếu thành tọa độ hình ảnh, đồng thời có thể bù trừ phù hợp theo độ chính xác thực tế.</p>
+
+<h2>2. Trường hợp ứng dụng</h2>
+
+<p>​ Ví dụ trong ứng dụng khắc laser, điểm bắt đầu khắc thường không có đặc trưng thị giác rõ ràng, nhưng có thể tìm thấy điểm đặc trưng gần đó, khi đó có thể lấy được tọa độ tương đối (đơn vị kích thước vật lý) từ điểm đặc trưng đến điểm bắt đầu, sau khi tạo ảnh có thể xác định tọa độ ảnh của điểm đặc trưng, thông qua hiệu chỉnh camera để chuyển đổi thành tọa độ ảnh của điểm bắt đầu, từ đó xác định được tọa độ trong hệ tọa độ thiết bị để thực hiện nhiệm vụ khắc.</p>
+
+<h2>3. Giải thích nguyên lý</h2>
+
+<p>​ Như hình dưới, điểm <strong>P2</strong> là điểm cần tính, nhưng khó xác định chính xác đặc trưng của nó trên ảnh, điểm <strong>P1</strong> là điểm đặc trưng gần <strong>P2</strong>, nếu lấy <strong>P1</strong> làm gốc tọa độ và các cạnh giao nhau làm trục tọa độ, thông qua đo đạc thực tế có thể biết được khoảng cách từ <strong>P2</strong> đến hai trục, từ đó suy ra tọa độ ảnh của <strong>P2</strong> và tính ra tọa độ trên nền tảng liên quan.</p>
+
+<p><img src="media\GvImgCrdProdOffsetTool_3_1.png" alt="GvImgCrdProdOffsetTool_3_1" /></p>
+
+<h2>4. Hướng dẫn sử dụng</h2>
+
+<p>​ Xem chi tiết tại phần “7. Dự án mẫu”</p>
+
+<h2>5. Vấn đề thường gặp</h2>
+
+<p>​ Không có</p>
+
+<h2>6. Giải thích tham số</h2>
+
+<ul>
+<li>Tham số đầu vào</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số      </th>
+<th> Mô tả tham số                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Đường thẳng 0         </td>
+<td> Đường tham chiếu lệch trục X                                            </td>
+</tr>
+<tr>
+<td> Đường thẳng 1         </td>
+<td> Đường tham chiếu lệch trục Y                                            </td>
+</tr>
+<tr>
+<td> Hệ số pixel      </td>
+<td> Kích thước điểm ảnh của camera                                             </td>
+</tr>
+<tr>
+<td> Đường tham chiếu hiệu chỉnh    </td>
+<td> Khi tính toán điểm mục tiêu, chọn đường tham chiếu góc: 0 là đường thẳng 0, 1 là đường thẳng 1, chỉ có thể nhập 0 hoặc 1 </td>
+</tr>
+<tr>
+<td> Hướng bù trục X   </td>
+<td> 0 là trái, 1 là phải, chỉ có thể nhập 0 hoặc 1                                   </td>
+</tr>
+<tr>
+<td> Hướng bù trục Y   </td>
+<td> 0 là trái, 1 là phải, chỉ có thể nhập 0 hoặc 1                                   </td>
+</tr>
+<tr>
+<td> Độ lệch cố định trục X </td>
+<td> Khoảng cách từ điểm mục tiêu đến trục X, đơn vị vật lý                                  </td>
+</tr>
+<tr>
+<td> Độ lệch cố định trục Y </td>
+<td> Khoảng cách từ điểm mục tiêu đến trục Y, đơn vị vật lý                                  </td>
+</tr>
+<tr>
+<td> Bù ngẫu nhiên trục X </td>
+<td> Giá trị bù cần thiết để khớp với đơn vị vật lý                                 </td>
+</tr>
+<tr>
+<td> Bù ngẫu nhiên trục Y </td>
+<td> Giá trị bù cần thiết để khớp với đơn vị vật lý                                 </td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>Tham số đầu ra</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số       </th>
+<th> Mô tả tham số       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Tọa độ ảnh sau hiệu chỉnh </td>
+<td> Tính toán tọa độ điểm mục tiêu </td>
+</tr>
+<tr>
+<td> Kết quả thực thi       </td>
+<td> Kết quả chạy của công cụ   </td>
+</tr>
+<tr>
+<td> Thời gian thực thi       </td>
+<td> Thời gian chạy công cụ   </td>
+</tr>
+</tbody>
+</table>
+
+<h2>7. Dự án mẫu</h2>
+
+<p>​ Tham khảo: “\Samples\图像坐标偏移修正工具.gvp”</p>
+
+<p>​ Mô tả quy trình như sau:</p>
+
+<ul>
+<li>Quy trình như sau:</li>
+</ul>
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_1.png" alt="GvImgCrdProdOffsetTool_7_1" /></p>
+
+<ul>
+<li>Để lấy điểm tham chiếu, cần thực hiện thao tác tìm đường trước;</li>
+</ul>
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_2.png" alt="GvImgCrdProdOffsetTool_7_2" /></p>
+
+<ul>
+<li>“Công cụ hiệu chỉnh độ lệch tọa độ ảnh” liên kết với kết quả tìm đường và hệ số pixel;</li>
+<li>Theo khoảng cách và hướng thực tế giữa điểm mục tiêu và điểm đặc trưng, thiết lập các tham số liên quan;</li>
+</ul>
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_3.png" alt="GvImgCrdProdOffsetTool_7_3" /></p>
+
+<ul>
+<li>Tọa độ sau hiệu chỉnh như hình dưới:</li>
+</ul>
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_4.png" alt="GvImgCrdProdOffsetTool_7_4" /></p>
+
+<ul>
+<li>Khoảng cách từ điểm mục tiêu đến đường thẳng 0 và đường thẳng 1 như sau, có thể thấy có sai số với đường thẳng 0, nguyên nhân do độ chính xác tính toán gây ra;</li>
+</ul>
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_5.png" alt="GvImgCrdProdOffsetTool_7_5" /></p>
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_6.png" alt="GvImgCrdProdOffsetTool_7_6" /></p>
+
+<ul>
+<li>Tiến hành hiệu chỉnh khoảng cách từ điểm mục tiêu đến đường thẳng 0;</li>
+</ul>
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_7.png" alt="GvImgCrdProdOffsetTool_7_7" /></p>
+
+<ul>
+<li>Sau hiệu chỉnh, tính lại khoảng cách từ điểm mục tiêu đến đường thẳng 0;</li>
+</ul>
+
+<p><img src="media\GvImgCrdProdOffsetTool_7_8.png" alt="GvImgCrdProdOffsetTool_7_8" /></p>

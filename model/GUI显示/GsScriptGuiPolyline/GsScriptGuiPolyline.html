@@ -1,0 +1,121 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GsScriptGuiPolyline</h1>
+
+<h2>功能</h2>
+
+<p>要在视图窗口显示的多边形，Blob工具可能会用。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                             </th>
+<th> 接口描述                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性 </td>
+<td> sScriptGuiStyle </td>
+<td> 显示风格，包括字体，大小，颜色等。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> polyline               </td>
+<td> 要显示的多边形。                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>sScriptGuiStyle</h3>
+
+<ul>
+<li>功能：显示风格，GsScriptGuiStyle类型。</li>
+</ul>
+
+
+<h3>polyline</h3>
+
+<ul>
+<li>功能：要显示的多边形，scPolyline类型</li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无。</p>
+
+<h2>示例代码</h2>
+
+<p>```python</p>
+
+<h2>设置GUI格式</h2>
+
+<p>guiStyle = GvVisionAssembly.GsScriptGuiStyle()
+guiStyle.bVisible = False
+guiStyle.nLineStyle = 3
+guiStyle.nLineWidth = 2
+guiStyle.clrLineColor = [255,0,0]
+guiStyle.bLabelVisible = True
+guiStyle.strLabelFont = &ldquo;宋体&rdquo;
+guiStyle.lFontSize = 10</p>
+
+<h6>### GUI设置</h6>
+
+<h2>获取GUI显示数组</h2>
+
+<p>guiArray = GvVisionAssembly.GcScriptGuiArray()</p>
+
+<h2>多边形GUI</h2>
+
+<p>guiPolyline = GvVisionAssembly.GsScriptGuiPolyline()
+p0 = GvVisionAssembly.sc2Vector(149,233)
+p1 = GvVisionAssembly.sc2Vector(103,178)
+p2 = GvVisionAssembly.sc2Vector(100,99)
+p3 = GvVisionAssembly.sc2Vector(200,99)
+p4 = GvVisionAssembly.sc2Vector(200,200)</p>
+
+<h2>添加构成多边形的点</h2>
+
+<p>VectorVec = GvVisionAssembly.sc2VectorVec()
+VectorVec.append(p0)
+VectorVec.append(p1)
+VectorVec.append(p2)
+VectorVec.append(p3)
+VectorVec.append(p4)
+polyline0 = GvVisionAssembly.scPolyline(VectorVec,True)</p>
+
+<p>guiPolyline.polyline = polyline0
+guiStyle.strLabel = &ldquo;多边形&rdquo; #如果不需要显示label标签，这一行代码可以删除
+guiPolyline.sScriptGuiStyle = guiStyle</p>
+
+<h2>向GUI显示数组添加GUI</h2>
+
+<p>guiArray.Add(guiPolyline)</p>
+
+<h2>将GUI数组设置到视图</h2>
+
+<p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiArray)
+```</p>

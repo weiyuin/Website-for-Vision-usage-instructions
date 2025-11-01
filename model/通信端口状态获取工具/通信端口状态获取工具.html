@@ -1,0 +1,124 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>通信端口状态获取工具</h1>
+
+<h2>功能</h2>
+
+<p>通信端口状态获取工具主要目的是获取当前指定通信端口的连接状态。连接状态分为连接和断开两种状态。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 通信端口 </td>
+<td> 选择所需要通信的设备（由通信管理对话框完成端口配置）。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 无   </td>
+<td> 无  </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无 </td>
+<td> 无  </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 端口状态                 </td>
+<td> 端口监控到的连接状态。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 监控个数 </td>
+<td> 该端口下监控到的连接个数                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                   </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无 </td>
+<td> 无                                         </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 端口状态      </td>
+<td> 监视的端口状态字符串数组                     </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 监控个数      </td>
+<td> 监控端口个数                            </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p> 监视窗口中端口状态是用字符串表示，格式为“[端口名称]客户端ip地址（红色字体部分可省略）:连接状态”,当端口为服务器时格式为“[端口名称]客户端ip地址（红色字体部分可省略）;网络端口:连接状态”例如：一个名称为“机器人”的串口，其获取的端口状态为“[机器人]:Connect”或者“[机器人]:Unconnect”。若当前端口是服务器端，端口名称“Port1”，有以下几种情况：</p>
+
+<p>服务器关闭的情况下，工具执行失败；</p>
+
+<p>服务器打开的情况下，有客户端连入时，工具执行成功，端口状态表示的连入的客户端的连接状态，如“[Port1]192.168.10.2;45286:Connect”;</p>
+
+<p>服务器打开的情况下，没有客户端连入时，工具执行成功，端口状态为“NULL”</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>端口状态输出为<strong>vector\&lt;string></strong>，需要配合脚本工具或者数组解析和字符串拆分工具等进行解析，然后利用通信发送工具将解析结果发送给第三方。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\通信端口状态获取工具.gvp”。该工程主要监控串口的状态，并将串口状态发往PLC的D2000地址（该工程成功运行需要连接三菱PLC）。</p>

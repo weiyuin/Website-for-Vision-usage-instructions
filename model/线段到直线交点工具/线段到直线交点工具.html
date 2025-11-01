@@ -1,0 +1,149 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>线段到直线交点工具</h1>
+
+<h2>功能</h2>
+
+<p>线段到直线交点工具计算输入线段与直线的交点。其应用效果如图1所示。</p>
+
+<p><img src="media/wps125.jpg" alt="img" />  <img src="media/wps126.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 输入线段与直线</imgnote> <imgnote>(b) 线段与直线交点结果</imgnote></p>
+
+<p><imgnote>图1 线段到直线交点工具应用示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像                         </td>
+<td> 显示待检测的图像。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 直线     </td>
+<td> 显示直线。                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 线段     </td>
+<td> 显示线段。                                                                                 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入图像                         </td>
+<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 直线     </td>
+<td> 输入直线，用于求交点的直线参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 线段     </td>
+<td> 输入线段，用于求交点的线段参数。</td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无       </td>
+<td> 无                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小。                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点     </td>
+<td> 输出线段与直线的交点坐标。                                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 显示工具执行结果图像，同监视窗口的输出图像参数。             </td>
+</tr>
+<tr>
+<td></td>
+<td> 交点     </td>
+<td> 显示线段与直线的交点，同监视窗口的交点参数。                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                               </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 交点                                                         </td>
+<td> 输出线段到直线交点坐标，供后序工具使用，同监视窗口的交点参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>输入的直线参数除了在属性窗口改变其位置和旋转角度，也可以在图像窗口鼠标左键选中拖动改变其位置或旋转角度。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

@@ -1,0 +1,210 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>关键点检测工具</h1>
+
+<h2>功能</h2>
+
+<p>该工具为Slam项目定制工具，只对特定图像有作用，主要具备以下功能：</p>
+
+<ul>
+<li>1) 检测功能：从全图范围检测定位出包含特征点的区域，如下图所示：</li>
+</ul>
+
+
+<p><img src="media/1.jpg" alt="" /></p>
+
+<p><imgnote>图1 检测结果</imgnote></p>
+
+<ul>
+<li>2) 识别功能：根据输入的ROI区域，对其范围内进行关键点识别，并根据关键点拟合生成两个矩形区域，后续工具可链接使用。效果图如下所示：</li>
+</ul>
+
+
+<p><img src="media/2.jpg" alt="" /></p>
+
+<p><imgnote>图2 识别结果</imgnote></p>
+
+<ul>
+<li>3) 检测和识别功能：从全图范围检测并识别得到特征点所在区域，并进一步识别得到关键点和拟合矩形框（当图像中有多个满足条件的区域时，检测可以检测出多个，识别只识别出一个）。效果图如下所示：</li>
+</ul>
+
+
+<p><img src="media/3.jpg" alt="" /></p>
+
+<p><imgnote>图2 检测和识别结果</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 模式类型 </td>
+<td> 可选：仅检测、仅识别、检测和识别。                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否启用ROI </td>
+<td> 是否启用ROI，若为否，则为全图匹配识别（只有选择仅识别时候有效）。                </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测阈值 </td>
+<td> 检测阈值，用于滤除分数较低检测框，取值范围为(0.0,1.0]的浮点数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 识别阈值 </td>
+<td> 识别关键点阈值，用于滤除分数较低的识别结果，取值范围为(0.0,1.0]的浮点数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 垂直关键点个数 </td>
+<td> 用于拟合垂直矩形框的点个数，取值范围为[0,50]的整数。                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域1-X边长</td>
+<td>拟合的第一个矩形X边长，取值范围为[0,500]的浮点数。</td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域1-Y边长</td>
+<td>拟合的第一个矩形Y边长，取值范围为[0,100]的浮点数。</td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域2-X边长</td>
+<td>拟合的第二个矩形X边长，取值范围为[0,500]的浮点数。</td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域2-Y边长</td>
+<td>拟合的第二个矩形Y边长，取值范围为[0,100]的浮点数。</td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入图像    </td>
+<td> 用来实时识别的输入图像，只支持灰度图像。              </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换 </td>
+<td> 输入的定位二维线性变换结果，以根据其变换相应的识别区域                                                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                                                                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 输入图像宽度、高度、像素大小。                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测整体位置矩形 </td>
+<td> 选择仅检测、检测和识别模式时候有效，为定位得到的所有检测框矩形。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 识别矩形区域 </td>
+<td> 选择识别模式时候有效，为识别过程中得到的所有文本框矩形。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域1 </td>
+<td> 拟合得到的第一个矩形              </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域2 </td>
+<td> 拟合得到的第二个矩形 </td>
+</tr>
+<tr>
+<td></td>
+<td> 关键点 </td>
+<td> 识别得到的关键点 </td>
+</tr>
+<tr>
+<td></td>
+<td> 关键点得分 </td>
+<td> 识别得到的关键点的得分 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 工具执行结果。                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间   </td>
+<td> 工具执行时间。                                                                                                   </td>
+</tr>
+<tr>
+<td>数据链</td>
+<td> 检测区域1    </td>
+<td> 拟合得到的第一个矩形 </td>
+</tr>
+<tr>
+<td></td>
+<td> 检测区域2  </td>
+<td> 拟合得到的第二个矩形 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2></h2>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>此工具由于使用深度学习方法进行识别，所以需要载入训练好的模型，会增加一些耗时，具体体现在：</p>
+
+<ul>
+<li><p>新增工具后的第一次执行中。</p></li>
+<li><p>加载包含该工具工程的时候。</p></li>
+</ul>
+</li>
+<li><p>当选择仅识别模式时候，需要启用ROI</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\关键点检测工具.gvp”。</p>

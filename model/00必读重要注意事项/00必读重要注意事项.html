@@ -1,0 +1,52 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h2>Những lưu ý quan trọng bắt buộc phải đọc</h2>
+
+<p><strong>Tham khảo quy chuẩn lập trình Python:</strong></p>
+
+<p>Tài liệu chính thức của Python: <a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p>
+
+<p>Quy chuẩn theo phong cách Google: <a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/">https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/</a></p>
+
+<h3>Vấn đề vòng lặp vô hạn: Hãy lưu trước</h3>
+
+<p>Trong phiên bản hiện tại, nếu trong mã Python bạn vô tình viết vòng lặp vô hạn, phần mềm sẽ bị treo và phải đóng cưỡng bức. Do đó, khi sử dụng vòng lặp trong mã, cần cực kỳ cẩn trọng và nên lưu toàn bộ project trước khi chạy.</p>
+
+<h3>Câu lệnh điều kiện: Kiểm tra tất cả các nhánh</h3>
+
+<p>Do đặc tính của Python, lỗi chỉ xuất hiện khi chương trình thực sự chạy đến dòng chứa lỗi. Nếu một dòng chứa lỗi không được thực thi, chương trình sẽ không báo lỗi!!! Ví dụ:</p>
+
+<p><code>python
+if True:
+    print(True)
+else:
+    print(False)
+</code></p>
+
+<p>Vì điều kiện `if` là True nên dòng `print(True)` được thực hiện, chương trình chạy bình thường và không báo lỗi. Tuy nhiên, nếu điều kiện `if` là False thì dòng `print(Fals)` sẽ chạy và gây lỗi vì viết sai. Do đó, sau khi viết xong đoạn mã có nhiều nhánh điều kiện, nhất định phải kiểm tra từng nhánh để đảm bảo không có lỗi.</p>
+
+<h3>Vấn đề tham số đầu vào khi sửa thông qua công cụ script: Cấm liên kết tham số với chuỗi dữ liệu</h3>
+
+<p>Nếu bạn quyết định dùng script để sửa đổi một tham số đầu vào của công cụ, thì **không được** liên kết tham số đó với chuỗi dữ liệu bên ngoài.</p>
+
+<p>Ví dụ: nếu một tham số đầu vào được liên kết với một biến trong phần quản lý biến, và tham số này lại được sửa đổi trong script, thì biến liên kết đó cũng sẽ bị thay đổi. Nếu biến này đang được dùng ở công cụ khác, điều này có thể gây ra lỗi thực thi và các hành vi không thể dự đoán. Vì vậy, các tham số bị thay đổi bên trong script **tuyệt đối không được liên kết với dữ liệu từ ngoài**.</p>
+
+<h3>Script không thể gán giá trị cho công cụ mảng</h3>
+
+<p>Vì công cụ mảng cần phải thực thi lại mỗi lần gán giá trị cho từng chỉ mục, mà hiện tại công cụ script không hỗ trợ khả năng thực thi công cụ, nên *script không thể gán giá trị cho công cụ mảng*.</p>

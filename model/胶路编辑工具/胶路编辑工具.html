@@ -1,0 +1,304 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Chỉnh Sửa Đường Keo</h1>
+
+<h2>1. Tổng Quan Chức Năng</h2>
+
+<p>​     Công cụ chỉnh sửa đường keo được sử dụng trong các dự án điểm keo, bao gồm hai phần chính: hướng dẫn điểm keo và chỉnh sửa đường keo. Hướng dẫn điểm keo thực hiện chuyển đổi tọa độ pixel đầu vào sang tọa độ vật lý của bàn dịch chuyển, đồng thời tính toán góc xoay và xuất ra cùng lúc để thực hiện chức năng dẫn đường; chức năng chỉnh sửa đường keo cho phép vẽ đường keo thủ công trong giao diện thuộc tính nâng cao và lưu lại thành tập tin dữ liệu.</p>
+
+<h2>2. Kịch Bản Ứng Dụng</h2>
+
+<p>​     Quy trình làm việc của dự án điểm keo như sau, sử dụng thị giác để dẫn hướng vị trí điểm keo.</p>
+
+<p><img src="media/GcRubberPathEditTool_1_1.png" alt="GcRubberPathEditTool_1_1" /></p>
+
+<h2>3. Nguyên Lý Hoạt Động</h2>
+
+<p>​     Công cụ chỉnh sửa đường keo tính toán tọa độ vật lý của bàn dịch chuyển từ tọa độ pixel và kết quả hiệu chuẩn, sau đó xuất ra; tính toán góc đầu ra từ đường đầu vào và đường tham chiếu. Tập tin đường keo lưu trữ vị trí tương đối của các điểm trên đường keo so với điểm gốc.</p>
+
+<p>​     Vị trí toàn bộ của đường keo được xác định bởi điểm bắt đầu, góc đầu ra và tập tin dữ liệu đường keo.</p>
+
+<h2>4. Hướng Dẫn Sử Dụng</h2>
+
+<ul>
+<li><h4>Cài Đặt Thuộc Tính</h4></li>
+</ul>
+
+<p><img src="media/GcRubberPathEditTool_4_3.png" alt="GcRubberPathEditTool_4_3" /></p>
+
+<p><strong>Cổng Giao Tiếp</strong></p>
+
+<p>Dùng để gửi và nhận vị trí thông qua cổng giao tiếp.</p>
+
+<p><strong>Dữ Liệu Đầu Vào</strong></p>
+
+<p>Chọn “Có” để đọc dữ liệu đường keo từ đường dẫn tập tin liên kết trong chuỗi dữ liệu; chọn “Không” để tải dữ liệu đường keo bằng phương pháp offline trong giao diện thuộc tính nâng cao.</p>
+
+<p><strong>Tải Hình Ảnh Gốc Offline</strong></p>
+
+<p>Chọn “Có” để tải hình ảnh gốc bằng phương pháp offline trong giao diện thuộc tính nâng cao; chọn “Không” để liên kết hình ảnh gốc qua chuỗi dữ liệu.</p>
+
+<p><strong>Chuẩn Hóa Góc</strong></p>
+
+<p>Chuẩn hóa góc nghĩa là chuyển đổi góc đầu ra vào một phạm vi xác định. Có bốn kiểu chuẩn hóa góc: [-90°, 90°)、[-180°, 180°)、[0°, 180°) và [0°, 360°)。</p>
+
+<ul>
+<li><h4>Cấu Hình Chuỗi Tham Số</h4></li>
+</ul>
+
+
+<p><img src="media/GcRubberPathEditTool_4_1.png" alt="GcRubberPathEditTool_4_1" /></p>
+
+<p><strong>Hình Ảnh Đầu Vào</strong></p>
+
+<p>Hình ảnh đầu vào chủ yếu dùng để hiển thị, không được sử dụng trong quá trình tính toán.</p>
+
+<p><strong>Hình Ảnh Gốc</strong></p>
+
+<p>Khi thuộc tính “Tải Hình Ảnh Gốc Offline” trong thanh thuộc tính được chọn là “Không”, hình ảnh gốc từ chuỗi dữ liệu sẽ khả dụng và được sử dụng để vẽ đường keo.</p>
+
+<p><strong>Điểm Tham Chiếu</strong></p>
+
+<p>Điểm gốc của đường keo trên hình ảnh mẫu khi vẽ đường keo, chủ yếu dùng cho việc vẽ đường keo.</p>
+
+<p><strong>Điểm Đầu Vào</strong></p>
+
+<p>Tọa độ điểm trên hình ảnh, điểm đầu vào này sẽ được chuyển đổi thành tọa độ vật lý và xuất ra, đóng vai trò là điểm bắt đầu của đường keo khi bơm keo thực tế.</p>
+
+<p><strong>Đường Tham Chiếu</strong></p>
+
+<p>Kết quả tìm đường trên hình ảnh mẫu, dùng để tính toán góc giữa hình ảnh hiện tại và hình ảnh gốc.</p>
+
+<p><strong>Đường Đầu Vào</strong></p>
+
+<p>Kết quả tìm đường trên hình ảnh hiện tại, được sử dụng cùng với đường tham chiếu để tính toán và xác định góc đầu ra.</p>
+
+<p><strong>Kết Quả Hiệu Chuẩn</strong></p>
+
+<p>Dùng để chuyển đổi tọa độ pixel đầu vào thành tọa độ vật lý.</p>
+
+<p><strong>Hướng Trục Của Bàn Dịch Chuyển</strong></p>
+
+<p>Hướng trục mặc định là sang phải và xuống dưới; khi hướng trục không phải mặc định, cần liên kết hướng trục của bàn, nếu không kết quả tính toán tọa độ và hiển thị đường keo sẽ bị sai lệch.</p>
+
+<p><strong>Đường Dẫn Tập Tin Đường Keo</strong></p>
+
+<p>Khi thuộc tính “Dữ Liệu Đầu Vào” được chọn là “Có”, đường dẫn tập tin đường keo từ chuỗi dữ liệu sẽ khả dụng và được dùng để đọc dữ liệu đường keo.</p>
+
+<ul>
+<li><h4>Vẽ Đường Keo</h4>
+
+<p>Giao diện chỉnh sửa đường keo như sau:</p></li>
+</ul>
+
+<p><img src="media/GcRubberPathEditTool_4_2.png" alt="GcRubberPathEditTool_4_2" /></p>
+
+<p><strong>Tải Hình Ảnh</strong></p>
+
+<p>Khi thuộc tính “Tải Hình Ảnh Gốc Offline” được chọn là “Không”, có thể tải một hình ảnh gốc trong giao diện thuộc tính nâng cao theo cách offline.</p>
+
+<p><strong>Chọn Tập Tin</strong></p>
+
+<p>Tải một tập tin đường keo offline, sau đó có thể chỉnh sửa trên hình ảnh bên phải. Khi thuộc tính “Dữ Liệu Đầu Vào” được chọn là “Không”, dữ liệu đường keo được tải offline trong giao diện thuộc tính nâng cao sẽ hiển thị trực tiếp trong công cụ.</p>
+
+<p><strong>Tải Lại</strong></p>
+
+<p>Nhấn nút tải lại để đọc lại dữ liệu đường keo từ tập tin điểm keo và cập nhật giao diện hiển thị.</p>
+
+<p><strong>Thêm Đường Keo, Hoàn Tất Thêm Mới, Hoàn Tác</strong></p>
+
+<p>Sau khi nhấn nút Thêm Đường Keo, nhấp chọn n vị trí trên hình ảnh, rồi nhấn Hoàn Tất Thêm Mới hoặc nhấp đúp vào hình ảnh để hoàn thành đường keo mới. Đường keo được tạo sẽ là các đoạn thẳng nối tuần tự các điểm đã chọn.</p>
+
+<p><strong>Thêm Cung Tròn</strong></p>
+
+<p>Nhấn nút Thêm Cung Tròn để thêm một đoạn cung tròn mặc định ở cuối đường keo.</p>
+
+<p><strong>Thêm Đoạn Thẳng</strong></p>
+
+<p>Nhấn nút Thêm Đoạn Thẳng để thêm một đoạn thẳng mặc định ở cuối đường keo.</p>
+
+<p><strong>Chèn Cung Tròn</strong></p>
+
+<p>Chọn một đoạn thẳng hoặc cung tròn trên đường keo, nhấn Chèn Cung Tròn để chèn một đoạn cung tròn mặc định vào trước đoạn đã chọn.</p>
+
+<p><strong>Chèn Đoạn Thẳng</strong></p>
+
+<p>Chọn một đoạn thẳng hoặc cung tròn trên đường keo, nhấn Chèn Đoạn Thẳng để chèn một đoạn thẳng mặc định vào trước đoạn đã chọn.</p>
+
+<p><strong>Xóa Mục Đã Chọn</strong></p>
+
+<p>Chọn một đoạn thẳng hoặc cung tròn trên đường keo, nhấn nút Xóa Mục Đã Chọn để xóa đoạn đó. Nếu đường keo chỉ còn một đoạn thẳng hoặc một cung tròn thì không thể xóa.</p>
+
+<p><strong>Đặt Là Đường Thẳng</strong></p>
+
+<p>Chọn một đoạn cung tròn trên đường keo, nhấn nút Đặt Là Đường Thẳng để chuyển cung tròn đó thành đoạn thẳng.</p>
+
+<p><strong>Đặt Là Cung Tròn</strong></p>
+
+<p>Chọn một đoạn thẳng trên đường keo, nhấn nút Đặt Là Cung Tròn để chuyển đoạn thẳng đó thành cung tròn.</p>
+
+<p><strong>Lưu Đường Dẫn Điểm Keo</strong></p>
+
+<p>Khi ô đường dẫn tập tin điểm keo đang trống, nhấn Lưu Đường Dẫn Điểm Keo sẽ hiển thị hộp thoại chọn thư mục để lưu tập tin điểm keo; nếu ô này không trống, dữ liệu đường keo sẽ được lưu vào tập tin hiển thị trong ô.</p>
+
+<p><strong>Lưu Thành...</strong></p>
+
+<p>Nhấn nút Lưu Thành... để mở hộp thoại chọn thư mục, cho phép chọn nơi lưu tập tin điểm keo và lưu dữ liệu đường keo.</p>
+
+<ul>
+<li><h4>Chức Năng Khác</h4></li>
+</ul>
+
+
+<p><img src="media/GcRubberPathEditTool_4_4.png" alt="GcRubberPathEditTool_4_4" /></p>
+
+<p><strong>Trạm Làm Việc</strong></p>
+
+<p>Nhập tên trạm làm việc, khi gửi vị trí cần gửi kèm theo tên trạm này.</p>
+
+<p><strong>Tọa Độ Điểm Gốc</strong></p>
+
+<p>Giá trị tọa độ pixel phẳng của điểm tham chiếu.</p>
+
+<p><strong>Di Chuyển</strong></p>
+
+<p>Nhập giá trị tọa độ vật lý cần di chuyển vào ô chỉnh sửa, sau đó nhấn các nút theo 4 hướng, đường keo trên hình ảnh sẽ di chuyển theo tọa độ hình ảnh được chuyển đổi từ tọa độ vật lý.</p>
+
+<p><strong>Xoay Góc</strong></p>
+
+<p>Nhập giá trị góc cần xoay vào ô chỉnh sửa (đơn vị độ, không phải radian, phạm vi từ 0~180), sau đó nhấn nút xoay để thực hiện xoay đường keo quanh điểm gốc.</p>
+
+<p><strong>Thu Phóng</strong></p>
+
+<p>Nhập tỷ lệ thu phóng đường keo vào ô chỉnh sửa. Sau khi nhập, đường keo sẽ được thu phóng theo thời gian thực. Phạm vi giá trị là (0~10], mặc định là 1. Mỗi lần lưu hoặc tải tập tin CSV đường keo, tỷ lệ thu phóng sẽ trở lại giá trị mặc định 1.</p>
+
+<p><strong>Khóa Đường Keo</strong></p>
+
+<p>Khi chọn khóa đường keo, giao diện và các điều khiển chỉnh sửa đường keo sẽ bị vô hiệu hóa. Mặc định mỗi lần mở cửa sổ sẽ là trạng thái khóa. Bỏ chọn mới có thể chỉnh sửa đường keo.</p>
+
+<p><strong>Kéo Toàn Bộ</strong></p>
+
+<p>Chỉ khi chọn “Kéo Toàn Bộ” thì mới có thể kéo toàn bộ đường keo trên hình ảnh bằng chuột. Nếu không chọn, chỉ có thể tinh chỉnh chứ không thể kéo toàn bộ.</p>
+
+<p><strong>Vị Trí Chuẩn Của Đầu Kim, Vị Trí Chụp Ảnh, Vị Trí Chụp Ảnh Của Đầu Kim, Vị Trí Bù</strong></p>
+
+<p>Các giá trị này dùng để thích ứng với môi trường điểm keo, tính toán vị trí điểm bắt đầu của đường keo:</p>
+
+<p>Tọa độ điểm bắt đầu = Tọa độ nền tảng của điểm đầu vào (sau khi chuyển đổi từ tọa độ pixel) + Tọa độ vị trí chuẩn đầu kim + Tọa độ vị trí chụp ảnh - Tọa độ vị trí chụp ảnh đầu kim + Tọa độ vị trí bù</p>
+
+<p><strong>Bật Bảo Vệ</strong></p>
+
+<p>Còn gọi là chức năng “chống sai sót”. Khi bật bảo vệ, nếu tọa độ điểm bắt đầu đường keo sau khi tính toán vượt ra ngoài phạm vi tọa độ cho phép, công cụ sẽ trả về false, báo lỗi và không xuất ra tọa độ điểm. Khi không bật bảo vệ, công cụ sẽ không kiểm tra tọa độ tính được.</p>
+
+<p><strong>Gửi Vị Trí</strong></p>
+
+<p>Chọn một điểm trên hình ảnh hoặc trong danh sách, nhấn “Gửi Vị Trí” để gửi tọa độ của điểm đó qua cổng truyền thông được thiết lập trong thanh thuộc tính.</p>
+
+<p><strong>Lấy Vị Trí</strong></p>
+
+<p>Chọn một điểm trên hình ảnh hoặc trong danh sách, nhấn “Lấy Vị Trí” để nhận tọa độ từ cổng truyền thông và cập nhật vào điểm đã chọn. Danh sách và hình ảnh sẽ được cập nhật đồng bộ.</p>
+
+<p><strong>Dịch Trục Z</strong></p>
+
+<p>Chọn một điểm trên hình ảnh hoặc danh sách, nhấn “Dịch Trục Z”, tọa độ Z của điểm sẽ được gửi qua cổng truyền thông được thiết lập trong thanh thuộc tính.</p>
+
+<p><strong>Cập Nhật Điểm Tham Chiếu</strong></p>
+
+<p>Điểm tham chiếu được truyền qua chuỗi dữ liệu, nhưng không tự động cập nhật trong công cụ khi công cụ chạy. Chỉ khi nhấn nút “Cập Nhật Điểm Tham Chiếu”, điểm tham chiếu nội bộ của công cụ mới được cập nhật theo điểm tham chiếu mới nhất từ chuỗi dữ liệu.</p>
+
+<p><strong>Cập Nhật Đường Tham Chiếu</strong></p>
+
+<p>Đường tham chiếu được truyền qua chuỗi dữ liệu, nhưng không tự động cập nhật trong công cụ khi công cụ chạy. Chỉ khi nhấn nút “Cập Nhật Đường Tham Chiếu”, đường tham chiếu nội bộ của công cụ mới được cập nhật theo đường tham chiếu mới nhất từ chuỗi dữ liệu.</p>
+
+
+<h2>5. Các Vấn Đề Thường Gặp</h2>
+
+<table>
+<thead>
+<tr>
+<th> Mô Tả Hiện Tượng                             </th>
+<th> Cách Giải Quyết                                                    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Vị trí điểm bắt đầu đường keo xuất ra không phải vị trí thực tế cần điểm keo </td>
+<td> Kiểm tra xem hướng trục được nối vào có chính xác không, nếu chính xác thì kiểm tra xem vị trí chuẩn điểm đầu kim, vị trí chụp ảnh, vị trí chụp ảnh của đầu kim đã điền đúng chưa, nếu không có vấn đề gì thì có thể là sai số nền tảng, dùng giá trị vị trí bù để bù trừ sai số. </td>
+</tr>
+<tr>
+<td> Lưu file không thành công                           </td>
+<td> Kiểm tra xem file cần lưu có đang được mở không, nếu có thì đóng file rồi lưu lại. </td>
+</tr>
+</tbody>
+</table>
+
+<h2>6. Giải Thích Tham Số</h2>
+
+<h4>Tham Số Đầu Vào</h4>
+
+<p>Xem phần Hướng Dẫn Sử Dụng.</p>
+
+<h4>Tham Số Đầu Ra</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên Tham Số   </th>
+<th> Giải Thích Tham Số                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh Đầu Vào   </td>
+<td> Chiều rộng, chiều cao và kích thước pixel của ảnh đầu vào.                               </td>
+</tr>
+<tr>
+<td> Kết Quả Thực Thi   </td>
+<td> Kết quả thực thi của công cụ.                                               </td>
+</tr>
+<tr>
+<td> Thời Gian Thực Thi   </td>
+<td> Thời gian thực thi của công cụ.                                               </td>
+</tr>
+<tr>
+<td> Điểm Bắt Đầu Đường Keo </td>
+<td> Tọa độ nền tảng điểm bắt đầu điểm keo.                                         </td>
+</tr>
+<tr>
+<td> Góc Xuất Ra   </td>
+<td> Góc xoay của đường keo, là góc giữa đường thẳng đầu vào và đường chuẩn.                     </td>
+</tr>
+<tr>
+<td> Dữ Liệu Đường Keo   </td>
+<td> Dữ liệu đường keo xuất ra, bao gồm các tọa độ điểm của từng cung tròn và đoạn thẳng, có thể lấy thông qua script. </td>
+</tr>
+<tr>
+<td> Tập Hợp Điểm Đường Keo   </td>
+<td> Tập hợp các điểm tọa độ nền tảng đường keo, mỗi điểm gồm một bộ dữ liệu 3 chiều (X, Y, Z). Mỗi đoạn đường keo được tạo thành bởi hai điểm (điểm giữa và điểm cuối). Tập hợp điểm bao gồm điểm bắt đầu đường keo, điểm giữa và điểm cuối của từng đoạn (nếu là đoạn thẳng, điểm giữa sẽ là (0,0,0)). </td>
+</tr>
+<tr>
+<td> Tập Dữ Liệu Đường Keo </td>
+<td> Xuất tập hợp điểm đường keo dưới dạng chuỗi, gồm điểm bắt đầu và điểm giữa, điểm cuối của từng đoạn; định dạng xuất mỗi đoạn gồm: số thứ tự, dạng đường keo (0 điểm bắt đầu, 1 đoạn thẳng, 2 cung tròn), có điểm keo hay không (1 có, 0 không), MX, MY, MZ, TX, TY, TZ; điểm bắt đầu là (0,0, điểm bắt đầu X, điểm bắt đầu Y, 0), nên chuỗi xuất ra có dạng: 0,0,điểm bắt đầu X, điểm bắt đầu Y, điểm bắt đầu Z,1,1,1,MX,MY,MZ,TX,TY,TZ&hellip; </td>
+</tr>
+</tbody>
+</table>
+
+<h2>7. Ví Dụ Dự Án</h2>
+
+<p>Xem file “\Samples\胶路编辑工具.gvp”.</p>

@@ -1,0 +1,115 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>批处理命令执行工具</h1>
+
+<h2>功能</h2>
+
+<p>以指定的参数执行指定的批处理文件。用于在流程执行到某个节点时，激活一个批处理命令，达到诸如新建文件夹、重命名文件夹等外部任务。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 批处理文件                                                   </td>
+<td> 需要执行的批处理命令文件绝对路径。                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否等待完成 </td>
+<td> 如果为是，工具将等待批处理命令执行完毕后才执行完成；如果为否，工具将在激活批处理命令后立刻执行完成。                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 无    </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 执行参数                                                     </td>
+<td> 传递给批处理命令的参数，可选。<br />参数以空格为分隔符，在批处理文件中可使用%1, %2引用，最多可支持9个参数。<br />批处理每次能处理的变量从%0~%9共10个，其中%0默认给批处理文件名使用，%1默认为使用此批处理时输入的的第一个值，同理：%2~%9指输入的第2~9个值；例：copy /Y src.txt SrcDir 中，/Y为%1，src.txt为%2，SrcDir为%3。 </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无           </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 执行结果       </td>
+<td> 工具执行结果。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无 </td>
+<td> 无                             </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 无   </td>
+<td> 无                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>本工具保存时会将批处理文件内容备份到工程文件中，目的是防止gvp文件拷贝时漏拷bat文件时，工程无法正常运行。打开工程时，工具会检查指定的批处理文件是否存在，如果不存在，则将备份的内容写入磁盘；如果存在，则不做任何操作，以磁盘上的批处理文件内容为准。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>本工具未关联批处理命令的执行结果，所以工具不会因为批处理命令执行失败而输出false。</p></li>
+<li><p>本工具灵活性较高，写批处理文件时应该按Windows批处理命令的语法规则写，本工具不会检查批处理命令的正确性。</p></li>
+<li><p>本工具会检查批处理命令文件本身是否存在。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\批处理命令执行工具.gvp”。</p>

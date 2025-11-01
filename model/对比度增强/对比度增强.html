@@ -1,0 +1,177 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Tăng cường độ tương phản</h1>
+
+<h2>Chức năng</h2>
+
+<p>Tăng cường độ tương phản là một trong những phương pháp xử lý ảnh sơ bộ thường dùng, nhiệm vụ chính là tăng cường độ tương phản của ảnh thông qua biến đổi giãn xám.</p>
+
+<p><img src="media/wps41.jpg" alt="img" /></p>
+
+<p><imgnote>Hình 1 Minh họa tăng cường độ tương phản</imgnote></p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Phương pháp tăng cường</td>
+<td>Gồm có chế độ tuyến tính và phi tuyến tính.</td>
+</tr>
+<tr>
+<td></td>
+<td>Giá trị nhỏ nhất</td>
+<td>Dùng để thiết lập giá trị nhỏ nhất trong chế độ tuyến tính.</td>
+</tr>
+<tr>
+<td></td>
+<td>Giá trị lớn nhất</td>
+<td>Dùng để thiết lập giá trị lớn nhất trong chế độ tuyến tính.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ngưỡng sáng tối</td>
+<td>Xem phần nguyên lý hoạt động.</td>
+</tr>
+<tr>
+<td></td>
+<td>Cường độ kéo giãn</td>
+<td>Xem phần nguyên lý hoạt động.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần được tăng cường độ tương phản.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần được tăng cường độ tương phản.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần được tăng cường độ tương phản.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh sau khi được tăng cường độ tương phản.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh sau khi được tăng cường độ tương phản.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi công cụ: thành công hiển thị “OK”, thất bại hiển thị “NG”, giống với tham số kết quả thực thi trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh sau khi được tăng cường độ tương phản.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>Nguyên lý hoạt động</h3>
+
+<p><img src="media/wps45.jpg" alt="img" /></p>
+
+<p><imgnote>Hình 2 Minh họa nguyên lý tăng cường độ tương phản</imgnote></p>
+
+<p>Bản chất của công cụ tăng cường độ tương phản là thực hiện biến đổi giãn xám trên ảnh, bao gồm hai chế độ: chế độ tuyến tính (tương ứng với giãn tuyến tính) và chế độ phi tuyến tính (tương ứng với giãn phi tuyến). Nguyên lý cơ bản như Hình 2. Trong giãn tuyến tính, dựa trên giá trị nhỏ nhất và lớn nhất được chỉ định, các giá trị nằm trong khoảng này sẽ được ánh xạ tuyến tính về khoảng 0~255. Trong khi đó, giãn phi tuyến sử dụng hàm ánh xạ dạng “S” xác định bởi giá trị m và E: phần nhỏ hơn m tương ứng với vùng tối, lớn hơn m tương ứng với vùng sáng. Các giá trị dưới (hoặc trên) m sẽ bị nén vào phạm vi hẹp gần màu đen (hoặc trắng).</p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li>Các tình huống ứng dụng của công cụ tăng cường độ tương phản và cách điều chỉnh tham số tương ứng được liệt kê trong bảng dưới:</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Tình huống ứng dụng</th>
+<th>Hiệu quả mong muốn</th>
+<th>Tham số cần điều chỉnh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ảnh có độ tương phản thấp</td>
+<td>Tăng tuyến tính độ tương phản trong một phạm vi nhất định</td>
+<td>Điều chỉnh giá trị nhỏ nhất và lớn nhất tương ứng</td>
+</tr>
+<tr>
+<td>Ảnh có độ tương phản thấp, hơi tối</td>
+<td>Tăng độ sáng và độ tương phản</td>
+<td>Điều chỉnh m về giá trị nhỏ hơn, nếu cần thì tăng giá trị E</td>
+</tr>
+<tr>
+<td>Ảnh có độ tương phản thấp, hơi sáng</td>
+<td>Giảm độ sáng và tăng độ tương phản</td>
+<td>Điều chỉnh m về giá trị lớn hơn, nếu cần thì tăng giá trị E</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Dự án mẫu</h2>
+
+<p>Xem “\Samples\对比度变换相关.gvp”.</p>

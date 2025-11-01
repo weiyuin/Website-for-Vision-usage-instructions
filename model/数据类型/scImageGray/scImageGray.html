@@ -1,0 +1,151 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scImageGray</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho ảnh xám.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Khởi tạo</td>
+<td>scImageGray</td>
+<td>scImageGray() – hàm khởi tạo mặc định</td>
+</tr>
+<tr>
+<td>Hàm</td>
+<td>Width</td>
+<td>Lấy chiều rộng ảnh</td>
+</tr>
+<tr>
+<td></td>
+<td>Height</td>
+<td>Lấy chiều cao ảnh</td>
+</tr>
+<tr>
+<td></td>
+<td>GetPixelValue</td>
+<td>Lấy giá trị pixel tại vị trí chỉ định</td>
+</tr>
+<tr>
+<td></td>
+<td>SetPixelValue</td>
+<td>Thiết lập giá trị pixel tại vị trí chỉ định</td>
+</tr>
+<tr>
+<td></td>
+<td>GetSubImage</td>
+<td>Lấy ảnh con</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>scImageGray()</h3>
+
+<ul>
+<li><p>Chức năng: Hàm khởi tạo mặc định.</p></li>
+<li><p>Tham số: Không có</p></li>
+<li><p>Giá trị trả về: Không có</p></li>
+</ul>
+
+<h3>Width()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy chiều rộng của ảnh.</p></li>
+<li><p>Giá trị trả về: Chiều rộng ảnh, kiểu số nguyên.</p></li>
+</ul>
+
+<h3>Height()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy chiều cao của ảnh.</p></li>
+<li><p>Giá trị trả về: Chiều cao ảnh, kiểu số nguyên.</p></li>
+</ul>
+
+<h3>GetPixelValue(x, y)</h3>
+
+<ul>
+<li><p>Chức năng: Lấy giá trị xám tại vị trí (x, y), lưu ý kích thước ảnh, x và y không được vượt ra ngoài phạm vi.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>x: Tọa độ x trong hệ tọa độ ảnh, kiểu số nguyên.</p></li>
+<li><p>y: Tọa độ y trong hệ tọa độ ảnh, kiểu số nguyên.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Giá trị xám tại tọa độ (x, y), kiểu double.</p></li>
+</ul>
+
+<h3>SetPixelValue(x, y, value)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập giá trị xám tại vị trí (x, y), lưu ý kích thước ảnh, x và y không được vượt ra ngoài phạm vi.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>x: Tọa độ x trong hệ tọa độ ảnh, kiểu số nguyên.</p></li>
+<li><p>y: Tọa độ y trong hệ tọa độ ảnh, kiểu số nguyên.</p></li>
+<li><p>value: Giá trị xám.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>GetSubImage(img, rect)</h3>
+
+<ul>
+<li><p>Chức năng: Lấy ảnh con theo vùng ROI là rect.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>img: Ảnh con thu được, kiểu scImageGray.</p></li>
+<li><p>rect: Vùng ROI để trích xuất ảnh con, kiểu scRect.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu số nguyên.</p>
+<ul>
+<li><p>0: Thành công.</p></li>
+<li><p>1025: Bộ nhớ ảnh rỗng hoặc kích thước ảnh không hợp lệ.</p></li>
+<li><p>1541: Cấp phát bộ nhớ thất bại.</p></li>
+<li><p>2049: Vùng không hợp lệ.</p></li>
+</ul>
+</li>
+</ul>
+
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
+<h2>Ví dụ mã</h2>
+
+<p><code>python
+raw_img = GvTool.GetToolData("图像文件_001.输出图像")
+sub_img = GvVisionAssembly.scImageGray()
+roi_rect = GvVisionAssembly.scRect(0, 0, 100, 100)
+status = raw_img.GetSubImage(sub_img, roi_rect)
+</code></p>

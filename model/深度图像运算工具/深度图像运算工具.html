@@ -1,0 +1,173 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>深度图像运算</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     将两幅深度图像进行运算，即图像运算，主要的运算有：加、减、乘。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     不同程度凹凸的零件表面粗糙度对零件的磨损产生影响，很大程度上关系到产品性能和使用寿命。不同于单独使用的产品，零件需要在装配中与其他零件相连，密封性和磨损量是厂商需要考虑的一大加工要素；其次，产品外观和触感也会影响到消费者的第一印象；第三，喷涂表面的时候，表面粗糙度会影响到涂料的厚度和渗透力。</p>
+
+<p>​     利用3D视觉检测方案代替人工，节省时间和人力付出，进行在线准确地测量表面粗糙度信息，从根本上满足客户的需求且增加生产效益。</p>
+
+<p><img src=".\media\深度图像运算工具_应用场景.png" style="zoom:100%;" /></p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4>
+
+<p><img src=".\media\GcRangeImgOperationTool_3_1.png" style="zoom:70%;" /></p></li>
+<li><h4>设置运算模式以及缩放比例</h4></li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述         </th>
+<th> 解决方法             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 无法修改缩放比例 </td>
+<td> 是否允许缩放设置为是 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>5. 参数说明</h2>
+
+<table>
+<thead>
+<tr>
+<th> 分类     </th>
+<th> 参数名称          </th>
+<th> 参数描述                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 运算模式          </td>
+<td> 两张图像进行运算的模式。主要有加、减。   </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 是否允许缩放      </td>
+<td> 对单张深度图像Z值进行放大缩小            </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 深度图像1缩放倍数 </td>
+<td> 缩放倍数取值范围(0,10000]                </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 深度图像2缩放倍数 </td>
+<td> 缩放倍数取值范围(0,10000]                </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像          </td>
+<td> 会显示参数链里面第一个连进来的输入图像。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输入图像1         </td>
+<td> 输入图像1，参加图像运算。                </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 输入图像2         </td>
+<td> 输入图像2，参加图像运算。                </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无                </td>
+<td> 无                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th> 分类     </th>
+<th> 参数名称  </th>
+<th> 参数描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输入图像1 </td>
+<td> 输入图像1，参加图像运算。                                    </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 输入图像2 </td>
+<td> 输入图像2，参加图像运算。                                    </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 输出图像  </td>
+<td> 两个输入图像的运算结果。                                     </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 执行结果  </td>
+<td> 工具执行结果。                                               </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 执行时间  </td>
+<td> 工具执行时间。                                               </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像  </td>
+<td> 两个图像的运算结果。                                         </td>
+</tr>
+<tr>
+<td>          </td>
+<td> 执行结果  </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像  </td>
+<td> 两个输入图像的运算结果。                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\深度图像运算工具.gvp”。</p>

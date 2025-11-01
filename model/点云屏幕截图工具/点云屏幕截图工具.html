@@ -1,0 +1,130 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云屏幕截图工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 对某一个新增的Cloud视图进行截屏，并保存成png格式的图片。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量及检测项目中，经常涉及将处理过程中的窗口截图保存下来，以便后续查看，需要涉及点云屏幕截图的问题。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4></li>
+</ul>
+
+
+<p><img src="media/GcCloudScreenShotTool_3_1.png" alt="" /></p>
+
+<p><imgnote>图3_1 点云屏幕截图工具</imgnote></p>
+
+<ul>
+<li><h4>参数设置</h4>
+
+<ul>
+<li>属性参数：截屏窗口、自动命名、文件格式、输出路径设置；</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 文件名 </td>
+<td> 当属性窗口中的“自动命名”选择为“否”时，会出现此链接。此处链接提前拟好的命名，可以为单独文件名（如cloud）或带文件夹路径的文件名（如20230302\\cloud） </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 截屏窗口 </td>
+<td> 选择需要截屏的窗口，比如，Cloud-1等。注意，如果没有Cloud视图，需要新增一个Cloud视图，将要截屏保存图像的拖进Cloud视图中 </td>
+</tr>
+<tr>
+<td> 自动命名 </td>
+<td> 否：需要在数据链接中链接“文件名”，是：系统自定义命名，系统命名规则：工具名+时间+8位ID，如点云屏幕截图工具_005_20230302104136644_f2eab9c4.png </td>
+</tr>
+<tr>
+<td> 输出文件路径 </td>
+<td> 点云屏幕截图的保存地址 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 文件路径与文件名 </td>
+<td> 点云屏幕截图的保存文件路径及文件名 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间           </td>
+<td> 工具执行时间                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点云图像源配置工具.gvp”。</p>
+
+<h2>7. 特殊说明</h2>

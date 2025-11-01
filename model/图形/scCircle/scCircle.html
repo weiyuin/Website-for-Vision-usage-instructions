@@ -1,0 +1,161 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scCircle</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho hình tròn, ví dụ như kết quả hình tròn từ công cụ tìm hình tròn, hoặc vùng ROI hình tròn của công cụ Blob.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Khởi tạo</td>
+<td>scCircle</td>
+<td>Hàm tạo scCircle(sc2Vector, double).</td>
+</tr>
+<tr>
+<td>Hàm</td>
+<td>SetCenterRadius</td>
+<td>Thiết lập tâm và bán kính hình tròn.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetCenter</td>
+<td>Thiết lập tâm hình tròn.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetRadius</td>
+<td>Thiết lập bán kính.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetCenter</td>
+<td>Lấy tâm hình tròn.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetRadius</td>
+<td>Lấy bán kính.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetPoint</td>
+<td>Lấy điểm trên hình tròn theo tham số góc (radian).</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>scCircle(sc2Vector c, double r)</h3>
+
+<ul>
+<li><p>Chức năng: Tạo đối tượng scCircle, thiết lập tâm là c, bán kính là r.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>c: Vị trí tâm hình tròn.</p></li>
+<li><p>r: Bán kính.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>SetCenterRadius(sc2Vector c, double r)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập tâm và bán kính hình tròn.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>c: Vị trí tâm.</p></li>
+<li><p>r: Bán kính.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetCenter(sc2Vector c)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập tâm hình tròn.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>c: Vị trí tâm.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetRadius(double r)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập bán kính.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>r: Bán kính.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>GetCenter()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy vị trí tâm hình tròn.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu sc2Vector, là tâm được lấy ra.</p></li>
+</ul>
+
+<h3>GetRadius()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy bán kính.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Kiểu double, là bán kính được lấy ra.</p></li>
+</ul>
+
+<h3>GetPoint(scRadian phi)</h3>
+
+<ul>
+<li><p>Chức năng: Lấy điểm trên hình tròn theo tham số góc (radian) phi.</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li>phi: Tham số góc radian.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu sc2Vector, là điểm lấy được trên hình tròn.</p></li>
+</ul>
+
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
+<h2>Ví dụ mã</h2>
+
+<p>Không có</p>
+

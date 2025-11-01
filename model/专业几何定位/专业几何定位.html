@@ -1,0 +1,295 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Định vị hình học chuyên nghiệp</h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>Công cụ định vị hình học chuyên nghiệp có thể thực hiện việc khớp từ một đến nhiều mẫu theo thời gian thực giữa ảnh thực tế và ảnh huấn luyện, kết quả định vị bao gồm điểm khớp, vị trí, góc xoay và nhiều thông tin khác.</p>
+
+<p>Hình 1 là một ví dụ định vị điển hình. Dấu cộng trong hình là đặc trưng mẫu huấn luyện với tọa độ huấn luyện là (320,240). Trong đó: a là ảnh gốc huấn luyện; b là ảnh gốc sau khi tịnh tiến (10,10); c là ảnh gốc xoay -10°; d là ảnh gốc xoay 10°; e là ảnh có tỉ lệ tín hiệu/nhiễu thấp; f là ảnh độ tương phản thấp; g là ảnh độ sáng thấp; h là ảnh độ sáng cao; i là ảnh bị thiếu một phần. Trong các trường hợp trên, công cụ định vị đều có thể đưa ra kết quả định vị với độ chính xác cao.</p>
+
+<p><img src="media/GvGeomSearchAdvancedExTool_1_1.png" alt="img" /></p>
+
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ định vị hình học chuyên nghiệp</imgnote></p>
+
+<h2>2. Các tình huống ứng dụng</h2>
+
+<p>Dựa trên đặc trưng hình học huấn luyện, tìm ra vị trí hình học khớp, đưa ra số lượng kết quả và mảng kết quả.</p>
+
+<h2>3. Nguyên lý</h2>
+
+<h3>Nguyên lý định vị</h3>
+
+<p>Công cụ định vị hình học chuyên nghiệp thu được mô tả đặc trưng hình học của đối tượng thông qua huấn luyện mẫu. Đặc trưng hình học có thể thực hiện các phép biến đổi như xoay, thu phóng một cách chính xác và nhanh chóng, đồng thời có khả năng thích ứng tốt với các thay đổi tuyến tính và phi tuyến của mức xám ảnh. Công cụ định vị này tìm kiếm mẫu huấn luyện trong ảnh thời gian thực, tính toán vị trí của mẫu tìm được, góc xoay và tỷ lệ thu phóng so với mẫu gốc.</p>
+
+<h2>4. Hướng dẫn sử dụng</h2>
+
+<p>Quy trình thực hiện công cụ: Cấu hình đầu vào → Thiết lập thuộc tính → Huấn luyện ảnh → Thực hiện tìm kiếm.</p>
+
+<h3>Cấu hình đầu vào</h3>
+
+<p>Nhấp đúp vào công cụ để cấu hình ảnh đầu vào trong cửa sổ bật lên, như Hình 2</p>
+
+<p><img src="media/GvGeomSearchAdvancedExTool_4_11.png" alt="img" /></p>
+
+<p><imgnote>Hình 2 Minh họa cấu hình đầu vào</imgnote></p>
+
+<h3>Thiết lập thuộc tính</h3>
+
+<p>Thiết lập trong thanh thuộc tính như Hình 3, nhấp chuột phải vào công cụ → Thuộc tính → Mở giao diện nâng cao như Hình 4</p>
+
+<p><img src="media/GvGeomSearchAdvancedExTool_4_10.png" alt="" /></p>
+
+<p><imgnote>Hình 3 Minh họa thiết lập thuộc tính trong thanh thuộc tính</imgnote></p>
+
+<p><img src="media/GvGeomSearchAdvancedExTool_4_12.png" alt="img" /></p>
+
+<p><imgnote>Hình 4 Minh họa thiết lập thuộc tính trong giao diện nâng cao</imgnote></p>
+
+<h4><strong>Thuộc tính mặt nạ</strong></h4>
+
+<p>Trong giao diện nâng cao, sau khi nhấp “Bật mặt nạ” và “Thiết lập ảnh mặt nạ”, bạn có thể loại trừ những vùng không tham gia huấn luyện mẫu trong quá trình tạo mẫu, từ đó giảm các đặc trưng hình học không cần thiết.</p>
+
+<p><img src="media/GvGeomSearchAdvancedExTool_4_5.jpg" alt="img" /> <img src="media/GvGeomSearchAdvancedExTool_4_6.jpg" alt="img" /> <img src="media/GvGeomSearchAdvancedExTool_4_7.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Đặc trưng gốc</imgnote> <imgnote>(b) Vùng mặt nạ</imgnote> <imgnote>(c) Đặc trưng sau khi mặt nạ</imgnote></p>
+
+<p><imgnote>Hình 5 Ví dụ mặt nạ</imgnote></p>
+
+<p>Hình 5 (a): Ảnh đặc trưng ban đầu, khi định vị chỉ cần đường viền ngoài màu trắng mà không cần phần lồi lõm bên trong, có thể dùng mặt nạ.</p>
+
+<p>Hình 5 (b): Vùng được tô đỏ trong công cụ mặt nạ là vùng không tham gia huấn luyện đặc trưng. Sau khi thiết lập xong mặt nạ, nhấn “Áp dụng” để hoàn tất.</p>
+
+<p>Hình 5 (c): Sau khi tạo mặt nạ, nhấn “Huấn luyện mẫu” trong giao diện nâng cao để tạo mẫu huấn luyện mới.</p>
+
+<h4><strong>Kim tự tháp ảnh</strong></h4>
+
+<p>Kim tự tháp ảnh được tạo bằng cách lọc và lấy mẫu giảm dần từ ảnh gốc, mỗi lớp phía trên có kích thước bằng 1/2 lớp phía dưới. Hình 6(a) là sơ đồ trích xuất kim tự tháp ảnh, Hình 6(b) là thay đổi đặc trưng sau khi ảnh thực tế được xử lý theo kim tự tháp. Khi tăng số lớp, độ phân giải ảnh giảm dần, đồng thời đặc trưng và chi tiết ảnh cũng bị giảm.</p>
+
+<p><img src="media/GvGeomSearchAdvancedExTool_4_2.png" alt="img" /><img src="media/GvGeomSearchAdvancedExTool_4_3.png" alt="img" /><img src="media/GvGeomSearchAdvancedExTool_4_4.png" alt="img" /></p>
+
+<p><imgnote>(a) Kim tự tháp ảnh</imgnote> <imgnote>(b) Mẫu</imgnote></p>
+
+<p><imgnote>Hình 6 Kim tự tháp</imgnote></p>
+
+<p>Mục tiêu trích xuất kim tự tháp ảnh:</p>
+
+<p>1. Tăng tốc: Sau khi tìm được kết quả ở lớp trên cùng, truyền xuống lớp dưới để tinh chỉnh, giúp giảm khối lượng tính toán so với tìm trực tiếp trên ảnh gốc. Lý thuyết càng nhiều lớp càng tốt, nhưng thực tế sau một số lớp sẽ không tiết kiệm thêm thời gian, và có thể mất chi tiết khiến định vị không ổn định. Thường thiết lập 3~5 lớp. Có thể thiết lập phạm vi tìm kiếm như (4,4), (4,3), (4,2), (3,3), (3,2)... trong đó (4,4) nhanh hơn (4,2).</p>
+
+<p>2. Với bề mặt mờ hoặc ảnh bị mờ, lớp dưới cùng có thể không đủ để huấn luyện mẫu, nhưng các lớp khác có thể tạo được mẫu tốt. Hình 6(b) là ảnh bề mặt mờ, đường xanh bên trái là mẫu lớp dưới cùng, bên phải là mẫu lớp thứ tư. Trong thực tế, mẫu trái sẽ thất bại (rối), còn mẫu phải sẽ ổn định. Nếu ảnh bên phải là lớp 4 thì tìm kiếm đặt là (4,4), nếu là lớp 3 thì đặt (4,3), bạn có thể tùy chọn phạm vi kim tự tháp khi tìm kiếm.</p>
+
+<h3>Huấn luyện ảnh</h3>
+
+<p>Nhấp chuột phải công cụ → Thuộc tính → Mở giao diện nâng cao → Tham số huấn luyện như Hình 7;</p>
+
+<p><img src="media/GvGeomSearchAdvancedExTool_4_13.png" alt="img" /></p>
+
+<p><imgnote>Hình 7 Minh họa huấn luyện ảnh</imgnote></p>
+
+<p>(1) Trước tiên chọn nguồn “ảnh huấn luyện”:</p>
+
+<p>​ a. “Ảnh đầu vào”: Ảnh huấn luyện lấy từ chuỗi tham số “ảnh đầu vào”;</p>
+
+<p>​ b. “Tải ảnh”: Ảnh huấn luyện được tải từ tệp offline;</p>
+
+<p>(2) Nhấn “Lấy ảnh huấn luyện”: cập nhật ảnh huấn luyện, sau khi nhấn sẽ hiện thông báo;</p>
+
+<p>(3) Nhấn “Thực hiện huấn luyện mẫu”: tiến hành huấn luyện;</p>
+
+<h3>Thực hiện tìm kiếm</h3>
+
+<p>Dựa vào tham số tìm kiếm và tham số đánh giá đã thiết lập để trả về kết quả tìm kiếm tương ứng, như Hình 8;</p>
+
+<p><img src="media/GvGeomSearchAdvancedExTool_4_14.png" alt="img" /></p>
+
+<p><imgnote>Hình 8 Minh họa thực hiện tìm kiếm</imgnote></p>
+
+<h2>5. Các vấn đề thường gặp</h2>
+
+<table>
+<thead>
+<tr>
+<th> Lưu ý </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1. Nếu có nhiều kết quả định vị, có thể dùng công cụ script để lấy từng kết quả trong mảng kết quả tìm kiếm của công cụ định vị hình học chuyên nghiệp. </td>
+</tr>
+<tr>
+<td> 2. Kết quả của nhiều phép biến đổi 2D trong định vị hình học chuyên nghiệp cũng có thể được lấy bằng công cụ script. </td>
+</tr>
+<tr>
+<td> 3. Khi số lớp kim tự tháp nhập tay quá cao, nếu huấn luyện không đạt tới thì kết thúc huấn luyện sẽ trả về lớp cao nhất có thể. </td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>6. Giải thích Tham số</h2>
+
+<h3>Tham số đầu vào</h3>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số             </th>
+<th style="text-align:left;"> Giải thích tham số                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Vùng huấn luyện             </td>
+<td style="text-align:left;"> Vùng hình chữ nhật biến hình trong ảnh mẫu tham gia vào quá trình huấn luyện.                                                                         </td>
+</tr>
+<tr>
+<td> Điểm đánh dấu huấn luyện      </td>
+<td style="text-align:left;"> Nhập thủ công tọa độ trục X và trục Y của điểm đánh dấu.                                                               </td>
+</tr>
+<tr>
+<td> Lưu ảnh huấn luyện </td>
+<td style="text-align:left;"> Khi lưu dự án, có lưu ảnh huấn luyện hay không. </td>
+</tr>
+<tr>
+<td> Kim tự tháp tự động </td>
+<td style="text-align:left;"> Có để thuật toán tự động xác định số tầng kim tự tháp hay không. Nếu chọn Không, thì hiển thị tham số số tầng kim tự tháp trong cửa sổ thuộc tính. </td>
+</tr>
+<tr>
+<td> Số tầng kim tự tháp </td>
+<td style="text-align:left;"> Khi số tầng kim tự tháp tăng, độ phân giải ảnh giảm dần; đồng thời, đặc trưng mẫu giảm và chi tiết mất đi. Thông thường dùng giá trị mặc định. Phạm vi giá trị [1,16], giá trị nguyên. Chỉ hiển thị thuộc tính này khi kim tự tháp tự động là Không. </td>
+</tr>
+<tr>
+<td> Tự động ngưỡng nhiễu          </td>
+<td style="text-align:left;"> Có để thuật toán tự động xác định ngưỡng nhiễu hay không. Nếu chọn Không, thì hiển thị tham số ngưỡng nhiễu trong cửa sổ thuộc tính.                                                               </td>
+</tr>
+<tr>
+<td> Ngưỡng nhiễu              </td>
+<td style="text-align:left;"> Trong ảnh, phần có giá trị điểm ảnh thấp hơn ngưỡng nhiễu được xem là nhiễu và không tham gia huấn luyện mẫu; phần cao hơn ngưỡng nhiễu được xem là đặc trưng ảnh và sẽ tham gia huấn luyện mẫu. Thường dùng giá trị mặc định. Phạm vi giá trị [0,255], hỗ trợ số thập phân. Chỉ hiển thị khi ngưỡng nhiễu tự động là Không.                                                              </td>
+</tr>
+<tr>
+<td> Tự động cường độ biên          </td>
+<td style="text-align:left;"> Có để thuật toán tự động xác định cường độ biên hay không. Nếu chọn Không, thì hiển thị tham số cường độ biên trong cửa sổ thuộc tính.                                                              </td>
+</tr>
+<tr>
+<td> Ngưỡng cường độ biên            </td>
+<td style="text-align:left;"> Tổng độ lớn của tất cả các điểm biên trong mẫu. Thường dùng giá trị mặc định. Phạm vi giá trị [1, +∞), giá trị nguyên. Chỉ hiển thị khi cường độ biên tự động là Không.                                                               </td>
+</tr>
+<tr>
+<td> Ngưỡng chấp nhận              </td>
+<td style="text-align:left;"> Mức độ phù hợp giữa mẫu huấn luyện và kết quả tìm kiếm thực tế. Khi điểm số phù hợp cao hơn ngưỡng chấp nhận, nghĩa là tìm kiếm thực tế thành công. Phạm vi giá trị (0,1).                                                               </td>
+</tr>
+<tr>
+<td> Ngưỡng độ tương phản            </td>
+<td style="text-align:left;"> Độ tương phản được định nghĩa là trung bình độ lớn biên của tất cả các điểm biên trong mẫu. Người dùng có thể đặt ngưỡng để loại bỏ mẫu có độ tương phản thấp. Phạm vi giá trị [1,255], hỗ trợ số thập phân.                                                               </td>
+</tr>
+<tr>
+<td> Ngưỡng tỷ lệ chồng lặp          </td>
+<td style="text-align:left;"> Nếu có nhiều mẫu, mức độ trùng lặp giữa các mẫu phải nhỏ hơn ngưỡng tỷ lệ chồng lặp, nếu không mẫu bị loại bỏ. Phạm vi giá trị (0,1], hỗ trợ số thập phân.                                                             </td>
+</tr>
+<tr>
+<td> Mức độ tham lam </td>
+<td style="text-align:left;"> Tham số thể hiện mức độ quyết liệt khi tìm kiếm, chủ yếu để tăng tốc tìm kiếm. Phạm vi giá trị [0,1], càng gần 1 thì tốc độ càng nhanh nhưng độ ổn định giảm. Mặc định là 0.9. Trong thực tế, dùng kết hợp với ngưỡng chấp nhận: ngưỡng chấp nhận càng cao thì nên giảm mức độ tham lam để tăng ổn định; ngưỡng chấp nhận càng thấp thì nên tăng mức độ tham lam để tăng tốc độ. Thường không cần điều chỉnh tham số này, chỉ cân nhắc khi các tham số khác không đạt yêu cầu. </td>
+</tr>
+<tr>
+<td> Số lượng tìm kiếm              </td>
+<td style="text-align:left;"> Thiết lập số lượng kết quả tìm kiếm tối đa.                                                                          </td>
+</tr>
+<tr>
+<td> Có bật tìm toàn ảnh      </td>
+<td style="text-align:left;"> Công tắc bật/tắt tìm kiếm toàn bộ ảnh. Khi chọn “Có”, toàn bộ ảnh thu được từ camera là phạm vi tìm kiếm; khi chọn “Không”, vùng hình chữ nhật biến hình “vùng tìm kiếm” trong chế độ xem Edit là phạm vi tìm kiếm. Vùng tìm kiếm cần lớn hơn vùng huấn luyện.                                                               </td>
+</tr>
+<tr>
+<td> Chế độ tìm kiếm              </td>
+<td style="text-align:left;"> Bao gồm hai chế độ: Nhanh và Chính xác, thời gian xử lý tăng dần và độ chính xác cũng tăng theo.                                                              </td>
+</tr>
+<tr>
+<td> Đa cực tính              </td>
+<td style="text-align:left;"> Cực tính chỉ hình thức chuyển tiếp mức xám của đặc trưng hình học mẫu, tức là từ sáng sang tối hoặc từ tối sang sáng.                                                               </td>
+</tr>
+<tr>
+<td> Góc quay nhỏ nhất/lớn nhất     </td>
+<td style="text-align:left;"> Phạm vi góc quay tìm kiếm, góc nhỏ nhất >= -360°, góc lớn nhất <= 360°, góc nhỏ nhất <= góc lớn nhất.                                       </td>
+</tr>
+<tr>
+<td> Tỷ lệ thu phóng nhỏ nhất/lớn nhất     </td>
+<td style="text-align:left;"> Phạm vi thu phóng khi tìm kiếm, tỷ lệ thu nhỏ > 0, và tỷ lệ nhỏ <= tỷ lệ lớn.                                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h3>Tham số đầu ra</h3>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số             </th>
+<th style="text-align:left;"> Giải thích tham số                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh đầu vào         </td>
+<td style="text-align:left;"> Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu vào.                                                                                   </td>
+</tr>
+<tr>
+<td> Tọa độ điểm đánh dấu huấn luyện       </td>
+<td style="text-align:left;"> Điểm đánh dấu được dùng để hỗ trợ định vị.                                                                                             </td>
+</tr>
+<tr>
+<td> Số lượng kết quả         </td>
+<td style="text-align:left;"> Số lượng kết quả tìm kiếm được.                                                                                                   </td>
+</tr>
+<tr>
+<td> Mảng kết quả tìm kiếm </td>
+<td style="text-align:left;"> Mảng bao gồm các kết quả tìm kiếm.                                                                                             </td>
+</tr>
+<tr>
+<td> Mảng biến đổi tuyến tính 2D </td>
+<td style="text-align:left;"> Biến đổi tuyến tính 2D là sự dịch chuyển, xoay và thu phóng của đối tượng so với mẫu. Mảng biến đổi tuyến tính 2D là tập hợp tất cả các biến đổi sau khi công cụ được thực thi một lần.                                                     </td>
+</tr>
+<tr>
+<td> Mảng tọa độ tìm kiếm     </td>
+<td style="text-align:left;"> Tọa độ tìm kiếm là kết quả tìm được của điểm đánh dấu. Mảng tọa độ tìm kiếm là tập hợp các tọa độ điểm đánh dấu sau khi công cụ thực thi một lần.                                                     </td>
+</tr>
+<tr>
+<td> Biến đổi tuyến tính 2D     </td>
+<td style="text-align:left;"> Biến đổi tuyến tính 2D do công cụ xuất ra là bộ giá trị đầu tiên trong mảng biến đổi tuyến tính 2D.                                                     </td>
+</tr>
+<tr>
+<td> Tọa độ tìm kiếm         </td>
+<td style="text-align:left;"> Tọa độ tìm kiếm xuất ra là bộ giá trị đầu tiên trong mảng tọa độ tìm kiếm. Nó tương ứng với cùng một kết quả tìm kiếm như biến đổi tuyến tính 2D đã xuất ra.                                                     </td>
+</tr>
+<tr>
+<td> Kết quả thực thi         </td>
+<td style="text-align:left;"> Kết quả thực thi của công cụ.                                                                                                   </td>
+</tr>
+<tr>
+<td> Thời gian thực thi         </td>
+<td style="text-align:left;"> Thời gian công cụ thực thi.                                                                                                   </td>
+</tr>
+</tbody>
+</table>
+
+<h2>7. Dự án mẫu</h2>
+
+<p>Tham khảo “\Samples\Công cụ định vị hình học chuyên nghiệp.gvp”。</p>
+

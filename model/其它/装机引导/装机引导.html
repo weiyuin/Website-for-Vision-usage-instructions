@@ -1,0 +1,345 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Hướng dẫn lắp đặt</h1>
+
+<p>Trong dây chuyền sản xuất của Apple, hệ thống thị giác được sử dụng cho các dự án căn chỉnh, dẫn hướng robot,... bao gồm camera và đèn chiếu sáng. Khi lắp đặt camera và đèn trên dây chuyền, cần phải lấy mẫu từ máy mẫu, sau đó sử dụng vị trí lắp đặt của camera và đèn trên máy mẫu làm tham chiếu để sao chép sang các máy khác trên dây chuyền. Các thông số cần sao chép bao gồm: vị trí và tư thế lắp đặt của camera và đèn, thông số thiết lập của camera và độ sáng của đèn. Mỗi máy đều cần tham khảo kết quả lắp đặt của máy mẫu, vì vậy cần phải sao chép thông tin mẫu một cách hiệu quả và chính xác trên các máy khác. Tuy nhiên, quá trình sao chép có thể do người có ít kinh nghiệm thực hiện. Do đó, cần có một công cụ thiết lập thị giác, giúp quá trình sao chép được lập trình hóa, có thể kiểm tra được kết quả lắp đặt thị giác, hỗ trợ kỹ sư AE/kỹ sư dịch vụ khách hàng lắp đặt camera và đèn một cách hiệu quả và chính xác.</p>
+
+<h2>1. Ghi lại thiết lập mẫu</h2>
+
+<h4>Thu thập thông tin hạng mục kiểm tra</h4>
+
+<p>Nhấn nút “Ghi lại thiết lập mẫu” trong menu “Tập tin”, như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_1.png" alt="SetupTool_1_1" /></p>
+
+<div align = "center">Hình 1-1</div>
+
+<p>Mở hộp thoại “Ghi lại thiết lập mẫu”, như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_2.png" alt="SetupTool_1_2" /></p>
+
+<div align = "center">Hình 1-2</div>
+
+<p>Nhấn nút “Thêm” trong cửa sổ “Ghi lại thiết lập mẫu”, hộp thoại bật lên như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_3.png" alt="SetupTool_1_3" /></p>
+
+<div align = "center">Hình 1-3</div>
+
+<p>Chọn công cụ nguồn hình ảnh (thu thập) được sử dụng cho hạng mục kiểm tra, chỉnh sửa hạng mục kiểm tra, mã sê-ri, thông tin xoay ảnh và lật ảnh. Nếu hạng mục kiểm tra này sử dụng đèn chiếu sáng, cần chỉnh sửa thông tin đèn. Nhấn nút “+” trong hộp thoại trên để thêm đèn. Người dùng có thể nhấp đúp vào đèn để chỉnh sửa bộ điều khiển đèn, kênh và độ sáng. Kết quả chỉnh sửa như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_4.png" alt="SetupTool_1_4" /></p>
+
+<div align = "center">Hình 1-4</div>
+
+
+<p>Chọn một đèn, nhấn nút “－” trong hộp thoại trên để xóa đèn, như Hình 1-5 dưới đây, ví dụ xóa đèn số 2:</p>
+
+<p><img src="media/SetupTool_1_5.png" alt="SetupTool_1_5" /></p>
+
+<div align = "center">Hình 1-5</div>
+
+<p>Nhấn nút “OK” trong hộp thoại trên để thêm một hạng mục kiểm tra. Nhấn “Hủy” hoặc nút “×” của hộp thoại để hủy thao tác thêm hạng mục kiểm tra.<br>
+Nhấn nút “Thu thập hình ảnh” trong Hình 1-2 để sử dụng công cụ thu thập hiện tại chụp một hình ảnh, đồng thời tạo một vùng “ROI định vị” và một vùng “ROI ánh sáng-1” trên hình ảnh. Nhấn biểu tượng “＋” trong hình trên để thêm hai vùng “ROI điều chỉnh vị trí đèn”, sau đó kéo đến khu vực quan tâm (tùy theo yêu cầu dự án), như Hình dưới:</p>
+
+<p><img src="media/SetupTool_1_6.png" alt="SetupTool_1_6" /></p>
+
+<div align = "center">Hình 1-6</div>
+
+<p>Vùng “ROI định vị” và “ROI ánh sáng-1” có thể kéo thả được. “ROI định vị” dùng để điều chỉnh vị trí cuối cùng của camera trên máy, còn “ROI ánh sáng-1” dùng để điều chỉnh vị trí của đèn cho hạng mục kiểm tra hiện tại. Số lượng tối đa các vùng “ROI ánh sáng” là 5.</p>
+
+<p>Chọn một ROI ánh sáng, nhấn nút “－” để xóa ROI ánh sáng đã chọn. Nhấn nút “Hủy”, sẽ bật ra hộp thoại cảnh báo như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_9.png" alt="SetupTool_1_9" /></p>
+
+<div align = "center">Hình 1-7</div>
+
+<p>Chọn hạng mục kiểm tra cần xóa trong danh sách, nhấn nút “Xóa”, hộp thoại xác nhận sẽ bật ra như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_10.png" alt="SetupTool_1_10" /></p>
+
+<div align = "center">Hình 1-8</div>
+
+<p>Chọn “Có” để xóa hạng mục đã chọn, chọn “Không” để thoát khỏi cửa sổ xóa. Nhấp đúp vào một hạng mục kiểm tra trong danh sách để mở hộp thoại chỉnh sửa, như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_11.png" alt="SetupTool_1_11" /></p>
+
+<div align = "center">Hình 1-9</div>
+
+<p>Cách thao tác trong hộp thoại chỉnh sửa tương tự như thao tác trong hộp thoại thêm mới.<br>
+Hạng mục kiểm tra dùng để ghi lại vị trí chụp ảnh của máy mẫu. Có bao nhiêu vị trí chụp thì tạo bấy nhiêu hạng mục kiểm tra.</p>
+
+<h4>Thu thập thông tin bia hiệu chuẩn</h4>
+
+<p>Nhấn nút “Tiếp theo” trong hình trên để vào giao diện thu thập thông tin bia hiệu chuẩn, như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_13.png" alt="SetupTool_1_13" /></p>
+
+<div align = "center">Hình 1-10</div>
+
+<p>Trong hình trên, danh sách camera hiển thị các camera đang kết nối với máy hiện tại. Nhấp đúp vào một camera để bật hộp thoại chỉnh sửa thông tin bia hiệu chuẩn, như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_14.png" alt="SetupTool_1_14" /></p>
+
+<div align = "center">Hình 1-11</div>
+
+
+<p>Người dùng có thể chỉnh sửa các thông số hiện tại của camera như khẩu độ, độ phóng đại, thời gian phơi sáng, độ lợi, Gamma và thông tin đèn chiếu sáng.<br>
+Nhấn nút “Thu thập hình ảnh” để dùng camera hiện tại chụp hình ảnh. Trong hình dưới, có thể thấy hai vùng là “ROI bia hiệu chuẩn” và “ROI đánh giá chất lượng ảnh”. ROI chất lượng ảnh được dùng để đánh giá chất lượng giữa hình ảnh thu thập được và ROI tương ứng trong mẫu máy. Kéo vùng ROI này đến vị trí bia hiệu chuẩn, nhấn nút “Lấy mã số tuần tự của bia hiệu chuẩn”, kết quả như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_15.png" alt="SetupTool_1_15" /></p>
+
+<div align = "center">Hình 1-12</div>
+
+<p>Nhấn lại nút “Thu thập hình ảnh”, hệ thống sẽ hiện thông báo như sau:</p>
+
+<p><img src="media/SetupTool_1_17.png" alt="SetupTool_1_17" /></p>
+
+<div align = "center">Hình 1-13</div>
+
+<p>Nhấn “Có” để chụp lại hình ảnh; nhấn “Không” để hủy thao tác chụp lại.<br>
+Nhấn nút “Bước trước” để quay lại giao diện thu thập thông tin hạng mục kiểm tra; nhấn “Bước tiếp” để vào giao diện “Hình ảnh chuẩn”.</p>
+
+<h4>Thu thập thông tin hình ảnh chuẩn</h4>
+
+<p>Nhấn nút “Bước tiếp” ở hình trên để vào giao diện thu thập thông tin hình ảnh chuẩn, như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_21.png" alt="SetupTool_1_17" /></p>
+
+<div align = "center">Hình 1-14</div>
+
+<p>Các bước thao tác như sau:</p>
+
+<p>Bước 1: Nhấn vào dòng danh sách CCD1;</p>
+
+<p>Bước 2: Chọn hạng mục kiểm tra dưới CCD1;</p>
+
+<p>Bước 3: Nhấn nút “Thu thập hình ảnh chuẩn”;</p>
+
+<p>Bước 4: Kéo vùng ROI_Train trên hình ảnh — vùng ROI này dùng để huấn luyện nên cần đặt tại các đặc trưng cố định của sản phẩm, như hình minh họa;</p>
+
+<p>Bước 5: Thêm 1~12 vùng ROI đánh giá độ sáng (tùy vào yêu cầu dự án), thông thường chỉ cần thêm 3~4 vùng;</p>
+
+<p>Bước 6: Kéo các ROI đánh giá độ sáng vào các vùng quan tâm trên sản phẩm. Các ROI này dùng để so sánh độ sáng với các máy mới, nhằm kiểm tra máy mới có giống mẫu máy hay không. Mục đích chính là điều chỉnh giá trị tỷ lệ cân bằng trắng của máy mới;</p>
+
+<p>Nhấn nút “Bước trước” để quay lại giao diện thu thập thông tin bia hiệu chuẩn; nhấn “Bước tiếp” để vào giao diện “Lưu thông tin mẫu máy”.</p>
+
+<h4>Lưu thông tin mẫu máy</h4>
+
+<p>Nhấn nút “Hoàn tất” trong giao diện ghi lại cài đặt mẫu máy để vào giao diện lưu thông tin mẫu máy, như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_18.png" alt="SetupTool_1_18" /></p>
+
+<div align = "center">Hình 1-15</div>
+
+
+<p>Giải thích các bước thao tác như sau：</p>
+
+<p>Bước 1: Thông tin máy dùng để ghi lại tên dự án, tên công đoạn, mã số công đoạn, người phụ trách thị giác và nhà cung cấp thị giác của máy hiện tại. Điền thông tin theo yêu cầu thực tế của dự án;</p>
+
+<p>Bước 2: X, Y là độ lệch tối đa cho phép (đơn vị: pixel) giữa vị trí chụp của máy mới và mẫu máy;</p>
+
+<p>Bước 3: Rx, Ry, Rz là các góc lệch tối đa cho phép giữa camera của máy mới và mẫu máy;</p>
+
+<p>Bước 4: Min, Max, Contrast là sai số độ sáng tối đa cho phép của các vùng ROI sáng giữa máy mới và mẫu máy, bao gồm: độ sáng nhỏ nhất, lớn nhất và độ tương phản;</p>
+
+<p>Bước 5: Giá trị trung bình kênh R, G, B là độ lệch tối đa cho phép về giá trị trung bình từng kênh màu trong ROI ảnh chuẩn giữa máy mới và mẫu máy;</p>
+
+<p>Bước 6: Nhấn nút “Xuất thông tin tham chiếu” để xuất toàn bộ thông tin chuẩn đã thu thập từ mẫu máy;</p>
+
+<p>Nhấn nút “Hủy” trong hình trên để đóng cửa sổ “Lưu thông tin mẫu máy”. Khi đóng cửa sổ này, mọi thông tin đã chỉnh sửa sẽ bị mất.<br>
+Nhấn nút “Xuất thông tin tham chiếu”, hộp thoại lưu tệp sẽ bật lên như hình dưới:</p>
+
+<p><img src="media/SetupTool_1_20.png" alt="SetupTool_1_20" /></p>
+
+<div align = "center">Hình 1-16</div>
+
+<h2>2. Sao chép cài đặt mẫu máy</h2>
+
+<h4>Nhập thông tin tham chiếu từ mẫu máy</h4>
+
+<p>Nhấn nút “Ghi lại cài đặt mẫu máy” trong menu “Tệp”, hộp thoại mở tệp thông tin mẫu máy sẽ bật lên như hình dưới:</p>
+
+<p><img src="media/SetupTool_2_1.png" alt="SetupTool_2_1" /></p>
+
+<div align = "center">Hình 2-1</div>
+
+<p>Chọn tệp thông tin mẫu máy đã lưu và nhấn nút “Mở” để nhập dữ liệu tham chiếu.</p>
+
+<h4>Điều chỉnh camera theo bia hiệu chuẩn</h4>
+
+<p>Sau khi nhập dữ liệu tham chiếu mẫu máy, giao diện sao chép cài đặt mẫu máy sẽ được mở ra. Chọn camera từ danh sách tất cả các camera (đang online) kết nối với máy hiện tại. Hệ thống sẽ hiển thị các thông tin của camera này trên mẫu máy, bao gồm: mã số bia hiệu chuẩn, khẩu độ, độ phóng đại, thời gian phơi sáng, độ lợi, Gamma và các sai số (X, Y, kích thước điểm ảnh, Rx, Ry, Rz), như hình dưới:</p>
+
+<p><img src="media/SetupTool_2_2.png" alt="SetupTool_2_2" /></p>
+
+<div align = "center">Hình 2-2</div>
+
+
+
+<p>Sau khi nhận diện bia hiệu chuẩn trong ảnh thời gian thực (thành công hoặc thất bại), việc thu ảnh thời gian thực sẽ dừng lại. Nếu cần nhận diện lại bia hiệu chuẩn, cần nhấn nút “Làm mới ảnh thời gian thực”, sau đó nhấn nút “Tiếp theo” để vào giao diện “Điều chỉnh độ nét”.</p>
+
+<p>Nhấn nút “Chức năng tiện ích” để vào giao diện chức năng tiện ích, như Hình 2-3 dưới đây.<br/>
+Giải thích thông tin trong bảng “Trạng thái gỡ lỗi” như sau (Đạt: nghĩa là sai số tuyệt đối giữa tham số bia hiệu chuẩn thời gian thực và tham số tham chiếu nhỏ hơn hoặc bằng sai số cho phép):<br/>
+Camera: tên camera;</p>
+
+<p>Sử dụng bia hiệu chuẩn để điều chỉnh tư thế camera: “Có” nghĩa là đã điều chỉnh thành công tư thế camera bằng bia hiệu chuẩn;</p>
+
+<p>Sử dụng sản phẩm để điều chỉnh tư thế camera: “Có” nghĩa là đã điều chỉnh thành công tư thế camera bằng sản phẩm thực tế;</p>
+
+<p>Sử dụng sản phẩm để điều chỉnh đèn chiếu sáng: “Có” nghĩa là đã điều chỉnh thành công đèn chiếu sáng bằng sản phẩm thực tế.</p>
+
+<p>Giải thích thông tin trong bảng “Điều khiển đèn chiếu sáng”:</p>
+
+<p>Bảng kết quả tìm kiếm sẽ hiển thị “Công cụ gửi lệnh giao tiếp” trong dự án đã chỉ định. Nhấn đúp vào công cụ gửi lệnh, công cụ này sẽ được thêm vào danh sách “Công cụ gửi lệnh chờ thực thi”;</p>
+
+<p>Nhấn nút “Thực thi” để thực hiện tất cả các công cụ gửi lệnh trong danh sách.</p>
+
+<p><img src="media/SetupTool_2_3.png" alt="SetupTool_2_3" /></p>
+
+<div align = "center">Hình 2-3</div>
+
+<h4>Điều chỉnh độ nét</h4>
+
+<p>Nhấn nút “Tiếp theo” trong cửa sổ sao chép cài đặt mẫu máy để vào giao diện “Điều chỉnh độ nét”. Trong giao diện này, người dùng có thể xem độ nét và độ tương phản của vùng ROI trong ảnh bia hiệu chuẩn hiện tại so với ảnh bia hiệu chuẩn của máy mẫu. Đồng thời có thể thay đổi ảnh thời gian thực hiện tại của máy mới bằng cách điều chỉnh tỷ lệ kênh cân bằng trắng của camera, từ đó điều chỉnh độ nét và độ tương phản của ảnh bia hiệu chuẩn hiện tại. Xem hình dưới:</p>
+
+<p>Chế độ cân bằng trắng: thiết lập chế độ cân bằng trắng, chỉ có hiệu lực với camera màu LBAS, giá trị có thể là Continuous (liên tục), Once (một lần), Off (tắt);</p>
+
+<p>Tỷ lệ kênh R: thiết lập giá trị tỷ lệ của kênh R trong cân bằng trắng;</p>
+
+<p>Tỷ lệ kênh G: thiết lập giá trị tỷ lệ của kênh G trong cân bằng trắng;</p>
+
+<p>Tỷ lệ kênh B: thiết lập giá trị tỷ lệ của kênh B trong cân bằng trắng;</p>
+
+<p>Lưu kênh: lưu lại tỷ lệ kênh đã chỉ định của camera.</p>
+
+<p><img src="media/SetupTool_2_4.png" alt="SetupTool_2_4" /></p>
+
+<div align = "center">Hình 2-4</div>
+
+
+<h4>Điều chỉnh camera bằng sản phẩm</h4>
+
+<p>Nhấn nút “Tiếp theo” trong cửa sổ sao chép cài đặt mẫu máy để vào giao diện “Hiệu chỉnh sai lệch màu sắc ảnh”. Trong giao diện này, người dùng có thể chọn “Hạng mục kiểm tra”, tất cả hạng mục là của camera hiện tại đang chờ hiệu chỉnh. Có thể thấy mã sản phẩm và thông tin đèn chiếu tương ứng với từng hạng mục kiểm tra như hình dưới:</p>
+
+<p>Hạng mục kiểm tra: Tên hạng mục kiểm tra, do người dùng tùy chỉnh trong giai đoạn “Ghi lại cài đặt mẫu máy”;</p>
+
+<p>Mã số: Mã số sản phẩm, do người dùng tùy chỉnh trong giai đoạn “Ghi lại cài đặt mẫu máy”;</p>
+
+<p>Xoay camera: Xoay ảnh gốc theo chiều ngược kim đồng hồ với các góc 0°, 90°, 180° và 270°;</p>
+
+<p>Gương ảnh camera: Thực hiện gương ảnh đối với ảnh gốc, có bốn chế độ: không, ngang, dọc và cả ngang lẫn dọc;</p>
+
+<p>Phơi sáng: Thời gian phơi sáng của camera, đơn vị: mili giây (ms);</p>
+
+<p>Khuếch đại (Gain): Mức khuếch đại của camera, đơn vị: decibel (dB);</p>
+
+<p>Gamma: Dùng để điều chỉnh độ tương phản của camera;</p>
+
+<p>Tư thế camera: X là giá trị tọa độ trung tâm vùng ROI định vị theo trục X, Y là theo trục Y, Rz là góc quay quanh trục Z theo chiều kim đồng hồ.</p>
+
+<p><img src="media/SetupTool_2_5.png" alt="SetupTool_2_5" /></p>
+
+<div align = "center">Hình 2-5</div>
+
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Trong hình trên, vùng ROI màu xanh lá trong ảnh bên phải là ROI ở cùng vị trí với ảnh bên trái, vùng ROI màu đỏ là ROI định vị thời gian thực (vùng khung đỏ trùng với khung xanh lá).</p></blockquote>
+
+<h4>Điều chỉnh đèn chiếu sáng bằng sản phẩm</h4>
+
+<p>Hạng mục kiểm tra: Tên hạng mục kiểm tra, do người dùng tùy chỉnh trong giai đoạn “Ghi lại cài đặt mẫu máy”;</p>
+
+<p>Mã số: Mã số sản phẩm, do người dùng tùy chỉnh trong giai đoạn “Ghi lại cài đặt mẫu máy”;</p>
+
+<p>Xoay camera: Xoay ảnh gốc theo chiều ngược kim đồng hồ với các góc 0°, 90°, 180° và 270°;</p>
+
+<p>Gương ảnh camera: Thực hiện gương ảnh đối với ảnh gốc, có bốn chế độ: không, ngang, dọc và cả ngang lẫn dọc;</p>
+
+<p>Phơi sáng: Thời gian phơi sáng của camera, đơn vị: mili giây (ms);</p>
+
+<p>Khuếch đại (Gain): Mức khuếch đại của camera, đơn vị: decibel (dB);</p>
+
+<p>Gamma: Dùng để điều chỉnh độ tương phản của camera;</p>
+
+<p>Tư thế camera: X là giá trị tọa độ trung tâm vùng ROI định vị theo trục X, Y là theo trục Y, Rz là góc quay quanh trục Z theo chiều kim đồng hồ.</p>
+
+<p><img src="media/SetupTool_2_6.png" alt="SetupTool_2_6" /></p>
+
+<div align = "center">Hình 2-6</div>
+
+<h4>Hiệu chỉnh sai lệch màu sắc ảnh</h4>
+
+<p>Người dùng có thể chọn chế độ tự động hoặc thủ công để hiệu chỉnh sai lệch màu sắc ảnh giữa máy sao chép và máy mẫu, sau đó lưu kết quả vào camera.</p>
+
+<p>Phương pháp tính trong chế độ thủ công:</p>
+
+<p>1. Thay đổi thủ công tỷ lệ kênh R/G/B;</p>
+
+<p>2. Làm mới ảnh thời gian thực và hiển thị kết quả tính toán.</p>
+
+<p>Trong chế độ tự động:</p>
+
+<p>Nhấn nút “Tính toán” để tự động tính tỷ lệ kênh R/G/B tối ưu.</p>
+
+<p>Nhấn nút “Lưu” trong chế độ thủ công hoặc tự động để lưu tỷ lệ kênh R/G/B hiện tại vào camera.</p>
+
+<p>Danh sách kết quả tính toán: hiển thị kết quả tính toán ảnh thời gian thực.</p>
+
+<p><span style="color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Trong vùng hiển thị ảnh đôi, ảnh trên là ảnh chuẩn, ảnh dưới là ảnh thời gian thực. Khi kết quả tính toán của ảnh thời gian thực nằm trong phạm vi sai số tối đa cho phép so với ảnh chuẩn, thông số ảnh thời gian thực sẽ hiển thị màu xanh lá, nếu vượt quá thì hiển thị màu đỏ (quy tắc này áp dụng cho tất cả các giao diện hiển thị vùng ảnh đôi).</p>
+
+<p>Xoay camera: Xoay ảnh gốc theo chiều ngược kim đồng hồ với các góc 0°, 90°, 180° và 270°;</p>
+
+<p>Gương ảnh camera: Thực hiện gương ảnh đối với ảnh gốc, có bốn chế độ: không, ngang, dọc và cả ngang lẫn dọc;</p>
+
+<p>Phơi sáng: Thời gian phơi sáng của camera, đơn vị: mili giây (ms);</p>
+
+<p>Khuếch đại (Gain): Mức khuếch đại của camera, đơn vị: decibel (dB);</p>
+
+<p>Gamma: Dùng để điều chỉnh độ tương phản của camera;</p>
+
+<p>Tư thế camera: X là giá trị tọa độ trung tâm vùng ROI định vị theo trục X, Y là theo trục Y, Rz là góc quay quanh trục Z theo chiều kim đồng hồ.</p>
+
+<p><img src="media/SetupTool_2_7.png" alt="SetupTool_2_7" /></p>
+
+<div align = "center">Hình 2-7</div>
+
+
+<h2>3. Các vấn đề thường gặp</h2>
+
+<ul>
+<li><h4>Ghi lại cài đặt mẫu máy</h4></li>
+</ul>
+
+<p>Khi trong dự án không có công cụ thu thập ảnh / công cụ nguồn ảnh (hệ thống đang online), sẽ không thể thêm hạng mục kiểm tra;</p>
+
+<p>Khi phần mềm chưa kết nối với camera, chức năng không thể sử dụng.</p>
+
+<ul>
+<li><h4>Sao chép cài đặt mẫu máy</h4></li>
+</ul>
+
+<p>Khi nhập dữ liệu mẫu máy vào máy mới, cần đảm bảo số lượng và tên camera kết nối với máy mới khớp hoàn toàn với mẫu máy;</p>
+
+<p>Khi sử dụng đến đèn chiếu, dự án cần có công cụ gửi thông tin truyền thông;</p>
+
+<p>Sau khi nhận diện xong bia mục tiêu, việc thu thập ảnh thời gian thực sẽ dừng lại, cần làm mới thủ công để tiếp tục thu thập ảnh bia mục tiêu; nếu chuyển sang giao diện điều chỉnh sản phẩm, hệ thống sẽ tự động làm mới ảnh;</p>
+
+<p>Khi phần mềm chưa kết nối với camera, chức năng không thể sử dụng.</p>

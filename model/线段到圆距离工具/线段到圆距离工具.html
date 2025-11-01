@@ -1,0 +1,170 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>线段到圆距离工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     线段到圆距离工具的主要作用是计算图像上一条线段到圆之间的距离，并将图像上的距离换算成实际的距离。需要注意的是该距离计算的是起始线段到圆之间的最短距离。</p>
+
+<p><img src="media/GcDistanceLineSegCircleTool_1_1.png" alt="img" /></p>
+
+<p><imgnote>图1 线段到圆距离工具示意图</imgnote></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     线段到圆距离工具适用于圆形目标物与特征线间的距离测量，如圆孔到器件边缘的距离等。</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     <strong>距离计算</strong>:</p>
+
+<p>​     线段上的点到圆上的点之间的最短距离。</p>
+
+<p>​     当线段与圆相交或相切时，距离为0；当线段在圆的外部时，距离为正；当圆内包线段时，距离为负。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcDistanceLineSegCircleTool_4_1.png" alt="img" /></p>
+
+<ul>
+<li><h4>定距离值上限、距离值下限等</h4></li>
+</ul>
+
+
+<p><img src="media/GcDistanceLineSegCircleTool_4_2.png" alt="img" /></p>
+
+<p><strong>距离值上限、距离值下限</strong></p>
+
+<p>对于输出参数<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">距离值</a>的有效范围进行设定，距离值上限、距离值下限的可取值范围为[0,999999.999999]，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">距离值</a>上限或下限不进行限定。</p>
+
+<p>使用距离值上限或/和距离值下限对<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">距离值</a>数值的有效范围进行设定后，执行此测量工具。</p>
+
+<p>当输出结果<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">距离值</a>在设定的有效范围内时，显示工具执行成功；否则，显示工具执行失败。</p>
+
+<ul>
+<li><h4>查看结果</h4></li>
+</ul>
+
+
+<p><img src="media/GcDistanceLineSegCircleTool_4_3.png" alt="img" /></p>
+
+<p><img src="media/GcDistanceLineSegCircleTool_4_4.png" alt="img" /></p>
+
+<h2>5. 常见问题</h2>
+
+<p>无</p>
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称       </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像       </td>
+<td> 待测量线段到圆距离的图像。                                   </td>
+</tr>
+<tr>
+<td> 距离值上限     </td>
+<td> 取值范围[-999999.999999,999999.999999]，输出参数距离值的上限阈值。当距离大于此值时，工具执行失败。 </td>
+</tr>
+<tr>
+<td> 距离值下限     </td>
+<td> 取值范围[-999999.999999,999999.999999]，输出参数距离值的下限阈值。当距离小于此值时，工具执行失败。 </td>
+</tr>
+<tr>
+<td> 距离值固定补偿 </td>
+<td> 测量结果固定补偿。一般为0，用于补偿成像等系统误差。          </td>
+</tr>
+<tr>
+<td> 距离值系数补偿 </td>
+<td> 测量结果系数补偿。一般为1，用于补偿成像等系统误差。          </td>
+</tr>
+<tr>
+<td> 像素当量       </td>
+<td> 图像上的距离转换成实际距离的比例。                           </td>
+</tr>
+<tr>
+<td> 线段           </td>
+<td> 待计算距离的参考起始线段。。                                 </td>
+</tr>
+<tr>
+<td> 圆             </td>
+<td> 待计算距离的参考圆。                                         </td>
+</tr>
+<tr>
+<td> 高级界面       </td>
+<td> 无                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                        </th>
+<th> 参数说明                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像                        </td>
+<td> 输出图像宽度、高度、像素大小。                               </td>
+</tr>
+<tr>
+<td> 距离线段                        </td>
+<td> 线段起始点、终止点的坐标和方向向量，显示为图像查找区域内的线段结果。 </td>
+</tr>
+<tr>
+<td> 图像距离值                      </td>
+<td> 两点在图像上的距离值，像素为单位。                           </td>
+</tr>
+<tr>
+<td> 距离值                          </td>
+<td> 两点的实际距离值，毫米为单位。                               </td>
+</tr>
+<tr>
+<td> 执行结果                        </td>
+<td> 工具执行结果，执行成功显示“OK”，执行失败显示“NG”。           </td>
+</tr>
+<tr>
+<td> 执行时间                        </td>
+<td> 工具执行时间。                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\形状间距及相关点.gvp”。</p>

@@ -1,0 +1,151 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Trộn Ảnh</h1>
+
+<h2>Chức năng</h2>
+
+<p>Trong quá trình thu nhận hình ảnh, có thể xảy ra hiện tượng một phần ảnh bị tối, phần khác lại quá sáng, dẫn đến độ sáng tổng thể không đồng đều. Vì vậy cần trộn hai ảnh lại với nhau. Nói đơn giản, đó là việc ghép một vùng cụ thể của ảnh nguồn vào ảnh đích để xuất ra ảnh đã trộn. Vùng này có thể là hình chữ nhật, hình chữ nhật biến đổi affine, đa giác hoặc hình tròn.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Loại vùng ROI</td>
+<td>Loại vùng ROI dùng để trộn ảnh nguồn, gồm 4 loại chính: hình chữ nhật, hình chữ nhật affine, đa giác và hình tròn.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI hình chữ nhật</td>
+<td>Xuất hiện tùy theo loại vùng ROI được chọn.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI hình chữ nhật affine</td>
+<td>Tương tự như trên.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI đa giác</td>
+<td>Tương tự như trên.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI hình tròn</td>
+<td>Tương tự như trên.</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Ảnh đích</td>
+<td>Ảnh sẽ được trộn với ảnh nguồn.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh nguồn</td>
+<td>Ảnh được lấy dữ liệu từ vùng ROI.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đích</td>
+<td>Tương tự như trên.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh nguồn</td>
+<td>Tương tự như trên.</td>
+</tr>
+<tr>
+<td></td>
+<td>Biến đổi tuyến tính</td>
+<td>Biến đổi tuyến tính được áp dụng lên vùng ROI tương ứng.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi trộn.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực hiện tác vụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi trộn.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ: hiển thị “OK” nếu thành công, hiển thị “NG” nếu thất bại — giống như tham số kết quả thực thi ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi trộn.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li>Vùng ROI trước tiên sẽ được thực hiện biến đổi tuyến tính (do chuỗi dữ liệu cung cấp), sau đó mới thực hiện sao chép vùng tương ứng từ ảnh nguồn vào ảnh đích.</li>
+</ul>
+
+<h2>Dự án mẫu</h2>
+
+<p>Tham khảo tại “\Samples\图像融合工具.gvp”。</p>
+

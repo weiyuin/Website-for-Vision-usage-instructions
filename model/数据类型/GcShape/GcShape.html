@@ -1,0 +1,206 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GcShape</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho một đối tượng hình học (đồ họa).</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hàm</td>
+<td>GetShape</td>
+<td>Lấy đối tượng hình học.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetShapeType</td>
+<td>Lấy kiểu loại của đối tượng hình học.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetRect</td>
+<td>Thiết lập hình học cơ bản: hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetAffineRect</td>
+<td>Thiết lập hình học cơ bản: hình chữ nhật biến dạng (hình chữ nhật affine).</td>
+</tr>
+<tr>
+<td></td>
+<td>SetCircle</td>
+<td>Thiết lập hình học cơ bản: hình tròn.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetAnnulusSection</td>
+<td>Thiết lập hình học cơ bản: đoạn vành khuyên (hình tròn rỗng một phần).</td>
+</tr>
+<tr>
+<td></td>
+<td>SetEllipse</td>
+<td>Thiết lập hình học cơ bản: hình elip.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetPolyline</td>
+<td>Thiết lập hình học cơ bản: hình đa giác (nhiều cạnh nối nhau).</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Chi tiết</h2>
+
+<h3>GetShape()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy đối tượng hình học.</p></li>
+<li><p>Tham số: Không có</p></li>
+<li><p>Giá trị trả về: Đối tượng hình học, kiểu dữ liệu là một trong các loại sau: scRect, scAffineRect, scCircle, scAnnulusSection, scEllipse, scPolyline.</p></li>
+</ul>
+
+<h3>GetShapeType()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy loại của đối tượng hình học.</p></li>
+<li><p>Tham số: Không có</p></li>
+<li><p>Giá trị trả về: Loại hình học, kiểu dữ liệu là ShapeType.</p></li>
+</ul>
+
+<h3>SetRect()</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập hình cơ bản là hình chữ nhật.</p></li>
+<li><p>Tham số: scRect</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetAffineRect()</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập hình cơ bản là hình chữ nhật biến dạng (affine).</p></li>
+<li><p>Tham số: scAffineRect</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetCircle()</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập hình cơ bản là hình tròn.</p></li>
+<li><p>Tham số: scCircle</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetAnnulusSection()</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập hình cơ bản là đoạn vành khuyên (một phần của hình tròn rỗng).</p></li>
+<li><p>Tham số: scAnnulusSection</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetEllipse()</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập hình cơ bản là hình elip.</p></li>
+<li><p>Tham số: scEllipse</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetPolyline()</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập hình cơ bản là đa giác (nhiều đoạn thẳng nối liên tiếp).</p></li>
+<li><p>Tham số: scPolyline</p></li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h2>Chú ý</h2>
+
+<ol>
+<li><p>Kiểu dữ liệu C++ của đối tượng này là <code>std::shared_ptr&lt;scShape&gt;</code>, thường được sử dụng trong tham số ROI của các công cụ như: Công cụ khớp mặt phẳng 2D, Công cụ đo chiều cao. Khi sử dụng cần gọi hàm <code>GetShape()</code> để lấy đối tượng hình học cụ thể.</p></li>
+<li><p>ROI có 7 loại: toàn ảnh, hình chữ nhật, hình chữ nhật biến dạng, hình tròn, đoạn vành khuyên, hình elip, đa giác. Hàm <code>GetShapeType()</code> sẽ trả về các giá trị tương ứng là: <code>eFull</code>, <code>eRect</code>, <code>eAffineRect</code>, <code>eCircle</code>, <code>eAnnulusSection</code>, <code>eEllipse</code>, <code>ePolyline</code>. Trường hợp <code>eFull</code> sẽ trả về con trỏ rỗng (null), cần chú ý khi sử dụng.</p></li>
+</ol>
+
+
+
+<h2>Mã ví dụ</h2>
+
+<ul>
+<li>Ví dụ 1</li>
+</ul>
+
+<pre><code class="language-python">
+# Lấy vùng ROI của công cụ khớp mặt phẳng 2_002 (ROI là một mảng đối tượng)
+Roi = GvTool.GetToolData("平面拟合工具2_002.ROI")
+
+# Lấy vùng ROI đầu tiên (là hình chữ nhật, kiểu dữ liệu scRect)
+shape = Roi[0].GetShape()
+
+# Lấy điểm góc trên bên trái của hình chữ nhật (kiểu dữ liệu sc2Vector)
+origin = shape.GetOrigin()
+
+# Lấy tọa độ X của góc trên bên trái (kiểu float)
+origin_x = origin.GetX()
+
+# Lấy tọa độ Y của góc trên bên trái (kiểu float)
+origin_y = origin.GetY()
+</code></pre>
+
+<ul>
+<li>Ví dụ 2</li>
+</ul>
+
+<pre><code class="language-python">
+# Khởi tạo mảng hình học và các hình học
+vctShape = GvVisionAssembly.GcShapeVec()
+
+# Thiết lập hình đầu tiên là hình chữ nhật
+shape1 = GvVisionAssembly.GcShape()
+rect = GvVisionAssembly.scRect(
+    GvVisionAssembly.sc2Vector(100, 100),
+    GvVisionAssembly.sc2Vector(200, 300)
+)
+shape1.SetRect(rect)
+vctShape.append(shape1)
+
+# Thiết lập hình thứ hai là hình tròn
+shape2 = GvVisionAssembly.GcShape()
+circle = GvVisionAssembly.scCircle(
+    GvVisionAssembly.sc2Vector(100, 100), 50
+)
+shape2.SetCircle(circle)
+vctShape.append(shape2)
+
+# Gán tập ROI đã thiết lập bằng script vào tham số ROI của công cụ khớp mặt phẳng 2
+vct = GvTool.SetToolData("平面拟合工具2_002.ROI", vctShape)
+</code></pre>

@@ -1,0 +1,144 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Gán Nhãn Tự Động</h1>
+
+<h2>1. Mô Tả Chức Năng</h2>
+
+<p>​ Công cụ này được sử dụng để hiệu chuẩn hình ảnh bàn cờ có chứa mã DM đầu vào.</p>
+
+<h2>2. Trường Hợp Ứng Dụng</h2>
+
+<p>​ Không có</p>
+
+<h2>3. Giải Thích Nguyên Lý</h2>
+
+<p>​ Đọc chuỗi ký tự từ một mã DM, chuỗi này chứa thông tin vị trí và kích thước mục tiêu (kích thước vật lý thực tế của một ô đen hoặc trắng). Sau đó chọn một vị trí gần mã DM này, tính toán tọa độ vật lý thực tế của vị trí đó, tức là tọa độ mục tiêu toàn cục; tiếp theo tính toán độ lệch giữa mục tiêu cục bộ và mục tiêu toàn cục, sau đó dựa vào mối quan hệ giữa hệ tọa độ mục tiêu và hệ tọa độ ảnh, chuyển đổi các điểm góc bàn cờ từ mục tiêu cục bộ sang mục tiêu toàn cục, cuối cùng thực hiện tính toán hiệu chuẩn.</p>
+
+<h2>4. Hướng Dẫn Sử Dụng</h2>
+
+<p>​ “Công cụ gán nhãn tự động” không cần thiết lập tham số nào, chỉ cần liên kết với ảnh và chạy trực tiếp.</p>
+
+<p><img src="media\GvCalibDMCodeTool_4_1.png" alt="GvCalibDMCodeTool_4_1" /></p>
+
+<h2>5. Các Vấn Đề Thường Gặp</h2>
+
+<p>​ Như đã mô tả trong phần nguyên lý trước đó, công cụ gán nhãn tự động sẽ tự động đọc thông tin từ mã DM và sử dụng thông tin này để tính toán mối quan hệ giữa hệ tọa độ ảnh và hệ tọa độ mục tiêu. Khi người dùng nhận thấy kết quả đầu ra bất thường như “hệ số chuyển đổi pixel” lệch nhiều so với giá trị lý thuyết, hoặc hình ảnh hiệu chỉnh méo bị sai lệch rõ rệt, có thể tiến hành kiểm tra tính chính xác của kết quả hiệu chuẩn theo quy trình sau:</p>
+
+<ul>
+<li>Lưu đồ kiểm tra công cụ gán nhãn tự động như sau:</li>
+</ul>
+
+<p><img src="media\GvCalibDMCodeTool_5_1.png" alt="GvCalibDMCodeTool_5_1" /></p>
+
+<ul>
+<li>Sử dụng “Công cụ đọc mã DM nâng cao” để đọc mã DM được sử dụng trong “Công cụ gán nhãn tự động”;</li>
+</ul>
+
+<p><img src="media\GvCalibDMCodeTool_5_2.png" alt="GvCalibDMCodeTool_5_2" /></p>
+
+<ul>
+<li>Kết quả giải mã như hình dưới, chuỗi ký tự cho kết quả là tọa độ mục tiêu toàn cục (6,194), 0.5 là kích thước thực tế (mm) của một ô trắng hoặc đen;</li>
+</ul>
+
+<p><img src="media\GvCalibDMCodeTool_5_3.png" alt="GvCalibDMCodeTool_5_3" /></p>
+
+<ul>
+<li>Vị trí tọa độ mục tiêu toàn cục là vị trí điểm đỏ trong hình dưới, tức là vị trí bàn cờ gần nhất với điểm 0 của mã QR.</li>
+</ul>
+
+<p><img src="media\GvCalibDMCodeTool_5_4.png" alt="GvCalibDMCodeTool_5_4" /></p>
+
+<ul>
+<li>Sử dụng công cụ script để phân tích kết quả giải mã, lấy tọa độ ảnh điểm 0 của mã QR và sử dụng “Công cụ tạo vector 2D” để tạo vector;</li>
+</ul>
+
+<p><img src="media\GvCalibDMCodeTool_5_5.png" alt="GvCalibDMCodeTool_5_5" /></p>
+
+<ul>
+<li>Liên kết tọa độ vector điểm 0 của mã QR và kết quả hiệu chuẩn từ “Công cụ gán nhãn tự động” với “Công cụ chiếu ngược tọa độ ảnh” để lấy tọa độ điểm 0 trong hệ tọa độ toàn cục;</li>
+</ul>
+
+<p><img src="media\GvCalibDMCodeTool_5_6.png" alt="GvCalibDMCodeTool_5_6" /></p>
+
+<ul>
+<li>So sánh tọa độ mục tiêu toàn cục (6,194) trong kết quả giải mã và tọa độ điểm 0 của mã QR sau khi chiếu ngược là (6.093,193.899), hai giá trị này gần giống nhau, phù hợp về mặt vị trí, chứng tỏ kết quả hiệu chuẩn là chính xác.</li>
+</ul>
+
+<h2>6. Mô Tả Tham Số</h2>
+
+<p><strong>Tham số đầu vào</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Vùng tìm kiếm</td>
+<td>Dùng để thiết lập vùng tìm mã DM trong ảnh cần hiệu chuẩn</td>
+</tr>
+<tr>
+<td>Chuỗi tham số</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh bàn cờ có mã DM, vùng đọc mã sẽ nhận biến đổi tuyến tính 2D để đảm bảo vùng đọc cố định so với mã DM</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tham số đầu ra</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kết quả hiệu chuẩn camera</td>
+<td>Kết quả hiệu chuẩn camera đầu ra</td>
+</tr>
+<tr>
+<td>Hệ số chuyển đổi pixel</td>
+<td>Hệ số chuyển đổi pixel được tính trong quá trình hiệu chuẩn</td>
+</tr>
+<tr>
+<td>Kích thước mục tiêu</td>
+<td>Kích thước mục tiêu được lấy khi đọc mã DM</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi công cụ</td>
+</tr>
+</tbody>
+</table>
+
+<h2>7. Dự án ví dụ</h2>
+
+<p>​ 参见“\Samples\DM码相机标定.gvp”。</p>

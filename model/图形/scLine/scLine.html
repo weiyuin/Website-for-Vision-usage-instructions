@@ -1,0 +1,344 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scLine</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho một đường thẳng, ví dụ như kết quả của công cụ tìm đường thẳng.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Khởi tạo</td>
+<td>scLine</td>
+<td>scLine() — Hàm tạo mặc định.</td>
+</tr>
+<tr>
+<td></td>
+<td>scLine</td>
+<td>scLine(sc2Vector, sc2Vector) — Hàm tạo với hai vector.</td>
+</tr>
+<tr>
+<td></td>
+<td>scLine</td>
+<td>scLine(sc2Vector, scRadian) — Hàm tạo với một vector và góc xoay.</td>
+</tr>
+<tr>
+<td></td>
+<td>scLine</td>
+<td>scLine(sc2Vector) — Hàm tạo với một vector.</td>
+</tr>
+<tr>
+<td></td>
+<td>scLine</td>
+<td>scLine(double, scRadian) — Hàm tạo với khoảng cách và góc xoay.</td>
+</tr>
+<tr>
+<td>Hàm</td>
+<td>SetPosDirection</td>
+<td>Thiết lập tọa độ điểm đi qua và vector hướng của đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetPosRotation</td>
+<td>Thiết lập tọa độ điểm đi qua và góc xoay của đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetDistRotation</td>
+<td>Thiết lập đường thẳng bằng khoảng cách từ gốc tọa độ đến đường thẳng và góc xoay.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetFromStartEnd</td>
+<td>Thiết lập điểm đầu và điểm cuối của đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetFromLineSeg</td>
+<td>Tạo đường thẳng từ đoạn thẳng lineSeg.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetPos</td>
+<td>Thiết lập tọa độ điểm đi qua của đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetRotation</td>
+<td>Thiết lập góc xoay của đường thẳng, phạm vi (-π, π]。</td>
+</tr>
+<tr>
+<td></td>
+<td>GetPos</td>
+<td>Lấy tọa độ điểm đi qua của đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetDir</td>
+<td>Lấy vector hướng của đường thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetRotation</td>
+<td>Lấy góc xoay của đường thẳng, phạm vi (-π, π]。</td>
+</tr>
+<tr>
+<td></td>
+<td>GetAngle</td>
+<td>Tính góc xoay từ đường thẳng hiện tại đến đường thẳng khác (−π &lt; a ≤ π)。</td>
+</tr>
+<tr>
+<td></td>
+<td>Intersect</td>
+<td>Tính giao điểm giữa đường thẳng hiện tại và đường thẳng khác.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Chi tiết mô tả</h2>
+
+<h3>scLine()</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đối tượng scLine, là hàm khởi tạo mặc định, tạo đường thẳng ngang đi qua gốc tọa độ.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scLine(pos, dir)</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đường thẳng dựa trên tọa độ điểm pos mà đường đi qua và vector hướng dir của đường.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>pos: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</p></li>
+<li><p>dir: Vector hướng của đường thẳng, kiểu sc2Vector.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scLine(pos, rot)</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đường thẳng dựa trên tọa độ điểm pos mà đường đi qua và góc quay rot của đường thẳng.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>pos: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</p></li>
+<li><p>rot: Góc quay của đường thẳng, kiểu scRadian.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scLine(v)</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đường thẳng từ vector hai chiều v, góc của đường thẳng là góc của vector v, và đi qua điểm do v biểu diễn.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>v: Vector hai chiều, kiểu sc2Vector.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scLine(dist, rot)</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đường thẳng dựa vào khoảng cách từ gốc tọa độ đến đường thẳng (dist) và góc quay (rot).</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>dist: Khoảng cách từ gốc tọa độ đến đường thẳng, kiểu float.</p></li>
+<li><p>rot: Góc quay của đường thẳng, kiểu scRadian.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>SetPosDirection(pos, dir)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập tọa độ điểm mà đường đi qua (pos) và vector hướng của đường (dir).</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>pos: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</p></li>
+<li><p>dir: Vector hướng của đường, kiểu sc2Vector.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetPosRotation(pos, rot)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập đường thẳng dựa vào tọa độ điểm pos mà đường đi qua và góc quay rot.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>pos: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</p></li>
+<li><p>rot: Góc quay của đường, kiểu scRadian.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetDistRotation(dist, rot)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập đường thẳng dựa trên khoảng cách từ gốc tọa độ đến đường thẳng (dist) và góc quay (rot).</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>dist: Khoảng cách từ gốc tọa độ đến đường thẳng, kiểu float.</p></li>
+<li><p>rot: Góc quay của đường thẳng, kiểu scRadian.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetFromStartEnd(point1, point2)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập đường thẳng bằng cách chỉ định điểm bắt đầu và điểm kết thúc.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>point1: Điểm bắt đầu, kiểu sc2Vector.</p></li>
+<li><p>point2: Điểm kết thúc, kiểu sc2Vector.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetFromLineSeg(lineSeg)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập đường thẳng dựa vào đoạn thẳng lineSeg.</p></li>
+<li><p>Tham số: Không có</p>
+
+<ul>
+<li>lineSeg: Đoạn thẳng, kiểu scLineSeg.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetPos(pos)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập tọa độ điểm mà đường đi qua là pos.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>pos: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetRotation(rot)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập góc quay của đường thẳng.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>rot: Góc quay của đường thẳng, kiểu scRadian.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>GetPos ()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy tọa độ điểm mà đường thẳng đi qua.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Tọa độ điểm mà đường đi qua, kiểu sc2Vector.</p></li>
+</ul>
+
+<h3>GetDir()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy vector hướng của đường thẳng.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Vector hướng của đường, kiểu sc2Vector.</p></li>
+</ul>
+
+<h3>GetRotation()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy góc quay của đường thẳng, phạm vi là (-π,π]。</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Góc quay của đường thẳng, kiểu scRadian.</p></li>
+</ul>
+
+<h3>GetAngle(other)</h3>
+
+<ul>
+<li><p>Chức năng: Tính toán góc quay từ đường hiện tại đến đường thẳng cho trước other (−π&lt; a &lt;=π)。</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>other: Đường thẳng cho trước, kiểu scLine.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Góc quay từ đường hiện tại đến other, kiểu scRadian.</p></li>
+</ul>
+
+<h3>Intersect(other)</h3>
+
+<ul>
+<li><p>Chức năng: Tính giao điểm giữa đường hiện tại và đường thẳng cho trước other.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>other: Đường thẳng cho trước, kiểu scLine.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Giao điểm, kiểu sc2VectorVec.</p></li>
+</ul>
+
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

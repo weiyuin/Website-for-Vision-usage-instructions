@@ -1,0 +1,164 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>畸变图像校正工具</h1>
+
+<h2>功能</h2>
+
+<p>由于成像过程的复杂性，实际拍摄的图像存在多种畸变（纵横比畸变、透视投影畸变、光学畸变），畸变图像校正工具是对实际拍摄图像进行畸变校正，获取最终无畸变图像，便于后期处理。其实际应用效果如图1所示。</p>
+
+<p><img src="media/wps85.jpg" alt="img" />  <img src="media/wps86.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 校正前</imgnote> <imgnote>(b) 校正后</imgnote></p>
+
+<p><imgnote>图1 畸变图像校正工具应用示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                          </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 是否彩图                                                     </td>
+<td> 输入图像是否是彩色图像。 </td>
+</tr>
+<tr>
+<td>  </td>
+<td> 校正类型                                                     </td>
+<td> 校正类型分为2种，投影和镜头畸变校正、镜头畸变校正。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否旋转     </td>
+<td> 默认为“是”，仅在投影和镜头畸变校正有效。                                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否裁切 </td>
+<td> 默认为“否”，仅在镜头畸变校正有效。                                                                                </td>
+</tr>
+<tr>
+<td></td>
+<td> 开启并行运算 </td>
+<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 线程数百分比 </td>
+<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 输入图像                                                     </td>
+<td> 显示待校正的畸变图像。                              </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> (彩色)畸变图像                                              </td>
+<td> 输入待校正的畸变图像。                              </td>
+</tr>
+<tr>
+<td></td>
+<td> 相机标定结果 </td>
+<td> 靶标相机标定工具的输出，是相机成像模型的参数，反映了物体的图像尺寸与真实尺寸之间的关系。                                                      </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td>   无      </td>
+<td> 无 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 校正图像                                                     </td>
+<td> 执行校正后的图像结果。                                       </td>
+</tr>
+<tr>
+<td></td>
+<td>   彩色校正图像       </td>
+<td> 执行校正后的彩色图像结果，供后序工具使用，同监视窗口的彩色校正图像参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输入图像                                                     </td>
+<td> 显示工具执行结果图像，同监视窗口的校正图像参数。             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                               </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 校正图像                                                     </td>
+<td> 执行校正后的图像结果，供后序工具使用，同监视窗口的校正图像参数。 </td>
+</tr>
+<tr>
+<td>    </td>
+<td> 彩色校正图像                                                     </td>
+<td> 执行校正后的彩色图像结果，供后序工具使用，同监视窗口的彩色校正图像参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>畸变图像校正工具使用时需要知道相机的成像模型，即相机的内外参数和畸变参数，而这正是靶标相机标定结果工具的输出参数，因此在搭建工程时，二者常搭配使用。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\靶标相机标定工具.gvp”。</p>

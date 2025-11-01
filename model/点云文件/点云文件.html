@@ -1,0 +1,134 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Tệp Điểm Mây (Point Cloud)</h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>​ Tệp điểm mây chủ yếu dùng để tải ảnh định dạng điểm mây từ thư mục.</p>
+
+<h2>2. Kịch bản ứng dụng</h2>
+
+<p>​ Trong các dự án đo lường và kiểm tra 3D, thường cần tải ảnh điểm mây offline để kiểm tra lại, vì vậy cần có chức năng tải ảnh điểm mây.</p>
+
+<h2>3. Hướng dẫn sử dụng</h2>
+
+<ul>
+<li><h4>Thêm công cụ</h4></li>
+</ul>
+
+<p><img src="media/GcCloudFromFileTool_3_1.png" alt="" /></p>
+
+<p><imgnote>Hình 3_1 Thêm công cụ tệp điểm mây</imgnote></p>
+
+<ul>
+<li><h4>Cài đặt tham số</h4>
+<ul>
+<li>① Tham số thuộc tính: Đường dẫn tệp, hiện hỗ trợ định dạng ply và txt, có thể chọn trong khung thuộc tính hoặc đặt qua script;</li>
+</ul>
+</li>
+</ul>
+
+<p><img src="media/GcCloudFromFileTool_3_2.png" alt="" /></p>
+
+<p><imgnote>Hình 3_2 Cài đặt đường dẫn tệp điểm mây</imgnote></p>
+
+<h2>4. Vấn đề thường gặp</h2>
+
+<p>Không có</p>
+
+<h2>5. Mô tả tham số</h2>
+
+<h4>Tham số đầu vào (Cửa sổ thuộc tính)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số           </th>
+<th> Mô tả tham số                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Đường dẫn tệp </td>
+<td> Đường dẫn tải tệp, hiện hỗ trợ định dạng ply và txt, có thể được thay đổi động bằng script </td>
+</tr>
+<tr>
+<td> Bật chỉ mục </td>
+<td> Có: cần cài đặt "Đường dẫn tệp chỉ mục", phần đầu ra sẽ hiển thị chỉ mục điểm hợp lệ được tải; Không: không tải chỉ mục điểm ảnh mây hợp lệ </td>
+</tr>
+<tr>
+<td> Đường dẫn tệp chỉ mục </td>
+<td> Đường dẫn để tải tệp chỉ mục, phần mở rộng tên tệp là `.index`                      </td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu ra (Chuỗi tham số)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh điểm mây </td>
+<td> Ảnh điểm mây đã tải </td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu ra (Cửa sổ đầu ra)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh điểm mây </td>
+<td> Ảnh điểm mây đã tải </td>
+</tr>
+<tr>
+<td> Chỉ mục điểm hợp lệ </td>
+<td> Xuất chỉ mục điểm mây đã tải </td>
+</tr>
+<tr>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ </td>
+</tr>
+<tr>
+<td> Thời gian thực thi           </td>
+<td> Thời gian thực thi của công cụ                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点云图像源配置工具.gvp”。</p>
+
+<h2>7. 特殊说明</h2>

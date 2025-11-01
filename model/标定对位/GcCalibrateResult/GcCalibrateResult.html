@@ -1,0 +1,150 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>GcCalibrateResult</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho vị trí và tư thế, ví dụ như đầu ra của công cụ tạo vị trí và tư thế, kết quả hiệu chuẩn (công cụ tính toán hiệu chuẩn tiêu chuẩn) bao gồm tọa độ ảnh và tọa độ nền tảng.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th> Phân loại </th>
+<th> Tên giao diện </th>
+<th> Mô tả giao diện </th>
+<th> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Hàm khởi tạo </td>
+<td> GcCalibrateResult </td>
+<td> Hàm khởi tạo mặc định của GcCalibrateResult </td>
+<td></td>
+</tr>
+<tr>
+<td> Thuộc tính </td>
+<td> matrixImageToPlatform </td>
+<td> Ma trận chuyển đổi giữa tọa độ ảnh và tọa độ nền tảng </td>
+<td></td>
+</tr>
+<tr>
+<td> </td>
+<td> coordPosImage </td>
+<td> Tọa độ ảnh của điểm đánh dấu tại vị trí ban đầu </td>
+<td></td>
+</tr>
+<tr>
+<td> </td>
+<td> coordPosPlatform </td>
+<td> Tọa độ nền tảng của điểm đánh dấu tại vị trí ban đầu </td>
+<td></td>
+</tr>
+<tr>
+<td> </td>
+<td> dImagePixelRadioX </td>
+<td> Tỷ lệ pixel theo hướng X </td>
+<td></td>
+</tr>
+<tr>
+<td> </td>
+<td> dImagePixelRadioY </td>
+<td> Tỷ lệ pixel theo hướng Y </td>
+<td></td>
+</tr>
+<tr>
+<td> </td>
+<td> dAngleImageInPlatform </td>
+<td> Góc giữa trục X dương của hệ tọa độ ảnh với hệ tọa độ nền tảng (đơn vị: độ) </td>
+<td></td>
+</tr>
+<tr>
+<td> </td>
+<td> dAnglePlatformShear </td>
+<td> Góc lệch của trục Y hệ tọa độ nền tảng so với phương vuông góc 90 độ (đơn vị: độ) </td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2>Chi tiết</h2>
+
+<h3>GcCalibrateResult ( )</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo một đối tượng GcCalibrateResult.</p>
+
+<p>Khởi tạo dImagePixelRadioX và dImagePixelRadioY là 1.0, dAngleImageInPlatform và dAnglePlatformShear là 0.0</p></li>
+<li><p>Tham số: Không có</p></li>
+<li><p>Giá trị trả về: Không có</p></li>
+</ul>
+
+<h3>matrixImageToPlatform</h3>
+
+<ul>
+<li>Chức năng: Ma trận chuyển đổi giữa tọa độ ảnh và tọa độ nền tảng. Kiểu dữ liệu: sc2Matrix, có thể đọc/ghi.</li>
+</ul>
+
+<h3>coordPosImage</h3>
+
+<ul>
+<li>Chức năng: Tọa độ ảnh của điểm đánh dấu tại vị trí ban đầu. Kiểu dữ liệu: GcCoordPos, có thể đọc/ghi.</li>
+</ul>
+
+<h3>coordPosPlatform</h3>
+
+<ul>
+<li>Chức năng: Tọa độ nền tảng của điểm đánh dấu tại vị trí ban đầu. Kiểu dữ liệu: GcCoordPos, có thể đọc/ghi.</li>
+</ul>
+
+<h3>dImagePixelRadioX</h3>
+
+<ul>
+<li>Chức năng: Tỷ lệ pixel theo hướng X. Kiểu dữ liệu: số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>dImagePixelRadioY</h3>
+
+<ul>
+<li>Chức năng: Tỷ lệ pixel theo hướng Y. Kiểu dữ liệu: số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>dAngleImageInPlatform</h3>
+
+<ul>
+<li>Chức năng: Góc giữa trục X dương của hệ tọa độ ảnh với hệ tọa độ nền tảng (đơn vị: độ). Kiểu dữ liệu: số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>dAnglePlatformShear</h3>
+
+<ul>
+<li>Chức năng: Góc lệch của trục Y hệ tọa độ nền tảng so với phương vuông góc 90 độ (đơn vị: độ). Kiểu dữ liệu: số thực, có thể đọc/ghi.</li>
+</ul>
+
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

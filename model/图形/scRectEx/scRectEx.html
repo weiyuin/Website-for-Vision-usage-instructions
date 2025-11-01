@@ -1,0 +1,402 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scRectEx</h1>
+
+<h2>功能</h2>
+
+<p>表示可变矩形（矩形或者圆环段），对应的图形Gui为scGuiRectEx，例如边宽检测工具的线边宽区域、圆边宽区域。</p>
+
+<p><img src="media/6a07bdbf80b7cec234a2aa21e25acd8f.png" alt="" /></p>
+
+<p><imgnote>(a) 普通状态</imgnote></p>
+
+<p><img src="media/970fb2cf68e98429fec8df7f5816f015.png" alt="" /></p>
+
+<p><imgnote>(b) 显示卡尺和掩膜状态</imgnote></p>
+
+<p><imgnote>图1 可变矩形控件示意图</imgnote></p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                                          </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scRectEx                                     </td>
+<td> scRectEx()默认构造函数。                          </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> GetOriginPoint                         </td>
+<td> 获取可变起始点Origin。                            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetOriginPoint                   </td>
+<td> 设置可变起始点Origin。                            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetXLength                                 </td>
+<td> 获取X方向长度。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetXLength                           </td>
+<td> 设置X方向长度。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetYLength                                 </td>
+<td> 获取Y方向长度。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetYLength                           </td>
+<td> 设置Y方向长度。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRotateAngle                         </td>
+<td> 获取旋转角度。                                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRotateAngle                    </td>
+<td> 设置旋转角度。                                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetBendAngle                             </td>
+<td> 获取弯曲角度。                                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetBendAngle                       </td>
+<td> 设置弯曲角度。                                    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCenterRadiusStartSpan            </td>
+<td> 获取可变矩形的圆心、半径、起始角度和弯曲角度。    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetAngleStart                           </td>
+<td> 获取可变矩形的起始角度。                          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCenterRadiusStartSpan </td>
+<td> 设置可变矩形的圆心、半径、起始角度和弯曲角度。    </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCircularArcs </td>
+<td> 获取可变矩形的两个圆环段。                        </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCornerPx                               </td>
+<td> 获取可变矩形x角点位置，即CornerX。                </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCornerPopp                           </td>
+<td> 获取可变矩形opp角点位置，即Opposite。             </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCornerPy                               </td>
+<td> 获取可变矩形y角点位置，即CornerY。                </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCenterPoint                         </td>
+<td> 获取可变矩形的中心点。                            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetMiddlePoint               </td>
+<td> 获取可变矩形中点（OX/YOPP弧段中点、矩形中心点）。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scRectEx()</h3>
+
+<ul>
+<li><p>功能：构造scRectEx对象。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetOriginPoint()</h3>
+
+<ul>
+<li><p>功能：获取可变起始点Origin。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变起始点坐标，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>SetOriginPoint(origin)</h3>
+
+<ul>
+<li><p>功能：设置可变起始点Origin。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>origin：可变起始点Origin，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetXLength()</h3>
+
+<ul>
+<li><p>功能：获取X方向长度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：X方向长度，浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetXLength(length)</h3>
+
+<ul>
+<li><p>功能：设置X方向长度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>length：X方向长度，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetYLength()</h3>
+
+<ul>
+<li><p>功能：获取Y方向长度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：Y方向长度，浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetYLength(length)</h3>
+
+<ul>
+<li><p>功能：设置Y方向长度。</p></li>
+<li><p>参数：无。</p>
+
+<ul>
+<li>length：Y方向长度，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetRotateAngle()</h3>
+
+<ul>
+<li><p>功能：获取旋转角度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：旋转角度，浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetRotateAngle(angle)</h3>
+
+<ul>
+<li><p>功能：设置旋转角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>angle：旋转角度，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetBendAngle()</h3>
+
+<ul>
+<li><p>功能：获取弯曲角度，参见图2，可通过弯曲角度和其角度确定终止角度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：弯曲角度，取值范围[-360, 360]，浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetBendAngle (angle)</h3>
+
+<ul>
+<li><p>功能：设置弯曲角度，参见图2。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>angle：弯曲角度，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCenterRadiusStartSpan(center, radius1, radius2, anglestart, anglespan)</h3>
+
+<ul>
+<li><p>功能：获取可变矩形的圆心、半径、起始角度和弯曲角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>center：获取的圆心，sc2Vector类型。需要先创建一个sc2Vector类型的变量，然后传入该函数。</p></li>
+<li><p>radius1：获取的半径，可变矩形OX圆弧段半径，输出，浮点数类型。需要先创建一个浮点数变量，然后传入该函数。该半径对应Origin和CornerX构成的边，从Gui图形上看，即标注了X的边，参见图2。</p></li>
+<li><p>radius2：获取的半径，可变矩形YOPP圆弧段半径，输出，浮点数类型。需要先创建一个浮点数变量，然后传入该函数。该半径对应CornerY和Opposite构成的边，参见图2。</p></li>
+<li><p>anglestart：获取的起始角度，输出，浮点数类型。需要先创建一个浮点数变量，然后传入该函数。</p></li>
+<li><p>anglespan：获取的弯曲角度，输出，浮点数类型，可以为负值，参考图2所示，X方向如果为顺时针则弯曲角度为正，X方向如果逆时针则弯曲角度为负。需要先创建一个浮点数变量，然后传入该函数。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<p><img src="media/f46fc8e64a467876a5aefd3e904c63bf.png" alt="" />
+<img src="media/95e9d2e5de5aa286c3020847835c3fa6.png" alt="" /></p>
+
+<p><img src="media/a989a0f4664e03aeaec3ff843028c125.png" alt="" />
+<img src="media/df0391b43ba4eaf81f12eca949a65124.png" alt="" /></p>
+
+<p>图2 半径、弯曲角度</p>
+
+<h3>GetAngleStart()</h3>
+
+<ul>
+<li><p>功能：获取可变矩形的起始角度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变矩形的起始角度，取值范围[0, 360]，浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetCenterRadiusStartSpan(center, radius1, radius2, anglestart, anglespan)</h3>
+
+<ul>
+<li><p>功能：设置可变矩形的圆心、半径、起始角度和弯曲角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>center：圆心，sc2Vector类型。</p></li>
+<li><p>radius1：半径，可变矩形OX圆弧段半径，浮点数类型。该半径对应Origin和CornerX构成的边，从Gui图形上看，即标注了X的边，参见图2。</p></li>
+<li><p>radius2：半径，可变矩形YOPP圆弧段半径，浮点数类型。该半径对应CornerY和Opposite构成的边，参见图2。</p></li>
+<li><p>anglestart：起始角度，浮点数类型。</p></li>
+<li><p>anglespan：弯曲角度，浮点数类型，可以为负值，参考图2所示，X方向如果为顺时针则弯曲角度为正，X方向如果逆时针则弯曲角度为负。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCircularArcs(circular_arc1, circular_arc2)</h3>
+
+<ul>
+<li><p>功能：获取可变矩形的两个圆弧段。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>circular_arc1：圆弧1，可变矩形OX圆弧段，输出，scCircularArc类型。需先创建一个scCircularArc类型变量，然后传入该函数。</p></li>
+<li><p>circular_arc2：圆弧2，可变矩形YOPP圆弧段，输出，scCircularArc类型。需先创建一个scCircularArc类型变量，然后传入该函数。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetCornerPx()</h3>
+
+<ul>
+<li><p>功能：获取可变矩形x角点位置，即CornerX。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变矩形x角点位置，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetCornerPopp()</h3>
+
+<ul>
+<li><p>功能：获取可变矩形opp角点位置，即Opposite。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变矩形opp角点位置，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetCornerPy()</h3>
+
+<ul>
+<li><p>功能：获取可变矩形y角点位置，即CornerY。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变矩形y角点位置，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetCenterPoint()</h3>
+
+<ul>
+<li><p>功能：获取可变矩形的中心点。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：可变矩形的中心点，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>GetMiddlePoint(m1, m2, m3)</h3>
+
+<ul>
+<li><p>功能：获取可变矩形中点（OX/YOPP弧段中点、矩形中心点）。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>m1：Origin和CornerX的中心点，输出，sc2Vector类型。需先创建一个sc2Vector类型变量，然后传入该函数。</p></li>
+<li><p>m2：CornerY和Opposite的中心点，输出，sc2Vector类型。需先创建一个sc2Vector类型变量，然后传入该函数。</p></li>
+<li><p>m3：矩形中心点，输出，sc2Vector类型。需先创建一个sc2Vector类型变量，然后传入该函数。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

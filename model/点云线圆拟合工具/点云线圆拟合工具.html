@@ -1,0 +1,260 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云线圆拟合工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>​          该工具是实现空间上直线、圆形的拟合功能，为后续工具的数据链提供链接；</p>
+
+<h2>2.使用场景</h2>
+
+<p>​          主要用于公差测量项目中，平行度测量时三维直线的拟合、圆度测量中圆形面的拟合、以及其他使用到空间上的圆形或者直线的项目中；</p>
+
+<h2>3.使用向导</h2>
+
+<ul>
+<li><h3>工具添加，图像导入、参数调节</h3>
+
+<p><strong>Step1:</strong>添加点云线圆拟合工具（2个），并双击打开工具参数链，链接点云文件，如图3-1所示；<br/>
+<strong>Step2:</strong>右击工具点击“属性”打开工具高级界面，如图3-2所示；</p></li>
+</ul>
+
+
+<div align="center">
+<img src="media/3DLineCircleFitting_3_1.png" style="zoom:100%;"/>
+    <center>图3_1 添加点云线圆拟合工具</center>
+</div>
+
+
+<div align="center">
+<img src="media/3DLineCircleFitting_3_2.gif" style="zoom:100%;"/>
+    <center>图3_2 三维直线拟合</center>
+</div>
+
+
+
+
+<div align="center">
+<img src="media/3DLineCircleFitting_3_3.gif" style="zoom:100%;"/>
+    <center>图3_3 三维圆拟合</center>
+</div>
+
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据                                               </td>
+<td> 输入待拟合的点云图像                                    </td>
+</tr>
+<tr>
+<td> 输入点集 </td>
+<td> 输入待拟合的点集 </td>
+</tr>
+<tr>
+<td>          输入投影平面            </td>
+<td> 输入待投影的平面                                                                                                           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                    </th>
+<th> 参数描述                                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 拟合类型                               </td>
+<td> 线拟合：使用ROI内的数据拟合三维直线；圆拟合：使用ROI内的数据拟合三维圆 </td>
+</tr>
+<tr>
+<td> 是否启用点集 </td>
+<td> 选择“是”，则根据输入的点集进行线圆拟合；选择“否”，则根据输入的点云进行线圆拟合 </td>
+</tr>
+<tr>
+<td>是否使用ROI</td>
+<td>是，启用使用ROI，ROI的形状：长方体</td>
+</tr>
+<tr>
+<td>直线拟合方法</td>
+<td> 包括三种：最小二乘、带局外点和最小包容 </td>
+</tr>
+<tr>
+<td>平面投影类型</td>
+<td> 包括两种：不投影和平面投影。其中：平面投影会将拟合的三维直线向量会投影到输入的平面上 </td>
+</tr>
+<tr>
+<td>直线方向</td>
+<td>包括两种：Z轴正方向和Z轴负方向。其中Z轴正方向：拟合直线的法向量方向与Z正方向夹角为锐角；Z轴负方向：拟合直线的法向量方向与Z负方向夹角为锐角</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+
+<table>
+<thead>
+<tr>
+<th> 按钮名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 开始绘制                                   </td>
+<td> 在高级界面图像中，相应位置点击并拖动鼠标即可绘制长方体ROI。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线拟合结果方向向量 </td>
+<td>直线拟合的方向向量</td>
+</tr>
+<tr>
+<td>圆心 </td>
+<td>拟合圆的圆心三维坐标</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                   </th>
+<th> 参数描述                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> RMS                </td>
+<td> 参与拟合的数据点的RMS值                                    </td>
+</tr>
+<tr>
+<td>线拟合结果 </td>
+<td> StartPoint：拟合直线的起始点三维坐标；EndPoint：拟合直线的终止点三维坐标；Direction：拟合直线的方向；Tilt：拟合直线的倾斜角；Rotation：拟合直线方向向量在XOY面上的投影向量与X轴正方向的夹角 </td>
+</tr>
+<tr>
+<td>线拟合结果方向向量 </td>
+<td>直线拟合的方向向量</td>
+</tr>
+<tr>
+<td>线段拟合结果 </td>
+<td>Pos：拟合直线的一个点的三维坐标；Dir：拟合直线的方向；Tilt：拟合直线的倾斜角；Rotation：拟合直线方向向量在XOY面上的投影向量与X轴正方向的夹角</td>
+</tr>
+<tr>
+<td>圆拟合结果 </td>
+<td>圆拟合结果：圆心，拟合圆的圆心三维坐标；法向量，拟合圆平面法向量；半径，拟合圆形的半径，单位：mm</td>
+</tr>
+<tr>
+<td>圆心 </td>
+<td>拟合圆的圆心三维坐标</td>
+</tr>
+<tr>
+<td>执行结果 </td>
+<td>工具执行结果</td>
+</tr>
+<tr>
+<td> 执行时间           </td>
+<td> 工具执行时间                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云坐标系对齐.gvp”。</p>
+
+<h2>7.特殊说明</h2>
+
+<h3>直线拟合算法原理说明</h3>
+
+<p><strong>距离阈值</strong>：指设定点到拟合直线距离的最大值；<br/>
+<strong>局外点</strong>：指点云数据到拟合直线的距离不满足距离阈值的点；<br/>
+<strong>内点</strong>：指点云数据点到拟合直线的距离在距离阈值之内的点；<br/>
+<strong>局外点比例</strong>：局外点占总点云数据点的比例，其中，内点与外点的和为总点云数据点；<br/>
+<strong>置信度</strong>：衡量使用内点构造拟合直线的可信程度，置信度越大，拟合直线越可靠;  <br/>
+<strong>投影平面</strong>：三维直线拟合过程中指定的投影平面，拟合所得的直线在该平面上;</p>
+
+<div align="center">
+<img src="media/3DLineCircleFitting_7_1.png" style="zoom:100%;"/>
+    <center>图7_1 带局外点直线拟合示意图</center>
+</div>
+
+
+<p><strong>最小二乘拟合</strong>：输入点云数据，拟合得到最佳直线；<br/>
+<strong>带局外点拟合</strong>：剔除点云数据的局外点后，拟合得到最佳直线；<br/>
+<strong>最小包容</strong>：点云上的点到拟合直线的最远距离最小，即公差带区域的半径或宽度最小；</p>
+
+<div align="center">
+<img src="media/3DLineCircleFitting_7_2.png" style="zoom:100%;"/>
+    <center>图7_2 带局外点直线拟合示意图</center>
+</div>
+
+
+
+
+<div align="center">
+<img src="media/3DLineCircleFitting_7_3.png" style="zoom:100%;"/>
+    <center>图7_3 直线拟合工具执行流程</center>
+</div>
+
+
+<h3>圆形拟合算法原理说明</h3>
+
+<p><strong>最小二乘</strong>：输入点云数据，拟合得到最佳圆形；<br/>
+<strong>带局外点</strong>：剔除点云数据的局外点后，拟合得到最佳圆形；<br/>
+<strong>最小包容</strong>：指投影到基准平面内的点云到该圆的最大距离最小；<br/>
+<strong>最小外接</strong>：指投影到基准平面内的点云都在该圆内部，且该圆半径最小；<br/>
+<strong>最大内切</strong>：指投影到基准平面内的点云都在该圆外部，且该圆半径最大；</p>

@@ -1,0 +1,139 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云保存工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云保存工具主要是保存点云格式的图像。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量及检测项目中，经常涉及将采集的点云图像（索引）保存下来，以便后续复测需要，因此需要涉及点云保存的问题。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具</h4></li>
+</ul>
+
+
+<p><img src="media/GcCloudToFile_3_1.png" alt="" /></p>
+
+<p><imgnote>图3_1 点云保存工具</imgnote></p>
+
+<ul>
+<li><h4>参数设置</h4>
+
+<ul>
+<li>① 属性参数：自动命名、文件格式、输出路径设置；</li>
+<li>② 数据链中输入点云数据、文件名（自动命名为“否”时）；</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<p>无</p>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 用于保存的点云图像 </td>
+</tr>
+<tr>
+<td> 文件名 </td>
+<td> 当属性窗口中的“自动命名”选择为“否”时，会出现此链接。此处链接提前拟好的命名，可以为单独文件名（如cloud）或带文件夹路径的文件名（如20230302\\cloud） </td>
+</tr>
+<tr>
+<td> 输入索引 </td>
+<td> 输入要保存的点云索引号码 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 自动命名 </td>
+<td> 否：需要在数据链接中链接“文件名”，是：系统自定义命名，系统命名规则：工具名+时间+8位ID，如点云保存工具_005_20230302104136644_f2eab9c4.ply </td>
+</tr>
+<tr>
+<td> 保存索引 </td>
+<td> 是：需要在数据链接中链接“输入索引”，文件名与点云保存的文件名一致，后缀为index，将索引保存下来；否：不保存索引 </td>
+</tr>
+<tr>
+<td> 文件格式                                      </td>
+<td> 选择点云图像的保存格式。分为自动、PLY、TXT三种 </td>
+</tr>
+<tr>
+<td> 输出文件路径 </td>
+<td> 点云图像的保存地址 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+<tr>
+<td> 执行时间           </td>
+<td> 工具执行时间                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​     参见“\Samples\3D\点云\点云图像源配置工具.gvp”。</p>
+
+<h2>7. 特殊说明</h2>

@@ -1,0 +1,146 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>母座测量项目</h1>
+
+<h2>1.项目需求</h2>
+
+<p>​ 本项目主要测量工件边框到基准边距离及边框平行度。</p>
+
+<h2>2.方案分析</h2>
+
+<p>​ 项目分为两个工位进行检测，分别测量母座正面及背面的尺寸，各工位检测内容如下：</p>
+
+<h3>2.1工位1</h3>
+
+<p>​ 工位1共测量4个距离，其中距离2可分为距离2_1、距离2_2和距离2_3，距离4为两条边的平行度，具体介绍如下:</p>
+
+<p>（1）下图中，紫色直线为距离1</p>
+
+<p><img src="media\Measurement_2_1.png" alt="Measurement_2_1" /></p>
+
+<p>（2）下图中，紫色直线为距离2，共分为三段距离，分别取线段的两个端点以及中点到另一边的距离，从上到下分别为距离2_1、距离2_2和距离2_3。</p>
+
+<p><img src="media\Measurement_2_2.png" alt="Measurement_2_2" /></p>
+
+<p>（3）下图中，紫色直线所示的为距离3。</p>
+
+<p><img src="media\Measurement_2_3.png" alt="Measurement_2_3" /></p>
+
+<p>（4）下图中，紫色直线所示的为距离4，为两条边的平行度，通过计算一条边的两个点到另一条边的距离的差值来作为平行度的评价标准。</p>
+
+<p><img src="media\Measurement_2_4.png" alt="Measurement_2_4" /></p>
+
+<h3>2.2工位2</h3>
+
+<p>​ 工位2共测量3个距离，其中距离2为两条边的平行度，具体介绍如下:</p>
+
+<p>（1）下图中，紫色直线为距离1。</p>
+
+<p><img src="media\Measurement_2_5.png" alt="Measurement_2_5" /></p>
+
+<p>（2）下图中，紫色直线为距离2，为两条边的平行度，通过计算一条边的两个点到另一条边的距离的差值来作为平行度的评价标准。</p>
+
+<p><img src="media\Measurement_2_6.png" alt="Measurement_2_6" /></p>
+
+<p>（3）下图中，紫色直线为距离3。</p>
+
+<p><img src="media\Measurement_2_7.png" alt="Measurement_2_7" /></p>
+
+<h2>3.方案实现</h2>
+
+<h3>3.1 测量流程</h3>
+
+<p>​ 两个工位测量步骤大体相似，其中工位1第一次拍照拍摄背景光图像，第二次拍照拍摄前景光图像，工位2第一次拍照拍摄前景光图像，第二次拍照拍摄背景光图像，流程如下：</p>
+
+<p><img src="media/Measurement_3_13.png" alt="" /></p>
+
+<h3>3.2 工位1测量</h3>
+
+<p>​ 如下图所示，采用两个并行分支同时处理前景光图像（图片2）和背景光图像（图片1）；其中背景光图像主要用来查找距离1边框线，前景光图像用来查找基准线、距离2/3/4边框线。</p>
+
+<p><img src="media\Measurement_3_1.png" alt="Measurement_3_1" /></p>
+
+<p>​ 对4个相关距离计算如下图所示，使用并行处理方式。</p>
+
+<p><img src="media\Measurement_3_2.png" alt="Measurement_3_2" /></p>
+
+<ul>
+<li>距离1计算选用边框找线线段结果中点到基准线的距离结果，距离示意图如下图所示</li>
+</ul>
+
+
+<p><img src="media\Measurement_3_3.png" alt="Measurement_3_3" /></p>
+
+<ul>
+<li>距离2三个距离计算选用边框找线线段结果的两个端点和中点到基准线的距离结果，距离示意图如下图所示</li>
+</ul>
+
+
+<p><img src="media\Measurement_3_4.png" alt="Measurement_3_4" /></p>
+
+<ul>
+<li>距离3计算选用边框找线线段结果中点到基准线的距离结果，距离示意图如下图所示</li>
+</ul>
+
+
+<p><img src="media\Measurement_3_5.png" alt="Measurement_3_5" /></p>
+
+<ul>
+<li>距离4（平行度）计算选用边框找线线段结果两个端点到基准线的距离结果之差，距离示意图如下图所示</li>
+</ul>
+
+
+<p><img src="media\Measurement_3_6.png" alt="Measurement_3_6" /></p>
+
+<h3>3.3 工位2测量</h3>
+
+<p>​ 如下图所示，采用两个并行分支同时处理前景光图像（图片1）和背景光图像（图片2）；其中钱景光图像主要用来查找距离1/2/3边框线，背景光图像用来查找距离1/2/3的两条基准线。</p>
+
+<p><img src="media\Measurement_3_7.png" alt="Measurement_3_7" /></p>
+
+<p>​ 对3个相关距离计算如下图所示，使用并行处理方式。</p>
+
+<p><img src="media\Measurement_3_8.png" alt="Measurement_3_8" /></p>
+
+<ul>
+<li>距离1计算选用边框找线线段结果中点到基准线的距离结果，距离示意图如下图所示</li>
+</ul>
+
+
+<p><img src="media\Measurement_3_9.png" alt="Measurement_3_9" /></p>
+
+<ul>
+<li>距离2平行度计算通过如下图所示两个蓝色点来完成（计算原理同工位1），两个计算点通过三条直线（红色所示）的交点获取</li>
+</ul>
+
+
+<p><img src="media\Measurement_3_10.png" alt="Measurement_3_10" /></p>
+
+<ul>
+<li>距离3计算通过下图绿色点到基准线距离获取，绿色点为以两个蓝色点为端点的线段的中点</li>
+</ul>
+
+
+<p><img src="media\Measurement_3_11.png" alt="Measurement_3_11" /></p>
+
+<h2>4.结果展示</h2>
+
+<p>​ 生产界面运行结果如下图所示。</p>
+
+<p><img src="media\Measurement_3_12.png" alt="Measurement_3_12" /></p>

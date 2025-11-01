@@ -1,0 +1,187 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scLineSeg</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho đoạn thẳng.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Khởi tạo</td>
+<td>scLineSeg</td>
+<td>Hàm khởi tạo mặc định scLineSeg().</td>
+</tr>
+<tr>
+<td></td>
+<td>scLineSeg</td>
+<td>Hàm khởi tạo scLineSeg(sc2Vector, sc2Vector).</td>
+</tr>
+<tr>
+<td>Hàm</td>
+<td>Set</td>
+<td>Thiết lập điểm bắt đầu và điểm kết thúc của đoạn thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetP1</td>
+<td>Thiết lập điểm bắt đầu của đoạn thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>SetP2</td>
+<td>Thiết lập điểm kết thúc của đoạn thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetP1</td>
+<td>Lấy điểm bắt đầu của đoạn thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetP2</td>
+<td>Lấy điểm kết thúc của đoạn thẳng.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetLine</td>
+<td>Lấy đường thẳng mà đoạn thẳng đang nằm trên đó.</td>
+</tr>
+<tr>
+<td></td>
+<td>GetRotation</td>
+<td>Lấy góc quay của đoạn thẳng.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>scLineSeg()</h3>
+
+<ul>
+<li><p>Chức năng: Khởi tạo đối tượng scLineSeg, là hàm khởi tạo mặc định.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>scLine(p1, p2)</h3>
+
+<ul>
+<li><p>Chức năng: Tạo đối tượng đoạn thẳng bằng điểm bắt đầu p1 và điểm kết thúc p2.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>p1: Điểm bắt đầu của đoạn thẳng, kiểu sc2Vector.</p></li>
+<li><p>p2: Điểm kết thúc của đoạn thẳng, kiểu sc2Vector.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Không có.</p></li>
+</ul>
+
+<h3>Set(p1, p2)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập điểm bắt đầu p1 và điểm kết thúc p2 của đoạn thẳng.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li><p>p1: Điểm bắt đầu của đoạn thẳng, kiểu sc2Vector.</p></li>
+<li><p>p2: Điểm kết thúc của đoạn thẳng, kiểu sc2Vector.</p></li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetP1(p)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập điểm bắt đầu của đoạn thẳng.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>p: Điểm bắt đầu của đoạn thẳng, kiểu sc2Vector.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>SetP2(p)</h3>
+
+<ul>
+<li><p>Chức năng: Thiết lập điểm kết thúc của đoạn thẳng.</p></li>
+<li><p>Tham số:</p>
+
+<ul>
+<li>p: Điểm kết thúc của đoạn thẳng, kiểu sc2Vector.</li>
+</ul>
+</li>
+<li><p>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
+</ul>
+
+<h3>GetP1()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy điểm bắt đầu của đoạn thẳng.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Điểm bắt đầu của đoạn thẳng, kiểu sc2Vector.</p></li>
+</ul>
+
+<h3>GetP2()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy điểm kết thúc của đoạn thẳng.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Điểm kết thúc của đoạn thẳng, kiểu sc2Vector.</p></li>
+</ul>
+
+<h3>GetLine()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy đường thẳng mà đoạn thẳng hiện tại nằm trên đó.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Đường thẳng, kiểu scLine.</p></li>
+</ul>
+
+<h3>GetRotation()</h3>
+
+<ul>
+<li><p>Chức năng: Lấy góc quay của đoạn thẳng.</p></li>
+<li><p>Tham số: Không có.</p></li>
+<li><p>Giá trị trả về: Góc quay, kiểu scRadian.</p></li>
+</ul>
+
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
+<h2>Mã ví dụ</h2>
+
+<p>Không có</p>
+

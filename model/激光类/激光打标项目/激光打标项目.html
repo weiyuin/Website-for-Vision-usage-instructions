@@ -1,0 +1,152 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Dự án khắc laser</h1>
+
+<h2>1. Yêu cầu dự án</h2>
+
+<p>​ Dự án này chủ yếu sử dụng định vị thị giác để dẫn hướng laser khắc ký tự vào vị trí tương ứng trên phôi.</p>
+
+<h2>2. Phân tích phương án</h2>
+
+<p>​ Dự án được chia thành ba phần chính: hiệu chuẩn camera và hiệu chuẩn liên kết, định vị dẫn hướng, và kiểm tra lại kết quả. Nội dung từng phần như sau:</p>
+
+<h3>2.1 Hiệu chuẩn camera và hiệu chuẩn liên kết</h3>
+
+<h4>2.1.1 Hiệu chuẩn camera</h4>
+
+<p>​ Mục đích hiệu chuẩn camera là xác định tỷ lệ chuyển đổi pixel, tham số méo hình… để có thể chuyển đổi tọa độ pixel sang tọa độ vật lý.</p>
+
+<h4>2.1.2 Liên kết với hệ tọa độ gương quét laser</h4>
+
+<p>​ Do hệ tọa độ gương quét laser là hệ tọa độ 2D, giống với hệ tọa độ camera, nên hiệu chuẩn liên kết thực chất là xác định ma trận chuyển đổi từ hệ tọa độ ảnh 2D của camera (màu xanh lá trong hình dưới) sang hệ tọa độ mặt phẳng khắc 2D (màu đen trong hình dưới).</p>
+
+<p><img src="media\Laser_2_1.png" alt="Laser_2_1" /></p>
+
+<p>​ Quan hệ biến đổi giữa các hệ tọa độ như sau:</p>
+
+<p><img src="media/Laser_2_4.png" alt="" /></p>
+
+<p>​ Trong đó <strong>(x,y)</strong> là tọa độ trong hệ tọa độ gương quét laser, <strong>(u,v)</strong> là tọa độ trong hệ tọa độ camera, <strong>α</strong> là tỷ lệ phóng đại giữa hai hệ tọa độ, <strong>θ</strong> là góc xoay giữa hai hệ, <strong>(Tx,Ty)</strong> là khoảng cách giữa gốc tọa độ của hai hệ. Hiệu chuẩn tức là xác định giá trị của <strong>α</strong>, <strong>θ</strong> và <strong>(Tx,Ty)</strong>.</p>
+
+<h3>2.2 Định vị dẫn hướng</h3>
+
+<p>​ Định vị dẫn hướng tức là sử dụng xử lý hình ảnh để lấy tọa độ vị trí và góc của mục tiêu trong ảnh, sau đó dựa trên kết quả hiệu chuẩn liên kết để chuyển đổi sang tọa độ cơ khí, giúp thực hiện chuyển động tương ứng.</p>
+
+<p>​ Hình dưới minh họa vị trí phôi chờ khắc laser trên đồ gá, vùng trắng xung quanh vòng tròn (màu xanh lá) là khu vực ký tự. Khi khắc chỉ cần cung cấp cho gương quét laser vị trí tâm phôi và vị trí bắt đầu khắc, thông tin ảnh cần thiết là tọa độ tâm phôi (màu xanh dương) và góc vị trí phôi trên đồ gá <strong>θ</strong> (trong dự án này là giá trị trung bình của góc đường thẳng ở mép trên và mép dưới của đồ gá). Đồng thời cần kiểm tra vị trí phôi trên đồ gá có hợp lệ hay không, tức là giá trị <strong>dx</strong> và <strong>dy</strong> phải nằm trong một khoảng cho phép; nếu vượt quá giới hạn thì coi như gá đặt lỗi, khi đó xuất tín hiệu <strong>NG</strong> để máy gá lại hoặc loại bỏ phôi.</p>
+
+<p><img src="media\Laser_2_2.png" alt="Laser_2_2" /></p>
+
+<p>Dựa trên phân tích trên, quy trình định vị dẫn hướng như sau:</p>
+
+<p><img src="media/Laser_2_5.png" alt="" /></p>
+
+<h3>2.3 Kiểm tra lại kết quả</h3>
+
+<p>​ Mục đích của kiểm tra lại kết quả là xác định vị trí ký tự khắc laser có hợp lệ hay không. Vì ký tự khắc thực tế được phân bố theo chu vi hình tròn (như hình dưới), nên việc kiểm tra lại có thể lượng hóa dựa trên vị trí và kích thước của đường tròn đó.</p>
+
+<p><img src="media\Laser_2_3.png" alt="Laser_2_3" /></p>
+
+<p>​ Theo phân tích định lượng, quy trình kiểm tra lại như sau:</p>
+
+<p><img src="media/Laser_2_6.png" alt="" /></p>
+
+<h2>3. Triển khai phương án</h2>
+
+<h3>3.1 Hiệu chuẩn camera và hiệu chuẩn liên kết</h3>
+
+<h4>3.1.1 Hiệu chuẩn camera</h4>
+
+<p>​ Sử dụng công cụ “Hiệu chuẩn camera mục tiêu”.</p>
+
+<h4>3.1.2 Hiệu chuẩn liên kết</h4>
+
+<p>​ Sử dụng “phương pháp hiệu chuẩn 9 vòng tròn” để hiệu chuẩn liên kết, các bước như sau:</p>
+
+<p>​ (1) Sử dụng gương quét laser khắc một ma trận vòng tròn <strong>3 × 3</strong> theo kiểu mảng tuyến tính trên tấm hiệu chuẩn (như vùng đỏ trong hình dưới) và ghi lại tọa độ tâm từng vòng tròn trong hệ tọa độ gương quét laser;</p>
+
+<p>​ (2) Đặt tấm hiệu chuẩn vào vị trí đồ gá của phôi cần gia công, dùng camera chụp ảnh và nhập ảnh vào công cụ “Hiệu chuẩn liên kết 9 vòng tròn”;</p>
+
+<p>​ (3) Nhập tọa độ tâm các vòng tròn trong hệ tọa độ gương quét laser vào vùng màu xanh lá trong hình dưới;</p>
+
+<p>​ (4) Các tham số khác thiết lập theo tình hình thực tế;</p>
+
+<p><img src="media\Laser_3_1.png" alt="Laser_3_1" /></p>
+
+<p>​ (5) Đặc biệt chú ý đến hai tham số “Hướng trục X” và “Hướng trục Y” của công cụ “Hiệu chuẩn liên kết 9 vòng tròn”: theo định nghĩa của công cụ, hướng dương trong hệ tọa độ ảo thống nhất là sang phải và xuống dưới; giá trị <strong>0</strong> nghĩa là hướng dương, <strong>1</strong> nghĩa là hướng ngược lại;</p>
+
+<p><img src="media\Laser_3_2.png" alt="Laser_3_2" /></p>
+
+<h3>3.2 Định vị dẫn hướng</h3>
+
+<p>​ Dựa trên quy trình kiểm tra trong “2.2 Phân tích phương án định vị dẫn hướng” và tình hình thực tế, triển khai thị giác như sau:</p>
+
+<ul>
+<li>Đặc trưng hình học dùng để định vị là biên dạng vòng tròn bên trong của phôi, như hình dưới</li>
+</ul>
+
+<p><img src="media\Laser_3_3.png" alt="Laser_3_3" /></p>
+
+<ul>
+<li>Tâm phôi được xác định bằng trung điểm giữa tâm khớp tròn và tâm khớp ellipse. Cách này giúp cải thiện độ tương quan trong kiểm tra lại so với chỉ dùng tâm khớp tròn. Kiểm tra tương quan là so sánh giá trị đo thị giác với giá trị đo của bên nghiệm thu, sai số không được vượt quá giới hạn cho phép.</li>
+</ul>
+
+<p><img src="media/Laser_3_4.png" alt="" /></p>
+
+<ul>
+<li>Khoảng cách từ đồ gá trên và đồ gá phải được đo như hình dưới. Mục đích là phòng trường hợp phôi không được gá đúng, bị đặt đè lên mép đồ gá. Cách này có tác dụng tương tự như đo khoảng cách từ tâm phôi đến đồ gá phải và dưới.</li>
+</ul>
+
+<p><img src="media\Laser_3_5.png" alt="Laser_3_6" /></p>
+
+<p><img src="media\Laser_3_6.png" alt="Laser_3_6" /></p>
+
+<ul>
+<li>Tâm ellipse thu được được đưa vào công cụ “Tính toán vị trí khắc của gương quét” và liên kết với kết quả hiệu chuẩn 9 vòng tròn để tính tọa độ tâm phôi trong hệ tọa độ gương quét laser;</li>
+</ul>
+
+<h3>3.3 Kiểm tra lại kết quả</h3>
+
+<p>​ Dựa trên quy trình trong “2.3 Phân tích phương án kiểm tra lại” và tình hình thực tế:</p>
+
+<ul>
+<li>Đặc trưng hình học chọn giống phần định vị dẫn hướng – biên dạng vòng tròn bên trong phôi;</li>
+<li>Chọn 6 ký tự có góc rõ ràng để trích xuất điểm góc ký tự và đưa vào mảng điểm ký tự;</li>
+</ul>
+
+<p><img src="media\Laser_3_7.png" alt="Laser_3_7" /></p>
+
+<ul>
+<li>Trích xuất điểm góc ký tự như hình dưới: dùng hai công cụ tìm đường thẳng, lấy giao điểm của chúng;</li>
+</ul>
+
+<p><img src="media\Laser_3_8.png" alt="Laser_3_8" /></p>
+
+<ul>
+<li>Như đã nói trong “3.2 Định vị dẫn hướng”, thực hiện khớp tròn và khớp ellipse với tập điểm ký tự, lấy trung điểm của hai tâm để làm tâm ký tự trong kiểm tra lại;</li>
+</ul>
+
+<p><img src="media/Laser_3_9.png" alt="" /></p>
+
+<ul>
+<li>Tính toán dữ liệu kiểm tra lại: đường kính chu vi tập điểm ký tự = bán kính khớp tròn + bán trục lớn khớp ellipse + giá trị bù, đây là cách tính cho kết quả tương quan tối ưu;</li>
+</ul>
+
+<h2>4. Hiển thị kết quả</h2>
+
+<p><img src="media\Laser_4_1.png" alt="Laser_4_1" /></p>

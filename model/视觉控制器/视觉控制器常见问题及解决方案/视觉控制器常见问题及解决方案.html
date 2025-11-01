@@ -1,0 +1,574 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>常见问题及排查方法</h1>
+
+<p>本章对常见的问题进行了分类，并通过现象的观察和一些检测方法，对问题进行定位，从而找出解决方法</p>
+
+<p>视觉控制器开机原理为：主板上电正常-主板自检正常-系统及引导正常-进入系统</p>
+
+<h2>1. 无法开机问题(通用判断方法)</h2>
+
+<p>无法开机问题是绝大部分问题的反馈，占比高达75%。前场判断无法开机问题时，需要观察以下信息并做相应判断。可能导致的情况包括：黑屏，开机无反应，风扇无反应，无法进入BIOS界面，主板报警等。</p>
+
+<p>此部分可观察的明显现象不多，以观察方法作为判断依据。</p>
+
+<ul>
+<li><p><strong>观察电源灯状态</strong></p>
+
+<ul>
+<li><p>可判断问题点：</p>
+
+<ul>
+<li><p>电源模块问题</p></li>
+<li><p>电源模块故障或硬件接口短路/无法识别（硬件损伤）</p></li>
+</ul>
+</li>
+<li><p>判断方法</p>
+
+<p>上电后，电源灯power正常情况下会变为绿色，此时，</p>
+
+<ul>
+<li><p>若电源灯是暗的(VC7200/7300)或橙色(VC7100)，按下开机按钮，若变绿，说明上电正常，BIOS中没有设置来电自启动。解决方法参考BIOS来电自启设置。</p></li>
+<li><p>若电源灯是暗的，按开机键没有反应，检查供电部分线序是否正确。此步可更换适配器测试。</p>
+
+<p>​   VC7100供电为19-24V，电源端子顺序 -++-</p>
+
+<p>​   VC7200供电为9-36V，电源端子顺序为 GND - +</p>
+
+<p>​   VC7300供电为18-25V，电源端子顺序为++&ndash;</p></li>
+<li><p>若确认供电无问题，定位 电源模块问题，返厂维修。</p></li>
+<li><p>若变绿后很快变暗，说明主板上电后触发短路保护，检查电源供电，若供电没问题，定位电源模块故障或硬件接口短路/无法识别（硬件损伤），返厂维修。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>观察风扇</strong></p>
+
+<ul>
+<li><p>可判断问题点：</p>
+
+<ul>
+<li><p>显示线缆连接导致的黑屏问题</p></li>
+<li><p>VGA接口故障导致的黑屏问题</p></li>
+<li><p>电源模块故障或硬件接口短路/无法识别（硬件损伤）</p></li>
+<li><p>判断方法</p>
+
+<p>VC7100和VC7200通过上面板的风扇进风口，用手感觉是否有风。</p>
+
+<p>VC7300通过后面板风扇进风口判断是否有风。</p>
+
+<p>若有风，且电源灯变绿，屏幕依旧无显示</p>
+
+<p>更换VGA(参考前面板接口)线缆，检查显示器端是否接好，并调节显示器模式为VGA，或自动检测。若解决，定位显示线缆连接导致的黑屏问题</p>
+
+<p>如果没有解决，7100更换DVI线缆(参考前面板接口)，7300换HDMI线缆插到对应接口，并调节显示器模式为对应模式。若解决，定位VGA接口故障导致的黑屏问题</p>
+
+<p>若没风，主板没起来或无供电。检查供电后如还没有风，电源模块故障或硬件接口短路/无法识别（硬件损伤）返厂维修。</p>
+
+<p>到此步，主板上电步骤完成。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>观察开机报警音</strong></p>
+
+<ul>
+<li><p>可判断问题点：</p>
+
+<p>主板故障，内存故障，显卡故障，CPU故障等</p></li>
+<li><p>判断方法</p>
+
+<p>正常会有滴的一声正常开机提示音，为主板自检提示音。</p>
+
+<p>一般出现的问题情况是没有报警音或有规则的报警音。</p>
+
+<p>无报警音，且视觉控制器无法开机的情况，关机后拔掉内存，重新开机，听是否有1长3短；注意，内存插拔的过程一定在关机状态下操作。</p>
+
+<p>有报警音的情况，听报警音规律。5短为CPU故障，8短为显示故障，1长3短为内存故障。现场如果有散件，可做替换操作验证。如没有，返修。</p>
+
+<p>如果提示音正常，但依旧无法开机，开机后一直不断按(非按住)DEL，看是否能进BIOS界面。只要能进BIOS界面，就过了主板自检。能进BIOS的情况，都不叫无法开机。BIOS界面参考下图。</p>
+
+<p><img src="media/1660792259069.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p><strong>观察鼠标或键盘插上时的声音</strong></p>
+
+<p>正常鼠标或键盘插到USB口时，主板会有滴的一声。或者观察硬盘灯，最左面的会亮，或者可以切换开关状态。用此方法可判断主板是否已经自检到外设部分，外设部分为比较靠后的自检项，都能过说明主板除了显示模块，供电及自检是正常的。</p></li>
+</ul>
+
+
+<h2>2. 无法进系统问题(通用判断方法)</h2>
+
+<p>无法进系统问题，除硬盘故障坏道属于硬件问题，部分蓝屏是内存问题，需要返厂维修外，其他问题都属于系统问题或BIOS设置问题。可以通过BIOS刷写，系统重装/还原等手段在现场解决。</p>
+
+<p>此问题有比较明显的现象，以现象分析作为解决问题的依据。</p>
+
+<ul>
+<li><p><strong>现象描述：</strong></p>
+
+<ul>
+<li><p>无法进入系统，卡windows图标</p></li>
+<li><p>无法进入系统，自动重启</p></li>
+<li><p>无法进入系统，蓝屏</p></li>
+<li><p>无法进入系统，黑屏有字符说明或左上角有不停闪烁的白色横杠</p></li>
+</ul>
+</li>
+<li><p><strong>问题分析：</strong></p>
+
+<ul>
+<li><p>无法进入系统，卡windows图标：</p>
+
+<p>可能原因包括外设问题、windows引导问题、驱动兼容性问题、系统崩溃问题及驱动兼容性问题。</p>
+
+<ul>
+<li><p>无法进入系统，自动重启(未进系统前)：</p>
+
+<p>可能原因包括硬盘坏道问题、windows引导问题、内存问题、驱动兼容性问题及系统崩溃问题、风扇不转导致的过热重启或死机问题。</p></li>
+<li><p>无法进入系统，蓝屏：</p>
+
+<p>可能原因包括内存问题、系统崩溃报错问题、驱动兼容性问题、进恢复模式问题。(此故障有报错信息，记录蓝屏报错代码并反馈给产品端，会有专用解决方法)</p>
+
+<p>比如：</p>
+
+<p><img src="media/wps77D3.tmp.jpg" alt="" /> <img src="media/wps77D4.tmp.jpg" alt="" /><img src="media/wps77D5.tmp.jpg" alt="" /></p></li>
+<li><p>无法进入系统，黑屏有英文说明或左上角有不停闪烁的白色横杠：</p>
+
+<p>大部分翻译为无法找到硬盘，无法找到引导，比如：</p>
+
+<p><img src="media/1660793223980.png" alt="" /></p>
+
+<p>可能的原因包括硬盘无法识别问题、引导丢失问题。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>解决方法：</strong></p>
+
+<p>  解决方法的操作方式从易到难，从系统到硬件的顺序，按以下顺序尝试。</p>
+
+<ul>
+<li><p>风扇问题：</p>
+
+<p>用手在上面板感觉下风扇有没有转，如果没风，判断为风扇问题。部分重启问题由此引起。</p>
+
+<p>时间评估：5s</p></li>
+<li><p>外设问题：</p>
+
+<p>拔掉所有USB设备后按开机键。</p>
+
+<p>时间评估：5s</p></li>
+<li><p>Windows引导问题：</p>
+
+<p>进PE系统后，运行windows引导修复工具，点击确定，待成功后重启。</p>
+
+<p>时间评估：1分钟</p></li>
+<li><p>驱动兼容性问题：</p>
+
+<p>出问题的一般是最近安装的驱动程序或显卡驱动，进入安全模式后，卸载显卡驱动或最近安装的驱动，重启。  时间评估：1分钟</p></li>
+<li><p>系统崩溃问题：</p>
+
+<p>还原系统或重装系统   时间评估：10-15分钟</p></li>
+<li><p>内存问题：</p>
+
+<p>取出内存后擦拭金手指，或更换好的内存测试。   时间评估：5分钟</p>
+
+<ul>
+<li><p>硬盘坏道问题：</p>
+
+<p>一般机械盘比较容易出现坏道问题，关机后打开机盖，拔掉机械硬盘线，开机看是否能进系统。如果能进，直接定位硬盘逻辑坏道问题。关机后插上硬盘线，开机后进入PE系统，打开diskgenius软件，选择磁盘-坏道修复-选择对应磁盘-开始检测，完成后点击尝试修复。其中，可以修复的部分为逻辑坏道，硬盘可以继续使用。这种坏道一般集中在扇区前部，检测约十分钟可暂停，尝试修复后重启。</p>
+
+<p>不可以修复的部分为物理坏道，需要返修或更换好的机械盘。</p>
+
+<p>固态系统盘如果出现坏块，一般是频繁的异常断电引起。如果出现还原系统后依旧卡顿或卡死重启，现场更换固态盘或送修。</p>
+
+<p>所有的硬盘坏道/坏块问题，都可以通过更换硬盘来解决</p>
+
+<p>时间评估：逻辑坏道15-20分钟，更换好的机械盘5分钟</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>3. 显示问题</h2>
+
+<ul>
+<li><p><strong>黑屏类问题(仅针对能上电的机器，不能上电的请参考1. 无法开机问题)</strong></p>
+
+<ul>
+<li><p><strong>硬盘或引导造成的黑屏</strong></p>
+
+<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<ul>
+<li><p>典型报错信息如下所示：</p>
+
+<p>Primary master hard disk fail</p>
+
+<p>Reboot and select proper boot device</p>
+
+<p>Invalid system disk</p>
+
+<p>A disk read error occurred</p></li>
+</ul>
+
+
+<p><span style = "color:blue"><strong>原因分析：</strong></span></p></li>
+</ul>
+
+
+<p>​        没有找到硬盘或系统引导有误</p>
+
+<p>​   <span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>​   ① 在BIOS中查看硬盘是否能够识别，以及首启动项是否为系统盘。</p></li>
+</ul>
+
+
+<p><img src="media/wps7854.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps7855.tmp.jpg" alt="" /></p>
+
+<p>  ​   ② 如果没找到硬盘，检查系统盘连接，关机后重新插拔后在尝试。如果还不行，更换硬盘。</p>
+
+<p>  ​   ③ 如果可以识别硬盘，选中后如果还不能进，进入PE系统，运行windows系统引导修复软件。</p>
+
+<p>  ​   ④ 如果还不行，还原系统。</p>
+
+<ul>
+<li><p><strong>显示模块故障或线缆/显示器设置造成的黑屏</strong></p>
+
+<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<ul>
+<li><p>① 视觉控制器开机后风扇转，电源正常</p></li>
+<li><p>② 风扇最大风力转，主板无正常上电音，且无报警</p></li>
+<li><p>③ 主板有正常上电音，插键盘有滴的响声，键盘灯亮</p></li>
+</ul>
+
+
+<p><span style = "color:blue"><strong>原因分析：</strong></span></p>
+
+<ul>
+<li><p>① 显示模块故障或主板故障</p></li>
+<li><p>② 线缆/显示器设置问题</p></li>
+<li><p>③ 分辨率问题</p></li>
+</ul>
+
+
+<p><span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<ul>
+<li><p>①关机后拔掉所有内存，重新上电，看是否有滴滴滴滴4声报警。如果没有，主板故障，如果有，清空CMOS信息(方法参考2.1.6)后开机，如果依旧无法开机，显示模块故障或南桥芯片故障，送修。</p></li>
+<li><p>② 更换线缆测试，更换DVI线缆测试，显示器调节为自动设置或对应接口的信号。如果还不行，按Ctrl+Alt+F1</p></li>
+<li><p>③ 按Ctrl+Alt+F7切换为最低分辨率</p></li>
+</ul>
+</li>
+<li><p><strong>蓝屏类问题</strong></p>
+
+<ul>
+<li><p><strong>系统内蓝屏</strong></p>
+
+<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<ul>
+<li>如下图所示，报错代码种类较多
+<img src="media/wps7856.tmp.jpg" alt="" /></li>
+</ul>
+
+
+<p><span style = "color:blue"><strong>原因分析：</strong></span></p>
+
+<p>软件崩溃，系统崩溃，驱动不兼容，系统补丁不兼容等</p>
+
+<p><span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>蓝屏都有报错代码，记录报错代码后反馈，同时提供系统日志和应用日志。</p></li>
+<li><p><strong>开机蓝屏</strong></p>
+
+<p><span style = "color:blue"><strong>现象描述:</strong></span></p>
+
+<ul>
+<li><p>① 同系统内蓝屏报错</p></li>
+<li><p>② 进恢复模式</p>
+
+<p><img src="media/wps7858.tmp.jpg" alt="" /></p></li>
+<li><p>③ 闪退型蓝屏，一闪而过，无法看清报错信息</p></li>
+</ul>
+
+
+<p><span style = "color:blue"><strong>原因分析：</strong></span></p>
+
+<ul>
+<li><p>①上一次开机安装的驱动，补丁等不兼容，或异常断电</p></li>
+<li><p>② 内存不兼容</p></li>
+<li><p>③ 系统崩溃</p></li>
+</ul>
+
+
+<p><span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>​ 关机后拔掉内存，擦拭金手指后插回。如未解决，还原系统。如果还未解决，送修，更换内存。</p></li>
+</ul>
+</li>
+<li><p><strong>花屏问题</strong></p>
+
+<p>  <span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>  ​ 运行中花屏，或开机花屏，闪屏</p>
+
+<p>  <span style = "color:blue"><strong>原因分析：</strong></span></p>
+
+<p>  ​ 线缆/显示器/电磁干扰(闪屏或花屏后可恢复)/显示模块故障</p>
+
+<p>  <span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>  ​ 依次更换线缆，显示器。如果依旧花屏，检查显示线缆附近的供电线。如果确认没问题，显示模块故障。送修</p></li>
+</ul>
+
+
+<h2>4. 启动类问题</h2>
+
+<ul>
+<li><p><strong>BIOS问题</strong></p>
+
+<ul>
+<li><p><strong>来电自启</strong></p>
+
+<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>​ 上电后视觉控制器不启动，按开机键后才能正常启动</p>
+
+<p><span style = "color:blue"><strong>原因分析：</strong></span></p>
+
+<p>​ BIOS来电自启动未设置</p>
+
+<p><span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>​ 参考<strong>常用快捷键、命令及工具/2常用工具及设置/2 BIOS/来电自启动选项</strong></p></li>
+<li><p><strong>硬盘启动项</strong></p>
+
+<p>​ 参考<strong>常用快捷键、命令及工具/2常用工具及设置/2 BIOS/硬盘启动选项</strong></p></li>
+<li><p><strong>BIOS信息错乱</strong></p>
+
+<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>​ BIOS设置被更改，乱码。</p>
+
+<p><span style = "color:blue"><strong>原因分析：</strong></span></p>
+
+<p>​ 一般出现在客户自行更改了BIOS设置或CMOS故障。</p>
+
+<p><span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>​ 清CMOS，扣电池后装回，DOS系统下刷CMOS固件。</p></li>
+</ul>
+</li>
+<li><p><strong>风扇类问题</strong></p>
+
+<ul>
+<li><p><strong>风扇不转</strong></p>
+
+<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>​ 开机后风扇不转或运行一段时间后视觉控制器过热重启</p>
+
+<p><span style = "color:blue"><strong>原因分析：</strong></span></p>
+
+<p>​ 风扇故障或散热硅脂太少/太干</p>
+
+<p><span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>​ 更换风扇，添加硅脂，或返修(参考<strong>视觉控制器位置组成及图示/1. 控制盒 VC5100 &amp; VC7100/CPU</strong>)</p></li>
+<li><p><strong>风扇全速转</strong></p>
+
+<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>​ 开机后风扇一直全速转不降速，黑屏</p>
+
+<p><span style = "color:blue"><strong>原因分析：</strong></span></p>
+
+<p>​ 主板卡自检</p>
+
+<p><span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>​ 重新拆装CPU和内存，如无法解决，清CMOS后开机，有概率恢复正常，如果依旧如此，主板接口模块故障，送修。</p></li>
+</ul>
+</li>
+<li><p><strong>报警类问题</strong></p>
+
+<ul>
+<li><p><strong>滴&hellip;.滴滴滴</strong></p>
+
+<p>​ 正常开机音</p></li>
+<li><p><strong>滴&hellip;. 滴..滴..滴..</strong></p>
+
+<p>​ 内存报错，重新插拔或更换内存</p></li>
+<li><p><strong>滴..滴..滴..滴..滴..</strong></p>
+
+<p>​ CPU报错，重新安装或更换CPU</p></li>
+<li><p><strong>滴..滴..滴..滴..滴..滴..滴..滴..</strong></p>
+
+<p>​ 显卡报错，重新插拔显卡及供电</p></li>
+</ul>
+</li>
+<li><p><strong>自动重启或卡死类问题</strong></p>
+
+<p>  <span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>  ​ 参考 <strong>2. 无法进系统问题</strong></p></li>
+<li><p><strong>硬盘类问题</strong></p>
+
+<p>  <span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>  ​ HDD灯常亮，但硬盘无法识别</p>
+
+<p>  <span style = "color:blue"><strong>原因分析：</strong></span></p>
+
+<p>  ​ 硬盘坏道，尤其映射区坏道</p>
+
+<p>  <span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>  ​ 更换硬盘</p></li>
+</ul>
+
+
+<h2>5. 系统类问题</h2>
+
+<ul>
+<li><p><strong>系统卡顿问题</strong></p>
+
+<p>  <span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>  ​ 系统卡顿，鼠标移动时不连贯，点击反应异常的慢，或工程运行时点击导致的软件未响应或崩溃</p>
+
+<p>  <span style = "color:blue"><strong>观察：</strong></span></p>
+
+<p>  ​ 任务管理器中CPU、内存、硬盘、网络的资源占用率，对较高的项，观察是什么进程引起的资源占用过高。如果都不高，怀疑是病毒问题。</p>
+
+<p>  <span style = "color:blue"><strong>原因分析：</strong></span></p>
+
+<p>  ​ 超出视觉控制器能力的工程应用，客户软件，病毒，系统故障</p>
+
+<p>  <span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<ul>
+<li><p><strong>CPU过高时：</strong>优化工程或提升视觉控制器处理能力，客户软件升级，安装杀毒软件，并反馈病毒种类。还原系统。</p></li>
+<li><p><strong>内存过高时：</strong>内存溢出(软件升级)，安装杀毒软件，并反馈病毒种类。还原系统。</p></li>
+<li><p><strong>硬盘过高时：</strong>评估存图量及队列情况，反馈。可临时更换硬盘解决。</p></li>
+</ul>
+</li>
+<li><p><strong>崩溃问题</strong></p>
+
+<p>  <span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>  ​ 桌面点击没反应，软件崩溃，桌面卡死等</p>
+
+<p>  <span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>  ​ 按<kbd>Win</kbd>+<kbd>D</kbd>看是否能切回桌面，判断是界面软件卡死还是桌面卡死。如果不能切回，按<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>看是否能切出桌面，切出后点击任务管理器，并结束未响应的进程。收集应用日志、系统日志及软件dump文件并反馈。</p></li>
+<li><p><strong>病毒类问题</strong></p>
+
+<p>  <span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>  ​ 软件崩溃，工具超时，系统卡顿，自动重启，蓝屏，最直观的现象为杀软拦截的病毒攻击</p>
+
+<p>  <span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>  ​ 安装火绒杀毒软件，观察攻击的病毒类型。重装系统后安装<strong>windows6.1-kb4012212</strong>及<strong>windows6.1-kb4012215</strong>补丁，安装火绒杀毒软件后关闭445端口(有工具)，都完成后在连网线。</p></li>
+</ul>
+
+
+<h2>6. 其他问题</h2>
+
+<ul>
+<li><p><strong>相机类问题</strong></p>
+
+<ul>
+<li><p><strong>双相机帧率达不到，一直丢包</strong></p>
+
+<p> <span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p> ​   双相机帧率达不到，一直丢包，客户自选的视觉控制器，经排查现场视觉控制器PCIe x8的槽位实际信号带宽只有PCIe x1，带宽不满足PCIe x4 更换槽位后正常。</p></li>
+<li><p><strong>超时问题(驱动部分)</strong></p>
+
+<p> <span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p> ​   相机抓图偶尔超时</p>
+
+<p> <span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p> ​   安装相机环境检测工具，查看抓图是否走的是socket协议。</p>
+
+<p> ​   卸载LBAS驱动后重新安装，看是否会出现数字签名报错。</p>
+
+<p> ​   <img src="media/1660813159733.png" alt="" /></p>
+
+<p> ​   安装补丁Windows6.1-KB3033929-x64后重新安装。</p>
+
+<p> ​   如果依旧报错，重启后不断按F8，选择金融驱动程序签名强制后，再次进行安装。</p>
+
+<p> ​   <img src="media/1660813186672.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p><strong>显卡问题</strong></p>
+
+<ul>
+<li><p><strong>驱动无法安装</strong></p>
+
+<p><img src="media/1660814392349.png" alt="" /></p>
+
+<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>​ 设备管理器中找不到显卡</p>
+
+<p><span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>​ 右键点击计算机-属性，选择设备管理器，找到显示适配器，看是否能找到显卡。如果找不到，关机后检查显卡风扇是否转，以及显卡供电是否插好。</p>
+
+<p><img src="media/1660814624899.png" alt="" /></p>
+
+<p><span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>​ 系统中能找到显卡</p>
+
+<p>​ 按<kbd>Win</kbd>+<kbd>R</kbd>，输入dxdiag，回车。</p>
+
+<p>​ <img src="media/1660814571893.png" alt="" /></p>
+
+<p>​ 检查系统小版本是否在17134及以上。如果不是，需要重装新的系统。对应的最低版本为1803系统版本，我们常用的为win10 企业版 1809 长服务周期版系统。</p></li>
+<li><p><strong>开机黑屏，但感觉开机状态正常</strong></p>
+
+<p>当视觉控制器上有显卡时，会默认从显卡的显示接口输出。左侧的显示口会无效。检查是否插错了显示接口。</p>
+
+<p><img src="media/1660814601462.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p><strong>USB问题</strong></p>
+
+<p>  <span style = "color:blue"><strong>现象描述：</strong></span></p>
+
+<p>  ​ 键鼠或U盘连接后无法使用，或使用时突然无法使用</p>
+
+<p>  <span style = "color:blue"><strong>解决方法：</strong></span></p>
+
+<p>  ​ 安装D盘-驱动路径下的USB驱动，如果还无法解决，判断是U3芯片故障，送修。</p></li>
+</ul>
+

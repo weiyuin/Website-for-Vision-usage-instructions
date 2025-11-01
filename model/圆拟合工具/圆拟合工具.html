@@ -1,0 +1,193 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Nội Suy Hình Tròn</h1>
+
+<h2>Chức năng</h2>
+
+<p>Thực hiện nội suy hình tròn cho tập hợp điểm đầu vào để tìm ra đường tròn phù hợp nhất. Hiệu quả áp dụng như Hình 1 bên dưới.</p>
+
+<p><img src="media/wps3.jpg" alt="img" />  <img src="media/wps4.jpg" alt="img" /></p>
+
+<p><imgnote>(a) Tập điểm đường viền đầu vào</imgnote> <imgnote>(b) Kết quả nội suy hình tròn</imgnote></p>
+
+<p><imgnote>Hình 1 Minh họa ứng dụng của công cụ nội suy hình tròn</imgnote></p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Phương pháp nội suy</td>
+<td>Gồm hai loại: khoảng cách đại số và khoảng cách hình học. <img src="media/wps6.jpg" alt="img" /></td>
+</tr>
+<tr>
+<td></td>
+<td>Bật nội suy tối ưu toàn cục</td>
+<td>Chọn bật hay không nội suy tối ưu toàn cục, mặc định là "Không". Nếu chọn Không, sử dụng phương pháp ưu tiên hiệu suất; nếu chọn Có, sử dụng phương pháp tối ưu toàn cục.</td>
+</tr>
+<tr>
+<td></td>
+<td>Xem xét điểm ngoại lai</td>
+<td>Có xét đến các điểm lệch khỏi đường cong trong quá trình nội suy không. Chọn “Có” sẽ hiển thị phương pháp xử lý và số lượng điểm ngoại lai.</td>
+</tr>
+<tr>
+<td></td>
+<td>Số lượng điểm ngoại lai</td>
+<td>Số điểm không tham gia nội suy hình tròn, số này phải nhỏ hơn tổng số điểm trừ đi 3.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tự động điều chỉnh số điểm ngoại lai</td>
+<td>Cho phép tự động điều chỉnh số điểm ngoại lai để giảm sai số RMS. Hữu ích trong trường hợp số lượng điểm ngoại lai phù hợp với phần lớn dữ liệu nhưng thiếu 1–2 điểm ở một vài dữ liệu gây sai số RMS cao.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ràng buộc bán kính</td>
+<td>Xác định kích thước bán kính của đường tròn nội suy.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Hình ảnh đầu vào</td>
+<td>Hiển thị hình ảnh cần kiểm tra.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập điểm đầu vào</td>
+<td>Hiển thị tập hợp điểm đầu vào.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Hình ảnh đầu vào</td>
+<td>Thông tin về chiều rộng, chiều cao, kích thước điểm ảnh của hình ảnh – giống với tham số hình ảnh đầu vào trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tập điểm đầu vào</td>
+<td>Tập điểm nội suy – giống với tham số tập điểm đầu vào trong cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Hình ảnh đầu vào</td>
+<td>Xuất chiều rộng, chiều cao, kích thước điểm ảnh của hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả hình tròn</td>
+<td>Xuất tọa độ tâm và bán kính của đường tròn được nội suy.</td>
+</tr>
+<tr>
+<td></td>
+<td>Sai số bình phương trung bình (RMS)</td>
+<td>Độ sai số của kết quả nội suy, giá trị càng nhỏ thì kết quả càng chính xác.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian chạy công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Kết quả hình tròn</td>
+<td>Hiển thị kết quả nội suy đường tròn – giống tham số kết quả hình tròn trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi: “OK” nếu thành công, “NG” nếu thất bại – giống tham số kết quả thực thi trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Kết quả hình tròn</td>
+<td>Xuất kết quả nội suy để dùng cho công cụ kế tiếp – giống tham số kết quả hình tròn trong cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>Phương pháp nội suy</h3>
+
+<p>Tùy theo định nghĩa của hàm sai số, nội suy đường cong chia thành hai loại: dựa trên khoảng cách đại số và dựa trên khoảng cách hình học. Giả sử phương trình đường cong cần nội suy là:</p>
+
+<p><img src="media/wps9.png" alt="img" />               (1)</p>
+
+<p>Tập điểm dữ liệu là (x<sub>i</sub> , y<sub>i</sub>), i=1,2,…,n (n>1), thì hàm sai số dựa trên khoảng cách đại số là:</p>
+
+<p><img src="media/wps10.png" alt="img" />                 (2)</p>
+
+<p>Trong đó, vectơ P=(P<sub>ab</sub>) là các tham số cần tìm trong phương trình đường cong, Q(x<sub>i</sub> , y<sub>i</sub>) là khoảng cách đại số từ điểm (x<sub>i</sub> , y<sub>i</sub>) đến đường cong Q(x , y) = 0.</p>
+
+<p>Hàm sai số dựa trên khoảng cách hình học là:</p>
+
+<p><img src="media/wps11.png" alt="img" />                   (3)</p>
+
+<p>Trong đó, vectơ P=(P<sub>ab</sub>) là các tham số cần tìm trong phương trình đường cong, d<sub>i</sub> là khoảng cách hình học từ điểm (x<sub>i</sub> , y<sub>i</sub>) đến đường cong Q(x , y) = 0.</p>
+
+<p>Mỗi phương pháp đều có ưu và nhược điểm riêng.</p>
+
+<p>Phương pháp dựa trên khoảng cách đại số thường có thể chuyển thành bài toán ước lượng tham số tuyến tính, nên quá trình tính toán đơn giản và trực tiếp. Trong nhiều trường hợp, phương pháp này là đủ, tuy nhiên nó không cho kết quả tối ưu vì hai lý do sau:</p>
+
+<ul>
+<li><p>Khoảng cách đại số không có tính bất biến đối với phép biến đổi Euclid;</p></li>
+<li><p>Các điểm trên đường cong đóng góp không đồng đều vào kết quả nội suy.</p></li>
+</ul>
+
+<p>Phương pháp dựa trên khoảng cách hình học khắc phục được các vấn đề trên, nhưng vì biểu thức d<sub>i</sub> phức tạp nên đây là bài toán ước lượng tham số phi tuyến, khiến tính toán trở nên phức tạp hơn. Phương pháp này hỗ trợ nội suy có ràng buộc như bán kính hoặc góc.</p>
+
+<h2>Lưu ý</h2>
+
+<ul>
+<li>Khi chọn phương pháp nội suy là “khoảng cách hình học” và bật xử lý điểm ngoại lai, thì tham số “nội suy tối ưu toàn cục” sẽ được tự động bật và không thể thay đổi.</li>
+</ul>
+
+<h2>Dự án mẫu</h2>
+
+<p>Xem tại “\Samples\形状间距及相关点.gvp”。</p>

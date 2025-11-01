@@ -1,0 +1,155 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scTrendlineCaliper</h1>
+
+<h2>功能</h2>
+
+<p>表示折线，对应的Gui图形控件为scGuiTrendline，例如边宽检测工具的折线边宽区域（对应属性栏中边宽检测类型为折线）、珠体跟踪工具的折线珠体训练区域，该折线中有两个可变矩形，即有两个分段。</p>
+
+<p><img src="media/f47aa718ace418e7b77b78c7c5e94210.png" alt="" /></p>
+
+<p><imgnote>图1 折线示意图</imgnote></p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                     </th>
+<th> 接口描述                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scTrendlineCaliper </td>
+<td> scTrendlineCaliper()默认构造函数。       </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> GetSubRectNum           </td>
+<td> 获取折线中可变矩形数目（折线分段数目）。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetFirstSubRectEx   </td>
+<td> 获取折线中第一个可变矩形                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSubRectEx     </td>
+<td> 获取指定序号的可变矩形。                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCaliperNum           </td>
+<td> 获取所有的卡尺数目。                     </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCalipers               </td>
+<td> 获取所有的卡尺。                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> BoundingBox               </td>
+<td> 获取折线的最小外接矩形。                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scTrendlineCaliper()</h3>
+
+<ul>
+<li><p>功能：构造scTrendlineCaliper对象。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>GetSubRectNum()</h3>
+
+<ul>
+<li><p>功能：获取折线中可变矩形数目（折线分段数目）。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：折线中可变矩形个数，整型。</p></li>
+</ul>
+
+
+<h3>GetFirstSubRectEx()</h3>
+
+<ul>
+<li><p>功能：获取折线中第一个可变矩形。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：折线中第一个可变矩形，scRectEx类型。</p></li>
+</ul>
+
+
+<h3>GetSubRectEx(rectExID)</h3>
+
+<ul>
+<li><p>功能：获取折线中指定序号的可变矩形。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>rectExID：可变矩形序号，整型。</li>
+</ul>
+</li>
+<li><p>返回值：第rectExID个可变矩形，scRectEx类型。</p></li>
+</ul>
+
+
+<h3>GetCaliperNum()</h3>
+
+<ul>
+<li><p>功能：获取所有的卡尺数目。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：所有的卡尺数目，整型。</p></li>
+</ul>
+
+
+<h3>GetCalipers()</h3>
+
+<ul>
+<li><p>功能：获取所有的卡尺。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：所有卡尺组成的向量，scRectEx类型的向量，相当于Python中的list。</p></li>
+</ul>
+
+
+<h3>BoundingBox()</h3>
+
+<ul>
+<li><p>功能：获取折线的最小外接矩形。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：最小外接矩形，scRect类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

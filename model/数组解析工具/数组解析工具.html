@@ -1,0 +1,155 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Phân Tích Mảng</h1>
+
+<h2>Chức Năng</h2>
+
+<p>Như tên gọi, công cụ này dùng để phân tích mảng, dựa trên chỉ số (index) để xuất ra một giá trị cụ thể trong mảng. Công cụ hỗ trợ nhiều loại dữ liệu: kiểu dữ liệu cơ bản (int, double, long, float, bool, sc2Vector), dữ liệu hình ảnh (ảnh xám 8 bit và ảnh màu RGB 24 bit), kết quả từ công cụ định vị, công cụ kiểm tra và công cụ tìm kiếm,… Chi tiết xem mô tả cụ thể. <img src="media/wps45.jpg" alt="img" /></p>
+
+<h2>Tham Số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Loại dữ liệu</td>
+<td>Loại dữ liệu của mảng.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Mảng đầu vào</td>
+<td>Mảng cần phân tích.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chỉ số đầu vào</td>
+<td>Giá trị chỉ số cần xuất ra, bắt đầu từ 0.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Đầu Ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số (ý nghĩa tham số)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Dữ liệu đầu ra</td>
+<td>Dữ liệu tại chỉ số được chỉ định (mặc định là 0) trong mảng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Dữ liệu đầu ra</td>
+<td>Dữ liệu tại chỉ số được chỉ định trong mảng.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải Thích Chi Tiết</h2>
+
+<table>
+<thead>
+<tr>
+<th>Loại dữ liệu</th>
+<th>Giải thích</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>scCircle</td><td>Hình tròn. Là kiểu đầu ra của công cụ tìm và khớp tròn.</td></tr>
+<tr><td>scLine</td><td>Đường thẳng. Là kiểu đầu ra của công cụ tìm và khớp đường thẳng.</td></tr>
+<tr><td>scGeomSearchResult</td><td>Kết quả định vị hình học.</td></tr>
+<tr><td>DMSingleReaderResult</td><td>Kết quả đọc mã DM đơn.</td></tr>
+<tr><td>SingleLinearCodeResult</td><td>Kết quả giải mã mã vạch đơn.</td></tr>
+<tr><td>QRSingleReaderResult</td><td>Kết quả đọc mã QR đơn.</td></tr>
+<tr><td>DefectResultInfo</td><td>Thông tin kết quả lỗi (khiếm khuyết).</td></tr>
+<tr><td>GsGlueDetectResult</td><td>Kết quả từ công cụ phát hiện vị trí keo rắn.</td></tr>
+<tr><td>scPatSearchMaxResult</td><td>Kết quả định vị khu vực đơn.</td></tr>
+<tr><td>GsSingleBlobResult</td><td>Kết quả BLOB đơn.</td></tr>
+<tr><td>scCaliperOneEdgeResult</td><td>Kết quả đầu ra của công cụ đo cạnh đơn (caliper đơn).</td></tr>
+<tr><td>scCaliperTwoEdgeResult</td><td>Kết quả đầu ra của công cụ đo hai cạnh (caliper đôi).</td></tr>
+<tr><td>GsLineSearchResult</td><td>Kết quả định vị đường đơn.</td></tr>
+<tr><td>GsCircleSearchResult</td><td>Kết quả định vị hình tròn đơn.</td></tr>
+<tr><td>scTriangleSearchResult</td><td>Kết quả định vị tam giác.</td></tr>
+<tr><td>EdgeDeviation</td><td>Độ lệch cạnh (dùng trong kiểm tra cạnh), là kết quả từ công cụ đo độ rộng biên cong.</td></tr>
+<tr><td>scFeatureletVector</td><td>Tập hợp điểm đặc trưng, thường là kết quả trích xuất biên dạng.</td></tr>
+<tr><td>GcCoordPos</td><td>Tọa độ điểm, có thể là kết quả từ công cụ hiệu chuẩn 9 vòng tròn liên kết hoặc công cụ tính vị trí gương quét đa vùng.</td></tr>
+<tr><td>GcPlatformAxisPos</td><td>Vị trí trục, thường là kết quả của công cụ căn chỉnh biên dạng với đường thẳng.</td></tr>
+<tr><td>scCrossSearchResult</td><td>Kết quả đơn từ công cụ định vị dấu cộng.</td></tr>
+<tr><td>scRectangleSearchResult</td><td>Kết quả đơn từ công cụ định vị hình chữ nhật.</td></tr>
+<tr><td>GsGlueMeasureResult</td><td>Kết quả đo từ công cụ đo kích thước keo rắn.</td></tr>
+<tr><td>scGcCoordPosVector</td><td>Tập hợp tọa độ điểm, gồm nhiều điểm.</td></tr>
+<tr><td>scSc2vectorVector</td><td>Tập hợp các vector 2D.</td></tr>
+<tr><td>GcBoardPoints</td><td>Kết quả đầu ra từ công cụ hiệu chuẩn camera với bảng mục tiêu.</td></tr>
+<tr><td>GsTextDisplayParam</td><td>Loại dữ liệu đầu ra từ công cụ hiển thị văn bản dạng mảng.</td></tr>
+<tr><td>GsMultiCLOutputResult</td><td>Loại kết quả tìm kiếm đầu ra của công cụ định vị nhiều hình tròn và nhiều đường.</td></tr>
+<tr><td>GcCalibrateResult</td><td>Kết quả từ công cụ tính toán hiệu chuẩn điểm chạm.</td></tr>
+<tr><td>sc2XformLinear</td><td>Biến đổi tuyến tính 2D.</td></tr>
+</tbody>
+</table>
+
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\数组解析工具.gvp”。</p>

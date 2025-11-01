@@ -1,0 +1,163 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>多区域振镜位置计算工具</h1>
+
+<h2>功能</h2>
+
+<p>多区域振镜位置计算工具是将输入的图像坐标经过计算后，得到转换后的振镜坐标，适用于将图像划分为多个小区域进行关联的场景。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口           </td>
+<td> 产品坐标系补偿值                                             </td>
+<td> 输入产品坐标系下的修正补偿值，包括X偏移向量、Y偏移向量和旋转角度。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否忽略角度变化   </td>
+<td> 控制转换计算过程中是否忽略转换图像坐标的角度变化，选择“是”，计算过程中角度值设为0。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否采用多基准     </td>
+<td> 选择“是”，转换计算过程中，利用距离转换图像坐标最近的辅助点来计算对应的振镜坐标；选择“否”，利用单个标定区域的中间点(第5个辅助点)来计算对应的振镜坐标。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否采用绝对角度   </td>
+<td> 采用绝对角度指将输出振镜坐标的旋转角度规范化到[-PI/2,PI/2]。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否采用最近组标定 </td>
+<td> 控制转换计算过程中是否采用最近组转换矩阵进行标定，选择“是”，根据最近组转换矩阵进行标定；选择“否”，根据输入的标定组号对应的转换矩阵进行标定。                                                               </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td>      无      </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链             </td>
+<td> 输入图像坐标                                           </td>
+<td> 输入需要转换的图像坐标。                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> X轴方向            </td>
+<td> 振镜X坐标轴方向。                                                                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> Y轴方向            </td>
+<td> 振镜Y坐标轴方向。                                                                                                          </td>
+</tr>
+<tr>
+<td></td>
+<td> 二维线性变换       </td>
+<td> 输入图像坐标与振镜坐标关联后的矩阵信息，从多区域标定工具链接得到。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像坐标           </td>
+<td> 输入图像坐标与振镜坐标关联后图像坐标点集，从多区域标定工具链接得到。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 激光坐标         </td>
+<td> 输入的激光坐标点集，从多区域标定工具链接得到。                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 标定组数           </td>
+<td> 是否采用最近组标定参数选择“否”时，需要配置该参数，int类型，取值范围1~标定组数。                                                               </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无           </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 输出激光坐标 </td>
+<td> 输出转换后的激光坐标。                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无 </td>
+<td> 无                                                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出激光坐标 </td>
+<td> 输出转换后的激光坐标，供后序工具使用，同监视窗口输出激光坐标参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>多区域振镜位置计算工具与多区域标定工具配合使用。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\多区域标定工具.gvp”。</p>

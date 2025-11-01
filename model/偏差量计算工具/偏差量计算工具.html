@@ -1,0 +1,124 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>偏差量计算工具</h1>
+
+<h2>功能</h2>
+
+<p>偏差量计算工具用来计算图像中一点与选定参考点之间的偏差。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 无    </td>
+<td> 无                                                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像窗口     </td>
+<td> 无                                                                                                                   </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 图像坐标                                                   </td>
+<td> 图像中一点的图像坐标，数据类型为GcCoordPos（位置姿态）。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 参考图像坐标 </td>
+<td> 选定的参考点的图像坐标，数据类型为GcCoordPos（位置姿态）。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 标定结果     </td>
+<td> 标定计算工具的输出结果，是图像、平台及轴坐标之间的关系。                                                             </td>
+</tr>
+<tr>
+<td> 高级界面     </td>
+<td> 无     </td>
+<td> 无                                                                                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 偏差量         </td>
+<td> 图像上一点与选定参考点之间的偏差。                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td> 属性窗口     </td>
+<td> 无 </td>
+<td> 无                                                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 偏差量         </td>
+<td> 图像上一点与选定参考点之间的偏差，供后序工具使用，同监视窗口的偏差量参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li><p>数据链窗口的参数图像坐标和参考图像坐标的数据类型是GcCoordPos（位置姿态），而非scVector（二维向量）。使用前应使用位置姿态生成、数组转位置姿态、轴位置转位置姿态等工具进行数据转换。</p></li>
+<li><p>数据链窗口的参数标定结果是标定计算工具的标定结果（GcCalibrateResult 型），而非靶标相机标定工具的标定结果（scCalibrateResult型）。</p></li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\偏差量计算工具.gvp”。</p>

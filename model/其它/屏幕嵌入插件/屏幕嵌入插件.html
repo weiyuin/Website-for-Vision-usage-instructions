@@ -1,0 +1,108 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>屏幕嵌入插件使用说明</h1>
+
+<ul>
+<li>【注意事项】该功能为6.3.200之后支持的特性，需配合新加密狗使用，新加密狗图片如下</li>
+</ul>
+
+
+<p><img src="media/1639983384867.png" alt="" /></p>
+
+<ul>
+<li><p>【注意事项】该功能为单服务端（VA）单客户端（屏幕嵌入控件使用者）设计。请勿接入多个客户端，或同时打开多个VA进程。</p></li>
+<li><p>【注意事项】使用该功能时，VA和客户端软件均需要以管理员身份运行。</p></li>
+<li><p>【注意事项】该功能传输图片时会占用运行时间，不需要嵌入功能请将配置项删掉（下文System路径下的VisionAssemblyEmbedded.gcfg）</p></li>
+<li><p>Step1：注册屏幕嵌入插件</p>
+
+<ul>
+<li>进入软件安装目录\ActiveX目录</li>
+<li>如果客户端软件生成平台为32位，管理员命令运行x86文件夹下的“快速注册.bat”脚本</li>
+<li>如果客户端软件生成平台为64位，管理员命令分别运行x64文件夹和x86文件夹下的“快速注册.bat”脚本</li>
+<li>注册完毕后，在Visua Studio资源编辑器的ToolBox的General可以看到控件，将其拖入即可使用，如图所示：</li>
+</ul>
+</li>
+</ul>
+
+
+<p><img src="media/1630332513347.png" alt="" /></p>
+
+<ul>
+<li>Step2：将安装目录下Plugins文件夹下的VisionAssemblyEmbedded.gcfg文件拷贝到System路径下：</li>
+</ul>
+
+
+<p><img src="media/1630333015281.png" alt="" /></p>
+
+<h1>屏幕嵌入插件接口使用说明</h1>
+
+<ul>
+<li>如果需要控制工程启动、运行、停止，则在IDE的类向导中添加对应变量即可，如图所示：</li>
+</ul>
+
+
+<p><img src="media/1630333143154.png" alt="" /></p>
+
+<ul>
+<li><p>接口：控制工程启动</p>
+
+<ul>
+<li>LONG OpenSolution(const char* szPath, LONG nTimeOut)</li>
+<li>Param1：szPath 解决方案路径 如：C:\Users\W01884\Desktop\VISIONAssembly.gvp</li>
+<li>Parem2：nTimeOut 接口启动超时时间，设置为0时即刻返回，不等待启动成功</li>
+<li>错误码：
+
+<ul>
+<li>0 成功</li>
+<li>1 传入路径非法</li>
+<li>2 已存在开启的VA进程</li>
+<li>3 启动VA进程失败</li>
+<li>4 未找到VA安装路径或未安装VA</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>接口：控制工程运行</p>
+
+<ul>
+<li>LONG StartEngine()</li>
+<li>错误码:
+
+<ul>
+<li>0 成功</li>
+<li>1 无VA连接或连接失败</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>接口：控制工程停止</p>
+
+<ul>
+<li>LONG StopEngine()</li>
+<li>错误码:
+
+<ul>
+<li>0 成功</li>
+<li>1 无VA连接或连接失败</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+

@@ -1,0 +1,143 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ Trích xuất Màu sắc</h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>​     Công cụ Trích xuất Màu sắc chủ yếu dùng để trích xuất vùng màu chỉ định trong ảnh màu và xuất ảnh xám. Vùng màu mục tiêu sẽ được đặt thành màu trắng, các vùng khác đặt thành màu đen.</p>
+
+<p><img src="media/GcColorExtractTool_1_1.png" alt="GcColorExtractTool_1_1" /></p>
+
+<h2>2. Hướng dẫn sử dụng</h2>
+
+<ul>
+<li><h4>Trích xuất màu sắc</h4></li>
+</ul>
+
+<p><img src="media/GcColorExtractTool_2_1.png" alt="GcColorExtractTool_2_1" /></p>
+
+<p>Nhấn chuột phải vào công cụ, chọn "Thuộc tính" để vào giao diện nâng cao như hình trên. Sau khi chọn vùng cần trích xuất màu, nhấn nút "Trích xuất màu", thanh trạng thái sẽ hiển thị "Trích xuất màu", sau đó di chuyển chuột trên ảnh đầu vào, khung chọn màu đỏ sẽ tự động di chuyển theo, sau khi xác định vùng, nhấn chuột để hoàn tất trích xuất màu một lần. Kích thước khung chọn mặc định là 15 pixel, có thể điều chỉnh bằng thanh trượt "Kích thước vùng tham chiếu" ở bên trái. Sau khi trích xuất, danh sách xổ xuống trên ảnh đầu vào sẽ tự động chuyển sang cửa sổ hiển thị kết quả trích xuất, quan sát hiệu quả. Nếu kết quả không đầy đủ, có thể tiếp tục trích xuất nhiều lần. Khi nhấn nút "Loại trừ màu", thanh trạng thái sẽ hiển thị "Loại trừ màu", con trỏ chuột khi di chuyển sẽ có vùng màu đỏ kích thước 1 pixel. Nhấn vào vùng ảnh, công cụ sẽ loại trừ màu đã chọn khỏi kết quả, tạo ra kết quả và hình ảnh trích xuất mới.</p>
+
+<p>Sau thao tác trích xuất hoặc loại trừ màu, nếu kết quả không như mong muốn, có thể nhấn nút "Hoàn tác" để quay lại trạng thái trước đó. Nếu muốn xoá toàn bộ hiệu ứng hiện tại và trích xuất lại từ đầu, có thể nhấn nút "Xoá". Việc trích xuất màu có thể thực hiện trên toàn bộ ảnh, nhưng kết quả chỉ áp dụng trong vùng ROI.</p>
+
+<p>Giới thiệu chức năng mới - Bộ sưu tập màu: Trước đây công cụ chỉ hỗ trợ trích xuất một nhóm màu, khi cần trích xuất nhiều nhóm màu, phải sử dụng nhiều công cụ riêng biệt, gây tốn bộ nhớ. Vì vậy công cụ đã được nâng cấp để hỗ trợ trích xuất nhiều nhóm màu. Trong giao diện nâng cao, có thể thêm hoặc xoá bộ sưu tập, các thao tác trích xuất, loại trừ, hoàn tác, xoá sẽ áp dụng cho bộ sưu tập được chọn.</p>
+
+<ul>
+<li><h4>Tiền xử lý</h4></li>
+</ul>
+
+<p><img src="media/GcColorExtractTool_2_2.png" alt="GcColorExtractTool_2_2" /></p>
+
+<p>Sau khi trích xuất màu nếu kết quả chưa tối ưu, có thể áp dụng thêm các bước tiền xử lý như: giãn nở, co lại, mở rộng, đóng kín, điền vùng, lọc... để cải thiện kết quả.</p>
+
+<p>Trong giao diện thuộc tính nâng cao, nhấn nút "Thêm" để mở cửa sổ như hình trên. Hỗ trợ thêm nhiều bước tiền xử lý. Nếu sau nhiều bước tiền xử lý kết quả xấu đi, có thể nhấn "Xoá" để quay lại bước trước đó. Nếu muốn chỉnh sửa một bước cụ thể, chọn bước đó trong danh sách rồi nhấn "Chỉnh sửa" để thay đổi cài đặt.</p>
+
+<ul>
+<li><h4>Tính toán diện tích</h4></li>
+</ul>
+
+<p>Sau khi trích xuất màu và tiền xử lý, công cụ sẽ tính diện tích vùng màu quan tâm trong ảnh kết quả. Tuỳ vào ứng dụng cụ thể, có thể chọn bật chức năng tính diện tích các đường viền khép kín (Blob).</p>
+
+<p>Diện tích màu: Tính tổng số pixel màu trắng/đen trong ảnh kết quả.</p>
+
+<p>Giá trị đo: Tính tổng diện tích của các Blob (đường viền khép kín) chứa màu được trích xuất.</p>
+
+<p>Số lượng: Đếm số lượng Blob chứa màu được trích xuất trong ảnh kết quả.</p>
+
+<ul>
+<li><h4>Thực thi</h4></li>
+</ul>
+
+<p>Quá trình trích xuất màu và tiền xử lý đều có thể quan sát trực tiếp trên ảnh kết quả. Tuy nhiên, để đảm bảo hiệu lực khi thoát giao diện nâng cao hoặc muốn xem kết quả cuối cùng, cần nhấn nút "Thực thi" một lần trước khi thoát.</p>
+
+<h2>3. Các vấn đề thường gặp</h2>
+
+<p>Không có</p>
+
+<h2>4. Giải thích tham số</h2>
+
+<h4>Tham số đầu vào</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không. Nếu bật, thuật toán sử dụng OpenMp để tăng tốc tính toán nhưng có thể làm thời gian không ổn định. Nếu tắt, thuật toán sẽ không dùng OpenMp. </td>
+</tr>
+<tr>
+<td> Phần trăm số luồng </td>
+<td> Thiết lập tỷ lệ % số luồng dùng cho tính toán song song. Giá trị hợp lệ trong khoảng (0, 0.75], tương ứng (0%, 75%]. </td>
+</tr>
+<tr>
+<td> Ảnh đầu vào     </td>
+<td> Ảnh được sử dụng để trích xuất màu.                       </td>
+</tr>
+<tr>
+<td> Biến đổi tuyến tính 2D </td>
+<td> Thực hiện biến đổi tịnh tiến, xoay, thu phóng trên vùng cần trích xuất. </td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu ra</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh đầu ra </td>
+<td> Ảnh xám sau khi đã trích xuất màu.                   </td>
+</tr>
+<tr>
+<td> Diện tích màu </td>
+<td> Tổng diện tích màu (theo pixel) trong ảnh kết quả.   </td>
+</tr>
+<tr>
+<td> Diện tích Blob </td>
+<td> Diện tích tổng cộng của các Blob chứa màu được phát hiện. </td>
+</tr>
+<tr>
+<td> Số lượng Blob </td>
+<td> Số lượng các Blob chứa màu được phát hiện.           </td>
+</tr>
+<tr>
+<td> Kết quả thực thi </td>
+<td> Kết quả chạy của công cụ.                             </td>
+</tr>
+<tr>
+<td> Thời gian thực thi </td>
+<td> Thời gian chạy công cụ.                               </td>
+</tr>
+</tbody>
+</table>
+
+<h2>5. Dự án mẫu</h2>
+
+<p>Xem tại: “\Samples\颜色提取工具.gvp”.</p>

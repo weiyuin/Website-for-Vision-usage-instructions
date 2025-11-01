@@ -1,0 +1,441 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scBlob</h1>
+
+<h2>Chức năng</h2>
+
+<p>Đại diện cho kết quả Blob. Được chứa trong tham số đầu ra "Kết quả Blob" của công cụ Blob, thuộc kiểu <code>GsSingleBlobResult</code>, và là kiểu dữ liệu của thuộc tính <code>BlobResult</code>.</p>
+
+<h2>Giao diện</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Khởi tạo</td>
+<td>scBlob</td>
+<td>Hàm khởi tạo mặc định scBlob().</td>
+</tr>
+<tr>
+<td>Thuộc tính</td>
+<td>lChildNum</td>
+<td>Số lượng nút con.</td>
+</tr>
+<tr>
+<td></td>
+<td>label</td>
+<td>Nhãn liên thông, tức là loại vùng. Với ảnh xám: Blob được đánh dấu là 1, Hole là 0.</td>
+</tr>
+<tr>
+<td></td>
+<td>area</td>
+<td>Diện tích.</td>
+</tr>
+<tr>
+<td></td>
+<td>centerMassX/Y</td>
+<td>Trọng tâm (tọa độ X/Y).</td>
+</tr>
+<tr>
+<td></td>
+<td>imageBoundCenterX/Y</td>
+<td>Tâm của hình chữ nhật bao ngoài (X/Y).</td>
+</tr>
+<tr>
+<td></td>
+<td>imageBoundMinX/Y</td>
+<td>Giá trị X/Y nhỏ nhất của hình chữ nhật bao ngoài.</td>
+</tr>
+<tr>
+<td></td>
+<td>imageBoundMaxX/Y</td>
+<td>Giá trị X/Y lớn nhất của hình chữ nhật bao ngoài.</td>
+</tr>
+<tr>
+<td></td>
+<td>imageBoundWidth</td>
+<td>Chiều rộng của hình chữ nhật bao ngoài.</td>
+</tr>
+<tr>
+<td></td>
+<td>imageBoundHeight</td>
+<td>Chiều cao của hình chữ nhật bao ngoài.</td>
+</tr>
+<tr>
+<td></td>
+<td>imageBoundAspect</td>
+<td>Tỷ lệ dài rộng của hình chữ nhật bao ngoài.</td>
+</tr>
+<tr>
+<td></td>
+<td>diagonalLength</td>
+<td>Độ dài đường chéo của hình chữ nhật bao ngoài nhỏ nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>dMassToBoundOffsetX/Y</td>
+<td>Độ lệch X/Y từ trọng tâm đến tâm hình chữ nhật bao ngoài nhỏ nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>dMinPixelValue</td>
+<td>Giá trị xám nhỏ nhất trong toàn bộ điểm của Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>dMaxPixelValue</td>
+<td>Giá trị xám lớn nhất trong toàn bộ điểm của Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>dAvergPixelValue</td>
+<td>Giá trị xám trung bình của toàn bộ điểm trong Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>dAvergPixelValueMax</td>
+<td>Giá trị lớn nhất của giá trị xám trung bình theo từng đoạn (run). Dựa trên khái niệm “sự kiện” tức là theo đoạn – tức là giá trị trung bình lớn nhất của từng đoạn trong Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>dAvergPixelValueMin</td>
+<td>Giá trị nhỏ nhất của giá trị xám trung bình theo từng đoạn (run). Dùng để xác định vùng có điểm tối nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>inertiaX/Y</td>
+<td>Moment quán tính bậc hai theo trục X/Y.</td>
+</tr>
+<tr>
+<td></td>
+<td>inertiaMin</td>
+<td>Moment quán tính bậc hai nhỏ nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>inertiaMax</td>
+<td>Moment quán tính bậc hai lớn nhất.</td>
+</tr>
+<tr>
+<td></td>
+<td>angle</td>
+<td>Góc phương (hướng chính của vật thể).</td>
+</tr>
+<tr>
+<td></td>
+<td>elongation</td>
+<td>Độ kéo dài (Elongation): là tỷ số giữa moment quán tính lớn nhất và nhỏ nhất. Hình tròn có giá trị elongation bằng 1 (giá trị nhỏ nhất).</td>
+</tr>
+<tr>
+<td></td>
+<td>boundPrincipalCenterX/Y</td>
+<td>Tâm X/Y của hình chữ nhật bao ngoài theo trục chính.</td>
+</tr>
+<tr>
+<td></td>
+<td>boundPrincipalMinX/Y</td>
+<td>Giá trị nhỏ nhất X/Y của hình chữ nhật theo trục chính.</td>
+</tr>
+<tr>
+<td></td>
+<td>boundPrincipalMaxX/Y</td>
+<td>Giá trị lớn nhất X/Y của hình chữ nhật theo trục chính.</td>
+</tr>
+<tr>
+<td></td>
+<td>boundPrincipalWidth</td>
+<td>Chiều rộng của hình chữ nhật theo trục chính.</td>
+</tr>
+<tr>
+<td></td>
+<td>boundPrincipalHeight</td>
+<td>Chiều cao của hình chữ nhật theo trục chính.</td>
+</tr>
+<tr>
+<td></td>
+<td>boundPrincipalAspect</td>
+<td>Tỷ lệ dài rộng của hình chữ nhật theo trục chính.</td>
+</tr>
+<tr>
+<td></td>
+<td>density</td>
+<td>Mật độ. Mô tả mức độ tập trung của điểm bên trong Blob. Được định nghĩa là: diện tích tổng / diện tích hình chữ nhật bao ngoài nhỏ nhất theo trục chính. Giá trị trong khoảng (0, 1].</td>
+</tr>
+<tr>
+<td></td>
+<td>scartchness</td>
+<td>Độ xước (Scratchness): tỷ lệ giữa bình phương chiều rộng của hình chữ nhật nhỏ nhất theo trục chính và diện tích. Giá trị càng lớn, khả năng là vết xước càng cao.</td>
+</tr>
+<tr>
+<td></td>
+<td>eccentricity</td>
+<td>Độ lệch tâm: càng lớn thì hình càng dẹt; càng nhỏ thì càng gần tròn.</td>
+</tr>
+<tr>
+<td></td>
+<td>boundaryPixelLength</td>
+<td>Chiều dài đường biên (số pixel biên).</td>
+</tr>
+<tr>
+<td></td>
+<td>perimeter</td>
+<td>Chu vi của Blob.</td>
+</tr>
+<tr>
+<td></td>
+<td>acircularity</td>
+<td>Độ lệch tròn: càng lớn thì càng dẹt, càng nhỏ thì càng tròn.</td>
+</tr>
+<tr>
+<td></td>
+<td>acircularityRms</td>
+<td>Độ lệch tròn đã chuẩn hóa.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Chi tiết</h2>
+
+<h3>lChildNum</h3>
+
+<ul>
+<li>Chức năng: Biểu thị số lượng nút con, kiểu số nguyên, có thể đọc/ghi.</li>
+</ul>
+
+<h3>label</h3>
+
+<ul>
+<li>Chức năng: Biểu thị nhãn kết nối (liên thông), kiểu số nguyên, có thể đọc/ghi.</li>
+</ul>
+
+<h3>area</h3>
+
+<ul>
+<li>Chức năng: Biểu thị diện tích, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>centerMassX/Y</h3>
+
+<ul>
+<li>Chức năng: Biểu thị vị trí trọng tâm, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>imageBoundCenterX/Y</h3>
+
+<ul>
+<li>Chức năng: Biểu thị tọa độ X/Y của tâm hình chữ nhật bao ngoài, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>imageBoundMinX/Y</h3>
+
+<ul>
+<li>Chức năng: Biểu thị X/Y nhỏ nhất của hình chữ nhật bao ngoài, kiểu số nguyên, có thể đọc/ghi.</li>
+</ul>
+
+<h3>imageBoundMaxX/Y</h3>
+
+<ul>
+<li>Chức năng: Biểu thị X/Y lớn nhất của hình chữ nhật bao ngoài, kiểu số nguyên, có thể đọc/ghi.</li>
+</ul>
+
+<h3>imageBoundWidth</h3>
+
+<ul>
+<li>Chức năng: Biểu thị chiều rộng của hình chữ nhật bao ngoài, kiểu số nguyên, có thể đọc/ghi.</li>
+</ul>
+
+<h3>imageBoundHeight</h3>
+
+<ul>
+<li>Chức năng: Biểu thị chiều cao của hình chữ nhật bao ngoài, kiểu số nguyên, có thể đọc/ghi.</li>
+</ul>
+
+<h3>imageBoundAspect</h3>
+
+<ul>
+<li>Chức năng: Biểu thị tỷ lệ chiều dài/rộng của hình chữ nhật bao ngoài, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>diagonalLength</h3>
+
+<ul>
+<li>Chức năng: Biểu thị độ dài đường chéo của hình chữ nhật bao nhỏ nhất, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>dMassToBoundOffsetX/Y</h3>
+
+<ul>
+<li>Chức năng: Biểu thị độ lệch của trọng tâm so với tâm của hình chữ nhật bao nhỏ nhất theo X/Y, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>dMinPixelValue</h3>
+
+<ul>
+<li>Chức năng: Biểu thị giá trị xám nhỏ nhất bên trong Blob, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>dMaxPixelValue</h3>
+
+<ul>
+<li>Chức năng: Biểu thị giá trị xám lớn nhất bên trong Blob, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>dAvergPixelValue</h3>
+
+<ul>
+<li>Chức năng: Biểu thị giá trị xám trung bình của tất cả các điểm trong Blob, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>dAvergPixelValueMax</h3>
+
+<ul>
+<li>Chức năng: Biểu thị giá trị xám trung bình lớn nhất dựa trên sự kiện (ở đây sự kiện được hiểu là đoạn chạy – run). Tức là giá trị trung bình lớn nhất của các đoạn chạy bên trong Blob. Kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>dAvergPixelValueMin</h3>
+
+<ul>
+<li>Chức năng: Biểu thị giá trị xám trung bình nhỏ nhất dựa trên sự kiện (ở đây sự kiện được hiểu là đoạn chạy – run). Tức là giá trị trung bình nhỏ nhất của các đoạn chạy bên trong Blob. Kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>inertiaX/Y</h3>
+
+<ul>
+<li>Chức năng: Biểu thị mô men quán tính bậc hai quanh trục X/Y, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>inertiaMin</h3>
+
+<ul>
+<li>Chức năng: Biểu thị mô men quán tính bậc hai nhỏ nhất, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>inertiaMax</h3>
+
+<ul>
+<li>Chức năng: Biểu thị mô men quán tính bậc hai lớn nhất, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>angle</h3>
+
+<ul>
+<li>Chức năng: Biểu thị hướng, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>elongation</h3>
+
+<ul>
+<li>Chức năng: Biểu thị độ giãn dài. Là tỷ số giữa mô men quán tính bậc hai lớn nhất và nhỏ nhất. Đối với hình tròn thì giá trị này là 1 – giá trị nhỏ nhất. Kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>boundPrincipalCenterX/Y</h3>
+
+<ul>
+<li>Chức năng: Biểu thị tọa độ tâm của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>boundPrincipalMinX/Y</h3>
+
+<ul>
+<li>Chức năng: Biểu thị X/Y nhỏ nhất của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>boundPrincipalMaxX/Y</h3>
+
+<ul>
+<li>Chức năng: Biểu thị X/Y lớn nhất của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>boundPrincipalWidth</h3>
+
+<ul>
+<li>Chức năng: Biểu thị chiều rộng của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>boundPrincipalHeight</h3>
+
+<ul>
+<li>Chức năng: Biểu thị chiều cao của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>boundPrincipalAspect</h3>
+
+<ul>
+<li>Chức năng: Biểu thị tỷ lệ dài/rộng của hình chữ nhật bao quanh theo trục chính, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>density</h3>
+
+<ul>
+<li>Chức năng: Biểu thị mật độ – thể hiện mức độ phân bố dày đặc của điểm trong Blob. Được định nghĩa là diện tích tổng / diện tích hình chữ nhật bao quanh theo trục chính nhỏ nhất. Giá trị nằm trong khoảng (0,1], kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>scartchness</h3>
+
+<ul>
+<li>Chức năng: Biểu thị mức độ trầy xước. Là tỷ lệ giữa bình phương chiều rộng của hình chữ nhật bao quanh theo trục chính nhỏ nhất và diện tích. Giá trị càng lớn thì càng có khả năng là vết trầy. Kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>eccentricity</h3>
+
+<ul>
+<li>Chức năng: Biểu thị độ lệch tâm (độ méo). Giá trị càng lớn thì hình càng dẹt; giá trị nhỏ thì hình càng giống hình tròn. Kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>boundaryPixelLength</h3>
+
+<ul>
+<li>Chức năng: Biểu thị độ dài đường viền (pixel), kiểu số nguyên, có thể đọc/ghi.</li>
+</ul>
+
+<h3>perimeter</h3>
+
+<ul>
+<li>Chức năng: Biểu thị chu vi, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>acircularity</h3>
+
+<ul>
+<li>Chức năng: Biểu thị độ tròn – càng lớn thì càng dẹt, càng nhỏ thì càng tròn. Kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+<h3>acircularityRms</h3>
+
+<ul>
+<li>Chức năng: Biểu thị độ tròn chuẩn hóa, kiểu số thực, có thể đọc/ghi.</li>
+</ul>
+
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

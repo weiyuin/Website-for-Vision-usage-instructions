@@ -1,0 +1,138 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>灰度图像拼接工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     图像拼接是指将多幅来自同一场景的具有一定重叠区域的小尺寸图像合成为一幅大型的无缝高分辨率图像的技术，这些图像可以是在不同时间、不同视角或者不同传感器获得。灰度图像拼接工具，即所拼接的图像只能是灰度图像，拼接后输出的结果也是灰度图像。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​     由于面阵相机的视野和分辨率有限，有时单个相机可能无法满足大视野、大幅面，这时需要将多个相机获取的图像进行拼接处理，可以使用灰度图像拼接工具。</p>
+
+<p><img src="media/GcGrayImageStitchingTool_2_1.png" alt="GcGrayImageStitchingTool_2_1" /></p>
+
+<h2>3. 原理说明</h2>
+
+<p>​     图像拼接的功能是将两到多幅图像组合为一幅结果图像。输入图像可以是单相机移动拍摄或多相机图像。拼接时需要考虑多幅图像通过算法变换成统一大小尺寸的图像。</p>
+
+<p>图像拼接过程中，只做边缘拼接。拼合过程中，输入的图像小于M×N（行列所需要的小图个数）时，用128灰度值补齐图像；输入的图像大于M×N时，增加行数适应拼合后图像大小。</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，设置拼接图像个数</h4></li>
+</ul>
+
+
+<p><img src="media/GcGrayImageStitchingTool_4_1.png" alt="GcGrayImageStitchingTool_4_1" /></p>
+
+<ul>
+<li><h4>链入图像数组</h4></li>
+</ul>
+
+
+<p><img src="media/GcGrayImageStitchingTool_4_2.png" alt="GcGrayImageStitchingTool_4_2" /></p>
+
+<ul>
+<li><h4>查看结果</h4></li>
+</ul>
+
+
+<p><img src="media/GcGrayImageStitchingTool_4_3.png" alt="GcGrayImageStitchingTool_4_3" /></p>
+
+<h2>5. 常见问题</h2>
+
+<table>
+<thead>
+<tr>
+<th> 现象描述             </th>
+<th> 解决方法                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 错误栏输出初始化失败 </td>
+<td> 检查数据链是否链入图像数组。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称   </th>
+<th> 参数说明                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像组 </td>
+<td> 需要拼接的灰度图像集合。                 </td>
+</tr>
+<tr>
+<td> 行数       </td>
+<td> 拼接大图的行数。                         </td>
+</tr>
+<tr>
+<td> 列数       </td>
+<td> 拼接大图的列数，列为基数，重新计算行数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出图像 </td>
+<td> 输出拼接后的灰度图像。 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果。         </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间。         </td>
+</tr>
+<tr>
+<td>          </td>
+<td>                        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\灰度图像拼接工具.gvp”。</p>

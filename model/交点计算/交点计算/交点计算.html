@@ -1,0 +1,259 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>交点计算</h1>
+
+<h2>功能</h2>
+
+<p>交点计算是用来计算两个几何图形（直线、圆、椭圆、线段）的交点。需要注意的是两个几何图形交点根据不同的相交情况有不同的个数。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th> 接口名称                                                     </th>
+<th> 接口描述       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> InterSectCircleCircle </td>
+<td> 圆与圆之间交点     </td>
+</tr>
+<tr>
+<td> InterSectLineLine </td>
+<td> 直线与直线之间交点 </td>
+</tr>
+<tr>
+<td> InterSectLineCircle </td>
+<td> 直线与圆之间交点   </td>
+</tr>
+<tr>
+<td> InterSectLineEllipse </td>
+<td> 直线与椭圆之间交点 </td>
+</tr>
+<tr>
+<td> InterSectSegmentSegment </td>
+<td> 线段与线段之间交点 </td>
+</tr>
+<tr>
+<td> InterSectSegmentLine </td>
+<td> 线段与直线之间交点 </td>
+</tr>
+<tr>
+<td> InterSectSegmentCircle </td>
+<td> 线段与圆之间交点   </td>
+</tr>
+<tr>
+<td> InterSectSegmentEllipse </td>
+<td> 线段与椭圆之间交点 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细描述</h2>
+
+<h3>InterSectCircleCircle(circleA, circleB)</h3>
+
+<ul>
+<li><p>功能：计算圆与圆的交点。结果中IntersectResult.intersect表示两个圆是否有交点，如果再结合结果中交点IntersectResult.points中元素个数就可以判断两个圆的具体相交情况。</p>
+
+<ul>
+<li><p>intersect：False，表示无交点，即圆是内含或相离关系。</p></li>
+<li><p>intersect：True，points交点个数=0，表示圆重合。</p></li>
+<li><p>intersect：True，points交点个数=1，表示圆相切（内切或外切）。</p></li>
+<li><p>intersect：True，points交点个数=2，表示圆相交。</p></li>
+</ul>
+</li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>circleA：圆A，scCircle类型。</p></li>
+<li><p>circleB：圆B，scCircle类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：交点计算结果，IntersectResult类型。</p></li>
+</ul>
+
+
+<h3>InterSectLineLine(lineA, lineB)</h3>
+
+<ul>
+<li><p>功能：计算直线与直线的交点，结果中IntersectResult.intersect表示两条直线是否有交点，如果再结合结果中交点IntersectResult.points中元素个数就可以判断两条直线的具体相交情况。</p>
+
+<ul>
+<li><p>intersect：False，表示无交点，即直线平行。</p></li>
+<li><p>intersect：True，points交点个数=0，表示直线重合。</p></li>
+<li><p>intersect：True，points交点个数=1，表示直线相交。</p></li>
+</ul>
+</li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>lineA：直线A，scLine类型。</p></li>
+<li><p>lineB：直线B，scLine类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：交点计算结果，IntersectResult类型。</p></li>
+</ul>
+
+
+<h3>InterSectLineCircle(line, circle)</h3>
+
+<ul>
+<li><p>功能：计算直线与圆的交点。结果中IntersectResult.intersect表示直线与圆是否有交点，如果再结合结果中交点IntersectResult.points中元素个数就可以判断直线与圆的具体相交情况。</p>
+
+<ul>
+<li><p>intersect：False，表示无交点，即直线和圆相离。</p></li>
+<li><p>intersect：True，points交点个数=1，表示直线与圆相切。</p></li>
+<li><p>intersect：True，points交点个数=2，表示直线与圆相交。</p></li>
+</ul>
+</li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>line：直线，scLine类型。</p></li>
+<li><p>circle：圆，scCircle类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：交点计算结果，IntersectResult类型。</p></li>
+</ul>
+
+
+<h3>InterSectLineEllipse(line, ellipse)</h3>
+
+<ul>
+<li><p>功能：计算直线与椭圆的交点。结果中IntersectResult.intersect表示直线与椭圆是否有交点，如果再结合结果中交点IntersectResult.points中元素个数就可以判断直线与椭圆的具体相交情况。</p>
+
+<ul>
+<li><p>intersect：False，表示无交点，即直线和椭圆相离。</p></li>
+<li><p>intersect：True，points交点个数=1，表示直线与椭圆相切。</p></li>
+<li><p>intersect：True，points交点个数=2，表示直线与椭圆相交。</p></li>
+</ul>
+</li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>line：直线，scLine类型。</p></li>
+<li><p>ellipse：椭圆，scEllipse类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：交点计算结果，IntersectResult类型。</p></li>
+</ul>
+
+
+<h3>InterSectSegmentSegment(lineSegA, lineSegB)</h3>
+
+<ul>
+<li><p>功能：计算线段与线段的交点，结果中IntersectResult.intersect表示两条线段是否有交点，如果再结合结果中交点IntersectResult.points中元素个数就可以判断两条线段的具体相交情况。</p>
+
+<ul>
+<li><p>intersect：False，表示无交点，即两线段平行或相离。</p></li>
+<li><p>intersect：True，points交点个数=0，表示两线段部分（全部）重合。</p></li>
+<li><p>intersect：True，points交点个数=1，表示两线段相交或仅重合于顶点。</p></li>
+</ul>
+</li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>lineSegA：线段A，scLineSeg类型。</p></li>
+<li><p>lineSegB：线段B，scLineSeg类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：交点计算结果，IntersectResult类型。</p></li>
+</ul>
+
+
+<h3>InterSectSegmentLine(lineSeg, line)</h3>
+
+<ul>
+<li><p>功能：计算线段与直线的交点，结果中IntersectResult.intersect表示线段与直线是否有交点，如果再结合结果中交点IntersectResult.points中元素个数就可以判断线段与直线的具体相交情况。</p>
+
+<ul>
+<li><p>intersect：False，表示无交点，即线段与直线平行或相离。</p></li>
+<li><p>intersect：True，points交点个数=0，表示线段与直线重合。</p></li>
+<li><p>intersect：True，points交点个数=1，表示线段与直线相交。</p></li>
+</ul>
+</li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>lineSeg：线段，scLineSeg类型。</p></li>
+<li><p>line：直线，scLine类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：交点计算结果，IntersectResult类型。</p></li>
+</ul>
+
+
+<h3>InterSectSegmentCircle(lineSeg, circle)</h3>
+
+<ul>
+<li><p>功能：计算线段与圆的交点。结果中IntersectResult.intersect表示线段与圆是否有交点，如果再结合结果中交点IntersectResult.points中元素个数就可以判断线段与圆的具体相交情况。</p>
+
+<ul>
+<li><p>intersect：False，表示无交点，即线段和圆相离，或圆内含线段。</p></li>
+<li><p>intersect：True，points交点个数=1，表示线段与圆相切或仅相交于一点。</p></li>
+<li><p>intersect：True，points交点个数=2，表示线段与圆相交。</p></li>
+</ul>
+</li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>lineSeg：线段，scLineSeg类型。</p></li>
+<li><p>circle：圆，scCircle类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：交点计算结果，IntersectResult类型。</p></li>
+</ul>
+
+
+<h3>InterSectSegmentEllipse(lineSeg, ellipse)</h3>
+
+<ul>
+<li><p>功能：计算线段与椭圆的交点。结果中IntersectResult.intersect表示线段与椭圆是否有交点，如果再结合结果中交点IntersectResult.points中元素个数就可以判断线段与椭圆的具体相交情况。</p>
+
+<ul>
+<li><p>intersect：False，表示无交点，即线段和椭圆相离，或椭圆内含线段。</p></li>
+<li><p>intersect：True，points交点个数=1，表示线段与椭圆相切或仅相交于一个点。</p></li>
+<li><p>intersect：True，points交点个数=2，表示线段与椭圆相交。</p></li>
+</ul>
+</li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>lineSeg：线段，scLineSeg类型。</p></li>
+<li><p>ellipse：椭圆，scEllipse类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：交点计算结果，IntersectResult类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<ul>
+<li>交点计算：参见“\Samples\脚本工具\脚本工具交点计算.gvp”。</li>
+</ul>
+

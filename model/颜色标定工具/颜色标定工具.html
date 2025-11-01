@@ -1,0 +1,165 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>颜色标定工具</h1>
+
+<h2>功能</h2>
+
+<p>颜色标定的任务是确定由RGB颜色空间到色度学颜色空间之间的转换关系，颜色视觉工具中的颜色标定主要是确定由RGB颜色空间到CIELAB颜色空间之间的转换关系。颜色标定本质上是将实际成像条件（实际成像设备，实际光源）下的颜色值转换到标准成像条件（标准观察者，标准光源）下的颜色值。颜色标定只支持12行×19列的标准IT8 228色卡标定，颜色标定（升级）支持多种格式的色卡标定（须将标准色卡数据调整到指定格式以方便读取且最多支持26行×99列的色卡）。</p>
+
+<p><img src="media/wps65.jpg" alt="img" /></p>
+
+<p><imgnote>图1 颜色标定示意图</imgnote></p>
+
+<p><img src="media/wps66.jpg" alt="img" /></p>
+
+<p><imgnote>图2 色卡示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口     </td>
+<td> 色卡数据路径                     </td>
+<td> 需要选择色卡的文件的目录，用于颜色标定。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 保存标定结果 </td>
+<td> 将标定的结果保存保存的文件目录。                                           </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 输入图像                         </td>
+<td> 对应的色卡的拍照的图像。                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 4个十字GUI   </td>
+<td> 用于标记图像的色卡的四个角点。                                             </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入图像                         </td>
+<td> 对应的色卡的拍照的图像。                 </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无           </td>
+<td> 无                                                                       </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口   </td>
+<td> 输入图像                                                     </td>
+<td> 对应的色卡的拍照的图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像   </td>
+<td> 标定后的图像。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 色差均值   </td>
+<td> 颜色空间转换的色差均值。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 色差峰值   </td>
+<td> 颜色空间转换的色差峰值。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 色差标准差 </td>
+<td> 颜色空间转换的色差标准差。                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 工具执行结果。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间   </td>
+<td> 工具执行时间。                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口   </td>
+<td> 输出图像                                                     </td>
+<td> 标定后的图像。           </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                           </td>
+</tr>
+<tr>
+<td> 数据链     </td>
+<td> 输出图像                                                     </td>
+<td> 标定后的图像。           </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>工作原理</h3>
+
+<p><img src="media/wps70.jpg" alt="img" /></p>
+
+<p><imgnote>图3 颜色标定原理图</imgnote></p>
+
+<p>如图3所示为颜色标定的原理框图，颜色标定由两部分内容组成：</p>
+
+<ul>
+<li>色卡颜色数据的提取，包括色卡CIE颜色数据和色卡图像RGB数据的提取；</li>
+<li>颜色标定模型的求解。颜色标定本质上是一个参数估计的问题，在求解参数之前需要确定参数的模型以及模型的输入输出采样值。</li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\颜色标定工具.gvp”。</p>

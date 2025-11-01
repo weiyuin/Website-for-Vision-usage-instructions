@@ -1,0 +1,440 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>sc3DPlane</h1>
+
+<h2>功能</h2>
+
+<p>表示三维平面。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                               </th>
+<th> 接口描述                          </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> sc3DPlane                             </td>
+<td> sc3DPlane()默认构造函数           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> sc3DPlane                         </td>
+<td> sc3DPlane (vect)构造函数          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> sc3DPlane                      </td>
+<td> sc3DPlane (pos, nor)构造函数      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> sc3DPlane                  </td>
+<td> sc3DPlane (pt1, pt2, pt3)构造函数 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> sc3DPlane                    </td>
+<td> sc3DPlane (a, b, c, d)构造函数    </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> Set3DVector                      </td>
+<td> 设置三维向量                      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> Set3Points               </td>
+<td> 设置平面上三个点（构造平面）      </td>
+</tr>
+<tr>
+<td>      </td>
+<td> Get3Points                </td>
+<td> 获取平面上三个点                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCoefficients        </td>
+<td> 设置平面一般方程的系数            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCoefficients                </td>
+<td> 获取平面一般方程的系数            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetPos                                </td>
+<td> 设置平面经过的点位置坐标          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetPos                                   </td>
+<td> 获取平面经过的点位置坐标          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetNormal                          </td>
+<td> 设置平面的法向量                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetNormal                             </td>
+<td> 获取平面的法向量                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRegularizationNormal </td>
+<td> 获取单位化的平面法向量            </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetOffset                       </td>
+<td> 设置平面的偏移量                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetOffset                             </td>
+<td> 获取平面的偏移量                  </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRotation                      </td>
+<td> 设置平面法向量的旋转角度          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRotation                         </td>
+<td> 获取平面法向量的旋转角度          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetTilt                              </td>
+<td> 设置平面法向量的倾斜角度          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetTilt                                 </td>
+<td> 获取平面法向量的倾斜角度          </td>
+</tr>
+<tr>
+<td>      </td>
+<td> Distance                            </td>
+<td> 计算给顶点到当前平面的距离        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>sc3DPlane()</h3>
+
+<ul>
+<li><p>功能：构造sc3DPlane对象， 默认构造函数。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>sc3DPlane(vect)</h3>
+
+<p>功能：根据三维向量vect构造平面，该平面必经过原点（0，0，0）且法向量为vect，若三维向量vect为零向量，则修正为默认向量(0, 0, 1)。</p>
+
+<ul>
+<li><p>参数：</p>
+
+<ul>
+<li>vect：三维向量，sc3Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>sc3DPlane(pos, nor)</h3>
+
+<p>功能：根据平面所经过点的位置坐标pos和法向量nor构造平面，若法向量nor为零向量，则修正为默认向量(0, 0, 1)。</p>
+
+<ul>
+<li><p>参数：</p>
+
+<ul>
+<li><p>pos：位置坐标，sc3Dpoint类型。</p></li>
+<li><p>nor：法向量，sc3Dpoint类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>sc3DPlane(pt1, pt2,pt3)</h3>
+
+<p>功能：用三个点pt1、pt2、pt3来构造平面，若三点共线，则返回经过点pt1，且平行于XOY平面的平面。</p>
+
+<ul>
+<li><p>参数：</p>
+
+<ul>
+<li><p>pt1：平面上第一个点，sc3Dpoint类型。</p></li>
+<li><p>pt2：平面上第二个点，sc3Dpoint类型。</p></li>
+<li><p>pt3：平面上第三个点，sc3Dpoint类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>sc3DPlane(a, b, c, d)</h3>
+
+<p>功能：用一般平面方程 aX + bY + cZ +d = 0构造平面，若系数a、b、c同时为0，则修正为：a = 0, b = 0, c = 1。</p>
+
+<ul>
+<li><p>参数：</p>
+
+<ul>
+<li><p>a：一般平面方程第一个系数，浮点数类型。</p></li>
+<li><p>b：一般平面方程第二个系数，浮点数类型。</p></li>
+<li><p>c：一般平面方程第三个系数，浮点数类型。</p></li>
+<li><p>d：一般平面方程第四个系数，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>Set3DVector(vect)</h3>
+
+<p>功能：设置三维向量vect构造平面，该平面必经过原点（0，0，0）且法向量为vect。</p>
+
+<ul>
+<li><p>参数：</p>
+
+<ul>
+<li>vect：三维向量，sc3Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，若三维向量vect为零向量 则返回false，否则返回true。</p></li>
+</ul>
+
+
+<h3>Set3Points(pt1, pt2, pt3)</h3>
+
+<ul>
+<li><p>功能：用平面上三个点来构造平面。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>pt1：平面经过的第一个点，sc3Dpoint类型。</p></li>
+<li><p>pt2：平面经过的第二个点，sc3Dpoint类型。</p></li>
+<li><p>pt3：平面经过的第三个点，sc3Dpoint类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，若三点共线，则返回false，否则返回true。</p></li>
+</ul>
+
+
+<h3>Get3Points(pt1, pt2,pt3)</h3>
+
+<ul>
+<li><p>功能：获取平面上的三个点。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>pt1：平面经过的第一个点，sc3Dpoint类型。</p></li>
+<li><p>pt2：平面经过的第二个点，sc3Dpoint类型。</p></li>
+<li><p>pt3：平面经过的第三个点，sc3Dpoint类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无</p></li>
+</ul>
+
+
+<h3>SetCoefficients(a, b, c, d)</h3>
+
+<ul>
+<li><p>功能：用平面上三个点来构造平面。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>a：一般平面方程第一个系数，浮点数类型。</p></li>
+<li><p>b：一般平面方程第二个系数，浮点数类型。</p></li>
+<li><p>c：一般平面方程第三个系数，浮点数类型。</p></li>
+<li><p>d：一般平面方程第四个系数，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：bool类型，若系数a，b，c同时为0，则返回false，否则返回true。</p></li>
+</ul>
+
+
+<h3>GetCoefficients( )</h3>
+
+<ul>
+<li><p>功能：获取平面一般方程 aX + bY + cZ +d = 0 的系数。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：各个系数组合成的元组(a, b, c, d)，tuple类型。</p></li>
+</ul>
+
+
+<h3>SetPos(pos)</h3>
+
+<ul>
+<li>功能：设置平面经过的点位置坐标。</li>
+<li>参数：</li>
+<li>pos：位置坐标，sc3Dpoint类型。</li>
+<li>返回值：bool类型，表示是否设置成功</li>
+</ul>
+
+
+<h3>GetPos()</h3>
+
+<ul>
+<li><p>功能：获取平面经过的点位置坐标。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：平面经过的点位置坐标，sc3Dpoint类型。</p></li>
+</ul>
+
+
+<h3>SetNormal(nor)</h3>
+
+<ul>
+<li><p>功能：设置平面的法向量。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>nor：法向量，sc3Dpoint类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，若法向量nor为零向量，则返回false，否则返回true。</p></li>
+</ul>
+
+
+<h3>GetNormal()</h3>
+
+<ul>
+<li><p>功能：获取平面的法向量。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：平面的法向量，sc3Dpoint类型。</p></li>
+</ul>
+
+
+<h3>GetRegularizationNormal()</h3>
+
+<ul>
+<li><p>功能：获取单位化的平面法向量。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：sc3Dpoint类型</p></li>
+</ul>
+
+
+<h3>SetOffset(offset)</h3>
+
+<ul>
+<li><p>功能：设置平面的偏移量。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>offset：偏移量，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetOffset()</h3>
+
+<ul>
+<li><p>功能：获取平面的偏移量。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：平面偏移量，浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetRotation(rot)</h3>
+
+<ul>
+<li><p>功能：设置平面法向量的旋转角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>rot：旋转角度，取值范围[0, π]，scRadian类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功</p></li>
+</ul>
+
+
+<h3>GetRotation()</h3>
+
+<ul>
+<li><p>功能：获取平面法向量的旋转角度。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：scRadian类型</p></li>
+</ul>
+
+
+<h3>SetTilt(til)</h3>
+
+<ul>
+<li><p>功能：设置平面法向量的倾斜角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>til：旋转角度，取值范围[0, 2π)，scRadian类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功</p></li>
+</ul>
+
+
+<h3>GetTilt()</h3>
+
+<ul>
+<li><p>功能：获取平面法向量的倾斜角度。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：scRadian类型</p></li>
+</ul>
+
+
+<h3>Distance(pos)</h3>
+
+<ul>
+<li><p>功能：计算给定点pos到当前平面的距离</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>pos：给定点，sc3Dpoint类型。</li>
+</ul>
+</li>
+<li><p>返回值：pos到当前平面的距离，浮点数类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

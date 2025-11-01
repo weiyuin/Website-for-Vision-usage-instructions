@@ -1,0 +1,1029 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Hướng dẫn sử dụng LBAS</h1>
+
+<h2>1. Hướng dẫn sử dụng</h2>
+
+<h3>1.1 Cài đặt phần mềm và kết nối phần cứng</h3>
+
+<h4>Cài đặt LBAS CAPTURE</h4>
+
+<blockquote><p><span style = "color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Đối với phiên bản VA6.2, các phiên bản trước VA6.2.153 sử dụng LBAS CAPTURE bản 3.1.190909; từ VA6.2.153 đến VA6.3.200.255 sử dụng bản 3.2.0.200922; các phiên bản sau VA6.3.200.255 sử dụng bản 3.3.1.210826. Nếu cài đặt không đúng những phiên bản này, cần xác nhận với bộ phận kiểm thử hoặc R&D xem có phải bản tùy chỉnh không. Nếu không phải, hãy gỡ và cài lại phiên bản phù hợp ở trên.</p></blockquote>
+
+<ul>
+<li><p>(1) Nhấp đúp vào gói cài đặt LBAS CAPTURE để bắt đầu cài đặt;</p></li>
+<li><p>(2) Chuyển đến giao diện chọn ngôn ngữ;</p>
+
+<p><img src="media/wps16C6.tmp.jpg" alt="" /></p></li>
+<li><p>(3) Nhấn Tiếp theo để đến giao diện chọn driver (GigE là cổng mạng, USB3 là cổng USB);</p>
+
+<p><img src="media/wps16C7.tmp.jpg" alt="" /></p></li>
+<li><p>(4) Tiếp tục nhấn Tiếp theo đến giao diện chọn đường dẫn cài đặt, mặc định là ổ C;</p>
+
+<p><img src="media/wps16C8.tmp.jpg" alt="" /></p></li>
+<li><p>(5) Nhấn Bắt đầu cài đặt để xem tiến trình;</p>
+
+<p><img src="media/wps16C9.tmp.jpg" alt="" /></p></li>
+<li><p>(6) Trên Windows 7, quá trình cài đặt sẽ hiện hộp thoại CO., LTD network service;</p></li>
+<li><p>(7) Đánh dấu "Luôn tin cậy phần mềm này", sau đó nhấn Cài đặt;</p>
+
+<p><img src="media/wps16CA.tmp.png" alt="" /></p></li>
+<li><p>(8) Khi cài đặt xong, sẽ hiện trang hoàn tất;</p>
+
+<p><img src="media/wps16CB.tmp.jpg" alt="" /></p>
+
+<blockquote><p><span style = "color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Trên Win7, nếu thấy hộp thoại yêu cầu chữ ký số như dưới đây, driver sẽ không cài được và có thể khiến không nhận cổng mạng. Cần cài thêm <span style="color:blue"><strong>bản vá</strong></span> cho Win7 và cài lại driver. Ngoài ra cần kiểm tra kỹ xem driver lọc đã được cài đúng chưa.</p>
+
+<p><img src="media/wps16DB.tmp.jpg" alt="" /></p></blockquote></li>
+</ul>
+
+<h4>Kết nối camera và thiết bị qua cổng mạng</h4>
+
+<p>Kết nối camera với máy tính công nghiệp: một đầu dây mạng cắm vào camera, đầu còn lại cắm vào cổng mạng của máy tính. Nếu máy không có module POE, cần cấp nguồn riêng cho camera (nối dây nguồn). Yêu cầu sử dụng dây mạng loại Cat 5e, mềm. Sau khi kết nối, đảm bảo đầu dây mạng ở camera cắm chắc, ốc vặn siết chặt. Nếu camera có đèn LED báo, đèn sẽ nhấp nháy xanh dương/lục. Đầu nối ở máy tính cũng phải chắc chắn, đèn mạng sáng.</p>
+
+<p><img src="media/wps16DC.tmp.jpg" alt="" /><img src="media/wps16DD.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps16DE.tmp.jpg" alt="" /></p>
+
+<h3>1.2 Thiết lập IP mạng/kiểm tra driver/xác nhận môi trường hệ thống</h3>
+
+<h4>Tắt tường lửa trước tiên</h4>
+
+<p><img src="media/wps16DF.tmp.jpg" alt="" /></p>
+
+<h4>Thiết lập IP mạng trên Windows 10</h4>
+
+<ul>
+<li><p>(1) Nhấp vào biểu tượng mạng ở góc dưới phải;</p>
+
+<p><img src="media/wps16E0.tmp.jpg" alt="" /></p></li>
+<li><p>(2) Chọn "Cài đặt mạng và Internet" ở bên phải;</p>
+
+<p><img src="media/wps16E1.tmp.jpg" alt="" /></p></li>
+<li><p>(3) Trong giao diện cài đặt, chọn Ethernet, sau đó "Thay đổi tùy chọn adapter";</p>
+
+<p><img src="media/wps16E2.tmp.jpg" alt="" /></p></li>
+<li><p>(4) Tìm card mạng kết nối với camera, nhấp đúp hoặc nhấp chuột phải vào "Thuộc tính";</p>
+
+<p><img src="media/wps16E3.tmp.jpg" alt="" /></p></li>
+<li><p>(5) Nhấp đúp vào "Internet Protocol Version 4 (TCP/IPv4)";</p>
+
+<p><img src="media/wps16E4.tmp.jpg" alt="" /></p></li>
+<li><p>(6) Thiết lập IP tĩnh theo quy định, gồm địa chỉ IP và subnet mask;</p>
+
+<p><img src="media/wps16F5.tmp.jpg" alt="" /></p></li>
+</ul>
+
+<h4>Thiết lập IP mạng trên Windows 7</h4>
+
+<ul>
+<li><p>(1) Nhấp vào biểu tượng mạng ở góc phải, chọn “Mở trung tâm mạng và chia sẻ”;</p>
+
+<p><img src="media/wps16F6.tmp.jpg" alt="" /></p></li>
+<li><p>(2) Trong giao diện trung tâm mạng, chọn “Thay đổi cài đặt adapter” ở bên trái;</p>
+
+<p><img src="media/wps16F7.tmp.jpg" alt="" /></p></li>
+<li><p>(3) Trong cửa sổ kết nối mạng, nhấp vào card mạng cần thiết lập;</p>
+
+<p><img src="media/wps16F8.tmp.jpg" alt="" /></p></li>
+<li><p>(4) Nhấp đúp vào "Internet Protocol Version 4 (TCP/IPv4)";</p>
+
+<p><img src="media/wps16F9.tmp.jpg" alt="" /></p></li>
+<li><p>(5) Chọn "Sử dụng địa chỉ IP sau", sau đó điền địa chỉ IP và subnet mask, nhấn "OK";</p>
+
+<p><img src="media/wps16FA.tmp.jpg" alt="" /></p></li>
+</ul>
+
+<h4>Thiết lập các tham số mạng nâng cao sau khi đặt IP</h4>
+
+<ul>
+<li><p>(1) Nhấp vào “Cấu hình” để vào giao diện thuộc tính;</p>
+
+<p><img src="media/wps16FB.tmp.jpg" alt="" /></p></li>
+<li><p>(2) Trong mục "Nâng cao", thiết lập Receive Buffers ở mức tối đa (thường là 2048), Jumbo Packet là 9k hoặc lớn nhất, và Interrupt Moderation Rate là cực trị;</p>
+
+<p><img src="media/wps16FC.tmp.png" alt="" /></p></li>
+<li><p>(3) Trong mục "Quản lý năng lượng", bỏ chọn “Cho phép máy tính tắt thiết bị để tiết kiệm điện”</p>
+
+<p><img src="media/wps16FD.tmp.jpg" alt="" /></p></li>
+</ul>
+
+<h4>Kiểm tra driver lọc (Filter Driver)</h4>
+
+<ul>
+<li><p>(1) Kiểm tra xem "LBAS GigeVision Image Filter Driver" có bị thiếu hay bị trùng. Nếu có vấn đề cần cài lại driver. Ngoài ra, nếu xuất hiện các Filter Driver khác (ví dụ của Teledyne Dalsa hoặc HIK), cần gỡ bỏ các driver đó;</p>
+
+<p><img src="media/wps16FE.tmp.jpg" alt="" /></p></li>
+<li><p>(2) Mở thư mục cài đặt LBAS CAPTURE, tìm công cụ cài đặt driver;</p>
+
+<p><img src="media/1660820905333.png" alt="" /></p></li>
+<li><p>(3) Nhấp đôi vào “LBAS_Driver”. Nếu hiện “chưa cài đặt”, nhấn “Cài đặt”;</p>
+
+<p><img src="media/1660820931104.png" alt="" /></p>
+
+<blockquote><p><span style = "color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Phiên bản 3.2.2.200922 có thể không kiểm tra chính xác trạng thái driver;</p></blockquote></li>
+<li><p>(4) Với phiên bản LBAS CAPTURE 3.2, cần kiểm tra log file;</p>
+
+<p>Tìm trong thư mục: `C:\Windows\Temp\LbasSdkLog\` các file `SDK_00.log` và `SDK_01.log`. Nếu không có, kiểm tra trong thư mục cài đặt VISIONAssembly, hoặc tìm toàn hệ thống;</p>
+
+<p>Kiểm tra xem có thông tin như hình bên dưới không:</p>
+
+<p><img src="media/1660820954510.png" alt="" /></p>
+
+<p><img src="media/1660820970239.png" alt="" /></p>
+
+<p>Nếu xuất hiện “Driver mode start” thì cài đặt thành công. Nếu có “Driver mode failed” hoặc từ “socket” thì là cài đặt thất bại;</p>
+
+<blockquote><p><span style = "color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Nếu có phần mềm diệt virus, cần thêm LBAS CAPTURE vào <span style = "color:blue">danh sách trắng</span> để tránh bị chặn khiến driver lọc không hoạt động.</p></blockquote>
+
+<p>Có thể sử dụng công cụ hỗ trợ kiểm tra lỗi LBAS từ cloud drive.</p>
+
+<p><img src="media/1660820988647.png" alt="" /></p></li>
+</ul>
+
+
+
+<h4>Xác nhận môi trường hệ thống</h4>
+
+<ul>
+<li><p>(1) Trong trạng thái bình thường, card mạng sẽ nhận diện được thiết bị; nếu xảy ra lỗi, card mạng sẽ không nhận diện được camera, như hình dưới:</p>
+
+<p><img src="media/1660821007453.png" alt="" /></p>
+
+<p>Nếu card mạng không nhận thiết bị hoặc bị vô hiệu hóa (hiển thị màu xám), cần kiểm tra tại “Máy tính của tôi &mdash; Quản lý &mdash; Trình quản lý thiết bị” xem driver của card mạng có biểu tượng cảnh báo màu vàng không. Nếu có, cần cài lại driver. Nếu không có, thử tắt rồi bật lại card mạng để khôi phục trạng thái. Nếu sau các bước này vẫn không nhận được thiết bị, cần thay máy tính công nghiệp (IPC).</p>
+
+<p><img src="media/1660821046824.png" alt="" /></p>
+
+<p><img src="media/1660821060235.png" alt="" /></p></li>
+
+<li><p>(2) Qua kiểm tra tại phòng lab, các card mạng Realtek có hiệu suất kém, dễ gây mất gói dữ liệu. Khuyến nghị sử dụng card mạng Intel như I210 hoặc I350. Ngoài ra, nếu driver của card mạng quá cũ cũng ảnh hưởng đến việc thu nhận ảnh từ camera. Khuyến nghị cập nhật driver (sử dụng phần mềm như Driver Booster), nên dùng bản driver phát hành sau năm 2015. Để kiểm tra loại card mạng và driver, nhấp chuột phải vào card &mdash; Thuộc tính &mdash; Cấu hình &mdash; Trình điều khiển như hình dưới:</p>
+
+<p><img src="media/1660821094213.png" alt="" /></p></li>
+</ul>
+
+<h3>1.3 Thiết lập thông số cốt lõi</h3>
+
+<h4>Giải thích các tham số cơ bản của camera</h4>
+
+<ul>
+<li><p><strong>FPS (Tốc độ khung hình):</strong> Số ảnh chụp được mỗi giây.</p></li>
+<li><p><strong>Thời gian phơi sáng (Exposure):</strong> Tăng độ sáng hình ảnh. Trong phạm vi nhất định, giá trị càng lớn thì ảnh càng sáng. Tuy nhiên, phơi sáng quá cao sẽ làm giảm FPS (khuyến nghị dưới 80ms).</p></li>
+<li><p><strong>Gain (Độ khuếch đại):</strong> Cũng để tăng độ sáng, nhưng nếu quá lớn sẽ tăng cả tín hiệu và nhiễu.</p></li>
+<li><p><strong>Gamma:</strong> Điều chỉnh độ tương phản hình ảnh (nên để mặc định nếu không cần thiết).</p></li>
+<li><p><strong>Định dạng pixel:</strong> Phần mềm hiện hỗ trợ Mono8 (đen trắng), RGB (màu), định dạng Bayer (màu).</p></li>
+<li><p><strong>Chế độ chụp:</strong> Gồm chế độ liên tục (Non-trigger) và chế độ kích hoạt (Trigger), trong trigger lại chia thành kích hoạt mềm và cứng. Kích hoạt mềm là khi phần mềm (VA) gửi lệnh mới chụp ảnh; kích hoạt cứng là khi có tín hiệu mức cao/thấp (thường do PLC gửi). Trong giai đoạn kiểm tra hình ảnh, thường dùng chế độ liên tục; khi vào sản xuất chính thức thì dùng trigger. Hình minh họa như sau:</p>
+
+<p><img src="media/1660821113663.png" alt="" /></p></li>
+</ul>
+
+<h4>Thiết lập tham số SCPD</h4>
+
+<p>Tham số SCPD là độ trễ giữa các gói ảnh. Mục đích là giảm lưu lượng truyền tải trong cùng một đơn vị thời gian, từ đó giảm khả năng mất gói và tránh hiện tượng ảnh bị sọc đen. Mỗi hãng mô tả và đặt SCPD theo cách khác nhau.</p>
+
+<blockquote><p><span style = "color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Thiết lập SCPD quá cao sẽ làm giảm FPS. Mặc định nên để 400. Trong phần mềm VA, mặc định đặt là 4000.</p></blockquote>
+
+<ul>
+<li><p>(1) Nếu phần mềm VA bạn dùng không phải bản chuẩn (baseline, như V5.5 hoặc V6.2), cần chỉnh SCPD trong SDK của camera.</p>
+
+<p>Đối với camera LBAS:</p>
+
+<ul>
+<li><p>Bước 1: Chọn thiết bị camera, nhấp "Kết nối":</p>
+
+<p><img src="media/1660821167153.png" alt="" /></p></li>
+<li><p>Bước 2: Tìm mục "Transport Layer Control" bên dưới, chỉnh SCPD:</p>
+
+<p><img src="media/1660821182328.png" alt="" /></p>
+
+<p><img src="media/1660821196852.png" alt="" /></p></li>
+<li><p>Bước 3: Vào mục "User Set Control" để lưu thiết lập, chọn đúng kênh rồi nhấn lưu:</p>
+
+<p><img src="media/1660821216496.png" alt="" /></p></li>
+</ul>
+</li>
+
+<li><p>(2) Nếu dùng phần mềm VA phiên bản baseline như V5.5 hoặc V6.2, SCPD đã được đặt sẵn là 4000. Giá trị lớn này sẽ làm giảm tốc độ khung hình, thời gian chụp ảnh sẽ dài hơn. Nếu nhà máy yêu cầu CT nghiêm ngặt, có thể sửa lại trong file cấu hình phần mềm như hình:</p>
+
+<p><img src="media/1660821234244.png" alt="" /></p>
+
+<p>Với phiên bản sau V6.3, SCPD được thiết lập trong phần “Quản lý camera” của phần mềm VA:</p>
+
+<p><img src="media/1660821586442.png" alt="" /></p></li>
+</ul>
+
+
+<h4>Thiết lập bộ đệm kích hoạt cứng của camera</h4>
+
+<blockquote><p><span style = "color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Nếu ứng dụng camera không phải dạng chụp khi đang chuyển động (fly-shooting), có thể bỏ qua phần thiết lập này.</p></blockquote>
+
+<p>Trong một số ứng dụng dạng "fly-shooting", camera sẽ thực hiện nhiều lần chụp ảnh trong một quy trình và chỉ xử lý sau khi hoàn thành toàn bộ. Khi đó, cần thiết lập bộ đệm kích hoạt cứng (trigger buffer) bằng với số lần chụp, nếu không sẽ dẫn đến hiện tượng ảnh bị lệch hoặc ảnh đen. Thiết lập như sau:</p>
+
+<p><img src="media/1660821250810.png" alt="" /></p>
+
+<p>Với các phiên bản VA từ 6.3 trở đi, có thể thiết lập trực tiếp trong phần quản lý camera của VA:</p>
+
+<p><img src="media/1660821094283.png" alt="" /></p>
+
+<h3>1.4 Cân bằng trắng của camera màu</h3>
+
+<p>Camera màu hỗ trợ tính năng cân bằng trắng, giúp hiệu chỉnh màu sắc phù hợp với điều kiện ánh sáng khác nhau. Bằng cách điều chỉnh tỷ lệ các thành phần R, G, B, đảm bảo khu vực màu trắng hiển thị đúng là màu trắng dưới nhiều nhiệt độ màu khác nhau. Tỷ lệ lý tưởng của R:G:B là 1:1:1. Có 3 chế độ cân bằng trắng: thủ công, tự động một lần và tự động liên tục. Chi tiết như bảng dưới đây:</p>
+
+<table>
+<thead>
+<tr>
+<th>Chế độ cân bằng trắng</th>
+<th>Tham số tương ứng</th>
+<th>Giá trị tùy chọn</th>
+<th>Nguyên lý hoạt động</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thủ công</td>
+<td>Analog Control > Balance White Auto</td>
+<td>Off</td>
+<td>Người dùng điều chỉnh các kênh R/G/B thông qua Balance RatioSelector và Balance Ratio, giá trị từ 1~4095, 1024 tương đương hệ số 1.0</td>
+</tr>
+<tr>
+<td>Tự động một lần</td>
+<td>Once</td>
+<td>Thực hiện cân bằng trắng một lần theo điều kiện hiện tại rồi dừng lại</td>
+<td></td>
+</tr>
+<tr>
+<td>Tự động liên tục</td>
+<td>Continuous</td>
+<td>Liên tục điều chỉnh theo môi trường hiện tại</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>Nếu màu sắc trong ảnh khác biệt nhiều so với thực tế, có thể tiến hành hiệu chỉnh cân bằng trắng trong phần mềm LBAS Capture. Thực hiện như sau:</p>
+
+<ul>
+<li>Chuẩn bị một tờ giấy trắng, đặt trong vùng nhìn của camera sao cho chiếm trọn khung hình.</li>
+<li>Thiết lập phơi sáng và độ khuếch đại, khuyến nghị đặt độ sáng trong khoảng 120 ~ 160.</li>
+<li>Giá trị mặc định của Balance White Auto là “Continuous” để thực hiện cân bằng trắng tự động.</li>
+
+<p><img src="media/1660821266056.png" alt="" /></p>
+</ul>
+
+<p>Nếu sau khi tự động cân bằng mà vẫn không đạt màu sắc mong muốn, có thể chuyển sang cân bằng trắng thủ công:</p>
+
+<ul>
+<li>Chuyển Balance White Auto sang “Off” để bật chế độ thủ công.</li>
+<li>Chọn một kênh R/G/B có giá trị là 1024 làm chuẩn, sau đó điều chỉnh các kênh còn lại sao cho cả 3 kênh có giá trị tương đồng. Khi hình ảnh gần sát với màu thực tế, việc hiệu chỉnh hoàn tất.</li>
+</ul>
+
+<blockquote><p><span style = "color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Sau khi hiệu chỉnh xong, nên lưu vào nhóm tham số người dùng để tránh mất sau khi camera mất điện. Nếu điều kiện ánh sáng thay đổi, cần hiệu chỉnh lại cân bằng trắng.</p></blockquote>
+
+<h3>1.5 Thiết lập IP và xác nhận firmware của camera</h3>
+
+<ul>
+<li><p>(1) Trên desktop, tìm biểu tượng phần mềm LBAS và nhấp đúp để mở.</p>
+
+<p><img src="media/1660821285227.png" alt="" /></p>
+
+<p>Hoặc vào menu Start, tìm thư mục “LBAS” và chọn “LBAS CAPTURE” để mở.</p>
+
+<p><img src="media/1660821330486.png" alt="" /></p></li>
+
+<li><p>(2) Nhấp vào mũi tên bên trái mục “GigE” để mở danh sách card mạng và camera. Nhấp tiếp vào mũi tên bên trái card mạng để tìm camera cần thiết lập. Nếu chưa thấy camera, hãy nhấn nút refresh nhiều lần cho đến khi xuất hiện. Sau đó chọn camera và vào menu “Công cụ” &rarr; “Công cụ thiết lập IP”.</p>
+
+<p><img src="media/1660821348757.png" alt="" /></p></li>
+
+<li><p>(3) Trong cửa sổ thiết lập IP, chọn “IP tĩnh” (Static IP), sau đó nhập IP, subnet mask và gateway. Đảm bảo IP nằm cùng dải mạng với card mạng đã thiết lập. Sau đó nhấn “Lưu” ở góc dưới và đóng cửa sổ.</p>
+
+<p><img src="media/1660821411586.png" alt="" /></p>
+
+<blockquote><p><span style = "color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Không nên nhấp đúp vào camera để đổi IP trực tiếp như hình dưới – đây không phải là thao tác chuẩn.</p>
+
+<p><img src="media/1660821425168.png" alt="" /></p></blockquote></li>
+</ul>
+
+
+
+<p><strong>Kiểm tra và nâng cấp SDK & firmware</strong></p>
+
+<p>Nhấn đúp vào biểu tượng LBAS trên desktop, chọn “Trợ giúp &mdash;- Giới thiệu”, trong hộp thoại hiện ra sẽ thấy thông tin phiên bản SDK.</p>
+
+<p><img src="media/1660821439545.png" alt="" /></p>
+
+<blockquote><p><span style = "color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Trình cài đặt driver LBAS có tên là LBAS CAPTURE_NEU_3.1_190909.exe, tương ứng với phiên bản “V3.1 build20190820”.</p></blockquote>
+
+<p>Nếu SDK không phải bản mới nhất, cần nâng cấp. Trước tiên vào Control Panel gỡ cài đặt bản cũ, sau đó khởi động lại máy rồi cài bản mới. (Để đảm bảo gỡ sạch, nên khởi động lại sau khi gỡ). Nếu không gỡ được, hãy thử cài đè bản hiện tại rồi gỡ lại.</p>
+
+<p><img src="media/1660821456889.png" alt="" /></p>
+
+<p><strong>Kiểm tra và nâng cấp firmware</strong></p>
+
+<p>Nhấn đúp biểu tượng LBAS trên desktop, nhấn nút <img src="media/1660821467001.png" alt="" /> để đảm bảo camera đang ở trạng thái chưa kết nối:</p>
+
+<p><img src="media/1660821491106.png" alt="" /></p>
+<p><img src="media/1660821507106.png" alt="" /></p>
+
+<p>Vào “Công cụ &mdash;&ndash; Công cụ nâng cấp firmware”, kiểm tra phiên bản firmware như hình:</p>
+
+<p><img src="media/1660821525939.png" alt="" /></p>
+
+<p>Nếu cần nâng cấp firmware, tải firmware tương ứng và thực hiện nâng cấp như hướng dẫn sau:</p>
+
+<p><img src="media/1660821538670.png" alt="" /></p>
+
+<p>Thông tin firmware mới nhất cho từng model LBAS có trong thư mục cloud như sau:</p>
+
+<p><img src="media/1660821555877.png" alt="" /></p>
+
+<p>Bộ cài SDK và firmware mới nhất nằm trong thư mục cloud, có thể tải trực tiếp hoặc liên hệ phòng kiểm tra để lấy.</p>
+
+<p><img src="media/1660821569188.png" alt="" /></p>
+
+<blockquote><p><strong>Lưu ý</strong></p>
+
+<p>Sau khi nâng cấp firmware, cần khởi động lại camera.</p></blockquote>
+
+<h3>1.6 Bật và xem log camera</h3>
+
+<h4>Vị trí log camera</h4>
+
+<p><img src="media/1660821586472.png" alt="" /></p>
+<p><img src="media/1660821603443.png" alt="" /></p>
+
+<ul>
+<li><p>(1) C:\Users\TênNgườiDùng\LBAS\LBASLog</p></li>
+<li><p>(2) Thư mục cài đặt phần mềm VA;</p></li>
+<li><p>(3) Nếu có thiết lập lại đường dẫn log thì kiểm tra trong thư mục đã chỉ định:</p>
+
+<p><img src="media/1660821617614.png" alt="" /></p>
+<p><img src="media/1660821633848.png" alt="" /></p></li>
+<li><p>(4) Như ví dụ dưới:</p>
+
+<p><img src="media/1660821650769.png" alt="" /></p></li>
+</ul>
+
+<blockquote><p><strong>Lưu ý</strong></p>
+
+<p>Tên file log có thể là SDK_00.log và SDK_01.log</p></blockquote>
+
+<h3>1.7 Lưu ý khi dùng camera USB3</h3>
+
+<p><strong>Không thể kết nối camera</strong></p>
+
+<p>Sau khi cài LBAS CAPTURE mà cả LBAS và VA đều không nhận camera, hoặc bị rớt gói nặng, hãy kiểm tra xem đã cài đúng driver USB3 mới nhất chưa.</p>
+
+<p><strong>Camera bị rớt gói</strong></p>
+
+<p>Nếu đã kiểm tra cơ bản bằng LBAS CAPTURE mà vẫn gặp rớt gói hoặc mất kết nối, kiểm tra lại độ dài và chất lượng cáp USB. Cáp USB3 lý thuyết dài tối đa 5m, thực tế ổn định chỉ khoảng 3m. Nếu cần kết nối xa, khuyên dùng cáp quang USB3.</p>
+
+<p><strong>Thời gian chụp tăng khi dùng Gamma trong chế độ độc lập</strong></p>
+
+<p>Camera USB3 khi dùng Gamma mất khoảng 150ms mỗi lần, do đó khi sử dụng cấu hình độc lập không nên thay đổi thông số Gamma.</p>
+
+<h3>1.8 Lưu ý khi dùng camera mạng 10G</h3>
+
+<p>Model hỗ trợ: LBAS-10G250-40M/C và LBAS-10G650-15M/C</p>
+
+<p>Card mạng 10G: PCIE-10GIGE-X1 (1 cổng)</p>
+
+<p>Link tải driver: AnyShare://IVS23 3C产品部/3C 产品管理部/采集卡</p>
+
+<p>Yêu cầu phần mềm LBAS CAPTURE phiên bản 3.2 trở lên</p>
+
+<p>Việc cài driver, đấu nối phần cứng và cài đặt thông số giống các model khác. Xem thêm tại <span style = "color:blue"><strong>Hướng dẫn sử dụng LBAS</strong></span>.</p>
+
+<p><strong>Kiểm tra tốc độ kết nối</strong></p>
+
+<p>Vào Control Panel → Network and Sharing Center → chọn card mạng:</p>
+
+<p><img src="media/1660821672860.png" alt="" /></p>
+
+<p>Nhấn đúp card mạng để kiểm tra tốc độ kết nối có đạt 10.0 Gbps không:</p>
+
+<p><img src="media/1660821686163.png" alt="" /></p>
+
+<blockquote><p><strong>Lưu ý</strong></p>
+
+<p>Nếu không đạt 10 Gbps, thử cắm lại dây mạng hoặc đổi sang khe cắm PCIE khác (yêu cầu PCIE 2.0 trở lên, một số máy cũ chỉ hỗ trợ PCIE 1.0).</p></blockquote>
+
+<p>Nếu bị lỗi chữ ký số trên Win7, cần cài bản vá: Windows6.1-KB3033929-x64.msu; nếu là Win10, cần tạm thời tắt kiểm tra chữ ký bằng cách: khởi động lại máy → giữ phím Shift → chọn tắt xác minh chữ ký số.</p>
+
+<h3>1.9 Cài đặt bản vá lỗi chữ ký số trên Win7</h3>
+
+<ul>
+<li><p>1. Tải về file Windows6.1-KB3033929-x64.msu từ cloud (đường dẫn: <span style = "color:blue">AnyShare://IVS23 3C产品部/VISIONAssembly发布/04-驱动和工具/相机/LBAS</span>) và cài đặt.</p></li>
+<li><p>2. Khởi động lại máy.</p></li>
+<li><p>3. Sau đó tiến hành cài đặt lại LBAS CAPTURE.</p></li>
+</ul>
+
+<h3>1.10 Thêm LBAS vào danh sách trắng của 360 Antivirus</h3>
+
+<p>Nếu máy tính có cài phần mềm diệt virus (ví dụ 360), có thể nó sẽ chặn driver LBAS. Sau đây là hướng dẫn thêm driver LBAS vào danh sách trắng:</p>
+
+<ul>
+<li><p>1. Mở phần mềm 360 Antivirus;</p>
+<p><img src="media/1660821703071.png" alt="" /></p></li>
+
+<li><p>2. Nhấn vào nút “Cài đặt” ở góc phải trên cùng;</p>
+<p><img src="media/1660821718243.png" alt="" /></p></li>
+
+<li><p>3. Vào mục “Danh sách trắng tập tin”, nhấn nút “Thêm tập tin”;</p>
+<p><img src="media/1660821731995.png" alt="" /></p></li>
+
+<li><p>4. Chọn tập tin driver LBAS để thêm;</p>
+<p><img src="media/1660821749328.png" alt="" /></p></li>
+
+<li><p>5. Đánh dấu chọn “Không vô hiệu nếu tập tin thay đổi”, rồi nhấn “Xác nhận”;</p>
+<p><img src="media/1660821763514.png" alt="" /></p></li>
+
+<li><p>6. Bây giờ file đã nằm trong danh sách trắng, 360 sẽ không chặn hoặc xóa nó nữa;</p>
+<p><img src="media/1660821782746.png" alt="" /></p></li>
+</ul>
+
+
+
+<h2>2. Câu hỏi thường gặp (FAQ)</h2>
+
+<p>Trong quá trình sử dụng camera, có thể gặp nhiều vấn đề khác nhau. Dưới đây là tổng hợp một số tình huống chính, bao gồm mô tả hiện tượng, nguyên nhân, cách kiểm tra và hướng xử lý.</p>
+
+<h3>2.1 Không tìm thấy camera</h3>
+
+<p><strong>Q:</strong></p>
+
+<p>Trong quá trình sử dụng VA, không thể tìm thấy camera, bấm nút làm mới (refresh) cũng không có tác dụng. Phải xử lý thế nào?</p>
+
+<p><strong>A:</strong></p>
+
+<p>Trường hợp VA không nhận diện được camera chủ yếu liên quan đến việc camera bị ẩn hoặc thiết lập IP sai. Dưới đây là các tình huống cụ thể:</p>
+
+<h4>1. Camera bị chuyển sang IP tự động</h4>
+
+<p><span style = "color:blue">Hiện tượng:</span></p>
+
+<p>Camera bị mất kết nối mạng hoặc nguồn điện trong khi đang sử dụng, khi kết nối lại thì phần mềm không thể nhận diện được camera. Mở phần mềm SDK tương ứng (như LBAS CAPTURE) để kiểm tra trạng thái của camera sẽ thấy một trong hai trạng thái sau: biểu tượng dấu chấm than vàng → IP camera không đúng; dấu X đỏ → camera đang bị chiếm dụng.</p>
+
+<p><img src="media/1660821834448.png" alt="" /></p>
+
+<p><span style = "color:blue">Cách xử lý:</span></p>
+
+<ul>
+<li><p>Khi cài IP cho camera, cần đảm bảo sử dụng đúng phần mềm SDK tương thích với camera; nếu không tương thích, cần cài lại SDK phù hợp.</p></li>
+<li><p>Kiểm tra xem card mạng đang dùng có thiết lập IP động hay không. Nếu là IP động, hãy làm theo mục <strong>Cài đặt IP card mạng</strong> đã nêu phía trên để chuyển sang IP tĩnh. Sau đó mở SDK camera để kiểm tra xem IP camera có bị chuyển sang dải 169 hay không, nếu có thì làm theo mục <strong>Cài đặt IP camera</strong> để gán lại IP tĩnh cho camera.</p></li>
+<li><p>Nếu trạng thái camera hiện dấu chấm than vàng, cần thiết lập lại IP bằng cách làm theo hướng dẫn ở mục <strong>Cài đặt IP camera</strong>.</p></li>
+</ul>
+
+<h4>2. Không thể thiết lập IP cho camera</h4>
+
+<p><span style = "color:blue">Hiện tượng:</span></p>
+
+<p>Trong phần mềm “LBAS CAPTURE_NEU_3.1_190909.exe”, khi vào “Công cụ” -> “Công cụ thiết lập IP” thì báo lỗi thiếu thư viện:</p>
+
+<p><img src="media/1660821859042.png" alt="" /></p>
+<p><img src="media/1660821872326.png" alt="" /></p>
+
+<p><span style = "color:blue">Cách xử lý:</span></p>
+
+<ul>
+<li><p>Gỡ cài đặt “LBASCAPTURE_1.0.1905.CL.exe”, sau đó cài đặt lại “LBAS CAPTURE_NEU_3.1_190909.exe”.</p>
+
+<p>Các bước gỡ phần mềm:</p>
+
+<ul>
+<li>(1) Mở Control Panel;</li>
+<li>(2) Nhấn đúp “Programs and Features” (Chương trình và tính năng);</li>
+<li>(3) Tìm phần mềm “LBAS” và nhấn đúp để gỡ.</li>
+</ul>
+</li>
+</ul>
+
+<h4>3. SDK nhận diện được camera nhưng VA không nhận</h4>
+
+<p><span style = "color:blue">Hiện tượng:</span></p>
+
+<ul>
+<li><p>Camera có trạng thái bình thường trong SDK (ảnh trái), nhưng không hiện trong VA.</p></li>
+<li><p>Camera bị chiếm dụng (ảnh phải), VA không thể kết nối, trạng thái hiển thị là ngoại tuyến:</p>
+
+<p><img src="media/1660821902979.png" alt="" /><img src="media/1660821919057.png" alt="" /></p></li>
+</ul>
+
+<p><span style = "color:blue">Cách xử lý:</span></p>
+
+<ul>
+<li><p>Nếu trạng thái camera bình thường, kiểm tra file cấu hình để xem camera có bị vô hiệu hóa hay không:</p>
+
+<p><img src="media/1660821945487.png" alt="" /></p>
+
+<ul>
+<li><p>Chuột phải vào biểu tượng VA → chọn “Mở vị trí tệp”, mở thư mục như hình trên, sau đó mở thư mục “System” và tìm file “CamConfig.gcfg”:</p>
+
+<p><img src="media/1660821970646.png" alt="" /></p></li>
+<li><p>Mở file bằng Notepad, kiểm tra xem camera có bị vô hiệu hóa không (dòng có “CameraSN”), nếu có thì xóa dòng đó và lưu lại, rồi khởi động lại VA.</p>
+
+<p><img src="media/1660821989134.png" alt="" /></p></li>
+</ul>
+</li>
+
+<li><p>Kiểm tra xem module của camera có bị xóa không, ví dụ với camera LBAS là file GvCamLBase12u.dll.</p>
+
+<ul>
+<li><p>Chuột phải vào biểu tượng VA → chọn “Mở vị trí tệp”, rồi mở thư mục “Plugins” như hình:</p>
+
+<p><img src="media/1660822004197.png" alt="" /></p></li>
+<li><p>Kiểm tra xem module tương ứng có tồn tại không:</p>
+
+<p><img src="media/1660822017085.png" alt="" /></p>
+<p><img src="media/1660822029388.png" alt="" /></p></li>
+</ul>
+</li>
+
+<li><p>Kiểm tra phiên bản SDK yêu cầu của phần mềm và phiên bản đang cài có khớp nhau không.</p>
+
+<ul>
+<li>Xem yêu cầu tại mục <a href="#_1.2_软件环境">Môi trường phần mềm</a></li>
+<li>Xem phiên bản SDK tại mục <a href="#_2.1.2_网卡设置/驱动确认/系统环境确认">Xác nhận driver</a></li>
+</ul>
+</li>
+
+<li><p>Nếu là trường hợp camera bị chiếm dụng, hãy ngắt nguồn và khởi động lại camera.</p></li>
+
+<li><p>Nếu trong file TraceLog*.txt (nằm trong thư mục LusterCache, file mới nhất như TraceLog1.txt) có ghi lỗi không load được GvCamLBase12u.dll (như hình dưới), hãy cài bản vá “SDK识别相机，VA不识别相机.zip” (tìm trong thư mục chia sẻ nội bộ):</p>
+
+<p><img src="media/1660822044937.png" alt="" /></p></li>
+</ul>
+
+<h4>4. SDK không nhận được camera</h4>
+
+<p><span style = "color:blue">Hiện tượng:</span></p>
+
+<ul>
+<li><p>Không thấy card mạng hoặc camera như hình:</p>
+
+<p><img src="media/1660822059799.png" alt="" /></p></li>
+<li><p>Đèn báo camera không bình thường: trạng thái chuẩn là đèn xanh/lam nhấp nháy, đèn mạng sáng. Nếu thấy đèn đỏ nhấp nháy, đèn mạng tắt là bất thường:</p>
+
+<p><img src="media/1660822073261.png" alt="" /></p></li>
+</ul>
+
+<p><span style = "color:blue">Cách xử lý:</span></p>
+
+<ul>
+<li><p>Kiểm tra kết nối mạng. Nếu driver cài sai có thể gây lỗi card mạng. Hãy cài bản vá chữ ký số.</p></li>
+<li><p>Kiểm tra dây mạng, thử thay dây mới.</p></li>
+<li><p>Thử camera ở máy tính khác để kiểm tra thiết bị có lỗi không.</p></li>
+<li><p>Kiểm tra nguồn POE của card mạng. Nếu nghi ngờ hỏng, hãy thay card mạng để thử lại.</p></li>
+<li><p>Thay camera và máy công nghiệp khác để loại trừ lỗi phần cứng.</p></li>
+</ul>
+
+
+
+<blockquote><p><span style = "color:red"><strong>Chú ý</strong></span></p>
+<p>Nếu là camera USB3, sau khi đã kiểm tra các bước trên nhưng vẫn chưa khắc phục được, hãy xem thêm mục <span style = "color:blue">2.1.6 Các lưu ý khi sử dụng camera USB3</span>.</p></blockquote>
+
+<h3>2.2 Đã tìm thấy camera nhưng không thể kết nối</h3>
+
+<p><strong>Q:</strong></p>
+
+<p>Sau khi mở phần mềm VA, có thể tìm thấy camera bằng cách làm mới, nhưng không thể kết nối và sử dụng được. Phải xử lý thế nào?</p>
+
+<p><strong>A:</strong></p>
+
+<p>Trường hợp này thường do camera mới chưa được tương thích, camera đang bị chiếm dụng, hoặc dây kết nối có vấn đề. Dưới đây là các tình huống cụ thể:</p>
+
+<p><strong>Không có trong danh sách phần cứng</strong></p>
+
+<p>Nếu là camera mới, cần gửi toàn bộ camera, card thu thập hình ảnh, dây kết nối và dây nguồn về bộ phận R&D để làm tương thích.</p>
+
+<p><strong>Camera bị chiếm dụng</strong></p>
+
+<p>Kiểm tra xem camera có đang bị sử dụng trong LBAS CAPTURE, các phần mềm VA khác đang mở hoặc tiến trình chưa thoát hẳn hay không. Nếu có, hãy đóng phần mềm đang dùng trước, sau đó khởi động lại VA và thử làm mới lại danh sách camera.</p>
+
+<p><strong>Phần mềm thoát đột ngột gây chiếm dụng camera</strong></p>
+
+<p>Khởi động lại camera rồi kết nối lại là được.</p>
+
+<p><strong>Vấn đề dây kết nối</strong></p>
+
+<p>Kiểm tra xem dây mạng có bị lỗi không, dây USB3 có quá dài không, v.v.</p>
+
+<h3>2.3 Ảnh có sọc tối hoặc nhiễu</h3>
+
+<p><strong>Q：</strong></p>
+
+<p>Hình ảnh thu được bằng phần mềm VA xuất hiện sọc đen, hình bị lệch, hoặc là ảnh hiện tại bị trộn với ảnh trước đó. Cách xử lý?</p>
+
+<p><img src="media/wps17A6.tmp.jpg" alt="" /><img src="media/wps17A7.tmp.png" alt="" /></p>
+
+<p><strong>A:</strong></p>
+
+<p>Lỗi do mất gói dữ liệu trong quá trình truyền khiến hình ảnh xuất hiện sọc đen, nhiễu, ghép lỗi, v.v.</p>
+
+<p><strong>Các bước kiểm tra và xử lý:</strong></p>
+
+<ul>
+<li>Kiểm tra model card mạng và driver có đáp ứng yêu cầu không, thao tác theo mục <span style = "color:blue">1.2</span>.</li>
+<li>Kiểm tra và thiết lập đúng các tham số như jumbo frame, buffer gửi/nhận, tốc độ ngắt, theo hướng dẫn mục <span style = "color:blue">1.2</span>.</li>
+<li>Nếu là camera LBAS, kiểm tra SDK (LBAS CAPTURE) và firmware camera có đúng phiên bản yêu cầu không. Tham khảo <span style = "color:blue">1.2</span>.</li>
+<li>Nếu vẫn mất gói, điều chỉnh tham số SCPD (khoảng trễ giữa các gói ảnh). Lưu ý: giảm SCPD sẽ làm giảm FPS. Tham khảo <span style = "color:blue">1.3</span>.</li>
+<li>Thêm chức năng tự động thu lại gói mất (re-capture). Phiên bản V5.5 và V6.2 đã hỗ trợ; nếu dùng bản khác, liên hệ bộ phận kiểm thử để thêm chức năng này.</li>
+<li>Nếu sau tất cả vẫn mất gói nghiêm trọng, có thể thay camera để loại trừ nguyên nhân do phần cứng.</li>
+</ul>
+
+<blockquote><p><strong>Giải thích</strong></p>
+<p>Vấn đề mất gói có thể do nhiều yếu tố từ phần cứng, phần mềm đến hệ thống. Hiện chưa thể loại bỏ hoàn toàn mất gói, nhưng có thể giảm thiểu để không ảnh hưởng đến xử lý hình ảnh.</p></blockquote>
+
+<h3>2.4 Hình ảnh bị méo, biến dạng</h3>
+
+<p><strong>Q:</strong></p>
+
+<p>Khi chụp ảnh bằng VA, thấy vật thể trong ảnh bị méo, lệch, hoặc nhòe. Nguyên nhân và cách khắc phục?</p>
+
+<p><img src="media/wps17A8.tmp.png" alt="" /></p>
+
+<p><strong>A:</strong></p>
+
+<p>Thường gặp với camera rolling (như LBAS-GE60-17, GE100-11M, GE120-10, GE200-5M, v.v.). Trong quá trình chụp, camera và vật thể có chuyển động tương đối, gây ra hiện tượng biến dạng. Cần:</p>
+
+<ul>
+<li>Thêm độ trễ trước khi chụp;</li>
+<li>Kiểm tra lại quy trình của phần mềm và thiết bị cơ khí để loại bỏ chuyển động khi chụp.</li>
+</ul>
+
+<h3>2.5 Hình mờ khi chụp bay (flying capture)</h3>
+
+<p><strong>Q:</strong></p>
+
+<p>Khi dùng trigger cứng để chụp bay, ảnh thu được bị mờ. Nguyên nhân và cách khắc phục?</p>
+
+<p><strong>A:</strong></p>
+
+<p>Chụp bay yêu cầu dùng camera Global Shutter. Nếu thời gian phơi sáng quá lâu khi có chuyển động, sẽ gây ra hiện tượng bóng kép hoặc mờ. Công thức tính thời gian phơi sáng tối đa:</p>
+
+<p><strong>Thời gian phơi sáng ≤ Độ phân giải quang học (độ phân giải vật lý / hệ số pixel) / tốc độ di chuyển</strong></p>
+
+<blockquote><p><span style = "color:red"><strong>Chú ý</strong></span></p>
+<p>Chụp bay cần sử dụng nguồn sáng nhấp nháy công suất lớn, ống kính khẩu độ lớn, camera có kích thước pixel lớn.</p></blockquote>
+
+<h3>2.6 Hình ảnh không khớp – lỗi kích hoạt sai</h3>
+
+<p><strong>Q:</strong></p>
+
+<p>Khi dùng trigger cứng, có thể xảy ra tình huống tín hiệu kích hoạt sai khiến camera chụp sai vật thể. Làm sao để tránh?</p>
+
+<p><strong>A:</strong></p>
+
+<p>Khi trigger cứng, chỉ cần xung 3V trở lên là camera đã có thể chụp ảnh và lưu vào bộ đệm. Nếu phần cơ học gửi sai tín hiệu, sẽ chụp thừa ảnh hoặc sai thứ tự ảnh. Giải pháp:</p>
+
+<ul>
+<li>Đảm bảo tín hiệu từ thiết bị cơ được kiểm soát chính xác (xung điện không bị nhiễu, tránh dùng relay hoặc nguồn switching gây xung gai);</li>
+<li>Chuyển chế độ trigger về soft trigger khi không cần chụp bằng phần cứng;</li>
+<li>Bật chế độ chống nhiễu trigger trong camera để lọc tín hiệu sai.</li>
+</ul>
+
+<p><img src="media/wps17A9.tmp.jpg" alt="" /></p>
+
+<h3>2.7 Hình ảnh quá sáng hoặc quá tối</h3>
+
+<p><strong>Q:</strong></p>
+
+<p>Khi chụp ảnh, độ sáng không đồng đều giữa các lần chụp, hoặc ảnh chụp đơn không giống ảnh chụp liên tục. Nguyên nhân?</p>
+
+<p><strong>A：</strong></p>
+
+<ul>
+<li>Đảm bảo đồng bộ giữa camera và nguồn sáng (đặc biệt là khi dùng đèn nhấp nháy);</li>
+<li>Tránh thay đổi thường xuyên các thông số như Exposure, Gain, Gamma bằng các profile riêng biệt vì có thể không được áp dụng kịp thời. Nên sử dụng mặc định hoặc tối giản các cài đặt riêng biệt;</li>
+<li>Nếu lỗi do firmware, hãy nâng cấp camera lên phiên bản firmware mới nhất;</li>
+<li>Với camera Rolling dùng chế độ GlobalReset, ảnh sẽ có độ sáng khác biệt so với ảnh ở chế độ chụp liên tục – đây là đặc điểm của thiết bị.</li>
+</ul>
+
+<h3>2.8 Vấn đề khi sử dụng camera màu</h3>
+
+<p><strong>Q:</strong></p>
+<p>Dùng chế độ màu nhưng không đạt được tốc độ khung hình mong muốn.</p>
+
+<p><strong>A:</strong></p>
+<p>Phần mềm hỗ trợ các định dạng màu RGB8Packet và Bayer8. Nếu dùng RGB8Packet sẽ chậm hơn đáng kể. Nên dùng Bayer8 để tối ưu tốc độ.</p>
+
+<p><strong>Q:</strong></p>
+<p>Màu sắc từ camera màu không chính xác.</p>
+
+<p><strong>A:</strong></p>
+
+<ul>
+<li>Chưa cân bằng trắng tốt, tham khảo mục <strong>1.3 – Cân bằng trắng cho camera màu</strong>;</li>
+<li>Firmware không đúng, có hai bản firmware: 1 bản cho độ nét cao, 1 bản cho tái tạo màu tốt hơn;</li>
+<li>Định dạng pixel ảnh hưởng: RGB8 cho màu đậm hơn nhưng giảm tốc độ khung hình.</li>
+</ul>
+
+<p><strong>Q:</strong></p>
+
+<p>Sau khi thiết lập định dạng điểm ảnh (pixel format) cho camera, khi tải lại project thì định dạng điểm ảnh lại bị thay đổi và không thể chỉnh sửa được:</p>
+
+<p><strong>A:</strong></p>
+
+<p>Trừ phiên bản nền 6.2, các phiên bản khác vẫn chưa mở quyền chỉnh định dạng điểm ảnh của camera LBAS trong phần mềm. Vì project có lưu định dạng của camera, nên thiết lập thủ công trên camera sẽ bị project ghi đè và không thể sửa lại được. Cách xử lý là chỉnh sửa trực tiếp file project bằng Notepad++ (Lưu ý: không nên dùng định dạng text thường để mở, dễ khiến project không thể sử dụng). Sửa định dạng theo hình dưới để dùng định dạng màu.</p>
+
+<p>Định dạng Bayer gồm 4 loại. Cần mở driver camera để kiểm tra định dạng nào được hỗ trợ, rồi sửa theo bảng dưới. Hình ảnh dưới là ví dụ sửa về định dạng BayerRG8:</p>
+
+<p><img src="media/wps17AA.tmp.jpg" alt="" /></p>
+
+<p>Bảng đối chiếu định dạng Bayer và giá trị ePixelFormat trong project:</p>
+
+<table>
+<thead>
+<tr>
+<th> Định dạng Bayer </th>
+<th> Giá trị ePixelFormat trong project </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> BayerRG8  </td>
+<td> 3                      </td>
+</tr>
+<tr>
+<td> BayerGR8  </td>
+<td> 4                      </td>
+</tr>
+<tr>
+<td> BayerGB8  </td>
+<td> 5                      </td>
+</tr>
+<tr>
+<td> BayerBG8  </td>
+<td> 6                      </td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.9 Thời gian thu ảnh lâu / không thu được ảnh</h3>
+
+<p><strong>Q：</strong></p>
+
+<p>Khi sử dụng camera để thu ảnh, đôi khi quá trình thu ảnh mất vài giây hoặc thậm chí hơn mười giây, phải xử lý như thế nào?</p>
+
+<p><strong>A:</strong></p>
+
+<p>Có nhiều nguyên nhân gây ra thời gian thu ảnh lâu, phổ biến là do ghi log khiến ổ cứng bị nghẽn I/O, hoặc do phần mềm diệt virus, tường lửa, hoặc giới hạn băng thông card mạng. Dưới đây là các biện pháp xử lý cụ thể:</p>
+
+<p><strong>Kiểm tra và xử lý sự cố:</strong></p>
+
+<ul>
+<li><p>Tắt ghi log của camera và công cụ thu ảnh (Từ phiên bản 6.3 có thể tắt trực tiếp trong phần “Hệ thống” mà không cần khởi động lại phần mềm)</p>
+
+<p><img src="media/wps17AB.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps17AC.tmp.jpg" alt="" /></p></li>
+
+<li><p>Tắt chế độ ngủ ổ cứng (ngăn ổ cứng dừng đĩa)</p>
+
+<p><img src="media/wps17AD.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps17AE.tmp.jpg" alt="" /></p></li>
+
+<li><p>Tắt tường lửa</p>
+
+<p><img src="media/wps17AF.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps17C0.tmp.jpg" alt="" /></p></li>
+
+<li><p>Kiểm tra cài đặt camera:</p>
+
+<ul>
+<li><p>Tham số SCPD:</p>
+
+<p><img src="media/wps17C1.tmp.jpg" alt="" /></p></li>
+
+<li><p>Tham số SCPS:</p>
+
+<p><img src="media/wps17C2.tmp.jpg" alt="" /></p></li>
+
+<li><p>Từ phiên bản 6.3 trở lên cần kiểm tra trong mục “Quản lý camera” của VA.</p></li>
+</ul>
+</li>
+</ul>
+
+<p><img src="media/1660821094233.png" alt="" /></p>
+
+<ul>
+<li><p>Kiểm tra cấu hình card mạng và băng thông:</p>
+
+<ul>
+<li><p><strong>Thiết lập card mạng:</strong> Theo mục <span style = "color:blue">1.2</span>, kiểm tra các tham số có được thiết lập đúng không. Nếu card mạng có cài thêm driver từ hãng khác mà không sử dụng thì cần gỡ bỏ để tránh xung đột.</p></li>
+
+<li><p><strong>Băng thông:</strong> Nếu máy công nghiệp dùng nhiều camera cùng lúc, và card mạng gigabit chia ra 1 thành 2 hoặc 4 cổng, thì cần kiểm tra loại card, loại khe cắm (nên là PCIE X4 trở lên). Nếu không đáp ứng, sẽ gây nghẽn băng thông, mất gói và kéo dài thời gian thu ảnh.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>2.10 Tốc độ khung hình không đạt tối đa</h3>
+
+<p><strong>Q:</strong></p>
+
+<p>Sử dụng phần mềm VA để quản lý camera thấy tốc độ khung hình của camera không đạt giá trị tối đa như đã hiệu chuẩn, làm sao để giải quyết?</p>
+
+<p><strong>A:</strong></p>
+
+<p>Tốc độ khung hình của camera không đạt giá trị tối đa thường do thiết lập phơi sáng quá cao, giá trị SCPD quá lớn, hoặc các yếu tố phần cứng như cấu hình card mạng, băng thông card mạng,… Các cách xử lý theo từng trường hợp cụ thể như sau:</p>
+
+<ul>
+<li><p>Thiết lập thông số camera</p>
+
+<ul>
+<li><p>Sau khi mở phần mềm “VA”, nhấn vào “Cài đặt” sau đó chọn “Camera” để vào phần quản lý camera.</p>
+
+<p><img src="media/wps17C3.tmp.jpg" alt="" /></p></li>
+<li><p>Trong quản lý camera, chọn camera ở danh sách bên trái, xem ở khung đỏ phía bên phải các thông số camera xem tốc độ khung hình có thiết lập quá thấp hay không, nếu thấp cần điều chỉnh lên tối đa; thiết lập phơi sáng cũng ảnh hưởng tới tốc độ khung hình, nếu giá trị phơi sáng cao thì tốc độ khung hình tối đa có thể đặt được sẽ giảm.</p>
+
+<p><img src="media/wps17C4.tmp.jpg" alt="" /></p></li>
+<li><p>Nếu trong “Công cụ thu ảnh” có sử dụng thông số riêng, thì giá trị phơi sáng được thiết lập tại đây quá cao (trên 100ms) cũng sẽ ảnh hưởng đến tốc độ thu ảnh;</p></li>
+</ul>
+
+<p>​   <img src="media/wps17C5.tmp.jpg" alt="" /></p>
+
+<ul>
+<li><p>Nếu giá trị SCPD của camera được đặt quá cao cũng sẽ làm giảm tốc độ khung hình, dẫn đến thời gian thu ảnh lâu. Việc chỉnh sửa tham số SCPD tham khảo tại <span style = "color:blue">Chương 1.3</span>.</p></li>
+<li><p>Nếu là camera màu, cần kiểm tra định dạng điểm ảnh của camera có phải định dạng bayer hay không, xem tại <span style = "color:blue">2.7 Vấn đề sử dụng camera màu</span></p></li>
+<li><p>Nếu là camera USB3, cần kiểm tra độ dài dây USB3 của camera và xem có phải đang sử dụng cổng USB2 không, tham khảo <span style = "color:blue">1.6 Lưu ý khi sử dụng camera USB3</span></p></li>
+</ul>
+</li>
+<li><p>Thiết lập thông số card mạng:</p>
+
+<ul>
+<li><p>Theo phương pháp tại <span style = "color:blue">1.2 Thiết lập card mạng</span> để kiểm tra các thiết lập như “Jumbo Frame”, “Bộ đệm gửi/nhận gói”… đã được cài đặt đúng chưa;</p></li>
+<li><p>Nếu hiện trường dùng 2 card mạng 1 chia 4 để sử dụng cho 6 camera, thì mỗi card kết nối 3 camera (kiểm tra băng thông card mạng có đáp ứng được số lượng camera kết nối không);</p></li>
+</ul>
+</li>
+<li><p>Firmware camera:</p>
+
+<p>Nếu firmware của dòng camera Rolling của LBAS chưa được cập nhật thì cần cập nhật firmware mới nhất cho dòng camera này. Tham khảo chi tiết tại <span style = "color:blue">Chương 1.2</span>.</p></li>
+</ul>
+
+<h3>2.11 Vấn đề thu ảnh thất bại</h3>
+
+<p><strong>Q:</strong></p>
+
+<p>Trong quá trình sử dụng, camera gặp lỗi thu ảnh thất bại, trạng thái của công cụ thu ảnh hiện màu đỏ, mô tả hiện tượng như sau:</p>
+
+<p><span style = "color:blue">Mô tả hiện tượng:</span></p>
+
+<p>Trong quá trình sản xuất bình thường, xuất hiện lỗi công cụ thu ảnh thực thi thất bại, công cụ báo đỏ.</p>
+
+<p><img src="media/wps17C6.tmp.jpg" alt="" /></p>
+
+<p><strong>Các tình huống cụ thể có thể gặp:</strong></p>
+
+<ul>
+<li><p>Công cụ thu ảnh thỉnh thoảng thu ảnh thất bại một lần, chạy lại công cụ thì có thể thực thi thành công;</p></li>
+<li><p>Công cụ thu ảnh thường xuyên (trên 5 lần/ngày) gặp lỗi thực thi, và nhật ký thu ảnh xuất hiện thông báo “Lỗi không xác định”:</p>
+
+<p><img src="media/wps17C7.tmp.jpg" alt="" /></p></li>
+<li><p>Công cụ thu ảnh liên tục thực thi thất bại, đèn báo camera hiện màu đỏ:</p>
+
+<p><img src="media/wps17C8.tmp.jpg" alt="" /></p></li>
+</ul>
+
+<p><strong>A:</strong></p>
+
+<p>Có thể do camera bị mất kết nối, tiếp xúc không tốt, hoặc sự cố liên quan đến thư viện GenICam.</p>
+
+<p><strong>Biện pháp kiểm tra và khắc phục:</strong></p>
+
+<ul>
+<li><p>Khi gặp lỗi thu ảnh thất bại, hãy kiểm tra đầu dây mạng kết nối vào camera và đầu dây mạng vào cổng mạng có được cắm chắc chắn không, thao tác cụ thể tham khảo <span style = "color:blue">2.1_Cài đặt kết nối camera và cổng mạng)</span></p></li>
+<li><p>Đảm bảo SDK điều khiển camera và firmware camera đã được cập nhật mới nhất, tham khảo <span style = "color:blue">Phụ lục 4.1</span></p></li>
+<li><p>Trong chương trình sản xuất nên thêm các biện pháp phòng ngừa lỗi thu ảnh để tránh hiện tượng thu ảnh thất bại ngẫu nhiên (xảy ra vài ngày đến vài tuần một lần).</p>
+
+<blockquote><p><span style = "color:red"><strong>Lưu ý</strong></span></p>
+
+<p>Hiện tại biện pháp phòng ngừa lỗi thu ảnh chỉ được tích hợp trong phiên bản cố định của công cụ thu ảnh, sau khi tối ưu và kiểm thử sẽ được thêm vào hai phiên bản chuẩn V5.5 và V6.2. Với các phiên bản cũ hơn, tạm thời vẫn cần xử lý tránh lỗi này trong chương trình sản xuất. Logic phòng ngừa như hình bên dưới:</p></blockquote>
+
+<p><img src="media/wps17C9.tmp.jpg" alt="" /></p></li>
+<li><p>Nếu camera bị rớt gói thường xuyên (trên 5 lần/ngày) và nhật ký thu ảnh hiển thị thông báo “Lỗi khác”, thì cần tăng dung lượng RAM của hệ thống để mở rộng bộ nhớ. (Do lỗi trang gây ra bởi việc trao đổi bộ nhớ ảnh hưởng đến tầng dưới của camera)</p></li>
+<li><p>Kiểm tra thời gian chờ của công cụ thu ảnh có thiết lập quá nhỏ không, khuyến nghị thiết lập timeout là -1</p></li>
+<li><p>Kiểm tra xem phơi sáng có đặt quá cao không, thời gian phơi sáng nên dưới 80ms để tránh vượt thời gian thu ảnh;</p></li>
+</ul>
+
+
+<h3>2.12 Ẩn các camera khác</h3>
+
+<p><strong>Q：</strong></p>
+
+<p>Làm cách nào để ẩn các camera khác?</p>
+
+<p><strong>A：</strong></p>
+
+<ul>
+<li><p><strong>Khi camera hoặc máy quét mã vạch cần ẩn sử dụng giao thức khác với camera đang dùng:</strong></p>
+
+<ul>
+<li><p>Giải pháp là xóa các thư viện của camera hoặc máy quét mã vạch cần ẩn, như hình dưới là các thư viện tương ứng với từng loại camera. Nếu chỉ sử dụng camera LBAS thì chỉ cần giữ lại tệp GVCamLBase12u.dll và xóa tất cả các tệp khác;</p>
+
+<p><img src="media/wps17DA.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps17DB.tmp.jpg" alt="" /></p></li>
+<li><p>Cũng có thể thêm SN cần ẩn vào file cấu hình, như hình dưới: dùng notepad++ (hoặc Notepad) mở file “CamConfig.gcfg” trong thư mục System như hình, thêm mục CameraSN, giá trị là SN của thiết bị cần ẩn, mỗi SN cần ẩn thêm một dòng CameraSN;</p>
+
+<p><img src="media/wps17DC.tmp.jpg" alt="" /></p></li>
+</ul>
+</li>
+<li><p><strong>Khi camera hoặc máy quét mã vạch cần ẩn sử dụng cùng giao thức với camera đang dùng:</strong></p>
+
+<p>Chỉ có thể sử dụng phương pháp thêm SN vào file cấu hình như đã mô tả ở câu hỏi trước;</p></li>
+</ul>
+
+<h3>2.13 Ảnh bị trộn khi chụp trigger cứng</h3>
+
+<p><strong>Q:</strong></p>
+
+<p>Khi sử dụng chế độ chụp bay, nếu chụp nhiều vị trí (hole), xảy ra hiện tượng mất ảnh hoặc trộn ảnh thì xử lý như thế nào?</p>
+
+<p><strong>A:</strong></p>
+
+<ul>
+<li><p>Thiết lập bộ đệm (cache node)</p>
+
+<p><img src="media/wps17DD.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps17DE.tmp.jpg" alt="" /></p></li>
+<li><p>Thông số riêng ảnh hưởng đến thời gian thu ảnh dài, vì khi sử dụng thông số riêng, thời gian thu ảnh của camera sẽ tăng đáng kể, thời gian thu ảnh dài sẽ khiến không kịp thực hiện thao tác chụp bay trong thời gian quy định. Vì vậy trong các tình huống chụp bay, nên tránh dùng thông số riêng;</p></li>
+</ul>
+
+<h3>2.14 Lỗi cài đặt driver lọc gây mất gói, ảnh trước, thời gian xử lý dài</h3>
+
+<p><strong>Q: </strong></p>
+
+<p>Sau khi cài đặt xong, khi chụp hoặc thu ảnh xuất hiện hiện tượng mất gói, hiển thị ảnh trước đó hoặc thời gian xử lý quá dài, nguyên nhân do đâu?</p>
+
+<p><strong>A:</strong></p>
+
+<p>Hãy kiểm tra driver lọc, và tham khảo <span style = "color:blue">Chương 2.3</span> và <span style = "color:blue">Chương 2.9</span>.</p>
+
+<h3>2.15 Thu thập thông tin liên quan đến camera</h3>
+
+<p><strong>Q:</strong></p>
+
+<p>Nếu đã thực hiện theo hướng dẫn ở trên nhưng vẫn không giải quyết được vấn đề thì phải làm sao?</p>
+
+<p><strong>A:</strong></p>
+
+<p>Khi tài liệu này không giúp giải quyết được vấn đề sử dụng camera, cần thu thập thông tin liên quan đến camera và hệ thống để gửi cho bộ phận R&D:</p>
+
+<ul>
+<li><p>Thông tin cơ bản của camera:</p>
+
+<p><img src="media/wps17DF.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps17E0.tmp.jpg" alt="" /></p>
+
+<p><img src="media/wps17E1.tmp.jpg" alt="" /></p></li>
+<li><p>Nhật ký SDK</p>
+
+<p><img src="media/wps17E2.tmp.jpg" alt="" /></p>
+
+<p>Truy cập thư mục C:\Windows\Temp\LbasSdkLog\ để tìm các file SDK_00.log và SDK_01.log. Nếu không thấy trong thư mục này, hãy kiểm tra tại đường dẫn của phần mềm VISIONAssembly, nếu vẫn không thấy thì tìm kiếm toàn hệ thống;</p>
+
+<p>Nếu không thể xuất file, cần xác nhận trong file có chứa thông tin như trong ảnh chụp màn hình;</p>
+
+<p><img src="media/wps17E3.tmp.jpg" alt="" /></p></li>
+<li><p>Xuất toàn bộ nhật ký tại thư mục: C:\Users\“Tên người dùng hiện tại”\LBAS</p></li>
+<li><p>Trong ảnh chụp dưới đây, hãy kiểm tra có tick chọn mục LBAS GigEVision Image Filter Driver hay không. Tốt nhất nên có ảnh chụp đầy đủ để thấy rõ đã cài bao nhiêu driver hoặc ghi lại thông tin như ảnh;</p>
+
+<p><img src="media/wps17E4.tmp.jpg" alt="" /></p></li>
+</ul>

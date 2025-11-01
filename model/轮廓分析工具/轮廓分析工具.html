@@ -1,0 +1,238 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>轮廓分析工具</h1>
+
+<h2>功能</h2>
+
+<p>轮廓分析的主要任务是在已完成轮廓提取的前提下，对轮廓点集进行分析，以进一步获得轮廓的相关几何信息(凸包、与轴平行最小矩形、最小面积圆、最小面积矩形)，用于后续的图像分析和处理。其应用效果如图1所示。</p>
+
+<p><img src="media/wps84.jpg" alt="img" />      <img src="media/wps85.jpg" alt="img" /></p>
+
+<p><imgnote>(a) 凸包轮廓</imgnote> <imgnote>(b) 轴平行矩形</imgnote></p>
+
+<p><img src="media/wps86.jpg" alt="img" />       <img src="media/wps87.jpg" alt="img" /></p>
+
+<p><imgnote>&copy; 最小面积矩形</imgnote> <imgnote>(d) 最小面积圆</imgnote></p>
+
+<p><imgnote>图1 轮廓分析工具应用示意图</imgnote></p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称         </th>
+<th> 参数描述                                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口         </td>
+<td> 当前轮廓序号                                                 </td>
+<td> 输入分析的轮廓序号，取值范围0~轮廓链数量-1。             </td>
+</tr>
+<tr>
+<td></td>
+<td> 凸包轮廓方向     </td>
+<td> 分为顺时针和逆时针两种形式。选择顺时针时，轮廓点按照顺时针排列；反之，按照逆时针排列。                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 显示凸包轮廓     </td>
+<td> 控制是否显示凸包轮廓。                                                                                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 显示轴平行矩形   </td>
+<td> 控制是否显示轴平行矩形。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 显示最小面积矩形 </td>
+<td> 控制是否显示最小面积矩形。                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 显示最小面积圆   </td>
+<td> 控制是否显示最小面积圆。                                                                                               </td>
+</tr>
+<tr>
+<td> 图像窗口         </td>
+<td> 输入图像                                                     </td>
+<td> 显示待检测的图像。                                       </td>
+</tr>
+<tr>
+<td> 数据链           </td>
+<td> 输入图像                                                     </td>
+<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓信息         </td>
+<td> 输入需要进行轮廓分析的坐标点集。                                                                                       </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无        </td>
+<td> 无                                                                                                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口     </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小。                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓数量     </td>
+<td> 输出轮廓的个数。                                                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> 是否凸包     </td>
+<td> 当前轮廓是否为凸多边形。                                                                                                   </td>
+</tr>
+<tr>
+<td></td>
+<td> 凸包顶点     </td>
+<td> 输出凸包的顶点坐标。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 轴平行矩形   </td>
+<td> 输出轴平行矩形的左上角点和矩形的边长                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 最小面积矩形 </td>
+<td> 输出最小面积矩形的中心点坐标、x方向边长、y方向边长、旋转角度和切变角度。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 最小面积圆   </td>
+<td> 输出最小面积圆的圆心和半径。                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果     </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间     </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td> 图像窗口     </td>
+<td> 输入图像                                                     </td>
+<td> 显示与振镜坐标相关联的图像，同监视窗口的输出图像参数。       </td>
+</tr>
+<tr>
+<td></td>
+<td> 凸包轮廓     </td>
+<td> 显示凸包轮廓参数选择“是”时，显示凸包轮廓。<img src="media/wps90.jpg" alt="img" />                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 轴平行矩形   </td>
+<td> 显示轴平行矩形参数选择“是”时，显示轴平行矩形。<img src="media/wps91.jpg" alt="img" />                                                               </td>
+</tr>
+<tr>
+<td>              </td>
+<td> 最小面积矩形                                                 </td>
+<td> 显示最小面积矩形参数选择“是”时，显示包含所有轮廓点且面积最小的矩形。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 最小面积圆   </td>
+<td> 显示最小面积圆参数选择“是”时，显示包含所有轮廓点且面积最小的圆。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果     </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                               </td>
+</tr>
+<tr>
+<td> 数据链       </td>
+<td> 输入图像                                                     </td>
+<td> 输出图像宽度、高度、像素大小，同监视窗口的输入图像参数。     </td>
+</tr>
+<tr>
+<td></td>
+<td> 所有轮廓     </td>
+<td> 输出满足预设条件的结果信息，供后序工具使用，同监视窗口的所有轮廓参数。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓链数量     </td>
+<td> 输出每个轮廓链的坐标点，供后序工具使用，同监视窗口的轮廓链参数。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓总数     </td>
+<td> 输出轮廓的总个数，同监视窗口的轮廓总数参数。                                                                               </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>凸包轮廓</h3>
+
+<p>凸包是指包含所有轮廓点且面积最小的凸多边形，如图2所示。凸多边形与非凸边形是指凸多边形区域内任意两点之间的线段(包括边界点)均位于多边形区域内部，非凸边形则相反。如图3所示。</p>
+
+<p><img src="media/wps93.jpg" alt="img" /></p>
+
+<p><imgnote>图2 凸包轮廓示意图</imgnote></p>
+
+<p><img src="media/wps94.jpg" alt="img" /></p>
+
+<p><imgnote>图3 凸多边形与非凸边形示意图</imgnote></p>
+
+<h3>轴平行矩形</h3>
+
+<p>轴平行矩形指的是与轴平行的最小面积矩形，包含所有轮廓点且与轴平行的面积最小矩形，如图4所示。</p>
+
+<p><img src="media/wps95.jpg" alt="img" /></p>
+
+<p><imgnote>图4 与轴平行最小面积矩形示意图</imgnote></p>
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\轮廓分析工具.gvp”。</p>

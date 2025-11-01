@@ -1,0 +1,299 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云分割工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​ 点云分割工具适用于3D测量、检测等场景，点云分割工具提供长方体、球体的几何体分割，获取几何体或几何体表面一定范围内的点云，也提供基于欧氏距离的聚类分割。</p>
+
+<h2>2. 应用场景</h2>
+
+<p>​ 在3D测量中，点云分割应用较为广泛，如手机中框检测，获取边框的点云，减少后续测量、检测运算量；多个卡尺工具同时参与测量，先使用点云分割工具获取边界点云，再使用卡尺工具，可加速整体计算效率等等。</p>
+
+<h2>3. 使用向导</h2>
+
+<ul>
+<li><h3>3.1 长方体ROI分割</h3>
+
+<p><strong>step1：</strong>添加点云文件、点云分割工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p><strong>step2：</strong>右击点云分割工具点击“属性”打开工具高级界面，如图3-2所示，ROI类型选择长方体，设置分割参数，然后点击运行即可得到分割后的点云数据；</p>
+
+<div align="center">
+<img src="media/GcCloudSegmentTool3_1.png" style="zoom:100%;"/>
+    <center>图3_1 点云分割：长方体ROI分割流程</center>
+</div>
+
+
+<div align="center">
+<img src="media/GcCloudSegmentTool3_2.gif" style="zoom:100%;"/>
+    <center>图3_2 点云分割：长方体ROI分割</center>
+</div>
+</li>
+<li><h3>3.2 球体ROI分割</h3>
+
+<p><strong>step1：</strong>添加点云文件、点云分割工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p><strong>step2：</strong>右击点云分割工具点击“属性”打开工具高级界面，如图3-3所示，ROI类型选择球体，设置分割参数，然后点击运行即可得到分割后的点云数据；</p>
+
+<div align="center">
+<img src="media/GcCloudSegmentTool3_3.gif" style="zoom:100%;"/>
+    <center>图3_3 点云分割：球体ROI分割</center>
+</div>
+
+
+<h3>3.3 多区域分割</h3>
+
+<p><strong>step1：</strong>添加点云文件、点云分割工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p><strong>step2：</strong>右击点云分割工具点击“属性”打开工具高级界面，如图3-4所示，设置分割参数，然后点击运行即可得到分割后的点云数据；</p>
+
+<div align="center">
+<img src="media/GcCloudSegmentTool3_4.gif" style="zoom:100%;"/>
+    <center>图3_4 点云分割：多区域分割</center>
+</div>
+
+
+<div align="center">
+<img src="media/GcCloudSegmentTool3_4.png" style="zoom:100%;"/>
+    <center>图3_5 点云分割：多区域分割结果</center>
+</div>
+
+
+<h3>3.4 基于平面的分割</h3>
+
+<p><strong>step1：</strong>添加点云文件、点云分割工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+
+<p><strong>step2：</strong>右击点云分割工具点击“属性”打开工具高级界面，如图3-3所示，设置分割参数，然后点击运行即可得到分割后的点云数据；</p>
+
+<div align="center">
+<img src="media/GcCloudSegmentTool3_5.gif" style="zoom:100%;"/>
+    <center>图3_6 点云分割：基于平面的分割</center>
+</div>
+</li>
+</ul>
+
+
+<h2>4. 常见问题</h2>
+
+<h2>5. 参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入点云数据 </td>
+<td> 输入待分割的点云图像                                                                                </td>
+</tr>
+<tr>
+<td> 输入基准面 </td>
+<td> 输入拟合后的平面 </td>
+</tr>
+<tr>
+<td> 输入指定索引       </td>
+<td> 表示对整体点云的指定索引部分，分割出ROI内的点，无链接代表整体索引 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> ROI类型                 </td>
+<td> 分为两种：长方体和球体 </td>
+</tr>
+<tr>
+<td> 长方体ROI </td>
+<td> 长方体ROI位置显示 </td>
+</tr>
+<tr>
+<td> 球体ROI </td>
+<td> 球体ROI位置显示 </td>
+</tr>
+<tr>
+<td> ROI个数 </td>
+<td> 启用ROI的情况下，用于设置ROI的个数，范围：[1,50] </td>
+</tr>
+<tr>
+<td> ROI索引 </td>
+<td> 用于不同索引下切换 </td>
+</tr>
+<tr>
+<td> 分割方法 </td>
+<td> 分为三种：集合体、多区域和基于平面 </td>
+</tr>
+<tr>
+<td> 是否启用表面取点 </td>
+<td> 启用该功能后，需要输入“几何体表面以内的距离”，表示点云分割时，只分割出该范围内的点云 </td>
+</tr>
+<tr>
+<td> 几何体表面以内的距离 </td>
+<td> 点云分割时，只分割出该范围内的点云              </td>
+</tr>
+<tr>
+<td> 是否启用反向选择 </td>
+<td> 启用该功能，原本应被输出的点云将不会输出，原本不被输出的点云将被输出 </td>
+</tr>
+<tr>
+<td> 距离阈值 </td>
+<td> 指定多少距离范围内是同一类的点 </td>
+</tr>
+<tr>
+<td> 是否开启相对阈值 </td>
+<td> 启用，距离阈值为一个系数；不启用，距离阈值为一个绝对距离值 </td>
+</tr>
+<tr>
+<td> 平面距离 </td>
+<td> 输出与平面距离±dDistance/2内的点云 </td>
+</tr>
+<tr>
+<td> 输出模式设置 </td>
+<td> 分为两种：输出指定索引和输出点云数据 </td>
+</tr>
+<tr>
+<td> 开启并行运算 </td>
+<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+</tr>
+<tr>
+<td> 线程数百分比 </td>
+<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+
+<table>
+<thead>
+<tr>
+<th> 按钮名称           </th>
+<th> 参数描述                                                                                                                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 添加ROI </td>
+<td> 在高级界面图像中，自动添加ROI </td>
+</tr>
+<tr>
+<td> 绘制当前ROI </td>
+<td> 在高级界面图像中，相应位置点击并拖动鼠标即可绘制当前索引下的ROI </td>
+</tr>
+<tr>
+<td> 删除当前ROI </td>
+<td> 在高级界面图像中，相应位置点击并拖动鼠标即可删除当前索引下的ROI </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出指定索引 </td>
+<td> 输出分割出ROI内的点的索引值 </td>
+</tr>
+<tr>
+<td> 输出点云数据                                            </td>
+<td> 输出ROI内点云数据 </td>
+</tr>
+<tr>
+<td> 输出点云集 </td>
+<td> 输出点云集合 </td>
+</tr>
+<tr>
+<td> 输出类簇 </td>
+<td> 多区域分割后的索引集 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出指定索引 </td>
+<td> 输出分割出ROI内的点的索引值 </td>
+</tr>
+<tr>
+<td> 输出点云数据                                            </td>
+<td> 输出ROI内点云数据 </td>
+</tr>
+<tr>
+<td> 输出点云集 </td>
+<td> 输出点云集合 </td>
+</tr>
+<tr>
+<td> 输出类簇 </td>
+<td> 多区域分割后的索引集 </td>
+</tr>
+<tr>
+<td> 执行时间 </td>
+<td> 工具执行时间 </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. 示例工程</h2>
+
+<p>​ 参见“\Samples\3D\点云\点云测量.gvp”。</p>
+
+<h2>7. 特殊说明</h2>
+
+<p>【1】多区域分割耗时较长，一般仅用于数据量较少的聚类分割</p>

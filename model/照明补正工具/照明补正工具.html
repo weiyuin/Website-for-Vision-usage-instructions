@@ -1,0 +1,204 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ bù sáng</h1>
+
+<h2>Chức năng</h2>
+
+<p>Nhiệm vụ chính của công cụ bù sáng là điều chỉnh hình ảnh thời gian thực dựa trên giá trị trung bình độ sáng của ảnh chuẩn (giá trị chuẩn), nhằm giảm ảnh hưởng của sự thay đổi ánh sáng (yếu đi hoặc mạnh lên) đối với hình ảnh.</p>
+
+<p><img src="media/image-20210312163509687.png" alt="image-20210312163509687" /></p>
+
+<p><imgnote>Hình 1 Minh họa bù sáng</imgnote></p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Phương pháp lấy giá trị chuẩn</td>
+<td>Có hai cách lấy giá trị chuẩn: sử dụng ảnh chuẩn và chỉ định trực tiếp.</td>
+</tr>
+<tr>
+<td></td>
+<td>Giá trị chuẩn</td>
+<td>Chỉ hiển thị khi phương pháp lấy giá trị chuẩn là “chỉ định trực tiếp”. Phạm vi 0-255, giá trị càng lớn thì ảnh sau khi bù sáng càng sáng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thiết lập loại ROI</td>
+<td>Có hai loại: ROI ảnh chuẩn và ROI bù sáng.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI ảnh chuẩn</td>
+<td>ROI ảnh chuẩn có bốn loại: toàn ảnh, hình chữ nhật, hình chữ nhật affine và đa giác.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI hình chữ nhật của ảnh chuẩn</td>
+<td>ROI ảnh chuẩn dạng hình chữ nhật gồm X, Y, W, H — tức tọa độ góc trái trên và chiều dài, chiều rộng của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI hình chữ nhật affine của ảnh chuẩn</td>
+<td>ROI ảnh chuẩn dạng hình chữ nhật affine gồm Center (X/Y), Size (SizeX/SizeY), Rotation (góc xoay) và Skew (góc nghiêng).</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI đa giác của ảnh chuẩn</td>
+<td>VerticesNum (số đỉnh) và Vertices (tọa độ các đỉnh).</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI bù sáng</td>
+<td>Khi chọn loại ROI là ROI bù sáng. Có bốn loại: toàn ảnh, hình chữ nhật, hình chữ nhật affine và đa giác.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI hình chữ nhật bù sáng</td>
+<td>ROI bù sáng dạng hình chữ nhật gồm X, Y, W, H — tức tọa độ góc trái trên và chiều dài, chiều rộng của hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI hình chữ nhật affine bù sáng</td>
+<td>ROI bù sáng dạng hình chữ nhật affine gồm Center (X/Y), Size (SizeX/SizeY), Rotation (góc xoay) và Skew (góc nghiêng).</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI đa giác bù sáng</td>
+<td>VerticesNum (số đỉnh) và Vertices (tọa độ các đỉnh).</td>
+</tr>
+<tr>
+<td></td>
+<td>Bật tính toán song song</td>
+<td>Cho phép bật hoặc tắt tính toán song song. Nếu chọn “Có”, thuật toán sẽ sử dụng OpenMP để tính toán song song, giúp tăng tốc xử lý nhưng có thể khiến thời gian xử lý không ổn định. Nếu chọn “Không”, OpenMP sẽ bị tắt.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỷ lệ phần trăm số luồng</td>
+<td>Thiết lập tỷ lệ phần trăm số luồng cho tính toán song song. Phạm vi hợp lệ (0, 0.75], tương ứng (0%, 75%].</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Hình ảnh cần bù sáng.</td>
+</tr>
+<tr>
+<td></td>
+<td>GUI chọn ROI</td>
+<td>Dùng để thiết lập vùng trong ảnh đầu vào cần bù sáng, hoặc thiết lập vùng chọn trong ảnh chuẩn để làm ảnh chuẩn.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Hình ảnh cần bù sáng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh chuẩn</td>
+<td>Ảnh chuẩn dùng để bù sáng.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口 </td>
+<td> 当前基准值                                                   </td>
+<td> 照明补正的基准值。       </td>
+</tr>
+<tr>
+<td></td>
+<td> 输出图像 </td>
+<td> 经过照明补正的结果图像。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                                         </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 输出图像                                                     </td>
+<td> 经过照明补正的结果图像。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 输出图像                                                     </td>
+<td> 经过照明补正的结果图像。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>基本原理</h3>
+
+<p>照明补正工具实质是将弱光或强光下的图像补正至一个正常光照范围的图像，具体实现方法为对当前图像乘以一个补正系数，补正系数由基准图像的均值除以当前图像的均值获得（图像的灰度均值反映了图像亮度的整体情况。图像较亮，则灰度均值较大，图像较暗，则灰度均值较小）。</p>
+
+<p><img src="media/wps102.jpg" alt="img" /></p>
+
+<p><imgnote>图2 照明补正原理示意图</imgnote></p>
+
+<h2>注意</h2>
+
+<ul>
+<li>基准值获取方法选择直接指定时，在Eidt视图有补正ROI区域，照明补正只在ROI区域范围内起作用。当基准值获取方法选择使用基准图像时，属性中的ROI类型设置，可以选择基准图像ROI和照明补正ROI，分别对应取基准值的ROI区域，和照明补正的ROI区域，需要分别设置。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\照明补正工具.gvp”。</p>

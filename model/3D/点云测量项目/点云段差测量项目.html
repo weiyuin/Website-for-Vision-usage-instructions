@@ -1,0 +1,70 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云段差测量项目</h1>
+
+<h2>1.项目需求</h2>
+
+<p>​ 本项目主要测量工件高度落差。</p>
+
+<h2>2.方案分析</h2>
+
+<p>​ 如下图所示为待测量产品工件，主要测量内侧边到基准平面的高度落差。</p>
+
+<p><img src="media\Measurement_2_1.png" alt="Measurement_2_1" /></p>
+
+<h2>3.方案实现</h2>
+
+<h3>3.1 测量流程</h3>
+
+<p><img src="media/Measurement_3_1.png" alt="" /></p>
+
+<h3>3.2 测量实现</h3>
+
+<ul>
+<li>整体流程图如下图所示。</li>
+</ul>
+
+
+<p><img src="media\Measurement_3_2.png" alt="Measurement_3_3" /></p>
+
+<ul>
+<li><p>点云坐标系对齐</p>
+
+<p>相当于产品定位，定位出产品的中心，将其移动到坐标系原点，如下图所示。</p>
+
+<p><img src="media\Measurement_3_3.png" alt="Measurement_3_3" /></p>
+
+<p><img src="media\Measurement_3_4.png" alt="Measurement_3_3" /></p></li>
+<li><p>点云段差测量</p>
+
+<p>利用卡尺工具在产品某一位置探测点，然后借助点云距离测量工具完成点到面的距离测量，如下图所示。</p>
+
+<p><img src="media\Measurement_3_5.png" alt="Measurement_3_3" />   <img src="media\Measurement_3_6.png" alt="Measurement_3_3" /></p></li>
+</ul>
+
+
+<h2>4.结果展示</h2>
+
+<p>​ 生产界面运行结果如下图所示。</p>
+
+<p><img src="media\Measurement_3_7.png" alt="Measurement_3_12" /></p>
+
+<h2>5. 示例工程</h2>
+
+<p>​     参见“\Samples\应用案例\测高类项目\点云测量项目\点云段差测量工程.gvp”。</p>

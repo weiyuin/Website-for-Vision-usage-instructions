@@ -1,0 +1,133 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>轮廓提取工具结果解析</h1>
+
+<h2>功能</h2>
+
+<p>轮廓提取工具结果解析用于对轮廓提取工具的结果进行解析处理，将轮廓提取工具的其中一个轮廓链，解析为一组轮廓点集。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                            </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 是否转为Sc2Vector集合 </td>
+<td> 控制解析后轮廓点链表集合的数据类型，选择“是”为Sc2Vector类型，选择“否”为scFeaturelet类型。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像窗口 </td>
+<td> 无                                                                                  </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 轮廓提取结果          </td>
+<td> 输入经过数组解析工具处理的轮廓数据。                         </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td> 无                    </td>
+<td> 无                                                                                  </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称   </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 监视窗口   </td>
+<td> 轮廓点链表集合                                               </td>
+<td> 是否转为Sc2Vector集合参数选择“否”时，输出解析后的轮廓点集，数据类型为scFeaturelet。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓点集合 </td>
+<td> 是否转为Sc2Vector集合参数选择“是”时，输出解析后的轮廓点集，数据类型为Sc2Vector。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓点总数 </td>
+<td> 输出轮廓点集的个数。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果   </td>
+<td> 工具执行结果。                                                                                                             </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间   </td>
+<td> 工具执行时间。                                                                                                             </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无             </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链     </td>
+<td> 轮廓点链表集合                                               </td>
+<td> 输出解析后的轮廓点集，供后序工具使用，同监视窗口的轮廓点链表集合参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓点集合 </td>
+<td> 输出解析后的轮廓点集，供后序工具使用，同监视窗口的轮廓点集合参数。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 轮廓点总数 </td>
+<td> 输出轮廓点集个数，同监视窗口的轮廓点总数参数。                                                                             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>轮廓提取工具结果解析与数组解析工具、轮廓提取工具配合使用，其中数组解析工具属性窗口的数据类型参数选择scFeatureletVector。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\轮廓提取工具.gvp”。</p>

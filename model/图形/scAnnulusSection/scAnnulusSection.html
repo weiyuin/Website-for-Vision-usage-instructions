@@ -1,0 +1,316 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>scAnnulusSection</h1>
+
+<h2>功能</h2>
+
+<p>表示圆环段。</p>
+
+<h2>接口</h2>
+
+<table>
+<thead>
+<tr>
+<th>      分类 </th>
+<th> 接口名称                                                     </th>
+<th> 接口描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 构造 </td>
+<td> scAnnulusSection                     </td>
+<td> scAnnulusSection()构造函数。                                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scAnnulusSection </td>
+<td> scAnnulusSection(center,radius,startPhi,spanPhi,dRadialScale)构造函数。 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> scAnnulusSection </td>
+<td> scAnnulusSection(annulus, startPhi, spanPhi)构造函数。       </td>
+</tr>
+<tr>
+<td> 函数 </td>
+<td> SetAnnulus                    </td>
+<td> 设置圆环段所在的圆环。                                       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetAnnulus                                 </td>
+<td> 获取圆环段所在的圆环。                                       </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetCenter                           </td>
+<td> 设置圆环中心。                                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetCenter                                   </td>
+<td> 获取圆环段所在圆环的中心。                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRadius                           </td>
+<td> 设置圆环的基准半径。                                         </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRadius                                   </td>
+<td> 获取基准圆半径                                               </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetRadialScale           </td>
+<td> 设置径向缩放比例。                                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetRadialScale                         </td>
+<td> 获取径向缩放比例。                                           </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetStartPhi                     </td>
+<td> 设置起始角。                                                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetStartPhi                               </td>
+<td> 获取起始角。                                                 </td>
+</tr>
+<tr>
+<td>      </td>
+<td> SetSpanPhi                        </td>
+<td> 设置张角。                                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetSpanPhi                                 </td>
+<td> 获取张角。                                                   </td>
+</tr>
+<tr>
+<td>      </td>
+<td> GetEndPhi                                   </td>
+<td> 获取终止角                                                   </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>scAnnulusSection()</h3>
+
+<ul>
+<li><p>功能：构造scAnnulus对象。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scAnnulusSection( center,radius,startPhi,spanPhi,dRadialScale )</h3>
+
+<p>功能：用圆心center，基准半径radius，起始角度startPhi，张角spanPhi和径向缩放比例dRadialScale来构造圆环段。</p>
+
+<ul>
+<li><p>参数：</p>
+
+<ul>
+<li><p>center：圆心位置，sc2Vector类型。</p></li>
+<li><p>radius：基准半径，浮点数类型。</p></li>
+<li><p>startPhi：起始角度，浮点数类型。</p></li>
+<li><p>spanPhi：张角，浮点数类型。</p></li>
+<li><p>dRadialScale：径向缩放比例，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>scAnnulusSection( annulus, startPhi, spanPhi )</h3>
+
+<ul>
+<li><p>功能：用圆环annulus，起始角度startPhi和张角spanPhi来构造圆环段。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li><p>annulus：圆环，scAnnulus类型。</p></li>
+<li><p>startPhi：起始角度，浮点数类型。</p></li>
+<li><p>spanPhi：张角，浮点数类型。</p></li>
+</ul>
+</li>
+<li><p>返回值：无。</p></li>
+</ul>
+
+
+<h3>SetAnnulus( annulus )</h3>
+
+<ul>
+<li><p>功能：设置圆环段所在的圆环。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>annulus：圆环，scAnnulus类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetAnnulus()</h3>
+
+<ul>
+<li><p>功能：获取圆环段所在的圆环。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：圆环段所在的圆环，scAnnulus类型。</p></li>
+</ul>
+
+
+<h3>SetCenter( center )</h3>
+
+<ul>
+<li><p>功能：设置圆环中心。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>center：圆环中心，sc2Vector类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetCenter()</h3>
+
+<ul>
+<li><p>功能：获取圆环段所在的圆环的中心。</p></li>
+<li><p>参数：无</p></li>
+<li><p>返回值：圆环段所在的圆环的中心，sc2Vector类型。</p></li>
+</ul>
+
+
+<h3>SetRadius( radius )</h3>
+
+<ul>
+<li><p>功能：设置圆环的基准半径。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>radius：基准半径，浮点数类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetRadius()</h3>
+
+<ul>
+<li><p>功能：获取圆环的基准半径。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：圆环的基准半径，浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetRadialScale( dRadialScale )</h3>
+
+<ul>
+<li><p>功能：设置径向缩放比例。</p></li>
+<li><p>参数：</p>
+
+<p> -dRadialScale：径向缩放比例，浮点数类型。</p></li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetRadialScale()</h3>
+
+<ul>
+<li><p>功能：获取径向缩放比例。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：径向缩放比例，浮点数类型。</p></li>
+</ul>
+
+
+<h3>SetStartPhi( startPhi )</h3>
+
+<ul>
+<li><p>功能：设置起始角度。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>startPhi：起始角度，scRadian类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetStartPhi()</h3>
+
+<ul>
+<li><p>功能：获取起始角度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：起始角度，scRadian类型。</p></li>
+</ul>
+
+
+<h3>SetSpanPhi( spanPhi )</h3>
+
+<ul>
+<li><p>功能：设置张角。</p></li>
+<li><p>参数：</p>
+
+<ul>
+<li>spanPhi：张角，scRadian类型。</li>
+</ul>
+</li>
+<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+</ul>
+
+
+<h3>GetSpanPhi()</h3>
+
+<ul>
+<li><p>功能：获取张角。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：张角，scRadian类型。</p></li>
+</ul>
+
+
+<h3>GetEndPhi()</h3>
+
+<ul>
+<li><p>功能：获取终止角度。</p></li>
+<li><p>参数：无。</p></li>
+<li><p>返回值：终止角度，scRadian类型。</p></li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例代码</h2>
+
+<p>无</p>

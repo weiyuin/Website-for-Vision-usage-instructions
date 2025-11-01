@@ -1,0 +1,188 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>一维码解析工具</h1>
+
+<h2>功能</h2>
+
+<p>解析一维码结果。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 无 </td>
+<td> 无                                 </td>
+</tr>
+<tr>
+<td> 图像窗口 </td>
+<td> 无 </td>
+<td> 无                                 </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 读码结果 </td>
+<td> QR码读码工具的一组数据。 </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无 </td>
+<td> 无                                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称       </th>
+<th> 参数描述                                                                                                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>监视窗口 </td>
+<td> 条码区域 </td>
+<td> 条码所在多边形区域。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 解码字符串                                                   </td>
+<td> 读码工具的读码结果。                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 解码字符串编码类型 </td>
+<td> Unknown、Mixed、ANSI、JIS8、Unicode、Kanji                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 亮条码暗背景   </td>
+<td> 条码的极性。                                                                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 条码类型       </td>
+<td> Code_39、Code_93、Code_128、UPC_A、UPC_E、EAN_8、EAN_13、ITF、BC_412、Codabar                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 条码方向       </td>
+<td> 条码与水平方向的夹角                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 条码等级       </td>
+<td> NC、F、D、C、B、A                                                                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 中心点坐标 </td>
+<td> 条码所在多边形区域的中心点坐标。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果       </td>
+<td> 工具执行结果。                                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间       </td>
+<td> 工具执行时间。                                                                                                     </td>
+</tr>
+<tr>
+<td> 图像窗口       </td>
+<td> 无  </td>
+<td> 无                                       </td>
+</tr>
+<tr>
+<td> 数据链         </td>
+<td> 条码区域线段                                                   </td>
+<td> 条码区域显示。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 条码区域 </td>
+<td> 条码所在多边形区域。 </td>
+</tr>
+<tr>
+<td> </td>
+<td> 解码字符串                                                   </td>
+<td> 读码工具的读码结果。同监视窗口中的“解码字符串”参数。 </td>
+</tr>
+<tr>
+<td></td>
+<td> 解码字符串编码类型 </td>
+<td> Unknown、Mixed、ANSI、JIS8、Unicode、Kanji                                                                         </td>
+</tr>
+<tr>
+<td></td>
+<td> 亮条码暗背景   </td>
+<td> 条码的极性。与监视窗口中的“是否亮条纹在暗背景上”是同一个参数。                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 条码类型       </td>
+<td> Code_39、Code_93、Code_128、UPC_A、UPC_E、EAN_8、EAN_13、ITF、BC_412、Codabar                                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> 条码方向       </td>
+<td> 条码与水平方向的夹角                                                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 条码等级       </td>
+<td> NC、F、D、C、B、A                                                                                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> 中心点坐标 </td>
+<td> 条码所在多边形区域的中心点坐标。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>为了读取一维码读码工具的结果，该工具要与“数组解析工具”联合使用，并且要把“数组解析工具”的数组类型选择为“SingleLinearCodeResult”，作为该工具的输入。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\读码工具.gvp”</p>

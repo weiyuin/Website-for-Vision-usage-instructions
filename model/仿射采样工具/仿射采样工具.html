@@ -1,0 +1,236 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ lấy mẫu affine</h1>
+
+<h2>Chức năng</h2>
+
+<p>Công cụ lấy mẫu affine chủ yếu thực hiện việc lấy mẫu hình ảnh trong vùng hình chữ nhật affine từ ảnh đầu vào và xuất ra ảnh hình chữ nhật, giúp xử lý các bước tiếp theo. Hình dưới đây là ví dụ về hiệu chỉnh xoay bằng công cụ lấy mẫu hình chữ nhật affine. Ngoài ra, công cụ còn có thể dùng để hiệu chỉnh tỷ lệ và méo hình.</p>
+
+<p><img src="media/wps91.png" alt="img" /></p>
+
+<p><imgnote>(a) Ảnh sản phẩm bị xoay</imgnote> <imgnote>(b) Ảnh kết quả sau khi lấy mẫu affine</imgnote></p>
+
+<p><imgnote>Hình 1: Ví dụ về công cụ lấy mẫu hình chữ nhật affine</imgnote></p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Hình dạng ROI</td>
+<td>Có thể chọn toàn bộ ảnh hoặc hình chữ nhật affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chiều dài mẫu theo X/Y</td>
+<td>Khi chọn toàn bộ ảnh làm ROI, cần thiết lập chiều dài mẫu theo phương ngang và dọc.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hình chữ nhật affine</td>
+<td>Khi chọn ROI là hình chữ nhật affine, sẽ hiển thị thiết lập của hình chữ nhật affine. <img src="media/wps93.jpg" alt="img" /></td>
+</tr>
+<tr>
+<td></td>
+<td>Center (X/Y)</td>
+<td>Tọa độ tâm của hình chữ nhật affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>Size (SizeX/SizeY)</td>
+<td>Chiều dài và rộng của hình chữ nhật affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>Rotation</td>
+<td>Góc xoay của hình chữ nhật affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>Skew</td>
+<td>Góc nghiêng (shear) của hình chữ nhật affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI hình đa giác</td>
+<td>Khi chọn ROI là hình đa giác, sẽ hiển thị thiết lập của hình đa giác. Do chỉ hỗ trợ tứ giác nên ROI hiển thị là hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>Số đỉnh (VerticesNum)</td>
+<td>Số lượng đỉnh, chỉ có thể là 4.</td>
+</tr>
+<tr>
+<td></td>
+<td>Các đỉnh (Vertices)</td>
+<td>Tọa độ các đỉnh của ROI.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh màu hay không</td>
+<td>Cho biết ảnh đầu vào có phải là ảnh màu hay không.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần thực hiện lấy mẫu affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>GUI hình chữ nhật affine</td>
+<td>Dùng để thiết lập hình chữ nhật affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROI hình đa giác</td>
+<td>Dùng để thiết lập hình tứ giác.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần thực hiện lấy mẫu affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>Biến đổi tuyến tính 2 chiều là sự dịch chuyển, xoay và thu phóng của mục tiêu so với mẫu gốc. Mảng biến đổi tuyến tính 2D là tập hợp tất cả các phép biến đổi này sau mỗi lần công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần thực hiện lấy mẫu affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh sau khi thực hiện lấy mẫu affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực hiện của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực hiện.</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh sau khi thực hiện lấy mẫu affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ, "OK" nếu thành công, "NG" nếu thất bại. Giống với tham số kết quả trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần thực hiện lấy mẫu affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh sau khi thực hiện lấy mẫu affine.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh màu đầu ra</td>
+<td>Ảnh màu sau khi thực hiện lấy mẫu affine.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Mô tả chi tiết</h2>
+
+<h3>Nguyên lý cơ bản</h3>
+
+<p>Hình chữ nhật affine được xác định theo phương pháp ba đỉnh. Bằng cách xác định ba đỉnh của hình chữ nhật affine là P<sub>o</sub>, P<sub>x</sub>, và P<sub>y</sub>, có thể xác định hoàn toàn hình chữ nhật affine, như minh họa trong Hình 2:</p>
+
+<p><img src="media/wps96.png" alt="img" /></p>
+
+<p><imgnote>Hình 2: Xác định hình chữ nhật affine bằng ba đỉnh</imgnote></p>
+
+<p>Dựa vào số điểm lấy mẫu theo hướng P<sub>o</sub> - P<sub>x</sub> và P<sub>o</sub> - P<sub>y</sub>, hình chữ nhật affine có thể được chia thành các điểm ảnh affine có diện tích bằng nhau. Nếu số điểm lấy mẫu theo hai hướng đó lần lượt là x_divisions và y_divisions, thì ảnh kết quả sẽ có số cột và hàng tương ứng. Với tọa độ ảnh đầu ra (x’, y’), có thể ánh xạ ngược lại để tính tọa độ tương ứng (x, y) trong không gian ảnh đầu vào.</p>
+
+<p><img src="media/wps97.png" alt="img" /></p>
+
+<p><imgnote>Hình 3: Nguyên lý lấy mẫu hình chữ nhật affine</imgnote></p>
+
+<p>Thông qua tọa độ (x, y) trong không gian ảnh đầu vào, có thể xác định mức xám của điểm ảnh bằng phương pháp nội suy. Công cụ lấy mẫu affine sử dụng **nội suy song tuyến tính (bilinear interpolation)** để đảm bảo cả độ chính xác lẫn hiệu suất.</p>
+
+<p>Trong thực tế, khi áp dụng hình chữ nhật affine để lấy mẫu từ ảnh đầu vào, có thể xảy ra hiện tượng **cắt xén (clipping)** nếu vùng affine vượt ra ngoài biên ảnh, như trong Hình 4(a). Ngay cả khi điểm ảnh nằm sát biên (ví dụ giữa hai pixel rìa), cũng được coi là bị cắt xén, như trong Hình 4(b).</p>
+
+<p><img src="media/wps98.png" alt="img" /></p>
+
+<p><imgnote>Hình 4: Minh họa hiện tượng cắt xén</imgnote></p>
+
+<p>Chiến lược xử lý phần bị cắt là: gán giá trị bằng 0 cho vùng đó và tạo ra một ảnh trọng số có cùng kích thước với ảnh sau khi lấy mẫu, để chỉ trạng thái điểm ảnh. Trong ảnh trọng số, "0" biểu thị điểm bị cắt, "1" biểu thị điểm hợp lệ. Xem Hình 5.</p>
+
+<p><img src="media/wps99.png" alt="img" /></p>
+
+<p><imgnote>(a) Ảnh đầu vào và vùng affine</imgnote> <imgnote>(b) Ảnh sau khi lấy mẫu</imgnote> <imgnote>&copy; Ảnh trọng số</imgnote></p>
+
+<p><imgnote>Hình 5: Ví dụ về lấy mẫu và ảnh trọng số</imgnote></p>
+
+<p><strong>Hình chữ nhật affine</strong></p>
+
+<p><img src="media/wps100.jpg" alt="img" /></p>
+
+<p><imgnote>Hình 6: Hình chữ nhật affine</imgnote></p>
+
+<h2>Lưu ý</h2>
+
+<p>Không có</p>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Sample\仿射采样工具.gvp”。</p>

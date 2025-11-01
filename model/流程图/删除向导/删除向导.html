@@ -1,0 +1,113 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Trình hướng dẫn xóa biểu đồ luồng</h1>
+
+<p>Trình hướng dẫn xóa biểu đồ luồng là phần mở rộng của chức năng xóa ban đầu.</p>
+
+<p>Khi xóa đối tượng công cụ (ví dụ trường hợp là công cụ), sẽ xóa hoặc thay thế tất cả các tham chiếu/liên kết sử dụng công cụ đó bởi các công cụ khác.</p>
+
+<p>Ví dụ, “Tệp ảnh _ 001” với “Ảnh đầu ra” được liên kết tới “Công cụ hình thái học mức xám _ 002” với “Ảnh đầu vào” làm tham số đầu vào, khi xóa “Tệp ảnh _ 001”, sẽ gọi “Trình hướng dẫn xóa biểu đồ luồng”, và “Ảnh đầu vào” của “Công cụ hình thái học mức xám _ 002” có thể được đặt thành trống hoặc thay thế bằng công cụ cùng loại khác (thay vì “Tệp ảnh _ 001”).</p>
+
+<p>“Trình hướng dẫn xóa biểu đồ luồng” xử lý các tham chiếu bao gồm:</p>
+
+<ul>
+<li>Chuỗi tham số</li>
+<li>Tham chiếu biểu thức (điều kiện nhánh, song song, vòng lặp, dừng vòng lặp)</li>
+<li>Tham chiếu công cụ script</li>
+<li>Tham chiếu công cụ tạo văn bản và công cụ xuất dữ liệu</li>
+<li>Tham chiếu giao diện sản xuất</li>
+</ul>
+
+<h3>Giao diện chính của trình hướng dẫn xóa biểu đồ luồng</h3>
+
+<p>Khi xóa đối tượng công cụ được tham chiếu bởi công cụ khác, sẽ hiện cửa sổ “Trình hướng dẫn xóa biểu đồ luồng” như hình dưới.</p>
+
+<p><img src="media/FlowWizard_1_1.png" alt="" /></p>
+
+<blockquote><p><span style="color:red"><strong>Chú ý</strong></span></p>
+
+<ul>
+<li><p>Khi chọn nhiều đối tượng công cụ để xóa, nếu có nhiều đối tượng được tham chiếu bởi công cụ khác (ngoại trừ tham chiếu chéo giữa các đối tượng trong nhóm xóa), sẽ có thông báo popup như sau:</p>
+
+<ul>
+<li><p>Chọn “Có” sẽ xóa trực tiếp tất cả đối tượng chọn</p></li>
+<li><p>Chọn “Không” sẽ hủy thao tác xóa, phần “Cửa sổ tìm kiếm” góc phải dưới sẽ hiển thị cảnh báo các đối tượng bị tham chiếu, cần xóa thủ công từng cái.</p></li>
+</ul>
+</li>
+<li><p>Nếu trong nhóm xóa chỉ có 1 đối tượng bị tham chiếu bên ngoài, cửa sổ trình hướng dẫn xóa sẽ hiển thị, cho phép xóa trực tiếp hoặc thay thế tham chiếu để xóa.</p></li>
+</ul>
+
+<p><img src="media/FlowWizard_1_8.png" alt="" /></p></blockquote>
+
+<h3>Các bước của trình hướng dẫn</h3>
+
+<ol>
+<li><p>Chọn chế độ thay thế: xóa trực tiếp hoặc thay thế tham chiếu bằng công cụ khác</p>
+
+<ul>
+<li>Xóa trực tiếp: xóa công cụ hiện tại và đặt tất cả tham chiếu đến công cụ này thành trống. *Lưu ý: Với công cụ script, chỉ xóa công cụ và tham số được tham chiếu, có thể gây lỗi cú pháp script cần chỉnh sửa thủ công.</li>
+<li>Thay thế tham chiếu bằng công cụ khác: xóa công cụ hiện tại và thay thế tất cả tham chiếu tới công cụ này bằng công cụ được chọn.</li>
+</ul>
+
+<p><img src="media/FlowWizard_1_1.png" alt="" /></p></li>
+
+<li><p>Chuỗi tham số được đặt trống hoặc thay thế, tham số không khớp sẽ bị ngắt chuỗi:</p>
+
+<p><img src="media/FlowWizard_1_2.png" alt="" /></p></li>
+
+<li><p>Tham chiếu biểu thức được đặt trống hoặc thay thế, một công cụ biểu thức có thể tham chiếu nhiều tham số công cụ, nếu có tham số không khớp, chỉ thay thế một phần, tham số không khớp giữ nguyên:</p>
+
+<p><img src="media/FlowWizard_1_3.png" alt="" /></p></li>
+
+<li><p>Tham chiếu công cụ script đặt trống hoặc thay thế: tương tự công cụ biểu thức, tham số không khớp không chỉnh sửa:</p>
+
+<p><img src="media/FlowWizard_1_4.png" alt="" /></p></li>
+
+<li><p>Tham chiếu công cụ tạo văn bản và xuất dữ liệu đặt trống hoặc thay thế, tham số không khớp sẽ xóa:</p>
+
+<p><img src="media/FlowWizard_1_5.png" alt="" /></p></li>
+
+<li><p>Tham chiếu giao diện sản xuất đặt trống hoặc thay thế, tham số không khớp sẽ xóa tham chiếu điều khiển:</p>
+
+<p><img src="media/FlowWizard_1_6.png" alt="" /></p></li>
+
+<li><p>Hoàn tất xóa/thay thế tham chiếu, xem lại tất cả các mục thay thế:</p>
+
+<p><img src="media/FlowWizard_1_7.png" alt="" /></p></li>
+</ol>
+
+<h3>Chi tiết thao tác</h3>
+
+<ol>
+<li>Lọc tham chiếu: chọn tham số đầu ra trong danh sách tham số để lọc danh sách các tham chiếu tương ứng đến tham số đó, ví dụ hình dưới</li>
+</ol>
+
+<p><img src="media/FlowWizard_2_1.png" alt="" /></p>
+
+<ol start="2">
+<li>Xử lý tham số không khớp: Khi dùng công cụ khác thay thế tham chiếu của công cụ bị xóa, hệ thống sẽ tự động so khớp tham số theo kiểu và tên tham số, nếu không tìm thấy tham số phù hợp sẽ hiện trạng thái “không khớp”:</li>
+</ol>
+
+<p><img src="media/FlowWizard_2_2.png" alt="" /></p>
+
+<p>Khi chọn một tham số đầu ra (ví dụ “Kết quả thực thi công cụ”), danh sách tham số thay thế sẽ hiển thị các tham số có thể thay thế được (ví dụ “Kết quả thực thi”), chọn tham số thay thế (ví dụ “Kết quả thực thi”), thực hiện thay thế tham số (biểu thức ban đầu “Vị trí vùng_035.Kết quả thực thi công cụ” được thay bằng “Định vị hình học__003.Kết quả thực thi”).</p>
+
+<p><strong>Nếu danh sách tham số thay thế trống, không có tham số nào có thể thay thế, không thể thực hiện thay thế, cần xử lý thủ công.</strong></p>
+
+<p><img src="media/FlowWizard_2_3.png" alt="" /></p>

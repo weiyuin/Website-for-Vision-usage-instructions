@@ -1,0 +1,141 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Thu Thập Ảnh 3D</h1>
+
+<h2>Chức năng</h2>
+
+<p>Dùng để thu thập ảnh từ camera 3D được kết nối.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Tên camera</td>
+<td>Tên của camera 3D dùng để thu ảnh, còn gọi là số sê-ri.</td>
+</tr>
+<tr>
+<td></td>
+<td>Loại dữ liệu đầu ra</td>
+<td>Chọn loại dữ liệu đầu ra từ camera 3D: có thể chọn ảnh độ sâu, ảnh đám mây điểm, hoặc cả hai.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian chờ thu thập</td>
+<td>-1 nghĩa là luôn chờ, giá trị > -1 là thời gian chờ cụ thể (đơn vị: mili giây).</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đám mây điểm</td>
+<td>Ảnh đám mây điểm được thu thập và số lượng điểm dữ liệu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chỉ số điểm hợp lệ</td>
+<td>Chỉ số của tất cả các điểm hợp lệ trong ảnh đám mây điểm từ camera.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh độ sâu</td>
+<td>Kích thước (chiều dài, chiều rộng), kích thước điểm ảnh, và dữ liệu độ sâu của ảnh độ sâu.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh xám</td>
+<td>Kích thước và kích thước điểm ảnh của ảnh xám.</td>
+</tr>
+<tr>
+<td></td>
+<td>Cờ báo hiệu Snap gửi xong</td>
+<td>Chỉ áp dụng với camera Keyence đang online: ban đầu là false, khi gửi xong tín hiệu snap để bắt đầu thu ảnh thì chuyển thành true.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực hiện của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực hiện công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh độ sâu</td>
+<td>Hiển thị ảnh độ sâu đã thu thập.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đám mây điểm</td>
+<td>Hiển thị ảnh đám mây điểm đã thu thập (dạng xem Cloud).</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đám mây điểm</td>
+<td>Ảnh đám mây điểm thu được.</td>
+</tr>
+<tr>
+<td></td>
+<td>Chỉ số điểm hợp lệ</td>
+<td>Chỉ số của tất cả các điểm hợp lệ trong ảnh đám mây điểm từ camera.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh độ sâu</td>
+<td>Ảnh độ sâu thu được từ camera.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh xám</td>
+<td>Ảnh xám thu được từ camera.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2>详细说明</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\3D\深度图\3D图像采集工具.gvp”。</p>

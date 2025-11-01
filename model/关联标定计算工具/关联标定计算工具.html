@@ -1,0 +1,247 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>关联标定计算</h1>
+
+<h2>功能</h2>
+
+<p>本工具用于关联标定计算。在关联标定过程中，首先已知参考对象相机的标定结果，而后通过在参考相机与目标相机下进行关联标定运动（轴位置由关联标定轴位置获取工具计算），得到相应定位点的参考图像坐标（向量）与待标定相机下定位点的图像坐标（向量），而后通过本工具用于关联标定计算。</p>
+
+<h2>参数</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称                                                     </th>
+<th> 参数描述                                                                                                                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口                                                     </td>
+<td> 关联标定类型                                                 </td>
+<td> 图像到平台单点关联标定：关联标定运动一次，只有一组关联点，只能确定目标图像坐标系与平台坐标系的平移关系，即平台坐标，旋转和缩放关系需要其他方式获取。<br />图像到平台多点关联标定：关联标定运动多次，有多组关联点，可以确定目标图像坐标系与平台坐标系的转换关系，包括旋转、缩放和平移关系。<br />图像到图像多点关联标定：关联运动多次，有多组关联点，但无参考标定结果，直接计算图像到图像间的映射关系。 </td>
+</tr>
+<tr>
+<td>图像窗口</td>
+<td> 无                                                     </td>
+<td> 无                                                                                                                         </td>
+</tr>
+<tr>
+<td> 数据链                                                       </td>
+<td> 参考图像坐标（向量）                                         </td>
+<td> 由每一次关联标定运动后参考相机定位的特征点图像坐标构成的向量，当标定计算类型为单点关联标定，则输入单个参考图像坐标即可。<img src="media/wps113.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像坐标（向量）                                             </td>
+<td> 由每一次关联标定运动后目标相机定位的特征点图像坐标构成的向量，当标定计算类型为单点关联标定，则输入单个图像坐标即可。<img src="media/wps114.jpg" alt="img" />                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 参考标定结果                                                 </td>
+<td> 参考相机的标定结果，该标定结果通常由标准标定运动和标准标定计算得出。当标定计算类型为图像到图像多点关联标定时，则不必输入此项。                                                               </td>
+</tr>
+<tr>
+<td>高级界面</td>
+<td>       无                                               </td>
+<td> 无                                                                                                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>输出</h2>
+
+<table>
+<thead>
+<tr>
+<th>分类 </th>
+<th> 参数名称 </th>
+<th> 参数描述                                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 属性窗口 </td>
+<td> 标定结果       </td>
+<td> 输出目标相机的相应标定结果。                                 </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行结果 </td>
+<td> 工具执行结果。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 执行时间 </td>
+<td> 工具执行时间。                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> 图像窗口 </td>
+<td> 无                                                                           </td>
+</tr>
+<tr>
+<td> 数据链   </td>
+<td> 标定结果       </td>
+<td> 输出目标相机的相应标定结果，供后序工具使用，同监视窗口参数。 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>详细说明</h2>
+
+<h3>参考图像坐标向量与图像坐标向量</h3>
+
+<p>在关联标定运动中，轴类型的不同，则关联点不同，对应的反向运动转移次数也不同。对于独立X或Y轴等单轴平台，适用于进行两点关联标定；对于XYD平台，则可以进行两点、三点或四点的关联标定。而对应不同步数的关联标定计算，输入的参考图像坐标向量与图像坐标向量中的坐标顺序要与相应的关联标定运动移动路径保持一致。具体如下：</p>
+
+<p>1.两点关联标定：机械手进行两次转移运动，适用于机械手，以及独立X或Y轴等单轴平台。两点关联标定的转移运动路径，如图2所示。</p>
+
+<p><img src="media/wps117.jpg" alt="img" /></p>
+
+<p><imgnote>图2 两点关联标定转移运动路径</imgnote></p>
+
+<p>表1是图2对应的位置列表，X<sub>0</sub>和Y<sub>0</sub>是机械手预设的拍照位置，即基准位置，D<sub>X</sub>和D<sub>Y</sub>是机械手在X和Y方向的单位运动步长。即此时关联标定计算工具的坐标向量输入顺序为坐标0→坐标1。</p>
+
+<p><imgnote>表1 单轴平台两点关联标定位置列表</imgnote></p>
+
+<table>
+<thead>
+<tr>
+<th> 索引 </th>
+<th> 位置             </th>
+<th> XY轴坐标                           </th>
+<th> X轴坐标         </th>
+<th> Y轴坐标         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 0    </td>
+<td> 基准位置的负方向 </td>
+<td> (X<sub>0</sub> - D<sub>X</sub>, Y<sub>0</sub> - D<sub>Y</sub>) </td>
+<td> X<sub>0</sub> - D<sub>X</sub> </td>
+<td> Y<sub>0</sub> - D<sub>Y</sub> </td>
+</tr>
+<tr>
+<td> 1    </td>
+<td> 基准位置的正方向 </td>
+<td> (X<sub>0</sub> + D<sub>X</sub>, Y<sub>0</sub> + D<sub>Y</sub>) </td>
+<td> X<sub>0</sub> + D<sub>X</sub> </td>
+<td> Y<sub>0</sub> + D<sub>Y</sub> </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>2.三点关联标定：机械手进行三次转移运动，其转移运动路径，如图3所示。</p>
+
+<p><img src="media/wps118.jpg" alt="img" /></p>
+
+<p><imgnote>图3 三点关联标定转移运动路径</imgnote></p>
+
+<p>表2是图3对应的位置列表，X<sub>0</sub>和Y<sub>0</sub>是机械手预设的拍照位置，即基准位置，D<sub>X</sub>和D<sub>Y</sub>是机械手在X和Y方向的单位运动步长。即此时关联标定计算工具的坐标向量输入顺序为坐标0→坐标1→坐标2，且此时三坐标尽量满足直角关系。</p>
+
+<p><imgnote>表2 三点关联标定位置列表</imgnote></p>
+
+<table>
+<thead>
+<tr>
+<th> 索引 </th>
+<th> 位置           </th>
+<th> XY轴坐标                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 0    </td>
+<td> 基准位置的左上 </td>
+<td> (X<sub>0</sub> - D<sub>X</sub>, Y<sub>0</sub> - D<sub>Y</sub>) </td>
+</tr>
+<tr>
+<td> 1    </td>
+<td> 基准位置的左下 </td>
+<td> (X<sub>0</sub> - D<sub>X</sub>, Y<sub>0</sub> + D<sub>Y</sub>) </td>
+</tr>
+<tr>
+<td> 2    </td>
+<td> 基准位置的右下 </td>
+<td> (X<sub>0</sub> + D<sub>X</sub>, Y<sub>0</sub> + D<sub>Y</sub>) </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>3.四点关联标定：机械手进行四次转移运动，其转移运动路径，如图4所示。</p>
+
+<p><img src="media/wps119.jpg" alt="img" /></p>
+
+<p><imgnote>图4 四点关联标定转移运动路径</imgnote></p>
+
+<p>表3是图4对应的位置列表，X<sub>0</sub>和Y<sub>0</sub>是机械手预设的拍照位置，即基准位置，D<sub>X</sub>和D<sub>Y</sub>是机械手在X和Y方向的单位运动步长。即此时关联标定计算工具的坐标向量输入顺序为坐标0→坐标1→坐标2→坐标3，此时的路径0→1和路径2→3尽量满足交叉垂直关系。</p>
+
+<p><imgnote>表3 四点关联标定位置列表</imgnote></p>
+
+<table>
+<thead>
+<tr>
+<th> 索引 </th>
+<th> 位置           </th>
+<th> XY轴坐标                                        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 0    </td>
+<td> 基准位置的正右 </td>
+<td> (X<sub>0</sub> + D<sub>X</sub>, Y<sub>0</sub>)  </td>
+</tr>
+<tr>
+<td> 1    </td>
+<td> 基准位置的正左 </td>
+<td> (X<sub>0</sub> - D<sub>X</sub>, Y<sub>0</sub>)  </td>
+</tr>
+<tr>
+<td> 2    </td>
+<td> 基准位置的正下 </td>
+<td> (X<sub>0</sub> , Y<sub>0</sub> + D<sub>Y</sub>) </td>
+</tr>
+<tr>
+<td> 3    </td>
+<td> 基准位置的正上 </td>
+<td> (X<sub>0</sub> , Y<sub>0</sub> - D<sub>Y</sub>) </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>实际项目中的关联标定，可以通过一次机械手移动并同时定位多个特征点来模拟相应步数的关联标定。但对于输入的三点或四点关联标定计算的坐标向量顺序，仍要与详细说明的顺序保持一直。即对于三点关联标定计算，尽量让三点呈直角关系，且第二个点为直角顶点；对于四点关联标定计算，输入的四点路径0→1和路径2→3尽量满足交叉垂直关系。</p>
+
+<h2>注意</h2>
+
+<ul>
+<li>参考相机的标定结果通常由在参考相机下进行标准标定运动和标准标定计算得出，所以通常关联标定的工程中应先对参考相机进行标准标定，之后再对目标相机进行关联标定。</li>
+</ul>
+
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\XY轴4步关联标定+对位计算.gvp”。</p>

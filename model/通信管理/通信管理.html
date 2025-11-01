@@ -1,0 +1,307 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Quản lý truyền thông</h1>
+
+<p>Các cổng truyền thông (cổng nối tiếp, cổng mạng) được sử dụng trong dự án có thể được thiết lập và quản lý thông qua mục “Quản lý truyền thông” trong phần “Khu chức năng - Cài đặt”.</p>
+
+<p><img src="media/ComManger_1_1.png" alt="" /></p>
+
+<ul>
+<li><p><strong>Danh sách cổng:</strong> Hiển thị tên cổng, tên mặc định là Port+N;</p></li>
+<li><p><strong>Thông số chung của cổng</strong></p>
+
+<ul>
+<li><p>Loại cổng: RS232 (cổng nối tiếp), Ethernet (cổng mạng) và MXComponent;</p></li>
+<li><p>Nhà sản xuất: Chọn loại nhà sản xuất phù hợp theo tình hình thực tế; mục này chỉ là chức năng lọc, không ảnh hưởng đến nội dung cụ thể của giao thức. Có thể chọn các hãng như Keyence, Panasonic, Omron, OPT, Jiali, Linhou, Mitsubishi, Schneider Electric.</p></li>
+<li><p>Giao thức: Chọn loại giao thức phù hợp theo nhu cầu thực tế;</p></li>
+<li><p>Trạng thái: Chưa kết nối / Đã kết nối;</p></li>
+</ul>
+</li>
+<li><p><strong>Thông số cổng nối tiếp</strong></p>
+
+<ul>
+<li><p>Cổng: Chọn cổng hiện được nhận dạng;</p></li>
+<li><p>Tốc độ baud: Đơn vị tốc độ truyền là bps, biểu thị số bit dữ liệu có thể truyền trong một giây. Các bit dừng và bit kiểm tra chẵn lẻ đều được xác định dựa trên tốc độ này. Ví dụ, khi đặt 9600bps, có thể truyền khoảng 1000 ký tự số tiếng Anh trong một giây.</p></li>
+<li><p>Bit dữ liệu: Chỉ độ dài của chuỗi ký tự. Trong giao tiếp RS232, dữ liệu thường được gửi theo đơn vị 7 hoặc 8 bit cho mỗi ký tự, trong đó 8 bit là phổ biến nhất.</p></li>
+<li><p>Bit kiểm tra chẵn lẻ: Là bit thêm vào để kiểm tra xem dữ liệu có được gửi bình thường không. Có thể chọn kiểm tra chẵn, kiểm tra lẻ hoặc không kiểm tra. Thông qua bit này có thể điều chỉnh để dữ liệu gửi đi là chẵn hoặc lẻ. n: không kiểm tra; o: kiểm tra chẵn; e: kiểm tra lẻ.</p></li>
+<li><p>Bit dừng: Mỗi ký tự sẽ có bit bắt đầu và bit dừng để đánh dấu phần đầu và phần cuối. Bên nhận sẽ dựa vào bit bắt đầu để xác định phần đầu của ký tự và nhận dữ liệu chính xác; phần cuối sẽ dùng bit dừng để báo hiệu kết thúc dữ liệu. Bit bắt đầu luôn là 1 bit, còn bit dừng có thể là 1 hoặc 2 bit.</p></li>
+<li><p>Điều khiển luồng: Khi bên nhận không kịp xử lý dữ liệu, nó sẽ gửi tín hiệu “ngừng nhận”, khiến bên gửi tạm dừng truyền cho đến khi nhận được tín hiệu “có thể gửi tiếp”.</p></li>
+<li><p>Ký tự kết thúc truyền thông: Để tránh lỗi khi một lệnh bị tách ra và nhận thành nhiều phần, hai bên truyền thông quy ước ký tự kết thúc dùng để đánh dấu sự kết thúc của một lệnh truyền thông.</p></li>
+</ul>
+</li>
+<li><p><strong>Thông số cổng mạng</strong></p></li>
+</ul>
+
+
+
+<p><img src="media/ComManger_1_2.png" alt="" /></p>
+
+<ul>
+<li><p><strong>Loại:</strong> Gồm hai loại “Máy chủ (Server)” và “Máy khách (Client)”; </p>
+
+<ul>
+<li><p>IP: Thiết lập địa chỉ IP truyền thông. Nếu loại mạng là “Máy chủ”, thì IP là địa chỉ cục bộ; nếu là “Máy khách”, thì địa chỉ IP phải trùng với địa chỉ IP của máy chủ;</p></li>
+<li><p>Cổng truyền thông: Giá trị cổng phải là số nguyên dương. Để tránh cổng bị chiếm dụng, thường đặt giá trị lớn, chẳng hạn 2000. Nếu loại mạng là “Máy chủ”, cổng được đặt thành số nguyên dương lớn; nếu là “Máy khách”, cổng phải trùng với cổng của máy chủ;</p></li>
+<li><p>Số lượng kết nối lắng nghe: Khi làm máy chủ, có thể hỗ trợ nhiều máy khách kết nối cùng lúc;</p></li>
+<li><p>Ký tự kết thúc truyền thông: Dấu hiệu kết thúc của lệnh truyền thông;</p></li>
+</ul>
+</li>
+
+<li><p><strong>Thông số UDP</strong></p>
+
+<p><img src="media/ComManger_UDP.PNG" alt="" /></p>
+
+<ul>
+<li><p>IP cục bộ: Địa chỉ IP của cổng mạng giao tiếp với PLC. Cũng có thể đặt là 127.0.0.1, hệ thống sẽ tự động khớp.</p></li>
+<li><p>Cổng cục bộ: Số hiệu cổng của máy tính, thường đặt lớn hơn 1024.</p></li>
+<li><p>IP đích: Địa chỉ IP của thiết bị PLC.</p></li>
+<li><p>Cổng đích: Số hiệu cổng được PLC sử dụng để giao tiếp.</p></li>
+<li><p>Ký tự kết thúc truyền thông: Dấu hiệu kết thúc của lệnh truyền thông.</p></li>
+</ul>
+</li>
+
+<li><p><strong>Thông số ADS</strong></p>
+
+<p><img src="media/ComManger_ADS.PNG" alt="" /></p>
+
+<ul>
+<li>IP: Địa chỉ IP của PLC Beckhoff.</li>
+<li>NetID: Phải trùng với hai byte cuối của AMSNetID của PLC, mặc định là 1.</li>
+<li>Cổng: Số hiệu cổng của máy chủ PLC.</li>
+</ul>
+</li>
+
+<li><p><strong>Thông số MXComponent</strong></p>
+
+<ul>
+<li><p>MXComponent là thành phần truyền thông của Mitsubishi, thông qua cấu hình mô-đun truyền thông trong phần mềm Mitsubishi để thực hiện giao tiếp.</p></li>
+<li><p>Trạm logic: ID cổng truyền thông, được cấu hình trong phần mềm Mitsubishi Component;</p></li>
+</ul>
+</li>
+</ul>
+
+<p><img src="media/ComManger_1_3.png" alt="" /></p>
+
+<ul>
+<li><p><strong>Thông số ProfiNet</strong></p>
+
+<p><img src="media/ComManger_ProfiNet.png" alt="" /></p>
+
+<ul>
+<li><p>Truyền thông ProfiNet cần phần cứng đặc biệt hỗ trợ, hiện chỉ hỗ trợ card CIFX 50-RE. Tức là chỉ khi máy tính công nghiệp tích hợp card này mới có thể truyền thông ProfiNet bình thường.</p></li>
+<li><p>Board: Mặc định là cifX0. Đối với card CIFX 50-RE, không cần thay đổi; mở tùy chọn này nhằm dự phòng tích hợp các mẫu card khác của cùng hãng trong tương lai.</p></li>
+<li><p>Channel: Mặc định là 0, không cần thay đổi đối với card CIFX 50-RE.</p></li>
+<li><p>AreaNum: Mặc định là 0, không cần thay đổi đối với card CIFX 50-RE.</p></li>
+</ul>
+</li>
+
+<li><p><strong>Nút thao tác</strong></p>
+
+<ul>
+<li><p>Tạo mới: Tạo một cổng mới;</p></li>
+<li><p>Xóa: Xóa cổng được chọn;</p></li>
+<li><p>Đồng ý: Lưu cài đặt hiện tại và thoát quản lý truyền thông;</p></li>
+<li><p>Đóng / ×: Hủy thao tác hiện tại và thoát quản lý truyền thông.</p></li>
+</ul>
+</li>
+
+<li><p><strong>Các thông số khác</strong></p>
+
+<p>Mỗi giao thức có các thông số đặc biệt riêng. Các giao thức này gồm: No-protocol trong cổng RS232, No-protocol trong cổng Ethernet, Mewtocol và ModbusTCP.</p></li>
+
+<li><p><strong>Cài đặt thông số No-protocol</strong></p>
+
+<ul>
+<li><p>Xóa bộ đệm nhận trước khi gửi: Khi công cụ gửi dữ liệu, xóa dữ liệu trong bộ đệm nhận trước đó.</p></li>
+<li><p>Phương thức tách dữ liệu: Vì No-protocol có thể gửi/nhận dữ liệu với độ dài tùy ý, để phân biệt các gói dữ liệu khác nhau cần có phương thức tách. Gồm tách theo ký tự kết thúc hoặc tách theo độ dài cố định.</p></li>
+<li><p>Tách theo ký tự kết thúc: Nhận dạng và tách gói dữ liệu dựa trên ký tự kết thúc được thiết lập trong giao diện quản lý truyền thông.</p></li>
+<li><p>Tách theo độ dài cố định: Nhận dạng và tách gói dữ liệu dựa theo giá trị được đặt trong “Độ dài dữ liệu tách mỗi lần”.</p></li>
+</ul>
+</li>
+</ul>
+
+<p><img src="media/ComManger_1_4.png" alt="" /></p>
+
+<ul>
+<li><p><strong>Cài đặt thông số Mewtocol</strong></p>
+
+<p>Trong giao thức Mewtocol, để phân biệt nhiều thiết bị trên cùng một bus, có tham số ID trạm. Phạm vi cài đặt của tham số này là từ 1 đến 99.</p></li>
+</ul>
+
+<p><img src="media/ComManger_1_5.png" alt="" /></p>
+
+<ul>
+<li><p><strong>Cài đặt thông số ModbusTCP</strong></p>
+
+<p>Trong giao thức ModbusTCP, để phân biệt nhiều thiết bị trên cùng một bus, có tham số ID thiết bị.</p>
+
+<p><img src="media/ComManger_1_6.png" alt="" /></p>
+
+<ul>
+<li><strong>Cài đặt thông số S7Comm</strong>
+
+<ul>
+<li><p>Giá đỡ (Rack): Số thứ tự của CPU PLC (0–100, mặc định 0)</p></li>
+<li><p>Khe cắm (Slot): Số thứ tự của mô-đun CPU (0–100, mặc định 2)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+<p><img src="media/ComManger_S7Comm.png" alt="" /></p>
+
+<h2>Hỗ trợ giao thức PLC</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;"> Giao thức </th>
+<th style="text-align:left;"> Hãng PLC </th>
+<th style="text-align:left;"> Giao thức đóng gói phần mềm </th>
+<th style="text-align:left;"> Vùng dữ liệu được hỗ trợ </th>
+<th style="text-align:left;"> Kiểu dữ liệu </th>
+<th> Ghi chú </th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="text-align:left;"> MX Component </td>
+<td style="text-align:left;"> Mitsubishi </td>
+<td style="text-align:left;"> MxComponent </td>
+<td style="text-align:left;"> M, D, X, Y </td>
+<td style="text-align:left;"> bool, short, int, long, float, double <br /> </td>
+<td> D, X, Y chỉ hỗ trợ đọc/ghi tại một địa chỉ đơn lẻ </td>
+</tr>
+
+<tr>
+<td style="text-align:left;"> FINSTCP </td>
+<td style="text-align:left;"> Omron </td>
+<td style="text-align:left;"> HostlinkFINS_TCP </td>
+<td style="text-align:left;"> DM, DM_Bit, CIO, CIO_Bit, <br />WR, WR_Bit, HR, HR_Bit, DR, IR <br /> </td>
+<td style="text-align:left;"> bool, short, unsigned short, int, unsigned int, long, unsigned long, float, double, string <br /> </td>
+<td> Không có </td>
+</tr>
+
+<tr>
+<td style="text-align:left;"> FINSUDP </td>
+<td style="text-align:left;"> Omron </td>
+<td style="text-align:left;"> HostlinkFINS_UDP </td>
+<td style="text-align:left;"> DM, DM_Bit, CIO, CIO_Bit, <br />WR, WR_Bit, HR, HR_Bit, DR, IR <br /> </td>
+<td style="text-align:left;"> bool, short, unsigned short, int, unsigned int, long, unsigned long, float, double, string <br /> </td>
+<td> Không có </td>
+</tr>
+
+<tr>
+<th style="text-align:left;"> Giao thức </th>
+<th style="text-align:left;"> Hãng PLC </th>
+<th style="text-align:left;"> Giao thức đóng gói phần mềm </th>
+<th style="text-align:left;"> Vùng dữ liệu được hỗ trợ </th>
+<th style="text-align:left;"> Kiểu dữ liệu </th>
+<th> Ghi chú </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;"> KeyenceSWLU </td>
+<td style="text-align:left;"> Keyence </td>
+<td style="text-align:left;"> KeyenceSWLU </td>
+<td style="text-align:left;"> DM, EM, W, TM, CM, VM,<br />R, B, MR, LR, CR, VB </td>
+<td style="text-align:left;"> bool, short, int, long, float, double, unsigned short,<br />unsigned int, unsigned long, string<br /> </td>
+<td> Giao thức này là giao thức liên kết cấp trên (Upper Link Communication Protocol) </td>
+</tr>
+<tr>
+<td style="text-align:left;"> ModbusTCP </td>
+<td style="text-align:left;"> Schneider </td>
+<td style="text-align:left;"> ModbusTCP </td>
+<td style="text-align:left;"> Thanh ghi giữ (4x), cuộn dây </td>
+<td style="text-align:left;"> bool, short, int, long, float, double, string<br /> </td>
+<td> Hiện chưa hỗ trợ đầu vào rời rạc và thanh ghi đầu vào; kiểu dữ liệu string chỉ có hiệu lực với thanh ghi,<br />không có hiệu lực với đầu vào rời rạc và cuộn dây </td>
+</tr>
+<tr>
+<td style="text-align:left;"> ModbusRTU </td>
+<td style="text-align:left;"> Schneider </td>
+<td style="text-align:left;"> ModbusRTU </td>
+<td style="text-align:left;"> Thanh ghi giữ (4x) </td>
+<td style="text-align:left;"> bool, short, int, long, float, double<br /> </td>
+<td> Hiện chưa hỗ trợ cuộn dây, đầu vào rời rạc, thanh ghi đầu vào </td>
+</tr>
+<tr>
+<td style="text-align:left;"> ModbusASCII </td>
+<td style="text-align:left;"> Schneider </td>
+<td style="text-align:left;"> ModbusASCII </td>
+<td style="text-align:left;"> Thanh ghi giữ (4x) </td>
+<td style="text-align:left;"> bool, short, int, long, float, double<br /> </td>
+<td> Hiện chưa hỗ trợ cuộn dây, đầu vào rời rạc, thanh ghi đầu vào </td>
+</tr>
+<tr>
+<td style="text-align:left;"> MEWTOCOL </td>
+<td style="text-align:left;"> Panasonic </td>
+<td style="text-align:left;"> Mewtocol </td>
+<td style="text-align:left;"> N/A </td>
+<td style="text-align:left;"> bool, short, int, long, float, double<br /> </td>
+<td> Không có </td>
+</tr>
+<tr>
+<td style="text-align:left;"> ADS </td>
+<td style="text-align:left;"> Beckhoff </td>
+<td style="text-align:left;"> ADS </td>
+<td style="text-align:left;"> N/A </td>
+<td style="text-align:left;"> bool, short, int, long, float, double<br /> </td>
+<td> Không có </td>
+</tr>
+<tr>
+<td style="text-align:left;"> S7Comm </td>
+<td style="text-align:left;"> Siemens </td>
+<td style="text-align:left;"> S7Comm </td>
+<td style="text-align:left;"> I, M, Q, DB </td>
+<td style="text-align:left;"> bool, short, int, long, float, double, unsigned short, unsigned int, unsigned long, string </td>
+<td> Khi sử dụng kiểu string, địa chỉ bị lệch về sau 2 byte </td>
+</tr>
+<tr>
+<td style="text-align:left;"> </td>
+<td style="text-align:left;"> </td>
+<td style="text-align:left;"> </td>
+<td style="text-align:left;"> </td>
+<td style="text-align:left;"> </td>
+<td> </td>
+</tr>
+<tr>
+<td style="text-align:left;"> ProfiNet </td>
+<td style="text-align:left;"> HILSCHER </td>
+<td style="text-align:left;"> ProfiNet </td>
+<td style="text-align:left;"> I, Q </td>
+<td style="text-align:left;"> bool, char, short, int, long, double, float, unsigned short, unsigned int, unsigned long, string </td>
+<td> Đối với thị giác máy (vision), vùng I chỉ ghi, vùng Q chỉ đọc,<br />giao tiếp này cần phần cứng đặc biệt, hiện chỉ hỗ trợ thẻ CIFX 50-RE </td>
+</tr>
+</tr>
+<tr>
+<td style="text-align:left;">              </td>
+<td style="text-align:left;">          </td>
+<td style="text-align:left;">                  </td>
+<td style="text-align:left;">                                                              </td>
+<td style="text-align:left;">                                                              </td>
+<td>                                                              </td>
+</tr>
+</tbody>
+</table>
+

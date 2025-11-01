@@ -1,0 +1,119 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Tùy Chọn Hệ Thống</h1>
+
+<p>Có thể đánh dấu chọn cấu hình các thông tin cần ghi lại, báo cáo lỗi công cụ, thiết lập đường dẫn hình ảnh và dữ liệu, cấu hình bộ nhớ đệm hình ảnh lịch sử, bật điều khiển hệ thống từ xa, tự động chuyển sang quyền vận hành, bật bàn phím ảo trên giao diện sản xuất, v.v. Trong đó các mục như báo cáo lỗi công cụ, báo cáo lỗi, báo cáo cảnh báo, báo cáo nhắc nhở, làm mới trạng thái thực thi lưu đồ, ghi thông tin nhật ký, ghi thông tin theo dõi sự cố, ghi thông tin nhắc nhở thu thập camera, ghi thông tin nhắc nhở truyền thông, ghi thông tin nhắc nhở chung, ghi thông tin thao tác người dùng, ghi CT công cụ và quản lý phiên bản dự án khi cài đặt lần đầu mặc định được chọn, các mục còn lại mặc định không chọn. Khi cài lại hoặc nâng cấp phần mềm sẽ giữ nguyên trạng thái chọn trước đó.</p>
+
+<p><img src="media/SystemOption_01.png" alt="" /></p>
+
+<h2>Ghi Thông Tin</h2>
+
+<ul>
+<li>Báo cáo lỗi công cụ: Xuất thông tin lỗi bên trong công cụ ra cửa sổ giám sát và cửa sổ nhật ký giao diện sản xuất.</li>
+<li>Báo cáo lỗi: Xuất các lỗi ngoài công cụ trong hệ thống ra cửa sổ giám sát và cửa sổ nhật ký giao diện sản xuất.</li>
+<li>Báo cáo cảnh báo: Xuất tất cả cảnh báo trong hệ thống ra cửa sổ giám sát và cửa sổ nhật ký giao diện sản xuất.</li>
+<li>Báo cáo nhắc nhở: Xuất tất cả thông báo nhắc nhở trong hệ thống ra cửa sổ giám sát và cửa sổ nhật ký giao diện sản xuất.</li>
+<li>Làm mới trạng thái thực thi lưu đồ: Trong quá trình chạy dự án sẽ liên tục làm mới trạng thái chạy của lưu đồ.</li>
+<li>Ghi thông tin nhật ký: Ghi lại nhật ký hoạt động hệ thống, vị trí ghi tại thư mục “LusterCache/Loại nhật ký” với tên file "Loại nhật ký + ngày hiện tại".txt. Ví dụ: D:\LusterCache\RecordGraphGUIErrorLog\RecordGraphGUIErrorLog_2021-12-20.txt.</li>
+<li>Ghi thông tin theo dõi sự cố: Ghi nhật ký chi tiết quá trình tải phần mềm, tạo, đăng ký và hủy các module, vị trí ghi tại thư mục “LusterCache” với file TraceLog1.txt. Khi file quá lớn sẽ tạo thêm TraceLog2.txt, lần lượt như vậy.</li>
+<li>Ghi thông tin nhắc nhở thu thập camera: Ghi thông tin nhắc nhở liên quan đến thu thập camera, sao lưu tự động giải pháp, vị trí ghi tại thư mục “LusterCache” với file NoteLog1.txt, quá lớn sẽ tạo NoteLog2.txt, v.v.</li>
+<li>Ghi thông tin nhắc nhở truyền thông: Ghi thông tin nhắc nhở truyền thông, vị trí ghi tại “LusterCache/CommLog” với file "CommLog + ngày hiện tại".txt.</li>
+<li>Ghi thông tin nhắc nhở: Ghi thông tin nhắc nhở trong quá trình chạy hệ thống, vị trí ghi giống thu thập camera.</li>
+<li>Ghi thông tin thao tác người dùng: Ghi lại các thao tác như chạy, tạm dừng, dừng dự án, vị trí ghi tại thư mục “LusterCache” với file CustomerOperatorLog.txt.</li>
+<li>Hiển thị giao diện sản xuất trên hai màn hình: Hiển thị giao diện sản xuất (hoặc chỉnh sửa) trên nhiều màn hình, mỗi màn hình hiển thị một phần giao diện, nội dung hiển thị dựa trên cách sắp xếp màn hình trong hệ thống.</li>
+<li>Ghi CT công cụ: Khi chạy dự án, ghi lại thời gian bắt đầu, kết thúc thực thi công cụ, tên, CT, tên tổ hợp công cụ, vị trí ghi tại thư mục “LusterCache\CTLog”.</li>
+<li>Quản lý phiên bản dự án: Khi bật, mỗi lần lưu dự án sẽ hiện hộp thoại để nhập thông tin phiên bản rồi lưu, nếu không bật sẽ lưu trực tiếp không hiện hộp thoại.</li>
+<li>Tự động lưu dự án: Khi bật, dự án sẽ được tự động sao lưu định kỳ, khi phần mềm thoát bất thường sẽ hỏi có tải lại bản sao lưu tự động hay không, nếu không bật thì không tự động sao lưu.</li>
+</ul>
+
+<h2>Cài Đặt Thư Mục Lưu Trữ</h2>
+
+<p>Thiết lập thư mục lưu dữ liệu và thư mục lưu hình ảnh.</p>
+
+<h2>Cài Đặt Bộ Nhớ Đệm Ảnh Lịch Sử</h2>
+
+<p>Cấu hình tự động xóa ảnh lịch sử, có thể xóa theo thời gian hoặc theo dung lượng.</p>
+
+<ul>
+<li><p><strong>Xóa theo thời gian:</strong> Hệ thống tự động xóa các ảnh lịch sử cũ hơn số ngày đã thiết lập.</p></li>
+<li><p><strong>Xóa theo dung lượng GB:</strong> Hệ thống tự động xóa các ảnh lịch sử cũ khi tổng dung lượng vượt quá mức đã thiết lập.</p></li>
+</ul>
+
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
+
+<ol>
+<li><p>Tự động xóa khi dung lượng ổ đĩa còn lại dưới 10%: Khi dung lượng trống ổ đĩa còn dưới 10%, hệ thống sẽ tự động xóa ảnh lịch sử cũ nhằm tránh phần mềm hoặc hệ thống bị lỗi do thiếu dung lượng.</p></li>
+<li><p>Các file ảnh sẽ được lưu trong thư mục GVIMAGES. Khi xóa ảnh, toàn bộ dữ liệu trong thư mục GVIMAGES sẽ bị xóa, vì vậy không nên lưu dữ liệu quan trọng trong thư mục này.</p></li>
+</ol>
+</blockquote>
+
+<h2>Các Cài Đặt Khác</h2>
+
+<h3>Bật Điều Khiển Từ Xa</h3>
+
+<p>Bật chức năng tự động chuyển đổi dự án: có thể tự động chuyển sang dự án sản phẩm tương ứng dựa vào mã vạch (chuỗi số) gửi từ PLC, tự động lưu dự án hiện tại, chuyển sang dự án mới và chạy liên tục trên giao diện sản xuất. Kết quả chuyển đổi được gửi đi, nội dung gửi có thể tùy chỉnh, hiện chỉ hỗ trợ định dạng lệnh, chưa hỗ trợ gửi dữ liệu.</p>
+
+<ul>
+<li><p>Mô tả giao tiếp điều khiển từ xa:</p>
+
+<ol>
+<li><p>PLC làm client giao tiếp, phần mềm VISIONAssembly làm server.</p></li>
+<li><p>PLC dùng Omron và Mitsubishi không giao thức; phần mềm VISIONAssembly cũng dùng không giao thức, có thể cấu hình qua file, quy định cổng mặc định (506), số lượng kết nối lắng nghe (mặc định 1) và ký tự kết thúc giao tiếp (mặc định none). Chức năng chỉ hỗ trợ không giao thức. Cấu hình qua file NoProRemSvrComm.xml.</p></li>
+<li><p>Phần mềm sẽ gửi kết quả chuyển đổi, có thể cấu hình lệnh gửi trong NoProRemSvrComm.xml.</p></li>
+<li><p>Phần mềm cần cấu hình định dạng lệnh nhận dữ liệu: Hệ thống chọn -> cài đặt điều khiển từ xa -> nhập định dạng lệnh -> OK, hoặc sửa trực tiếp file SysConfig.gcfg.</p></li>
+<li><p>Chức năng chuyển đổi:</p></li>
+<li><p>Tự động lưu dự án trước (file gvp).</p></li>
+<li><p>Chuyển sang giao diện sản xuất trạng thái chạy liên tục (chưa xét đến quyền hạn).</p></li>
+<li><p>Một sản phẩm tương ứng một dự án, nhận dạng mã vạch để xác định sản phẩm và tìm dự án tương ứng. Cấu hình trong file ProductSolution.xml.</p></li>
+</ol>
+</li>
+<li><p><span id = "Description">Mô tả file cấu hình giao tiếp điều khiển từ xa:</span></p>
+
+<ol>
+<li>File SysConfig.gcfg, trường EnableRemoteRunCtrl phải là 1, RemoteSysCtrlPortName mặc định là NoProRemSvrComPort, có thể đổi tên nhưng phải trùng với thuộc tính Name trong nút Port của file NoProRemSvrComm.xml. Định dạng lệnh mặc định là: ^([0-9]{10,})\$</li>
+</ol>
+
+<p><img src="media/SystemOption_02.png" alt="" /></p>
+
+<ol>
+<li>File ProductSolution.xml, thuộc tính LINK lưu thông tin liên kết mẫu mã vạch và file dự án. Trong đó ProType là mẫu mã vạch tương ứng sản phẩm. Ví dụ ProType="****2234**" đại diện cho sản phẩm loại 2234, * là số bất kỳ; độ dài trong cấu hình phải khớp độ dài mã vạch. Thuộc tính SolPath là đường dẫn tuyệt đối đến file dự án tương ứng.</li>
+</ol>
+
+<p><img src="media/SystemOption_03.png" alt="" /></p>
+
+<ol>
+<li>File NoProRemSvrComm.xml, lưu cấu hình giao tiếp PLC với phần mềm VISIONAssembly. Nút Port chứa các cấu hình không giao thức, chỉ được chỉnh ListenPort, ListenNum, CommStop và Name. Giá trị Name phải trùng với RemoteSysCtrlPortName trong SysConfig.gcfg.</li>
+<li>Trường ResponseResult, CmdStr của OK là lệnh gửi khi chuyển đổi dự án thành công, CmdStr của NG là lệnh khi thất bại, CmdStr của KS là lệnh khi không cần chuyển đổi. Có thể tùy chỉnh định dạng lệnh gửi thành công hoặc thất bại. Hiện chỉ hỗ trợ định dạng lệnh (KS = giữ trạng thái).</li>
+</ol>
+
+<p><img src="media/SystemOption_04.png" alt="" /></p>
+
+<ol>
+<li>Chức năng điều khiển từ xa chạy/dừng dự án, gửi lệnh 101 để chạy liên tục, lệnh 100 để dừng chạy. Khi lệnh thực thi thành công gửi lệnh OK về PLC, thất bại gửi lệnh NG.</li>
+</ol>
+</li>
+</ul>
+
+<blockquote><p><strong>Lưu ý khi giao tiếp điều khiển từ xa</strong></p>
+
+<ol>
+<li><p>Đảm bảo tên cổng điều khiển từ xa trùng khớp hoặc sửa trường RemoteSysCtrlPortName trong file SysConfig.gcfg cho trùng với tên thuộc tính Name trong NoProRemSvrComm.xml.</p></li>
+<li><p>Ký tự đầu và cuối của mã vạch gửi từ PLC không được là khoảng trắng; khoảng trắng giữa cũng tính là một ký tự.</p></li>
+<li><p>Giá trị ProType trong ProductSolution.xml phải duy nhất, không trùng lặp.</p></li>
+<li><p>Định dạng lệnh mặc định có thể để trống nhưng nên viết, ví dụ mã vạch ít nhất 10 số thì định dạng

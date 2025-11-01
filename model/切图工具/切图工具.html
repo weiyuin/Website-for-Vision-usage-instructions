@@ -1,0 +1,171 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ Cắt Hình</h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>​     Cắt hình, hay còn gọi là cắt ảnh, là một trong các phương pháp tiền xử lý ảnh. Nó cho phép cắt ra và xuất hình ảnh từ một vùng hình chữ nhật xác định trên ảnh đầu vào, nhằm xử lý các khu vực trọng điểm của hình ảnh.</p>
+
+<h2>2. Ứng dụng</h2>
+
+<p>​     Khi cần cắt và trích xuất ảnh đầu vào, công cụ cắt hình sẽ được sử dụng. Ví dụ như hình dưới.</p>
+
+<p>​     Ảnh đầu vào:</p>
+
+<p><img src="media/GcGetSliceImageTool_2_1.png" alt="GcGetSliceImageTool_2_1" /></p>
+
+<p>​     Ảnh kết quả:</p>
+
+<p><img src="media/GcGetSliceImageTool_2_2.png" alt="GcGetSliceImageTool_2_2" /></p>
+
+<h2>3. Nguyên lý</h2>
+
+<p>​     Quá trình cắt hình dựa vào điểm trung tâm được liên kết và kích thước ảnh đầu ra, từ đó tính toán ra kích thước và vị trí vùng hình chữ nhật, rồi trích xuất vùng này từ ảnh đầu vào để tạo ảnh đầu ra.</p>
+
+<h2>4. Hướng dẫn sử dụng</h2>
+
+<ul>
+<li><h4>Thêm công cụ, liên kết ảnh đầu vào</h4></li>
+</ul>
+
+<p><img src="media/GcGetSliceImageTool_4_1.png" alt="GcGetSliceImageTool_4_1" /></p>
+
+<ul>
+<li><h4>Thiết lập kích thước ảnh đầu ra</h4></li>
+</ul>
+
+<p><img src="media/GcGetSliceImageTool_4_2.png" alt="GcGetSliceImageTool_4_2" /></p>
+
+<ul>
+<li><h4>Liên kết điểm trung tâm, ví dụ kết quả tìm hình tròn</h4></li>
+</ul>
+
+<p><img src="media/GcGetSliceImageTool_4_3.png" alt="GcGetSliceImageTool_4_3" /></p>
+
+<ul>
+<li><h4>Xem kết quả</h4></li>
+</ul>
+
+<p><img src="media/GcGetSliceImageTool_4_4.png" alt="GcGetSliceImageTool_4_4" /></p>
+
+<h2>5. Các vấn đề thường gặp</h2>
+
+<table>
+<thead>
+<tr>
+<th>Mô tả hiện tượng</th>
+<th>Phương pháp giải quyết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dữ liệu ảnh đầu ra trống ở thanh lỗi</td>
+<td>Kiểm tra chuỗi dữ liệu đã liên kết ảnh chưa, và dữ liệu ảnh có bình thường không</td>
+</tr>
+<tr>
+<td>Ảnh kết quả bất thường</td>
+<td>Kiểm tra chuỗi dữ liệu đã liên kết điểm trung tâm chưa; nếu đã liên kết, kiểm tra công cụ tạo điểm trung tâm có xuất đúng điểm hay không</td>
+</tr>
+<tr>
+<td>Thanh lỗi báo điểm trung tâm không hợp lệ, không được vượt quá ảnh</td>
+<td>Điểm trung tâm liên kết đã vượt ra ngoài phạm vi ảnh, kiểm tra có liên kết nhầm ảnh đầu ra không</td>
+</tr>
+</tbody>
+</table>
+
+<h2>6. Thông số</h2>
+
+<h4>Thông số đầu vào</h4>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ảnh đầu vào</td>
+<td>Ảnh sẽ bị cắt, được liên kết từ chuỗi dữ liệu.</td>
+</tr>
+<tr>
+<td>Ảnh đầu vào (RGB)</td>
+<td>Ảnh màu sẽ bị cắt, được liên kết từ chuỗi dữ liệu.</td>
+</tr>
+<tr>
+<td>Điểm trung tâm</td>
+<td>Điểm trung tâm của vùng hình chữ nhật cần cắt, được liên kết từ chuỗi dữ liệu.</td>
+</tr>
+<tr>
+<td>Kích thước ảnh đầu ra</td>
+<td>Chiều rộng và chiều cao của vùng hình chữ nhật cần cắt.</td>
+</tr>
+<tr>
+<td>Giá trị điền</td>
+<td>Khi ảnh đầu ra lớn hơn ảnh cần cắt, phần dư sẽ được điền bằng màu có giá trị số nhập vào, phạm vi giá trị là số nguyên từ 0-255.</td>
+</tr>
+<tr>
+<td>Cắt ảnh màu hay không</td>
+<td>Có: Cắt ảnh màu; Không: Cắt ảnh không màu.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Thông số đầu ra</h4>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ảnh đầu vào</td>
+<td>Kích thước ảnh đã cắt, để chuỗi dữ liệu sử dụng.</td>
+</tr>
+<tr>
+<td>Ảnh đầu vào (RGB)</td>
+<td>Ảnh màu đã cắt, để chuỗi dữ liệu sử dụng.</td>
+</tr>
+<tr>
+<td>Ảnh đầu ra</td>
+<td>Ảnh kết quả sau khi cắt.</td>
+</tr>
+<tr>
+<td>Ảnh đầu ra (RGB)</td>
+<td>Ảnh kết quả màu sau khi cắt.</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Kết quả chạy của công cụ.</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Thời gian chạy của công cụ.</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>​     参见“\Samples\切图工具.gvp”。</p>

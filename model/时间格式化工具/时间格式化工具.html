@@ -1,0 +1,160 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ định dạng thời gian</h1>
+
+<h2>Chức năng</h2>
+
+<p>Định dạng thời gian hệ thống hiện tại theo một mẫu định dạng nhất định.</p>
+
+<h2>Tham số</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Định dạng thời gian</td>
+<td>Nhập chuỗi định dạng thời gian được chỉ định.<img src="media/wps43.jpg" alt="img" /> </td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Dữ liệu chuỗi</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả định dạng</td>
+<td>Xuất kết quả thời gian đã được định dạng.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Dữ liệu chuỗi</td>
+<td>Kết quả định dạng</td>
+<td>Xuất kết quả thời gian định dạng để công cụ tiếp theo sử dụng, giống với tham số kết quả định dạng ở cửa sổ giám sát.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Giải thích chi tiết</h2>
+
+<h3>Định dạng thời gian</h3>
+
+<p>Chuỗi định dạng thời gian được chỉ định theo bảng 1 dưới đây.</p>
+
+<p>Bảng 1: Định dạng thời gian đầu vào được chỉ định</p>
+
+<table>
+<thead>
+<tr>
+<th>%a: Viết tắt ngày trong tuần, ví dụ Thu.</th>
+<th>%A: Viết đầy đủ ngày trong tuần, ví dụ Thursday.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%b: Viết tắt tháng, ví dụ Aug.</td>
+<td>%B: Viết đầy đủ tháng, ví dụ August.</td>
+</tr>
+<tr>
+<td>%c: Hiển thị ngày và giờ, ví dụ Thu Aug 23 14:55:02 2001.</td>
+<td>%D: Ngày trong tháng, 01-31.</td>
+</tr>
+<tr>
+<td>%H: Giờ theo 24h, 00-23.</td>
+<td>%j: Ngày trong năm, 001-366.</td>
+</tr>
+<tr>
+<td>%m: Tháng số thập phân, 01-12.</td>
+<td>%M: Phút, 00-59.</td>
+</tr>
+<tr>
+<td>%S: Giây, 00-61.</td>
+<td>%U: Số tuần, bắt đầu tuần đầu tiên từ Chủ Nhật, 00-53.</td>
+</tr>
+<tr>
+<td>%w: Số ngày trong tuần, Chủ Nhật là 0, 0-6.</td>
+<td>%W: Số tuần, bắt đầu tuần đầu tiên từ Thứ Hai, 00-53.</td>
+</tr>
+<tr>
+<td>%x: Hiển thị ngày, tháng/ngày/năm, ví dụ ngày 11/1/2017 sẽ là 01/11/17.</td>
+<td>%X: Hiển thị giờ, ví dụ 14:55:02.</td>
+</tr>
+<tr>
+<td>%y: Hai số cuối của năm, ví dụ 2017 sẽ là 17.</td>
+<td>%Y: Hiển thị năm đầy đủ, ví dụ 2017.</td>
+</tr>
+<tr>
+<td>%p: AM hoặc PM.</td>
+<td>%ms: Hiển thị mili giây, hiện chỉ hỗ trợ đặt ở cuối chuỗi.</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>注意</h2>
+
+<p>无</p>
+
+<h2>示例工程</h2>
+
+<p>参见“\Samples\TXT文本写入工具.gvp”。</p>

@@ -1,0 +1,145 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công Cụ Trích Xuất Đường Keo</h1>
+
+<h2>1. Tổng Quan Chức Năng</h2>
+
+<p>Trong quá trình phân đoạn đường keo, khi sự khác biệt màu sắc giữa mép keo và vùng trung tâm keo quá lớn, chỉ vùng trung tâm keo được trích xuất, dẫn đến kết quả phân đoạn không bao gồm vùng biên thực tế của đường keo, khiến kết quả bị lệch nhiều so với thực tế. Công cụ trích xuất đường keo giúp mép phân đoạn gần sát với biên thực tế hơn, từ đó nâng cao độ chính xác của kết quả.</p>
+
+<h2>2. Giải Thích Nguyên Lý</h2>
+
+<p>(1) Tính đạo hàm cho mỗi điểm ảnh của ảnh xám đầu vào để thu được ảnh gradient tương ứng; (2) Tính toán đường viền của ảnh nhị phân đầu vào và hướng của từng điểm trên đường viền, dựa trên độ dài đường tìm kiếm đã thiết lập để tạo đường tìm kiếm theo hướng từng điểm viền; (3) Dọc theo các đường tìm kiếm, xác định vị trí mở rộng của từng điểm viền trên ảnh gradient dựa trên các ngưỡng đạo hàm bậc nhất và bậc hai đã thiết lập; (4) Làm mượt và liên kết tập hợp điểm sau khi mở rộng, tạo thành ảnh đường keo mở rộng mới.</p>
+
+<p><img src="media/1.jpg" alt="1" /></p>
+
+<h2>3. Giải Thích Tham Số</h2>
+
+<h4>Tham Số Đầu Vào</h4>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ thuộc tính</td>
+<td>Có sử dụng ROI không</td>
+<td>Bật hoặc tắt ROI, nếu không thì trích xuất toàn bộ ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Vùng ROI</td>
+<td>Hiện tại chỉ hỗ trợ vùng ROI hình chữ nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hình chữ nhật ROI</td>
+<td>Vùng cụ thể của ROI hình chữ nhật</td>
+</tr>
+<tr>
+<td></td>
+<td>Khoảng cách mở rộng tối đa của điểm viền</td>
+<td>Khoảng cách mở rộng tối đa của điểm viền ra bên ngoài, phạm vi: [5, 1000], giá trị khuyến nghị: 60.</td>
+</tr>
+<tr>
+<td></td>
+<td>Bán kính kernel lọc trung vị</td>
+<td>Tham số bán kính kernel lọc trung vị, phạm vi: (1, 100], giá trị khuyến nghị: 20.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ngưỡng đạo hàm bậc hai Gaussian</td>
+<td>Ngưỡng đạo hàm bậc hai Gaussian trên ảnh, phạm vi: (0, 10], giá trị khuyến nghị: 0.5.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ngưỡng đạo hàm bậc nhất Gaussian</td>
+<td>Ngưỡng đạo hàm bậc nhất Gaussian trên ảnh, phạm vi: (0, 10], giá trị khuyến nghị: 0.4.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hệ số làm mượt đạo hàm ảnh</td>
+<td>Hệ số làm mượt khi tính đạo hàm ảnh, phạm vi: (0, 10], giá trị khuyến nghị: 3.</td>
+</tr>
+<tr>
+<td></td>
+<td>Bật tính toán song song</td>
+<td>Bật hoặc tắt tính toán song song. Nếu bật, thuật toán sử dụng OpenMP để tăng tốc độ tính toán nhưng có thể không ổn định về thời gian; nếu tắt, thuật toán không dùng OpenMP.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỷ lệ phần trăm số luồng</td>
+<td>Thiết lập tỷ lệ phần trăm số luồng sử dụng cho tính toán song song, phạm vi hợp lệ là (0, 0.75], tương ứng với 0% ~ 75%.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh đầu vào chưa được dán keo, chỉ hỗ trợ ảnh xám.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh nhị phân đường keo đầu vào</td>
+<td>Ảnh nhị phân sau khi dán keo và xử lý, chỉ hỗ trợ ảnh xám.</td>
+</tr>
+<tr>
+<td></td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>Kết quả biến đổi tuyến tính 2D từ công cụ định vị để áp dụng tương ứng lên vùng ROI.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham Số Đầu Ra</h4>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ảnh đầu ra</td>
+<td>Ảnh nhị phân đường keo sau khi xử lý</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Kết quả chạy của công cụ</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ</td>
+</tr>
+</tbody>
+</table>
+
+<h2>4. Hướng Dẫn Sử Dụng</h2>
+
+<p>Như hình bên dưới, khi sử dụng toàn ảnh, cần cấu hình hai chuỗi tham số: ảnh đầu vào và ảnh nhị phân đường keo đầu vào. Cả hai có thể lấy từ tệp ảnh hoặc cấu hình nguồn ảnh. Ảnh đầu vào cần là ảnh xám chưa dán keo, ảnh nhị phân đường keo đầu vào là ảnh tạo ra bằng cách lấy kênh B trừ kênh G trong ảnh RGB sau khi dán keo. Khi bật ROI, tham số biến đổi tuyến tính 2D cần liên kết với đầu ra biến đổi 2D của công cụ định vị hình học. Các tham số trong thanh thuộc tính có thể để mặc định.
+<img src="media/2.png" alt="2" /></p>
+
+
+<h2>5. 示例工程</h2>
+
+<p>参见“\Samples\胶路提取工具.gvp”。</p>
