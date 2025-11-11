@@ -21,11 +21,7 @@ Trang web tổng hợp các **hướng dẫn sử dụng phần mềm Vision Ass
 - 🌐 Tích hợp MES, ghi log và quản lý hình ảnh
 
 ---
-
-## 🛠 Công nghệ sử dụng
-- 🔹 Static Web Hosting bằng **GitHub Pages**
 - 🔹 Nội dung dịch từ bản gốc tiếng Trung sang tiếng Việt bởi Nguyễn Công Tùng do Luster Lightech cung cấp
-
 ---
 
 ## 🧑‍💻 Đối tượng phù hợp
