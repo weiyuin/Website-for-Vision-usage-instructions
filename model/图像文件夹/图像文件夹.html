@@ -16,150 +16,149 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>图像文件夹工具</h1>
+<h1>Công cụ thư mục hình ảnh</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>图像文件夹工具就是根据文件路径依次加载文件夹中的图片。</p>
+<p>Công cụ thư mục hình ảnh dùng để tải lần lượt các hình ảnh trong một thư mục theo đường dẫn tệp đã chỉ định.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                           </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口 </td>
-<td> 文件夹路径 </td>
-<td> 需要加载图片的文件夹。 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Đường dẫn thư mục</td>
+<td>Thư mục chứa các hình ảnh cần tải.</td>
 </tr>
 <tr>
-<td>  </td>
-<td> 开启过滤功能 </td>
-<td> 开发过滤功能会以过滤条件的正则表达式对文件筛选。 </td>
+<td></td>
+<td>Bật chức năng lọc</td>
+<td>Khi bật, công cụ sẽ sử dụng biểu thức chính quy trong điều kiện lọc để chọn tệp phù hợp.</td>
 </tr>
 <tr>
-<td>  </td>
-<td> 过滤条件 </td>
-<td> 用于过滤的正则表达式。 </td>
+<td></td>
+<td>Điều kiện lọc</td>
+<td>Biểu thức chính quy được dùng để lọc các tệp hình ảnh.</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无 </td>
-<td> 无                                 </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Không</td>
+<td>Không có tham số.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 无  </td>
-<td> 无                                 </td>
+<td>Chuỗi dữ liệu</td>
+<td>Không</td>
+<td>Không có tham số.</td>
 </tr>
 <tr>
-<td> 高级界面 </td>
-<td> 无   </td>
-<td> 无                                 </td>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không có tham số.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                         </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口     </td>
-<td> 输出图像                                                     </td>
-<td> 灰度图像输出，包括图像长宽和像素大小。             </td>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh xám đầu ra, bao gồm chiều dài, chiều rộng và kích thước điểm ảnh.</td>
 </tr>
 <tr>
 <td></td>
-<td> 输出图像RGB  </td>
-<td> 彩色图像输出，包括图像长宽和像素大小。                                                                           </td>
+<td>Ảnh đầu ra RGB</td>
+<td>Ảnh màu đầu ra, bao gồm chiều dài, chiều rộng và kích thước điểm ảnh.</td>
 </tr>
 <tr>
 <td></td>
-<td> 输出深度图像 </td>
-<td> 深度图像输出，包括图像长宽和像素大小。（可以右键查看3D效果）                                                     </td>
+<td>Ảnh đầu ra độ sâu</td>
+<td>Ảnh độ sâu đầu ra, bao gồm chiều dài, chiều rộng và kích thước điểm ảnh (có thể nhấp chuột phải để xem hiệu ứng 3D).</td>
 </tr>
 <tr>
 <td></td>
-<td> 输出轮廓图像 </td>
-<td> 轮廓图像输出，包括轮廓总点数和有效点数。                                                                         </td>
+<td>Ảnh đầu ra đường viền</td>
+<td>Ảnh đường viền đầu ra, bao gồm tổng số điểm và số điểm hợp lệ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 当前文件     </td>
-<td> 当前图片的路径文件名。                                                                                           </td>
+<td>Tệp hiện tại</td>
+<td>Tên tệp và đường dẫn của hình ảnh hiện tại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 当前文件名称 </td>
-<td> 当前图片的名称。                                                                                                 </td>
+<td>Tên tệp hiện tại</td>
+<td>Tên của hình ảnh hiện tại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 遍历到达末尾 </td>
-<td> 是否遍历到文件末尾。                                                                                             </td>
+<td>Đã duyệt đến cuối</td>
+<td>Chỉ ra liệu quá trình duyệt đã đến cuối danh sách tệp hay chưa.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果     </td>
-<td> 工具执行结果。                                                                                                   </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间     </td>
-<td> 工具执行时间。                                                                                                   </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ hoàn thành quá trình thực thi.</td>
 </tr>
 <tr>
-<td> 图像窗口     </td>
-<td> 输出图像                                                     </td>
-<td> 显示路径加载的图像。                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果     </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                     </td>
-</tr>
-<tr>
-<td> 数据链       </td>
-<td> 输出图像                                                     </td>
-<td> 输出灰度图像或者彩色图像或者深度图像或者轮廓图像。 </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Hiển thị hình ảnh được tải từ đường dẫn.</td>
 </tr>
 <tr>
 <td></td>
-<td> 输出图像RGB  </td>
-<td> 彩色图像输出，包括图像长宽和像素大小。                                                                           </td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ. Khi thành công hiển thị “OK”, khi thất bại hiển thị “NG”, giống với tham số “Kết quả thực thi” trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Xuất ra ảnh xám, ảnh màu, ảnh độ sâu hoặc ảnh đường viền.</td>
 </tr>
 <tr>
 <td></td>
-<td> 遍历到达末尾  </td>
-<td> 文件夹中的文件是否遍历到末尾                                                                           </td>
+<td>Ảnh đầu ra RGB</td>
+<td>Ảnh màu đầu ra, bao gồm chiều dài, chiều rộng và kích thước điểm ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Đã duyệt đến cuối</td>
+<td>Chỉ ra xem thư mục hình ảnh đã được duyệt đến cuối hay chưa.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Giải thích chi tiết</h2>
 
-<h2>详细说明</h2>
+<p>Không có.</p>
 
-<p>无。</p>
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
 
-<p>无。</p>
-
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
 <p>参见“\Samples\图像源配置工具.gvp”。</p>

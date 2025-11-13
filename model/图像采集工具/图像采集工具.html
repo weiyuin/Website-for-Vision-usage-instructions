@@ -16,131 +16,128 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>图像采集工具</h1>
+<h1>Công cụ thu nhận hình ảnh</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Giới thiệu chức năng</h2>
 
-<p>用于与之相连的相机采集图像，如果连接多台相机的话，可以选择相应的相机名称（序列号）进行采集图像。</p>
+<p>Dùng để thu nhận hình ảnh từ camera được kết nối. Nếu có nhiều camera kết nối, có thể chọn tên (hoặc số sê-ri) của camera tương ứng để lấy ảnh.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>需要实时获取图像内容或者根据需要动态获取图像内容的场景。</p>
+<p>Được sử dụng trong các tình huống cần lấy hình ảnh theo thời gian thực hoặc lấy hình ảnh một cách linh hoạt khi cần.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên lý hoạt động</h2>
 
-<p>连接好相机，可以设置帧率、曝光、增益、Gamma等参数使用内触发或者硬触发的方式采集图像，当出现采集不稳定的时候可以通过防呆重新采集等。</p>
+<p>Sau khi kết nối camera, có thể thiết lập các tham số như tốc độ khung hình (frame rate), thời gian phơi sáng (exposure), độ khuếch đại (gain), Gamma, v.v… và sử dụng chế độ kích hoạt nội bộ hoặc kích hoạt phần cứng để thu nhận hình ảnh. Khi quá trình thu nhận không ổn định, có thể sử dụng chức năng “chống lỗi” để thu lại.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像</h4></li>
+<li><h4>Thêm công cụ, tải hình ảnh</h4></li>
 </ul>
-
 
 <p><img src="media/GcImageFromCamera_4_1.png" alt="GcImageFromCamera_4_1" /></p>
 
-<p>把图像采集工具放到工程中，点相机名称下拉框可以选择在线的相机，此时会看到使用独立参数的选项，如果获取图像时需要的增益、曝光、Gamma和相机参数不同时可以选择为“是”，如果使用参数获取的效果不大时建议使用独立参数设置为否；<strong>如果现场相机连接不稳定可以把“是否开启采集防呆”设置为“是”，如果现场相机稳定可以选择“否”。</strong></p>
+<p>Thêm công cụ thu nhận hình ảnh vào dự án, nhấp vào danh sách thả xuống ở mục tên camera để chọn camera đang trực tuyến. Lúc này sẽ xuất hiện tùy chọn “sử dụng tham số độc lập”. Nếu trong quá trình lấy hình ảnh, cần các tham số gain, exposure, Gamma và tham số camera khác nhau thì chọn “Có”. Nếu việc tùy chỉnh tham số không tạo khác biệt đáng kể, nên chọn “Không”.  
+<strong>Nếu kết nối camera tại hiện trường không ổn định, hãy bật “Chống lỗi thu nhận” bằng cách chọn “Có”. Nếu kết nối ổn định, có thể chọn “Không”.</strong></p>
 
-<h2>5. 常见问题</h2>
-
-<table>
-<thead>
-<tr>
-<th> 现象描述                                                     </th>
-<th> 解决方法                       </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 相机成像异常，出现黑条纹；采集执行失败、软件崩溃（相机模块）、识别不到相机、帧率达不到标准、图像采集工具卡住、硬触发采图出现黑图串图等现象； </td>
-<td> FAQ                            </td>
-</tr>
-<tr>
-<td> 采集不稳定掉线                                               </td>
-<td> 1、检查相机连接；2、开启防呆； </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>6. 参数说明</h2>
-
-<h4>输入参数</h4>
+<h2>5. Các vấn đề thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数说明                                                     </th>
+<th>Mô tả hiện tượng</th>
+<th>Giải pháp</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 相机名称             </td>
-<td> 采集图像的相机的名称，又称序列号。                           </td>
+<td>Hình ảnh camera bị lỗi, xuất hiện sọc đen; quá trình thu nhận thất bại, phần mềm (mô-đun camera) bị treo; không nhận được camera; tốc độ khung hình không đạt tiêu chuẩn; công cụ thu nhận bị đơ; kích hoạt phần cứng cho kết quả ảnh đen hoặc nhiễu hình, v.v…</td>
+<td>Xem phần FAQ</td>
 </tr>
 <tr>
-<td> <strong>是否使用独立参数</strong> </td>
-<td> <strong>如果不使用独立参数，会按照相机初始的参数进行图像采集，选是的话，需要手动设置增益和曝光时间。</strong> </td>
-</tr>
-<tr>
-<td> 增益                 </td>
-<td> 使用独立参数时，相机的增益，单位为分贝（dB）。               </td>
-</tr>
-<tr>
-<td> 曝光                 </td>
-<td> 使用独立参数时，相机的曝光时间，单位为毫秒。                 </td>
-</tr>
-<tr>
-<td> Gamma                </td>
-<td> 对比度调整。                                                 </td>
-</tr>
-<tr>
-<td> 是否开启防呆         </td>
-<td> 相机不稳定相机模式和相机状态的设置。                         </td>
-</tr>
-<tr>
-<td> 防呆次数             </td>
-<td> 相机不稳定时，纠正连接问题的次数，默认设置为3。              </td>
-</tr>
-<tr>
-<td> 采集等待时间         </td>
-<td> -1为一直等待，大于-1为等待的时间，单位为毫秒。               </td>
+<td>Thu nhận không ổn định, bị mất kết nối</td>
+<td>1. Kiểm tra kết nối camera; 2. Bật chức năng chống lỗi.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>6. Giải thích tham số</h2>
 
-<h4>输出参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称   </th>
-<th> 参数说明               </th>
+<th>Tên tham số</th>
+<th>Giải thích</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 图像数据   </td>
-<td> 图像的长宽和像素大小。 </td>
+<td>Tên camera</td>
+<td>Tên của camera thu nhận hình ảnh, còn gọi là số sê-ri.</td>
 </tr>
 <tr>
-<td> 执行结果   </td>
-<td> 工具执行结果。         </td>
+<td><strong>Có sử dụng tham số độc lập hay không</strong></td>
+<td><strong>Nếu không sử dụng tham số độc lập, hệ thống sẽ lấy ảnh theo tham số mặc định ban đầu của camera. Nếu chọn “Có”, cần thiết lập thủ công gain và thời gian phơi sáng.</strong></td>
 </tr>
 <tr>
-<td> 执行时间   </td>
-<td> 工具执行时间。         </td>
+<td>Độ khuếch đại (Gain)</td>
+<td>Khi sử dụng tham số độc lập, đây là độ khuếch đại của camera, đơn vị dB (decibel).</td>
 </tr>
 <tr>
-<td> 输出的图像 </td>
-<td> 采集到的图像。         </td>
+<td>Phơi sáng (Exposure)</td>
+<td>Khi sử dụng tham số độc lập, đây là thời gian phơi sáng của camera, đơn vị mili giây (ms).</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>Dùng để điều chỉnh độ tương phản hình ảnh.</td>
+</tr>
+<tr>
+<td>Bật chức năng chống lỗi</td>
+<td>Thiết lập trạng thái và chế độ của camera trong trường hợp hoạt động không ổn định.</td>
+</tr>
+<tr>
+<td>Số lần chống lỗi</td>
+<td>Số lần thử khắc phục kết nối camera khi không ổn định, mặc định là 3 lần.</td>
+</tr>
+<tr>
+<td>Thời gian chờ thu nhận</td>
+<td>Giá trị -1 nghĩa là chờ vô thời hạn; nếu lớn hơn -1, đó là thời gian chờ (đơn vị: mili giây).</td>
 </tr>
 </tbody>
 </table>
 
+<h4>Tham số đầu ra</h4>
 
-<h2>7. 示例工程</h2>
+<table>
+<thead>
+<tr>
+<th>Tên tham số</th>
+<th>Giải thích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dữ liệu hình ảnh</td>
+<td>Gồm kích thước và độ phân giải của hình ảnh.</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Kết quả chạy của công cụ.</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ hoàn thành tác vụ.</td>
+</tr>
+<tr>
+<td>Hình ảnh đầu ra</td>
+<td>Hình ảnh đã được thu nhận.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>7. Dự án mẫu</h2>
 
 <p>参见“\Samples\图像源配置工具.gvp”。</p>
