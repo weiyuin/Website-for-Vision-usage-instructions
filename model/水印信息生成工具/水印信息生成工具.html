@@ -16,270 +16,272 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>水印信息生成工具</h1>
+<h1>Công Cụ Tạo Thông Tin Watermark</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng Quan Chức Năng</h2>
 
-<p>水印信息生成工具主要用户Apple体系中，满足客户对图片增加水印信息的需求。所谓的水印信息，是追加在图片数据之后的一段信息，内容包括了采集这幅图像时使用的一些基础信息，如项目名称、时间、SN、曝光、增益等，后面会有更加详细的介绍。</p>
+<p>Công cụ tạo thông tin watermark chủ yếu được dùng trong hệ thống Apple, nhằm đáp ứng nhu cầu của khách hàng về việc thêm thông tin watermark vào hình ảnh. Watermark là một đoạn thông tin được gắn thêm phía sau dữ liệu ảnh, bao gồm các thông tin cơ bản khi thu nhận hình ảnh như tên dự án, thời gian, SN, phơi sáng, độ lợi… Các phần sau sẽ giới thiệu chi tiết hơn.</p>
 
-<p>追加的图片数据之后的水印信息是不可见的，即用户无论使用第三方看图软件，还是使用VA的图像文件工具进行加载，看到的图像信息和原始信息没有任何差异，只有使用特殊的方法才能看到追加的信息，从而保证了图片本身的完整性和正确性。</p>
+<p>Thông tin watermark được gắn thêm sau dữ liệu ảnh là không thể nhìn thấy. Dù người dùng dùng phần mềm xem ảnh của bên thứ ba hay công cụ xử lý ảnh của VA để tải ảnh, hình ảnh hiển thị vẫn giống hệt ảnh gốc. Chỉ khi dùng phương pháp đặc biệt mới xem được phần thông tin bổ sung này, từ đó đảm bảo tính toàn vẹn và chính xác của hình ảnh.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Các Trường Hợp Ứng Dụng</h2>
 
-<p>在Apple体系中比较明显，用户经常会要求我们将图片的基础信息和图片关联起来，而我们通常使用的手段是将这些信息添加到图片的名称中，从而导致图片的名称很长，如“20230511_171601390_DTV2425F95J1CWWAC+F6_TW_VFBP_V1.1_0.05ms_CCD4_CAP”就是一个典型的图片命名方式。</p>
+<p>Trong hệ thống Apple, khách hàng thường yêu cầu liên kết thông tin cơ bản của ảnh với chính ảnh đó. Thông thường, chúng ta thêm các thông tin này vào tên file, dẫn đến tên ảnh rất dài, ví dụ: “20230511_171601390_DTV2425F95J1CWWAC+F6_TW_VFBP_V1.1_0.05ms_CCD4_CAP” là một kiểu tên điển hình.</p>
 
-<p>而且往往在VA工程中甚至无法获取获取图像时的曝光、增益等参数，如当相机使用非独立参数时，用户无法拿到采集图像时相机管理中的参数。所以我们增加专门的水印生成工具，帮助用户链接一些工程中常使用的工具参数，来快速生成一个完整的水印信息。</p>
+<p>Hơn nữa, trong các dự án VA, đôi khi không thể lấy được các tham số như phơi sáng, độ lợi khi chụp ảnh. Ví dụ, khi camera dùng tham số không độc lập, người dùng không thể lấy được các tham số trong phần quản lý camera tại thời điểm chụp. Vì vậy, chúng tôi tạo ra công cụ tạo watermark chuyên dụng để giúp người dùng liên kết các tham số thường dùng trong dự án, từ đó nhanh chóng tạo ra một thông tin watermark hoàn chỉnh.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải Thích Nguyên Lý</h2>
 
-<h3>解析原理</h3>
+<h3>Nguyên Lý Phân Tích</h3>
 
-<p>图1是Apple客户给定的固定格式的水印数据，而且由于当前只有Apple客户对图片增加水印提出了明确的要求，所以我们的水印生成工具是严格按照Apple格式来进行生成的，后续当其它大客户有类似于增加水印数据的要求时，可以优先沟通介绍这一格式。下面对水印中的各个参数做进一步的说明。</p>
+<p>Hình 1 là định dạng watermark cố định do khách hàng Apple cung cấp. Do hiện tại chỉ có Apple đưa ra yêu cầu rõ ràng về thêm dữ liệu watermark vào ảnh, công cụ của chúng tôi tuân thủ nghiêm ngặt theo định dạng của Apple. Khi các khách hàng lớn khác có yêu cầu tương tự trong tương lai, định dạng này có thể được ưu tiên giới thiệu. Dưới đây là giải thích chi tiết về từng tham số trong watermark.</p>
 
 <p><img src="media/GvCreateWaterMarkTool_3_1.png" alt="img" /></p>
 
-<p><imgnote>图1 Apple Matedata内容示意图</imgnote></p>
+<p><imgnote>Hình 1: Minh họa nội dung Metadata của Apple</imgnote></p>
 
 <p><strong>Version</strong></p>
 
-<p>视觉版本号，用于标识当前视觉软件所使用的版本。苹果客户所谓的视觉版本，类似于从项目初期使用的版本定义为0001，后续每次升级则向上递增至0002、0003等。由于当前我们VA中使用的版本号如6.3.225.0041没有办法很好的和客户的概念进行统一，所以这一参数在水印信息中始终为0001。</p>
+<p>Phiên bản thị giác, dùng để đánh dấu phiên bản phần mềm thị giác hiện đang sử dụng. Phiên bản thị giác theo định nghĩa của Apple: phiên bản dùng từ đầu dự án là 0001, mỗi lần nâng cấp sẽ tăng lên 0002, 0003… Do phiên bản VA của chúng ta (ví dụ 6.3.225.0041) không thể đồng nhất với khái niệm của khách hàng, nên tham số này trong watermark luôn là 0001.</p>
 
-<p><strong>Data + Time</strong></p>
+<p><strong>Date + Time</strong></p>
 
-<p>图片的生成日期，Data为年月日，Time为时分秒毫秒。</p>
+<p>Ngày giờ tạo ảnh. Date là năm-tháng-ngày; Time là giờ-phút-giây-mili giây.</p>
 
 <p><strong>Vision Vendor</strong></p>
 
-<p>视觉供应商，对于我们的水印信息来说，这一参数始终为Luster。</p>
+<p>Nhà cung cấp thị giác. Đối với watermark của chúng ta, tham số này luôn là Luster.</p>
 
 <p><strong>Station ID</strong></p>
 
-<p>工作站 ID 是站点标识符，其内容通常能很好的用于识别特定机器在特定生产线上的特定位置。工作站 ID 字符串由机器控制应用程序（通常是上位机）在与客户终端服务器的建立TCP/IP连接后，通过固定的指令“ghi_station”进行查询并得到的结果。如下示例简单的表示出如何获取当前工站的ID：
-Command to Bali: “ghi_station\n”
-Response from Bai: “ok@{FXZZ-B11-0XXX-XXX0-XXX-XX}@\n”</p>
+<p>Station ID là mã nhận diện trạm, dùng để xác định vị trí cụ thể của máy trong dây chuyền sản xuất. Chuỗi Station ID được trả về bởi ứng dụng điều khiển máy (thường là máy tính chủ) sau khi thiết lập kết nối TCP/IP với server của khách hàng thông qua lệnh cố định “ghi_station”.  
+Ví dụ lấy ID trạm:  
+Command to Bali: “ghi_station\n”  
+Response from Bali: “ok@{FXZZ-B11-0XXX-XXX0-XXX-XX}@\n”</p>
 
 <p><strong>Nick Name</strong></p>
 
-<p>简称是载具的通用名称（例如，“RCAM”、“AAA”、“CGS”等），这一信息通常在项目初期能够比较快速的从终端客户或者设备商那里拿到，且整个项目期间不会发生变化。</p>
+<p>Tên viết tắt là tên gọi chung của jig/fixture (ví dụ: “RCAM”, “AAA”, “CGS”…). Thông tin này thường có thể lấy được nhanh chóng từ khách hàng hoặc nhà sản xuất thiết bị ở đầu dự án và thường không thay đổi trong suốt quá trình.</p>
 
 <p><strong>DUT Serial Number</strong></p>
 
-<p>我们通常简称的SN，即这一参数表示当前图像中产品的SN信息，可以为空。</p>
+<p>Thường gọi tắt là SN. Tham số này biểu thị số SN của sản phẩm trong ảnh và có thể để trống.</p>
 
 <p><strong>Process Command</strong></p>
 
-<p>触发指令，即触发采集当前图像时的上位机指令，在实际使用过程中建议关联这一信息，可以方便后续的问题排查，可以为空。</p>
+<p>Lệnh kích hoạt, tức lệnh của máy tính chủ dùng để kích hoạt chụp ảnh. Trong quá trình sử dụng thực tế, nên liên kết tham số này để thuận tiện cho việc truy vết lỗi về sau. Có thể để trống.</p>
 
 <p><strong>Camera Number</strong></p>
 
-<p>相机标号，这一信息和我们通常的理解有所差异。苹果客户要求水印中的Camera Number为纯数字，是第N个相机的概念。所以我们采取的方法是根据采集图像的相机名称去相机管理中进行对比，查看其在相机管理列表中位于第几个，并将其顺序作为Camera Number。</p>
+<p>Số thứ tự camera, khác với khái niệm thường dùng. Apple yêu cầu Camera Number phải là số thuần, biểu thị camera thứ N. Vì vậy, chúng tôi so sánh tên camera dùng để chụp ảnh với danh sách camera trong phần quản lý camera, xác định vị trí của nó và dùng vị trí này làm Camera Number.</p>
 
 <p><strong>X Pixel Size + Y Pixel Size</strong></p>
 
-<p>传统意义上的像素当量，标识这一图像所对应的相机完成标定后，标定结果中的像素当量结果。</p>
+<p>Pixel tương đương theo nghĩa truyền thống, biểu thị giá trị pixel tương đương lấy từ kết quả hiệu chuẩn của camera dùng cho ảnh này.</p>
 
 <p><strong>Camera Gain + Camera Exposure</strong></p>
 
-<p>相机的增益和曝光，标识采集此图像时相机所使用的增益和曝光值。</p>
+<p>Độ lợi và phơi sáng của camera khi chụp ảnh này.</p>
 
 <p><strong># of Light Setting</strong></p>
 
-<p>光源数量，即采集当前图像时，用到的光源数量是多少</p>
+<p>Số lượng nguồn sáng được sử dụng khi chụp ảnh.</p>
 
 <p><strong>Light Setting1&hellip;</strong></p>
 
-<p>光源控制指令，和前面的光源数量对应，有多少个光源，就会有多少条光源控制指令。其格式为L01_C01_I255，其中L后面的N表示当前用的是第几个光源控制器，C后面的N表示使用的是哪一个通道，I后面的N表示当前通道的亮度。</p>
+<p>Lệnh điều khiển nguồn sáng, tương ứng với số lượng nguồn sáng. Có bao nhiêu nguồn sáng thì có bấy nhiêu dòng lệnh. Định dạng: L01_C01_I255, trong đó N sau L là số controller, N sau C là số kênh, N sau I là độ sáng của kênh.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng Dẫn Sử Dụng</h2>
 
-<p>工具执行流程：链接参数→工具执行→生成水印信息数据。下面来重点介绍如果通过当前工具所链接的参数来生成用户需要的水印数据。</p>
+<p>Quy trình công cụ: liên kết tham số → thực thi công cụ → tạo dữ liệu watermark. Phần dưới sẽ giới thiệu trọng tâm cách tạo watermark dựa trên các tham số đã liên kết.</p>
 
-<h3>参数链链接</h3>
+<h3>Liên Kết Chuỗi Tham Số</h3>
 
-<p>工具的属性栏如图2所示，下面介绍用户如何进行使用。</p>
+<p>Thanh thuộc tính của công cụ được thể hiện ở Hình 2. Nội dung sau sẽ giới thiệu cách người dùng thao tác.</p>
 
 <p><img src="media/GvCreateWaterMarkTool_4_3.png" alt="img" /></p>
 
-<p><imgnote>图2 工具属性栏示意图</imgnote></p>
+<p><imgnote>Hình 2 Minh họa thanh thuộc tính của công cụ</imgnote></p>
 
-<p><strong>光源控制器数量、控制器N编号</strong></p>
+<p><strong>Số lượng bộ điều khiển ánh sáng, số hiệu bộ điều khiển N</strong></p>
 
-<p>由于一个机台上可能使用了多个光源控制器，而且一幅图像采集时，可能有多个光源，而光源可能连接在不同的光源控制器上。基于上述描述，仅靠光源指令无法判断其所属的光源控制器编号，所以需要用户手动输入这些信息。光源控制器数量表示当前图像采集时使用了几个光源控制器，支持的范围为[1, 4]，当用户输入数量后，下面会出现对应数量的控制器编号属性，用户需要为每个控制器输入编号，编号范围为[1, 4]。不同的光源控制器编号之间不互斥，以上图为例，用户可以将控制1和控制器2的编号均设为1。</p>
+<p>Do một máy có thể sử dụng nhiều bộ điều khiển ánh sáng, và khi chụp một ảnh, có thể dùng nhiều nguồn sáng khác nhau, trong đó các nguồn sáng có thể được kết nối vào các bộ điều khiển khác nhau. Vì vậy, chỉ dựa vào lệnh điều khiển ánh sáng thì không thể xác định được nguồn sáng thuộc bộ điều khiển nào, nên người dùng cần nhập thủ công thông tin này. “Số lượng bộ điều khiển ánh sáng” biểu thị số bộ điều khiển được dùng để chụp ảnh hiện tại, phạm vi hỗ trợ là [1, 4]. Sau khi người dùng nhập số lượng, bên dưới sẽ xuất hiện số lượng trường tương ứng để nhập số hiệu các bộ điều khiển, với phạm vi [1, 4]. Các số hiệu bộ điều khiển không bắt buộc phải khác nhau. Như ví dụ trong hình, người dùng có thể đặt số hiệu của bộ điều khiển 1 và bộ điều khiển 2 đều là 1.</p>
 
-<p>之所以要设置控制器编号，是因为在使用时，假设某幅图像采集时仅使用了1个光源控制器，但是使用的是2号光源控制器，此时光源控制器数量需要设置为1，控制器1编号设为2。</p>
+<p>Lý do cần đặt số hiệu bộ điều khiển là vì trong thực tế, nếu ảnh chỉ sử dụng 1 bộ điều khiển ánh sáng nhưng đó là bộ điều khiển số 2, thì số lượng bộ điều khiển cần đặt là 1 và số hiệu bộ điều khiển 1 phải đặt là 2.</p>
 
-<h3>参数链链接</h3>
+<h3>Liên Kết Chuỗi Tham Số</h3>
 
-<p>工具的参数链如图3所示，下面介绍用户如何进行使用。</p>
+<p>Chuỗi tham số của công cụ như Hình 3, nội dung dưới đây giải thích cách người dùng thao tác.</p>
 
 <p><img src="media/GvCreateWaterMarkTool_4_1.png" alt="img" /></p>
 
-<p><imgnote>图3 工具参数链示意图</imgnote></p>
+<p><imgnote>Hình 3 Minh họa chuỗi tham số của công cụ</imgnote></p>
 
-<p><strong>工站ID</strong></p>
+<p><strong>工站ID (Station ID)</strong></p>
 
-<p>即客户要求的Station ID，具体含义见上一章节，类型为string，通常是将这一信息保存在VA的全局变量中，解决方案内所有的水印生成工具均链接这一参数。</p>
+<p>Chính là Station ID khách hàng yêu cầu. Ý nghĩa cụ thể đã được giải thích ở phần trước, kiểu dữ liệu là string. Thông tin này thường được lưu trong biến toàn cục của VA và tất cả các công cụ tạo watermark trong giải pháp đều liên kết tham số này.</p>
 
-<p><strong>产品简称</strong></p>
+<p><strong>产品简称 (Nickname)</strong></p>
 
-<p>即客户要求的Nickname，具体含义见上一章节，类型为string，通常是将这一信息保存在VA的全局变量中，解决方案内所有的水印生成工具均链接这一参数。</p>
+<p>Chính là Nickname khách hàng yêu cầu. Ý nghĩa cụ thể xem phần trước, kiểu string, thường được lưu trong biến toàn cục VA và được liên kết bởi tất cả công cụ tạo watermark trong giải pháp.</p>
 
-<p><strong>产品SN</strong></p>
+<p><strong>产品SN (DUT Serial Number)</strong></p>
 
-<p>即客户要求的DUT Serial Number，具体含义见上一章节，类型为string，一般通过通信发送工具由上位机发送过来，当不存在时，可以不链接。</p>
+<p>Chính là DUT Serial Number do khách hàng yêu cầu, ý nghĩa xem phần trước, kiểu string. Thường được gửi từ máy tính chủ thông qua công cụ truyền thông; nếu không có thì có thể không liên kết.</p>
 
-<p><strong>触发指令</strong></p>
+<p><strong>触发指令 (Process Command)</strong></p>
 
-<p>即客户要求的Process Command，具体含义见上一章节，类型为string，一般通过通信发送工具由上位机发送过来，当不存在时，可以不链接。</p>
+<p>Chính là Process Command khách hàng yêu cầu. Ý nghĩa xem phần trước, kiểu string. Thường được gửi từ máy tính chủ thông qua công cụ truyền thông; nếu không có thì có thể không liên kết.</p>
 
-<p><strong>采集参数</strong></p>
+<p><strong>采集参数 (Tham số thu nhận ảnh)</strong></p>
 
-<p>内容包含相机名称、曝光、增益、Gamma值等，由参数链链接图像采集工具或图像源工具中对应的输出结果，并在工具内部自动解析出内部的数据，分别用户填充Camera Number、Camera Gain、Camera Exposure参数。</p>
+<p>Bao gồm tên camera, phơi sáng, độ lợi, giá trị Gamma… Chuỗi tham số được liên kết từ công cụ chụp ảnh hoặc nguồn ảnh. Công cụ sẽ tự động phân tích các giá trị này để điền Camera Number, Camera Gain, Camera Exposure.</p>
 
-<p><strong>X/Y像素当量</strong></p>
+<p><strong>X/Y 像素当量 (Pixel tương đương X/Y)</strong></p>
 
-<p>用户链接工程中的标定结果中的像素当量值，此数值可能来源于常见的标定工具，如标准标定计算工具、运动标定工具、激光关联标定工具、靶标相机标定工具等。</p>
+<p>Người dùng liên kết giá trị pixel tương đương lấy từ kết quả hiệu chuẩn trong dự án. Giá trị này có thể lấy từ các công cụ thường dùng như: công cụ hiệu chuẩn tiêu chuẩn, hiệu chuẩn chuyển động, hiệu chuẩn liên kết laser, hiệu chuẩn camera–target…</p>
 
-<p><strong>光源指令N</strong></p>
+<p><strong>光源指令N (Lệnh điều khiển nguồn sáng N)</strong></p>
 
-<p>一般关联通信发送工具的“指令格式”参数，参数链的数量和用户在属性栏设置的光源控制器数量相等。如上图所示，表示采集水印相关联的图像时，用到了两个光源控制器，用户需要为光源指令1和光源指令2关联控制这两个控制器时的指令内容。</p>
+<p>Thường liên kết với tham số “định dạng lệnh” của công cụ truyền thông. Số lượng chuỗi tham số bằng với số lượng bộ điều khiển ánh sáng mà người dùng đã thiết lập ở thanh thuộc tính. Như ví dụ trong hình, để chụp ảnh phục vụ watermark cần dùng 2 bộ điều khiển ánh sáng, nên người dùng cần liên kết nội dung lệnh tương ứng cho “Lệnh ánh sáng 1” và “Lệnh ánh sáng 2”.</p>
 
-<h3>结果输出</h3>
+<h3>Kết Quả Đầu Ra</h3>
 
-<p>图3是水印信息生成工具的结果输出，其中最关键的结果就是“水印信息”，用户后续可以将此参数传给图像保存工具或屏幕截图工具的水印参数链中。</p>
+<p>Hình 3 là danh sách kết quả đầu ra của công cụ tạo watermark, trong đó quan trọng nhất là “Thông tin Watermark”. Người dùng có thể truyền tham số này vào tham số watermark của công cụ lưu ảnh hoặc công cụ chụp màn hình.</p>
 
 <p><img src="media/GvCreateWaterMarkTool_4_2.png" alt="img" /></p>
 
-<p><imgnote>图3 输出参数列表</imgnote></p>
+<p><imgnote>Hình 3 Danh sách tham số đầu ra</imgnote></p>
 
-<h2>5. 常见问题</h2>
 
-<h3>注意事项</h3>
+<h2>5. Các vấn đề thường gặp</h2>
+
+<h3>Lưu ý</h3>
 
 <table>
 <thead>
 <tr>
-<th> 注意事项                                                     </th>
+<th> Lưu ý                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 1. 需要用户自行链接的string类型的4个参数：工站ID、产品简称、产品SN、触发指令，当其内部含有英文格式的逗号(,)时，工具内部会自动将其替换为中间段横杠(-)。因为英文格式逗号是水印信息中不同信息之间的分隔符，当其它信息中也包含逗号时，会影响信息的整体排布。 </td>
+<td> 1. Với 4 tham số kiểu string cần người dùng tự liên kết: ID công trạm, Tên viết tắt sản phẩm, SN sản phẩm, Lệnh trigger — khi bên trong chúng có dấu phẩy tiếng Anh ( , ), công cụ sẽ tự động thay bằng dấu gạch ngang (-). Vì dấu phẩy tiếng Anh được dùng làm ký tự phân tách các mục trong thông tin watermark, nên nếu các thông tin khác cũng chứa dấu phẩy sẽ ảnh hưởng đến bố cục tổng thể. </td>
 </tr>
 <tr>
-<td> 2. 第三章节中，每个信息项第三列中“Required”一项为“Always”时，表示此结果为必选项，对应到我们的参数链中，采集参数、光源指令、标定结果为必填项，其余参数为可选项。 </td>
+<td> 2. Ở chương 3, trong cột thứ ba của mỗi mục thông tin, mục “Required” nếu là “Always” nghĩa là bắt buộc. Tương ứng trong chuỗi tham số của công cụ, tham số thu thập, lệnh ánh sáng, và kết quả hiệu chuẩn là bắt buộc; các tham số khác là tùy chọn. </td>
 </tr>
 <tr>
-<td> 3. 客户要求水印信息中包含所有数据，所以当可选项未被链接时，在水印中表现为空字符串，即会出现两个相邻的逗号的现象，此为正确的结果。 </td>
+<td> 3. Khách hàng yêu cầu thông tin watermark phải chứa toàn bộ dữ liệu, nên khi các mục tùy chọn không được liên kết thì chúng sẽ hiển thị như chuỗi rỗng trong watermark, dẫn đến việc xuất hiện hai dấu phẩy liền nhau — đây là hiện tượng bình thường. </td>
 </tr>
 <tr>
-<td> 4.当必选项未被正确链接时，其内容仍会出现在水印中。对应到采集参数中，当其未被正确链接时，水印中表示Camera Number、Camera Gain、Camera Exposure值均为0；对应到光源指令，当其未被正确链接时，水印中表示of Light Settings的值为0。 </td>
+<td> 4. Khi các mục bắt buộc chưa được liên kết đúng, nội dung của chúng vẫn sẽ xuất hiện trong watermark. Với tham số thu thập, nếu không được liên kết đúng, giá trị Camera Number, Camera Gain và Camera Exposure trong watermark sẽ là 0; với lệnh ánh sáng, nếu liên kết sai, giá trị of Light Settings trong watermark sẽ là 0. </td>
 </tr>
 <tr>
-<td> 5.当参数未被链接时，工具内部将使用默认的值填充水印信息。     </td>
+<td> 5. Khi tham số không được liên kết, công cụ sẽ sử dụng giá trị mặc định để điền vào thông tin watermark. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>支持的光源控制器类型</h3>
+<h3>Các loại bộ điều khiển ánh sáng được hỗ trợ</h3>
 
-<p>当前我们在解析光源指令时，是按照支持的光源控制器的指令格式来进行严格匹配的，当用户输入的内容和VA中支持的控制器类型及其格式不匹配时，水印中标识光源信息的内容将为0。</p>
+<p>Hiện tại khi phân tích lệnh ánh sáng, công cụ sẽ đối chiếu nghiêm ngặt theo định dạng lệnh của bộ điều khiển ánh sáng được hỗ trợ. Khi nội dung người dùng nhập không khớp với định dạng hoặc loại bộ điều khiển mà VA hỗ trợ, dữ liệu ánh sáng trong watermark sẽ hiển thị là 0.</p>
 
-<p>下面以康世达控制器为例来说明VA中是如何进行严格类型匹配的，首先其指令格式为SA0255#SB0255#SC0255#SD0255#，所以VA在进行匹配时，将严格要求指令格式中包含若干个形如SX0XXX#的内容，其中X表示未知量，即指令第1位为S，第2位为[A-H]中的某个数值，表示1-8通道，第3位为0，后面3为为纯数字，表示光源亮度，第7为为#，表示结束符。一旦指令不能严格和这一类型匹配，则会认为不是康世达的光源控制器。</p>
+<p>Dưới đây là ví dụ về việc VA thực hiện khớp loại nghiêm ngặt đối với bộ điều khiển Kangshida. Định dạng lệnh của nó là SA0255#SB0255#SC0255#SD0255#. Vì vậy, khi khớp, VA sẽ yêu cầu nghiêm ngặt lệnh phải chứa các đoạn có dạng SX0XXX#, trong đó X là giá trị không xác định. Nghĩa là ký tự thứ 1 phải là S, ký tự thứ 2 thuộc [A-H] (tương ứng kênh 1–8), ký tự thứ 3 là 0, ba ký tự tiếp theo là số thể hiện độ sáng, và ký tự thứ 7 là # làm ký tự kết thúc. Nếu không khớp hoàn toàn thì sẽ xem như không phải bộ điều khiển Kangshida. </p>
 
-<p>当用户输入的指令和下表中支持的控制器均不匹配时，则匹配失败，光源信息显示0。下表为当前VA中支持的自动解析的控制器类型，后续可能会逐步扩充。</p>
+<p>Khi lệnh người dùng nhập không khớp với bất kỳ bộ điều khiển nào trong bảng hỗ trợ dưới đây, quá trình khớp sẽ thất bại và thông tin ánh sáng hiển thị 0. Bảng sau thể hiện các loại bộ điều khiển hiện VA hỗ trợ tự động phân tích; sau này có thể được bổ sung thêm.</p>
 
 <table>
 <thead>
 <tr>
-<th> 支持的光源控制器类型 </th>
-<th> 指令格式示例                 </th>
+<th> Loại bộ điều khiển ánh sáng hỗ trợ </th>
+<th> Ví dụ định dạng lệnh                 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 康世达               </td>
+<td> Kangshida               </td>
 <td> SA0255#SB0255#SC0255#SD0255# </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
+<h2>6. Giải thích tham số</h2>
 
-<h3>输入参数</h3>
+<h3>Tham số đầu vào</h3>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
+<th> Tên tham số             </th>
+<th style="text-align:left;"> Giải thích                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> 工站ID </td>
-<td style="text-align:left;"> 工作站 ID 是站点标识符，其内容通常能很好的用于识别特定机器在特定生产线上的特定位置。 </td>
+<td style="text-align:left;"> ID trạm là mã nhận diện trạm, thường được dùng để xác định vị trí của một máy cụ thể trên dây chuyền sản xuất. </td>
 </tr>
 <tr>
 <td> 产品简称 </td>
-<td style="text-align:left;"> 简称是载具的通用名称（例如，“RCAM”、“AAA”、“CGS”等），一般由终端客户或者设备商提供。 </td>
+<td style="text-align:left;"> Tên viết tắt là tên gọi chung của carrier (ví dụ: “RCAM”, “AAA”, “CGS”), thường do khách hàng hoặc nhà sản xuất thiết bị cung cấp. </td>
 </tr>
 <tr>
 <td> 产品SN </td>
-<td style="text-align:left;"> 当前产品的SN，一般由上位机使用通信发送工具发送过来。 </td>
+<td style="text-align:left;"> SN của sản phẩm hiện tại, thường được gửi từ máy chủ qua công cụ truyền thông. </td>
 </tr>
 <tr>
 <td> 触发指令 </td>
-<td style="text-align:left;"> 触发采集当前图像时的上位机指令，在实际使用过程中建议关联这一信息，可以方便后续的问题排查。 </td>
+<td style="text-align:left;"> Lệnh từ máy chủ dùng để trigger thu thập ảnh. Khuyến nghị liên kết tham số này để thuận tiện cho việc truy vết. </td>
 </tr>
 <tr>
 <td> 采集参数 </td>
-<td style="text-align:left;"> 包含相机名称、曝光、增益、Gamma值等，由图像采集工具或图像源工具输出。 </td>
+<td style="text-align:left;"> Bao gồm tên camera, thời gian phơi sáng, gain, Gamma… được xuất ra từ công cụ chụp ảnh hoặc nguồn ảnh. </td>
 </tr>
 <tr>
 <td> X像素当量 </td>
-<td style="text-align:left;"> 当前相机完成标定后，其在X方向的像素当量。 </td>
+<td style="text-align:left;"> Pixel equivalent theo hướng X sau khi hoàn tất hiệu chuẩn của camera. </td>
 </tr>
 <tr>
 <td> Y像素当量 </td>
-<td style="text-align:left;"> 当前相机完成标定后，其在Y方向的像素当量。 </td>
+<td style="text-align:left;"> Pixel equivalent theo hướng Y sau khi hoàn tất hiệu chuẩn của camera. </td>
 </tr>
 <tr>
 <td> 光源指令 </td>
-<td style="text-align:left;"> 采集当前图像时所使用的光源控制指令。 </td>
+<td style="text-align:left;"> Lệnh điều khiển ánh sáng sử dụng khi thu thập ảnh hiện tại. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>输出参数</h3>
+<h3>Tham số đầu ra</h3>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
+<th> Tên tham số             </th>
+<th style="text-align:left;"> Giải thích                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> 水印信息 </td>
-<td style="text-align:left;"> 将参数链中关联的参数，按照Apple风格生成的最终水印信息，一般将其链接给图像保存工具或屏幕截图工具。 </td>
+<td style="text-align:left;"> Tạo thông tin watermark cuối cùng theo phong cách Apple từ các tham số được liên kết trong chuỗi tham số, thường dùng để liên kết cho công cụ lưu ảnh hoặc chụp màn hình. </td>
 </tr>
 <tr>
 <td> 执行结果 </td>
-<td style="text-align:left;"> 工具最终的执行结果。 </td>
+<td style="text-align:left;"> Kết quả thực thi của công cụ. </td>
 </tr>
 <tr>
 <td> 执行时间 </td>
-<td style="text-align:left;"> 工具执行时耗费的时间。 </td>
+<td style="text-align:left;"> Thời gian công cụ thực thi. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7. 示例工程</h2>
+<h2>7. Ví dụ về project</h2>
 
 <p>参见“\Samples\水印信息生成工具.gvp”。</p>
