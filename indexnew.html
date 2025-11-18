@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luster Lightech Vietnam – Machine Vision Platform</title>
+
+    <!-- FAVICON (thay your-logo.ico bằng file thực tế) -->
+    <link rel="icon" type="image/x-icon" href="your-logo.ico">
+    <link rel="shortcut icon" href="image/Genivision.ico">
+
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --red: #e63946;
+            --red-dark: #c1121f;
+            --red-grad: linear-gradient(135deg, #e63946, #ff5e6c);
+            --white: #ffffff;
+            --light: #f9f9fb;
+            --text: #1a1a2e;
+            --gray: #94a3b8;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER & LOGO ===== */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,.9);
+            box-shadow: 0 2px 20px rgba(0,0,0,.05);
+            transition: all .3s;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--red);
+            text-decoration: none;
+        }
+        .logo img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: drop-shadow(0 1px 3px rgba(230,57,70,.3));
+        }
+        .logo span {
+            background: var(--red-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 1rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Nền động 3D với nhiều layer */
+        .bg-layers {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .layer {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(230,57,70,.08) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: drift 25s infinite linear;
+        }
+        .layer:nth-child(1) { top: -50%; left: -30%; animation-delay: 0s; }
+        .layer:nth-child(2) { bottom: -40%; right: -20%; animation-delay: 8s; }
+        .layer:nth-child(3) { top: 20%; left: 50%; width: 120%; height: 120%; animation-delay: 15s; }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(80px, -80px) rotate(360deg); }
+        }
+
+        /* Hạt ánh sáng */
+        .sparkles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .sparkle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--red);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--red);
+            animation: sparkle 4s infinite ease-in-out;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Nội dung chính */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: riseUp 1.4s .6s cubic-bezier(.2,.8,.2,1) forwards;
+        }
+
+        @keyframes riseUp {
+            to { opacity:1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: clamp(3.2rem, 10vw, 6rem);
+            font-weight: 900;
+            margin-bottom: .5rem;
+            line-height: 1.1;
+            background: var(--red-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            font-weight: 500;
+            letter-spacing: .5px;
+            opacity: 0;
+            animation: fadeIn 1s 1s forwards;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            max-width: 720px;
+            margin: 1.5rem auto 3rem;
+            color: #555;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeIn 1s 1.2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity:1; transform: translateY(0); }
+            from { opacity:0; transform: translateY(20px); }
+        }
+
+        /* ===== NÚT CTA SIÊU MƯỢT ===== */
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeIn 1s 1.4s forwards;
+        }
+
+        .btn {
+            padding: 1.2rem 2.8rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 60px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all .5s cubic-bezier(.2,.8,.2,1);
+            min-width: 220px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .75rem;
+            box-shadow: 0 8px 25px rgba(230,57,70,.2);
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,.3), transparent);
+            transform: translateX(-100%);
+            transition: transform .6s;
+        }
+        .btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn-vi {
+            background: transparent;
+            color: var(--red);
+            border: 2.5px solid var(--red);
+        }
+        .btn-vi:hover {
+            background: var(--red);
+            color: white;
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(230,57,70,.4);
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ===== FOOTER STATS ===== */
+        .stats {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: .95rem;
+            color: var(--gray);
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s 1.6s forwards;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat strong {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--red);
+            margin-bottom: .25rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 80%; max-width: 300px; }
+            .stats { gap: 2rem; }
+        }
+        @media (max-width: 480px) {
+            header { padding: 1rem 4%; }
+            .logo { font-size: 1.2rem; }
+            .logo img { width: 32px; height: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="#" class="logo">
+            <img src="image/Genivision.ico" alt="Luster Lightech Logo">
+            <span>Luster Lightech Vietnam</span>
+        </a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="bg-layers">
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+        </div>
+
+        <div class="sparkles" id="sparkles"></div>
+
+        <div class="hero-content">
+            <h1>Machine Vision</h1>
+            <p class="tagline">AI Vision Platform • Doanh nghiệp Việt Nam</p>
+            <p class="description">
+                Hệ thống nhận diện, xử lý hình ảnh thông minh, mạnh mẽ, phát hiện lỗi sản xuất, kiểm tra chất lượng,...
+            </p>
+
+            <div class="cta-buttons">
+                <a href="https://weiyuin.github.io/Luster-MachineVision/" class="btn btn-vi" target="_blank">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    简体中文版
+                </a>
+                <a href="https://weiyuin.github.io/Website-for-Vision-usage-instructions/" class="btn btn-vi" target="_blank">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Tiếng Việt
+                </a>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <strong>500+</strong>
+                    Doanh nghiệp tin dùng
+                </div>
+                <div class="stat">
+                    <strong>99.7%</strong>
+                    Độ chính xác AI
+                </div>
+                <div class="stat">
+                    <strong>&lt;100ms</strong>
+                    Thời gian xử lý
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const sparklesContainer = document.getElementById('sparkles');
+        const sparkleCount = 18;
+
+        for (let i = 0; i < sparkleCount; i++) {
+            const s = document.createElement('div');
+            s.classList.add('sparkle');
+            s.style.left = Math.random() * 100 + 'vw';
+            s.style.top = Math.random() * 100 + 'vh';
+            s.style.animationDelay = Math.random() * 4 + 's';
+            s.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            sparklesContainer.appendChild(s);
+        }
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255,255,255,.95)';
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,.1)';
+            } else {
+                header.style.background = 'rgba(255,255,255,.9)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,.05)';
+            }
+        });
+    </script>
+</body>
+</html>

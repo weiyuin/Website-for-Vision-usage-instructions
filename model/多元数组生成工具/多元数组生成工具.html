@@ -16,210 +16,211 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>多元数组生成工具</h1>
+<h1>Công cụ tạo mảng đa phần tử</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>多元数组生成工具可以用来将相同类型的多组独立的数据，生成多元数组。</p>
+<p>Công cụ tạo mảng đa phần tử dùng để kết hợp nhiều nhóm dữ liệu độc lập cùng kiểu, tạo thành mảng đa phần tử.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                   </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口 </td>
-<td> 数据类型     </td>
-<td> 选择生成数组的数据类型，根据实际使用情况选择对应的数据类型。 </td>
+<td>Thuộc tính cửa sổ</td>
+<td>Loại dữ liệu</td>
+<td>Chọn loại dữ liệu để tạo mảng, tùy theo nhu cầu sử dụng thực tế chọn loại dữ liệu tương ứng.</td>
 </tr>
 <tr>
 <td></td>
-<td> 元素个数 </td>
-<td> 个数为2至64。                                                              </td>
+<td>Số lượng phần tử</td>
+<td>Số lượng từ 2 đến 64.</td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无 </td>
-<td> 无                                                                         </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Không</td>
+<td>Không</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输入数据     </td>
-<td> 输入数据（与属性窗口数据类型相同）。                         </td>
+<td>Dây dữ liệu</td>
+<td>Dữ liệu đầu vào</td>
+<td>Dữ liệu đầu vào (cùng loại dữ liệu với cửa sổ thuộc tính).</td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无 </td>
-<td> 无                                                                         </td>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Mảng đầu ra</td>
+<td>Xuất thông tin mảng đã tạo.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Dây dữ liệu</td>
+<td>Mảng đầu ra</td>
+<td>Xuất thông tin mảng đã tạo, dùng cho các công cụ tiếp theo, giống tham số mảng đầu ra trong cửa sổ giám sát.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Chi tiết</h2>
+
+<p>Công cụ tạo mảng đa phần tử hỗ trợ các loại dữ liệu sau:</p>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                     </th>
+<th>bool</th>
+<th>Kiểu Boolean</th>
+<th>int</th>
+<th>Kiểu số nguyên</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出数组       </td>
-<td> 输出生成的数组信息。                                         </td>
+<td>double</td>
+<td>Kiểu số thực chính xác kép</td>
+<td>float</td>
+<td>Kiểu số thực chính xác đơn</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Kiểu số nguyên dài</td>
+<td>sc2Vector</td>
+<td>Vector 2D</td>
+</tr>
+<tr>
+<td>GcCalibrateResult</td>
+<td>Kết quả hiệu chuẩn</td>
+<td>GcCoordPos</td>
+<td>Tọa độ và tư thế</td>
+</tr>
+<tr>
+<td>GcPlatformAxisPos</td>
+<td>Vị trí trục</td>
+<td>GcBoardPoints</td>
+<td>Tọa độ góc mục tiêu</td>
+</tr>
+<tr>
+<td>sc2XformLinear</td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>scCaliperOneEdgeResult</td>
+<td>Kết quả thước đo một cạnh</td>
+</tr>
+<tr>
+<td>scCaliperTwoEdgeResult</td>
+<td>Kết quả thước đo hai cạnh</td>
+<td>scCircle</td>
+<td>Kết quả công cụ tìm vòng tròn</td>
+</tr>
+<tr>
+<td>scGeomSearchResult</td>
+<td>Kết quả định vị hình học</td>
+<td>scImage24</td>
+<td>Hình ảnh 24-bit màu</td>
+</tr>
+<tr>
+<td>scImage8</td>
+<td>Hình ảnh xám 8-bit</td>
+<td>scLine</td>
+<td>Kết quả công cụ tìm đường thẳng</td>
+</tr>
+<tr>
+<td>scPatSearchMaxResult</td>
+<td>Kết quả PatSearchMax</td>
+<td>scGcCoordPosVector</td>
+<td>Vector vị trí và tư thế</td>
+</tr>
+<tr>
+<td>scSc2vectorVector</td>
+<td>Vector của vector 2D</td>
+<td>scFeatureletVector</td>
+<td>Chuỗi đặc trưng</td>
+</tr>
+<tr>
+<td>GsTextDisplayParam</td>
+<td>Tham số hiển thị văn bản</td>
+<td>DefectResultInfo</td>
+<td>Kết quả kiểm tra khuyết tật</td>
+</tr>
+<tr>
+<td>DMSingleReaderResult</td>
+<td>Kết quả đọc mã DM đơn</td>
+<td>GsGlueDetectResult</td>
+<td>Kết quả phát hiện keo</td>
+</tr>
+<tr>
+<td>GsSingleBlobResult</td>
+<td>Kết quả Blob đơn</td>
+<td>GsGlueMeasureResult</td>
+<td>Kết quả đo kích thước keo</td>
+</tr>
+<tr>
+<td>scCrossSearchResult</td>
+<td>Kết quả định vị chữ thập</td>
+<td>QRSingleReaderResult</td>
+<td>Kết quả đọc mã QR đơn</td>
+</tr>
+<tr>
+<td>GsMultiCLOutputResult</td>
+<td>Kết quả định vị nhiều vòng tròn và đường thẳng</td>
+<td>SingleLinearCodeResult</td>
+<td>Kết quả đọc mã 1D</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                               </td>
-</tr>
-<tr>
+<td>EdgeDeviation</td>
+<td>Kết quả phát hiện biên</td>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                               </td>
-</tr>
-<tr>
-<td>图像窗口</td>
-<td> 无 </td>
-<td> 无                                                                           </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 输出数组       </td>
-<td> 输出生成的数组信息，供后序工具使用，同监视窗口的输出数组参数。 </td>
 </tr>
 </tbody>
 </table>
 
+<h2>Lưu ý</h2>
 
-<h2>详细说明</h2>
+<p>Không</p>
 
-<p>多元数组生成工具提供的数据类型如下所示。</p>
+<h2>Ví dụ mã</h2>
 
-<table>
-<thead>
-<tr>
-<th>  bool                   </th>
-<th> 布尔             </th>
-<th>  int                    </th>
-<th> 整型             </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>  double                 </td>
-<td> 双精度浮点型     </td>
-<td>  float                  </td>
-<td> 单精度浮点型     </td>
-</tr>
-<tr>
-<td>  long                   </td>
-<td> 长整型           </td>
-<td>  sc2Vector              </td>
-<td> 二维向量         </td>
-</tr>
-<tr>
-<td>  GcCalibrateResult      </td>
-<td> 标定结果         </td>
-<td>  GcCoordPos             </td>
-<td> 位置姿态         </td>
-</tr>
-<tr>
-<td>  GcPlatformAxisPos      </td>
-<td> 轴位置           </td>
-<td>  GcBoardPoints          </td>
-<td> 靶标角点坐标     </td>
-</tr>
-<tr>
-<td>  sc2XformLinear         </td>
-<td> 二维线性变换     </td>
-<td>  scCaliperOneEdgeResult </td>
-<td> 单边卡尺结果     </td>
-</tr>
-<tr>
-<td>  scCaliperTwoEdgeResult </td>
-<td> 双边卡尺结果     </td>
-<td>  scCircle               </td>
-<td> 找圆工具结果     </td>
-</tr>
-<tr>
-<td>  scGeomSearchResult     </td>
-<td> 几何定位结果     </td>
-<td>  scImage24              </td>
-<td> 24位彩色图像     </td>
-</tr>
-<tr>
-<td>  scImage8               </td>
-<td> 8位灰度图像      </td>
-<td>  scLine                 </td>
-<td> 找线工具结果     </td>
-</tr>
-<tr>
-<td>  scPatSearchMaxResult   </td>
-<td> PatSearchMax结果 </td>
-<td>  scGcCoordPosVector     </td>
-<td> 位置姿态向量     </td>
-</tr>
-<tr>
-<td>  scSc2vectorVector      </td>
-<td> 二维向量向量     </td>
-<td>  scFeatureletVector     </td>
-<td> 特征链           </td>
-</tr>
-<tr>
-<td>  GsTextDisplayParam     </td>
-<td> 文本显示参数     </td>
-<td>  DefectResultInfo       </td>
-<td> 瑕疵检测结果     </td>
-</tr>
-<tr>
-<td>  DMSingleReaderResult   </td>
-<td> 单个DM读码结果   </td>
-<td>  GsGlueDetectResult     </td>
-<td> 胶体位置检测结果 </td>
-</tr>
-<tr>
-<td>  GsSingleBlobResult     </td>
-<td> 单个Blob结果     </td>
-<td>  GsGlueMeasureResult    </td>
-<td> 胶体尺寸测量结果 </td>
-</tr>
-<tr>
-<td>  scCrossSearchResult    </td>
-<td> 十字定位结果     </td>
-<td>  QRSingleReaderResult   </td>
-<td> 单个QR读码结果   </td>
-</tr>
-<tr>
-<td>  GsMultiCLOutputResult  </td>
-<td> 多圆多线定位结果 </td>
-<td>  SingleLinearCodeResult </td>
-<td> 一维读码结果     </td>
-</tr>
-<tr>
-<td></td>
-<td>  EdgeDeviation          </td>
-<td> 边缘检测结果                               </td>
-<td>                  </td>
-</tr>
-</tbody>
-</table>
+<p>Không</p>
 
-
-<h2>注意</h2>
-
-<p>无</p>
-
-<h2>示例工程</h2>
 
 <p>参见“\Samples\多元数组生成工具.gvp”。</p>

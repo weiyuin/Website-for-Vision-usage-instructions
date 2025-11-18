@@ -16,172 +16,151 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>设备同步</h1>
+<h1>Đồng bộ thiết bị</h1>
 
-<h2>应用场景</h2>
+<h2>Ứng dụng</h2>
 
-<p>在实际应用项目初期进行批量装机的时候，所有机台都会使用统一的解决方案，但是在设备调试过程中，由于机台的差异性，每个机台的使用数据会不同；其次，随着解决方案的逐渐升级完善，需要将新的解决方案配置到所有机台上，但需要保持每个机台所特有的数据，不必再重新调试，过程如图1所示。因此，增加设备同步功能，可将标准机台上的工程程序逻辑或者数据同步到其它机台上，软件入口如图2所示。</p>
+<p>Trong giai đoạn đầu của dự án triển khai hàng loạt, tất cả các máy sẽ sử dụng một giải pháp thống nhất. Tuy nhiên, trong quá trình hiệu chỉnh thiết bị, do sự khác biệt giữa các máy, dữ liệu sử dụng của mỗi máy sẽ khác nhau. Thêm vào đó, khi giải pháp được nâng cấp và hoàn thiện dần, cần cấu hình giải pháp mới cho tất cả các máy, nhưng vẫn giữ được dữ liệu đặc thù của từng máy mà không cần hiệu chỉnh lại. Quá trình này được minh họa trong Hình 1. Do đó, chức năng đồng bộ thiết bị được thêm vào, cho phép đồng bộ chương trình hoặc dữ liệu từ máy chuẩn sang các máy khác. Giao diện phần mềm được minh họa trong Hình 2.</p>
 
 <p><img src="media/ModuleData_1.png" alt="" /></p>
-
-<p><imgnote>图1 现场工艺变更及升级示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa thay đổi và nâng cấp công nghệ tại hiện trường</imgnote></p>
 
 <p><img src="media/ModuleData_2.png" alt="" /></p>
+<p><imgnote>Hình 2 Đồng bộ thiết bị</imgnote></p>
 
-<p><imgnote>图2 设备同步</imgnote></p>
-
-<h2>功能描述</h2>
-
-<ul>
-<li><p>同步程序到目标设备</p>
+<h2>Mô tả chức năng</h2>
 
 <ul>
-<li><p>即导出解决方案中的程序逻辑结构到gvpm文件中。</p></li>
-<li><p>所谓的程序逻辑结构包括：流程图、参数链、视图、表达式、生产界面布局等等。</p></li>
+<li><p>Đồng bộ chương trình sang thiết bị mục tiêu</p>
+<ul>
+<li><p>Xuất cấu trúc logic chương trình trong giải pháp ra tệp gvpm.</p></li>
+<li><p>Cấu trúc logic chương trình bao gồm: sơ đồ quy trình, chuỗi tham số, giao diện, biểu thức, bố cục giao diện sản xuất, v.v.</p></li>
 </ul>
 </li>
-<li><p>同步数据到目标设备</p>
-
+<li><p>Đồng bộ dữ liệu sang thiết bị mục tiêu</p>
 <ul>
-<li><p>即导出解决方案中的数据到gvpd文件中。</p></li>
-<li><p>所谓的数据包括：工具参数、变量值、作业名、生产界面日志窗口设置等等，具体如表1中含有D的部分。</p></li>
+<li><p>Xuất dữ liệu trong giải pháp ra tệp gvpd.</p></li>
+<li><p>Dữ liệu bao gồm: tham số công cụ, giá trị biến, tên công việc, cài đặt cửa sổ nhật ký giao diện sản xuất, v.v., cụ thể là các mục có ký hiệu D trong Bảng 1.</p></li>
 </ul>
 </li>
-<li><p>从源设备同步程序</p>
-
+<li><p>Đồng bộ chương trình từ thiết bị nguồn</p>
 <ul>
-<li>从gvpm文件中导入程序逻辑结构到解决方案中。</li>
+<li>Nhập cấu trúc logic chương trình từ tệp gvpm vào giải pháp.</li>
 </ul>
 </li>
-<li><p>从源设备同步数据</p>
-
+<li><p>Đồng bộ dữ liệu từ thiết bị nguồn</p>
 <ul>
-<li>从gvpd文件中导入数据到解决方案中。</li>
+<li>Nhập dữ liệu từ tệp gvpd vào giải pháp.</li>
 </ul>
 </li>
 </ul>
 
 
-<h2>使用向导</h2>
 
-<h3>场景一</h3>
+<h2>Hướng dẫn sử dụng</h2>
 
-<p>工艺变更，工程中增加了新的功能，工程流程图、视图显示、表达式、脚本内容等等发生变化，希望将这些修改同步到其它设备上。
-该场景可使用“设备同步->同步程序到目标设备”、“设备同步->从源设备同步程序”。具体步骤如下：</p>
+<h3>Trường hợp 1</h3>
+
+<p>Thay đổi công nghệ: khi dự án có thêm tính năng mới, sơ đồ quy trình, hiển thị giao diện, biểu thức, nội dung script, v.v. đều thay đổi, và bạn muốn đồng bộ các thay đổi này sang các thiết bị khác. 
+Trường hợp này sử dụng “Đồng bộ thiết bị -> Đồng bộ chương trình sang thiết bị mục tiêu” hoặc “Đồng bộ thiết bị -> Đồng bộ chương trình từ thiết bị nguồn”. Các bước cụ thể như sau:</p>
 
 <ol>
-<li><p>标准机台上，选择文件->设备同步->同步程序到目标设备，如图3</p>
-
+<li><p>Trên máy chuẩn, chọn Tệp -> Đồng bộ thiết bị -> Đồng bộ chương trình sang thiết bị mục tiêu, như Hình 3:</p>
 <p><img src="media/ModuleData_3.png" alt="" /></p>
+<p><imgnote>Hình 3 Đồng bộ chương trình sang thiết bị mục tiêu</imgnote></p></li>
 
-<p><imgnote>图3 同步程序到目标设备</imgnote></p></li>
-<li><p>进行导出程序配置</p>
-
+<li><p>Thực hiện cấu hình xuất chương trình</p>
 <ul>
-<li><p>导出工具配置：在导出工程的程序逻辑结构时，可以同步导出工具参数，勾选列表中需要导出的工具即可，如图4</p>
+<li><p>Cấu hình xuất công cụ: khi xuất cấu trúc logic chương trình, có thể đồng thời xuất các tham số công cụ, tích chọn các công cụ cần xuất, như Hình 4</p>
 
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
-
-<p>在<font color = red>导出程序配置</font>时，工具列表<font color = red>默认全不勾选</font>。</p></blockquote>
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
+<p>Khi <font color="red">xuất cấu hình chương trình</font>, danh sách công cụ <font color="red">mặc định không chọn</font>.</p></blockquote>
 
 <p><img src="media/ModuleData_4.png" alt="" /></p>
+<p><imgnote>Hình 4 Cấu hình xuất công cụ</imgnote></p></li>
 
-<p><imgnote>图4 导出工具配置</imgnote></p></li>
-<li><p>导出变量配置：在导出工程的程序逻辑结构时，可以同步导出工程中变量的值，勾选列表中需要导出的变量即可，<font color = red><strong>推荐勾选显示全部变量后，使用推荐配置</strong></font>，如图5(b)</p>
+<li><p>Cấu hình xuất biến: khi xuất cấu trúc logic chương trình, có thể đồng thời xuất giá trị các biến trong dự án, tích chọn các biến cần xuất. <font color="red"><strong>Khuyến nghị chọn Hiển thị tất cả biến và dùng cấu hình đề xuất</strong></font>, như Hình 5(b)</p>
 
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
-
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
 <ol>
-<li>在导出程序配置时，默认“生产界面不可修改？”项为是时，“是否导出”才勾选，如图5(a)。</li>
-<li>当未勾选显示全部变量，且变量列表为空时，说明配置正确。<strong>若此时列表不为空，需核对变量导出配置。</strong></li>
+<li>Khi xuất cấu hình chương trình, mục “Giao diện sản xuất không thể chỉnh sửa?” mặc định là Có thì mới chọn “Có xuất” như Hình 5(a).</li>
+<li>Nếu không tích chọn Hiển thị tất cả biến và danh sách biến trống, cấu hình đúng. <strong>Nếu danh sách không trống, cần kiểm tra cấu hình xuất biến.</strong></li>
 </ol>
 </blockquote>
 
 <p><img src="media/ModuleData_5.png" alt="" /><img src="media/ModuleData_6.png" alt="" /></p>
-
 <p><imgnote>(a)</imgnote> <imgnote>(b)</imgnote></p>
+<p><imgnote>Hình 5 Cấu hình xuất biến</imgnote></p></li>
 
-<p><imgnote>图5 导出变量配置</imgnote></p></li>
-<li><p>其它配置：在导出工程的程序逻辑结构时，可以同步导出工程中相机、通信、光源管理中的参数设置，勾选需要导出的参数即可，如图6</p>
+<li><p>Cấu hình khác: khi xuất cấu trúc logic chương trình, có thể đồng thời xuất các tham số trong quản lý camera, truyền thông, ánh sáng, tích chọn các tham số cần xuất, như Hình 6</p>
 
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
-
-<p>在<font color = red>导出程序配置</font>时，<font color = red>默认全不勾选</font>。</p></blockquote>
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
+<p>Khi <font color="red">xuất cấu hình chương trình</font>, <font color="red">mặc định không chọn</font>.</p></blockquote>
 
 <p><img src="media/ModuleData_7.png" alt="" /></p>
-
-<p><imgnote>图6 其它</imgnote></p></li>
+<p><imgnote>Hình 6 Các cấu hình khác</imgnote></p></li>
 </ul>
 </li>
-<li><p>目标机台上，选择文件->设备同步->从源设备同步程序，如图7</p>
+
+<li><p>Trên máy mục tiêu, chọn Tệp -> Đồng bộ thiết bị -> Đồng bộ chương trình từ thiết bị nguồn, như Hình 7:</p>
 
 <p><img src="media/ModuleData_8.png" alt="" /></p>
-
-<p><imgnote>图7 从源设备同步程序</imgnote></p>
-
-<h3>场景二</h3></li>
+<p><imgnote>Hình 7 Đồng bộ chương trình từ thiết bị nguồn</imgnote></p></li>
 </ol>
 
+<h3>Trường hợp 2</h3>
 
-<p>参数标准化。根据客户要求，需要统一设备的生产参数，需要将某一台机修改的参数同步至其它机台。
-该场景可使用“设备同步->同步数据到目标设备”、“设备同步->从源设备同步数据”。具体步骤如下：</p>
+
+
+<p>Chuẩn hóa tham số: theo yêu cầu khách hàng, cần đồng nhất các tham số sản xuất trên các thiết bị. Các tham số thay đổi trên một máy sẽ được đồng bộ sang các máy khác. 
+Trường hợp này sử dụng “Đồng bộ thiết bị -> Đồng bộ dữ liệu sang thiết bị mục tiêu” hoặc “Đồng bộ thiết bị -> Đồng bộ dữ liệu từ thiết bị nguồn”. Các bước cụ thể như sau:</p>
 
 <ol>
-<li><p>标准机台上，选择文件->设备同步->同步数据到目标设备，如图8</p>
-
+<li><p>Trên máy chuẩn, chọn Tệp -> Đồng bộ thiết bị -> Đồng bộ dữ liệu sang thiết bị mục tiêu, như Hình 8:</p>
 <p><img src="media/ModuleData_9.png" alt="" /></p>
+<p><imgnote>Hình 8 Đồng bộ dữ liệu sang thiết bị mục tiêu</imgnote></p></li>
 
-<p><imgnote>图8 同步数据到目标设备</imgnote></p></li>
-<li><p>进行导出数据配置</p>
-
+<li><p>Thực hiện cấu hình xuất dữ liệu</p>
 <ul>
-<li><p>导出工具配置：导出工具参数数据，勾选列表中需要导出的工具即可，如图9</p>
+<li><p>Cấu hình xuất công cụ: xuất dữ liệu tham số công cụ, tích chọn các công cụ cần xuất, như Hình 9</p>
 
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
-
-<p>在<font color = red>导出数据配置</font>时，工具列表<font color = red>默认全勾选</font>，可手动去掉不需要导出的工具。</p></blockquote>
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
+<p>Khi <font color="red">xuất cấu hình dữ liệu</font>, danh sách công cụ <font color="red">mặc định chọn tất cả</font>, có thể bỏ các công cụ không cần xuất.</p></blockquote>
 
 <p><img src="media/ModuleData_10.png" alt="" /></p>
+<p><imgnote>Hình 9 Cấu hình xuất công cụ</imgnote></p></li>
 
-<p><imgnote>图9 导出工具配置</imgnote></p></li>
-<li><p>导出变量配置：导出工程中变量的值，勾选列表中需要导出的变量即可，<font color = red><strong>推荐勾选显示全部变量后，使用推荐配置</strong></font>，如图10</p>
+<li><p>Cấu hình xuất biến: xuất giá trị các biến trong dự án, tích chọn các biến cần xuất. <font color="red"><strong>Khuyến nghị chọn Hiển thị tất cả biến và dùng cấu hình đề xuất</strong></font>, như Hình 10</p>
 
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
-
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
 <ol>
-<li>在导出数据配置时，默认“生产界面不可修改？”项为是时，“是否导出”不勾选，如图10。</li>
-<li>当未勾选显示全部变量，且变量列表为空时，说明配置正确。<strong>若此时列表不为空，需核对变量导出配置。</strong></li>
+<li>Khi xuất cấu hình dữ liệu, mục “Giao diện sản xuất không thể chỉnh sửa?” mặc định là Có thì “Có xuất” không được tích, như Hình 10.</li>
+<li>Nếu không chọn Hiển thị tất cả biến và danh sách biến trống, cấu hình đúng. <strong>Nếu danh sách không trống, cần kiểm tra cấu hình xuất biến.</strong></li>
 </ol>
 </blockquote>
 
 <p><img src="media/ModuleData_11.png" alt="" /></p>
+<p><imgnote>Hình 10 Cấu hình xuất biến</imgnote></p></li>
 
-<p><imgnote>图10 导出变量配置</imgnote></p></li>
-<li><p>其它配置：同步导出工程中相机、通信、光源管理中的参数设置，勾选需要导出的参数即可，如图11</p>
+<li><p>Cấu hình khác: đồng bộ xuất các tham số trong quản lý camera, truyền thông, ánh sáng, tích chọn các tham số cần xuất, như Hình 11</p>
 
-<blockquote><p><span style="color:red"><strong>注意</strong></span></p>
-
-<p>在<font color = red>导出数据配置</font>时，<font color = red>默认全勾选</font>。</p></blockquote>
+<blockquote><p><span style="color:red"><strong>Lưu ý</strong></span></p>
+<p>Khi <font color="red">xuất cấu hình dữ liệu</font>, <font color="red">mặc định chọn tất cả</font>.</p></blockquote>
 
 <p><img src="media/ModuleData_12.png" alt="" /></p>
-
-<p><imgnote>图11 其它</imgnote></p></li>
+<p><imgnote>Hình 11 Các cấu hình khác</imgnote></p></li>
 </ul>
 </li>
-<li><p>目标机台上，选择文件->设备同步->从源设备同步数据，如图12</p>
 
+<li><p>Trên máy mục tiêu, chọn Tệp -> Đồng bộ thiết bị -> Đồng bộ dữ liệu từ thiết bị nguồn, như Hình 12:</p>
 <p><img src="media/ModuleData_13.png" alt="" /></p>
-
-<p><imgnote>图12 从源设备同步数据</imgnote></p></li>
+<p><imgnote>Hình 12 Đồng bộ dữ liệu từ thiết bị nguồn</imgnote></p></li>
 </ol>
 
-
-<h2>注意</h2>
-
+<h2>Lưu ý</h2>
 <ul>
-<li><p>导入、导出的文件必须同源，即来自同一个解决方案（复制或另存为），即解决方案ID相同。</p></li>
-<li><p>新建的解决方案不能直接导入gvpm或gvpd文件，需要先保存。</p></li>
-<li><p>在目标机台导入变量/相机/通信端口/光源参数时，均是通过名称进行匹配，若名称相同，则认为是同一个变量/相机/通信端口/光源。</p></li>
-<li><p>在目标机台导入相机参数时，若相机类型不同，则以目标机台的相机类型为准。</p></li>
+<li>File xuất/nhập phải cùng nguồn, tức là từ cùng một giải pháp (sao chép hoặc lưu dưới dạng khác), cùng ID giải pháp.</li>
+<li>Giải pháp mới tạo không thể nhập trực tiếp file gvpm hoặc gvpd, cần lưu trước.</li>
+<li>Khi nhập biến/camera/cổng truyền thông/ánh sáng trên máy mục tiêu, việc đối chiếu dựa trên tên. Nếu tên trùng, coi là cùng biến/camera/cổng/ánh sáng.</li>
+<li>Khi nhập tham số camera trên máy mục tiêu, nếu loại camera khác nhau, sẽ sử dụng loại camera của máy mục tiêu.</li>
 </ul>
-
