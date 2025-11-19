@@ -16,108 +16,105 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>通信发送工具</h1>
+<h1>Công cụ Gửi dữ liệu</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>通信发送工具主要是通过对目标设备端口发送特定格式的数据指令，完成与外部设备的信息交互。通常在使用之前需要在通信管理对话框（工具条-设置-通信）中完成对通信端口的设置。</p>
+<p>Công cụ gửi dữ liệu chủ yếu gửi các lệnh dữ liệu theo định dạng nhất định đến cổng của thiết bị mục tiêu, thực hiện trao đổi thông tin với thiết bị bên ngoài. Thường trước khi sử dụng cần cấu hình cổng giao tiếp trong hộp thoại quản lý giao tiếp (thanh công cụ - Cài đặt - Giao tiếp).</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                         </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口 </td>
-<td> 通信端口                                                 </td>
-<td> 选择所需要通信的设备（由通信管理对话框完成端口配置）。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 指令格式 </td>
-<td> 将数据链中的发送数据进行格式转换（同字符串格式化工具）。                                                         </td>
-</tr>
-<tr>
-<td></td>
-<td> 通信超时 </td>
-<td> 设备通信超时等待时间（最小5ms，设置-1表示一直等待）。 </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 无  </td>
-<td> 无                                                                                                               </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 发送数据                                                 </td>
-<td> 需要发送的数据，通常先由数据包生成工具处理。           </td>
-</tr>
-<tr>
-<td> 高级界面 </td>
-<td> 无  </td>
-<td> 无                                                                                                               </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                       </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 执行结果       </td>
-<td> 工具执行结果。 </td>
+<td> Cửa sổ thuộc tính </td>
+<td> Cổng giao tiếp </td>
+<td> Chọn thiết bị cần giao tiếp (cấu hình cổng hoàn tất trong hộp thoại quản lý giao tiếp). </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                 </td>
+<td> Định dạng lệnh </td>
+<td> Chuyển đổi dữ liệu gửi trong data link theo định dạng (tương tự công cụ định dạng chuỗi). </td>
 </tr>
 <tr>
 <td></td>
-<td> 发送字符串 </td>
-<td> 工具实际发送出去的数据 </td>
+<td> Timeout giao tiếp </td>
+<td> Thời gian chờ giao tiếp với thiết bị (tối thiểu 5ms, đặt -1 để chờ vô hạn). </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无</td>
-<td> 无                             </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không </td>
+<td> Không có </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 无     </td>
-<td> 无                             </td>
+<td> Data link </td>
+<td> Dữ liệu gửi </td>
+<td> Dữ liệu cần gửi, thường được xử lý trước bởi công cụ tạo gói dữ liệu. </td>
+</tr>
+<tr>
+<td> Giao diện nâng cao </td>
+<td> Không </td>
+<td> Không có </td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Cửa sổ giám sát </td>
+<td> Kết quả thực thi </td>
+<td>Kết quả thực thi của công cụ. </td>
+</tr>
+<tr>
+<td></td>
+<td> Thời gian thực thi </td>
+<td>Thời gian thực thi công cụ. </td>
+</tr>
+<tr>
+<td></td>
+<td> Chuỗi gửi </td>
+<td>Dữ liệu thực tế được công cụ gửi đi. </td>
+</tr>
+<tr>
+<td> Cửa sổ hình ảnh </td>
+<td> Không</td>
+<td> Không </td>
+</tr>
+<tr>
+<td> Data link </td>
+<td> Không </td>
+<td> Không </td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li>在格式转换中，对于bool型变量是转换成0或1发送出去的，对应转换符号%d。</li>
+<li>Trong chuyển đổi định dạng, biến kiểu bool sẽ được gửi ra dưới dạng 0 hoặc 1, sử dụng ký hiệu chuyển đổi %d.</li>
 </ul>
 
-
-<h2>示例工程</h2>
+<h2>Ví dụ dự án</h2>
 
 <p>参见“\Samples\通信发送&amp;接收工具.gvp”。</p>

@@ -16,167 +16,163 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>圆到圆距离工具</h1>
+<h1>Công cụ Khoảng cách từ Hình tròn đến Hình tròn</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     圆到圆距离工具的主要作用是计算图像上一个圆到另一个圆之间的垂直距离，并将图像上的距离换算成实际的距离。需要注意的是该距离不是指两个圆心之间的距离。</p>
+<p>Công cụ khoảng cách từ hình tròn đến hình tròn chủ yếu dùng để tính khoảng cách vuông góc giữa hai hình tròn trên hình ảnh, và chuyển đổi khoảng cách trên hình ảnh sang khoảng cách thực tế. Lưu ý, khoảng cách này không phải là khoảng cách giữa hai tâm hình tròn.</p>
 
 <p><img src="media/GcDistanceCircleCircleTool_1_1.png" alt="img" /></p>
 
-<p><imgnote>图1 圆到圆距离工具示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa công cụ khoảng cách từ hình tròn đến hình tròn</imgnote></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Ứng dụng</h2>
 
-<p>​     圆到圆距离工具适用于圆形目标物体的距离测量，如圆孔、螺丝、贴环等。</p>
+<p>Công cụ khoảng cách từ hình tròn đến hình tròn thích hợp cho việc đo khoảng cách giữa các vật thể hình tròn, ví dụ lỗ tròn, ốc, vòng dán, v.v.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên lý</h2>
 
 <p><img src="media/GcDistanceCircleCircleTool_3_1.png" alt="img" /></p>
 
-<p><imgnote>图2 距离值计算 示意图</imgnote></p>
+<p><imgnote>Hình 2 Minh họa tính giá trị khoảng cách</imgnote></p>
 
-<p>​     <strong>距离计算</strong></p>
+<p><strong>Tính khoảng cách</strong></p>
 
-<p>​     1、当两圆分离时：</p>
+<p>1. Khi hai hình tròn tách rời:</p>
 
-<p><imgnote>距离L = 圆心距离L<sub>r</sub> - 圆1半径r<sub>1</sub> - 圆2半径r<sub>2</sub></imgnote></p>
+<p><imgnote>Khoảng cách L = Khoảng cách giữa hai tâm L<sub>r</sub> - bán kính hình tròn 1 r<sub>1</sub> - bán kính hình tròn 2 r<sub>2</sub></imgnote></p>
 
-<p>​     2、当两圆相交时：</p>
+<p>2. Khi hai hình tròn cắt nhau:</p>
 
-<p><imgnote>距离L = 0</p>
+<p><imgnote>Khoảng cách L = 0</imgnote></p>
 
-<p>​     3、当圆1内包圆2时：（距离为负数）</imgnote></p>
+<p>3. Khi hình tròn 1 bao quanh hình tròn 2 (khoảng cách âm):</p>
 
-<p><imgnote>距离L = 圆2半径r<sub>2</sub> - 圆心距离L<sub>r</sub> - 圆1半径r<sub>1</sub></imgnote></p>
+<p><imgnote>Khoảng cách L = bán kính hình tròn 2 r<sub>2</sub> - khoảng cách giữa hai tâm L<sub>r</sub> - bán kính hình tròn 1 r<sub>1</sub></imgnote></p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像</h4></li>
+<li><h4>Thêm công cụ, tải hình ảnh</h4></li>
 </ul>
-
 
 <p><img src="media/GcDistanceCircleCircleTool_4_1.png" alt="img" /></p>
 
 <ul>
-<li><h4>定距离值上限、距离值下限等</h4></li>
+<li><h4>Thiết lập giá trị khoảng cách tối đa, tối thiểu</h4></li>
 </ul>
-
 
 <p><img src="media/GcDistanceCircleCircleTool_4_2.png" alt="img" /></p>
 
-<p><strong>距离值上限、距离值下限</strong></p>
+<p><strong>Giá trị khoảng cách tối đa, tối thiểu</strong></p>
 
-<p>对于输出参数<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">距离值</a>的有效范围进行设定，距离值上限、距离值下限的可取值范围为[-999999.999999,999999.999999]，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">距离值</a>上限或下限不进行限定。</p>
+<p>Thiết lập phạm vi giá trị hợp lệ cho tham số đầu ra <a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">Khoảng cách</a>. Phạm vi giá trị tối đa và tối thiểu là [-999999.999999, 999999.999999], có thể đặt là "&ndash;.&mdash;&mdash;&ldquo;" để không giới hạn giá trị tối đa hoặc tối thiểu.</p>
 
-<p>使用距离值上限或/和距离值下限对<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">距离值</a>数值的有效范围进行设定后，执行此测量工具。</p>
+<p>Sau khi thiết lập phạm vi hợp lệ cho giá trị <a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">Khoảng cách</a>, tiến hành thực hiện công cụ đo.</p>
 
-<p>当输出结果<a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">距离值</a>在设定的有效范围内时，显示工具执行成功；否则，显示工具执行失败。</p>
+<p>Khi kết quả đầu ra <a href="#%E8%B7%9D%E7%A6%BB%E5%80%BC">Khoảng cách</a> nằm trong phạm vi hợp lệ, hiển thị công cụ thực thi thành công; ngược lại, hiển thị công cụ thực thi thất bại.</p>
 
 <ul>
-<li><h4>查看结果</h4></li>
+<li><h4>Xem kết quả</h4></li>
 </ul>
-
 
 <p><img src="media/GcDistanceCircleCircleTool_4_3.png" alt="img" /></p>
 
 <p><img src="media/GcDistanceCircleCircleTool_4_4.png" alt="img" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>6. 参数说明</h2>
+<h2>6. Giải thích tham số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称       </th>
-<th> 参数说明                                                     </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像       </td>
-<td> 待测量圆到圆距离的图像。                                     </td>
+<td>Hình ảnh đầu vào</td>
+<td>Hình ảnh dùng để đo khoảng cách từ hình tròn đến hình tròn.</td>
 </tr>
 <tr>
-<td> 距离值上限     </td>
-<td> 取值范围[-999999.999999,999999.999999]，输出参数距离值的上限阈值。当距离大于此值时，工具执行失败。 </td>
+<td>Giá trị khoảng cách tối đa</td>
+<td>Phạm vi [-999999.999999, 999999.999999], ngưỡng giá trị tối đa của tham số đầu ra khoảng cách. Khi khoảng cách lớn hơn giá trị này, công cụ thực thi thất bại.</td>
 </tr>
 <tr>
-<td> 距离值下限     </td>
-<td> 取值范围[-999999.999999,999999.999999]，输出参数距离值的下限阈值。当距离小于此值时，工具执行失败。 </td>
+<td>Giá trị khoảng cách tối thiểu</td>
+<td>Phạm vi [-999999.999999, 999999.999999], ngưỡng giá trị tối thiểu của tham số đầu ra khoảng cách. Khi khoảng cách nhỏ hơn giá trị này, công cụ thực thi thất bại.</td>
 </tr>
 <tr>
-<td> 距离值固定补偿 </td>
-<td> 测量结果固定补偿。一般为0，用于补偿成像等系统误差。          </td>
+<td>Bù khoảng cách cố định</td>
+<td>Bù cố định cho kết quả đo. Thường là 0, dùng để bù sai số hệ thống như tạo ảnh.</td>
 </tr>
 <tr>
-<td> 距离值系数补偿 </td>
-<td> 测量结果系数补偿。一般为1，用于补偿成像等系统误差。          </td>
+<td>Bù hệ số khoảng cách</td>
+<td>Bù hệ số cho kết quả đo. Thường là 1, dùng để bù sai số hệ thống như tạo ảnh.</td>
 </tr>
 <tr>
-<td> 像素当量       </td>
-<td> 图像上的距离转换成实际距离的比例。                           </td>
+<td>Giá trị quy đổi pixel</td>
+<td>Tỷ lệ chuyển đổi từ khoảng cách trên hình ảnh sang khoảng cách thực tế.</td>
 </tr>
 <tr>
-<td> 圆A            </td>
-<td> 待计算距离的参考圆。                                         </td>
+<td>Hình tròn A</td>
+<td>Hình tròn tham chiếu để tính khoảng cách.</td>
 </tr>
 <tr>
-<td> 圆B            </td>
-<td> 待计算距离的参考圆。                                         </td>
+<td>Hình tròn B</td>
+<td>Hình tròn tham chiếu để tính khoảng cách.</td>
 </tr>
 <tr>
-<td> 高级界面       </td>
-<td> 无                                                           </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数说明                               </th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像                    </td>
-<td> 输出图像宽度、高度、像素大小。         </td>
+<td>Hình ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước pixel của hình ảnh đầu ra.</td>
 </tr>
 <tr>
-<td> 线段距离  </td>
-<td> 线段起始点、终止点的坐标和方向向量，显示为图像查找区域内的线段结果。 </td>
+<td>Đoạn thẳng khoảng cách</td>
+<td>Tọa độ điểm bắt đầu, điểm kết thúc và vector hướng của đoạn thẳng, hiển thị kết quả trong vùng tìm kiếm của hình ảnh.</td>
 </tr>
 <tr>
-<td> 图像距离值 </td>
-<td> 两点在图像上的距离值，像素为单位。   </td>
+<td>Khoảng cách trên hình ảnh</td>
+<td>Giá trị khoảng cách giữa hai điểm trên hình ảnh, đơn vị pixel.</td>
 </tr>
 <tr>
-<td> 距离值 </td>
-<td> 两点的实际距离值，毫米为单位。      </td>
+<td>Khoảng cách thực tế</td>
+<td>Giá trị khoảng cách thực tế giữa hai điểm, đơn vị mm.</td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。  </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi công cụ: thành công hiển thị “OK”, thất bại hiển thị “NG”, giống với tham số kết quả trong cửa sổ giám sát.</td>
 </tr>
 <tr>
-<td> 执行时间                    </td>
-<td> 工具执行时间。                         </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>7. 示例工程</h2>
+<h2>7. Dự án ví dụ</h2>
 
 <p>参见“\Samples\形状间距及相关点.gvp”。</p>

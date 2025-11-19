@@ -16,119 +16,116 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>数据库更新工具</h1>
+<h1>Công cụ Cập nhật Cơ sở dữ liệu</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>更新与之相连数据库表中的一行或者是多行，可以对某一列或者多列进行更新，通常将数据包生成工具与数据库更新工具一起使用。</p>
+<p>Cập nhật một hoặc nhiều dòng trong bảng cơ sở dữ liệu liên kết, có thể cập nhật một cột hoặc nhiều cột. Thường sử dụng công cụ tạo gói dữ liệu cùng với công cụ cập nhật cơ sở dữ liệu.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                                   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口     </td>
-<td> 目标表名称                                                   </td>
-<td> 需要更新的数据库里面表的名称。                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 更新数据个数 </td>
-<td> 更新表里面列的个数。温馨提示：数据包最多支持64个数据，所以列的个数最好不要超过64个。                                                             </td>
-</tr>
-<tr>
-<td></td>
-<td> 更新列名称   </td>
-<td> 列的个数最多支持64个，可以根据实际情况自由选择，参看上面一条。                                                              </td>
-</tr>
-<tr>
-<td> 图像窗口     </td>
-<td> 无     </td>
-<td> 无 </td>
-</tr>
-<tr>
-<td> 数据链       </td>
-<td> 输入数据包                                                   </td>
-<td> 更新的列数据可能是一个或者多个，所以使用“数据包生成工具”里面的输出作为更新的（多个）数值。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 条件         </td>
-<td> 和“数据查询工具”查询条件一个意思。通常使用新建字符串变量作为查询条件。                                                               </td>
-</tr>
-<tr>
-<td> 高级界面     </td>
-<td> 无     </td>
-<td> 无  </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                       </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 执行结果       </td>
-<td> 工具执行结果。 </td>
+<td>Cửa sổ Thuộc tính</td>
+<td>Tên bảng đích</td>
+<td>Tên bảng trong cơ sở dữ liệu cần cập nhật.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                 </td>
+<td>Số lượng dữ liệu cập nhật</td>
+<td>Số cột trong bảng cần cập nhật. Lưu ý: gói dữ liệu tối đa hỗ trợ 64 dữ liệu, nên số cột không vượt quá 64.</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无  </td>
-<td> 无                             </td>
+<td></td>
+<td>Tên cột cập nhật</td>
+<td>Tối đa 64 cột, có thể chọn tùy theo thực tế, xem ghi chú trên.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 无   </td>
-<td> 无                             </td>
+<td>Cửa sổ Hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Dây dữ liệu</td>
+<td>Nhập gói dữ liệu</td>
+<td>Dữ liệu cột cập nhật có thể là một hoặc nhiều giá trị, nên sử dụng đầu ra từ "công cụ tạo gói dữ liệu" làm giá trị cập nhật.</td>
+</tr>
+<tr>
+<td></td>
+<td>Điều kiện</td>
+<td>Giống với điều kiện truy vấn trong "công cụ truy vấn dữ liệu". Thường dùng biến chuỗi mới làm điều kiện truy vấn.</td>
+</tr>
+<tr>
+<td>Giao diện Nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ Giám sát</td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ Hình ảnh</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+<tr>
+<td>Dây dữ liệu</td>
+<td>Không có</td>
+<td>Không có</td>
+</tr>
+</tbody>
+</table>
 
-<p>无</p>
+<h2>Hướng dẫn chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li><p>数据库更新和数据库查询都是需要连接数据库的。更新是对满足条件的记录进行数据的更改，记录可以是一条或者多条记录，这个是由（查询）条件决定，关于多查询条件的使用方法可以参考数据库查询工具里面的注意事项。见图1（查询）条件的设计。图2数据链的连接。</p></li>
-<li><p>对列进行更新最好不要对ID进行更新，因为这个是区分数据记录的唯一标识。</p></li>
-<li><p>对于多列进行更新的情况下，每一列的数据类型与数据包生成工具的相对应输出数据的类型要一致，这样是为了保证数据库更新结果的正确。比如第三个列的数据类型是double的，那么数据包生成工具的第三个输出也应该是double类型的，如果是bool类型的就会有问题的。</p></li>
-<li><p>关于属性界面的设置可以参考数据查询工具。</p>
+<li><p>Công cụ cập nhật và truy vấn cơ sở dữ liệu đều cần kết nối đến cơ sở dữ liệu. Cập nhật sẽ thay đổi dữ liệu của các bản ghi thỏa mãn điều kiện, bản ghi có thể là một hoặc nhiều, do điều kiện (truy vấn) quyết định. Cách sử dụng nhiều điều kiện truy vấn có thể tham khảo trong công cụ truy vấn cơ sở dữ liệu. Xem Hình 1 về thiết kế điều kiện (truy vấn) và Hình 2 về kết nối dây dữ liệu.</p></li>
+<li><p>Không nên cập nhật cột ID vì đây là định danh duy nhất phân biệt các bản ghi.</p></li>
+<li><p>Khi cập nhật nhiều cột, kiểu dữ liệu của mỗi cột phải trùng với kiểu dữ liệu đầu ra tương ứng của công cụ tạo gói dữ liệu để đảm bảo kết quả cập nhật đúng. Ví dụ, cột thứ ba có kiểu dữ liệu là double thì đầu ra thứ ba của công cụ tạo gói dữ liệu cũng phải là double; nếu là bool sẽ gây lỗi.</p></li>
+<li><p>Các thiết lập trong giao diện thuộc tính có thể tham khảo công cụ truy vấn dữ liệu.</p>
 
 <p><img src="media/wps102.png" alt="img" /></p>
 
-<p><imgnote>图1 （查询）条件的设计</imgnote></p>
+<p><imgnote>Hình 1 Thiết kế điều kiện (truy vấn)</imgnote></p>
 
 <p><img src="media/wps103.png" alt="img" /></p>
 
-<p><imgnote>图2 数据链的连接</imgnote></p></li>
+<p><imgnote>Hình 2 Kết nối dây dữ liệu</imgnote></p></li>
 </ul>
 
-
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
 <p>参见“\Samples\数据库相关工具.gvp”。</p>
