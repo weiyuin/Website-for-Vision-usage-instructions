@@ -16,227 +16,227 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>激光关联标定工具</h1>
+<h1>Công cụ hiệu chuẩn liên kết laser</h1>
 
-<h1>1.功能概述</h1>
+<h1>1. Tổng quan chức năng</h1>
 
-<p>​     激光关联标定工具是在指定的搜索区域内对图像坐标和相应的振镜坐标进行关联，其关联结果如图1所示。</p>
+<p>Công cụ hiệu chuẩn liên kết laser dùng để liên kết tọa độ hình ảnh với tọa độ gương quét trong khu vực tìm kiếm được chỉ định. Kết quả liên kết minh họa trong Hình 1.</p>
 
 <p><img src="media/GcLaserCalibrateTool_1_1.png" alt="" /></p>
 
-<p><imgnote>图1 激光关联标定工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ hiệu chuẩn liên kết laser</imgnote></p>
 
-<h1>2.应用场景</h1>
+<h1>2. Ứng dụng</h1>
 
-<p>​     在常见的激光切割、激光打标、激光焊接等应用场景中，均可使用此工具进行图像坐标系和激光坐标系的关联标定。</p>
+<p>Trong các ứng dụng phổ biến như cắt laser, khắc laser, hàn laser, công cụ này có thể dùng để hiệu chuẩn liên kết giữa hệ tọa độ hình ảnh và hệ tọa độ laser.</p>
 
-<h1>3.原理说明</h1>
+<h1>3. Nguyên lý</h1>
 
-<h3>计算图像旋转镜像参数</h3>
+<h3>Tính toán tham số xoay và phản chiếu hình ảnh</h3>
 
-<p>​     在进行图像坐标系和激光坐标系关联标定时，首先需要将图像坐标和激光坐标一一对应。本工具支持任意旋转镜像的图像进行自动标定，所以需要在图像上有一个标准的特征，供图像处理算法自动抓取并计算图像的旋转镜像参数。如图2所示，标准的L型特征在激光坐标系X方向的长度为600Pixel，Y方向的长度为300Pixel，宽度为60Pixel。图像处理算法会自动抓取L边的边缘特征，并计算其两条边缘的夹角、旋转方向等参数，从而确定图像的旋转镜像参数。</p>
+<p>Khi hiệu chuẩn liên kết giữa hệ tọa độ hình ảnh và hệ tọa độ laser, trước tiên cần xác định từng điểm ảnh tương ứng với điểm laser. Công cụ hỗ trợ hình ảnh xoay và phản chiếu bất kỳ để thực hiện hiệu chuẩn tự động, vì vậy cần có một đặc trưng tiêu chuẩn trên hình ảnh để thuật toán xử lý hình ảnh tự động nhận dạng và tính toán tham số xoay và phản chiếu. Hình 2 minh họa đặc trưng dạng L chuẩn, với chiều dài theo hướng X của laser = 600 Pixel, chiều dài theo hướng Y = 300 Pixel, bề rộng = 60 Pixel. Thuật toán sẽ tự động nhận dạng biên của cạnh L, tính toán góc giữa hai cạnh, hướng xoay, từ đó xác định tham số xoay và phản chiếu của hình ảnh.</p>
 
 <p><img src="media/GcLaserCalibrateTool_3_1.png" alt="" /></p>
 
-<p><imgnote>图2 L特征标准示意图</imgnote></p>
+<p><imgnote>Hình 2 Minh họa đặc trưng L chuẩn</imgnote></p>
 
-<h3>图像 - 激光坐标系关联</h3>
+<h3>Liên kết hệ tọa độ hình ảnh và laser</h3>
 
-<p>​     图像坐标系和激光坐标系在进行关联标定计算时，会抽象成共面的直角坐标系，如图3所示。</p>
+<p>Trong quá trình hiệu chuẩn, hệ tọa độ hình ảnh và hệ tọa độ laser được biểu diễn dưới dạng hệ tọa độ trực giao đồng phẳng, minh họa trong Hình 3.</p>
 
 <p><img src="media/GcLaserCalibrateTool_3_2.png" alt="" /></p>
 
-<p><imgnote>图3 共面坐标系关系示意图</imgnote></p>
+<p><imgnote>Hình 3 Minh họa mối quan hệ hệ tọa độ đồng phẳng</imgnote></p>
 
-<p>​     其中两个坐标系的转换关系可以由如下公式表示。所以，当输入一组一一对应的图像坐标和激光坐标值，则可以根据此公式计算出两个坐标系之间的转换关系。</p>
+<p>Quan hệ chuyển đổi giữa hai hệ tọa độ có thể được biểu diễn bằng công thức sau. Khi nhập một bộ tọa độ hình ảnh và tọa độ laser tương ứng, có thể tính toán mối quan hệ chuyển đổi giữa hai hệ tọa độ dựa trên công thức này.</p>
 
 <p><img src="media/GcLaserCalibrateTool_3_3.png" alt="" /></p>
 
-<h1>4. 使用向导</h1>
 
-<p>​     工具的执行流程：配置输入 -> 高级属性界面设置 -> 执行标定。</p>
+<h1>4. Hướng dẫn sử dụng</h1>
 
-<h3>配置输入</h3>
+<p>Quy trình thực hiện công cụ: cấu hình đầu vào -> cài đặt giao diện thuộc tính nâng cao -> thực hiện hiệu chuẩn.</p>
 
-<p>​     双击工具，在弹出的窗口中配置输入图像，如图4所示。</p>
+<h3>Cấu hình đầu vào</h3>
+
+<p>Nhấp đúp vào công cụ, trong cửa sổ bật lên cấu hình hình ảnh đầu vào, như minh họa trong Hình 4.</p>
 
 <p><img src="media/GcLaserCalibrateTool_4_1.png" alt="" /></p>
 
-<p><imgnote>图4 配置输入示意图</imgnote></p>
+<p><imgnote>Hình 4 Minh họa cấu hình đầu vào</imgnote></p>
 
-<h3>高级属性界面设置</h3>
+<h3>Cài đặt giao diện thuộc tính nâng cao</h3>
 
-<p>​     右键工具，点击”属性“进入高级界面，如图5所示。</p>
+<p>Nhấp chuột phải vào công cụ, chọn “Thuộc tính” để vào giao diện nâng cao, như minh họa trong Hình 5.</p>
 
 <p><img src="media/GcLaserCalibrateTool_4_2.png" alt="" /></p>
 
-<p><imgnote>图5 高级界面设定属性示意图</imgnote></p>
+<p><imgnote>Hình 5 Minh họa cài đặt thuộc tính giao diện nâng cao</imgnote></p>
 
-<h4>L边特征提取</h4>
+<h4>Trích xuất đặc trưng cạnh L</h4>
 
-<p>​     点击“提取L边特征”进行图像中L边的自动提取，当提取成功后，会在对应的位置放置坐标轴，如图5所示。当自动提取失败时，允许用户勾选“手动查找”功能，在属性界面手动提取L边特征。需要注意的是，当自动提取L边时，会遍历图像中所有的线段特征，并按照一定的算法进行筛选，其中筛选的重要条件之一是L特征的长边与短边的比例为2：1。由于实际应用时激光打标会发生一定的外扩或内缩，导致L特征的外边缘比例不一定为标准的2：1，此时L特征的内边缘或内外边缘的组合更加接近2：1，从而导致L特征定位时不一定一直定位在外边缘处，如图6所示。但是通过内边缘或外边缘计算的图像旋转镜像参数一致，所以不影响最终的计算结果。</p>
+<p>Nhấp “Trích xuất đặc trưng cạnh L” để tự động trích xuất cạnh L trong hình ảnh. Khi trích xuất thành công, tọa độ sẽ được đặt tại vị trí tương ứng, như Hình 5. Nếu trích xuất tự động thất bại, người dùng có thể chọn chức năng “Tìm thủ công” để trích xuất cạnh L trong giao diện thuộc tính. Lưu ý: khi trích xuất tự động, thuật toán sẽ quét tất cả các đoạn thẳng trong hình và lọc theo điều kiện nhất định, trong đó tỷ lệ cạnh dài và cạnh ngắn của đặc trưng L là 2:1. Trong thực tế, khi khắc laser có thể xảy ra giãn nở hoặc co rút, tỷ lệ cạnh ngoài của đặc trưng L có thể không chính xác, lúc này kết hợp cạnh trong hoặc cạnh trong-ngoài sẽ gần với tỷ lệ 2:1 hơn, nên vị trí đặc trưng L không luôn nằm ở cạnh ngoài, như minh họa Hình 6. Tuy nhiên, tham số xoay và phản chiếu hình ảnh tính từ cạnh trong hoặc ngoài đều giống nhau, không ảnh hưởng đến kết quả cuối cùng.</p>
 
 <p><img src="media/GcLaserCalibrateTool_4_3.png" alt="" /></p>
 
-<p><imgnote>图6 L特征定位示意图</imgnote></p>
+<p><imgnote>Hình 6 Minh họa định vị đặc trưng L</imgnote></p>
 
-<h4>图像旋转镜像参数</h4>
+<h4>Tham số xoay và phản chiếu hình ảnh</h4>
 
-<p>​     点击“提取L边特征”后，如果L边提取成功，则工具内部会根据L边的X轴和Y轴之间的关系，计算出图像的旋转镜像参数，如图7所示。其中Rotate表示图像的旋转角度，Mirror表示图像镜像参数。其中，Mirror总是为0或1，0表示图像没有镜像，1则表示图像有水平方向的镜像（注：垂直镜像总是能够通过水平镜像 + 旋转得到，所以本算法内部只有水平镜像的概念）；另外Rotate表示的旋转角度并不严格准确，当L边定位存在误差时，得到的旋转角度可能存在误差，如旋转角度理论值为0度，计算得到的旋转角度可能为1度、2度、-1度等。图像的旋转镜像参数仅在工具内部对抓取的圆形Mark进行自动排序时使用，存在一定角度的误差不会影响实际的排序结果，所以用户不需要过多关注此参数。当用户想要验证工具内部自动计算的旋转镜像参数是否正确时，可以使用“旋转镜像工具”链接标定的图像，旋转的角度为本工具计算的Rotate取整（如计算的Rotate为88°，则“旋转镜像工具”的旋转角度选择90）；Mirror为0时，无镜像，Mirror为1时，选择水平镜像，然后执行“旋转镜像工具”，查看其输出的结果图像中L特征的朝向是否为向右向下的。</p>
+<p>Sau khi trích xuất thành công cạnh L, công cụ sẽ dựa trên mối quan hệ giữa trục X và Y của cạnh L để tính tham số xoay và phản chiếu hình ảnh, như minh họa Hình 7. Trong đó, Rotate biểu thị góc xoay hình ảnh, Mirror biểu thị tham số phản chiếu. Mirror chỉ nhận giá trị 0 hoặc 1: 0 nghĩa là hình ảnh không phản chiếu, 1 nghĩa là hình ảnh phản chiếu theo chiều ngang (lưu ý: phản chiếu theo chiều dọc có thể đạt được bằng phản chiếu ngang + xoay, nên thuật toán chỉ xét phản chiếu ngang). Góc Rotate có thể không hoàn toàn chính xác nếu định vị cạnh L có sai số; ví dụ lý thuyết là 0°, tính toán có thể cho 1°, 2° hoặc -1°. Tham số xoay và phản chiếu chỉ dùng nội bộ để sắp xếp tự động các Mark hình tròn, sai số nhỏ không ảnh hưởng đến kết quả. Người dùng không cần quan tâm quá nhiều. Để kiểm tra tính chính xác của Rotate và Mirror, có thể dùng “Công cụ xoay và phản chiếu” với góc Rotate làm tròn và Mirror = 0 hoặc 1, sau đó kiểm tra hướng cạnh L trên hình xuất ra.</p>
 
 <p><img src="media/GcLaserCalibrateTool_4_7.png" alt="" /></p>
 
-<p><imgnote>图7 图像旋转镜像结果示意图</imgnote></p>
+<p><imgnote>Hình 7 Minh họa kết quả xoay và phản chiếu hình ảnh</imgnote></p>
 
-<h4>标定方式</h4>
+<h4>Phương thức hiệu chuẩn</h4>
 
-<p>​     标定方式共分为3中，九圆、N圆、多区域，其中九圆是N圆的特例，N圆是多区域的特例。进行标定方式的划分，主要是因为在实际应用中，九圆关联标定占据大部分比例的应用场景，所以将其单独提取出来，从而保证用户在使用九圆关联标定时，使用最少的操作步骤完成标定。</p>
+<p>Phương thức hiệu chuẩn có 3 loại: chín vòng, N vòng, đa vùng, trong đó chín vòng là trường hợp đặc biệt của N vòng, N vòng là trường hợp đặc biệt của đa vùng. Việc phân loại này chủ yếu do trong thực tế, hiệu chuẩn liên kết chín vòng chiếm phần lớn ứng dụng, nên được tách riêng để người dùng thực hiện hiệu chuẩn với ít thao tác nhất.</p>
 
-<h4>圆数量参数</h4>
+<h4>Tham số số lượng vòng</h4>
 
-<p>​     圆数量参数允许用户在使用N圆和多区域标定时，自定义每个区域圆特征的行数和列数，其中行数和列数的范围均为[0, 30]。</p>
+<p>Tham số số lượng vòng cho phép người dùng tự định nghĩa số hàng và số cột của các đặc trưng vòng trong mỗi vùng khi sử dụng N vòng hoặc đa vùng. Cả hàng và cột có giá trị trong khoảng [0, 30].</p>
 
-<h4>圆特征参数</h4>
+<h4>Tham số đặc trưng vòng</h4>
 
-<p>​     在进行圆结果提取时，默认的搜索方向为由内向外，且不允许用户修改，用户可以通过设定不同的搜索极性来满足实际的场景。其默认参数为任意，在大多数场景下，用户不需要对其进行修改。</p>
+<p>Khi trích xuất kết quả vòng, hướng tìm kiếm mặc định là từ trong ra ngoài và không cho phép người dùng chỉnh sửa. Người dùng có thể thay đổi cực tính tìm kiếm để phù hợp với thực tế. Mặc định là “bất kỳ”, trong hầu hết các trường hợp không cần chỉnh sửa.</p>
 
-<h4>上一组/下一组</h4>
+<h4>Nhóm trước/nhóm tiếp theo</h4>
 
-<p>​     当用户选择多区域标定时，会启用此按钮，允许用户通过点击上一组/下一组来切换当前的搜索区域。</p>
+<p>Khi chọn hiệu chuẩn đa vùng, nút này sẽ được kích hoạt, cho phép người dùng chuyển vùng tìm kiếm hiện tại bằng cách nhấn “Nhóm trước” hoặc “Nhóm tiếp theo”.</p>
 
-<h4>圆特征提取</h4>
+<h4>Trích xuất đặc trưng vòng</h4>
 
-<p>​     全图搜索：适用于九圆/N圆的标定方式，当用户勾选时，会在全图范围内搜索圆形Mark。</p>
+<p>Toàn bộ hình ảnh: áp dụng cho hiệu chuẩn chín vòng hoặc N vòng; khi chọn, sẽ tìm kiếm các Mark hình tròn trên toàn bộ hình ảnh.</p>
 
-<p>​     实时刷新：主要响应用户的GUI拖动操作。当用拖动搜索区域或找圆工具GUI时，如果此选项被勾选，则会自动进行圆结果提取，当不勾选此选项时，需要点击“圆特征提取”按钮进行圆结果提取。</p>
+<p>Cập nhật thời gian thực: đáp ứng các thao tác GUI của người dùng. Khi kéo vùng tìm kiếm hoặc GUI công cụ tìm vòng, nếu tùy chọn này được chọn, kết quả vòng sẽ được trích xuất tự động; nếu không chọn, người dùng cần nhấn nút “Trích xuất đặc trưng vòng” để trích xuất.</p>
 
-<p>​     圆特征提取：当用户点击此按钮时，会搜索当前区域内找圆工具GUI对应的圆结果，并将圆结果显示在视图中。</p>
+<p>Trích xuất đặc trưng vòng: khi người dùng nhấn nút này, công cụ sẽ tìm các vòng trong vùng hiện tại tương ứng với GUI công cụ tìm vòng và hiển thị kết quả trên giao diện.</p>
 
-<h4>激光坐标</h4>
+<h4>Tọa độ laser</h4>
 
-<p>​     激光坐标主要分为手动填充和文件读取两种方式，如图8所示。在进行激光坐标起始点和间隔填充时，起始点为当前搜索区域内激光坐标系下，X轴最小，Y轴最小的点的激光坐标值，间隔始终为正值。</p>
+<p>Tọa độ laser có hai cách chính: nhập thủ công hoặc đọc từ file, như Hình 8. Khi điền điểm bắt đầu và khoảng cách tọa độ laser, điểm bắt đầu là giá trị tọa độ X và Y nhỏ nhất trong vùng tìm kiếm hiện tại, khoảng cách luôn là giá trị dương.</p>
 
 <p><img src="media/GcLaserCalibrateTool_4_4.png" alt="" /></p>
 
-<p><imgnote>图8 激光坐标填充示意图</imgnote></p>
+<p><imgnote>Hình 8 Minh họa điền tọa độ laser</imgnote></p>
 
-<h4>标定与误差显示</h4>
+<h4>Hiệu chuẩn và hiển thị sai số</h4>
 
-<p>​     当完成上述参数设置后，用户可以点击“标定计算”按钮进行标定结果计算。当完成计算后，会在每个圆心处显示此圆的标定结果误差。当误差值的X/Y方向超过“标定精度”数值时，会显示为红色，否则显示绿色，如图9所示。</p>
+<p>Khi hoàn tất các thiết lập tham số, người dùng có thể nhấn nút “Tính hiệu chuẩn” để tính kết quả. Sau khi tính xong, tại mỗi tâm vòng sẽ hiển thị sai số hiệu chuẩn của vòng đó. Nếu sai số theo hướng X/Y vượt quá giá trị “Độ chính xác hiệu chuẩn”, sẽ hiển thị màu đỏ, ngược lại hiển thị màu xanh lá, như Hình 9.</p>
 
 <p><img src="media/GcLaserCalibrateTool_4_5.png" alt="" /></p>
 
-<p><imgnote>图9 标定误差数值示意图</imgnote></p>
+<p><imgnote>Hình 9 Minh họa giá trị sai số hiệu chuẩn</imgnote></p>
 
-<p>​     图9所示为标定误差的精确数值，当用户想要以更加直观、更加感性的方式观察标定误差的趋势时，可以勾选“显示误差向量”，此时会以向量的方式显示每个圆特征的标定误差。用户还可以通过点击“+”和”-“按钮，来进行向量的缩放，向量的颜色和数值的颜色显示规则一致。如图10为误差向量显示，用户可以通过观察向量的方向，长度等，来更加直观的确定误差的趋势，比值等。</p>
+<p>Hình 9 hiển thị giá trị sai số chính xác. Nếu muốn quan sát trực quan và cảm nhận xu hướng sai số, người dùng có thể chọn “Hiển thị vector sai số”, lúc này mỗi sai số đặc trưng của vòng sẽ được hiển thị dưới dạng vector. Người dùng có thể dùng nút “+” và “-” để phóng to hoặc thu nhỏ vector, màu sắc vector tuân theo quy tắc màu sắc của giá trị số. Hình 10 minh họa hiển thị vector sai số, giúp quan sát hướng và độ dài vector để xác định xu hướng và tỷ lệ sai số.</p>
 
 <p><img src="media/GcLaserCalibrateTool_4_6.png" alt="" /></p>
 
-<p><imgnote>图10 标定误差向量示意图</imgnote></p>
+<p><imgnote>Hình 10 Minh họa vector sai số hiệu chuẩn</imgnote></p>
 
-<h4>误差说明</h4>
+<h4>Giải thích sai số</h4>
 
-<h5>误差计算方法</h5>
+<h5>Phương pháp tính sai số</h5>
 
-<p>​     下面以单区域的计算方法为例说明误差计算方法，多区域原理相同。在完成标定计算后，可以利用标定结果将图像中任意一点转换到激光坐标系下，由前文所述的标定原理可知，此计算需要用到一组图像坐标和与之对应的激光坐标。在进行计算时，选取此区域内中间的圆作为基准，并计算其余圆形Mark的激光坐标值，将计算得到的激光坐标和理论坐标值进行比较，以确定此位置处的误差。</p>
+<p>Ví dụ dưới đây minh họa cách tính sai số cho vùng đơn; nguyên lý đa vùng tương tự. Sau khi tính hiệu chuẩn, có thể dùng kết quả để chuyển bất kỳ điểm nào trong ảnh sang tọa độ laser. Dựa trên nguyên lý hiệu chuẩn, tính toán này cần một tập tọa độ ảnh và tọa độ laser tương ứng. Chọn vòng ở giữa vùng làm chuẩn, tính toán tọa độ laser của các vòng còn lại và so với giá trị lý thuyết để xác định sai số tại vị trí đó.</p>
 
-<p>​     由此描述可知，此误差值不代表实际计算过程中的误差值（注：由于在实际计算过程中（即激光位置计算工具的功能）会选取距离实时点最近的圆形Mark作为基准值，所以使用多基准的方法计算标定结果的误差，则所有点的误差值均为0），使用中心圆作为基准进行误差计算，主要目的是让用户对当前的机构、视觉系统的误差有一个定量的概念。</p>
+<p>Sai số này không phản ánh sai số thực trong quá trình tính toán (Lưu ý: trong thực tế, công cụ tính vị trí laser sẽ chọn Mark gần điểm thực tế nhất làm chuẩn, nên nếu dùng nhiều chuẩn thì tất cả sai số sẽ bằng 0). Việc dùng vòng trung tâm làm chuẩn chỉ nhằm cung cấp một khái niệm định lượng về sai số cho người dùng đối với cơ cấu và hệ thống thị giác hiện tại.</p>
 
-<h5>误差趋势说明</h5>
+<h5>Giải thích xu hướng sai số</h5>
 
-<p>​     如前文描述，误差趋势的长度可以通过“+”和”-“按钮来调整，所以其长度不代表误差的大小，而仅仅标识了误差的趋势。此趋势在一定程度上反应了相机的畸变、相机的安装垂直度、圆形Mark的定位精度等。当整体标定结果误差较大时，可以首先确认圆形Mark的定位精度是否满足要求；当定位正确时，查看误差趋势的方向、一致性等，比如图10所示的误差趋势，说明相机存在较大的畸变（左侧误差向右、右侧误差向左、上侧误差向下、下侧误差向上）；如果左右误差趋势一致，则可能相机安装的垂直度可能不满足精度要求。</p>
+<p>Như đã mô tả, độ dài vector sai số có thể điều chỉnh bằng nút “+” và “-”, nên không phản ánh độ lớn thực của sai số, chỉ biểu thị xu hướng. Xu hướng này phản ánh phần nào méo ảnh của camera, độ thẳng đứng khi lắp camera, và độ chính xác định vị Mark. Khi sai số tổng thể lớn, cần kiểm tra độ chính xác định vị Mark; nếu chính xác, quan sát hướng và tính nhất quán của xu hướng. Ví dụ Hình 10, xu hướng sai số cho thấy camera bị méo nhiều (sai số trái sang phải, phải sang trái, trên xuống dưới, dưới lên trên); nếu sai số trái-phải đồng nhất, có thể camera không thẳng đứng đủ độ chính xác.</p>
 
-<h4>圆形Mark自动提取</h4>
+<h4>Trích xuất tự động Mark hình tròn</h4>
 
-<p>​     如下动图中所示，当用户每次修改搜索区域时，工具内部会重新自动定位搜索区域内的圆形Mark，并将找圆GUI放置到相应的位置上，其自动放置的逻辑如下描述：
-1）当搜索区域内定位到的Mark数量满足要求时（等于输入的行数 * 列数），停止搜索，并将其作为目标Mark，颜色设置为天蓝色；</p>
+<p>Như GIF minh họa, khi người dùng thay đổi vùng tìm kiếm, công cụ sẽ tự động định vị các Mark hình tròn trong vùng và đặt GUI tìm vòng vào vị trí tương ứng. Logic tự động như sau:</p>
 
-<p>2）当搜索区域内定位到的Mark数量不满足要求，但是数量大于理论数量的一半时（ 行数 * 列数 / 2），则分析已经定位到的Mark，根据其排布规律尝试进行自动填充，自动填充的GUI颜色设置为黄色；</p>
-
-<p>3）完成上述两步后，如果数量仍然不满足要求，则将缺失的GUI放置在搜索区域的右下角位置；</p>
-
-<p>4）如果第二步中判断自动定位到的Mark数量小于等于理论数量的一半，则丢弃自动定位到的结果，改为在搜索区域内均匀的分布M行N列找圆GUI，此种设计依据的前提在于，进行激光标定时，一般场景下图像的成像质量都比较好，如果自动定位到的Mark数量达不到一半，则认为工具内部的自动定位算法不适应当前的成像特点，所以放弃自动定位算法。</p>
+<ol>
+<li>Nếu số Mark trong vùng đạt yêu cầu (bằng số hàng * số cột nhập), dừng tìm kiếm và dùng làm Mark mục tiêu, màu GUI xanh da trời.</li>
+<li>Nếu số Mark trong vùng không đủ nhưng lớn hơn một nửa số lý thuyết (hàng * cột / 2), phân tích Mark đã định vị, tự động điền theo quy luật bố trí, màu GUI vàng.</li>
+<li>Nếu sau hai bước trên số Mark vẫn không đủ, đặt GUI thiếu ở góc phải dưới vùng tìm kiếm.</li>
+<li>Nếu số Mark tự động định vị ≤ một nửa số lý thuyết, bỏ kết quả tự động, đặt GUI theo lưới M hàng N cột đều trong vùng. Thiết kế này dựa trên giả định rằng trong hầu hết ứng dụng laser, chất lượng hình ảnh tốt; nếu số Mark tự động < một nửa, thuật toán tự động không phù hợp với đặc điểm hình ảnh hiện tại, nên bỏ.</li>
+</ol>
 
 <p><img src="media/GcLaserCalibrateTool_4_8.gif" alt="" /></p>
 
-<p><imgnote>图11 圆形Mark自动提取与缺失填充示意图</imgnote></p>
+<p><imgnote>Hình 11 Minh họa trích xuất tự động và điền Mark hình tròn</imgnote></p>
 
-<h1>5.常见问题</h1>
 
-<h3>L特征标准尺寸与位置</h3>
+<h1>5. Các vấn đề thường gặp</h1>
 
-<p>​     当激光器进行L特征打印时，其X方向为L特征的长边，Y方向为L特征的短边，且X方向和Y方向的长度比例为2:1，L特征的宽度d应该大于等于60Pixel。且其位置应该打在第一个附近，如下图所示。</p>
+<h3>Kích thước và vị trí tiêu chuẩn của đặc trưng L</h3>
+
+<p>Khi laser in đặc trưng L, hướng X là cạnh dài, hướng Y là cạnh ngắn, tỉ lệ X/Y là 2:1, chiều rộng d ≥ 60 Pixel. Vị trí in nên gần góc đầu tiên, như hình minh họa dưới đây.</p>
 
 <p><img src="media/GcLaserCalibrateTool_5_1.png" alt="" /></p>
 
-<h3>L特征提取失败</h3>
+<h3>Trích xuất đặc trưng L thất bại</h3>
 
-<p>​     当进行L特征提取时，受限于图像的质量、L特征的比例关系等，可能出现自动提取失败的情况，此时用户可以勾选“手动提取”功能，此时在界面上会添加两个找线工具，用户手动将这两个工具拖动到正确的位置上，再次点击“L特征提取”按钮即可。</p>
+<p>Khi trích xuất đặc trưng L, do chất lượng ảnh hoặc tỉ lệ đặc trưng, có thể trích xuất tự động thất bại. Lúc này, người dùng có thể chọn “Trích xuất thủ công”, hai công cụ tìm đường sẽ xuất hiện trên giao diện. Người dùng kéo chúng vào vị trí chính xác, rồi nhấn lại nút “Trích xuất đặc trưng L”.</p>
 
 <ol>
-<li>L特征提取主要进行图像旋转镜像参数的计算，是后续计算的基础，所以用户必须要进行此步骤。</li>
-<li>在实际项目中，要求L特征在X方向和Y方向的长度比例为2：1，并且L边的短边（即Y方向）的长度不低于300Pixel，L特征的宽度不低于60Pixel。</li>
+<li>Trích xuất đặc trưng L chủ yếu để tính tham số xoay và phản chiếu của ảnh, là cơ sở cho các bước tính toán tiếp theo, nên bắt buộc phải thực hiện bước này.</li>
+<li>Trong thực tế, tỉ lệ chiều dài X/Y của đặc trưng L phải là 2:1, cạnh ngắn (hướng Y) ≥ 300 Pixel, chiều rộng đặc trưng ≥ 60 Pixel.</li>
 </ol>
 
+<h3>Điền tọa độ laser thất bại</h3>
 
-<h3>激光坐标填充失败</h3>
+<p>Khi người dùng chọn điền thủ công tọa độ laser, có thể do khoảng cách giữa các điểm laser hoặc điểm xuất phát không đúng. Lúc này cần xác nhận lại các giá trị tọa độ laser.</p>
 
-<p>当用户选择手动填充的方式进行激光坐标填充时，可能是激光坐标的间隔不正确，或者激光坐标的起始点不正确，此时用户需要重新确认激光坐标值的正确性。</p>
+<h1>6. Giải thích tham số</h1>
 
-<h1>6.参数说明</h1>
-
-<h3>输入参数</h3>
+<h3>Tham số đầu vào</h3>
 
 <table>
 <thead>
 <tr>
-<th>参数名称 </th>
-<th> 参数描述                                                                                                                 </th>
+<th>Tên tham số</th>
+<th>Giải thích</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 数输入图像            </td>
-<td> 链接待标定的灰度图像 </td>
+<td>Ảnh đầu vào</td>
+<td>Liên kết đến ảnh xám cần hiệu chuẩn</td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>输出参数</h3>
+<h3>Tham số đầu ra</h3>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称       </th>
-<th> 参数描述                                                                                                               </th>
+<th>Tên tham số</th>
+<th>Giải thích</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像                                                     </td>
-<td> 输出图像宽度、高度、像素大小。                           </td>
+<td>Ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu ra.</td>
 </tr>
 <tr>
-<td> 标定结果     </td>
-<td> 每个区域的图像坐标系 - 激光坐标系之间的转换关系                                                                  </td>
+<td>Kết quả hiệu chuẩn</td>
+<td>Quan hệ chuyển đổi giữa hệ tọa độ ảnh và hệ tọa độ laser của từng khu vực.</td>
 </tr>
 <tr>
-<td> RMS误差 </td>
-<td> 每个区域的标定结果误差评估                                                                    </td>
+<td>Lỗi RMS</td>
+<td>Đánh giá sai số kết quả hiệu chuẩn của từng khu vực.</td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                         </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                       </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>7.示例工程</h2>
+<h2>7. Ví dụ dự án</h2>
 
 <p>参见“\Samples\激光关联标定+激光位置计算工具.gvp”。</p>
