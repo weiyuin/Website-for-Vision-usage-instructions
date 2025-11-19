@@ -16,55 +16,53 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云段差测量项目</h1>
+<h1>Hạng mục đo độ chênh lệch độ cao (Step Height) dựa trên đám mây điểm.</h1>
 
-<h2>1.项目需求</h2>
+<h2>1. Yêu cầu dự án</h2>
 
-<p>​ 本项目主要测量工件高度落差。</p>
+<p>Đây là dự án chủ yếu đo sự chênh lệch chiều cao của chi tiết sản phẩm.</p>
 
-<h2>2.方案分析</h2>
+<h2>2. Phân tích giải pháp</h2>
 
-<p>​ 如下图所示为待测量产品工件，主要测量内侧边到基准平面的高度落差。</p>
+<p>Như hình dưới, sản phẩm cần đo, chủ yếu đo chênh lệch chiều cao từ mép bên trong tới mặt phẳng chuẩn.</p>
 
-<p><img src="media\Measurement_2_1.png" alt="Measurement_2_1" /></p>
+<p><img src="media/Measurement_2_1.png" alt="Measurement_2_1" /></p>
 
-<h2>3.方案实现</h2>
+<h2>3. Thực hiện giải pháp</h2>
 
-<h3>3.1 测量流程</h3>
+<h3>3.1 Quy trình đo</h3>
 
 <p><img src="media/Measurement_3_1.png" alt="" /></p>
 
-<h3>3.2 测量实现</h3>
+<h3>3.2 Thực hiện đo</h3>
 
 <ul>
-<li>整体流程图如下图所示。</li>
+<li>Quy trình tổng thể được thể hiện như hình dưới.</li>
 </ul>
 
-
-<p><img src="media\Measurement_3_2.png" alt="Measurement_3_3" /></p>
+<p><img src="media/Measurement_3_2.png" alt="Measurement_3_3" /></p>
 
 <ul>
-<li><p>点云坐标系对齐</p>
+<li><p>Căn chỉnh hệ tọa độ điểm mây</p>
 
-<p>相当于产品定位，定位出产品的中心，将其移动到坐标系原点，如下图所示。</p>
+<p>Tương tự như định vị sản phẩm, xác định tâm sản phẩm và di chuyển về gốc tọa độ, như hình dưới.</p>
 
-<p><img src="media\Measurement_3_3.png" alt="Measurement_3_3" /></p>
+<p><img src="media/Measurement_3_3.png" alt="Measurement_3_3" /></p>
+<p><img src="media/Measurement_3_4.png" alt="Measurement_3_3" /></p></li>
 
-<p><img src="media\Measurement_3_4.png" alt="Measurement_3_3" /></p></li>
-<li><p>点云段差测量</p>
+<li><p>Đo chênh lệch điểm mây</p>
 
-<p>利用卡尺工具在产品某一位置探测点，然后借助点云距离测量工具完成点到面的距离测量，如下图所示。</p>
+<p>Sử dụng công cụ thước cặp đo một điểm trên sản phẩm, sau đó dùng công cụ đo khoảng cách từ điểm tới mặt phẳng trên điểm mây để hoàn tất đo, như hình dưới.</p>
 
-<p><img src="media\Measurement_3_5.png" alt="Measurement_3_3" />   <img src="media\Measurement_3_6.png" alt="Measurement_3_3" /></p></li>
+<p><img src="media/Measurement_3_5.png" alt="Measurement_3_3" />   <img src="media/Measurement_3_6.png" alt="Measurement_3_3" /></p></li>
 </ul>
 
+<h2>4. Hiển thị kết quả</h2>
 
-<h2>4.结果展示</h2>
+<p>Giao diện sản xuất hiển thị kết quả như hình dưới.</p>
 
-<p>​ 生产界面运行结果如下图所示。</p>
+<p><img src="media/Measurement_3_7.png" alt="Measurement_3_12" /></p>
 
-<p><img src="media\Measurement_3_7.png" alt="Measurement_3_12" /></p>
-
-<h2>5. 示例工程</h2>
+<h2>5. Ví dụ dự án</h2>
 
 <p>​     参见“\Samples\应用案例\测高类项目\点云测量项目\点云段差测量工程.gvp”。</p>

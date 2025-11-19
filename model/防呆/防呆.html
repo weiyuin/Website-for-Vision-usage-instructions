@@ -16,99 +16,95 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>防呆</h1>
+<h1>Chống lỗi (Fool Proof)</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>使用脚本实现防呆功能。</p>
+<p>Sử dụng script để thực hiện chức năng chống lỗi.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th> 接口名称                         </th>
-<th> 接口描述                           </th>
+<th>Tên giao diện</th>
+<th>Giải thích giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> ScFoolProofline1 </td>
-<td> 判断单条线夹角是否满足需求 </td>
+<td>ScFoolProofline1</td>
+<td>Kiểm tra xem góc của một đường có đáp ứng yêu cầu hay không</td>
 </tr>
 <tr>
-<td> ScFoolProofline2 </td>
-<td> 判断两条线夹角是否满足需求 </td>
+<td>ScFoolProofline2</td>
+<td>Kiểm tra xem góc giữa hai đường có đáp ứng yêu cầu hay không</td>
 </tr>
 <tr>
-<td> ScFoolProofCircle </td>
-<td> 判断圆半径是否满足需求 </td>
+<td>ScFoolProofCircle</td>
+<td>Kiểm tra bán kính hình tròn có đáp ứng yêu cầu hay không</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Hướng dẫn chi tiết</h2>
 
 <h3>ScFoolProofline1(line0,stdAngle=90,AngleLimit=10,strlabel=<strong>&ldquo;L1&rdquo;</strong>)</h3>
 
 <ul>
-<li>功能：  判断单条线夹角是否满足需求。</li>
-<li>参数：
+<li>Chức năng: Kiểm tra góc của một đường có đáp ứng yêu cầu hay không.</li>
+<li>Tham số:
 
 <ul>
-<li>line0：输入线1  scLine类型。</li>
-<li>stdAngle：标准夹角  double类型。</li>
-<li>AngleLimit：标准公差  double类型。</li>
-<li>strlabel：标注（NG时提示哪一个异常了）可忽略。</li>
+<li>line0: đường đầu vào, kiểu scLine.</li>
+<li>stdAngle: góc chuẩn, kiểu double.</li>
+<li>AngleLimit: sai số chuẩn, kiểu double.</li>
+<li>strlabel: nhãn (hiển thị khi NG) có thể bỏ qua.</li>
 </ul>
 </li>
-<li>返回值：True符合标准，False不符合标准。</li>
+<li>Giá trị trả về: True nếu phù hợp chuẩn, False nếu không phù hợp.</li>
 </ul>
-
 
 <h3>ScFoolProofline2(line0,line1,stdAngle=90,AngleLimit=1,strlabel=<strong>&ldquo;L1&amp;L2&rdquo;</strong>)</h3>
 
 <ul>
-<li>功能：判断两条线夹角是否满足需求。</li>
-<li>参数：
+<li>Chức năng: Kiểm tra góc giữa hai đường có đáp ứng yêu cầu hay không.</li>
+<li>Tham số:
 
 <ul>
-<li>line0：输入线1  scLine类型。</li>
-<li>line1：输入线2  scLine类型。</li>
-<li>stdAngle：标准夹角  double类型。</li>
-<li>AngleLimit：标准公差  double类型。</li>
-<li>strlabel：标注（NG时提示哪一个异常了）可忽略。</li>
+<li>line0: đường 1 đầu vào, kiểu scLine.</li>
+<li>line1: đường 2 đầu vào, kiểu scLine.</li>
+<li>stdAngle: góc chuẩn, kiểu double.</li>
+<li>AngleLimit: sai số chuẩn, kiểu double.</li>
+<li>strlabel: nhãn (hiển thị khi NG) có thể bỏ qua.</li>
 </ul>
 </li>
-<li>返回值：True符合标准，False不符合标准。</li>
+<li>Giá trị trả về: True nếu phù hợp chuẩn, False nếu không phù hợp.</li>
 </ul>
-
 
 <h3>ScFoolProofCircle(circleR,stdR=100,RLimit=10,strlabel=<strong>&ldquo;R1&rdquo;</strong>)</h3>
 
 <ul>
-<li><p>功能：判断圆半径是否满足需求。</p></li>
-<li><p>参数：</p>
+<li>Chức năng: Kiểm tra bán kính hình tròn có đáp ứng yêu cầu hay không.</li>
+<li>Tham số:
 
 <ul>
-<li>circleR：输入圆  scCircle类型。</li>
-<li>stdR：标准圆半径  double类型。</li>
-<li>strlabel：标注（NG时提示哪一个异常了）可忽略。</li>
+<li>circleR: hình tròn đầu vào, kiểu scCircle.</li>
+<li>stdR: bán kính chuẩn, kiểu double.</li>
+<li>strlabel: nhãn (hiển thị khi NG) có thể bỏ qua.</li>
 </ul>
 </li>
-<li>返回值：True符合标准，False不符合标准。</li>
+<li>Giá trị trả về: True nếu phù hợp chuẩn, False nếu không phù hợp.</li>
 </ul>
 
-
-<h2>注意：</h2>
+<h2>Lưu ý</h2>
 
 <p>from ScFoolProof import ScFoolProof</p>
 
-<p>引用库：ScFoolProof</p>
+<p>Thư viện tham chiếu: ScFoolProof</p>
 
-<p>类名称： class ScFoolProof</p>
+<p>Tên lớp: class ScFoolProof</p>
 
-<h2>示例代码：</h2>
+<h2>Ví dụ mã nguồn:</h2>
 
-<p>无</p>
+<p>Không có</p>

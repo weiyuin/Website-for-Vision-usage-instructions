@@ -16,131 +16,124 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>母座测量项目</h1>
+<h1>Hạng mục kiểm tra Socket</h1>
 
-<h2>1.项目需求</h2>
+<h2>1. Yêu cầu dự án</h2>
 
-<p>​ 本项目主要测量工件边框到基准边距离及边框平行度。</p>
+<p>Dự án này chủ yếu đo khoảng cách từ khung phôi tới cạnh chuẩn và độ song song của khung.</p>
 
-<h2>2.方案分析</h2>
+<h2>2. Phân tích giải pháp</h2>
 
-<p>​ 项目分为两个工位进行检测，分别测量母座正面及背面的尺寸，各工位检测内容如下：</p>
+<p>Dự án được thực hiện tại hai trạm đo, lần lượt đo kích thước mặt trước và mặt sau của đế mẹ; nội dung kiểm tra từng trạm như sau:</p>
 
-<h3>2.1工位1</h3>
+<h3>2.1 Trạm 1</h3>
 
-<p>​ 工位1共测量4个距离，其中距离2可分为距离2_1、距离2_2和距离2_3，距离4为两条边的平行度，具体介绍如下:</p>
+<p>Trạm 1 đo tổng cộng 4 khoảng cách, trong đó khoảng cách 2 chia thành khoảng cách 2_1, 2_2 và 2_3; khoảng cách 4 là độ song song giữa hai cạnh. Cụ thể như sau:</p>
 
-<p>（1）下图中，紫色直线为距离1</p>
+<p>(1) Hình dưới, đường thẳng màu tím là khoảng cách 1.</p>
 
 <p><img src="media\Measurement_2_1.png" alt="Measurement_2_1" /></p>
 
-<p>（2）下图中，紫色直线为距离2，共分为三段距离，分别取线段的两个端点以及中点到另一边的距离，从上到下分别为距离2_1、距离2_2和距离2_3。</p>
+<p>(2) Hình dưới, đường thẳng màu tím là khoảng cách 2, chia thành ba đoạn; lấy khoảng cách từ hai đầu mút và điểm giữa của đoạn tới cạnh còn lại, từ trên xuống là khoảng cách 2_1, 2_2 và 2_3.</p>
 
 <p><img src="media\Measurement_2_2.png" alt="Measurement_2_2" /></p>
 
-<p>（3）下图中，紫色直线所示的为距离3。</p>
+<p>(3) Hình dưới, đường thẳng màu tím là khoảng cách 3.</p>
 
 <p><img src="media\Measurement_2_3.png" alt="Measurement_2_3" /></p>
 
-<p>（4）下图中，紫色直线所示的为距离4，为两条边的平行度，通过计算一条边的两个点到另一条边的距离的差值来作为平行度的评价标准。</p>
+<p>(4) Hình dưới, đường thẳng màu tím là khoảng cách 4, biểu thị độ song song giữa hai cạnh, đánh giá bằng hiệu khoảng cách từ hai điểm trên một cạnh tới cạnh kia.</p>
 
 <p><img src="media\Measurement_2_4.png" alt="Measurement_2_4" /></p>
 
-<h3>2.2工位2</h3>
+<h3>2.2 Trạm 2</h3>
 
-<p>​ 工位2共测量3个距离，其中距离2为两条边的平行度，具体介绍如下:</p>
+<p>Trạm 2 đo tổng cộng 3 khoảng cách, trong đó khoảng cách 2 là độ song song giữa hai cạnh, cụ thể:</p>
 
-<p>（1）下图中，紫色直线为距离1。</p>
+<p>(1) Hình dưới, đường thẳng màu tím là khoảng cách 1.</p>
 
 <p><img src="media\Measurement_2_5.png" alt="Measurement_2_5" /></p>
 
-<p>（2）下图中，紫色直线为距离2，为两条边的平行度，通过计算一条边的两个点到另一条边的距离的差值来作为平行度的评价标准。</p>
+<p>(2) Hình dưới, đường thẳng màu tím là khoảng cách 2, đánh giá độ song song bằng hiệu khoảng cách từ hai điểm trên một cạnh tới cạnh kia.</p>
 
 <p><img src="media\Measurement_2_6.png" alt="Measurement_2_6" /></p>
 
-<p>（3）下图中，紫色直线为距离3。</p>
+<p>(3) Hình dưới, đường thẳng màu tím là khoảng cách 3.</p>
 
 <p><img src="media\Measurement_2_7.png" alt="Measurement_2_7" /></p>
 
-<h2>3.方案实现</h2>
+<h2>3. Thực hiện giải pháp</h2>
 
-<h3>3.1 测量流程</h3>
+<h3>3.1 Quy trình đo</h3>
 
-<p>​ 两个工位测量步骤大体相似，其中工位1第一次拍照拍摄背景光图像，第二次拍照拍摄前景光图像，工位2第一次拍照拍摄前景光图像，第二次拍照拍摄背景光图像，流程如下：</p>
+<p>Quy trình đo tại hai trạm tương tự nhau: Trạm 1 chụp lần đầu hình nền, lần hai hình tiền cảnh; Trạm 2 chụp lần đầu hình tiền cảnh, lần hai hình nền, như hình dưới:</p>
 
 <p><img src="media/Measurement_3_13.png" alt="" /></p>
 
-<h3>3.2 工位1测量</h3>
+<h3>3.2 Đo tại trạm 1</h3>
 
-<p>​ 如下图所示，采用两个并行分支同时处理前景光图像（图片2）和背景光图像（图片1）；其中背景光图像主要用来查找距离1边框线，前景光图像用来查找基准线、距离2/3/4边框线。</p>
+<p>Như hình dưới, sử dụng hai nhánh song song xử lý đồng thời hình tiền cảnh (hình 2) và hình nền (hình 1); hình nền chủ yếu dùng để tìm đường viền khoảng cách 1, hình tiền cảnh dùng để tìm đường chuẩn và các đường viền khoảng cách 2/3/4.</p>
 
 <p><img src="media\Measurement_3_1.png" alt="Measurement_3_1" /></p>
 
-<p>​ 对4个相关距离计算如下图所示，使用并行处理方式。</p>
+<p>Việc tính toán 4 khoảng cách liên quan được thực hiện theo hình dưới, sử dụng cách xử lý song song.</p>
 
 <p><img src="media\Measurement_3_2.png" alt="Measurement_3_2" /></p>
 
 <ul>
-<li>距离1计算选用边框找线线段结果中点到基准线的距离结果，距离示意图如下图所示</li>
+<li>Khoảng cách 1 được tính bằng khoảng cách từ điểm giữa đoạn tìm được trên đường viền tới đường chuẩn, minh họa khoảng cách như hình dưới</li>
 </ul>
-
 
 <p><img src="media\Measurement_3_3.png" alt="Measurement_3_3" /></p>
 
 <ul>
-<li>距离2三个距离计算选用边框找线线段结果的两个端点和中点到基准线的距离结果，距离示意图如下图所示</li>
+<li>Ba khoảng cách của khoảng cách 2 được tính bằng khoảng cách từ hai đầu mút và điểm giữa đoạn tìm được trên đường viền tới đường chuẩn, minh họa như hình dưới</li>
 </ul>
-
 
 <p><img src="media\Measurement_3_4.png" alt="Measurement_3_4" /></p>
 
 <ul>
-<li>距离3计算选用边框找线线段结果中点到基准线的距离结果，距离示意图如下图所示</li>
+<li>Khoảng cách 3 được tính bằng khoảng cách từ điểm giữa đoạn tìm được trên đường viền tới đường chuẩn, minh họa như hình dưới</li>
 </ul>
-
 
 <p><img src="media\Measurement_3_5.png" alt="Measurement_3_5" /></p>
 
 <ul>
-<li>距离4（平行度）计算选用边框找线线段结果两个端点到基准线的距离结果之差，距离示意图如下图所示</li>
+<li>Khoảng cách 4 (độ song song) được tính bằng hiệu khoảng cách từ hai đầu mút đoạn tìm được trên đường viền tới đường chuẩn, minh họa như hình dưới</li>
 </ul>
-
 
 <p><img src="media\Measurement_3_6.png" alt="Measurement_3_6" /></p>
 
-<h3>3.3 工位2测量</h3>
+<h3>3.3 Đo tại trạm 2</h3>
 
-<p>​ 如下图所示，采用两个并行分支同时处理前景光图像（图片1）和背景光图像（图片2）；其中钱景光图像主要用来查找距离1/2/3边框线，背景光图像用来查找距离1/2/3的两条基准线。</p>
+<p>Như hình dưới, sử dụng hai nhánh song song xử lý đồng thời hình tiền cảnh (hình 1) và hình nền (hình 2); hình tiền cảnh chủ yếu dùng để tìm các đường viền khoảng cách 1/2/3, hình nền dùng để tìm hai đường chuẩn cho khoảng cách 1/2/3.</p>
 
 <p><img src="media\Measurement_3_7.png" alt="Measurement_3_7" /></p>
 
-<p>​ 对3个相关距离计算如下图所示，使用并行处理方式。</p>
+<p>Việc tính toán 3 khoảng cách liên quan được thực hiện theo hình dưới, sử dụng cách xử lý song song.</p>
 
 <p><img src="media\Measurement_3_8.png" alt="Measurement_3_8" /></p>
 
 <ul>
-<li>距离1计算选用边框找线线段结果中点到基准线的距离结果，距离示意图如下图所示</li>
+<li>Khoảng cách 1 được tính bằng khoảng cách từ điểm giữa đoạn tìm được trên đường viền tới đường chuẩn, minh họa như hình dưới</li>
 </ul>
-
 
 <p><img src="media\Measurement_3_9.png" alt="Measurement_3_9" /></p>
 
 <ul>
-<li>距离2平行度计算通过如下图所示两个蓝色点来完成（计算原理同工位1），两个计算点通过三条直线（红色所示）的交点获取</li>
+<li>Khoảng cách 2 (độ song song) được tính bằng hai điểm màu xanh như hình dưới (nguyên lý tính toán giống trạm 1), hai điểm này lấy từ giao điểm của ba đường thẳng màu đỏ</li>
 </ul>
-
 
 <p><img src="media\Measurement_3_10.png" alt="Measurement_3_10" /></p>
 
 <ul>
-<li>距离3计算通过下图绿色点到基准线距离获取，绿色点为以两个蓝色点为端点的线段的中点</li>
+<li>Khoảng cách 3 được tính bằng khoảng cách từ điểm màu xanh lá tới đường chuẩn, điểm xanh lá là trung điểm của đoạn nối hai điểm màu xanh</li>
 </ul>
-
 
 <p><img src="media\Measurement_3_11.png" alt="Measurement_3_11" /></p>
 
-<h2>4.结果展示</h2>
+<h2>4. Kết quả hiển thị</h2>
 
-<p>​ 生产界面运行结果如下图所示。</p>
+<p>Giao diện sản xuất hiển thị kết quả như hình dưới.</p>
 
 <p><img src="media\Measurement_3_12.png" alt="Measurement_3_12" /></p>
