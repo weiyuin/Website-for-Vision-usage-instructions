@@ -16,151 +16,152 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>圆到圆交点工具</h1>
+<h1>Công cụ Giao điểm từ Hình tròn đến Hình tròn</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>圆到圆交点工具主要用来计算输入图像中圆与圆之间的交点，并输出交点坐标。</p>
+<p>Công cụ giao điểm từ hình tròn đến hình tròn chủ yếu dùng để tính giao điểm giữa hai hình tròn trong hình ảnh đầu vào và xuất tọa độ giao điểm.</p>
 
 <p><img src="media/wps68.jpg" alt="img" />     <img src="media/wps69.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 圆示意图</imgnote>  <imgnote>(b) 交点示意图</imgnote></p>
+<p><imgnote>(a) Minh họa hình tròn</imgnote>  <imgnote>(b) Minh họa giao điểm</imgnote></p>
 
-<p><imgnote>图1 圆到圆交点工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ giao điểm từ hình tròn đến hình tròn</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                         </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口 </td>
-<td> 无   </td>
-<td> 无                                                                               </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输入图像               </td>
-<td> 显示待检测的图像。                                       </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Hình ảnh đầu vào</td>
+<td>Hiển thị hình ảnh cần phát hiện.</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输入图像               </td>
-<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 圆A      </td>
-<td> 将要求交点的第一个圆。                                                           </td>
+<td>Dây dữ liệu</td>
+<td>Hình ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước pixel của hình ảnh đầu vào, giống tham số trong cửa sổ hình ảnh.</td>
 </tr>
 <tr>
 <td></td>
-<td> 圆B      </td>
-<td> 将要求交点的第二个圆。                                                           </td>
+<td>Hình tròn A</td>
+<td>Hình tròn thứ nhất cần tính giao điểm.</td>
 </tr>
 <tr>
-<td> 高级界面 </td>
-<td> 无   </td>
-<td> 无                                                                               </td>
+<td></td>
+<td>Hình tròn B</td>
+<td>Hình tròn thứ hai cần tính giao điểm.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                               </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Giải thích tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输入图像                                                     </td>
-<td> 输出图像宽度、高度、像素大小。                           </td>
+<td>Cửa sổ giám sát</td>
+<td>Hình ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước pixel của hình ảnh đầu ra.</td>
 </tr>
 <tr>
 <td></td>
-<td> 交点A    </td>
-<td> 圆A与圆B的第一个交点图像坐标。                                                                                         </td>
+<td>Giao điểm A</td>
+<td>Tọa độ hình ảnh của giao điểm thứ nhất giữa hình tròn A và B.</td>
 </tr>
 <tr>
 <td></td>
-<td> 交点B    </td>
-<td> 圆A与圆B的第二个交点图像坐标。                                                                                         </td>
+<td>Giao điểm B</td>
+<td>Tọa độ hình ảnh của giao điểm thứ hai giữa hình tròn A và B.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                                                         </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                                                         </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输入图像                                                     </td>
-<td> 显示工具执行结果图像，同监视窗口的输入图像参数。         </td>
-</tr>
-<tr>
-<td></td>
-<td> 交点A    </td>
-<td> 圆A与圆B的第一个交点图像坐标。                                                                                         </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Hình ảnh đầu vào</td>
+<td>Hiển thị hình ảnh kết quả thực thi công cụ, giống tham số hình ảnh đầu vào trong cửa sổ giám sát.</td>
 </tr>
 <tr>
 <td></td>
-<td> 交点B    </td>
-<td> 圆A与圆B的第二个交点图像坐标。                                                                                         </td>
+<td>Giao điểm A</td>
+<td>Tọa độ hình ảnh của giao điểm thứ nhất giữa hình tròn A và B.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                           </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 交点A    </td>
-<td> 圆A与圆B的第一个交点图像坐标，供后序工具使用，同监视窗口的交点A参数。                                                           </td>
+<td>Giao điểm B</td>
+<td>Tọa độ hình ảnh của giao điểm thứ hai giữa hình tròn A và B.</td>
 </tr>
 <tr>
 <td></td>
-<td> 交点B    </td>
-<td> 圆A与圆B的第二个交点图像坐标，供后序工具使用，同监视窗口的交点B参数。                                                           </td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả công cụ: thành công hiển thị “OK”, thất bại hiển thị “NG”, giống tham số kết quả trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Dây dữ liệu</td>
+<td>Giao điểm A</td>
+<td>Tọa độ hình ảnh của giao điểm thứ nhất giữa hình tròn A và B, dùng cho các công cụ tiếp theo, giống tham số Giao điểm A trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Giao điểm B</td>
+<td>Tọa độ hình ảnh của giao điểm thứ hai giữa hình tròn A và B, dùng cho các công cụ tiếp theo, giống tham số Giao điểm B trong cửa sổ giám sát.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
 
-<p>无</p>
+<h2>Hướng dẫn chi tiết</h2>
 
-<h2>注意</h2>
+<p>Không có</p>
+
+<h2>Lưu ý</h2>
 
 <ul>
-<li><p>圆与圆无交点时，工具执行失败。</p></li>
-<li><p>当数据链窗口中没有指定圆参数来源时，圆由图像窗口的圆的GUI确定；当数据链窗口中已经指定圆参数来源时，以该参数来源为优先，图像窗口圆GUI确定的圆无效。</p></li>
-<li><p>如果圆由图像窗口的圆的GUI确定，则每次打开工程时需重新确定圆。</p></li>
-<li><p>数据链中圆A与圆B的参数来源，既可以是完整的圆，也可以是圆弧（如图2 所示）所在的圆。</p>
+<li><p>Nếu hai hình tròn không có giao điểm, công cụ thực thi sẽ thất bại.</p></li>
+<li><p>Khi không chỉ định nguồn tham số hình tròn trong cửa sổ dây dữ liệu, hình tròn sẽ được xác định từ GUI hình tròn trong cửa sổ hình ảnh; nếu nguồn tham số hình tròn đã được chỉ định trong cửa sổ dây dữ liệu, tham số này sẽ ưu tiên, và hình tròn xác định từ GUI trong cửa sổ hình ảnh sẽ không hợp lệ.</p></li>
+<li><p>Nếu hình tròn được xác định từ GUI hình tròn trong cửa sổ hình ảnh, mỗi lần mở dự án cần xác định lại hình tròn.</p></li>
+<li><p>Tham số hình tròn A và B trong dây dữ liệu có thể là hình tròn đầy đủ hoặc là hình tròn chứa cung tròn (như minh họa Hình 2).</p>
 
 <p><img src="media/wps74.jpg" alt="img" /></p>
 
-<p><imgnote>图2 圆与圆交点示意图</imgnote></p></li>
+<p><imgnote>Hình 2 Minh họa giao điểm giữa hai hình tròn</imgnote></p></li>
 </ul>
 
-
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
 <p>参见“\Samples\形状间距及相关点.gvp”。</p>
