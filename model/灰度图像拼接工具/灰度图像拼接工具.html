@@ -16,123 +16,117 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>灰度图像拼接工具</h1>
+<h1>Công cụ ghép ảnh xám</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Giới thiệu chức năng</h2>
 
-<p>​     图像拼接是指将多幅来自同一场景的具有一定重叠区域的小尺寸图像合成为一幅大型的无缝高分辨率图像的技术，这些图像可以是在不同时间、不同视角或者不同传感器获得。灰度图像拼接工具，即所拼接的图像只能是灰度图像，拼接后输出的结果也是灰度图像。</p>
+<p>Ghép ảnh là kỹ thuật hợp nhất nhiều ảnh nhỏ của cùng một cảnh (có vùng chồng lấp) thành một ảnh lớn có độ phân giải cao và không đường nối. Các ảnh này có thể được chụp ở thời điểm khác nhau, góc nhìn khác nhau hoặc từ các cảm biến khác nhau. Công cụ ghép ảnh xám chỉ hỗ trợ ảnh đầu vào là ảnh xám và kết quả xuất ra cũng là ảnh xám.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Ứng dụng</h2>
 
-<p>​     由于面阵相机的视野和分辨率有限，有时单个相机可能无法满足大视野、大幅面，这时需要将多个相机获取的图像进行拼接处理，可以使用灰度图像拼接工具。</p>
+<p>Do giới hạn về trường nhìn và độ phân giải của camera ma trận, một camera đơn có thể không đáp ứng được yêu cầu quan sát diện rộng. Khi cần ghép ảnh từ nhiều camera, có thể sử dụng công cụ ghép ảnh xám.</p>
 
 <p><img src="media/GcGrayImageStitchingTool_2_1.png" alt="GcGrayImageStitchingTool_2_1" /></p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên lý</h2>
 
-<p>​     图像拼接的功能是将两到多幅图像组合为一幅结果图像。输入图像可以是单相机移动拍摄或多相机图像。拼接时需要考虑多幅图像通过算法变换成统一大小尺寸的图像。</p>
+<p>Công cụ thực hiện ghép từ hai hoặc nhiều ảnh thành một ảnh kết quả duy nhất. Ảnh đầu vào có thể đến từ camera di chuyển hoặc từ nhiều camera khác nhau. Khi ghép, cần đưa các ảnh về cùng kích thước tương ứng.</p>
 
-<p>图像拼接过程中，只做边缘拼接。拼合过程中，输入的图像小于M×N（行列所需要的小图个数）时，用128灰度值补齐图像；输入的图像大于M×N时，增加行数适应拼合后图像大小。</p>
+<p>Trong quá trình ghép, chỉ xử lý phần biên. Nếu số ảnh nhỏ hơn kích thước M×N (số hàng × số cột) yêu cầu, hệ thống dùng giá trị xám 128 để bù vào. Nếu số ảnh lớn hơn M×N, công cụ sẽ tự tăng số hàng để phù hợp với ảnh ghép cuối cùng.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，设置拼接图像个数</h4></li>
+<li><h4>Thêm công cụ và thiết lập số lượng ảnh cần ghép</h4></li>
 </ul>
-
 
 <p><img src="media/GcGrayImageStitchingTool_4_1.png" alt="GcGrayImageStitchingTool_4_1" /></p>
 
 <ul>
-<li><h4>链入图像数组</h4></li>
+<li><h4>Liên kết mảng ảnh đầu vào</h4></li>
 </ul>
-
 
 <p><img src="media/GcGrayImageStitchingTool_4_2.png" alt="GcGrayImageStitchingTool_4_2" /></p>
 
 <ul>
-<li><h4>查看结果</h4></li>
+<li><h4>Xem kết quả ghép ảnh</h4></li>
 </ul>
-
 
 <p><img src="media/GcGrayImageStitchingTool_4_3.png" alt="GcGrayImageStitchingTool_4_3" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Các vấn đề thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述             </th>
-<th> 解决方法                     </th>
+<th>Mô tả hiện tượng</th>
+<th>Giải pháp</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 错误栏输出初始化失败 </td>
-<td> 检查数据链是否链入图像数组。 </td>
+<td>Báo lỗi khởi tạo thất bại</td>
+<td>Kiểm tra xem chuỗi dữ liệu đã liên kết đúng mảng ảnh hay chưa.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>6. Giải thích tham số</h2>
 
-<h2>6. 参数说明</h2>
-
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称   </th>
-<th> 参数说明                                 </th>
+<th>Tên tham số</th>
+<th>Giải thích</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像组 </td>
-<td> 需要拼接的灰度图像集合。                 </td>
+<td>Nhóm ảnh đầu vào</td>
+<td>Tập ảnh xám cần ghép.</td>
 </tr>
 <tr>
-<td> 行数       </td>
-<td> 拼接大图的行数。                         </td>
+<td>Số hàng</td>
+<td>Số hàng của ảnh lớn sau khi ghép.</td>
 </tr>
 <tr>
-<td> 列数       </td>
-<td> 拼接大图的列数，列为基数，重新计算行数。 </td>
+<td>Số cột</td>
+<td>Số cột của ảnh ghép; nếu số cột là số lẻ, hệ thống sẽ tính lại số hàng.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数说明               </th>
+<th>Tên tham số</th>
+<th>Giải thích</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出图像 </td>
-<td> 输出拼接后的灰度图像。 </td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh xám sau khi ghép hoàn chỉnh.</td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果。         </td>
+<td>Kết quả thực thi</td>
+<td>Trạng thái thực thi của công cụ.</td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 工具执行时间。         </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian xử lý của công cụ.</td>
 </tr>
 <tr>
-<td>          </td>
-<td>                        </td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>7. 示例工程</h2>
+<h2>7. Ví dụ dự án</h2>
 
 <p>​     参见“\Samples\灰度图像拼接工具.gvp”。</p>

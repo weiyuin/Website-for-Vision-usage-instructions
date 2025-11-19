@@ -16,209 +16,201 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>通信接收工具</h1>
+<h1>Công cụ nhận truyền thông</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     信接收工具主要是接收目标设备端口发送的特定格式的数据指令，完成与外部设备的信息交互。通常在使用之前需要在通信管理对话框（工具条-设置-通信）中完成对通信端口的设置。特别的，通信接收的数据有两种方式进行解析。一种是根据通信协议书写正则表达式，然后配合数据包解析工具来分析接收的数据。另一种方式是不书写正则表达式，此时可以配合字符串拆分工具对通信数据进行分析，但是此种方式对数据格式有一定的要求，不一定能够满足所有需求。</p>
+<p>​     Công cụ nhận truyền thông chủ yếu nhận các lệnh dữ liệu theo định dạng cụ thể từ cổng của thiết bị mục tiêu, hoàn tất việc trao đổi thông tin với thiết bị bên ngoài. Thông thường, trước khi sử dụng cần cấu hình cổng truyền thông trong hộp thoại quản lý truyền thông (Thanh công cụ - Cài đặt - Truyền thông). Đặc biệt, dữ liệu nhận từ truyền thông có hai cách phân tích. Một là viết biểu thức chính quy theo giao thức truyền thông, sau đó kết hợp với công cụ phân tích gói dữ liệu để phân tích dữ liệu nhận được. Cách thứ hai là không viết biểu thức chính quy, lúc này có thể kết hợp với công cụ tách chuỗi để phân tích dữ liệu truyền thông, nhưng cách này yêu cầu định dạng dữ liệu nhất định, không nhất thiết đáp ứng được mọi nhu cầu.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Ứng dụng</h2>
 
-<p>网络、串口、寄存器等接收并解析发来数据供后续工具使用；</p>
+<p>Nhận và phân tích dữ liệu từ mạng, cổng nối tiếp, thanh ghi,… để các công cụ tiếp theo sử dụng;</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên lý hoạt động</h2>
 
-<p>​     使用网络、串口、寄存器等和其他设备端建立连接，按照约定好的规则接收其他设备端发来信息并解析出对应的数据（如bool、char、string、double、float 、int、long、short、unsigned char、unsigned long、unsigned  short类型）。</p>
+<p>​     Sử dụng mạng, cổng nối tiếp, thanh ghi,… để thiết lập kết nối với thiết bị khác, theo các quy tắc đã thỏa thuận để nhận thông tin từ thiết bị và phân tích ra các dữ liệu tương ứng (như bool, char, string, double, float, int, long, short, unsigned char, unsigned long, unsigned short).</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，设置端口和端口测试</h4></li>
+<li><h4>Thêm công cụ, cấu hình cổng và kiểm tra cổng</h4></li>
 </ul>
-
 
 <p><img src="media/GcComInputTool_4_1.png" alt="GcComInputTool_4_1" /></p>
 
-<p>右键点击通信接收工具->属性->通信管理，打开通信管理界面后新建端口，上图例子是使用网络无协议客户端，连接后点击“确定”按键，端口信息会同步到通信接收工具的高级界面；在高级界面中按照和连接的设备端的约定设置参数，然后可以对建立的通信进行测试，测试没问题后点击右上角叉号关闭通信接收工具窗口，在通信接收工具高级界面中设置的参数会同步到通信接收参数的属性中，此时该工具可以正常使用；</p>
+<p>Nhấn chuột phải vào công cụ nhận truyền thông -> Thuộc tính -> Quản lý truyền thông, mở giao diện quản lý truyền thông và tạo cổng mới. Ví dụ trên là sử dụng mạng dạng client không có giao thức; sau khi kết nối, nhấn nút “Xác nhận”, thông tin cổng sẽ được đồng bộ lên giao diện nâng cao của công cụ nhận truyền thông. Trong giao diện nâng cao, thiết lập các tham số theo thỏa thuận với thiết bị kết nối, sau đó có thể kiểm tra kết nối. Khi kiểm tra ổn, nhấn nút đóng (hình dấu X) ở góc trên bên phải để đóng cửa sổ công cụ nhận truyền thông, các tham số thiết lập trong giao diện nâng cao sẽ được đồng bộ vào thuộc tính tham số của công cụ, lúc này công cụ có thể sử dụng bình thường.</p>
 
 <ul>
-<li><h4>输出数据</h4></li>
+<li><h4>Dữ liệu đầu ra</h4></li>
 </ul>
 
 
 <p><img src="media/GcComInputTool_4_2.png" alt="GcComInputTool_4_2" /></p>
 
-<p>其他工具需要把数据链连接到该通信接收工具，方式有两种：</p>
+<p>Các công cụ khác cần kết nối chuỗi dữ liệu đến công cụ nhận truyền thông này, có hai cách:</p>
 
 <ul>
-<li><p>1.直接连接输出数据；</p></li>
-<li><p>2.安装之前先连接数据包解析工具在使用解析出来参数的方式；</p></li>
+<li><p>1. Kết nối trực tiếp dữ liệu đầu ra;</p></li>
+<li><p>2. Trước khi sử dụng, kết nối công cụ phân tích gói dữ liệu và sử dụng các tham số phân tích được;</p></li>
 </ul>
 
-
-<h2>5. 常见问题</h2>
+<h2>5. Các vấn đề thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述     </th>
-<th> 解决方法                                                     </th>
+<th> Hiện tượng </th>
+<th> Cách giải quyết </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 不能打开端口 </td>
-<td> 1、检查端口是否被占用；2、检查端口是否已经被打开；3、检查参数设置； </td>
+<td> Không thể mở cổng </td>
+<td> 1. Kiểm tra cổng có bị chiếm không; 2. Kiểm tra cổng đã được mở chưa; 3. Kiểm tra cấu hình tham số; </td>
 </tr>
 <tr>
-<td> 通信连接失败 </td>
-<td> 1、使用通信工具测试通信能否正常连接；2、检查连接线路；3、检查端口是否能打开； </td>
+<td> Kết nối truyền thông thất bại </td>
+<td> 1. Sử dụng công cụ truyền thông để kiểm tra kết nối; 2. Kiểm tra đường kết nối; 3. Kiểm tra cổng có mở được không; </td>
+</tr>
+</tbody>
+</table>
+
+<h2>6. Giải thích tham số</h2>
+
+<h4>Tham số đầu vào</h4>
+
+<table>
+<thead>
+<tr>
+<th>Tên tham số </th>
+<th> Giải thích </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Cổng truyền thông </td>
+<td> Chọn thiết bị cần truyền thông (cấu hình cổng thực hiện qua hộp thoại quản lý truyền thông). </td>
+</tr>
+<tr>
+<td> Thời gian chờ truyền thông </td>
+<td> Thời gian chờ truyền thông của thiết bị (đơn vị ms, đặt -1 để chờ liên tục). </td>
+</tr>
+<tr>
+<td> Định dạng lệnh </td>
+<td> Định dạng nhập theo dạng biểu thức chính quy. Khi định dạng lệnh trống, có thể sử dụng kết hợp công cụ tách chuỗi để phân tích dữ liệu nhận trực tiếp </td>
+</tr>
+<tr>
+<td> Số lượng dữ liệu nhận </td>
+<td> Số lượng dữ liệu nhận (cấu hình theo giao thức truyền thông). </td>
+</tr>
+<tr>
+<td> Loại dữ liệu nhận </td>
+<td> Loại dữ liệu nhận (cấu hình theo giao thức truyền thông). </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
-
-<h4>输入参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th>参数名称                  </th>
-<th> 参数说明 </th>
+<th> Tên tham số </th>
+<th> Giải thích </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 通信端口                  </td>
-<td> 选择所需要通信的设备（由通信管理对话框完成端口配置）。       </td>
+<td> Dữ liệu đầu ra 0… </td>
+<td> Dữ liệu nhận được sau khi phân tích </td>
 </tr>
 <tr>
-<td> 通信超时                  </td>
-<td> 设备通信超时等待时间（单位ms，设置为-1表示一直等待）。       </td>
+<td> Dữ liệu nhận </td>
+<td> Dữ liệu truyền thông đã được phân tích theo biểu thức chính quy </td>
 </tr>
 <tr>
-<td> 指令格式 </td>
-<td> 该格式输入为正则表达式形式。当该格式指令为空时，可以配合字符串拆分工具直接分析接收数据 </td>
+<td> Chuỗi nhận </td>
+<td> Chuỗi đầy đủ nhận được từ công cụ truyền thông (chưa tách) </td>
 </tr>
 <tr>
-<td> 接收数据个数              </td>
-<td> 接收的数据个数（根据通信协议设置）。                         </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ </td>
 </tr>
 <tr>
-<td> 接收数据类型              </td>
-<td> 接收的数据的类型（根据通信协议分别设置）。                   </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ </td>
 </tr>
 </tbody>
 </table>
-
-
-<h4>输出参数</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称     </th>
-<th> 参数说明                                 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 输出数据0&hellip; </td>
-<td> 接收到数据解析后的数据                   </td>
-</tr>
-<tr>
-<td> 接收的数据   </td>
-<td> 通信数据经过正则表达式解析后的数据。     </td>
-</tr>
-<tr>
-<td> 接收字符串 </td>
-<td> 通信工具接收到的完整的字符串（未拆分）。 </td>
-</tr>
-<tr>
-<td> 执行结果     </td>
-<td> 工具执行结果。                           </td>
-</tr>
-<tr>
-<td> 执行时间     </td>
-<td> 工具执行时间。                           </td>
-</tr>
-</tbody>
-</table>
-
 
 <ul>
-<li>正则表达式</li>
+<li>Biểu thức chính quy</li>
 </ul>
 
+<p>Một biểu thức chính quy chỉ là một chuỗi, không giới hạn độ dài. “Biểu thức con” là một phần trong toàn bộ biểu thức chính quy, thường là biểu thức trong dấu ngoặc hoặc các nhánh được phân tách bằng "|". (Theo mặc định, chữ cái trong biểu thức phân biệt chữ hoa và chữ thường).</p>
 
-<p>一个正则表达式仅仅为一个字符串，它没有长度限制。“子表达式”指的是整个正则表达式中的一部分，通常是括号内的表达式，或者是由"|&ldquo;分割的多选分支。（默认情况下，表达式中的字母是要区分大小写的）。</p>
+<p>Một biểu thức chính quy thường bắt đầu bằng ký tự chèn "^" và kết thúc bằng ký tự "$". Biểu thức có ba loại dấu ngoặc: dấu ngoặc vuông "[ ]" chứa các ký tự cần so khớp; dấu ngoặc nhọn "{}" chỉ số lượng ký tự cần so khớp; dấu ngoặc tròn "()" dùng để nhóm.</p>
 
-<p>一个正则表达式通常以插入符号"^&ldquo;开始，以插入符号&rdquo;$&ldquo;结束。表达式中有三种括号类型：方括号&rdquo;[ ]&ldquo;内是需要匹配的字符；花括号&rdquo;{}&ldquo;是指指定匹配字符的数量；圆括号&rdquo;()&ldquo;则是用来分组的。</p>
-
-<p><strong>示例：</strong></p>
+<p><strong>Ví dụ:</strong></p>
 
 <ol>
-<li>匹配像91230456，01237648那样的固定8位数</li>
+<li>Khớp số cố định 8 chữ số như 91230456, 01237648</li>
 </ol>
-
 
 <p>^[0-9]{8}$</p>
 
 <ol>
-<li>验证固定格式序列号</li>
+<li>Xác thực số serial theo định dạng cố định</li>
 </ol>
 
-
-<p>^[a-z]{3}[0-9]{8}$  表示前三个是字母，后面为8位长度数字，若字母部分有大小写，则表达式可表示为：^[a-zA-Z]{3}[0-9]{8}$</p>
+<p>^[a-z]{3}[0-9]{8}$  nghĩa là ba ký tự đầu là chữ cái, tiếp theo là 8 chữ số. Nếu phần chữ cái có cả chữ hoa và chữ thường, biểu thức có thể viết thành: ^[a-zA-Z]{3}[0-9]{8}$</p>
 
 <ol>
-<li><p>验证邮箱格式</p>
+<li><p>Xác thực định dạng email</p>
 
-<p>email开始是长度在1-10的英文字母，最后跟一个"@&ldquo;：^[a-zA-Z0-9]{1,  10}@；@后面是长度在1-10的英文字母，后面跟一个&rdquo;.&ldquo;：[a-zA-Z]{1, 10}； 最后以.com或.org结束：.(com|org)$。则完整的表达式可写为：^[a-zA-Z0-9]{1,  10}@[a-zA-Z]{1, 10}<a href="com|org">.</a>$</p></li>
+<p>Email bắt đầu bằng 1-10 ký tự chữ và số, sau đó là "@": ^[a-zA-Z0-9]{1,10}@; sau "@" là 1-10 ký tự chữ, tiếp theo là ".": [a-zA-Z]{1,10}; cuối cùng kết thúc bằng .com hoặc .org: .(com|org)$; Vậy biểu thức đầy đủ có thể viết: ^[a-zA-Z0-9]{1,10}@[a-zA-Z]{1,10}\.(com|org)$</p></li>
 </ol>
 
 
-<p><strong>常用的元字符：</strong></p>
+<p><strong>Các ký tự đặc biệt thường dùng:</strong></p>
 
 <ol>
-<li><p>&ldquo;."：匹配除&rdquo;\n"之外的任何单个字符，若要匹配包括"\n"在内的任意字符，需使用诸如"[\s\S]&ldquo;之类的模式；</p></li>
-<li><p>&ldquo;^"：匹配输入字符串的开始位置，不匹配任何字符，要匹配&rdquo;^&ldquo;字符本身，需使用&rdquo;^&ldquo;；</p></li>
-<li><p>&ldquo;$"：匹配输入字符串结尾的位置，不匹配任何字符，要匹配&rdquo;$&ldquo;字符本身，需使用&rdquo;\$&ldquo;；</p></li>
-<li><p>&ldquo;<em>"：零次或多次匹配前面的字符或子表达式，&rdquo;</em>&ldquo;等效于&rdquo;{0, }&ldquo;，如&rdquo;^*b"可以匹配"b"、"<sup>b</sup>"、"^<sup>b</sup>"、…；</p></li>
-<li><p>&ldquo;+"：一次或多次匹配前面的字符或子表达式，等效于&rdquo;{1,   }&ldquo;，如"a+b"可以匹配"ab"、"aab"、"aaab"、…；</p></li>
-<li><p>&ldquo;?"： 零次或一次匹配前面的字符或子表达式，等效于&rdquo;{0,  1}&ldquo;，如"a[cd]?"可以匹配"a"、"ac"、"ad"； 当此字符紧随任何其他限定符&rdquo;*&ldquo;、&rdquo;+&ldquo;、&rdquo;?&ldquo;、&rdquo;{n}&ldquo;、&rdquo;{n, }&ldquo;、&rdquo;{n, m}&ldquo;之后时，匹配模式是“非贪心的”。“非贪心的”模式匹配搜索到的、尽可能短的字符串，而默认的“贪心的”模式匹配搜索到的、尽可能长的字符串。如，在字符串"oooo"中，"o+?"只匹配单个"o"，而"o+"匹配所有"o"；</p></li>
-<li><p>&ldquo;|"： 将两个匹配条件进行逻辑"或&rdquo;(or)运算，如正则表达式"(him|her)&ldquo;匹配"it belongs to  him"和"it belongs to  her"，但是不能匹配"it  belongs to them"；</p></li>
-<li><p>&ldquo;\"：将下一字符标记为特殊字符、文本、反向引用或八进制转义符，如，"n"匹配字符"n"，&rdquo;\n"匹配换行符，序列"\&ldquo;匹配&rdquo;\&ldquo;，&rdquo;(&ldquo;匹配&rdquo;(&ldquo;；</p></li>
-<li><p>&ldquo;\w"：匹配字母或数字或下划线，任意一个字母或数字或下划线，即A~Z，a~z，0~9，_中任意一个；</p></li>
-<li><p>&ldquo;\W"：匹配任意不是字母、数字、下划线的字符；</p></li>
-<li><p>&ldquo;\s"：匹配任意的空白符，包括空格、制表符、换页符等空白字符的其中任意一个，与&rdquo;[ \f\n\r\t\v]&ldquo;等效；</p></li>
-<li><p>&ldquo;\S"：匹配任意不是空白符的字符，与&rdquo;[^\f\n\r\t\v]&ldquo;等效；</p></li>
-<li><p>&ldquo;\d"：匹配数字，任意一个数字，0~9中的任意一个，等效于&rdquo;[0-9]&ldquo;；</p></li>
-<li><p>&ldquo;\D"：匹配任意非数字的字符，等效于&rdquo;[^0-9]&ldquo;；</p></li>
-<li><p>&ldquo;\b"：匹配一个字边界，即字与空格间的位置，也就是单词和空格之间的位置，不匹配任何字符，如，"er\b"匹配"never"中的"er"，但不匹配"verb"中的"er"；</p></li>
-<li><p>&ldquo;\B"：非字边界匹配，"er\B"匹配"verb"中的"er"，但不匹配"never"中的"er"；</p></li>
-<li><p>&ldquo;\f"：匹配一个换页符，等价于&rdquo;\x0c"和"\cL"；</p></li>
-<li><p>&ldquo;\n"：匹配一个换行符，等价于&rdquo;\x0a"和"\cJ"；</p></li>
-<li><p>&ldquo;\r"：匹配一个回车符，等价于&rdquo;\x0d"和"\cM"；</p></li>
-<li><p>&ldquo;\t"：匹配一个制表符，等价于&rdquo;\x09"和"\cI"；</p></li>
-<li><p>&ldquo;\v"：匹配一个垂直制表符，等价于&rdquo;\x0b"和"\cK"；</p></li>
-<li><p>&ldquo;\cx"：匹配"x"指示的控制字符，如，&rdquo;\cM"匹配Control-M或回车符，"x"的值必须在"A-Z"或"a-z"之间，如果不是这样，则假定c就是"c"字符本身；</p></li>
-<li><p>&ldquo;{n}"："n"是非负整数，正好匹配n次，如，"o{2}"与"Bob"中的"o"不匹配，但与"food"中的两个"o"匹配；</p></li>
-<li><p>&ldquo;{n,  }"："n"是非负整数，至少匹配n次，如，"o{2, }"不匹配"Bob"中的"o"，而匹配"foooood"中的所有"o"，"o{1, }"等效于"o+"，"o{0, }"等效于"o*"；</p></li>
-<li><p>&ldquo;{n,  m}"："n"和"m"是非负整数，其中n&lt;=m，匹配至少n次，至多m次，如，"o{1, 3}"匹配"fooooood"中的头三个o，'o{0, 1}&lsquo;等效于'o?'，注意，不能将空格插入逗号和数字之间；如"ba{1,  3}"可以匹配"ba"或"baa"或"baaa"；</p></li>
-<li><p>&ldquo;x|y"：匹配"x"或"y"，如，"z|food"匹配"z"或"food"；&rdquo;(z|f)ood"匹配"zood"或"food"；</p></li>
-<li><p>&ldquo;[xyz]"：字符集，匹配包含的任一字符，如，&rdquo;[abc]&ldquo;匹配"plain"中的"a"；</p></li>
-<li><p>&ldquo;[^xyz]"：反向字符集，匹配未包含的任何字符，匹配除了"xyz"以外的任意字符，如，&rdquo;[^abc]&ldquo;匹配"plain"中的"p"；</p></li>
-<li><p>&ldquo;[a-z]"：字符范围，匹配指定范围内的任何字符，如，&rdquo;[a-z]&ldquo;匹配"a"到"z"范围内的任何小写字母；</p></li>
-<li><p>&ldquo;[^a-z]"：反向范围字符，匹配不在指定的范围内的任何字符，如，&rdquo;[^a-z]&ldquo;匹配任何不在"a"到"z"范围内的任何字符；</p></li>
-<li><p>&ldquo;(  )"：将&rdquo;(&ldquo;和&rdquo;)&ldquo;之间的表达式定义为“组group”，并且将匹配这个表达式的字符保存到一个临时区域，一个正则表达式中最多可以保存9个，它们可以用&rdquo;\1"到"\9"的符号来引用；</p></li>
+<li><p>"." : khớp với bất kỳ ký tự đơn nào ngoài "\n". Để khớp bao gồm cả "\n", cần dùng các mẫu như "[\s\S]".</p></li>
+<li><p>"^" : khớp với vị trí bắt đầu chuỗi nhập, không khớp với ký tự nào. Để khớp ký tự "^" thực, dùng "\^".</p></li>
+<li><p>"$" : khớp với vị trí kết thúc chuỗi nhập, không khớp với ký tự nào. Để khớp ký tự "$" thực, dùng "\$".</p></li>
+<li><p>"*" : khớp 0 hoặc nhiều lần ký tự hoặc biểu thức trước đó, tương đương "{0,}". Ví dụ "^*b" có thể khớp "b", "<sup>b</sup>", "^<sup>b</sup>",…</p></li>
+<li><p>"+" : khớp 1 hoặc nhiều lần ký tự hoặc biểu thức trước đó, tương đương "{1,}". Ví dụ "a+b" có thể khớp "ab", "aab", "aaab",…</p></li>
+<li><p>"?" : khớp 0 hoặc 1 lần ký tự hoặc biểu thức trước đó, tương đương "{0,1}". Ví dụ "a[cd]?" khớp "a", "ac", "ad". Khi theo sau các ký tự định lượng khác như "*", "+", "?", "{n}", "{n,}", "{n,m}", thì mẫu khớp là "không tham lam", nghĩa là khớp chuỗi ngắn nhất có thể, trong khi mặc định là "tham lam" khớp dài nhất.</p></li>
+<li><p>"|" : thực hiện phép toán logic "hoặc" giữa hai điều kiện khớp. Ví dụ biểu thức "(him|her)" khớp với "it belongs to him" và "it belongs to her", nhưng không khớp với "it belongs to them".</p></li>
+<li><p>"\" : đánh dấu ký tự tiếp theo là ký tự đặc biệt, văn bản, tham chiếu ngược hoặc escape octal. Ví dụ "n" khớp ký tự "n", "\n" khớp xuống dòng, "\(" khớp "(".</p></li>
+<li><p>\w : khớp chữ cái, số hoặc dấu gạch dưới, tức A~Z, a~z, 0~9, _</p></li>
+<li><p>\W : khớp bất kỳ ký tự nào không phải chữ, số, dấu gạch dưới</p></li>
+<li><p>\s : khớp ký tự trắng bất kỳ, gồm space, tab, formfeed, newline, vertical tab, tương đương "[ \f\n\r\t\v]"</p></li>
+<li><p>\S : khớp ký tự không phải ký tự trắng, tương đương "[^\f\n\r\t\v]"</p></li>
+<li><p>\d : khớp chữ số 0~9, tương đương "[0-9]"</p></li>
+<li><p>\D : khớp ký tự không phải chữ số, tương đương "[^0-9]"</p></li>
+<li><p>\b : khớp biên của từ (vị trí giữa chữ và khoảng trắng), không khớp ký tự nào. Ví dụ "er\b" khớp "er" trong "never" nhưng không khớp "er" trong "verb"</p></li>
+<li><p>\B : khớp không phải biên từ. Ví dụ "er\B" khớp "er" trong "verb" nhưng không khớp "er" trong "never"</p></li>
+<li><p>\f : khớp ký tự ngắt trang, tương đương "\x0c" và "\cL"</p></li>
+<li><p>\n : khớp ký tự xuống dòng, tương đương "\x0a" và "\cJ"</p></li>
+<li><p>\r : khớp ký tự carriage return, tương đương "\x0d" và "\cM"</p></li>
+<li><p>\t : khớp ký tự tab, tương đương "\x09" và "\cI"</p></li>
+<li><p>\v : khớp ký tự tab dọc, tương đương "\x0b" và "\cK"</p></li>
+<li><p>\cx : khớp ký tự điều khiển do "x" chỉ định, ví dụ "\cM" khớp Control-M hoặc carriage return. Giá trị x phải là A-Z hoặc a-z, nếu không sẽ coi "c" là ký tự bình thường</p></li>
+<li><p>{n} : n là số nguyên không âm, khớp đúng n lần. Ví dụ "o{2}" không khớp "o" trong "Bob" nhưng khớp 2 ký tự "o" trong "food"</p></li>
+<li><p>{n,} : n là số nguyên không âm, khớp ít nhất n lần. Ví dụ "o{2,}" không khớp "o" trong "Bob" nhưng khớp tất cả "o" trong "foooood". "{1,}" tương đương "+", "{0,}" tương đương "*"</p></li>
+<li><p>{n,m} : n và m là số nguyên không âm, n≤m, khớp ít nhất n lần và tối đa m lần. Ví dụ "o{1,3}" khớp 3 ký tự "o" đầu tiên trong "fooooood". Chú ý không thêm khoảng trắng giữa dấu phẩy và số. Ví dụ "ba{1,3}" khớp "ba", "baa" hoặc "baaa"</p></li>
+<li><p>x|y : khớp "x" hoặc "y", ví dụ "z|food" khớp "z" hoặc "food"; "(z|f)ood" khớp "zood" hoặc "food"</p></li>
+<li><p>[xyz] : tập ký tự, khớp bất kỳ ký tự nào trong tập. Ví dụ "[abc]" khớp "a" trong "plain"</p></li>
+<li><p>[^xyz] : tập ký tự phủ định, khớp ký tự không có trong tập, ví dụ "[^abc]" khớp "p" trong "plain"</p></li>
+<li><p>[a-z] : phạm vi ký tự, khớp bất kỳ ký tự trong phạm vi. Ví dụ "[a-z]" khớp bất kỳ chữ thường từ a đến z</p></li>
+<li><p>[^a-z] : phạm vi ký tự phủ định, khớp ký tự không trong phạm vi. Ví dụ "[^a-z]" khớp bất kỳ ký tự không nằm trong "a-z"</p></li>
+<li><p>(  ) : nhóm biểu thức. Biểu thức trong dấu ngoặc sẽ được lưu vào vùng tạm, tối đa 9 nhóm, có thể tham chiếu bằng \1 đến \9</p></li>
 </ol>
 
+<h2>7. Ví dụ dự án</h2>
 
-<h2>7. 示例工程</h2>
+<p>Tham khảo "\Samples\Công cụ Gửi &amp; Nhận dữ liệu.gvp".</p>
 
-<p>参见"\Samples\通信发送&amp;接收工具.gvp"。</p>
-
-<p>通信接收工具使用通信发送工具建立通信或者使用通信助手建立通信来使用。</p>
+<p>Công cụ nhận dữ liệu sử dụng công cụ gửi dữ liệu hoặc công cụ trợ giúp truyền thông để thiết lập kết nối và sử dụng.</p>
