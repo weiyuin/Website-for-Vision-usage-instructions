@@ -16,330 +16,328 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>找圆工具</h1>
+<h1>Công cụ tìm vòng tròn</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tóm tắt chức năng</h2>
 
-<p>找圆工具主要是在指定的ROI区域内对实际工件的圆边缘进行拟合，获取圆边缘的解析式。一般与定位工具配合使用，根据边缘极性等参数实现高精度找圆。其实际应用效果如图1所示。</p>
+<p>Công cụ tìm vòng tròn chủ yếu dùng để thực hiện việc khớp viền vòng tròn của chi tiết thực tế trong vùng ROI được chỉ định, từ đó lấy được phương trình phân tích của viền vòng tròn. Thường được sử dụng kết hợp với công cụ định vị, dựa trên các tham số như cực tính của biên để đạt độ chính xác cao. Hiệu quả thực tế được minh họa như Hình 1.</p>
 
 <p><img src="media/wps68.jpg" alt="img" />  <img src="media/wps69.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 工具摆放示意图</imgnote> <imgnote>(b) 找圆结果</imgnote></p>
+<p><imgnote>(a) Sơ đồ bố trí công cụ</imgnote> <imgnote>(b) Kết quả tìm vòng tròn</imgnote></p>
 
-<p><imgnote>图1 找圆工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa ứng dụng công cụ tìm vòng tròn</imgnote></p>
 
-<h2>2. 算法说明</h2>
+<h2>2. Giải thích thuật toán</h2>
 
-<p>与找线工具原理类似，找圆工具通过查找区域内卡尺参数的设置，寻找查找区域内的图像边缘点，然后对找到的边缘点进行圆拟合，从而寻找到一个目标圆，如下图所示。</p>
+<p>Tương tự nguyên lý công cụ tìm đường thẳng, công cụ tìm vòng tròn thiết lập các tham số thước đo trong vùng tìm kiếm để xác định các điểm biên trong ảnh, sau đó thực hiện khớp vòng tròn với các điểm biên tìm được, từ đó xác định vòng tròn mục tiêu, như hình dưới.</p>
 
 <p><img src="media/GcFindCircleTool_2_1.png" alt="" /></p>
 
-<h2>3. 应用场景</h2>
+<h2>3. Kịch bản ứng dụng</h2>
 
-<p>找圆工具的应用场景可以分为以下三个</p>
+<p>Công cụ tìm vòng tròn có thể được ứng dụng trong ba trường hợp chính:</p>
 
 <ul>
-<li>测量项目中可作为特征元素或中间元素参与尺寸测量，如测量圆与圆之间的距离，或者通过圆圆、线圆求交点后，计算两点间距离等。</li>
-<li>配合几何定位工具，通过找线工具、找圆工具、交点工具、中点工具等工具查找物料某些固定特征作为参考特征来实现精确定位。</li>
-<li>在标定对位类项目中，可通过找线工具、找圆工具、交点工具，求取特定Mark点的图像坐标，配合对应机械坐标值，计算图像坐标系与机械坐标系的转换关系。</li>
+<li>Trong các dự án đo lường, vòng tròn có thể dùng như phần tử đặc trưng hoặc phần tử trung gian để tham gia đo kích thước, ví dụ: đo khoảng cách giữa các vòng tròn, hoặc xác định giao điểm giữa vòng tròn và vòng tròn/đường thẳng rồi tính khoảng cách giữa hai điểm.</li>
+<li>Kết hợp với công cụ định vị hình học, sử dụng công cụ tìm đường, tìm vòng tròn, giao điểm, trung điểm, v.v. để xác định các đặc trưng cố định của vật thể làm tham chiếu cho định vị chính xác.</li>
+<li>Trong các dự án hiệu chỉnh căn chỉnh, có thể dùng công cụ tìm đường, tìm vòng tròn, giao điểm để xác định tọa độ ảnh của các điểm Mark cụ thể, kết hợp với tọa độ cơ khí tương ứng để tính toán mối quan hệ chuyển đổi giữa hệ tọa độ ảnh và hệ tọa độ cơ khí.</li>
 </ul>
 
+<h2>4. Hướng dẫn sử dụng</h2>
 
-<h2>4. 使用向导</h2>
-
-<h3>添加工具，链接参数</h3>
+<h3>Thêm công cụ và liên kết tham số</h3>
 
 <ul>
-<li><p>输入图像：待检测的图像</p></li>
-<li><p>二维线性变换：该参数一般来源于定位工具，其表示为当前图像中的目标特征相对于模板图像中对应特征的平移、旋转、缩放变换。实时在线检测时，可通过该参数不断调整找线工具的查找区域。</p></li>
+<li><p>Ảnh đầu vào: Ảnh cần kiểm tra.</p></li>
+<li><p>Biến đổi tuyến tính 2D: Tham số này thường lấy từ công cụ định vị, biểu thị sự dịch chuyển, xoay và co giãn của đặc trưng mục tiêu trong ảnh hiện tại so với đặc trưng tương ứng trong ảnh mẫu. Khi kiểm tra trực tuyến thời gian thực, có thể điều chỉnh vùng tìm kiếm của công cụ tìm đường dựa trên tham số này.</p></li>
 </ul>
 
 
 <p><img src="media/GcFindCircleTool_4_1.png" alt="" /></p>
 
-<h3>设置检测参数</h3>
+<h3>Thiết lập tham số phát hiện</h3>
 
 <p><img src="media/GcFindCircleTool_4_2.png" alt="" /></p>
 
-<p>重点参数说明如下，其余参数可参考“5.参数说明”。</p>
+<p>Các tham số quan trọng được giải thích dưới đây, các tham số còn lại có thể tham khảo mục “5. Giải thích tham số”.</p>
 
-<h4>边缘模式</h4>
+<h4>Chế độ biên</h4>
 
-<p>单边缘和双边缘模式实际应用如图2和图3所示，采用单边缘模式时，其找圆结果如图2(b)中的红色曲线所示；若采用双边缘模式，卡尺摆放如图3(a)所示，卡尺的查找区域中包含两条边缘，找圆结果为这两条边缘(图3(b)中绿色直线)的中线，如图3(b)中的红色曲线所示。</p>
+<p>Chế độ biên đơn và biên kép được minh họa trong Hình 2 và Hình 3. Khi sử dụng chế độ biên đơn, kết quả tìm vòng tròn hiển thị như đường cong màu đỏ trong Hình 2(b). Khi sử dụng chế độ biên kép, bố trí thước đo như Hình 3(a), vùng tìm kiếm của thước đo bao gồm hai biên, kết quả tìm vòng tròn là đường trung tuyến giữa hai biên (đường thẳng màu xanh trong Hình 3(b)), hiển thị như đường cong màu đỏ trong Hình 3(b).</p>
 
 <p><img src="media/wps77.jpg" alt="img" />       <img src="media/wps78.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 找线区域设置</imgnote> <imgnote>(b) 找线结果</imgnote></p>
+<p><imgnote>(a) Thiết lập vùng tìm đường</imgnote> <imgnote>(b) Kết quả tìm đường</imgnote></p>
 
-<p><imgnote>图2 单边缘模式示意图</imgnote></p>
+<p><imgnote>Hình 2 Minh họa chế độ biên đơn</imgnote></p>
 
 <p><img src="media/wps79.jpg" alt="img" />     <img src="media/wps80.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 找线区域设置</imgnote> <imgnote>(b) 找线结果</imgnote></p>
+<p><imgnote>(a) Thiết lập vùng tìm đường</imgnote> <imgnote>(b) Kết quả tìm đường</imgnote></p>
 
-<p><imgnote>图3 双边缘模式示意图</imgnote></p>
+<p><imgnote>Hình 3 Minh họa chế độ biên kép</imgnote></p>
 
-<h4>边缘极性</h4>
+<h4>Cực tính biên</h4>
 
-<p>卡尺的边缘极性是根据图像边缘的灰度级过渡形式来确定的。如图4所示，沿着卡尺Y轴正方向(红色箭头所指的方向)，图像边缘的灰度级过渡形式如果是从亮到暗，则边缘极性选择亮到暗，反之选择暗到亮，如果图像边缘的灰度级过渡形式不确定时选择任意极性。</p>
+<p>Cực tính biên của thước đo xác định theo sự chuyển đổi giá trị xám tại biên của ảnh. Như Hình 4, theo hướng trục Y của thước đo (hướng mũi tên đỏ), nếu giá trị xám chuyển từ sáng sang tối, chọn cực tính “sáng sang tối”; ngược lại chọn “tối sang sáng”. Nếu sự chuyển đổi không rõ ràng, có thể chọn bất kỳ cực tính nào.</p>
 
 <p><img src="media/wps81.jpg" alt="img" />   <img src="media/wps82.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 亮到暗</imgnote> <imgnote>(b) 暗到亮</imgnote></p>
+<p><imgnote>(a) Sáng sang tối</imgnote> <imgnote>(b) Tối sang sáng</imgnote></p>
 
-<p><imgnote>图4 边缘极性示意图</imgnote></p>
+<p><imgnote>Hình 4 Minh họa cực tính biên</imgnote></p>
 
-<h4>局外点比例</h4>
+<h4>Tỷ lệ điểm ngoại lai</h4>
 
-<p>如图5所示，其中红色十字点为局外点，局外点是不参与拟合的。其中局外点所占比例称为局外点比例，图5中局外点比例为0.2。一般在边缘干扰过大时，需要设置局外点比例。</p>
+<p>Như Hình 5, các dấu cộng màu đỏ là các điểm ngoại lai, không tham gia khớp vòng tròn. Tỷ lệ điểm ngoại lai là tỷ lệ các điểm ngoại lai trong tổng số điểm. Trong Hình 5, tỷ lệ này là 0.2. Thường cần thiết khi biên bị nhiễu nhiều, phải thiết lập tỷ lệ điểm ngoại lai.</p>
 
 <p><img src="media/wps83.jpg" alt="img" /></p>
 
-<p><imgnote>图5 局外点示意图</imgnote></p>
+<p><imgnote>Hình 5 Minh họa điểm ngoại lai</imgnote></p>
 
-<h4>边缘属性</h4>
+<h4>Thuộc tính biên</h4>
 
-<p>一般对于多边缘图像，需要设置合适的边缘属性。</p>
+<p>Đối với ảnh có nhiều biên, cần thiết lập các thuộc tính biên phù hợp.</p>
 
-<p><strong>最佳边缘：</strong>在查找区域内，图像边缘相邻两侧灰度值相差最大的边缘；
-<strong>第一条边缘：</strong>在查找区域内，沿着卡尺Y轴的正方向，符合边缘极性的第一条图像边缘；
-<strong>最后一条边缘：</strong>在查找区域内，沿着卡尺Y轴的正方向，符合边缘极性的最后一条图像边缘；</p>
+<p><strong>Biên tốt nhất:</strong> Biên có sự chênh lệch giá trị xám lớn nhất hai bên trong vùng tìm kiếm;<br>
+<strong>Biên đầu tiên:</strong> Biên đầu tiên theo hướng trục Y của thước đo, phù hợp với cực tính biên;<br>
+<strong>Biên cuối cùng:</strong> Biên cuối cùng theo hướng trục Y của thước đo, phù hợp với cực tính biên;</p>
 
-<p><strong>整体最亮边缘：</strong>在查找区域内，图像边缘两侧亮度平均值（灰度值平均值最大）的边缘；
-<strong>整体最暗边缘：</strong>在查找区域内，图像边缘两侧亮度平均值（灰度值平均值最小）的边缘；
-<strong>亮侧最亮边缘：</strong>在查找区域内，图像边缘亮侧最亮（亮侧灰度值最大）的边缘；
-<strong>亮侧最暗边缘：</strong>在查找区域内，图像边缘亮侧最暗（亮侧灰度值最小）的边缘；
-<strong>暗侧最亮边缘：</strong>在查找区域内，图像边缘暗侧最亮（暗侧灰度值最大）的边缘；
-<strong>暗侧最暗边缘：</strong>在查找区域内，图像边缘暗侧最暗（暗侧灰度值最小）的边缘。</p>
+<p><strong>Biên sáng tổng thể:</strong> Biên có giá trị trung bình hai bên sáng nhất trong vùng tìm kiếm;<br>
+<strong>Biên tối tổng thể:</strong> Biên có giá trị trung bình hai bên tối nhất trong vùng tìm kiếm;<br>
+<strong>Biên sáng bên sáng:</strong> Biên có bên sáng sáng nhất (giá trị xám bên sáng lớn nhất);<br>
+<strong>Biên tối bên sáng:</strong> Biên có bên sáng tối nhất (giá trị xám bên sáng nhỏ nhất);<br>
+<strong>Biên sáng bên tối:</strong> Biên có bên tối sáng nhất (giá trị xám bên tối lớn nhất);<br>
+<strong>Biên tối bên tối:</strong> Biên có bên tối tối nhất (giá trị xám bên tối nhỏ nhất).</p>
 
-<p>选择双边缘模式时，边缘属性中的整体最亮边缘、整体最暗边缘、亮侧最亮边缘、亮侧最暗边缘、暗侧最亮边缘以及暗侧最暗边缘按最佳边缘处理。当查找范围为整个图像区域，边缘模式为单边缘，边缘极性设置为任意极性，选择不同的边缘属性时，其对应的找圆结果如图6所示。</p>
+<p>Khi chọn chế độ biên kép, các thuộc tính biên như biên sáng tổng thể, biên tối tổng thể, biên sáng bên sáng, biên tối bên sáng, biên sáng bên tối và biên tối bên tối được xử lý như biên tốt nhất. Khi phạm vi tìm kiếm là toàn bộ ảnh, chế độ biên là biên đơn và cực tính biên chọn bất kỳ, kết quả tìm vòng tròn tương ứng với từng thuộc tính biên được minh họa trong Hình 6.</p>
 
 <p><img src="media/wps84.jpg" alt="img" />  <img src="media/wps85.jpg" alt="img" />  <img src="media/wps86.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 最佳边缘</imgnote> <imgnote>(b) 第一条边缘</imgnote> <imgnote>&copy; 最后一条边缘</imgnote></p>
+<p><imgnote>(a) Biên tốt nhất</imgnote> <imgnote>(b) Biên đầu tiên</imgnote> <imgnote>(c) Biên cuối cùng</imgnote></p>
 
 <p><img src="media/wps87.jpg" alt="img" />  <img src="media/wps88.jpg" alt="img" />  <img src="media/wps89.jpg" alt="img" /></p>
 
-<p><imgnote>(d) 整体最亮边缘</imgnote> <imgnote>(e) 整体最暗边缘</imgnote> <imgnote>(f) 亮侧最亮边缘</imgnote></p>
+<p><imgnote>(d) Biên sáng tổng thể</imgnote> <imgnote>(e) Biên tối tổng thể</imgnote> <imgnote>(f) Biên sáng bên sáng</imgnote></p>
 
 <p><img src="media/wps90.jpg" alt="img" />   <img src="media/wps91.jpg" alt="img" />  <img src="media/wps92.jpg" alt="img" /></p>
 
-<p><imgnote>(h) 亮侧最暗边缘</imgnote> <imgnote>(i) 暗侧最亮边缘</imgnote> <imgnote>(j) 暗侧最暗边缘</imgnote></p>
+<p><imgnote>(h) Biên tối bên sáng</imgnote> <imgnote>(i) Biên sáng bên tối</imgnote> <imgnote>(j) Biên tối bên tối</imgnote></p>
 
-<p><imgnote>图6 边缘属性示意图</imgnote></p>
+<p><imgnote>Hình 6 Minh họa thuộc tính biên</imgnote></p>
 
-<h4>设置结果上下限阈值</h4>
+<h4>Thiết lập ngưỡng kết quả</h4>
 
-<p>找圆工具增加了对检测结果（包括圆心、半径）的判定功能，用户可开启或关闭对应检测结果的判定功能。当检测结果超出设置的上下限阈值时，判定工具运行失败，用户可根据此时工具的运行结果进行后续处理操作。如图7所示。</p>
+<p>Công cụ tìm vòng tròn bổ sung chức năng đánh giá kết quả phát hiện (bao gồm tâm và bán kính). Người dùng có thể bật hoặc tắt chức năng đánh giá kết quả tương ứng. Khi kết quả vượt quá ngưỡng trên/dưới thiết lập, công cụ sẽ báo thất bại, người dùng có thể xử lý tiếp theo dựa trên kết quả này. Minh họa trong Hình 7.</p>
 
 <p><img src="media/GcFindCircleTool_4_3.png" alt="" /></p>
 
-<p><imgnote>图7 找圆工具结果判定</imgnote></p>
+<p><imgnote>Hình 7 Đánh giá kết quả công cụ tìm vòng tròn</imgnote></p>
 
-<h4>设置灰度约束</h4>
+<h4>Thiết lập ràng buộc mức xám</h4>
 
-<p>找圆工具增加了对检测边缘像素的灰度约束，只有图像中点的像素灰度值在【最小约束，最大约束】之间的时候才有可能被认为是探测点，否则就是干扰或者是背景，不会作为拟合圆的探测点，从而提升找圆正确率。其中边缘一的约束一直存在，当打开双边缘模式之后边缘二的约束会出现，范围为：【0，最小约束，最大约束，255】。如图8所示。</p>
+<p>Công cụ tìm vòng tròn bổ sung ràng buộc mức xám cho các điểm biên phát hiện. Chỉ khi giá trị xám của điểm ảnh trong ảnh nằm trong [ràng buộc tối thiểu, ràng buộc tối đa] mới được coi là điểm phát hiện; nếu không sẽ bị coi là nhiễu hoặc nền và không dùng để khớp vòng tròn, giúp nâng cao độ chính xác tìm vòng tròn. Ràng buộc biên thứ nhất luôn có hiệu lực; khi bật chế độ biên kép, ràng buộc biên thứ hai xuất hiện với phạm vi: [0, ràng buộc tối thiểu, ràng buộc tối đa, 255]. Minh họa trong Hình 8.</p>
 
 <p><img src="media/GcFindCircleTool_4_4.png" alt="" /></p>
 
-<p><imgnote>图8 找圆工具灰度约束</imgnote></p>
+<p><imgnote>Hình 8 Ràng buộc mức xám của công cụ tìm vòng tròn</imgnote></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Các vấn đề thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述                </th>
-<th> 解决方法                                                     </th>
+<th>Mô tả hiện tượng</th>
+<th>Cách khắc phục</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 找圆ROI不能设置掩膜     </td>
-<td> 查看属性栏参数“掩膜模式”是否选择“是”，选择“是”时才可以设置掩膜。 </td>
+<td>Không thể thiết lập mặt nạ cho ROI tìm vòng tròn</td>
+<td>Kiểm tra tham số “Chế độ mặt nạ” trong thanh thuộc tính, chỉ khi chọn “Có” mới có thể thiết lập mặt nạ.</td>
 </tr>
 <tr>
-<td> 找圆ROI不能设置卡尺参数 </td>
-<td> 查看属性栏参数“手动模式”是否选择“是”，选择“是”时才可以设置卡尺参数。 </td>
+<td>Không thể thiết lập tham số thước đo cho ROI tìm vòng tròn</td>
+<td>Kiểm tra tham số “Chế độ thủ công” trong thanh thuộc tính, chỉ khi chọn “Có” mới có thể thiết lập tham số thước đo.</td>
 </tr>
 <tr>
-<td> 找圆失败                </td>
-<td> 1. 查找失败。可根据输出窗口错误栏的错误提示，修改对比度阈值、局外点比例等参数。<br />2. 判定失败。圆心、半径判定上下限阈值设置不合理，可根据实际情况修改其上下限阈值。 </td>
+<td>Tìm vòng tròn thất bại</td>
+<td>1. Tìm kiếm thất bại: Dựa vào thông báo lỗi trong cửa sổ đầu ra, điều chỉnh các tham số như ngưỡng tương phản, tỷ lệ điểm ngoại lai.<br>2. Đánh giá thất bại: Nếu ngưỡng trên/dưới của tâm và bán kính không hợp lý, điều chỉnh ngưỡng theo tình huống thực tế.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
+<h2>6. Thông số</h2>
 
-<h3>输入参数</h3>
+<h3>Tham số đầu vào</h3>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像    </td>
-<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。     </td>
+<td>Ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu vào, giống với tham số ảnh đầu vào của cửa sổ ảnh.</td>
 </tr>
 <tr>
-<td> 二维线性变换     </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。        </td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>Biến đổi dịch, xoay, tỷ lệ của đối tượng so với mẫu.</td>
 </tr>
 <tr>
-<td> 边缘模式                                                     </td>
-<td> 找圆工具的边缘模式有2种，单边缘和双边缘。<a href="#%E8%BE%B9%E7%BC%98%E6%A8%A1%E5%BC%8F"><img src="media/link.jpg" alt="img" /></a> </td>
+<td>Chế độ biên</td>
+<td>Công cụ tìm vòng tròn có 2 chế độ: biên đơn và biên kép. <a href="#%E8%BE%B9%E7%BC%98%E6%A8%A1%E5%BC%8F"><img src="media/link.jpg" alt="img" /></a></td>
 </tr>
 <tr>
-<td> 边缘极性         </td>
-<td> 边缘极性是指图像边缘灰度级的过渡形式，分为3种，任意极性、亮到暗和暗到亮。<a href="#%E8%BE%B9%E7%BC%98%E6%9E%81%E6%80%A7"><img src="media/link.jpg" alt="img" /></a>                                </td>
+<td>Cực tính biên</td>
+<td>Cực tính biên xác định hình thức chuyển tiếp giá trị xám của biên ảnh, có 3 loại: bất kỳ, sáng sang tối, tối sang sáng. <a href="#%E8%BE%B9%E7%BC%98%E6%9E%81%E6%80%A7"><img src="media/link.jpg" alt="img" /></a></td>
 </tr>
 <tr>
-<td> 对比度阈值       </td>
-<td> 卡尺工具默认只采用对比度评价分数，即按照边缘信号的强度来评分，输出边缘最强的点。对比度阈值的取值范围是0~255。                                                               </td>
+<td>Ngưỡng tương phản</td>
+<td>Thước đo mặc định chỉ sử dụng điểm số tương phản để đánh giá, chọn điểm có biên mạnh nhất. Ngưỡng từ 0 đến 255.</td>
 </tr>
 <tr>
-<td> 局外点比例       </td>
-<td> 局外点就是偏离曲线较远的点。局外点比例即不参与直线拟合的点的比例，取值范围是0~0.5。<a href="#%E5%B1%80%E5%A4%96%E7%82%B9%E6%AF%94%E4%BE%8B"><img src="media/link.jpg" alt="img" /></a>                              </td>
+<td>Tỷ lệ điểm ngoại lai</td>
+<td>Điểm ngoại lai là những điểm lệch xa khỏi đường cong. Tỷ lệ điểm ngoại lai là tỷ lệ điểm không tham gia khớp vòng tròn, từ 0 đến 0.5. <a href="#%E5%B1%80%E5%A4%96%E7%82%B9%E6%AF%94%E4%BE%8B"><img src="media/link.jpg" alt="img" /></a></td>
 </tr>
 <tr>
-<td> 边缘属性         </td>
-<td> 在查找区域内，卡尺根据不同的边缘属性，确定图像边缘的精确位置。<br />卡尺工具的边缘属性有9种，最佳边缘、第一条边缘、最后一条边缘、整体最亮边缘、整体最暗边缘、亮侧最亮边缘、亮侧最暗边缘、暗侧最亮边缘和暗侧最暗边缘。<a href="#%E8%BE%B9%E7%BC%98%E5%B1%9E%E6%80%A7"><img src="media/link.jpg" alt="img" /></a>                          </td>
+<td>Thuộc tính biên</td>
+<td>Trong vùng tìm kiếm, thước đo xác định vị trí biên chính xác dựa trên thuộc tính biên. Có 9 loại: biên tốt nhất, biên đầu tiên, biên cuối cùng, biên sáng tổng thể, biên tối tổng thể, biên sáng bên sáng, biên tối bên sáng, biên sáng bên tối và biên tối bên tối. <a href="#%E8%BE%B9%E7%BC%98%E5%B1%9E%E6%80%A7"><img src="media/link.jpg" alt="img" /></a></td>
 </tr>
 <tr>
-<td> 启用全局最优拟合 </td>
-<td> 是否启用全局最优拟合                                                                                                       </td>
+<td>Bật khớp tối ưu toàn cục</td>
+<td>Chọn có/không để bật tính năng khớp tối ưu toàn cục.</td>
 </tr>
 <tr>
-<td> 半径约束值 </td>
-<td> 范围[0.0，10000.0]，单位：像素，默认值0，默认不使用半径约束值且此参数只在开启全局最优拟合后有效。 </td>
+<td>Ràng buộc bán kính</td>
+<td>Phạm vi [0.0, 10000.0] pixel, mặc định 0, không sử dụng khi tắt khớp tối ưu toàn cục.</td>
 </tr>
 <tr>
-<td> 半径公差 </td>
-<td> 范围[0.0，10000.0]，单位：像素，默认值0，默认不使用半径约束值且此参数只在开启全局最优拟合后有效。另外当半径公差大于半径约束值时算法会自动进行范围校正。 </td>
+<td>Độ dung sai bán kính</td>
+<td>Phạm vi [0.0, 10000.0] pixel, mặc định 0, chỉ hiệu lực khi bật khớp tối ưu toàn cục. Nếu dung sai lớn hơn ràng buộc, thuật toán tự điều chỉnh phạm vi.</td>
 </tr>
 <tr>
-<td> 启用重新评分     </td>
-<td> 是否启用重新评分                                                                                                           </td>
+<td>Bật đánh giá lại</td>
+<td>Chọn có/không để bật đánh giá lại kết quả.</td>
 </tr>
 <tr>
-<td> 允许减少局外点   </td>
-<td> 是否允许减少局外点                                                                                                         </td>
+<td>Cho phép giảm điểm ngoại lai</td>
+<td>Chọn có/không cho phép giảm điểm ngoại lai.</td>
 </tr>
 <tr>
-<td> 掩膜模式         </td>
-<td> 掩膜设置是指在模板训练过程中，屏蔽掉不参与模式训练的区域，减少参与模式训练的几何特征。                                                               </td>
+<td>Chế độ mặt nạ</td>
+<td>Thiết lập mặt nạ để loại bỏ vùng không tham gia huấn luyện mẫu, giảm các đặc trưng hình học tham gia huấn luyện.</td>
 </tr>
 <tr>
-<td> 手动模式         </td>
-<td> 选择“是”，支持手动设置卡尺参数，鼠标右键点击卡尺，在弹出的对话框中可以改变卡尺参数；选择“否”，不支持手动设置卡尺参数。                                                               </td>
+<td>Chế độ thủ công</td>
+<td>Chọn "Có" để thiết lập thủ công tham số thước đo bằng chuột; "Không" để vô hiệu hóa.</td>
 </tr>
 <tr>
-<td> 实时显示结果     </td>
-<td> 选择“是”，在修改工具参数后，不需要运行工具，就可以实时显示结果；选择“否”，改变参数后需要运行工具才会显示对应的结果。                                                               </td>
+<td>Hiển thị kết quả thời gian thực</td>
+<td>Chọn "Có" để xem kết quả ngay khi thay đổi tham số; "Không" cần chạy công cụ mới thấy kết quả.</td>
 </tr>
 <tr>
-<td> 显示探测点       </td>
-<td> 选择“是”，显示卡尺的探测点；选择“否”，不显示卡尺的探测点。其中局外点用红色标注，其余用绿色标注。</td>
+<td>Hiển thị điểm phát hiện</td>
+<td>Chọn "Có" để hiển thị điểm thước đo; điểm ngoại lai màu đỏ, các điểm khác màu xanh; chọn "Không" không hiển thị.</td>
 </tr>
 <tr>
-<td> 圆心X上限 </td>
-<td> 测量结果质心位置坐标X的判断上限阈值，取值范围[0,999999.999999]， 且下限应小于等于上限。 </td>
+<td>Giới hạn X tâm</td>
+<td>Ngưỡng tối đa tọa độ X tâm, phạm vi [0, 999999.999999], dưới ≤ trên.</td>
 </tr>
 <tr>
-<td> 圆心X下限 </td>
-<td> 测量结果质心位置坐标X的判断下限阈值，取值范围[0,999999.999999]， 且下限应小于等于上限。<a href="#%E8%AE%BE%E7%BD%AE%E7%BB%93%E6%9E%9C%E4%B8%8A%E4%B8%8B%E9%99%90%E9%98%88%E5%80%BC"><img src="media/link.jpg" alt="img" /></a> </td>
+<td>Giới hạn X tâm thấp</td>
+<td>Ngưỡng tối thiểu tọa độ X tâm, phạm vi [0, 999999.999999], dưới ≤ trên. <a href="#%E8%AE%BE%E7%BD%AE%E7%BB%93%E6%9E%9C%E4%B8%8A%E4%B8%8B%E9%99%90%E9%98%88%E5%80%BC"><img src="media/link.jpg" alt="img" /></a></td>
 </tr>
 <tr>
-<td> 圆心Y上限 </td>
-<td> 测量结果质心位置坐标Y的判断上限阈值，取值范围[0,999999.999999]， 且下限应小于等于上限。 </td>
+<td>Giới hạn Y tâm cao</td>
+<td>Ngưỡng tối đa tọa độ Y tâm, phạm vi [0, 999999.999999], dưới ≤ trên.</td>
 </tr>
 <tr>
-<td> 圆心Y下限 </td>
-<td> 测量结果质心位置坐标Y的判断下限阈值，取值范围[0,999999.999999]， 且下限应小于等于上限。 </td>
+<td>Giới hạn Y tâm thấp</td>
+<td>Ngưỡng tối thiểu tọa độ Y tâm, phạm vi [0, 999999.999999], dưới ≤ trên.</td>
 </tr>
 <tr>
-<td> 半径上限 </td>
-<td> 测量结果直线绝对角度的判断上限阈值，取值范围(0,999999.999999]， 且下限应小于等于上限。 </td>
+<td>Giới hạn bán kính cao</td>
+<td>Ngưỡng tối đa bán kính, phạm vi (0, 999999.999999], dưới ≤ trên.</td>
 </tr>
 <tr>
-<td> 半径下限 </td>
-<td> 测量结果直线绝对角度的判断下限阈值，取值范围(0,999999.999999]， 且下限应小于等于上限。 </td>
+<td>Giới hạn bán kính thấp</td>
+<td>Ngưỡng tối thiểu bán kính, phạm vi (0, 999999.999999], dưới ≤ trên.</td>
 </tr>
 <tr>
-<td> 边缘一最小灰度约束 </td>
-<td> 边缘一测量结果像素灰度值下限阈值，取值范围[0,255.000000]， 且下限应小于等于上限。 </td>
+<td>Ràng buộc xám biên 1 tối thiểu</td>
+<td>Ngưỡng tối thiểu giá trị xám điểm ảnh biên 1, phạm vi [0, 255], dưới ≤ trên.</td>
 </tr>
 <tr>
-<td> 边缘一最大灰度约束 </td>
-<td> 边缘一测量结果像素灰度值上限阈值，取值范围[0,255.000000]， 且下限应小于等于上限。 </td>
+<td>Ràng buộc xám biên 1 tối đa</td>
+<td>Ngưỡng tối đa giá trị xám điểm ảnh biên 1, phạm vi [0, 255], dưới ≤ trên.</td>
 </tr>
 <tr>
-<td> 边缘二最小灰度约束 </td>
-<td> 边缘二测量结果像素灰度值下限阈值，取值范围[0,255.000000]， 且下限应小于等于上限。（当开启双边缘时有效） </td>
+<td>Ràng buộc xám biên 2 tối thiểu</td>
+<td>Ngưỡng tối thiểu giá trị xám điểm ảnh biên 2, phạm vi [0, 255], dưới ≤ trên. (Hiệu lực khi bật biên kép)</td>
 </tr>
 <tr>
-<td> 边缘二最大灰度约束 </td>
-<td> 边缘二测量结果像素灰度值上限阈值，取值范围[0,255.000000]， 且下限应小于等于上限。（当开启双边缘时有效） </td>
+<td>Ràng buộc xám biên 2 tối đa</td>
+<td>Ngưỡng tối đa giá trị xám điểm ảnh biên 2, phạm vi [0, 255], dưới ≤ trên. (Hiệu lực khi bật biên kép)</td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>输出参数</h3>
+<h3>Tham số đầu ra</h3>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                               </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像                                                     </td>
-<td> 输出图像宽度、高度、像素大小。                           </td>
+<td>Ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước điểm ảnh của ảnh đầu ra.</td>
 </tr>
 <tr>
-<td> 圆结果           </td>
-<td> 输出圆结果的圆心和半径。                                                                                               </td>
+<td>Kết quả vòng tròn</td>
+<td>Tâm và bán kính của kết quả vòng tròn đầu ra.</td>
 </tr>
 <tr>
-<td> 圆弧结果         </td>
-<td> 输出圆结果的圆心、半径和角度。                                                                                         </td>
+<td>Kết quả cung tròn</td>
+<td>Tâm, bán kính và góc của kết quả cung tròn đầu ra.</td>
 </tr>
 <tr>
-<td> 圆心             </td>
-<td> 圆或圆弧结果的圆心。                                                                                                   </td>
+<td>Tâm vòng</td>
+<td>Tâm của vòng tròn hoặc cung tròn.</td>
 </tr>
 <tr>
-<td> 半径             </td>
-<td> 圆或圆弧结果的半径。                                                                                                   </td>
+<td>Bán kính</td>
+<td>Bán kính của vòng tròn hoặc cung tròn.</td>
 </tr>
 <tr>
-<td> 参与拟合圆的点集 </td>
-<td> 参与圆或圆弧拟合的点集，即除去局外点后的点集。                                                                         </td>
+<td>Tập hợp điểm tham gia khớp vòng</td>
+<td>Tập hợp các điểm tham gia khớp vòng hoặc cung, loại bỏ các điểm ngoại lai.</td>
 </tr>
 <tr>
-<td> 匹配分数值       </td>
-<td> 圆或圆弧结果与实际图像的匹配程度，匹配分数值越接近1，圆或圆弧结果越准确。                                                           </td>
+<td>Điểm số khớp</td>
+<td>Mức độ khớp giữa kết quả vòng/cung với ảnh thực, giá trị càng gần 1 thì kết quả càng chính xác.</td>
 </tr>
 <tr>
-<td> 执行结果         </td>
-<td> 工具执行结果。                                                                                                         </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
 </tr>
 <tr>
-<td> 执行时间         </td>
-<td> 工具执行时间。                                                                                                         </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian thực thi của công cụ.</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>7. 示例工程</h2>
+<h2>7. Ví dụ dự án</h2>
 
 <p>参见“\Samples\形状间距及相关点.gvp”。</p>

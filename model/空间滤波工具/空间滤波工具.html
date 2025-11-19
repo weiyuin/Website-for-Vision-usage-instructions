@@ -16,230 +16,230 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>空间滤波工具</h1>
+<h1>Công cụ lọc không gian</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>图像空间滤波工具主要用来对输入图像进行滤波操作，目的是对图像进行增强，以强调图像中感兴趣信息，而抑制图像中的噪声信号。支持的滤波操作有低通滤波（平均滤波器和加权平均滤波器）、高通滤波（4邻域和8邻域高通滤波）、一阶边缘检测（Prewitt算子和Sobel算子）、二阶边缘检测（4-邻域Laplacian算子和8-邻域Laplacian算子）、高斯滤波、快速平均滤波（最大支持滤波器尺寸为9x9）。</p>
+<p>Công cụ lọc không gian hình ảnh chủ yếu được dùng để thực hiện các thao tác lọc trên ảnh đầu vào, nhằm mục đích tăng cường ảnh, làm nổi bật thông tin quan tâm và triệt tiêu nhiễu. Các thao tác lọc được hỗ trợ gồm: lọc thông thấp (bộ lọc trung bình và bộ lọc trung bình có trọng số), lọc thông cao (lọc thông cao lân cận 4 điểm và 8 điểm), phát hiện biên bậc một (toán tử Prewitt và toán tử Sobel), phát hiện biên bậc hai (toán tử Laplacian lân cận 4 điểm và 8 điểm), lọc Gauss, lọc trung bình nhanh (kích thước bộ lọc tối đa hỗ trợ là 9x9).</p>
 
 <p><img src="media/wps137.jpg" alt="img" /></p>
 
-<p><imgnote>图1 低通滤波、自定义滤波、二阶边缘检测示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa lọc thông thấp, lọc tùy chỉnh và phát hiện biên bậc hai</imgnote></p>
 
 <p><img src="media/wps138.jpg" alt="img" /></p>
 
-<p><imgnote>图2 高通滤波示意图 </imgnote></p>
+<p><imgnote>Hình 2 Minh họa lọc thông cao</imgnote></p>
 
 <p><img src="media/wps139.jpg" alt="img" /></p>
 
-<p><imgnote>图3 一阶边缘检测示意图</imgnote></p>
+<p><imgnote>Hình 3 Minh họa phát hiện biên bậc một</imgnote></p>
 
 <p><img src="media/wps140.jpg" alt="img" /></p>
 
-<p><imgnote>图4 高斯滤波示意图</imgnote></p>
+<p><imgnote>Hình 4 Minh họa lọc Gauss</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称          </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口          </td>
-<td> 滤波器类型<img src="media/wps142.jpg" alt="img" />                           </td>
-<td> 低通滤波（平均滤波器和加权平均滤波器）、高通滤波（4邻域和8邻域高通滤波）、一阶边缘检测（Prewitt算子和Sobel算子）、二阶边缘检测（4-邻域Laplacian算子和8-邻域Laplacian算子）、高斯滤波、快速平均滤波。 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Loại bộ lọc<img src="media/wps142.jpg" alt="img" /></td>
+<td>Lọc thông thấp (bộ lọc trung bình và bộ lọc trung bình trọng số), lọc thông cao (lọc thông cao lân cận 4 điểm và 8 điểm), phát hiện biên bậc một (toán tử Prewitt và Sobel), phát hiện biên bậc hai (toán tử Laplacian lân cận 4 điểm và 8 điểm), lọc Gauss, lọc trung bình nhanh.</td>
 </tr>
 <tr>
 <td></td>
-<td> Sobel幅值缩放系数 </td>
-<td> 用于Sobel滤波。它决定幅值的范围，系数越大，范围也越大，但是幅值大于255的会被截断。                                                               </td>
+<td>Hệ số thu phóng biên độ Sobel</td>
+<td>Dùng cho lọc Sobel. Nó quyết định phạm vi biên độ; hệ số càng lớn, phạm vi càng lớn, nhưng các giá trị biên độ vượt quá 255 sẽ bị cắt ngưỡng.</td>
 </tr>
 <tr>
 <td></td>
-<td> 横向标准差        </td>
-<td> 高斯滤波的横向标准差。                                                                                                     </td>
+<td>Độ lệch chuẩn ngang</td>
+<td>Độ lệch chuẩn theo chiều ngang của lọc Gauss.</td>
 </tr>
 <tr>
 <td></td>
-<td> 纵向标准差        </td>
-<td> 高斯滤波的纵向标准差。                                                                                                     </td>
+<td>Độ lệch chuẩn dọc</td>
+<td>Độ lệch chuẩn theo chiều dọc của lọc Gauss.</td>
 </tr>
 <tr>
 <td></td>
-<td> 全图滤波          </td>
-<td> 是否全图滤波。当滤波器类型选择快速平均滤波时，会出现全图滤波属性。                                                               </td>
+<td>Lọc toàn ảnh</td>
+<td>Có lọc toàn bộ hình ảnh hay không. Khi chọn loại bộ lọc là lọc trung bình nhanh, thuộc tính này sẽ xuất hiện.</td>
 </tr>
 <tr>
 <td></td>
-<td> 滤波窗口行m       </td>
-<td> 滤波器卷积和的行的个数。                                                                                                   </td>
+<td>Số dòng cửa sổ lọc m</td>
+<td>Số dòng của cửa sổ tích chập của bộ lọc.</td>
 </tr>
 <tr>
 <td></td>
-<td> 滤波窗口列n       </td>
-<td> 滤波器卷积和的列的个数。                                                                                                   </td>
+<td>Số cột cửa sổ lọc n</td>
+<td>Số cột của cửa sổ tích chập của bộ lọc.</td>
 </tr>
 <tr>
 <td></td>
-<td> 开启并行运算 </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+<td>Bật tính toán song song</td>
+<td>Có bật tính toán song song hay không. Chọn “Có” sẽ kích hoạt tính toán song song OpenMP, giúp tăng tốc độ xử lý nhưng có thể khiến thời gian xử lý không ổn định. Chọn “Không” sẽ tắt OpenMP.</td>
 </tr>
 <tr>
 <td></td>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td>Tỷ lệ phần trăm luồng</td>
+<td>Thiết lập tỷ lệ phần trăm luồng dùng cho tính toán song song, phạm vi hợp lệ là (0, 0.75], tương ứng (0%, 75%].</td>
 </tr>
 <tr>
-<td> 图像窗口          </td>
-<td> 选框GUI                                                      </td>
-<td> 用于选择感兴趣的区域。                                       </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入图像          </td>
-<td> 本工具从数据链获取的输入图像。                                                                                             </td>
-</tr>
-<tr>
-<td> 数据链            </td>
-<td> 输入图像                                                     </td>
-<td> 需要进行的空间滤波的图像，同图像窗口输入图像参数。           </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Khung chọn GUI</td>
+<td>Dùng để chọn vùng quan tâm.</td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换      </td>
-<td> 用于图像进行缩放平移的二维线性变换。                                                                                       </td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh đầu vào được công cụ lấy từ chuỗi dữ liệu.</td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无 </td>
-<td> 无                                                                                                                         </td>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần thực hiện lọc không gian, giống với tham số ảnh đầu vào ở cửa sổ hình ảnh.</td>
+</tr>
+<tr>
+<td></td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>Dùng cho phép biến đổi tuyến tính hai chiều để phóng to hoặc tịnh tiến ảnh.</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                           </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输入图像                                                     </td>
-<td> 图像的长宽和像素大小。                               </td>
+<td>Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Kích thước và số pixel của ảnh.</td>
 </tr>
 <tr>
 <td></td>
-<td> 输出图像 </td>
-<td> 图像的长宽和像素大小。                                                                                             </td>
+<td>Ảnh đầu ra</td>
+<td>Kích thước và số pixel của ảnh.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                                                     </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                                                     </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输出图像                                                     </td>
-<td> 进行空间滤波之后的输出结果，同监视窗口输出图像参数。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                       </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 输入图像                                                     </td>
-<td> 进行滤波的源图像，同监视窗口输入图像参数。           </td>
+<td>Cửa sổ hình ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Kết quả sau khi thực hiện lọc không gian, giống với tham số ảnh đầu ra trong cửa sổ giám sát.</td>
 </tr>
 <tr>
 <td></td>
-<td> 输出图像 </td>
-<td> 进行滤波之后的目标图像，同监视窗口输出图像参数。                                                                   </td>
+<td>Kết quả thực thi</td>
+<td>Hiển thị kết quả thực thi của công cụ: khi thành công hiển thị “OK”, khi thất bại hiển thị “NG”, giống với tham số kết quả thực thi ở cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh nguồn cần lọc, giống với tham số ảnh đầu vào trong cửa sổ giám sát.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh đích sau khi lọc, giống với tham số ảnh đầu ra trong cửa sổ giám sát.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
-<h3>低通滤波器</h3>
+<h3>Bộ lọc thông thấp</h3>
 
-<p>低通滤波器也称为平滑滤波器，其能减弱或消除图像中的高频信号，但不影响低频信号，可以减少噪声，噪声一般为高频信息。</p>
+<p>Bộ lọc thông thấp còn được gọi là bộ lọc làm mịn. Nó có thể làm suy yếu hoặc loại bỏ tín hiệu tần số cao trong ảnh mà không ảnh hưởng đến tín hiệu tần số thấp, từ đó giúp giảm nhiễu — vốn thường là thông tin tần số cao.</p>
 
-<h3>高通滤波器</h3>
+<h3>Bộ lọc thông cao</h3>
 
-<p>高通滤波器又称为锐化滤波器，其可增强图像的高频信息，即凸显图像的轮廓特征。</p>
+<p>Bộ lọc thông cao còn được gọi là bộ lọc làm sắc. Nó giúp tăng cường thông tin tần số cao của ảnh, tức là làm nổi bật các đặc trưng đường biên.</p>
 
-<h3>一阶边缘检测器</h3>
+<h3>Bộ phát hiện biên bậc một</h3>
 
-<p>一阶边缘检测器对2-D梯度的一种离散近似。</p>
+<p>Bộ phát hiện biên bậc một là một dạng xấp xỉ rời rạc của gradient hai chiều (2-D gradient).</p>
 
-<h3>二阶边缘检测器</h3>
+<h3>Bộ phát hiện biên bậc hai</h3>
 
-<p>二阶边缘检测器常用的为Laplacian算子，其是连续Laplacian算子的离散化描述。</p>
+<p>Bộ phát hiện biên bậc hai thường dùng toán tử Laplacian, là mô tả rời rạc của toán tử Laplacian liên tục.</p>
 
-<h3>高斯滤波器</h3>
+<h3>Bộ lọc Gaussian</h3>
 
-<p>滤波器的1-D零均值Gaussian滤波器的数学表示为<img src="media/wps145.png" alt="img" /> 其中<img src="media/wps146.png" alt="img" />为Gaussian的宽度控制参数。</p>
+<p>Biểu thức toán học của bộ lọc Gaussian 1-D với giá trị trung bình bằng 0 là <img src="media/wps145.png" alt="img" /> trong đó <img src="media/wps146.png" alt="img" /> là tham số điều khiển độ rộng của Gaussian.</p>
 
-<p>2-D零均值Gaussian滤波器为<img src="media/wps147.png" alt="img" /> 该滤波器如图5所示。</p>
+<p>Bộ lọc Gaussian 2-D với giá trị trung bình bằng 0 là <img src="media/wps147.png" alt="img" />. Bộ lọc này được minh họa trong Hình 5.</p>
 
 <p><img src="media/wps148.jpg" alt="img" /></p>
 
-<p><imgnote>图5 2-D Gaussian滤波器</imgnote></p>
+<p><imgnote>Hình 5 Bộ lọc Gaussian 2-D</imgnote></p>
 
-<h3>图像卷积</h3>
+<h3>Phép tích chập ảnh</h3>
 
-<p>卷积是一种邻域操作，每个像素的输出是输入邻域像素的加权和。图像的线性滤波是通过卷积（convolution）操作完成的。权值矩阵称为卷积核（convolution kernel），也称为滤波器（filter）。</p>
+<p>Tích chập là một phép toán trên vùng lân cận, trong đó giá trị đầu ra của mỗi điểm ảnh là tổng có trọng số của các điểm ảnh trong vùng lân cận. Lọc tuyến tính của ảnh được thực hiện bằng phép tích chập (convolution). Ma trận trọng số được gọi là nhân tích chập (convolution kernel), hay còn gọi là bộ lọc.</p>
 
-<h3>相关</h3>
+<h3>Tương quan</h3>
 
-<p>相关（correlation）和卷积非常相似，输出像素灰度级也是邻域像素的加权和。差异在于：在相关计算前不对权值矩阵旋转180度，并将该权值矩阵称为相关核。</p>
+<p>Tương quan (correlation) rất giống với tích chập, khi giá trị đầu ra cũng là tổng có trọng số của các điểm ảnh lân cận. Điểm khác biệt là trong tương quan, nhân không bị xoay 180 độ trước khi tính toán, và được gọi là nhân tương quan.</p>
 
-<p>计算原理如下图所示（相关核中心直接和图像像素（1,3）重合，权值和对应像素灰度级相乘并求和，结果为585。</p>
+<p>Nguyên lý tính toán được minh họa như hình dưới (tâm nhân tương quan trùng với điểm ảnh (1,3) của ảnh, các trọng số nhân với giá trị xám tương ứng rồi cộng lại, kết quả bằng 585).</p>
 
 <p><img src="media/wps149.jpg" alt="img" /></p>
 
-<p><imgnote>图6 图像卷积计算原理示意图</imgnote></p>
+<p><imgnote>Hình 6 Minh họa nguyên lý tích chập ảnh</imgnote></p>
 
-<h3>边界填充问题</h3>
+<h3>Vấn đề đệm biên</h3>
 
-<p>在图像卷积中，若卷积核尺寸为n x n，当卷积核中心到图像边界位置小于(n - 1) / 2，将有部分卷积核权值对应的图像像素在图像之外，如图7所示。常用的边界填充方法有：（1）零值填充：将边界以外的像素用零值进行填充。（2）近邻复制：复制图像最边界的像素灰度级。图像滤波工具中缺省为近邻复制填充策略。</p>
+<p>Trong tích chập ảnh, nếu kích thước nhân là n x n, khi khoảng cách từ tâm nhân đến biên ảnh nhỏ hơn (n - 1) / 2 thì một phần trọng số của nhân sẽ tương ứng với các điểm ảnh nằm ngoài vùng ảnh, như Hình 7. Các phương pháp đệm biên thường dùng gồm: (1) Đệm bằng 0: thay các điểm ảnh ngoài biên bằng 0. (2) Sao chép điểm ảnh lân cận: sao chép giá trị xám của điểm ảnh ở sát biên. Trong công cụ lọc ảnh, mặc định dùng phương pháp sao chép điểm ảnh biên.</p>
 
 <p><img src="media/wps150.jpg" alt="img" /></p>
 
-<p><imgnote>图7 图像卷积中的边界填充示意图</imgnote></p>
+<p><imgnote>Hình 7 Minh họa đệm biên trong tích chập ảnh</imgnote></p>
 
-<h3>相关核</h3>
+<h3>Nhân tương quan</h3>
 
-<p>常用的滤波器都是以相关核的形式给出。不同滤波器对应的相关核（权值矩阵）如下图所示：</p>
+<p>Các bộ lọc thông dụng đều được biểu diễn dưới dạng nhân tương quan. Nhân tương quan (ma trận trọng số) tương ứng của từng loại bộ lọc được minh họa trong hình sau:</p>
 
 <p><img src="media/wps151.jpg" alt="img" /></p>
 
-<p><imgnote>图8 不同滤波器对应的相关核示意图</imgnote></p>
+<p><imgnote>Hình 8 Nhân tương quan tương ứng với các bộ lọc khác nhau</imgnote></p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>示例工程</h2>
+<h2>Ví dụ dự án</h2>
 
 <p>参见“\Samples\空间滤波工具.gvp”。</p>

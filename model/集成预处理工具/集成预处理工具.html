@@ -16,74 +16,75 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1><strong>集成预处理工具</strong></h1>
+<h1><strong>Công cụ tiền xử lý tích hợp</strong></h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tóm tắt chức năng</h2>
 
-<p>​ 集成预处理工具为一个集成类工具，集成了当前项目中常见的预处理方式，包括彩色颜色提取、RGB图像分离、灰度形态学、区域内灰度值替换、对比度提高、二值化、范围内灰度值替换、图像与图像计算、图像计算、干扰斑点去除二值化等。</p>
+<p>Công cụ tiền xử lý tích hợp là một công cụ dạng tổng hợp, tích hợp nhiều phương pháp tiền xử lý phổ biến trong dự án hiện tại, bao gồm: trích xuất màu từ ảnh màu, tách ảnh RGB, hình thái học mức xám, thay thế giá trị mức xám trong vùng, tăng độ tương phản, nhị phân hóa, thay thế giá trị mức xám trong phạm vi, phép toán ảnh–ảnh, phép toán ảnh, loại bỏ nhiễu đốm bằng nhị phân hóa, v.v.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>​ 集成预处理工具旨在允许用户使用一个工具完成大多数预处理功能，而不再需要在流程图中添加很多个单独的预处理工具。并且工具设计成实时处理的方式，允许用户在完成功能添加后，实时查看预处理的结果图像，提高用户的使用体验和操作效率。</p>
+<p>Công cụ tiền xử lý tích hợp cho phép người dùng sử dụng một công cụ duy nhất để hoàn thành hầu hết các chức năng tiền xử lý, thay vì phải thêm nhiều công cụ tiền xử lý rời rạc trong lưu đồ. Công cụ được thiết kế theo cách xử lý thời gian thực, giúp người dùng xem ngay ảnh kết quả sau khi thêm chức năng tiền xử lý, nâng cao trải nghiệm và hiệu quả thao tác.</p>
 
-<p>​ 其典型的应用场景是允许用户灵活的搭建一个标准的项目应用流程，在图像采集流程后面添加一个空的集成预处理工具，最终的使用者可以根据项目的实际预处理需求选择是否开启预处理功能，并添加所需的预处理功能。</p>
+<p>Ứng dụng điển hình là xây dựng linh hoạt một quy trình chuẩn cho dự án: sau bước thu nhận ảnh, người dùng thêm một công cụ tiền xử lý tích hợp trống. Người dùng cuối có thể tùy theo nhu cầu tiền xử lý thực tế của dự án để quyết định có kích hoạt tiền xử lý hay không, và thêm các chức năng cần thiết.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>​ 集成预处理工具本质上是集成了VA中的多种预处理工具，如颜色提取功能，内部调用了颜色提取工具，二值化内部调用了二值化工具，在此文档内不再介绍每一种预处理功能的操作原理，用户可以单独找到对应工具的说明文档进行查看。</p>
+<p>Bản chất của công cụ tiền xử lý tích hợp là tích hợp nhiều công cụ tiền xử lý trong VA. Ví dụ: chức năng trích xuất màu sẽ gọi nội bộ công cụ trích xuất màu; chức năng nhị phân hóa sẽ gọi công cụ nhị phân hóa. Vì vậy trong tài liệu này không mô tả nguyên lý chi tiết của từng chức năng; người dùng có thể tham khảo tài liệu riêng của từng công cụ tương ứng.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像</h4></li>
+<li><h4>Thêm công cụ và nạp ảnh</h4></li>
 </ul>
+
 
 
 <p><img src="media/GcIntegratedPreprocessTool_4_1.png" alt="" /></p>
 
 <ul>
-<li><h4>集成预处理功能</h4>
+<li><h4>Chức năng tiền xử lý tích hợp</h4>
 
 <ul>
-<li><p><strong>添加区域预处理项</strong>，每个项最终都会有一个预处理结果区域图像的输出。项的内容包括：</p>
+<li><p><strong>Thêm mục tiền xử lý vùng</strong>: Mỗi mục cuối cùng sẽ có ảnh kết quả tiền xử lý của vùng xuất ra. Nội dung của mục bao gồm:</p>
 
-<p>​ 1、ROI：当前项的预处理结果生效区域。支持矩形、仿射矩形、圆形、多边形。</p>
+<p>1. ROI: Vùng ảnh mà kết quả tiền xử lý của mục này có hiệu lực. Hỗ trợ hình chữ nhật, hình chữ nhật biến đổi affine, hình tròn và đa giác.</p>
 
-<p>​ 2、颜色提取：针对当前ROI进行颜色提取。功能同颜色提取工具。</p>
+<p>2. Trích xuất màu: Thực hiện trích xuất màu cho ROI hiện tại. Chức năng tương tự công cụ trích xuất màu.</p>
 
-<p>​ 3、预处理方式集合：以颜色提取的结果（如果启用）作为输入图像，按照列表中的预处理工具的先后顺序依次执行。工具包括：彩色RGB图像分离、灰度形态学、区域内灰度值替换、对比度提高、二值化、范围内灰度值替换、图像与图像计算、图像计算、干扰斑点去除二值化。</p></li>
+<p>3. Bộ công cụ tiền xử lý: Sử dụng kết quả trích xuất màu (nếu bật) làm ảnh đầu vào, thực hiện tuần tự theo danh sách các công cụ tiền xử lý. Các công cụ bao gồm: tách ảnh RGB màu, hình thái học mức xám, thay thế giá trị mức xám trong vùng, tăng độ tương phản, nhị phân hóa, thay thế giá trị mức xám trong phạm vi, phép toán ảnh–ảnh, phép toán ảnh, loại bỏ nhiễu đốm bằng nhị phân hóa.</p>
+</li>
 </ul>
-
 
 <p><img src="media/GcIntegratedPreprocessTool_4_2.png" alt="" /></p>
 
-<p>​   &ldquo;<strong>预处理方式执行逻辑</strong>"：上一个启用的预处理工具的执行结果作为下一个预处理工具的输入，最后一个启用的预处理工具的执行结果作为当前区域预处理的总结果，同时可以改变预处理工具的上下顺序，从而改变执行的先后顺序。</p>
+<p>“<strong>Logic thực thi tiền xử lý</strong>”: Kết quả của công cụ tiền xử lý được bật trước đó sẽ làm đầu vào cho công cụ tiền xử lý tiếp theo. Kết quả của công cụ tiền xử lý cuối cùng sẽ là kết quả tổng của vùng tiền xử lý hiện tại. Người dùng có thể thay đổi thứ tự công cụ tiền xử lý để thay đổi trình tự thực thi.</p>
 
 <p><img src="media/GcIntegratedPreprocessTool_4_3.png" alt="" /></p>
 
-<p>​   &ldquo;<strong>预处理工具参数配置</strong>&rdquo;</p>
+<p>“<strong>Cấu hình tham số công cụ tiền xử lý</strong>”</p>
 
-<p>​       选中预处理方式列表中的预处理工具，下方会显示当前可调参数，如下图所示：</p>
+<p>Khi chọn công cụ trong danh sách tiền xử lý, các tham số có thể điều chỉnh sẽ hiển thị phía dưới, như hình sau:</p>
 
 <p><img src="media/GcIntegratedPreprocessTool_4_4.png" alt="" /></p>
 
-<p>​           &ldquo;<strong>图像来源</strong>"：默认为上一个启用的工具执行结果，可配置当前选中的预处理工具的图像输入，可选择项为前面预处理工具的结果图。如果当前工具为第一个，则输入图像为颜色提取结果图。</p>
+<p>“<strong>Nguồn ảnh</strong>”: Mặc định là kết quả của công cụ được bật trước, nhưng có thể cấu hình ảnh đầu vào của công cụ hiện tại, lựa chọn là kết quả của các công cụ tiền xử lý trước đó. Nếu công cụ hiện tại là công cụ đầu tiên, ảnh đầu vào sẽ là kết quả trích xuất màu.</p>
 
 <p><img src="media/GcIntegratedPreprocessTool_4_5.png" alt="" /></p>
 
 <ul>
-<li><p><strong>开启和关闭</strong></p>
+<li><p><strong>Bật và tắt</strong></p>
 
-<p>可控制<strong>区域预处理</strong>项的执行或者不执行。</p>
+<p>Cho phép điều khiển thực thi hoặc không thực thi mục <strong>tiền xử lý vùng</strong>.</p>
 
 <p><img src="media/GcIntegratedPreprocessTool_4_6.png" alt="" /></p>
 
-<p>可控制预处理方式中的<strong>预处理工具</strong>的执行或者不执行。</p>
+<p>Cho phép điều khiển thực thi hoặc không thực thi các <strong>công cụ tiền xử lý</strong> trong bộ công cụ.</p>
 
 <p><img src="media/GcIntegratedPreprocessTool_4_7.png" alt="" /></p></li>
-<li><p><strong>实时执行结果显示</strong></p>
+<li><p><strong>Hiển thị kết quả thực thi thời gian thực</strong></p>
 
-<p>全局预处理结果图像实时更新。</p>
+<p>Ảnh kết quả tiền xử lý toàn cục được cập nhật theo thời gian thực.</p>
 
 <p><img src="media/GcIntegratedPreprocessTool_4_8.png" alt="" /></p></li>
 </ul>
@@ -91,99 +92,97 @@
 </ul>
 
 
-<h2>5. 常见问题</h2>
+
+<h2>5. Các vấn đề thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述       </th>
-<th> 解决方法                                                     </th>
+<th>Mô tả hiện tượng</th>
+<th>Cách khắc phục</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 预处理执行失败 </td>
-<td> 区域预处理项为空、区域预处理项都未启用、预处理项中没有添加工具、如果是彩色图像，没有启用颜色提取或者没有添加彩色转黑白工具。 </td>
+<td>Tiền xử lý thất bại</td>
+<td>Mục tiền xử lý vùng trống, tất cả các mục tiền xử lý vùng đều chưa được bật, không có công cụ nào được thêm trong mục tiền xử lý, hoặc với ảnh màu, không bật trích xuất màu hoặc chưa thêm công cụ chuyển màu sang đen trắng.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>6. Giải thích tham số</h2>
 
-<h2>6. 参数说明</h2>
-
-<h4>工具属性参数</h4>
+<h4>Tham số thuộc tính công cụ</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称         </th>
-<th style="text-align:left;"> 参数说明                                   </th>
+<th>Tên tham số</th>
+<th style="text-align:left;">Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 是否输入彩色图像 </td>
-<td style="text-align:left;"> 是：输入图像是彩色图；否：输入图像是灰度图 </td>
+<td>Nhập ảnh màu hay không</td>
+<td style="text-align:left;">Có: ảnh đầu vào là ảnh màu; Không: ảnh đầu vào là ảnh mức xám</td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>工具输入参数</h4>
+<h4>Tham số đầu vào công cụ</h4>
 
 <table>
 <thead>
 <tr>
-<th style="text-align:left;"> 参数名称     </th>
-<th style="text-align:left;"> 参数说明           </th>
+<th style="text-align:left;">Tên tham số</th>
+<th style="text-align:left;">Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;"> 输入图像     </td>
-<td style="text-align:left;"> 可链接灰度输入图像 </td>
+<td style="text-align:left;">Ảnh đầu vào</td>
+<td style="text-align:left;">Có thể liên kết với ảnh đầu vào mức xám</td>
 </tr>
 <tr>
-<td style="text-align:left;"> 输入图像RGB  </td>
-<td style="text-align:left;"> 可链接彩色输入图像 </td>
+<td style="text-align:left;">Ảnh đầu vào RGB</td>
+<td style="text-align:left;">Có thể liên kết với ảnh đầu vào màu</td>
 </tr>
 <tr>
-<td style="text-align:left;"> 二维线性变换 </td>
-<td style="text-align:left;"> 链接二维线性变换   </td>
+<td style="text-align:left;">Biến đổi tuyến tính 2D</td>
+<td style="text-align:left;">Liên kết biến đổi tuyến tính 2 chiều</td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>工具输出参数</h4>
+<h4>Tham số đầu ra công cụ</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明                                           </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像     </td>
-<td> 在视图区域的Edit项显示用户通过参数链链接的灰度图像 </td>
+<td>Ảnh đầu vào</td>
+<td>Hiển thị ảnh mức xám liên kết qua chuỗi tham số trong mục Edit của khu vực xem</td>
 </tr>
 <tr>
-<td> 输入图像RGB  </td>
-<td> 在视图区域的Edit项显示用户通过参数链链接的RGB图像  </td>
+<td>Ảnh đầu vào RGB</td>
+<td>Hiển thị ảnh RGB liên kết qua chuỗi tham số trong mục Edit của khu vực xem</td>
 </tr>
 <tr>
-<td> 输出图像     </td>
-<td> 在视图区域的Result项显示最终的预处理图像           </td>
+<td>Ảnh đầu ra</td>
+<td>Hiển thị ảnh tiền xử lý cuối cùng trong mục Result của khu vực xem</td>
 </tr>
 <tr>
-<td> 工具执行结果 </td>
-<td> 显示当前工具的整体执行状态                         </td>
+<td>Kết quả thực thi công cụ</td>
+<td>Hiển thị trạng thái thực thi tổng thể của công cụ</td>
 </tr>
 <tr>
-<td> 工具执行时间 </td>
-<td> 显示当前工具的执行时间                             </td>
+<td>Thời gian thực thi công cụ</td>
+<td>Hiển thị thời gian thực thi của công cụ</td>
 </tr>
 </tbody>
 </table>
