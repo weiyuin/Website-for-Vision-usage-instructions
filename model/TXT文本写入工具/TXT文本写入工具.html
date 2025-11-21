@@ -16,106 +16,104 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>TXT文本写入工具</h1>
+<h1>TXT Văn Bản – Công Cụ Ghi Dữ Liệu</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>TXT文本写入工具主要目的是能够灵活、便捷的记录数据，方便事后分析。一般配合数据包生成工具及字符串解析工具来自由组合、编辑多种数据源的存储样式。</p>
+<p>Công cụ ghi TXT dùng để ghi dữ liệu linh hoạt và thuận tiện, hỗ trợ phân tích sau này. Thường kết hợp với công cụ tạo gói dữ liệu và công cụ phân tích chuỗi để tùy ý ghép nối, chỉnh sửa nhiều dạng dữ liệu đầu ra.</p>
 
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                     </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口 </td>
-<td> 文件路径                                                     </td>
-<td> TXT文本的保存路径。                            </td>
-</tr>
-<tr>
-<td> 图像窗口 </td>
-<td> 无  </td>
-<td> 无                                                                                                           </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 文本名称                                                     </td>
-<td> TXT文本的名称，注意需要带上文件后缀名(*.txt)。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 写入内容 </td>
-<td> 要存入TXT文本的内容，可配合数据包生成工具及字符串解析工具使用。</td>
-</tr>
-<tr>
-<td></td>
-<td> 覆盖内容 </td>
-<td> 要存入TXT文本的内容是否覆盖之前内容。</td>
-</tr>
-<tr>
-<td> 高级界面 </td>
-<td> 无 </td>
-<td> 无 </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                       </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 执行结果       </td>
-<td> 工具执行结果。 </td>
+<td>Cửa sổ thuộc tính</td>
+<td>Đường dẫn tệp</td>
+<td>Đường lưu tệp TXT.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Dữ liệu liên kết</td>
+<td>Tên văn bản</td>
+<td>Tên tệp TXT, cần kèm hậu tố (*.txt).</td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                 </td>
+<td>Nội dung ghi</td>
+<td>Nội dung sẽ ghi vào tệp TXT, có thể dùng chung với công cụ tạo gói dữ liệu và công cụ phân tích chuỗi.</td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无       </td>
-<td> 无                             </td>
+<td></td>
+<td>Ghi đè nội dung</td>
+<td>Chọn ghi đè hay không lên nội dung cũ.</td>
 </tr>
 <tr>
-<td>数据链</td>
-<td> 无       </td>
-<td> 无                             </td>
+<td>Cửa sổ nâng cao</td>
+<td>Không</td>
+<td>Không</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cửa sổ giám sát</td>
+<td>Kết quả thực thi</td>
+<td>Kết quả chạy của công cụ.</td>
+</tr>
+<tr>
+<td></td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực thi.</td>
+</tr>
+<tr>
+<td>Cửa sổ hình ảnh</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Dữ liệu liên kết</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+</tbody>
+</table>
 
-<h3>写入内容</h3>
+<h2>Giải thích chi tiết</h2>
 
-<p>通过与数据包生成工具、字符串解析工具组合使用，可以自由、便捷的组合编辑多个数据源输出格式，使输出的文本信息更加丰富。</p>
+<h3>Nội dung ghi</h3>
 
-<p>图1 (a) 给出了一组由数据包生成工具生成的包含多种数据类型的数据组合，图1 (b) 给出对应的字符串格式化的转换格式。（bool型变量输出结果为0和1，用%d转换）。</p>
+<p>Kết hợp với công cụ tạo gói dữ liệu và công cụ phân tích chuỗi, có thể tùy ý chỉnh sửa, ghép nối nhiều nguồn dữ liệu, làm cho văn bản đầu ra phong phú hơn.</p>
+
+<p>Hình 1 (a) là một nhóm dữ liệu nhiều kiểu được tạo bởi công cụ tạo gói dữ liệu; hình 1 (b) là định dạng chuyển đổi chuỗi tương ứng (biến kiểu bool xuất 0 hoặc 1, dùng %d).</p>
 
 <p><img src="media/wps46.jpg" alt="img" />  <img src="media/wps47.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 数据包生成工具属性窗口</imgnote> <imgnote>(b) 字符串格式化属性窗口</imgnote></p>
+<p><imgnote>(a) Cửa sổ thuộc tính của công cụ tạo gói dữ liệu</imgnote> <imgnote>(b) Cửa sổ định dạng chuỗi</imgnote></p>
 
-<p><imgnote>图1 文本写入内容编辑示意图</imgnote></p>
+<p><imgnote>Hình 1 – Minh họa chỉnh sửa nội dung ghi văn bản</imgnote></p>
 
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
 <p>参见“\Samples\TXT文本写入工具.gvp”。</p>
