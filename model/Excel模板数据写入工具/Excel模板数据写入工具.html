@@ -16,149 +16,149 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Excel模板数据写入工具</h1>
+<h1>Công cụ ghi dữ liệu vào template Excel</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>实际生产项目中往往有记录生产数据的需求，记录生产数据往往以Excel表格的形式导出呈现。当客户所需要的Excel表格格式固定时，即表格填入数据分布与计算公式结果等组织形式固定化，可将该固定化的Excel文件作为模板，只将生产数据覆盖写入到Excel相应单元格位置。Excel模板写入工具就完成了此种功能。</p>
+<p>Trong các dự án sản xuất thực tế thường có nhu cầu ghi lại dữ liệu sản xuất, dữ liệu này thường được xuất ra dưới dạng bảng Excel. Khi khách hàng yêu cầu định dạng Excel cố định (vị trí ghi dữ liệu, công thức tính toán, kết quả hiển thị đã được chuẩn hóa), ta có thể dùng file Excel cố định đó làm template, chỉ ghi đè dữ liệu sản xuất vào các ô tương ứng. Công cụ “Ghi dữ liệu vào template Excel” chính là thực hiện chức năng này.</p>
 
-<p>模板文件如图1所示，其中红框中的内容为生产数据写入单元格，而绿色方框中的数据为模板数据或公式自动计算结果。生产中只需覆盖写入生产数据部分，而让绿色框中的数据自动做更新。</p>
+<p>File template như Hình 1, trong đó phần khung đỏ là các ô sẽ ghi dữ liệu sản xuất, còn phần khung xanh là dữ liệu cố định của template hoặc kết quả tự động tính từ công thức. Trong sản xuất chỉ cần ghi đè phần dữ liệu sản xuất (khung đỏ), còn phần khung xanh sẽ tự động cập nhật.</p>
 
 <p><img src="media/wps63.jpg" alt="img" /></p>
 
-<p><imgnote>图1   Excel模板文件</imgnote></p>
+<p><imgnote>Hình 1   File template Excel</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口     </td>
-<td> Excel文件路径                                                </td>
-<td> Excel模板文件的完整路径<img src="media/wps65.jpg" alt="img" />               </td>
+<td> Cửa sổ thuộc tính     </td>
+<td> Đường dẫn file Excel                                                </td>
+<td> Đường dẫn đầy đủ đến file template Excel <img src="media/wps65.jpg" alt="img" />               </td>
 </tr>
 <tr>
 <td></td>
-<td> 工作表标签名 </td>
-<td> Excel模板单元格所在的工作表标签名字<img src="media/wps66.jpg" alt="img" />                                                                 </td>
+<td> Tên sheet </td>
+<td> Tên tab sheet chứa các ô cần ghi trong file template Excel <img src="media/wps66.jpg" alt="img" />                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 起始写入行ID </td>
-<td> 指生产数据写入的起始行的行号，如图1中的起始行号为15                                                                        </td>
+<td> Hàng bắt đầu ghi </td>
+<td> Số thứ tự hàng bắt đầu ghi dữ liệu sản xuất, ví dụ trong Hình 1 là hàng 15                                                                        </td>
 </tr>
 <tr>
 <td></td>
-<td> 起始写入列ID </td>
-<td> 指生产数据写入的起始列的列号，如图1中的起始列号为B                                                                         </td>
+<td> Cột bắt đầu ghi </td>
+<td> Số thứ tự cột bắt đầu ghi dữ liệu sản xuất, ví dụ trong Hình 1 là cột B                                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 数据表名称   </td>
-<td> 需要查询的数据表的名称（前提是需要连接到表所在的数据库），同数据库查询工具                                                               </td>
+<td> Tên bảng dữ liệu   </td>
+<td> Tên bảng dữ liệu cần truy vấn (yêu cầu đã kết nối đến cơ sở dữ liệu chứa bảng), giống với công cụ Truy vấn cơ sở dữ liệu                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 查询项       </td>
-<td> 需要查询的列的名称，同数据库查询工具                                                                                       </td>
+<td> Các mục truy vấn       </td>
+<td> Tên các cột cần lấy dữ liệu, giống công cụ Truy vấn cơ sở dữ liệu                                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 查询条件     </td>
-<td> 满足查询条件的逻辑表达式（多条件使用and、or或者()）。比如：半径>60 AND半径&lt;65，或者稍复杂的：列名1= &lsquo;Aa&rsquo; and 列名2= &lsquo;Bb &rsquo; and (列名3 = 888 or 列名4 = 888 )，同数据库查询工具                                                               </td>
+<td> Điều kiện truy vấn     </td>
+<td> Biểu thức logic điều kiện truy vấn (có thể dùng and, or hoặc ngoặc). Ví dụ: bán kính>60 AND bán kính&lt;65, hoặc phức tạp hơn: tên_cột1= 'Aa' and tên_cột2= 'Bb' and (tên_cột3 = 888 or tên_cột4 = 888), giống công cụ Truy vấn cơ sở dữ liệu                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像窗口     </td>
-<td> 无                                                                                                                         </td>
+<td> Cửa sổ hình ảnh     </td>
+<td> Không có                                                                                                                         </td>
 </tr>
 <tr>
-<td> 数据链       </td>
-<td> Excel文件另存路径                                            </td>
-<td> 因为Excel模板文件写入生产数据后，若保存将覆盖掉原Excel模板；因此要另存为新Excel文件，该数据链即为另存路径<img src="media/wps67.jpg" alt="img" /> </td>
+<td> Chuỗi dữ liệu       </td>
+<td> Đường dẫn lưu file Excel mới                                            </td>
+<td> Vì khi ghi dữ liệu vào template rồi lưu sẽ ghi đè lên file gốc, nên phải lưu thành file mới. Tham số này chính là đường dẫn lưu file mới <img src="media/wps67.jpg" alt="img" /> </td>
 </tr>
 <tr>
 <td></td>
-<td> 高级界面     </td>
-<td> 无                                                                                                                         </td>
+<td> Giao diện nâng cao     </td>
+<td> Không có                                                                                                                         </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                       </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 执行结果       </td>
-<td> 工具执行结果。 </td>
+<td> Cửa sổ giám sát </td>
+<td> Kết quả thực thi       </td>
+<td> Kết quả thực thi của công cụ. </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                 </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像窗口 </td>
-<td> 无                             </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không có                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 数据链   </td>
-<td> 无                             </td>
+<td> Chuỗi dữ liệu   </td>
+<td> Không có                             </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
-<p>Excel模板写入工具实际上是在现有excel模板（如Sample文件夹下的ExcelModel.xls）上填充生产数据的工具，而CPK等参数在生产数据填充后，可以通过excel公式自动进行计算显示在excel文件中。</p>
+<p>Công cụ ghi dữ liệu vào template Excel thực chất là công cụ điền dữ liệu sản xuất vào file Excel template có sẵn (ví dụ: ExcelModel.xls trong thư mục Sample). Sau khi điền dữ liệu sản xuất, các thông số như CPK sẽ tự động được tính toán và hiển thị nhờ công thức có sẵn trong Excel.</p>
 
-<h3>Excel文件路径</h3>
+<h3>Đường dẫn file Excel</h3>
 
-<p>即为CPK原始模板文件路径，只支持.xls文件，且路径中不支持中文路径；</p>
+<p>Đường dẫn đầy đủ đến file template gốc, chỉ hỗ trợ định dạng .xls, đường dẫn không được chứa ký tự tiếng Trung;</p>
 
-<h3>工作表签名</h3>
+<h3>Tên sheet</h3>
 
-<p>即.xls模板文件的工作表标签名，不支持中文。如图2；</p>
+<p>Tên tab sheet trong file .xls template, không hỗ trợ tên tiếng Trung. Như Hình 2;</p>
 
 <p><img src="media/wps70.jpg" alt="img" /></p>
 
-<p><imgnote>图2 工作表签名</imgnote></p>
+<p><imgnote>Hình 2 Tên sheet</imgnote></p>
 
-<h3>Excel文件另存路径</h3>
+<h3>Đường dẫn lưu file Excel mới</h3>
 
-<p>即CPK写入原始模板后形成的新excel文件的保存路径。该路径为字符串类型，可以通过数据包生成工具与字符串格式化工具生成。该路径需要包含完整路径与文件命名，并以.xls为结尾，且不支持中文。如“C:\Users\blabla \Desktop\Excelcpk\new.xls”。</p>
+<p>Đường dẫn lưu file Excel mới sau khi đã ghi dữ liệu vào template. Đây là kiểu chuỗi, có thể dùng công cụ Tạo gói dữ liệu kết hợp công cụ Định dạng chuỗi để tạo ra. Đường dẫn phải bao gồm đầy đủ đường dẫn + tên file và kết thúc bằng .xls, không hỗ trợ tiếng Trung. Ví dụ: “C:\Users\blabla\Desktop\Excelcpk\new.xls”.</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li><p>此工具要与数据收集工具配合使用。是将数据表查询项中的数据写入到Excel模板文件中，写入的起始位置为该工具所设置的起始行和列；写入数据的行数和列数依赖于查询的行数和查询项个数；</p></li>
-<li><p>此工具只对Excel模板文件的生产数据部分进行覆盖写入，而保持了原模板的其他单元格的计算公式，因此在查看Excel文件时，相应的公式单元格将自动计算；</p></li>
-<li><p>该工具可以保持模板文件中固定单元格的数值和计算公式，但无法保持其单元格格式，如字体和背景颜色等；</p></li>
-<li><p>关于数据表查询的操作参见“数据库查询工具”操作手册；</p></li>
-<li><p>写入数据的最大列数不能超过IV（256），最大行数不能超过65536；</p></li>
+<li><p>Công cụ này cần kết hợp với công cụ Thu thập dữ liệu/Truy vấn cơ sở dữ liệu. Nó sẽ ghi dữ liệu từ các mục truy vấn vào file template Excel, vị trí bắt đầu ghi là hàng và cột đã cài đặt; số hàng và cột ghi vào phụ thuộc vào số dòng kết quả truy vấn và số mục truy vấn;</p></li>
+<li><p>Công cụ chỉ ghi đè phần dữ liệu sản xuất, giữ nguyên công thức tính toán của template, vì vậy khi mở file Excel, các ô công thức sẽ tự động tính lại;</p></li>
+<li><p>Công cụ giữ được giá trị cố định và công thức nhưng không giữ được định dạng ô (phông chữ, màu nền, v.v.);</p></li>
+<li><p>Về cách sử dụng truy vấn bảng dữ liệu, xem hướng dẫn công cụ “Truy vấn cơ sở dữ liệu”;</p></li>
+<li><p>Số cột tối đa khi ghi không vượt quá IV (256 cột), số hàng tối đa không vượt quá 65536;</p></li>
 </ul>
 
 
-<h2>示例工程</h2>
+<h2>Ví dụ dự án</h2>
 
 <p>参见“\Samples\Excel模板写入.gvp”，引用的excel模板文件见\Samples\ExcelModel.xls。</p>

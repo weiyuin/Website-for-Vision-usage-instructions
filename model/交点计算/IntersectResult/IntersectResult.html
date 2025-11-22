@@ -18,75 +18,77 @@
            </head>
 <h1>IntersectResult</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示求交点的计算结果，例如直线与圆的交点，圆与圆的交点，线段与圆之间的交点等。</p>
+<p>Biểu diễn kết quả tính toán các điểm giao nhau, ví dụ như giao điểm của đường thẳng với đường tròn, giao điểm giữa hai đường tròn, giao điểm giữa đoạn thẳng và đường tròn, v.v.</p>
 
-<p>由于两个图形相交情况不同，在不同相交情况下交点个数也不同，例如直线和圆可能不相交（即相离，无交点），也可能相切（有1个交点），还可能相交（有2个交点），因此在交点结果类型里面包含了一个intersect属性，用来表示是否有交点，同时配合判断points中元素个数（len(result.points)），即可判断出相交的具体情况。</p>
+<p>Do tình huống giao nhau giữa hai hình khác nhau nên số lượng giao điểm cũng khác nhau trong các trường hợp giao nhau khác nhau. Ví dụ đường thẳng và đường tròn có thể không giao nhau (tức là rời nhau, không có giao điểm), có thể tiếp xúc (có 1 giao điểm), hoặc cắt nhau (có 2 giao điểm). Vì vậy trong kiểu kết quả giao điểm có chứa một thuộc tính <code>intersect</code> để biểu thị có giao điểm hay không, đồng thời kết hợp kiểm tra số lượng phần tử trong <code>points</code> (<code>len(result.points)</code>) là có thể xác định chính xác tình huống giao nhau cụ thể.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                 </th>
-<th> 接口描述         </th>
+<th> Phân loại </th>
+<th> Tên giao diện            </th>
+<th> Mô tả giao diện          </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
+<td> Thuộc tính </td>
 <td> issucceed </td>
-<td> 表示计算是否成功 </td>
+<td> Biểu thị tính toán có thành công hay không </td>
 </tr>
 <tr>
-<td>      </td>
+<td>            </td>
 <td> intersect </td>
-<td> 是否有交点       </td>
+<td> Có giao điểm hay không   </td>
 </tr>
 <tr>
-<td>      </td>
-<td> points       </td>
-<td> 交点             </td>
+<td>            </td>
+<td> points    </td>
+<td> Các giao điểm            </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>issucceed</h3>
 
 <ul>
-<li>功能：表示计算是否成功，布尔类型。</li>
+<li>Chức năng: Biểu thị việc tính toán có thành công hay không, kiểu boolean.</li>
 </ul>
 
 
 <h3>intersect</h3>
 
 <ul>
-<li><p>功能：判断是否两图形是否有交点，布尔型。</p>
+<li><p>Chức năng: Xác định hai hình có giao điểm với nhau hay không, kiểu boolean.</p>
 
-<p>False：无交点。</p>
+<p>False: Không có giao điểm.</p>
 
-<p>True：表示有交点，但是要结合points中的元素个数具体分析。例如直线与直线交点，结果为intersect为True，但是points为0，这种情况表示两条直线重合。</p></li>
+<p>True: Biểu thị có giao điểm, nhưng cần kết hợp với số lượng phần tử trong points để phân tích cụ thể.
+Ví dụ khi tính giao điểm giữa hai đường thẳng, nếu intersect là True nhưng points có 0 phần tử, thì điều đó có nghĩa là hai đường thẳng trùng nhau (có vô số giao điểm).</p></li>
 </ul>
 
 
 <h3>points</h3>
 
 <ul>
-<li><p>功能：表示求出的交点，sc2Vector类型的列表list，在脚本工具中使用type查看类型，返回值为sc2VectorVec。</p>
+<li><p>Chức năng: Biểu thị danh sách các giao điểm tìm được, là list kiểu sc2Vector; trong script tool dùng type để xem kiểu sẽ trả về sc2VectorVec.</p>
 
-<blockquote><p>注意：points中元素个数可以为0，需要根据points具体个数情况结合intersect来判断相交情况。</p></blockquote></li>
+<blockquote><p>Lưu ý: Số lượng phần tử trong points có thể là 0, cần kết hợp số lượng cụ thể của points với thuộc tính intersect để xác định chính xác tình huống giao nhau.</p></blockquote></li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Chỉ dựa vào việc phán đoán số lượng phần tử trong points bằng 0 là không thể kết luận hai hình không giao nhau.
+Ví dụ: khi tính giao điểm của hai đường thẳng, nếu hai đường thẳng trùng nhau (nằm chồng lên nhau), thì kết quả trả về sẽ có số phần tử trong points là 0, nhưng thực tế hai đường thẳng này có vô số giao điểm.
+Do đó, cần kết hợp với thuộc tính intersect để xác định chính xác tình huống giao nhau. Chi tiết cụ thể cần tham khảo phần mô tả của hàm tính giao điểm tương ứng.</p>
 
-<p>只通过判断points中元素个数为0，无法断定两个图形不相交，例如计算两条直线的交点，如果两条直线重合，则结果中points元素个数为0，但是两条直线是重合的，即有无穷个交点，需要结合intersect判断具体相交情况，详情需要参考具体的交点计算函数说明。</p>
+<h2>Ví dụ mã</h2>
 
-<h2>示例代码</h2>
-
-<p>无</p>
+<p>Không có</p>
