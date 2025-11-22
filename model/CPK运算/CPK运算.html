@@ -16,138 +16,137 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>CPK运算工具</h1>
+<h1>Công cụ tính toán CPK</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>对输入的数据向量根据给定的规格上/下限值（USL/LSL）进行CPK运算，最终输出CPK结果。</p>
+<p>Thực hiện phép tính CPK cho vector dữ liệu đầu vào dựa trên giá trị giới hạn trên/dưới quy định (USL/LSL), cuối cùng xuất ra kết quả CPK.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称   </th>
-<th> 参数描述                                                                       </th>
+<th>Phân loại </th>
+<th> Tên tham số   </th>
+<th> Mô tả tham số                                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口   </td>
-<td> 规格上限值                           </td>
-<td> USL参数，给定的任意值，参与CPK计算。   </td>
+<td> Cửa sổ thuộc tính   </td>
+<td> Giới hạn trên quy định (USL)                           </td>
+<td> Tham số USL, giá trị tùy ý được cung cấp, tham gia vào phép tính CPK.   </td>
 </tr>
 <tr>
 <td></td>
-<td> 规格下限值 </td>
-<td> LSL参数，给定的任意值，参与CPK计算。                                         </td>
+<td> Giới hạn dưới quy định (LSL) </td>
+<td> Tham số LSL, giá trị tùy ý được cung cấp, tham gia vào phép tính CPK.                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像窗口   </td>
-<td> 无                                                                             </td>
+<td> Cửa sổ hình ảnh   </td>
+<td> Không có                                                                             </td>
 </tr>
 <tr>
-<td> 数据链     </td>
-<td> 输入数据向量                         </td>
-<td> 输入的数据向量，为double类型的数据数组。 </td>
+<td> Chuỗi dữ liệu     </td>
+<td> Vector dữ liệu đầu vào                         </td>
+<td> Vector dữ liệu đầu vào, là mảng dữ liệu kiểu double. </td>
+</tr>
+</tbody>
+</table>
+
+<h2>Đầu ra</h2>
+
+<table>
+<thead>
+<tr>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Cửa sổ giám sát </td>
+<td> Kết quả tính toán       </td>
+<td> Kết quả CPK đã tính toán. </td>
+</tr>
+<tr>
+<td></td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                  </td>
+</tr>
+<tr>
+<td></td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                  </td>
+</tr>
+<tr>
+<td></td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không có                              </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu   </td>
+<td> Kết quả tính toán       </td>
+<td> Kết quả CPK đã tính toán. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Giải thích chi tiết</h2>
 
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                        </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 监视窗口 </td>
-<td> 计算结果       </td>
-<td> 计算的CPK结果。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                  </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                  </td>
-</tr>
-<tr>
-<td></td>
-<td> 图像窗口 </td>
-<td> 无                              </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 计算结果       </td>
-<td> 计算的CPK结果。 </td>
-</tr>
-</tbody>
-</table>
+<p>Không có</p>
 
-
-<h2>详细说明</h2>
-
-<p>无</p>
-
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li><p>CPK (Process Capability Index )的意义为制程水平的量化反映，即用一个数值来表达制程的水平，其实质作用是反映制程合格率的高低；</p></li>
-<li><p>计算CPK时，输入数据向量至少应有20组数据，且数据要具有一定代表性；</p></li>
-<li><p>CPK等级的评定与处理原则如下表所示：</p></li>
+<li><p>CPK (Process Capability Index) là chỉ số định lượng phản ánh mức độ năng lực của quy trình sản xuất, dùng một con số để biểu thị mức độ của quy trình, bản chất là phản ánh tỷ lệ sản phẩm đạt yêu cầu cao hay thấp;</p></li>
+<li><p>Khi tính CPK, vector dữ liệu đầu vào ít nhất phải có 20 nhóm dữ liệu và dữ liệu cần có tính đại diện nhất định;</p></li>
+<li><p>Tiêu chí đánh giá và nguyên tắc xử lý các cấp độ CPK như bảng sau:</p></li>
 </ul>
 
 
 <table>
 <thead>
 <tr>
-<th> 等级 </th>
-<th> CPK值         </th>
-<th> 处理原则                             </th>
+<th> Cấp độ </th>
+<th> Giá trị CPK         </th>
+<th> Nguyên tắc xử lý                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> A+   </td>
 <td> ≥1.67         </td>
-<td> 无缺点，考虑降低成本                 </td>
+<td> Không khuyết điểm, có thể xem xét giảm chi phí                 </td>
 </tr>
 <tr>
 <td> A    </td>
 <td> 1.33≤CPK&lt;1.67 </td>
-<td> 状态良好维持现状                     </td>
+<td> Tình trạng tốt, duy trì hiện trạng                     </td>
 </tr>
 <tr>
 <td> B    </td>
 <td> 1.0≤CPK&lt;1.33  </td>
-<td> 改进为A级                            </td>
+<td> Cải thiện lên cấp A                            </td>
 </tr>
 <tr>
 <td> C    </td>
 <td> 0.67≤CPK&lt;1.0  </td>
-<td> 制程不良较多，必须提升其能力         </td>
+<td> Quy trình có nhiều lỗi, phải nâng cao năng lực         </td>
 </tr>
 <tr>
 <td> D    </td>
 <td> CPK&lt;0.67      </td>
-<td> 制程能力较差，考虑整改设计制程       </td>
+<td> Năng lực quy trình kém, cần xem xét cải tổ thiết kế quy trình       </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>示例工程</h2>
+<h2>Ví dụ dự án</h2>
 
 <p>参见“\Samples\CPK运算工具.gvp”</p>

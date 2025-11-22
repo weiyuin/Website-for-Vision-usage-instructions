@@ -16,11 +16,11 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>二维向量外层相加工具</h1>
+<h1>Công cụ ghép nối ngoại tầng hai vector 2D</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>将两个vector&lt;vector<sc2Vector>>A，B组成一个数组，数组第一个元素是A，第二个元素是B，如图1所示。</p>
+<p>Ghép hai vector&lt;vector<sc2Vector>> là A và B thành một mảng, trong đó phần tử đầu tiên của mảng là A, phần tử thứ hai là B, như Hình 1.</p>
 
 <p><img src="media/wps31.png" alt="img" /></p>
 
@@ -32,101 +32,101 @@
 
 <p><img src="media/wps33.png" alt="img" /></p>
 
-<p><imgnote>&copy; 二维向量外层相加工具执行结果</imgnote></p>
+<p><imgnote>(c) Kết quả thực thi công cụ ghép nối ngoại tầng hai vector 2D</imgnote></p>
 
-<p><imgnote>图1 二维向量外层相加工具</imgnote></p>
+<p><imgnote>Hình 1 Công cụ ghép nối ngoại tầng hai vector 2D</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称      </th>
-<th> 参数描述                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số      </th>
+<th> Mô tả tham số                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>属性窗口</td>
-<td>    无   </td>
-<td> 无                                         </td>
+<td>Cửa sổ thuộc tính</td>
+<td>    Không có   </td>
+<td> Không có                                         </td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td>    无   </td>
-<td> 无                                         </td>
+<td>Cửa sổ hình ảnh</td>
+<td>    Không có   </td>
+<td> Không có                                         </td>
 </tr>
 <tr>
-<td> 数据链        </td>
-<td> 输入二维向量A        </td>
-<td> 输入第一组二维向量。 </td>
+<td> Chuỗi dữ liệu        </td>
+<td> Vector 2D đầu vào A        </td>
+<td> Nhóm vector 2D đầu tiên đầu vào. </td>
 </tr>
 <tr>
 <td></td>
-<td> 输入二维向量B </td>
-<td> 输入第二组二维向量。                       </td>
+<td> Vector 2D đầu vào B </td>
+<td> Nhóm vector 2D thứ hai đầu vào.                       </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无 </td>
-<td> 无                                         </td>
+<td>Giao diện nâng cao</td>
+<td> Không có </td>
+<td> Không có                                         </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述（参数的含义）                                                               </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số（Ý nghĩa tham số）                                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出二维向量           </td>
-<td> 组合后的结果。                                               </td>
+<td> Cửa sổ giám sát </td>
+<td> Vector 2D đầu ra           </td>
+<td> Kết quả sau khi ghép nối.                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                       </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                       </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                                                                       </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 执行结果               </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Kết quả thực thi               </td>
+<td> Hiển thị kết quả thực thi công cụ, thành công hiển thị “OK”, thất bại hiển thị “NG”, giống với tham số kết quả thực thi ở cửa sổ giám sát. </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出二维向量           </td>
-<td> 输出组合后的结果，供其他工具使用，同监视窗口“输出二维向量”参数。 </td>
+<td> Chuỗi dữ liệu   </td>
+<td> Vector 2D đầu ra           </td>
+<td> Kết quả đã ghép nối để cung cấp cho các công cụ khác sử dụng, giống với tham số “Vector 2D đầu ra” ở cửa sổ giám sát. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li>“二维向量外层相加工具”的输入是vector&lt;vector<sc2Vector>>类型的，属于该类型的数据有“靶标相机标定工具”的输出数据链中的“有效角点的畸变图像坐标”、“有效角点的全局靶标坐标”。可以通过数组生成工具将“有效角点的即便图像坐标”、“有效角点的全局靶标坐标”的数据提取出来，将数据类型属性选为“scSc2vectorVector”。</li>
+<li>Đầu vào của “Công cụ ghép nối ngoại tầng hai vector 2D” là kiểu vector&lt;vector<sc2Vector>>, các dữ liệu thuộc kiểu này bao gồm: trong chuỗi dữ liệu đầu ra của “Công cụ hiệu chuẩn camera靶标” có “Tọa độ hình ảnh méo của các góc điểm hiệu quả” và “Tọa độ靶标 toàn cục của các góc điểm hiệu quả”. Có thể sử dụng công cụ tạo mảng để trích xuất dữ liệu “Tọa độ hình ảnh méo của các góc điểm hiệu quả” và “Tọa độ靶标 toàn cục của các góc điểm hiệu quả”, sau đó chọn thuộc tính kiểu dữ liệu là “scSc2vectorVector”.</li>
 </ul>
 
 
-<h2>示例工程</h2>
+<h2>Ví dụ dự án</h2>
 
 <p>参见“\Samples\二维向量外层相加工具.gvp”。</p>

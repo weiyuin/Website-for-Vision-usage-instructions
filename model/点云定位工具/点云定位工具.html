@@ -16,583 +16,582 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云定位工具</h1>
+<h1>Công cụ Định vị Điểm đám mây</h1>
 
-<h2>1. 功能</h2>
+<h2>1. Chức năng</h2>
 
-<p>在实际的工业3D应用中，常需要对实时获取的深度图像进行定位，从而对指定的ROI区域进行精确的测量或检测等。点云定位工具能够在实时深度图像中进行一个到多个实时模式与训练模式之间的匹配，定位结果包含了匹配分数、位置、角度等诸多信息。</p>
+<p>Trong các ứng dụng 3D công nghiệp thực tế, thường cần định vị đối với hình ảnh độ sâu thu được thời gian thực, từ đó thực hiện đo lường hoặc phát hiện chính xác trên vùng ROI chỉ định. Công cụ định vị điểm đám mây có thể thực hiện việc khớp một hoặc nhiều mẫu thời gian thực với mẫu đã huấn luyện trong hình ảnh độ sâu thời gian thực, kết quả định vị bao gồm điểm số khớp, vị trí, góc quay và nhiều thông tin khác.</p>
 
-<p>图1所示为点云定位工具的一个应用示例。训练模板为深度图像中的工件，训练参考点坐标为(800.00,1700.00)；实时图像(a)-(d)为带有一定旋转和平移的深度图像。从图1中的实时定位结果可知，点云定位工具对于图(a)~图(d)这四幅图像有着较好的定位效果。</p>
+<p>Hình 1 thể hiện một ví dụ ứng dụng của công cụ định vị điểm đám mây. Mẫu huấn luyện là chi tiết công việc trong hình ảnh độ sâu, tọa độ điểm tham chiếu huấn luyện là (800.00, 1700.00); hình ảnh thời gian thực (a)-(d) là các hình ảnh độ sâu có một mức độ xoay và dịch chuyển nhất định. Từ kết quả định vị thời gian thực trong Hình 1 có thể thấy, công cụ định vị điểm đám mây có hiệu quả định vị tốt đối với bốn hình ảnh từ (a) đến (d).</p>
 
 <p><img src="media/wps101.jpg" alt="img" /></p>
 
-<p><imgnote>图1 点云定位工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa ứng dụng công cụ định vị điểm đám mây</imgnote></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Cảnh ứng dụng</h2>
 
-<p>根据训练的深度几何特征，找出匹配几何的位置，给出结果个数、结果数组。</p>
+<p>Dựa trên đặc trưng hình học độ sâu đã huấn luyện, tìm ra vị trí hình học khớp, trả về số lượng kết quả và mảng kết quả.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<h3>定位原理</h3>
+<h3>Nguyên lý định vị</h3>
 
-<p>点云定位工具通过模式训练来获取模板图像的几何特征描述，几何特征可以精确、快速的进行平移，旋转等变换。深度图像定位工具在实时图像中搜索与训练模式类似的边缘几何特征模式，计算实时图像中结果模式的位置、以及其相对于训练模式的旋转角度。</p>
+<p>Công cụ định vị điểm đám mây thông qua huấn luyện mẫu để thu được mô tả đặc trưng hình học của hình ảnh mẫu, đặc trưng hình học có thể thực hiện chính xác và nhanh chóng các phép biến đổi dịch chuyển, xoay, v.v. Công cụ định vị hình ảnh độ sâu sẽ tìm kiếm trong hình ảnh thời gian thực các mẫu đặc trưng hình học cạnh tương tự mẫu huấn luyện, tính toán vị trí của mẫu kết quả trong hình ảnh thời gian thực và góc xoay của nó so với mẫu huấn luyện.</p>
 
-<p>图2所示为点云定位工具的整体流程图。点云定位工具首先进行模式训练得到训练特征模式，然后经过实时搜索得到定位结果。</p>
+<p>Hình 2 thể hiện sơ đồ luồng tổng thể của công cụ định vị điểm đám mây. Công cụ định vị điểm đám mây trước tiên thực hiện huấn luyện mẫu để thu được đặc trưng mẫu huấn luyện, sau đó qua tìm kiếm thời gian thực để thu được kết quả định vị.</p>
 
 <p><img src="media/wps105.png" alt="img" /></p>
 
-<p><imgnote>图2 颗粒度示意图</imgnote></p>
+<p><imgnote>Hình 2 Sơ đồ luồng tổng thể</imgnote></p>
 
-<p>图3所示为点云定位工具模式训练的示意图。在图5中，点云定位工具通过在训练图像上使用ROI来选取目标来进行模式训练。训练过程中针对选中区域内的有效图像，提取边缘信息，经过进一步处理之后得到训练模式。在图5中当ROI区域为训练区域A时，获取到的训练结果为训练结果A； 当ROI区域为训练区域B时，获取到的训练结果为训练结果B。目前，点云定位工具仅支持训练一个训练模式，不支持训练多个模式。</p>
+<p>Hình 3 thể hiện sơ đồ huấn luyện mẫu của công cụ định vị điểm đám mây. Trong Hình 3, công cụ định vị điểm đám mây sử dụng ROI trên hình ảnh huấn luyện để chọn đối tượng mục tiêu thực hiện huấn luyện mẫu. Trong quá trình huấn luyện, đối với vùng hình ảnh hiệu quả trong khu vực đã chọn, trích xuất thông tin cạnh, sau khi xử lý thêm sẽ thu được mẫu huấn luyện. Trong Hình 3, khi vùng ROI là vùng huấn luyện A thì kết quả huấn luyện thu được là kết quả huấn luyện A; khi vùng ROI là vùng huấn luyện B thì kết quả huấn luyện thu được là kết quả huấn luyện B. Hiện tại, công cụ định vị điểm đám mây chỉ hỗ trợ huấn luyện một mẫu duy nhất, chưa hỗ trợ huấn luyện nhiều mẫu.</p>
 
 <p><img src="media/wps106.jpg" alt="img" /></p>
 
-<p><imgnote>图3 模式训练</imgnote></p>
+<p><imgnote>Hình 3 Huấn luyện mẫu</imgnote></p>
 
-<p>定位工具在用户设置的一到多个自由度组成的搜索空间下进行实时搜索。由于深度图像代表所扫描物体的真实尺寸信息，因此，目前点云定位工具的自由度搜索空间仅支持平移自由度和旋转自由度，不支持和缩放相关的自由度。在实际应用中，设置的自由度范围应接近可能出现的最大自由度范围，减少不必要范围搜索带来的工具耗时。</p>
+<p>Công cụ định vị thực hiện tìm kiếm thời gian thực trong không gian tìm kiếm gồm một hoặc nhiều bậc tự do mà người dùng thiết lập. Do hình ảnh độ sâu thể hiện thông tin kích thước thực của vật thể được quét, vì vậy hiện tại không gian tìm kiếm bậc tự do của công cụ định vị điểm đám mây chỉ hỗ trợ bậc tự do dịch chuyển và bậc tự do xoay, không hỗ trợ các bậc tự do liên quan đến tỷ lệ phóng to/thu nhỏ. Trong ứng dụng thực tế, phạm vi bậc tự do được thiết lập nên gần với phạm vi bậc tự do tối đa có thể xuất hiện, nhằm giảm thời gian xử lý của công cụ do tìm kiếm trong phạm vi không cần thiết.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
-<p>工具执行流程：配置输入→设定属性→训练图像→执行搜索。</p>
+<p>Quy trình thực thi công cụ: Cấu hình đầu vào → Thiết lập thuộc tính → Huấn luyện hình ảnh → Thực hiện tìm kiếm.</p>
 
-<h3>配置输入</h3>
+<h3>Cấu hình đầu vào</h3>
 
-<p>双击工具在弹出窗口中配置输入图像，如图4</p>
+<p>Nhấp đúp vào công cụ, trong cửa sổ bật lên cấu hình hình ảnh đầu vào, như Hình 4</p>
 
 <p><img src="media/%E9%85%8D%E7%BD%AE%E8%BE%93%E5%85%A5.png" alt="img" /></p>
 
-<p><imgnote>图4 配置输入示意图</imgnote></p>
+<p><imgnote>Hình 4 Sơ đồ cấu hình đầu vào</imgnote></p>
 
-<h3>设定属性</h3>
+<h3>Thiết lập thuộc tính</h3>
 
-<p>属性栏设置如图5，右键工具→属性→打开高级界面设置如图6</p>
+<p>Thiết lập thanh thuộc tính như Hình 5, chuột phải vào công cụ → Thuộc tính → Mở giao diện nâng cao như Hình 6</p>
 
 <p><img src="media/%E5%B1%9E%E6%80%A7%E6%A0%8F.png" alt="" /></p>
 
-<p><imgnote>图5 属性栏设定属性示意图</imgnote></p>
+<p><imgnote>Hình 5 Sơ đồ thiết lập thuộc tính trên thanh thuộc tính</imgnote></p>
 
 <p><img src="media/%E9%AB%98%E7%BA%A7%E7%95%8C%E9%9D%A2.png" alt="img" /></p>
 
-<p><imgnote>图6 高级界面设定属性示意图</imgnote></p>
+<p><imgnote>Hình 6 Sơ đồ thiết lập thuộc tính trên giao diện nâng cao</imgnote></p>
 
-<h3>训练图像</h3>
+<h3>Huấn luyện hình ảnh</h3>
 
-<p>右键工具→属性→打开高级界面→训练参数，如图7；</p>
+<p>Chuột phải vào công cụ → Thuộc tính → Mở giao diện nâng cao → Tab Tham số huấn luyện, như Hình 7;</p>
 
 <p><img src="media/%E9%AB%98%E7%BA%A7%E7%95%8C%E9%9D%A2%E8%AE%AD%E7%BB%83.png" alt="img" /></p>
 
-<p><imgnote>图7 训练图像示意图</imgnote></p>
+<p><imgnote>Hình 7 Sơ đồ huấn luyện hình ảnh</imgnote></p>
 
-<p>（1）首先选择“训练图像”来源：</p>
+<p>（1）Trước tiên chọn nguồn “Hình ảnh huấn luyện”:</p>
 
-<p>​ a.&ldquo;输入图像"：训练图像从参数链“输入图像”获取；</p>
+<p> a. “Hình ảnh đầu vào”: hình ảnh huấn luyện được lấy từ chuỗi tham số “Hình ảnh đầu vào”;</p>
 
-<p>​ b.&ldquo;加载图像"：训练图像由离线加载方式从文件获取；</p>
+<p> b. “Tải hình ảnh”: hình ảnh huấn luyện được tải từ file ngoại tuyến;</p>
 
-<p>（2）点击“获取训练图像”：更新训练图像，点击后会先进行弹框提示；</p>
+<p>（2）Nhấp “Lấy hình ảnh huấn luyện”: cập nhật hình ảnh huấn luyện, sau khi nhấp sẽ hiện hộp thoại xác nhận;</p>
 
-<p>（3）点击“执行模式训练”：进行训练；</p>
+<p>（3）Nhấp “Thực hiện huấn luyện mẫu”: tiến hành huấn luyện;</p>
 
-<h3>执行搜索</h3>
+<h3>Thực hiện tìm kiếm</h3>
 
-<p>根据设定的搜索参数和判定结果参数返回相应的搜索结果，如图8；</p>
+<p>Theo các tham số tìm kiếm và tham số đánh giá kết quả đã thiết lập để trả về kết quả tìm kiếm tương ứng, như Hình 8;</p>
 
 <p><img src="media/%E9%AB%98%E7%BA%A7%E7%95%8C%E9%9D%A2%E7%BB%93%E6%9E%9C.png" alt="img" /></p>
 
-<p><imgnote>图8 执行搜索示意图</imgnote></p>
+<p><imgnote>Hình 8 Sơ đồ thực hiện tìm kiếm</imgnote></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>6. 参数说明</h2>
+<h2>6. Giải thích tham số</h2>
 
-<h3>输入参数</h3>
+<h3>Tham số đầu vào</h3>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称               </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số               </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口               </td>
-<td> 是否开启全图搜索                                             </td>
-<td> 开启全图搜索的开关。当选择“是”时，整幅实时采集的图像都是该工具的搜索范围；当选择“否”时，Edit视图中的矩形ROI是该工具的搜索范围。搜索区域要大于训练区域。 </td>
+<td> Cửa sổ thuộc tính               </td>
+<td> Có bật tìm kiếm toàn ảnh không                                             </td>
+<td> Công tắc bật/tắt tìm kiếm toàn ảnh. Khi chọn “Có”, toàn bộ ảnh thu thập thời gian thực là phạm vi tìm kiếm của công cụ; khi chọn “Không”, vùng ROI hình chữ nhật trong Edit view là phạm vi tìm kiếm. Vùng tìm kiếm phải lớn hơn vùng huấn luyện. </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否外部输入搜索区域   </td>
-<td> 开启后，可以通过参数链编辑对话框链接搜索区域，从外部输入搜索区域。                                                               </td>
+<td> Có cho phép nhập vùng tìm kiếm từ bên ngoài không   </td>
+<td> Khi bật, có thể liên kết vùng tìm kiếm qua hộp thoại chỉnh sửa chuỗi tham số, nhập vùng tìm kiếm từ bên ngoài.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索区域               </td>
-<td> 是否开启全图搜索为“否”时，Edit视图中的矩形ROI是该工具的搜索范围。搜索区域要大于训练区域。                                                               </td>
+<td> Vùng tìm kiếm               </td>
+<td> Khi “Có bật tìm kiếm toàn ảnh không” chọn “Không”, vùng ROI hình chữ nhật trong Edit view là phạm vi tìm kiếm của công cụ. Vùng tìm kiếm phải lớn hơn vùng huấn luyện.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索模式               </td>
-<td> 包含快速、高精、高精稳健三种形式，耗时依次增加，精度依次提升。                                                               </td>
+<td> Chế độ tìm kiếm               </td>
+<td> Bao gồm ba dạng: Nhanh, Độ chính xác cao, Độ chính xác cao + Ổn định; thời gian xử lý tăng dần, độ chính xác tăng dần.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索个数               </td>
-<td> 设置最多的搜索结果个数。                                                                                                   </td>
+<td> Số lượng tìm kiếm               </td>
+<td> Thiết lập số lượng kết quả tìm kiếm tối đa.                                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 接受阈值               </td>
-<td> 训练模板与实时搜索结果之间有一个匹配程度的分数，当匹配分数高于接受阈值时表明实时搜索成功。接收阈值的取值范围是(0,1]。                                                               </td>
+<td> Ngưỡng chấp nhận               </td>
+<td> Giữa mẫu huấn luyện và kết quả tìm kiếm thời gian thực có một điểm số mức độ khớp, khi điểm số khớp cao hơn ngưỡng chấp nhận thì coi như tìm kiếm thời gian thực thành công. Phạm vi giá trị (0,1].                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否使用粗匹配接受阈值 </td>
-<td> 选择“是”，则显示粗匹配接受阈值参数。                                                                                       </td>
+<td> Có sử dụng ngưỡng chấp nhận khớp thô không </td>
+<td> Chọn “Có” thì sẽ hiển thị tham số ngưỡng chấp nhận khớp thô.                                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 粗匹配接受阈值         </td>
-<td> 粗匹配接受阈值是对粗匹配定位结果评价分数的最低要求。低于粗匹配接受阈值的粗定位结果为无效匹配，将不进入精匹配过程，反之将会进入精匹配过程。                                                               </td>
+<td> Ngưỡng chấp nhận khớp thô         </td>
+<td> Ngưỡng chấp nhận khớp thô là yêu cầu điểm đánh giá tối thiểu đối với kết quả định vị thô. Kết quả định vị thô có điểm thấp hơn ngưỡng này sẽ bị coi là khớp không hợp lệ và không được đưa vào quá trình khớp tinh; ngược lại sẽ được đưa vào khớp tinh.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索最低/最高角度      </td>
-<td> 搜索的角度范围，最低角度>=-360°，最高角度&lt;=360°，最低角度&lt;最高角度。                                                               </td>
+<td> Góc thấp nhất/cao nhất tìm kiếm      </td>
+<td> Phạm vi góc tìm kiếm, góc thấp nhất ≥ -360°, góc cao nhất ≤ 360°, góc thấp nhất &lt; góc cao nhất.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索角度范围           </td>
-<td> 实时搜索时，判断位置信息相同的多个不同定位结果为一个结果的旋转角度差的上限值。该阈值主要用于滤除多个位置信息均相同，但旋转角度不同的匹配结果。当匹配记过的X和Y位置信息都相同时，则删除旋转角度之差在搜索角度范围内的匹配结果，最终仅保留一个得分最高的匹配结果。取值范围[0,360]，支持小数，一般按默认值360度即可 。                                                               </td>
+<td> Phạm vi góc tìm kiếm           </td>
+<td> Khi tìm kiếm thời gian thực, ngưỡng trên của chênh lệch góc xoay để coi nhiều kết quả định vị khác nhau nhưng cùng vị trí là một kết quả duy nhất. Ngưỡng này chủ yếu dùng để lọc bỏ các kết quả khớp có cùng thông tin vị trí nhưng góc xoay khác nhau. Khi tọa độ X và Y giống nhau hoàn toàn, sẽ xóa các kết quả có chênh lệch góc xoay nằm trong phạm vi này, cuối cùng chỉ giữ lại kết quả có điểm số cao nhất. Phạm vi giá trị [0,360], hỗ trợ số thập phân, thông thường để mặc định 360 độ là được.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 对比度阈值             </td>
-<td> 对比度阈值为最终可接受定位结果对比度的最小值，其中定位结果对比度为模式特征所有边界点的梯度幅值的中值。定位结果低于对比度阈值的为无效匹配，反之为有效匹配。取值范围为(0, 255]。                                                               </td>
+<td> Ngưỡng độ tương phản             </td>
+<td> Ngưỡng độ tương phản là giá trị nhỏ nhất của độ tương phản mà kết quả định vị cuối cùng có thể chấp nhận, trong đó độ tương phản của kết quả định vị là giá trị trung vị của biên độ gradient của tất cả các điểm biên đặc trưng mẫu. Kết quả có độ tương phản thấp hơn ngưỡng này là khớp không hợp lệ, ngược lại là hợp lệ. Phạm vi giá trị (0, 255].                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 重叠比例阈值           </td>
-<td> 重叠比例阈值为判断两个有重叠部分的定位结果为一个结果的重叠比例需要满足的下限值。高于重叠比例阈值的定位结果为无效匹配，即判定为重复结果，反之视为有效匹配。该阈值在快速算法下不可用。取值范围(0,1]。                                                               </td>
+<td> Ngưỡng tỷ lệ chồng lấp           </td>
+<td> Ngưỡng tỷ lệ chồng lấp là giá trị giới hạn dưới mà tỷ lệ chồng lấp cần đạt được để coi hai kết quả định vị có phần chồng lấp là một kết quả duy nhất. Kết quả có tỷ lệ chồng lấp cao hơn ngưỡng này sẽ bị coi là kết quả trùng lặp (không hợp lệ), ngược lại là hợp lệ. Ngưỡng này không khả dụng ở thuật toán nhanh. Phạm vi giá trị (0,1].                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 混叠阈值               </td>
-<td> 反映的是训练模式中没有的特征在实时定位结果中被找到的多少，实时定位结果中含有而训练模板中没有的额外特征。混乱点越多，混叠值越高。取值范围为[0,+∞)，支持小数。                                                               </td>
+<td> Ngưỡng nhiễu loạn (混叠阈值)               </td>
+<td> Phản ánh số lượng đặc trưng không có trong mẫu huấn luyện nhưng lại được tìm thấy trong kết quả định vị thời gian thực (đặc trưng thừa). Càng nhiều điểm nhiễu loạn thì giá trị nhiễu loạn càng cao. Phạm vi giá trị -1 hoặc [0,100], mặc định -1 (không bật).                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合误差阈值           </td>
-<td> 实时搜索过程中，可接受的利用最小二乘法求解定位结果的RMS误差的最小值。拟合误差反映的是训练模式与实时定位结果之间的差异程度。高于阈值的定位结果为无效匹配，低于阈值的定位结果为有效匹配。取值范围[1,100]。该阈值在快速算法下不可用。                                                               </td>
+<td> Ngưỡng sai số khớp           </td>
+<td> Trong quá trình tìm kiếm thời gian thực, giá trị lớn nhất của sai số RMS (phương pháp bình phương tối thiểu) có thể chấp nhận được khi giải kết quả định vị. Sai số khớp phản ánh mức độ khác biệt giữa mẫu huấn luyện và kết quả định vị thời gian thực. Kết quả vượt ngưỡng là không hợp lệ, thấp hơn ngưỡng là hợp lệ. Phạm vi giá trị -1 hoặc [0,100], mặc định -1 (không bật), ngưỡng này không khả dụng ở thuật toán nhanh.                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否使用实时噪声阈值   </td>
-<td> 选择“是”，则启用是否自动噪声阈值和噪声阈值参数                                                                             </td>
+<td> Có sử dụng ngưỡng nhiễu thời gian thực không   </td>
+<td> Chọn “Có” thì bật các tham số “Tự động xác định ngưỡng nhiễu” và “Ngưỡng nhiễu”.                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否自动噪声阈值       </td>
-<td> 选择“是”，则由算法自动确定实时噪声阈值；选择“否”，则启用噪声阈值参数。                                                               </td>
+<td> Tự động xác định ngưỡng nhiễu       </td>
+<td> Chọn “Có” thì thuật toán tự động xác định ngưỡng nhiễu thời gian thực; chọn “Không” thì bật tham số ngưỡng nhiễu.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 噪声阈值               </td>
-<td> 实时搜索时，实时图像中有效边缘点梯度幅值的最小值。实时待搜索图像中，低于实时噪声阈值的边缘点将视为噪声点被滤除。取值范围[0,255]。                                                               </td>
+<td> Ngưỡng nhiễu               </td>
+<td> Khi tìm kiếm thời gian thực, giá trị biên độ gradient tối thiểu của các điểm cạnh hiệu quả trong ảnh thời gian thực. Các điểm cạnh có biên độ gradient thấp hơn ngưỡng nhiễu thời gian thực sẽ bị coi là điểm nhiễu và bị lọc bỏ. Phạm vi giá trị [0,255].                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 结果排序方式           </td>
-<td> 按照指定的方式对定位结果进行排序。支持的结果排序方式有X、Y、Score三种。                                                               </td>
+<td> Cách sắp xếp kết quả           </td>
+<td> Sắp xếp kết quả định vị theo cách được chỉ định. Các cách sắp xếp hỗ trợ: X, Y, Score.                                                               </td>
 </tr>
 <tr>
-<td> 图像窗口               </td>
-<td> 训练区域                                                     </td>
-<td> 显示模板图像中参与训练的仿射矩形区域。与属性窗口中的“训练区域”是同一个参数。 </td>
+<td> Cửa sổ ảnh               </td>
+<td> Vùng huấn luyện                                                     </td>
+<td> Hiển thị vùng hình chữ nhật affine tham gia huấn luyện trong ảnh mẫu. Là cùng tham số với “Vùng huấn luyện” trong cửa sổ thuộc tính. </td>
 </tr>
 <tr>
 <td></td>
-<td> 手动输入标记点         </td>
-<td> 显示标记点，用于辅助定位。当属性窗口中“是否手动输入标记点”选择为“是”，并输入了标记点的X轴、Y轴坐标后，图像上的标记点会随之移动到相应位置。                                                               </td>
+<td> Nhập thủ công điểm đánh dấu         </td>
+<td> Hiển thị điểm đánh dấu, dùng để hỗ trợ định vị. Khi trong cửa sổ thuộc tính chọn “Có nhập thủ công điểm đánh dấu” là “Có” và nhập tọa độ trục X, Y của điểm đánh dấu, điểm đánh dấu trên ảnh sẽ di chuyển đến vị trí tương ứng.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索区域               </td>
-<td> 显示实时图像上参与搜索的矩形区域。与属性窗口中的“搜索区域”是同一个参数。                                                               </td>
+<td> Vùng tìm kiếm               </td>
+<td> Hiển thị vùng hình chữ nhật tham gia tìm kiếm trên ảnh thời gian thực. Là cùng tham số với “Vùng tìm kiếm” trong cửa sổ thuộc tính.                                                               </td>
 </tr>
 <tr>
-<td> 数据链                 </td>
-<td> 输入深度图像                                                 </td>
-<td> 用来实时搜索的图像。                                         </td>
+<td> Chuỗi dữ liệu                 </td>
+<td> Ảnh độ sâu đầu vào                                                 </td>
+<td> Ảnh dùng để tìm kiếm thời gian thực.                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 训练深度图像           </td>
-<td> 用来进行模板训练的图像。                                                                                                   </td>
+<td> Ảnh độ sâu huấn luyện           </td>
+<td> Ảnh dùng để huấn luyện mẫu.                                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 外部输入搜索区域       </td>
-<td> 属性窗口的“是否外部输入搜索区域”选择“是”时，该参数有效。该参数链接的通常是矩形生成工具的输出结果。                                                               </td>
+<td> Vùng tìm kiếm nhập từ bên ngoài       </td>
+<td> Khi trong cửa sổ thuộc tính chọn “Có cho phép nhập vùng tìm kiếm từ bên ngoài” là “Có” thì tham số này có hiệu lực. Tham số này thường liên kết với kết quả đầu ra của công cụ tạo hình chữ nhật.                                                               </td>
 </tr>
 <tr>
-<td> 高级界面               </td>
-<td> 启用掩膜/设置掩膜图像                                        </td>
-<td> 在模板训练过程中，屏蔽掉不参与模式训练的区域，减少参与模式训练的特征。 </td>
+<td> Giao diện nâng cao               </td>
+<td> Bật mask/Thiết lập ảnh mask                                        </td>
+<td> Trong quá trình huấn luyện mẫu, che đi vùng không tham gia huấn luyện mẫu, giảm số lượng đặc trưng tham gia huấn luyện mẫu. </td>
 </tr>
 <tr>
 <td></td>
-<td> 编辑当前模式           </td>
-<td> 对训练模式的特征链进行手动编辑 。                                                                                          </td>
+<td> Chỉnh sửa mẫu hiện tại           </td>
+<td> Chỉnh sửa thủ công chuỗi đặc trưng của mẫu huấn luyện.                                                                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 载入/保存（所有）模板  </td>
-<td> 支持对当前模式进行保存、加载                                                                                               </td>
+<td> Tải/Lưu (tất cả) mẫu  </td>
+<td> Hỗ trợ lưu và tải mẫu hiện tại.                                                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 获取训练图像           </td>
-<td> 获取训练所需要的图像                                                                                                       </td>
+<td> Lấy ảnh huấn luyện           </td>
+<td> Lấy ảnh cần thiết để huấn luyện.                                                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行模式训练           </td>
-<td> 针对获得的训练图像进行模板训练                                                                                             </td>
+<td> Thực hiện huấn luyện mẫu           </td>
+<td> Thực hiện huấn luyện mẫu dựa trên ảnh huấn luyện đã lấy được.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 颗粒度                 </td>
-<td> 图像中最小检测特征的度量，是对要检测的最小图像特征尺寸的一种描述。取值范围[1,16]，颗粒度越大，采样间隔越大，训练时提取的最小特征尺寸越大。随着颗粒度增加，能获取特征的目标尺寸增大，有效特征数量不断减少。                                                               </td>
+<td> Độ hạt (Granularity)                 </td>
+<td> Đo lường kích thước đặc trưng nhỏ nhất có thể phát hiện trong ảnh, là mô tả kích thước đặc trưng ảnh nhỏ nhất cần phát hiện. Phạm vi giá trị [1,16], độ hạt càng lớn thì khoảng cách lấy mẫu càng lớn, kích thước đặc trưng nhỏ nhất trích xuất khi huấn luyện càng lớn. Khi độ hạt tăng, kích thước mục tiêu có thể lấy được đặc trưng tăng lên, số lượng đặc trưng hiệu quả giảm dần.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 精细颗粒度             </td>
-<td> 模式训练过程中用于检测精细特征所设置的较小颗粒度，取值范围[1,16]。精细颗粒度可以有效地保留小尺寸目标的边缘特征或大尺寸目标中的局部细节特征，可提高实时搜索的定位精度，但可能导致定位耗时增多。                                                               </td>
+<td> Độ hạt tinh tế             </td>
+<td> Độ hạt nhỏ hơn được dùng để phát hiện đặc trưng tinh tế trong quá trình huấn luyện mẫu, phạm vi giá trị [1,16]. Độ hạt tinh tế có thể giữ lại hiệu quả các đặc trưng cạnh của mục tiêu kích thước nhỏ hoặc chi tiết cục bộ của mục tiêu lớn, nâng cao độ chính xác định vị khi tìm kiếm thời gian thực, nhưng có thể làm tăng thời gian định vị.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 噪声阈值               </td>
-<td> 模式训练过程中，有效边缘点梯度幅值的最小值。梯度幅值低于噪声阈值的边缘点将视为噪声点被滤除。取值范围[1,255]。                                                               </td>
+<td> Ngưỡng nhiễu               </td>
+<td> Trong quá trình huấn luyện mẫu, giá trị biên độ gradient tối thiểu của các điểm cạnh hiệu quả. Các điểm cạnh có biên độ gradient thấp hơn ngưỡng nhiễu sẽ bị coi là điểm nhiễu và bị lọc bỏ. Phạm vi giá trị [1,255].                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 边缘强度               </td>
-<td> 模式训练过程中，有效边缘特征链（由多个有效边缘点组成）的梯度幅值和的最小值。梯度幅值和低于边缘强度阈值的短链和弱边缘长链将被滤除，取值范围[1, 5000000]。                                                               </td>
+<td> Cường độ cạnh               </td>
+<td> Trong quá trình huấn luyện mẫu, giá trị nhỏ nhất của tổng biên độ gradient của chuỗi đặc trưng cạnh hiệu quả (gồm nhiều điểm cạnh hiệu quả). Các chuỗi ngắn và chuỗi dài có biên độ yếu có tổng biên độ gradient thấp hơn ngưỡng cường độ cạnh sẽ bị lọc bỏ, phạm vi giá trị [1, 5000000].                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 训练区域               </td>
-<td> 模板图像中参与训练的仿射矩形区域。                                                                                         </td>
+<td> Vùng huấn luyện               </td>
+<td> Vùng hình chữ nhật affine tham gia huấn luyện trong ảnh mẫu.                                                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 训练标记点             </td>
-<td> 标记点用于辅助定位。当属性窗口中“是否手动输入标记点”选择为“是”，并输入了标记点的X轴、Y轴坐标后，图像上的标记点会随之移动到相应位置。                                                               </td>
+<td> Điểm đánh dấu huấn luyện             </td>
+<td> Điểm đánh dấu dùng để hỗ trợ định vị. Khi trong cửa sổ thuộc tính chọn “Có nhập thủ công điểm đánh dấu” là “Có” và nhập tọa độ trục X, Y của điểm đánh dấu, điểm đánh dấu trên ảnh sẽ di chuyển đến vị trí tương ứng.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 中心标记点             </td>
-<td> 把标记点放到训练区域的中心。                                                                                               </td>
+<td> Điểm đánh dấu trung tâm             </td>
+<td> Đặt điểm đánh dấu vào trung tâm vùng huấn luyện.                                                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 显示控制               </td>
-<td> 控制是否显示辅助标记点或是特征的显示情况，包括粗糙特征显示或是精细特征显示。                                                               </td>
+<td> Điều khiển hiển thị               </td>
+<td> Điều khiển việc hiển thị điểm hỗ trợ hoặc đặc trưng, bao gồm hiển thị đặc trưng thô hoặc đặc trưng tinh tế.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索模式               </td>
-<td> 包含快速、高精、高精稳健三种形式，耗时依次增加，精度依次提升。                                                               </td>
+<td> Chế độ tìm kiếm               </td>
+<td> Bao gồm ba dạng: Nhanh, Độ chính xác cao, Độ chính xác cao + Ổn định; thời gian xử lý tăng dần, độ chính xác tăng dần.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索个数               </td>
-<td> 设置最多的搜索结果个数。                                                                                                   </td>
+<td> Số lượng tìm kiếm               </td>
+<td> Thiết lập số lượng kết quả tìm kiếm tối đa.                                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 接受阈值               </td>
-<td> 训练模板与实时搜索结果之间有一个匹配程度的分数，当匹配分数高于接受阈值时表明实时搜索成功。接收阈值的取值范围是(0,1]。                                                               </td>
+<td> Ngưỡng chấp nhận               </td>
+<td> Giữa mẫu huấn luyện và kết quả tìm kiếm thời gian thực có một điểm số mức độ khớp, khi điểm số khớp cao hơn ngưỡng chấp nhận thì coi như tìm kiếm thời gian thực thành công. Phạm vi giá trị (0,1].                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否使用粗匹配接受阈值 </td>
-<td> 选择“是”，则显示粗匹配接受阈值参数。                                                                                       </td>
+<td> Có sử dụng ngưỡng chấp nhận khớp thô không </td>
+<td> Chọn “Có” thì sẽ hiển thị tham số ngưỡng chấp nhận khớp thô.                                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 粗匹配接受阈值         </td>
-<td> 粗匹配接受阈值是对粗匹配定位结果评价分数的最低要求。低于粗匹配接受阈值的粗定位结果为无效匹配，将不进入精匹配过程，反之将会进入精匹配过程。                                                               </td>
+<td> Ngưỡng chấp nhận khớp thô         </td>
+<td> Ngưỡng chấp nhận khớp thô là yêu cầu điểm đánh giá tối thiểu đối với kết quả định vị thô. Kết quả định vị thô có điểm thấp hơn ngưỡng này sẽ bị coi là khớp không hợp lệ và không được đưa vào quá trình khớp tinh; ngược lại sẽ được đưa vào khớp tinh.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 全图搜索               </td>
-<td> 当选择“是”时，整个实时的采样图片都是该工具的搜索范围；当选择“否”时，“搜索区域”视图中的仿射矩形是该工具的搜索范围。搜索区域要大于训练区域。同属性界面中的“开启全图搜索”参数。                                                               </td>
+<td> Tìm kiếm toàn ảnh               </td>
+<td> Khi chọn “Có”, toàn bộ ảnh thu thập thời gian thực là phạm vi tìm kiếm; khi chọn “Không”, vùng hình chữ nhật affine trong view “Vùng tìm kiếm” là phạm vi tìm kiếm. Vùng tìm kiếm phải lớn hơn vùng huấn luyện. Tương đương với tham số “Có bật tìm kiếm toàn ảnh không” trong giao diện thuộc tính.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 载入/保存参数          </td>
-<td> 支持对搜索参数的保存加载 。                                                                                                </td>
+<td> Tải/Lưu tham số          </td>
+<td> Hỗ trợ lưu và tải các tham số tìm kiếm.                                                                                                </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索最低/最高角度      </td>
-<td> 搜索的角度范围，最低角度>=-360°，最高角度&lt;=360°，最低角度&lt;最高角度。                                                               </td>
+<td> Góc thấp nhất/cao nhất tìm kiếm      </td>
+<td> Phạm vi góc tìm kiếm, góc thấp nhất ≥ -360°, góc cao nhất ≤ 360°, góc thấp nhất &lt; góc cao nhất.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索角度范围           </td>
-<td> 实时搜索时，判断位置信息相同的多个不同定位结果为一个结果的旋转角度差的上限值。该阈值主要用于滤除多个位置信息均相同，但旋转角度不同的匹配结果。当匹配记过的X和Y位置信息都相同时，则删除旋转角度之差在搜索角度范围内的匹配结果，最终仅保留一个得分最高的匹配结果。取值范围[0,360]，支持小数，一般按默认值360度即可 。                                                               </td>
+<td> Phạm vi góc tìm kiếm           </td>
+<td> Khi tìm kiếm thời gian thực, ngưỡng trên của chênh lệch góc xoay để coi nhiều kết quả định vị khác nhau nhưng cùng vị trí là một kết quả duy nhất. Ngưỡng này chủ yếu dùng để lọc bỏ các kết quả khớp có cùng thông tin vị trí nhưng góc xoay khác nhau. Khi tọa độ X và Y giống nhau hoàn toàn, sẽ xóa các kết quả có chênh lệch góc xoay nằm trong phạm vi này, cuối cùng chỉ giữ lại kết quả có điểm số cao nhất. Phạm vi giá trị [0,360], hỗ trợ số thập phân, thông thường để mặc định 360 độ là được.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 对比度阈值             </td>
-<td> 对比度阈值为最终可接受定位结果对比度的最小值，其中定位结果对比度为模式特征所有边界点的梯度幅值的中值。定位结果低于对比度阈值的为无效匹配，反之为有效匹配。取值范围为(0, 255]。                                                               </td>
+<td> Ngưỡng độ tương phản             </td>
+<td> Ngưỡng độ tương phản là giá trị nhỏ nhất của độ tương phản mà kết quả định vị cuối cùng có thể chấp nhận, trong đó độ tương phản của kết quả định vị là giá trị trung vị của biên độ gradient của tất cả các điểm biên đặc trưng mẫu. Kết quả có độ tương phản thấp hơn ngưỡng này là khớp không hợp lệ, ngược lại là hợp lệ. Phạm vi giá trị (0, 255].                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 重叠比例阈值           </td>
-<td> 重叠比例阈值为判断两个有重叠部分的定位结果为一个结果的重叠比例需要满足的下限值。高于重叠比例阈值的定位结果为无效匹配，即判定为重复结果，反之视为有效匹配。该阈值在快速算法下不可用。取值范围(0,1]。                                                               </td>
+<td> Ngưỡng tỷ lệ chồng lấp           </td>
+<td> Ngưỡng tỷ lệ chồng lấp là giá trị giới hạn dưới mà tỷ lệ chồng lấp cần đạt được để coi hai kết quả định vị có phần chồng lấp là một kết quả duy nhất. Kết quả có tỷ lệ chồng lấp cao hơn ngưỡng này sẽ bị coi là kết quả trùng lặp (không hợp lệ), ngược lại là hợp lệ. Ngưỡng này không khả dụng ở thuật toán nhanh. Phạm vi giá trị (0,1].                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 混叠阈值               </td>
-<td> 反映的是训练模式中没有的特征在实时定位结果中被找到的多少，实时定位结果中含有而训练模板中没有的额外特征。混乱点越多，混叠值越高。取值范围为[0,+∞)，支持小数。                                                               </td>
+<td> Ngưỡng nhiễu loạn               </td>
+<td> Phản ánh số lượng đặc trưng không có trong mẫu huấn luyện nhưng lại được tìm thấy trong kết quả định vị thời gian thực (đặc trưng thừa). Càng nhiều điểm nhiễu loạn thì giá trị nhiễu loạn càng cao. Phạm vi giá trị -1 hoặc [0,100], mặc định -1 (không bật).                                                        </td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合误差阈值           </td>
-<td> 实时搜索过程中，可接受的利用最小二乘法求解定位结果的RMS误差的最小值。拟合误差反映的是训练模式与实时定位结果之间的差异程度。高于阈值的定位结果为无效匹配，低于阈值的定位结果为有效匹配。取值范围[1,100]。该阈值在快速算法下不可用。                                                               </td>
+<td> Ngưỡng sai số khớp           </td>
+<td> Trong quá trình tìm kiếm thời gian thực, giá trị lớn nhất của sai số RMS (phương pháp bình phương tối thiểu) có thể chấp nhận được khi giải kết quả định vị. Sai số khớp phản ánh mức độ khác biệt giữa mẫu huấn luyện và kết quả định vị thời gian thực. Kết quả vượt ngưỡng là không hợp lệ, thấp hơn ngưỡng là hợp lệ. Phạm vi giá trị -1 hoặc [0,100], mặc định -1 (không bật), ngưỡng này không khả dụng ở thuật toán nhanh.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否使用实时噪声阈值   </td>
-<td> 选择“是”，则启用是否自动噪声阈值和噪声阈值参数                                                                             </td>
+<td> Có sử dụng ngưỡng nhiễu thời gian thực không   </td>
+<td> Chọn “Có” thì bật các tham số “Tự động xác định ngưỡng nhiễu” và “Ngưỡng nhiễu”.                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否自动噪声阈值       </td>
-<td> 选择“是”，则由算法自动确定实时噪声阈值；选择“否”，则启用噪声阈值参数。                                                               </td>
+<td> Tự động xác định ngưỡng nhiễu       </td>
+<td> Chọn “Có” thì thuật toán tự động xác định ngưỡng nhiễu thời gian thực; chọn “Không” thì bật tham số ngưỡng nhiễu.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 噪声阈值               </td>
-<td> 实时搜索时，实时图像中有效边缘点梯度幅值的最小值。实时待搜索图像中，低于实时噪声阈值的边缘点将视为噪声点被滤除。取值范围[0,255]。                                                               </td>
+<td> Ngưỡng nhiễu               </td>
+<td> Khi tìm kiếm thời gian thực, giá trị biên độ gradient tối thiểu của các điểm cạnh hiệu quả trong ảnh thời gian thực. Các điểm cạnh có biên độ gradient thấp hơn ngưỡng nhiễu thời gian thực sẽ bị coi là điểm nhiễu và bị lọc bỏ. Phạm vi giá trị [0,255].                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行搜索               </td>
-<td> 在已经训练的前提之下，执行一次搜索任务。                                                                                   </td>
+<td> Thực hiện tìm kiếm               </td>
+<td> Trên cơ sở đã huấn luyện mẫu, thực hiện một lần tìm kiếm.                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 显示结果位置           </td>
-<td> 控制训练标记点在实时图像中的显示。                                                                                         </td>
+<td> Hiển thị vị trí kết quả           </td>
+<td> Điều khiển hiển thị điểm đánh dấu huấn luyện trên ảnh thời gian thực.                                                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 显示结果区域           </td>
-<td> 控制训练区域在实时图像的显示。                                                                                             </td>
+<td> Hiển thị vùng kết quả           </td>
+<td> Điều khiển hiển thị vùng huấn luyện trên ảnh thời gian thực.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 显示结果辅助点         </td>
-<td> 控制训练标记点在实时图像中的显示。                                                                                         </td>
+<td> Hiển thị điểm hỗ trợ kết quả         </td>
+<td> Điều khiển hiển thị điểm đánh dấu huấn luyện trên ảnh thời gian thực.                                                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 显示参考特征           </td>
-<td> 控制训练特征实时图像中的显示。                                                                                             </td>
+<td> Hiển thị đặc trưng tham chiếu           </td>
+<td> Điều khiển hiển thị đặc trưng huấn luyện trên ảnh thời gian thực.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 结果个数上限           </td>
-<td>设定结果个数上限，默认为“&mdash;&mdash;”不判定，可设置的判定区间为[0, 5000]且大于下限，当结果个数大于上限时执行结果为失败。</td>
+<td> Giới hạn trên số lượng kết quả           </td>
+<td>Thiết lập giới hạn trên số lượng kết quả, mặc định là “——” (không kiểm tra), phạm vi kiểm tra có thể đặt [0, 5000] và lớn hơn giới hạn dưới, khi số lượng kết quả vượt quá giới hạn trên thì thực thi thất bại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 结果个数下限           </td>
-<td>设定结果个数下限，默认为“&mdash;&mdash;”不判定，可设置的判定区间为[0, 5000]且小于上限，当结果个数小于下限时执行结果为失败。                                                                 </td>
+<td> Giới hạn dưới số lượng kết quả           </td>
+<td>Thiết lập giới hạn dưới số lượng kết quả, mặc định là “——” (không kiểm tra), phạm vi kiểm tra có thể đặt [0, 5000] và nhỏ hơn giới hạn trên, khi số lượng kết quả nhỏ hơn giới hạn dưới thì thực thi thất bại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 结果位置X上限          </td>
-<td>设定结果位置X上限，默认为“&ndash;.&mdash;&mdash;”不判定，可设置的判定区间为[0, 100000]且大于下限，当结果位置X大于上限时执行结果为失败。                                    </td>
+<td> Giới hạn trên vị trí X kết quả          </td>
+<td>Thiết lập giới hạn trên vị trí X của kết quả, mặc định “-.——” (không kiểm tra), phạm vi kiểm tra có thể đặt [0, 100000] và lớn hơn giới hạn dưới, khi vị trí X của kết quả vượt quá giới hạn trên thì thực thi thất bại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 结果位置X下限          </td>
-<td>设定结果位置X下限，默认为“&ndash;.&mdash;&mdash;”不判定，可设置的判定区间为[0, 100000]且小于上限，当结果位置X小于下限时执行结果为失败。                                    </td>
+<td> Giới hạn dưới vị trí X kết quả          </td>
+<td>Thiết lập giới hạn dưới vị trí X của kết quả, mặc định “-.——” (không kiểm tra), phạm vi kiểm tra có thể đặt [0, 100000] và nhỏ hơn giới hạn trên, khi vị trí X của kết quả nhỏ hơn giới hạn dưới thì thực thi thất bại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 结果位置Y上限          </td>
-<td>设定结果位置Y上限，默认为“&ndash;.&mdash;&mdash;”不判定，可设置的判定区间为[0, 100000]且大于下限，当结果位置Y大于上限时执行结果为失败。                                    </td>
+<td> Giới hạn trên vị trí Y kết quả          </td>
+<td>Thiết lập giới hạn trên vị trí Y của kết quả, mặc định “-.——” (không kiểm tra), phạm vi kiểm tra có thể đặt [0, 100000] và lớn hơn giới hạn dưới, khi vị trí Y của kết quả vượt quá giới hạn trên thì thực thi thất bại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 结果位置Y下限          </td>
-<td>设定结果位置Y下限，默认为“&ndash;.&mdash;&mdash;”不判定，可设置的判定区间为[0, 100000]且小于上限，当结果位置Y小于下限时执行结果为失败。                                    </td>
+<td> Giới hạn dưới vị trí Y kết quả          </td>
+<td>Thiết lập giới hạn dưới vị trí Y của kết quả, mặc định “-.——” (không kiểm tra), phạm vi kiểm tra có thể đặt [0, 100000] và nhỏ hơn giới hạn trên, khi vị trí Y của kết quả nhỏ hơn giới hạn dưới thì thực thi thất bại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 结果角度上限           </td>
-<td>设定结果角度上限，默认为“&ndash;.&mdash;&mdash;”不判定，可设置的判定区间为[-360, 360]且大于下限，当结果角度大于上限时执行结果为失败。                                    </td>
+<td> Giới hạn trên góc kết quả           </td>
+<td>Thiết lập giới hạn trên góc của kết quả, mặc định “-.——” (không kiểm tra), phạm vi kiểm tra có thể đặt [-360, 360] và lớn hơn giới hạn dưới, khi góc kết quả vượt quá giới hạn trên thì thực thi thất bại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 结果角度下限           </td>
-<td>设定结果角度下限，默认为“&ndash;.&mdash;&mdash;”不判定，可设置的判定区间为[-360, 360]且小于上限，当结果角度小于下限时执行结果为失败。                                    </td>
+<td> Giới hạn dưới góc kết quả           </td>
+<td>Thiết lập giới hạn dưới góc của kết quả, mặc định “-.——” (không kiểm tra), phạm vi kiểm tra có thể đặt [-360, 360] và nhỏ hơn giới hạn trên, khi góc kết quả nhỏ hơn giới hạn dưới thì thực thi thất bại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 结果分数上限           </td>
-<td>设定结果分数上限，默认为“&ndash;.&mdash;&mdash;”不判定，可设置的判定区间为[0, 1]且大于下限，当结果分数大于上限时执行结果为失败。                                          </td>
+<td> Giới hạn trên điểm số kết quả           </td>
+<td>Thiết lập giới hạn trên điểm số của kết quả, mặc định “-.——” (không kiểm tra), phạm vi kiểm tra có thể đặt [0, 1] và lớn hơn giới hạn dưới, khi điểm số kết quả vượt quá giới hạn trên thì thực thi thất bại.</td>
 </tr>
 <tr>
 <td></td>
-<td> 结果分数下限           </td>
-<td>设定结果分数下限，默认为“&ndash;.&mdash;&mdash;”不判定，可设置的判定区间为[0, 1]且小于上限，当结果分数小于下限时执行结果为失败。 </td>
+<td> Giới hạn dưới điểm số kết quả           </td>
+<td>Thiết lập giới hạn dưới điểm số của kết quả, mặc định “-.——” (không kiểm tra), phạm vi kiểm tra có thể đặt [0, 1] và nhỏ hơn giới hạn trên, khi điểm số kết quả nhỏ hơn giới hạn dưới thì thực thi thất bại.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>输出参数</h3>
+<h3>Tham số đầu ra</h3>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                         </th>
+<th>Phân loại </th>
+<th> Tên tham số         </th>
+<th> Mô tả tham số                                                                                                         </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口         </td>
-<td> 输入深度图像                                                 </td>
-<td> 输入图像宽度、高度、像素大小。                     </td>
+<td> Cửa sổ giám sát         </td>
+<td> Ảnh độ sâu đầu vào                                                 </td>
+<td> Chiều rộng, chiều cao ảnh đầu vào và kích thước pixel.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 标记点           </td>
-<td> 标记点用于辅助定位。                                                                                             </td>
+<td> Điểm đánh dấu           </td>
+<td> Điểm đánh dấu dùng để hỗ trợ định vị.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 训练标记点       </td>
-<td> 标记点用于辅助定位。                                                                                             </td>
+<td> Điểm đánh dấu huấn luyện       </td>
+<td> Điểm đánh dấu dùng để hỗ trợ định vị.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 结果个数         </td>
-<td> 搜索结果个数。                                                                                                   </td>
+<td> Số lượng kết quả         </td>
+<td> Số lượng kết quả tìm kiếm.                                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索结果数组     </td>
-<td> 搜索结果组成的数组。                                                                                             </td>
+<td> Mảng kết quả tìm kiếm     </td>
+<td> Mảng gồm các kết quả tìm kiếm.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换     </td>
-<td> 该工具输出的二维线性变换是指该工具二维线性变换数组中的第一组值。                                                     </td>
+<td> Biến đổi tuyến tính 2D     </td>
+<td> Biến đổi tuyến tính 2D mà công cụ này xuất ra là nhóm giá trị đầu tiên trong mảng biến đổi tuyến tính 2D.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换数组 </td>
-<td> 二维线性变换是指目标相对于模板的平移、旋转、缩放变换。二维线性变换数组是指在该工具在某一次执行完之后，所有二维线性变换所组成的数组。                                                     </td>
+<td> Mảng biến đổi tuyến tính 2D </td>
+<td> Biến đổi tuyến tính 2D là phép biến đổi dịch chuyển, xoay, phóng to/thu nhỏ của mục tiêu so với mẫu. Mảng biến đổi tuyến tính 2D là mảng gồm tất cả các biến đổi tuyến tính 2D sau khi công cụ thực thi xong một lần.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索坐标         </td>
-<td> 该工具输出的搜索坐标是指搜索坐标数组的第一组值。它与输出的二维线性变换针对同一个搜索结果。                                                     </td>
+<td> Tọa độ tìm kiếm         </td>
+<td> Tọa độ tìm kiếm mà công cụ này xuất ra là nhóm giá trị đầu tiên trong mảng tọa độ tìm kiếm. Nó tương ứng với cùng một kết quả tìm kiếm với biến đổi tuyến tính 2D đầu ra.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索坐标数组     </td>
-<td> 搜索坐标是指标记点实时搜索结果，搜索坐标数组是指该工具在某一次执行完后，所有搜索标记点所组成的数组。                                                     </td>
+<td> Mảng tọa độ tìm kiếm     </td>
+<td> Tọa độ tìm kiếm là tọa độ kết quả tìm kiếm thời gian thực của điểm đánh dấu, mảng tọa độ tìm kiếm là mảng gồm tất cả các điểm đánh dấu tìm kiếm sau khi công cụ thực thi xong một lần.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果         </td>
-<td> 工具执行结果。                                                                                                   </td>
+<td> Kết quả thực thi         </td>
+<td> Kết quả thực thi của công cụ.                                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间         </td>
-<td> 工具执行时间。                                                                                                   </td>
+<td> Thời gian thực thi         </td>
+<td> Thời gian thực thi của công cụ.                                                                                                   </td>
 </tr>
 <tr>
-<td> 图像窗口         </td>
-<td> 搜索位置                                                     </td>
-<td> 模板中的搜索区域在实时搜索图像上的区域范围。       </td>
-</tr>
-<tr>
-<td></td>
-<td> 搜索坐标         </td>
-<td> 搜索坐标是指标记点实时搜索结果，同监视窗口中的“搜索坐标”参数。                                                     </td>
+<td> Cửa sổ ảnh         </td>
+<td> Vị trí tìm kiếm                                                     </td>
+<td> Vùng tìm kiếm trong mẫu hiển thị trên ảnh tìm kiếm thời gian thực.       </td>
 </tr>
 <tr>
 <td></td>
-<td> 标记点           </td>
-<td> 标记点用于辅助定位。                                                                                             </td>
+<td> Tọa độ tìm kiếm         </td>
+<td> Tọa độ tìm kiếm là tọa độ kết quả tìm kiếm thời gian thực của điểm đánh dấu, cùng tham số với “Tọa độ tìm kiếm” trong cửa sổ giám sát.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果         </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                     </td>
-</tr>
-<tr>
-<td> 数据链           </td>
-<td> 输入深度图像                                                 </td>
-<td> 用于实时搜索的图像。同监视窗口中的“输入图像”参数。 </td>
+<td> Điểm đánh dấu           </td>
+<td> Điểm đánh dấu dùng để hỗ trợ định vị.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 训练图像         </td>
-<td> 用来进行模板训练的图像。与“参数”章节里“数据链”中的“训练图像”是一个参数。                                                     </td>
+<td> Kết quả thực thi         </td>
+<td> Hiển thị kết quả thực thi công cụ, thành công hiển thị “OK”, thất bại hiển thị “NG”, cùng tham số kết quả thực thi trong cửa sổ giám sát.                                                     </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu           </td>
+<td> Ảnh độ sâu đầu vào                                                 </td>
+<td> Ảnh dùng để tìm kiếm thời gian thực. Cùng tham số với “Ảnh đầu vào” trong cửa sổ giám sát. </td>
 </tr>
 <tr>
 <td></td>
-<td> 训练标记点坐标   </td>
-<td> 标记点用于辅助定位。                                                                                             </td>
+<td> Ảnh huấn luyện         </td>
+<td> Ảnh dùng để huấn luyện mẫu. Là cùng một tham số với “Ảnh huấn luyện” trong phần “Chuỗi dữ liệu” của chương “Tham số”.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索结果数组     </td>
-<td> 所有满足预设条件的结果信息。同监视窗口中的“搜索结果数组”参数。                                                     </td>
+<td> Tọa độ điểm đánh dấu huấn luyện   </td>
+<td> Điểm đánh dấu dùng để hỗ trợ định vị.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索坐标数组     </td>
-<td> 搜索坐标是指标记点实时搜索结果，搜索坐标数组是指该工具在某一次执行完后，所有搜索标记点所组成的数组。同监视窗口的“搜索坐标数组”参数。                                                     </td>
+<td> Mảng kết quả tìm kiếm     </td>
+<td> Toàn bộ thông tin kết quả thỏa mãn điều kiện đã thiết lập trước. Cùng tham số với “Mảng kết quả tìm kiếm” trong cửa sổ giám sát.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换数组 </td>
-<td> 二维线性变换是指目标相对于模板的平移、旋转、缩放变换。二维线性变换数组是指在该工具在某一次执行完之后，所有二维线性变换所组成的数组。同“监视窗口”中的“二维线性变换数组”是同一个参数。                                                     </td>
+<td> Mảng tọa độ tìm kiếm     </td>
+<td> Tọa độ tìm kiếm là tọa độ kết quả tìm kiếm thời gian thực của điểm đánh dấu, mảng tọa độ tìm kiếm là mảng gồm tất cả các điểm đánh dấu tìm kiếm sau khi công cụ thực thi xong một lần. Cùng tham số với “Mảng tọa độ tìm kiếm” trong cửa sổ giám sát.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换     </td>
-<td> 该工具输出的二维线性变换是指该工具二维线性变换数组中的第一组值。与“监视窗口”中的“二维线性变换”是同一个参数。                                                     </td>
+<td> Mảng biến đổi tuyến tính 2D </td>
+<td> Biến đổi tuyến tính 2D là phép biến đổi dịch chuyển, xoay, phóng to/thu nhỏ của mục tiêu so với mẫu. Mảng biến đổi tuyến tính 2D là mảng gồm tất cả các biến đổi tuyến tính 2D sau khi công cụ thực thi xong một lần. Là cùng tham số với “Mảng biến đổi tuyến tính 2D” trong cửa sổ giám sát.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 搜索坐标         </td>
-<td> 该工具输出的搜索坐标是指搜索坐标数组的第一组值。它与输出的二维线性变换针对同一个搜索结果。与“监视窗口”中的“搜索坐标”是同一个参数。                                                     </td>
+<td> Biến đổi tuyến tính 2D     </td>
+<td> Biến đổi tuyến tính 2D mà công cụ này xuất ra là nhóm giá trị đầu tiên trong mảng biến đổi tuyến tính 2D. Là cùng tham số với “Biến đổi tuyến tính 2D” trong cửa sổ giám sát.                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> Tọa độ tìm kiếm         </td>
+<td> Tọa độ tìm kiếm mà công cụ này xuất ra là nhóm giá trị đầu tiên trong mảng tọa độ tìm kiếm. Nó tương ứng với cùng một kết quả tìm kiếm với biến đổi tuyến tính 2D đầu ra. Là cùng tham số với “Tọa độ tìm kiếm” trong cửa sổ giám sát.                                                     </td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>7. 示例工程</h2>
+<h2>7. Dự án ví dụ</h2>
 
 <p>参见“\Samples\3D\深度图\3D测量工具.gvp”。</p>
