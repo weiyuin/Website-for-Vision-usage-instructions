@@ -22,7 +22,8 @@
 
 <p>Biểu diễn kết quả tính toán các điểm giao nhau, ví dụ như giao điểm của đường thẳng với đường tròn, giao điểm giữa hai đường tròn, giao điểm giữa đoạn thẳng và đường tròn, v.v.</p>
 
-<p>Do tình huống giao nhau giữa hai hình khác nhau nên số lượng giao điểm cũng khác nhau trong các trường hợp giao nhau khác nhau. Ví dụ đường thẳng và đường tròn có thể không giao nhau (tức là rời nhau, không có giao điểm), có thể tiếp xúc (có 1 giao điểm), hoặc cắt nhau (có 2 giao điểm). Vì vậy trong kiểu kết quả giao điểm có chứa một thuộc tính <code>intersect</code> để biểu thị có giao điểm hay không, đồng thời kết hợp kiểm tra số lượng phần tử trong <code>points</code> (<code>len(result.points)</code>) là có thể xác định chính xác tình huống giao nhau cụ thể.</p>
+<p>
+Do tình huống giao nhau giữa hai hình học khác nhau nên số lượng giao điểm cũng khác nhau, ví dụ đường thẳng với đường tròn có thể không giao nhau (tức rời nhau, không có giao điểm), có thể tiếp xúc (có 1 giao điểm), hoặc cắt nhau (có 2 giao điểm); chính vì vậy trong kiểu kết quả giao điểm có chứa thuộc tính intersect để biểu thị có giao điểm hay không, đồng thời kết hợp kiểm tra số lượng phần tử trong points (len(result.points)) là có thể xác định chính xác tình huống giao nhau cụ thể.</p>
 
 <h2>Giao diện</h2>
 
