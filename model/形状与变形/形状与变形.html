@@ -16,140 +16,139 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>形状与变形</h1>
+<h1>Hình dạng và Biến đổi</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>使用脚本实现部分形状与变形的功能。</p>
+<p>Sử dụng script để thực hiện một phần chức năng liên quan đến hình dạng và biến đổi vị trí.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th> 接口名称                         </th>
-<th> 接口描述                           </th>
+<th> Tên giao diện                         </th>
+<th> Mô tả giao diện                                      </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> ScShapeLineCross4Lines </td>
-<td> 两横两纵四条边的交点 </td>
+<td> Giao điểm của bốn đường biên (hai ngang, hai dọc) </td>
 </tr>
 <tr>
 <td> ScShapeLineCross </td>
-<td> 两条线交点 含防呆 </td>
+<td> Giao điểm của hai đường thẳng (có cơ chế chống lỗi) </td>
 </tr>
 <tr>
 <td> ScShapeTransPolyline </td>
-<td> 对blob工具的多边形ROI区域做位置变换 </td>
+<td> Biến đổi vị trí vùng ROI đa giác của công cụ Blob </td>
 </tr>
 <tr>
 <td> ScShapeTransAffinRec </td>
-<td> 对blob工具的仿射矩形ROI区域做位置变换 </td>
+<td> Biến đổi vị trí vùng ROI hình chữ nhật affine của công cụ Blob </td>
 </tr>
 <tr>
 <td> ScShapeTransRec </td>
-<td> 对blob工具的矩形ROI区域做位置变换 </td>
+<td> Biến đổi vị trí vùng ROI hình chữ nhật của công cụ Blob </td>
 </tr>
 <tr>
 <td> ScShapeTransCircle </td>
-<td> 对blob工具的圆ROI区域做位置变换            </td>
+<td> Biến đổi vị trí vùng ROI hình tròn của công cụ Blob            </td>
 </tr>
 <tr>
 <td> ScShapeTransAnnulus </td>
-<td> 对blob工具的圆环ROI区域做位置变换 </td>
+<td> Biến đổi vị trí vùng ROI hình vành khăn (annulus) của công cụ Blob </td>
 </tr>
 <tr>
 <td> ScShapeTransCircleSearchAnn </td>
-<td> 对找圆工具的圆环ROI区域做位置变换 </td>
+<td> Biến đổi vị trí vùng ROI hình vành khăn của công cụ Tìm vòng tròn </td>
 </tr>
 <tr>
 <td> ScShapeTranslineSearchRec </td>
-<td> 对找圆工具的圆环ROI区域做位置变换 </td>
+<td> Biến đổi vị trí vùng ROI hình chữ nhật của công cụ Tìm đường thẳng </td>
 </tr>
 <tr>
 <td> ScShapeLineGetAngle </td>
-<td> 获取直线的角度 </td>
+<td> Lấy góc của đường thẳng </td>
 </tr>
 <tr>
 <td> ScRotateVector </td>
-<td> 任意一个点在图像坐标系下旋转到另一个点位置 </td>
+<td> Xoay một điểm bất kỳ trong hệ tọa độ ảnh đến vị trí của một điểm khác </td>
 </tr>
 <tr>
 <td> ScaxDisVecToLine </td>
-<td> 计算点数组到直线的最大距离 </td>
+<td> Tính khoảng cách lớn nhất từ mảng điểm đến một đường thẳng </td>
 </tr>
 <tr>
 <td> fScDisPointToLine </td>
-<td> 显示一个点到一条直线的距离的线段 </td>
+<td> Hiển thị đoạn thẳng biểu diễn khoảng cách từ một điểm đến một đường thẳng </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>ScShapeLineCross4Lines（self,lineup,linedn,linelt,linert,GcCoodPosVec,bFoolProof=False,dangleLimit=1）</h3>
 
 <ul>
-<li><p>功能：两横两纵四条边的交点。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Tính giao điểm của bốn đường biên gồm hai ngang và hai dọc.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>self：ScShape类本身。</li>
-<li>lineup：输入线1  scLine类型 上横线。</li>
-<li>linedn：输入线2  scLine类型 下横线。</li>
-<li>linelt：输入线3  scLine类型 左竖线。</li>
-<li>linert：输入线4  scLine类型 右竖线。</li>
-<li>GcCoodPosVec：GcCoodPos类型数组，本地定义。</li>
-<li>bFoolProof：BOOL类型  是否防呆  默认Flase。</li>
-<li>dangleLimit：防呆数值大小，±value。</li>
+<li>self：Chính lớp ScShape。</li>
+<li>lineup：Đường đầu vào 1, kiểu scLine – đường ngang trên。</li>
+<li>linedn：Đường đầu vào 2, kiểu scLine – đường ngang dưới。</li>
+<li>linelt：Đường đầu vào 3, kiểu scLine – đường dọc trái。</li>
+<li>linert：Đường đầu vào 4, kiểu scLine – đường dọc phải。</li>
+<li>GcCoodPosVec：Mảng kiểu GcCoodPos, được định nghĩa cục bộ。</li>
+<li>bFoolProof：Kiểu BOOL – bật/tắt cơ chế chống lỗi, mặc định False。</li>
+<li>dangleLimit：Ngưỡng giá trị chống lỗi, phạm vi ±value。</li>
 </ul>
 </li>
-<li><p>返回值：errorcode int类型  1，表示正常（含不防呆），21左上角异常，22右下角异常，23右上角异常，24左下角异常。</p></li>
-<li><p>示例代码：</p>
+<li><p>Giá trị trả về：errorcode kiểu int  1：bình thường (bao gồm cả khi không bật chống lỗi)，21 góc trên-trái bất thường，22 góc dưới-phải bất thường，23 góc trên-phải bất thường，24 góc dưới-trái bất thường。</p></li>
+<li><p>Ví dụ mã：</p>
 
 <p>```python
 PosVec=(GvVisionAssembly.GcCoordPos(),GvVisionAssembly.GcCoordPos(),GvVisionAssembly.GcCoordPos(),GvVisionAssembly.GcCoordPos(),GvVisionAssembly.GcCoordPos())
-line0=GvTool.GetToolData(&ldquo;找线工具<em>004.直线结果&rdquo;)
-line3=GvTool.GetToolData(&ldquo;找线工具</em>006.直线结果&rdquo;)
-line1=GvTool.GetToolData(&ldquo;找线工具<em>007.直线结果&rdquo;)
-line4=GvTool.GetToolData(&ldquo;找线工具</em>008.直线结果&rdquo;)
+line0=GvTool.GetToolData("找线工具_004.直线结果")
+line3=GvTool.GetToolData("找线工具_006.直线结果")
+line1=GvTool.GetToolData("找线工具_007.直线结果")
+line4=GvTool.GetToolData("找线工具_008.直线结果")
 cross=ScShape.ScShapeLineCross4Lines(ScShape,line0,line3,line1,line4,PosVec)</p>
 
-<h2>多元数组生成工具的类型是GcCoorPos</h2>
+<h2>Công cụ tạo mảng đa phần tử có kiểu dữ liệu là GcCoordPos</h2>
 
-GvTool.SetToolData(&ldquo;多元数组生成工具<em>001.输入数据0&rdquo;,PosVec[0])
-GvTool.SetToolData(&ldquo;多元数组生成工具</em>001.输入数据1&rdquo;,PosVec[1])
-GvTool.SetToolData(&ldquo;多元数组生成工具<em>001.输入数据2&rdquo;,PosVec[2])
-GvTool.SetToolData(&ldquo;多元数组生成工具</em>001.输入数据3&rdquo;,PosVec[3])
-GvTool.SetToolData(&ldquo;多元数组生成工具_001.输入数据4&rdquo;,PosVec[4])
+GvTool.SetToolData("多元数组生成工具_001.输入数据0",PosVec[0])
+GvTool.SetToolData("多元数组生成工具_001.输入数据1",PosVec[1])
+GvTool.SetToolData("多元数组生成工具_001.输入数据2",PosVec[2])
+GvTool.SetToolData("多元数组生成工具_001.输入数据3",PosVec[3])
+GvTool.SetToolData("多元数组生成工具_001.输入数据4",PosVec[4])
 
-<h2>PosVec[4]是中点坐标</h2>
+<h2>PosVec[4] là tọa độ điểm trung tâm</h2>
 
 <p>```</p></li>
 </ul>
 
-
 <h3>ScShapeLineCross(line0,line1,GcCoodPos,bFoolProof=False,stdAngle=90,AngleLimit=1,strlabel=<strong>&ldquo;L1&amp;L2&rdquo;</strong>)</h3>
 
 <ul>
-<li><p>功能：两条线交点  含防呆。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Tính giao điểm của hai đường thẳng, có cơ chế chống lỗi (fool-proof)。</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>line0：输入线1  scLine类型 线1  坐标的角度与线1 的角度相同。</li>
-<li>line1：输入线2  scLine类型 线2。</li>
-<li>GcCoodPos：GcCoodPos类型，本地定义。</li>
-<li>bFoolProof：BOOL类型  是否防呆  默认Flase。</li>
-<li>stdAngle：标准设定角度   正常角度0-180°  默认90.0°。</li>
-<li>AngleLimit：标准设定公差  正常角度0-180°  默认1.0°。</li>
-<li>strlabel：标识 默认"L1&amp;L2"。</li>
+<li>line0：Đường đầu vào 1, kiểu scLine – đường 1, góc tọa độ giống với góc của đường 1。</li>
+<li>line1：Đường đầu vào 2, kiểu scLine – đường 2。</li>
+<li>GcCoodPos：Kiểu GcCoodPos, được định nghĩa cục bộ。</li>
+<li>bFoolProof：Kiểu BOOL – bật/tắt cơ chế chống lỗi, mặc định False。</li>
+<li>stdAngle：Góc chuẩn đặt trước, phạm vi bình thường 0–180°, mặc định 90.0°。</li>
+<li>AngleLimit：Dung sai góc chuẩn, phạm vi bình thường 0–180°, mặc định 1.0°。</li>
+<li>strlabel：Nhãn nhận diện, mặc định "L1&L2"。</li>
 </ul>
 </li>
-<li><p>返回值：Bool类型  True，表示正常（含不防呆），False 表示异常。</p></li>
-<li><p>示例代码：</p>
+<li><p>Giá trị trả về：Kiểu Bool – True: bình thường (bao gồm cả khi không bật chống lỗi), False: bất thường。</p></li>
+<li><p>Ví dụ mã：</p>
 
 <p><code>python
 GcCoodPos=GvVisionAssembly.GcCoordPos()
@@ -160,26 +159,25 @@ print(GcCoodPos.X,GcCoodPos.Y,GcCoodPos.D)
 </code></p></li>
 </ul>
 
-
 <h3>ScShapeTransPolyline(self,Polyline,VectorVec,transx=0,transy=0,transd=0)</h3>
 
 <ul>
-<li><p>功能：一般用来对blob工具的多边形ROI区域做位置变换。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Thường dùng để thực hiện biến đổi vị trí cho vùng ROI đa giác của công cụ Blob。</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>self：ScShape类本身。</li>
-<li>Polyline：获取blob工具的 “多边形ROI”。</li>
-<li>VectorVec：生成的标准检测区域的点阵。</li>
-<li>transx，transy，transd：需要偏移的特征点的位置坐标，相对于标准检测区域。</li>
+<li>self：Chính lớp ScShape。</li>
+<li>Polyline：Lấy vùng “Đa giác ROI” từ công cụ Blob。</li>
+<li>VectorVec：Mảng điểm chuẩn (point array) tạo thành vùng phát hiện tiêu chuẩn。</li>
+<li>transx，transy，transd：Tọa độ vị trí điểm đặc trưng cần dịch chuyển, tính tương đối so với vùng phát hiện tiêu chuẩn。</li>
 </ul>
 </li>
-<li><p>返回值：Polyline  多边形ROI 区域。</p></li>
-<li><p>示例代码：</p>
+<li><p>Giá trị trả về：Polyline – vùng ROI đa giác đã được biến đổi。</p></li>
+<li><p>Ví dụ mã：</p>
 
 <p>```python</p>
 
-<h1>添加构成多边形的点//典型应用场景，生成比较特殊的查找区域，检测区域等，可以跟随特征点的位置变化而变化</h1>
+<h1>Thêm các điểm tạo thành đa giác // Ứng dụng điển hình: tạo vùng tìm kiếm/đo lường đặc biệt, vùng này có thể tự động thay đổi theo vị trí điểm đặc trưng</h1>
 
 <p>p0 = GvVisionAssembly.sc2Vector(0,-100)
 p1 = GvVisionAssembly.sc2Vector(0,100)
@@ -194,11 +192,11 @@ ScShape.ScShapePolylineAddPoint(VectorVec,p2)
 ScShape.ScShapePolylineAddPoint(VectorVec,p3)
 ScShape.ScShapePolylineAddPoint(VectorVec,p4)
 ScShape.ScShapePolylineAddPoint(VectorVec,p5)
-ScShape.ScShapePolylineAddArc(VectorVec,p2,100,90,0)#增加一段圆弧
-rec3=GvTool.GetToolData(&ldquo;Blob工具<em>033.多边形ROI&rdquo;)
+ScShape.ScShapePolylineAddArc(VectorVec,p2,100,90,0) # Thêm một đoạn cung tròn
+rec3=GvTool.GetToolData("Blob工具_033.多边形ROI")
 print(type(rec3))
 rec3=ScShape.ScShapeTransPolyline(ScShape,rec3,VectorVec,10,10,3)
-GvTool.SetToolData(&ldquo;Blob工具</em>033.多边形ROI&rdquo;,rec3)
+GvTool.SetToolData("Blob工具_033.多边形ROI",rec3)
 ```</p></li>
 </ul>
 

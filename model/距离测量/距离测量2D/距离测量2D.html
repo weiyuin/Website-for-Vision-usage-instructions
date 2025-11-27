@@ -16,100 +16,99 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>距离测量2D</h1>
+<h1>Đo lường khoảng cách 2D</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>2D距离测量主要是计算两个几何元素（点、线段、直线、圆与椭圆等）之间的距离，包括圆到圆距离、直线到圆距离、直线到椭圆距离、线段到圆距离工具、线段到椭圆距离、线段到线段距离、
-线段到直线距离、点到圆距离、点到椭圆距离、点到线段距离、点到直线距离、点到点距离、矩形同心度计算、矩形中线同心度计算、轮廓到轮廓定向距离、多点到直线距离、点集距离计算。</p>
+<p>Đo khoảng cách 2D chủ yếu dùng để tính khoảng cách giữa hai phần tử hình học (điểm, đoạn thẳng, đường thẳng, đường tròn và elip, v.v.), bao gồm khoảng cách tròn đến tròn, thẳng đến tròn, thẳng đến elip, đoạn thẳng đến tròn, đoạn thẳng đến elip, đoạn thẳng đến đoạn thẳng,
+đoạn thẳng đến thẳng, điểm đến tròn, điểm đến elip, điểm đến đoạn thẳng, điểm đến thẳng, điểm đến điểm, tính độ đồng tâm hình chữ nhật, tính độ đồng tâm đường trung tuyến hình chữ nhật, khoảng cách định hướng từ contour đến contour, khoảng cách từ nhiều điểm đến thẳng, tính khoảng cách tập hợp điểm.</p>
 
-<p>其中多点到直线距离、点集距离计算的函数接口有像素当量参数，需要输入像素当量计算得到实际距离，如果像素当量等于1.0，则表示计算图像距离。</p>
+<p>Trong đó các hàm tính khoảng cách từ nhiều điểm đến đường thẳng và tính khoảng cách tập hợp điểm có tham số pixel equivalent, cần truyền vào giá trị pixel equivalent để tính được khoảng cách thực tế; nếu pixel equivalent bằng 1.0 thì kết quả là khoảng cách trên ảnh.</p>
 
-<p>除了多点到直线距离、点集距离计算，其他距离计算函数结果的含义和单位取决于输入几何元素所在的坐标系。如果是图像坐标系下，结果是图像上的距离，单位是像素（实际距离需要乘以像素当量进行转换）；平台坐标系下，结果是实际距离。例如线段到线段距离计算，输入的线段如果是图像坐标系下的，计算结果就是图像距离；如果是转换到平台坐标系下的，就是实际距离；对于点到点距离计算，输入的点如果是图像坐标系下的，计算结果就是图像距离；输入的点如果是转换到平台坐标下的，就是实际距离。</p>
+<p>Ngoại trừ hai hàm khoảng cách từ nhiều điểm đến thẳng và tính khoảng cách tập hợp điểm, các hàm tính khoảng cách còn lại sẽ cho kết quả có ý nghĩa và đơn vị phụ thuộc vào hệ tọa độ của phần tử hình học đầu vào. Nếu ở hệ tọa độ ảnh thì kết quả là khoảng cách trên ảnh, đơn vị pixel (để có khoảng cách thực tế cần nhân thêm với pixel equivalent); nếu ở hệ tọa độ nền tảng thì kết quả là khoảng cách thực tế. Ví dụ tính khoảng cách đoạn thẳng đến đoạn thẳng: nếu đoạn thẳng đầu vào ở hệ tọa độ ảnh thì kết quả là khoảng cách ảnh; nếu đã chuyển sang hệ tọa độ nền tảng thì kết quả là khoảng cách thực tế; tương tự với tính khoảng cách điểm đến điểm.</p>
 
-<p>对于和点相关的距离计算，计算结果DistanceResult中只有issucceed、distance和point1可用，point1表示参与距离计算的其他几何形状上计算距离的点坐标。对于两点之间距离计算，计算结果中只有只有issucceed、distance可用。</p>
+<p>Đối với các phép tính khoảng cách liên quan đến điểm, trong kết quả DistanceResult chỉ có issucceed, distance và point1 là có giá trị, trong đó point1 là tọa độ điểm trên phần tử hình học kia được dùng để tính khoảng cách. Riêng với phép tính khoảng cách giữa hai điểm thì trong kết quả chỉ có issucceed và distance là có giá trị.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th> 接口名称                                                       </th>
-<th> 接口描述                 </th>
+<th> Tên giao diện                          </th>
+<th> Mô tả giao diện                        </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> DistanceCircle2Circle </td>
-<td> 圆到圆之间的距离测量         </td>
+<td> DistanceCircle2Circle          </td>
+<td> Đo khoảng cách giữa hai đường tròn          </td>
 </tr>
 <tr>
-<td> DistanceLine2Circle </td>
-<td> 直线到圆之间的距离测量       </td>
+<td> DistanceLine2Circle            </td>
+<td> Đo khoảng cách từ đường thẳng đến đường tròn </td>
 </tr>
 <tr>
-<td> DistanceLine2Ellipse </td>
-<td> 直线到椭圆之间的距离测量     </td>
+<td> DistanceLine2Ellipse           </td>
+<td> Đo khoảng cách từ đường thẳng đến elip       </td>
 </tr>
 <tr>
-<td> DistanceLineSeg2Circle </td>
-<td> 线段到圆之间的距离测量       </td>
+<td> DistanceLineSeg2Circle         </td>
+<td> Đo khoảng cách từ đoạn thẳng đến đường tròn  </td>
 </tr>
 <tr>
-<td> DistanceLineSeg2Ellipse </td>
-<td> 线段到椭圆之间的距离测量     </td>
+<td> DistanceLineSeg2Ellipse        </td>
+<td> Đo khoảng cách từ đoạn thẳng đến elip        </td>
 </tr>
 <tr>
-<td> DistanceLineSeg2LineSeg </td>
-<td> 线段到线段之间的距离测量     </td>
+<td> DistanceLineSeg2LineSeg        </td>
+<td> Đo khoảng cách giữa hai đoạn thẳng           </td>
 </tr>
 <tr>
-<td> DistanceLineSeg2Line </td>
-<td> 线段到直线之间的距离测量     </td>
+<td> DistanceLineSeg2Line           </td>
+<td> Đo khoảng cách từ đoạn thẳng đến đường thẳng </td>
 </tr>
 <tr>
-<td> DistancePoint2Circle </td>
-<td> 点到圆之间的距离测量         </td>
+<td> DistancePoint2Circle           </td>
+<td> Đo khoảng cách từ điểm đến đường tròn        </td>
 </tr>
 <tr>
-<td> DistancePoint2Ellipse </td>
-<td> 点到椭圆之间的距离测量       </td>
+<td> DistancePoint2Ellipse          </td>
+<td> Đo khoảng cách từ điểm đến elip              </td>
 </tr>
 <tr>
-<td> DistancePoint2LineSeg </td>
-<td> 点到线段之间的距离测量       </td>
+<td> DistancePoint2LineSeg          </td>
+<td> Đo khoảng cách từ điểm đến đoạn thẳng        </td>
 </tr>
 <tr>
-<td> DistancePoint2Line </td>
-<td> 点到直线之间的距离测量       </td>
+<td> DistancePoint2Line             </td>
+<td> Đo khoảng cách từ điểm đến đường thẳng       </td>
 </tr>
 <tr>
-<td> DistancePoint2Point </td>
-<td> 两点之间的距离测量           </td>
+<td> DistancePoint2Point            </td>
+<td> Đo khoảng cách giữa hai điểm                 </td>
 </tr>
 <tr>
-<td> CalcRectConcentric </td>
-<td> 矩形同心度计算               </td>
+<td> CalcRectConcentric             </td>
+<td> Tính độ đồng tâm của hình chữ nhật           </td>
 </tr>
 <tr>
-<td> CalcRectConcentricCL </td>
-<td> 矩形中线同心度计算           </td>
+<td> CalcRectConcentricCL           </td>
+<td> Tính độ đồng tâm đường trung tuyến hình chữ nhật </td>
 </tr>
 <tr>
-<td> DistanceContour2Contour </td>
-<td> 轮廓到轮廓的定向距离         </td>
+<td> DistanceContour2Contour        </td>
+<td> Khoảng cách định hướng từ contour đến contour </td>
 </tr>
 <tr>
-<td> DistanceMulPoint2Line </td>
-<td> 多点到直线的距离             </td>
+<td> DistanceMulPoint2Line          </td>
+<td> Khoảng cách từ nhiều điểm đến đường thẳng    </td>
 </tr>
 <tr>
-<td> DistanceVctPoint2VctPoint </td>
-<td> 两个点集对应点之间的距离测量 </td>
+<td> DistanceVctPoint2VctPoint      </td>
+<td> Đo khoảng cách giữa các điểm tương ứng của hai tập hợp điểm </td>
 </tr>
 </tbody>
 </table>
-
 
 <h2>详细描述</h2>
 

@@ -16,34 +16,33 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1><strong>异步写日志使用说明</strong></h1>
+<h1><strong>Hướng dẫn sử dụng Ghi log bất đồng bộ (Async Logging)</strong></h1>
 
-<h2>说明</h2>
+<h2>Giải thích</h2>
 
 <ul>
-<li>此日志模块是在python的第三方库loguru的基础上封装</li>
-<li>异步写日志(队列方式)</li>
-<li>日志以“年-月-日 时:分秒:毫秒 - 日志内容”的格式进行打印</li>
-<li>每天会创建新的日志文件进行记录</li>
-<li>每天凌晨00:00会对昨天的日志文件进行备份，备份文件格式为“文件名称.第一条日志的时间.txt”</li>
-<li>日志最多会缓存一个月，超过一个月的会自动进行清理</li>
+<li>Module ghi log này được đóng gói dựa trên thư viện bên thứ ba loguru của Python</li>
+<li>Hỗ trợ ghi log bất đồng bộ (dùng hàng đợi - queue)</li>
+<li>Log được in theo định dạng: “năm-tháng-ngày giờ:phút:giây:mili giây - nội dung log”</li>
+<li>Mỗi ngày sẽ tự động tạo một file log mới</li>
+<li>Vào 00:00 hàng ngày, file log của ngày hôm trước sẽ được tự động sao lưu, tên file backup có dạng: “tên_file.thời_gian_của_dòng_log_đầu_tiên.txt”</li>
+<li>Log sẽ được lưu tối đa 1 tháng, các file quá 1 tháng sẽ tự động bị xóa</li>
 </ul>
 
 
-<h2>使用步骤及示例</h2>
+<h2>Các bước sử dụng và ví dụ</h2>
 
 <ul>
-<li><p>步骤一：导入GVLog</p></li>
-<li><p>步骤二:   写日志</p>
+<li><p>Bước 1: Import GvLog</p></li>
+<li><p>Bước 2: Ghi log</p>
 
-<p><strong>代码示例：</strong></p>
+<p><strong>Ví dụ mã:</strong></p>
 
 <p>from GvAsyncLog import GvLog</p>
 
-<p>GvLog.Log(&ldquo;D:/标定.txt&rdquo;,&ldquo;Helelo&rdquo;)</p>
+<p>GvLog.Log("D:/标定.txt", "Helelo")</p>
 
-<p><strong><em>注意：</em></strong></p>
+<p><strong><em>Lưu ý:</em></strong></p>
 
-<p>   日志中的文件每天都会新建一个，不需要在脚本中每天更换不同的文件名称</p></li>
+<p>   File log sẽ tự động tạo mới mỗi ngày, bạn không cần thay đổi tên file trong script theo từng ngày.</p></li>
 </ul>
-
