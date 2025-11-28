@@ -18,238 +18,238 @@
            </head>
 <h1>scEllipse</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示椭圆，例如Blob工具的椭圆ROI区域，灰度检测工具的椭圆检测区域。</p>
+<p>Biểu diễn hình elip, ví dụ như vùng ROI elip của công cụ Blob, vùng phát hiện elip của công cụ đo độ xám.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                     </th>
-<th> 接口描述                                            </th>
+<th>      Phân loại </th>
+<th> Tên giao diện                                                </th>
+<th> Mô tả giao diện                                            </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
+<td> Hàm khởi tạo </td>
 <td> scEllipse                                   </td>
-<td> scEllipse()默认构造函数。                           </td>
+<td> scEllipse() hàm khởi tạo mặc định.                           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> scEllipse            </td>
-<td> scEllipse(sc2Vector, sc2Vector, scRadian)构造函数。 </td>
+<td> scEllipse(sc2Vector, sc2Vector, scRadian) hàm khởi tạo. </td>
 </tr>
 <tr>
 <td>      </td>
 <td> scEllipse                    </td>
-<td> scEllipse(sc2XformLinear)构造函数。                 </td>
+<td> scEllipse(sc2XformLinear) hàm khởi tạo.                 </td>
 </tr>
 <tr>
-<td> 函数 </td>
+<td> Hàm </td>
 <td> SetCenterRadiusRotation </td>
-<td> 设置椭圆中心、半轴长度和旋转角度。                  </td>
+<td> Thiết lập tâm elip, độ dài hai trục và góc xoay.                  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetRadii                                </td>
-<td> 设置X方向和Y方向的半轴长度。                        </td>
+<td> Thiết lập độ dài bán trục theo hướng X và Y.                        </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetRadii                                     </td>
-<td> 获取X方向和Y方向的半轴长度。                        </td>
+<td> Lấy độ dài bán trục theo hướng X và Y.                        </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetCenter                             </td>
-<td> 设置中心。                                          </td>
+<td> Thiết lập tâm.                                          </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetCenter                                   </td>
-<td> 获取中心。                                          </td>
+<td> Lấy tọa độ tâm.                                          </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetRotation                       </td>
-<td> 设置旋转角度。                                      </td>
+<td> Thiết lập góc xoay.                                      </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetRotation                               </td>
-<td> 获取旋转角度。                                      </td>
+<td> Lấy góc xoay.                                      </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetEllFromUnitCirc </td>
-<td> 设置仿射变换。                                      </td>
+<td> Thiết lập phép biến đổi affine.                                      </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetEllFromUnitCirc             </td>
-<td> 获取仿射变换。                                      </td>
+<td> Lấy phép biến đổi affine.                                      </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
 <h3>scEllipse()</h3>
 
 <ul>
-<li><p>功能：构造scEllipse对象。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng：Khởi tạo đối tượng scEllipse。</p></li>
+<li><p>Tham số：Không có。</p></li>
+<li><p>Giá trị trả về：Không có。</p></li>
 </ul>
 
 
 <h3>scEllipse(center, radii, rotation)</h3>
 
 <ul>
-<li><p>功能：用中心center、X方向和Y方向的半轴长度构成的向量radii、旋转角度rotation来构造scEllipse对象。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Khởi tạo đối tượng scEllipse bằng tâm center, vector radii chứa độ dài bán trục X và Y, và góc xoay rotation。</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li><p>center：椭圆中心坐标，sc2Vector类型。</p></li>
-<li><p>radii：X方向和Y方向半轴长度构成的向量，sc2Vector类型。</p></li>
-<li><p>rotation：旋转角度，scRadian类型。</p></li>
+<li><p>center：Tọa độ tâm elip, kiểu sc2Vector。</p></li>
+<li><p>radii：Vector chứa độ dài bán trục theo hướng X và Y, kiểu sc2Vector。</p></li>
+<li><p>rotation：Góc xoay, kiểu scRadian。</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về：Không có。</p></li>
 </ul>
 
 
 <h3>scEllipse(ellFromUnitCirc)</h3>
 
 <ul>
-<li><p>功能：用二维仿射变换ellFromUnitedCirc来构造scCircle对象。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Khởi tạo đối tượng scEllipse bằng phép biến đổi affine 2D。</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>ellFromUnitCirc：二维仿射变换，sc2XformLinear类型。</li>
+<li>ellFromUnitCirc：Phép biến đổi affine 2D, kiểu sc2XformLinear。</li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về：Không có。</p></li>
 </ul>
 
 
 <h3>SetCenterRadiusRotation(center, radii, rotation)</h3>
 
 <ul>
-<li><p>功能：设置椭圆的中心，半轴长度和旋转角度。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Thiết lập tâm, độ dài bán trục và góc xoay của elip。</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li><p>center：椭圆中心坐标，sc2Vector类型。</p></li>
-<li><p>radii：X方向和Y方向半轴长度构成的向量，sc2Vector类型。</p></li>
-<li><p>rotation：旋转角度，scRadian类型。</p></li>
+<li><p>center：Tọa độ tâm elip, kiểu sc2Vector。</p></li>
+<li><p>radii：Vector chứa độ dài bán trục theo hướng X và Y, kiểu sc2Vector。</p></li>
+<li><p>rotation：Góc xoay, kiểu scRadian。</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, cho biết việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>SetRadii(radii)</h3>
 
 <ul>
-<li><p>功能：设置椭圆的X方向和Y方向的半轴长度。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Thiết lập độ dài bán trục theo hướng X và Y của elip。</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>radii：X方向和Y方向半轴长度构成的向量，sc2Vector类型。</li>
+<li>radii：Vector chứa độ dài bán trục theo hướng X và Y, kiểu sc2Vector。</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, cho biết việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>GetRadii()</h3>
 
 <ul>
-<li><p>功能：获取椭圆的X方向和Y方向的半轴长度。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：X方向和Y方向半轴长度构成的向量，sc2Vector类型。</p></li>
+<li><p>Chức năng：Lấy độ dài bán trục theo hướng X và Y của elip。</p></li>
+<li><p>Tham số：Không có。</p></li>
+<li><p>Giá trị trả về：Vector chứa độ dài bán trục theo hướng X và Y, kiểu sc2Vector。</p></li>
 </ul>
 
 
 <h3>SetCenter(center)</h3>
 
 <ul>
-<li><p>功能：设置椭圆圆心。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Thiết lập tâm elip。</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>center：椭圆中心坐标，sc2Vector类型。</li>
+<li>center：Tọa độ tâm elip, kiểu sc2Vector。</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, cho biết việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>GetCenter()</h3>
 
 <ul>
-<li><p>功能：获取椭圆圆心。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：椭圆中心坐标，sc2Vector类型。</p></li>
+<li><p>Chức năng：Lấy tọa độ tâm elip。</p></li>
+<li><p>Tham số：Không có。</p></li>
+<li><p>Giá trị trả về：Tọa độ tâm elip, kiểu sc2Vector。</p></li>
 </ul>
 
 
 <h3>SetRotation(rotation)</h3>
 
 <ul>
-<li><p>功能：设置椭圆的旋转角度。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Thiết lập góc xoay của elip。</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>rotation：旋转角度，scRadian类型。</li>
+<li>rotation：Góc xoay, kiểu scRadian。</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, cho biết việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>GetRotation()</h3>
 
 <ul>
-<li><p>功能：获取椭圆的旋转角度。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：旋转角度，scRadian类型。</p></li>
+<li><p>Chức năng：Lấy góc xoay của elip。</p></li>
+<li><p>Tham số：Không có。</p></li>
+<li><p>Giá trị trả về：Góc xoay, kiểu scRadian。</p></li>
 </ul>
 
 
-<h3>SetEllFromUnitCirc( ellFromUnitCirc )</h3>
+<h3>SetEllFromUnitCirc(ellFromUnitCirc)</h3>
 
 <ul>
-<li><p>功能：设置仿射变换。</p></li>
-<li><p>参数：无。</p>
+<li><p>Chức năng：Thiết lập phép biến đổi affine。</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>ellFromUnitCirc：二维仿射变换，sc2XformLinear类型。</li>
+<li>ellFromUnitCirc：Phép biến đổi affine 2D, kiểu sc2XformLinear。</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, cho biết việc thiết lập có thành công hay không。</p></li>
 </ul>
 
 
 <h3>GetEllFromUnitCirc()</h3>
 
 <ul>
-<li><p>功能：获取仿射变换。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：二维仿射变换，sc2XformLinear类型。</p></li>
+<li><p>Chức năng：Lấy phép biến đổi affine。</p></li>
+<li><p>Tham số：Không có。</p></li>
+<li><p>Giá trị trả về：Phép biến đổi affine 2D, kiểu sc2XformLinear。</p></li>
 </ul>
 
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>示例代码</h2>
+<h2>Ví dụ mã</h2>
 
 <p>无</p>

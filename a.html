@@ -1,0 +1,151 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>6.8.100</h1>
+
+<h2>1 版本说明</h2>
+
+<h3>1.1 版本概述</h3>
+
+<p>VisionAssembly 6.8.100版本为本年度VA迭代开发版本，是面向视觉系统产品线“NPI效能提升10%~15%，全面落地ODS1.0（批量复制），提升NPI&amp;MP效率”战略目标落地，打造的一款覆盖复杂工艺解决方案和定制功能的通用视觉系统平台。</p>
+
+<h3>1.2 版本信息</h3>
+
+<p>VisionAssembly 6.8.100</p>
+
+<h3>1.3 配套文档</h3>
+
+<p>VisionAssembly 用户操作手册，随软件一起发布，用户可在软件中直接打开操作手册查看，如图所示。</p>
+
+<p><img src="media/Help.jpg" alt="" /></p>
+
+<h2>2 版本变更说明</h2>
+
+<h3>2.1 新增功能</h3>
+
+<ol>
+<li><p>新增AI定位工具<span style="color:#0070C0">【需要加密狗24权限】</span>。</p>
+
+<blockquote><p><span style = "color:red">注意</span></p>
+
+<p>VA中使用AI工具时的配置要求：Win10系统，64位，内存8G以上，硬盘500G以上，CPU 6~13代 i3及以上</p></blockquote></li>
+<li><p>新增OCV检测工具<span style="color:#0070C0">【需要加密狗25权限】</span>。</p></li>
+<li><p>新增轮廓度测量工具<span style="color:#0070C0">【需要加密狗108权限】</span>。</p></li>
+<li><p>产品经营管理：部分特性功能增加权限管控，如下</p>
+
+<ul>
+<li><p>装机引导功能，<span style="color:#0070C0">需要加密狗105权限</span>；</p></li>
+<li><p>相机连接：连接相机个数超过8个时，第9个开始，<span style="color:#0070C0">需要加密狗106权限</span>；</p></li>
+<li><p>水印工具，<span style="color:#0070C0">需要加密狗107权限</span>；</p></li>
+</ul>
+</li>
+<li><p>生产编辑界面，布局管理中，新增生成标准化布局功能<span style="color:#0070C0">【需要加密狗107权限】</span>。</p></li>
+<li><p>生产编辑界面布局排布优化：网格布局、双列布局、双行布局。</p></li>
+<li><p>生产界面显示窗口控件新增支持关联相机管理、3D相机管理、光源管理、路径管理窗口。</p></li>
+<li><p>生产界面新增支持选项卡控件、多行文本编辑控件、版本信息管理控件。</p></li>
+<li><p>生产界面表格控件优化：</p>
+
+<ul>
+<li><p>属性分类显示；</p></li>
+<li><p>首行首列单元格编辑；</p></li>
+<li><p>单独列宽调整；</p></li>
+<li><p>单元格字体颜色控制；</p></li>
+<li><p>删除指定行列；</p></li>
+<li><p>行列标题的多语言管理；</p></li>
+</ul>
+</li>
+<li><p>生产界面支持监控关联的相机、3D相机、端口的在线/离线状态。</p></li>
+<li><p>变量管理中新增系统变量类型，并新增三个系统变量：@SysVar_StationID（工站ID）、@SysVar_SolutionVersion（工程版本号）、@SysVar_SwitchLayout（切换的布局）。</p></li>
+<li><p>光源管理新增支持康视达协议。</p></li>
+<li><p>运动标定工具优化：</p>
+
+<ul>
+<li><p>支持显示平移标定误差和旋转误差；</p></li>
+<li><p>支持标定结果评价；</p></li>
+</ul>
+</li>
+<li><p>图像拼接工具优化：</p>
+
+<ul>
+<li><p>多图拼合保存工具、灰度图像拼接工具、图像拼接工具、多图像拼接工具整合为图像拼合工具；</p></li>
+<li><p>图像拼合工具支持灰度图像和彩色图像；</p></li>
+<li><p>边缘拼接模式（原多图拼合保存）新增支持PNG格式保存；</p></li>
+</ul>
+</li>
+<li><p>多语言管理新增支持导入/导出表格；</p></li>
+<li><p>新增一键信息收集功能</p></li>
+<li><p>CTLog功能优化：</p>
+
+<ul>
+<li><p>存储效率提升40%。</p></li>
+<li><p>增加场景配置，分成调试阶段和量产阶段，只记录关注的异常信息，减少对磁盘造成的冲击。</p></li>
+<li><p>优化大文件打开效率；</p></li>
+<li><p>优化使用过程中内存占用的稳定性解决可能的内存不断上涨的问题；</p></li>
+<li><p>优化使用过程中的软件操作流畅度解决造成的视觉卡顿或者超时的问题；</p></li>
+<li><p>优化记录内容，减少不必要工具的记录；</p></li>
+</ul>
+</li>
+<li><p>专业几何定位内存优化：加载态内存降低约67% (4G->1.35G)、运行内存降低约66% (7.35G->2.5G)</p>
+
+<blockquote><p><span style="color:red">注意</span></p>
+
+<p>测试条件：25M图像+全图搜索+10个专业几何定位工具</p></blockquote></li>
+<li><p>日志写入优化</p></li>
+</ol>
+
+
+<h3>2.2 修改/删除功能</h3>
+
+<ol>
+<li><p>不再支持新增多图拼合保存工具、灰度图像拼接工具、图像拼接工具、多图像拼接工具；</p>
+
+<blockquote><p><span style="color:red">注意</span></p>
+
+<p>新版本不再支持添加这四个工具，但是加载老工程仍能使用，过渡期过后将完全移除，即不支持添加、不支持加载。</p></blockquote></li>
+<li><p>修改生产界面编辑的“生产界面管理配置”窗口，修改内容如下：</p>
+
+<ul>
+<li><p>自动切换布局关联的变量更换为固定关联系统变量@SysVar_SwitchLayout，不再需要用户手动选择，可直接在工程中使用系统变量@SysVar_SwitchLayout；</p></li>
+<li><p>“启用生产界面状态栏”替换“生产界面状态栏”；</p></li>
+<li><p>CPU（系统/进程）改名为CPU(SYS/PRO)，内存（系统/进程）改名为Memory(SYS/PRO)；</p></li>
+<li><p>去掉“当前作业”和“磁盘使用率”功能区显示，工程师和生产界面的状态栏中不再显示这两个功能；</p></li>
+<li><p>去掉当前布局标签，直接显示布局名称；</p></li>
+<li><p>增加“相机状态”和“端口状态”功能；</p></li>
+<li><p>当勾选“启用生产界面状态栏”时，CPU、RAM、当前布局、系统状态、工程运行状态、系统时间、信息提示框、相机状态和端口状态功能为可用状态；当不勾选时，为禁用状态，不再隐藏控件。</p></li>
+</ul>
+</li>
+</ol>
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">    修改前     </th>
+<th>                 </th>
+<th style="text-align:center;">    修改后     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"> <img src="media/MainRunConfigMngrBefore.jpg" alt="" /> </td>
+<td> <img src="media/Arrow.png" alt="" /> </td>
+<td style="text-align:center;"> <img src="media/MainRunConfigMngrAfter.jpg" alt="" /> </td>
+</tr>
+</tbody>
+</table>
+
