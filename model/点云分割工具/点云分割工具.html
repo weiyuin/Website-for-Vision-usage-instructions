@@ -16,281 +16,275 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云分割工具</h1>
+<h1>Công cụ Phân Đoạn Đám Mây Điểm</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 点云分割工具适用于3D测量、检测等场景，点云分割工具提供长方体、球体的几何体分割，获取几何体或几何体表面一定范围内的点云，也提供基于欧氏距离的聚类分割。</p>
+<p> Công cụ phân đoạn đám mây điểm dùng trong đo lường và kiểm tra 3D, hỗ trợ:  
+• Phân đoạn theo hình học: Hình hộp chữ nhật (Cuboid), Hình cầu (Sphere)  
+• Phân đoạn theo khoảng cách từ bề mặt hình học  
+• Phân đoạn đa vùng (nhiều ROI cùng lúc)  
+• Phân đoạn dựa trên mặt phẳng  
+• Phân đoạn dựa trên thuật toán gom cụm Euclidean (Euclidean Cluster)</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Các kịch bản ứng dụng</h2>
 
-<p>​ 在3D测量中，点云分割应用较为广泛，如手机中框检测，获取边框的点云，减少后续测量、检测运算量；多个卡尺工具同时参与测量，先使用点云分割工具获取边界点云，再使用卡尺工具，可加速整体计算效率等等。</p>
+<p> Rất phổ biến trong đo 3D, ví dụ:  
+• Tách riêng điểm thuộc khung viền điện thoại để đo kích thước  
+• Tách vùng cạnh để dùng nhiều công cụ caliper cùng lúc, giảm đáng kể thời gian tính toán  
+• Loại bỏ nền, chỉ giữ lại vật thể quan tâm  
+• Tách nhiều chi tiết riêng biệt trên cùng một đám mây điểm…</p>
 
-<h2>3. 使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>3.1 长方体ROI分割</h3>
+<li><h3>3.1 Phân đoạn theo ROI hình hộp chữ nhật</h3>
 
-<p><strong>step1：</strong>添加点云文件、点云分割工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
-
-<p><strong>step2：</strong>右击点云分割工具点击“属性”打开工具高级界面，如图3-2所示，ROI类型选择长方体，设置分割参数，然后点击运行即可得到分割后的点云数据；</p>
+<p><strong>Bước 1:</strong> Thêm công cụ Tải file đám mây điểm → Công cụ Phân Đoạn Đám Mây Điểm, mở chuỗi tham số, nối file điểm như Hình 3-1;<br/>
+<strong>Bước 2:</strong> Chuột phải vào công cụ → “Thuộc tính”, chọn “Loại ROI” = Hình hộp chữ nhật, kéo/thay đổi kích thước ROI trong giao diện nâng cao → Chạy để lấy điểm bên trong hộp.</p>
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_1.png" style="zoom:100%;"/>
-    <center>图3_1 点云分割：长方体ROI分割流程</center>
+    <center>Hình 3-1 Quy trình phân đoạn đám mây điểm – Hình hộp chữ nhật</center>
 </div>
-
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_2.gif" style="zoom:100%;"/>
-    <center>图3_2 点云分割：长方体ROI分割</center>
+    <center>Hình 3-2 Phân đoạn theo ROI hình hộp chữ nhật</center>
 </div>
 </li>
-<li><h3>3.2 球体ROI分割</h3>
 
-<p><strong>step1：</strong>添加点云文件、点云分割工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+<li><h3>3.2 Phân đoạn theo ROI hình cầu</h3>
 
-<p><strong>step2：</strong>右击点云分割工具点击“属性”打开工具高级界面，如图3-3所示，ROI类型选择球体，设置分割参数，然后点击运行即可得到分割后的点云数据；</p>
+<p>Tương tự bước trên, chỉ thay “Loại ROI” thành Hình cầu, điều chỉnh tâm và bán kính → Chạy.</p>
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_3.gif" style="zoom:100%;"/>
-    <center>图3_3 点云分割：球体ROI分割</center>
+    <center>Hình 3-3 Phân đoạn theo ROI hình cầu</center>
 </div>
 
+<h3>3.3 Phân đoạn đa vùng (nhiều ROI cùng lúc)</h3>
 
-<h3>3.3 多区域分割</h3>
-
-<p><strong>step1：</strong>添加点云文件、点云分割工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
-
-<p><strong>step2：</strong>右击点云分割工具点击“属性”打开工具高级界面，如图3-4所示，设置分割参数，然后点击运行即可得到分割后的点云数据；</p>
+<p>Trong giao diện nâng cao bật chế độ “Đa vùng”, thêm/bớt/sửa từng ROI (hộp hoặc cầu) → hệ thống sẽ xuất ra từng đám mây con tương ứng từng vùng.</p>
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_4.gif" style="zoom:100%;"/>
-    <center>图3_4 点云分割：多区域分割</center>
+    <center>Hình 3-4 Thiết lập đa vùng phân đoạn</center>
 </div>
-
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_4.png" style="zoom:100%;"/>
-    <center>图3_5 点云分割：多区域分割结果</center>
+    <center>Hình 3-5 Kết quả đa vùng phân đoạn</center>
 </div>
 
+<h3>3.4 Phân đoạn dựa trên mặt phẳng</h3>
 
-<h3>3.4 基于平面的分割</h3>
-
-<p><strong>step1：</strong>添加点云文件、点云分割工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
-
-<p><strong>step2：</strong>右击点云分割工具点击“属性”打开工具高级界面，如图3-3所示，设置分割参数，然后点击运行即可得到分割后的点云数据；</p>
+<p>Chọn “Loại ROI” = Mặt phẳng, thiết lập ngưỡng khoảng cách và chọn giữ lại điểm ở phía nào (một phía hoặc cả hai phía) so với mặt phẳng → Chạy.</p>
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_5.gif" style="zoom:100%;"/>
-    <center>图3_6 点云分割：基于平面的分割</center>
+    <center>Hình 3-6 Phân đoạn dựa trên mặt phẳng</center>
 </div>
 </li>
 </ul>
 
 
-<h2>4. 常见问题</h2>
+<h2>4. Câu hỏi thường gặp</h2>
 
-<h2>5. 参数说明</h2>
+<h2>5. Giải thích tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên tham số            </th>
+<th> Mô tả tham số                                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入点云数据 </td>
-<td> 输入待分割的点云图像                                                                                </td>
+<td> Đám mây điểm đầu vào   </td>
+<td> Đám mây điểm cần thực hiện phân đoạn                                                                              </td>
 </tr>
 <tr>
-<td> 输入基准面 </td>
-<td> 输入拟合后的平面 </td>
+<td> Mặt phẳng chuẩn        </td>
+<td> Mặt phẳng đã được fit trước đó (chỉ cần nối khi chọn phương pháp “Dựa trên mặt phẳng)                             </td>
 </tr>
 <tr>
-<td> 输入指定索引       </td>
-<td> 表示对整体点云的指定索引部分，分割出ROI内的点，无链接代表整体索引 </td>
+<td> Chỉ số chỉ định đầu vào </td>
+<td> Nếu nối vào đây thì công cụ chỉ xử lý trên tập hợp điểm có chỉ số đã cho;  
+nếu không nối gì → mặc định xử lý toàn bộ đám mây điểm                                                             </td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số                     </th>
+<th> Mô tả tham số                                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Loại ROI                        </td>
+<td> Hình hộp chữ nhật / Hình cầu                                                                                      </td>
+</tr>
+<tr>
+<td> ROI hình hộp chữ nhật           </td>
+<td> Hiển thị vị trí và kích thước của hộp trong giao diện nâng cao                                                      </td>
+</tr>
+<tr>
+<td> ROI hình cầu                    </td>
+<td> Hiển thị tâm và bán kính của hình cầu trong giao diện nâng cao                                                    </td>
+</tr>
+<tr>
+<td> Số lượng ROI                    </td>
+<td> Khi bật chế độ đa vùng: số lượng ROI tối đa, phạm vi [1, 50]                                                     </td>
+</tr>
+<tr>
+<td> Chỉ số ROI hiện tại             </td>
+<td> Dùng để chuyển đổi giữa các ROI khi có nhiều vùng                                                                 </td>
+</tr>
+<tr>
+<td> Phương pháp phân đoạn           </td>
+<td> Hình học (Cuboid/Sphere) / Đa vùng / Dựa trên mặt phẳng                                                           </td>
+</tr>
+<tr>
+<td> Bật lấy điểm gần bề mặt hình học </td>
+<td> Khi bật → chỉ giữ lại các điểm nằm trong khoảng cách nhất định tính từ bề mặt hình học (trong hoặc ngoài)           </td>
+</tr>
+<tr>
+<td> Khoảng cách từ bề mặt hình học  </td>
+<td> Giá trị khoảng cách (±) để lấy điểm gần bề mặt (mm)                                                               </td>
+</tr>
+<tr>
+<td> Bật chọn ngược (Invert)         </td>
+<td> Đảo ngược kết quả: điểm vốn nằm trong ROI sẽ bị loại ra, điểm bên ngoài sẽ được giữ lại                           </td>
+</tr>
+<tr>
+<td> Ngưỡng khoảng cách (Euclidean Cluster) </td>
+<td> Các điểm cách nhau ≤ ngưỡng này sẽ thuộc cùng một cụm                                                             </td>
+</tr>
+<tr>
+<td> Bật ngưỡng tương đối            </td>
+<td> Có: ngưỡng là hệ số nhân; Không: ngưỡng là giá trị tuyệt đối (mm)                                                </td>
+</tr>
+<tr>
+<td> Khoảng cách tới mặt phẳng       </td>
+<td> Khi phân đoạn theo mặt phẳng: giữ lại điểm nằm trong ± giá trị này so với mặt phẳng                                </td>
+</tr>
+<tr>
+<td> Chế độ đầu ra                  </td>
+<td> Chỉ xuất chỉ số điểm (index) / Xuất cả tọa độ điểm thực tế                                                        </td>
+</tr>
+<tr>
+<td> Bật tính toán song song         </td>
+<td> Có: bật OpenMP để tăng tốc (có thể thời gian dao động); Không: tắt OpenMP                                         </td>
+</tr>
+<tr>
+<td> Tỷ lệ phần trăm luồng           </td>
+<td> Tỷ lệ sử dụng CPU cho tính toán song song, phạm vi (0, 0.75] → 0%–75%                                             </td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu vào (giao diện nâng cao)</h4>
+
+<p>Các tham số hoàn toàn giống với cửa sổ thuộc tính, kèm thêm các nút thao tác trực tiếp:</p>
+
+<table>
+<thead>
+<tr>
+<th> Tên nút               </th>
+<th> Chức năng                                                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Thêm ROI              </td>
+<td> Tự động tạo một ROI mới trong cửa sổ 3D                                                   </td>
+</tr>
+<tr>
+<td> Vẽ ROI hiện tại       </td>
+<td> Click + kéo chuột để vẽ hoặc chỉnh sửa ROI đang chọn                                      </td>
+</tr>
+<tr>
+<td> Xóa ROI hiện tại      </td>
+<td> Click + kéo để xóa ROI đang chọn                                                          </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên tham số                </th>
+<th> Mô tả tham số                                                                 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> ROI类型                 </td>
-<td> 分为两种：长方体和球体 </td>
+<td> Chỉ số điểm đầu ra         </td>
+<td> Chỉ số (index) của tất cả các điểm nằm trong vùng ROI đã chọn                         </td>
 </tr>
 <tr>
-<td> 长方体ROI </td>
-<td> 长方体ROI位置显示 </td>
+<td> Đám mây điểm đầu ra        </td>
+<td> Đám mây điểm thực tế chỉ chứa các điểm nằm trong ROI                                  </td>
 </tr>
 <tr>
-<td> 球体ROI </td>
-<td> 球体ROI位置显示 </td>
+<td> Tập hợp đám mây đầu ra     </td>
+<td> Khi dùng chế độ đa vùng: xuất mảng (array) các đám mây con tương ứng từng ROI          </td>
 </tr>
 <tr>
-<td> ROI个数 </td>
-<td> 启用ROI的情况下，用于设置ROI的个数，范围：[1,50] </td>
-</tr>
-<tr>
-<td> ROI索引 </td>
-<td> 用于不同索引下切换 </td>
-</tr>
-<tr>
-<td> 分割方法 </td>
-<td> 分为三种：集合体、多区域和基于平面 </td>
-</tr>
-<tr>
-<td> 是否启用表面取点 </td>
-<td> 启用该功能后，需要输入“几何体表面以内的距离”，表示点云分割时，只分割出该范围内的点云 </td>
-</tr>
-<tr>
-<td> 几何体表面以内的距离 </td>
-<td> 点云分割时，只分割出该范围内的点云              </td>
-</tr>
-<tr>
-<td> 是否启用反向选择 </td>
-<td> 启用该功能，原本应被输出的点云将不会输出，原本不被输出的点云将被输出 </td>
-</tr>
-<tr>
-<td> 距离阈值 </td>
-<td> 指定多少距离范围内是同一类的点 </td>
-</tr>
-<tr>
-<td> 是否开启相对阈值 </td>
-<td> 启用，距离阈值为一个系数；不启用，距离阈值为一个绝对距离值 </td>
-</tr>
-<tr>
-<td> 平面距离 </td>
-<td> 输出与平面距离±dDistance/2内的点云 </td>
-</tr>
-<tr>
-<td> 输出模式设置 </td>
-<td> 分为两种：输出指定索引和输出点云数据 </td>
-</tr>
-<tr>
-<td> 开启并行运算 </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
-</tr>
-<tr>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td> Các cụm (cluster) đầu ra   </td>
+<td> Khi dùng gom cụm Euclidean: xuất danh sách các cụm chỉ số riêng biệt                  </td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>输入参数（高级界面）</h4>
-
-<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 按钮名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên tham số                </th>
+<th> Mô tả tham số                                                                 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 添加ROI </td>
-<td> 在高级界面图像中，自动添加ROI </td>
+<td> Chỉ số điểm đầu ra         </td>
+<td> Chỉ số của các điểm nằm trong ROI                                                     </td>
 </tr>
 <tr>
-<td> 绘制当前ROI </td>
-<td> 在高级界面图像中，相应位置点击并拖动鼠标即可绘制当前索引下的ROI </td>
+<td> Đám mây điểm đầu ra        </td>
+<td> Đám mây điểm thực tế chỉ chứa các điểm nằm trong ROI                                  </td>
 </tr>
 <tr>
-<td> 删除当前ROI </td>
-<td> 在高级界面图像中，相应位置点击并拖动鼠标即可删除当前索引下的ROI </td>
+<td> Tập hợp đám mây đầu ra     </td>
+<td> Mảng các đám mây con khi phân đoạn đa vùng                                            </td>
+</tr>
+<tr>
+<td> Các cụm đầu ra             </td>
+<td> Danh sách các cụm chỉ số sau khi gom cụm Euclidean                                    </td>
+</tr>
+<tr>
+<td> Thời gian thực thi        </td>
+<td> Thời gian chạy công cụ                                                                </td>
+</tr>
+<tr>
+<td> Kết quả thực thi           </td>
+<td> Kết quả thực thi của công cụ (thành công/thất bại)                                    </td>
 </tr>
 </tbody>
 </table>
-
-
-<h4>输出参数（参数链）</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 输出指定索引 </td>
-<td> 输出分割出ROI内的点的索引值 </td>
-</tr>
-<tr>
-<td> 输出点云数据                                            </td>
-<td> 输出ROI内点云数据 </td>
-</tr>
-<tr>
-<td> 输出点云集 </td>
-<td> 输出点云集合 </td>
-</tr>
-<tr>
-<td> 输出类簇 </td>
-<td> 多区域分割后的索引集 </td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>输出参数（输出窗口）</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 输出指定索引 </td>
-<td> 输出分割出ROI内的点的索引值 </td>
-</tr>
-<tr>
-<td> 输出点云数据                                            </td>
-<td> 输出ROI内点云数据 </td>
-</tr>
-<tr>
-<td> 输出点云集 </td>
-<td> 输出点云集合 </td>
-</tr>
-<tr>
-<td> 输出类簇 </td>
-<td> 多区域分割后的索引集 </td>
-</tr>
-<tr>
-<td> 执行时间 </td>
-<td> 工具执行时间 </td>
-</tr>
-<tr>
-<td> 执行结果 </td>
-<td> 工具执行结果 </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>6. 示例工程</h2>
 
 <p>​ 参见“\Samples\3D\点云\点云测量.gvp”。</p>
 

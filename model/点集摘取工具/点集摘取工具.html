@@ -16,117 +16,112 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点集摘取工具</h1>
+<h1>Công cụ Trích xuất Tập Điểm</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 可以将相机采集图像中的2D灰度图中的像素点集映射为点云数据中的点集。</p>
+<p> Có thể ánh xạ tập hợp các điểm pixel trong ảnh xám 2D thu thập bởi camera thành tập hợp điểm trong dữ liệu đám mây điểm (point cloud).</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Các kịch bản ứng dụng</h2>
 
-<p>​ 可将2D灰度图与3D点云图联合起来处理。如手眼标定场景，可将2D特征点映射到3D点云中去，用作标定输入。</p>
+<p> Có thể xử lý đồng thời ảnh xám 2D và đám mây điểm 3D. Ví dụ trong kịch bản hiệu chuẩn tay-mắt (hand-eye calibration), có thể ánh xạ các điểm đặc trưng 2D vào đám mây điểm 3D để làm dữ liệu đầu vào cho việc hiệu chuẩn.</p>
 
-<h2>3. 使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具</h4></li>
+<li><h4>Thêm công cụ</h4></li>
 </ul>
-
 
 <p><img src="media/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8.png" alt="" /></p>
 
 <ul>
-<li><h4>数据链设置</h4>
+<li><h4>Cài đặt chuỗi dữ liệu</h4>
 
-<p>数据链中先链入相机采集的灰度图、与之对应的点云图及有效点索引；</p>
+<p>Trong chuỗi dữ liệu, trước tiên nối vào ảnh xám do camera thu thập, đám mây điểm tương ứng cùng thời điểm và chỉ số điểm hợp lệ (valid point index);</p>
 
-<p>然后输入在灰度图中的待转换的特征点集。</p>
+<p>Sau đó nhập tập hợp các điểm đặc trưng trong ảnh xám cần chuyển đổi.</p>
 
-<p><em>注意：输入的点云图、有效点索引、灰度图都必须是采集工具同一时刻输出的图像</em></p></li>
+<p><em>Lưu ý: Ảnh đám mây điểm, chỉ số điểm hợp lệ và ảnh xám đầu vào phải là các hình ảnh được xuất ra cùng một thời điểm từ công cụ thu thập</em></p></li>
 </ul>
 
+<h2>4. Câu hỏi thường gặp</h2>
 
-<h2>4. 常见问题</h2>
+<p>Chưa có</p>
 
-<p>无</p>
+<h2>5. Giải thích tham số</h2>
 
-<h2>5. 参数说明</h2>
-
-<h4>输入参数（属性窗口）</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 输入点云图 </td>
-<td> 相机采集的点云图像 </td>
-</tr>
-<tr>
-<td> 输入点云有效点索引 </td>
-<td> 点云图像对应的有效点索引 </td>
-</tr>
-<tr>
-<td> 输入灰度图 </td>
-<td> 同时刻相机采集的灰度图像        </td>
-</tr>
-<tr>
-<td> 输入灰度图点集 </td>
-<td> 灰度图中的待转换的特征点集 </td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
+<th> Tên tham số              </th>
+<th> Mô tả tham số                                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云数据点集 </td>
-<td> 输出映射到3D点云坐标上的点集 </td>
+<td> Ảnh đám mây điểm đầu vào </td>
+<td> Ảnh đám mây điểm do camera thu thập </td>
+</tr>
+<tr>
+<td> Chỉ số điểm hợp lệ của đám mây điểm đầu vào </td>
+<td> Chỉ số các điểm hợp lệ tương ứng với ảnh đám mây điểm </td>
+</tr>
+<tr>
+<td> Ảnh xám đầu vào          </td>
+<td> Ảnh xám cùng thời điểm do camera thu thập                                                                                 </td>
+</tr>
+<tr>
+<td> Tập điểm ảnh xám đầu vào </td>
+<td> Tập hợp các điểm đặc trưng trong ảnh xám cần chuyển đổi                                                                   </td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
+<th> Tên tham số                  </th>
+<th> Mô tả tham số                                                                                            </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云数据点集 </td>
-<td> 输出映射到3D点云坐标上的点集 </td>
-</tr>
-<tr>
-<td> 执行结果         </td>
-<td> 工具执行结果                 </td>
-</tr>
-<tr>
-<td> 执行时间         </td>
-<td> 工具执行时间                 </td>
+<td> Tập điểm dữ liệu đám mây đầu ra </td>
+<td> Tập điểm đã được ánh xạ ánh xạ vào hệ tọa độ đám mây điểm 3D </td>
 </tr>
 </tbody>
 </table>
 
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
-<h2>6. 示例工程</h2>
+<table>
+<thead>
+<tr>
+<th> Tên tham số                  </th>
+<th> Mô tả tham số                                                                                            </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Tập điểm dữ liệu đám mây đầu ra </td>
+<td> Tập điểm đã được ánh xạ vào hệ tọa độ đám mây điểm 3D </td>
+</tr>
+<tr>
+<td> Kết quả thực thi             </td>
+<td> Kết quả thực thi của công cụ                                                                      </td>
+</tr>
+<tr>
+<td> Thời gian thực thi           </td>
+<td> Thời gian thực thi của công cụ                                                                      </td>
+</tr>
+</tbody>
+</table>
+
+<h2>6. Dự án ví dụ</h2>
 
 <p>​     参见“\Samples\3D\点云\点集摘取工具.gvp”。</p>
 

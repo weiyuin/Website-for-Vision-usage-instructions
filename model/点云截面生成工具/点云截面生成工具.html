@@ -16,290 +16,289 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云截面生成工具</h1>
+<h1>Công cụ Tạo Mặt Cắt Đám Mây Điểm</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 点云截面生成工具分为单截面和多截面截取轮廓，单截面根据输入平面截取轮廓，多截面按照固定路径创建一系列平面截取各个平面的轮廓。</p>
+<p> Công cụ tạo mặt cắt đám mây điểm được chia thành hai chế độ: <strong>mặt cắt đơn</strong> và <strong>nhiều mặt cắt</strong>.  
+Mặt cắt đơn sẽ cắt lấy đường viền theo một mặt phẳng đầu vào.  
+Nhiều mặt cắt sẽ tạo một loạt mặt phẳng theo một đường dẫn cố định và lấy đường viền của từng mặt phẳng.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Các kịch bản ứng dụng</h2>
 
-<p>​ 点云截面生成工具应用于获取三维点云数据中某一确定平面的点云数据（截面数据），通过检测截面数据来判断点云数据是否存在缺陷，以降低在点云数据上的测量难度，提高测量精度。</p>
+<p> Công cụ được dùng để lấy dữ liệu đám mây điểm nằm trên một mặt phẳng xác định (dữ liệu mặt cắt) từ đám mây điểm 3D. Thông qua việc kiểm tra dữ liệu mặt cắt này, có thể đánh giá đám mây điểm gốc có khuyết tật hay không, đồng thời giảm độ khó đo đạc trực tiếp trên đám mây điểm 3D và nâng cao độ chính xác đo lường.</p>
 
-<h2>3. 使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>3.1 单截面</h3>
+<li><h3>3.1 Mặt cắt đơn</h3>
 
-<p><strong>step1：</strong>添加点云文件、平面拟合工具（或添加元素生成工具可以生成平面的工具）点云截面生成工具，并双击打开工具参数链，链接点云文件和输入平面，如图3-1所示；</p>
+<p><strong>Bước 1：</strong>Thêm công cụ Tải file đám mây điểm → công cụ Fit Plane (hoặc bất kỳ công cụ nào có thể tạo ra mặt phẳng) → công cụ Tạo Mặt Cắt Đám Mây Điểm. Nhấp đúp vào công cụ để mở chuỗi tham số, nối file đám mây điểm và mặt phẳng đầu vào như Hình 3-1;</p>
 
-<p><strong>step2：</strong>右击点云截面生成工具点击“属性”打开工具高级界面（或直接操作属性页），如图3-2所示，设置距离阈值，用于控制点到平面的最大距离，距离范围内的值才能生成截面数据，然后点击运行即可得到该截面上的数据；</p>
+<p><strong>Bước 2：</strong>Chuột phải vào công cụ Tạo Mặt Cắt Đám Mây Điểm → chọn “Thuộc tính” để mở giao diện nâng cao (hoặc thao tác trực tiếp trên trang thuộc tính). Tại đây thiết lập <strong>ngưỡng khoảng cách</strong> (distance threshold) – chỉ những điểm nằm trong khoảng cách này với mặt phẳng mới được giữ lại tạo thành mặt cắt. Sau khi thiết lập xong, nhấn Chạy để nhận dữ liệu mặt cắt, như Hình 3-2.</p>
 
 <p><img src="media/GcCloudCrossSectionTool3_1.png" alt="" /></p>
-
-<p><imgnote>图3_1 点云单截面模式流程</imgnote></p>
+<p><imgnote>Hình 3-1 Quy trình chế độ mặt cắt đơn</imgnote></p>
 
 <p><img src="media/GcCloudCrossSectionTool3_2.png" alt="" /></p>
+<p><imgnote>Hình 3-2 Giao diện nâng cao chế độ mặt cắt đơn</imgnote></p></li>
 
-<p><imgnote>图3_1 点云单截面模式高级界面</imgnote></p></li>
-<li><h3>3.2 多截面</h3>
+<li><h3>3.2 Nhiều mặt cắt</h3>
 
-<p>​     多截面分手动绘制和非手动绘制两种模式，手动模式时可在高级界面实时绘制路径及平面参数，非手动模式需要在数据链中链接路径参数和输入平面。</p></li>
-<li><h4>3.2.1 多截面手动模式</h4>
+<p> Chế độ nhiều mặt cắt có hai kiểu: <strong>vẽ tay (thủ công)</strong> và <strong>không vẽ tay (tự động)</strong>.  
+Kiểu vẽ tay cho phép vẽ trực tiếp đường dẫn và chỉnh thông số mặt phẳng ngay trên giao diện nâng cao.  
+Kiểu không vẽ tay cần nối sẵn các tham số đường dẫn và mặt phẳng gốc trong chuỗi dữ liệu.</p></li>
 
-<p><strong>step1：</strong>添加点云文件、点云截面生成工具，并双击打开工具参数链，链接点云文件，如图3-3所示；</p>
+<li><h4>3.2.1 Chế độ nhiều mặt cắt – Vẽ tay</h4>
 
-<p><strong>step2：</strong>右击点云截面生成工具点击“属性”打开工具高级界面，如图3-3所示，在视图中拖拽ROI到合适位置，或者在高级界面手动修改平面或路径参数，然后点击运行即可得到路径上一系列截面上的数据；</p>
+<p><strong>Bước 1：</strong>Thêm file đám mây điểm và công cụ Tạo Mặt Cắt Đám Mây Điểm, nhấp đúp mở chuỗi tham số, chỉ cần nối file đám mây điểm như Hình 3-3;</p>
+
+<p><strong>Bước 2：</strong>Chuột phải vào công cụ → “Thuộc tính” để mở giao diện nâng cao (Hình 3-4). Trong cửa sổ xem kéo thả ROI đến vị trí phù hợp hoặc chỉnh trực tiếp các tham số mặt phẳng/đường dẫn, sau đó nhấn Chạy để nhận toàn bộ dữ liệu các mặt cắt dọc theo đường dẫn.</p>
 
 <p><img src="media/GcCloudCrossSectionTool3_3.png" alt="" /></p>
-
-<p><imgnote>图3_3 点云多截面手动绘制</imgnote></p>
+<p><imgnote>Hình 3-3 Vẽ tay nhiều mặt cắt – quy trình</imgnote></p>
 
 <p><img src="media/GcCloudCrossSectionTool3_4.png" alt="" /></p>
+<p><imgnote>Hình 3-4 Giao diện nâng cao khi vẽ tay nhiều mặt cắt</imgnote></p></li>
 
-<p><imgnote>图3_4 点云多截面手动绘制高级界面</imgnote></p></li>
-<li><h4>3.2.2 多截面非手动模式</h4>
+<li><h4>3.2.2 Chế độ nhiều mặt cắt – Không vẽ tay</h4>
 
-<p><strong>step1：</strong>添加点云文件、点云截面生成工具，并双击打开工具参数链，链接点云文件，如图3-5所示；</p>
+<p><strong>Bước 1：</strong>Thêm file đám mây điểm và công cụ Tạo Mặt Cắt Đám Mây Điểm, mở chuỗi tham số, nối file đám mây điểm như Hình 3-5;</p>
 
-<p><strong>step2：</strong>数据链接输入平面以及路径需要的各个参数，然后点击运行即可得到路径上一系列截面上的数据；</p>
+<p><strong>Bước 2：</strong>Trong chuỗi dữ liệu nối thêm mặt phẳng gốc và tất cả các tham số cần thiết của đường dẫn, sau đó nhấn Chạy để nhận toàn bộ dữ liệu các mặt cắt dọc theo đường dẫn.</p>
 
 <p><img src="media/GcCloudCrossSectionTool3_5.png" alt="" /></p>
-
-<p><imgnote>图3_5 点云多界面非手动模式</imgnote></p></li>
+<p><imgnote>Hình 3-5 Chế độ nhiều mặt cắt không vẽ tay</imgnote></p></li>
 </ul>
 
+<h2>4. Câu hỏi thường gặp</h2>
 
-<h2>4. 常见问题</h2>
+<h2>5. Giải thích tham số</h2>
 
-<h2>5. 参数说明</h2>
-
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên tham số                </th>
+<th> Mô tả tham số                                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入点云数据        </td>
-<td> 输入的点云图像 </td>
+<td> Đám mây điểm đầu vào       </td>
+<td> Ảnh đám mây điểm đầu vào                                                                                                  </td>
 </tr>
 <tr>
-<td> 输入三维平面  </td>
-<td> 输入截取的平面，属性参数截面模式为三维平面时生效 </td>
+<td> Mặt phẳng 3D đầu vào       </td>
+<td> Mặt phẳng dùng để cắt, chỉ có hiệu lực khi thuộc tính “Chế độ mặt cắt” chọn “Mặt phẳng 3D vô giới hạn”                     </td>
 </tr>
 <tr>
-<td> 输入三维矩形平面 </td>
-<td> 输入截取的矩形平面，属性参数截面模式为三维矩形平面时生效 </td>
+<td> Mặt phẳng hình chữ nhật 3D đầu vào </td>
+<td> Mặt phẳng hình chữ nhật dùng để cắt, chỉ có hiệu lực khi chọn “Mặt phẳng hình chữ nhật 3D”                                </td>
 </tr>
 <tr>
-<td> 输入三维圆形平面 </td>
-<td> 输入截取的圆形平面，属性参数截面模式为三维圆形平面时生效 </td>
+<td> Mặt phẳng hình tròn 3D đầu vào </td>
+<td> Mặt phẳng hình tròn dùng để cắt, chỉ có hiệu lực khi chọn “Mặt phẳng hình tròn 3D”                                       </td>
 </tr>
 <tr>
-<td> 输入路径起点 </td>
-<td> 多截面模式时，路径起始点 </td>
+<td> Điểm bắt đầu đường dẫn     </td>
+<td> Chế độ nhiều mặt cắt – điểm bắt đầu của đường dẫn                                                                         </td>
 </tr>
 <tr>
-<td> 输入路径终点 </td>
-<td> 多截面模式时，路径结束点 </td>
+<td> Điểm kết thúc đường dẫn    </td>
+<td> Chế độ nhiều mặt cắt – điểm kết thúc của đường dẫn                                                                        </td>
 </tr>
 <tr>
-<td> 输入路径三维参考圆 </td>
-<td> 多截面模式时，圆或圆弧形状的路径 </td>
+<td> Đường dẫn tham chiếu hình tròn 3D </td>
+<td> Chế độ nhiều mặt cắt – đường dẫn dạng đường tròn hoặc cung tròn                                                           </td>
 </tr>
 <tr>
-<td> 自定义偏移量 </td>
-<td> 自定义多截面偏移距离/角度 </td>
+<td> Độ lệch tùy chỉnh          </td>
+<td> Độ lệch khoảng cách/góc tùy chỉnh trong chế độ nhiều mặt cắt                                                               </td>
+</tr>
+</tbody>
+</table>
+
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số                                                                                                             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Loại mặt cắt                    </td>
+<td> Chia thành hai loại: Mặt cắt đơn và Nhiều mặt cắt                                                                         </td>
+</tr>
+<tr>
+<td> Chế độ mặt cắt                  </td>
+<td> Ba lựa chọn: Mặt phẳng vô giới hạn, Mặt phẳng hình chữ nhật 3D, Mặt phẳng hình tròn 3D                                     </td>
+</tr>
+<tr>
+<td> Chế độ phân tách                </td>
+<td> Hai lựa chọn: Chỉ giữ lại điểm ở một phía pháp vector của mặt phẳng hoặc Giữ lại điểm ở cả hai phía                        </td>
+</tr>
+<tr>
+<td> Ngưỡng khoảng cách              </td>
+<td> Khoảng cách tối đa từ điểm tới mặt phẳng để được giữ lại làm dữ liệu mặt cắt, phạm vi [0, 10000]                          </td>
+</tr>
+<tr>
+<td> Chế độ chiếu                    </td>
+<td> Có chiếu các điểm đã lọc lên mặt phẳng hay không: Không chiếu / Có chiếu                                                 </td>
+</tr>
+<tr>
+<td> Vẽ tay (thủ công)               </td>
+<td> Có: vẽ và chỉnh đường dẫn + mặt phẳng trực tiếp trong giao diện nâng cao; Không: dùng tham số từ chuỗi dữ liệu            </td>
+</tr>
+<tr>
+<td> Loại đường dẫn tham chiếu       </td>
+<td> Ba lựa chọn: Đoạn thẳng tham chiếu, Hình tròn tham chiếu, Cung tròn tham chiếu                                            </td>
+</tr>
+<tr>
+<td> Kiểu xây dựng cung tròn         </td>
+<td> Hai kiểu: Hình tròn + điểm đầu + điểm cuối  hoặc  Hình tròn + điểm đầu + góc quét cung                                    </td>
+</tr>
+<tr>
+<td> Góc quét cung                   </td>
+<td> Phạm vi (0, 360) độ                                                                                                       </td>
+</tr>
+<tr>
+<td> Xây dựng theo chiều kim đồng hồ </td>
+<td> Có: theo chiều kim đồng hồ; Không: ngược chiều kim đồng hồ                                                                </td>
+</tr>
+<tr>
+<td> Phương thức tạo nhiều mặt phẳng </td>
+<td> Ba lựa chọn: Theo số lượng, Theo khoảng cách/góc, Tùy chỉnh (khi chọn tùy chỉnh sẽ dùng tham số “Độ lệch tùy chỉnh” từ chuỗi) </td>
+</tr>
+<tr>
+<td> Số lượng mặt phẳng              </td>
+<td> Số mặt phẳng cần tạo, phạm vi [2, 100]                                                                                    </td>
+</tr>
+<tr>
+<td> Khoảng cách/góc giữa các mặt phẳng </td>
+<td> Khoảng cách: (0, 10000], góc: (0, 360)                                                                                     </td>
+</tr>
+<tr>
+<td> Hướng tạo thuận                 </td>
+<td> Có: từ điểm đầu → điểm cuối; Không: từ điểm cuối → điểm đầu                                                               </td>
+</tr>
+<tr>
+<td> Độ lệch ban đầu (khoảng cách/góc) </td>
+<td> Độ lệch từ điểm/góc bắt đầu trước khi tạo các mặt phẳng đầu tiên, khoảng cách [0,10000], góc [0,360)                     </td>
+</tr>
+<tr>
+<td> Bật tính toán song song         </td>
+<td> Có: bật OpenMP để tăng tốc độ tính toán (có thể thời gian không ổn định); Không: tắt OpenMP                                 </td>
+</tr>
+<tr>
+<td> Tỷ lệ phần trăm số luồng        </td>
+<td> Tỷ lệ sử dụng CPU cho tính toán song song, phạm vi hiệu quả (0, 0.75] tức 0% ~ 75%                                         </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào (giao diện nâng cao)</h4>
+
+<p>Các tham số trong giao diện nâng cao hoàn toàn giống với cửa sổ thuộc tính, chỉ có thêm các nút tương tác sau:</p>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên nút                     </th>
+<th> Mô tả chức năng                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 截平面类型        </td>
-<td> 分为两种：单截面和多截面 </td>
-</tr>
-<tr>
-<td> 截面模式 </td>
-<td> 分为三种：无界平面、三维矩形平面和三维圆形平面 </td>
-</tr>
-<tr>
-<td> 分割模式 </td>
-<td> 包括两种：分割平面法向量一侧点云数据和分割平面两侧点云数据 </td>
-</tr>
-<tr>
-<td> 距离阈值 </td>
-<td> 用于控制点到平面的最大距离，距离范围内的值才能生成截面数据，参数范围[0,10000] </td>
-</tr>
-<tr>
-<td> 投影模式 </td>
-<td> 主要指分割的点云是否投影到截面上，包括两种：不投影和投影 </td>
-</tr>
-<tr>
-<td> 手动绘制 </td>
-<td> 是：高级界面交互绘制路径和平面；否：数据链接链接参数生成路径和平面 </td>
-</tr>
-<tr>
-<td> 参考路径模式 </td>
-<td> 分为三种：参考线段、参考圆和参考圆弧 </td>
-</tr>
-<tr>
-<td> 圆弧构造类型 </td>
-<td> 包括两种：参考圆+起始点+终点、参考圆+起始点+圆弧跨度 </td>
-</tr>
-<tr>
-<td> 跨度 </td>
-<td> 范围(0，360) </td>
-</tr>
-<tr>
-<td> 顺时针构造 </td>
-<td> 是：顺时针构造；否：逆时针构造 </td>
-</tr>
-<tr>
-<td> 构造方式 </td>
-<td> 包括三种：个数、间隔、自定义，自定义模式时，需要通过数据链“自定义偏移量”设置偏移距离 </td>
-</tr>
-<tr>
-<td> 平面个数 </td>
-<td> 平面个数，范围[2，100] </td>
-</tr>
-<tr>
-<td> 间隔距离/角度 </td>
-<td> 间隔距离范围为（0，10000]，两平面之间距离;间隔角度范围为（0,360)，两平面之间间隔角度 </td>
-</tr>
-<tr>
-<td> 正向构造 </td>
-<td> 是：从起始点——终点构造；否：从终点——起始点构造 </td>
-</tr>
-<tr>
-<td> 起始偏移距离/角度 </td>
-<td> 起始偏移距离(参考线段)，范围为[0，10000]，离起始点偏移距离开始构造多平面；起始偏移角度,范围为[0,360)，离起始偏移角度开始生成截面 </td>
-</tr>
-<tr>
-<td> 开启并行运算 </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
-</tr>
-<tr>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td> Khôi phục vị trí tay cầm (ROI) </td>
+<td> Đặt lại vị trí ROI về tư thế mặc định phù hợp với đặc điểm của đám mây điểm đầu vào            </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
-
-<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 按钮名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên tham số                   </th>
+<th> Mô tả tham số                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 复原手柄位置                                   </td>
-<td> 按照输入点云图像特点固定摆放ROI</td>
+<td> Đám mây điểm đầu ra           </td>
+<td> Dữ liệu đám mây điểm nằm trên các mặt cắt                                                       </td>
+</tr>
+<tr>
+<td> Dữ liệu mặt cắt đầu ra        </td>
+<td> Chế độ mặt cắt đơn: xuất dữ liệu đường viền (contour)                                           </td>
+</tr>
+<tr>
+<td> Mảng dữ liệu mặt cắt đầu ra   </td>
+<td> Chế độ nhiều mặt cắt: xuất mảng các đường viền của từng mặt cắt                                 </td>
+</tr>
+<tr>
+<td> Mặt phẳng vô giới hạn đầu ra  </td>
+<td> Chế độ nhiều mặt cắt: xuất các mặt phẳng vô giới hạn dọc theo đường dẫn                         </td>
+</tr>
+<tr>
+<td> Mặt phẳng hình chữ nhật 3D đầu ra </td>
+<td> Chế độ nhiều mặt cắt: xuất các mặt phẳng hình chữ nhật dọc theo đường dẫn                        </td>
+</tr>
+<tr>
+<td> Mặt phẳng hình tròn 3D đầu ra </td>
+<td> Chế độ nhiều mặt cắt: xuất các mặt phẳng hình tròn dọc theo đường dẫn                           </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
+<th> Tên tham số                   </th>
+<th> Mô tả tham số                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云数据                                            </td>
-<td> 输出截面上的点云数据 </td>
+<td> Đám mây điểm đầu ra           </td>
+<td> Dữ liệu đám mây điểm nằm trên các mặt cắt                                                       </td>
 </tr>
 <tr>
-<td> 输出截面数据 </td>
-<td> 单截面时输出轮廓数据 </td>
+<td> Mặt phẳng vô giới hạn đầu ra  </td>
+<td> Chế độ nhiều mặt cắt: các mặt phẳng vô giới hạn dọc theo đường dẫn                                </td>
 </tr>
 <tr>
-<td> 输出截面数据数组 </td>
-<td> 多截面时输出轮廓数据 </td>
+<td> Mặt phẳng hình chữ nhật 3D đầu ra </td>
+<td> Chế độ nhiều mặt cắt: các mặt phẳng hình chữ nhật dọc đường dẫn                                 </td>
 </tr>
 <tr>
-<td> 输出无界平面 </td>
-<td> 多截面时输出路径上的无界平面 </td>
+<td> Mặt phẳng hình tròn 3D đầu ra  </td>
+<td> Chế độ nhiều mặt cắt: các mặt phẳng hình tròn dọc đường dẫn                                     </td>
 </tr>
 <tr>
-<td> 输出三维矩形平面 </td>
-<td> 多截面时输出路径上的矩形平面 </td>
+<td> Thời gian thực thi            </td>
+<td> Thời gian chạy công cụ                                                                          </td>
 </tr>
 <tr>
-<td> 输出三维圆形平面 </td>
-<td> 多截面时输出路径上的圆形平面 </td>
+<td> Kết quả thực thi              </td>
+<td> Kết quả thực thi của công cụ                                                                    </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 输出点云数据                                            </td>
-<td> 输出截面上的点云数据 </td>
-</tr>
-<tr>
-<td> 输出无界平面 </td>
-<td> 多截面时输出路径上的无界平面 </td>
-</tr>
-<tr>
-<td> 输出三维矩形平面 </td>
-<td> 多截面时输出路径上的矩形平面 </td>
-</tr>
-<tr>
-<td> 输出三维圆形平面 </td>
-<td> 多截面时输出路径上的圆形平面 </td>
-</tr>
-<tr>
-<td> 执行时间 </td>
-<td> 工具执行时间 </td>
-</tr>
-<tr>
-<td> 执行结果 </td>
-<td> 工具执行结果 </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>6. 示例工程</h2>
-
+<h2>6. Dự án ví dụ</h2>
 <p>​ 参见“\Samples\3D\点云\点云截面生成工具.gvp”。</p>
 
 <h2>7. 特殊说明</h2>

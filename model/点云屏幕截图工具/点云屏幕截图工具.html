@@ -16,114 +16,113 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云屏幕截图工具</h1>
+<h1>Công cụ Chụp Ảnh Màn Hình Đám Mây Điểm</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 对某一个新增的Cloud视图进行截屏，并保存成png格式的图片。</p>
+<p> Chụp ảnh màn hình một cửa sổ Cloud đang hiển thị và lưu thành file ảnh định dạng PNG.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Các kịch bản ứng dụng</h2>
 
-<p>​ 在3D测量及检测项目中，经常涉及将处理过程中的窗口截图保存下来，以便后续查看，需要涉及点云屏幕截图的问题。</p>
+<p> Trong các dự án đo lường và kiểm tra 3D, thường cần lưu lại ảnh chụp màn hình của các cửa sổ trong quá trình xử lý để xem lại sau này, đặc biệt là khi cần lưu ảnh đám mây điểm đang hiển thị.</p>
 
-<h2>3. 使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具</h4></li>
+<li><h4>Thêm công cụ</h4></li>
 </ul>
 
-
 <p><img src="media/GcCloudScreenShotTool_3_1.png" alt="" /></p>
-
-<p><imgnote>图3_1 点云屏幕截图工具</imgnote></p>
-
-<ul>
-<li><h4>参数设置</h4>
+<p><imgnote>Hình 3-1 Công cụ chụp màn hình đám mây điểm</imgnote></p>
 
 <ul>
-<li>属性参数：截屏窗口、自动命名、文件格式、输出路径设置；</li>
+<li><h4>Cài đặt tham số</h4>
+
+<ul>
+<li>Thuộc tính: Chọn cửa sổ chụp màn hình, bật/tắt tự động đặt tên, định dạng file, đường dẫn lưu file;</li>
 </ul>
 </li>
 </ul>
 
+<h2>4. Câu hỏi thường gặp</h2>
 
-<h2>4. 常见问题</h2>
+<p>Chưa có</p>
 
-<p>无</p>
+<h2>5. Giải thích tham số</h2>
 
-<h2>5. 参数说明</h2>
-
-<h4>输入参数（参数链）</h4>
-
-<table>
-<thead>
-<tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 文件名 </td>
-<td> 当属性窗口中的“自动命名”选择为“否”时，会出现此链接。此处链接提前拟好的命名，可以为单独文件名（如cloud）或带文件夹路径的文件名（如20230302\\cloud） </td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
-</tr>
-</thead>
+<th> Tên tham số   </th>
+<th> Mô tả tham số                                                                                                                                 </th>
+</tr></thead>
 <tbody>
 <tr>
-<td> 截屏窗口 </td>
-<td> 选择需要截屏的窗口，比如，Cloud-1等。注意，如果没有Cloud视图，需要新增一个Cloud视图，将要截屏保存图像的拖进Cloud视图中 </td>
-</tr>
-<tr>
-<td> 自动命名 </td>
-<td> 否：需要在数据链接中链接“文件名”，是：系统自定义命名，系统命名规则：工具名+时间+8位ID，如点云屏幕截图工具_005_20230302104136644_f2eab9c4.png </td>
-</tr>
-<tr>
-<td> 输出文件路径 </td>
-<td> 点云屏幕截图的保存地址 </td>
+<td> Tên file      </td>
+<td> Chỉ xuất hiện khi trong cửa sổ thuộc tính chọn “Tự động đặt tên” = Không.  
+Tại đây có thể nối tên file đã chuẩn bị trước, có thể là tên đơn (ví dụ: cloud) hoặc tên kèm đường dẫn thư mục (ví dụ: 20230302\cloud) </td>
 </tr>
 </tbody>
 </table>
 
-
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
+<th> Tên tham số         </th>
+<th> Mô tả tham số                                                                                                                                                                                                 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 文件路径与文件名 </td>
-<td> 点云屏幕截图的保存文件路径及文件名 </td>
+<td> Cửa sổ chụp màn hình </td>
+<td> Chọn cửa sổ Cloud cần chụp (ví dụ: Cloud-1, Cloud-2…).  
+Lưu ý: Nếu chưa có cửa sổ Cloud nào, cần tạo mới một Cloud View và kéo đám mây điểm muốn chụp vào đó trước. </td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果 </td>
+<td> Tự động đặt tên     </td>
+<td> 
+  <strong>Không</strong>: phải nối “Tên file” từ chuỗi dữ liệu.<br>
+  <strong>Có</strong>: hệ thống tự tạo tên theo quy tắc: Tên công cụ + số thứ tự + thời gian + ID 8 ký tự,  
+  ví dụ: Công cụ chụp ảnh đám mây điểm_005_20230302104136644_f2eab9c4.png 
+</td>
 </tr>
 <tr>
-<td> 执行时间           </td>
-<td> 工具执行时间                                               </td>
+<td> Đường dẫn lưu file  </td>
+<td> Thư mục lưu ảnh chụp màn hình đám mây điểm                                                                                                                                            </td>
 </tr>
 </tbody>
 </table>
 
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
-<h2>6. 示例工程</h2>
+<table>
+<thead>
+<tr>
+<th> Tên tham số            </th>
+<th> Mô tả tham số                                      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Đường dẫn và tên file  </td>
+<td> Đường dẫn đầy đủ kèm tên file ảnh đã lưu           </td>
+</tr>
+<tr>
+<td> Kết quả thực thi       </td>
+<td> Kết quả thực thi của công cụ                       </td>
+</tr>
+<tr>
+<td> Thời gian thực thi     </td>
+<td> Thời gian chạy công cụ                             </td>
+</tr>
+</tbody>
+</table>
+
+<h2>6. Dự án ví dụ</h2>
 
 <p>​     参见“\Samples\3D\点云\点云图像源配置工具.gvp”。</p>
 
