@@ -16,221 +16,237 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>高斯线检测工具</h1>
+<h1>Công cụ Phát hiện Đường Gaussian</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
+<p>Phát hiện các khuyết tật dạng đường (line defect) trong ảnh, đồng thời đo và xuất ra thông tin quan trọng như chiều dài, chiều rộng của từng đường.</p>
 
-<p>​ 检测图像中的线状缺陷，并计算其长度、宽度等关键信息 。</p>
+<h2>2. Ứng dụng điển hình</h2>
+<p>Phát hiện vết xước trên kính, vết nứt, vết rạn dạng đường thẳng hoặc cong.</p>
 
-<h2>2. 应用场景</h2>
-
-<p>​ 玻璃划痕等线类检测。</p>
-
-<h2>3. 原理说明</h2>
-
-<p>​ 高斯线工具的基本原理如图所示。其主要内容包括线条中心点提取、中心点连接成线、线宽提取和结果输出。</p>
-
+<h2>3. Nguyên lý hoạt động</h2>
+<p>Nguyên lý cơ bản của công cụ Gaussian Line được minh họa như sau:</p>
 <p><img src="media/GcGaussLineDetectTool_3_1.png" alt="" /></p>
 
 <ol>
-<li><p>中心点提取：目的是对输入图像中线条的中心进行计算提取。使用高斯平滑内核的偏导数来计算得到中心点（x,y），sigma参数为平滑系数，较大的值会使图像更加平滑，但中心点的定位会更差。</p></li>
-<li><p>中心点连接成线：目的是将提取到的中心点连接成线条。高低阈值为图像的二阶导，用来对中心点进行筛选，如果图像的二阶导>高阈值，该点直接连在线条上；如果图像的二阶导&lt;低阈值，该点舍弃；如果图像二阶导介于两者之间，则通过内部阈值判断该点是否连接到线条上。如果在相交的线条出现断开的情况下，可以通过“线扩展”功能，算法会试图使断线自动连接。</p></li>
-<li><p>线宽提取：目的是计算每条线对应的线宽。通过求取每条线对应的边缘位置，计算得到线宽。其中检测模式会对线条位置和线宽自动进行偏差纠正，除‘none’以外的参数，工具会补偿非对称线条（即在线条的中心两侧有不同对比度的线条），自动校正后输出线条位置和宽度。</p></li>
-<li><p>结果输出：目的是对所检测出来的候选结果进行输出。其中最小线长和最大线长参数可以对检测出的线条进行筛选，输出希望得到的线条。</p></li>
-<li><p><strong>注：</strong>在选择高低阈值时，其取决于线条的对比度、线宽以及sigma值。高低阈值与对比度成线性关系，即对比度越大，选高低阈值越大；对于线宽，呈现反线性关系，即线越宽，选高低阈值越小；同样对于sigma，sigma值越大，选高低阈值越小。一般来说：低阈值为高阈值对的1/3，低阈值越小，线条将会延伸到对比度较低的区域，即线条越长。反之，低值越高，线条越短，但越突出。</p></li>
+<li><strong>Trích xuất điểm trung tâm:</strong> Tính toán vị trí tâm của các đường trong ảnh bằng đạo hàm của kernel Gaussian (sigma là hệ số làm mịn). Sigma càng lớn → ảnh càng mịn nhưng độ chính xác vị trí tâm giảm.</li>
+<li><strong>Nối các điểm tâm thành đường:</strong> Dùng ngưỡng cao/thấp dựa trên đạo hàm bậc 2 để lọc và nối điểm:
+   <ul>
+   <li>> Ngưỡng cao → chắc chắn thuộc đường</li>
+   <li>< Ngưỡng thấp → loại bỏ</li>
+   <li>Giữa hai ngưỡng → quyết định theo thuật toán nội bộ</li>
+   </ul>
+   Tính năng “Mở rộng đường” (Line Extension) giúp tự động nối các đoạn bị đứt.</li>
+<li><strong>Đo chiều rộng đường:</strong> Tìm vị trí hai cạnh của mỗi đường → tính chiều rộng. Chế độ phát hiện (Detection Mode) ngoại trừ “none” sẽ tự động hiệu chỉnh sai lệch đối với đường không đối xứng (độ tương phản hai bên khác nhau).</li>
+<li><strong>Xuất kết quả:</strong> Lọc theo Min/Max chiều dài đường để chỉ giữ lại các đường cần thiết.</li>
+<li><strong>Lưu ý chọn ngưỡng cao/thấp:</strong>
+   <ul>
+   <li>Tỷ lệ thuận với độ tương phản</li>
+   <li>Tỷ lệ nghịch với độ rộng đường và sigma</li>
+   <li>Thông thường: Ngưỡng thấp ≈ 1/3 Ngưỡng cao</li>
+   <li>Ngưỡng thấp càng nhỏ → đường kéo dài đến vùng tương phản yếu hơn (đường dài hơn nhưng dễ nhiễu)</li>
+   <li>Ngưỡng thấp càng cao → đường ngắn hơn nhưng rõ ràng và nổi bật hơn</li>
+   </ul>
+</li>
 </ol>
 
-
-<h2>4. 使用向导</h2>
-
+<h2>4. Hướng dẫn sử dụng</h2>
 <ul>
-<li><h4>参数设置</h4></li>
-<li><p>初级参数设置：可通过待检测缺陷的大小及灰度值进行参数设置；初级参数设置后可自动计算出专家参数，实际参与检测运算的为专家参数；</p></li>
-<li>专家参数设置：当检测效果不好时，可对专家参数进行微调，以实现预期效果；设置专家参数不会反算出初级参数，设定好专家参数会由于初级参数的改变而改变；专家参数为检测算法概念参数，不具有直观性；</li>
-<li><p>最大/最小线长：根据实际检测要求进行设置，用于过滤不需要的检测特征；当只对高斯线长下限做设置时，可设置最小线长参数，同时将最大线长设置为0；</p></li>
-<li><h4>查看结果</h4></li>
-<li><p>轮廓平均线宽结果数组、轮廓最大线宽结果数组、轮廓最小线宽结果数组、轮廓线长结果数组：四个结果数组为检测结果，数组大小与检测结果个数相同，使用相同索引号可获取每个高斯线相应的线宽信息及线长信息；</p></li>
-<li>拟合高斯线、线宽区域、最大线宽区域：显示检测结果特征，在view视图上可设置相应颜色进行区分，如下图所示，绿色线为拟合高斯线，蓝色线为线宽区域，红色线为最大线宽区域；</li>
-</ul>
+<li><h4>Thiết lập tham số</h4></li>
+<li>Thiết lập cơ bản: Dựa vào kích thước và mức xám của khuyết tật → phần mềm tự tính ra tham số chuyên gia (chính các tham số này được dùng để tính toán).</li>
+<li>Thiết lập chuyên gia: Khi kết quả chưa tốt, điều chỉnh thủ công các tham số này. Thay đổi tham số chuyên gia không ảnh hưởng ngược lại tham số cơ bản.</li>
+<li>Chiều dài tối thiểu/tối đa: Dùng để lọc bỏ các đường không mong muốn. Nếu chỉ cần giới hạn dưới, đặt Max = 0.</li>
 
+<li><h4>Xem kết quả</h4></li>
+<li>Các mảng kết quả:
+   <ul>
+   <li>Độ rộng trung bình, Độ rộng lớn nhất, Độ rộng nhỏ nhất, Chiều dài đường</li>
+   <li>Tất cả có cùng kích thước mảng, dùng cùng chỉ số để lấy thông tin của từng đường.</li>
+   </ul>
+</li>
+<li>Hiển thị trên ảnh:
+   <ul>
+   <li>Đường Gaussian đã fit (xanh lá)</li>
+   <li>Vùng độ rộng đường (xanh dương)</li>
+   <li>Vùng độ rộng lớn nhất (đỏ)</li>
+   </ul>
+</li>
+</ul>
 
 <p><img src="media/GcGaussLineDetectTool_4_1.png" alt="" /></p>
 
 <ol>
-<li>轮廓特征位置数组：该数组数据记录拟合高斯线在图像上的位置，方便将检测信息显示在视图上，效果如图所示：</li>
+<li>Mảng vị trí đặc trưng: Lưu tọa độ các điểm của đường Gaussian đã fit, dùng để vẽ lên ảnh gốc.</li>
 </ol>
-
 
 <p><img src="media/GcGaussLineDetectTool_4_2.png" alt="" /></p>
 
-<p>​ 脚本编写：</p>
-
+<p>Ví dụ script vẽ kết quả:</p>
 <p><img src="media/GcGaussLineDetectTool_4_3.png" alt="" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
+<p>Không có</p>
 
-<p>无</p>
+<h2>6. Tham số chi tiết</h2>
 
-<h2>6. 参数说明</h2>
-
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数说明                                                     </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像             </td>
-<td> 待检测图像，只支持链接灰度图；                               </td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần phát hiện, chỉ hỗ trợ ảnh xám (grayscale).</td>
 </tr>
 <tr>
-<td> 二维线性变换         </td>
-<td> 目标相对于模板的平移、旋转、缩放变换；                       </td>
+<td>Biến đổi tuyến tính 2D</td>
+<td>Tịnh tiến, xoay, co giãn của đối tượng so với template.</td>
 </tr>
 <tr>
-<td> ROI类型              </td>
-<td> 工具执行检测的区域，分为3种：整幅图像、矩形ROI、圆形ROI；    </td>
+<td>Loại ROI</td>
+<td>Vùng thực hiện phát hiện: Toàn ảnh / Hình chữ nhật / Hình tròn.</td>
 </tr>
 <tr>
-<td> 参数模式             </td>
-<td> 两种参数模式：初级参数和专家参数；选择“初级参数”，可以设置“检测线宽”、“高对比度”和“低对比度”三个参数；选择“专家参数”，可以设置“Sigma”、“高阈值”和“低阈值”三个参数； </td>
+<td>Chế độ tham số</td>
+<td>Cơ bản hoặc Chuyên gia.<br>
+– Cơ bản: chỉ điều chỉnh “Độ rộng đường phát hiện”, “Độ tương phản cao”, “Độ tương phản thấp”.<br>
+– Chuyên gia: điều chỉnh trực tiếp “Sigma”, “Ngưỡng cao”, “Ngưỡng thấp”.</td>
 </tr>
 <tr>
-<td> 检测线宽             </td>
-<td> 初级参数；待检测缺陷的线宽大小，用于估计 Sigma，单位：像素；取值范围(0.0, 99999.0)；此值是个估算值，与待检测缺陷的线宽近似即可，若缺陷线宽大小不一，可设置为中间值；同时需要注意的是若待检测缺陷的线宽差别太大，则工具不易同时检测出两种宽度的缺陷，需单独各自进行检测； </td>
+<td>Độ rộng đường phát hiện</td>
+<td>Tham số cơ bản. Ước lượng độ rộng khuyết tật (pixel). Dùng để tự động tính Sigma. Nếu đường có nhiều độ rộng khác nhau, lấy giá trị trung bình. Nếu chênh lệch quá lớn, nên tách riêng từng mức độ rộng để phát hiện.</td>
 </tr>
 <tr>
-<td> 高对比度             </td>
-<td> 初级参数；缺陷线条与附近背景的灰度值之差最高值，用于估计高阈值；取值范围[低对比度, 255.0]； </td>
+<td>Độ tương phản cao</td>
+<td>Tham số cơ bản. Độ chênh lệch xám lớn nhất giữa đường và nền → dùng tính Ngưỡng cao. Phạm vi: [Độ tương phản thấp, 255].</td>
 </tr>
 <tr>
-<td> 低对比度             </td>
-<td> 初级参数；缺陷线条与附近背景的灰度值之差最低值，用于估计低阈值；取值范围[0.0, 高对比度]；注：当低对比度为 0 时，默认低对比度为高对比度的 1/3； </td>
+<td>Độ tương phản thấp</td>
+<td>Tham số cơ bản. Độ chênh lệch xám nhỏ nhất → dùng tính Ngưỡng thấp. Phạm vi: [0, Độ tương phản cao]. Nếu để 0 thì tự động lấy 1/3 Độ tương phản cao.</td>
 </tr>
 <tr>
-<td> Sigma                </td>
-<td> 专家参数；高斯平滑系数，取决于线宽；线宽越大，相应的 sigma 设置越大；取值范围(0.0, Min(图像长/4，或图像宽/4))；推荐取值范围[0.7, 20.0]；建议值：1、 1.2、 1.5、 1.8、 2、 2.5、 3、 4、 5；未链接图像时，取值范围(0.0, 30.0]； </td>
+<td>Sigma</td>
+<td>Tham số chuyên gia. Hệ số làm mịn Gaussian. Đường càng rộng → Sigma càng lớn. Phạm vi khuyến nghị: [0.7, 20]. Gợi ý: 1, 1.2, 1.5, 1.8, 2, 2.5, 3, 4, 5.</td>
 </tr>
 <tr>
-<td> 高阈值               </td>
-<td> 专家参数；大于此阈值的点保留；取值范围[低阈值, 99999.0]；推荐取值范围[0.0, 35.0]；建议值：0、 0.5、 1、 2、 3、 4、 5、 8、 10； </td>
+<td>Ngưỡng cao</td>
+<td>Tham số chuyên gia. Điểm có đạo hàm bậc 2 > ngưỡng này chắc chắn thuộc đường. Phạm vi khuyến nghị: [0, 35]. Gợi ý: 0, 0.5, 1, 2, 3, 4, 5, 8, 10.</td>
 </tr>
 <tr>
-<td> 低阈值               </td>
-<td> 专家参数；小于此阈值的点过滤；取值范围[0.0, 高阈值]；取值范围[低阈值, 99999.0]；推荐取值范围[0.0, 20.0]；建议值：0、 0.5、 1、 2、 3、 4、 5、 8、 10； </td>
+<td>Ngưỡng thấp</td>
+<td>Tham số chuyên gia. Điểm < ngưỡng này bị loại bỏ. Phạm vi khuyến nghị: [0, 20]. Gợi ý: 0, 0.5, 1, 2, 3, 4, 5, 8, 10.</td>
 </tr>
 <tr>
-<td> 检测模式             </td>
-<td> 可选模式：bar-shape、none；bar-shape代表工具会通过补偿非对称线条（即在线条的中心两侧有不同对比度的线条）来校正提取出的线条的位置和宽度； </td>
+<td>Chế độ phát hiện</td>
+<td>bar-shape / none. Chọn bar-shape để tự động hiệu chỉnh vị trí và độ rộng đối với đường không đối xứng (hai bên có độ tương phản khác nhau).</td>
 </tr>
 <tr>
-<td> 最大线长             </td>
-<td> 线长大于该值的线条被过滤（值为 &ldquo;&ndash;,&mdash;-&rdquo; 时，不限制）；取值范围[最小线长, 99999.0]； </td>
+<td>Chiều dài tối đa</td>
+<td>Lọc bỏ đường dài hơn giá trị này (đặt “---” để không giới hạn). Phạm vi: [Chiều dài tối thiểu, 99999].</td>
 </tr>
 <tr>
-<td> 最小线长             </td>
-<td> 线长小于该值的线条被过滤（值为 &ldquo;&ndash;,&mdash;-&rdquo; 时，不限制）；取值范围(0.0, 最大线长]； </td>
+<td>Chiều dài tối thiểu</td>
+<td>Lọc bỏ đường ngắn hơn giá trị này (đặt “---” để không giới hạn). Phạm vi: (0, Chiều dài tối đa].</td>
 </tr>
 <tr>
-<td> 亮暗模式             </td>
-<td> 可选模式：“亮线”、“暗线”；                                   </td>
+<td>Chế độ sáng/tối</td>
+<td>Đường sáng (bright line) hoặc Đường tối (dark line).</td>
 </tr>
 <tr>
-<td> 是否开启线宽检测     </td>
-<td> 可选模式：“是”、“否”；选择“是”，执行高斯线宽估计，输出线宽结果：平均线宽结果、最大线宽结果、最小线宽结果；选择“否”，不执行高斯线宽估计并输出线宽结果； </td>
+<td>Có bật đo độ rộng không</td>
+<td>Có/Không. Chọn “Có” để tính và xuất: Độ rộng trung bình, Độ rộng lớn nhất, Độ rộng nhỏ nhất.</td>
 </tr>
 <tr>
-<td> 是否开启线拓展       </td>
-<td> 可选模式：“是”、“否”；选择“是”，尝试对断连的线条进行连接；选择“否”，则不进行连接； </td>
+<td>Có bật nối đường không</td>
+<td>Có/Không. Chọn “Có” để tự động nối các đoạn đường bị đứt.</td>
 </tr>
 <tr>
-<td> 是否显示线宽区域     </td>
-<td> 可选模式：“是”、“否”；选择“是”，显示检测结果的线宽区域；选择“否”，则不显示；注：必须将参数“是否开启线宽检测”设置为“是”时，此参数才生效； </td>
+<td>Hiển thị vùng độ rộng</td>
+<td>Có/Không. Chỉ có hiệu lực khi đã bật đo độ rộng.</td>
 </tr>
 <tr>
-<td> 是否显示最大线宽区域 </td>
-<td> 可选模式：“是”、“否”；选择“是”，显示检测结果的最大线宽区域；选择“否”，则不显示；注：必须将参数“是否开启线宽检测”设置为“是”时，此参数才生效； </td>
+<td>Hiển thị vùng độ rộng lớn nhất</td>
+<td>Có/Không. Chỉ có hiệu lực khi đã bật đo độ rộng.</td>
 </tr>
 <tr>
-<td> 开启并行运算         </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+<td>Bật tính toán song song</td>
+<td>Có/Không. Chọn “Có” để dùng OpenMP tăng tốc (có thể làm thời gian không ổn định).</td>
 </tr>
 <tr>
-<td> 线程数百分比         </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td>Tỷ lệ số luồng</td>
+<td>Phần trăm CPU dùng cho tính toán song song, phạm vi (0, 0.75] tức (0%, 75%].</td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数说明                                                     </th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像             </td>
-<td> 输入图像宽度、高度、像素大小；                               </td>
+<td>Ảnh đầu vào</td>
+<td>Chiều rộng, chiều cao và kích thước pixel của ảnh đầu vào.</td>
 </tr>
 <tr>
-<td> 结果个数             </td>
-<td> 检测到的高斯线数量；                                         </td>
+<td>Số lượng kết quả</td>
+<td>Số đường Gaussian đã phát hiện được.</td>
 </tr>
 <tr>
-<td> 轮廓特征位置数组     </td>
-<td> 检测到的每条高斯线的位置；此参数用于将相关结果显示在图像缺陷（检测到的高斯线）位置处； </td>
+<td>Mảng vị trí đặc trưng đường</td>
+<td>Tọa độ các điểm của từng đường Gaussian đã phát hiện. Dùng để vẽ/vị trí hóa kết quả lên ảnh gốc.</td>
 </tr>
 <tr>
-<td> 轮廓平均线宽结果数组 </td>
-<td> 检测到的每条高斯线的平均线宽；                               </td>
+<td>Mảng độ rộng trung bình</td>
+<td>Độ rộng trung bình của từng đường Gaussian (cùng chỉ số với các mảng khác).</td>
 </tr>
 <tr>
-<td> 轮廓最大线宽结果数组 </td>
-<td> 检测到的每条高斯线的最大线宽；                               </td>
+<td>Mảng độ rộng lớn nhất</td>
+<td>Độ rộng lớn nhất của từng đường Gaussian.</td>
 </tr>
 <tr>
-<td> 轮廓最小线宽结果数组 </td>
-<td> 检测到的每条高斯线的最小线宽；                               </td>
+<td>Mảng độ rộng nhỏ nhất</td>
+<td>Độ rộng nhỏ nhất của từng đường Gaussian.</td>
 </tr>
 <tr>
-<td> 轮廓线长结果数组     </td>
-<td> 检测到的每条高斯线的线长；                                   </td>
+<td>Mảng chiều dài đường</td>
+<td>Chiều dài của từng đường Gaussian (pixel).</td>
 </tr>
 <tr>
-<td> 拟合高斯线           </td>
-<td> 检测到的高斯线特征，用于显示在视图上；                       </td>
+<td>Đường Gaussian đã fit</td>
+<td>Đối tượng đường Gaussian đã phát hiện, dùng để hiển thị trên view (thường màu xanh lá).</td>
 </tr>
 <tr>
-<td> 线宽区域             </td>
-<td> 检测到的高斯线线的线宽区域，用于显示在视图上；               </td>
+<td>Vùng độ rộng đường</td>
+<td>Vùng thể hiện độ rộng của đường, dùng để hiển thị trên view (thường màu xanh dương).</td>
 </tr>
 <tr>
-<td> 最大宽度区域         </td>
-<td> 检测到的高斯线的最大线宽区域，用于显示在视图上；             </td>
+<td>Vùng độ rộng lớn nhất</td>
+<td>Vùng thể hiện đoạn có độ rộng lớn nhất, dùng để hiển thị trên view (thường màu đỏ).</td>
 </tr>
 <tr>
-<td> 执行结果             </td>
-<td> 工具执行结果；                                               </td>
+<td>Kết quả thực thi</td>
+<td>Trạng thái thực thi của công cụ (OK/NG).</td>
 </tr>
 <tr>
-<td> 执行时间             </td>
-<td> 工具执行时间；                                               </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ chạy (ms).</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>7. 示例工程</h2>
-
+<h2>7. Dự án ví dụ</h2>
 <p>​ 参见“\Samples\高斯线检测工具.gvp”。</p>
 
 <p>​</p>

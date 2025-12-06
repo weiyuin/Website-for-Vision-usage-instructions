@@ -16,195 +16,171 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>仿射变换工具</h1>
+<h1>Công cụ Biến đổi Affine (仿射变换工具)</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>仿射变换工具是常用的预处理工具之一，主要对输入图像进行仿射变换，输出仿射变换后图，以便对其进行后续处理。支持的仿射变换操作有：平移、旋转。</p>
+<p>Công cụ biến đổi Affine là một trong những công cụ tiền xử lý phổ biến, dùng để thực hiện biến đổi affine (bao gồm tịnh tiến và xoay) lên ảnh đầu vào, sau đó xuất ra ảnh đã biến đổi để xử lý tiếp theo.</p>
 
 <p><img src="media/wps80.jpg" alt="img" /></p>
 
-<p><imgnote>图1 仿射变换示意图</imgnote></p>
+<p><imgnote>Hình 1. Sơ đồ minh họa biến đổi Affine</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口         </td>
-<td> 裁剪为原图像相同尺寸                                         </td>
-<td> 是：仿射变换后的图像和原图大小一样，如果仿射变换操作引起图像大小改变，最终结果会被裁剪为和原图像一样大小；否：仿射变换后的图像大小可以自定义。通过“输出图像宽度”和“输出图像高度”自定义。       </td>
+<td rowspan="10">Cửa sổ thuộc tính</td>
+<td> Cắt về cùng kích thước ảnh gốc</td>
+<td> Có: Ảnh sau biến đổi affine sẽ có kích thước bằng ảnh gốc. Nếu biến đổi làm thay đổi kích thước, kết quả cuối cùng sẽ bị cắt để bằng ảnh gốc.<br>Không: Cho phép tự định nghĩa kích thước ảnh đầu ra thông qua “Chiều rộng ảnh đầu ra” và “Chiều cao ảnh đầu ra”.</td>
 </tr>
 <tr>
-<td></td>
-<td> 输出图像宽度     </td>
-<td> 用户自定义输出图像宽度。只在“裁剪为原图像相同尺寸”属性为“否”时起作用。                                                               </td>
+<td> Chiều rộng ảnh đầu ra</td>
+<td> Người dùng tự đặt chiều rộng ảnh đầu ra. Chỉ có hiệu lực khi “Cắt về cùng kích thước ảnh gốc” = Không.</td>
 </tr>
 <tr>
-<td></td>
-<td> 输出图像高度     </td>
-<td> 用户自定义输出图像高度。只在“裁剪为原图像相同尺寸”属性为“否”时起作用。                                                               </td>
+<td> Chiều cao ảnh đầu ra</td>
+<td> Người dùng tự đặt chiều cao ảnh đầu ra. Chỉ có hiệu lực khi “Cắt về cùng kích thước ảnh gốc” = Không.</td>
 </tr>
 <tr>
-<td></td>
-<td> 镜像     </td>
-<td> 变化后的图像做无、水平、垂直、水平垂直的镜像操作。     </td>
+<td> Lật ảnh</td>
+<td> Không lật / Lật ngang / Lật dọc / Lật cả ngang và dọc.</td>
 </tr>
 <tr>
-<td></td>
-<td> 是否缩放     </td>
-<td> 按照缩放点，进行X轴和Y轴缩放。     </td>
+<td> Có phóng to/thu nhỏ không</td>
+<td> Có thực hiện phóng to/thu nhỏ theo trục X và Y hay không.</td>
 </tr>
 <tr>
-<td></td>
-<td> x缩放系     </td>
-<td> 按X轴缩放系数。  </td>
+<td> Hệ số phóng to X</td>
+<td> Hệ số phóng to/thu nhỏ theo trục X.</td>
 </tr>
 <tr>
-<td></td>
-<td> y缩放系     </td>
-<td> 按y轴缩放系数。  </td>
+<td> Hệ số phóng to Y</td>
+<td> Hệ số phóng to/thu nhỏ theo trục Y.</td>
 </tr>
 <tr>
-<td></td>
-<td> Center X     </td>
-<td> 中心X轴坐标。  </td>
+<td> Tâm X (Center X)</td>
+<td> Tọa độ X của tâm xoay/phóng to.</td>
 </tr>
 <tr>
-<td></td>
-<td> Center y     </td>
-<td> 中心Y轴坐标。  </td>
+<td> Tâm Y (Center Y)</td>
+<td> Tọa độ Y của tâm xoay/phóng to.</td>
 </tr>
 <tr>
-<td></td>
-<td> 旋转角度类型     </td>
-<td> 角度：数据链中“旋转角度”参数单位为度；弧度：数据链中“旋转角度”参数单位为弧度；                                                               </td>
+<td> Loại đơn vị góc xoay</td>
+<td> Độ (degree): tham số “Góc xoay” trong chuỗi dữ liệu tính bằng độ.<br>Radian: tham số “Góc xoay” tính bằng radian.</td>
 </tr>
 <tr>
-<td> 图像窗口         </td>
-<td> Edit                                                         </td>
-<td> 显示原图像。                                                       </td>
+<td>Cửa sổ ảnh</td>
+<td> Edit </td>
+<td> Hiển thị ảnh gốc.</td>
 </tr>
 <tr>
-<td> 数据链           </td>
-<td> 输入图像                                                     </td>
-<td> 需要进行仿射变换操作的图像；                                       </td>
+<td rowspan="5">Chuỗi dữ liệu</td>
+<td> Ảnh đầu vào</td>
+<td> Ảnh cần thực hiện biến đổi affine.</td>
 </tr>
 <tr>
-<td></td>
-<td> 旋转中心         </td>
-<td> 二维向量类型，向量元素为double类型。表示旋转操作的中心。                                                                   </td>
+<td> Tâm xoay</td>
+<td> Kiểu vector 2D, phần tử là double. Biểu thị tâm của phép xoay.</td>
 </tr>
 <tr>
-<td></td>
-<td> 水平方向平移大小 </td>
-<td> double类型。表示水平方向偏移量，单位是像素；                                                                               </td>
+<td> Độ dịch ngang</td>
+<td> Kiểu double. Độ dịch theo phương ngang, đơn vị pixel.</td>
 </tr>
 <tr>
-<td></td>
-<td> 垂直方向平移大小 </td>
-<td> double类型。表示垂直方向偏移量，单位是像素；                                                                               </td>
+<td> Độ dịch dọc</td>
+<td> Kiểu double. Độ dịch theo phương dọc, đơn vị pixel.</td>
 </tr>
 <tr>
-<td></td>
-<td> 旋转角度         </td>
-<td> double类型。表示旋转的角度，逆时针为正，单位与属性窗口“旋转角度类型”相同。                                                               </td>
+<td> Góc xoay</td>
+<td> Kiểu double. Góc xoay (ngược chiều kim đồng hồ là dương). Đơn vị giống với cài đặt “Loại đơn vị góc xoay” ở cửa sổ thuộc tính.</td>
 </tr>
 <tr>
-<td> 高级界面         </td>
-<td> 无                                                           </td>
-<td> 无                                                                </td>
+<td>Giao diện nâng cao</td>
+<td> Không có </td>
+<td> Không có tham số nào.</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称   </th>
-<th> 参数描述                                                                                                   </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口   </td>
-<td> 输入图像                                                     </td>
-<td> 输出原始图像宽度、高度、像素信息；           </td>
+<td rowspan="4">Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Hiển thị chiều rộng, chiều cao và thông tin pixel của ảnh gốc.</td>
 </tr>
 <tr>
-<td></td>
-<td> 输出图像   </td>
-<td> 输出放射变换后图像的宽度、高度、像素信息；                                                                 </td>
+<td>Ảnh đầu ra</td>
+<td>Hiển thị chiều rộng, chiều cao và thông tin pixel của ảnh sau biến đổi affine.</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行结果   </td>
-<td> 工具执行结果；                                                                                             </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi của công cụ.</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行时间   </td>
-<td> 工具执行时间。                                                                                             </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian công cụ thực hiện xử lý.</td>
 </tr>
 <tr>
-<td> 图像窗口   </td>
-<td> Result                                                       </td>
-<td> 输出仿射变换后的图像；                       </td>
+<td rowspan="3">Cửa sổ ảnh</td>
+<td>Result</td>
+<td>Hiển thị ảnh sau biến đổi affine.</td>
 </tr>
 <tr>
-<td></td>
-<td> 自定义视图 </td>
-<td> 输出仿射变换后的图像；                                                                                     </td>
+<td>Tùy chỉnh hiển thị</td>
+<td>Hiển thị ảnh sau biến đổi affine.</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行结果   </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                               </td>
+<td>Kết quả thực thi</td>
+<td>Thành công hiển thị “OK”, thất bại hiển thị “NG” (giống kết quả ở cửa sổ giám sát).</td>
 </tr>
 <tr>
-<td> 数据链     </td>
-<td> 输出图像                                                     </td>
-<td> 输出经过仿射变换之后的图像，供其他工具使用。 </td>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh đã qua biến đổi affine, cung cấp cho các công cụ tiếp theo.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Giải thích chi tiết</h2>
+<p>Không có</p>
 
-<h2>详细说明</h2>
-
-<p>无</p>
-
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li>仿射变换工具数据链中的<strong>旋转中心</strong>，可以在仿射变换之前添加一个二维向量生成工具，二维向量成工具的输出结果作为仿射变换工具数据链中旋转中心的来源。</li>
+<li>Tham số <strong>Tâm xoay</strong> trong chuỗi dữ liệu có thể lấy từ công cụ tạo vector 2D đặt trước nó.</li>
 </ul>
-
 
 <p><img src="media/wps85.jpg" alt="img" /></p>
-
-<p><imgnote>图2 仿射变换工具。旋转中心数据链输入示意</imgnote></p>
+<p><imgnote>Hình 2. Ví dụ nối chuỗi dữ liệu tâm xoay</imgnote></p>
 
 <ul>
-<li>其他数据链参数可以在变量里面定义相应类型的变量或者使用流程里对应类型的数据作为输入。</li>
+<li>Các tham số chuỗi dữ liệu còn lại có thể dùng biến hoặc lấy trực tiếp từ công cụ trước trong quy trình.</li>
 </ul>
 
-
 <p><img src="media/wps86.jpg" alt="img" /></p>
+<p><imgnote>Hình 3. Ví dụ nối các tham số chuỗi dữ liệu khác</imgnote></p>
 
-<p><imgnote>图3 仿射变换工具。其他数据链输入示意</imgnote></p>
-
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
 <p>参见“\Samples\仿射变换工具.gvp”。</p>

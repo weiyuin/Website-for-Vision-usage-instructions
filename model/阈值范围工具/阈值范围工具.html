@@ -16,137 +16,131 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>阈值范围工具</h1>
+<h1>Công cụ Phạm vi Ngưỡng</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>阈值范围工具是一种图像预处理工具，主要通过灰度映射方式凸显用户感兴趣灰度范围的图像，同时削弱其他灰度带来的影响。如图1 所示，阈值范围工具通过不同的映射函数，可以得到用户感兴趣的灰度范围信息。</p>
+<p>Công cụ Phạm vi Ngưỡng là công cụ tiền xử lý ảnh, dùng để làm nổi bật vùng pixel nằm trong khoảng cường độ xám mà người dùng quan tâm, đồng Briggs thời làm giảm ảnh hưởng của các mức xám còn lại. Thông qua các hàm ánh xạ khác nhau, công cụ này giúp chỉ giữ lại và tăng cường thông tin trong phạm vi ngưỡng mong muốn (xem hình 1).</p>
 
 <p><img src="media/wps55.jpg" alt="img" /></p>
+<p><imgnote>Hình 1. Minh họa công cụ Phạm vi Ngưỡng</imgnote></p>
 
-<p><imgnote>图1 阈值范围工具示意图</imgnote></p>
-
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                             </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口     </td>
-<td> 最大阈值                                  </td>
-<td> 要变换像素的上限。<img src="media/wps57.jpg" alt="img" /> </td>
+<td rowspan="3">Cửa sổ thuộc tính</td>
+<td>Ngưỡng tối đa</td>
+<td>Giới hạn trên của pixel sẽ được ánh xạ.<img src="media/wps57.jpg" alt="img" /></td>
 </tr>
 <tr>
-<td></td>
-<td> 最小阈值     </td>
-<td> 要变换像素的下限。<img src="media/wps58.jpg" alt="img" />                                            </td>
+<td>Ngưỡng tối thiểu</td>
+<td>Giới hạn dưới của pixel sẽ được ánh xạ.<img src="media/wps58.jpg" alt="img" /></td>
 </tr>
 <tr>
-<td></td>
-<td> 输出灰度阈值 </td>
-<td> 输出的灰度阈值。<img src="media/wps59.jpg" alt="img" />                                              </td>
+<td>Mức xám đầu ra</td>
+<td>Mức xám sẽ được gán cho toàn bộ pixel nằm trong khoảng [Ngưỡng tối thiểu, Ngưỡng tối đa] sau khi ánh xạ.<img src="media/wps59.jpg" alt="img" /></td>
 </tr>
+
 <tr>
-<td> 图像窗口     </td>
-<td> 输入图像                                  </td>
-<td> 需要变换的图像。                          </td>
+<td>Cửa sổ ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần thực hiện xử lý phạm vi ngưỡng.</td>
 </tr>
+
 <tr>
-<td> 数据链       </td>
-<td> 输入图像                                  </td>
-<td> 需要变换的图像。                          </td>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh cần thực hiện xử lý phạm vi ngưỡng.</td>
 </tr>
+
 <tr>
-<td> 高级界面     </td>
-<td> 无   </td>
-<td> 无          </td>
+<td>Giao diện nâng cao</td>
+<td>Không có</td>
+<td>Không có</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                       </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输入图像                                                     </td>
-<td> 需要变换的图像。 </td>
+<td rowspan="4">Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh gốc cần xử lý.</td>
 </tr>
 <tr>
-<td></td>
-<td> 输出图像 </td>
-<td> 变换后的图像。                                                                 </td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh sau khi đã áp dụng phạm vi ngưỡng.</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                 </td>
+<td>Kết quả thực thi</td>
+<td>Kết quả thực thi công cụ.</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                 </td>
+<td>Thời gian thực thi</td>
+<td>Thời gian xử lý của công cụ.</td>
+</tr>
+
+<tr>
+<td rowspan="2">Cửa sổ ảnh</td>
+<td>Ảnh đầu ra</td>
+<td>Hiển thị ảnh đã qua xử lý phạm vi ngưỡng.</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输出图像                                                     </td>
-<td> 处理后的图像。   </td>
+<td>Kết quả thực thi</td>
+<td>Thành công → “OK”, thất bại → “NG” (giống cửa sổ giám sát).</td>
 </tr>
+
 <tr>
-<td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                   </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 输出图像 </td>
-<td> 变换后的图像。                                                                 </td>
+<td>Chuỗi dữ liệu</td>
+<td>Ảnh đầu ra</td>
+<td>Ảnh đã áp dụng phạm vi ngưỡng, dùng cho các công cụ tiếp theo.</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Giải thích chi tiết</h2>
 
-<h2>详细说明</h2>
+<h3>Ngưỡng tối thiểu</h3>
+<p>Pixel có mức xám < Ngưỡng tối thiểu sẽ bị gán thành 255 (trắng).</p>
 
-<h3>最小阈值</h3>
+<h3>Ngưỡng tối đa</h3>
+<p>Pixel có mức xám > Ngưỡng tối đa sẽ bị gán thành 255 (trắng).</p>
 
-<p>用户输入一个感兴趣灰度范围中的最大灰度值，如果输入灰度值大于该阈值，则输出灰度值为255。</p>
+<h3>Mức xám đầu ra</h3>
+<p>Pixel có mức xám nằm trong khoảng [Ngưỡng tối thiểu, Ngưỡng tối đa] sẽ được gán chính xác bằng giá trị này.</p>
 
-<h3>最大阈值</h3>
-
-<p>用户输入一个感兴趣灰度范围中的最小灰度值，如果输入灰度值小于该阈值，则输出灰度值为255。</p>
-
-<h3>灰度阈值</h3>
-
-<p>用户输入一个感兴趣灰度范围处理后的灰度值，如果输入灰度值在最大阈值和最小阈值之间，则输出灰度值即为灰度阈值。</p>
-
-<h3>基本原理</h3>
-
-<p>阈值范围工具通过灰度映射的方式，将输入图像的灰度值映射到输出图像上。基本原理如图2所示，将输入灰度图像的灰度值与设定的最大阈值和最小阈值比较，如果该灰度值在最大阈值和最小阈值之间，则输出图像在该位置的灰度为灰度阈值g，反之则设置为255。</p>
+<h3>Nguyên lý cơ bản</h3>
+<p>Công cụ thực hiện ánh xạ mức xám như sau (xem hình 2):<br>
+– Nếu mức xám nằm giữa Ngưỡng tối thiểu và Ngưỡng tối đa → giữ nguyên giá trị “Mức xám đầu ra”.<br>
+– Nếu nằm ngoài khoảng này → gán thành 255 (trắng).<br>
+Kết quả là chỉ vùng quan tâm được giữ mức xám mong muốn, còn lại bị đẩy về trắng.</p>
 
 <p><img src="media/wps62.jpg" alt="img" /></p>
+<p><imgnote>Hình 2. Sơ đồ nguyên lý công cụ Phạm vi Ngưỡng</imgnote></p>
 
-<p><imgnote>图2 阈值范围工具原理图</imgnote></p>
+<h2>Lưu ý</h2>
+<p>Không có</p>
 
-<h2>注意</h2>
-
-<p>无</p>
-
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
 <p>参见“\Samples\阈值范围工具.gvp”。</p>
