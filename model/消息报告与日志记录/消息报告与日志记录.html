@@ -16,179 +16,125 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>消息报告与日志记录</h1>
+<h1>Thông báo tin nhắn và Ghi log</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>使用脚本记录消息报告与日志。</p>
+<p>Dùng trong script để ghi log và hiển thị các loại thông báo trong phần mềm.</p>
 
-<h2>接口</h2>
+<h2>Giao diện (Interface)</h2>
 
 <table>
 <thead>
 <tr>
-<th> 接口名称                         </th>
-<th> 接口描述                           </th>
+<th>Tên hàm</th>
+<th>Mô tả</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> RecordMsgDate </td>
-<td> 记录日志 </td>
+<td><strong>RecordMsgDate</strong></td>
+<td>Ghi log kèm theo ngày giờ hiện tại</td>
 </tr>
 <tr>
-<td> RecordMsgFolder </td>
-<td> 记录日志 </td>
+<td><strong>RecordMsgFolder</strong></td>
+<td>Ghi log kèm đường dẫn thư mục hiện tại của dự án</td>
 </tr>
 <tr>
-<td> RecordAutoLog </td>
-<td> 记录日志 </td>
+<td><strong>RecordAutoLog</strong></td>
+<td>Ghi log tự động (thường dùng trong các biến quan trọng, trạng thái công cụ…)</td>
 </tr>
 <tr>
-<td> ReportMsg </td>
-<td> 报告提示消息 </td>
+<td><strong>ReportMsg</strong></td>
+<td>Hiển thị thông báo bình thường (màu xanh)</td>
 </tr>
 <tr>
-<td> ReportMsgWarn </td>
-<td> 报告警告 </td>
+<td><strong>ReportMsgWarn</strong></td>
+<td>Hiển thị cảnh báo (màu vàng)</td>
 </tr>
 <tr>
-<td> ReportMsgError </td>
-<td> 报告错误提示      </td>
+<td><strong>ReportMsgError</strong></td>
+<td>Hiển thị lỗi (màu đỏ)</td>
 </tr>
 <tr>
-<td> ReportMsgPop </td>
-<td> 报告弹出提示 </td>
+<td><strong>ReportMsgPop</strong></td>
+<td>Hiện cửa sổ popup thông báo (có nút OK)</td>
 </tr>
 <tr>
-<td> ReportMsgOption </td>
-<td> 报告自定义提示框，带返回值 </td>
+<td><strong>ReportMsgOption</strong></td>
+<td>Hiện popup tùy chỉnh có nhiều nút lựa chọn và trả về giá trị người dùng chọn (ví dụ: Yes/No/Cancel)</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Chi tiết hàm</h2>
 
-<h3>RecordMsgDate(filePath,filename=&ldquo;Null.txt&rdquo;, cmdWrite=&ldquo;Hello&rdquo;)</h3>
-
+<h3>RecordMsgDate(filePath, filename="Null.txt", cmdWrite="Hello")</h3>
 <ul>
-<li>功能：可以把日志记录在指定的文件夹路径下面，下面的指定文件名。</li>
-<li>参数：
-
-<ul>
-<li>filePath：路径名称，文件存储在这个文件夹下面的日期文件夹（自动创建）。</li>
-<li>filename：日志文件名称。</li>
-<li>cmdWrite：日志文件内容。默认 hello。</li>
-</ul>
+<li><strong>Chức năng</strong>: Ghi log vào thư mục chỉ định, tự động tạo thư mục con theo ngày hiện tại (vd: 2025-12-07).</li>
+<li><strong>Tham số</strong>:
+  <ul>
+  <li><code>filePath</code>Path → đường dẫn thư mục cha</li>
+  <li><code>filename</code> → tên file log (mặc định "Null.txt")</li>
+  <li><code>cmdWrite</code> → nội dung cần ghi (mặc định "Hello")</li>
+  </ul>
 </li>
 </ul>
 
-
-<h3>RecordMsgFolder(filePath,filename=&ldquo;Null.txt&rdquo;, cmdWrite=&ldquo;Hello&rdquo;)</h3>
-
+<h3>RecordMsgFolder(filePath, filename="Null.txt", cmdWrite="Hello")</h3>
 <ul>
-<li><p>功能：可以把日志记录在指定的文件夹路径下面，下面的指定文件名。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>filePath：路径名称。</li>
-<li>filename：日志文件名称。</li>
-<li>cmdWrite：日志文件内容。默认 hello。</li>
+<li><strong>Chức năng</strong>: Ghi log trực tiếp vào thư mục chỉ định (không tạo thư mục ngày).</li>
+<li><strong>Tham số</strong>: giống RecordMsgDate</li>
 </ul>
+
+<h3>RecordAutoLog(filePath, cmdWrite="Hello")</h3>
+<ul>
+<li><strong>Chức năng</strong>: Ghi log tự động, tên file là ngày hiện tại (vd: 20251207.txt).</li>
+<li><strong>Tham số</strong>:
+  <ul>
+  <li><code>filePath</code> → đường dẫn thư mục</li>
+  <li><code>cmdWrite</code> → nội dung ghi</li>
+  </ul>
 </li>
 </ul>
 
-
-<h3>RecordAutoLog(filePath,cmdWrite=&ldquo;Hello&rdquo;)</h3>
-
+<h3>ReportMsg(cmdMsg="Hello")</h3>
 <ul>
-<li><p>功能：可以把日志记录在指定的文件夹路径下面，下面的指定文件名，日志名称自动指定为 日期当天.txt。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>filePath：路径名称。</li>
-<li>cmdWrite：日志文件内容。默认 hello。</li>
+<li><strong>Chức năng</strong>: Hiển thị thông báo bình thường (màu xanh) ở khung Message.</li>
 </ul>
+
+<h3>ReportMsgWarn(cmdMsg="Hello")</h3>
+<ul>
+<li><strong>Chức năng</strong>: Hiển thị cảnh báo (màu vàng)</li>
+</ul>
+
+<h3>ReportMsgError(cmdMsg="Hello")</h3>
+<ul>
+<li><strong>Chức năng</strong>: Hiển thị lỗi (màu đỏ)</li>
+</ul>
+
+<h3>ReportMsgPop(cmdMsg="Hello", bPumpOut=True)</h3>
+<ul>
+<li><strong>Chức năng</strong>: Hiện popup thông báo (có nút OK).</li>
+<li><strong>Tham số</strong>:
+  <ul>
+  <li><code>bPumpOut=True</code> → không hiện popup (dùng khi chạy auto)</li>
+  <li><code>bPumpOut=False</code> → hiện popup</li>
+  </ul>
 </li>
 </ul>
 
-
-<h3>ReportMsg(cmdMsg=&ldquo;Hello&rdquo;)</h3>
-
+<h3>ReportMsgOption(cmdMsg="Hello", bPumpOut=True)</h3>
 <ul>
-<li><p>功能：报告提示消息。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>cmdMsg：提示消息内容。</li>
-</ul>
-</li>
+<li><strong>Chức năng</strong>: Hiện popup tùy chọn (Yes/No/Cancel…) và trả về giá trị người dùng chọn.</li>
+<li><strong>Tham số</strong>: giống ReportMsgPop</li>
 </ul>
 
+<h2>Lưu ý</h2>
+<p>Phải import trước khi dùng:</p>
+<p><code>from ScMsgReport import ScMsgReport</code></p>
+<p>Tên class: <strong>ScMsgReport</strong></p>
 
-<h3>ReportMsgWarn(cmdMsg=&ldquo;Hello&rdquo;)</h3>
-
-<ul>
-<li><p>功能：报告警告。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>cmdMsg：警告内容。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ReportMsgError(cmdMsg=&ldquo;Hello&rdquo;)</h3>
-
-<ul>
-<li><p>功能：报告错误提示。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>cmdMsg：错误提示内容。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ReportMsgPop(cmdMsg=&ldquo;Hello&rdquo;, bPumpOut=True)</h3>
-
-<ul>
-<li><p>功能：报告弹出提示。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>cmdMsg：报告弹出提示内容。</li>
-<li>bPumpOut：bool型，True表示禁止弹出，False表示弹出。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>ReportMsgOption(cmdMsg=&ldquo;Hello&rdquo;, bPumpOut=True)</h3>
-
-<ul>
-<li><p>功能：报告自定义提示框，带返回值。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>cmdMsg：提示框内容。</li>
-<li>bPumpOut：bool型，True表示禁止弹出，False表示弹出。</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>注意：</h2>
-
-<p>from ScMsgReport import ScMsgReport</p>
-
-<p>引用库：ScMsgReport</p>
-
-<p>类名称：class ScMsgReport</p>
-
-<h2>示例代码：</h2>
-
-<p>无</p>
+<h2>Ví dụ code</h2>
+<p>Không có</p>

@@ -18,130 +18,110 @@
            </head>
 <h1>scRectEx</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示可变矩形（矩形或者圆环段），对应的图形Gui为scGuiRectEx，例如边宽检测工具的线边宽区域、圆边宽区域。</p>
+<p>Biểu diễn vùng hình chữ nhật biến đổi (có thể là hình chữ nhật thẳng hoặc đoạn vòng cung có chiều rộng), đối tượng GUI tương ứng là scGuiRectEx. Thường dùng làm vùng tìm cạnh có độ rộng (line width region / annular width region) trong các công cụ đo biên như đo chiều rộng cạnh thẳng hoặc cạnh cong.</p>
 
 <p><img src="media/6a07bdbf80b7cec234a2aa21e25acd8f.png" alt="" /></p>
-
-<p><imgnote>(a) 普通状态</imgnote></p>
+<p><imgnote>(a) Trạng thái bình thường</imgnote></p>
 
 <p><img src="media/970fb2cf68e98429fec8df7f5816f015.png" alt="" /></p>
+<p><imgnote>(b) Trạng thái hiển thị thước kẹp (caliper) và mask</imgnote></p>
 
-<p><imgnote>(b) 显示卡尺和掩膜状态</imgnote></p>
+<p><imgnote>Hình 1. Sơ đồ minh họa vùng hình chữ nhật biến đổi scRectEx</imgnote></p>
 
-<p><imgnote>图1 可变矩形控件示意图</imgnote></p>
-
-<h2>接口</h2>
+<h2>Giao diện (Interface)</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                     </th>
-<th> 接口描述                                          </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> scRectEx                                     </td>
-<td> scRectEx()默认构造函数。                          </td>
+<td>Hàm tạo</td>
+<td>scRectEx</td>
+<td>scRectEx() – Hàm khởi tạo mặc định.</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> GetOriginPoint                         </td>
-<td> 获取可变起始点Origin。                            </td>
+<td rowspan="19">Hàm thành viên</td>
+<td>GetOriginPoint</td>
+<td>Lấy điểm gốc biến đổi Origin.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetOriginPoint                   </td>
-<td> 设置可变起始点Origin。                            </td>
+<td>SetOriginPoint</td>
+<td>Đặt điểm gốc biến đổi Origin.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetXLength                                 </td>
-<td> 获取X方向长度。                                   </td>
+<td>GetXLength</td>
+<td>Lấy chiều dài theo hướng X.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetXLength                           </td>
-<td> 设置X方向长度。                                   </td>
+<td>SetXLength</td>
+<td>Đặt chiều dài theo hướng X.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetYLength                                 </td>
-<td> 获取Y方向长度。                                   </td>
+<td>GetYLength</td>
+<td>Lấy chiều dài theo hướng Y.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetYLength                           </td>
-<td> 设置Y方向长度。                                   </td>
+<td>SetYLength</td>
+<td>Đặt chiều dài theo hướng Y.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetRotateAngle                         </td>
-<td> 获取旋转角度。                                    </td>
+<td>GetRotateAngle</td>
+<td>Lấy góc xoay của vùng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetRotateAngle                    </td>
-<td> 设置旋转角度。                                    </td>
+<td>SetRotateAngle</td>
+<td>Đặt góc xoay của vùng.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetBendAngle                             </td>
-<td> 获取弯曲角度。                                    </td>
+<td>GetBendAngle</td>
+<td>Lấy góc uốn cong (span angle).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetBendAngle                       </td>
-<td> 设置弯曲角度。                                    </td>
+<td>SetBendAngle</td>
+<td>Đặt góc uốn cong.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCenterRadiusStartSpan            </td>
-<td> 获取可变矩形的圆心、半径、起始角度和弯曲角度。    </td>
+<td>GetCenterRadiusStartSpan</td>
+<td>Lấy đồng thời tâm, bán kính 1, bán kính 2, góc bắt đầu và góc uốn cong.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetAngleStart                           </td>
-<td> 获取可变矩形的起始角度。                          </td>
+<td>GetAngleStart</td>
+<td>Lấy góc bắt đầu của vùng biến đổi.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetCenterRadiusStartSpan </td>
-<td> 设置可变矩形的圆心、半径、起始角度和弯曲角度。    </td>
+<td>SetCenterRadiusStartSpan</td>
+<td>Đặt đồng thời tâm, bán kính 1, bán kính 2, góc bắt đầu và góc uốn cong.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCircularArcs </td>
-<td> 获取可变矩形的两个圆环段。                        </td>
+<td>GetCircularArcs</td>
+<td>Lấy hai đoạn cung tròn (annular arcs) của vùng biến đổi.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCornerPx                               </td>
-<td> 获取可变矩形x角点位置，即CornerX。                </td>
+<td>GetCornerPx</td>
+<td>Lấy vị trí góc X (CornerX).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCornerPopp                           </td>
-<td> 获取可变矩形opp角点位置，即Opposite。             </td>
+<td>GetCornerPopp</td>
+<td>Lấy vị trí góc đối diện (Opposite).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCornerPy                               </td>
-<td> 获取可变矩形y角点位置，即CornerY。                </td>
+<td>GetCornerPy</td>
+<td>Lấy vị trí góc Y (CornerY).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCenterPoint                         </td>
-<td> 获取可变矩形的中心点。                            </td>
+<td>GetCenterPoint</td>
+<td>Lấy tâm của vùng biến đổi.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetMiddlePoint               </td>
-<td> 获取可变矩形中点（OX/YOPP弧段中点、矩形中心点）。 </td>
+<td>GetMiddlePoint</td>
+<td>Lấy các điểm giữa (trung điểm cung OX, trung điểm cung YOPP và tâm vùng).</td>
 </tr>
 </tbody>
 </table>

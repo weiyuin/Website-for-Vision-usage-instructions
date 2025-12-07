@@ -18,255 +18,208 @@
            </head>
 <h1>scAnnulus</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示圆环。</p>
+<p>Biểu diễn vùng vòng tròn đồng tâm (annulus / circular ring region). Thường dùng làm vùng tìm kiếm biên dạng tròn trong các công cụ đo đường kính, bán kính, hoặc tìm tâm vòng tròn.</p>
 
-<h2>接口</h2>
+<h2>Giao diện (Interface)</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                     </th>
-<th> 接口描述                                               </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> scAnnulus                                  </td>
-<td> scAnnulus()构造函数。                                  </td>
+<td rowspan="3">Hàm tạo</td>
+<td>scAnnulus</td>
+<td>scAnnulus() – Hàm khởi tạo mặc định.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scAnnulus                 </td>
-<td> scAnnulus(c, r, dRadialScale)构造函数。                </td>
+<td>scAnnulus</td>
+<td>scAnnulus(c, r, dRadialScale) – Hàm tạo với tâm c, bán kính chuẩn r và tỷ lệ mở rộng theo hướng kính dRadialScale.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scAnnulus              </td>
-<td> scAnnulus(circle, dRadialScale)构造函数。              </td>
+<td>scAnnulus</td>
+<td>scAnnulus(circle, dRadialScale) – Hàm tạo từ đối tượng vòng tròn circle và tỷ lệ mở rộng theo hướng kính.</td>
+</tr>
+
+<tr>
+<td rowspan="11">Hàm thành viên</td>
+<td>SetCenterRadiusRadialScale</td>
+<td>Đặt đồng thời tâm c, bán kính chuẩn r và tỷ lệ mở rộng theo hướng kính dRadialScale.</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> SetCenterRadiusRadialScale </td>
-<td> 设置圆环的中心c，基准半径r和径向缩放比例dRadialScale。 </td>
+<td>SetCenter</td>
+<td>Đặt tâm của vùng vòng tròn đồng tâm.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetCenter                                  </td>
-<td> 设置圆环的圆心（中心）。                               </td>
+<td>SetRadius</td>
+<td>Đặt bán kính chuẩn (bán kính trung bình hoặc bán kính vòng trong tùy ngữ cảnh).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetRadius                                  </td>
-<td> 设置圆环的基准半径。                                   </td>
+<td>SetRadialScale</td>
+<td>Đặt tỷ lệ mở rộng theo hướng kính (thường là độ dày vùng annulus so với bán kính chuẩn).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetRadialScale             </td>
-<td> 设置圆环的径向缩放比例。                               </td>
+<td>GetRadius</td>
+<td>Lấy bán kính chuẩn.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetRadius                                   </td>
-<td> 获取圆环的基准半径。                                   </td>
+<td>GetRadialScale</td>
+<td>Lấy tỷ lệ mở rộng theo hướng kính.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetRadialScale                 </td>
-<td> 获取圆环的径向缩放比例。                               </td>
+<td>GetCenter</td>
+<td>Lấy tâm của vùng annulus.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCenter                                   </td>
-<td> 获取圆环的圆心（中心）。                               </td>
+<td>GetInnerRadius</td>
+<td>Lấy bán kính vòng trong (inner radius).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetInnerRadius                         </td>
-<td> 获取内圆半径。                                         </td>
+<td>GetOuterRadius</td>
+<td>Lấy bán kính vòng ngoài (outer radius).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetOuterRadius                         </td>
-<td> 获取外圆半径。                                         </td>
+<td>GetInnerCircle</td>
+<td>Lấy đối tượng vòng tròn bên trong (scCircle).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetInnerCircle                         </td>
-<td> 获取内圆。                                             </td>
-</tr>
-<tr>
-<td>      </td>
-<td> GetOuterCircle                         </td>
-<td> 获取外圆。                                             </td>
+<td>GetOuterCircle</td>
+<td>Lấy đối tượng vòng tròn bên ngoài (scCircle).</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Chi tiết chức năng</h2>
 
-<h3>scAnnulus ()</h3>
-
+<h3>scAnnulus()</h3>
 <ul>
-<li><p>功能：构造scAnnulus对象。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng: Tạo đối tượng scAnnulus (mặc định).</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
 </ul>
 
-
-<h3>scAnnulus (c, r, dRadialScale)</h3>
-
+<h3>scAnnulus(c, r, dRadialScale)</h3>
 <ul>
-<li><p>功能：用圆环圆心（中心）c，基准半径r和径向缩放比例dRadialScale来构造圆环。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Tạo vùng annulus từ tâm c, bán kính chuẩn r và tỷ lệ mở rộng theo hướng kính dRadialScale.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>c：圆心位置，sc2Vector类型。</p></li>
-<li><p>r：基准半径，浮点数类型。</p></li>
-<li><p>dRadialScale：径向缩放比例，浮点数类型。</p></li>
+<li><p>c: Tâm vòng tròn, kiểu sc2Vector.</p></li>
+<li><p>r: Bán kính chuẩn (reference radius), kiểu double.</p></li>
+<li><p>dRadialScale: Tỷ lệ mở rộng theo hướng kính (radial scale factor), kiểu double.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
 </ul>
 
-
-<h3>scAnnulus (circle, dRadialScale)</h3>
-
+<h3>scAnnulus(circle, dRadialScale)</h3>
 <ul>
-<li><p>功能：用基准圆circle和径向缩放比例dRadialScale来构造圆环。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Tạo vùng annulus từ vòng tròn chuẩn circle và tỷ lệ mở rộng theo hướng kính dRadialScale.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>circle：基准圆，scCircle类型。</p></li>
-<li><p>dRadialScale：径向缩放比例，浮点数类型。</p></li>
+<li><p>circle: Vòng tròn chuẩn (reference circle), kiểu scCircle.</p></li>
+<li><p>dRadialScale: Tỷ lệ mở rộng theo hướng kính, kiểu double.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
 </ul>
-
 
 <h3>SetCenterRadiusRadialScale(c, r, dRadialScale)</h3>
-
 <ul>
-<li><p>功能：设置圆环的圆心c，基准半径r和径向缩放比例dRadialScale。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Đặt đồng thời tâm c, bán kính chuẩn r và tỷ lệ mở rộng theo hướng kính dRadialScale của vùng annulus.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>c：圆心位置，sc2Vector类型。</p></li>
-<li><p>r：基准半径，浮点数类型。</p></li>
-<li><p>dRadialScale：径向缩放比例，浮点数类型。</p></li>
+<li><p>c: Tâm vòng tròn, kiểu sc2Vector.</p></li>
+<li><p>r: Bán kính chuẩn, kiểu double.</p></li>
+<li><p>dRadialScale: Tỷ lệ mở rộng theo hướng kính, kiểu double.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, true nếu đặt thành công.</p></li>
 </ul>
 
-
-<h3>SetCenter&copy;</h3>
-
+<h3>SetCenter(c)</h3>
 <ul>
-<li><p>功能：设置圆环的圆心（中心）。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Đặt tâm của vùng annulus.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li>c：圆环圆形（中心），sc2Vector类型。</li>
+<li>c: Tâm vòng tròn, kiểu sc2Vector.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, true nếu đặt thành công.</p></li>
 </ul>
 
 
-<h3>SetRadius&reg;</h3>
-
+<h3>SetRadius(r)</h3>
 <ul>
-<li><p>功能：设置圆环的基准半径。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>r：半径。</li>
-</ul>
+<li><p>Chức năng: Đặt bán kính chuẩn (reference radius) của vùng annulus.</p></li>
+<li><p>Tham số:</p>
+<ul><li>r: Bán kính chuẩn, kiểu double.</li></ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, true nếu đặt thành công.</p></li>
 </ul>
-
 
 <h3>SetRadialScale(dRadialScale)</h3>
-
 <ul>
-<li><p>功能：设置圆环的基准半径。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>dRadialScale：径向缩放比例，浮点数类型。</li>
-</ul>
+<li><p>Chức năng: Đặt tỷ lệ mở rộng theo hướng kính (radial scale factor). Giá trị này quyết định độ dày vùng annulus (thường > 0, ví dụ: 0.1 → độ dày = 10% bán kính chuẩn).</p></li>
+<li><p>Tham số:</p>
+<ul><li>dRadialScale: Tỷ lệ mở rộng theo hướng kính, kiểu double.</li></ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, true nếu đặt thành công.</p></li>
 </ul>
-
 
 <h3>GetRadius()</h3>
-
 <ul>
-<li><p>功能：获取圆环的基准半径。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆环的基准半径，浮点数类型。</p></li>
+<li><p>Chức năng: Lấy bán kính chuẩn của vùng annulus.</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Bán kính chuẩn, kiểu double.</p></li>
 </ul>
-
 
 <h3>GetRadialScale()</h3>
-
 <ul>
-<li><p>功能：获取圆环的径向缩放比例。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆环的径向缩放比例，浮点数类型。</p></li>
+<li><p>Chức năng: Lấy tỷ lệ mở rộng theo hướng kính hiện tại.</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Tỷ lệ mở rộng theo hướng kính, kiểu double.</p></li>
 </ul>
-
 
 <h3>GetCenter()</h3>
-
 <ul>
-<li><p>功能：获取圆环的圆心（中心）。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆环的圆心（中心），sc2Vector类型。</p></li>
+<li><p>Chức năng: Lấy tâm của vùng annulus.</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Tọa độ tâm, kiểu sc2Vector.</p></li>
 </ul>
-
 
 <h3>GetInnerRadius()</h3>
-
 <ul>
-<li><p>功能：获取内圆半径。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：内圆半径，浮点数类型。</p></li>
+<li><p>Chức năng: Lấy bán kính vòng trong (inner radius).</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Bán kính vòng trong, kiểu double.</p></li>
 </ul>
-
 
 <h3>GetOuterRadius()</h3>
-
 <ul>
-<li><p>功能：获取外圆半径。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：外圆半径，浮点数类型。</p></li>
+<li><p>Chức năng: Lấy bán kính vòng ngoài (outer radius).</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Bán kính vòng ngoài, kiểu double.</p></li>
 </ul>
-
 
 <h3>GetInnerCircle()</h3>
-
 <ul>
-<li><p>功能：获取内圆。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆环内圆，scCircle类型。</p></li>
+<li><p>Chức năng: Lấy đối tượng vòng tròn bên trong.</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Vòng tròn bên trong, kiểu scCircle.</p></li>
 </ul>
 
-
 <h3>GetOuterCircle()</h3>
-
 <ul>
-<li><p>功能：获取内圆半径。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆环外圆，scCircle类型。</p></li>
+<li><p>Chức năng: Lấy đối tượng vòng tròn bên ngoài.</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Vòng tròn bên ngoài, kiểu scCircle.</p></li>
 </ul>
 
 

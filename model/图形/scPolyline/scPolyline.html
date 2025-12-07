@@ -18,286 +18,229 @@
            </head>
 <h1>scPolyline</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示多边形，例如Blob工具的多边形ROI。</p>
+<p>Biểu diễn đa giác (polygon), thường dùng làm vùng ROI dạng đa giác trong các công cụ như Blob Analysis, tìm vùng khuyết tật, đo diện tích, v.v.</p>
 
-<h2>接口</h2>
+<h2>Giao diện (Interface)</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                          </th>
-<th> 接口描述                                  </th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
+<th>Mô tả giao diện</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
-<td> scPolyline               </td>
-<td> scPolyline ()默认构造函数。               </td>
+<td rowspan="3">Hàm tạo</td>
+<td>scPolyline</td>
+<td>scPolyline() – Hàm khởi tạo mặc định.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scPolyline     </td>
-<td> scPolyline (sc2VectorVec, bool)构造函数。 </td>
+<td>scPolyline</td>
+<td>scPolyline(sc2VectorVec, bool) – Tạo từ danh sách điểm đỉnh và cờ đóng kín (closed).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> scPolyline             </td>
-<td> scPolyline (scPolyline) 构造函数。        </td>
+<td>scPolyline</td>
+<td>scPolyline(scPolyline) – Hàm tạo sao chép (copy constructor).</td>
+</tr>
+
+<tr>
+<td rowspan="11">Hàm thành viên</td>
+<td>GetVerticesNum</td>
+<td>Lấy số lượng đỉnh của đa giác.</td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> GetVerticesNum              </td>
-<td> 获取顶点的数量。                          </td>
+<td>SetVertex</td>
+<td>Đặt tọa độ đỉnh thứ idx.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetVertex             </td>
-<td> 设置第idx个顶点的坐标。                   </td>
+<td>GetVertex</td>
+<td>Lấy tọa độ đỉnh thứ idx.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetVertex                     </td>
-<td> 获取第idx个顶点的坐标。                   </td>
+<td>SetVertices</td>
+<td>Thay thế toàn bộ danh sách đỉnh của đa giác.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> SetVertices            </td>
-<td> 重新设置多边形的顶点。                    </td>
+<td>GetVertices</td>
+<td>Lấy toàn bộ danh sách đỉnh (dạng sc2VectorVec).</td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetVertices                    </td>
-<td> 获取多边形的顶点。                        </td>
+<td>InsertVertex</td>
+<td>Chèn một đỉnh mới vào vị trí idx.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> InsertVertex       </td>
-<td> 在idx位置插入新的顶点。                   </td>
+<td>InsertVertices</td>
+<td>Chèn một nhóm đỉnh vào vị trí idx.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> InsertVertices </td>
-<td> 在第idx位置插入一组顶点。                 </td>
+<td>AddVertex</td>
+<td>Thêm một đỉnh mới vào cuối danh sách.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> AddVertex                  </td>
-<td> 在多边形点序列的尾部添加新的顶点。        </td>
+<td>AddVertices</td>
+<td>Thêm một nhóm đỉnh vào cuối danh sách.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> AddVertices            </td>
-<td> 在多边形点序列的尾部添加一组顶点。        </td>
+<td>RemoveVertex</td>
+<td>Xóa đỉnh thứ idx.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> RemoveVertex               </td>
-<td> 删除第idx个顶点。                         </td>
-</tr>
-<tr>
-<td>      </td>
-<td> RemoveVertices              </td>
-<td> 删除所有顶点。                            </td>
+<td>RemoveVertices</td>
+<td>Xóa toàn bộ đỉnh (làm rỗng đa giác).</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Chi tiết chức năng</h2>
+
+<h3>scPolyline()</h3>
+<ul>
+<li><p>Chức năng: Tạo đối tượng scPolyline mặc định (không có đỉnh nào).</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
+</ul>
 
 <h3>scPolyline(bClosed)</h3>
-
 <ul>
-<li><p>功能：构造scPolyline对象，若bClosed为True则构造闭合的多边形。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>bClosed：多边形是否闭合标记，True:表示闭合，bool类型。</li>
-</ul>
+<li><p>Chức năng: Tạo đối tượng scPolyline rỗng và đặt trạng thái đóng kín (closed polygon).</p></li>
+<li><p>Tham số:</p>
+<ul><li>bClosed: Cờ xác định đa giác có đóng kín hay không. True = đóng kín (polygon), False = mở (polyline), kiểu bool.</li></ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
 </ul>
-
 
 <h3>scPolyline(vertices, bClosed)</h3>
-
 <ul>
-<li><p>功能：用一组点构成的向量来构造多边形。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Tạo đa giác từ danh sách các điểm đỉnh và trạng thái đóng kín.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>vertices：线段的起始点，sc2VectorVec类型。</p></li>
-<li><p>bClosed：多边形是否闭合标记，True:表示闭合，bool类型。</p></li>
+<li><p>vertices: Danh sách tọa độ các đỉnh, kiểu sc2VectorVec.</p></li>
+<li><p>bClosed: True = đa giác đóng kín, False = dãy đoạn thẳng mở, kiểu bool.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
 </ul>
 
-
-<h3>scPolyline (polyline)</h3>
-
+<h3>scPolyline(polyline)</h3>
 <ul>
-<li><p>功能：用已知多边形构造多边形。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>polyline：多变形，scPolyline类型。</li>
-</ul>
+<li><p>Chức năng: Tạo bản sao (copy constructor) từ một đối tượng scPolyline đã có.</p></li>
+<li><p>Tham số:</p>
+<ul><li>polyline: Đối tượng scPolyline nguồn, kiểu scPolyline.</li></ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
 </ul>
-
 
 <h3>GetVerticesNum()</h3>
-
 <ul>
-<li><p>功能：获取顶点的数量。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：多边形顶点的数量，int类型。</p></li>
+<li><p>Chức năng: Lấy số lượng đỉnh hiện tại của đa giác.</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Số đỉnh, kiểu int.</p></li>
 </ul>
-
 
 <h3>SetVertex(idx, vertex)</h3>
-
 <ul>
-<li><p>功能：设置第idx个顶点的坐标。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Đặt lại tọa độ của đỉnh thứ idx (đánh số từ 0).</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>idx：顶点序号，int类型。</p></li>
-<li><p>vertex：顶点坐标，sc2Vector类型。</p></li>
+<li><p>idx: Chỉ số đỉnh cần thay đổi, kiểu int.</p></li>
+<li><p>vertex: Tọa độ mới của đỉnh, kiểu sc2Vector.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, true nếu đặt thành công.</p></li>
 </ul>
-
 
 <h3>GetVertex(idx)</h3>
-
 <ul>
-<li><p>功能：获取第idx个顶点的坐标。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>idx：顶点序号，int类型。</li>
-</ul>
+<li><p>Chức năng: Lấy tọa độ của đỉnh thứ idx.</p></li>
+<li><p>Tham số:</p>
+<ul><li>idx: Chỉ số đỉnh cần lấy, kiểu int.</li></ul>
 </li>
-<li><p>返回值：顶点坐标，sc2Vector类型。</p></li>
+<li><p>Giá trị trả về: Tọa độ đỉnh, kiểu sc2Vector.</p></li>
 </ul>
-
 
 <h3>SetVertices(vertices)</h3>
-
 <ul>
-<li><p>功能：设置第idx个顶点的坐标。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>vertices：顶点数组，sc2VectorVec类型。</li>
-</ul>
+<li><p>Chức năng: Thay thế toàn bộ danh sách đỉnh bằng danh sách mới (giữ nguyên trạng thái đóng kín hiện tại).</p></li>
+<li><p>Tham số:</p>
+<ul><li>vertices: Danh sách đỉnh mới, kiểu sc2VectorVec.</li></ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, true nếu đặt thành công.</p></li>
 </ul>
 
 
 <h3>GetVertices()</h3>
-
 <ul>
-<li><p>功能：获取所有顶点的坐标。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：所有顶点的坐标，sc2VectorVec类型。</p></li>
+<li><p>Chức năng: Lấy toàn bộ danh sách tọa độ các đỉnh hiện tại.</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Danh sách các đỉnh, kiểu sc2VectorVec.</p></li>
 </ul>
-
 
 <h3>InsertVertex(idx, vertex)</h3>
-
 <ul>
-<li><p>功能：在第idx个位置插入新的顶点。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Chèn một đỉnh mới vào trước vị trí idx (idx = 0 → chèn vào đầu, idx = GetVerticesNum() → chèn vào cuối).</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>idx：顶点序号，int类型。</p></li>
-<li><p>vertex：顶点坐标，sc2Vector类型。</p></li>
+<li><p>idx: Vị trí chèn, kiểu int.</p></li>
+<li><p>vertex: Tọa độ đỉnh cần chèn, kiểu sc2Vector.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否插入成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, true nếu chèn thành công.</p></li>
 </ul>
-
 
 <h3>InsertVertices(idx, vertices)</h3>
-
 <ul>
-<li><p>功能：在第idx个位置插入一组顶点。</p></li>
-<li><p>参数：</p>
-
+<li><p>Chức năng: Chèn một nhóm đỉnh mới vào trước vị trí idx.</p></li>
+<li><p>Tham số:</p>
 <ul>
-<li><p>idx：顶点序号，int类型。</p></li>
-<li><p>vertices：要插入的一组顶点坐标数组，sc2VectorVec类型。</p></li>
+<li><p>idx: Vị trí chèn, kiểu int.</p></li>
+<li><p>vertices: Danh sách các đỉnh cần chèn, kiểu sc2VectorVec.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否插入成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, true nếu chèn thành công.</p></li>
 </ul>
-
 
 <h3>AddVertex(vertex)</h3>
-
 <ul>
-<li><p>功能：在多边形点序列的尾部添加新的顶点。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>vertex：新的顶点坐标，sc2Vector类型。</li>
-</ul>
+<li><p>Chức năng: Thêm một đỉnh mới vào cuối danh sách đỉnh (tương đương InsertVertex(GetVerticesNum(), vertex)).</p></li>
+<li><p>Tham số:</p>
+<ul><li>vertex: Tọa độ đỉnh cần thêm, kiểu sc2Vector.</li></ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
 </ul>
-
 
 <h3>AddVertices(vertices)</h3>
-
 <ul>
-<li><p>功能：在多边形点序列的尾部添加一组顶点。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>vertices：一组顶点坐标数组，sc2VectorVec类型。</li>
-</ul>
+<li><p>Chức năng: Thêm một nhóm đỉnh vào cuối danh sách đỉnh hiện tại.</p></li>
+<li><p>Tham số:</p>
+<ul><li>vertices: Danh sách các đỉnh cần thêm, kiểu sc2VectorVec.</li></ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
 </ul>
 
 
 <h3>RemoveVertex(idx)</h3>
-
 <ul>
-<li><p>功能：删除第idx个顶点。</p></li>
-<li><p>参数：</p>
-
-<ul>
-<li>idx：顶点序号，int类型。</li>
-</ul>
+<li><p>Chức năng: Xóa đỉnh thứ idx (đánh số từ 0).</p></li>
+<li><p>Tham số:</p>
+<ul><li>idx: Chỉ số đỉnh cần xóa, kiểu int.</li></ul>
 </li>
-<li><p>返回值：bool类型，表示是否删除成功。</p></li>
+<li><p>Giá trị trả về: Kiểu bool, true nếu xóa thành công.</p></li>
 </ul>
-
 
 <h3>RemoveVertices()</h3>
-
 <ul>
-<li><p>功能：删除所有顶点。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng: Xóa toàn bộ đỉnh, làm rỗng đa giác (số đỉnh = 0).</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
 </ul>
 
+<h2>Lưu ý</h2>
+<p>Không có.</p>
 
-<h2>注意</h2>
-
-<p>无</p>
-
-<h2>示例代码</h2>
-
-<p>无</p>
+<h2>Ví dụ code</h2>
+<p>Không có.</p>

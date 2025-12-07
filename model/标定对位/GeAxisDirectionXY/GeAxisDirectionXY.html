@@ -16,86 +16,58 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>GeAxisDirectionXY</h1>
+<h1>GeAxisDirectionXY – Kiểu dữ liệu hướng trục X/Y</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示X轴方向类型，例如标准标定轴位置获取工具的属性栏输入参数X轴方向。</p>
+<p>Biểu diễn hướng dương của trục X hoặc trục Y.  
+Thường dùng làm tham số đầu vào trong thuộc tính công cụ (ví dụ: công cụ lấy vị trí trục chuẩn hiệu chuẩn).</p>
 
-<h2>接口</h2>
+<h2>Giao diện (Interface)</h2>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 接口名称 </th>
-<th> 接口描述           </th>
-<th>            </th>
+<th>Phân loại</th>
+<th>Tên giá trị</th>
+<th>Mô tả</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性     </td>
-<td> eLeft   </td>
-<td> 轴方向向左 </td>
-<td></td>
+<td rowspan="4">Giá trị enum</td>
+<td>eLeft</td>
+<td>Hướng trục dương về bên trái</td>
 </tr>
 <tr>
-<td>          </td>
-<td> eRight </td>
-<td> 轴方向向右 </td>
-<td></td>
+<td>eRight</td>
+<td>Hướng trục dương về bên phải</td>
 </tr>
 <tr>
-<td>          </td>
-<td> eUp       </td>
-<td> 轴方向向上 </td>
-<td></td>
+<td>eUp</td>
+<td>Hướng trục dương lên trên</td>
 </tr>
 <tr>
-<td>          </td>
-<td> eDown   </td>
-<td> 轴方向向下 </td>
-<td></td>
+<td>eDown</td>
+<td>Hướng trục dương xuống dưới</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
-
-<h3>eLeft</h3>
+<h2>Chi tiết</h2>
 
 <ul>
-<li>功能：轴方向向左。</li>
+<li><strong>eLeft</strong> → trục dương hướng trái</li>
+<li><strong>eRight</strong> → trục dương hướng phải</li>
+<li><strong>eUp</strong> → trục dương hướng lên</li>
+<li><strong>eDown</strong> → trục dương hướng xuống</li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h3>eRight</h3>
+<p>Hiện tại <strong>trục X không hỗ trợ</strong> đặt hướng lên/xuống (eUp, eDown).  
+Chỉ dùng eLeft / eRight cho trục X.</p>
 
-<ul>
-<li>功能：轴方向向右。</li>
-</ul>
+<h2>Ví dụ code</h2>
 
-
-<h3>eUp</h3>
-
-<ul>
-<li>功能：轴方向向上。</li>
-</ul>
-
-
-<h3>eDown</h3>
-
-<ul>
-<li>功能：轴方向向下。</li>
-</ul>
-
-
-<h2>注意</h2>
-
-<p>X轴暂时不支持设置为向上向下。</p>
-
-<h2>示例代码</h2>
-
-<p>无</p>
+<p>Không có</p>
