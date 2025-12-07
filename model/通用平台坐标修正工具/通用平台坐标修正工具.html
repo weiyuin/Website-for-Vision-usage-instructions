@@ -16,147 +16,141 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>通用平台坐标修正</h1>
+<h1>Công cụ sửa tọa độ nền tảng đa năng</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>如图1，当对位时轴位置不等于标定时轴位置时，图像坐标系与平台坐标系间的位置关系变化，称之为平台坐标系原点更新。当平台坐标系原点更新时，直接由图像坐标和标定结果计算得到平台坐标并不正确。需要根据轴位置的变化量对转换关系进行修正，得到正确的图像坐标系和平台坐标系间的转换关系，以得到正确的平台坐标。通用平台坐标修正工具就是对输入平台坐标依据轴位置的变化加以修正，计算修正后平台坐标的工具。</p>
+<p>Khi vị trí trục lúc đối vị khác với vị trí trục lúc hiệu chuẩn, quan hệ vị trí giữa hệ tọa độ ảnh và hệ tọa độ nền tảng sẽ thay đổi – gọi là “cập nhật gốc tọa độ nền tảng”. Lúc này, tọa độ nền tảng tính trực tiếp từ tọa độ ảnh + kết quả hiệu chuẩn sẽ không còn chính xác. Cần phải sửa quan hệ chuyển đổi theo lượng thay đổi vị trí trục để lấy được tọa độ nền tảng đúng. Công cụ sửa tọa độ nền tảng đa năng chính là công cụ thể dùng để sửa tọa độ nền tảng đầu vào theo lượng thay đổi vị trí trục và xuất ra tọa độ nền tảng đã được sửa.</p>
 
 <p><img src="media/wps51.jpg" alt="img" /></p>
+<p><imgnote>Hình 1 – Dịch chuyển tịnh tiến hệ tọa độ nền tảng</imgnote></p>
 
-<p><imgnote>图1 平台坐标系平移运动</imgnote></p>
-
-<h2>参数</h2>
-
-<table>
-<thead>
-<tr>
-<th>分类 </th>
-<th> 参数名称                                                     </th>
-<th> 参数描述                                                                                                                   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 属性窗口                                                     </td>
-<td> 坐标修正类型                                                 </td>
-<td> 图像到平台和图像到轴的标定结果：依据图像到轴的标定结果，先将轴位置变化量转化为图像距离；后依据图像到平台的标定结果，将图像距离转化为平台距离。<br />轴到平台的标定结果：依据轴到平台的标定结果，直接将轴位置变化量转化为平台距离变化量。 </td>
-</tr>
-<tr>
-<td></td>
-<td> X/Y轴属性                                                    </td>
-<td> 选择X/Y轴是平台轴还是相机轴：若X/Y为相机轴，则最终结果为输入平台坐标+X/Y平台距离变化量；若X/Y为平台轴，则最终结果为输入平台坐标-X/Y平台距离变化量。<img src="media/wps53.jpg" alt="img" />                                                               </td>
-</tr>
-<tr>
-<td>图像窗口</td>
-<td> 无                                                    </td>
-<td> 无                                                                                                                         </td>
-</tr>
-<tr>
-<td> 数据链                                                       </td>
-<td> 平台坐标                                                     </td>
-<td> 待修正的平台坐标输入。                                       </td>
-</tr>
-<tr>
-<td></td>
-<td> 标定时轴位置                                                 </td>
-<td> 标定时的轴位置，该轴可能为相机轴，也可能为平台轴。                                                                         </td>
-</tr>
-<tr>
-<td></td>
-<td> 对位时轴位置                                                 </td>
-<td> 对位时的轴位置，该轴可能为相机轴，也可能为平台轴。                                                                         </td>
-</tr>
-<tr>
-<td></td>
-<td> 轴方向                                                       </td>
-<td> 平台/相机各轴的正方向。                                                                                                    </td>
-</tr>
-<tr>
-<td></td>
-<td> 图像到平台的标定结果                                         </td>
-<td> 图像到平台的标定结果，只在坐标修正类型为“图像到平台和图像到轴的标定结果”时使用。                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 图像到轴的标定结果                                           </td>
-<td> 图像到轴的标定结果，只在坐标修正类型为“图像到平台和图像到轴的标定结果”时使用。                                                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 轴到平台的标定结果                                           </td>
-<td> 轴到平台的标定结果，只在坐标修正类型为“轴到平台的标定结果”时使用。                                                               </td>
-</tr>
-<tr>
-<td>高级界面</td>
-<td> 无                                                           </td>
-<td> 无                                                                                                                         </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>输出</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                               </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 修正平台坐标   </td>
-<td> 修正后的平台坐标结果。                                 </td>
+<td rowspan="2">Cửa sổ thuộc tính</td>
+<td>Loại sửa tọa độ</td>
+<td>
+- Hiệu chuẩn ảnh → nền tảng + ảnh → trục: dùng kết quả hiệu chuẩn ảnh→trục để chuyển lượng thay đổi vị trí trục thành khoảng cách ảnh, sau đó dùng kết quả hiệu chuẩn ảnh→nền tảng để chuyển khoảng cách ảnh thành khoảng cách nền tảng.<br>
+- Hiệu chuẩn trục → nền tảng: dùng trực tiếp kết quả hiệu chuẩn trục→nền tảng để chuyển lượng thay đổi vị trí trục thành lượng thay đổi tọa độ nền tảng.
+</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                         </td>
+<td>Thuộc tính trục X/Y</td>
+<td>Chọn trục X/Y là trục nền tảng hay trục camera:<br>
+→ Nếu là trục camera → kết quả cuối = tọa độ nền tảng đầu vào + lượng thay đổi khoảng cách nền tảng X/Y<br>
+→ Nếu là trục nền tảng → kết quả cuối = tọa độ nền tảng đầu vào – lượng thay đổi khoảng cách nền tảng X/Y<br>
+<img src="media/wps53.jpg" alt="img" />
+</td>
 </tr>
 <tr>
-<td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                         </td>
+<td>Hình ảnh</td>
+<td>Không</td>
+<td>Không</td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无 </td>
-<td> 无</td>
+<td rowspan="7">Chuỗi dữ liệu</td>
+<td>Tọa độ nền tảng</td>
+<td>Tọa độ nền tảng cần sửa (đầu vào)</td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 修正平台坐标   </td>
-<td> 修正后的平台坐标结果，供后序工具使用，同监视窗口参数。 </td>
+<td>Vị trí trục lúc hiệu chuẩn</td>
+<td>Vị trí trục khi thực hiện hiệu chuẩn (có thể là trục camera hoặc trục nền tảng)</td>
+</tr>
+<tr>
+<td>Vị trí trục lúc đối vị</td>
+<td>Vị trí trục khi thực hiện đối vị (có thể là trục camera hoặc trục nền tảng)</td>
+</tr>
+<tr>
+<td>Hướng trục</td>
+<td>Chiều dương của từng trục nền tảng/camera</td>
+</tr>
+<tr>
+<td>Kết quả hiệu chuẩn ảnh → nền tảng</td>
+<td>Chỉ dùng khi chọn loại sửa “Hiệu chuẩn ảnh → nền tảng + ảnh → trục”</td>
+</tr>
+<tr>
+<td>Kết quả hiệu chuẩn ảnh → trục</td>
+<td>Chỉ dùng khi chọn loại sửa “Hiệu chuẩn ảnh → nền tảng + ảnh → trục”</td>
+</tr>
+<tr>
+<td>Kết quả hiệu chuẩn trục → nền tảng</td>
+<td>Chỉ dùng khi chọn loại sửa “Hiệu chuẩn trục → nền tảng”</td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td>Không</td>
+<td>Không</td>
 </tr>
 </tbody>
 </table>
 
+<h2>Đầu ra</h2>
 
-<h2>详细说明</h2>
+<table>
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="3">Cửa sổ giám sát</td>
+<td>Tọa độ nền tảng đã sửa</td>
+<td>Kết quả tọa độ nền tảng sau khi sửa</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Trạng thái thực thi của công cụ</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Thời gian chạy công cụ</td>
+</tr>
+<tr>
+<td>Hình ảnh</td>
+<td>Không</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Chuỗi dữ liệu</td>
+<td>Tọa độ nền tảng đã sửa</td>
+<td>Kết quả tọa độ nền tảng sau khi sửa, dùng cho các công cụ phía sau (giống giá trị ở cửa sổ giám sát)</td>
+</tr>
+</tbody>
+</table>
 
-<h3>X/Y轴属性</h3>
+<h2>Giải thích chi tiết</h2>
 
-<p>X/Y轴属性为相机轴或平台轴时，则标定和对位时的轴位置变化量将会影响到平台坐标的变化，此时则需要用到平台坐标修正工具对当前计算的平台坐标进行修正，以将轴位置的变化量考虑进去，从而得出正确的平台坐标结果。当轴属性不同时，修正工具的计算方式也不同：</p>
+<h3>Thuộc tính trục X/Y</h3>
 
-<p>当X/Y轴属性为平台轴时，此时结构示意图如图2。平台轴位置的变化引起了对位和标定时的平台坐标系发生了变化，此时的平台坐标需要减去X/Y轴位置的变化量予以修正。</p>
+<p>Khi vị trí trục thay đổi giữa lúc hiệu chuẩn và lúc đối vị, sẽ ảnh hưởng đến tọa độ nền tảng → cần dùng công cụ này để sửa. Cách tính sửa khác nhau tùy thuộc thuộc tính trục:</p>
 
+<p><strong>Khi trục X/Y là trục nền tảng (Hình 2):</strong><br>
+Sự thay đổi vị trí trục nền tảng làm hệ tọa độ nền tảng dịch chuyển → cần trừ đi lượng thay đổi vị trí trục.</p>
 <p><img src="media/wps56.jpg" alt="img" />
-<imgnote>图2 平台轴位置变</imgnote></p>
+<imgnote>Hình 2 – Thay đổi vị trí trục nền tảng</imgnote></p>
 
-<p>当X/Y轴属性为相机轴时，此时结构示意图如图3。相机轴位置的变化引起了对位和标定时的图像坐标系发生了变化，此时的平台坐标需要与X/Y轴位置的变化量相加予以修正。</p>
-
+<p><strong>Khi trục X/Y là trục camera (Hình 3):</strong><br>
+Sự thay đổi vị trí camera làm hệ tọa độ ảnh dịch chuyển → cần cộng thêm lượng thay đổi vị trí trục vào tọa độ nền tảng.</p>
 <p><img src="media/wps57.jpg" alt="img" /></p>
+<p><imgnote>Hình 3 – Thay đổi vị trí trục camera</imgnote></p>
 
-<p><imgnote>图3 相机轴位置变化</imgnote></p>
-
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li>当修正类型为“图像到平台和图像到轴的标定结果”，若输入的图像到平台的标定结果与图像到轴的标定结果为同一个标定结果时，修正后的平台坐标等于修正类型为“轴到平台的标定结果”，轴到平台的标定结果输入同一个标定结果的修正平台坐标结果。</li>
+<li>Khi chọn loại sửa “Hiệu chuẩn ảnh → nền tảng + ảnh → trục” và dùng cùng một kết quả hiệu chuẩn cho cả hai, thì kết quả tọa độ nền tảng đã sửa sẽ giống hệt với trường hợp chọn loại “Hiệu chuẩn trục → nền tảng” và dùng cùng kết quả hiệu chuẩn đó.</li>
 </ul>
 
 

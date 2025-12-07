@@ -16,246 +16,210 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>九圆关联标定工具</h1>
+<h1>Công cụ hiệu chuẩn liên kết 9 điểm tròn</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>九圆关联标定工具是在指定的搜索区域内对图像坐标和相应的振镜坐标进行关联，其关联结果如图1所示。</p>
+<p>Công cụ này dùng để liên kết (associate) tọa độ ảnh với tọa độ galvo (vibrating mirror) trong một vùng tìm kiếm được chỉ định. Kết quả liên kết được hiển thị như Hình 1.</p>
 
 <p><img src="media/wps43.jpg" alt="img" />  <img src="media/wps44.jpg" alt="img" /></p>
+<p><imgnote>(a) Vùng tìm kiếm</imgnote> <imgnote>(b) Kết quả hiển thị liên kết</imgnote></p>
+<p><imgnote>Hình 1 – Sơ đồ ứng dụng công cụ hiệu chuẩn liên kết 9 điểm tròn</imgnote></p>
 
-<p><imgnote>(a) 搜索区域</imgnote> <imgnote>(b) 关联显示结果</imgnote></p>
-
-<p><imgnote>图1 九圆关联标定工具应用示意图</imgnote></p>
-
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称              </th>
-<th> 参数描述                                                                                                                 </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口              </td>
-<td> 搜索区域                                                     </td>
-<td> 输入搜索区域左上角坐标值、宽度和高度。                     </td>
+<td rowspan="5">Cửa sổ thuộc tính</td>
+<td>Vùng tìm kiếm</td>
+<td>Nhập tọa độ góc trên-trái, chiều rộng và chiều cao của vùng tìm kiếm</td>
 </tr>
 <tr>
-<td></td>
-<td> 提取方式              </td>
-<td> 提取方式分为2种，手动提取和自动提取。                                                             </td>
+<td>Phương thức trích xuất</td>
+<td>Có 2 cách: Trích xuất thủ công và Trích xuất tự động</td>
+</tr><tr>
+<td>Màu Mark</td>
+<td>Phân biệt Mark trắng hoặc Mark đen</td>
+</tr><tr>
+<td>Có kết hợp pixel khi lượng không</td>
+<td>Chọn “Có” → cần nối thêm tham số Pixel khi lượng (mm/px) vào chuỗi dữ liệu để phần mềm kết hợp giá trị này với góc giữa ảnh và galvo nhằm tạo ma trận chuyển đổi chính xác hơn</td>
+</tr><tr>
+<td>Độ chính xác hiệu chuẩn</td>
+<td>Sau khi hiệu chuẩn xong, phần mềm sẽ dùng kết quả hiệu chuẩn tính ngược lại tọa độ laser lý thuyết của 9 tâm tròn, so sánh với tọa độ thực tế. Nếu sai số tại tâm nào vượt quá ngưỡng này → chữ sai số sẽ hiển thị màu đỏ để cảnh báo (chỉ mang tính nhắc nhở, không ảnh hưởng đến việc công cụ báo thành công)</td>
 </tr>
+
 <tr>
-<td></td>
-<td> Mark颜色              </td>
-<td> 根据Mark点颜色分为白色和黑色。                                                                                           </td>
+<td rowspan="2">Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Hiển thị ảnh được liên kết với tọa độ galvo</td>
+</tr><tr>
+<td>Vùng tìm kiếm</td>
+<td>Vùng hình chữ nhật trên ảnh dùng để tìm kiếm, đồng bộ với tham số vùng tìm kiếm ở cửa sổ thuộc tính</td>
 </tr>
+
 <tr>
-<td></td>
-<td> 是否融合像素当量      </td>
-<td> 选择“是”，需要对数据链中输入像素当量参数进行配置，是将像素当量值与图像振镜夹角进行融合得到转换矩阵。</td>
+<td rowspan="4">Chuỗi dữ liệu</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh có chiều rộng, chiều cao, kích thước pixel giống với ảnh hiển thị ở cửa sổ hình ảnh</td>
+</tr><tr>
+<td>Hướng trục X</td>
+<td>Hướng trục X của galvo</td>
+</tr><tr>
+<td>Hướng trục Y</td>
+<td>Hướng trục Y của galvo</td>
+</tr><tr>
+<td>Pixel khi lượng đầu vào (mm/px)</td>
+<td>Kích thước thực tế tương ứng với 1 pixel (mm/pixel)</td>
 </tr>
+
 <tr>
-<td></td>
-<td>标定精度</td>
-<td>完成标定后使用标定结果反向计算出9个圆心的理论激光坐标，并和实际坐标比较得到每个圆心处的标定误差，当圆心标定误差超过此值时，将其误差文本置为红色，以提示用户此标定结果误差过大，仅做提示用，不影响工具的执行成功与否。</td>
-</tr>
-<tr>
-<td> 图像窗口              </td>
-<td> 输入图像                                                     </td>
-<td> 显示与振镜坐标相关联的图像。                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 搜索区域              </td>
-<td> 图像中参与查找的仿射矩形区域，同属性窗口的搜索区域参数。                                                                 </td>
-</tr>
-<tr>
-<td> 数据链                </td>
-<td> 输入图像                                                     </td>
-<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。   </td>
-</tr>
-<tr>
-<td></td>
-<td> X轴方向               </td>
-<td> 振镜X坐标轴方向。                                                                                                        </td>
-</tr>
-<tr>
-<td></td>
-<td> Y轴方向               </td>
-<td> 振镜Y坐标轴方向。                                                                                                        </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入像素当量（mm/px） </td>
-<td> 像素当量是指每像素所占实际尺寸的大小。                                                                                   </td>
-</tr>
-<tr>
-<td> 高级界面              </td>
-<td> 提取方式                                                   </td>
-<td> 提取方式分为手动提取和自动提取，同属性窗口的提取方式参数 </td>
-</tr>
-<tr>
-<td></td>
-<td> 颜色特征              </td>
-<td> 根据辅助点颜色分为白色和黑色，同属性窗口的Mark颜色参数。                                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 标记点位置            </td>
-<td> 输入9个振镜坐标点的X和Y分量，同数据链中的辅助点坐标参数。                                                                </td>
+<td rowspan="3">Giao diện nâng cao</td>
+<td>Phương thức trích xuất</td>
+<td>Giống tham số ở cửa sổ thuộc tính</td>
+</tr><tr>
+<td>Đặc trưng màu</td>
+<td>Màu của các điểm phụ trợ (trắng/đen), giống tham số Mark màu</td>
+</tr><tr>
+<td>Vị trí điểm đánh dấu</td>
+<td>Nhập tọa độ X và Y của 9 điểm galvo (đã biết trước</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称       </th>
-<th> 参数描述                                                                                                               </th>
+<th>Phân loại</th>
+<th>Tên tham số</th>
+<th>Mô tả tham số</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口       </td>
-<td> 输入图像                                                     </td>
-<td> 输出图像宽度、高度、像素大小。                           </td>
+<td rowspan="12">Cửa sổ giám sát</td>
+<td>Ảnh đầu vào</td>
+<td>Ảnh đã xử lý (chiều rộng, chiều cao, kích thước pixel)</td>
 </tr>
 <tr>
+<td>Pixel khi lượng</td>
+<td>Kích thước thực tế tương ứng mỗi pixel (mm/px)</td>
+</tr>
+<tr>
+<td>Góc giữa ảnh và galvo</td>
+<td>Góc xoay giữa hệ tọa độ ảnh và hệ tọa độ galvo</td>
+</tr>
+<tr>
+<td>Ma trận biến đổi tuyến tính 2D</td>
+<td>Ma trận chuyển đổi từ tọa độ ảnh ↔ tọa độ galvo</td>
+</tr>
+<tr>
+<td>Tọa độ ảnh của điểm đánh dấu</td>
+<td>Tọa độ ảnh của điểm trung tâm (điểm thứ 5 trong 9 điểm)</td>
+</tr>
+<tr>
+<td>Tọa độ nền tảng của điểm đánh dấu</td>
+<td>Tọa độ galvo của điểm trung tâm (điểm thứ 5)</td>
+</tr>
+<tr>
+<td>Tọa độ ảnh 9 điểm tròn</td>
+<td>Mảng 9 tâm tròn tìm được trên ảnh sau khi liên kết</td>
+</tr>
+<tr>
+<td>Tọa độ nền tảng 9 điểm</td>
+<td>Mảng 9 tọa độ galvo đã biết (đầu vào)</td>
+</tr>
+<tr>
+<td>Kết quả hiệu chuẩn</td>
+<td>Toàn bộ thông số hiệu chuẩn (dùng cho các công cụ tính vị trí laser sau này)</td>
+</tr>
+<tr>
+<td>Thông tin hiệu chuẩn</td>
+<td>Chuỗi thông tin chi tiết về quá trình hiệu chuẩn</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Trạng thái chạy công cụ (OK / NG)</td>
+</tr>
+<tr>
+<td>Thời gian thực thi</td>
+<td>Thời gian chạy công cụ</td>
+</tr>
+
+<tr>
+<td rowspan="2">Cửa sổ hình ảnh</td>
+<td>Ảnh đầu vào</td>
+<td>Hiển thị ảnh đã liên kết với galvo (giống ảnh ở cửa sổ giám sát)</td>
+</tr>
+<tr>
+<td>Kết quả thực thi</td>
+<td>Hiển thị OK (xanh) hoặc NG (đỏ), đồng bộ với cửa sổ giám sát</td>
+</tr>
+
+<tr>
+<td rowspan="9">Chuỗi dữ liệu (đầu ra)</td>
+<td>Pixel khi lượng</td>
+<td>Xuất ra cho các công cụ sau dùng</td>
+</tr>
+<tr>
+<td>Góc giữa ảnh và galvo</td>
 <td></td>
-<td> 像素当量       </td>
-<td> 输出每像素所占实际尺寸的大小。                                                                                         </td>
 </tr>
 <tr>
+<td>Ma trận biến đổi tuyến tính 2D</td>
+<td>Dùng trực tiếp cho công cụ tính vị trí đánh dấu laser sau này</td>
+</tr>
+<tr>
+<td>Tọa độ ảnh điểm đánh dấu</td>
 <td></td>
-<td> 图像振镜夹角   </td>
-<td> 输出的图像坐标系与振镜坐标系之间的夹角。                                                                               </td>
 </tr>
 <tr>
+<td>Tọa độ nền tảng điểm đánh dấu</td>
 <td></td>
-<td> 二维线性变换   </td>
-<td> 输出图像坐标与振镜坐标关联后的转换矩阵。                                                                               </td>
 </tr>
 <tr>
+<td>Tọa độ ảnh 9 điểm tròn</td>
 <td></td>
-<td> 标记点图像坐标 </td>
-<td> 输出图像坐标与振镜坐标关联时的图像标记点坐标，指九圆图像坐标的第5个点的坐标。                                                           </td>
 </tr>
 <tr>
+<td>Tọa độ nền tảng 9 điểm tròn</td>
 <td></td>
-<td> 标记点平台坐标 </td>
-<td> 输出图像坐标与振镜坐标关联时的平台标记点坐标，指九圆平台坐标的第5个辅助点坐标。                                                           </td>
 </tr>
 <tr>
-<td></td>
-<td> 九圆图像坐标   </td>
-<td> 输出图像坐标与振镜坐标关联后九圆图像坐标。                                                                             </td>
-</tr>
-<tr>
-<td></td>
-<td> 九圆平台坐标   </td>
-<td> 输出的九圆平台坐标，即输入参数中的9个辅助点坐标。                                                                      </td>
-</tr>
-<tr>
-<td></td>
-<td> 标定结果   </td>
-<td> 标定后参数的结果值，供后面位置计算工具使用。                                                                      </td>
-</tr>
-<tr>
-<td></td>
-<td> 标定信息   </td>
-<td> 标定信息字符串。                                                                      </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果       </td>
-<td> 工具执行结果。                                                                                                         </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行时间       </td>
-<td> 工具执行时间。                                                                                                         </td>
-</tr>
-<tr>
-<td> 图像窗口       </td>
-<td> 输入图像                                                     </td>
-<td> 显示与振镜坐标相关联的图像，同监视窗口的输出图像参数。   </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果       </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                           </td>
-</tr>
-<tr>
-<td> 数据链        </td>
-<td> 像素当量       </td>
-<td> 输出每个像素所占实际尺寸的大小，供后序工具使用，同监视窗口的像素当量参数。                                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 图像振镜夹角   </td>
-<td> 输出图像坐标系与振镜坐标系之间的夹角。                                                                                 </td>
-</tr>
-<tr>
-<td></td>
-<td> 二维线性变换   </td>
-<td> 输出图像坐标与振镜坐标关联后的转换矩阵，供后序振镜打标位置计算工具使用，同监视窗口的二维线性变换参数。                                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 标记点图像坐标 </td>
-<td> 输出图像标记点坐标，供后序振镜打标位置计算工具使用，同监视窗口的标记点图像坐标参数。                                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 标记点平台坐标 </td>
-<td> 输出平台标记点坐标，供后序振镜打标位置计算工具使用，同监视窗口的标记点平台坐标参数。                                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 九圆图像坐标   </td>
-<td> 输出图像坐标与振镜坐标关联后图像坐标，供后序振镜打标位置计算工具使用，同监视窗口的图像坐标参数。                                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 九圆平台坐标   </td>
-<td> 输出的九圆平台坐标，供后序振镜打标位置计算工具使用，同监视窗口的振镜坐标参数。                                                           </td>
-</tr>
-<tr>
-<td></td>
-<td> 标定结果   </td>
-<td> 标定后参数的结果值，供后面位置计算工具使用。                                                                      </td>
+<td>Kết quả hiệu chuẩn</td>
+<td>Toàn bộ kết quả hiệu chuẩn (dùng cho các công cụ tính vị trí laser tiếp theo)</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
-<h3>提取方式</h3>
+<h3>Phương thức trích xuất</h3>
 
-<p>手动提取是指在搜索区域内手动摆放卡尺提取辅助点，其中搜索区域内卡尺的摆放顺序如图2所示，找圆卡尺与辅助点是一一对应的关系。自动提取指在搜索区域内自动提取辅助点坐标。</p>
+<p><strong>Trích xuất thủ công</strong>: Người dùng tự đặt các caliper tìm vòng tròn trong vùng tìm kiếm. Thứ tự đặt caliper phải đúng theo quy tắc như Hình 2 (từ 1 → 9, mỗi caliper tương ứng đúng 1 điểm phụ trợ).<br>
+<strong>Trích xuất tự động</strong>: Phần mềm tự động tìm và xác định tọa độ 9 điểm phụ trợ trong vùng tìm kiếm.</p>
 
 <p><img src="media/wps49.jpg" alt="img" /></p>
+<p><imgnote>Hình 2 – Thứ tự đặt caliper trong chế độ thủ công</imgnote></p>
 
-<p><imgnote>图2 手动模式卡尺摆放顺序示意图</imgnote></p>
-
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li><p>九圆标定工具在手动提取模式下，鼠标左键双击其中一个找圆卡尺，在弹出的属性对话框中改变其参数(卡尺数量和卡尺搜索方向)，然后鼠标拖动该找圆卡尺(改变搜索长度和投影长度参数)，即可完成所有找圆卡尺的同步刷新。</p></li>
-<li><p>九圆关联标定工具与振镜打标位置计算工具配合使用。</p></li>
+<li>Trong chế độ trích xuất thủ công: chỉ cần nháy đúp chuột trái vào một caliper tìm vòng tròn bất kỳ → chỉnh thông số (số lượng caliper, hướng tìm kiếm, chiều dài tìm kiếm, chiều dài chiếu…) → tất cả 9 caliper còn lại sẽ tự động đồng bộ theo thông số mới.</li>
+<li>Công cụ hiệu chuẩn liên kết 9 điểm tròn luôn được dùng kết hợp với <strong>Công cụ tính vị trí đánh dấu laser galvo</strong> ở bước sau.</li>
 </ul>
 
-
-<h2>示例工程</h2>
+<h2>Ví dụ dự án</h2>
 
 <p>参见“\Samples\九圆关联标定工具.gvp”。</p>
