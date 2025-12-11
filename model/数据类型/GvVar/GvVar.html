@@ -18,107 +18,89 @@
            </head>
 <h1>GvVar</h1>
 
-<h2>Chức Năng</h2>
+<h2>Chức năng</h2>
 
-<p>GvVar là đối tượng của lớp GcVisionAssemblyVar, dùng để thao tác trong quản lý biến. Cấm tự định nghĩa một đối tượng GcVisionAssemblyVar.</p>
+<p>GvVar là đối tượng toàn cục của lớp GcVisionAssemblyVar dùng để đọc/ghi các biến trong Quản lý biến (Variable Manager). Tuyệt đối không được tự tạo mới một đối tượng GcVisionAssemblyVar — hệ thống đã cung cấp sẵn đối tượng GvVar để sử dụng trực tiếp.</p>
 
-<h2>Giao Diện</h2>
+<h2>Giao diện (Interface)</h2>
 
 <table>
 <thead>
 <tr>
 <th>Phân loại</th>
 <th>Tên giao diện</th>
-<th>Mô tả giao diện</th>
+<th>Mô tả</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Hàm</td>
-<td>GetVar(str, is_raw_string)</td>
-<td>Lấy bản sao của biến, giá trị trả về là một bản sao.</td>
+<td rowspan="2">Hàm thành viên</td>
+<td>GetVar(str, is_raw_string=False)</td>
+<td>Lấy giá trị biến (trả về bản sao).</td>
 </tr>
 <tr>
-<td></td>
-<td>SetVar(str, value, is_raw_string)</td>
-<td>Thiết lập biến.</td>
+<td>SetVar(str, value, is_raw_string=False)</td>
+<td>Đặt giá trị cho biến.</td>
 </tr>
 </tbody>
 </table>
 
-<h2>Giải Thích Chi Tiết</h2>
+<h2>Chi tiết chức năng</h2>
 
-<h3>GvVar.GetVar(str, is_raw_string)</h3>
-
+<h3>GvVar.GetVar(str, is_raw_string=False)</h3>
 <ul>
-<li><p>Chức năng: Lấy biến. Biến lấy được là một bản sao, việc sửa đổi trên bản sao sẽ không đồng bộ lại với biến trong trình quản lý biến. Ví dụ:</p>
+<li><p>Chức năng: Lấy giá trị của biến trong Quản lý biến. Giá trị trả về là bản sao (copy), nên sửa đổi biến này sẽ không tự động cập nhật vào Variable Manager.</p>
 
 <p><code>python
-num = GvVar.GetVar("#L1") ## lúc này #L1 là 1
-num = 5 ## lúc này #L1 vẫn là 1
+num = GvVar.GetVar("#L1")   # lúc này #L1 = 1
+num = 5                     # #L1 trong Variable Manager vẫn là 1
 </code></p>
 
-<p>Nếu muốn đồng bộ thay đổi lên trình quản lý biến thì cần dùng thêm GvVar.SetVar.</p></li>
+<p>Nếu muốn thay đổi thực sự → phải dùng thêm GvVar.SetVar().</p></li>
 
 <li><p>Tham số:</p>
-
 <ul>
-<li><p>str: Tên biến, ví dụ “#L1”, “@G1”.</p></li>
-<li><p>is_raw_string: Kiểu boolean. Tham số này thường không cần hiển thị, giá trị mặc định là False (trừ khi cần lấy chuỗi gốc thì mới cần dùng đến tham số này). Thông thường không cần thiết lập tham số này khi lấy biến.</p>
+<li><p>str: Tên biến, ví dụ "#L1", "#L2", "@G1", "@G2", "#S10", v.v.</p></li>
+<li><p>is_raw_string: bool, mặc định False (hầu như không cần dùng).<br>
+• False → chuỗi được chuyển sang UTF-8.<br>
+• True → trả về dữ liệu bytes gốc (dùng khi biến chứa dữ liệu nhị phân có byte 0x00, ví dụ dữ liệu giao tiếp, barcode, QR…).</p>
 
-<ul>
-<li>True: Lấy chuỗi gốc, giá trị trả về là kiểu bytes.</li>
-<li>False: Chuỗi được chuyển sang UTF-8.</li>
-</ul>
-
-<p>Ví dụ trong trình quản lý biến có giá trị chuỗi là 05 4c 4d 11 00 51, nếu xử lý như chuỗi thông thường thì sẽ bị cắt tại 00, chỉ lấy được 05 4c 4d 11, dài 4 byte. Nếu muốn lấy đủ 6 byte thì cần đặt is_raw_string=True.</p></li>
+<p>Ví dụ: biến #S0 chứa chuỗi hex 05 4C 4D 11 00 51 → nếu is_raw_string=False sẽ bị cắt tại 00 → chỉ còn “05 4C 4D 11”. Dùng True sẽ lấy đủ 6 byte.</p></li>
 </ul>
 </li>
-
-<li><p>Giá trị trả về: Bản sao của biến tương ứng trong trình quản lý biến.</p></li>
+<li><p>Giá trị trả về: Bản sao của giá trị biến (int, float, str, list, bytes…).</p></li>
 </ul>
 
-<h3>GvVar.SetVar(str, value, is_raw_string)</h3>
-
+<h3>GvVar.SetVar(str, value, is_raw_string=False)</h3>
 <ul>
-<li><p>Chức năng: Thiết lập giá trị cho biến, sử dụng kết hợp với GetVar. Ví dụ:</p>
+<li><p>Chức năng: Ghi/đặt lại giá trị biến trong Variable Manager.</p>
 
 <p><code>python
-num = GvVar.SetVar("#L1") # lúc này #L1 là 1
-num = 5 ## lúc này #L1 vẫn là 1
-GvVar.SetVar("#L1", num) ## lúc này #L1 có giá trị là 5
+num = GvVar.GetVar("#L1")   # num = 1
+num = 5
+GvVar.SetVar("#L1", num)    # lúc này #L1 trong Variable Manager đã thành 5
 </code></p></li>
 
 <li><p>Tham số:</p>
-
 <ul>
-<li><p>str: Tên biến, ví dụ “#L1”, “@G1”.</p></li>
-<li><p>value: Giá trị cần thiết lập.</p></li>
-<li><p>is_raw_string: Kiểu boolean. Tham số này thường không cần hiển thị, giá trị mặc định là False (trừ khi cần thiết lập chuỗi gốc). Thông thường không cần thiết lập tham số này.</p>
-
-<ul>
-<li>True: Thiết lập chuỗi gốc, giá trị là kiểu bytes.</li>
-</ul>
-</li>
-</ul>
-</li>
-
-<li>False: Chuỗi sẽ được chuyển thành mã hóa GBK.</li>
+<li>str: Tên biến (ví dụ "#L1", "@G1").</li>
+<li>value: Giá trị mới cần đặt.</li>
+<li>is_raw_string: bool, mặc định False.<br>
+• False → chuỗi được chuyển sang GBK trước khi ghi.<br>
+• True → ghi trực tiếp bytes gốc (dùng khi cần ghi dữ liệu nhị phân).</li>
 </ul>
 
-<p>Ví dụ: GvTool.SetVar("#L0", b'\xAA') — nếu đặt is_raw_string=False thì kết quả sẽ là 3F, còn nếu đặt là True thì kết quả sẽ là AA.</p>
-
-<ul>
-<li>Giá trị trả về: Kiểu bool, cho biết thiết lập có thành công hay không.</li>
+<p>Ví dụ: GvVar.SetVar("#L0", b'\xAA', True) → biến #L0 sẽ nhận đúng byte AA.<br>
+Nếu để False thì sẽ bị chuyển thành “?” (0x3F).</p></li>
+<li><p>Giá trị trả về: bool – True nếu đặt thành công.</p></li>
 </ul>
 
-<h2>Lưu Ý</h2>
+<h2>Lưu ý quan trọng</h2>
 
-<p>1. Cấm tự định nghĩa đối tượng GcVisionAssemblyVar, hệ thống đã có sẵn đối tượng GvVar có thể sử dụng trực tiếp.</p>
+<p>1. Tuyệt đối không tự tạo đối tượng GcVisionAssemblyVar. Hãy dùng luôn đối tượng toàn cục GvVar có sẵn.</p>
 
-<p>2. Nếu dùng GetVar để lấy biến mà muốn thay đổi được cập nhật lên trình quản lý biến thì cần kết hợp với SetVar.</p>
+<p>2. GetVar() chỉ trả về bản sao → muốn thay đổi thực sự trong Variable Manager thì phải gọi SetVar().</p>
 
+<h2>Ví dụ code</h2>
 
-<h2>示例代码</h2>
-
-<p>无</p>
+<p>Không có (đã có ví dụ trong phần mô tả).</p>
