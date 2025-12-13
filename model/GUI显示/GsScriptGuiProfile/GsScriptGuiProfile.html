@@ -18,78 +18,66 @@
            </head>
 <h1>GsScriptGuiProfile</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>要在视图窗口显示的轮廓图像。</p>
+<p>Đối tượng GUI dùng để hiển thị hình ảnh profile (đồ thị cường độ biên/đồ thị quét đường thẳng) lên cửa sổ hình ảnh (View).</p>
 
-<h2>接口</h2>
+<h2>Giao diện (Interface)</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                             </th>
-<th> 接口描述                           </th>
+<th>Phân loại</th>
+<th>Tên thuộc tính</th>
+<th>Mô tả</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
-<td> sScriptGuiStyle </td>
-<td> 显示风格，包括字体，大小，颜色等。 </td>
+<td rowspan="2">Thuộc tính</td>
+<td>sScriptGuiStyle</td>
+<td>Phong cách hiển thị (kiểu GsScriptGuiStyle), bao gồm độ dày nét, màu sắc, v.v.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> profile                 </td>
-<td> 要显示的轮廓图像。                 </td>
+<td>profile</td>
+<td>Hình ảnh profile cần hiển thị (kiểu GsProfileData).</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Chi tiết chức năng</h2>
 
 <h3>sScriptGuiStyle</h3>
-
 <ul>
-<li>功能：显示风格，GsScriptGuiStyle类型。</li>
+<li>Chức năng: Phong cách hiển thị GUI, kiểu GsScriptGuiStyle.</li>
 </ul>
-
 
 <h3>profile</h3>
-
 <ul>
-<li>功能：要显示的轮廓图像，GsProfileData类型</li>
+<li>Chức năng: Dữ liệu profile cần hiển thị lên View, kiểu GsProfileData.</li>
 </ul>
 
-
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ol>
-<li><p>脚本设置轮廓图像时可以不用设置显示风格。</p></li>
-<li><p>脚本工具中若添加了多个轮廓图像，只显示第一个轮廓图像。</p></li>
-<li><p>如果决定使用脚本向视图中添加轮廓图像，则禁止手动向视图中添加轮廓图像。反之亦是。</p></li>
+<li><p>Khi dùng script để đặt profile thì có thể không cần thiết lập phong cách hiển thị.</p></li>
+<li><p>Nếu trong một công cụ script thêm nhiều đối tượng profile GUI thì chỉ hiển thị profile đầu tiên.</p></li>
+<li><p>Nếu đã quyết định dùng script để thêm profile vào View thì không được thêm thủ công (manual) profile vào cùng View đó. Ngược lại cũng vậy.</p></li>
 </ol>
 
+<h2>Ví dụ code</h2>
 
-<h2>示例代码</h2>
+<p>```python
+# Gui数组
+guiArray = GvVisionAssembly.GcScriptGuiArray()
 
-<p>```python</p>
+# Gui轮廓
+guiProfile = GvVisionAssembly.GsScriptGuiProfile()
+guiProfile.profile = GvTool.GetToolData("Thư mục ảnh_003.Đầu ra profile ảnh")  # lấy profile từ công cụ khác
 
-<h2>Gui数组</h2>
+# 将轮廓Gui添加到Gui数组
+guiArray.Add(guiProfile)
 
-<p>guiArray = GvVisionAssembly.GcScriptGuiArray()</p>
-
-<h2>Gui轮廓</h2>
-
-<p>guiProfile = GvVisionAssembly.GsScriptGuiProfile()
-guiProfile.profile = GvTool.GetToolData(&ldquo;图像文件夹_003.输出轮廓图像&rdquo;)</p>
-
-<h2>将轮廓Gui添加到Gui数组</h2>
-
-<p>guiArray.Add(guiProfile)</p>
-
-<h2>将Gui数组添加的View显示</h2>
-
-<p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiArray)
+# 将Gui数组添加的View显示
+GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
 ```</p>

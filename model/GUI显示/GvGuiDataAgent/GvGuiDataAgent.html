@@ -20,60 +20,62 @@
 
 <h2>Chức năng</h2>
 
-<p>Dùng để hiển thị mảng các đối tượng GUI được lưu trữ trong GvGuiDataAgent lên cửa sổ hiển thị (view window) thông qua đối tượng lớp GcScriptGuiDataAgent. <strong>Không được tự định nghĩa đối tượng GcScriptGuiDataAgent.</strong></p>
+<p>GvGuiDataAgent là đối tượng toàn cục của lớp GcScriptGuiDataAgent, dùng để hiển thị mảng đối tượng GUI (text, line, rect, circle, annulus, profile, v.v.) lên cửa sổ hình ảnh (View). Tuyệt đối không được tự tạo mới một đối tượng GcScriptGuiDataAgent.</p>
 
-<h2>Giao diện</h2>
+<h2>Giao diện (Interface)</h2>
 
 <table>
 <thead>
 <tr>
-<th>Loại</th>
-<th>Tên hàm</th>
+<th>Phân loại</th>
+<th>Tên giao diện</th>
 <th>Mô tả</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Hàm</td>
+<td>Hàm thành viên</td>
 <td>SetGraphicDisplay(str, value)</td>
-<td>Thêm đối tượng GUI cần hiển thị vào cửa sổ hiển thị.</td>
+<td>Hiển thị mảng đối tượng GUI lên cửa sổ hình ảnh đã chỉ định.</td>
 </tr>
 </tbody>
 </table>
 
-<h2>Giải thích chi tiết</h2>
+<h2>Chi tiết chức năng</h2>
 
 <h3>SetGraphicDisplay(str, value)</h3>
-
 <ul>
-<li><p><strong>Chức năng</strong>: Thêm mảng đối tượng GUI vào cửa sổ hiển thị.</p></li>
-<li><p><strong>Tham số</strong>:</p>
-  <ul>
-    <li><p><code>str</code>: kiểu chuỗi, tên của cửa sổ hiển thị. Ví dụ: "View-1".</p></li>
-    <li><p><code>value</code>: kiểu <code>GcScriptGuiArray</code>, là mảng các đối tượng GUI cần hiển thị.</p></li>
-  </ul>
+<li><p>Chức năng: Đẩy toàn bộ mảng đối tượng GUI lên cửa sổ hình ảnh để hiển thị (thường gọi mỗi frame hoặc khi cần cập nhật overlay).</p></li>
+<li><p>Tham số:</p>
+<ul>
+<li><p>str: Tên cửa sổ hình ảnh (View), ví dụ "View-1", "View-2", "MainView"…</p></li>
+<li><p>value: Mảng các đối tượng GUI cần hiển thị, kiểu GcScriptGuiArray.</p></li>
+</ul>
 </li>
-<li><p><strong>Giá trị trả về</strong>: kiểu bool, biểu thị việc thêm có thành công hay không.</p></li>
+<li><p>Giá trị trả về: bool – True nếu hiển thị thành công.</p></li>
 </ul>
 
-<h2>Lưu ý</h2>
+<h2>Lưu ý quan trọng</h2>
 
 <ol>
-<li>Không được tự định nghĩa đối tượng <code>GcScriptGuiDataAgent</code>, vì đã có sẵn đối tượng <code>GvGuiDataAgent</code> nội bộ có thể sử dụng trực tiếp.</li>
+<li>Tuyệt đối không tự tạo đối tượng GcScriptGuiDataAgent. Hệ thống đã cung cấp sẵn đối tượng toàn cục GvGuiDataAgent để sử dụng trực tiếp.</li>
 </ol>
 
-<h2>Ví dụ mã nguồn</h2>
+<h2>Ví dụ code</h2>
 
-<p>1. Thêm GUI vào cửa sổ hiển thị:</p>
+<p>1、Thêm và hiển thị GUI (ví dụ vẽ chữ “text” tại vị trí (0,0) trên View-1)</p>
 
-<pre><code class="language-python">
+<p><code>python
 guiArray = GvVisionAssembly.GcScriptGuiArray()
 guiText = GvVisionAssembly.GsScriptGuiText()
-guiText.sScriptGuiStyle = guiStyle
-guiText.strText = "text"
-guiText.posX = 0.0
-guiText.posY = 0.0
-guiText.deg = 0.0
-guiArray.Add(guiText)
-GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
-</code></pre>
+
+guiText.sScriptGuiStyle = guiStyle        # guiStyle là biến GsScriptGuiStyle đã định nghĩa trước
+guiText.strText = "text"                  # nội dung chữ cần hiển thị
+guiText.posX = 0.0                        # tọa độ X
+guiText.posY = 0.0                        # tọa độ Y
+guiText.deg = 0.0                         # góc xoay (độ)
+
+guiArray.Add(guiText)                     # thêm vào mảng
+
+GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)  # hiển thị lên View-1
+</code></p>

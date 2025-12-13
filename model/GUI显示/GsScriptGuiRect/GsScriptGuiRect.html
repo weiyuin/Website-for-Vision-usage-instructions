@@ -18,87 +18,76 @@
            </head>
 <h1>GsScriptGuiRect</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>要在视图窗口显示的矩形。</p>
+<p>Đối tượng GUI dùng để hiển thị hình chữ nhật (rectangle) lên cửa sổ hình ảnh (View).</p>
 
-<h2>接口</h2>
+<h2>Giao diện (Interface)</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                             </th>
-<th> 接口描述                           </th>
+<th>Phân loại</th>
+<th>Tên thuộc tính</th>
+<th>Mô tả</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
-<td> sScriptGuiStyle </td>
-<td> 显示风格，包括字体，大小，颜色等。 </td>
+<td rowspan="2">Thuộc tính</td>
+<td>sScriptGuiStyle</td>
+<td>Phong cách hiển thị (kiểu GsScriptGuiStyle), bao gồm kiểu nét, độ dày, màu sắc, nhãn, font chữ, v.v.</td>
 </tr>
 <tr>
-<td>      </td>
-<td> rect                       </td>
-<td> 要显示的矩形。                     </td>
+<td>rect</td>
+<td>Hình chữ nhật cần hiển thị (kiểu scRect).</td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>详细说明</h2>
+<h2>Chi tiết chức năng</h2>
 
 <h3>sScriptGuiStyle</h3>
-
 <ul>
-<li>功能：显示风格，GsScriptGuiStyle类型。</li>
+<li>Chức năng: Phong cách hiển thị GUI, kiểu GsScriptGuiStyle.</li>
 </ul>
-
 
 <h3>rect</h3>
-
 <ul>
-<li>功能：要显示的矩形，scRect类型</li>
+<li>Chức năng: Vùng hình chữ nhật cần hiển thị lên View, kiểu scRect.</li>
 </ul>
 
+<h2>Lưu ý</h2>
 
-<h2>注意</h2>
+<p>Không có.</p>
 
-<p>无。</p>
+<h2>Ví dụ code</h2>
 
-<h2>示例代码</h2>
+<p>```python
+# 设置GUI格式
+guiStyle = GvVisionAssembly.GsScriptGuiStyle()
+guiStyle.bVisible = False          # không hiển thị vùng fill (nếu có)
+guiStyle.nLineStyle = 3            # kiểu nét (3 thường là nét đứt)
+guiStyle.nLineWidth = 2            # độ dày nét 2 pixel
+guiStyle.clrLineColor = [255, 0, 0]  # màu đỏ (RGB)
+guiStyle.bLabelVisible = True      # hiển thị nhãn
+guiStyle.strLabelFont = "宋体"      # font SimSun (宋体)
+guiStyle.lFontSize = 10            # cỡ chữ 10
 
-<p>```python</p>
+########## GUI设置 ################
 
-<h2>设置GUI格式</h2>
+# 获取GUI显示数组
+guiArray = GvVisionAssembly.GcScriptGuiArray()
 
-<p>guiStyle = GvVisionAssembly.GsScriptGuiStyle()
-guiStyle.bVisible = False
-guiStyle.nLineStyle = 3
-guiStyle.nLineWidth = 2
-guiStyle.clrLineColor = [255,0,0]
-guiStyle.bLabelVisible = True
-guiStyle.strLabelFont = &ldquo;宋体&rdquo;
-guiStyle.lFontSize = 10</p>
+# 矩形GUI
+guiRect = GvVisionAssembly.GsScriptGuiRect()
+rect0 = GvVisionAssembly.scRect(GvVisionAssembly.sc2Vector(100,100), GvVisionAssembly.sc2Vector(200,300))  # góc trái trên (100,100), góc phải dưới (200,300)
 
-<h6>########## GUI设置 ################</h6>
-
-<h2>获取GUI显示数组</h2>
-
-<p>guiArray = GvVisionAssembly.GcScriptGuiArray()</p>
-
-<h2>矩形GUI</h2>
-
-<p>guiRect = GvVisionAssembly.GsScriptGuiRect()
-rect0 =GvVisionAssembly.scRect(GvVisionAssembly.sc2Vector(100,100),GvVisionAssembly.sc2Vector(200,300))</p>
-
-<p>guiRect.rect = rect0
-guiStyle.strLabel = &ldquo;矩形&rdquo;
+guiRect.rect = rect0
+guiStyle.strLabel = "矩形"          # nội dung nhãn
 guiRect.sScriptGuiStyle = guiStyle
-guiArray.Add(guiRect)</p>
+guiArray.Add(guiRect)
 
-<h2>将GUI数组设置到视图</h2>
-
-<p>GvGuiDataAgent.SetGraphicDisplay(&ldquo;View-1&rdquo;, guiArray)
+# 将GUI数组设置到视图
+GvGuiDataAgent.SetGraphicDisplay("View-1", guiArray)
 ```</p>
