@@ -16,131 +16,131 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>旋转镜像工具</h1>
+<h1>Công cụ Xoay & Lật ảnh</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>旋转镜像工具主要用来对输入图像进行旋转、镜像变换。</p>
+<p>Công cụ Xoay & Lật ảnh chủ yếu được sử dụng để thực hiện các phép biến đổi xoay và lật đối xứng trên ảnh đầu vào.</p>
 
-<p><img src="media/wps47.jpg" alt="img" />      <img src="media/wps48.jpg" alt="img" /></p>
+<p><img src="media/wps47.jpg" alt="img" />      <img src="media/wps48.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 输入图像</imgnote> <imgnote>(b) 旋转180度图像</imgnote></p>
+<p><imgnote>(a) Ảnh đầu vào</imgnote> <imgnote>(b) Ảnh xoay 180 độ</imgnote></p>
 
-<p><imgnote>图1 旋转镜像工具示意图</imgnote></p>
+<p><imgnote>Hình 1: Hình minh họa công cụ Xoay & Lật ảnh</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口 </td>
-<td> 旋转类型                                                     </td>
-<td> 逆时针将原始图像旋转一定角度，分为4种角度类型，0度、90度、180度和270度。 </td>
+<td> Cửa sổ thuộc tính </td>
+<td> Kiểu xoay                                                     </td>
+<td> Xoay ảnh gốc ngược chiều kim đồng hồ một góc nhất định, chia làm 4 loại góc: 0 độ, 90 độ, 180 độ và 270 độ. </td>
 </tr>
 <tr>
 <td></td>
-<td> 镜像类型 </td>
-<td> 对原始图像进行镜像操作，分为4种类型，无、水平、垂直和水平垂直。                                                               </td>
+<td> Kiểu lật </td>
+<td> Thực hiện thao tác lật đối xứng trên ảnh gốc, chia làm 4 loại: Không, Ngang, Dọc và Ngang & Dọc.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否彩色图 </td>
-<td> 输入图像是否为彩色图像。                                                               </td>
+<td> Là ảnh màu? </td>
+<td> Ảnh đầu vào có phải là ảnh màu hay không.                                                               </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输入图像                                                     </td>
-<td> 显示待变化的图像。                                           </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Ảnh đầu vào                                                     </td>
+<td> Hiển thị hình ảnh chờ biến đổi.                                           </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输入图像                                                     </td>
-<td> 输入待变化的灰度图像。                                           </td>
+<td> Liên kết dữ liệu   </td>
+<td> Ảnh đầu vào                                                     </td>
+<td> Đầu vào là ảnh xám chờ biến đổi.                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 输入彩色图像 </td>
-<td> 输入待变化的彩色图像。                                                               </td>
+<td> Ảnh màu đầu vào </td>
+<td> Đầu vào là ảnh màu chờ biến đổi.                                                               </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无       </td>
-<td> 无                                                                                                                         </td>
+<td>Giao diện nâng cao</td>
+<td> Không       </td>
+<td> Không                                                                                                                         </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                       </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出图像                                                     </td>
-<td> 输出灰度图像的宽度、高度、像素大小。                 </td>
+<td> Cửa sổ giám sát </td>
+<td> Ảnh đầu ra                                                     </td>
+<td> Xuất ra chiều rộng, chiều cao, kích thước pixel của ảnh xám.                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 输出彩色图像 </td>
-<td> 输出彩色图像的宽度、高度、像素大小。                                                                                                 </td>
+<td> Ảnh màu đầu ra </td>
+<td> Xuất ra chiều rộng, chiều cao, kích thước pixel của ảnh màu.                                                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                                                 </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                                                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                                                 </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                                                                                                 </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输出图像                                                     </td>
-<td> 显示工具执行结果图像，同监视窗口的输出图像参数。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                   </td>
-</tr>
-<tr>
-<td> 数据链   </td>
-<td> 输出图像                                                     </td>
-<td> 输出的旋转之后的灰度图像，供其他工具使用。           </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Ảnh đầu ra                                                     </td>
+<td> Hiển thị hình ảnh kết quả thực thi của công cụ, giống tham số ảnh đầu ra trong Cửa sổ giám sát. </td>
 </tr>
 <tr>
 <td></td>
-<td> 输出彩色图像 </td>
-<td> 输出的旋转之后的彩色图像，供其他工具使用。                                                                                                 </td>
+<td> Kết quả thực thi </td>
+<td> Hiển thị kết quả thực thi công cụ, thành công hiện "OK", thất bại hiện "NG", giống tham số kết quả thực thi trong Cửa sổ giám sát.                                                   </td>
+</tr>
+<tr>
+<td> Liên kết dữ liệu   </td>
+<td> Ảnh đầu ra                                                     </td>
+<td> Xuất ra ảnh xám sau khi xoay, cung cấp cho các công cụ khác sử dụng.           </td>
+</tr>
+<tr>
+<td></td>
+<td> Ảnh màu đầu ra </td>
+<td> Xuất ra ảnh màu sau khi xoay, cung cấp cho các công cụ khác sử dụng.                                                                                                 </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
 <p>参见“\Samples\旋转镜像工具.gvp”。</p>

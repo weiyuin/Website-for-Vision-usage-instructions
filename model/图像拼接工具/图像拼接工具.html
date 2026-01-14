@@ -16,181 +16,181 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>图像拼接工具</h1>
+<h1>Công cụ Ghép ảnh</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>图像拼接是指将多幅来自同一场景的具有一定重叠区域的小尺寸图像合成为一幅大型的无缝高分辨率图像的技术（这些图像可以是不同时间、不同视角或者不同传感器获得的），图1给出了一个简单示意图。在工业视觉领域，图像拼接技术可以应用在单个相机无法满足的大视野、大幅面等场景，部分克服面阵相机的视野限制和分辨率限制。</p>
+<p>Ghép ảnh là kỹ thuật tổng hợp nhiều bức ảnh kích thước nhỏ có vùng chồng lấn nhất định từ cùng một cảnh thành một bức ảnh lớn liền mạch có độ phân giải cao (các bức ảnh này có thể thu được từ thời gian, góc nhìn hoặc cảm biến khác nhau), Hình 1 đưa ra một sơ đồ minh họa đơn giản. Trong lĩnh vực thị giác công nghiệp, kỹ thuật ghép ảnh có thể áp dụng cho các cảnh có trường nhìn lớn, khổ lớn mà một camera đơn lẻ không thể đáp ứng, khắc phục một phần hạn chế về trường nhìn và độ phân giải của camera diện (area scan camera).</p>
 
 <p><img src="media/wps130.jpg" alt="img" /></p>
 
-<p><imgnote>图1 拼接示意图，4幅图像拼接为1幅图像</imgnote></p>
+<p><imgnote>Hình 1: Sơ đồ ghép ảnh, 4 ảnh ghép thành 1 ảnh</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称                </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số                </th>
+<th> Mô tả tham số                                                                                                                 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口                </td>
-<td> 融合模式                                                     </td>
-<td> 图像拼接的模式，主要有：覆盖、最大值、最小值、平均值和中心加权等模式。 </td>
+<td> Cửa sổ thuộc tính                </td>
+<td> Chế độ hòa trộn                                               </td>
+<td> Các chế độ ghép ảnh, chủ yếu gồm: Ghi đè (Phủ), Giá trị lớn nhất, Giá trị nhỏ nhất, Giá trị trung bình và Trọng số trung tâm. </td>
 </tr>
 <tr>
 <td></td>
-<td> 空白区域灰度值          </td>
-<td> 拼接结果图像中非输入图像计算处的像素值。                                                                                   </td>
+<td> Giá trị xám vùng trống          </td>
+<td> Giá trị pixel trong ảnh kết quả tại những vị trí không được tính toán từ ảnh đầu vào.                                                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 开启并行运算 </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không. Khi chọn "Có", thuật toán sẽ bật chế độ tính toán song song OpenMp để tăng tốc độ, nhưng có thể xảy ra tình trạng thời gian xử lý không ổn định; khi chọn "Không", thuật toán sẽ tắt OpenMp. </td>
 </tr>
 <tr>
 <td></td>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td> Phần trăm số luồng </td>
+<td> Thiết lập phần trăm số luồng cho tính toán song song, phạm vi hiệu lực là (0, 0.75], tương ứng với phạm vi phần trăm (0%, 75%]. </td>
 </tr>
 <tr>
-<td> 图像窗口                </td>
-<td> 输入图像                                                     </td>
-<td> 显示两个输入图像的其中一幅。                                 </td>
+<td> Cửa sổ hình ảnh                </td>
+<td> Ảnh đầu vào                                                     </td>
+<td> Hiển thị một trong hai ảnh đầu vào.                                 </td>
 </tr>
 <tr>
-<td> 数据链                  </td>
-<td> 输入图像0                                                    </td>
-<td> 需要融合的第一张图片，第一张是不会被覆盖的，如果选择覆盖模式的话。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入图像1               </td>
-<td> 需要融合的第二张图片。                                                                                                     </td>
+<td> Liên kết dữ liệu                  </td>
+<td> Ảnh đầu vào 0                                                    </td>
+<td> Bức ảnh thứ nhất cần hòa trộn. Bức ảnh này sẽ không bị che lấp nếu chọn chế độ Ghi đè (Phủ). </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像0前向特征匹配特征点 </td>
-<td> 可选，可以不设置特征点。                                                                                                   </td>
+<td> Ảnh đầu vào 1               </td>
+<td> Bức ảnh thứ hai cần hòa trộn.                                                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像0后向特征匹配特征点 </td>
-<td> 必须设置，影响融合的效果。注意：选择的特性点必须是两个图像重合的部分提取的。                                                               </td>
+<td> Điểm đặc trưng khớp nối phía trước Ảnh 0 </td>
+<td> Tùy chọn, có thể không cần thiết lập điểm đặc trưng.                                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像1前向特征匹配特征点 </td>
-<td> 必须设置，影响融合的效果。注意：选择的特性点必须是两个图像重合的部分提取的。                                                               </td>
+<td> Điểm đặc trưng khớp nối phía sau Ảnh 0 </td>
+<td> Bắt buộc thiết lập, ảnh hưởng đến hiệu quả hòa trộn. Lưu ý: Các điểm đặc trưng được chọn phải được trích xuất từ phần chồng lấn của hai hình ảnh.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像1后向特征匹配特征点 </td>
-<td> 可选，可以不设置特征点。                                                                                                   </td>
+<td> Điểm đặc trưng khớp nối phía trước Ảnh 1 </td>
+<td> Bắt buộc thiết lập, ảnh hưởng đến hiệu quả hòa trộn. Lưu ý: Các điểm đặc trưng được chọn phải được trích xuất từ phần chồng lấn của hai hình ảnh.                                                               </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无                      </td>
-<td> 无                                                                                                                         </td>
+<td></td>
+<td> Điểm đặc trưng khớp nối phía sau Ảnh 1 </td>
+<td> Tùy chọn, có thể không cần thiết lập điểm đặc trưng.                                                                                                   </td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td> Không                      </td>
+<td> Không                                                                                                                         </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称               </th>
-<th> 参数描述                                                                                     </th>
+<th>Phân loại </th>
+<th> Tên tham số               </th>
+<th> Mô tả tham số                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口               </td>
-<td> 结果掩模图像                                                 </td>
-<td> 结果图像，白色为图像有效区域。 </td>
+<td> Cửa sổ giám sát               </td>
+<td> Ảnh mặt nạ kết quả                                               </td>
+<td> Ảnh kết quả, màu trắng là vùng ảnh hợp lệ. </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像0变换参数          </td>
-<td> 图像0拼接前到拼接后发生的变化的变换矩阵。                                                    </td>
+<td> Tham số biến đổi Ảnh 0          </td>
+<td> Ma trận biến đổi của Ảnh 0 từ trước khi ghép đến sau khi ghép.                                                    </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像1变换参数          </td>
-<td> 图像1拼接前到拼接后发生的变化的变换矩阵。                                                    </td>
+<td> Tham số biến đổi Ảnh 1          </td>
+<td> Ma trận biến đổi của Ảnh 1 từ trước khi ghép đến sau khi ghép.                                                    </td>
 </tr>
 <tr>
 <td></td>
-<td> 结果图像前向匹配特征点 </td>
-<td> 结果图像前向匹配特征点。                                                                     </td>
+<td> Điểm đặc trưng khớp nối phía trước ảnh kết quả </td>
+<td> Điểm đặc trưng khớp nối phía trước ảnh kết quả.                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 结果图像后向匹配特征点 </td>
-<td> 结果图像后向匹配特征点。                                                                     </td>
+<td> Điểm đặc trưng khớp nối phía sau ảnh kết quả </td>
+<td> Điểm đặc trưng khớp nối phía sau ảnh kết quả.                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 输出图像               </td>
-<td> 输出的融合后的图像。                                                                         </td>
+<td> Ảnh đầu ra               </td>
+<td> Ảnh sau khi đã được hòa trộn (ghép).                                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果               </td>
-<td> 工具执行结果。                                                                               </td>
+<td> Kết quả thực thi               </td>
+<td> Kết quả thực thi của công cụ.                                                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间               </td>
-<td> 工具执行时间。                                                                               </td>
+<td> Thời gian thực thi               </td>
+<td> Thời gian thực thi của công cụ.                                                                                                 </td>
 </tr>
 <tr>
-<td> 图像窗口               </td>
-<td> 输出图像                                                     </td>
-<td> 拼接后的图像结果。             </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果               </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                 </td>
-</tr>
-<tr>
-<td> 数据链                 </td>
-<td> 结果掩模图像                                                 </td>
-<td> 结果掩模图像。                 </td>
+<td> Cửa sổ hình ảnh               </td>
+<td> Ảnh đầu ra                                                     </td>
+<td> Kết quả hình ảnh sau khi ghép.             </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像0变换参数          </td>
-<td> 图像0变换参数。                                                                              </td>
+<td> Kết quả thực thi               </td>
+<td> Hiển thị kết quả thực thi công cụ, thành công hiện "OK", thất bại hiện "NG", giống tham số kết quả thực thi trong Cửa sổ giám sát.                                 </td>
+</tr>
+<tr>
+<td> Liên kết dữ liệu                 </td>
+<td> Ảnh mặt nạ kết quả                                                 </td>
+<td> Ảnh mặt nạ kết quả.                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像1变换参数          </td>
-<td> 图像1变换参数。                                                                              </td>
+<td> Tham số biến đổi Ảnh 0          </td>
+<td> Tham số biến đổi Ảnh 0.                                                                              </td>
 </tr>
 <tr>
 <td></td>
-<td> 结果图像前向匹配特征点 </td>
-<td> 结果图像前向匹配特征点。                                                                     </td>
+<td> Tham số biến đổi Ảnh 1          </td>
+<td> Tham số biến đổi Ảnh 1.                                                                              </td>
 </tr>
 <tr>
 <td></td>
-<td> 结果图像后向匹配特征点 </td>
-<td> 结果图像后向匹配特征点。                                                                     </td>
+<td> Điểm đặc trưng khớp nối phía trước ảnh kết quả </td>
+<td> Điểm đặc trưng khớp nối phía trước ảnh kết quả.                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 输出图像               </td>
-<td> 输出的融合后的图像。                                                                         </td>
+<td> Điểm đặc trưng khớp nối phía sau ảnh kết quả </td>
+<td> Điểm đặc trưng khớp nối phía sau ảnh kết quả.                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> Ảnh đầu ra               </td>
+<td> Ảnh sau khi đã được hòa trộn (ghép).                                                                         </td>
 </tr>
 </tbody>
 </table>
