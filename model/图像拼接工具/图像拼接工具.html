@@ -196,83 +196,83 @@
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<h3>工作原理</h3>
+<h3>Nguyên lý hoạt động</h3>
 
-<p>图像拼接的功能是将两到多幅图像组合为一幅结果图像。输入图像可以是单相机移动拍摄或多相机图像。拼接时需要考虑多幅图像的匹配特征模式，这里有两种特征模式：一、图像对应的二维线性变换（将输入图像变换到共同的客户坐标，含旋转、缩放、平移）；二、输入图像之间对应特征点。</p>
+<p>Chức năng ghép ảnh là kết hợp hai hoặc nhiều hình ảnh thành một hình ảnh kết quả duy nhất. Ảnh đầu vào có thể là ảnh chụp từ một camera di chuyển hoặc ảnh từ nhiều camera. Khi ghép, cần xem xét các mô hình đặc trưng khớp nối của nhiều hình ảnh. Ở đây có hai mô hình đặc trưng: Một là biến đổi tuyến tính 2D tương ứng của hình ảnh (biến đổi ảnh đầu vào sang hệ tọa độ khách hàng chung, bao gồm xoay, tỷ lệ, tịnh tiến); Hai là các điểm đặc trưng tương ứng giữa các hình ảnh đầu vào.</p>
 
-<p>图像拼接过程中，对于多幅图中的重叠区域，使用不同的融合算法进行处理。</p>
+<p>Trong quá trình ghép ảnh, đối với các vùng chồng lấn trong nhiều hình ảnh, các thuật toán hòa trộn khác nhau sẽ được sử dụng để xử lý.</p>
 
-<h3>融合算法</h3>
+<h3>Thuật toán hòa trộn</h3>
 
-<p>图像拼接过程中，多幅图中之间会有重叠区域，融合算法指的是如何去计算重叠区域像素的灰度值。有覆盖、最大值、最小值、平均值和中心加权五种方法。</p>
+<p>Trong quá trình ghép ảnh, sẽ có các vùng chồng lấn giữa nhiều hình ảnh, thuật toán hòa trộn đề cập đến cách tính toán giá trị xám của các pixel trong vùng chồng lấn đó. Có 5 phương pháp: Phủ (Ghi đè), Giá trị lớn nhất, Giá trị nhỏ nhất, Giá trị trung bình và Trung bình có trọng số (trọng số tâm).</p>
 
 <ul>
-<li>覆盖</li>
+<li>Phủ (Ghi đè)</li>
 </ul>
 
 
-<p>选择最后一幅输入图像的像素灰度值作为重叠区域像素的灰度值。</p>
+<p>Chọn giá trị xám pixel của hình ảnh đầu vào cuối cùng làm giá trị xám cho pixel tại vùng chồng lấn.</p>
 
 <ul>
-<li>最大值</li>
+<li>Giá trị lớn nhất</li>
 </ul>
 
 
-<p>选择多幅输入图像像素值的最大值作为重叠区域像素的灰度值。</p>
+<p>Chọn giá trị lớn nhất trong các pixel của nhiều hình ảnh đầu vào làm giá trị xám cho pixel tại vùng chồng lấn.</p>
 
 <ul>
-<li>最小值</li>
+<li>Giá trị nhỏ nhất</li>
 </ul>
 
 
-<p>选择多幅输入图像像素值的最小值作为重叠区域像素的灰度值。</p>
+<p>Chọn giá trị nhỏ nhất trong các pixel của nhiều hình ảnh đầu vào làm giá trị xám cho pixel tại vùng chồng lấn.</p>
 
 <ul>
-<li>平均值</li>
+<li>Giá trị trung bình</li>
 </ul>
 
 
-<p>选择多幅输入图像像素值的平均值作为重叠区域像素的灰度值。</p>
+<p>Chọn giá trị trung bình cộng của các pixel từ nhiều hình ảnh đầu vào làm giá trị xám cho pixel tại vùng chồng lấn.</p>
 
 <ul>
-<li>加权平均值</li>
+<li>Giá trị trung bình có trọng số</li>
 </ul>
 
 
-<p>选择多幅输入图像像素值的加权平均值作为重叠区域像素的灰度值。</p>
+<p>Chọn giá trị trung bình có trọng số của các pixel từ nhiều hình ảnh đầu vào làm giá trị xám cho pixel tại vùng chồng lấn (thường ưu tiên pixel ở trung tâm ảnh hơn pixel ở biên).</p>
 
-<h3>结果掩膜图像</h3>
+<h3>Ảnh mặt nạ kết quả</h3>
 
-<p>标识拼接结果图像中相应位置是否根据输入图像计算得到。</p>
+<p>Đánh dấu xem vị trí tương ứng trong ảnh kết quả ghép nối có được tính toán từ ảnh đầu vào hay không (Vùng hợp lệ).</p>
 
-<h3>空白区域灰度值</h3>
+<h3>Giá trị xám vùng trống</h3>
 
-<p>拼接结果图像中非输入图像计算处的像素值。</p>
+<p>Giá trị pixel tại các vị trí trong ảnh kết quả không được tính toán từ ảnh đầu vào (vùng nền).</p>
 
-<p>图2中给出四幅输入图像，图3给出覆盖、平均值、最大值、最小值、中心加权融合模式的拼接结果。图4和图5分别给出空白区域像素值、结果掩膜图像的示例。</p>
+<p>Hình 2 đưa ra bốn hình ảnh đầu vào, Hình 3 đưa ra kết quả ghép nối của các chế độ hòa trộn: Phủ, Trung bình, Lớn nhất, Nhỏ nhất, Trọng số tâm. Hình 4 và Hình 5 lần lượt đưa ra các ví dụ về giá trị pixel vùng trống và ảnh mặt nạ kết quả.</p>
 
 <p><img src="media/wps134.jpg" alt="img" /></p>
 
-<p><imgnote>图2 输入图像</imgnote></p>
+<p><imgnote>Hình 2: Ảnh đầu vào</imgnote></p>
 
 <p><img src="media/wps135.jpg" alt="img" /></p>
 
-<p><imgnote>图3 不同融合模式拼接结果</imgnote></p>
+<p><imgnote>Hình 3: Kết quả ghép nối với các chế độ hòa trộn khác nhau</imgnote></p>
 
 <p><img src="media/wps136.jpg" alt="img" /></p>
 
-<p><imgnote>图4 空白区域灰度值自定义结果</imgnote></p>
+<p><imgnote>Hình 4: Kết quả tùy chỉnh giá trị xám vùng trống</imgnote></p>
 
 <p><img src="media/wps137.jpg" alt="img" /></p>
 
-<p><imgnote>图5 结果掩膜图像</imgnote></p>
+<p><imgnote>Hình 5: Ảnh mặt nạ kết quả</imgnote></p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
 <p>参见“\Samples\图像拼接工具.gvp”。</p>
