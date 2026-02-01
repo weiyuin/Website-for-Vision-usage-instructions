@@ -18,113 +18,113 @@
            </head>
 <h1>scRectExCaliper</h1>
 
-<h2>功能</h2>
+<h2>Tính năng</h2>
 
-<p>表示可变矩形卡尺，对应的Gui图形控件为scGuiRectEx，表示可变矩形内部的卡尺集合，最外的矩形为可变矩形，内部的小矩形为卡尺。</p>
+<p>Biểu diễn thước kẹp hình chữ nhật biến dạng (Variable Rectangular Caliper), điều khiển đồ họa Gui tương ứng là scGuiRectEx, đại diện cho tập hợp các Caliper bên trong hình chữ nhật biến dạng, hình chữ nhật ngoài cùng là Variable Rectangle, và các hình chữ nhật nhỏ bên trong là các Caliper.</p>
 
 <p><img src="media/970fb2cf68e98429fec8df7f5816f015.png" alt="" /></p>
 
-<p><imgnote>图1 可变矩形卡尺示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa Variable Rectangular Caliper</imgnote></p>
 
-<h2>接口</h2>
+<h2>Interface</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                               </th>
-<th> 接口描述                         </th>
+<th> Phân loại </th>
+<th> Tên Interface </th>
+<th> Mô tả Interface </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
+<td> Constructor </td>
 <td> scRectExCaliper </td>
-<td> scRectExCaliper ()默认构造函数。 </td>
+<td> scRectExCaliper() Hàm khởi tạo mặc định. </td>
 </tr>
 <tr>
-<td> 函数 </td>
-<td> GetCaliperNum    </td>
-<td> 获取卡尺数目。                   </td>
+<td> Hàm </td>
+<td> GetCaliperNum </td>
+<td> Lấy số lượng Caliper. </td>
 </tr>
 <tr>
-<td>      </td>
-<td> GetCalipers        </td>
-<td> 获取所有卡尺                     </td>
+<td> </td>
+<td> GetCalipers </td>
+<td> Lấy tất cả các Caliper </td>
 </tr>
 <tr>
-<td> 属性 </td>
-<td> rectEx             </td>
-<td> 可变矩形卡尺所在的可变矩形       </td>
+<td> Thuộc tính </td>
+<td> rectEx </td>
+<td> Hình chữ nhật biến dạng nơi tọa lạc các Variable Rectangular Caliper </td>
 </tr>
 <tr>
-<td>      </td>
-<td> caliperWidth         </td>
-<td> 卡尺宽度                         </td>
+<td> </td>
+<td> caliperWidth </td>
+<td> Chiều rộng Caliper </td>
 </tr>
 <tr>
-<td>      </td>
-<td> caliperSpace         </td>
-<td> 卡尺间隔                         </td>
+<td> </td>
+<td> caliperSpace </td>
+<td> Khoảng cách (Spacing) giữa các Caliper </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
 <h3>scRectExCaliper()</h3>
 
 <ul>
-<li><p>功能：构造scRectExCaliper对象。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Tính năng: Khởi tạo đối tượng scRectExCaliper.</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Không.</p></li>
 </ul>
 
 
 <h3>GetCapliperNum()</h3>
 
 <ul>
-<li><p>功能：获取卡尺数目。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：卡尺个数，整型。</p></li>
+<li><p>Tính năng: Lấy số lượng Caliper.</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Số lượng Caliper, kiểu nguyên (Integer).</p></li>
 </ul>
 
 
 <h3>GetCaplipers()</h3>
 
 <ul>
-<li><p>功能：获取可变矩形卡尺中的所有卡尺。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：可变矩形卡尺中的所有卡尺，scRectEx类型的向量形式，相当于Python中的list。</p></li>
+<li><p>Tính năng: Lấy tất cả các Caliper trong Variable Rectangular Caliper.</p></li>
+<li><p>Tham số: Không.</p></li>
+<li><p>Giá trị trả về: Tất cả các Caliper trong Variable Rectangular Caliper, dưới dạng Vector thuộc kiểu scRectEx, tương đương với List trong Python.</p></li>
 </ul>
 
 
 <h3>rectEx</h3>
 
 <ul>
-<li>功能：表示卡尺所在的可变矩形，，scRectEx类型，可读写。</li>
+<li>Tính năng: Biểu diễn hình chữ nhật biến dạng nơi đặt Caliper, kiểu scRectEx, có quyền đọc/ghi (R/W).</li>
 </ul>
 
 
 <h3>caliperWidth</h3>
 
 <ul>
-<li>功能：表示卡尺宽度，整型，可读写。</li>
+<li>Tính năng: Biểu diễn chiều rộng Caliper, kiểu nguyên, có quyền đọc/ghi (R/W).</li>
 </ul>
 
 
 <h3>caliperSpace</h3>
 
 <ul>
-<li>功能：表示卡尺间隔，整型，可读写。</li>
+<li>Tính năng: Biểu diễn khoảng cách giữa các Caliper, kiểu nguyên, có quyền đọc/ghi (R/W).</li>
 </ul>
 
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>示例代码</h2>
+<h2>Mã ví dụ</h2>
 
-<p>无</p>
+<p>Không</p>
