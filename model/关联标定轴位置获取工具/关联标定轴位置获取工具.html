@@ -16,63 +16,65 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>关联标定轴位置获取</h1>
+<h1>Lấy vị trí trục hiệu chuẩn liên kết</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>关联工具的基本原理是，通过机械手和平台的反向对位运动，将对象产品从对象相机多次转移到目标相机，并结合对象相机标定结果，建立目标图像坐标系和平台坐标系的转换关系。</p>
+<p>Nguyên lý cơ bản của công cụ liên kết là thông qua chuyển động đối vị ngược (Reverse alignment motion) của robot và nền tảng để chuyển đối tượng sản phẩm từ camera nguồn (object camera) sang camera mục tiêu (target camera) nhiều lần. Kết hợp với kết quả hiệu chuẩn của camera nguồn, hệ thống sẽ thiết lập quan hệ chuyển đổi giữa hệ tọa độ hình ảnh mục tiêu và hệ tọa độ nền tảng.</p>
+
+
 
 <p><img src="media/wps125.jpg" alt="img" /></p>
 
-<p><imgnote>图1 关联标定运动</imgnote></p>
+<p><imgnote>Hình 1 Chuyển động hiệu chuẩn liên kết</imgnote></p>
 
-<p>如图1所示位置变换流程，关联标定的转移运动与对位运动相反，对象相机在（c）位置先对对象拍照，机械手和平台在（b）位置完成组装或贴合，目标相机在（a）位置再对对象拍照，以上步骤依据步数重复多次。关联标定轴位置获取工具就是用于生成在关联标定过程中相应步数对应的相对轴位置。</p>
+<p>Như quy trình thay đổi vị trí trong Hình 1, chuyển động dịch chuyển của hiệu chuẩn liên kết ngược với chuyển động đối vị (Alignment). Camera nguồn chụp ảnh đối tượng tại vị trí (c), robot và nền tảng hoàn tất việc lắp ráp hoặc dán ép tại vị trí (b), sau đó camera mục tiêu chụp ảnh đối tượng tại vị trí (a). Các bước trên được lặp lại nhiều lần theo số bước quy định. Công cụ "Lấy vị trí trục hiệu chuẩn liên kết" được sử dụng để tạo ra các vị trí trục tương đối tương ứng với số bước trong quá trình hiệu chuẩn liên kết.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                        </th>
+<th>Phân loại </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                                                                        </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口     </td>
-<td> 平台类型                                                     </td>
-<td> 有XY/X/Y三种类型选项，即关联标定中不存在D轴偏移。 </td>
+<td> Cửa sổ thuộc tính     </td>
+<td> Loại nền tảng (Platform Type)                                                                                       </td>
+<td> Có ba tùy chọn loại: XY, X, hoặc Y. Nghĩa là trong hiệu chuẩn liên kết này không tồn tại độ lệch trục D (trục xoay). </td>
 </tr>
 <tr>
 <td></td>
-<td> 标定运动步数 </td>
-<td> 设置关联标定中轴的运动步数，单X或Y轴运动2步即可，而XY轴运动可选2/3/4步。<img src="media/wps127.jpg" alt="img" />                                                    </td>
+<td> Số bước chuyển động hiệu chuẩn </td>
+<td> Thiết lập số bước chuyển động của trục trong hiệu chuẩn liên kết. Đối với chuyển động trục X hoặc Y đơn lẻ chỉ cần 2 bước, trong khi chuyển động trục XY có thể chọn 2/3/4 bước.<img src="media/wps127.jpg" alt="img" />                                                    </td>
 </tr>
 <tr>
 <td></td>
-<td> 轴正方向     </td>
-<td> 用于根据实际项目设置X/Y轴方向。                                                                                 </td>
+<td> Hướng dương của trục     </td>
+<td> Dùng để thiết lập hướng trục X/Y dựa trên dự án thực tế.                                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 轴运动步长   </td>
-<td> 用于根据实际项目设置X/Y轴的运动步长。                                                                           </td>
+<td> Bước dịch chuyển trục (Step length)   </td>
+<td> Dùng để thiết lập khoảng cách dịch chuyển (step length) của trục X/Y dựa trên dự án thực tế.                                                                           </td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无     </td>
-<td> 无                                                                                                              </td>
+<td>Cửa sổ hình ảnh</td>
+<td> Không     </td>
+<td> Không                                                                                                              </td>
 </tr>
 <tr>
-<td> 数据链       </td>
-<td> 索引值                                                       </td>
-<td> 输入步数索引，用来决定输出该索引对应的轴位置。    </td>
+<td> Chuỗi dữ liệu       </td>
+<td> Giá trị chỉ mục (Index)                                                                     </td>
+<td> Nhập chỉ mục bước (Step index) để quyết định đầu ra vị trí trục tương ứng với chỉ mục đó.    </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td>  无    </td>
-<td> 无                                                                                                              </td>
+<td>Giao diện nâng cao</td>
+<td>  Không    </td>
+<td> Không                                                                                                              </td>
 </tr>
 </tbody>
 </table>
