@@ -16,188 +16,187 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>目标对位补偿</h1>
+<h1>Bù trừ căn chỉnh mục tiêu</h1>
 
-<h2>功能</h2>
+<h2>Tính năng</h2>
 
-<p>如图1，在实际项目中，如果对位后的目标和对象存在一个数值固定的位置偏差，可以通过对位补偿消除该误差。</p>
+<p>Như Hình 1, trong các dự án thực tế, nếu giữa mục tiêu (Target) và đối tượng (Object) sau khi căn chỉnh (alignment) vẫn tồn tại một sai số vị trí cố định, ta có thể loại bỏ sai số này thông qua bù trừ căn chỉnh.</p>
 
 <p><img src="media/wps44.jpg" alt="img" /></p>
 
-<p><imgnote>图1 对位后目标和对象存在位置偏差</imgnote></p>
+<p><imgnote>Hình 1 Tồn tại sai số vị trí giữa mục tiêu và đối tượng sau khi căn chỉnh</imgnote></p>
 
-<p>目标对位补偿工具的功能是，在图像坐标转换为平台坐标后，在对位计算前，根据输入的补偿量和补偿方式，组合修正目标标记点的平台坐标，使用修正后的目标标记点对位计算，从而消除对位计算后的目标和对象间的固定位置偏差。</p>
+<p>Tính năng của công cụ Bù trừ căn chỉnh mục tiêu là: sau khi tọa độ hình ảnh đã được chuyển đổi sang tọa độ bàn máy (platform coordinates) và trước khi tính toán căn chỉnh, công cụ sẽ dựa trên lượng bù trừ (offset) và phương thức bù trừ đầu vào để hiệu chỉnh tổ hợp tọa độ bàn máy của các điểm Mark mục tiêu. Việc sử dụng các điểm Mark đã hiệu chỉnh này để tính toán căn chỉnh sẽ giúp loại bỏ sai số vị trí cố định giữa mục tiêu và đối tượng.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称                                                     </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口                                                     </td>
-<td> 目标对位补偿类型                                             </td>
-<td> Mark坐标系：以输入平台坐标向量的前两个点连线与其中垂线构成的坐标系。<img src="media/wps46.jpg" alt="img" /><br />产品坐标系：以产品中心为坐标原点，以宽高方向分别作为X轴，Y轴方向的坐标系。<img src="media/wps47.jpg" alt="img" /> </td>
+<td> Cửa sổ thuộc tính </td>
+<td> Kiểu bù trừ căn chỉnh mục tiêu </td>
+<td> Hệ tọa độ Mark: Hệ tọa độ được cấu thành từ đường nối hai điểm đầu tiên của vector tọa độ bàn máy đầu vào và đường trung trực của nó.<img src="media/wps46.jpg" alt="img" /><br />Hệ tọa độ sản phẩm: Hệ tọa độ lấy tâm sản phẩm làm gốc tọa độ, hướng chiều rộng và chiều cao tương ứng làm trục X và trục Y.<img src="media/wps47.jpg" alt="img" /> </td>
 </tr>
 <tr>
 <td></td>
-<td> 对位补偿量                                                   </td>
-<td> 输入的补偿量。                                                                                                             </td>
+<td> Lượng bù trừ căn chỉnh </td>
+<td> Lượng bù trừ đầu vào. </td>
 </tr>
 <tr>
 <td></td>
-<td> 产品宽度                                                     </td>
-<td> 产品实际规格的宽度，只在选定为产品坐标系下使用，用以计算产品坐标系，对应高级界面图中的Width。                                                               </td>
+<td> Chiều rộng sản phẩm </td>
+<td> Chiều rộng quy cách thực tế của sản phẩm, chỉ sử dụng khi chọn Hệ tọa độ sản phẩm để tính toán hệ tọa độ, tương ứng với "Width" trong sơ đồ giao diện nâng cao. </td>
 </tr>
 <tr>
 <td></td>
-<td> 产品长度                                                     </td>
-<td> 产品实际规格的长度，只在选定为产品坐标系下使用，用以计算产品坐标系，对应高级界面图中的Height。                                                               </td>
+<td> Chiều dài sản phẩm </td>
+<td> Chiều dài quy cách thực tế của sản phẩm, chỉ sử dụng khi chọn Hệ tọa độ sản phẩm để tính toán hệ tọa độ, tương ứng với "Height" trong sơ đồ giao diện nâng cao. </td>
 </tr>
 <tr>
-<td> 图像窗口</td>
-<td> 无</td>
-<td> 无                                                       </td>
+<td> Cửa sổ hình ảnh</td>
+<td> Không</td>
+<td> Không </td>
 </tr>
 <tr>
-<td> 数据链                                                       </td>
-<td> 目标平台坐标向量                                             </td>
-<td> 待补偿的最初目标平台坐标向量。                               </td>
-</tr>
-<tr>
-<td></td>
-<td> 动态补偿                                                     </td>
-<td> 决定是否在工程中自动进行补偿值计算并补偿。<img src="media/wps48.jpg" alt="img" />                                                               </td>
+<td> Chuỗi dữ liệu (Data Chain) </td>
+<td> Vector tọa độ bàn máy mục tiêu </td>
+<td> Vector tọa độ bàn máy mục tiêu ban đầu cần được bù trừ. </td>
 </tr>
 <tr>
 <td></td>
-<td> X补偿量                                                      </td>
-<td> 当采用动态补偿时，目标平台坐标向量会在固定X轴补偿量的基础上补偿该X补偿量。                                                               </td>
+<td> Bù trừ động </td>
+<td> Quyết định việc có tự động tính toán và thực hiện bù trừ giá trị trong dự án hay không.<img src="media/wps48.jpg" alt="img" /> </td>
 </tr>
 <tr>
 <td></td>
-<td> Y补偿量                                                      </td>
-<td> 当采用动态补偿时，目标平台坐标向量会在固定Y轴补偿量的基础上补偿该Y补偿量。                                                               </td>
+<td> Lượng bù X </td>
+<td> Khi sử dụng bù trừ động, vector tọa độ bàn máy mục tiêu sẽ được bù thêm giá trị X này dựa trên lượng bù trục X cố định. </td>
 </tr>
 <tr>
 <td></td>
-<td> 角度补偿量                                                   </td>
-<td> 当采用动态补偿时，目标平台坐标向量会在固定角度补偿量的基础上补偿该D角度补偿量。                                                               </td>
+<td> Lượng bù Y </td>
+<td> Khi sử dụng bù trừ động, vector tọa độ bàn máy mục tiêu sẽ được bù thêm giá trị Y này dựa trên lượng bù trục Y cố định. </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否绝对动态补偿量 </td>
-<td> 当为是时，属性栏的补偿量会自动同步至和链接的补偿量一致；当为否时，每次执行工具后，属性栏的补偿量都会加上参数链中链接的补偿值。 </td>
+<td> Lượng bù góc </td>
+<td> Khi sử dụng bù trừ động, vector tọa độ bàn máy mục tiêu sẽ được bù thêm giá trị góc D này dựa trên lượng bù góc cố định. </td>
+</tr>
+<tr>
+<td></td>
+<td> Là lượng bù động tuyệt đối </td>
+<td> Nếu là "Có", lượng bù trong cột thuộc tính sẽ tự động đồng bộ hóa với lượng bù được liên kết; nếu là "Không", sau mỗi lần thực thi công cụ, lượng bù trong cột thuộc tính sẽ cộng thêm giá trị bù từ chuỗi tham số liên kết. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                       </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出目标平台坐标向量 </td>
-<td> 补偿计算后的目标平台坐标向量结果。                           </td>
+<td> Cửa sổ giám sát </td>
+<td> Xuất vector tọa độ bàn máy mục tiêu </td>
+<td> Kết quả vector tọa độ bàn máy mục tiêu sau khi tính toán bù trừ. </td>
 </tr>
 <tr>
-<td>  </td>
-<td> 产品坐标系中心点坐标 </td>
-<td> 补偿后的产品坐标系的原点的位置坐标值（仅在产品坐标系类型下启用）。 </td>
+<td>  </td>
+<td> Tọa độ tâm hệ tọa độ sản phẩm </td>
+<td> Giá trị tọa độ vị trí gốc của hệ tọa độ sản phẩm sau khi bù trừ (chỉ kích hoạt khi chọn kiểu Hệ tọa độ sản phẩm). </td>
 </tr>
 <tr>
-<td>  </td>
-<td> 输出角度 </td>
-<td> 补偿后产品坐标系X轴的角度值（仅在产品坐标系类型下启用，当前工具未实现此参数）。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                 </td>
+<td>  </td>
+<td> Góc đầu ra </td>
+<td> Giá trị góc của trục X trong hệ tọa độ sản phẩm sau khi bù trừ (chỉ kích hoạt khi chọn kiểu Hệ tọa độ sản phẩm, công cụ hiện tại chưa triển khai tham số này). </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                 </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực hiện của công cụ. </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像窗口 </td>
-<td> 无                                                                             </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực hiện của công cụ. </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 目标平台坐标向量 </td>
-<td> 补偿计算后的目标平台坐标向量结果，供后序工具使用，同监视窗口。 </td>
+<td></td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu </td>
+<td> Vector tọa độ bàn máy mục tiêu </td>
+<td> Kết quả vector tọa độ bàn máy mục tiêu sau khi tính toán bù trừ, dùng cho các công cụ tiếp theo, giống với cửa sổ giám sát. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<h3>Mark坐标系</h3>
+<h3>Hệ tọa độ Mark</h3>
 
-<p>Mark坐标系的定义是，在大于等于两个标记点的对位系统中，以从标记点0到标记点1的射线为X轴正方向，以标记点0和标记点1的中点为原点，经过原点垂直于X轴且符合左手坐标系的方向为Y轴正方向，如图2（a）所示。</p>
+<p>Định nghĩa của hệ tọa độ Mark là: trong hệ thống căn chỉnh có từ hai điểm Mark trở lên, tia đi từ điểm Mark 0 đến điểm Mark 1 là hướng dương của trục X, trung điểm của điểm Mark 0 và điểm Mark 1 là gốc tọa độ. Hướng đi qua gốc tọa độ, vuông góc với trục X và tuân theo quy tắc hệ tọa độ tay trái là hướng dương của trục Y, như hiển thị trong Hình 2 (a).</p>
 
-<p>当只有一个标记点时，原点建立在标记点0上，X轴方向为标记点代表的产品在平台坐标系下的角度，Y轴经过原点且垂直于X轴，同样符合左手坐标系，如图2（b）所示。一个标记点的对位应用场景，多见于探针机械手拾取、XY平台点胶对位、以及其他对位应用（道元振动马达贴标项目）。</p>
+
+
+<p>Khi chỉ có một điểm Mark, gốc tọa độ được thiết lập tại điểm Mark 0, hướng trục X là góc của sản phẩm (đại diện bởi điểm Mark) trong hệ tọa độ bàn máy, trục Y đi qua gốc tọa độ và vuông góc với trục X, cũng tuân theo quy tắc hệ tọa độ tay trái, như hiển thị trong Hình 2 (b). Kịch bản ứng dụng căn chỉnh một điểm Mark thường thấy trong việc gắp của tay máy đầu dò (probe), căn chỉnh đổ keo trên bàn máy XY và các ứng dụng căn chỉnh khác.</p>
 
 <p><img src="media/wps51.jpg" alt="img" /></p>
 
-<p><imgnote>图2 Mark坐标系</imgnote></p>
+<p><imgnote>Hình 2 Hệ tọa độ Mark</imgnote></p>
 
-<h3>产品坐标系</h3>
+<h3>Hệ tọa độ sản phẩm</h3>
 
-<p>产品坐标系补偿是指在产品坐标系下进行补偿，旋转补偿时以产品坐标系原点O进行旋转，平移补偿时以旋转后的产品坐标系的X和Y方向进行平移。</p>
+<p>Bù trừ hệ tọa độ sản phẩm nghĩa là thực hiện bù trừ trong hệ tọa độ của chính sản phẩm. Khi bù trừ xoay, việc xoay sẽ lấy gốc O của hệ tọa độ sản phẩm làm tâm; khi bù trừ tịnh tiến, việc di chuyển sẽ theo hướng X và Y của hệ tọa độ sản phẩm sau khi đã xoay.</p>
 
-<p>产品坐标系的原点建立与矩形产品的中心重合，该原点的平台坐标是通过输入目标点的坐标与位置关系，结合产品的实际宽高尺寸来计算得出。产品坐标系的X轴方向即为与产品的宽方向平行向右，Y方向为产品的高方向平行向下，符合左手坐标系。产品坐标系如图3所示。</p>
+<p>Gốc của hệ tọa độ sản phẩm được thiết lập trùng với tâm của sản phẩm hình chữ nhật. Tọa độ bàn máy của gốc này được tính toán bằng cách kết hợp tọa độ điểm mục tiêu đầu vào, mối quan hệ vị trí và kích thước chiều rộng/chiều dài thực tế của sản phẩm. Hướng trục X của hệ tọa độ sản phẩm song song với chiều rộng sản phẩm hướng sang phải, hướng Y song song với chiều cao sản phẩm hướng xuống dưới, tuân theo hệ tọa độ tay trái. Hệ tọa độ sản phẩm được hiển thị trong Hình 3.</p>
 
 <p><img src="media/wps52.jpg" alt="img" /></p>
 
-<p><imgnote>图3 产品坐标系</imgnote></p>
+<p><imgnote>Hình 3 Hệ tọa độ sản phẩm</imgnote></p>
 
-<h3>动态补偿</h3>
+<h3>Bù trừ động</h3>
 
-<p>输入型的判断动态补偿判定条件。当为真时，则采用链入的X/Y/角度补偿量加上相应的固定补偿量作为最终的目标对位补偿量。该功能可用于工程的对位自动补偿场景中，即对位后，采用相机进行测量计算动态的补偿量，而后动态补偿入补偿量；当为假时，则不采用动态补偿，只采用固定补偿；</p>
+<p>Đây là điều kiện phán đoán kiểu đầu vào cho bù trừ động. Khi giá trị là True, lượng bù X/Y/Góc được liên kết cộng với lượng bù cố định tương ứng sẽ được dùng làm lượng bù trừ căn chỉnh mục tiêu cuối cùng. Tính năng này được sử dụng trong các kịch bản bù trừ tự động của dự án: sau khi căn chỉnh, camera thực hiện đo lường để tính toán lượng bù động, sau đó đưa giá trị này vào phần bù trừ. Khi giá trị là False, bù trừ động sẽ không được sử dụng, chỉ áp dụng bù trừ cố định.</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>当Mark坐标系时，根据输入目标平台坐标向量的前两个点的连线以及中垂线作为坐标系，此时高级界面仅作为补偿量输入对话框使用。</p>
+<p>Khi sử dụng Hệ tọa độ Mark, hệ tọa độ được xác định dựa trên đường nối và đường trung trực của hai điểm đầu tiên trong vector tọa độ bàn máy đầu vào. Lúc này, giao diện nâng cao chỉ đóng vai trò là hộp thoại để nhập lượng bù trừ.</p>
 
-<p>当产品坐标系时，此时工具的高级界面如图4。界面上端的输入X、Y、θ输入框依然为简单的补偿量输入框。而下端红线框出的部分表示了不同目标点位置输入决定了产品坐标系不同的计算方式。对应右边图示，工程师需要根据实际项目需要勾选相应的目标点复选框，并由实际产品规格来输入产品的宽和长。</p>
+<p>Khi sử dụng Hệ tọa độ sản phẩm, giao diện nâng cao của công cụ sẽ như Hình 4. Các ô nhập X, Y, θ ở phía trên giao diện vẫn là các ô nhập lượng bù đơn giản. Tuy nhiên, phần được khoanh vùng đỏ ở phía dưới thể hiện các cách tính toán hệ tọa độ sản phẩm khác nhau tùy thuộc vào vị trí điểm mục tiêu đầu vào. Tương ứng với sơ đồ bên phải, kỹ sư cần tích chọn các ô kiểm (checkbox) điểm mục tiêu phù hợp với yêu cầu thực tế của dự án và nhập chiều rộng, chiều dài theo quy cách thực tế của sản phẩm.</p>
 
 <p><img src="media/wps54.jpg" alt="img" /></p>
 
-<p><imgnote>图4 高级界面</imgnote></p>
+<p><imgnote>Hình 4 Giao diện nâng cao</imgnote></p>
 
-<p>注意勾选目标点复选框与输入目标平台向量中点的顺序关系。</p>
+<p>Lưu ý mối quan hệ giữa việc tích chọn ô kiểm điểm mục tiêu và thứ tự các điểm trong vector bàn máy mục tiêu đầu vào:</p>
 
-<p>当勾选目标点1+目标点2+…：则输入向量前两点依次为目标点1、目标点2，后不做需求；</p>
+<ul>
+  <li>Khi tích chọn Điểm mục tiêu 1 + Điểm mục tiêu 2 + ...: Hai điểm đầu tiên của vector đầu vào lần lượt là Điểm 1, Điểm 2; các điểm sau không bắt buộc.</li>
+  <li>Khi tích chọn Điểm mục tiêu 2 + Điểm mục tiêu 3 (+ Điểm mục tiêu 4): Hai điểm đầu tiên của vector đầu vào lần lượt là Điểm 2, Điểm 3.</li>
+  <li>Khi chỉ tích chọn Điểm mục tiêu 3 + Điểm mục tiêu 4 (+ Điểm mục tiêu 1): Thứ tự hai điểm của vector đầu vào là Điểm 4, Điểm 3.</li>
+  <li>Khi chỉ tích chọn Điểm mục tiêu 1 + Điểm mục tiêu 3: Hai điểm đầu tiên của vector đầu vào lần lượt là Điểm 1, Điểm 3.</li>
+  <li>Khi chỉ tích chọn Điểm mục tiêu 2 + Điểm mục tiêu 4: Thứ tự hai điểm của vector đầu vào là Điểm 4, Điểm 2.</li>
+  <li>Khi chỉ tích chọn Điểm mục tiêu 1 + Điểm mục tiêu 4: Thứ tự hai điểm của vector đầu vào là Điểm 1, Điểm 4.</li>
+</ul>
 
-<p>当勾选目标点2+目标点3(+目标点4)：则输入向量前两点依次为目标点2、目标点3，后不做需求；</p>
-
-<p>当只勾选目标点3+目标点4(+目标点1)：则输入向量两点顺序为目标点4、目标点3；</p>
-
-<p>当只勾选目标点1+目标点3：输入向量前两点依次为目标点1、目标点3；</p>
-
-<p>当只勾选目标点2+目标点4：输入向量两点依次为目标4、目标点2；</p>
-
-<p>当只勾选目标点1+目标点4：则输入向量两点顺序为目标点1、目标点4；</p>
-
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
 <p>参见“\Samples\标准标定+基准两点对位.gvp”</p>

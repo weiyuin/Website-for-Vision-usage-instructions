@@ -16,168 +16,168 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>振镜打标位置计算工具</h1>
+<h1>Công cụ tính toán vị trí khắc Galvo</h1>
 
-<h2>功能</h2>
+<h2>Tính năng</h2>
 
-<p>振镜打标位置计算工具是将输入的图像坐标经过计算后，得到转换后的振镜坐标。</p>
+<p>Công cụ tính toán vị trí khắc Galvo dùng để tính toán tọa độ hình ảnh đầu vào để thu được tọa độ Galvo sau khi chuyển đổi.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>属性窗口</td>
-<td> 是否忽略角度变化 </td>
-<td> 控制转换计算过程中是否忽略转换图像坐标的角度变化，选择“是”，计算过程中角度值设为0。                                                               </td>
+<td>Cửa sổ thuộc tính</td>
+<td> Bỏ qua biến thiên góc </td>
+<td> Kiểm soát việc có bỏ qua sự thay đổi góc của tọa độ hình ảnh trong quá trình tính toán chuyển đổi hay không. Nếu chọn "Có", giá trị góc sẽ được đặt bằng 0 trong quá trình tính toán. </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否采用多基准   </td>
-<td> 选择“是”，转换计算过程中，利用距离转换图像坐标最近的辅助点来计算对应的振镜坐标；选择“否”，利用九圆标定区域中的中间点(第5个辅助点)来计算对应的振镜坐标。                                                               </td>
+<td> Sử dụng đa điểm chuẩn (Multi-datum) </td>
+<td> Chọn "Có": Trong quá trình tính toán, sử dụng điểm phụ trợ gần nhất với tọa độ hình ảnh cần chuyển đổi để tính tọa độ Galvo tương ứng. Chọn "Không": Sử dụng điểm trung tâm (điểm phụ trợ thứ 5) trong vùng hiệu chuẩn 9 điểm (9-circle calibration) để tính tọa độ Galvo tương ứng. </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否采用绝对角度 </td>
-<td> 采用绝对角度指将输出振镜坐标的旋转角度规范化到[-PI/2,PI/2]。                                                               </td>
+<td> Sử dụng góc tuyệt đối </td>
+<td> Sử dụng góc tuyệt đối nghĩa là chuẩn hóa góc quay của tọa độ Galvo đầu ra về phạm vi [-PI/2, PI/2]. </td>
 </tr>
 <tr>
 <td></td>
-<td>输入角度归一化 </td>
-<td> 将输入的角度归一化，取值为[-90°,90°)、[-180°,180°)、[0°,180°)、[0°,360°)；比如归一化到-90~90°之间，输入的是92°，内部计算的时候会变成-88°。 </td>
+<td>Chuẩn hóa góc đầu vào </td>
+<td> Chuẩn hóa góc đầu vào về các phạm vi: [-90°, 90°), [-180°, 180°), [0°, 180°), [0°, 360°). Ví dụ: Nếu chuẩn hóa về khoảng -90°~90° và giá trị đầu vào là 92°, giá trị tính toán nội bộ sẽ trở thành -88°. </td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无               </td>
-<td> 无                                                                                                                         </td>
+<td>Cửa sổ hình ảnh</td>
+<td> Không </td>
+<td> Không </td>
 </tr>
 <tr>
-<td> 数据链           </td>
-<td> 图像坐标                                                     </td>
-<td> 输入需要转换的图像坐标。                                     </td>
+<td> Chuỗi dữ liệu (Data Chain) </td>
+<td> Tọa độ hình ảnh </td>
+<td> Nhập tọa độ hình ảnh cần chuyển đổi. </td>
 </tr>
 <tr>
-<td>  </td>
-<td> 产品上料角度 </td>
-<td> 链接能够标识产品角度的数据，通常为产品上某个特征的角度。 </td>
-</tr>
-<tr>
-<td></td>
-<td> X轴方向          </td>
-<td> 振镜X坐标轴方向。                                                                                                          </td>
+<td> </td>
+<td> Góc cấp phôi sản phẩm </td>
+<td> Liên kết với dữ liệu có thể xác định góc của sản phẩm, thông thường là góc của một đặc trưng cụ thể trên sản phẩm. </td>
 </tr>
 <tr>
 <td></td>
-<td> Y轴方向          </td>
-<td> 振镜Y坐标轴方向。                                                                                                          </td>
+<td> Hướng trục X </td>
+<td> Hướng trục tọa độ X của hệ thống Galvo. </td>
 </tr>
 <tr>
 <td></td>
-<td> 九圆标定结果     </td>
-<td> 输入图像坐标与振镜坐标关联后图像坐标点集，从九圆关联标定工具链接得到。                                                               </td>
+<td> Hướng trục Y </td>
+<td> Hướng trục tọa độ Y của hệ thống Galvo. </td>
 </tr>
 <tr>
 <td></td>
-<td> X补偿值 </td>
-<td> 对计算结果中的X值做补偿。 </td>
+<td> Kết quả hiệu chuẩn 9 điểm </td>
+<td> Tập hợp các điểm tọa độ hình ảnh đã liên kết với tọa độ Galvo, nhận được thông qua liên kết từ công cụ Hiệu chuẩn tương quan 9 điểm (9-point calibration). </td>
 </tr>
 <tr>
 <td></td>
-<td> Y补偿值 </td>
-<td> 对计算结果中的Y值做补偿。 </td>
+<td> Giá trị bù X (Offset X) </td>
+<td> Bù trừ cho giá trị X trong kết quả tính toán. </td>
 </tr>
 <tr>
 <td></td>
-<td> D补偿值 </td>
-<td> 对计算结果中的D值做补偿。 </td>
+<td> Giá trị bù Y (Offset Y) </td>
+<td> Bù trừ cho giá trị Y trong kết quả tính toán. </td>
 </tr>
 <tr>
-<td> 高级界面         </td>
-<td> 无         </td>
-<td> 无     </td>
+<td></td>
+<td> Giá trị bù D (Offset D) </td>
+<td> Bù trừ cho giá trị góc D trong kết quả tính toán. </td>
+</tr>
+<tr>
+<td> Giao diện nâng cao </td>
+<td> Không </td>
+<td> Không </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                     </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 振镜坐标X </td>
-<td> 输出转换后的振镜坐标X。                                      </td>
+<td> Cửa sổ giám sát </td>
+<td> Tọa độ Galvo X </td>
+<td> Xuất tọa độ X của Galvo sau khi chuyển đổi. </td>
 </tr>
 <tr>
-<td>  </td>
-<td> 振镜坐标Y </td>
-<td> 输出转换后的振镜坐标Y。             </td>
+<td> </td>
+<td> Tọa độ Galvo Y </td>
+<td> Xuất tọa độ Y của Galvo sau khi chuyển đổi. </td>
 </tr>
 <tr>
-<td>  </td>
-<td> 振镜坐标D </td>
-<td> 输出转换后的振镜坐标D。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                               </td>
+<td> </td>
+<td> Tọa độ Galvo D </td>
+<td> Xuất tọa độ góc D của Galvo sau khi chuyển đổi. </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                               </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực hiện của công cụ. </td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无           </td>
-<td> 无                                                                           </td>
+<td></td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực hiện của công cụ. </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 振镜坐标X </td>
-<td> 输出转换后的振镜坐标X，同监视窗口。 </td>
+<td>Cửa sổ hình ảnh</td>
+<td> Không </td>
+<td> Không </td>
 </tr>
 <tr>
-<td>          </td>
-<td> 振镜坐标Y </td>
-<td> 输出转换后的振镜坐标Y，同监视窗口。 </td>
+<td> Chuỗi dữ liệu </td>
+<td> Tọa độ Galvo X </td>
+<td> Xuất tọa độ X Galvo sau chuyển đổi, giống với cửa sổ giám sát. </td>
 </tr>
 <tr>
-<td>          </td>
-<td> 振镜坐标D </td>
-<td> 输出转换后的振镜坐标D，同监视窗口。 </td>
+<td> </td>
+<td> Tọa độ Galvo Y </td>
+<td> Xuất tọa độ Y Galvo sau chuyển đổi, giống với cửa sổ giám sát. </td>
+</tr>
+<tr>
+<td> </td>
+<td> Tọa độ Galvo D </td>
+<td> Xuất tọa độ góc D Galvo sau chuyển đổi, giống với cửa sổ giám sát. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li>振镜打标位置计算工具与九圆关联标定工具配合使用。</li>
+<li>Công cụ tính toán vị trí khắc Galvo được sử dụng kết hợp với công cụ Hiệu chuẩn tương quan 9 điểm.</li>
 </ul>
 
 
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
 <p>参见“\Samples\九圆关联标定工具.gvp”。</p>
