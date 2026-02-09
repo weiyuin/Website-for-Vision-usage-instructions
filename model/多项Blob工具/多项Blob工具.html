@@ -16,417 +16,417 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>多项Blob工具</h1>
+<h1>Công cụ Multi-Blob</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan tính năng</h2>
 
-<p>​     多项Blob工具是同时支持对多个ROI区域进行Blob计算并输出多个结果的Blob工具。</p>
+<p>​     Công cụ Multi-Blob là công cụ Blob hỗ trợ tính toán Blob đồng thời trên nhiều vùng ROI (Region of Interest) và xuất ra nhiều kết quả tương ứng.</p>
 
 <p><img src="media/GcBlobMultiRoiTool_1_1.png" alt="" /></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>​     Blob工具可以提取图像的闭合特征轮廓。通过参数设置，过滤，提取符合条件的闭合区域。当需要提取多处区域时，Blob工具无法满足需求，需要支持多个区域Blob计算的多项Blob工具。</p>
+<p>​     Công cụ Blob có thể trích xuất các đường bao đặc trưng (feature contours) khép kín của hình ảnh. Thông qua thiết lập tham số và bộ lọc, công cụ sẽ trích xuất các vùng khép kín đáp ứng điều kiện. Khi cần trích xuất đồng thời nhiều vùng khác nhau, công cụ Blob thông thường không thể đáp ứng nhu cầu, lúc đó cần sử dụng công cụ Multi-Blob để hỗ trợ tính toán Blob trên nhiều khu vực.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>​     Blob工具通过参数设置来获取目标的几何特征轮廓，几何特征可以精确、快速的进行旋转、缩放等变换，且对图像灰度线性、灰度非线性变化具有良好的适应性。</p>
+<p>​     Công cụ Blob thu thập các đường bao đặc trưng hình học của mục tiêu thông qua việc thiết lập tham số. Các đặc trưng hình học này có thể thực hiện các phép biến đổi như xoay, thu phóng (scaling) một cách chính xác và nhanh chóng, đồng thời có khả năng thích nghi tốt với các biến đổi mức xám tuyến tính và phi tuyến tính của hình ảnh.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像</h4></li>
+<li><h4>Thêm công cụ, tải hình ảnh</h4></li>
 </ul>
 
 
 <p><img src="media/GcBlobMultiRoiTool_4_1.png" alt="" /></p>
 
 <ul>
-<li><h4>设置ROI模式</h4></li>
+<li><h4>Thiết lập chế độ ROI</h4></li>
 </ul>
 
 
 <p><img src="media/GcBlobMultiRoiTool_4_2.png" alt="" /></p>
 
 <ul>
-<li><h4>高级属性界面参数设置</h4></li>
+<li><h4>Thiết lập tham số giao diện thuộc tính nâng cao (Advanced Properties)</h4></li>
 </ul>
 
 
 <p><img src="media/GcBlobMultiRoiTool_4_3.png" alt="" /></p>
 
-<p> <strong>ROI总数</strong></p>
+<p> <strong>Tổng số ROI</strong></p>
 
-<p>设置多项Blob工具的ROI数量，取值范围是1~50，当ROI类型为整幅图像时，ROI总数固定为1。</p>
+<p>Thiết lập số lượng ROI cho công cụ Multi-Blob, phạm vi giá trị từ 1~50. Khi kiểu ROI được đặt là Toàn bộ hình ảnh (Whole Image), tổng số ROI cố định là 1.</p>
 
-<p> <strong>ROI序列号</strong></p>
+<p> <strong>Số thứ tự ROI (Index)</strong></p>
 
-<p>对指定序列号的ROI进行参数设置。</p>
+<p>Thực hiện thiết lập tham số cho ROI theo số thứ tự (ID) được chỉ định.</p>
 
-<p> <strong>ROI区域</strong></p>
+<p> <strong>Vùng ROI</strong></p>
 
-<p>Blob计算ROI区域类型设置，可选整幅图像、矩形ROI、仿射矩形ROI、圆形ROI、圆环ROI、椭圆ROI、多边形ROI、可变拆线ROI和自由形状共9种。</p>
+<p>Thiết lập kiểu vùng ROI để tính toán Blob, bao gồm 9 loại: Toàn bộ hình ảnh, ROI Hình chữ nhật, ROI Hình chữ nhật Affine, ROI Hình tròn, ROI Hình vành khăn, ROI Hình Ellipse, ROI Đa giác, ROI Đường gấp khúc thay đổi và Hình dạng tự do (Freeform).</p>
 
-<p><strong>目标跟随</strong></p>
+<p><strong>Bám đuổi mục tiêu (Fixture Roll)</strong></p>
 
-<p>目标跟随属性是用来设置多项Blob工具ROI区域是否跟随二维线性变换。全部应用按钮可以将设置值同步到所有ROI，其他参数功能相同。</p>
+<p>Thuộc tính bám đuổi mục tiêu dùng để thiết lập xem vùng ROI của công cụ Multi-Blob có bám theo phép biến đổi tuyến tính 2D (2D Linear Transformation) hay không. Nút "Áp dụng tất cả" có thể đồng bộ giá trị thiết lập cho mọi ROI, các chức năng tham số khác vẫn giữ nguyên.</p>
 
-<p>是：Blob工具可以链接二维线性变换，ROI区域会跟随二维线性变换移动，例如几何定位工具输出的二维线性变换。</p>
+<p>Có: Công cụ Blob có thể liên kết với phép biến đổi tuyến tính 2D, vùng ROI sẽ di chuyển theo phép biến đổi đó (ví dụ: kết quả đầu ra từ công cụ Định vị hình học - Geometric Matching).</p>
 
-<p>否：Blob工具不可以链接二维线性变换，ROI区域可以动态实时指定，即设置的ROI区域坐标为多少，ROI区域的位置就在什么位置。</p>
+<p>Không: Công cụ Blob không liên kết với phép biến đổi tuyến tính 2D, vùng ROI có thể được chỉ định động theo thời gian thực, nghĩa là tọa độ ROI được thiết lập ở đâu thì vị trí ROI sẽ nằm tại đó.</p>
 
-<p> <strong>Blob极性</strong></p>
+<p> <strong>Cực tính Blob (Polarity)</strong></p>
 
-<p>黑色Blob，白色背景：检测白色背景下的黑色区域。</p>
+<p>Blob đen, nền trắng: Phát hiện vùng tối trên nền sáng.</p>
 
-<p>白色Blob，黑色背景：检测黑色背景下的白色区域。</p>
+<p>Blob trắng, nền đen: Phát hiện vùng sáng trên nền tối.</p>
 
-<p> <strong>正反检</strong></p>
+<p> <strong>Kiểm tra thuận nghịch (Dual Polarity)</strong></p>
 
-<p>当勾选正反检时，同时检测黑色和白色区域，勾选正反检的区域会输出正检和反检两组数据结果。</p>
+<p>Khi chọn mục này, công cụ sẽ đồng thời phát hiện cả vùng đen và vùng trắng. Vùng được chọn kiểm tra thuận nghịch sẽ xuất ra hai nhóm kết quả dữ liệu: phát hiện thuận và phát hiện nghịch.</p>
 
-<p> <strong>分割方式</strong></p>
+<p> <strong>Phương pháp phân ngưỡng (Segmentation)</strong></p>
 
-<p>None（直接输入）：对已分割的图像，通过提供尺度因数Scale归一化像素权重，以便于后续的特征量计算。</p>
+<p>None (Nhập trực tiếp): Đối với hình ảnh đã được phân đoạn, thực hiện chuẩn hóa trọng số pixel thông qua hệ số tỷ lệ (Scale Factor) để thuận tiện cho việc tính toán các đặc trưng (features) sau này.</p>
 
-<p>Hard Threshold（硬阈值分割）：硬阈值分割原理较为简单，即将灰度级小于分割阈值的像素认为是目标，而将灰度级大于等于分割阈值的像素认为是背景，反之亦然。图2为硬阈值分割示例，其中将分割阈值设定为100，即将灰度级小于100的像素标记为目标，而将灰度级大于等于150的像素标记为背景</p>
+<p>Hard Threshold (Phân ngưỡng cứng): Nguyên lý phân ngưỡng cứng khá đơn giản, các pixel có mức xám nhỏ hơn ngưỡng được coi là mục tiêu, và các pixel có mức xám lớn hơn hoặc bằng ngưỡng được coi là nền, hoặc ngược lại. Hình 2 là ví dụ về phân ngưỡng cứng, trong đó ngưỡng được đặt là 100, nghĩa là các pixel có mức xám dưới 100 được đánh dấu là mục tiêu, còn các pixel từ 100 trở lên được đánh dấu là nền.</p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_4.png" alt="" /></p>
 
-<p><imgnote>图2 硬阈值分割示意图</imgnote></p>
+<p><imgnote>Hình 2 Sơ đồ minh họa phân ngưỡng cứng</imgnote></p>
 
-<p>Soft Threshold（软阈值分割）：为了消除或减轻由硬阈值分割造成的空间量化误差，可以使用软阈值分割。通过软阈值分割，可将灰度图像转换为权重图像。和硬阈值不同，软阈值实际上是一个阈值序列，灰度值比阈值序列大的像素权重为1.0（目标），灰度值比阈值序列小的像素权重为0.0（背景），在阈值序列中间的像素权重为0.0到1.0之间的数值。</p>
+<p>Soft Threshold (Phân ngưỡng mềm): Để loại bỏ hoặc giảm thiểu sai số lượng tử hóa không gian do phân ngưỡng cứng gây ra, có thể sử dụng phân ngưỡng mềm. Thông qua phân ngưỡng mềm, hình ảnh mức xám có thể được chuyển đổi thành hình ảnh trọng số (weight image). Khác với ngưỡng cứng, ngưỡng mềm thực chất là một chuỗi ngưỡng: pixel có giá trị xám lớn hơn chuỗi ngưỡng sẽ có trọng số là 1.0 (mục tiêu), nhỏ hơn chuỗi ngưỡng sẽ có trọng số là 0.0 (nền), và các pixel nằm giữa chuỗi ngưỡng sẽ có trọng số từ 0.0 đến 1.0.</p>
 
-<p>在软阈值分割中，涉及到4个参数：高阈值<em>High Threshold，低阈值Low Threshold，柔化因数</em>Softness（阈值序列中的过渡层级），其值域范围为[0, 254]，极性。图3为软阈值参数示意图。</p>
+<p>Trong phân ngưỡng mềm liên quan đến 4 tham số: Ngưỡng cao (High Threshold), Ngưỡng thấp (Low Threshold), Độ mềm (Softness - mức độ chuyển tiếp trong chuỗi ngưỡng) với phạm vi giá trị từ [0, 254], và cực tính. Hình 3 là sơ đồ minh họa tham số ngưỡng mềm.</p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_5.png" alt="" /></p>
 
-<p><imgnote>图3 软阈值参数示意图</imgnote></p>
+<p><imgnote>Hình 3 Sơ đồ minh họa tham số ngưỡng mềm</imgnote></p>
 
-<p> <strong>连通分析方式</strong></p>
+<p> <strong>Phương pháp phân tích liên thông (Connectivity)</strong></p>
 
-<p>Whole Image：分割后图像中的所有目标像素被标记为一个单一的Blob。即使图像中存在多个不连通的目标区域，Whole Image连通性分析也将其视为单一的Blob，所有的特征量都根据图像中全部目标像素计算得到。</p>
+<p>Whole Image: Tất cả các pixel mục tiêu sau khi phân đoạn được đánh dấu là một Blob duy nhất. Ngay cả khi hình ảnh tồn tại nhiều vùng mục tiêu không liên thông, phân tích liên thông Whole Image vẫn coi chúng là một Blob, tất cả các đặc trưng được tính toán dựa trên toàn bộ pixel mục tiêu trong ảnh.</p>
 
-<p>Gray Scale：将分割后的图像中的目标像素标记为若干个连通的区域。目标区域是8连通的。</p>
+<p>Gray Scale: Đánh dấu các pixel mục tiêu trong ảnh sau phân đoạn thành nhiều vùng liên thông riêng biệt. Các vùng mục tiêu được phân tích theo kiểu liên thông 8 (8-connectivity).</p>
 
-<p>Labeled：在图像处理应用中，有时需要将图像内容分割为若干个集合，而不是简单的目标和背景。例如，将图像分割为四类不同的像素，每一类像素代表不同的灰度范围，利用唯一的label值表示。Labeled连通性分析根据连通性将label值相同的连通像素聚合为一个连通区域。在Labeled连通性分析中没有目标区域和背景区域的概念，所有区域都是6连通的。</p>
+<p>Labeled: Trong ứng dụng xử lý ảnh, đôi khi cần phân đoạn nội dung ảnh thành nhiều tập hợp khác nhau thay vì chỉ đơn giản là mục tiêu và nền. Ví dụ: phân đoạn ảnh thành 4 loại pixel, mỗi loại đại diện cho một dải mức xám khác nhau, được biểu thị bằng một giá trị Label duy nhất. Phân tích liên thông Labeled sẽ gộp các pixel có cùng giá trị Label thành một vùng liên thông. Trong kiểu này không có khái niệm vùng mục tiêu và vùng nền, tất cả các vùng đều được tính theo liên thông 6 (6-connectivity).</p>
 
-<p><strong>特征量</strong></p>
+<p><strong>Đặc trưng (Feature Measurements)</strong></p>
 
-<p>在Blob分析中，从计算的角度可将特征量分为四类，包括基本特征量、矩阵相关特征量、轮廓相关特征量和灰度相关特征量。Blob及其特征示意图如图4所示。</p>
+<p>Trong phân tích Blob, các đặc trưng có thể được chia thành bốn loại từ góc độ tính toán: đặc trưng cơ bản, đặc trưng liên quan đến momen (matrix/moment), đặc trưng liên quan đến đường bao (contour) và đặc trưng liên quan đến mức xám. Sơ đồ minh họa Blob và các đặc trưng của nó được hiển thị trong Hình 4.</p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_6.png" alt="" /></p>
 
-<p><imgnote>图4 Blob及特征示意图</imgnote></p>
+<p><imgnote>Hình 4 Sơ đồ minh họa Blob và đặc trưng</imgnote></p>
 
-<p><strong>基本特征量</strong></p>
+<p><strong>Đặc trưng cơ bản</strong></p>
 
-<p>特征量 1：连通标记ConnectivityLabel。连通标记，即区域的类别标记。对灰度图像，Blob标记为1，Hole标记为0。对标记图像，即为Blob的标记。连通标记可在连通分量标记完毕后进行设置。</p>
+<p>Đặc trưng 1: Nhãn liên thông (ConnectivityLabel). Là nhãn loại của vùng. Đối với ảnh mức xám, Blob được gán nhãn là 1, Hole (lỗ) được gán là 0. Đối với ảnh gán nhãn (Labeled Image), đây chính là nhãn của Blob. Nhãn liên thông có thể được thiết lập sau khi hoàn tất việc gán nhãn các thành phần liên thông.</p>
 
-<p>特征量 2：面积Area。即Blob中所有非零像素的权重之和。</p>
+<p>Đặc trưng 2: Diện tích (Area). Tổng trọng số của tất cả các pixel không bằng 0 trong Blob.</p>
 
-<p>特征量 3：质心CenterMassX，CenterMassY。质心是Blob的平衡点。Blob的质心不一定在Blob内。如图5所示。</p>
+<p>Đặc trưng 3: Tâm khối (Center of Mass) X, Y. Tâm khối là điểm cân bằng của Blob. Tâm khối của Blob không nhất thiết phải nằm bên trong Blob. Như minh họa trong Hình 5.</p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_7.png" alt="" /></p>
 
-<p><imgnote>图5 质心示意图</imgnote></p>
+<p><imgnote>Hình 5 Sơ đồ minh họa tâm khối</imgnote></p>
 
-<p>特征量 4：坐标最小外接矩形。如图6所示，其可用区域由x最小坐标、x最大坐标、y最小坐标、y最大坐标进行完全描述。</p>
+<p>Đặc trưng 4: Hình chữ nhật ngoại tiếp tối thiểu theo tọa độ (Bounding Box). Như hiển thị trong Hình 6, vùng khả dụng của nó được mô tả hoàn toàn bởi tọa độ x min, x max, y min và y max.</p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_8.png" alt="" /></p>
 
-<p><imgnote>图6 坐标最小外接矩形示意图</imgnote></p>
+<p><imgnote>Hình 6 Sơ đồ minh họa hình chữ nhật ngoại tiếp theo tọa độ</imgnote></p>
 
-<p>特征量 5：主轴最小外接矩形。如图7所示，其中原图像坐标系原点平移到区域质心，并顺时针旋转<img src="media/GcBlobTool_6_6.png" alt="GcBlobTool_6_6" />为区域长轴角度。</p>
+<p>Đặc trưng 5: Hình chữ nhật ngoại tiếp tối thiểu theo trục chính (Oriented Bounding Box). Như hiển thị trong Hình 7, trong đó gốc tọa độ của hệ tọa độ ảnh gốc được tịnh tiến đến tâm khối của vùng, và xoay theo chiều kim đồng hồ một góc <img src="media/GcBlobTool_6_6.png" alt="GcBlobTool_6_6" /> là góc của trục dài của vùng.</p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_9.png" alt="" /></p>
 
-<p><imgnote>图7 主轴最小外接矩形示意图</imgnote></p>
+<p><imgnote>Hình 7 Sơ đồ minh họa hình chữ nhật ngoại tiếp theo trục chính</imgnote></p>
 
-<p>特征量 6：子节点个数NumChildren。裁剪或填充操作前的子节点个数。</p>
+<p>Đặc trưng 6: Số lượng nút con (NumChildren). Số lượng các đối tượng con trước khi thực hiện các thao tác cắt tỉa hoặc lấp đầy.</p>
 
-<p>特征量 7：最小外接矩形对角线长度。</p>
+<p>Đặc trưng 7: Độ dài đường chéo của hình chữ nhật ngoại tiếp tối thiểu.</p>
 
-<p>特征量 8：质心到最小外接矩形的中心偏移。</p>
+<p>Đặc trưng 8: Độ lệch từ tâm khối đến tâm của hình chữ nhật ngoại tiếp tối thiểu.</p>
 
-<p><strong>矩相关特征量</strong></p>
+<p><strong>Đặc trưng liên quan đến Momen</strong></p>
 
-<p> 特征量 9：关于坐标轴的惯性二阶矩，即关于过质心并与坐标轴平行的轴的惯性二阶矩，如图8所示。</p>
+<p> Đặc trưng 9: Momen quán tính bậc hai đối với trục tọa độ, tức là momen quán tính bậc hai đối với trục đi qua tâm khối và song song với trục tọa độ, như hiển thị trong Hình 8.</p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_10.png" alt="" /></p>
 
-<p><imgnote>图8 关于坐标轴的惯性二阶矩示意图</imgnote></p>
+<p><imgnote>Hình 8 Sơ đồ minh họa momen quán tính bậc hai đối với trục tọa độ</imgnote></p>
 
-<p>特征量 10 ：方向Angle。即对应惯性二阶矩最小的轴。如图9所示。</p>
+<p>Đặc trưng 10: Hướng (Angle). Là trục tương ứng với momen quán tính bậc hai nhỏ nhất. Như hiển thị trong Hình 9.</p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_11.png" alt="" /></p>
 
-<p><imgnote>图9 方向计算示意图</imgnote></p>
+<p><imgnote>Hình 9 Sơ đồ minh họa tính toán hướng</imgnote></p>
 
-<p>特征量 11：关于主轴的惯性二阶矩。即最小惯性二阶矩和最大惯性二阶矩。</p>
+<p>Đặc trưng 11: Momen quán tính bậc hai đối với trục chính. Bao gồm momen quán tính bậc hai nhỏ nhất và lớn nhất.</p>
 
-<p>特征量 12：延长度Elongation。最大惯性二阶矩与最小惯性二阶矩的比值。圆的延长度为1，其为延长度的下限。</p>
+<p>Đặc trưng 12: Độ kéo giãn (Elongation). Tỷ lệ giữa momen quán tính bậc hai lớn nhất và nhỏ nhất. Độ kéo giãn của hình tròn là 1, đây là giới hạn dưới của đặc trưng này.</p>
 
-<p>特征量 13：稠密度Density。描述Blob内部点分布的紧凑程度，其定义为总面积/主轴最小外接矩形面积。取值范围为(0,1]。</p>
+<p>Đặc trưng 13: Độ đặc (Density). Mô tả mức độ tập trung của các điểm bên trong Blob, định nghĩa bằng Tổng diện tích / Diện tích hình chữ nhật ngoại tiếp trục chính. Phạm vi giá trị là (0,1].</p>
 
-<p>特征量 14：划伤度Scratchness。指主轴最小外接矩形宽度平方与面积的比值，反映了属于划伤的可能性，取值范围为(0,+∞)，该值越大，则越可能是划伤。</p>
+<p>Đặc trưng 14: Độ trầy xước (Scratchness). Tỷ lệ giữa bình phương chiều rộng hình chữ nhật ngoại tiếp trục chính và diện tích, phản ánh khả năng thuộc về vết trầy xước. Phạm vi giá trị là (0,+∞), giá trị này càng lớn thì càng có khả năng là vết trầy xước.</p>
 
-<p>特征量 15：离心率Eccentricity。指物体圆形度。如果离心率越大，物体越扁平；反之越接近圆形。</p>
+<p>Đặc trưng 15: Độ lệch tâm (Eccentricity). Chỉ độ tròn của vật thể. Nếu độ lệch tâm càng lớn, vật thể càng dẹt; ngược lại, nó càng gần với hình tròn.</p>
 
-<p><strong>轮廓相关特征量</strong></p>
+<p><strong>Đặc trưng liên quan đến đường bao</strong></p>
 
-<p>特征量 16：边界像素长度BoundaryPixelLength。如图10所示，若区域的轮廓边界点序列为<img src="media/GcBlobMultiRoiTool_4_15.png" alt="" />，其中序列中的前后两个像素是连通的，包括第一个像素和最后一个像素在内，像素边界长度定义为</p>
+<p>Đặc trưng 16: Độ dài pixel biên (BoundaryPixelLength). Như hiển thị trong Hình 10, nếu chuỗi các điểm biên của vùng là <img src="media/GcBlobMultiRoiTool_4_15.png" alt="" />, trong đó hai pixel kề nhau trong chuỗi là liên thông (bao gồm cả pixel đầu và pixel cuối), độ dài biên pixel được định nghĩa là:</p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_13.png" alt="" /></p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_12.png" alt="" /></p>
 
-<p><imgnote>图10 像素边界长度示意图</imgnote></p>
+<p><imgnote>Hình 10 Sơ đồ minh họa độ dài biên pixel</imgnote></p>
 
-<p>特征量 17：周长Perimeter。</p>
+<p>Đặc trưng 17: Chu vi (Perimeter).</p>
 
-<p>特征量 18 ：圆度Acircularity。</p>
+<p>Đặc trưng 18: Độ không tròn (Acircularity).</p>
 
-<p>特征量 19：归一化圆度AcircularityRms。</p>
+<p>Đặc trưng 19: Độ không tròn chuẩn hóa (AcircularityRms).</p>
 
-<p><strong>灰度相关特征量</strong></p>
+<p><strong>Đặc trưng liên quan đến mức xám</strong></p>
 
-<p>特征量 20：最小灰度。指Blob内部所有点的最小灰度值。</p>
+<p>Đặc trưng 20: Mức xám tối thiểu. Giá trị mức xám nhỏ nhất của tất cả các điểm bên trong Blob.</p>
 
-<p>特征量 21：最大灰度。指Blob内部所有点的最大灰度值。</p>
+<p>Đặc trưng 21: Mức xám tối đa. Giá trị mức xám lớn nhất của tất cả các điểm bên trong Blob.</p>
 
-<p>特征量 22：平均灰度。指Blob内部所有点的平均灰度值。</p>
+<p>Đặc trưng 22: Mức xám trung bình. Giá trị mức xám trung bình của tất cả các điểm bên trong Blob.</p>
 
-<p>特征量 23：基于事件的平均灰度的最大值。这里基于事件应该理解为基于游程。所以基于事件的平均灰度的最大值即基于游程的平均灰度的最大值。也就是Blob内部所有的游程平均灰度的最大值。</p>
+<p>Đặc trưng 23: Mức xám trung bình tối đại dựa trên thực thể (Event-based). Ở đây "thực thể" nên được hiểu là Run-length. Do đó, đây là giá trị mức xám trung bình lớn nhất dựa trên các đoạn Run-length bên trong Blob.</p>
 
-<p>特征量 24：基于事件的平均灰度的最小值。这里基于事件应该理解为基于游程。所以基于事件的平均灰度的最小值即基于游程的平均灰度的最小值。也就是Blob内部所有的游程平均灰度的最小值。</p>
+<p>Đặc trưng 24: Mức xám trung bình tối tiểu dựa trên thực thể. Tương tự, đây là giá trị mức xám trung bình nhỏ nhất dựa trên các đoạn Run-length bên trong Blob.</p>
 
-<p><strong>其他参数</strong></p>
+<p><strong>Các tham số khác</strong></p>
 
-<p>见参数说明。</p>
+<p>Xem phần giải thích tham số.</p>
 
-<h4>查看结果</h4>
+<h4>Xem kết quả</h4>
 
-<p>当所有区域的执行结果都为true时，工具执行结果为true，否则工具执行结果为false。</p>
+<p>Khi kết quả thực thi của tất cả các vùng ROI đều là True, kết quả thực thi chung của công cụ sẽ là True; ngược lại, kết quả thực thi của công cụ sẽ là False.</p>
 
 <p><img src="media/GcBlobMultiRoiTool_4_14.png" alt="" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Các câu hỏi thường gặp (FAQ)</h2>
 
 <table>
 <thead>
 <tr>
-<th> 注释事项                                                     </th>
+<th> Các mục cần lưu ý </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 1. 多项Blob工具常与几何定位工具搭配使用，几何定位工具通过几何特征定位到特定区域后，Blob工具在该区域的指定位置进行检测分析，提高检测的准确性和效率。 </td>
+<td> 1. Công cụ Multi-Blob thường được sử dụng kết hợp với công cụ Định vị hình học (Geometric Matching). Sau khi công cụ định vị xác định được vị trí vùng đặc trưng cụ thể, công cụ Blob sẽ thực hiện kiểm tra và phân tích tại vị trí chỉ định trong vùng đó để nâng cao độ chính xác và hiệu suất kiểm tra. </td>
 </tr>
 <tr>
-<td> 2. 多项Blob工具在使用时应该注意ROI区域的摆放位置，如果ROI区域超出图像范围，会导致Blob分析失败。 </td>
+<td> 2. Khi sử dụng công cụ Multi-Blob, cần lưu ý vị trí đặt các vùng ROI. Nếu vùng ROI vượt quá phạm vi của hình ảnh (Out of bounds), việc phân tích Blob sẽ bị thất bại. </td>
 </tr>
 <tr>
-<td> 3. 多项Blob工具的执行结果为各个ROI结果取并，当工具执行结果为false时，执行为false的ROI将在视图上显示为红色。生产界面上双击红色ROI可弹出高级属性界面并直接调试对应参数。 </td>
+<td> 3. Kết quả thực thi của công cụ Multi-Blob là phép giao (AND logic) kết quả của từng ROI. Khi kết quả thực thi của công cụ là False, các ROI có kết quả False sẽ hiển thị màu đỏ trên màn hình quan sát. Trên giao diện sản xuất, nhấp đúp vào ROI màu đỏ sẽ hiển thị giao diện Thuộc tính nâng cao (Advanced Properties) để tinh chỉnh trực tiếp các tham số tương ứng. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
+<h2>6. Giải thích tham số</h2>
 
-<h3>输入参数</h3>
+<h3>Tham số đầu vào</h3>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
+<th> Tên tham số </th>
+<th style="text-align:left;"> Giải thích tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 目标跟随    </td>
-<td style="text-align:left;"> 是：可以连接二维线性变换；否：按照链接进的ROI区域执行工具    </td>
+<td> Bám đuổi mục tiêu </td>
+<td style="text-align:left;"> Có: Có thể liên kết với phép biến đổi tuyến tính 2D; Không: Thực thi công cụ theo vùng ROI được liên kết vào. </td>
 </tr>
 <tr>
-<td> ROI区域 </td>
-<td style="text-align:left;"> 工具执行检测的区域，分为9种：整幅图像、矩形ROI、仿射矩形ROI、圆形ROI、圆环ROI、椭圆ROI、多边形ROI、可变拆线ROI和自由形状  ROI（边可以变成曲线的多边形）。 </td>
+<td> Vùng ROI </td>
+<td style="text-align:left;"> Vùng công cụ thực hiện kiểm tra, chia làm 9 loại: Toàn bộ hình ảnh, ROI Hình chữ nhật, ROI Hình chữ nhật Affine, ROI Hình tròn, ROI Hình vành khăn, ROI Hình Ellipse, ROI Đa giác, ROI Đường gấp khúc thay đổi và ROI Hình dạng tự do (Đa giác có các cạnh có thể biến thành đường cong). </td>
 </tr>
 <tr>
-<td> Blob极性             </td>
-<td style="text-align:left;"> Blob极性是指目标和背景的黑白过度情况，分为2种：黑色Blob-白色背景和白色Blob-黑色背景。 </td>
+<td> Cực tính Blob </td>
+<td style="text-align:left;"> Cực tính Blob đề cập đến trạng thái chuyển đổi trắng đen giữa mục tiêu và nền, chia làm 2 loại: Blob đen - Nền trắng và Blob trắng - Nền đen. </td>
 </tr>
 <tr>
-<td> 分割方式   </td>
-<td style="text-align:left;"> Blob分析之前，必须将图像分割为目标和背景，Blob工具提供的分割方式分为3种：None（直接输入）、Hard   Threshold（硬阈值分割）和Soft Threshold（软阈值分割）。 </td>
+<td> Phương pháp phân đoạn </td>
+<td style="text-align:left;"> Trước khi phân tích Blob, hình ảnh phải được phân đoạn thành mục tiêu và nền. Công cụ Blob cung cấp 3 phương pháp phân đoạn: None (Nhập trực tiếp), Hard Threshold (Phân ngưỡng cứng) và Soft Threshold (Phân ngưỡng mềm). </td>
 </tr>
 <tr>
-<td> Threshold   </td>
-<td style="text-align:left;"> Threshold硬阈数值。 </td>
+<td> Threshold </td>
+<td style="text-align:left;"> Giá trị ngưỡng cứng (Hard Threshold). </td>
 </tr>
 <tr>
-<td> 连通分析方式 </td>
-<td style="text-align:left;"> 图像被分割为目标和背景之后，连通性分析根据目标像素的连通属性将其聚合成连通的区域。Blob工具提供的连通性分析方式分为3种：Whole   Image、Gray Scale和Labeled。 </td>
+<td> Phương pháp phân tích liên thông </td>
+<td style="text-align:left;"> Sau khi hình ảnh được phân đoạn thành mục tiêu và nền, phân tích liên thông sẽ tập hợp các pixel mục tiêu thành các vùng liên thông dựa trên thuộc tính kết nối của chúng. Có 3 phương pháp: Whole Image, Gray Scale và Labeled. </td>
 </tr>
 <tr>
-<td> 修剪、填充           </td>
-<td style="text-align:left;"> 连通性分析方式选择为Gray Scale和Labeled时显示该参数，分为3种：无、修剪和填充，该参数将根据指定的最小面积，将面积小于最小面积的Blob结果直接修剪掉或者填充到相邻的大Blob中。 </td>
+<td> Cắt tỉa, Lấp đầy (Pruning/Filling) </td>
+<td style="text-align:left;"> Tham số này hiển thị khi phương pháp liên thông được chọn là Gray Scale hoặc Labeled, gồm 3 tùy chọn: Không, Cắt tỉa (Pruning) và Lấp đầy (Filling). Dựa trên diện tích tối thiểu được chỉ định, các Blob có diện tích nhỏ hơn mức này sẽ bị cắt tỉa bỏ hoặc lấp đầy vào các Blob lớn lân cận. </td>
 </tr>
 <tr>
-<td> 像素当量 </td>
-<td style="text-align:left;"> 面积=像素总数*像素当量² </td>
+<td> Hệ số pixel (Pixel Equivalence) </td>
+<td style="text-align:left;"> Diện tích = Tổng số pixel * Hệ số pixel² </td>
 </tr>
 <tr>
-<td> 总像素数上限        </td>
-<td style="text-align:left;"> 所有检测到的Blob所占有像素个数的最大值，不能小于下限值，取值范围[0, 999999999]。当输出结果中检测到的Blob总像素数在上下限之间时，检测区域执行结果为true，否则为false。 </td>
+<td> Giới hạn trên tổng số pixel </td>
+<td style="text-align:left;"> Giá trị tối đa số pixel mà tất cả các Blob phát hiện được chiếm giữ, không được nhỏ hơn giá trị giới hạn dưới, phạm vi [0, 999999999]. Khi tổng số pixel của Blob nằm trong khoảng giới hạn, kết quả vùng kiểm tra là True, ngược lại là False. </td>
 </tr>
 <tr>
-<td> 总像素数下限        </td>
-<td style="text-align:left;"> 所有检测到的Blob所占有像素个数的最小值，不能大于上限值，取值范围[0, 999999999]。当输出结果中检测到的Blob总像素数在上下限之间时，检测区域执行结果为true，否则为false。 </td>
+<td> Giới hạn dưới tổng số pixel </td>
+<td style="text-align:left;"> Giá trị tối thiểu số pixel mà tất cả các Blob phát hiện được chiếm giữ, không được lớn hơn giá trị giới hạn trên, phạm vi [0, 999999999]. Khi tổng số pixel của Blob nằm trong khoảng giới hạn, kết quả vùng kiểm tra là True, ngược lại là False. </td>
 </tr>
 <tr>
-<td> 结果个数上限        </td>
-<td style="text-align:left;"> 所有检测到的Blob所占个数的最大值，不能小于下限值，取值范围[0, 999999999]。当输出结果中检测到的Blob总个数在上下限之间时，检测区域执行结果为true，否则为false。 </td>
+<td> Giới hạn trên số lượng kết quả </td>
+<td style="text-align:left;"> Số lượng Blob tối đa được phát hiện, không nhỏ hơn giới hạn dưới, phạm vi [0, 999999999]. Khi tổng số lượng Blob nằm trong khoảng giới hạn, kết quả vùng kiểm tra là True, ngược lại là False. </td>
 </tr>
 <tr>
-<td> 结果个数下限        </td>
-<td style="text-align:left;"> 所有检测到的Blob所占个数的最小值，不能大于上限值，取值范围[0, 999999999]。当输出结果中检测到的Blob总个数在上下限之间时，检测区域执行结果为true，否则为false。 </td>
+<td> Giới hạn dưới số lượng kết quả </td>
+<td style="text-align:left;"> Số lượng Blob tối thiểu được phát hiện, không lớn hơn giới hạn trên, phạm vi [0, 999999999]. Khi tổng số lượng Blob nằm trong khoảng giới hạn, kết quả vùng kiểm tra là True, ngược lại là False. </td>
 </tr>
 <tr>
-<td> 面积占比下限 </td>
-<td style="text-align:left;"> 所有Blob面积与ROI检测区域面积之比的最小值，不能大于上限值，取值范围[0.0, 1.0]。当所有Blob面积与ROI检测区域面积之比在上下限之间时，检测区域执行结果为true，否则为false。 </td>
+<td> Giới hạn dưới tỷ lệ diện tích </td>
+<td style="text-align:left;"> Tỷ lệ tối thiểu giữa diện tích tất cả Blob và diện tích vùng kiểm tra ROI, phạm vi [0.0, 1.0]. Khi tỷ lệ này nằm trong khoảng giới hạn, kết quả vùng kiểm tra là True, ngược lại là False. </td>
 </tr>
 <tr>
-<td> 面积占比上限 </td>
-<td style="text-align:left;"> 所有Blob面积与ROI检测区域面积之比的最大值，不能小于下限值，取值范围[0.0, 1.0]。当所有Blob面积与ROI检测区域面积之比在上下限之间时，检测区域执行结果为true，否则为false。 </td>
+<td> Giới hạn trên tỷ lệ diện tích </td>
+<td style="text-align:left;"> Tỷ lệ tối đa giữa diện tích tất cả Blob và diện tích vùng kiểm tra ROI, phạm vi [0.0, 1.0]. Khi tỷ lệ này nằm trong khoảng giới hạn, kết quả vùng kiểm tra là True, ngược lại là False. </td>
 </tr>
 <tr>
-<td> 面积下限 </td>
-<td style="text-align:left;"> Blob面积最小值，不能大于上限值，取值范围[0, 999999999]。当所有Blob面积在上下限之间时，检测区域执行结果为true，否则为false。 </td>
+<td> Giới hạn dưới diện tích </td>
+<td style="text-align:left;"> Giá trị diện tích tối thiểu của Blob, phạm vi [0, 999999999]. Khi diện tích của tất cả Blob nằm trong khoảng giới hạn, kết quả vùng kiểm tra là True, ngược lại là False. </td>
 </tr>
 <tr>
-<td> 面积上限 </td>
-<td style="text-align:left;"> Blob面积最大值，不能小于下限值，取值范围[0, 999999999]。当所有Blob面积在上下限之间时，检测区域执行结果为true，否则为false。 </td>
+<td> Giới hạn trên diện tích </td>
+<td style="text-align:left;"> Giá trị diện tích tối đa của Blob, phạm vi [0, 999999999]. Khi diện tích của tất cả Blob nằm trong khoảng giới hạn, kết quả vùng kiểm tra là True, ngược lại là False. </td>
 </tr>
 <tr>
-<td> 是否计算矩相关特性   </td>
-<td style="text-align:left;"> 选择“是”，则计算矩相关特征量，并将结果显示到监视窗口Blob结果参数中，同时矩相关特征量将参与结果过滤设置。 </td>
+<td> Tính toán đặc trưng Momen </td>
+<td style="text-align:left;"> Nếu chọn "Có", công cụ sẽ tính toán các đặc trưng liên quan đến momen (Moment characteristics) và hiển thị kết quả trong cửa sổ giám sát, đồng thời các đặc trưng này sẽ tham gia vào thiết lập bộ lọc kết quả. </td>
 </tr>
 <tr>
-<td> 是否计算轮廓相关特性 </td>
-<td style="text-align:left;"> 选择“是”，则计算轮廓相关特征量，并将结果显示到监视窗口Blob结果参数中，同时轮廓相关特征量将参与结果过滤设置。 </td>
+<td> Tính toán đặc trưng Đường bao </td>
+<td style="text-align:left;"> Nếu chọn "Có", công cụ sẽ tính toán các đặc trưng liên quan đến đường bao (Contour characteristics) và hiển thị kết quả, đồng thời tham gia vào bộ lọc kết quả. </td>
 </tr>
 <tr>
-<td> 是否计算灰度相关特性 </td>
-<td style="text-align:left;"> 选择“是”，则计算灰度相关特征量，并将结果显示到监视窗口Blob结果参数中，同时灰度相关特征量将参与结果过滤设置。 </td>
+<td> Tính toán đặc trưng Mức xám </td>
+<td style="text-align:left;"> Nếu chọn "Có", công cụ sẽ tính toán các đặc trưng liên quan đến mức xám (Gray-scale characteristics) và hiển thị kết quả, đồng thời tham gia vào bộ lọc kết quả. </td>
 </tr>
 <tr>
-<td> 结果是否排序         </td>
-<td style="text-align:left;"> 选择“是”，则显示结果排序方式和结果排序参数这两个参数，并根据选择的排序方式和排序参数对结果进行排序。 </td>
+<td> Sắp xếp kết quả </td>
+<td style="text-align:left;"> Nếu chọn "Có", các tham số về phương thức sắp xếp và tiêu chí sắp xếp sẽ hiển thị để thực hiện sắp xếp danh sách kết quả đầu ra. </td>
 </tr>
 <tr>
-<td> 结果是否过滤         </td>
-<td style="text-align:left;"> 选择“是”，则对相应的参数进行过滤设置，并按照设置对检测结果进行筛选。 </td>
+<td> Lọc kết quả (Filtering) </td>
+<td style="text-align:left;"> Nếu chọn "Có", công cụ sẽ thực hiện thiết lập bộ lọc cho các tham số tương ứng và sàng lọc kết quả kiểm tra theo thiết lập đó. </td>
 </tr>
 <tr>
-<td> 过滤不完整Blob </td>
-<td style="text-align:left;"> 被检测区域ROI截断的blob即为不完整blob </td>
+<td> Lọc Blob không hoàn chỉnh </td>
+<td style="text-align:left;"> Các Blob bị cắt ngang bởi biên của vùng ROI kiểm tra được coi là Blob không hoàn chỉnh. </td>
 </tr>
 <tr>
-<td> 结果是否取反         </td>
-<td style="text-align:left;"> 选择“是”，则将工具的执行结果取反，例如结果为false，选择取反后，结果变为true，反之亦然。 </td>
+<td> Đảo ngược kết quả (Invert) </td>
+<td style="text-align:left;"> Nếu chọn "Có", kết quả thực thi của công cụ sẽ bị đảo ngược. Ví dụ: nếu kết quả gốc là False, sau khi đảo ngược sẽ thành True và ngược lại. </td>
 </tr>
 <tr>
-<td> 是否Blob填充         </td>
-<td style="text-align:left;"> 选择“是”，则在黑色背景上根据检测到的目标位置、形状、大小、方向等信息进行白色填充。 </td>
+<td> Lấp đầy Blob (Blob Filling) </td>
+<td style="text-align:left;"> Nếu chọn "Có", công cụ sẽ thực hiện lấp đầy màu trắng lên nền đen dựa trên thông tin vị trí, hình dạng, kích thước và hướng của mục tiêu phát hiện được. </td>
 </tr>
 <tr>
-<td> 正反检 </td>
-<td style="text-align:left;"> 可同时检测黑色blob与白色blob </td>
+<td> Kiểm tra thuận nghịch </td>
+<td style="text-align:left;"> Có thể đồng thời phát hiện cả Blob đen và Blob trắng. </td>
 </tr>
 <tr>
-<td> 输入图像             </td>
-<td style="text-align:left;"> 显示待检测的图像。                                           </td>
+<td> Hình ảnh đầu vào </td>
+<td style="text-align:left;"> Hiển thị hình ảnh chờ kiểm tra. </td>
 </tr>
 <tr>
-<td> 数据链               </td>
-<td style="text-align:left;"> 输入图像                                                     </td>
+<td> Chuỗi dữ liệu (Data Chain) </td>
+<td style="text-align:left;"> Hình ảnh đầu vào. </td>
 </tr>
 <tr>
-<td> 二维线性变换         </td>
-<td style="text-align:left;"> 目标相对于模板的平移、旋转、缩放变换。                       </td>
+<td> Biến đổi tuyến tính 2D </td>
+<td style="text-align:left;"> Các phép biến đổi tịnh tiến (translation), xoay (rotation) và thu phóng (scaling) của mục tiêu so với mẫu (template). </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>输出参数</h3>
+<h3>Tham số đầu ra</h3>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称         </th>
-<th> 参数说明                                                     </th>
+<th> Tên tham số </th>
+<th> Giải thích tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像         </td>
-<td> 输出图像的宽度、高度、像素大小，同监视窗口的输入图像参数。              </td>
+<td> Hình ảnh đầu vào </td>
+<td> Đầu ra gồm chiều rộng, chiều cao và kích thước pixel của hình ảnh, tương tự tham số hình ảnh đầu vào trong cửa sổ giám sát. </td>
 </tr>
 <tr>
-<td> 结果个数         </td>
-<td> 输出各个ROI的Blob结果个数，供后序工具使用，同监视窗口的结果个数参数。 </td>
+<td> Số lượng kết quả </td>
+<td> Đầu ra là số lượng kết quả Blob của từng ROI để các công cụ tiếp theo sử dụng, tương tự tham số số lượng kết quả trong cửa sổ giám sát. </td>
 </tr>
 <tr>
-<td> Blob结果         </td>
-<td> 输出各个ROI的结果信息，包括基本特征量、矩相关特征量、轮廓相关特征量和灰度相关特征量等参数，供后序工具使用，同监视窗口的Blob结果参数。 </td>
+<td> Kết quả Blob </td>
+<td> Xuất thông tin kết quả của từng ROI, bao gồm các đặc trưng cơ bản, đặc trưng liên quan đến momen, đặc trưng liên quan đến đường bao và đặc trưng liên quan đến mức xám, phục vụ cho các công cụ sau. </td>
 </tr>
 <tr>
-<td> 所有Blob面积占比 </td>
-<td> 输出各个ROI的Blob面积与ROI检测区域面积之比，供后序工具使用，同监视窗口的所有Blob面积占比参数。 </td>
+<td> Tỷ lệ diện tích tất cả Blob </td>
+<td> Đầu ra là tỷ lệ giữa diện tích Blob và diện tích vùng kiểm tra ROI của từng ROI, tương tự tham số tỷ lệ diện tích trong cửa sổ giám sát. </td>
 </tr>
 <tr>
-<td> 总像素数         </td>
-<td> 输出各个ROI的Blob占有的像素个数。                      </td>
+<td> Tổng số pixel </td>
+<td> Đầu ra là số lượng pixel mà các Blob chiếm giữ trong từng vùng ROI. </td>
 </tr>
 <tr>
-<td> 面积 </td>
-<td> 输出各个ROI的面积，面积=总像素数*像素当量²。 </td>
+<td> Diện tích </td>
+<td> Đầu ra là diện tích của từng ROI, diện tích = tổng số pixel * hệ số pixel². </td>
 </tr>
 <tr>
-<td> 反检ROI序列号 </td>
-<td> 进行反检的ROI序号集合 </td>
+<td> Số thứ tự ROI kiểm tra nghịch </td>
+<td> Tập hợp các chỉ số (ID) của các ROI thực hiện kiểm tra nghịch (Inverse Detection). </td>
 </tr>
 <tr>
-<td> 反检结果个数 </td>
-<td> 进行反检的每个ROI的检测结果数量 </td>
+<td> Số lượng kết quả kiểm tra nghịch </td>
+<td> Số lượng kết quả phát hiện của từng ROI thực hiện kiểm tra nghịch. </td>
 </tr>
 <tr>
-<td> 反检所有Blob面积占比 </td>
-<td> 进行反检的每个ROI的检测结果所有Blob面积占比 </td>
+<td> Tỷ lệ diện tích Blob kiểm tra nghịch </td>
+<td> Tỷ lệ diện tích của tất cả các Blob phát hiện được trong mỗi ROI thực hiện kiểm tra nghịch. </td>
 </tr>
 <tr>
-<td> 反检总像素数 </td>
-<td> 进行反检的每个ROI的检测结果总像素数 </td>
+<td> Tổng số pixel kiểm tra nghịch </td>
+<td> Tổng số pixel của các kết quả phát hiện trong mỗi ROI thực hiện kiểm tra nghịch. </td>
 </tr>
 <tr>
-<td> 所有ROI检测结果 </td>
-<td> 正反检总的检测结果 </td>
+<td> Kết quả kiểm tra tất cả ROI </td>
+<td> Tổng hợp kết quả phát hiện của cả kiểm tra thuận và kiểm tra nghịch. </td>
 </tr>
 <tr>
-<td> 执行结果         </td>
-<td> 工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực hiện của công cụ: hiển thị "OK" nếu thành công, "NG" (No Go) nếu thất bại, tương tự tham số kết quả thực thi trong cửa sổ giám sát. </td>
 </tr>
 <tr>
-<td> 执行时间         </td>
-<td> 工具执行时间。                                        </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian công cụ thực hiện tính toán. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7. 示例工程</h2>
+<h2>7. Dự án mẫu</h2>
 
-<p>参见“\Samples\多项Blob工具.gvp”。</p>
+<p>Tham khảo tại: “\Samples\Multi_Blob_Tool.gvp”.</p>
