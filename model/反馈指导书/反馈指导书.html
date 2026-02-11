@@ -16,240 +16,240 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>1 概述</h1>
+<h1>1 Tổng quan</h1>
 
-<p>本文档主要用于客诉反馈时，指导用户收集信息、复现排查并正确填写问题单，以加速问题复现、定位和解决，快速恢复生产，减少客户损失。</p>
+<p>Tài liệu này chủ yếu được sử dụng khi phản hồi khiếu nại của khách hàng, hướng dẫn người dùng thu thập thông tin, tái hiện và kiểm tra lỗi (troubleshoot), đồng thời điền phiếu vấn đề (ticket) một cách chính xác, nhằm đẩy nhanh quá trình tái hiện, định vị và giải quyết vấn đề, nhanh chóng khôi phục sản xuất và giảm thiểu thiệt hại cho khách hàng.</p>
 
-<h1>2 基本信息</h1>
+<h1>2 Thông tin cơ bản</h1>
 
-<p>问题描述：现象、频次</p>
+<p>Mô tả vấn đề: Hiện tượng, Tần suất</p>
 
-<p>项目名称：</p>
+<p>Tên dự án:</p>
 
-<p>反馈人：</p>
+<p>Người phản hồi:</p>
 
-<p>问题版本：</p>
+<p>Phiên bản gặp lỗi:</p>
 
-<p>期望解决日期：</p>
+<p>Ngày mong muốn giải quyết:</p>
 
-<blockquote><p><span style = "color:red">注意</span></p>
+<blockquote><p><span style = "color:red">Lưu ý</span></p>
 
 <ul>
-<li><p>项目名称格式如下：项目类型-最终用户-设备商-项目/工站名称</p>
+<li><p>Định dạng tên dự án như sau: Loại dự án-Khách hàng cuối (End User)-Nhà cung cấp thiết bị-Tên dự án/Trạm (Station)</p>
 
-<p>​        ex： 对位-嘉善立讯-杰士德-FCMXX检测项目</p></li>
-<li><p>项目类型：对位、检测、2D量测、3D量测、激光、深度学习、学习反馈（不涉及项目生产）</p></li>
-<li><p>示例</p>
+<p>​        ex： Alignment-Luxshare Jiashan-Jieshide-Dự án kiểm tra FCMXX</p></li>
+<li><p>Loại dự án: Alignment, Inspection (Kiểm tra), Đo lường 2D, Đo lường 3D, Laser, Deep Learning, Phản hồi học tập (không liên quan đến sản xuất dự án)</p></li>
+<li><p>Ví dụ</p>
 
 <p><img src="media/2-1.png" alt="" /></p></li>
 </ul>
 </blockquote>
 
-<h1>3 问题相关资料收集</h1>
+<h1>3 Thu thập tài liệu liên quan đến vấn đề</h1>
 
-<p>请大家在遇到问题时，优先使用本文档进行初步排查，如仍无法解决问题，尽快进行问题反馈！如版本比较旧，请在条件允许的前提下，及时更新版本！</p>
+<p>Khi gặp vấn đề, vui lòng ưu tiên sử dụng tài liệu này để kiểm tra sơ bộ, nếu vẫn không thể giải quyết, hãy phản hồi vấn đề càng sớm càng tốt! Nếu phiên bản đã cũ, vui lòng cập nhật phiên bản kịp thời nếu điều kiện cho phép!</p>
 
-<p>先对问题进行大类的划分，核对现象是否一致或接近，查阅信息收集清单及相关方法，进行信息收集与回传。当问题涉及多个问题归类时，所需信息都需要进行收集。</p>
+<p>Trước tiên hãy phân loại vấn đề theo nhóm lớn, đối chiếu xem hiện tượng có nhất quán hoặc gần giống không, tra cứu danh sách thu thập thông tin và các phương pháp liên quan để tiến hành thu thập và gửi lại thông tin. Khi vấn đề liên quan đến nhiều danh mục phân loại, cần thu thập tất cả thông tin được yêu cầu.</p>
 
-<p>如：现场发现相机重命名时崩溃，则需要按崩溃和相机问题进行信息收集（dump、操作记录、采集日志、相机型号等）</p>
+<p>Ví dụ: Tại hiện trường phát hiện phần mềm bị Crash khi đổi tên Camera, thì cần thu thập thông tin theo hạng mục Crash và Vấn đề Camera (file dump, lịch sử thao tác, log thu nhận ảnh (grab log), model camera, v.v.)</p>
 
-<h2>3.1 软件无法打开</h2>
+<h2>3.1 Phần mềm không thể mở</h2>
 
 <p><img src="media/3-1.png" alt="" /></p>
 
-<h2>3.2 软件崩溃</h2>
+<h2>3.2 Phần mềm bị Crash</h2>
 
 <p><img src="media/3-2.png" alt="" /></p>
 
-<h2>3.3 软件卡死</h2>
+<h2>3.3 Phần mềm bị treo (Freeze)</h2>
 
 <p><img src="media/3-3.png" alt="" /></p>
 
-<h2>3.4 软件闪退</h2>
+<h2>3.4 Phần mềm tự thoát (Force Close)</h2>
 
 <p><img src="media/3-4.png" alt="" /></p>
 
-<h2>3.5 软件使用卡顿</h2>
+<h2>3.5 Phần mềm bị giật lag</h2>
 
 <p><img src="media/3-5.png" alt="" /></p>
 
-<h2>3.6 软件工具缺失</h2>
+<h2>3.6 Thiếu công cụ phần mềm</h2>
 
 <p><img src="media/3-6.png" alt="" /></p>
 
-<h2>3.7  2D相机问题</h2>
+<h2>3.7  Vấn đề Camera 2D</h2>
 
 <p><img src="media/3-7.png" alt="" /></p>
 
-<h2>3.8  3D相机问题</h2>
+<h2>3.8  Vấn đề Camera 3D</h2>
 
 <p><img src="media/3-8.png" alt="" /></p>
 
-<h2>3.9 通信问题</h2>
+<h2>3.9 Vấn đề truyền thông (Communication)</h2>
 
 <p><img src="media/3-9.png" alt="" /></p>
 
-<h2>3.10 存图</h2>
+<h2>3.10 Lưu ảnh</h2>
 
 <p><img src="media/3-10.png" alt="" /></p>
 
-<h2>3.11 深度学习耗时问题</h2>
+<h2>3.11 Vấn đề thời gian xử lý Deep Learning</h2>
 
 <p><img src="media/3-11.png" alt="" /></p>
 
-<h2>3.12 加密狗</h2>
+<h2>3.12 Dongle (Khóa cứng)</h2>
 
 <p><img src="media/3-12.png" alt="" /></p>
 
-<h2>3.13 工具类</h2>
+<h2>3.13 Các loại công cụ (Tools)</h2>
 
 <p><img src="media/3-13.png" alt="" /></p>
 
-<h2>3.14 其它疑难问题</h2>
+<h2>3.14 Các vấn đề khó khăn khác</h2>
 
 <p><img src="media/3-14.png" alt="" /></p>
 
-<h1>4 ONES录入问题单</h1>
+<h1>4 Nhập phiếu vấn đề trên ONES</h1>
 
-<h2>4.1 电脑端</h2>
+<h2>4.1 Trên máy tính</h2>
 
-<h3>4.1.1 登录ONES系统</h3>
+<h3>4.1.1 Đăng nhập hệ thống ONES</h3>
 
 <ul>
-<li><p>第1步：登录网址<strong>https://ones.lusterinc.com</strong></p></li>
-<li><p>第2步：点击<strong>“L”</strong>图标，切换到<strong>LDAP/AD</strong>登录方式</p>
+<li><p>Bước 1: Đăng nhập địa chỉ web <strong>https://ones.lusterinc.com</strong></p></li>
+<li><p>Bước 2: Nhấn vào biểu tượng <strong>“L”</strong>, chuyển sang chế độ đăng nhập <strong>LDAP/AD</strong></p>
 
 <p><img src="media/4-1.jpg" alt="" /></p></li>
-<li><p>第3步：使用<strong>LDAP/AD</strong>账号登录，输入<strong>域账户、域密码</strong>即可完成登录</p>
+<li><p>Bước 3: Sử dụng tài khoản <strong>LDAP/AD</strong> để đăng nhập, nhập <strong>tài khoản miền (domain account), mật khẩu miền</strong> để hoàn tất đăng nhập</p>
 
 <p><img src="media/4-2.jpg" alt="" /></p></li>
 </ul>
 
 
-<h3>4.1.2 录入问题单</h3>
+<h3>4.1.2 Nhập phiếu vấn đề</h3>
 
 <ul>
-<li><p>第1步：左侧菜单栏选择<strong>“项目/需求管理”</strong></p>
+<li><p>Bước 1: Chọn <strong>“Quản lý Dự án/Yêu cầu”</strong> trên thanh menu bên trái</p>
 
 <p><img src="media/4-3.jpg" alt="" /></p></li>
-<li><p>第2步：右上角点击“+”，<strong>新建工作项</strong>（也可批量导入工作项，见附录6）</p>
+<li><p>Bước 2: Nhấn dấu “+” ở góc trên bên phải, <strong>Tạo mới hạng mục công việc</strong> (cũng có thể nhập hàng loạt hạng mục công việc, xem Phụ lục 6)</p>
 
 <p><img src="media/4-4.jpg" alt="" /></p></li>
-<li><p>第3步：所属项目选择<strong>Onsite Issue</strong>，工作项类型选择<strong>Bug-FB</strong></p>
+<li><p>Bước 3: Dự án trực thuộc chọn <strong>Onsite Issue</strong>, loại hạng mục công việc chọn <strong>Bug-FB</strong></p>
 
 <p><img src="media/4-5.jpg" alt="" /></p></li>
-<li><p>第4步：填写字段信息-<strong>标题、描述、反馈人、工程项目名称、影响版本、截止日期</strong>，其中项目名称格式如下</p>
+<li><p>Bước 4: Điền thông tin trường dữ liệu - <strong>Tiêu đề, Mô tả, Người phản hồi, Tên dự án kỹ thuật, Phiên bản bị ảnh hưởng, Ngày hết hạn</strong>, trong đó định dạng tên dự án như sau</p>
 
 <blockquote><ul>
-<li>项目名称格式如下：项目类型-最终用户-设备商-项目/工站名称</li>
+<li>Định dạng tên dự án như sau: Loại dự án-Khách hàng cuối (End User)-Nhà cung cấp thiết bị-Tên dự án/Trạm (Station)</li>
 </ul>
 
 
-<p>​        ex： 对位-嘉善立讯-杰士德-FCMXX检测项目</p>
+<p>​        ex： Alignment-Luxshare Jiashan-Jieshide-Dự án kiểm tra FCMXX</p>
 
 <ul>
-<li><p>项目类型：对位、检测、2D量测、3D量测、激光、深度学习、学习反馈（不涉及项目生产）</p></li>
-<li><p>示例</p></li>
+<li><p>Loại dự án: Alignment, Inspection (Kiểm tra), Đo lường 2D, Đo lường 3D, Laser, Deep Learning, Phản hồi học tập (không liên quan đến sản xuất dự án)</p></li>
+<li><p>Ví dụ</p></li>
 </ul>
 
 
 <p><img src="media/2-1.png" alt="" /></p></blockquote></li>
-<li><p>第5步：上传相关资料，小文件可点击上图的“上传文件”进行上传，大文件（如：工程文件、dump、图像、镜像文件等）建议上传云盘：AnyShare://IVS23 3C产品部/3C产品发布/06-学习资料/ONES附件上传（创建一个以单号命名的文件夹，将附件上传至文件夹中）</p>
+<li><p>Bước 5: Tải lên tài liệu liên quan, với tệp nhỏ có thể nhấn vào “Tải lên tệp” như hình trên để tải lên, với tệp lớn (như: file project, dump, hình ảnh, file image hệ thống, v.v.) khuyến nghị tải lên Cloud: AnyShare://IVS23 3C产品部/3C产品发布/06-学习资料/ONES附件上传 (Tạo một thư mục đặt tên theo số phiếu, tải tệp đính kèm vào thư mục đó)</p>
 
 <p><img src="media/4-6.jpg" alt="" /></p>
 
-<blockquote><p><span style = "color:red">注意</span></p>
+<blockquote><p><span style = "color:red">Lưu ý</span></p>
 
-<p>如dump、镜像文件等文件过大时，可通过微信、钉钉、百度云盘等方式，发送给测试部相关测试人员。</p></blockquote></li>
+<p>Nếu các tệp như dump, file image hệ thống quá lớn, có thể gửi cho nhân viên kiểm thử (tester) liên quan thuộc bộ phận kiểm thử qua WeChat, DingTalk, Baidu Netdisk, v.v.</p></blockquote></li>
 </ul>
 
 
-<h2>4.2 手机端</h2>
+<h2>4.2 Trên điện thoại di động</h2>
 
-<h3>4.2.1 登录ONES系统</h3>
-
-<ul>
-<li><p>第1步：登录<strong>VPN（EasyConnect）</strong>，下载打开ONES APP</p>
+<h3>4.2.1 Đăng nhập hệ thống ONES</h3>
 
 <ul>
-<li><p>Android 用户在应用宝搜索 “ 万事ONES ” 进行下载安装；</p></li>
-<li><p>iOS 用户在 App Store 搜索 “ 万事ONES ” 进行下载安装。</p></li>
+<li><p>Bước 1: Đăng nhập <strong>VPN (EasyConnect)</strong>, tải và mở ứng dụng ONES</p>
+
+<ul>
+<li><p>Người dùng Android tìm kiếm “Wanshi ONES” trên Yingyongbao để tải xuống và cài đặt;</p></li>
+<li><p>Người dùng iOS tìm kiếm “Wanshi ONES” trên App Store để tải xuống và cài đặt.</p></li>
 </ul>
 </li>
-<li><p>第2步：点击<strong>私有部署登录</strong></p>
+<li><p>Bước 2: Nhấn vào <strong>Đăng nhập triển khai riêng tư (Private Deployment)</strong></p>
 
 <p><img src="media/4-7.jpg" alt="" /></p></li>
-<li><p>第3步：按下图配置服务器，点击“下一步”</p>
+<li><p>Bước 3: Cấu hình máy chủ theo hình dưới, nhấn “Bước tiếp theo”</p>
 
 <p><img src="media/4-8.jpg" alt="" /></p></li>
-<li><p>第4步：点击第三方登录<strong>LDAP/AD</strong></p>
+<li><p>Bước 4: Nhấn vào đăng nhập bên thứ ba <strong>LDAP/AD</strong></p>
 
 <p><img src="media/4-9.jpg" alt="" /></p></li>
-<li><p>第5步：输入<strong>域账户、域密码</strong>登录，进入主页</p>
+<li><p>Bước 5: Nhập <strong>tài khoản miền, mật khẩu miền</strong> để đăng nhập, vào trang chủ</p>
 
 <p><img src="media/4-10.jpg" alt="" /></p></li>
 </ul>
 
 
-<h3>4.2.2 录入问题单</h3>
+<h3>4.2.2 Nhập phiếu vấn đề</h3>
 
 <ul>
-<li><p>第1步：主页中，点击右下角的+，<strong>新建工作项</strong></p>
+<li><p>Bước 1: Tại trang chủ, nhấn dấu + ở góc dưới bên phải, <strong>Tạo mới hạng mục công việc</strong></p>
 
 <p><img src="media/4-11.jpg" alt="" /></p></li>
-<li><p>第2步：<strong>填写所需字段信息</strong>，点击右上角的√进行问题提交即可（字段填写，可参考电脑端问题单的录入说明）</p>
+<li><p>Bước 2: <strong>Điền thông tin trường dữ liệu cần thiết</strong>, nhấn dấu √ ở góc trên bên phải để gửi vấn đề (việc điền trường dữ liệu có thể tham khảo hướng dẫn nhập phiếu trên máy tính)</p>
 
 <p><img src="media/4-12.jpg" alt="" /></p></li>
 </ul>
 
 
-<h2>4.3 查看本人提单</h2>
+<h2>4.3 Xem phiếu do bản thân tạo</h2>
 
 <ul>
-<li><p>第1步：登录后，点击上方的<strong>“筛选器”</strong></p></li>
-<li><p>第2步：点击筛选器中的<strong>“客诉提单”</strong></p></li>
-<li><p>第3步：可查看全部客诉单，也可查看本人提单</p></li>
-<li><p>第4步：可在右上角的搜索区搜索某个问题</p>
+<li><p>Bước 1: Sau khi đăng nhập, nhấn vào <strong>“Bộ lọc” (Filter)</strong> ở phía trên</p></li>
+<li><p>Bước 2: Nhấn vào <strong>“Phiếu khiếu nại khách hàng”</strong> trong bộ lọc</p></li>
+<li><p>Bước 3: Có thể xem tất cả phiếu khiếu nại khách hàng, hoặc xem phiếu do bản thân tạo</p></li>
+<li><p>Bước 4: Có thể tìm kiếm vấn đề cụ thể trong vùng tìm kiếm ở góc trên bên phải</p>
 
 <p><img src="media/4-13.jpg" alt="" /></p></li>
 </ul>
 
 
-<h1>5 附录</h1>
+<h1>5 Phụ lục</h1>
 
-<h2>5.1 dump收集</h2>
-
-<ul>
-<li><p><strong>【崩溃dump】</strong></p>
-
-<blockquote><p><span style = "color:red">注意</span></p>
+<h2>5.1 Thu thập Dump</h2>
 
 <ul>
-<li>软件崩溃时，会自动生成dump文件并重启软件，过程中避免手动操作，直到软件重启完成</li>
-<li><strong>深度学习项目需拷贝文件夹内的dump，压缩包内的dump是可能是损坏的</strong>。</li>
-<li>第1步：找到路径<strong>LusterCache\Dump</strong></li>
+<li><p><strong>【Crash Dump】</strong></p>
+
+<blockquote><p><span style = "color:red">Lưu ý</span></p>
+
+<ul>
+<li>Khi phần mềm bị Crash, hệ thống sẽ tự động tạo file dump và khởi động lại phần mềm, trong quá trình này tránh thao tác thủ công cho đến khi phần mềm khởi động xong.</li>
+<li><strong>Dự án Deep Learning cần copy file dump trong thư mục, file dump trong tệp nén có thể bị hỏng</strong>.</li>
+<li>Bước 1: Tìm đến đường dẫn <strong>LusterCache\Dump</strong></li>
 </ul>
 </blockquote>
 
-<p>  LusterCache路径可在软件系统选项中查看，一般在最后一个硬盘分区内</p>
+<p>  Đường dẫn LusterCache có thể xem trong tùy chọn hệ thống phần mềm, thường nằm ở phân vùng ổ cứng cuối cùng.</p>
 
 <ul>
-<li><p>第2步：找到崩溃时间生成的zip文件，发给研发部门（直接拷贝zip压缩文件即可，如：00b2845d-6af1-42ad-ba84-96151b92feaa.zip）</p>
+<li><p>Bước 2: Tìm file zip được tạo vào thời điểm xảy ra crash, gửi cho bộ phận R&D (chỉ cần copy trực tiếp file nén zip, ví dụ: 00b2845d-6af1-42ad-ba84-96151b92feaa.zip)</p>
 
-<blockquote><p><span style = "color:red">注意</span></p>
+<blockquote><p><span style = "color:red">Lưu ý</span></p>
 
-<p>深度学习项目需拷贝和压缩包名称一致的文件夹</p></blockquote>
+<p>Dự án Deep Learning cần copy thư mục có tên trùng khớp với tên file nén</p></blockquote>
 
 <p><img src="media/5-1.jpg" alt="" /></p></li>
-<li><p>第3步：找到路径LusterCache\Dump中的xml文件，打开文件查看模块信息</p>
+<li><p>Bước 3: Tìm file xml trong đường dẫn LusterCache\Dump, mở file để xem thông tin mô-đun</p>
 
 <p><img src="media/5-2.jpg" alt="" /></p></li>
-<li><p>第4步：查看dump有无损坏</p>
+<li><p>Bước 4: Kiểm tra xem dump có bị hỏng không</p>
 
 <ul>
-<li><p>S1：使用WinDbg工具打开dump，点击左上角“文件”→“Open dump file”</p>
+<li><p>S1: Sử dụng công cụ WinDbg để mở dump, nhấn vào “File” ở góc trên bên trái → “Open dump file”</p>
 
-<p>（工具下载路径：AnyShare://IVS23 3C产品部/3C产品发布/04-驱动和工具/dump查看工具）</p>
+<p>（Đường dẫn tải công cụ: AnyShare://IVS23 3C产品部/3C产品发布/04-驱动和工具/dump查看工具）</p>
 
 <p><img src="media/5-3.jpg" alt="" /></p>
 
@@ -257,43 +257,43 @@
 
 <p><img src="media/5-5.jpg" alt="" /></p>
 
-<p>dump正常</p>
+<p>Dump bình thường</p>
 
 <p><img src="media/5-6.jpg" alt="" /></p>
 
-<p>dump损坏需重新收集</p></li>
+<p>Dump bị hỏng cần thu thập lại</p></li>
 </ul>
 </li>
-<li><p>第5步：初步确认崩溃位置</p>
+<li><p>Bước 5: Xác nhận sơ bộ vị trí crash</p>
 
 <ul>
-<li><p>S1：准备崩溃版本软件对应的PDB文件</p></li>
-<li><p>S2：菜单栏中打开Settings</p></li>
-<li><p>S3：选择“Debugging settings”</p></li>
-<li><p>S4：Default symbol path中输入PDB文件的路径</p>
+<li><p>S1: Chuẩn bị file PDB tương ứng với phiên bản phần mềm bị crash</p></li>
+<li><p>S2: Mở Settings trên thanh menu</p></li>
+<li><p>S3: Chọn “Debugging settings”</p></li>
+<li><p>S4: Nhập đường dẫn file PDB vào Default symbol path</p>
 
 <p><img src="media/5-7.jpg" alt="" /></p></li>
-<li><p>S5：点击“OK”</p></li>
-<li><p>S6：将崩溃的dmp文件拖拽到dump查看工具界面中</p></li>
-<li><p>S7：待加载完成，查看右下方的Stack堆栈区域。举例显示如下：（请电话研发人员，告知堆栈内容或将下图全部内容抄写带出来）</p>
+<li><p>S5: Nhấn “OK”</p></li>
+<li><p>S6: Kéo thả file dmp bị crash vào giao diện công cụ xem dump</p></li>
+<li><p>S7: Đợi tải xong, xem vùng Stack (Ngăn xếp) ở góc dưới bên phải. Ví dụ hiển thị như sau: (Vui lòng gọi điện cho nhân viên R&D, thông báo nội dung stack hoặc chép lại toàn bộ nội dung hình dưới)</p>
 
 <p><img src="media/5-8.jpg" alt="" /></p>
 
-<p>分析：</p>
+<p>Phân tích:</p>
 
-<p>​      通过上图红框内的信息，可以推断崩溃在运动标定工具加载的时候，而且是在解决方案整体加载的时候出现的，基本可以锁定到二三十行代码范围了，大大提升了定位效率。</p></li>
+<p>​      Thông qua thông tin trong khung đỏ ở hình trên, có thể suy đoán crash xảy ra khi tải công cụ Motion Calibration (Hiệu chuẩn chuyển động), và xuất hiện khi tải toàn bộ giải pháp (Solution), cơ bản có thể khoanh vùng trong phạm vi 20-30 dòng code, nâng cao đáng kể hiệu quả định vị lỗi.</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><strong>【卡死dump-转储文件】</strong></p>
+<li><p><strong>【Freeze Dump - Tạo file dump thủ công】</strong></p>
 
 <ul>
-<li><p>第1步：打开任务管理器，在详细信息内找到VisionAssembly.exe</p></li>
-<li><p>第2步：右键菜单选择“创建转储文件”</p>
+<li><p>Bước 1: Mở Task Manager, tìm VisionAssembly.exe trong tab Details (Chi tiết)</p></li>
+<li><p>Bước 2: Chuột phải chọn “Create dump file” (Tạo tệp kết xuất)</p>
 
 <p><img src="media/5-9.jpg" alt="" /></p></li>
-<li><p>第3步：将生成的dump文件，发给研发部门</p>
+<li><p>Bước 3: Gửi file dump đã tạo cho bộ phận R&D</p>
 
 <p><img src="media/5-10.jpg" alt="" /></p></li>
 </ul>
@@ -301,13 +301,13 @@
 </ul>
 
 
-<h2>5.2 log收集</h2>
+<h2>5.2 Thu thập Log</h2>
 
 <ul>
-<li><p>第1步：软件系统选项中，找到数据目录LusterCache并打开</p>
+<li><p>Bước 1: Trong tùy chọn hệ thống phần mềm, tìm thư mục dữ liệu LusterCache và mở ra</p>
 
 <p><img src="media/5-11.jpg" alt="" /></p></li>
-<li><p>第2步，根据需求，选择正确的log文件，发给研发部门</p>
+<li><p>Bước 2: Tùy theo nhu cầu, chọn file log chính xác, gửi cho bộ phận R&D</p>
 
 <p><img src="media/5-12.png" alt="" /></p>
 
@@ -317,92 +317,92 @@
 </ul>
 
 
-<h2>5.3 系统信息收集</h2>
+<h2>5.3 Thu thập thông tin hệ thống</h2>
 
 <ul>
-<li><p><strong>方法一：运行环境检测工具（适用于6.3.2XX及以上版本）</strong></p>
+<li><p><strong>Phương pháp 1: Công cụ kiểm tra môi trường vận hành (Áp dụng cho phiên bản 6.3.2XX trở lên)</strong></p>
 
 <ul>
-<li><p>第1步：运行VA 安装目录下的驱动检测小工具</p>
+<li><p>Bước 1: Chạy công cụ nhỏ DriveDetectionTool trong thư mục cài đặt VA</p>
 
 <p>C:\Program Files\VISIONAssembly_x64\Tools\DriveDetectionTool\DriveDetectionTool.exe</p></li>
-<li><p>第2步：依次点击操作→信息收集、信息检测</p>
+<li><p>Bước 2: Lần lượt nhấn Thao tác → Thu thập thông tin, Kiểm tra thông tin</p>
 
 <p><img src="media/5-15.jpg" alt="" /></p></li>
-<li><p>第3步：点击文件→将检测结果另存为，将另存的pdf文件发给研发部门</p>
+<li><p>Bước 3: Nhấn File → Lưu kết quả kiểm tra dưới dạng, gửi file pdf đã lưu cho bộ phận R&D</p>
 
 <p><img src="media/5-16.jpg" alt="" /></p></li>
 </ul>
 </li>
-<li><p><strong>方法二：命令行</strong></p>
+<li><p><strong>Phương pháp 2: Dòng lệnh (Command Line)</strong></p>
 
 <ul>
-<li><p>第1步：Windows键+R键，输入“cmd”；</p>
+<li><p>Bước 1: Phím Windows + R, nhập “cmd”;</p>
 
 <p><img src="media/5-17.jpg" alt="" /></p></li>
-<li><p>第2步：点击“确定”，进入cmd命令窗口；</p>
+<li><p>Bước 2: Nhấn “OK”, vào cửa sổ lệnh cmd;</p>
 
 <p><img src="media/5-18.jpg" alt="" /></p></li>
-<li><p>第3步：输入systeminfo>>D:\sys.txt</p></li>
-<li><p>第4步：将D盘的sys.txt文件发给研发部门</p></li>
+<li><p>Bước 3: Nhập systeminfo>>D:\sys.txt</p></li>
+<li><p>Bước 4: Gửi file sys.txt trong ổ D cho bộ phận R&D</p></li>
 </ul>
 </li>
 </ul>
 
 
-<h2>5.4 系统日志收集</h2>
+<h2>5.4 Thu thập Log hệ thống</h2>
 
 <ul>
-<li><p>第1步：右键点击计算机-管理</p>
+<li><p>Bước 1: Chuột phải vào Computer - Manage (Quản lý)</p>
 
 <p><img src="media/5-19.jpg" alt="" /></p></li>
-<li><p>第2步：点击事件查看器→windows 日志，右键点击应用程序-将所有事件另存为，修改名称为”应用程序”，保存</p>
+<li><p>Bước 2: Nhấn Event Viewer (Trình xem sự kiện) → Windows Logs, chuột phải vào Application - Save All Events As (Lưu tất cả sự kiện dưới dạng), đổi tên thành “Application”, lưu lại</p>
 
 <p><img src="media/5-20.jpg" alt="" /></p></li>
-<li><p>第3步：右键点击系统-将所有事件另存为，修改名称为”系统”，保存（见上图）</p></li>
+<li><p>Bước 3: Chuột phải vào System - Save All Events As, đổi tên thành “System”, lưu lại (xem hình trên)</p></li>
 </ul>
 
 
-<h2>5.5 加密狗信息收集</h2>
+<h2>5.5 Thu thập thông tin Dongle (Khóa cứng)</h2>
 
 <ul>
-<li><p>【sentinel-旧加密狗】</p>
+<li><p>【sentinel - Dongle cũ】</p>
 
 <ul>
-<li><p>第1步：开启加密狗日志</p>
+<li><p>Bước 1: Bật log của Dongle</p>
 
 <ul>
-<li><p>S1：浏览器中输入localhost:1947（不需要联网即可，无法打开时，前面加上http://再试试，注意使用英文冒号）；</p></li>
-<li><p>S2：点击左侧的“Configuration”，进入配置界面；</p></li>
-<li><p>S3：在“Basic Settings”中，将下图中红框内的所有打勾处都勾选，如下图所示；</p>
+<li><p>S1: Nhập localhost:1947 vào trình duyệt (không cần kết nối internet, nếu không mở được, hãy thử thêm http:// vào phía trước, lưu ý sử dụng dấu hai chấm tiếng Anh);</p></li>
+<li><p>S2: Nhấn vào “Configuration” ở bên trái để vào giao diện cấu hình;</p></li>
+<li><p>S3: Trong “Basic Settings”, tích chọn tất cả các mục được đánh dấu trong khung đỏ như hình dưới đây;</p>
 
 <p><img src="media/5-21.jpg" alt="" /></p></li>
-<li><p>S4：点击页面最下方的“Submit”进行保存；</p></li>
-<li><p>S5：重启加密狗的服务Sentinel License Manager或重启电脑；</p>
+<li><p>S4: Nhấn “Submit” ở cuối trang để lưu lại;</p></li>
+<li><p>S5: Khởi động lại dịch vụ Sentinel License Manager hoặc khởi động lại máy tính;</p>
 
 <ul>
-<li><p>S5-1：计算机右键选择管理；</p></li>
-<li><p>S5-2：在“服务”中找到“Sentinel License Manager”，右键选择“重新启动”即可；</p>
+<li><p>S5-1: Chuột phải vào Computer chọn Manage (Quản lý);</p></li>
+<li><p>S5-2: Trong phần “Services” (Dịch vụ), tìm “Sentinel License Manager”, chuột phải và chọn “Restart” (Khởi động lại);</p>
 
 <p><img src="media/5-22.jpg" alt="" /></p></li>
 </ul>
 </li>
-<li><p>S6：log文件所在路径：C:\Program Files (x86)\Common Files\Aladdin Shared\HASP\log，将下图中命名格式的log文件发回研发端辅助问题定位分析。</p>
+<li><p>S6: Đường dẫn file log: C:\Program Files (x86)\Common Files\Aladdin Shared\HASP\log, gửi file log có định dạng tên như hình dưới về bộ phận R&D để hỗ trợ phân tích định vị vấn đề.</p>
 
 <p><img src="media/5-23.jpg" alt="" /></p></li>
 </ul>
 </li>
-<li><p>第2步：双击工具LDKDiagnosticTool_ENDUSER，会生成对应的压缩文件，名称类似Output_LDT_20220819-205713.zip</p>
+<li><p>Bước 2: Nhấn đúp vào công cụ LDKDiagnosticTool_ENDUSER, sẽ tạo ra file nén tương ứng, tên file tương tự Output_LDT_20220819-205713.zip</p>
 
-<blockquote><p><strong>工具下载路径</strong></p>
+<blockquote><p><strong>Đường dẫn tải công cụ</strong></p>
 
 <p>AnyShare://IVS23 3C产品部/3C产品发布/04-驱动和工具/加密狗/sentinel/LDKDiagnosticTool_ENDUSER_v1.5.zip</p></blockquote></li>
 </ul>
 </li>
-<li><p>【sense-新加密狗】</p>
+<li><p>【sense - Dongle mới】</p>
 
 <ul>
-<li><p>第1步：找到路径C:\Program Files (x86)\senseshield\ss，将如下文件打包反馈</p>
+<li><p>Bước 1: Tìm đến đường dẫn C:\Program Files (x86)\senseshield\ss, đóng gói các file sau và gửi phản hồi</p>
 
 <p><img src="media/5-24.jpg" alt="" /></p></li>
 </ul>
@@ -410,26 +410,26 @@
 </ul>
 
 
-<h2>5.6 批量创建/导入问题单</h2>
+<h2>5.6 Tạo mới/Nhập (Import) phiếu vấn đề hàng loạt</h2>
 
 <ul>
-<li><p>批量创建</p>
+<li><p>Tạo mới hàng loạt</p>
 
 <ul>
-<li><p>第1步：登录ONES系统</p></li>
-<li><p>第2步：左侧菜单栏点击<strong>“项目/需求管理”</strong></p>
+<li><p>Bước 1: Đăng nhập hệ thống ONES</p></li>
+<li><p>Bước 2: Chọn <strong>“Quản lý Dự án/Yêu cầu”</strong> trên thanh menu bên trái</p>
 
 <p><img src="media/5-25.jpg" alt="" /></p></li>
-<li><p>第3步：点击全部项目中<strong>“Onsite lssue”</strong></p>
+<li><p>Bước 3: Chọn <strong>“Onsite Issue”</strong> trong danh sách tất cả dự án</p>
 
 <p><img src="media/5-26.jpg" alt="" /></p></li>
-<li><p>第4步：点击<strong>“Bug-FB”</strong></p>
+<li><p>Bước 4: Nhấn vào <strong>“Bug-FB”</strong></p>
 
 <p><img src="media/5-27.jpg" alt="" /></p></li>
-<li><p>第5步：点击“Bug-FB”下拉列表中<strong>“批量新建”</strong></p>
+<li><p>Bước 5: Nhấn vào <strong>“Tạo mới hàng loạt”</strong> trong danh sách thả xuống của “Bug-FB”</p>
 
 <p><img src="media/5-28.jpg" alt="" /></p></li>
-<li><p>第5步：填写相应的字段信息，点击完成即可</p>
+<li><p>Bước 5: Điền thông tin các trường dữ liệu tương ứng, nhấn hoàn thành</p>
 
 <p><img src="media/5-29.jpg" alt="" /></p></li>
 </ul>
@@ -437,101 +437,101 @@
 </ul>
 
 
-<blockquote><p><span style = "color:red">字段填写说明（以上字段均为必填项）</span></p>
+<blockquote><p><span style = "color:red">Hướng dẫn điền trường dữ liệu (Các trường trên đều là bắt buộc)</span></p>
 
 <ul>
-<li><p>标题：问题概要说明</p></li>
-<li><p>负责人：平慧</p></li>
-<li><p>工程项目名称：参考<strong>“2 基本信息”</strong></p></li>
+<li><p>Tiêu đề: Tóm tắt sơ lược vấn đề</p></li>
+<li><p>Người phụ trách: Ping Hui</p></li>
+<li><p>Tên dự án kỹ thuật: Tham khảo <strong>“2 Thông tin cơ bản”</strong></p></li>
 </ul>
 </blockquote>
 
 <ul>
-<li><p>添加\删除，新建问题单个数</p>
+<li><p>Thêm\Xóa, số lượng phiếu vấn đề tạo mới</p>
 
 <ul>
-<li><p>1、添加：点击“添加工作项”，删除：点击“—”</p>
+<li><p>1. Thêm: Nhấn “Thêm hạng mục công việc”, Xóa: Nhấn “—”</p>
 
 <p><img src="media/5-30.jpg" alt="" /></p></li>
 </ul>
 </li>
-<li><p>描述信息补充（如：填写操作、频率等信息）</p>
+<li><p>Bổ sung thông tin mô tả (Ví dụ: điền thao tác, tần suất...)</p>
 
 <ul>
-<li><p>方式1：批量新建完成后，进行补充描述信息</p>
+<li><p>Cách 1: Sau khi tạo hàng loạt xong, tiến hành bổ sung thông tin mô tả</p>
 
-<p>第1步：打开已创建的具体的问题单，补充描述信息</p>
+<p>Bước 1: Mở phiếu vấn đề cụ thể đã tạo, bổ sung thông tin mô tả</p>
 
 <p><img src="media/5-31.jpg" alt="" /></p>
 
-<blockquote><p><span style = "color:red">注意</span></p>
+<blockquote><p><span style = "color:red">Lưu ý</span></p>
 
-<p>描述中可插入截图信息</p></blockquote></li>
-<li><p>方式2：批量创建时，进行补充描述信息（默认描述信息字段不显示）</p>
+<p>Trong phần mô tả có thể chèn hình ảnh minh họa</p></blockquote></li>
+<li><p>Cách 2: Khi tạo hàng loạt, tiến hành bổ sung thông tin mô tả (Mặc định trường thông tin mô tả không hiển thị)</p>
 
 <ul>
-<li><p>第1步：点击右上角“选择属性"</p>
+<li><p>Bước 1: Nhấn vào “Chọn thuộc tính" ở góc trên bên phải</p>
 
 <p><img src="media/5-32.jpg" alt="" /></p></li>
-<li><p>第2步：可选属性中，勾选“描述"，点击确定</p>
+<li><p>Bước 2: Trong các thuộc tính tùy chọn, tích chọn “Mô tả", nhấn Đồng ý/Xác nhận</p>
 
 <p><img src="media/5-33.jpg" alt="" /></p></li>
-<li><p>第3步：描述字段中填写信息</p>
+<li><p>Bước 3: Điền thông tin vào trường mô tả</p>
 
-<blockquote><p><span style = "color:red">注意</span></p>
+<blockquote><p><span style = "color:red">Lưu ý</span></p>
 
-<p>只能填写文本内容，无法插入图片；非必填项</p></blockquote>
+<p>Chỉ có thể điền nội dung văn bản, không thể chèn hình ảnh; Đây là mục không bắt buộc</p></blockquote>
 
 <p><img src="media/5-34.jpg" alt="" /></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>批量导入问题单</p>
+<li><p>Nhập phiếu vấn đề hàng loạt (Import)</p>
 
 <p><img src="media/5-35.png" alt="" /></p>
 
 <ul>
-<li><p>第1步：下载上述“ONES导入客诉模板”</p></li>
-<li><p>第2步：填写相应字段信息</p>
+<li><p>Bước 1: Tải xuống “Template nhập khiếu nại ONES” kể trên</p></li>
+<li><p>Bước 2: Điền thông tin trường dữ liệu tương ứng</p>
 
-<blockquote><p><span style = "color:red">导入客诉模板说明（<strong>模板内字段均为必填项</strong>）</span></p>
+<blockquote><p><span style = "color:red">Hướng dẫn template nhập khiếu nại (<strong>Các trường trong template đều là bắt buộc</strong>)</span></p>
 
-<p>（1）标黄字段则统一内容进行填写</p>
+<p>(1) Các trường tô vàng thì điền nội dung thống nhất</p>
 
-<p>（2）截止日期：格式为<strong>2022-XX-XX</strong></p>
+<p>(2) Ngày hết hạn: Định dạng là <strong>2022-XX-XX</strong></p>
 
 <p><img src="media/5-36.jpg" alt="" /></p>
 
-<p>示例如下：</p>
+<p>Ví dụ như sau:</p>
 
 <p><img src="media/5-37.jpg" alt="" /></p>
 
-<p>（3）工程项目名称：参考<strong>“2 基本信息”</strong></p></blockquote></li>
-<li><p>第3步：登录ONES系统</p></li>
-<li><p>第4步：左侧菜单栏点击<strong>“项目/需求管理”</strong></p>
+<p>(3) Tên dự án kỹ thuật: Tham khảo <strong>“2 Thông tin cơ bản”</strong></p></blockquote></li>
+<li><p>Bước 3: Đăng nhập hệ thống ONES</p></li>
+<li><p>Bước 4: Chọn <strong>“Quản lý Dự án/Yêu cầu”</strong> trên thanh menu bên trái</p>
 
 <p><img src="media/5-38.jpg" alt="" /></p></li>
-<li><p>第5步：点击全部项目中<strong>“Onsite lssue”</strong></p>
+<li><p>Bước 5: Chọn <strong>“Onsite Issue”</strong> trong danh sách tất cả dự án</p>
 
 <p><img src="media/5-39.jpg" alt="" /></p></li>
-<li><p>第6步：点击<strong>“Bug-FB”</strong></p>
+<li><p>Bước 6: Nhấn vào <strong>“Bug-FB”</strong></p>
 
 <p><img src="media/5-40.jpg" alt="" /></p></li>
-<li><p>第7步：点击“Bug-FB”下拉列表中<strong>“导入Bug-FB”</strong></p>
+<li><p>Bước 7: Nhấn vào <strong>“Nhập Bug-FB”</strong> trong danh sách thả xuống của “Bug-FB”</p>
 
 <p><img src="media/5-41.jpg" alt="" /></p></li>
-<li><p>第8步：点击<strong>“选择文件”</strong></p>
+<li><p>Bước 8: Nhấn vào <strong>“Chọn tệp”</strong></p>
 
 <p><img src="media/5-42.jpg" alt="" /></p></li>
-<li><p>第9步：选择已填写的“ONES导入客诉模板.xlsx”，点击“下一步”</p></li>
-<li><p>第10步：点击<strong>“开始导入”</strong>（导入后会自动匹配字段）</p>
+<li><p>Bước 9: Chọn file “Template nhập khiếu nại ONES.xlsx” đã điền, nhấn “Bước tiếp theo”</p></li>
+<li><p>Bước 10: Nhấn <strong>“Bắt đầu nhập”</strong> (Sau khi nhập sẽ tự động khớp trường dữ liệu)</p>
 
 <p><img src="media/5-43.jpg" alt="" /></p></li>
-<li><p>第11步：点击<strong>“确定”</strong></p>
+<li><p>Bước 11: Nhấn <strong>“Xác nhận”</strong></p>
 
 <p><img src="media/5-44.jpg" alt="" /></p></li>
-<li><p>第12步：界面左侧会出现导入进度管理器</p>
+<li><p>Bước 12: Bên trái giao diện sẽ xuất hiện trình quản lý tiến độ nhập</p>
 
 <p><img src="media/5-45.jpg" alt="" /></p></li>
 </ul>
@@ -539,30 +539,30 @@
 </ul>
 
 
-<h2>5.7 制作系统镜像文件</h2>
+<h2>5.7 Tạo file image hệ thống</h2>
 
-<p>工具及操作文档，下载路径为公司云盘：AnyShare://IVS23 3C产品部/3C产品发布/03-FAQ/制作系统镜像</p>
+<p>Công cụ và tài liệu hướng dẫn, đường dẫn tải xuống tại Cloud công ty: AnyShare://IVS23 3C产品部/3C产品发布/03-FAQ/制作系统镜像</p>
 
-<h2>5.8 查看CUP温度和转速</h2>
+<h2>5.8 Xem nhiệt độ và tốc độ quạt CPU</h2>
 
 <ul>
-<li><p>第1步：解压“AIDA64”文件</p>
+<li><p>Bước 1: Giải nén tệp “AIDA64”</p>
 
-<p>下载路径为公司云盘：AnyShare://IVS23 3C产品部/3C产品发布/03-FAQ/查看CPU温度和转速工具</p></li>
-<li><p>第2步：打开压缩包，找到“aidi64.exe”双击打开</p>
+<p>Đường dẫn tải xuống tại Cloud công ty: AnyShare://IVS23 3C产品部/3C产品发布/03-FAQ/查看CPU温度和转速工具</p></li>
+<li><p>Bước 2: Mở gói nén, tìm tệp “aidi64.exe” và nhấp đúp để mở</p>
 
 <p><img src="media/5-46.jpg" alt="" /></p></li>
-<li><p>第3步：显示软件界面后，依次点击“计算机->传感器（注：会先获取传感器信息，需要一些时间）”。需截取多张图片。</p>
+<li><p>Bước 3: Sau khi giao diện phần mềm hiện ra, lần lượt nhấp vào “Computer -> Sensor (Lưu ý: sẽ cần một chút thời gian để lấy thông tin cảm biến)”. Cần chụp lại nhiều ảnh màn hình.</p>
 
 <p><img src="media/5-47.jpg" alt="" /></p></li>
 </ul>
 
 
-<h2>5.9 查看windows系统版本号</h2>
+<h2>5.9 Kiểm tra số phiên bản hệ thống Windows</h2>
 
 <ul>
-<li><p>第1步：按下“win+e”，显示“运行”窗口</p></li>
-<li><p>第2步：输入“winver”点击“确定”，点击确定后显示windows的版本，截图保存即可。</p>
+<li><p>Bước 1: Nhấn tổ hợp phím “win+e”, hiển thị cửa sổ “Run”</p></li>
+<li><p>Bước 2: Nhập “winver” rồi nhấp “OK”, sau khi nhấp OK sẽ hiển thị phiên bản Windows, chụp màn hình và lưu lại.</p>
 
 <p><img src="media/5-48.jpg" alt="" /></p>
 
@@ -570,36 +570,35 @@
 </ul>
 
 
-<h2>5.10 查看磁盘休眠时间（关闭休眠）</h2>
+<h2>5.10 Kiểm tra thời gian ngủ của ổ cứng (Tắt chế độ ngủ)</h2>
 
 <ul>
-<li><p>第1步：打开控制面板，点击“电源选项”</p>
+<li><p>Bước 1: Mở Control Panel, nhấp vào “Power Options” (Tùy chọn nguồn điện)</p>
 
 <p><img src="media/5-50.jpg" alt="" /></p></li>
-<li><p>第2步：点击左侧“更改计算机睡眠时间”</p>
+<li><p>Bước 2: Nhấp vào “Change when the computer sleeps” (Thay đổi thời gian ngủ của máy tính) ở bên trái</p>
 
 <p><img src="media/5-51.jpg" alt="" /></p></li>
-<li><p>第3步：点击“更改高级电源设置”</p>
+<li><p>Bước 3: Nhấp vào “Change advanced power settings” (Thay đổi cài đặt nguồn nâng cao)</p>
 
 <p><img src="media/5-52.jpg" alt="" /></p></li>
-<li><p>第4步：将电源选项窗口中，时间均修改为0（修改后显示为从不）</p>
+<li><p>Bước 4: Trong cửa sổ Power Options, sửa tất cả thời gian thành 0 (sau khi sửa sẽ hiển thị là Never/Không bao giờ)</p>
 
 <p><img src="media/5-53.jpg" alt="" /></p></li>
-<li><p>第5步：点击“应用”，点击“确定”</p>
+<li><p>Bước 5: Nhấp “Apply” (Áp dụng), rồi nhấp “OK”</p>
 
 <p><img src="media/5-54.jpg" alt="" /></p></li>
 </ul>
 
 
-<h2>5.11 查看硬盘型号</h2>
+<h2>5.11 Kiểm tra model ổ cứng</h2>
 
 <ul>
-<li><p>第1步：选中桌面，我的电脑，右键菜单，点击“属性”</p></li>
-<li><p>第2步：点击左侧“设备管理器”</p>
+<li><p>Bước 1: Chọn Desktop (Màn hình chính), chuột phải vào My Computer (Máy tính của tôi), chọn “Properties” (Thuộc tính)</p></li>
+<li><p>Bước 2: Nhấp vào “Device Manager” (Trình quản lý thiết bị) ở bên trái</p>
 
 <p><img src="media/5-55.jpg" alt="" /></p></li>
-<li><p>第3步：点击“磁盘驱动器”（显示的即为硬盘型号）</p>
+<li><p>Bước 3: Nhấp vào “Disk drives” (Ổ đĩa) (thông tin hiển thị chính là model ổ cứng)</p>
 
 <p><img src="media/5-56.jpg" alt="" /></p></li>
 </ul>
-
