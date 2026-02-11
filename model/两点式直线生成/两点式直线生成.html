@@ -16,98 +16,99 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Tạo Đường Thẳng Qua Hai Điểm</h1>
+<h1>Tạo đường thẳng từ hai điểm</h1>
 
 <h2>Chức năng</h2>
 
-<p>Công cụ này dùng để tính toán kết quả đường thẳng kiểu <code>scLine</code> được xác định bởi hai tọa độ nền kiểu <code>GcCoordPos</code>.</p>
+<p>Công cụ này được sử dụng để tính toán kết quả đường thẳng kiểu scLine được xác định bởi hai tọa độ nền tảng (platform coordinates) kiểu GcCoordPos.</p>
 
 <h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>Phân loại</th>
-<th>Tên tham số</th>
-<th>Mô tả tham số</th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Cửa sổ thuộc tính</td>
-<td>Không có</td>
-<td>Không có</td>
+<td>  Không </td>
+<td> Không                                                     </td>
 </tr>
 <tr>
 <td>Cửa sổ hình ảnh</td>
-<td>Không có</td>
-<td>Không có</td>
+<td>  Không </td>
+<td> Không                                                     </td>
 </tr>
 <tr>
-<td>Chuỗi dữ liệu</td>
-<td>Vector tọa độ nền</td>
-<td>Vector gồm hai tọa độ nền kiểu <code>GcCoordPos</code></td>
+<td> Liên kết dữ liệu   </td>
+<td> Vectơ tọa độ nền tảng </td>
+<td> Vectơ bao gồm hai tọa độ nền tảng kiểu GcCoordPos </td>
 </tr>
 <tr>
 <td>Giao diện nâng cao</td>
-<td>Không có</td>
-<td>Không có</td>
+<td>  Không </td>
+<td> Không                                                     </td>
 </tr>
 </tbody>
 </table>
+
 
 <h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>Phân loại</th>
-<th>Tên tham số</th>
-<th>Mô tả tham số</th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Cửa sổ giám sát</td>
-<td>Đường thẳng đầu ra</td>
-<td>Dữ liệu kết quả đường thẳng kiểu <code>scLine</code></td>
+<td> Cửa sổ giám sát </td>
+<td> Đường thẳng đầu ra     </td>
+<td> Dữ liệu kết quả đường thẳng kiểu scLine                             </td>
 </tr>
 <tr>
 <td></td>
-<td>Kết quả thực thi</td>
-<td>Kết quả thực hiện công cụ</td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td>Thời gian thực thi</td>
-<td>Thời gian thực hiện công cụ</td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ                                                   </td>
 </tr>
 <tr>
 <td>Cửa sổ hình ảnh</td>
-<td>Không có</td>
-<td>Không có</td>
+<td>  Không </td>
+<td> Không                                                             </td>
 </tr>
 <tr>
-<td>Chuỗi dữ liệu</td>
-<td>Đường thẳng đầu ra</td>
-<td>Dữ liệu kết quả đường thẳng kiểu <code>scLine</code>, được sử dụng cho các công cụ tiếp theo, giống với cửa sổ giám sát</td>
+<td> Liên kết dữ liệu   </td>
+<td> Đường thẳng đầu ra     </td>
+<td> Dữ liệu kết quả đường thẳng kiểu scLine, cung cấp cho các công cụ phía sau sử dụng, giống với cửa sổ giám sát </td>
 </tr>
 </tbody>
 </table>
 
+
 <h2>Mô tả chi tiết</h2>
 
-<p>Không có</p>
+<p>Không</p>
 
 <h2>Lưu ý</h2>
 
 <ul>
-<li><p>Tạo đường thẳng qua hai điểm được thực hiện bằng cách nối hai điểm tọa độ. Do tọa độ nền kiểu <code>GcCoordPos</code> là một cấu trúc gồm ba giá trị kiểu <code>double</code> (X, Y, D), nên công cụ tạo đường thẳng qua hai điểm chỉ sử dụng các tọa độ X và Y để tạo điểm 2D.</p></li>
-<li><p>Công cụ tạo đường thẳng được dùng chủ yếu để chuyển đổi các tọa độ nền thành đường thẳng, từ đó cung cấp vector đường thẳng mục tiêu hoặc đối tượng cho công cụ tính toán căn chỉnh nhiều điểm.</p></li>
+<li><p>Tạo đường thẳng từ hai điểm là việc kết nối tọa độ của hai điểm để xây dựng nên đường thẳng. Do tọa độ nền tảng kiểu GcCoordPos là một cấu trúc (struct) bao gồm ba tọa độ kiểu double là X, Y, D, nên tọa độ hai điểm được công cụ tạo đường thẳng từ hai điểm sử dụng là tọa độ điểm 2D bao gồm X và Y.</p></li>
+<li><p>Ngữ cảnh ứng dụng chủ yếu của công cụ tạo đường thẳng là kết nối các tọa độ nền tảng thành đường thẳng, từ đó làm đầu vào vectơ đường thẳng mục tiêu/đối tượng cho công cụ tính toán Alignment (Căn chỉnh) đường đa điểm.</p></li>
 </ul>
 
 
+<h2>Project mẫu</h2>
 
-<h2>示例工程</h2>
-
-<p>参见“\Samples\标准标定+基准四点两线对位.gvp”</p>
+<p>Tham khảo “\Samples\标准标定+基准四点两线对位.gvp”</p>
