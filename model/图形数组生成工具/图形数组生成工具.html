@@ -16,142 +16,142 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>图形数组生成工具</h1>
+<h1>Công cụ tạo mảng đồ họa</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>图形数组生成工具将输入的数据按照对应的索引值显示输出。其应用效果如图1所示。</p>
+<p>Công cụ tạo mảng đồ họa sẽ hiển thị đầu ra dữ liệu đầu vào theo giá trị chỉ mục tương ứng. Hiệu quả ứng dụng của nó được hiển thị như Hình 1.</p>
 
 <p><img src="media/wps35.jpg" alt="img" /></p>
 
-<p><imgnote>图1 图形数组生成工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa ứng dụng công cụ tạo mảng đồ họa</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                      </th>
+<th>Phân loại </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                                                                      </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口     </td>
-<td> 数据类型                                                     </td>
-<td> 选择输入数据的数据类型。<img src="media/wps37.jpg" alt="img" /> </td>
+<td> Cửa sổ thuộc tính     </td>
+<td> Kiểu dữ liệu                                                     </td>
+<td> Chọn kiểu dữ liệu của dữ liệu đầu vào.<img src="media/wps37.jpg" alt="img" /> </td>
 </tr>
 <tr>
 <td></td>
-<td> 自动清空 </td>
-<td> 控制是否清空输出数组，如果清空数组，每次运行工具都会将输出数组中的数据清空。                                                  </td>
+<td> Tự động xóa </td>
+<td> Kiểm soát việc có xóa mảng đầu ra hay không, nếu xóa mảng, mỗi lần chạy công cụ sẽ xóa sạch dữ liệu trong mảng đầu ra.                                                  </td>
 </tr>
 <tr>
-<td> 图像窗口      </td>
-<td> 无                                                                                                           </td>
-<td>无</td>
+<td> Cửa sổ hình ảnh      </td>
+<td> Không                                                                                                           </td>
+<td>Không</td>
 </tr>
 <tr>
-<td> 数据链       </td>
-<td> 输入数据                                                     </td>
-<td> 输入形成图形数组的数据，类型可选。              </td>
+<td> Liên kết dữ liệu       </td>
+<td> Dữ liệu đầu vào                                                     </td>
+<td> Nhập dữ liệu để tạo thành mảng đồ họa, tùy chọn kiểu.              </td>
 </tr>
 <tr>
 <td></td>
-<td> 输入数据索引 </td>
-<td> 输入数据索引，int类型；如果输入数据为sc2Vector类型，那么输出数据将是sc2Vector类型的数组，输入数据索引就是将输入数据写入到输出数组位置的索引。                                                  </td>
+<td> Chỉ mục dữ liệu đầu vào </td>
+<td> Nhập chỉ mục dữ liệu đầu vào, kiểu int; nếu dữ liệu đầu vào là kiểu sc2Vector, thì dữ liệu đầu ra sẽ là mảng kiểu sc2Vector, chỉ mục dữ liệu đầu vào chính là chỉ mục xác định vị trí ghi dữ liệu đầu vào trong mảng đầu ra.                                                  </td>
 </tr>
 </tbody>
 </table>
 
 
-<p>| 高级界面     | 无   | 无                                                                                                            |</p>
+<p>| Giao diện nâng cao     | Không   | Không                                                                                                            |</p>
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出数组                                                     </td>
-<td> 输出形成的图形数组。                                         </td>
+<td> Cửa sổ giám sát </td>
+<td> Mảng đầu ra                                                     </td>
+<td> Xuất ra mảng đồ họa được hình thành.                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                                                             </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                                                             </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                                                                                                             </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输出数组                                                     </td>
-<td> 显示形成的图形数组，同监视窗口的输出数据参数。               </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Mảng đầu ra                                                     </td>
+<td> Hiển thị mảng đồ họa được hình thành, giống với tham số dữ liệu đầu ra trong cửa sổ giám sát.               </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                               </td>
+<td> Kết quả thực thi </td>
+<td> Hiển thị kết quả thực thi công cụ, thực thi thành công hiển thị "OK", thất bại hiển thị "NG", giống với tham số kết quả thực thi trong cửa sổ giám sát.                                                               </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出数组                                                     </td>
-<td> 输出形成的图形数组，同监视窗口的输出数据参数。即将输入数据按索引位置写入后的生成的图形数组，大小不定，随着写入索引而改变。 </td>
+<td> Liên kết dữ liệu   </td>
+<td> Mảng đầu ra                                                     </td>
+<td> Xuất ra mảng đồ họa được hình thành, giống với tham số dữ liệu đầu ra trong cửa sổ giám sát. Tức là mảng đồ họa được tạo ra sau khi ghi dữ liệu đầu vào theo vị trí chỉ mục, kích thước không cố định, thay đổi theo chỉ mục được ghi. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<h3>数据类型</h3>
+<h3>Kiểu dữ liệu</h3>
 
-<p>数据类型选择时，需同输入数据的数据类型相同，可选的数据类型如表1所示。</p>
+<p>Khi chọn kiểu dữ liệu, cần phải giống với kiểu dữ liệu của dữ liệu đầu vào, các kiểu dữ liệu tùy chọn được hiển thị trong Bảng 1.</p>
 
-<p>表1 数据类型</p>
+<p>Bảng 1 Kiểu dữ liệu</p>
 
 <table>
 <thead>
 <tr>
-<th> 数据类型               </th>
-<th> 说明                                 </th>
-<th> 数据类型  </th>
-<th> 说明                                 </th>
+<th> Kiểu dữ liệu               </th>
+<th> Mô tả                                 </th>
+<th> Kiểu dữ liệu  </th>
+<th> Mô tả                                 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> GsTextDisplayParam     </td>
-<td> 文本显示数组工具输出的输出数组类型。 </td>
+<td> GsTextDisplayParam     </td>
+<td> Kiểu mảng đầu ra của công cụ mảng hiển thị văn bản. </td>
 <td> Sc2Vector </td>
-<td> 二维向量。                           </td>
+<td> Vector 2D.                           </td>
 </tr>
 <tr>
 <td> scCaliperTwoEdgeResult </td>
-<td> 双边卡尺工具输出结果类型。           </td>
-<td> scCircle  </td>
-<td> 圆形。找圆，圆拟合等工具的输出类型。 </td>
+<td> Kiểu kết quả đầu ra của công cụ thước kẹp hai cạnh (Double Edge Caliper).           </td>
+<td> scCircle  </td>
+<td> Hình tròn. Kiểu đầu ra của các công cụ tìm hình tròn, khớp hình tròn (Circle Fitting). </td>
 </tr>
 <tr>
 <td> scCaliperOneEdgeResult </td>
-<td> 单边卡尺工具输出结果类型。           </td>
-<td> scLine    </td>
-<td> 直线。找线，线拟合等工具的输出类型。 </td>
+<td> Kiểu kết quả đầu ra của công cụ thước kẹp một cạnh (Single Edge Caliper).           </td>
+<td> scLine    </td>
+<td> Đường thẳng. Kiểu đầu ra của các công cụ tìm đường thẳng, khớp đường thẳng (Line Fitting). </td>
 </tr>
 <tr>
-<td> GsMultiCLOutputResult  </td>
-<td> 多圆多线定位工具输出的搜索结果类型。            </td>
+<td> GsMultiCLOutputResult  </td>
+<td> Kiểu kết quả tìm kiếm đầu ra của công cụ định vị đa đường tròn đa đường thẳng.            </td>
 <td></td>
 <td></td>
 </tr>
@@ -159,10 +159,10 @@
 </table>
 
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li>图形数组生成工具显示输入的字符串时，需要将显示结果加到有图片显示的View视图中。</li>
+<li>Khi công cụ tạo mảng đồ họa hiển thị chuỗi ký tự đầu vào, cần thêm kết quả hiển thị vào View (khung nhìn) có hiển thị hình ảnh.</li>
 </ul>
 
 

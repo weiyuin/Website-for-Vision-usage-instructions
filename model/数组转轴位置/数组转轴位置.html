@@ -16,96 +16,99 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Chuyển đổi mảng thành vị trí trục</h1>
+<h1>Chuyển đổi vị trí trục sang mảng</h1>
 
 <h2>Chức năng</h2>
 
-<p>Công cụ này có thể chuyển đổi một mảng gồm ba dữ liệu kiểu double (thường do công cụ tạo mảng ba phần tử sinh ra) thành dữ liệu vị trí trục dạng <code>GcPlatformAxisPos</code>. Kết quả vị trí trục này thường được dùng làm đầu vào chuỗi dữ liệu ban đầu cho công cụ lấy vị trí trục hiệu chuẩn.</p>
+<p>Công cụ này có thể chuyển đổi dữ liệu vị trí trục kiểu GcPlatformAxisPos thành gói dữ liệu tọa độ bao gồm ba dữ liệu kiểu double X, Y, D. Gói dữ liệu kết quả này có thể được gửi trực tiếp đến robot thông qua công cụ gửi truyền thông. Đầu vào có thể là đầu ra của công cụ tính toán Alignment (Căn chỉnh) hoặc vị trí trục đầu ra của công cụ thu thập vị trí trục hiệu chuẩn, v.v.</p>
 
 <h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>Phân loại</th>
-<th>Tên tham số</th>
-<th>Mô tả tham số</th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                    </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Cửa sổ thuộc tính</td>
-<td>Không có</td>
-<td>Không có</td>
+<td> Cửa sổ thuộc tính </td>
+<td> Không </td>
+<td> Không                                          </td>
 </tr>
 <tr>
-<td>Cửa sổ hình ảnh</td>
-<td>Không có</td>
-<td>Không có</td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không </td>
+<td> Không                                          </td>
 </tr>
 <tr>
-<td>Chuỗi dữ liệu</td>
-<td>Mảng tọa độ</td>
-<td>Mảng gồm ba dữ liệu kiểu double, thường do công cụ tạo mảng ba phần tử sinh ra.</td>
+<td> Liên kết dữ liệu   </td>
+<td> Vị trí trục   </td>
+<td> Dữ liệu vị trí trục kiểu GcPlatformAxisPos. </td>
 </tr>
 <tr>
-<td>Giao diện nâng cao</td>
-<td>Không có</td>
-<td>Không có</td>
+<td> Giao diện nâng cao </td>
+<td> Không   </td>
+<td> Không                                          </td>
 </tr>
 </tbody>
 </table>
+
 
 <h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>Phân loại</th>
-<th>Tên tham số</th>
-<th>Mô tả tham số</th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Cửa sổ giám sát</td>
-<td>Vị trí trục</td>
-<td>Kết quả vị trí trục kiểu <code>GcPlatformAxisPos</code>.</td>
+<td> Cửa sổ giám sát </td>
+<td> Gói dữ liệu tọa độ     </td>
+<td> Gói dữ liệu tọa độ bao gồm ba dữ liệu kiểu double X, Y, D.              </td>
 </tr>
 <tr>
 <td></td>
-<td>Kết quả thực thi</td>
-<td>Kết quả thực thi của công cụ.</td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td>Thời gian thực thi</td>
-<td>Thời gian thực thi của công cụ.</td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                                                               </td>
 </tr>
 <tr>
-<td>Cửa sổ hình ảnh</td>
-<td>Không có</td>
-<td>Không có</td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không</td>
+<td> Không                                                                           </td>
 </tr>
 <tr>
-<td>Chuỗi dữ liệu</td>
-<td>Vị trí trục</td>
-<td>Xuất ra vị trí trục kiểu <code>GcPlatformAxisPos</code> để dùng cho các công cụ tiếp theo, giống với tham số trong cửa sổ giám sát.</td>
+<td> Liên kết dữ liệu   </td>
+<td> Gói dữ liệu tọa độ     </td>
+<td> Xuất ra gói dữ liệu tọa độ bao gồm ba dữ liệu kiểu double X, Y, D, cung cấp cho các công cụ khác sử dụng, giống với tham số cửa sổ giám sát. </td>
 </tr>
 </tbody>
 </table>
 
-<h2>Giải thích chi tiết</h2>
 
-<p>Không có</p>
+<h2>Mô tả chi tiết</h2>
+
+<p>Không</p>
 
 <h2>Lưu ý</h2>
 
 <ul>
-<li>Công cụ chuyển đổi kiểu này ít được sử dụng. Khi trong dự án cần tạo vị trí trục từ mảng ba dữ liệu kiểu double, có thể sử dụng công cụ này.</li>
+<li><p>Công cụ này thường được sử dụng cùng với công cụ tính toán Alignment hoặc công cụ thu thập vị trí trục, chuyển đổi độ lệch Alignment kiểu GcPlatformAxisPos thành gói dữ liệu tọa độ gồm ba dữ liệu double, sau đó sử dụng công cụ gửi truyền thông để gửi cho robot.</p></li>
+<li><p>Sự khác biệt giữa công cụ này và công cụ Phân giải vị trí trục (Axis Position Parse) nằm ở chỗ, ba kết quả dữ liệu double được phân giải bởi công cụ Phân giải vị trí trục còn cần phải thông qua công cụ Tạo gói dữ liệu để tạo dữ liệu thì mới có thể được công cụ Gửi truyền thông sử dụng và gửi đi.</p></li>
 </ul>
 
-<h2>Dự án ví dụ</h2>
 
+<h2>Project mẫu</h2>
 
-<p>参见“\Samples\数组转轴位置.gvp”。</p>
+<p>参见“\Samples\标准标定+基准两点对位.gvp”，轴位置转数组工具功能等价于工程中“轴位置解析+数据包生成”的功能。</p>
