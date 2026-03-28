@@ -16,125 +16,125 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>数组排序工具</h1>
+<h1>Công cụ sắp xếp mảng</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>数组排序工具用于对输入的数组按行或按列进行排序。</p>
+<p>Công cụ sắp xếp mảng được sử dụng để sắp xếp mảng đầu vào theo hàng hoặc theo cột.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th> 分类     </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                  </th>
+<th> Phân loại     </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口 </td>
-<td> 数据类型 </td>
-<td> 分为sc2Vector、scGeomSearchResult和scPatSearchMaxResult。 </td>
+<td> Cửa sổ thuộc tính </td>
+<td> Kiểu dữ liệu </td>
+<td> Được chia thành sc2Vector, scGeomSearchResult và scPatSearchMaxResult. </td>
 </tr>
 <tr>
-<td>          </td>
-<td> 排序方式 </td>
-<td> 分为按列排序和按行排序。                                  </td>
+<td>          </td>
+<td> Phương thức sắp xếp </td>
+<td> Được chia thành sắp xếp theo cột và sắp xếp theo hàng.                                  </td>
 </tr>
 <tr>
-<td>          </td>
-<td> 输出方式 </td>
-<td> 排序结果输出方式分为按列输出和按行输出。                  </td>
+<td>          </td>
+<td> Phương thức đầu ra </td>
+<td> Phương thức đầu ra kết quả sắp xếp được chia thành đầu ra theo cột và đầu ra theo hàng.                  </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无       </td>
-<td> 无                                                        </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không       </td>
+<td> Không                                                        </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输入数组 </td>
-<td> 输入待排序的数组，vector<sc2Vector>类型。                 </td>
+<td> Liên kết dữ liệu   </td>
+<td> Mảng đầu vào </td>
+<td> Nhập mảng cần sắp xếp, kiểu vector<sc2Vector>.                 </td>
 </tr>
 <tr>
-<td> 高级界面 </td>
-<td> 无       </td>
-<td> 无                                                        </td>
+<td> Giao diện nâng cao </td>
+<td> Không       </td>
+<td> Không                                                        </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 排序结果数组                                                 </td>
-<td> 输出排序后的数组。                                           </td>
+<td> Cửa sổ giám sát </td>
+<td> Mảng kết quả sắp xếp                                                 </td>
+<td> Xuất ra mảng sau khi sắp xếp.                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 输出行数 </td>
-<td> 输出排序后的行数(按列排序时，输出行数指所有列中行数最大值)。                                                               </td>
+<td> Số hàng đầu ra </td>
+<td> Xuất ra số lượng hàng sau khi sắp xếp (khi sắp xếp theo cột, số hàng đầu ra chỉ giá trị số hàng lớn nhất trong tất cả các cột).                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 输出列数 </td>
-<td> 输出排序后的列数(按行排序时，输出列数指所有行中列数最大值)。                                                               </td>
+<td> Số cột đầu ra </td>
+<td> Xuất ra số lượng cột sau khi sắp xếp (khi sắp xếp theo hàng, số cột đầu ra chỉ giá trị số cột lớn nhất trong tất cả các hàng).                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                                                             </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                                                             </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                                                                                                             </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无  </td>
-<td> 无                                                                                                                         </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không  </td>
+<td> Không                                                                                                                         </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 排序结果数组                                                 </td>
-<td> 输出排序后的数组，供后序工具使用，同监视窗口的排序结果数组参数。 </td>
-</tr>
-<tr>
-<td></td>
-<td> 输出行数 </td>
-<td> 输出排序后的行数，同监视窗口的输出行数参数相同。                                                                           </td>
+<td> Liên kết dữ liệu   </td>
+<td> Mảng kết quả sắp xếp                                                 </td>
+<td> Xuất ra mảng sau khi sắp xếp, cung cấp cho các công cụ phía sau sử dụng, giống với tham số mảng kết quả sắp xếp trong cửa sổ giám sát. </td>
 </tr>
 <tr>
 <td></td>
-<td> 输出列数 </td>
-<td> 输出排序后的列数，同监视窗口的输出列数参数相同。                                                                           </td>
+<td> Số hàng đầu ra </td>
+<td> Xuất ra số lượng hàng sau khi sắp xếp, giống với tham số số hàng đầu ra trong cửa sổ giám sát.                                                                           </td>
+</tr>
+<tr>
+<td></td>
+<td> Số cột đầu ra </td>
+<td> Xuất ra số lượng cột sau khi sắp xếp, giống với tham số số cột đầu ra trong cửa sổ giám sát.                                                                           </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>示例工程</h2>
+<h2>Project mẫu</h2>
 
 <p>参见“\Samples\数学运算相关工具.gvp”。</p>

@@ -16,100 +16,100 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>基准修正标定计算工具</h1>
+<h1>Công cụ tính toán hiệu chỉnh chuẩn Calibration</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>基准修正标定计算工具是修改标定结果中的基准，即对标定结果中的图像坐标和平台坐标进行修改。修正的平台坐标是由工具输入的图像坐标向量根据原始标定结果计算得出，即将图像坐标转换为平台坐标。该工具的输入“图像坐标向量”是基准点的图像坐标，类型是GcCoordPos类型。</p>
+<p>Công cụ tính toán hiệu chỉnh chuẩn Calibration được sử dụng để sửa đổi điểm chuẩn (benchmark) trong kết quả Calibration, tức là sửa đổi tọa độ hình ảnh và tọa độ nền tảng (platform) trong kết quả Calibration. Tọa độ nền tảng đã sửa đổi được tính toán từ vectơ tọa độ hình ảnh đầu vào của công cụ dựa trên kết quả Calibration gốc, hay nói cách khác là chuyển đổi tọa độ hình ảnh thành tọa độ nền tảng. Đầu vào "Vectơ tọa độ hình ảnh" của công cụ này là tọa độ hình ảnh của điểm chuẩn, thuộc kiểu GcCoordPos.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                       </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>属性窗口</td>
-<td> 无 </td>
-<td> 无                                                             </td>
+<td>Cửa sổ thuộc tính</td>
+<td> Không </td>
+<td> Không                                                             </td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无 </td>
-<td> 无                                                             </td>
+<td>Cửa sổ hình ảnh</td>
+<td> Không </td>
+<td> Không                                                             </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 图像坐标向量           </td>
-<td> 新基准点的图像坐标，类型为GcCoordPos。 </td>
+<td> Liên kết dữ liệu   </td>
+<td> Vectơ tọa độ hình ảnh           </td>
+<td> Tọa độ hình ảnh của điểm chuẩn mới, kiểu GcCoordPos. </td>
 </tr>
 <tr>
 <td></td>
-<td> 标定结果 </td>
-<td> 待修改的原始标定结果。                                         </td>
+<td> Kết quả Calibration </td>
+<td> Kết quả Calibration gốc cần sửa đổi.                                         </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td>  无</td>
-<td> 无                                                             </td>
+<td>Giao diện nâng cao</td>
+<td>  Không</td>
+<td> Không                                                             </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                     </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 修正后标定结果 </td>
-<td> 修改基准点后的标定结果。                                     </td>
+<td> Cửa sổ giám sát </td>
+<td> Kết quả Calibration sau hiệu chỉnh </td>
+<td> Kết quả Calibration sau khi sửa đổi điểm chuẩn.                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                               </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                               </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                                                               </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 执行结果       </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。 </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Kết quả thực thi       </td>
+<td> Hiển thị kết quả thực thi công cụ, thực thi thành công hiển thị "OK", thất bại hiển thị "NG", giống với tham số kết quả thực thi trong cửa sổ giám sát. </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 修正后标定结果 </td>
-<td> 输出修改基准点后的标定结果，供其他工具使用，同监视窗口“修正后标定结果”参数。 </td>
+<td> Liên kết dữ liệu   </td>
+<td> Kết quả Calibration sau hiệu chỉnh </td>
+<td> Xuất kết quả Calibration sau khi sửa đổi điểm chuẩn, cung cấp cho các công cụ khác sử dụng, giống với tham số "Kết quả Calibration sau hiệu chỉnh" trong cửa sổ giám sát. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>示例工程</h2>
+<h2>Project mẫu</h2>
 
 <p>参见“\Samples\单相机对位.gvp”。</p>
