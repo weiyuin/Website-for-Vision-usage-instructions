@@ -16,214 +16,214 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>3D刚体变换</h1>
+<h1>Biến đổi Cứng 3D</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     3D刚体变换工具根据3D相机标定生成的平移旋转关系，对ROI、3D面、3D点等3D数据进行刚体变换，从而使转换后的数据在目标图像中位置保持和源图像中一致。</p>
+<p>​     Công cụ biến đổi cứng 3D dựa trên mối quan hệ tịnh tiến-xoay được tạo bởi hiệu chuẩn camera 3D, thực hiện biến đổi cứng đối với dữ liệu 3D như ROI, mặt 3D, điểm 3D, v.v., từ đó làm cho dữ liệu sau chuyển đổi giữ vị trí nhất quán trong hình ảnh đích so với hình ảnh nguồn.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>​     3D刚体变换工具主要针对实际工程中：两个或多个3D相机扫描同一个产品，当产品位置发生变化，图像ROI需要做出相应的调整，当前操作只能对每个ROI位置大小进行调整，导致重复操作，步骤繁琐，所以想增加一个根据相机标定生成的映射关系和图像参数对源图像到目标图像的ROI坐标映射工具，提升软件易用性。</p>
+<p>​     Công cụ biến đổi cứng 3D chủ yếu nhắm đến trong kỹ thuật thực tế: hai hoặc nhiều camera 3D quét cùng một sản phẩm, khi vị trí sản phẩm thay đổi, ROI hình ảnh cần điều chỉnh tương ứng, thao tác hiện tại chỉ có thể điều chỉnh vị trí kích thước từng ROI, dẫn đến lặp lại thao tác, bước phức tạp, nên muốn bổ sung một công cụ ánh xạ tọa độ ROI từ hình ảnh nguồn đến hình ảnh đích dựa trên mối quan hệ ánh xạ từ hiệu chuẩn camera và tham số hình ảnh, nâng cao tính dễ sử dụng của phần mềm.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Nguyên lý giải thích</h2>
 
-<p>​     3D刚体变换工具通过输入的三维线性变换关系将源图像中的ROI、3D面、3D点等数据转换到目标图像中。</p>
+<p>​     Công cụ biến đổi cứng 3D thông qua mối quan hệ biến đổi tuyến tính 3D đầu vào để chuyển đổi dữ liệu như ROI, mặt 3D, điểm 3D trong hình ảnh nguồn sang hình ảnh đích.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像，相机标定，生成三维线性变换关系</h4></li>
+<li><h4>Thêm công cụ, tải hình ảnh, hiệu chuẩn camera, tạo mối quan hệ biến đổi tuyến tính 3D</h4></li>
 </ul>
 
 
 <p><img src="media/Gc3DTransformTool_4_1.png" alt="Gc3DTransformTool_4_1" /></p>
 
-<p><strong>三维线性变换关系</strong></p>
+<p><strong>Mối quan hệ biến đổi tuyến tính 3D</strong></p>
 
-<p>​     （1）三维线性变换关系生成方式主要是通过3D相机全局标定工具获取，操作方式参考3D相机全局标定工具操作说明手册；</p>
+<p>​     （1）Cách tạo mối quan hệ biến đổi tuyến tính 3D chủ yếu thông qua công cụ hiệu chuẩn toàn cục camera 3D để thu được, cách thao tác tham khảo sổ tay hướng dẫn sử dụng công cụ hiệu chuẩn toàn cục camera 3D；</p>
 
-<p>​     （2）三维线性变换关系生成方式也可根据实际项目情况生成；</p>
+<p>​     （2）Cách tạo mối quan hệ biến đổi tuyến tính 3D cũng có thể tạo theo tình huống dự án thực tế；</p>
 
 <ul>
-<li><h4>添加工具，参数设置，导入源图像、目标图像、三维线性变换、二维点集</h4></li>
+<li><h4>Thêm công cụ, cài đặt tham số, nhập hình ảnh nguồn, hình ảnh đích, biến đổi tuyến tính 3D, tập điểm 2D</h4></li>
 </ul>
 
 
 <p><img src="media/Gc3DTransformTool_4_2.png" alt="Gc3DTransformTool_4_2" /></p>
 
-<p><strong>转换类型</strong></p>
+<p><strong>Loại chuyển đổi</strong></p>
 
-<p>​     可以切换四种类型，分别为：二维点集、多边形、3D点、3D面等；</p>
+<p>​     Có thể chuyển đổi bốn loại, lần lượt là：tập điểm 2D、đa giác、điểm 3D、mặt 3D, v.v.；</p>
 
-<p><strong>批量转换</strong></p>
+<p><strong>Chuyển đổi hàng loạt</strong></p>
 
-<p>​     当选择“否”时，工具每次执行只能转换单个二维点集、多边形、3D面，其中3D点只能是批量转换，所以选择转换类型为：“3D点”时，会默认是批量转换，且不显示批量转换属性参数，防止误操作；当选择“是”时，工具一次进行多个二维点集、多边形、3D面的转换，同样，对应的数据链输入类型变为相应转换类型的数组格式；</p>
+<p>​     Khi chọn “Không”, công cụ mỗi lần thực thi chỉ chuyển đổi một tập điểm 2D, đa giác, mặt 3D đơn lẻ, trong đó điểm 3D chỉ có thể là chuyển đổi hàng loạt, nên khi chọn loại chuyển đổi là：“điểm 3D” thì mặc định là chuyển đổi hàng loạt, và không hiển thị tham số thuộc tính chuyển đổi hàng loạt, tránh thao tác sai；Khi chọn “Có”, công cụ một lần thực hiện chuyển đổi nhiều tập điểm 2D, đa giác, mặt 3D, tương tự, loại đầu vào chuỗi dữ liệu tương ứng trở thành định dạng mảng của loại chuyển đổi tương ứng；</p>
 
-<p><strong>多个三维线性变换</strong></p>
+<p><strong>Nhiều biến đổi tuyến tính 3D</strong></p>
 
-<p>​     只有当“批量转换”设置为“是”的时候，属性框才会显示此参数，当“多个三维线性变换”选择“是”时，工具可以对多个选择的转换类型，按照不同的三维线性变换进行转换，此时要注意：对应转换类型的数组大小要和三维线性变换数组的大小一致，否则会转换失败，选择“否”时，批量转换只能使用同一个三维线性变换；</p>
+<p>​     Chỉ khi “Chuyển đổi hàng loạt” được đặt là “Có” thì hộp thuộc tính mới hiển thị tham số này, khi “Nhiều biến đổi tuyến tính 3D” chọn “Có”, công cụ có thể chuyển đổi nhiều loại chuyển đổi được chọn theo các biến đổi tuyến tính 3D khác nhau, lúc này cần chú ý：kích thước mảng của loại chuyển đổi tương ứng phải nhất quán với kích thước mảng biến đổi tuyến tính 3D, nếu không sẽ chuyển đổi thất bại, chọn “Không” thì chuyển đổi hàng loạt chỉ sử dụng cùng một biến đổi tuyến tính 3D；</p>
 
 <ul>
-<li><h4>查看结果</h4></li>
+<li><h4>Xem kết quả</h4></li>
 </ul>
 
 
 <p><img src="media/Gc3DTransformTool_4_3.png" alt="Gc3DTransformTool_4_3" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Vấn đề thường gặp</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>6. 参数说明</h2>
+<h2>6. Giải thích tham số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                   </th>
-<th> 参数说明                                                  </th>
+<th> Tên tham số                   </th>
+<th> Giải thích tham số                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入数据类型               </td>
-<td> ROI二维点集、ROI多边形、3D面、3D点等转换类型。            </td>
+<td> Loại dữ liệu đầu vào               </td>
+<td> Loại chuyển đổi tập điểm 2D ROI、đa giác ROI、mặt 3D、điểm 3D, v.v..            </td>
 </tr>
 <tr>
-<td> 批量转换                   </td>
-<td> 是：显示数组类输入数据链；否：显示非数组类数据链          </td>
+<td> Chuyển đổi hàng loạt                   </td>
+<td> Có：hiển thị chuỗi dữ liệu đầu vào dạng mảng；Không：hiển thị chuỗi dữ liệu không phải mảng          </td>
 </tr>
 <tr>
-<td> 启用不同3D变换             </td>
-<td> 是：显示数组类输入数据链；否：显示非数组类数据链          </td>
+<td> Bật biến đổi 3D khác nhau             </td>
+<td> Có：hiển thị chuỗi dữ liệu đầu vào dạng mảng；Không：hiển thị chuỗi dữ liệu không phải mảng          </td>
 </tr>
 <tr>
-<td> 开启并行运算               </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+<td> Bật tính toán song song               </td>
+<td> Có bật tính toán song song hay không, khi chọn Có, thuật toán sẽ bật chế độ tính toán song song OpenMp, có thể nâng cao tốc độ tính toán nhưng có thể xuất hiện tình huống thời gian không ổn định, khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp. </td>
 </tr>
 <tr>
-<td> 线程数百分比               </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td> Tỷ lệ phần trăm số luồng               </td>
+<td> Thiết lập tỷ lệ phần trăm số luồng tính toán song song, phạm vi hiệu quả là (0, 0.75], tương ứng với phạm vi phần trăm (0%, 75%]. </td>
 </tr>
 <tr>
-<td> 三维线性变换（数据链）     </td>
-<td> 用于旋转平移关系参数。                                    </td>
+<td> Biến đổi tuyến tính 3D（chuỗi dữ liệu）     </td>
+<td> Tham số dùng cho mối quan hệ xoay-tịnh tiến.                                    </td>
 </tr>
 <tr>
-<td> 三维线性变换数组（数据链） </td>
-<td> 用于旋转平移关系参数数组。                                </td>
+<td> Mảng biến đổi tuyến tính 3D（chuỗi dữ liệu） </td>
+<td> Mảng tham số dùng cho mối quan hệ xoay-tịnh tiến.                                </td>
 </tr>
 <tr>
-<td> 源二维点集（数据链）       </td>
-<td> 用于获取需要转换的ROI数组数据，便于不支持图形的脚本写入。 </td>
+<td> Tập điểm 2D nguồn（chuỗi dữ liệu）       </td>
+<td> Dùng để lấy dữ liệu mảng ROI cần chuyển đổi, tiện cho script không hỗ trợ đồ họa ghi vào. </td>
 </tr>
 <tr>
-<td> 源二维点集数组（数据链）   </td>
-<td> 用于获取需要转换的ROI数组数据，便于不支持图形的脚本写入。 </td>
+<td> Mảng tập điểm 2D nguồn（chuỗi dữ liệu）   </td>
+<td> Dùng để lấy dữ liệu mảng ROI cần chuyển đổi, tiện cho script không hỗ trợ đồ họa ghi vào. </td>
 </tr>
 <tr>
-<td> 源ROI多边形（数据链）      </td>
-<td> 用于获取需要转换的ROI数据。                               </td>
+<td> Đa giác ROI nguồn（chuỗi dữ liệu）      </td>
+<td> Dùng để lấy dữ liệu ROI cần chuyển đổi.                               </td>
 </tr>
 <tr>
-<td> 源ROI多边形数组（数据链）  </td>
-<td> 用于获取需要转换的ROI数组数据。                           </td>
+<td> Mảng đa giác ROI nguồn（chuỗi dữ liệu）  </td>
+<td> Dùng để lấy dữ liệu mảng ROI cần chuyển đổi.                           </td>
 </tr>
 <tr>
-<td> 源3D点集（数据链）         </td>
-<td> 用于获取需要转换的3D点数组数据。                          </td>
+<td> Tập điểm 3D nguồn（chuỗi dữ liệu）         </td>
+<td> Dùng để lấy dữ liệu mảng điểm 3D cần chuyển đổi.                          </td>
 </tr>
 <tr>
-<td> 源3D面（数据链）           </td>
-<td> 用于获取需要转换的3D面数据。                              </td>
+<td> Mặt 3D nguồn（chuỗi dữ liệu）           </td>
+<td> Dùng để lấy dữ liệu mặt 3D cần chuyển đổi.                              </td>
 </tr>
 <tr>
-<td> 源3D面数组（数据链）       </td>
-<td> 用于获取需要转换的3D面数组数据。                          </td>
+<td> Mảng mặt 3D nguồn（chuỗi dữ liệu）       </td>
+<td> Dùng để lấy dữ liệu mảng mặt 3D cần chuyển đổi.                          </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数说明                                                    </th>
+<th> Tên tham số                    </th>
+<th> Giải thích tham số                                                    </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 源二维点集数组              </td>
-<td> 用于获取需要转换的ROI数组数据，或便于不支持图形的脚本写入。 </td>
+<td> Mảng tập điểm 2D nguồn              </td>
+<td> Dùng để lấy dữ liệu mảng ROI cần chuyển đổi, hoặc tiện cho script không hỗ trợ đồ họa ghi vào. </td>
 </tr>
 <tr>
-<td> 转换二维点集数组            </td>
-<td> 转换后的二维点集数组。                                      </td>
+<td> Mảng tập điểm 2D sau chuyển đổi            </td>
+<td> Mảng tập điểm 2D sau chuyển đổi.                                      </td>
 </tr>
 <tr>
-<td> 转换二维点集                </td>
-<td> 转换后的多边形ROI顶点数据。                                 </td>
+<td> Tập điểm 2D sau chuyển đổi                </td>
+<td> Dữ liệu đỉnh đa giác ROI sau chuyển đổi.                                 </td>
 </tr>
 <tr>
-<td> 转换ROI多边形               </td>
-<td> 转换后的多边形ROI数据。                                     </td>
+<td> Đa giác ROI sau chuyển đổi               </td>
+<td> Dữ liệu đa giác ROI sau chuyển đổi.                                     </td>
 </tr>
 <tr>
-<td> 转换ROI多边形数组           </td>
-<td> 转换后的多边形ROI数组数据。                                 </td>
+<td> Mảng đa giác ROI sau chuyển đổi           </td>
+<td> Dữ liệu mảng đa giác ROI sau chuyển đổi.                                 </td>
 </tr>
 <tr>
-<td> 转换3D点集                  </td>
-<td> 转换后的3D点数组数据。                                      </td>
+<td> Tập điểm 3D sau chuyển đổi                  </td>
+<td> Dữ liệu mảng điểm 3D sau chuyển đổi.                                      </td>
 </tr>
 <tr>
-<td> 转换3D面                    </td>
-<td> 转换后的3D面数据。                                          </td>
+<td> Mặt 3D sau chuyển đổi                    </td>
+<td> Dữ liệu mặt 3D sau chuyển đổi.                                          </td>
 </tr>
 <tr>
-<td> 转换3D面数组                </td>
-<td> 转换后的3D面数组数据。                                      </td>
+<td> Mảng mặt 3D sau chuyển đổi                </td>
+<td> Dữ liệu mảng mặt 3D sau chuyển đổi.                                      </td>
 </tr>
 <tr>
-<td> 源二维点集数组（数据链）    </td>
-<td> 用于获取需要转换的ROI数组数据，便于不支持图形的脚本写入。   </td>
+<td> Mảng tập điểm 2D nguồn（chuỗi dữ liệu）    </td>
+<td> Dùng để lấy dữ liệu mảng ROI cần chuyển đổi, tiện cho script không hỗ trợ đồ họa ghi vào.   </td>
 </tr>
 <tr>
-<td> 转换二维点集数组（数据链）  </td>
-<td> 转换后的二维点集数组。                                      </td>
+<td> Mảng tập điểm 2D sau chuyển đổi（chuỗi dữ liệu）  </td>
+<td> Mảng tập điểm 2D sau chuyển đổi.                                      </td>
 </tr>
 <tr>
-<td> 转换ROI多边形（数据链）     </td>
-<td> 转换后的多边形ROI数据。                                     </td>
+<td> Đa giác ROI sau chuyển đổi（chuỗi dữ liệu）     </td>
+<td> Dữ liệu đa giác ROI sau chuyển đổi.                                     </td>
 </tr>
 <tr>
-<td> 转换ROI多边形数组（数据链） </td>
-<td> 转换后的多边形ROI数组数据。                                 </td>
+<td> Mảng đa giác ROI sau chuyển đổi（chuỗi dữ liệu） </td>
+<td> Dữ liệu mảng đa giác ROI sau chuyển đổi.                                 </td>
 </tr>
 <tr>
-<td> 转换3D点集（数据链）        </td>
-<td> 转换后的3D点数组数据。                                      </td>
+<td> Tập điểm 3D sau chuyển đổi（chuỗi dữ liệu）        </td>
+<td> Dữ liệu mảng điểm 3D sau chuyển đổi.                                      </td>
 </tr>
 <tr>
-<td> 转换3D面（数据链）          </td>
-<td> 转换后的3D面数据。                                          </td>
+<td> Mặt 3D sau chuyển đổi（chuỗi dữ liệu）          </td>
+<td> Dữ liệu mặt 3D sau chuyển đổi.                                          </td>
 </tr>
 <tr>
-<td> 转换3D面数组（数据链）      </td>
-<td> 转换后的3D面数组数据。                                      </td>
+<td> Mảng mặt 3D sau chuyển đổi（chuỗi dữ liệu）      </td>
+<td> Dữ liệu mảng mặt 3D sau chuyển đổi.                                      </td>
 </tr>
 <tr>
-<td> 执行结果                    </td>
-<td> 工具执行结果，true/false                                    </td>
+<td> Kết quả thực thi                    </td>
+<td> Kết quả thực thi công cụ，true/false                                    </td>
 </tr>
 <tr>
-<td> 执行时间                    </td>
-<td> 工具执行完所需的时间                                        </td>
+<td> Thời gian thực thi                    </td>
+<td> Thời gian cần thiết để công cụ thực thi xong                                        </td>
 </tr>
 </tbody>
 </table>

@@ -16,142 +16,142 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>深度图像转RGB图像工具</h1>
+<h1>Công cụ Chuyển đổi Hình ảnh Chiều sâu sang Hình ảnh RGB</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>深度图像转RGB图像工具的功能是将16位深度图像转换为RGB图像，功能类似颜色图，其中高度范围设置的最大值、最小值采用物理实际Z值，工具根据输入值线性映射到合适的范围内，用于去除干扰点，获取较为理想的RGB图像，如图1、2所示。</p>
+<p>Công cụ chuyển đổi hình ảnh chiều sâu sang hình ảnh RGB có chức năng chuyển đổi hình ảnh chiều sâu 16 bit sang hình ảnh RGB, chức năng tương tự biểu đồ màu, trong đó giá trị tối đa, giá trị tối thiểu của phạm vi chiều cao thiết lập sử dụng giá trị Z thực tế vật lý, công cụ theo giá trị đầu vào ánh xạ tuyến tính đến phạm vi phù hợp, dùng để loại bỏ điểm nhiễu, thu được hình ảnh RGB lý tưởng hơn, như hình 1, 2 cho thấy.</p>
 
 <p><img src="media/GcRangeToRGBTool_1_1.jpg" alt="img" />  <img src="media/GcRangeToRGBTool_1_2.jpg" alt="img" /></p>
 
-<p>​                                         <imgnote>图1 深度图像转RGB图像工具示意图</imgnote></p>
+<p>​                                         <imgnote>Hình 1 Sơ đồ công cụ chuyển đổi hình ảnh chiều sâu sang hình ảnh RGB</imgnote></p>
 
 <p><img src="media/GcRangeToRGBTool_1_3.jpg" alt="img" /></p>
 
-<p>​                                                                <imgnote>图2 颜色图界</imgnote></p>
+<p>​                                                                <imgnote>Hình 2 Giao diện biểu đồ màu</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số         </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口         </td>
-<td> 颜色图关注范围                                              </td>
-<td> 分为3种：整幅图像、仿射矩形、圆形。 </td>
+<td> Cửa sổ thuộc tính         </td>
+<td> Phạm vi quan tâm biểu đồ màu                                              </td>
+<td> Chia thành 3 loại: toàn bộ hình ảnh, hình chữ nhật affine, hình tròn. </td>
 </tr>
 <tr>
 <td></td>
-<td> 自动模式    </td>
-<td> 是否由算法自动确定最小深度值、最大深度值。                                           </td>
+<td> Chế độ tự động    </td>
+<td> Có để thuật toán tự động xác định giá trị chiều sâu tối thiểu, giá trị chiều sâu tối đa hay không.                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 最小深度值 </td>
-<td> 真实Z值，取值范围受图像Z轴方向分辨率及Z方向偏移控制，小于此值将被作为干扰点过滤掉。                                         </td>
+<td> Giá trị chiều sâu tối thiểu </td>
+<td> Giá trị Z thực tế, phạm vi lấy giá trị chịu ảnh hưởng bởi độ phân giải trục Z của hình ảnh và độ lệch hướng Z, nhỏ hơn giá trị này sẽ bị lọc bỏ như điểm nhiễu.                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 最大深度值     </td>
-<td> 真实Z值，取值范围受图像Z轴方向分辨率及Z方向偏移控制，大于此值将被作为干扰点过滤掉。 </td>
+<td> Giá trị chiều sâu tối đa     </td>
+<td> Giá trị Z thực tế, phạm vi lấy giá trị chịu ảnh hưởng bởi độ phân giải trục Z của hình ảnh và độ lệch hướng Z, lớn hơn giá trị này sẽ bị lọc bỏ như điểm nhiễu. </td>
 </tr>
 <tr>
 <td></td>
-<td> 深度图颜色模式 </td>
-<td> 分为2种，转化为灰色图像或彩色图像。                                                                    </td>
+<td> Chế độ màu hình ảnh chiều sâu </td>
+<td> Chia thành 2 loại, chuyển thành hình ảnh xám hoặc hình ảnh màu.                                                                    </td>
 </tr>
 <tr>
 <td></td>
-<td> 彩虹条类型  </td>
-<td> 分为2种，彩虹1或彩虹2。                                                           </td>
+<td> Loại thanh cầu vồng  </td>
+<td> Chia thành 2 loại, cầu vồng 1 hoặc cầu vồng 2.                                                           </td>
 </tr>
 <tr>
-<td> 图像窗口         </td>
-<td> 深度图像                                                     </td>
-<td> 显示待检测的深度图像，显示为伪彩色图像。                     </td>
-</tr>
-<tr>
-<td></td>
-<td> 检测区域         </td>
-<td> 在图像上显示待检测区域。                                                                                       </td>
-</tr>
-<tr>
-<td> 数据链           </td>
-<td> 输入深度图像                                               </td>
-<td> 输入待检测的深度图像。                           </td>
+<td> Cửa sổ hình ảnh         </td>
+<td> Hình ảnh chiều sâu                                                     </td>
+<td> Hiển thị hình ảnh chiều sâu cần phát hiện, hiển thị dưới dạng hình ảnh giả màu.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换     </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                                                  </td>
+<td> Vùng phát hiện         </td>
+<td> Hiển thị vùng cần phát hiện trên hình ảnh.                                                                                       </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无    </td>
+<td> Chuỗi dữ liệu           </td>
+<td> Hình ảnh chiều sâu đầu vào                                               </td>
+<td> Nhập hình ảnh chiều sâu cần phát hiện.                           </td>
+</tr>
+<tr>
+<td></td>
+<td> Biến đổi tuyến tính 2D     </td>
+<td> Biến đổi tịnh tiến, xoay, thu phóng của mục tiêu so với mẫu.                                                  </td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td> Không    </td>
 <td>                                                                                                            </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                         </th>
+<th>Phân loại </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                                                         </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口     </td>
-<td> 输出RGB图像                                              </td>
-<td> 输出图像的长宽和像素大小。  </td>
+<td> Cửa sổ giám sát     </td>
+<td> Hình ảnh RGB đầu ra                                              </td>
+<td> Chiều dài, chiều rộng và kích thước pixel của hình ảnh đầu ra.  </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                              </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ.                              </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                          </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ.                                                          </td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 输入深度图像 </td>
-<td> 显示检测的深度图像，显示为伪彩色图像。                                                                </td>
+<td>Cửa sổ hình ảnh</td>
+<td> Hình ảnh chiều sâu đầu vào </td>
+<td> Hiển thị hình ảnh chiều sâu được phát hiện, hiển thị dưới dạng hình ảnh giả màu.                                                                </td>
 </tr>
 <tr>
 <td>      </td>
-<td> 输出RGB图像                                              </td>
-<td> 显示转换成的RGB图像。 </td>
+<td> Hình ảnh RGB đầu ra                                              </td>
+<td> Hiển thị hình ảnh RGB sau chuyển đổi. </td>
 </tr>
 <tr>
 <td></td>
-<td> 数据链       </td>
-<td> 同监视窗口参数，供后续工具使用。                                                                 </td>
+<td> Chuỗi dữ liệu       </td>
+<td> Giống tham số cửa sổ giám sát, cung cấp cho công cụ sau sử dụng.                                                                 </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
-<h3>转换原理</h3>
+<h3>Nguyên lý chuyển đổi</h3>
 
-<p>深度图像转RGB图像工具的原理是将深度值(真实Z值)按照线性映射函数转换到[0 , 65535]范围，同时可以设置深度最大值、深度最小值排除一些Z值较低或较高的干扰点获取较为理想的RGB图像。</p>
+<p>Nguyên lý của công cụ chuyển đổi hình ảnh chiều sâu sang hình ảnh RGB là chuyển đổi giá trị chiều sâu (giá trị Z thực tế) theo hàm ánh xạ tuyến tính đến phạm vi [0, 65535], đồng thời có thể thiết lập giá trị chiều sâu tối đa, giá trị chiều sâu tối thiểu để loại trừ một số điểm nhiễu có giá trị Z thấp hơn hoặc cao hơn, thu được hình ảnh RGB lý tưởng hơn.</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <h2>示例工程</h2>
 
