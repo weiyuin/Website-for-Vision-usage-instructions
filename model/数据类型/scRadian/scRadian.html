@@ -18,120 +18,120 @@
            </head>
 <h1>scRadian</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示弧度，例如通过脚本获取的直线的角度，scLine.GetRotation。</p>
+<p>Biểu diễn góc radian, ví dụ góc của đường thẳng lấy được qua script, scLine.GetRotation.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                  </th>
-<th> 接口描述                    </th>
+<th>      Phân loại </th>
+<th> Tên giao diện                                  </th>
+<th> Mô tả giao diện                    </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
+<td> Khởi tạo </td>
 <td> scRadian            </td>
-<td> scRadian(value)构造函数     </td>
+<td> Constructor scRadian(value)     </td>
 </tr>
 <tr>
-<td> 函数 </td>
+<td> Hàm </td>
 <td> ToDouble                  </td>
-<td> 将弧度转换为浮点数          </td>
+<td> Chuyển đổi radian thành số thực dấu phẩy động          </td>
 </tr>
 <tr>
 <td>      </td>
 <td> Norm                         </td>
-<td> 将弧度规范化到[0, 2PI]      </td>
+<td> Chuẩn hóa radian về khoảng [0, 2PI]      </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SignedNorm             </td>
-<td> 将弧度规范化到[-PI, PI]     </td>
+<td> Chuẩn hóa radian về khoảng [-PI, PI]     </td>
 </tr>
 <tr>
 <td>      </td>
 <td> NormMod180             </td>
-<td> 将弧度规范化到[0, PI]       </td>
+<td> Chuẩn hóa radian về khoảng [0, PI]       </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SignedNormMod180 </td>
-<td> 将弧度规范化到[-PI/2, PI/2] </td>
+<td> Chuẩn hóa radian về khoảng [-PI/2, PI/2] </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
 <h3>scRadian(value)</h3>
 
 <ul>
-<li><p>功能：构造sc2Vector对象，初始化为value。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Khởi tạo đối tượng scRadian, khởi tạo giá trị là value.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>value：弧度值，浮点数类型。</li>
+<li>value：Giá trị radian, kiểu số thực dấu phẩy động.</li>
 </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li><p>Giá trị trả về：Không có</p></li>
 </ul>
 
 
 <h3>ToDouble()</h3>
 
 <ul>
-<li><p>功能：将弧度转换为浮点数。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：弧度，浮点数类型</p></li>
+<li><p>Chức năng：Chuyển đổi radian thành số thực dấu phẩy động.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Radian, kiểu số thực dấu phẩy động</p></li>
 </ul>
 
 
 <h3>Norm( )</h3>
 
 <ul>
-<li><p>功能：将弧度规范化到[0, 2PI]。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：规范化后的弧度，scRadian类型</p></li>
+<li><p>Chức năng：Chuẩn hóa radian về khoảng [0, 2PI].</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Radian sau khi chuẩn hóa, kiểu scRadian</p></li>
 </ul>
 
 
 <h3>SignedNorm( )</h3>
 
 <ul>
-<li><p>功能：将弧度规范化到[-PI, PI]。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：规范化后的弧度，scRadian类型</p></li>
+<li><p>Chức năng：Chuẩn hóa radian về khoảng [-PI, PI].</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Radian sau khi chuẩn hóa, kiểu scRadian</p></li>
 </ul>
 
 
 <h3>NormMod180( )</h3>
 
 <ul>
-<li><p>功能：将弧度规范化到[0, PI]。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：规范化后的弧度，scRadian类型</p></li>
+<li><p>Chức năng：Chuẩn hóa radian về khoảng [0, PI].</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Radian sau khi chuẩn hóa, kiểu scRadian</p></li>
 </ul>
 
 
 <h3>SignedNormMod180( )</h3>
 
 <ul>
-<li><p>功能：将弧度规范化到[-PI/2, PI/2]。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：规范化后的弧度，scRadian类型</p></li>
+<li><p>Chức năng：Chuẩn hóa radian về khoảng [-PI/2, PI/2].</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Radian sau khi chuẩn hóa, kiểu scRadian</p></li>
 </ul>
 
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>示例代码</h2>
+<h2>Mã ví dụ</h2>
 
-<p>无</p>
+<p>Không có</p>

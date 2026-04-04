@@ -1,0 +1,203 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1><strong>Công cụ Phát hiện Keo Dị hình</strong></h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>Công cụ phát hiện keo dị hình, dành cho các ứng dụng cần phát hiện chính xác quỹ đạo, có chức năng đo lường và phát hiện khuyết điểm. Bao gồm:</p>
+
+<ul>
+<li>Phần đo lường
+
+<ul>
+<li>Chiều rộng keo</li>
+<li>Lượng keo</li>
+<li>Tỷ lệ keo (tỷ lệ phủ)</li>
+<li>Độ vị trí (lệch keo)</li>
+<li>Diện tích lỗ hổng</li>
+</ul>
+</li>
+<li>Phần phát hiện
+
+<ul>
+<li>Ngắt keo</li>
+<li>Keo thừa</li>
+<li>Keo thiếu</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>2. Kịch bản ứng dụng</h2>
+
+<p>Công cụ phát hiện keo dị hình, dùng cho các tình huống cần đồng thời phát hiện nhiều khuyết điểm quỹ đạo keo. Phiên bản đầu tiên được phát triển dành cho quá trình lắp ráp tai nghe thành phẩm, phát hiện quá trình bôi keo ở các công đoạn của tai nghe và hộp sạc tai nghe. Sau đó mở rộng sang các tình huống khác cần phát hiện quỹ đạo bôi keo.</p>
+
+<ul>
+<li>Kịch bản khuyến nghị sử dụng
+
+<ul>
+<li>Tình huống quỹ đạo phát hiện phức tạp, phân chia vùng nhiều, khó bảo trì</li>
+<li>Tình huống cần định lượng khuyết điểm</li>
+<li>Tình huống cần đồng thời phát hiện ngắt keo, tỷ lệ phủ, chiều rộng keo và nhiều hạng mục phát hiện khác</li>
+<li>Tình huống cần quản lý thống nhất giới hạn trên dưới của phát hiện</li>
+</ul>
+</li>
+<li>Kịch bản không khuyến nghị sử dụng
+
+<ul>
+<li>Hạng mục phát hiện đơn giản, ví dụ chỉ phát hiện lượng keo, không cần phát hiện quỹ đạo, khuyến nghị sử dụng công cụ đơn giản như Blob</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>3. Hướng dẫn sử dụng</h2>
+
+<ul>
+<li><p>Chuẩn bị hình ảnh quỹ đạo keo</p>
+
+<p>Cần sử dụng trong các công cụ phân đoạn khác để tạo hình ảnh nhị phân của quỹ đạo keo. Thông thường là: công cụ trích xuất màu (dùng cho hình ảnh màu), công cụ Blob (dùng cho hình ảnh xám). Đối với tình huống phát hiện tinh tế (như quá trình lắp ráp điện thoại cao cấp, tai nghe), cần phối hợp sử dụng công cụ trích xuất keo.</p></li>
+<li><p>Chuẩn bị hệ tọa độ sản phẩm</p>
+
+<p>Đối với tình huống cần kiểm soát vùng định lượng nghiêm ngặt, cần liên kết vào hệ tọa độ sản phẩm. Có thể sửa chữa sự khác biệt giữa các máy. Đối với tình huống không có nhu cầu này có thể bỏ qua bước này.</p>
+
+<p>Yếu tố của hệ tọa độ sản phẩm bao gồm:</p>
+
+<ul>
+<li>trục x (đường thẳng)</li>
+<li>gốc tọa độ sản phẩm (điểm)</li>
+<li>đương lượng pixel (số thực)</li>
+</ul>
+</li>
+<li><p>Thêm công cụ phát hiện keo dị hình</p></li>
+<li><p>Cấu hình đầu vào đầu ra</p>
+
+<p>Liên kết hình ảnh quỹ đạo keo, các yếu tố hệ tọa độ sản phẩm đã thu được ở trên vào chuỗi tham số của công cụ.</p>
+
+<p><img src="media\SpecialTool_1.png" alt="" /></p></li>
+<li><p>Cấu hình vùng</p>
+
+<p>Quỹ đạo keo liên tục là một nhóm (Group), trong cùng một nhóm có thể thêm nhiều vùng, dùng để phát hiện tinh tế hơn.</p>
+
+<p><img src="media\SpecialTool_2.png" alt="" /></p></li>
+<li><p>Cấu hình hạng mục phát hiện</p>
+
+<p>Theo nhu cầu dự án, kích hoạt các hạng mục phát hiện cần thiết trong các tab khác, và cấu hình tiêu chuẩn phát hiện hợp lý cho các hạng mục phát hiện.</p></li>
+</ul>
+
+
+<h2>4. Giải thích tham số</h2>
+
+<h4>Tham số thuộc tính công cụ</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số         </th>
+<th style="text-align:left;"> Giải thích tham số                                                    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Chuẩn hóa góc       </td>
+<td style="text-align:left;"> Cách chuẩn hóa góc của trục tọa độ đầu vào                                </td>
+</tr>
+<tr>
+<td> Bật tính toán song song     </td>
+<td style="text-align:left;"> Có bật tính toán song song không, bật khi tài nguyên CPU đủ                       </td>
+</tr>
+<tr>
+<td> Tỷ lệ phần trăm số luồng     </td>
+<td style="text-align:left;"> Mức độ bật tính toán song song, giá trị càng cao, chiếm tài nguyên CPU càng nhiều, tốc độ tính toán càng nhanh </td>
+</tr>
+<tr>
+<td> Có xuất khuyết điểm phân tách không </td>
+<td style="text-align:left;"> Có xuất kết quả phát hiện ngắt keo đã phân tách không, dùng cho việc bổ keo                        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Tham số đầu vào công cụ</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;"> Tên tham số     </th>
+<th style="text-align:left;"> Giải thích tham số                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">Hình ảnh quỹ đạo keo đầu vào       </td>
+<td style="text-align:left;"> Liên kết hình nhị phân sau phân đoạn  </td>
+</tr>
+<tr>
+<td style="text-align:left;">Hình ảnh gốc đầu vào</td>
+<td style="text-align:left;"> Liên kết hình màu gốc của quỹ đạo keo </td>
+</tr>
+<tr>
+<td style="text-align:left;">Hình ảnh phát hiện lỗ hổng đầu vào</td>
+<td style="text-align:left;"> Nếu cần phát hiện lỗ hổng, liên kết hình nhị phân sau phân đoạn lỗ hổng, có thể không liên kết </td>
+</tr>
+<tr>
+<td style="text-align:left;">Điểm đầu vào (gốc)</td>
+<td style="text-align:left;"> Liên kết gốc của hệ tọa độ sản phẩm, có thể không liên kết </td>
+</tr>
+<tr>
+<td style="text-align:left;">Đường thẳng đầu vào (trục X)</td>
+<td style="text-align:left;"> Liên kết đường thẳng trục ngang sản phẩm, có thể không liên kết </td>
+</tr>
+<tr>
+<td style="text-align:left;">Đương lượng pixel </td>
+<td style="text-align:left;"> Liên kết đương lượng pixel sau hiệu chuẩn, không được bằng 0, có thể không liên kết </td>
+</tr>
+<tr>
+<td style="text-align:left;">Điểm/đường thẳng/đường bao chuẩn lệch keo theo nhóm </td>
+<td style="text-align:left;"> Nếu bật phát hiện lệch keo, liên kết chuẩn phát hiện lệch keo </td>
+</tr>
+<tr>
+<td style="text-align:left;">Số serial sản phẩm </td>
+<td style="text-align:left;"> Dùng làm đầu ra từ điển khuyết điểm, để hiển thị, có thể không liên kết </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Tham số đầu ra công cụ</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số     </th>
+<th style="text-align:left;"> Giải thích tham số                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Kết quả chuỗi hóa khuyết điểm </td>
+<td style="text-align:left;"> Chuỗi hóa tất cả dữ liệu phát hiện thành chuỗi json, có thể dùng script để phân tích trực tiếp hoặc dùng công cụ cấu hình kết quả keo dị hình. Tham khảo hướng dẫn công cụ cấu hình kết quả keo dị hình.        </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>5. Dự án ví dụ</h2>
+
+<p>参见“\Samples\异形胶检测工具.gvp”。</p>

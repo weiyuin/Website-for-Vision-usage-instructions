@@ -1,0 +1,174 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>胶水提取工具</h1>
+
+<h2>1. 功能概述</h2>
+
+<p>​     胶水提取工具主要用来对输入图像的某一区域内的胶水提取。</p>
+
+<p><img src="media/GcAIGlueExtractTool_1_1.png" alt="" /></p>
+
+<p><imgnote>图1 胶水提取工具 应用示意图</imgnote></p>
+
+<h2>2. 应用场景</h2>
+
+<p>​</p>
+
+<h2>3. 原理说明</h2>
+
+<p>​</p>
+
+<h2>4. 使用向导</h2>
+
+<ul>
+<li><h4>添加工具，载入图像</h4></li>
+</ul>
+
+
+<p><img src="media/GcAIGlueExtractTool_1_2.png" alt="" /></p>
+
+<ul>
+<li><h4>配置AI模型、边界忽略比例、调整ROI位置</h4></li>
+</ul>
+
+
+<p><img src="media/GcAIGlueExtractTool_1_3.png" alt="" /></p>
+
+<p><img src="media/GcAIGlueExtractTool_1_4.png" alt="" /></p>
+
+<p><strong>AI模型</strong></p>
+
+<p>导入AI模型，格式为vwai。</p>
+
+<p><strong>边界忽略比例</strong></p>
+
+<p>ROI区域的边界忽略比例，取值范围为[0.01, 0.2]。</p>
+
+<p><strong>导入ROI列表</strong></p>
+
+<p>ROI的设置，包括ROI数目和ROI尺寸，Edit视图可修改ROI的位置。</p>
+
+<p>可导入ROI列表，导入成功，ROI数目和ROI尺寸同步为列表里的数据。</p>
+
+<p><strong>是否实时显示提取轮廓</strong></p>
+
+<p>是：执行成功，Result显示输入图像和轮廓；否：执行成功，显示提取二值图。</p>
+
+<p>在调试过程中，配置为’是‘； 生成过程中，配置为’否‘。</p>
+
+<ul>
+<li><h4>查看结果</h4></li>
+</ul>
+
+
+<p><img src="media/GcAIGlueExtractTool_1_1.png" alt="" /></p>
+
+<h2>5. 常见问题</h2>
+
+<p>无</p>
+
+<h2>6. 参数说明</h2>
+
+<h4>输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称 </th>
+<th> 参数说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入图像       </td>
+<td> 待提取的图像。                   </td>
+</tr>
+<tr>
+<td> 二维线性变换   </td>
+<td> 目标相对于模板的平移、旋转、缩放变换。                       </td>
+</tr>
+<tr>
+<td> AI模型 </td>
+<td> 设置AI模型路径。 </td>
+</tr>
+<tr>
+<td> ROI数目 </td>
+<td> 取值范围为[1, 50]。 </td>
+</tr>
+<tr>
+<td> ROI尺寸 </td>
+<td> 取值范围为[128, 2048]。 </td>
+</tr>
+<tr>
+<td> 边界忽略比例 </td>
+<td> 取值范围为[0.01, 0.2]。 </td>
+</tr>
+<tr>
+<td> 导入ROI列表 </td>
+<td> 导入的ROI列表文件路径。 </td>
+</tr>
+<tr>
+<td> 是否实时显示提取轮廓 </td>
+<td> 是：执行成功，Result显示输入图像和轮廓；否：执行成功，显示提取二值图 </td>
+</tr>
+<tr>
+<td> 开启并行运算 </td>
+<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。默认否。 </td>
+</tr>
+<tr>
+<td> 线程数百分比 </td>
+<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围，默认0.75。 </td>
+</tr>
+<tr>
+<td> 高级界面 </td>
+<td> 无 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称                                </th>
+<th> 参数说明                           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出图像                               </td>
+<td> 输出图像宽度、高度、像素大小。     </td>
+</tr>
+<tr>
+<td> 执行结果 </td>
+<td> 工具执行结果。 </td>
+</tr>
+<tr>
+<td> 执行时间                          </td>
+<td> 工具执行时间。                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. 示例工程</h2>
+
+<p>参见“\Samples\AI胶水提取工具.gvp”。</p>
