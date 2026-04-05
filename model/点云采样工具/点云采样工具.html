@@ -16,65 +16,75 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Công cụ Sampling (Giảm Mật Độ) Đám Mây Điểm</h1>
+<h1>Công cụ lấy mẫu đám mây điểm</h1>
 
 <h2>1. Tổng quan chức năng</h2>
 
-<p> Công cụ sampling đám mây điểm chủ yếu phục vụ các dự án đo lường 3D, giải quyết vấn đề đám mây điểm quá lớn gây chậm xử lý bằng cách giảm số lượng điểm (down-sampling). Công cụ thường được dùng ở giai đoạn tiền xử lý của dự án đo 3D.</p>
+<p>​ Công cụ lấy mẫu đám mây điểm chủ yếu phục vụ cho dự án đo lường đám mây điểm 3D, giải quyết vấn đề lượng dữ liệu đám mây điểm quá lớn cần giảm mẫu, công cụ chủ yếu được áp dụng trong giai đoạn tiền xử lý của dự án đo lường ba chiều.</p>
 
-<h2>2. Các kịch bản ứng dụng</h2>
+<h2>2. Kịch bản sử dụng</h2>
 
-<p> Khi đám mây điểm quá lớn dẫn đến thời gian xử lý lâu, cần giảm số điểm mà vẫn giữ được hình dạng tổng thể. Công cụ hỗ trợ 4 phương pháp chính:  
-• Thể tích voxel (voxel grid)  
-• Ngẫu nhiên (random)  
-• Bước chỉ số cố định (fixed index step)  
-• Khoảng cách không gian cố định (uniform distance)  
-→ Giảm đáng kể số điểm, rút ngắn thời gian xử lý tiếp theo.</p>
+<p>​ Kịch bản ứng dụng điển hình như: khi lấy dữ liệu đám mây điểm, do lượng dữ liệu đám mây điểm quá lớn gây ảnh hưởng, thời gian xử lý khi thao tác trên đó quá dài, cần sử dụng công cụ lấy mẫu đám mây điểm, có thể thông qua phương thức lấy mẫu voxel, lấy mẫu ngẫu nhiên, lấy mẫu bước chỉ số cố định, lấy mẫu khoảng cách điểm không gian, giảm lượng dữ liệu đám mây điểm, hiệu quả rút ngắn thời gian xử lý.</p>
 
 <div align="center">
 <img src="media/GvCloudSampleTool_2_1.png" style="zoom:100%;"/>
-    <center>Hình 2-1 Hiệu quả trước và sau khi sampling đám mây điểm</center>
+    <center>Hình 2_1 Lấy mẫu đám mây điểm
+</center>
 </div>
+
 
 <h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>3.1 Sampling theo thể tích voxel</h3>
+<li><h3>3.1 Lấy mẫu voxel</h3>
 
-<p><strong>Bước 1:</strong> Thêm công cụ Tải file đám mây điểm → Công cụ Sampling Đám Mây Điểm, mở chuỗi tham số, nối file điểm như Hình 3-1;<br/>
-<strong>Bước 2:</strong> Chuột phải → “Thuộc tính” → chọn “Thể tích voxel”, thiết lập kích thước voxel và các tham số khác → Chạy để nhận kết quả.</p></li>
+<p><strong>Bước 1：</strong>Thêm tệp đám mây điểm, công cụ lấy mẫu đám mây điểm, và nhấp đúp mở chuỗi tham số công cụ, liên kết tệp đám mây điểm, như hình 3-1;</p>
+
+<p><strong>Bước 2：</strong>Nhấp chuột phải vào công cụ lấy mẫu đám mây điểm, chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-2, chọn “Lấy mẫu voxel”, thiết lập tham số lấy mẫu, sau đó nhấp chạy để nhận được kết quả lấy mẫu;</p></li>
+</ul>
+
 
 <div align="center">
 <img src="media/GvCloudSampleTool_3_1.png" style="zoom:70%;"/>
-    <center>Hình 3-1 Quy trình sampling đám mây điểm</center>
+    <center>Hình 3_1 Lấy mẫu đám mây điểm: Quy trình lấy mẫu</center>
 </div>
+
+
+
 
 <div align="center">
 <img src="media/GvCloudSampleTool_3_2.gif" style="zoom:70%;"/>
-    <center>Hình 3-2 Sampling theo thể tích voxel</center>
+    <center>Hình 3_2 Lấy mẫu đám mây điểm: Lấy mẫu voxel</center>
 </div>
 
-<li><h3>3.2 Sampling ngẫu nhiên</h3>
 
-<p>Trong giao diện nâng cao chọn “Loại sampling” → “Giảm mật độ (Down-sampling)”, “Phương pháp” → “Ngẫu nhiên”, thiết lập tỷ lệ hoặc số điểm mong muốn → Chạy.</p>
+<ul>
+<li><h3>3.2 Lấy mẫu ngẫu nhiên</h3>
+
+<p><strong>Bước 1：</strong>Thêm tệp đám mây điểm, công cụ lấy mẫu đám mây điểm, và nhấp đúp mở chuỗi tham số công cụ, liên kết tệp đám mây điểm, như hình 3-1;</p>
+
+<p><strong>Bước 2：</strong>Nhấp chuột phải vào công cụ lấy mẫu đám mây điểm, chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-3, loại lấy mẫu chọn “Giảm mẫu”, phương pháp lấy mẫu thiết lập “Lấy mẫu ngẫu nhiên”, thiết lập tham số lấy mẫu, sau đó nhấp chạy để nhận được kết quả lấy mẫu;</p>
 
 <div align="center">
 <img src="media/GvCloudSampleTool_3_3.gif" style="zoom:70%;"/>
-    <center>Hình 3-3 Sampling ngẫu nhiên</center>
+    <center>Hình 3_3 Lấy mẫu đám mây điểm: Lấy mẫu ngẫu nhiên</center>
 </div>
+</li>
+<li><h3>3.3 Lấy mẫu bước chỉ số cố định</h3>
 
-<li><h3>3.3 Sampling theo bước chỉ số cố định</h3>
+<p><strong>Bước 1：</strong>Thêm tệp đám mây điểm, công cụ lấy mẫu đám mây điểm, và nhấp đúp mở chuỗi tham số công cụ, liên kết tệp đám mây điểm, như hình 3-1;</p>
 
-<p>Chọn “Phương pháp” → “Bước chỉ số cố định”, nhập bước (ví dụ mỗi 5 điểm giữ lại 1 điểm) → Chạy.</p>
+<p><strong>Bước 2：</strong>Nhấp chuột phải vào công cụ lấy mẫu đám mây điểm, chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-3, loại lấy mẫu chọn “Giảm mẫu”, phương pháp lấy mẫu thiết lập “Lấy mẫu bước chỉ số cố định”, thiết lập tham số lấy mẫu, sau đó nhấp chạy để nhận được kết quả lấy mẫu;</p>
 
 <div align="center">
 <img src="media/GvCloudSampleTool_3_4.gif" style="zoom:70%;"/>
-    <center>Hình 3-4 Sampling theo bước chỉ số cố định</center>
+    <center>Hình 3_4 Lấy mẫu đám mây điểm: Lấy mẫu bước chỉ số cố định</center>
 </div>
 </li>
 </ul>
 
-<h2>4. Câu hỏi thường gặp</h2>
+
+<h2>4. Vấn đề thường gặp</h2>
 
 <h2>5. Giải thích tham số</h2>
 
@@ -83,122 +93,139 @@
 <table>
 <thead>
 <tr>
-<th> Tên tham số        </th>
-<th> Mô tả                          </th>
+<th> Tên tham số</th>
+<th> Mô tả tham số               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Đám mây điểm đầu vào </td>
-<td> Đám mây điểm cần giảm mật độ   </td>
+<td> Dữ liệu đám mây điểm đầu vào                                                 </td>
+<td> Liên kết ảnh đám mây điểm bên ngoài </td>
 </tr>
 </tbody>
 </table>
+
 
 <h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> Tên tham số                 </th>
-<th> Mô tả                                                                                   </th>
+<th>Tên tham số </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Loại sampling               </td>
-<td> Thể tích voxel / Giảm mật độ (Down-sampling)                                            </td>
+<td> Loại lấy mẫu đám mây điểm                                                 </td>
+<td> Chia thành lấy mẫu voxel và giảm mẫu                                       </td>
 </tr>
 <tr>
-<td> Kích thước voxel X, Y, Z    </td>
-<td> Kích thước mỗi ô lưới voxel, phạm vi [0.001, 1] mm                                      </td>
+<td> Voxel X、Y、Z                                                  </td>
+<td> Chỉ định kích thước lưới voxel đơn lẻ, dùng để chia toàn bộ đám mây điểm thành voxel; phạm vi giá trị [0.001,1] </td>
 </tr>
 <tr>
-<td> Số điểm tối thiểu trong voxel </td>
-<td> Voxel có ít hơn ngưỡng này sẽ bị loại bỏ, phạm vi (0, 500]                              </td>
+<td> Số điểm tối thiểu trong một voxel                                             </td>
+<td> Chỉ định số điểm tối thiểu trong voxel hợp lệ, voxel có số điểm ít hơn ngưỡng này là voxel không hợp lệ, kết quả lấy mẫu sẽ loại bỏ điểm trong voxel không hợp lệ; phạm vi giá trị (0,500] </td>
 </tr>
 <tr>
-<td> Loại điểm đặc trưng voxel   </td>
-<td> Tâm khối voxel / Điểm gần tâm voxel nhất                                               </td>
+<td> Loại điểm đặc trưng voxel                                               </td>
+<td> Chỉ định loại điểm đặc trưng của kết quả lọc voxel, bao gồm điểm trọng tâm voxel và điểm gần nhất với tâm voxel </td>
 </tr>
 <tr>
-<td> Hướng cắt bớt (crop)        </td>
-<td> Cắt theo X / Y / Z / XYZ… để loại bỏ vùng không cần thiết                               </td>
+<td> Hướng cắt                                                     </td>
+<td> Chỉ định hướng X/Y/Z/XYZ để cắt                                </td>
 </tr>
 <tr>
-<td> Giới hạn X/Y/Z              </td>
-<td> Phạm vi [-20000, 20000] mm                                                              </td>
+<td> Giới hạn trên dưới X/YZ                                                   </td>
+<td> Phạm vi giá trị [-20000,20000]                                   </td>
 </tr>
 <tr>
-<td> Phương pháp sampling        </td>
-<td> Ngẫu nhiên / Bước chỉ số cố định / Khoảng cách không gian cố định                       </td>
+<td> Phương pháp lấy mẫu                                                     </td>
+<td> Chỉ định phương pháp giảm mẫu, bao gồm lấy mẫu ngẫu nhiên, lấy mẫu bước chỉ số cố định, lấy mẫu khoảng cách điểm không gian </td>
 </tr>
 <tr>
-<td> Loại dữ liệu đầu ra         </td>
-<td> Chỉ số (index) hoặc tọa độ điểm thực tế                                                 </td>
+<td> Loại dữ liệu đầu ra                                                 </td>
+<td> Bao gồm chỉ số và điểm dữ liệu                                           </td>
 </tr>
 <tr>
-<td> Khoảng cách điểm không gian </td>
-<td> Khoảng cách giữa các điểm sau khi sampling (chỉ dùng cho phương pháp “Khoảng cách không gian”), phạm vi [0.001, 5] mm </td>
+<td> Khoảng cách điểm không gian                                                     </td>
+<td> Chỉ định khoảng cách giữa các điểm sau khi giảm mẫu, chỉ hiệu quả với lấy mẫu khoảng cách điểm không gian; phạm vi giá trị [0.001,5] </td>
+</tr>
+<tr>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không, khi chọn Có, thuật toán sẽ bật chế độ tính toán song song OpenMp, có thể nâng cao tốc độ tính toán, nhưng có thể xuất hiện tình huống thời gian tiêu hao không ổn định, khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp. </td>
+</tr>
+<tr>
+<td> Tỷ lệ số luồng </td>
+<td> Thiết lập tỷ lệ phần trăm số luồng cho tính toán song song, phạm vi hiệu quả (0, 0.75], tương ứng với phạm vi phần trăm (0%, 75%]. </td>
 </tr>
 </tbody>
 </table>
 
+
 <h4>Tham số đầu vào (giao diện nâng cao)</h4>
 
-<p>Hoàn toàn giống cửa sổ thuộc tính.</p>
+<p>Tham số giao diện nâng cao giống với tham số cửa sổ thuộc tính.</p>
 
 <h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> Tên tham số        </th>
-<th> Mô tả                              </th>
+<th> Dữ liệu đám mây điểm đầu ra </th>
+<th> Bao gồm số điểm trong đám mây điểm;   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Đám mây điểm đầu ra </td>
-<td> Đám mây điểm đã được giảm mật độ   </td>
+<td> Dữ liệu đám mây điểm đầu ra </td>
+<td> Dữ liệu đám mây điểm cung cấp cho bên ngoài sử dụng </td>
 </tr>
 </tbody>
 </table>
+
 
 <h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> Tên tham số        </th>
-<th> Mô tả                              </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số         </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Đám mây điểm đầu ra </td>
-<td> Số lượng điểm sau khi sampling     </td>
+<td> Dữ liệu đám mây điểm đầu ra </td>
+<td> Bao gồm số điểm trong đám mây điểm </td>
 </tr>
 <tr>
-<td> Kết quả thực thi   </td>
-<td> Kết quả thực thi công cụ           </td>
+<td> Kết quả thực thi     </td>
+<td> Kết quả thực thi công cụ     </td>
 </tr>
 <tr>
-<td> Thời gian thực thi </td>
-<td> Thời gian chạy công cụ             </td>
+<td> Thời gian thực thi     </td>
+<td> Thời gian thực thi công cụ     </td>
 </tr>
 </tbody>
 </table>
 
+
 <h2>6. Dự án ví dụ</h2>
 
-<p>Xem file “\Samples\3D\点云\点云测量.gvp”.</p>
+<p>Xem “\Samples\3D\点云\点云测量.gvp”。</p>
 
-<h2>7. Giải thích nguyên lý</h2>
+<h2>7. Giải thích đặc biệt</h2>
 
-<h3>Nguyên lý các phương pháp sampling</h3>
+<h3>Giải thích nguyên lý lấy mẫu</h3>
 
-<p><strong>Thể tích voxel:</strong> Chia toàn bộ đám mây điểm thành lưới 3D (voxel), mỗi voxel chỉ giữ lại 1 điểm đại diện (tâm hoặc điểm gần tâm nhất).<br/>
-<strong>Ngẫu nhiên:</strong> Lấy ngẫu nhiên một phần trăm hoặc số điểm cố định.<br/>
-<strong>Bước chỉ số cố định:</strong> Cứ N điểm giữ lại 1 điểm (ví dụ bước = 5 → giữ điểm 1, 6, 11…).<br/>
-<strong>Khoảng cách không gian cố định:</strong> Giữ các điểm sao cho khoảng cách giữa chúng gần bằng giá trị đã đặt, đảm bảo phân bố đều.</p>
+<p><strong>Công cụ lấy mẫu đám mây điểm：</strong>Công cụ lấy mẫu đám mây điểm chủ yếu bao gồm các chức năng voxel/đồng đều/chỉ số/khoảng cách điểm không gian/ngẫu nhiên</p>
+
+<p><strong>Nguyên lý lấy mẫu voxel：</strong>Trước tiên chia lưới voxel cho đám mây điểm đầu vào, sau đó xử lý điểm chồng chéo trong voxel, chọn điểm trọng tâm của lưới voxel</p>
+
+<p><strong>Nguyên lý lấy mẫu ngẫu nhiên：</strong>Thực hiện chọn điểm ngẫu nhiên giảm mẫu trên đám mây điểm đầu vào</p>
+
+<p><strong>Nguyên lý lấy mẫu chỉ số：</strong>Dựa theo bước chỉ số được chỉ định để giảm mẫu trên đám mây điểm đầu vào</p>
+
+<p><strong>Nguyên lý lấy mẫu khoảng cách điểm không gian：</strong>Dựa theo khoảng cách điểm không gian của từng điểm sau khi lấy mẫu được chỉ định để giảm mẫu trên đám mây điểm đầu vào</p>

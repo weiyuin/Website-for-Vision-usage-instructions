@@ -16,67 +16,67 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云球体圆柱圆锥拟合工具</h1>
+<h1>Công cụ khớp hình cầu, hình trụ, hình nón từ đám mây điểm</h1>
 
-<h2>1.功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 点云球体圆柱圆锥拟合工具主要用于对点云数据进行球体、圆柱体或者圆锥体形状的拟合，为其他工具提供拟合后的球体、圆柱体或者圆锥体的信息；</p>
+<p>​ Công cụ khớp hình cầu, hình trụ, hình nón từ đám mây điểm chủ yếu dùng để khớp hình cầu, hình trụ hoặc hình nón với dữ liệu đám mây điểm, cung cấp thông tin của hình cầu, hình trụ hoặc hình nón sau khi khớp cho các công cụ khác;</p>
 
-<p>​ 点云球体圆柱圆锥拟合工具：主要是剔除点云图像数据中的局外点，根据内点数据计算得到球体、圆柱和圆锥的解析表达式，以协助后续的检测和标定等操作。</p>
+<p>​ Công cụ khớp hình cầu, hình trụ, hình nón từ đám mây điểm: chủ yếu loại bỏ các điểm ngoại lai trong dữ liệu ảnh đám mây điểm, dựa trên dữ liệu điểm nội tại để tính toán biểu thức giải tích của hình cầu, hình trụ và hình nón, hỗ trợ cho các thao tác phát hiện và hiệu chuẩn sau này.</p>
 
 <div align="center">
 <img src="media/3DSphereFitting_1_1.png" style="zoom:100%;"/>
 <img src="media/3DSphereFitting_1_2.png" style="zoom:100%;"/>
 <img src="media/3DSphereFitting_1_3.png" style="zoom:100%;"/>
-    <center>图1_1 点云球体圆柱圆锥拟合工具原理</center>
+    <center>Hình 1_1 Nguyên lý công cụ khớp hình cầu, hình trụ, hình nón từ đám mây điểm</center>
 </div>
 
 
-<h2>2.使用场景</h2>
+<h2>2. Kịch bản sử dụng</h2>
 
-<p>​          <strong>案例1：3D测量-VC散热片厚度测量</strong></p>
+<p>​          <strong>Ví dụ 1: Đo lường 3D - Đo độ dày tản nhiệt VC</strong></p>
 
 <div align="center">
 <img src="media/3DSphereFitting_2_2.png" style="zoom:100%;"/>
-    <center>图2_1 场景1：VC散热片厚度测量</center>
+    <center>Hình 2_1 Kịch bản 1: Đo độ dày tản nhiệt VC</center>
 </div>
 
 
-<p>​          <strong>案例02：3D测量-手机中板厚度测量</strong></p>
+<p>​          <strong>Ví dụ 02: Đo lường 3D - Đo độ dày mặt giữa điện thoại</strong></p>
 
 <div align="center">
 <img src="media/3DPlaneFitting_2_2.png" style="zoom:50%;"/>
-    <center>图2_2 场景2：手机中板平面度测量--图片来源于网络</center>
+    <center>Hình 2_2 Kịch bản 2: Đo độ phẳng mặt giữa điện thoại -- Ảnh lấy từ mạng</center>
 </div>
 
 
-<p>​          <strong>案例03：3D测量-3C零部件螺钉孔锥度测量</strong></p>
+<p>​          <strong>Ví dụ 03: Đo lường 3D - Đo độ côn lỗ vít linh kiện 3C</strong></p>
 
 <div align="center">
 <img src="media/3DSphereFitting_2_3.png" style="zoom:70%;"/>
-    <center>图2_3 场景3：手机主板屏蔽罩平面度检测</center>
+    <center>Hình 2_3 Kịch bản 3: Kiểm tra độ phẳng mặt chắn của mainboard điện thoại</center>
 </div>
 
 
-<h2>3.使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>工具添加，图像导入、参数调节</h3>
+<li><h3>Thêm công cụ, nhập ảnh, điều chỉnh tham số</h3>
 
-<p><strong>Step1:</strong>添加点云球体圆柱圆锥拟合工具（3个），并双击打开工具参数链，链接点云文件，如图3-1所示；<br/>
-<strong>Step2:</strong>右击工具点击“属性”打开工具高级界面，如图3-2所示；</p></li>
+<p><strong>Bước 1:</strong> Thêm công cụ khớp hình cầu, hình trụ, hình nón từ đám mây điểm (3 công cụ), sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết tệp đám mây điểm, như hình 3-1;<br/>
+<strong>Bước 2:</strong> Nhấp chuột phải vào công cụ và chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-2;</p></li>
 </ul>
 
 
 <div align="center">
 <img src="media/3DSphereFitting_3_1.png" style="zoom:80%;"/>
-    <center>图3_1 添加点云球体圆柱圆锥拟合工具</center>
+    <center>Hình 3_1 Thêm công cụ khớp hình cầu, hình trụ, hình nón từ đám mây điểm</center>
 </div>
 
 
 <div align="center">
 <img src="media/3DSphereFitting_3_2.gif" style="zoom:80%;"/>
-    <center>图3_2 球体拟合</center>
+    <center>Hình 3_2 Khớp hình cầu</center>
 </div>
 
 
@@ -84,7 +84,7 @@
 
 <div align="center">
 <img src="media/3DSphereFitting_3_3.gif" style="zoom:80%;"/>
-    <center>图3_3 圆柱拟合</center>
+    <center>Hình 3_3 Khớp hình trụ</center>
 </div>
 
 
@@ -92,220 +92,219 @@
 
 <div align="center">
 <img src="media/3DSphereFitting_3_4.gif" style="zoom:80%;"/>
-    <center>图3_4 圆锥拟合</center>
+    <center>Hình 3_4 Khớp hình nón</center>
 </div>
 
 
-<h2>4.常见问题</h2>
+<h2>4. Vấn đề thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5. Giải thích tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述                                                                                                       </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số                                                                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入点云数据                                               </td>
-<td> 输入待拟合的点云图像                                  </td>
+<td> Dữ liệu đám mây điểm đầu vào                                               </td>
+<td> Đầu vào ảnh đám mây điểm cần khớp                                  </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述                                                                                                       </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số                                                                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>是否使用ROI                               </td>
-<td> 选择“是”，则使用长方体框选ROI进行拟合；选择“否”，则对全部点云进行平面拟合 </td>
+<td>Có sử dụng ROI hay không                               </td>
+<td> Chọn “Có”, thì sử dụng ROI hình hộp chữ nhật để khớp; chọn “Không”, thì thực hiện khớp toàn bộ đám mây điểm </td>
 </tr>
 <tr>
-<td>拟合类型</td>
-<td>分为三种：球体、圆柱、圆锥</td>
+<td>Loại khớp</td>
+<td>Chia thành ba loại: hình cầu, hình trụ, hình nón</td>
 </tr>
 <tr>
-<td>球体拟合方法</td>
-<td>分为最佳拟合和带局外点拟合</td>
+<td>Phương pháp khớp hình cầu</td>
+<td>Chia thành hai loại: khớp tối ưu và khớp có điểm ngoại lai</td>
 </tr>
 <tr>
-<td>距离阈值</td>
-<td>三维点到拟合平面距离的最大值，超出距离判定为局外点，不参与拟合计算，范围：(0,1000]，单位：像素</td>
+<td>Ngưỡng khoảng cách</td>
+<td>Giá trị khoảng cách tối đa từ điểm ba chiều đến mặt phẳng khớp, vượt quá ngưỡng sẽ bị coi là điểm ngoại lai, không tham gia tính toán khớp, phạm vi: (0,1000], đơn vị: pixel</td>
 </tr>
 <tr>
-<td>置信度</td>
-<td>衡量拟合平面的可信程度，置信度越大，拟合平面越可靠，范围：(0,1)，单位：百分比</td>
+<td>Mức độ tin cậy</td>
+<td>Đo lường mức độ đáng tin cậy của mặt phẳng khớp, mức độ tin cậy càng lớn thì mặt phẳng khớp càng đáng tin, phạm vi: (0,1), đơn vị: phần trăm</td>
 </tr>
 <tr>
-<td>局外点比例</td>
-<td>局外点占总三维点的比例，范围：[0,1)</td>
+<td>Tỷ lệ điểm ngoại lai</td>
+<td>Tỷ lệ điểm ngoại lai chiếm tổng số điểm ba chiều, phạm vi: [0,1)</td>
 </tr>
 <tr>
-<td>采样半宽</td>
-<td>采样后相邻三维点之间的距离为采样距离的两倍，范围：(0,50]，单位：像素</td>
+<td>Bán rộng lấy mẫu</td>
+<td>Khoảng cách giữa các điểm ba chiều liền kề sau khi lấy mẫu bằng hai lần khoảng cách lấy mẫu, phạm vi: (0,50], đơn vị: pixel</td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
+<h4>Tham số đầu vào (giao diện nâng cao)</h4>
 
-<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+<p>Tham số giao diện nâng cao giống với tham số cửa sổ thuộc tính, các nút tương tác như sau:</p>
 
 <table>
 <thead>
 <tr>
-<th> 按钮名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên nút           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 绘制ROI                                </td>
-<td> 在高级界面图像中，相应位置点击并拖动鼠标即可绘制长方体ROI </td>
+<td> Vẽ ROI                                </td>
+<td> Trong ảnh giao diện nâng cao, click và kéo chuột tại vị trí tương ứng để vẽ ROI hình hộp chữ nhật </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>球体   </td>
-<td>输出拟合的球体</td>
+<td>Hình cầu   </td>
+<td>Đầu ra hình cầu đã khớp</td>
 </tr>
 <tr>
-<td>圆柱    </td>
-<td> 输出拟合的圆柱 </td>
+<td>Hình trụ    </td>
+<td> Đầu ra hình trụ đã khớp </td>
 </tr>
 <tr>
-<td>圆锥 </td>
-<td> 输出拟合的圆锥 </td>
+<td>Hình nón </td>
+<td> Đầu ra hình nón đã khớp </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> RMS </td>
-<td> 参与拟合的数据点的RMS值 </td>
+<td> Giá trị RMS của các điểm dữ liệu tham gia khớp </td>
 </tr>
 <tr>
-<td>球体   </td>
-<td>球体：Center，拟合球体的球心三维坐标<br />球体：Radius，拟合球体的半径，单位：mm</td>
+<td>Hình cầu   </td>
+<td>Hình cầu: Center, tọa độ ba chiều của tâm hình cầu đã khớp<br />Hình cầu: Radius, bán kính của hình cầu đã khớp, đơn vị: mm</td>
 </tr>
 <tr>
-<td>圆柱    </td>
-<td> 圆柱：Pos，拟合圆柱体下表面圆心的三维坐标<br />圆柱：Normal，拟合圆柱的轴线向量<br />圆柱：Radius，拟合圆柱底面圆形的半径，单位：mm </td>
+<td>Hình trụ    </td>
+<td> Hình trụ: Pos, tọa độ ba chiều của tâm mặt dưới hình trụ đã khớp<br />Hình trụ: Normal, vector trục của hình trụ đã khớp<br />Hình trụ: Radius, bán kính hình tròn đáy của hình trụ đã khớp, đơn vị: mm </td>
 </tr>
 <tr>
-<td>圆锥 </td>
-<td> 圆锥：Apex，拟合圆锥体半锥顶角<br />圆锥：Center，拟合圆锥顶点三维坐标<br />圆柱：Radius，拟合圆锥底面圆形的半径，单位：mm </td>
+<td>Hình nón </td>
+<td> Hình nón: Apex, góc nửa đỉnh nón của hình nón đã khớp<br />Hình nón: Center, tọa độ ba chiều của đỉnh hình nón đã khớp<br />Hình nón: Radius, bán kính hình tròn đáy của hình nón đã khớp, đơn vị: mm </td>
 </tr>
 <tr>
-<td>执行结果 </td>
-<td> 工具执行结果 </td>
+<td>Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ </td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 工具执行时间                                                 </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ                                                 </td>
 </tr>
 </tbody>
 </table>
 
+<h2>6. Dự án ví dụ</h2>
 
-<h2>6.示例工程</h2>
+<p>Xem “\Samples\3D\点云\点云球体圆柱圆锥拟合工具.gvp”。</p>
 
-<p>参见“\Samples\3D\点云\点云球体圆柱圆锥拟合工具.gvp”。</p>
+<h2>7. Giải thích đặc biệt</h2>
 
-<h2>7.特殊说明</h2>
-
-<h3>算法原理说明</h3>
+<h3>Giải thích nguyên lý thuật toán</h3>
 
 <ul>
-<li><h3>7.1 点云球体、圆柱、圆锥拟合原理：</h3></li>
+<li><h3>7.1 Nguyên lý khớp hình cầu, hình trụ, hình nón từ đám mây điểm：</h3></li>
 </ul>
 
 
-<p><strong>1.球体参数:球心O(a,b,c)、半径：r</strong></p>
+<p><strong>1. Tham số hình cầu: Tâm cầu O(a,b,c)、Bán kính：r</strong></p>
 
-<p>球体的几何含义：球面上一点到球心的距离等于半径；
+<p>Ý nghĩa hình học của hình cầu：Khoảng cách từ một điểm trên mặt cầu đến tâm cầu bằng bán kính；
 $$
-  球体方程：(x-a)<sup>2</sup>+(y-b)<sup>2</sup>+(z-c)<sup>2</sup>=r<sup>2</sup>
+  Phương trình hình cầu：(x-a)<sup>2</sup>+(y-b)<sup>2</sup>+(z-c)<sup>2</sup>=r<sup>2</sup>
 $$</p>
 
 <div align="center">
 <img src="media/3DSphereFitting_7_1.png" style="zoom:100%;"/>
-    <center>图7-1 球体方程</center>
+    <center>Hình 7-1 Phương trình hình cầu</center>
 </div>
 
 
-<p><strong>2.圆柱参数：轴线上一点Q（x0,y0,z0）、轴线向量：PN(a,b,c)、半径：r</strong></p>
+<p><strong>2. Tham số hình trụ：Một điểm Q trên trục (x0,y0,z0)、Vector trục：PN(a,b,c)、Bán kính：r</strong></p>
 
-<p>圆柱的几何含义：圆柱上一点Q、轴线上一点P以及Q在轴线上的垂足N构成三角形满足勾股定理；
+<p>Ý nghĩa hình học của hình trụ：Điểm Q trên hình trụ, một điểm P trên trục và chân vuông góc N của Q trên trục tạo thành tam giác thỏa mãn định lý Pythagoras；
 $$
-圆柱方程：(x-x0)<sup>2</sup>+(y-y0)<sup>2</sup>+(z-z0)<sup>2</sup>=[a(x-x0)+b(y-y0)+c(z-z0)]^2+r<sup>2</sup>
+Phương trình hình trụ：(x-x0)<sup>2</sup>+(y-y0)<sup>2</sup>+(z-z0)<sup>2</sup>=[a(x-x0)+b(y-y0)+c(z-z0)]^2+r<sup>2</sup>
 $$</p>
 
 <div align="center">
 <img src="media/3DSphereFitting_7_2.png" style="zoom:100%;"/>
-    <center>图7-2 圆柱方程</center>
+    <center>Hình 7-2 Phương trình hình trụ</center>
 </div>
 
 
-<p><strong>3.圆锥参数：顶点P(x0,y0,z0)、轴线向量PN(a,b,c)、半锥顶角γ</strong></p>
+<p><strong>3. Tham số hình nón：Đỉnh P(x0,y0,z0)、Vector trục PN(a,b,c)、Góc nửa đỉnh nón γ</strong></p>
 
-<p>圆锥的几何含义：圆锥顶点P与圆锥上任意一点Q构成的向量PQ与轴线向量PN的夹角为半锥顶角；
+<p>Ý nghĩa hình học của hình nón：Vector PQ tạo bởi đỉnh nón P và bất kỳ điểm Q nào trên hình nón với vector trục PN có góc bằng góc nửa đỉnh nón；
 $$
-圆锥方程：[a(x-x0)+b(y-y0)+c(z-z0)]^2=cos<sup>2</sup> 𝛾[(𝑥−𝑥<em>0 )<sup>2</sup>+(𝑦−𝑦</em>0 )<sup>2</sup>+(𝑧−𝑧_0 )<sup>2</sup>]
+Phương trình hình nón：[a(x-x0)+b(y-y0)+c(z-z0)]^2=cos<sup>2</sup> 𝛾[(𝑥−𝑥0 )<sup>2</sup>+(𝑦−𝑦0 )<sup>2</sup>+(𝑧−𝑧_0 )<sup>2</sup>]
 $$</p>
 
 <div align="center">
 <img src="media/3DSphereFitting_7_3.png" style="zoom:100%;"/>
-    <center>图7-3 圆锥方程</center>
+    <center>Hình 7-3 Phương trình hình nón</center>
 </div>
 
 
-<p><strong>4.工具高级参数</strong></p>
+<p><strong>4. Tham số nâng cao của công cụ</strong></p>
 
 <div align="center">
 <img src="media/3DSphereFitting_7_4.png" style="zoom:120%;"/>
-    <center>图7-4 球、圆柱、圆锥拟合</center>
+    <center>Hình 7-4 Khớp hình cầu, hình trụ, hình nón</center>
 </div>
 
 
-<p><strong>距离阈值：</strong>指设定点到球体、圆柱和圆锥距离的最大值；
-<strong>局外点：</strong>指点云数据点到球体、圆柱和圆锥的距离不满足距离阈值的点；
-<strong>内点：</strong>指点云数据点到球体、圆柱和圆锥的距离在距离阈值之内的点；
-<strong>局外点比例：</strong>局外点占总点云数据点的比例，其中，内点与外点的和为总点云数据点；
-<strong>置信度：</strong>衡量使用内点构造球体、圆柱和圆锥的可信程度，置信度越大，拟合越可靠。</p>
+<p><strong>Ngưỡng khoảng cách：</strong> chỉ giá trị khoảng cách tối đa từ điểm đến hình cầu, hình trụ và hình nón đã thiết lập；
+<strong>Điểm ngoại lai：</strong> chỉ các điểm dữ liệu đám mây điểm có khoảng cách đến hình cầu, hình trụ và hình nón không thỏa mãn ngưỡng khoảng cách；
+<strong>Điểm nội tại：</strong> chỉ các điểm dữ liệu đám mây điểm có khoảng cách đến hình cầu, hình trụ và hình nón nằm trong ngưỡng khoảng cách；
+<strong>Tỷ lệ điểm ngoại lai：</strong> tỷ lệ điểm ngoại lai chiếm tổng điểm dữ liệu đám mây điểm, trong đó tổng điểm nội tại và điểm ngoại lai bằng tổng điểm dữ liệu đám mây điểm；
+<strong>Mức độ tin cậy：</strong> đo lường mức độ đáng tin cậy khi sử dụng điểm nội tại để xây dựng hình cầu, hình trụ và hình nón, mức độ tin cậy càng lớn thì kết quả khớp càng đáng tin cậy.</p>
