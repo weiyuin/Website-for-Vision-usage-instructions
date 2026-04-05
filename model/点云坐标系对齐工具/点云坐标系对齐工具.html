@@ -16,182 +16,182 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云坐标系对齐工具</h1>
+<h1>Công cụ căn chỉnh hệ tọa độ điểm mây</h1>
 
-<h2>1.功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​         该工具主要完成指定坐标系间的对齐功能，以协助后续点云测量和检测的任务，同时该功能可以替代深度图像中定位的功能；</p>
+<p>​         Công cụ này chủ yếu hoàn thành chức năng căn chỉnh giữa các hệ tọa độ chỉ định, nhằm hỗ trợ nhiệm vụ đo lường và kiểm tra điểm mây sau này, đồng thời chức năng này có thể thay thế chức năng định vị trong ảnh chiều sâu;</p>
 
-<h2>2.使用场景</h2>
+<h2>2. Kịch bản sử dụng</h2>
 
-<p>​          该工具主要用于需要和客户产品坐标系对齐的项目比如：</p>
+<p>​          Công cụ này chủ yếu được sử dụng cho các dự án cần căn chỉnh với hệ tọa độ sản phẩm của khách hàng, ví dụ như:</p>
 
-<p>​        <strong>场景1：IPhone手机平面度检测项目</strong></p>
+<p>​        <strong>Cảnh 1: Dự án kiểm tra độ phẳng của điện thoại IPhone</strong></p>
 
 <div align="center">
 <img src="media/3DAlignment Tool_2_1.png" style="zoom:50%;"/>
-    <center>图2_1 IPhone手机平面度检测项目-图片来源于网络</center>
+    <center>图2_1 Dự án kiểm tra độ phẳng điện thoại IPhone - Ảnh lấy từ mạng</center>
 </div>
 
 
-<p>​ 由于测量精度高，该产品需要进行拼接，同时客户提供的测量点坐标是以客户给定产品坐标系来定义的，所以需要我们先进行坐标系对齐，才可以精确的定位到测量点。</p>
+<p>​ Do yêu cầu độ chính xác đo cao, sản phẩm này cần thực hiện ghép nối, đồng thời tọa độ điểm đo do khách hàng cung cấp được định nghĩa theo hệ tọa độ sản phẩm của khách hàng, vì vậy cần thực hiện căn chỉnh hệ tọa độ trước, mới có thể định vị chính xác đến điểm đo.</p>
 
-<p>​        <strong>场景2：大尺寸精确定位测量项目</strong></p>
+<p>​        <strong>Cảnh 2: Dự án đo lường định vị chính xác kích thước lớn</strong></p>
 
 <div align="center">
 <img src="media/3DAlignment Tool_2_2.png" style="zoom:50%;"/>
-    <center>图2_2 大尺寸精确定位测量项目</center>
+    <center>图2_2 Dự án đo lường định vị chính xác kích thước lớn</center>
 </div>
 
 
-<h2>3.使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>工具添加，图像导入、参数调节</h3>
+<li><h3>Thêm công cụ, nhập hình ảnh, điều chỉnh tham số</h3>
 
-<p><strong>Step1:</strong>添加坐标系生成工具（2个）和一个点云坐标系对齐工具，并双击打开工具参数链，链接点云文件、X、Y、Z坐标、源坐标系和目标坐标系，如图3-1所示；<br/>
-<strong>Step2:</strong>右击点云坐标系工具点击“属性”打开工具高级界面，如图3-2所示；</p></li>
+<p><strong>Bước 1:</strong> Thêm công cụ tạo hệ tọa độ (2 cái) và một công cụ căn chỉnh hệ tọa độ điểm mây, sau đó nhấp đúp mở chuỗi tham số của công cụ, liên kết tệp điểm mây, tọa độ X, Y, Z, hệ tọa độ nguồn và hệ tọa độ đích, như hình 3-1 hiển thị;<br/>
+<strong>Bước 2:</strong> Nhấp chuột phải vào công cụ hệ tọa độ điểm mây chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-2 hiển thị;</p></li>
 </ul>
 
 
 <div align="center">
 <img src="media/3DAlignment Tool_3_1.png" style="zoom:100%;"/>
-    <center>图3_1 添加点云坐标系对齐工具</center>
+    <center>图3_1 Thêm công cụ căn chỉnh hệ tọa độ điểm mây</center>
 </div>
 
 
 <div align="center">
 <img src="media/3DAlignment Tool_3_2.gif" style="zoom:100%;"/>
-    <center>图3_2 点云坐标系对齐运行结果及保存</center>
+    <center>图3_2 Kết quả chạy và lưu căn chỉnh hệ tọa độ điểm mây</center>
 </div>
 
 
-<h2>4.常见问题</h2>
+<h2>4. Vấn đề thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5. Giải thích tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述                                                                                                       </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số                                                                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入点云数据                                               </td>
-<td> 输入待对齐的点云图像                                   </td>
+<td> Dữ liệu điểm mây đầu vào                                               </td>
+<td> Đầu vào hình ảnh điểm mây cần căn chỉnh                                   </td>
 </tr>
 <tr>
-<td> 源坐标系 </td>
-<td> 输入源坐标系 </td>
+<td> Hệ tọa độ nguồn </td>
+<td> Đầu vào hệ tọa độ nguồn </td>
 </tr>
 <tr>
-<td> 目标坐标系 </td>
-<td> 输入目标坐标系 </td>
+<td> Hệ tọa độ đích </td>
+<td> Đầu vào hệ tọa độ đích </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云图像                               </td>
-<td> 显示对齐后的点云图像 </td>
+<td> Hình ảnh điểm mây đầu ra                               </td>
+<td> Hiển thị hình ảnh điểm mây sau căn chỉnh </td>
 </tr>
 <tr>
-<td> 刚性变换矩阵 </td>
-<td> 输出对齐矩阵 </td>
+<td> Ma trận biến đổi rigid body </td>
+<td> Đầu ra ma trận căn chỉnh </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>刚性变换矩阵   </td>
-<td>刚性变换矩阵：Trans，平移矩阵；<br />刚性变换矩阵：Matrix，旋转矩阵；</td>
+<td>Ma trận biến đổi rigid body   </td>
+<td>Ma trận biến đổi rigid: Trans, ma trận tịnh tiến;<br />Ma trận biến đổi rigid: Matrix, ma trận xoay;</td>
 </tr>
 <tr>
-<td>输出点云图像 </td>
-<td>显示对齐后的点云图像的点数</td>
+<td>Hình ảnh điểm mây đầu ra </td>
+<td>Hiển thị số điểm của hình ảnh điểm mây sau căn chỉnh</td>
 </tr>
 <tr>
-<td>执行时间 </td>
-<td>工具执行时间</td>
+<td>Thời gian thực thi </td>
+<td>Thời gian thực thi của công cụ</td>
 </tr>
 <tr>
-<td>执行结果 </td>
-<td>工具执行结果</td>
+<td>Kết quả thực thi </td>
+<td>Kết quả thực thi của công cụ</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.示例工程</h2>
+<h2>6. Dự án ví dụ</h2>
 
-<p>参见“\Samples\3D\点云\点云坐标系对齐.gvp”。</p>
+<p>Tham khảo “\Samples\3D\Điểm mây\Căn chỉnh hệ tọa độ điểm mây.gvp”。</p>
 
-<h2>7.特殊说明</h2>
+<h2>7. Giải thích đặc biệt</h2>
 
-<h3>算法原理说明</h3>
+<h3>Giải thích nguyên lý thuật toán</h3>
 
-<p>主要是根据构建的源坐标系和目标坐标系，将源坐标系转换到目标坐标系，从而完成对齐并输出转换矩阵的过程；</p>
+<p>Chủ yếu dựa trên hệ tọa độ nguồn và hệ tọa độ đích đã xây dựng, chuyển đổi hệ tọa độ nguồn sang hệ tọa độ đích, từ đó hoàn thành căn chỉnh và xuất ra ma trận chuyển đổi;</p>
 
 <div align="center">
 <img src="media/3DAlignment Tool_7_1.png" style="zoom:100%;"/>
-    <center>图7_1 点云坐标系对齐原理</center>
+    <center>图7_1 Nguyên lý căn chỉnh hệ tọa độ điểm mây</center>
 </div>
 
 
-<h3>工具使用说明</h3>
+<h3>Hướng dẫn sử dụng công cụ</h3>
 
-<p>以产品坐标系转换到世界坐标系为例进行说明</p>
+<p>Lấy ví dụ chuyển đổi hệ tọa độ sản phẩm sang hệ tọa độ thế giới để giải thích</p>
 
-<p><strong>1、产品坐标系</strong>：建立产品坐标系，需要中心点、X轴方向向量、Y轴方向向量；</p>
+<p><strong>1、Hệ tọa độ sản phẩm</strong>：Thiết lập hệ tọa độ sản phẩm, cần điểm trung tâm, vector hướng trục X, vector hướng trục Y;</p>
 
 <p><img src="media/3DAlignment%20Tool_7_2.png" alt="" /></p>
 
-<p><imgnote>图7_2 产品坐标系</imgnote></p>
+<p><imgnote>图7_2 Hệ tọa độ sản phẩm</imgnote></p>
 
-<p><strong>2、世界坐标系</strong>：建立世界坐标系，中心点(0,0,0)、X轴方向向量(1,0,0)、Y轴方向向量(0,1,0)；</p>
+<p><strong>2、Hệ tọa độ thế giới</strong>：Thiết lập hệ tọa độ thế giới, điểm trung tâm (0,0,0), vector hướng trục X (1,0,0), vector hướng trục Y (0,1,0);</p>
 
 <p><img src="media/3DAlignment%20Tool_7_3.png" alt="" /></p>
 
-<p><imgnote>图7_3 世界坐标系</imgnote></p>
+<p><imgnote>图7_3 Hệ tọa độ thế giới</imgnote></p>
 
-<p><strong>3、坐标系对齐</strong>：将源坐标系转换到目标坐标系；</p>
+<p><strong>3、Căn chỉnh hệ tọa độ</strong>：Chuyển đổi hệ tọa độ nguồn sang hệ tọa độ đích;</p>
 
 <p><img src="media/3DAlignment%20Tool_7_6.png" alt="" /></p>
 
-<p><imgnote>图7_4 坐标系对齐工具</imgnote></p>
+<p><imgnote>图7_4 Công cụ căn chỉnh hệ tọa độ</imgnote></p>
 
-<p><strong>4、坐标系效果</strong>：将产品坐标系的中心点，转到世界坐标系下的原点，对齐后产品中心会转换到(0,0,0)位置，产品的X轴与世界坐标系X轴平行；</p>
+<p><strong>4、Hiệu quả căn chỉnh hệ tọa độ</strong>：Chuyển điểm trung tâm của hệ tọa độ sản phẩm đến gốc của hệ tọa độ thế giới, sau khi căn chỉnh, trung tâm sản phẩm sẽ chuyển đến vị trí (0,0,0), trục X của sản phẩm song song với trục X của hệ tọa độ thế giới;</p>
 
 <div align="center">
   <img src="media/3DAlignment Tool_7_4.png" style="zoom:100%;"/>
   <img src="media/3DAlignment Tool_7_5.png" style="zoom:100%;"/>
-      <center>图7_5 对齐前后对比</center>
+      <center>图7_5 So sánh trước và sau căn chỉnh</center>
 </div>
 
 
