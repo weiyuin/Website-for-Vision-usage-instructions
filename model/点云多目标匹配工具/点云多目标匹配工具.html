@@ -16,241 +16,241 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云多目标匹配</h1>
+<h1>Phù hợp Đa Mục tiêu Đám mây Điểm</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>点云多目标匹配工具用于将模型点云和场景点云进行匹配，以得到场景点云中与模型点云相似度较高的点云。</p>
+<p>Công cụ phù hợp đa mục tiêu đám mây điểm dùng để khớp đám mây điểm mô hình và đám mây điểm cảnh, nhằm thu được đám mây điểm trong đám mây điểm cảnh có độ tương đồng cao hơn với đám mây điểm mô hình.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>主要用于在无序抓取或引导类项目中进行物料的匹配，以得到最合适的抓取或引导位置。</p>
+<p>Chủ yếu dùng trong dự án nắm không thứ tự hoặc hướng dẫn để thực hiện khớp vật liệu, nhằm thu được vị trí nắm hoặc hướng dẫn phù hợp nhất.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
-<p>工具执行流程：加载模型点云→加载场景点云→设置匹配参数→执行匹配。</p>
+<p>Quy trình thực thi công cụ: tải đám mây điểm mô hình → tải đám mây điểm cảnh → thiết lập tham số khớp → thực thi khớp.</p>
 
 <p><img src="media/GcCloudModelMatchTool_4_1.png" alt="img" /></p>
 
-<p><imgnote>图1 使用向导示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa hướng dẫn sử dụng</imgnote></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Vấn đề thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 注意事项                                                     </th>
+<th> Lưu ý                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 1、匹配过程中，需要保证场景点云和目标点云的法向量一致，否则匹配为无效 </td>
+<td> 1、Trong quá trình khớp, cần đảm bảo vectơ pháp tuyến của đám mây điểm cảnh và đám mây điểm mục tiêu nhất quán, nếu không thì khớp sẽ vô hiệu </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
+<h2>6. Giải thích tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
+<th> Tên tham số             </th>
+<th style="text-align:left;"> Giải thích tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入模型点云 </td>
-<td style="text-align:left;"> 输入模型点云 </td>
+<td> Đám mây điểm mô hình đầu vào </td>
+<td style="text-align:left;"> Đám mây điểm mô hình đầu vào </td>
 </tr>
 <tr>
-<td> 输入场景点云 </td>
-<td style="text-align:left;"> 输入场景点云 </td>
+<td> Đám mây điểm cảnh đầu vào </td>
+<td style="text-align:left;"> Đám mây điểm cảnh đầu vào </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
+<th> Tên tham số             </th>
+<th style="text-align:left;"> Giải thích tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 模型参考点个数 </td>
-<td style="text-align:left;"> 取值范围[10, 2000]，默认为1000；该参数影响粗配准精度，建议参考点在1000个左右，若效果不理想可考虑增加 </td>
+<td> Số điểm tham chiếu mô hình </td>
+<td style="text-align:left;"> Phạm vi giá trị [10, 2000], mặc định 1000; tham số này ảnh hưởng đến độ chính xác khớp thô, gợi ý số điểm tham chiếu khoảng 1000, nếu hiệu quả không lý tưởng có thể xem xét tăng </td>
 </tr>
 <tr>
-<td> 场景参考点个数 </td>
-<td style="text-align:left;"> 取值范围[10, 2000]，默认为1000；该参数影响粗配准精度，建议参考点在1000个左右，若效果不理想可考虑增加 </td>
+<td> Số điểm tham chiếu cảnh </td>
+<td style="text-align:left;"> Phạm vi giá trị [10, 2000], mặc định 1000; tham số này ảnh hưởng đến độ chính xác khớp thô, gợi ý số điểm tham chiếu khoảng 1000, nếu hiệu quả không lý tưởng có thể xem xét tăng </td>
 </tr>
 <tr>
-<td> 特征点类型 </td>
-<td style="text-align:left;"> 分为所有点和边缘点 </td>
+<td> Loại điểm đặc trưng </td>
+<td style="text-align:left;"> Phân thành tất cả điểm và điểm biên </td>
 </tr>
 <tr>
-<td> KNN邻域搜索点数 </td>
-<td style="text-align:left;"> 取值范围[3,100]，默认为20 </td>
+<td> Số điểm tìm kiếm lân cận KNN </td>
+<td style="text-align:left;"> Phạm vi giá trị [3,100], mặc định 20 </td>
 </tr>
 <tr>
-<td> 边缘阈值 </td>
-<td style="text-align:left;"> 取值范围[-10.0, 10.0]，默认为1 </td>
+<td> Ngưỡng biên </td>
+<td style="text-align:left;"> Phạm vi giá trị [-10.0, 10.0], mặc định 1 </td>
 </tr>
 <tr>
-<td> 启用高级参数 </td>
-<td style="text-align:left;"> 是否开启高级参数设置 </td>
+<td> Bật tham số nâng cao </td>
+<td style="text-align:left;"> Có bật thiết lập tham số nâng cao hay không </td>
 </tr>
 <tr>
-<td> 场景法向量取反 </td>
-<td style="text-align:left;"> 当场景法向量与模型不一致时需要取反 </td>
+<td> Lấy ngược vectơ pháp tuyến cảnh </td>
+<td style="text-align:left;"> Khi vectơ pháp tuyến cảnh không nhất quán với mô hình thì cần lấy ngược </td>
 </tr>
 <tr>
-<td> 场景点采样步长 </td>
-<td style="text-align:left;"> 取值范围[-1,100]，默认为3 </td>
+<td> Bước lấy mẫu điểm cảnh </td>
+<td style="text-align:left;"> Phạm vi giá trị [-1,100], mặc định 3 </td>
 </tr>
 <tr>
-<td> 稠密匹配采样步长 </td>
-<td style="text-align:left;"> 取值范围[-1,100]，默认为3 </td>
+<td> Bước lấy mẫu khớp dày đặc </td>
+<td style="text-align:left;"> Phạm vi giá trị [-1,100], mặc định 3 </td>
 </tr>
 <tr>
-<td> 稀疏匹配迭代次数 </td>
-<td style="text-align:left;"> 取值范围[1,200]，默认为50 </td>
+<td> Số lần lặp khớp thưa </td>
+<td style="text-align:left;"> Phạm vi giá trị [1,200], mặc định 50 </td>
 </tr>
 <tr>
-<td> 粗匹配最小角度 </td>
-<td style="text-align:left;"> 取值范围[0,90]，默认为5 </td>
+<td> Góc tối thiểu khớp thô </td>
+<td style="text-align:left;"> Phạm vi giá trị [0,90], mặc định 5 </td>
 </tr>
 <tr>
-<td> 粗匹配姿态筛选优化 </td>
-<td style="text-align:left;"> 效率优化策略，开启后并调整策略相关参数，内部将对粗匹配的输出姿态进行优化 </td>
+<td> Tối ưu sàng lọc tư thế khớp thô </td>
+<td style="text-align:left;"> Chiến lược tối ưu hiệu suất, bật lên và điều chỉnh tham số liên quan chiến lược, bên trong sẽ tối ưu hóa tư thế đầu ra của khớp thô </td>
 </tr>
 <tr>
-<td> 稀疏匹配使用最小迭代偏差结果 </td>
-<td style="text-align:left;"> 精度优化策略，开启后并调整策略相关参数，内部将对稀疏匹配的输出姿态进行优化 </td>
+<td> Khớp thưa sử dụng kết quả sai lệch lặp tối thiểu </td>
+<td style="text-align:left;"> Chiến lược tối ưu độ chính xác, bật lên và điều chỉnh tham số liên quan chiến lược, bên trong sẽ tối ưu hóa tư thế đầu ra của khớp thưa </td>
 </tr>
 <tr>
-<td> 倾斜角度筛选         </td>
-<td style="text-align:left;"> 启用后可过滤倾斜角度较大的姿态                               </td>
+<td> Sàng lọc góc nghiêng         </td>
+<td style="text-align:left;"> Bật lên thì có thể lọc tư thế có góc nghiêng lớn                               </td>
 </tr>
 <tr>
-<td> 遮挡比例筛选         </td>
-<td style="text-align:left;"> 启用后可过滤姿态遮挡                                         </td>
+<td> Sàng lọc tỷ lệ che khuất         </td>
+<td style="text-align:left;"> Bật lên thì có thể lọc tư thế che khuất                                         </td>
 </tr>
 <tr>
-<td> 最大倾角                     </td>
-<td style="text-align:left;"> 取值范围[0,90]， 默认值为 45.0                               </td>
+<td> Góc nghiêng tối đa                     </td>
+<td style="text-align:left;"> Phạm vi giá trị [0,90], giá trị mặc định là 45.0                               </td>
 </tr>
 <tr>
-<td> 最大遮挡比例                 </td>
-<td style="text-align:left;"> 取值范围[0,1]， 默认值为 0.2                                 </td>
+<td> Tỷ lệ che khuất tối đa                 </td>
+<td style="text-align:left;"> Phạm vi giá trị [0,1], giá trị mặc định là 0.2                                 </td>
 </tr>
 <tr>
-<td> 是否开启超时退出 </td>
-<td style="text-align:left;"> 是否开启超时退出 </td>
+<td> Có bật thoát timeout hay không </td>
+<td style="text-align:left;"> Có bật thoát timeout hay không </td>
 </tr>
 <tr>
-<td> 超时上限 </td>
-<td style="text-align:left;"> 取值范围[1, 3600.0]， 默认值为30.0 </td>
+<td> Giới hạn trên timeout </td>
+<td style="text-align:left;"> Phạm vi giá trị [1, 3600.0], giá trị mặc định là 30.0 </td>
 </tr>
 <tr>
-<td> 最大结果个数 </td>
-<td style="text-align:left;"> 取值范围[1,10000]，默认为1；输出匹配结果的个数 </td>
+<td> Số kết quả tối đa </td>
+<td style="text-align:left;"> Phạm vi giá trị [1,10000], mặc định 1; số lượng kết quả khớp đầu ra </td>
 </tr>
 <tr>
-<td> 最小得分 </td>
-<td style="text-align:left;"> 取值范围[0,1]， 默认值为 0.4；大于该得分的结果才能输出 </td>
+<td> Điểm tối thiểu </td>
+<td style="text-align:left;"> Phạm vi giá trị [0,1], giá trị mặc định là 0.4; chỉ kết quả lớn hơn điểm này mới được đầu ra </td>
 </tr>
 <tr>
-<td> 相似位姿重叠率 </td>
-<td style="text-align:left;"> 取值范围[0,1]，默认值为 0.8；匹配后，模型和场景的重叠程度，大于这个的默认为重叠姿态，只选其中一个输出 </td>
+<td> Tỷ lệ chồng lặp tư thế tương tự </td>
+<td style="text-align:left;"> Phạm vi giá trị [0,1], mặc định là 0.8; sau khi khớp, mức độ chồng lặp giữa mô hình và cảnh, lớn hơn giá trị này mặc định là tư thế chồng lặp, chỉ chọn một trong số đó để đầu ra </td>
 </tr>
 <tr>
-<td> 相似位姿过滤阈值             </td>
-<td style="text-align:left;"> 取值范围[0.0001, 1]，默认值为0.05；过滤相似姿态              </td>
+<td> Ngưỡng lọc tư thế tương tự             </td>
+<td style="text-align:left;"> Phạm vi giá trị [0.0001, 1], mặc định là 0.05; lọc tư thế tương tự              </td>
 </tr>
 <tr>
-<td> 得分系数                     </td>
-<td style="text-align:left;"> 取值范围(0,50]， 默认值为 5.0                                </td>
+<td> Hệ số điểm                     </td>
+<td style="text-align:left;"> Phạm vi giá trị (0,50], giá trị mặc định là 5.0                                </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
+<th> Tên tham số             </th>
+<th style="text-align:left;"> Giải thích tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出变换矩阵 </td>
-<td style="text-align:left;"> 匹配后的刚性变换矩阵 </td>
+<td> Ma trận biến đổi đầu ra </td>
+<td style="text-align:left;"> Ma trận biến đổi cứng nhắc sau khi khớp </td>
 </tr>
 <tr>
-<td> 输出变换矩阵数组 </td>
-<td style="text-align:left;"> 匹配后的刚性变换矩阵数组 </td>
+<td> Mảng ma trận biến đổi đầu ra </td>
+<td style="text-align:left;"> Mảng ma trận biến đổi cứng nhắc sau khi khớp </td>
 </tr>
 <tr>
-<td> 结果对应得分 </td>
-<td style="text-align:left;"> 匹配得分，取值范围[0,1] </td>
+<td> Điểm tương ứng kết quả </td>
+<td style="text-align:left;"> Điểm khớp, phạm vi giá trị [0,1] </td>
 </tr>
 <tr>
-<td> 输出点云数据 </td>
-<td style="text-align:left;"> 模型变换后的点云数据 </td>
+<td> Dữ liệu đám mây điểm đầu ra </td>
+<td style="text-align:left;"> Dữ liệu đám mây điểm sau khi biến đổi mô hình </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
+<th> Tên tham số             </th>
+<th style="text-align:left;"> Giải thích tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出变换矩阵 </td>
-<td style="text-align:left;"> 匹配后的刚性变换矩阵 </td>
+<td> Ma trận biến đổi đầu ra </td>
+<td style="text-align:left;"> Ma trận biến đổi cứng nhắc sau khi khớp </td>
 </tr>
 <tr>
-<td> 输出变换矩阵数组 </td>
-<td style="text-align:left;"> 匹配后的刚性变换矩阵数组 </td>
+<td> Mảng ma trận biến đổi đầu ra </td>
+<td style="text-align:left;"> Mảng ma trận biến đổi cứng nhắc sau khi khớp </td>
 </tr>
 <tr>
-<td> 结果对应得分 </td>
-<td style="text-align:left;"> 匹配得分，取值范围[0,1] </td>
+<td> Điểm tương ứng kết quả </td>
+<td style="text-align:left;"> Điểm khớp, phạm vi giá trị [0,1] </td>
 </tr>
 <tr>
-<td> 输出点云数据 </td>
-<td style="text-align:left;"> 模型变换后的点云数据 </td>
+<td> Dữ liệu đám mây điểm đầu ra </td>
+<td style="text-align:left;"> Dữ liệu đám mây điểm sau khi biến đổi mô hình </td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td style="text-align:left;"> 工具执行结果 </td>
+<td> Kết quả thực thi </td>
+<td style="text-align:left;"> Kết quả thực thi công cụ </td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td style="text-align:left;"> 工具执行时间 </td>
+<td> Thời gian thực thi </td>
+<td style="text-align:left;"> Thời gian thực thi công cụ </td>
 </tr>
 </tbody>
 </table>

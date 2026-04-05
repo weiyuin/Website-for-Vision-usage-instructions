@@ -16,230 +16,230 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>带局外点平面拟合工具</h1>
+<h1>Công cụ Phù hợp Mặt phẳng Với Điểm Ngoại lai</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>功能是剔除深度数据图像中的局外点，根据内点数据计算得到三维平面的解析表达式，从而能够在这个基平面上进行投影、高度测量和体积测量等后续操作。</p>
+<p>Chức năng là loại bỏ điểm ngoại lai trong hình ảnh dữ liệu chiều sâu, dựa trên dữ liệu điểm nội lai để tính toán được biểu thức phân tích của mặt phẳng ba chiều, từ đó có thể thực hiện các thao tác tiếp theo như chiếu chiếu, đo chiều cao và đo thể tích trên mặt phẳng cơ sở này.</p>
 
 <p><img src="media/wps20.jpg" alt="img" /> <img src="media/wps21.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 带局外点的深度图像</imgnote> <imgnote>(b) 剔除局外点的深度数据图像 </imgnote></p>
+<p><imgnote>(a) Hình ảnh chiều sâu có điểm ngoại lai</imgnote> <imgnote>(b) Hình ảnh dữ liệu chiều sâu sau khi loại bỏ điểm ngoại lai </imgnote></p>
 
-<p><imgnote>图1 带局外点平面拟合示意图 </imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa phù hợp mặt phẳng với điểm ngoại lai </imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称       </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口       </td>
-<td> 启用三维点集拟合                                             </td>
-<td> 选择“是”，参数链中显示输入三维点集参数，并使用该三维点集进行平面拟合。 </td>
+<td> Cửa sổ thuộc tính       </td>
+<td> Bật phù hợp tập điểm ba chiều                                             </td>
+<td> Chọn “Có”, tham số chuỗi sẽ hiển thị tham số tập điểm ba chiều đầu vào, và sử dụng tập điểm ba chiều này để thực hiện phù hợp mặt phẳng. </td>
 </tr>
 <tr>
 <td></td>
-<td> 平面方向       </td>
-<td> 分为两种：正像素空间和负像素空间。<img src="media/wps23.jpg" alt="img" />                                                                  </td>
+<td> Hướng mặt phẳng       </td>
+<td> Phân thành hai loại: Không gian pixel dương và không gian pixel âm.<img src="media/wps23.jpg" alt="img" />                                                                  </td>
 </tr>
 <tr>
 <td></td>
-<td> ROI类型      </td>
-<td> 待拟合区域，分为7种：整幅图像、矩形、仿射矩形、圆形、圆环段、椭圆、多边形。                                                               </td>
+<td> Loại ROI      </td>
+<td> Khu vực cần phù hợp, phân thành 7 loại: Toàn bộ hình ảnh, Hình chữ nhật, Hình chữ nhật affine, Hình tròn, Đoạn vòng tròn, Elip, Đa giác.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 局外点判定距离 </td>
-<td> 参与拟合的深度数据点到拟合平面距离的最大值。<img src="media/wps24.jpg" alt="img" />                                                               </td>
+<td> Khoảng cách phán đoán điểm ngoại lai </td>
+<td> Giá trị tối đa của khoảng cách từ các điểm dữ liệu chiều sâu tham gia phù hợp đến mặt phẳng phù hợp.<img src="media/wps24.jpg" alt="img" />                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 局外点比例     </td>
-<td> 局外点占总深度数据点的比例。                                                                                               </td>
+<td> Tỷ lệ điểm ngoại lai     </td>
+<td> Tỷ lệ điểm ngoại lai chiếm tổng số điểm dữ liệu chiều sâu.                                                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 结果置信度     </td>
-<td> 衡量使用内点构造拟合平面的可信程度，置信度越大，拟合平面越可靠。                                                               </td>
+<td> Độ tin cậy kết quả     </td>
+<td> Đo lường mức độ đáng tin cậy khi sử dụng điểm nội lai để xây dựng mặt phẳng phù hợp; độ tin cậy càng lớn, mặt phẳng phù hợp càng đáng tin cậy.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 启用采样       </td>
-<td> 是否进行采样拟合，选择“是”，则显示采样半宽参数。                                                                           </td>
+<td> Bật lấy mẫu       </td>
+<td> Có thực hiện lấy mẫu phù hợp hay không, chọn “Có” thì hiển thị tham số nửa chiều rộng lấy mẫu.                                                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 采样距离     </td>
-<td> 每隔多少采样一次，缩短平面拟合时间。                                                                                       </td>
+<td> Khoảng cách lấy mẫu     </td>
+<td> Mỗi lần cách bao nhiêu thì lấy mẫu một lần, rút ngắn thời gian phù hợp mặt phẳng.                                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 启用掩膜       </td>
-<td> 用于过滤不需要拟合的区域，对该部分添加掩膜。选择“是”时，则可通过属性高级界面进行掩膜设置                                                               </td>
+<td> Bật mặt nạ       </td>
+<td> Dùng để lọc các khu vực không cần phù hợp, thêm mặt nạ cho phần đó. Chọn “Có” thì có thể thực hiện thiết lập mặt nạ qua giao diện nâng cao thuộc tính.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 开启并行运算 </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không, chọn “Có” thì thuật toán sẽ bật chế độ tính toán song song OpenMP, có thể nâng cao tốc độ tính toán nhưng có thể xuất hiện tình huống thời gian tiêu hao không ổn định; chọn “Không” thì thuật toán sẽ tắt tính toán song song OpenMP. </td>
 </tr>
 <tr>
 <td></td>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td> Phần trăm số luồng </td>
+<td> Thiết lập phần trăm số luồng cho tính toán song song, phạm vi hiệu lực là (0, 0.75], tương ứng với phạm vi phần trăm (0%, 75%]. </td>
 </tr>
 <tr>
-<td> 图像窗口       </td>
-<td> 深度图像                                                     </td>
-<td> 显示待检测的深度图像，显示为伪彩色图像。                     </td>
-</tr>
-<tr>
-<td></td>
-<td> 拟合区域       </td>
-<td> 在图像上显示待拟合区域。                                                                                                   </td>
-</tr>
-<tr>
-<td> 数据链         </td>
-<td> 输入图像                                                     </td>
-<td> 输入待检测的深度图像，仅在属性栏参数启用三维点集拟合选择“否”时有效。 </td>
+<td> Cửa sổ hình ảnh       </td>
+<td> Hình ảnh chiều sâu                                                     </td>
+<td> Hiển thị hình ảnh chiều sâu cần kiểm tra, hiển thị dưới dạng hình ảnh màu giả.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 输入三维点集   </td>
-<td> 进行平面拟合的三维点集，仅在属性栏参数启用三维点集拟合选择“是”时有效。                                                               </td>
+<td> Khu vực phù hợp       </td>
+<td> Hiển thị khu vực cần phù hợp trên hình ảnh.                                                                                                   </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu         </td>
+<td> Hình ảnh đầu vào                                                     </td>
+<td> Hình ảnh chiều sâu đầu vào cần kiểm tra, chỉ hiệu lực khi tham số trong thanh thuộc tính “Bật phù hợp tập điểm ba chiều” chọn “Không”. </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换   </td>
-<td> 目标相对于模板的平移、旋转、缩放变换，仅在属性栏参数启用三维点集拟合选择“否”时有效。                                                               </td>
+<td> Tập điểm ba chiều đầu vào   </td>
+<td> Tập điểm ba chiều dùng để thực hiện phù hợp mặt phẳng, chỉ hiệu lực khi tham số trong thanh thuộc tính “Bật phù hợp tập điểm ba chiều” chọn “Có”.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 高级界面       </td>
-<td> 仅在属性栏参数启用掩膜选择“是”时，显示掩膜设置界面。                                                                       </td>
+<td> Biến đổi tuyến tính hai chiều   </td>
+<td> Biến đổi tịnh tiến, xoay, thu phóng của mục tiêu so với mẫu, chỉ hiệu lực khi tham số trong thanh thuộc tính “Bật phù hợp tập điểm ba chiều” chọn “Không”.                                                               </td>
+</tr>
+<tr>
+<td></td>
+<td> Giao diện nâng cao       </td>
+<td> Chỉ khi tham số trong thanh thuộc tính “Bật mặt nạ” chọn “Có”, thì hiển thị giao diện thiết lập mặt nạ.                                                                       </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Kết quả đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称       </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口       </td>
-<td> 输出图像                                                     </td>
-<td> 输出深度图像的长宽和像素大小，以及深度数据参数，仅在属性栏参数启用三维点集拟合选择“否”时有效。 </td>
+<td> Cửa sổ giám sát       </td>
+<td> Hình ảnh đầu ra                                                     </td>
+<td> Đầu ra chiều dài và chiều rộng của hình ảnh chiều sâu cùng kích thước pixel, cũng như tham số dữ liệu chiều sâu, chỉ hiệu lực khi tham số trong thanh thuộc tính “Bật phù hợp tập điểm ba chiều” chọn “Không”. </td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合平面       </td>
-<td> 输出拟合平面结果，包括平面的法向量、偏移量、倾斜角、旋转角。<img src="media/wps26.jpg" alt="img" />                                                               </td>
+<td> Mặt phẳng phù hợp       </td>
+<td> Đầu ra kết quả mặt phẳng phù hợp, bao gồm vectơ pháp tuyến của mặt phẳng, độ lệch, góc nghiêng, góc xoay.<img src="media/wps26.jpg" alt="img" />                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 平面度         </td>
-<td> 输出平面的平面度，即最大偏移-最小偏移，单位：mm。                                                                          </td>
+<td> Độ phẳng         </td>
+<td> Đầu ra độ phẳng của mặt phẳng, tức là độ lệch tối đa trừ độ lệch tối thiểu, đơn vị: mm.                                                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合误差       </td>
-<td> 输出平面的拟合误差。                                                                                                       </td>
+<td> Lỗi phù hợp       </td>
+<td> Đầu ra lỗi phù hợp của mặt phẳng.                                                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 平面拟合的点数 </td>
-<td> 输出平面拟合中参与拟合的点数。                                                                                             </td>
+<td> Số điểm phù hợp mặt phẳng </td>
+<td> Đầu ra số điểm tham gia vào quá trình phù hợp mặt phẳng.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果       </td>
-<td> 工具执行结果。                                                                                                             </td>
+<td> Kết quả thực thi       </td>
+<td> Kết quả thực thi công cụ.                                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间       </td>
-<td> 工具执行时间。                                                                                                             </td>
+<td> Thời gian thực thi       </td>
+<td> Thời gian thực thi công cụ.                                                                                                             </td>
 </tr>
 <tr>
-<td> 图像窗口       </td>
-<td> 输出图像                                                     </td>
-<td> 显示检测的深度图像，显示为伪彩色图像。                       </td>
+<td> Cửa sổ hình ảnh       </td>
+<td> Hình ảnh đầu ra                                                     </td>
+<td> Hiển thị hình ảnh chiều sâu đã kiểm tra, hiển thị dưới dạng hình ảnh màu giả.                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 数据链         </td>
-<td> 同监视窗口参数，供后续工具使用。                                                                                           </td>
+<td> Chuỗi dữ liệu         </td>
+<td> Giống tham số cửa sổ giám sát, để sử dụng cho công cụ tiếp theo.                                                                                           </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
-<h3>相关参数</h3>
+<h3>Tham số liên quan</h3>
 
-<p>距离阈值：指设定点到拟合平面距离的最大值；</p>
+<p>Khoảng cách ngưỡng: Chỉ giá trị tối đa của khoảng cách từ điểm đến mặt phẳng phù hợp;</p>
 
-<p>局外点：指深度数据点到拟合平面的距离不满足距离阈值的点；</p>
+<p>Điểm ngoại lai: Chỉ các điểm dữ liệu chiều sâu mà khoảng cách đến mặt phẳng phù hợp không thỏa mãn khoảng cách ngưỡng;</p>
 
-<p>内点：指深度数据点到拟合平面的距离在距离阈值之内的点；</p>
+<p>Điểm nội lai: Chỉ các điểm dữ liệu chiều sâu mà khoảng cách đến mặt phẳng phù hợp nằm trong khoảng cách ngưỡng;</p>
 
-<p>局外点比例：局外点占总深度数据点的比例，其中，内点与外点的和为总深度数据点；</p>
+<p>Tỷ lệ điểm ngoại lai: Tỷ lệ điểm ngoại lai chiếm tổng số điểm dữ liệu chiều sâu, trong đó tổng điểm nội lai và điểm ngoại lai bằng tổng số điểm dữ liệu chiều sâu;</p>
 
-<p>置信度：衡量使用内点构造拟合平面的可信程度，置信度越大，拟合平面越可靠。</p>
+<p>Độ tin cậy: Đo lường mức độ đáng tin cậy khi sử dụng điểm nội lai để xây dựng mặt phẳng phù hợp, độ tin cậy càng lớn thì mặt phẳng phù hợp càng đáng tin cậy.</p>
 
 <p><img src="media/wps28.jpg" alt="img" /></p>
 
-<p><imgnote>图1 相关参数示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa tham số liên quan</imgnote></p>
 
-<h3>法向量、倾斜角、旋转角、偏移量</h3>
+<h3>Vectơ pháp tuyến, góc nghiêng, góc xoay, độ lệch</h3>
 
-<p>法向量：垂直于平面的向量<strong>N</strong>，表示平面在三维空间中的方向，如图2(a)所示。</p>
+<p>Vectơ pháp tuyến: Vectơ <strong>N</strong> vuông góc với mặt phẳng, biểu thị hướng của mặt phẳng trong không gian ba chiều, như hình 2(a) cho thấy.</p>
 
-<p>倾斜角：Z轴正方向按顺时针方向与平面法向量<strong>N</strong>的夹角<strong>φ</strong>，取值范围为：[0,π] ，如图2(b)所示。</p>
+<p>Góc nghiêng: Góc <strong>φ</strong> giữa hướng dương trục Z theo chiều kim đồng hồ với vectơ pháp tuyến <strong>N</strong> của mặt phẳng, phạm vi giá trị: [0,π], như hình 2(b) cho thấy.</p>
 
-<p>旋转角：X轴正方向按逆时针方向与法向量的投影向量<strong>N</strong><strong>0</strong>的夹角<strong>θ</strong>，取值范围为：[0, 2π) ，如图2(b)所示。</p>
+<p>Góc xoay: Góc <strong>θ</strong> giữa hướng dương trục X theo chiều ngược kim đồng hồ với vectơ chiếu <strong>N</strong><strong>0</strong> của vectơ pháp tuyến, phạm vi giá trị: [0, 2π), như hình 2(b) cho thấy.</p>
 
-<p>偏移量：将原点移动到当前平面<strong>P</strong>上的距离偏移，若移动方向与法向量方向相同，偏移量为正；否则为负，如图2&copy;、(d)所示。</p>
+<p>Độ lệch: Khoảng cách lệch khi di chuyển gốc tọa độ đến mặt phẳng hiện tại <strong>P</strong>, nếu hướng di chuyển trùng với hướng vectơ pháp tuyến thì độ lệch là dương; ngược lại là âm, như hình 2(c)、(d) cho thấy.</p>
 
 <p><img src="media/wps29.jpg" alt="img" /></p>
 
-<p><imgnote>图2 法向量、倾斜角、旋转角、偏移量</imgnote></p>
+<p><imgnote>Hình 2 Vectơ pháp tuyến, góc nghiêng, góc xoay, độ lệch</imgnote></p>
 
-<h3>使用向导</h3>
+<h3>Hướng dẫn sử dụng</h3>
 
-<p><strong>Step 1 设置拟合区域和平面方向</strong></p>
+<p><strong>Bước 1 Thiết lập khu vực phù hợp và hướng mặt phẳng</strong></p>
 
-<p>为了获取三维空间点数据需要设置感兴趣区域。在获取拟合的平面方程时，需要确定平面方向，即平面法向量的方向；平面方向共包含：正向像素空间Z和负向像素空间Z两种，其具体物理含义如下表所示。两种平面方向得到的平面法向量的数值是互为相反数的。</p>
+<p>Để thu được dữ liệu điểm trong không gian ba chiều cần thiết lập vùng quan tâm. Khi thu được phương trình mặt phẳng phù hợp, cần xác định hướng mặt phẳng, tức là hướng của vectơ pháp tuyến mặt phẳng; hướng mặt phẳng bao gồm hai loại: Không gian pixel dương Z và không gian pixel âm Z, ý nghĩa vật lý cụ thể được trình bày trong bảng dưới đây. Hai hướng mặt phẳng thu được có giá trị vectơ pháp tuyến mặt phẳng là ngược nhau.</p>
 
 <p><img src="media/wps30.jpg" alt="img" /></p>
 
-<p><strong>Step 2设置参数、采样半宽以及是否启用掩膜</strong></p>
+<p><strong>Bước 2 Thiết lập tham số, nửa chiều rộng lấy mẫu và có bật mặt nạ hay không</strong></p>
 
-<p> 根据需要设置距离阈值、置信度、最糟糕情况下外点比例、采样半宽以及掩膜的设置。</p>
+<p> Theo nhu cầu thiết lập khoảng cách ngưỡng, độ tin cậy, tỷ lệ điểm ngoại lai trong trường hợp xấu nhất, nửa chiều rộng lấy mẫu và thiết lập mặt nạ.</p>
 
-<p><strong>Step3 执行拟合和输出结果</strong></p>
+<p><strong>Bước 3 Thực thi phù hợp và đầu ra kết quả</strong></p>
 
-<p>在上述步骤之后，就可以执行拟合了。对于局外点平面拟合，输出的结果包括：拟合平面的法向量、偏移旋转和拟合的均方差。</p>
+<p>Sau các bước trên, có thể thực thi phù hợp. Đối với phù hợp mặt phẳng có điểm ngoại lai, kết quả đầu ra bao gồm: vectơ pháp tuyến của mặt phẳng phù hợp, độ lệch xoay và phương sai trung bình của phù hợp.</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
 <p>参见“\Samples\3D\深度图\带局外点平面拟合工具.gvp”。</p>

@@ -16,282 +16,282 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>深度图像转灰度图像工具</h1>
+<h1>Công cụ Chuyển Hình Ảnh Chiều Sâu Sang Hình Ảnh Xám</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>深度图像转灰度图像工具的功能是将16位深度图像通过像素映射的方法转换为8位灰度图像。</p>
+<p>Chức năng của công cụ chuyển đổi hình ảnh chiều sâu sang hình ảnh xám là chuyển đổi hình ảnh chiều sâu 16 bit thành hình ảnh xám 8 bit thông qua phương pháp ánh xạ pixel.</p>
 
 <p><img src="media/wps12.jpg" alt="img" /></p>
 
-<p><imgnote>图1 深度图像转灰度图像工具示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa công cụ chuyển đổi hình ảnh chiều sâu sang hình ảnh xám</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称            </th>
-<th> 参数描述                                                                                                              </th>
+<th>Phân loại </th>
+<th> Tên tham số            </th>
+<th> Mô tả tham số                                                                                                              </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口            </td>
-<td> ROI类型                                                    </td>
-<td> 待检测区域，分为4种：整幅图像、仿射矩形、圆形、多边形。 </td>
+<td> Cửa sổ thuộc tính            </td>
+<td> Loại ROI                                                    </td>
+<td> Khu vực cần kiểm tra, phân thành 4 loại: toàn bộ hình ảnh, hình chữ nhật affine, hình tròn, đa giác. </td>
 </tr>
 <tr>
 <td></td>
-<td> 像素映射方法        </td>
-<td> 确定映射曲线基准点，分为5种，最小最大、高低尾部、均值标准差、线性映射，物理模式。                                                    </td>
+<td> Phương pháp ánh xạ pixel        </td>
+<td> Xác định điểm基准 đường cong ánh xạ, phân thành 5 loại: tối thiểu tối đa, cao thấp phần đuôi, trung bình độ lệch chuẩn, ánh xạ tuyến tính, chế độ vật lý.                                                    </td>
 </tr>
 <tr>
 <td></td>
-<td> 标准差系数1/2       </td>
-<td> 该参数仅在像素映射方法选择均值标准差时有效，即根据均值和标准差确定基准点。参数范围 (-1000, 0]/[0, +1000)。                                                          </td>
+<td> Hệ số độ lệch chuẩn 1/2       </td>
+<td> Tham số này chỉ hiệu lực khi phương pháp ánh xạ pixel chọn trung bình độ lệch chuẩn, tức là xác định điểm基准 theo trung bình và độ lệch chuẩn. Phạm vi tham số (-1000, 0]/[0, +1000).                                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 高/低尾部分数       </td>
-<td> 该参数仅在像素映射方法选择高低尾部时有效，即根据低尾部分数、高尾部分数确定基准点。参数范围 [0,1]，且高低尾部分数之和小于等于1。                                                          </td>
+<td> Phần số phần đuôi cao/thấp       </td>
+<td> Tham số này chỉ hiệu lực khi phương pháp ánh xạ pixel chọn cao thấp phần đuôi, tức là xác định điểm基准 theo phần số phần đuôi thấp và phần số phần đuôi cao. Phạm vi tham số [0,1], và tổng phần số phần đuôi cao thấp nhỏ hơn hoặc bằng 1.                                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 基准点1输入调整系 </td>
-<td> 按照该参数缩小基准点1的X轴数值。参数范围 [-1,0]。                                                          </td>
+<td> Hệ số điều chỉnh đầu vào điểm基准 1 </td>
+<td> Theo tham số này thu nhỏ giá trị trục X của điểm基准 1. Phạm vi tham số [-1,0].                                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 基准点2输入调整系数 </td>
-<td> 按照该参数扩大基准点2的X轴数值。参数范围 [0,1]。                                                                      </td>
+<td> Hệ số điều chỉnh đầu vào điểm基准 2 </td>
+<td> Theo tham số này mở rộng giá trị trục X của điểm基准 2. Phạm vi tham số [0,1].                                                                      </td>
 </tr>
 <tr>
 <td></td>
-<td> 基准点输出范围      </td>
-<td> 分为3种，完整范围、倒置完整范围、自定义。                                                                             </td>
+<td> Phạm vi đầu ra điểm基准      </td>
+<td> Phân thành 3 loại: phạm vi hoàn chỉnh, phạm vi hoàn chỉnh đảo ngược, tùy chỉnh.                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 基准点1输出调整系数 </td>
-<td> 按照该参数调整基准点1的Y轴数值。参数范围 [0,1]。该参数仅在基准点输出范围选择自定义时有效。                                                          </td>
+<td> Hệ số điều chỉnh đầu ra điểm基准 1 </td>
+<td> Theo tham số này điều chỉnh giá trị trục Y của điểm基准 1. Phạm vi tham số [0,1]. Tham số này chỉ hiệu lực khi phạm vi đầu ra điểm基准 chọn tùy chỉnh.                                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 基准点2输出调整系数 </td>
-<td> 按照该参数调整基准点2的Y轴数值。参数范围 [0,1]。该参数仅在基准点输出范围选择自定义时有效。                                                          </td>
+<td> Hệ số điều chỉnh đầu ra điểm基准 2 </td>
+<td> Theo tham số này điều chỉnh giá trị trục Y của điểm基准 2. Phạm vi tham số [0,1]. Tham số này chỉ hiệu lực khi phạm vi đầu ra điểm基准 chọn tùy chỉnh.                                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 尺度系数            </td>
-<td> 调整最终映射输出的缩放因子。参数范围 (0, +1000)。                                                          </td>
+<td> Hệ số tỷ lệ            </td>
+<td> Điều chỉnh hệ số thu phóng của đầu ra ánh xạ cuối cùng. Phạm vi tham số (0, +1000).                                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 映射输出偏移            </td>
-<td> 调整最终映射输出的偏移量。参数范围 [0, +1000)。                                                                       </td>
+<td> Độ lệch đầu ra ánh xạ            </td>
+<td> Điều chỉnh độ lệch của đầu ra ánh xạ cuối cùng. Phạm vi tham số [0, +1000).                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> Z向物理低值 </td>
-<td> 该参数仅在像素映射方法选择物理模式时有效，指定映射输入的高度最低值 </td>
+<td> Giá trị vật lý thấp hướng Z </td>
+<td> Tham số này chỉ hiệu lực khi phương pháp ánh xạ pixel chọn chế độ vật lý, chỉ định giá trị chiều cao thấp nhất của đầu vào ánh xạ </td>
 </tr>
 <tr>
 <td></td>
-<td> Z向物理高值 </td>
-<td> 该参数仅在像素映射方法选择物理模式时有效，指定映射输入的高度最高值 </td>
+<td> Giá trị vật lý cao hướng Z </td>
+<td> Tham số này chỉ hiệu lực khi phương pháp ánh xạ pixel chọn chế độ vật lý, chỉ định giá trị chiều cao cao nhất của đầu vào ánh xạ </td>
 </tr>
 <tr>
 <td></td>
-<td> 灰度边界值1 </td>
-<td> 该参数仅在像素映射方法选择物理模式时有效，指定映射输出的灰度最低值 </td>
+<td> Giá trị biên xám 1 </td>
+<td> Tham số này chỉ hiệu lực khi phương pháp ánh xạ pixel chọn chế độ vật lý, chỉ định giá trị xám thấp nhất của đầu ra ánh xạ </td>
 </tr>
 <tr>
 <td></td>
-<td> 灰度边界值2 </td>
-<td> 该参数仅在像素映射方法选择物理模式时有效，指定映射输出的灰度最高值 </td>
+<td> Giá trị biên xám 2 </td>
+<td> Tham số này chỉ hiệu lực khi phương pháp ánh xạ pixel chọn chế độ vật lý, chỉ định giá trị xám cao nhất của đầu ra ánh xạ </td>
 </tr>
 <tr>
 <td></td>
-<td> 设置缺失像素值      </td>
-<td> 选择“是”，则为缺失像素设置像素值 (0~255)；选择“否”，缺失像素则使用默认像素值0。                                                          </td>
+<td> Thiết lập giá trị pixel thiếu      </td>
+<td> Chọn “Có”, thì thiết lập giá trị pixel (0~255) cho pixel thiếu; chọn “Không”, pixel thiếu thì sử dụng giá trị pixel mặc định 0.                                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 启用直方图统计 </td>
-<td> 选择“是”，则进行直方图统计计算均值、最小值、最大值、低尾部、高尾部和标准差。 </td>
+<td> Bật thống kê histogram </td>
+<td> Chọn “Có”, thì thực hiện thống kê histogram để tính trung bình, giá trị nhỏ nhất, giá trị lớn nhất, phần đuôi thấp, phần đuôi cao và độ lệch chuẩn. </td>
 </tr>
 <tr>
-<td> 图像窗口            </td>
-<td> 深度图像                                                     </td>
-<td> 显示待检测的深度图像，显示为伪彩色图像。                </td>
-</tr>
-<tr>
-<td></td>
-<td> 检测区域            </td>
-<td> 在图像上显示待检测区域。                                                                                              </td>
-</tr>
-<tr>
-<td> 数据链              </td>
-<td> 输入深度图像                                                 </td>
-<td> 输入待检测的深度图像。                                  </td>
+<td> Cửa sổ hình ảnh            </td>
+<td> Hình ảnh chiều sâu                                                     </td>
+<td> Hiển thị hình ảnh chiều sâu cần kiểm tra, hiển thị dưới dạng hình ảnh màu giả.                </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换        </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                                                                                </td>
+<td> Khu vực kiểm tra            </td>
+<td> Hiển thị khu vực cần kiểm tra trên hình ảnh.                                                                                              </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无                  </td>
-<td> 无                                                                                                                    </td>
+<td> Chuỗi dữ liệu              </td>
+<td> Hình ảnh chiều sâu đầu vào                                                 </td>
+<td> Hình ảnh chiều sâu đầu vào cần kiểm tra.                                  </td>
+</tr>
+<tr>
+<td></td>
+<td> Biến đổi tuyến tính hai chiều        </td>
+<td> Biến đổi tịnh tiến, xoay, thu phóng của mục tiêu so với mẫu.                                                                                </td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td> Không                  </td>
+<td> Không                                                                                                                    </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Kết quả đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th> 分类   </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                             </th>
+<th> Phân loại   </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出栏                                        </td>
-<td> 输出灰度图像                                                 </td>
-<td> 输出图像的长宽和像素大小。             </td>
+<td> Cột đầu ra                                        </td>
+<td> Hình ảnh xám đầu ra                                                 </td>
+<td> Chiều dài và chiều rộng của hình ảnh đầu ra cùng kích thước pixel.             </td>
 </tr>
 <tr>
 <td>       </td>
-<td> 基准点1      </td>
-<td> 基准点1的相对输入输出和绝对输入输出。                                         </td>
+<td> Điểm基准 1      </td>
+<td> Đầu vào đầu ra tương đối và đầu vào đầu ra tuyệt đối của điểm基准 1.                                         </td>
 </tr>
 <tr>
 <td>       </td>
-<td> 基准点2      </td>
-<td> 基准点2的相对输入输出和绝对输入输出。                                                                </td>
+<td> Điểm基准 2      </td>
+<td> Đầu vào đầu ra tương đối và đầu vào đầu ra tuyệt đối của điểm基准 2.                                                                </td>
 </tr>
 <tr>
 <td>          </td>
-<td> 均值         </td>
-<td> 图像中像素灰度级的平均值。                                                                           </td>
+<td> Trung bình         </td>
+<td> Giá trị trung bình của mức xám pixel trong hình ảnh.                                                                           </td>
 </tr>
 <tr>
 <td>        </td>
-<td> 最小值       </td>
-<td> 图像中像素灰度级的最小值。                                                                           </td>
+<td> Giá trị nhỏ nhất       </td>
+<td> Giá trị nhỏ nhất của mức xám pixel trong hình ảnh.                                                                           </td>
 </tr>
 <tr>
 <td>        </td>
-<td> 最大值       </td>
-<td> 图像中像素灰度级的最大值。                                                                           </td>
+<td> Giá trị lớn nhất       </td>
+<td> Giá trị lớn nhất của mức xám pixel trong hình ảnh.                                                                           </td>
 </tr>
 <tr>
 <td>        </td>
-<td> 低尾部       </td>
-<td> 使得小于某数值（即低尾部）的数据量达到指定比例（即低尾部分数）。                                         </td>
+<td> Phần đuôi thấp       </td>
+<td> Làm cho lượng dữ liệu nhỏ hơn một giá trị nhất định (tức phần đuôi thấp) đạt tỷ lệ chỉ định (tức phần số phần đuôi thấp).                                         </td>
 </tr>
 <tr>
 <td>        </td>
-<td> 高尾部       </td>
-<td> 使得大于某数值（即高尾部）的数据量达到指定比例（即高尾部分数）。                                         </td>
+<td> Phần đuôi cao       </td>
+<td> Làm cho lượng dữ liệu lớn hơn một giá trị nhất định (tức phần đuôi cao) đạt tỷ lệ chỉ định (tức phần số phần đuôi cao).                                         </td>
 </tr>
 <tr>
 <td>        </td>
-<td> 标准差       </td>
-<td> 图像中像素灰度级的标准差。                                                                           </td>
+<td> Độ lệch chuẩn       </td>
+<td> Độ lệch chuẩn của mức xám pixel trong hình ảnh.                                                                           </td>
 </tr>
 <tr>
 <td>      </td>
-<td> 执行结果     </td>
-<td> 工具执行结果。                                                                                       </td>
+<td> Kết quả thực thi     </td>
+<td> Kết quả thực thi công cụ.                                                                                       </td>
 </tr>
 <tr>
 <td>      </td>
-<td> 执行时间     </td>
-<td> 工具执行时间。                                                                                       </td>
+<td> Thời gian thực thi     </td>
+<td> Thời gian thực thi công cụ.                                                                                       </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
-<h3>映射原理</h3>
+<h3>Nguyên lý ánh xạ</h3>
 
-<p>深度图像转灰度图像工具的原理是根据映射函数关系将16为图像转换成8位图像，映射函数如图2所示，其中X轴表示输入的16位图像的像素值，Y轴表示输出的8位图像的像素值，通过映射关系可以获取每一个16位图像像素值对应的8位图像像素值。</p>
+<p>Nguyên lý của công cụ chuyển đổi hình ảnh chiều sâu sang hình ảnh xám là dựa theo quan hệ hàm ánh xạ để chuyển đổi hình ảnh 16 bit thành hình ảnh 8 bit, hàm ánh xạ như hình 2 cho thấy, trong đó trục X biểu thị giá trị pixel của hình ảnh 16 bit đầu vào, trục Y biểu thị giá trị pixel của hình ảnh 8 bit đầu ra, thông qua quan hệ ánh xạ có thể thu được giá trị pixel hình ảnh 8 bit tương ứng với mỗi giá trị pixel hình ảnh 16 bit.</p>
 
 <p><img src="media/wps20.jpg" alt="img" /></p>
 
-<p><imgnote>图2 映射曲线示意图</imgnote></p>
+<p><imgnote>Hình 2 Sơ đồ minh họa đường cong ánh xạ</imgnote></p>
 
-<p><strong>第一步：像素映射方法</strong></p>
+<p><strong>Bước thứ nhất: Phương pháp ánh xạ pixel</strong></p>
 
-<p><strong>最小最大：</strong>根据图像灰度级的最小值和最大值确定原始基准点。</p>
+<p><strong>Tối thiểu tối đa:</strong> Xác định điểm基准 gốc theo giá trị nhỏ nhất và giá trị lớn nhất của mức xám hình ảnh.</p>
 
-<p>x<sub>1</sub> = 灰度最小值，y<sub>1 </sub>= 0。</p>
+<p>x<sub>1</sub> = giá trị xám nhỏ nhất, y<sub>1</sub>= 0.</p>
 
-<p>x<sub>2 </sub>= 灰度最大值，y<sub>2</sub> = 255。</p>
+<p>x<sub>2</sub>= giá trị xám lớn nhất, y<sub>2</sub> = 255.</p>
 
-<p><strong>高低尾部：</strong>根据高低尾部分数确定初始基准点。此方法可以排除一些灰度级较低或较高的干扰点。</p>
+<p><strong>Cao thấp phần đuôi:</strong> Xác định điểm基准 ban đầu theo phần số phần đuôi cao thấp. Phương pháp này có thể loại trừ một số điểm nhiễu có mức xám thấp hơn hoặc cao hơn.</p>
 
-<p>假设低尾部分数为m，高尾部分数为n，则：原始基准点x<sub>1</sub>计算方式：当灰度级在0~G范围内的灰度个数（像素数）与图像总灰度个数（总像素数）的比值为m时，令x<sub>1</sub>=G，y<sub>1</sub>=0。</p>
+<p>Giả sử phần số phần đuôi thấp là m, phần số phần đuôi cao là n, thì: cách tính điểm基准 gốc x<sub>1</sub>: khi tỷ lệ giữa số lượng mức xám (số pixel) trong khoảng mức xám 0~G với tổng số mức xám của hình ảnh (tổng số pixel) bằng m, thì đặt x<sub>1</sub>=G, y<sub>1</sub>=0.</p>
 
 <p><img src="media/wps21.jpg" alt="img" /></p>
 
-<p><imgnote>图3 灰度直方图——求G</imgnote></p>
+<p><imgnote>Hình 3 Histogram xám——tính G</imgnote></p>
 
-<p>原始基准点x<sub>2</sub>计算方式：当灰度级在G~65535范围内的灰度个数（像素数）与图像总灰度个数（总像素数）的比值为n时，令x<sub>2</sub>=G，y<sub>2</sub>=255。</p>
+<p>Cách tính điểm基准 gốc x<sub>2</sub>: khi tỷ lệ giữa số lượng mức xám (số pixel) trong khoảng mức xám G~65535 với tổng số mức xám của hình ảnh (tổng số pixel) bằng n, thì đặt x<sub>2</sub>=G, y<sub>2</sub>=255.</p>
 
-<p><strong>均值标准差：</strong>根据图像灰度级的均值和标准差确定原始基准点。此方法可以排除一些灰度级较低或较高的干扰点。</p>
+<p><strong>Trung bình độ lệch chuẩn:</strong> Xác định điểm基准 gốc theo giá trị trung bình và độ lệch chuẩn của mức xám hình ảnh. Phương pháp này có thể loại trừ một số điểm nhiễu có mức xám thấp hơn hoặc cao hơn.</p>
 
-<p>假设标准差系数1为a，标准差系数2为b，则：</p>
+<p>Giả sử hệ số độ lệch chuẩn 1 là a, hệ số độ lệch chuẩn 2 là b, thì:</p>
 
-<p>x<sub>1</sub> = a*dev+mean，y<sub>1</sub> = 0。</p>
+<p>x<sub>1</sub> = a*dev+mean, y<sub>1</sub> = 0.</p>
 
-<p>x<sub>2</sub> = b*dev+mean，y<sub>2 </sub>=2 55。</p>
+<p>x<sub>2</sub> = b*dev+mean, y<sub>2</sub>= 255.</p>
 
-<p>其中mean为图像灰度的均值，dev为标准差。</p>
+<p>Trong đó mean là giá trị trung bình mức xám của hình ảnh, dev là độ lệch chuẩn.</p>
 
-<p><strong>线性映射：</strong>根据一种线性变化得到原始基准点。</p>
+<p><strong>Ánh xạ tuyến tính:</strong> Thu được điểm基准 gốc theo một biến đổi tuyến tính.</p>
 
-<p>x<sub>1</sub> = 0，y<sub>1 </sub>= 0。</p>
+<p>x<sub>1</sub> = 0, y<sub>1</sub>= 0.</p>
 
-<p>x<sub>2</sub> = 65535，y<sub>2 </sub>= 255。</p>
+<p>x<sub>2</sub> = 65535, y<sub>2</sub>= 255.</p>
 
-<p><strong>物理模式：</strong>直接指定映射范围，无需第二步、第三步的配置步骤。</p>
+<p><strong>Chế độ vật lý:</strong> Trực tiếp chỉ định phạm vi ánh xạ, không cần bước thứ hai, bước thứ ba thiết lập cấu hình.</p>
 
-<p>将高度值低于Z向物理低值的数据映射为灰度边界值1；</p>
+<p>Dữ liệu có giá trị chiều cao thấp hơn giá trị vật lý thấp hướng Z ánh xạ thành giá trị biên xám 1;</p>
 
-<p>将高度值低于Z向物理高值的数据映射为灰度边界值2；</p>
+<p>Dữ liệu có giá trị chiều cao thấp hơn giá trị vật lý cao hướng Z ánh xạ thành giá trị biên xám 2;</p>
 
-<p>在Z向物理低值与高值范围内的数据线性映射到[灰度边界值1,灰度边界值2]。</p>
+<p>Dữ liệu trong phạm vi giá trị vật lý thấp hướng Z đến cao hướng Z ánh xạ tuyến tính vào [giá trị biên xám 1, giá trị biên xám 2].</p>
 
-<p>x<sub>2</sub> = Z向物理高值(mm)对应的深度值，y<sub>2 </sub>= 灰度边界值2。</p>
+<p>x<sub>2</sub> = giá trị chiều sâu tương ứng với giá trị vật lý cao hướng Z (mm), y<sub>2</sub>= giá trị biên xám 2.</p>
 
-<p><strong>第二步：基准点输入、输出调整系数</strong></p>
+<p><strong>Bước thứ hai: Hệ số điều chỉnh đầu vào, đầu ra điểm基准</strong></p>
 
 <p><img src="media/wps22.jpg" alt="img" /></p>
 
-<p><imgnote>图4 基准点调整系数示意图</imgnote></p>
+<p><imgnote>Hình 4 Sơ đồ minh họa hệ số điều chỉnh điểm基准</imgnote></p>
 
-<p><strong>第三步：尺度因数、映射输出偏移</strong></p>
+<p><strong>Bước thứ ba: Hệ số tỷ lệ, độ lệch đầu ra ánh xạ</strong></p>
 
-<p>通过尺度因数和偏移对初始映射进行线性变换，得到最终映射。</p>
+<p>Thông qua hệ số tỷ lệ và độ lệch thực hiện biến đổi tuyến tính đối với ánh xạ ban đầu, thu được ánh xạ cuối cùng.</p>
 
 <p><img src="media/wps23.jpg" alt="img" /></p>
 
-<p><imgnote>图5 初始映射曲线和最终映射曲线示意图</imgnote></p>
+<p><imgnote>Hình 5 Sơ đồ minh họa đường cong ánh xạ ban đầu và đường cong ánh xạ cuối cùng</imgnote></p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
 <h2>示例工程</h2>
 
