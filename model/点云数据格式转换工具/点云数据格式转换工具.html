@@ -16,190 +16,190 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云数据格式转换工具</h1>
+<h1>Công cụ chuyển đổi định dạng dữ liệu điểm mây</h1>
 
-<h2>1.功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​         该工具主要解决不同的数据类型转换需求，以替换脚本或表达式的实现方式。</p>
+<p>​         Công cụ này chủ yếu giải quyết nhu cầu chuyển đổi giữa các loại dữ liệu khác nhau, thay thế cách thực hiện bằng script hoặc biểu thức.</p>
 
-<h2>2.使用向导</h2>
+<h2>2. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>工具添加，参数调节</h3>
+<li><h3>Thêm công cụ, điều chỉnh tham số</h3>
 
-<p><strong>Step1:</strong> 添加点云数据格式工具，选择转换类型，如图3-1所示；</p></li>
+<p><strong>Bước 1:</strong> Thêm công cụ định dạng dữ liệu điểm mây, chọn loại chuyển đổi, như hình 3-1 hiển thị;</p></li>
 </ul>
 
 
 <div align="center">
 <img src="media/GcCloudDataTransTool_3_1.png" style="zoom:100%;"/>
-    <center>图3_1 添加点云数据格式转换工具</center>
+    <center>图3_1 Thêm công cụ chuyển đổi định dạng dữ liệu điểm mây</center>
 </div>
 
 
-<h2>4.常见问题</h2>
+<h2>4. Vấn đề thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5. Giải thích tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述                                                                                                       </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số                                                                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入刚体变换1/2                         </td>
-<td> 输入变换矩阵     </td>
+<td> Đầu vào phép biến đổi rigid body 1/2                         </td>
+<td> Đầu vào ma trận biến đổi     </td>
 </tr>
 <tr>
-<td> 输入6自由度位姿 </td>
-<td> 输入位姿，沿x、y、z三个直角坐标轴方向的移动自由度和绕这三个坐标轴的转动自由度，常用Tx,Ty,Tz,Rx,Ry,Rz表示 </td>
+<td> Đầu vào tư thế 6 bậc tự do </td>
+<td> Đầu vào tư thế, bậc tự do di chuyển theo ba trục tọa độ vuông góc x, y, z và bậc tự do quay quanh ba trục tọa độ này, thường biểu diễn bằng Tx, Ty, Tz, Rx, Ry, Rz </td>
 </tr>
 <tr>
-<td> 输入点云点集 </td>
-<td> 点集数据，类型为std::vector&lt;stVW_PointXYZ> </td>
+<td> Đầu vào tập điểm điểm mây </td>
+<td> Dữ liệu tập điểm, kiểu là std::vector&lt;stVW_PointXYZ> </td>
 </tr>
 <tr>
-<td> 输入点云数据 </td>
-<td> 点云数据，类型为scVoxelPointCloud&lt;> </td>
+<td> Đầu vào dữ liệu điểm mây </td>
+<td> Dữ liệu điểm mây, kiểu là scVoxelPointCloud&lt;> </td>
 </tr>
 <tr>
-<td> 输入深度图点集 </td>
-<td> 输入深度图点集，类型为std::vector<scVoxelVector> </td>
+<td> Đầu vào tập điểm ảnh chiều sâu </td>
+<td> Đầu vào tập điểm ảnh chiều sâu, kiểu là std::vector<scVoxelVector> </td>
 </tr>
 <tr>
-<td> 输入向量 </td>
-<td> 输入待旋转的向量 </td>
+<td> Đầu vào vector </td>
+<td> Đầu vào vector cần xoay </td>
 </tr>
 <tr>
-<td> 输入旋转轴向量 </td>
-<td> 输入旋转轴向量 </td>
+<td> Đầu vào vector trục xoay </td>
+<td> Đầu vào vector trục xoay </td>
 </tr>
 <tr>
-<td> 输入欧拉角 </td>
-<td> 输入欧拉角度，绕坐标轴的多次旋转 </td>
+<td> Đầu vào góc Euler </td>
+<td> Đầu vào góc Euler, nhiều lần xoay quanh trục tọa độ </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述                                                                                                       </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số                                                                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 转换类型                            </td>
-<td>目前支持刚体变换矩阵相乘、刚体变换求逆、刚体变换旋转矩阵求逆、刚体变换转6自由度、6自由度转刚体变换、点云转点集、点集转点云、点云转深度图点集、深度图点集转点云、向量转换、欧拉角转四元数</td>
+<td> Loại chuyển đổi                            </td>
+<td>Hiện tại hỗ trợ: nhân ma trận biến đổi rigid body, nghịch đảo biến đổi rigid body, nghịch đảo ma trận xoay của biến đổi rigid body, biến đổi rigid body sang 6 bậc tự do, 6 bậc tự do sang biến đổi rigid body, điểm mây sang tập điểm, tập điểm sang điểm mây, điểm mây sang tập điểm ảnh chiều sâu, tập điểm ảnh chiều sâu sang điểm mây, chuyển đổi vector, góc Euler sang quaternion</td>
 </tr>
 <tr>
-<td> 机械臂旋转顺序 </td>
-<td> 支持X-Y-Z或Z-Y-X </td>
+<td> Thứ tự xoay của cánh tay robot </td>
+<td> Hỗ trợ X-Y-Z hoặc Z-Y-X </td>
 </tr>
 <tr>
-<td> 旋转角度 </td>
-<td> 旋转的角度 </td>
+<td> Góc xoay </td>
+<td> Góc độ xoay </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>输出刚体变换   </td>
-<td>刚性变换矩阵：Trans，平移矩阵<br />刚性变换矩阵：Matrix，旋转矩阵</td>
+<td>Đầu ra phép biến đổi rigid body   </td>
+<td>Ma trận biến đổi rigid: Trans, ma trận tịnh tiến<br />Ma trận biến đổi rigid: Matrix, ma trận xoay</td>
 </tr>
 <tr>
-<td>输出6自由度位姿 </td>
-<td>输出位姿，常用Tx,Ty,Tz,Rx,Ry,Rz表示</td>
+<td>Đầu ra tư thế 6 bậc tự do </td>
+<td>Đầu ra tư thế, thường biểu diễn bằng Tx, Ty, Tz, Rx, Ry, Rz</td>
 </tr>
 <tr>
-<td>输出3D点集 </td>
-<td>输出点云图点集，类型为std::vector&lt;stVW_PointXYZ></td>
+<td>Đầu ra tập điểm 3D </td>
+<td>Đầu ra tập điểm điểm mây, kiểu là std::vector&lt;stVW_PointXYZ></td>
 </tr>
 <tr>
-<td>输出点云数据 </td>
-<td>点云数据，类型为scVoxelPointCloud&lt;></td>
+<td>Đầu ra dữ liệu điểm mây </td>
+<td>Dữ liệu điểm mây, kiểu là scVoxelPointCloud&lt;></td>
 </tr>
 <tr>
-<td>输出深度图点集 </td>
-<td>输出深度图点集，类型为std::vector<scVoxelVector></td>
+<td>Đầu ra tập điểm ảnh chiều sâu </td>
+<td>Đầu ra tập điểm ảnh chiều sâu, kiểu là std::vector<scVoxelVector></td>
 </tr>
 <tr>
-<td>输出向量 </td>
-<td>输出旋转后的向量，类型为scVoxelVector</td>
+<td>Đầu ra vector </td>
+<td>Đầu ra vector sau khi xoay, kiểu là scVoxelVector</td>
 </tr>
 <tr>
-<td>输出四元数 </td>
-<td>输出转换后的四元数，绕某一旋转轴旋转一定的角度，类型为std::vector<double></td>
+<td>Đầu ra quaternion </td>
+<td>Đầu ra quaternion sau khi chuyển đổi, xoay quanh một trục xoay nhất định một góc độ, kiểu là std::vector<double></td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>输出刚体变换   </td>
-<td>刚性变换矩阵：Trans，平移矩阵<br />刚性变换矩阵：Matrix，旋转矩阵</td>
+<td>Đầu ra phép biến đổi rigid body   </td>
+<td>Ma trận biến đổi rigid: Trans, ma trận tịnh tiến<br />Ma trận biến đổi rigid: Matrix, ma trận xoay</td>
 </tr>
 <tr>
-<td>输出6自由度位姿 </td>
-<td>输出位姿，常用Tx,Ty,Tz,Rx,Ry,Rz表示</td>
+<td>Đầu ra tư thế 6 bậc tự do </td>
+<td>Đầu ra tư thế, thường biểu diễn bằng Tx, Ty, Tz, Rx, Ry, Rz</td>
 </tr>
 <tr>
-<td>输出3D点集 </td>
-<td>输出点云图点集，类型为std::vector&lt;stVW_PointXYZ></td>
+<td>Đầu ra tập điểm 3D </td>
+<td>Đầu ra tập điểm điểm mây, kiểu là std::vector&lt;stVW_PointXYZ></td>
 </tr>
 <tr>
-<td>输出点云数据 </td>
-<td>点云数据，类型为scVoxelPointCloud&lt;></td>
+<td>Đầu ra dữ liệu điểm mây </td>
+<td>Dữ liệu điểm mây, kiểu là scVoxelPointCloud&lt;></td>
 </tr>
 <tr>
-<td>输出深度图点集 </td>
-<td>输出深度图点集，类型为std::vector<scVoxelVector></td>
+<td>Đầu ra tập điểm ảnh chiều sâu </td>
+<td>Đầu ra tập điểm ảnh chiều sâu, kiểu là std::vector<scVoxelVector></td>
 </tr>
 <tr>
-<td>输出向量 </td>
-<td>输出旋转后的向量</td>
+<td>Đầu ra vector </td>
+<td>Đầu ra vector sau khi xoay</td>
 </tr>
 <tr>
-<td>输出四元数 </td>
-<td>输出转换后的四元数</td>
+<td>Đầu ra quaternion </td>
+<td>Đầu ra quaternion sau khi chuyển đổi</td>
 </tr>
 <tr>
-<td>执行时间 </td>
-<td>工具执行时间</td>
+<td>Thời gian thực thi </td>
+<td>Thời gian thực thi của công cụ</td>
 </tr>
 <tr>
-<td>执行结果 </td>
-<td>工具执行结果</td>
+<td>Kết quả thực thi </td>
+<td>Kết quả thực thi của công cụ</td>
 </tr>
 </tbody>
 </table>

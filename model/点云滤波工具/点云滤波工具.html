@@ -16,37 +16,37 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云滤波工具</h1>
+<h1>Công cụ lọc điểm mây</h1>
 
-<h2>1.功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​         点云滤波工具主要服务于3D点云测量项目，解决点云降噪、平滑等问题，工具主要应用在三维测量项目的预处理阶段。</p>
+<p>​         Công cụ lọc điểm mây chủ yếu phục vụ cho dự án đo lường điểm mây 3D, giải quyết các vấn đề khử nhiễu, làm mịn điểm mây, công cụ chủ yếu được ứng dụng trong giai đoạn tiền xử lý của dự án đo lường ba chiều.</p>
 
-<h2>2.使用场景</h2>
+<h2>2. Kịch bản sử dụng</h2>
 
-<p>​         典型的应用场景如：获取点云数据时，由于<em>设备精度、操作者经验、环境因素、以及电磁波的衍射特性</em>（<strong>电磁波遇到障碍物时偏离原来直线传播的物理现象</strong>）等带来的影响，点云数据中将不可避免地出现一些噪点；此外，实际应用时除了这些随机误差产生的噪点外，由于受到外界干扰如<em>视线遮挡、障碍物</em>等因素，点云数据中还会存在一些离主体点较远的 离群点。点云滤波工具可以有效地过滤噪点和离群点。</p>
+<p>​         Các kịch bản ứng dụng điển hình như: khi thu được dữ liệu điểm mây, do ảnh hưởng từ <em>độ chính xác của thiết bị, kinh nghiệm của người vận hành, yếu tố môi trường, cũng như đặc tính nhiễu xạ của sóng điện từ</em>（<strong>hiện tượng vật lý mà sóng điện từ lệch khỏi đường truyền thẳng ban đầu khi gặp vật cản</strong>）v.v., trong dữ liệu điểm mây sẽ không tránh khỏi xuất hiện một số điểm nhiễu; ngoài ra, trong ứng dụng thực tế ngoài các điểm nhiễu do sai số ngẫu nhiên tạo ra, do bị ảnh hưởng bởi nhiễu bên ngoài như <em>tầm nhìn bị che khuất, vật cản</em> v.v., trong dữ liệu điểm mây còn tồn tại một số điểm ngoại lai cách xa tập điểm chính. Công cụ lọc điểm mây có thể lọc hiệu quả các điểm nhiễu và điểm ngoại lai.</p>
 
 <div align="center">
 <img src="media/GvCloudFilterTool_2_1.PNG" style="zoom:100%;"/>
-    <center>图2_1 点云降噪
+    <center>图2_1 Khử nhiễu điểm mây
 </center>
 </div>
 
 
-<h2>3.使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>3.1 统计学滤波</h3>
+<li><h3>3.1 Lọc thống kê</h3>
 
-<p><strong>step1:</strong>   添加点云文件、点云滤波工具，并双击打开参数链，链接点云文件，如图3-1所示；</p>
+<p><strong>Bước 1:</strong>   Thêm tệp điểm mây, công cụ lọc điểm mây, và nhấp đúp mở chuỗi tham số, liên kết tệp điểm mây, như hình 3-1 hiển thị;</p>
 
-<p><strong>step2：</strong>右击点云滤波工具“属性”打开工具高级界面，如图3-2所示，滤波类型选择“统计学滤波”，滤波模式选择“统计学”；设置滤波参数，然后点击运行即可得到统计学滤波之后的点云数据；</p></li>
+<p><strong>Bước 2：</strong>Nhấp chuột phải vào công cụ lọc điểm mây chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-2 hiển thị, loại lọc chọn “Lọc thống kê”, chế độ lọc chọn “Thống kê”; thiết lập tham số lọc, sau đó nhấp chạy để thu được dữ liệu điểm mây sau lọc thống kê;</p></li>
 </ul>
 
 
 <div align="center">
 <img src="media/GvCloudFilterTool_3_1.PNG" style="zoom:70%;"/>
-    <center>图3_1 点云滤波：滤波流程</center>
+    <center>图3_1 Lọc điểm mây：Quy trình lọc</center>
 </div>
 
 
@@ -54,297 +54,297 @@
 
 <div align="center">
 <img src="media/GvCloudFilterTool_3_2.gif" style="zoom:70%;"/>
-    <center>图3_2 点云滤波：统计学滤波</center>
+    <center>图3_2 Lọc điểm mây：Lọc thống kê</center>
 </div>
 
 
 <ul>
-<li><h3>3.2 体素滤波</h3>
+<li><h3>3.2 Lọc voxel</h3>
 
-<p><strong>step1:</strong>   添加点云文件、点云滤波工具，并双击打开参数链，链接点云文件，如图3-1所示；</p>
+<p><strong>Bước 1:</strong>   Thêm tệp điểm mây, công cụ lọc điểm mây, và nhấp đúp mở chuỗi tham số, liên kết tệp điểm mây, như hình 3-1 hiển thị;</p>
 
-<p><strong>step2：</strong>右击点云滤波工具“属性”打开工具高级界面，如图3-3所示，滤波类型选择“统计学滤波”，滤波模式选择“体素”；设置滤波参数，然后点击运行即可得到体素滤波之后的点云数据；</p>
+<p><strong>Bước 2：</strong>Nhấp chuột phải vào công cụ lọc điểm mây chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-3 hiển thị, loại lọc chọn “Lọc thống kê”, chế độ lọc chọn “Voxel”; thiết lập tham số lọc, sau đó nhấp chạy để thu được dữ liệu điểm mây sau lọc voxel;</p>
 
 <div align="center">
 <img src="media/GvCloudFilterTool_3_3.gif" style="zoom:70%;"/>
-    <center>图3_3 点云滤波：体素滤波</center>
+    <center>图3_3 Lọc điểm mây：Lọc voxel</center>
 </div>
 </li>
-<li><h3>3.3 平滑滤波</h3>
+<li><h3>3.3 Lọc làm mịn</h3>
 
-<p><strong>step1:</strong>   添加点云文件、点云滤波工具，并双击打开参数链，链接点云文件，如图3-1所示；</p>
+<p><strong>Bước 1:</strong>   Thêm tệp điểm mây, công cụ lọc điểm mây, và nhấp đúp mở chuỗi tham số, liên kết tệp điểm mây, như hình 3-1 hiển thị;</p>
 
-<p><strong>step2：</strong>右击点云滤波工具“属性”打开工具高级界面，如图3-4所示，滤波类型选择“平滑滤波”；设置滤波参数，然后点击运行即可得到平滑滤波之后的点云数据；</p>
+<p><strong>Bước 2：</strong>Nhấp chuột phải vào công cụ lọc điểm mây chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-4 hiển thị, loại lọc chọn “Lọc làm mịn”; thiết lập tham số lọc, sau đó nhấp chạy để thu được dữ liệu điểm mây sau lọc làm mịn;</p>
 
 <div align="center">
 <img src="media/GvCloudFilterTool_3_4.gif" style="zoom:70%;"/>
-    <center>图3_4 点云滤波：平滑滤波</center>
+    <center>图3_4 Lọc điểm mây：Lọc làm mịn</center>
 </div>
 </li>
 </ul>
 
 
-<h2>4.常见问题</h2>
+<h2>4. Vấn đề thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5. Giải thích tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数描述  </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入点云数据 </td>
-<td> 链接外部的的点云图像 </td>
+<td> Dữ liệu điểm mây đầu vào </td>
+<td> Liên kết hình ảnh điểm mây bên ngoài </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数描述  </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 点云滤波类型    </td>
-<td> 包括：统计学滤波和平滑滤波                                  </td>
+<td> Loại lọc điểm mây    </td>
+<td> Bao gồm: lọc thống kê và lọc làm mịn                                  </td>
 </tr>
 <tr>
-<td> 是否启用ROI </td>
-<td> 选择“是”，则使用长方体框选ROI进行拟合；选择“否”，则对全点云进行平面拟合 </td>
+<td> Có bật ROI hay không </td>
+<td> Chọn “Có”, thì sử dụng hộp chữ nhật chọn ROI để khớp; chọn “Không”, thì thực hiện khớp mặt phẳng trên toàn bộ điểm mây </td>
 </tr>
 <tr>
-<td> ROI个数 </td>
-<td> 启用ROI的情况下，用于设置ROI的个数，范围：[1,50] </td>
+<td> Số lượng ROI </td>
+<td> Trong trường hợp bật ROI, dùng để thiết lập số lượng ROI, phạm vi：[1,50] </td>
 </tr>
 <tr>
-<td> ROI索引 </td>
-<td> 用于不同索引下切换 </td>
+<td> Chỉ số ROI </td>
+<td> Dùng để chuyển đổi giữa các chỉ số khác nhau </td>
 </tr>
 <tr>
-<td> 长方体ROI </td>
-<td> 当前索引下的ROI </td>
+<td> ROI hình hộp chữ nhật </td>
+<td> ROI dưới chỉ số hiện tại </td>
 </tr>
 <tr>
-<td> 滤波模式        </td>
-<td> 包括：统计学和体素                                          </td>
+<td> Chế độ lọc        </td>
+<td> Bao gồm: thống kê và voxel                                          </td>
 </tr>
 <tr>
-<td> 邻域点数 </td>
-<td> 指定KNN近邻搜索的邻域点数，即指定邻域搜索范围；取值范围为(0,125] </td>
+<td> Số điểm lân cận </td>
+<td> Chỉ định số điểm lân cận của tìm kiếm KNN, tức chỉ định phạm vi tìm kiếm lân cận; phạm vi giá trị là (0,125] </td>
 </tr>
 <tr>
-<td> 标准差系数      </td>
-<td> 用于领域点平均距离阈值的自动确定；取值范围为[0.01,5]        </td>
+<td> Hệ số độ lệch chuẩn      </td>
+<td> Dùng để tự động xác định ngưỡng khoảng cách trung bình của điểm lân cận; phạm vi giá trị là [0.01,5]        </td>
 </tr>
 <tr>
-<td> 反向滤波 </td>
-<td> 结果取反 </td>
+<td> Lọc ngược </td>
+<td> Kết quả lấy ngược </td>
 </tr>
 <tr>
-<td> 体素尺寸X、Y、Z </td>
-<td> 指定单个体素网格尺寸大小，以此对整片点云进行体素划分；取值范围为[0.001,1] </td>
+<td> Kích thước voxel X、Y、Z </td>
+<td> Chỉ định kích thước lưới voxel đơn lẻ, từ đó chia toàn bộ điểm mây thành voxel; phạm vi giá trị là [0.001,1] </td>
 </tr>
 <tr>
-<td> 自动设置 </td>
-<td> 自动设置邻域点数阈值 </td>
+<td> Thiết lập tự động </td>
+<td> Tự động thiết lập ngưỡng số điểm lân cận </td>
 </tr>
 <tr>
-<td> 邻域点数阈值   </td>
-<td> 指定或自动确定邻域点数阈值，小于阈值的则为噪声点；取值范围为(0,500] </td>
+<td> Ngưỡng số điểm lân cận   </td>
+<td> Chỉ định hoặc tự động xác định ngưỡng số điểm lân cận, nhỏ hơn ngưỡng thì là điểm nhiễu; phạm vi giá trị là (0,500] </td>
 </tr>
 <tr>
-<td> 搜索方法        </td>
-<td> 指定近邻搜索方法为KNN近邻搜索、相对半径搜索或绝对半径搜索   </td>
+<td> Phương pháp tìm kiếm        </td>
+<td> Chỉ định phương pháp tìm kiếm lân cận là tìm kiếm lân cận KNN, tìm kiếm bán kính tương đối hoặc tìm kiếm bán kính tuyệt đối   </td>
 </tr>
 <tr>
-<td> 相对/绝对搜索半径 </td>
-<td> 指定半径搜索的相对范围，相对半径搜索半径为输入值乘以点云分辨率；相对取值范围为[0.1, 10]，绝对取值范围[0.001,1] </td>
+<td> Bán kính tìm kiếm tương đối/tuyệt đối </td>
+<td> Chỉ định phạm vi tương đối của tìm kiếm bán kính, bán kính tìm kiếm bán kính tương đối là giá trị đầu vào nhân với độ phân giải điểm mây; phạm vi giá trị tương đối là [0.1, 10], phạm vi giá trị tuyệt đối [0.001,1] </td>
 </tr>
 <tr>
-<td> 邻域搜索点数    </td>
-<td> 指定KNN近邻搜索的邻域搜索点数；取值范围为[3,150]            </td>
+<td> Số điểm tìm kiếm lân cận    </td>
+<td> Chỉ định số điểm tìm kiếm lân cận của KNN; phạm vi giá trị là [3,150]            </td>
 </tr>
 <tr>
-<td> 高级参数设置 </td>
-<td> 是：显示高级参数，否：不显示高级参数 </td>
+<td> Thiết lập tham số nâng cao </td>
+<td> Có: hiển thị tham số nâng cao, Không: không hiển thị tham số nâng cao </td>
 </tr>
 <tr>
-<td> 投影方式        </td>
-<td> 指定各点的投影方式，包含不投影、简单投影和垂直投影          </td>
+<td> Phương pháp chiếu        </td>
+<td> Chỉ định phương pháp chiếu của từng điểm, bao gồm không chiếu, chiếu đơn giản và chiếu thẳng đứng          </td>
 </tr>
 <tr>
-<td> Sigma计算方式   </td>
-<td> 包含默认Sigma、绝对Sigma和相对sigma；默认sigma为根据不同搜索方法自动确定相应的sigma值；绝对sigma为输入值；相对sigma为输入值乘以邻域点距的中值。Sigma越大，拟合的曲面越平滑；取值范围为[0.001,1000] </td>
+<td> Phương pháp tính Sigma   </td>
+<td> Bao gồm Sigma mặc định, Sigma tuyệt đối và sigma tương đối; sigma mặc định là tự động xác định giá trị sigma tương ứng theo phương pháp tìm kiếm khác nhau; sigma tuyệt đối là giá trị đầu vào; sigma tương đối là giá trị đầu vào nhân với trung vị khoảng cách điểm lân cận. Sigma càng lớn, bề mặt khớp càng mịn; phạm vi giá trị là [0.001,1000] </td>
 </tr>
 <tr>
-<td> Sigma值 </td>
-<td> 取值范围为[0.001, 1000] </td>
+<td> Giá trị Sigma </td>
+<td> Phạm vi giá trị là [0.001, 1000] </td>
 </tr>
 <tr>
-<td> 多项式阶次      </td>
-<td> 指定表征MLS曲面的多项式阶次，阶次越大，在拟合曲面上的邻域点越多，高阶次容易过拟合且效率慢，推荐参数为二阶，取值范围为[1, 4] </td>
+<td> Bậc đa thức      </td>
+<td> Chỉ định bậc đa thức biểu thị bề mặt MLS, bậc càng cao, số điểm lân cận trên bề mặt khớp càng nhiều, bậc cao dễ quá khớp và hiệu suất chậm, tham số khuyến nghị là bậc hai, phạm vi giá trị là [1, 4] </td>
 </tr>
 <tr>
-<td> 上采样方法      </td>
-<td> 指定结果点云的上采样方法，包含不采样、局部平面、均匀分布和体素扩增 </td>
+<td> Phương pháp lấy mẫu lên      </td>
+<td> Chỉ định phương pháp lấy mẫu lên của kết quả điểm mây, bao gồm không lấy mẫu, mặt phẳng cục bộ, phân bố đều và mở rộng voxel </td>
 </tr>
 <tr>
-<td> 采样半径设置    </td>
-<td> 包含绝对采样半径和相对采样半径                              </td>
+<td> Thiết lập bán kính lấy mẫu    </td>
+<td> Bao gồm bán kính lấy mẫu tuyệt đối và bán kính lấy mẫu tương đối                              </td>
 </tr>
 <tr>
-<td> 上采样相对/绝对半径 </td>
-<td> 针对局部平面上采样方法设置，指定上采样的局部平面大小。若设置为相对值，则上采样半径为输入值乘以点云分辨率 </td>
+<td> Bán kính lấy mẫu lên tương đối/tuyệt đối </td>
+<td> Thiết lập cho phương pháp lấy mẫu lên trên mặt phẳng cục bộ, chỉ định kích thước mặt phẳng cục bộ của lấy mẫu lên. Nếu thiết lập giá trị tương đối, thì bán kính lấy mẫu lên là giá trị đầu vào nhân với độ phân giải điểm mây </td>
 </tr>
 <tr>
-<td> 上采样相对/绝对步长 </td>
-<td> 针对局部平面上采样方法设置，指定上采样的步长。若设置为相对值，则上采样步长为输入值乘以点云分辨率 </td>
+<td> Bước lấy mẫu lên tương đối/tuyệt đối </td>
+<td> Thiết lập cho phương pháp lấy mẫu lên trên mặt phẳng cục bộ, chỉ định bước lấy mẫu lên. Nếu thiết lập giá trị tương đối, thì bước lấy mẫu lên là giá trị đầu vào nhân với độ phân giải điểm mây </td>
 </tr>
 <tr>
-<td> 期望点数 </td>
-<td> 针对均匀分布上采样方法设置，指定在一定半径搜索范围内上采样后达到的点数；取值范围为[1, 500] </td>
+<td> Số điểm mong đợi </td>
+<td> Thiết lập cho phương pháp lấy mẫu lên phân bố đều, chỉ định số điểm đạt được sau lấy mẫu lên trong phạm vi tìm kiếm bán kính nhất định; phạm vi giá trị là [1, 500] </td>
 </tr>
 <tr>
-<td> MLS体素-X、Y、Z </td>
-<td> 针对体素扩增上采样方法设置，指定点云体素划分的体素尺寸大小；取值范围为[0.001, 1] </td>
+<td> Voxel MLS-X、Y、Z </td>
+<td> Thiết lập cho phương pháp lấy mẫu lên mở rộng voxel, chỉ định kích thước voxel chia voxel điểm mây; phạm vi giá trị là [0.001, 1] </td>
 </tr>
 <tr>
-<td> 体素扩增次数 </td>
-<td> 针对体素扩增上采样方法设置，指定体素扩增上采样的次数；取值范围为[0, 10] </td>
+<td> Số lần mở rộng voxel </td>
+<td> Thiết lập cho phương pháp lấy mẫu lên mở rộng voxel, chỉ định số lần lấy mẫu lên mở rộng voxel; phạm vi giá trị là [0, 10] </td>
 </tr>
 <tr>
-<td> 开启并行运算 </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không, chọn Có thì thuật toán sẽ bật cách tính toán song song OpenMp, có thể nâng cao tốc độ tính toán, nhưng có thể xuất hiện tình huống thời gian tiêu hao không ổn định, chọn Không thì thuật toán sẽ tắt tính toán song song OpenMp. </td>
 </tr>
 <tr>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td> Tỷ lệ phần trăm số luồng </td>
+<td> Thiết lập tỷ lệ phần trăm số luồng của tính toán song song, phạm vi hiệu quả là (0, 0.75], tương ứng với phạm vi phần trăm (0%, 75%]. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
+<h4>Tham số đầu vào (giao diện nâng cao)</h4>
 
-<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+<p>Tham số giao diện nâng cao giống với tham số cửa sổ thuộc tính, các nút tương tác như sau:</p>
 
 <table>
 <thead>
 <tr>
-<th> 按钮名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên nút           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 添加ROI </td>
-<td> 在高级界面图像中，自动添加长方体ROI </td>
+<td> Thêm ROI </td>
+<td> Trong hình ảnh giao diện nâng cao, tự động thêm hộp chữ nhật ROI </td>
 </tr>
 <tr>
-<td> 绘制当前ROI </td>
-<td> 在高级界面图像中，相应位置点击并拖动鼠标即可绘制当前索引下的长方体ROI </td>
+<td> Vẽ ROI hiện tại </td>
+<td> Trong hình ảnh giao diện nâng cao, click và kéo chuột tại vị trí tương ứng để vẽ hộp chữ nhật ROI dưới chỉ số hiện tại </td>
 </tr>
 <tr>
-<td> 删除当前ROI                            </td>
-<td> 在高级界面图像中，相应位置点击并拖动鼠标即可删除当前索引下的长方体ROI </td>
+<td> Xóa ROI hiện tại                            </td>
+<td> Trong hình ảnh giao diện nâng cao, click và kéo chuột tại vị trí tương ứng để xóa hộp chữ nhật ROI dưới chỉ số hiện tại </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数描述             </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云数据 </td>
-<td> 显示滤波后的点云图像 </td>
+<td> Dữ liệu điểm mây đầu ra </td>
+<td> Hiển thị hình ảnh điểm mây sau lọc </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数描述             </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云数据 </td>
-<td> 显示滤波后的点云图像 </td>
+<td> Dữ liệu điểm mây đầu ra </td>
+<td> Hiển thị hình ảnh điểm mây sau lọc </td>
 </tr>
 <tr>
-<td> 执行结果     </td>
-<td> 工具执行结果         </td>
+<td> Kết quả thực thi     </td>
+<td> Kết quả thực thi của công cụ         </td>
 </tr>
 <tr>
-<td> 执行时间     </td>
-<td> 工具执行时间         </td>
+<td> Thời gian thực thi     </td>
+<td> Thời gian thực thi của công cụ         </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.示例工程</h2>
+<h2>6. Dự án ví dụ</h2>
 
-<p>参见“\Samples\3D\点云\点云测量.gvp”。</p>
+<p>Tham khảo “\Samples\3D\Điểm mây\Đo điểm mây.gvp”。</p>
 
-<h2>7.特殊说明</h2>
+<h2>7. Giải thích đặc biệt</h2>
 
-<h3>滤波原理</h3>
+<h3>Nguyên lý lọc</h3>
 
-<p><strong>点云滤波工具：</strong>主要包括统计学滤波、体素滤波和平滑滤波功能；</p>
+<p><strong>Công cụ lọc điểm mây：</strong>Chủ yếu bao gồm chức năng lọc thống kê, lọc voxel và lọc làm mịn;</p>
 
-<p><strong>统计学原理：</strong>采用基于统计学的思想，将点云平均点距看作服从正态分布的形式对输入点云进行滤波降噪；</p>
+<p><strong>Nguyên lý thống kê：</strong>Áp dụng ý tưởng dựa trên thống kê, coi khoảng cách điểm trung bình của điểm mây như tuân theo phân bố chuẩn để lọc và khử nhiễu điểm mây đầu vào;</p>
 
-<p><strong>体素噪声滤波原理：</strong>通过对噪声点云进行体素网格划分，根据指定的邻域点数或由指定大小的体素邻域自动确定的邻域点数筛选出符合预期的结果点；</p>
+<p><strong>Nguyên lý lọc nhiễu voxel：</strong>Thông qua việc chia lưới voxel cho điểm mây nhiễu, dựa trên số điểm lân cận được chỉ định hoặc số điểm lân cận được tự động xác định bởi voxel lân cận có kích thước chỉ định để sàng lọc ra các điểm kết quả phù hợp với kỳ vọng;</p>
 
-<p><strong>MLS移动最小二乘平滑原理：</strong>对输入点云进行局部邻域曲面拟合，根据曲面修正点位置与法线；</p>
+<p><strong>Nguyên lý làm mịn bình phương nhỏ nhất di chuyển MLS：</strong>Thực hiện khớp bề mặt lân cận cục bộ cho điểm mây đầu vào, dựa trên bề mặt để sửa vị trí điểm và pháp tuyến;</p>
 
-<p><strong>投影方法：</strong>指定各点的投影方式，包含<strong>不投影、简单投影和垂直投影</strong>。不投影，各点修正平滑为邻域局部拟合平面的投影点；简单投影，各点修正平滑为沿法线方向在拟合曲面的投影点；垂直投影，各点修正平滑为沿垂直拟合曲面方向上的曲面投影点。垂直投影的平滑效果优于简单投影，简单投影效率优于垂直投影，如图7-1所示。</p>
+<p><strong>Phương pháp chiếu：</strong>Chỉ định phương pháp chiếu của từng điểm, bao gồm <strong>không chiếu, chiếu đơn giản và chiếu thẳng đứng</strong>. Không chiếu: mỗi điểm được sửa mịn thành điểm chiếu trên mặt phẳng khớp cục bộ lân cận; chiếu đơn giản: mỗi điểm được sửa mịn thành điểm chiếu trên bề mặt khớp dọc theo hướng pháp tuyến; chiếu thẳng đứng: mỗi điểm được sửa mịn thành điểm chiếu trên bề mặt dọc theo hướng thẳng đứng với bề mặt khớp. Hiệu quả làm mịn của chiếu thẳng đứng tốt hơn chiếu đơn giản, hiệu suất của chiếu đơn giản tốt hơn chiếu thẳng đứng, như hình 7-1 hiển thị.</p>
 
 <div align="center">
 <img src="media/GvCloudFilterTool_7_1.png" style="zoom:70%;"/>
-    <center>图7_1 点云滤波：简单投影、垂直投影</center>
+    <center>图7_1 Lọc điểm mây：Chiếu đơn giản, chiếu thẳng đứng</center>
 </div>
 
 
-<p><strong>上采样方法：</strong>指定结果点云的上采样方法，包含<strong>不采样、局部平面、均匀分布和体素扩增</strong>。</p>
+<p><strong>Phương pháp lấy mẫu lên：</strong>Chỉ định phương pháp lấy mẫu lên của kết quả điểm mây, bao gồm <strong>không lấy mẫu, mặt phẳng cục bộ, phân bố đều và mở rộng voxel</strong>.</p>
 
 <ul>
-<li><p>不采样，平滑结果点云不进行上采样；</p></li>
-<li><p>局部平面，平滑结果点云各点在指定大小且以法线为平面法向的局部平面内进行指定步长取点上采样，如图7-2所示；</p></li>
-<li><p>均匀随机分布，平滑结果点云在一定半径搜索范围内进行随机取点上采样；</p></li>
-<li><p>体素扩增，对平滑结果点云进行体素划分，并对各点26邻域网格作有效化处理，根据体素尺寸对扩增的体素网格进行取点上采样，如图7-3所示。</p></li>
+<li><p>Không lấy mẫu, điểm mây kết quả làm mịn không thực hiện lấy mẫu lên;</p></li>
+<li><p>Mặt phẳng cục bộ, mỗi điểm của điểm mây kết quả làm mịn thực hiện lấy mẫu lên với bước chỉ định trong mặt phẳng cục bộ có kích thước chỉ định và lấy pháp tuyến làm pháp tuyến mặt phẳng, như hình 7-2 hiển thị;</p></li>
+<li><p>Phân bố ngẫu nhiên đều, điểm mây kết quả làm mịn thực hiện lấy mẫu lên ngẫu nhiên trong phạm vi tìm kiếm bán kính nhất định;</p></li>
+<li><p>Mở rộng voxel, thực hiện chia voxel cho điểm mây kết quả làm mịn, và xử lý hiệu lực hóa lưới 26 lân cận của từng điểm, dựa trên kích thước voxel để lấy mẫu lên cho lưới voxel được mở rộng, như hình 7-3 hiển thị.</p></li>
 </ul>
 
 
 <div align="center">
 <img src="media/GvCloudFilterTool_7_2.png" style="zoom:100%;"/>
-    <center>图7_2 点云滤波：简单局部平面投影</center>
+    <center>图7_2 Lọc điểm mây：Chiếu mặt phẳng cục bộ đơn giản</center>
 </div>
 
 
@@ -352,7 +352,7 @@
 
 <div align="center">
 <img src="media/GvCloudFilterTool_7_3.png" style="zoom:100%;"/>
-    <center>图7_3 点云滤波：体素网格扩增上采样</center>
+    <center>图7_3 Lọc điểm mây：Lấy mẫu lên bằng cách mở rộng lưới voxel</center>
 </div>
 
 

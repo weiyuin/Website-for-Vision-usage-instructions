@@ -16,11 +16,11 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云卡尺工具</h1>
+<h1>Điểm mây thước kẹp công cụ</h1>
 
-<h2>1.功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>   点云卡尺工具主要应用于工件尺寸测量，如对工件厚度、长宽、圆柱外径、圆孔内径等进行测量或模拟三坐标测量机对物体表面进行探触取点；</p>
+<p>   Công cụ điểm mây thước kẹp chủ yếu được ứng dụng trong đo kích thước chi tiết, chẳng hạn như đo độ dày, chiều dài chiều rộng, đường kính ngoài của hình trụ, đường kính trong của lỗ tròn v.v. của chi tiết, hoặc mô phỏng máy đo tọa độ ba chiều để thăm dò và lấy điểm trên bề mặt vật thể;</p>
 
 <div align="center">
 <img src="media/3DProtrudeTool_1_1.png" style="zoom:50%;"/>
@@ -29,236 +29,236 @@
 </div>
 
 
-<h2>2.使用场景</h2>
+<h2>2. Kịch bản sử dụng</h2>
 
-<p>   模拟现实中探针测量数据的场景对点云数据进行测量；</p>
+<p>   Mô phỏng cảnh đo dữ liệu bằng đầu dò trong thực tế để đo dữ liệu điểm mây;</p>
 
-<h2>3.使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>添加工具、导入图像</h3>
+<li><h3>Thêm công cụ, nhập hình ảnh</h3>
 
-<p>添加“点云卡尺工具”，设置属性参数、数据链接，如图3-1所示；
+<p>Thêm “Điểm mây thước kẹp công cụ”, thiết lập tham số thuộc tính, liên kết dữ liệu, như hình 3-1 hiển thị;
 <img src="media/3DProtrudeTool_3_1.png" alt="" /></p></li>
 </ul>
 
 
-<p><imgnote>图3_1 点添加点云卡尺工具</imgnote>
-- ### 参数设置</p>
+<p><imgnote>图3_1 Thêm điểm mây thước kẹp công cụ</imgnote>
+- ### Thiết lập tham số</p>
 
 <ul>
-<li>① 计算方式为第一探触点时，支持的探触类型：球体、圆柱、模拟CMM，设置的ROI不能与输入点云有交集，从该位置按照测量方向进行探触求点；</li>
-<li>② 计算方式为均值/中值/最大值/最小值/投影均值时，针对全部点云数据，并在测量方向上按照过滤上下限进行过滤计算；</li>
-<li>③ 计算方式为ROI均值/ROI中值/ROI最大值/ROI最小值/ROI投影均值时，支持的ROI类型：球体、圆柱和长方体，针对ROI内部点云数据，并在测量方向上按照过滤上下限进行过滤计算；
+<li>① Khi phương thức tính toán là điểm thăm dò đầu tiên, các loại thăm dò được hỗ trợ: hình cầu, hình trụ, mô phỏng CMM, ROI được thiết lập không được giao với điểm mây đầu vào, từ vị trí này theo hướng đo tiến hành thăm dò để tìm điểm;</li>
+<li>② Khi phương thức tính toán là giá trị trung bình/giá trị trung vị/giá trị lớn nhất/giá trị nhỏ nhất/giá trị trung bình chiếu, thì nhắm đến toàn bộ dữ liệu điểm mây, và theo hướng đo tiến hành lọc theo giới hạn trên dưới để tính toán;</li>
+<li>③ Khi phương thức tính toán là giá trị trung bình ROI/giá trị trung vị ROI/giá trị lớn nhất ROI/giá trị nhỏ nhất ROI/giá trị trung bình chiếu ROI, thì các loại ROI được hỗ trợ: hình cầu, hình trụ và hình hộp chữ nhật, nhắm đến dữ liệu điểm mây bên trong ROI, và theo hướng đo tiến hành lọc theo giới hạn trên dưới để tính toán;
 
-<h2>4.常见问题</h2></li>
+<h2>4. Vấn đề thường gặp</h2></li>
 </ul>
 
 
-<h2>5.参数说明</h2>
+<h2>5. Giải thích tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称</th>
-<th style="text-align:left;"> 参数描述  </th>
+<th> Tên tham số</th>
+<th style="text-align:left;"> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>输入点云数据 </td>
-<td style="text-align:left;">链接需要做测量的点云数据图像      </td>
+<td>Dữ liệu điểm mây đầu vào </td>
+<td style="text-align:left;">Liên kết dữ liệu điểm mây hình ảnh cần thực hiện đo      </td>
 </tr>
 <tr>
-<td>测量方向 </td>
-<td style="text-align:left;">输入点云卡尺工具的探测方向，探针会沿着测量方向对点云数据进行探测或测量</td>
+<td>Hướng đo </td>
+<td style="text-align:left;">Hướng thăm dò của công cụ điểm mây thước kẹp đầu vào, đầu dò sẽ dọc theo hướng đo để thăm dò hoặc đo dữ liệu điểm mây</td>
 </tr>
 <tr>
-<td>输入球体/圆柱/长方体</td>
-<td style="text-align:left;">第一探触点模式下探头的形状或ROI模式下ROI形状，可以链接其他工具（元素生成工具：球体、圆柱、长方体）的输出</td>
+<td>Đầu vào hình cầu/hình trụ/hình hộp chữ nhật</td>
+<td style="text-align:left;">Hình dạng của đầu dò ở chế độ điểm thăm dò đầu tiên hoặc hình dạng ROI ở chế độ ROI, có thể liên kết đầu ra của các công cụ khác (công cụ tạo phần tử: hình cầu, hình trụ, hình hộp chữ nhật)</td>
 </tr>
 <tr>
-<td>参考点</td>
-<td style="text-align:left;">仅当卡尺点计算方法为投影均值/ROI投影均值时生效，参考点和方向向量构建直线，用于点云投影</td>
+<td>Điểm tham chiếu</td>
+<td style="text-align:left;">Chỉ có hiệu lực khi phương pháp tính toán điểm thước kẹp là giá trị trung bình chiếu/giá trị trung bình chiếu ROI, điểm tham chiếu và vector hướng tạo thành đường thẳng, dùng để chiếu điểm mây</td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称</th>
-<th style="text-align:left;"> 参数描述  </th>
+<th> Tên tham số</th>
+<th style="text-align:left;"> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 计算方式 </td>
-<td style="text-align:left;"> 第一探触点：输入的球体，圆柱等作为探触体，均值/中值/最大/最小/投影均值针对全部点云，ROI均值/ROI中值/ROI最大/ROI最小/ROI投影均值针对ROI内部点云 </td>
+<td> Phương thức tính toán </td>
+<td style="text-align:left;"> Điểm thăm dò đầu tiên: hình cầu, hình trụ đầu vào v.v. được dùng làm thể thăm dò, giá trị trung bình/giá trị trung vị/giá trị lớn nhất/giá trị nhỏ nhất/giá trị trung bình chiếu nhắm đến toàn bộ điểm mây, giá trị trung bình ROI/giá trị trung vị ROI/giá trị lớn nhất ROI/giá trị nhỏ nhất ROI/giá trị trung bình chiếu ROI nhắm đến điểm mây bên trong ROI </td>
 </tr>
 <tr>
-<td>                                                      卡尺类型</td>
-<td style="text-align:left;"> 选择测量卡尺（探头）的类型，包括：球形、圆柱、模拟CMM三种类型 </td>
+<td>                                                      Loại thước kẹp</td>
+<td style="text-align:left;"> Chọn loại thước kẹp đo (đầu dò), bao gồm: ba loại hình cầu, hình trụ, mô phỏng CMM </td>
 </tr>
 <tr>
-<td> ROI类型                                                      </td>
-<td style="text-align:left;"> ROI类型包括三种：球体、圆柱、长方体。仅在计算方式存在ROI模式下有效 </td>
+<td> Loại ROI                                                      </td>
+<td style="text-align:left;"> Loại ROI bao gồm ba loại: hình cầu, hình trụ, hình hộp chữ nhật. Chỉ có hiệu lực khi phương thức tính toán tồn tại chế độ ROI </td>
 </tr>
 <tr>
-<td> 过滤下限~过滤上限 </td>
-<td style="text-align:left;"> 设置卡尺点计算时使用的数据起始和终止比例（第一探触点模式外生效） </td>
+<td> Giới hạn dưới lọc ~ Giới hạn trên lọc </td>
+<td style="text-align:left;"> Thiết lập tỷ lệ bắt đầu và kết thúc dữ liệu sử dụng khi tính toán điểm thước kẹp (có hiệu lực ngoài chế độ điểm thăm dò đầu tiên) </td>
 </tr>
 <tr>
-<td> CMM拟合类型      </td>
-<td style="text-align:left;"> 模拟复杂几何图形的实际接触测量。包括：三维平面、球体、圆柱、圆锥 </td>
+<td> Loại khớp CMM      </td>
+<td style="text-align:left;"> Mô phỏng đo tiếp xúc thực tế của hình học phức tạp. Bao gồm: mặt phẳng ba chiều, hình cầu, hình trụ, hình nón </td>
 </tr>
 <tr>
-<td> 搜索深度          </td>
-<td style="text-align:left;"> 搜索深度为卡尺初始位置沿探触方向定义的搜索区域深度（第一探触点模式生效），范围[0，1000000]，如图7-1所示 </td>
+<td> Độ sâu tìm kiếm          </td>
+<td style="text-align:left;"> Độ sâu tìm kiếm là độ sâu vùng tìm kiếm được định nghĩa dọc theo hướng thăm dò từ vị trí ban đầu của thước kẹp (có hiệu lực ở chế độ điểm thăm dò đầu tiên), phạm vi [0，1000000], như hình 7-1 hiển thị </td>
 </tr>
 <tr>
-<td> 球体卡尺参数              </td>
-<td style="text-align:left;"> 卡尺余隙：卡尺类型为球体卡尺或圆柱卡尺时，余隙为球或圆柱初始位置沿探触方向移动的距离。蓝色为球形卡尺初始位置，橙色为球形卡尺沿探触方向移动后的位置，即两球心之间的距离；如图7-1所示 </td>
+<td> Tham số thước kẹp hình cầu              </td>
+<td style="text-align:left;"> Khe hở thước kẹp：Khi loại thước kẹp là thước kẹp hình cầu hoặc thước kẹp hình trụ, khe hở là khoảng cách mà vị trí ban đầu của hình cầu hoặc hình trụ di chuyển dọc theo hướng thăm dò. Màu xanh lam là vị trí ban đầu của thước kẹp hình cầu, màu cam là vị trí sau khi thước kẹp hình cầu di chuyển dọc theo hướng thăm dò, tức khoảng cách giữa hai tâm cầu; như hình 7-1 hiển thị </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
+<h4>Tham số đầu vào (giao diện nâng cao)</h4>
 
-<p>高级界面参数与属性窗口参数一致。</p>
+<p>Tham số giao diện nâng cao giống với tham số cửa sổ thuộc tính.</p>
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称</th>
-<th> 参数描述  </th>
+<th> Tên tham số</th>
+<th> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 卡点坐标数组                                              </td>
-<td> 使用卡尺工具获取的探测点的三维坐标数组                       </td>
+<td> Mảng tọa độ điểm kẹp                                              </td>
+<td> Mảng tọa độ ba chiều của điểm thăm dò thu được bằng công cụ thước kẹp                       </td>
 </tr>
 <tr>
-<td> 卡点坐标 </td>
-<td> 使用卡尺工具获取的探测点的第一组三维坐标 </td>
+<td> Tọa độ điểm kẹp </td>
+<td> Nhóm tọa độ ba chiều đầu tiên của điểm thăm dò thu được bằng công cụ thước kẹp </td>
 </tr>
 <tr>
-<td> 候选点数                         </td>
-<td> 指探触点接触时获取的所有三维点的点数                                           </td>
+<td> Số điểm ứng viên                         </td>
+<td> Chỉ số điểm ba chiều thu được khi điểm thăm dò tiếp xúc                                           </td>
 </tr>
 <tr>
-<td> 拟合平面/圆柱/球/圆锥                     </td>
-<td> CMM不同不可类型，输出对应的平面/圆柱/球/圆锥 </td>
+<td> Mặt phẳng/hình trụ/hình cầu/hình nón đã khớp                     </td>
+<td> Các loại khác nhau của CMM, đầu ra mặt phẳng/hình trụ/hình cầu/hình nón tương ứng </td>
 </tr>
 <tr>
-<td> 拟合误差                               </td>
-<td> 拟合平面误差，指所有参与平面拟合的点的RMS结果               </td>
+<td> Lỗi khớp                               </td>
+<td> Lỗi khớp mặt phẳng, chỉ kết quả RMS của tất cả các điểm tham gia khớp mặt phẳng               </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称</th>
-<th> 参数描述  </th>
+<th> Tên tham số</th>
+<th> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 卡点坐标数组                                              </td>
-<td> 使用卡尺工具获取的探测点的三维坐标数组                       </td>
+<td> Mảng tọa độ điểm kẹp                                              </td>
+<td> Mảng tọa độ ba chiều của điểm thăm dò thu được bằng công cụ thước kẹp                       </td>
 </tr>
 <tr>
-<td> 卡点坐标 </td>
-<td> 使用卡尺工具获取的探测点的第一组三维坐标 </td>
+<td> Tọa độ điểm kẹp </td>
+<td> Nhóm tọa độ ba chiều đầu tiên của điểm thăm dò thu được bằng công cụ thước kẹp </td>
 </tr>
 <tr>
-<td> 候选点数                         </td>
-<td> 指探触点接触时获取的所有三维点的点数                                           </td>
+<td> Số điểm ứng viên                         </td>
+<td> Chỉ số điểm ba chiều thu được khi điểm thăm dò tiếp xúc                                           </td>
 </tr>
 <tr>
-<td> 拟合平面/圆柱/球/圆锥                     </td>
-<td> CMM不同不可类型，输出对应的平面/圆柱/球/圆锥 </td>
+<td> Mặt phẳng/hình trụ/hình cầu/hình nón đã khớp                     </td>
+<td> Các loại khác nhau của CMM, đầu ra mặt phẳng/hình trụ/hình cầu/hình nón tương ứng </td>
 </tr>
 <tr>
-<td> 拟合误差                               </td>
-<td> 拟合平面误差，指所有参与平面拟合的点的RMS结果               </td>
+<td> Lỗi khớp                               </td>
+<td> Lỗi khớp mặt phẳng, chỉ kết quả RMS của tất cả các điểm tham gia khớp mặt phẳng               </td>
 </tr>
 <tr>
-<td> 执行结果                                   </td>
-<td> 工具执行结果                                                                                       </td>
+<td> Kết quả thực thi                                   </td>
+<td> Kết quả thực thi của công cụ                                                                                       </td>
 </tr>
 <tr>
-<td> 执行时间                                   </td>
-<td> 工具执行时间 </td>
+<td> Thời gian thực thi                                   </td>
+<td> Thời gian thực thi của công cụ </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.示例工程</h2>
+<h2>6. Dự án ví dụ</h2>
 
-<p>参见“\Samples\点云卡尺工具.gvp”。</p>
+<p>Tham khảo “\Samples\Điểm mây thước kẹp công cụ.gvp”。</p>
 
-<h2>7.特殊说明</h2>
+<h2>7. Giải thích đặc biệt</h2>
 
-<h3>原理说明</h3>
+<h3>Giải thích nguyên lý</h3>
 
-<p><strong>1、第一探触点</strong>：以当前位置沿着测量方向与点云接触，计算第一个探触点位置；</p>
+<p><strong>1、Điểm thăm dò đầu tiên</strong>：Từ vị trí hiện tại dọc theo hướng đo tiếp xúc với điểm mây, tính toán vị trí điểm thăm dò đầu tiên;</p>
 
-<p><strong>探触类型</strong>：目前支持：球体、圆柱和模拟CMM；</p>
+<p><strong>Loại thăm dò</strong>：Hiện tại hỗ trợ: hình cầu, hình trụ và mô phỏng CMM;</p>
 
-<p><strong>测量方向</strong>：即卡尺测量方向，卡尺沿该方向与点云数据接触取点；</p>
+<p><strong>Hướng đo</strong>：Tức là hướng đo của thước kẹp, thước kẹp dọc theo hướng này tiếp xúc với dữ liệu điểm mây để lấy điểm;</p>
 
-<p><strong>搜索深度</strong>：搜索深度为卡尺初始位置沿探触方向定义的搜索区域深度，如图7-1所示；<br/>
-<strong>搜索半径</strong>：当探触类型为模拟CMM点时，搜索半径为卡尺参考点沿探触方向定义的搜索区域半径，如图7-1所示；
-<strong>余隙</strong>：当探触类型为球体卡尺或圆柱卡尺时，余隙为球或圆柱初始位置沿测量方向移动的距离，如图7-1所示。蓝色为球体卡尺初始位置，橙色为球体卡尺沿探触方向移动后的位置，即两球心之间的距离，后续计算会按照橙色球体位置进行计算，即实现不移动ROI实际位置达到移动ROI位置的计算效果；</p>
+<p><strong>Độ sâu tìm kiếm</strong>：Độ sâu tìm kiếm là độ sâu vùng tìm kiếm được định nghĩa dọc theo hướng thăm dò từ vị trí ban đầu của thước kẹp, như hình 7-1 hiển thị;<br/>
+<strong>Bán kính tìm kiếm</strong>：Khi loại thăm dò là điểm mô phỏng CMM, bán kính tìm kiếm là bán kính vùng tìm kiếm được định nghĩa dọc theo hướng thăm dò từ điểm tham chiếu của thước kẹp, như hình 7-1 hiển thị;
+<strong>Khe hở</strong>：Khi loại thăm dò là thước kẹp hình cầu hoặc thước kẹp hình trụ, khe hở là khoảng cách mà vị trí ban đầu của hình cầu hoặc hình trụ di chuyển dọc theo hướng đo, như hình 7-1 hiển thị. Màu xanh lam là vị trí ban đầu của thước kẹp hình cầu, màu cam là vị trí sau khi thước kẹp hình cầu di chuyển dọc theo hướng thăm dò, tức khoảng cách giữa hai tâm cầu, các tính toán tiếp theo sẽ thực hiện theo vị trí hình cầu màu cam, tức là đạt được hiệu quả tính toán di chuyển vị trí ROI mà không thực sự di chuyển vị trí ROI;</p>
 
 <p> <div align="center">
   <img src="media/3DProtrudeTool_7_1.png" style="zoom:100%;"/>
   <img src="media/3DProtrudeTool_7_2.png" style="zoom:100%;"/>
-      <center>图7_1 参数示意图介绍</center>
+      <center>图7_1 Sơ đồ giới thiệu tham số</center>
   </div></p>
 
-<p><strong>球体/圆柱卡尺</strong>：根据构造的球/圆柱位置，沿测量方向与点云接触，输出接触到的第一个点；
+<p><strong>Thước kẹp hình cầu/hình trụ</strong>：Dựa trên vị trí hình cầu/hình trụ được xây dựng, dọc theo hướng đo tiếp xúc với điểm mây, xuất ra điểm tiếp xúc đầu tiên;
 <img src="media/3DProtrudeTool_7_3.png" alt="" /></p>
 
-<p><imgnote>图7-2 球体卡尺</imgnote></p>
+<p><imgnote>图7-2 Thước kẹp hình cầu</imgnote></p>
 
 <p><img src="media/3DProtrudeTool_7_4.png" alt="" /></p>
 
-<p><imgnote>图7-3 圆柱卡尺</imgnote></p>
+<p><imgnote>图7-3 Thước kẹp hình trụ</imgnote></p>
 
-<p>  <font color = "red">注：圆柱卡尺是圆柱侧面与点云接触取点；</font></p>
+<p>  <font color = "red">Chú ý: Thước kẹp hình trụ là mặt bên của hình trụ tiếp xúc với điểm mây để lấy điểm;</font></p>
 
-<p><strong>模拟CMM点</strong>：根据半径和深度确定一个搜索范围，将此范围内的点拟合成对应平面/球/圆柱/圆锥面，输出参考点沿搜索方向构成的射线与拟合面的交点；</p>
+<p><strong>Điểm mô phỏng CMM</strong>：Dựa trên bán kính và độ sâu xác định một phạm vi tìm kiếm, khớp các điểm trong phạm vi này thành mặt phẳng/hình cầu/hình trụ/mặt nón tương ứng, xuất ra điểm giao giữa tia được tạo bởi điểm tham chiếu dọc theo hướng tìm kiếm với mặt đã khớp;</p>
 
 <p><img src="media/3DProtrudeTool_7_5.png" alt="" /></p>
 
-<p><imgnote>图7-4 模拟CMM</imgnote></p>
+<p><imgnote>图7-4 Mô phỏng CMM</imgnote></p>
 
-<p><strong>2、均值/中值/最大值/最小值/投影均值</strong>：针对全部点云，计算均值/中值/最大值/最小值/投影均值；</p>
+<p><strong>2、Giá trị trung bình/giá trị trung vị/giá trị lớn nhất/giá trị nhỏ nhất/giá trị trung bình chiếu</strong>：Nhắm đến toàn bộ điểm mây, tính toán giá trị trung bình/giá trị trung vị/giá trị lớn nhất/giá trị nhỏ nhất/giá trị trung bình chiếu;</p>
 
-<p><strong>过滤上下限</strong>：将输入点云投影到测量方向上，在按照上下限对点云过滤处理后再计算；</p>
+<p><strong>Giới hạn trên dưới lọc</strong>：Chiếu điểm mây đầu vào lên hướng đo, sau đó lọc điểm mây theo giới hạn trên dưới rồi tính toán;</p>
 
-<p><strong>参考点</strong>：投影均值时有效，计算出均值后投影到参考点+方向向量构成的直线上；</p>
+<p><strong>Điểm tham chiếu</strong>：Có hiệu lực khi là giá trị trung bình chiếu, sau khi tính toán được giá trị trung bình thì chiếu lên đường thẳng được tạo bởi điểm tham chiếu + vector hướng;</p>
 
-<p><strong>3、ROI均值/ROI中值/ROI最大值/ROI最小值/ROI投影均值</strong>：针对ROI内部点云，计算ROI内部均值/中值/最大值/最小值/投影均值；</p>
+<p><strong>3、Giá trị trung bình ROI/giá trị trung vị ROI/giá trị lớn nhất ROI/giá trị nhỏ nhất ROI/giá trị trung bình chiếu ROI</strong>：Nhắm đến điểm mây bên trong ROI, tính toán giá trị trung bình/giá trị trung vị/giá trị lớn nhất/giá trị nhỏ nhất/giá trị trung bình chiếu bên trong ROI;</p>
 
-<p><strong>ROI类型</strong>：目前支持：球体、圆柱和长方体；
+<p><strong>Loại ROI</strong>：Hiện tại hỗ trợ: hình cầu, hình trụ và hình hộp chữ nhật;
 <img src="media/3DProtrudeTool_7_6.png" alt="" /></p>
 
-<p><imgnote>图7-5 ROI均值</imgnote></p>
+<p><imgnote>图7-5 Giá trị trung bình ROI</imgnote></p>
