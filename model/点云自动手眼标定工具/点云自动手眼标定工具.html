@@ -1,0 +1,238 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>点云自动手眼标定工具</h1>
+
+<h2>1.功能概述</h2>
+
+<p>该工具主要服务于3D视觉引导项目，提供自动获取机械手手眼标定姿态的功能，支持两阶段手眼标定和区域自动标定两种模式，工具主要应用在3D视觉引导项目的手眼标定流程上，可<strong>简化传统手动示教机械手手眼标定姿态的繁琐工作</strong>。</p>
+
+<p><img src="media/AutoHandeyeCalibTool_1_1.png" alt="" /></p>
+
+<h2>2.使用场景</h2>
+
+<p>​     该工具主要用于配合机械臂抓取或引导类项目比如：</p>
+
+<p>​        <strong>场景1：3C产品大范围的尺寸测量、缺陷检测、柔性装配等3D引导检测项目</strong></p>
+
+<div align="center">
+<img src="media/AutoHandeyeCalib Tool_2_1.png" style="zoom:50%;"/>
+    <center>图2_1 柔性装配项目-图片来源于网络</center>
+</div>
+
+
+<p>​        <strong>场景2：仓储物流领域的无序抓取分拣、拆垛码垛 or 汽车制造领域的涂胶、焊接等自动化项目</strong></p>
+
+<div align="center">
+<img src="media/AutoHandeyeCalib Tool_2_2.png" style="zoom:50%;"/>
+    <center>图2_1 码垛机器人项目-图片来源于网络</center>
+</div>
+
+
+<h2>3.使用向导</h2>
+
+<h4>1）方案步骤</h4>
+
+<h5>两阶段标定方法：</h5>
+
+<ul>
+<li><strong>Step1</strong>：初始标定位姿设置，手动示教机械手将标定板放置相机视野下，记录并载入初始位姿；</li>
+<li><strong>Step2</strong>：设置标定参数，通过一阶段标定姿态获取10个初始标定位姿，发送位姿至机械手；</li>
+<li><strong>Step3</strong>：依次走位并采集标定图像，完成特征提取及初始手眼标定计算；</li>
+<li><strong>Step4</strong>：载入初始手眼标定结果，获取高精度手眼标定位姿并发送至机械手；</li>
+<li><strong>Step5</strong>：依次走位并采集标定图像，完成特征提取及高精度手眼标定计算；</li>
+</ul>
+
+
+<p><img src=".\media\AutoHandeyeCalibTool_3_1.png" alt="" /></p>
+
+<h5>区域标定方法：</h5>
+
+<ul>
+<li><strong>Step1：</strong>手动拖动机械手，示教五个点表征在机械手坐标系下的标定空间；</li>
+<li><strong>Step2：</strong>初始标定位姿设置，手动示教机械手将标定板放置相机视野下，记录并载入初始标定位姿；</li>
+<li><strong>Step3：</strong>设置标定参数，获取标定位姿并发送至机械手；</li>
+<li><strong>Step4：</strong>依次走位并采集标定图像，完成特征提取及手眼标定计算；</li>
+</ul>
+
+
+<p><img src=".\media\AutoHandeyeCalibTool_3_2.png" alt="" /></p>
+
+<p><strong>标定姿态结果界面如下：</strong></p>
+
+<p><img src=".\media\AutoHandeyeCalibTool_3_3.png" alt="" /></p>
+
+<h2>4.常见问题</h2>
+
+<h2>5.参数说明</h2>
+
+<h4>输入参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称             </th>
+<th> 参数描述                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输入初始姿态         </td>
+<td> 用户给定初始标定姿态，此姿态要求标定板在相机视野中心，且正对相机 </td>
+</tr>
+<tr>
+<td> 一阶段手眼标定矩阵   </td>
+<td> 一阶段3D相机与机械手的位姿转换关系                           </td>
+</tr>
+<tr>
+<td> 一阶段手眼标定标志点 </td>
+<td> 一阶段靶标标志点位置                                         </td>
+</tr>
+<tr>
+<td> 区域点集             </td>
+<td> 标定区域由五个点构成                                         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（属性窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称         </th>
+<th> 参数描述                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 相机安装方式     </td>
+<td> 支持眼在手外和眼在手上                                 </td>
+</tr>
+<tr>
+<td> 标定平面层数     </td>
+<td> 指定标定姿态分布的总层数，取值范围[3,10]               </td>
+</tr>
+<tr>
+<td> 标定网格数       </td>
+<td> 指定每层平面上标定位姿的分布网格，取值范围[3,10]       </td>
+</tr>
+<tr>
+<td> 姿态个数         </td>
+<td> 指定输出姿态的个数，取值范围[5,100]                    </td>
+</tr>
+<tr>
+<td> 姿态旋转角度     </td>
+<td> 指定标定姿态相对初始姿态旋转的最大角度，取值范围[0,45] </td>
+</tr>
+<tr>
+<td> 自动标定方法     </td>
+<td> 支持两阶段标定和区域标定                               </td>
+</tr>
+<tr>
+<td> 视野长           </td>
+<td> 相机视野长，单位mm                                     </td>
+</tr>
+<tr>
+<td> 视野宽           </td>
+<td> 相机视野宽，单位mm                                     </td>
+</tr>
+<tr>
+<td> 景深             </td>
+<td> 相机景深，单位mm                                       </td>
+</tr>
+<tr>
+<td> 已有手眼标定结果 </td>
+<td> 已完成一阶段标定                                       </td>
+</tr>
+<tr>
+<td> 外部结果         </td>
+<td> 是否启用外部结果导入                                   </td>
+</tr>
+<tr>
+<td> 标定结果路径     </td>
+<td> 标定结果在本地文件夹路径                               </td>
+</tr>
+<tr>
+<td> 外部点集         </td>
+<td> 是否启用外部点集导入                                   </td>
+</tr>
+<tr>
+<td> 点集路径         </td>
+<td> 点集在本地文件夹路径                                   </td>
+</tr>
+<tr>
+<td> 编辑点坐标       </td>
+<td> 是否可以编辑点的坐标值                                 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输入参数（高级界面）</h4>
+
+<p>高级界面参数与属性窗口参数一致。</p>
+
+<h4>输出参数（参数链）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出标定姿态 </td>
+<td> 输出的机械手手眼标定位姿 </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>输出参数（输出窗口）</h4>
+
+<table>
+<thead>
+<tr>
+<th> 参数名称     </th>
+<th> 参数描述                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 输出标定姿态 </td>
+<td> 输出的机械手手眼标定位姿 </td>
+</tr>
+<tr>
+<td> 执行时间     </td>
+<td> 工具执行时间             </td>
+</tr>
+<tr>
+<td> 执行结果     </td>
+<td> 工具执行结果             </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6.示例工程</h2>
+
+<p>参见“\Samples\3D\点云\点云自动手眼标定工具.gvp”。</p>
