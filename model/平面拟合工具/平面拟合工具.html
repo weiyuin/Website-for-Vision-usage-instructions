@@ -16,216 +16,216 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>平面拟合工具</h1>
+<h1>Công cụ khớp phẳng</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>在3D测量中，往往需要对深度图像中检测区域内的三维空间点进行拟合获得一个最优平面，从而能够在这个基平面上进行投影、高度测量和体积测量等后续操作。平面拟合工具主要是根据若干个三维空间点计算得到三维平面的解析表达式。</p>
+<p>Trong đo lường 3D, thường cần thực hiện khớp các điểm không gian ba chiều trong vùng phát hiện của ảnh chiều sâu để thu được một mặt phẳng tối ưu, từ đó có thể thực hiện các thao tác tiếp theo như chiếu, đo chiều cao và đo thể tích trên mặt phẳng cơ sở này. Công cụ khớp phẳng chủ yếu dựa vào một số điểm không gian ba chiều để tính toán biểu thức giải tích của mặt phẳng ba chiều.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口     </td>
-<td> 启用三维点集拟合                                             </td>
-<td> 选择“是”，参数链中显示输入三维点集参数，并使用该三维点集进行平面拟合。 </td>
+<td> Cửa sổ thuộc tính     </td>
+<td> Kích hoạt khớp tập điểm 3D                                             </td>
+<td> Chọn “Có”, tham số chuỗi dữ liệu sẽ hiển thị tham số tập điểm 3D đầu vào, và sử dụng tập điểm 3D này để khớp mặt phẳng. </td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合方法     </td>
-<td> 分为两种：面积和点。                                                                                                       </td>
+<td> Phương pháp khớp     </td>
+<td> Được chia thành hai loại: diện tích và điểm.                                                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 平面方向     </td>
-<td> 分为两种：正像素空间和负像素空间。<img src="media/wps48.jpg" alt="img" />                                                                  </td>
+<td> Hướng mặt phẳng     </td>
+<td> Được chia thành hai loại: không gian pixel dương và không gian pixel âm.<img src="media/wps48.jpg" alt="img" />                                                                  </td>
 </tr>
 <tr>
 <td></td>
-<td> ROI类型      </td>
-<td> 待检测区域，分为8种：整幅图像、矩形、仿射矩形、圆形、圆环、椭圆、多边形。                                                               </td>
+<td> Loại ROI      </td>
+<td> Vùng cần phát hiện, được chia thành 8 loại: toàn bộ ảnh, hình chữ nhật, hình chữ nhật affine, hình tròn, đoạn vòng tròn, elip, đa giác.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 启用掩模     </td>
-<td> 是否启用掩模，选择“是”，显示掩模个数、掩膜序号、掩膜形状等参数。                                                               </td>
+<td> Kích hoạt mặt nạ     </td>
+<td> Có kích hoạt mặt nạ hay không, chọn “Có” sẽ hiển thị các tham số như số lượng mặt nạ, số thứ tự mặt nạ, hình dạng mặt nạ, v.v.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 掩模个数     </td>
-<td> 设置启用的掩模个数，取值范围为 [1, 99]。                                                                                   </td>
+<td> Số lượng mặt nạ     </td>
+<td> Thiết lập số lượng mặt nạ được kích hoạt, phạm vi giá trị [1, 99].                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 掩膜序号     </td>
-<td> 当前欲设置的掩膜索引。                                                                                                     </td>
+<td> Số thứ tự mặt nạ     </td>
+<td> Chỉ số mặt nạ hiện tại muốn thiết lập.                                                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 掩膜ROI类型 </td>
-<td> 当前欲设置的掩膜形状，分为6种：矩形、仿射矩形、圆形、圆环、椭圆、多边形。                                                               </td>
+<td> Loại ROI mặt nạ </td>
+<td> Hình dạng mặt nạ hiện tại muốn thiết lập, được chia thành 6 loại: hình chữ nhật, hình chữ nhật affine, hình tròn, đoạn vòng tròn, elip, đa giác.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维点集     </td>
-<td> 拟合方法为点时显示该参数，用于指定参与拟合平面的点。                                                                       </td>
+<td> Tập điểm 2D     </td>
+<td> Khi phương pháp khớp là điểm thì hiển thị tham số này, dùng để chỉ định các điểm tham gia khớp mặt phẳng.                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> Z查询方法    </td>
-<td> 拟合方法为点时显示该参数，分为三种：单个像素、邻域中值、邻域均值。<img src="media/wps49.jpg" alt="img" />                                                               </td>
+<td> Phương pháp truy vấn Z    </td>
+<td> Khi phương pháp khớp là điểm thì hiển thị tham số này, được chia thành ba loại: pixel đơn lẻ, trung vị lân cận, giá trị trung bình lân cận.<img src="media/wps49.jpg" alt="img" />                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 邻域数量X、Y </td>
-<td> Z查询方法为邻域中值和邻域均值时显示该参数，用于设置邻域X、Y尺寸大小，取值范围为[1, 25]。                                                               </td>
+<td> Số lượng lân cận X, Y </td>
+<td> Khi phương pháp truy vấn Z là trung vị lân cận hoặc giá trị trung bình lân cận thì hiển thị tham số này, dùng để thiết lập kích thước lân cận X, Y, phạm vi giá trị [1, 25].                                                               </td>
 </tr>
 <tr>
-<td> 图像窗口     </td>
-<td> 深度图像                                                     </td>
-<td> 显示待检测的深度图像，显示为伪彩色图像。                     </td>
-</tr>
-<tr>
-<td></td>
-<td> 检测区域     </td>
-<td> 在图像上显示待检测区域。                                                                                                   </td>
+<td> Cửa sổ ảnh     </td>
+<td> Ảnh chiều sâu                                                     </td>
+<td> Hiển thị ảnh chiều sâu cần phát hiện, hiển thị dưới dạng ảnh giả màu.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 掩模区域     </td>
-<td> 在图像上显示待掩模区域。                                                                                                   </td>
-</tr>
-<tr>
-<td> 数据链       </td>
-<td> 深度图像                                                     </td>
-<td> 输入待检测的深度图像。                                       </td>
+<td> Vùng phát hiện     </td>
+<td> Trên ảnh hiển thị vùng cần phát hiện.                                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 输入三维点集 </td>
-<td> 进行平面拟合的三维点集，仅在属性栏参数启用三维点集拟合选择“是”时有效。                                                               </td>
+<td> Vùng mặt nạ     </td>
+<td> Trên ảnh hiển thị vùng mặt nạ.                                                                                                   </td>
+</tr>
+<tr>
+<td> Chuỗi dữ liệu       </td>
+<td> Ảnh chiều sâu                                                     </td>
+<td> Đầu vào ảnh chiều sâu cần phát hiện.                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换 </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                                                                                     </td>
+<td> Tập điểm 3D đầu vào </td>
+<td> Tập điểm 3D dùng để khớp mặt phẳng, chỉ có hiệu lực khi tham số kích hoạt khớp tập điểm 3D trong thanh thuộc tính chọn “Có”.                                                               </td>
 </tr>
 <tr>
-<td> 高级界面         </td>
-<td> 无        </td>
-<td> 无  </td>
+<td></td>
+<td> Biến đổi tuyến tính 2D </td>
+<td> Biến đổi tịnh tiến, xoay, thu phóng của mục tiêu so với mẫu.                                                                                     </td>
+</tr>
+<tr>
+<td> Giao diện nâng cao         </td>
+<td> Không        </td>
+<td> Không  </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称       </th>
-<th> 参数描述                                                                                               </th>
+<th>Phân loại </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                                                                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口       </td>
-<td> 深度图像                                     </td>
-<td> 图像的长宽和像素大小，以及深度数据参数。 </td>
+<td> Cửa sổ giám sát       </td>
+<td> Ảnh chiều sâu                                     </td>
+<td> Chiều dài rộng và kích thước pixel của ảnh, cũng như tham số dữ liệu chiều sâu. </td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合平面       </td>
-<td> 输出拟合平面结果，包括平面的法向量、偏移量、倾斜角、旋转角。<img src="media/wps51.jpg" alt="img" />                                           </td>
+<td> Mặt phẳng khớp       </td>
+<td> Kết quả khớp mặt phẳng đầu ra, bao gồm vector pháp tuyến của mặt phẳng, độ lệch, góc nghiêng, góc xoay.<img src="media/wps51.jpg" alt="img" />                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 平面度         </td>
-<td> 输出平面的平面度，即最大偏移-最小偏移，单位：mm。                                                      </td>
+<td> Độ phẳng         </td>
+<td> Độ phẳng của mặt phẳng đầu ra, tức là độ lệch lớn nhất trừ độ lệch nhỏ nhất, đơn vị: mm.                                                      </td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合误差       </td>
-<td> 输出平面的拟合误差。                                                                                   </td>
+<td> Lỗi khớp       </td>
+<td> Lỗi khớp của mặt phẳng đầu ra.                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 平面拟合的点数 </td>
-<td> 输出平面拟合中参与拟合的点数。                                                                         </td>
+<td> Số điểm khớp mặt phẳng </td>
+<td> Số điểm tham gia vào khớp mặt phẳng đầu ra.                                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果       </td>
-<td> 工具执行结果。                                                                                         </td>
+<td> Kết quả thực thi       </td>
+<td> Kết quả thực thi của công cụ.                                                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间       </td>
-<td> 工具执行时间。                                                                                         </td>
+<td> Thời gian thực thi       </td>
+<td> Thời gian thực thi của công cụ.                                                                                         </td>
 </tr>
 <tr>
-<td> 图像窗口       </td>
-<td> 输出图像                                                     </td>
-<td> 显示检测的深度图像，显示为伪彩色图像。   </td>
+<td> Cửa sổ ảnh       </td>
+<td> Ảnh đầu ra                                                     </td>
+<td> Hiển thị ảnh chiều sâu đã phát hiện, hiển thị dưới dạng ảnh giả màu.   </td>
 </tr>
 <tr>
 <td></td>
-<td> 数据链         </td>
-<td> 同监视窗口参数，供后续工具使用。                                                                       </td>
+<td> Chuỗi dữ liệu         </td>
+<td> Giống tham số cửa sổ giám sát, cung cấp cho công cụ tiếp theo sử dụng.                                                                       </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
-<h3>法向量、倾斜角、旋转角、偏移量</h3>
+<h3>Vector pháp tuyến, góc nghiêng, góc xoay, độ lệch</h3>
 
-<p><strong>法向量：</strong>垂直于平面的向量<strong>N</strong>，表示平面在三维空间中的方向，如图1(a)所示。</p>
+<p><strong>Vector pháp tuyến：</strong>Vector <strong>N</strong> vuông góc với mặt phẳng, biểu thị hướng của mặt phẳng trong không gian ba chiều, như Hình 1(a) cho thấy.</p>
 
-<p><strong>倾斜角：</strong>Z轴正方向按顺时针方向与平面法向量<strong>N</strong>的夹角<strong>φ</strong>，取值范围为：[0,π] ，如图1(b)所示。</p>
+<p><strong>Góc nghiêng：</strong>Góc <strong>φ</strong> giữa hướng dương trục Z theo chiều kim đồng hồ với vector pháp tuyến <strong>N</strong> của mặt phẳng, phạm vi giá trị：[0,π] ，như Hình 1(b) cho thấy.</p>
 
-<p><strong>旋转角：</strong>X轴正方向按逆时针方向与法向量的投影向量<strong>N</strong><strong>0</strong>的夹角<strong>θ</strong>，取值范围为：[0, 2π) ，如图1(b)所示。</p>
+<p><strong>Góc xoay：</strong>Góc <strong>θ</strong> giữa hướng dương trục X theo chiều ngược kim đồng hồ với vector chiếu <strong>N</strong><strong>0</strong> của vector pháp tuyến, phạm vi giá trị：[0, 2π) ，như Hình 1(b) cho thấy.</p>
 
-<p><strong>偏移量：</strong>将原点移动到当前平面<strong>P</strong>上的距离偏移，若移动方向与法向量方向相同，偏移量为正；否则为负，如图1&copy;、(d)所示。</p>
+<p><strong>Độ lệch：</strong>Khoảng cách lệch khi di chuyển gốc tọa độ đến mặt phẳng hiện tại <strong>P</strong>, nếu hướng di chuyển trùng với hướng vector pháp tuyến thì độ lệch là dương; ngược lại là âm, như Hình 1(c)、(d) cho thấy.</p>
 
 <p><img src="media/wps53.jpg" alt="img" /></p>
 
-<p><imgnote>图1 法向量、倾斜角、旋转角、偏移量</imgnote></p>
+<p><imgnote>Hình 1 Vector pháp tuyến, góc nghiêng, góc xoay, độ lệch</imgnote></p>
 
-<p>平面拟合工具主要分以下三个步骤：</p>
+<p>Công cụ khớp phẳng chủ yếu được chia thành ba bước sau:</p>
 
-<p><strong>Step 1 设置平面方向：</strong></p>
+<p><strong>Bước 1 Cài đặt hướng mặt phẳng：</strong></p>
 
-<p>在获取拟合的平面方程时，需要确定平面方向，即平面法向量的方向；平面方向共包含：正向像素空间Z和负向像素空间Z两种，其具体物理含义如下表所示。两种平面方向得到的平面法向量的数值是互为相反数的，因此，最终平面的法向量、偏移、倾斜和旋转等描述也就不同。</p>
+<p>Khi thu được phương trình mặt phẳng khớp, cần xác định hướng mặt phẳng, tức là hướng của vector pháp tuyến mặt phẳng; hướng mặt phẳng bao gồm hai loại: Z không gian pixel dương và Z không gian pixel âm. Ý nghĩa vật lý cụ thể được trình bày trong bảng dưới đây. Giá trị vector pháp tuyến mặt phẳng thu được từ hai hướng mặt phẳng là ngược nhau, do đó, vector pháp tuyến, độ lệch, góc nghiêng và góc xoay của mặt phẳng cuối cùng cũng khác nhau.</p>
 
 <p><img src="media/wps54.jpg" alt="img" /></p>
 
-<p><strong>Step 2 设置拟合方法和检测区域</strong></p>
+<p><strong>Bước 2 Cài đặt phương pháp khớp và vùng phát hiện</strong></p>
 
-<p>为了获取三维空间点数据需要设置拟合方法和检测区域。其中，拟合方法有：面积和点两种。基于不同的拟合方法，检测区域的设置也有所不同。</p>
+<p>Để thu được dữ liệu điểm không gian ba chiều cần cài đặt phương pháp khớp và vùng phát hiện. Trong đó, phương pháp khớp có hai loại: diện tích và điểm. Dựa trên phương pháp khớp khác nhau, cách cài đặt vùng phát hiện cũng khác nhau.</p>
 
-<p>拟合方法为面积时，需要设置区域形状与掩膜，其中，区域形状支持圆、椭圆、多边形、矩形、仿射矩形或圆环段等六种检测区域设置，掩膜支持一定数量（1~99）的圆、椭圆、多边形、矩形、仿射矩形和圆环段等六种区域设置；此时，平面拟合使用的是区域形状内除去掩膜区域的三维空间点数据进行拟合。</p>
+<p>Khi phương pháp khớp là diện tích, cần cài đặt hình dạng vùng và mặt nạ, trong đó hình dạng vùng hỗ trợ sáu loại vùng phát hiện: hình tròn, elip, đa giác, hình chữ nhật, hình chữ nhật affine hoặc đoạn vòng tròn; mặt nạ hỗ trợ một số lượng nhất định (1~99) các vùng hình tròn, elip, đa giác, hình chữ nhật, hình chữ nhật affine và đoạn vòng tròn. Lúc này, khớp mặt phẳng sử dụng dữ liệu điểm không gian ba chiều trong hình dạng vùng loại trừ vùng mặt nạ để thực hiện khớp.</p>
 
-<p>拟合方法为点时，需要设置二维坐标与Z查询方法，其中，二维坐标是三维空间点对应在图像平面上的x、y位置坐标；设置Z查询方法主要是为了通过单个像素、邻域中值或邻域均值的查询方法获取三维空间点的z值，其中，邻域可以设置尺寸大小。此时，平面拟合使用的是二维坐标与Z查询方法得到的z值构成的三维空间点数据进行拟合。</p>
+<p>Khi phương pháp khớp là điểm, cần cài đặt tọa độ 2D và phương pháp truy vấn Z, trong đó tọa độ 2D là tọa độ x, y tương ứng của điểm không gian ba chiều trên mặt phẳng ảnh; cài đặt phương pháp truy vấn Z chủ yếu để thu được giá trị z của điểm không gian ba chiều thông qua phương pháp truy vấn pixel đơn lẻ, trung vị lân cận hoặc giá trị trung bình lân cận, trong đó có thể cài đặt kích thước lân cận. Lúc này, khớp mặt phẳng sử dụng dữ liệu điểm không gian ba chiều được tạo thành từ tọa độ 2D và giá trị z thu được từ phương pháp truy vấn Z để thực hiện khớp.</p>
 
-<p><strong>Step 3 执行拟合和输出结果</strong></p>
+<p><strong>Bước 3 Thực hiện khớp và xuất kết quả</strong></p>
 
-<p>在设置好平面方向、拟合方法和检测区域后，就可以执行平面拟合，输出的结果包括：平面的法向量、偏移量、倾斜角和旋转角，拟合的RMS误差，以及拟合平面所使用的三维点数目。</p>
+<p>Sau khi đã cài đặt hướng mặt phẳng, phương pháp khớp và vùng phát hiện, có thể thực hiện khớp mặt phẳng. Kết quả đầu ra bao gồm: vector pháp tuyến của mặt phẳng, độ lệch, góc nghiêng và góc xoay, lỗi RMS của phép khớp, cũng như số lượng điểm ba chiều được sử dụng để khớp mặt phẳng.</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
 <h2>示例工程</h2>
 

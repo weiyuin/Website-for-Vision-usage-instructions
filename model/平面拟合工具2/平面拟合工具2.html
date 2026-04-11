@@ -16,186 +16,186 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>平面拟合工具2</h1>
+<h1>Công cụ khớp phẳng 2</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>在3D测量中，往往需要对深度图像中检测区域内的三维空间点进行拟合获得一个最优平面，从而能够在这个基平面上进行投影、高度测量和体积测量等后续操作。平面拟合工具2主要是根据若干个三维空间点计算得到三维平面的解析表达式。</p>
+<p>Trong đo lường 3D, thường cần thực hiện khớp các điểm không gian ba chiều trong vùng phát hiện của ảnh chiều sâu để thu được một mặt phẳng tối ưu, từ đó có thể thực hiện các thao tác tiếp theo như chiếu, đo chiều cao và đo thể tích trên mặt phẳng cơ sở này. Công cụ khớp phẳng 2 chủ yếu dựa vào một số điểm không gian ba chiều để tính toán biểu thức giải tích của mặt phẳng ba chiều.</p>
 
-<p>图1所示为平面拟合工具2示意图。在平面拟合工具2中，可以对平面拟合区域的形状和特征等进行配置。如图1所示，总共有两个拟合区域，这两个区域的形状分别是矩形、椭圆形，可以用这两个区域内的特征点（如均值、中值等）或者所有数据来拟合平面。平面拟合工具2对实际项目中，基平面形成方式的多样化提供了支持。</p>
+<p>Hình 1 là sơ đồ công cụ khớp phẳng 2. Trong công cụ khớp phẳng 2, có thể cấu hình hình dạng và đặc trưng của vùng khớp mặt phẳng. Như Hình 1 cho thấy, tổng cộng có hai vùng khớp, hình dạng của hai vùng này lần lượt là hình chữ nhật và hình elip. Có thể sử dụng các điểm đặc trưng trong hai vùng này (như giá trị trung bình, trung vị, v.v.) hoặc toàn bộ dữ liệu để khớp mặt phẳng. Công cụ khớp phẳng 2 hỗ trợ cho sự đa dạng hóa cách thức hình thành mặt phẳng cơ sở trong các dự án thực tế.</p>
 
 <p><img src="media/wps60.jpg" alt="img" /></p>
 
-<p><imgnote>图1 平面拟合工具2示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ công cụ khớp phẳng 2</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                                         </th>
+<th>Phân loại </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                                                                         </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>属性窗口 </td>
-<td> 平面方向 </td>
-<td> 分为两种：正像素空间和负像素空间。 </td>
+<td>Cửa sổ thuộc tính </td>
+<td> Hướng mặt phẳng </td>
+<td> Được chia thành hai loại: không gian pixel dương và không gian pixel âm. </td>
 </tr>
 <tr>
 <td>      </td>
-<td> ROI数量                                                      </td>
-<td> 该参数指定用于拟合平面的ROI数量，最多支持100个ROI。 </td>
+<td> Số lượng ROI                                                      </td>
+<td> Tham số này chỉ định số lượng ROI dùng để khớp mặt phẳng, hỗ trợ tối đa 100 ROI. </td>
 </tr>
 <tr>
 <td></td>
-<td> ROI索引      </td>
-<td> 该参数用于选择第i个拟合区域，并对其参数进行设置。                                                                </td>
+<td> Chỉ số ROI      </td>
+<td> Tham số này dùng để chọn vùng khớp thứ i và thiết lập tham số cho nó.                                                                </td>
 </tr>
 <tr>
 <td></td>
-<td> ROI类型    </td>
-<td> 待拟合区域，分为7种：整幅图像、矩形、仿射矩形、圆形、圆环段、椭圆、多边形。                                                     </td>
+<td> Loại ROI    </td>
+<td> Vùng cần khớp, được chia thành 7 loại: toàn bộ ảnh, hình chữ nhật, hình chữ nhật affine, hình tròn, đoạn vòng tròn, elip, đa giác.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合点   </td>
-<td> 选取ROI区域内的某种特征点进行平面拟合，分为6种：均值、中值、质心、Z最大、Z最小、所有数据。                                                     </td>
+<td> Điểm khớp   </td>
+<td> Chọn một loại điểm đặc trưng trong vùng ROI để thực hiện khớp mặt phẳng, được chia thành 6 loại: giá trị trung bình, trung vị, trọng tâm, Z lớn nhất, Z nhỏ nhất, toàn bộ dữ liệu.                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 区间上、下限 </td>
-<td> 拟合区域的深度数据按照Z分量从小到大排序，然后再获取位于start% ~ end%的深度数据的均值，中值等特征点。取值范围为下限[0,100)，上限(0,100]，且下限小于上限。<img src="media/wps62.jpg" alt="img" />                                                     </td>
+<td> Giới hạn trên, dưới của khoảng </td>
+<td> Dữ liệu chiều sâu của vùng khớp được sắp xếp theo thành phần Z từ nhỏ đến lớn, sau đó lấy giá trị trung bình, trung vị hoặc các điểm đặc trưng khác của dữ liệu chiều sâu nằm trong khoảng start% ~ end%. Phạm vi giá trị: giới hạn dưới [0,100), giới hạn trên (0,100], và giới hạn dưới nhỏ hơn giới hạn trên.<img src="media/wps62.jpg" alt="img" />                                                     </td>
 </tr>
 <tr>
-<td> 图像窗口     </td>
-<td> 深度图像                                                     </td>
-<td> 显示待检测的深度图像，显示为伪彩色图像。           </td>
-</tr>
-<tr>
-<td></td>
-<td> 拟合区域     </td>
-<td> 在图像上显示待拟合区域。                                                                                         </td>
-</tr>
-<tr>
-<td> 数据链       </td>
-<td> 深度图像                                                     </td>
-<td> 输入待检测的深度图像。                             </td>
+<td> Cửa sổ ảnh     </td>
+<td> Ảnh chiều sâu                                                     </td>
+<td> Hiển thị ảnh chiều sâu cần phát hiện, hiển thị dưới dạng ảnh giả màu.           </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换 </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                                                                           </td>
+<td> Vùng khớp     </td>
+<td> Hiển thị vùng cần khớp trên ảnh.                                                                                         </td>
 </tr>
 <tr>
-<td> 高级界面     </td>
-<td> 无</td>
-<td>无                                                                                                              </td>
+<td> Chuỗi dữ liệu       </td>
+<td> Ảnh chiều sâu                                                     </td>
+<td> Đầu vào ảnh chiều sâu cần phát hiện.                             </td>
+</tr>
+<tr>
+<td></td>
+<td> Biến đổi tuyến tính 2D </td>
+<td> Biến đổi tịnh tiến, xoay, thu phóng của mục tiêu so với mẫu.                                                                           </td>
+</tr>
+<tr>
+<td> Giao diện nâng cao     </td>
+<td> Không</td>
+<td>Không                                                                                                              </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称       </th>
-<th> 参数描述                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口       </td>
-<td> 深度图像                                                     </td>
-<td> 深度图像的长宽和像素大小，以及深度数据参数。 </td>
+<td> Cửa sổ giám sát       </td>
+<td> Ảnh chiều sâu                                                     </td>
+<td> Chiều dài rộng và kích thước pixel của ảnh chiều sâu, cũng như tham số dữ liệu chiều sâu. </td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合平面       </td>
-<td> 输出拟合平面结果，包括平面的法向量、偏移量、倾斜角、旋转角。<img src="media/wps64.jpg" alt="img" />                                               </td>
+<td> Mặt phẳng khớp       </td>
+<td> Kết quả khớp mặt phẳng đầu ra, bao gồm vector pháp tuyến của mặt phẳng, độ lệch, góc nghiêng, góc xoay.<img src="media/wps64.jpg" alt="img" />                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 平面度         </td>
-<td> 输出平面的平面度，即最大偏移-最小偏移。                                                                    </td>
+<td> Độ phẳng         </td>
+<td> Độ phẳng của mặt phẳng đầu ra, tức là độ lệch lớn nhất trừ độ lệch nhỏ nhất.                                                                    </td>
 </tr>
 <tr>
 <td></td>
-<td> 拟合误差       </td>
-<td> 输出平面的拟合误差。                                                                                       </td>
+<td> Lỗi khớp       </td>
+<td> Lỗi khớp của mặt phẳng đầu ra.                                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 平面拟合的点数 </td>
-<td> 输出平面拟合中参与拟合的点数。                                                                             </td>
+<td> Số điểm khớp mặt phẳng </td>
+<td> Số điểm tham gia vào khớp mặt phẳng đầu ra.                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果       </td>
-<td> 工具执行结果。                                                                                             </td>
+<td> Kết quả thực thi       </td>
+<td> Kết quả thực thi của công cụ.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间       </td>
-<td> 工具执行时间。                                                                                             </td>
+<td> Thời gian thực thi       </td>
+<td> Thời gian thực thi của công cụ.                                                                                             </td>
 </tr>
 <tr>
-<td> 图像窗口       </td>
-<td> 输出图像                                                     </td>
-<td> 显示检测的深度图像，显示为伪彩色图像。       </td>
+<td> Cửa sổ ảnh       </td>
+<td> Ảnh đầu ra                                                     </td>
+<td> Hiển thị ảnh chiều sâu đã phát hiện, hiển thị dưới dạng ảnh giả màu.       </td>
 </tr>
 <tr>
 <td></td>
-<td> 数据链         </td>
-<td> 同监视窗口参数，供后续工具使用。                                                                           </td>
+<td> Chuỗi dữ liệu         </td>
+<td> Giống tham số cửa sổ giám sát, cung cấp cho công cụ tiếp theo sử dụng.                                                                           </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Giải thích chi tiết</h2>
 
-<h3>拟合区间</h3>
+<h3>Khoảng khớp</h3>
 
-<p>设区间范围为[start%, end%]，则只有位于区间范围内的数据才是有效的；如图2所示，当对拟合区域进行参数配置时，将区域内的深度数据按照Z分量从小到大进行排序，然后再获取位于start% ~ end%的深度数据的均值，中值等特征点。</p>
+<p>Giả sử phạm vi khoảng là [start%, end%], thì chỉ có dữ liệu nằm trong phạm vi khoảng mới là hợp lệ; như Hình 2 cho thấy, khi cấu hình tham số cho vùng khớp, dữ liệu chiều sâu trong vùng được sắp xếp theo thành phần Z từ nhỏ đến lớn, sau đó lấy giá trị trung bình, trung vị hoặc các điểm đặc trưng khác của dữ liệu chiều sâu nằm trong khoảng start% ~ end%.</p>
 
 <p><img src="media/wps66.png" alt="img" /></p>
 
-<p><imgnote>图2 区间示意图</imgnote></p>
+<p><imgnote>Hình 2 Sơ đồ khoảng</imgnote></p>
 
-<h3>法向量、倾斜角、旋转角、偏移量</h3>
+<h3>Vector pháp tuyến, góc nghiêng, góc xoay, độ lệch</h3>
 
-<p><strong>法向量：</strong>垂直于平面的向量<strong>N</strong>，表示平面在三维空间中的方向，如图3(a)所示。</p>
+<p><strong>Vector pháp tuyến：</strong>Vector <strong>N</strong> vuông góc với mặt phẳng, biểu thị hướng của mặt phẳng trong không gian ba chiều, như Hình 3(a) cho thấy.</p>
 
-<p><strong>倾斜角：</strong>Z轴正方向按顺时针方向与平面法向量<strong>N</strong>的夹角<strong>φ</strong>，取值范围为：[0,π] ，如图3(b)所示。</p>
+<p><strong>Góc nghiêng：</strong>Góc <strong>φ</strong> giữa hướng dương trục Z theo chiều kim đồng hồ với vector pháp tuyến <strong>N</strong> của mặt phẳng, phạm vi giá trị：[0,π] ，như Hình 3(b) cho thấy.</p>
 
-<p><strong>旋转角：</strong>X轴正方向按逆时针方向与法向量的投影向量<strong>N</strong><strong>0</strong>的夹角<strong>θ</strong>，取值范围为：[0, 2π) ，如图3(b)所示。</p>
+<p><strong>Góc xoay：</strong>Góc <strong>θ</strong> giữa hướng dương trục X theo chiều ngược kim đồng hồ với vector chiếu <strong>N</strong><strong>0</strong> của vector pháp tuyến, phạm vi giá trị：[0, 2π) ，như Hình 3(b) cho thấy.</p>
 
-<p><strong>偏移量：</strong>将原点移动到当前平面<strong>P</strong>上的距离偏移，若移动方向与法向量方向相同，偏移量为正；否则为负，如图3&copy;、(d)所示。</p>
+<p><strong>Độ lệch：</strong>Khoảng cách lệch khi di chuyển gốc tọa độ đến mặt phẳng hiện tại <strong>P</strong>, nếu hướng di chuyển trùng với hướng vector pháp tuyến thì độ lệch là dương; ngược lại là âm, như Hình 3(c)、(d) cho thấy.</p>
 
 <p><img src="media/wps67.jpg" alt="img" /></p>
 
-<p><imgnote>图3 法向量、倾斜角、旋转角、偏移量</imgnote></p>
+<p><imgnote>Hình 3 Vector pháp tuyến, góc nghiêng, góc xoay, độ lệch</imgnote></p>
 
-<h3>使用向导</h3>
+<h3>Hướng dẫn sử dụng</h3>
 
-<p><strong>Step 1 设置拟合区域</strong></p>
+<p><strong>Bước 1 Cài đặt vùng khớp</strong></p>
 
-<p>主要需要对拟合区域的个数、形状、区域内的特征点类型和区间的范围进行设置。其中，用户可自行指定用于拟合的ROI数量；拟合区域的形状分为7种：整幅图像、矩形、仿射矩形、圆形、圆环、椭圆、多边形；拟合区域内的特征点类型分为6种：均值、中值、质心、Z最大、Z最小、所有数据。</p>
+<p>Chủ yếu cần cài đặt số lượng vùng khớp, hình dạng, loại điểm đặc trưng trong vùng và phạm vi khoảng. Trong đó, người dùng có thể tự chỉ định số lượng ROI dùng để khớp; hình dạng vùng khớp được chia thành 7 loại: toàn bộ ảnh, hình chữ nhật, hình chữ nhật affine, hình tròn, đoạn vòng tròn, elip, đa giác; loại điểm đặc trưng trong vùng khớp được chia thành 6 loại: giá trị trung bình, trung vị, trọng tâm, Z lớn nhất, Z nhỏ nhất, toàn bộ dữ liệu.</p>
 
-<p><strong>Step 2 执行拟合和输出结果</strong></p>
+<p><strong>Bước 2 Thực hiện khớp và xuất kết quả</strong></p>
 
-<p>在设置好拟合区域后，就可以执行平面拟合，输出的结果包括：平面的法向量、偏移量、倾斜角和旋转角，拟合的RMS误差，以及拟合平面所使用的三维点数目。</p>
+<p>Sau khi đã cài đặt vùng khớp, có thể thực hiện khớp mặt phẳng, kết quả đầu ra bao gồm: vector pháp tuyến của mặt phẳng, độ lệch, góc nghiêng và góc xoay, lỗi RMS của phép khớp, cũng như số lượng điểm ba chiều được sử dụng để khớp mặt phẳng.</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li>在进行平面拟合的时候，若使用每个区域内的特征点进行平面拟合，则参与的拟合点至少为三个，即至少需要三个拟合区域。</li>
+<li>Khi thực hiện khớp mặt phẳng, nếu sử dụng điểm đặc trưng trong mỗi vùng để khớp mặt phẳng, thì số điểm tham gia khớp ít nhất phải là ba, tức là ít nhất cần ba vùng khớp.</li>
 </ul>
 
 

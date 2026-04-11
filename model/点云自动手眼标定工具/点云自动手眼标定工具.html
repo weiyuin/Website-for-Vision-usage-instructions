@@ -16,218 +16,218 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云自动手眼标定工具</h1>
+<h1>Công cụ hiệu chuẩn tay mắt tự động cho đám mây điểm</h1>
 
-<h2>1.功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>该工具主要服务于3D视觉引导项目，提供自动获取机械手手眼标定姿态的功能，支持两阶段手眼标定和区域自动标定两种模式，工具主要应用在3D视觉引导项目的手眼标定流程上，可<strong>简化传统手动示教机械手手眼标定姿态的繁琐工作</strong>。</p>
+<p>Công cụ này chủ yếu phục vụ cho các dự án hướng dẫn bằng tầm nhìn 3D, cung cấp chức năng tự động lấy tư thế hiệu chuẩn tay mắt của robot, hỗ trợ hai chế độ hiệu chuẩn tay mắt hai giai đoạn và hiệu chuẩn tự động theo vùng. Công cụ chủ yếu được áp dụng trong quy trình hiệu chuẩn tay mắt của các dự án hướng dẫn bằng tầm nhìn 3D, có thể <strong>giản hóa công việc phức tạp của việc dạy tay mắt hiệu chuẩn tay mắt bằng tay truyền thống</strong>.</p>
 
 <p><img src="media/AutoHandeyeCalibTool_1_1.png" alt="" /></p>
 
-<h2>2.使用场景</h2>
+<h2>2. Kịch bản sử dụng</h2>
 
-<p>​     该工具主要用于配合机械臂抓取或引导类项目比如：</p>
+<p>​     Công cụ này chủ yếu được dùng phối hợp với các dự án robot kẹp hoặc dẫn hướng chẳng hạn như：</p>
 
-<p>​        <strong>场景1：3C产品大范围的尺寸测量、缺陷检测、柔性装配等3D引导检测项目</strong></p>
+<p>​        <strong>Cảnh 1：Các dự án kiểm tra hướng dẫn 3D như đo kích thước phạm vi lớn của sản phẩm 3C, phát hiện khuyết điểm, lắp ráp linh hoạt, v.v.</strong></p>
 
 <div align="center">
 <img src="media/AutoHandeyeCalib Tool_2_1.png" style="zoom:50%;"/>
-    <center>图2_1 柔性装配项目-图片来源于网络</center>
+    <center>Hình 2_1 Dự án lắp ráp linh hoạt - Ảnh lấy từ mạng</center>
 </div>
 
 
-<p>​        <strong>场景2：仓储物流领域的无序抓取分拣、拆垛码垛 or 汽车制造领域的涂胶、焊接等自动化项目</strong></p>
+<p>​        <strong>Cảnh 2：Các dự án tự động hóa như kẹp phân loại không thứ tự trong lĩnh vực kho vận logistics, tháo xếp pallet hoặc bôi keo, hàn trong lĩnh vực sản xuất ô tô</strong></p>
 
 <div align="center">
 <img src="media/AutoHandeyeCalib Tool_2_2.png" style="zoom:50%;"/>
-    <center>图2_1 码垛机器人项目-图片来源于网络</center>
+    <center>Hình 2_1 Dự án robot xếp pallet - Ảnh lấy từ mạng</center>
 </div>
 
 
-<h2>3.使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
-<h4>1）方案步骤</h4>
+<h4>1）Các bước thực hiện方案</h4>
 
-<h5>两阶段标定方法：</h5>
+<h5>Phương pháp hiệu chuẩn hai giai đoạn：</h5>
 
 <ul>
-<li><strong>Step1</strong>：初始标定位姿设置，手动示教机械手将标定板放置相机视野下，记录并载入初始位姿；</li>
-<li><strong>Step2</strong>：设置标定参数，通过一阶段标定姿态获取10个初始标定位姿，发送位姿至机械手；</li>
-<li><strong>Step3</strong>：依次走位并采集标定图像，完成特征提取及初始手眼标定计算；</li>
-<li><strong>Step4</strong>：载入初始手眼标定结果，获取高精度手眼标定位姿并发送至机械手；</li>
-<li><strong>Step5</strong>：依次走位并采集标定图像，完成特征提取及高精度手眼标定计算；</li>
+<li><strong>Bước 1</strong>：Thiết lập tư thế hiệu chuẩn ban đầu, tay dạy robot đặt bảng hiệu chuẩn trong trường nhìn của camera, ghi lại và tải tư thế ban đầu；</li>
+<li><strong>Bước 2</strong>：Thiết lập tham số hiệu chuẩn, thông qua tư thế hiệu chuẩn giai đoạn một lấy 10 tư thế hiệu chuẩn ban đầu, gửi tư thế đến robot；</li>
+<li><strong>Bước 3</strong>：Di chuyển lần lượt và thu thập ảnh hiệu chuẩn, hoàn thành trích xuất đặc trưng và tính toán hiệu chuẩn tay mắt ban đầu；</li>
+<li><strong>Bước 4</strong>：Tải kết quả hiệu chuẩn tay mắt ban đầu, lấy tư thế hiệu chuẩn tay mắt độ chính xác cao và gửi đến robot；</li>
+<li><strong>Bước 5</strong>：Di chuyển lần lượt và thu thập ảnh hiệu chuẩn, hoàn thành trích xuất đặc trưng và tính toán hiệu chuẩn tay mắt độ chính xác cao；</li>
 </ul>
 
 
 <p><img src=".\media\AutoHandeyeCalibTool_3_1.png" alt="" /></p>
 
-<h5>区域标定方法：</h5>
+<h5>Phương pháp hiệu chuẩn theo vùng：</h5>
 
 <ul>
-<li><strong>Step1：</strong>手动拖动机械手，示教五个点表征在机械手坐标系下的标定空间；</li>
-<li><strong>Step2：</strong>初始标定位姿设置，手动示教机械手将标定板放置相机视野下，记录并载入初始标定位姿；</li>
-<li><strong>Step3：</strong>设置标定参数，获取标定位姿并发送至机械手；</li>
-<li><strong>Step4：</strong>依次走位并采集标定图像，完成特征提取及手眼标定计算；</li>
+<li><strong>Bước 1：</strong>Dùng tay kéo robot, dạy năm điểm đại diện cho không gian hiệu chuẩn trong hệ tọa độ robot；</li>
+<li><strong>Bước 2：</strong>Thiết lập tư thế hiệu chuẩn ban đầu, tay dạy robot đặt bảng hiệu chuẩn trong trường nhìn của camera, ghi lại và tải tư thế hiệu chuẩn ban đầu；</li>
+<li><strong>Bước 3：</strong>Thiết lập tham số hiệu chuẩn, lấy tư thế hiệu chuẩn và gửi đến robot；</li>
+<li><strong>Bước 4：</strong>Di chuyển lần lượt và thu thập ảnh hiệu chuẩn, hoàn thành trích xuất đặc trưng và tính toán hiệu chuẩn tay mắt；</li>
 </ul>
 
 
 <p><img src=".\media\AutoHandeyeCalibTool_3_2.png" alt="" /></p>
 
-<p><strong>标定姿态结果界面如下：</strong></p>
+<p><strong>Giao diện kết quả tư thế hiệu chuẩn như sau：</strong></p>
 
 <p><img src=".\media\AutoHandeyeCalibTool_3_3.png" alt="" /></p>
 
-<h2>4.常见问题</h2>
+<h2>4. Vấn đề thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5. Giải thích tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                     </th>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入初始姿态         </td>
-<td> 用户给定初始标定姿态，此姿态要求标定板在相机视野中心，且正对相机 </td>
+<td> Tư thế ban đầu đầu vào         </td>
+<td> Tư thế hiệu chuẩn ban đầu do người dùng cung cấp, tư thế này yêu cầu bảng hiệu chuẩn nằm ở trung tâm trường nhìn của camera và đối diện thẳng với camera </td>
 </tr>
 <tr>
-<td> 一阶段手眼标定矩阵   </td>
-<td> 一阶段3D相机与机械手的位姿转换关系                           </td>
+<td> Ma trận hiệu chuẩn tay mắt giai đoạn một   </td>
+<td> Quan hệ chuyển đổi tư thế giữa camera 3D và robot ở giai đoạn một                           </td>
 </tr>
 <tr>
-<td> 一阶段手眼标定标志点 </td>
-<td> 一阶段靶标标志点位置                                         </td>
+<td> Điểm đánh dấu hiệu chuẩn tay mắt giai đoạn một </td>
+<td> Vị trí điểm đánh dấu của bảng mục tiêu ở giai đoạn một                                         </td>
 </tr>
 <tr>
-<td> 区域点集             </td>
-<td> 标定区域由五个点构成                                         </td>
+<td> Tập điểm vùng             </td>
+<td> Vùng hiệu chuẩn được tạo thành bởi năm điểm                                         </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào（cửa sổ thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称         </th>
-<th> 参数描述                                               </th>
+<th> Tên tham số         </th>
+<th> Mô tả tham số                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 相机安装方式     </td>
-<td> 支持眼在手外和眼在手上                                 </td>
+<td> Cách lắp đặt camera     </td>
+<td> Hỗ trợ mắt ngoài tay và mắt trên tay                                 </td>
 </tr>
 <tr>
-<td> 标定平面层数     </td>
-<td> 指定标定姿态分布的总层数，取值范围[3,10]               </td>
+<td> Số lớp mặt phẳng hiệu chuẩn     </td>
+<td> Chỉ định tổng số lớp phân bố tư thế hiệu chuẩn, phạm vi giá trị [3,10]               </td>
 </tr>
 <tr>
-<td> 标定网格数       </td>
-<td> 指定每层平面上标定位姿的分布网格，取值范围[3,10]       </td>
+<td> Số lưới hiệu chuẩn       </td>
+<td> Chỉ định lưới phân bố tư thế hiệu chuẩn trên mỗi lớp mặt phẳng, phạm vi giá trị [3,10]       </td>
 </tr>
 <tr>
-<td> 姿态个数         </td>
-<td> 指定输出姿态的个数，取值范围[5,100]                    </td>
+<td> Số lượng tư thế         </td>
+<td> Chỉ định số lượng tư thế đầu ra, phạm vi giá trị [5,100]                    </td>
 </tr>
 <tr>
-<td> 姿态旋转角度     </td>
-<td> 指定标定姿态相对初始姿态旋转的最大角度，取值范围[0,45] </td>
+<td> Góc xoay tư thế     </td>
+<td> Chỉ định góc xoay tối đa của tư thế hiệu chuẩn so với tư thế ban đầu, phạm vi giá trị [0,45] </td>
 </tr>
 <tr>
-<td> 自动标定方法     </td>
-<td> 支持两阶段标定和区域标定                               </td>
+<td> Phương pháp hiệu chuẩn tự động     </td>
+<td> Hỗ trợ hiệu chuẩn hai giai đoạn và hiệu chuẩn theo vùng                               </td>
 </tr>
 <tr>
-<td> 视野长           </td>
-<td> 相机视野长，单位mm                                     </td>
+<td> Chiều dài trường nhìn           </td>
+<td> Chiều dài trường nhìn của camera, đơn vị mm                                     </td>
 </tr>
 <tr>
-<td> 视野宽           </td>
-<td> 相机视野宽，单位mm                                     </td>
+<td> Chiều rộng trường nhìn           </td>
+<td> Chiều rộng trường nhìn của camera, đơn vị mm                                     </td>
 </tr>
 <tr>
-<td> 景深             </td>
-<td> 相机景深，单位mm                                       </td>
+<td> Độ sâu trường nhìn             </td>
+<td> Độ sâu trường nhìn của camera, đơn vị mm                                       </td>
 </tr>
 <tr>
-<td> 已有手眼标定结果 </td>
-<td> 已完成一阶段标定                                       </td>
+<td> Kết quả hiệu chuẩn tay mắt đã có </td>
+<td> Đã hoàn thành hiệu chuẩn giai đoạn một                                       </td>
 </tr>
 <tr>
-<td> 外部结果         </td>
-<td> 是否启用外部结果导入                                   </td>
+<td> Kết quả bên ngoài         </td>
+<td> Có kích hoạt nhập kết quả bên ngoài hay không                                   </td>
 </tr>
 <tr>
-<td> 标定结果路径     </td>
-<td> 标定结果在本地文件夹路径                               </td>
+<td> Đường dẫn kết quả hiệu chuẩn     </td>
+<td> Đường dẫn thư mục cục bộ của kết quả hiệu chuẩn                               </td>
 </tr>
 <tr>
-<td> 外部点集         </td>
-<td> 是否启用外部点集导入                                   </td>
+<td> Tập điểm bên ngoài         </td>
+<td> Có kích hoạt nhập tập điểm bên ngoài hay không                                   </td>
 </tr>
 <tr>
-<td> 点集路径         </td>
-<td> 点集在本地文件夹路径                                   </td>
+<td> Đường dẫn tập điểm         </td>
+<td> Đường dẫn thư mục cục bộ của tập điểm                                   </td>
 </tr>
 <tr>
-<td> 编辑点坐标       </td>
-<td> 是否可以编辑点的坐标值                                 </td>
+<td> Chỉnh sửa tọa độ điểm       </td>
+<td> Có thể chỉnh sửa giá trị tọa độ điểm hay không                                 </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
+<h4>Tham số đầu vào（giao diện nâng cao）</h4>
 
-<p>高级界面参数与属性窗口参数一致。</p>
+<p>Tham số giao diện nâng cao giống với tham số cửa sổ thuộc tính.</p>
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数描述                 </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出标定姿态 </td>
-<td> 输出的机械手手眼标定位姿 </td>
+<td> Tư thế hiệu chuẩn đầu ra </td>
+<td> Tư thế hiệu chuẩn tay mắt của robot đầu ra </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra（cửa sổ đầu ra）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数描述                 </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出标定姿态 </td>
-<td> 输出的机械手手眼标定位姿 </td>
+<td> Tư thế hiệu chuẩn đầu ra </td>
+<td> Tư thế hiệu chuẩn tay mắt của robot đầu ra </td>
 </tr>
 <tr>
-<td> 执行时间     </td>
-<td> 工具执行时间             </td>
+<td> Thời gian thực thi     </td>
+<td> Thời gian thực thi của công cụ             </td>
 </tr>
 <tr>
-<td> 执行结果     </td>
-<td> 工具执行结果             </td>
+<td> Kết quả thực thi     </td>
+<td> Kết quả thực thi của công cụ             </td>
 </tr>
 </tbody>
 </table>
