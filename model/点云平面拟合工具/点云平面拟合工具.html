@@ -16,300 +16,300 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云平面拟合工具</h1>
+<h1>Công cụ Phù hợp Mặt phẳng Đám mây Điểm</h1>
 
-<h2>1.功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 在3D高度测量项目中，经常会涉及在产品某一区域内进行平面拟合或平面度测量，该工具包括2种拟合算法：带局外点平面拟合和切比雪夫平面拟合。</p>
+<p>​ Trong các dự án đo chiều cao 3D, thường liên quan đến việc thực hiện phù hợp mặt phẳng hoặc đo độ phẳng trong một khu vực nhất định của sản phẩm. Công cụ này bao gồm 2 thuật toán phù hợp: phù hợp mặt phẳng có loại bỏ điểm ngoại lai và phù hợp mặt phẳng Chebyshev.</p>
 
-<p>​    带局外点平面拟合工具主要是剔除图像中的局外点，根据内点数据计算得到三维平面的解析表达式，以协助后续高度测量等操作。切比雪夫平面拟合依据新标准GB/T 11337-2004，平面度评价基准需满足最小包容条件。本工具实现在新标准意义下平面度计算。</p>
+<p>​    Công cụ phù hợp mặt phẳng có loại bỏ điểm ngoại lai chủ yếu loại bỏ các điểm ngoại lai trong hình ảnh, sau đó tính toán biểu thức giải tích của mặt phẳng 3D dựa trên dữ liệu điểm nội tại, để hỗ trợ các thao tác đo chiều cao tiếp theo. Phù hợp mặt phẳng Chebyshev dựa theo tiêu chuẩn mới GB/T 11337-2004, tiêu chuẩn đánh giá độ phẳng mặt phẳng cần thỏa mãn điều kiện bao hàm tối thiểu. Công cụ này thực hiện tính toán độ phẳng theo ý nghĩa của tiêu chuẩn mới.</p>
 
 <p><img src="media/3DPlaneFitting_1_1.png" alt="" /></p>
 
-<p><imgnote>图1_1 带局外点平面拟合算法</imgnote></p>
+<p><imgnote>Figure 1_1 Thuật toán phù hợp mặt phẳng có loại bỏ điểm ngoại lai</imgnote></p>
 
 <p><img src="media/3DPlaneFitting_1_2.png" alt="" /></p>
 
-<p><imgnote>图1_2 切比雪夫平面拟合算法</imgnote></p>
+<p><imgnote>Figure 1_2 Thuật toán phù hợp mặt phẳng Chebyshev</imgnote></p>
 
-<h2>2.使用场景</h2>
+<h2>2. Kịch bản sử dụng</h2>
 
-<p>​          3D测量-手机中框零件电池安装面平面度测量
+<p>​          Đo lường 3D - Đo độ phẳng mặt lắp pin của khung giữa điện thoại
 <img src="media/3DPlaneFitting_2_1.png" alt="" />
 ​  <br/>
-<imgnote>图2_1 场景1：手机中框零件电池安装面平面度测量</imgnote></p>
+<imgnote>Figure 2_1 Kịch bản 1: Đo độ phẳng mặt lắp pin của khung giữa điện thoại</imgnote></p>
 
-<p>​          3D测量-手机中板平面度测量
+<p>​          Đo lường 3D - Đo độ phẳng mặt giữa điện thoại
 <img src="media/3DPlaneFitting_2_2.png" alt="" />
 ​  <br/>
-<imgnote>图2_2 场景2：手机中板平面度测量</imgnote></p>
+<imgnote>Figure 2_2 Kịch bản 2: Đo độ phẳng mặt giữa điện thoại</imgnote></p>
 
-<p>​          3D测量-手机主板屏蔽罩高度测量</p>
+<p>​          Đo lường 3D - Đo chiều cao vỏ che chắn bo mạch chủ điện thoại</p>
 
 <p><img src="media/3DPlaneFitting_2_3.jpg" alt="" /></p>
 
-<p><imgnote>图2_3 场景3：手机主板屏蔽罩高度测量</imgnote></p>
+<p><imgnote>Figure 2_3 Kịch bản 3: Đo chiều cao vỏ che chắn bo mạch chủ điện thoại</imgnote></p>
 
-<h2>3.使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>工具添加，图像导入、参数调节</h3>
+<li><h3>Thêm công cụ, nhập hình ảnh, điều chỉnh tham số</h3>
 
-<p><strong>Step1:</strong> 添加点云平面拟合工具，并双击打开工具参数链，链接点云文件，如图3-1所示；<br/>
-<strong>Step2:</strong> 右击工具点击“属性”打开工具高级界面，如图3-2所示；
+<p><strong>Bước 1:</strong> Thêm công cụ phù hợp mặt phẳng đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết tệp đám mây điểm, như hình 3-1; <br/>
+<strong>Bước 2:</strong> Nhấp chuột phải vào công cụ và chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-2;
 <img src="media/3DPlaneFitting_3_1.png" alt="" /></p></li>
 </ul>
 
 
-<p><imgnote>图3_1 添加点云平面拟合工具</imgnote></p>
+<p><imgnote>Figure 3_1 Thêm công cụ phù hợp mặt phẳng đám mây điểm</imgnote></p>
 
 <p><img src="media/3DPlaneFitting_3_2.png" alt="" /></p>
 
-<p><imgnote>图3_2 点云拟合平面</imgnote></p>
+<p><imgnote>Figure 3_2 Phù hợp mặt phẳng đám mây điểm</imgnote></p>
 
-<h2>4.常见问题</h2>
+<h2>4. Vấn đề thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5. Giải thích tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (Chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述                                                                                                     </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số                                                                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入点云数据 </td>
-<td> 输入待拟合的点云图像 </td>
+<td> Dữ liệu đám mây điểm đầu vào </td>
+<td> Nhập hình ảnh đám mây điểm cần phù hợp </td>
 </tr>
 <tr>
-<td> 输入点集 </td>
-<td> 输入待拟合的点集 </td>
+<td> Tập điểm đầu vào </td>
+<td> Nhập tập điểm cần phù hợp </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào (Cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述                                                                                                     </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số                                                                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 拟合类型 </td>
-<td> 包括两种：带局外点平面拟合、切比雪夫平面拟合 </td>
+<td> Loại phù hợp </td>
+<td> Bao gồm hai loại: Phù hợp mặt phẳng có loại bỏ điểm ngoại lai, Phù hợp mặt phẳng Chebyshev </td>
 </tr>
 <tr>
-<td> 是否启用点集                           </td>
-<td> 选择“是”，则根据输入的点集进行平面拟合；选择“否”，则根据输入的点云进行平面拟合 </td>
+<td> Có bật tập điểm hay không                           </td>
+<td> Chọn “Có”, thì thực hiện phù hợp mặt phẳng theo tập điểm đầu vào; chọn “Không”, thì thực hiện phù hợp mặt phẳng theo đám mây điểm đầu vào </td>
 </tr>
 <tr>
-<td> 是否启用ROI </td>
-<td> 选择“是”，则使用长方体框选ROI进行拟合；选择“否”，则对全点云进行平面拟合 </td>
+<td> Có bật ROI hay không </td>
+<td> Chọn “Có”, thì sử dụng khung ROI hình hộp chữ nhật để thực hiện phù hợp; chọn “Không”, thì thực hiện phù hợp mặt phẳng trên toàn bộ đám mây điểm </td>
 </tr>
 <tr>
-<td> ROI个数 </td>
-<td> 启用ROI的情况下，用于设置ROI的个数，范围：[1,50] </td>
+<td> Số lượng ROI </td>
+<td> Trong trường hợp bật ROI, dùng để thiết lập số lượng ROI, phạm vi: [1,50] </td>
 </tr>
 <tr>
-<td> ROI索引 </td>
-<td> 用于不同索引下切换 </td>
+<td> Chỉ số ROI </td>
+<td> Dùng để chuyển đổi giữa các chỉ số khác nhau </td>
 </tr>
 <tr>
-<td> 最大迭代次数 </td>
-<td> 切比雪夫平面拟合专用，用于预防特殊点输入时工具内部算法严重超时，对于一般的平面，默认即可；范围为[10,10000] </td>
+<td> Số lần lặp tối đa </td>
+<td> Dành riêng cho phù hợp mặt phẳng Chebyshev, dùng để ngăn chặn tình trạng thuật toán bên trong công cụ bị timeout nghiêm trọng khi nhập điểm đặc biệt. Đối với mặt phẳng thông thường, dùng giá trị mặc định; phạm vi [10,10000] </td>
 </tr>
 <tr>
-<td> 是否开启高精度 </td>
-<td> 切比雪夫平面拟合专用，用于输入点云数量不大且非平面分布的情况；若开启，最大迭代次数设置100以上数值且耗时至少增加一倍 </td>
+<td> Có bật độ chính xác cao hay không </td>
+<td> Dành riêng cho phù hợp mặt phẳng Chebyshev, dùng cho trường hợp số lượng đám mây điểm không lớn và phân bố không phải mặt phẳng; nếu bật, số lần lặp tối đa cần thiết lập trên 100 và thời gian tiêu tốn ít nhất tăng gấp đôi </td>
 </tr>
 <tr>
-<td> 平面方向 </td>
-<td> 带局外点平面拟合专用，分为两种：正方向和负方向   </td>
+<td> Hướng mặt phẳng </td>
+<td> Dành riêng cho phù hợp mặt phẳng có loại bỏ điểm ngoại lai, chia thành hai loại: hướng dương và hướng âm   </td>
 </tr>
 <tr>
-<td> 局外点判定距离 </td>
-<td> 带局外点平面拟合专用，参与拟合的数据点到拟合平面距离的最大值，范围：(0,1000] </td>
+<td> Khoảng cách phán đoán điểm ngoại lai </td>
+<td> Dành riêng cho phù hợp mặt phẳng có loại bỏ điểm ngoại lai, giá trị khoảng cách tối đa từ điểm dữ liệu tham gia phù hợp đến mặt phẳng phù hợp, phạm vi: (0,1000] </td>
 </tr>
 <tr>
-<td> 局外点比例     </td>
-<td> 带局外点平面拟合专用，局外点占总深度数据点的比例，范围：[0,1)    </td>
+<td> Tỷ lệ điểm ngoại lai     </td>
+<td> Dành riêng cho phù hợp mặt phẳng có loại bỏ điểm ngoại lai, tỷ lệ điểm ngoại lai chiếm tổng điểm dữ liệu chiều sâu, phạm vi: [0,1)    </td>
 </tr>
 <tr>
-<td> 结果置信度     </td>
-<td> 带局外点平面拟合专用，衡量使用内点构造拟合平面的可信程度，置信度越大，拟合平面越可靠，范围：(0,1) </td>
+<td> Độ tin cậy kết quả     </td>
+<td> Dành riêng cho phù hợp mặt phẳng có loại bỏ điểm ngoại lai, đo lường mức độ tin cậy khi sử dụng điểm nội tại để xây dựng mặt phẳng phù hợp. Độ tin cậy càng lớn, mặt phẳng phù hợp càng đáng tin cậy, phạm vi: (0,1) </td>
 </tr>
 <tr>
-<td> 启用采样       </td>
-<td> 带局外点平面拟合专用，是否进行采样拟合，选择“是”，则显示采样半宽参数 </td>
+<td> Bật lấy mẫu       </td>
+<td> Dành riêng cho phù hợp mặt phẳng có loại bỏ điểm ngoại lai, có thực hiện lấy mẫu phù hợp hay không. Chọn “Có” thì hiển thị tham số bán rộng lấy mẫu </td>
 </tr>
 <tr>
-<td> 采样距离       </td>
-<td> 带局外点平面拟合专用，每隔多少采样一次，缩短平面拟合时间，范围：(0,50] </td>
+<td> Khoảng cách lấy mẫu       </td>
+<td> Dành riêng cho phù hợp mặt phẳng có loại bỏ điểm ngoại lai, lấy mẫu cách nhau bao nhiêu, rút ngắn thời gian phù hợp mặt phẳng, phạm vi: (0,50] </td>
 </tr>
 <tr>
-<td> 开启并行运算 </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算 </td>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không. Khi chọn Có, thuật toán sẽ bật chế độ tính toán song song OpenMp, có thể tăng tốc độ tính toán nhưng có thể xuất hiện tình trạng thời gian không ổn định. Khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp </td>
 </tr>
 <tr>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围 </td>
+<td> Tỷ lệ số luồng </td>
+<td> Thiết lập tỷ lệ số luồng cho tính toán song song, phạm vi hiệu quả (0, 0.75], tương ứng với phạm vi phần trăm (0%, 75%] </td>
 </tr>
 <tr>
-<td> 输出三维矩形平面 </td>
-<td> 选择“是”，则根据输入点集输出三维矩形平面，即自适应显示大小 </td>
+<td> Xuất mặt phẳng hình chữ nhật 3D </td>
+<td> Chọn “Có”, thì dựa trên tập điểm đầu vào xuất ra mặt phẳng hình chữ nhật 3D, tức là hiển thị kích thước tự thích ứng </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
+<h4>Tham số đầu vào (Giao diện nâng cao)</h4>
 
-<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+<p>Tham số giao diện nâng cao giống với tham số cửa sổ thuộc tính, các nút tương tác như sau:</p>
 
 <table>
 <thead>
 <tr>
-<th> 按钮名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên nút           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 添加ROI </td>
-<td> 在高级界面图像中，自动添加长方体ROI </td>
+<td> Thêm ROI </td>
+<td> Trong hình ảnh giao diện nâng cao, tự động thêm ROI hình hộp chữ nhật </td>
 </tr>
 <tr>
-<td> 绘制当前ROI </td>
-<td> 在高级界面图像中，相应位置点击并拖动鼠标即可绘制当前索引下的长方体ROI </td>
+<td> Vẽ ROI hiện tại </td>
+<td> Trong hình ảnh giao diện nâng cao, nhấp và kéo chuột tại vị trí tương ứng để vẽ ROI hình hộp chữ nhật dưới chỉ số hiện tại </td>
 </tr>
 <tr>
-<td> 删除当前ROI                            </td>
-<td> 在高级界面图像中，相应位置点击并拖动鼠标即可删除当前索引下的长方体ROI </td>
+<td> Xóa ROI hiện tại                            </td>
+<td> Trong hình ảnh giao diện nâng cao, nhấp và kéo chuột tại vị trí tương ứng để xóa ROI hình hộp chữ nhật dưới chỉ số hiện tại </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (Chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>输出点云图像 </td>
-<td> 显示待拟合的点云图像 </td>
+<td> Hình ảnh đám mây điểm đầu ra </td>
+<td> Hiển thị hình ảnh đám mây điểm cần phù hợp </td>
 </tr>
 <tr>
-<td>平面拟合结果   </td>
-<td>输出拟合的三维平面</td>
+<td>Kết quả phù hợp mặt phẳng   </td>
+<td>Xuất mặt phẳng 3D đã phù hợp</td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (Cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>输出点云图像 </td>
-<td> 显示待拟合的点云图像； </td>
+<td> Hình ảnh đám mây điểm đầu ra </td>
+<td> Hiển thị hình ảnh đám mây điểm cần phù hợp; </td>
 </tr>
 <tr>
-<td>平面拟合结果   </td>
-<td>三维平面：平面点，拟合平面经过的三维点<br />三维平面：法向量，拟合平面的法向量<br />三维平面：偏移量，拟合平面相对于零平面的偏移量<br />三维平面：倾斜角，拟合平面法向量与Z轴的夹角<br />三维平面：旋转角，拟合平面法向量在XOY平面的投影向量与X轴的夹角</td>
+<td>Kết quả phù hợp mặt phẳng   </td>
+<td>Mặt phẳng 3D: Điểm mặt phẳng, điểm 3D mà mặt phẳng phù hợp đi qua<br />Mặt phẳng 3D: Vector pháp tuyến, vector pháp tuyến của mặt phẳng phù hợp<br />Mặt phẳng 3D: Độ lệch, độ lệch của mặt phẳng phù hợp so với mặt phẳng zero<br />Mặt phẳng 3D: Góc nghiêng, góc giữa vector pháp tuyến mặt phẳng phù hợp và trục Z<br />Mặt phẳng 3D: Góc xoay, góc giữa vector chiếu của vector pháp tuyến mặt phẳng phù hợp trên mặt phẳng XOY và trục X</td>
 </tr>
 <tr>
-<td>平面度 </td>
-<td>输出平面的平面度，即最大偏差-最小偏差</td>
+<td> Độ phẳng </td>
+<td>Độ phẳng của mặt phẳng đầu ra, tức là độ lệch tối đa trừ độ lệch tối thiểu</td>
 </tr>
 <tr>
-<td>最大偏差 </td>
-<td>最大偏差值</td>
+<td> Độ lệch tối đa </td>
+<td>Giá trị độ lệch tối đa</td>
 </tr>
 <tr>
-<td>最小偏差 </td>
-<td>最小偏差值</td>
+<td> Độ lệch tối thiểu </td>
+<td>Giá trị độ lệch tối thiểu</td>
 </tr>
 <tr>
-<td>三维矩形平面拟合结果 </td>
-<td>根据输入点集输出三维矩形平面，即点集投影到拟合平面后，计算输出投影点集的最小外接三维矩形平面</td>
+<td> Kết quả phù hợp mặt phẳng hình chữ nhật 3D </td>
+<td>Dựa trên tập điểm đầu vào xuất ra mặt phẳng hình chữ nhật 3D, tức là sau khi chiếu tập điểm lên mặt phẳng phù hợp, tính toán và xuất ra mặt phẳng hình chữ nhật 3D ngoại tiếp tối thiểu của tập điểm chiếu</td>
 </tr>
 <tr>
-<td>执行结果 </td>
-<td>工具执行结果</td>
+<td> Kết quả thực thi </td>
+<td>Kết quả thực thi công cụ</td>
 </tr>
 <tr>
-<td> 执行时间     </td>
-<td> 工具执行时间                                               </td>
+<td> Thời gian thực thi     </td>
+<td> Thời gian thực thi công cụ                                               </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.示例工程</h2>
+<h2>6. Dự án ví dụ</h2>
 
-<p>参见“\Samples\3D\点云\点云卡尺工具.gvp”。</p>
+<p>Xem “\Samples\3D\Đám mây điểm\Công cụ thước kẹp đám mây điểm.gvp”.</p>
 
-<h2>7.特殊说明</h2>
+<h2>7. Giải thích đặc biệt</h2>
 
-<h3>原理说明</h3>
+<h3>Giải thích nguyên lý</h3>
 
 <ul>
-<li><h3>7.1 带局外点平面拟合：</h3>
+<li><h3>7.1 Phù hợp mặt phẳng có loại bỏ điểm ngoại lai：</h3>
 
-<p>带局外点平面拟合工具主要是基于Ransac算法框架，通过设置距离阈值、置信度和局外点比例来获取次优平面，再对次优平面通过迭代寻优的方法获得最优的拟合平面结果。</p>
+<p>Công cụ phù hợp mặt phẳng có loại bỏ điểm ngoại lai chủ yếu dựa trên khung thuật toán RANSAC, thông qua thiết lập ngưỡng khoảng cách, độ tin cậy và tỷ lệ điểm ngoại lai để thu được mặt phẳng thứ ưu, sau đó sử dụng phương pháp tìm kiếm tối ưu lặp lại trên mặt phẳng thứ ưu để thu được kết quả mặt phẳng phù hợp tối ưu nhất.</p>
 
-<p> <strong>局外点判定距离</strong> ：指设定点到拟合平面距离的最大值；</p>
+<p> <strong>Khoảng cách phán đoán điểm ngoại lai</strong> ：Chỉ giá trị khoảng cách tối đa từ điểm thiết lập đến mặt phẳng phù hợp；</p>
 
-<p> <strong>局外点</strong> ：指深度数据点到拟合平面的距离不满足距离阈值的点；</p>
+<p> <strong>Điểm ngoại lai</strong> ：Chỉ các điểm dữ liệu chiều sâu có khoảng cách đến mặt phẳng phù hợp không thỏa mãn ngưỡng khoảng cách；</p>
 
-<p> <strong>局外点比例</strong> ：局外点占总深度数据点的比例，其中，内点与外点的和为总深度数据点；</p>
+<p> <strong>Tỷ lệ điểm ngoại lai</strong> ：Tỷ lệ điểm ngoại lai chiếm tổng điểm dữ liệu chiều sâu, trong đó tổng điểm nội tại và điểm ngoại lai bằng tổng điểm dữ liệu chiều sâu；</p>
 
-<p> <strong>结果置信度</strong> ：衡量使用内点构造拟合平面的可信程度，置信度越大，拟合平面越可靠。</p></li>
-<li><h3>7.2 切比雪夫平面拟合：</h3>
+<p> <strong>Độ tin cậy kết quả</strong> ：Đo lường mức độ tin cậy khi sử dụng điểm nội tại để xây dựng mặt phẳng phù hợp. Độ tin cậy càng lớn, mặt phẳng phù hợp càng đáng tin cậy.</p></li>
+<li><h3>7.2 Phù hợp mặt phẳng Chebyshev：</h3>
 
-<p><strong>最大迭代次数</strong> ：工具内部进行迭代选优的最大计算次数（用于预防特殊点输入时工具内部算法严重超时）默认为50，对于一般的平面测量点云，使用默认参数即可。设置迭代次数≥1；<br/>
-<strong>高精度计算模式</strong> ：开启后工具将搜索全局最优解 （用于输入点云数量不大且非平面分布的情况）默认不开启，对于分布呈现平面状态的点云，使用默认参数即可；若开启高精度计算模式，建议将最大迭代次数设置为100以上数值，开启后耗时至少增加一倍。</p></li>
+<p><strong>Số lần lặp tối đa</strong> ：Số lần tính toán lặp lại tối đa bên trong công cụ để chọn tối ưu (dùng để ngăn chặn tình trạng thuật toán bên trong công cụ bị timeout nghiêm trọng khi nhập điểm đặc biệt) mặc định là 50. Đối với đám mây điểm đo mặt phẳng thông thường, sử dụng tham số mặc định là được. Thiết lập số lần lặp ≥1；<br/>
+<strong>Chế độ tính toán độ chính xác cao</strong> ：Sau khi bật, công cụ sẽ tìm kiếm nghiệm tối ưu toàn cục （dùng cho trường hợp số lượng đám mây điểm không lớn và phân bố không phải mặt phẳng）mặc định không bật. Đối với đám mây điểm phân bố呈现 trạng thái mặt phẳng, sử dụng tham số mặc định là được；nếu bật chế độ tính toán độ chính xác cao, khuyến nghị thiết lập số lần lặp tối đa trên 100, sau khi bật thời gian tiêu tốn ít nhất tăng gấp đôi.</p></li>
 </ul>
 
 
 <p><img src="media/3DPlaneFitting_7_1.png" alt="" /></p>
 
-<p><imgnote>图7_1 切比雪夫拟合算法说明</imgnote></p>
+<p><imgnote>Figure 7_1 Giải thích thuật toán phù hợp Chebyshev</imgnote></p>
 
-<h3>ROI赋值使用说明</h3>
+<h3>Hướng dẫn gán giá trị ROI</h3>
 
-<p>对脚本设置平面拟合ROI说明</p>
+<p>Giải thích thiết lập ROI phù hợp mặt phẳng cho script</p>
 
-<p><strong>1、脚本赋值ROI</strong>：ROI指平面拟合ROI的集合；</p>
+<p><strong>1、Gán giá trị ROI cho script</strong>：ROI chỉ tập hợp ROI phù hợp mặt phẳng；</p>
 
 <p><img src="media/3DPlaneFitting_7_2.png" alt="" /></p>
 
-<p><imgnote>图7_2 平面拟合ROI</imgnote></p>
+<p><imgnote>Figure 7_2 ROI phù hợp mặt phẳng</imgnote></p>
 
-<p><strong>2、脚本赋值长方体ROI</strong>：长方体ROI指当前索引下的ROI；</p>
+<p><strong>2、Gán giá trị ROI hình hộp chữ nhật cho script</strong>：ROI hình hộp chữ nhật chỉ ROI dưới chỉ số hiện tại；</p>
 
 <p><img src="media/3DPlaneFitting_7_3.png" alt="" /></p>
 
-<p><imgnote>图7_3 平面拟合长方体ROI</imgnote></p>
+<p><imgnote>Figure 7_3 ROI hình hộp chữ nhật phù hợp mặt phẳng</imgnote></p>
