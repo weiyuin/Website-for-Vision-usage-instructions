@@ -16,15 +16,15 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Công cụ Trích xuất Tập Điểm</h1>
+<h1>Công cụ trích chọn tập điểm</h1>
 
 <h2>1. Tổng quan chức năng</h2>
 
-<p> Có thể ánh xạ tập hợp các điểm pixel trong ảnh xám 2D thu thập bởi camera thành tập hợp điểm trong dữ liệu đám mây điểm (point cloud).</p>
+<p>​ Có thể ánh xạ tập điểm pixel trong ảnh xám 2D của ảnh do camera thu thập thành tập điểm trong dữ liệu đám mây điểm.</p>
 
-<h2>2. Các kịch bản ứng dụng</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p> Có thể xử lý đồng thời ảnh xám 2D và đám mây điểm 3D. Ví dụ trong kịch bản hiệu chuẩn tay-mắt (hand-eye calibration), có thể ánh xạ các điểm đặc trưng 2D vào đám mây điểm 3D để làm dữ liệu đầu vào cho việc hiệu chuẩn.</p>
+<p>​ Có thể kết hợp ảnh xám 2D và ảnh đám mây điểm 3D để xử lý. Ví dụ trong kịch bản hiệu chuẩn tay-mắt, có thể ánh xạ điểm đặc trưng 2D vào đám mây điểm 3D để dùng làm đầu vào hiệu chuẩn.</p>
 
 <h2>3. Hướng dẫn sử dụng</h2>
 
@@ -32,31 +32,33 @@
 <li><h4>Thêm công cụ</h4></li>
 </ul>
 
+
 <p><img src="media/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8.png" alt="" /></p>
 
 <ul>
-<li><h4>Cài đặt chuỗi dữ liệu</h4>
+<li><h4>Thiết lập chuỗi dữ liệu</h4>
 
-<p>Trong chuỗi dữ liệu, trước tiên nối vào ảnh xám do camera thu thập, đám mây điểm tương ứng cùng thời điểm và chỉ số điểm hợp lệ (valid point index);</p>
+<p>Trong chuỗi dữ liệu, trước tiên liên kết ảnh xám do camera thu thập, ảnh đám mây điểm tương ứng và chỉ số điểm hợp lệ；</p>
 
-<p>Sau đó nhập tập hợp các điểm đặc trưng trong ảnh xám cần chuyển đổi.</p>
+<p>Sau đó nhập tập điểm đặc trưng cần chuyển đổi trong ảnh xám.</p>
 
-<p><em>Lưu ý: Ảnh đám mây điểm, chỉ số điểm hợp lệ và ảnh xám đầu vào phải là các hình ảnh được xuất ra cùng một thời điểm từ công cụ thu thập</em></p></li>
+<p><em>Chú ý：Ảnh đám mây điểm đầu vào, chỉ số điểm hợp lệ, ảnh xám đều phải là ảnh do công cụ thu thập xuất ra tại cùng một thời điểm</em></p></li>
 </ul>
+
 
 <h2>4. Câu hỏi thường gặp</h2>
 
-<p>Chưa có</p>
+<p>Không có</p>
 
-<h2>5. Giải thích tham số</h2>
+<h2>5. Mô tả tham số</h2>
 
-<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
+<h4>Tham số đầu vào（cửa sổ thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
-<th> Tên tham số              </th>
-<th> Mô tả tham số                                                                                                             </th>
+<th> Tên tham số           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
@@ -66,63 +68,66 @@
 </tr>
 <tr>
 <td> Chỉ số điểm hợp lệ của đám mây điểm đầu vào </td>
-<td> Chỉ số các điểm hợp lệ tương ứng với ảnh đám mây điểm </td>
+<td> Chỉ số điểm hợp lệ tương ứng với ảnh đám mây điểm </td>
 </tr>
 <tr>
-<td> Ảnh xám đầu vào          </td>
-<td> Ảnh xám cùng thời điểm do camera thu thập                                                                                 </td>
+<td> Ảnh xám đầu vào </td>
+<td> Ảnh xám do camera thu thập tại cùng thời điểm        </td>
 </tr>
 <tr>
 <td> Tập điểm ảnh xám đầu vào </td>
-<td> Tập hợp các điểm đặc trưng trong ảnh xám cần chuyển đổi                                                                   </td>
+<td> Tập điểm đặc trưng cần chuyển đổi trong ảnh xám </td>
 </tr>
 </tbody>
 </table>
 
-<h4>Tham số đầu ra (chuỗi tham số)</h4>
+
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> Tên tham số                  </th>
-<th> Mô tả tham số                                                                                            </th>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Tập điểm dữ liệu đám mây đầu ra </td>
-<td> Tập điểm đã được ánh xạ ánh xạ vào hệ tọa độ đám mây điểm 3D </td>
+<td> Tập điểm dữ liệu đám mây điểm đầu ra </td>
+<td> Xuất tập điểm được ánh xạ sang tọa độ đám mây điểm 3D </td>
 </tr>
 </tbody>
 </table>
 
-<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
+
+<h4>Tham số đầu ra（cửa sổ đầu ra）</h4>
 
 <table>
 <thead>
 <tr>
-<th> Tên tham số                  </th>
-<th> Mô tả tham số                                                                                            </th>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Tập điểm dữ liệu đám mây đầu ra </td>
-<td> Tập điểm đã được ánh xạ vào hệ tọa độ đám mây điểm 3D </td>
+<td> Tập điểm dữ liệu đám mây điểm đầu ra </td>
+<td> Xuất tập điểm được ánh xạ sang tọa độ đám mây điểm 3D </td>
 </tr>
 <tr>
-<td> Kết quả thực thi             </td>
-<td> Kết quả thực thi của công cụ                                                                      </td>
+<td> Kết quả thực thi         </td>
+<td> Kết quả thực thi công cụ                 </td>
 </tr>
 <tr>
-<td> Thời gian thực thi           </td>
-<td> Thời gian thực thi của công cụ                                                                      </td>
+<td> Thời gian thực thi         </td>
+<td> Thời gian thực thi công cụ                 </td>
 </tr>
 </tbody>
 </table>
+
 
 <h2>6. Dự án ví dụ</h2>
 
-<p>​     参见“\Samples\3D\点云\点集摘取工具.gvp”。</p>
+<p>​     Tham khảo “\Samples\3D\Đám mây điểm\Công cụ trích chọn tập điểm.gvp”.</p>
 
-<h2>7. 特殊说明</h2>
+<h2>7. Ghi chú đặc biệt</h2>

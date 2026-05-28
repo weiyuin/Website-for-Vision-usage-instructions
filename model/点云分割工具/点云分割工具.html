@@ -16,74 +16,75 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Công cụ Phân Đoạn Đám Mây Điểm</h1>
+<h1>Công cụ phân đoạn đám mây điểm</h1>
 
 <h2>1. Tổng quan chức năng</h2>
 
-<p> Công cụ phân đoạn đám mây điểm dùng trong đo lường và kiểm tra 3D, hỗ trợ:  
-• Phân đoạn theo hình học: Hình hộp chữ nhật (Cuboid), Hình cầu (Sphere)  
-• Phân đoạn theo khoảng cách từ bề mặt hình học  
-• Phân đoạn đa vùng (nhiều ROI cùng lúc)  
-• Phân đoạn dựa trên mặt phẳng  
-• Phân đoạn dựa trên thuật toán gom cụm Euclidean (Euclidean Cluster)</p>
+<p>​ Công cụ phân đoạn đám mây điểm phù hợp với các kịch bản như đo lường 3D、kiểm tra, cung cấp chức năng phân đoạn hình học dạng hình hộp chữ nhật、hình cầu, lấy đám mây điểm của khối hình học hoặc trong một phạm vi nhất định trên bề mặt khối hình học, đồng thời cũng cung cấp chức năng phân đoạn cụm dựa trên khoảng cách Euclid.</p>
 
-<h2>2. Các kịch bản ứng dụng</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p> Rất phổ biến trong đo 3D, ví dụ:  
-• Tách riêng điểm thuộc khung viền điện thoại để đo kích thước  
-• Tách vùng cạnh để dùng nhiều công cụ caliper cùng lúc, giảm đáng kể thời gian tính toán  
-• Loại bỏ nền, chỉ giữ lại vật thể quan tâm  
-• Tách nhiều chi tiết riêng biệt trên cùng một đám mây điểm…</p>
+<p>​ Trong đo lường 3D, phân đoạn đám mây điểm được ứng dụng khá rộng rãi, như kiểm tra khung giữa điện thoại, lấy đám mây điểm của viền khung, giảm khối lượng tính toán cho các bước đo lường、kiểm tra tiếp theo；khi nhiều công cụ thước cặp cùng tham gia đo lường, trước tiên dùng công cụ phân đoạn đám mây điểm để lấy đám mây điểm biên, sau đó dùng công cụ thước cặp, có thể tăng tốc hiệu suất tính toán tổng thể, v.v.</p>
 
 <h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>3.1 Phân đoạn theo ROI hình hộp chữ nhật</h3>
+<li><h3>3.1 Phân đoạn ROI hình hộp chữ nhật</h3>
 
-<p><strong>Bước 1:</strong> Thêm công cụ Tải file đám mây điểm → Công cụ Phân Đoạn Đám Mây Điểm, mở chuỗi tham số, nối file điểm như Hình 3-1;<br/>
-<strong>Bước 2:</strong> Chuột phải vào công cụ → “Thuộc tính”, chọn “Loại ROI” = Hình hộp chữ nhật, kéo/thay đổi kích thước ROI trong giao diện nâng cao → Chạy để lấy điểm bên trong hộp.</p>
+<p><strong>step1：</strong>Thêm tệp đám mây điểm、công cụ phân đoạn đám mây điểm, và nhấp đúp để mở chuỗi tham số công cụ, liên kết tệp đám mây điểm, như hình 3-1；</p>
+
+<p><strong>step2：</strong>Nhấp chuột phải vào công cụ phân đoạn đám mây điểm và chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-2, chọn loại ROI là hình hộp chữ nhật, thiết lập tham số phân đoạn, sau đó nhấp chạy để thu được dữ liệu đám mây điểm sau phân đoạn；</p>
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_1.png" style="zoom:100%;"/>
-    <center>Hình 3-1 Quy trình phân đoạn đám mây điểm – Hình hộp chữ nhật</center>
+    <center>Hình 3_1 Phân đoạn đám mây điểm：Quy trình phân đoạn ROI hình hộp chữ nhật</center>
 </div>
+
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_2.gif" style="zoom:100%;"/>
-    <center>Hình 3-2 Phân đoạn theo ROI hình hộp chữ nhật</center>
+    <center>Hình 3_2 Phân đoạn đám mây điểm：Phân đoạn ROI hình hộp chữ nhật</center>
 </div>
 </li>
+<li><h3>3.2 Phân đoạn ROI hình cầu</h3>
 
-<li><h3>3.2 Phân đoạn theo ROI hình cầu</h3>
+<p><strong>step1：</strong>Thêm tệp đám mây điểm、công cụ phân đoạn đám mây điểm, và nhấp đúp để mở chuỗi tham số công cụ, liên kết tệp đám mây điểm, như hình 3-1；</p>
 
-<p>Tương tự bước trên, chỉ thay “Loại ROI” thành Hình cầu, điều chỉnh tâm và bán kính → Chạy.</p>
+<p><strong>step2：</strong>Nhấp chuột phải vào công cụ phân đoạn đám mây điểm và chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-3, chọn loại ROI là hình cầu, thiết lập tham số phân đoạn, sau đó nhấp chạy để thu được dữ liệu đám mây điểm sau phân đoạn；</p>
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_3.gif" style="zoom:100%;"/>
-    <center>Hình 3-3 Phân đoạn theo ROI hình cầu</center>
+    <center>Hình 3_3 Phân đoạn đám mây điểm：Phân đoạn ROI hình cầu</center>
 </div>
 
-<h3>3.3 Phân đoạn đa vùng (nhiều ROI cùng lúc)</h3>
 
-<p>Trong giao diện nâng cao bật chế độ “Đa vùng”, thêm/bớt/sửa từng ROI (hộp hoặc cầu) → hệ thống sẽ xuất ra từng đám mây con tương ứng từng vùng.</p>
+<h3>3.3 Phân đoạn đa vùng</h3>
+
+<p><strong>step1：</strong>Thêm tệp đám mây điểm、công cụ phân đoạn đám mây điểm, và nhấp đúp để mở chuỗi tham số công cụ, liên kết tệp đám mây điểm, như hình 3-1；</p>
+
+<p><strong>step2：</strong>Nhấp chuột phải vào công cụ phân đoạn đám mây điểm và chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-4, thiết lập tham số phân đoạn, sau đó nhấp chạy để thu được dữ liệu đám mây điểm sau phân đoạn；</p>
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_4.gif" style="zoom:100%;"/>
-    <center>Hình 3-4 Thiết lập đa vùng phân đoạn</center>
+    <center>Hình 3_4 Phân đoạn đám mây điểm：Phân đoạn đa vùng</center>
 </div>
+
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_4.png" style="zoom:100%;"/>
-    <center>Hình 3-5 Kết quả đa vùng phân đoạn</center>
+    <center>Hình 3_5 Phân đoạn đám mây điểm：Kết quả phân đoạn đa vùng</center>
 </div>
+
 
 <h3>3.4 Phân đoạn dựa trên mặt phẳng</h3>
 
-<p>Chọn “Loại ROI” = Mặt phẳng, thiết lập ngưỡng khoảng cách và chọn giữ lại điểm ở phía nào (một phía hoặc cả hai phía) so với mặt phẳng → Chạy.</p>
+<p><strong>step1：</strong>Thêm tệp đám mây điểm、công cụ phân đoạn đám mây điểm, và nhấp đúp để mở chuỗi tham số công cụ, liên kết tệp đám mây điểm, như hình 3-1；</p>
+
+<p><strong>step2：</strong>Nhấp chuột phải vào công cụ phân đoạn đám mây điểm và chọn “Thuộc tính” để mở giao diện nâng cao của công cụ, như hình 3-3, thiết lập tham số phân đoạn, sau đó nhấp chạy để thu được dữ liệu đám mây điểm sau phân đoạn；</p>
 
 <div align="center">
 <img src="media/GcCloudSegmentTool3_5.gif" style="zoom:100%;"/>
-    <center>Hình 3-6 Phân đoạn dựa trên mặt phẳng</center>
+    <center>Hình 3_6 Phân đoạn đám mây điểm：Phân đoạn dựa trên mặt phẳng</center>
 </div>
 </li>
 </ul>
@@ -91,203 +92,208 @@
 
 <h2>4. Câu hỏi thường gặp</h2>
 
-<h2>5. Giải thích tham số</h2>
+<h2>5. Mô tả tham số</h2>
 
-<h4>Tham số đầu vào (chuỗi tham số)</h4>
-
-<table>
-<thead>
-<tr>
-<th> Tên tham số            </th>
-<th> Mô tả tham số                                                                                                             </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> Đám mây điểm đầu vào   </td>
-<td> Đám mây điểm cần thực hiện phân đoạn                                                                              </td>
-</tr>
-<tr>
-<td> Mặt phẳng chuẩn        </td>
-<td> Mặt phẳng đã được fit trước đó (chỉ cần nối khi chọn phương pháp “Dựa trên mặt phẳng)                             </td>
-</tr>
-<tr>
-<td> Chỉ số chỉ định đầu vào </td>
-<td> Nếu nối vào đây thì công cụ chỉ xử lý trên tập hợp điểm có chỉ số đã cho;  
-nếu không nối gì → mặc định xử lý toàn bộ đám mây điểm                                                             </td>
-</tr>
-</tbody>
-</table>
-
-<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
+<h4>Tham số đầu vào（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> Tên tham số                     </th>
-<th> Mô tả tham số                                                                                                             </th>
+<th> Tên tham số           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Loại ROI                        </td>
-<td> Hình hộp chữ nhật / Hình cầu                                                                                      </td>
+<td> Dữ liệu đám mây điểm đầu vào </td>
+<td> Đám mây điểm đầu vào cần phân đoạn                                                                                </td>
 </tr>
 <tr>
-<td> ROI hình hộp chữ nhật           </td>
-<td> Hiển thị vị trí và kích thước của hộp trong giao diện nâng cao                                                      </td>
+<td> Mặt phẳng chuẩn đầu vào </td>
+<td> Mặt phẳng sau khi fitting đầu vào </td>
 </tr>
 <tr>
-<td> ROI hình cầu                    </td>
-<td> Hiển thị tâm và bán kính của hình cầu trong giao diện nâng cao                                                    </td>
-</tr>
-<tr>
-<td> Số lượng ROI                    </td>
-<td> Khi bật chế độ đa vùng: số lượng ROI tối đa, phạm vi [1, 50]                                                     </td>
-</tr>
-<tr>
-<td> Chỉ số ROI hiện tại             </td>
-<td> Dùng để chuyển đổi giữa các ROI khi có nhiều vùng                                                                 </td>
-</tr>
-<tr>
-<td> Phương pháp phân đoạn           </td>
-<td> Hình học (Cuboid/Sphere) / Đa vùng / Dựa trên mặt phẳng                                                           </td>
-</tr>
-<tr>
-<td> Bật lấy điểm gần bề mặt hình học </td>
-<td> Khi bật → chỉ giữ lại các điểm nằm trong khoảng cách nhất định tính từ bề mặt hình học (trong hoặc ngoài)           </td>
-</tr>
-<tr>
-<td> Khoảng cách từ bề mặt hình học  </td>
-<td> Giá trị khoảng cách (±) để lấy điểm gần bề mặt (mm)                                                               </td>
-</tr>
-<tr>
-<td> Bật chọn ngược (Invert)         </td>
-<td> Đảo ngược kết quả: điểm vốn nằm trong ROI sẽ bị loại ra, điểm bên ngoài sẽ được giữ lại                           </td>
-</tr>
-<tr>
-<td> Ngưỡng khoảng cách (Euclidean Cluster) </td>
-<td> Các điểm cách nhau ≤ ngưỡng này sẽ thuộc cùng một cụm                                                             </td>
-</tr>
-<tr>
-<td> Bật ngưỡng tương đối            </td>
-<td> Có: ngưỡng là hệ số nhân; Không: ngưỡng là giá trị tuyệt đối (mm)                                                </td>
-</tr>
-<tr>
-<td> Khoảng cách tới mặt phẳng       </td>
-<td> Khi phân đoạn theo mặt phẳng: giữ lại điểm nằm trong ± giá trị này so với mặt phẳng                                </td>
-</tr>
-<tr>
-<td> Chế độ đầu ra                  </td>
-<td> Chỉ xuất chỉ số điểm (index) / Xuất cả tọa độ điểm thực tế                                                        </td>
-</tr>
-<tr>
-<td> Bật tính toán song song         </td>
-<td> Có: bật OpenMP để tăng tốc (có thể thời gian dao động); Không: tắt OpenMP                                         </td>
-</tr>
-<tr>
-<td> Tỷ lệ phần trăm luồng           </td>
-<td> Tỷ lệ sử dụng CPU cho tính toán song song, phạm vi (0, 0.75] → 0%–75%                                             </td>
-</tr>
-</tbody>
-</table>
-
-<h4>Tham số đầu vào (giao diện nâng cao)</h4>
-
-<p>Các tham số hoàn toàn giống với cửa sổ thuộc tính, kèm thêm các nút thao tác trực tiếp:</p>
-
-<table>
-<thead>
-<tr>
-<th> Tên nút               </th>
-<th> Chức năng                                                                 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> Thêm ROI              </td>
-<td> Tự động tạo một ROI mới trong cửa sổ 3D                                                   </td>
-</tr>
-<tr>
-<td> Vẽ ROI hiện tại       </td>
-<td> Click + kéo chuột để vẽ hoặc chỉnh sửa ROI đang chọn                                      </td>
-</tr>
-<tr>
-<td> Xóa ROI hiện tại      </td>
-<td> Click + kéo để xóa ROI đang chọn                                                          </td>
+<td> Chỉ số chỉ định đầu vào       </td>
+<td> Biểu thị phần chỉ số chỉ định của toàn bộ đám mây điểm, phân đoạn ra các điểm nằm trong ROI, nếu không liên kết thì đại diện cho toàn bộ chỉ số </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>Tham số đầu ra (chuỗi tham số)</h4>
+<h4>Tham số đầu vào（cửa sổ thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
-<th> Tên tham số                </th>
-<th> Mô tả tham số                                                                 </th>
+<th> Tên tham số           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Chỉ số điểm đầu ra         </td>
-<td> Chỉ số (index) của tất cả các điểm nằm trong vùng ROI đã chọn                         </td>
+<td> Loại ROI                 </td>
+<td> Chia thành hai loại：hình hộp chữ nhật và hình cầu </td>
 </tr>
 <tr>
-<td> Đám mây điểm đầu ra        </td>
-<td> Đám mây điểm thực tế chỉ chứa các điểm nằm trong ROI                                  </td>
+<td> ROI hình hộp chữ nhật </td>
+<td> Hiển thị vị trí ROI hình hộp chữ nhật </td>
 </tr>
 <tr>
-<td> Tập hợp đám mây đầu ra     </td>
-<td> Khi dùng chế độ đa vùng: xuất mảng (array) các đám mây con tương ứng từng ROI          </td>
+<td> ROI hình cầu </td>
+<td> Hiển thị vị trí ROI hình cầu </td>
 </tr>
 <tr>
-<td> Các cụm (cluster) đầu ra   </td>
-<td> Khi dùng gom cụm Euclidean: xuất danh sách các cụm chỉ số riêng biệt                  </td>
+<td> Số lượng ROI </td>
+<td> Khi bật ROI, dùng để thiết lập số lượng ROI, phạm vi：[1,50] </td>
+</tr>
+<tr>
+<td> Chỉ số ROI </td>
+<td> Dùng để chuyển đổi giữa các chỉ số khác nhau </td>
+</tr>
+<tr>
+<td> Phương pháp phân đoạn </td>
+<td> Chia thành ba loại：khối hình học、đa vùng và dựa trên mặt phẳng </td>
+</tr>
+<tr>
+<td> Có bật lấy điểm bề mặt hay không </td>
+<td> Sau khi bật chức năng này, cần nhập “khoảng cách bên trong bề mặt khối hình học”, biểu thị khi phân đoạn đám mây điểm, chỉ phân đoạn ra đám mây điểm trong phạm vi này </td>
+</tr>
+<tr>
+<td> Khoảng cách bên trong bề mặt khối hình học </td>
+<td> Khi phân đoạn đám mây điểm, chỉ phân đoạn ra đám mây điểm trong phạm vi này              </td>
+</tr>
+<tr>
+<td> Có bật chọn ngược hay không </td>
+<td> Bật chức năng này, đám mây điểm vốn phải được xuất ra sẽ không được xuất ra, đám mây điểm vốn không được xuất ra sẽ được xuất ra </td>
+</tr>
+<tr>
+<td> Ngưỡng khoảng cách </td>
+<td> Chỉ định phạm vi khoảng cách bao nhiêu thì các điểm thuộc cùng một lớp </td>
+</tr>
+<tr>
+<td> Có bật ngưỡng tương đối hay không </td>
+<td> Bật, ngưỡng khoảng cách là một hệ số；không bật, ngưỡng khoảng cách là một giá trị khoảng cách tuyệt đối </td>
+</tr>
+<tr>
+<td> Khoảng cách mặt phẳng </td>
+<td> Xuất đám mây điểm nằm trong khoảng cách ±dDistance/2 so với mặt phẳng </td>
+</tr>
+<tr>
+<td> Thiết lập chế độ đầu ra </td>
+<td> Chia thành hai loại：xuất chỉ số chỉ định và xuất dữ liệu đám mây điểm </td>
+</tr>
+<tr>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không, khi chọn có, thuật toán sẽ bật phương thức tính toán song song OpenMp, có thể nâng cao tốc độ tính toán, nhưng có thể xuất hiện tình trạng thời gian xử lý không ổn định, khi chọn không, thuật toán sẽ tắt tính toán song song OpenMp。 </td>
+</tr>
+<tr>
+<td> Phần trăm số luồng </td>
+<td> Thiết lập phần trăm số luồng của tính toán song song, phạm vi hợp lệ là (0, 0.75], tương ứng biểu thị phạm vi phần trăm(0%, 75%]。 </td>
 </tr>
 </tbody>
 </table>
 
-<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
+
+<h4>Tham số đầu vào（giao diện nâng cao）</h4>
+
+<p>Tham số giao diện nâng cao nhất quán với tham số cửa sổ thuộc tính, các nút tương tác như sau：</p>
 
 <table>
 <thead>
 <tr>
-<th> Tên tham số                </th>
-<th> Mô tả tham số                                                                 </th>
+<th> Tên nút           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Chỉ số điểm đầu ra         </td>
-<td> Chỉ số của các điểm nằm trong ROI                                                     </td>
+<td> Thêm ROI </td>
+<td> Trong hình ảnh giao diện nâng cao, tự động thêm ROI </td>
 </tr>
 <tr>
-<td> Đám mây điểm đầu ra        </td>
-<td> Đám mây điểm thực tế chỉ chứa các điểm nằm trong ROI                                  </td>
+<td> Vẽ ROI hiện tại </td>
+<td> Trong hình ảnh giao diện nâng cao, nhấp và kéo chuột tại vị trí tương ứng để vẽ ROI dưới chỉ số hiện tại </td>
 </tr>
 <tr>
-<td> Tập hợp đám mây đầu ra     </td>
-<td> Mảng các đám mây con khi phân đoạn đa vùng                                            </td>
-</tr>
-<tr>
-<td> Các cụm đầu ra             </td>
-<td> Danh sách các cụm chỉ số sau khi gom cụm Euclidean                                    </td>
-</tr>
-<tr>
-<td> Thời gian thực thi        </td>
-<td> Thời gian chạy công cụ                                                                </td>
-</tr>
-<tr>
-<td> Kết quả thực thi           </td>
-<td> Kết quả thực thi của công cụ (thành công/thất bại)                                    </td>
+<td> Xóa ROI hiện tại </td>
+<td> Trong hình ảnh giao diện nâng cao, nhấp và kéo chuột tại vị trí tương ứng để xóa ROI dưới chỉ số hiện tại </td>
 </tr>
 </tbody>
 </table>
 
-<p>​ 参见“\Samples\3D\点云\点云测量.gvp”。</p>
 
-<h2>7. 特殊说明</h2>
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
-<p>【1】多区域分割耗时较长，一般仅用于数据量较少的聚类分割</p>
+<table>
+<thead>
+<tr>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Chỉ số chỉ định đầu ra </td>
+<td> Xuất giá trị chỉ số của các điểm được phân đoạn ra trong ROI </td>
+</tr>
+<tr>
+<td> Dữ liệu đám mây điểm đầu ra                                            </td>
+<td> Xuất dữ liệu đám mây điểm trong ROI </td>
+</tr>
+<tr>
+<td> Tập đám mây điểm đầu ra </td>
+<td> Xuất tập hợp đám mây điểm </td>
+</tr>
+<tr>
+<td> Cụm đầu ra </td>
+<td> Tập chỉ số sau khi phân đoạn đa vùng </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Tham số đầu ra（cửa sổ đầu ra）</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Chỉ số chỉ định đầu ra </td>
+<td> Xuất giá trị chỉ số của các điểm được phân đoạn ra trong ROI </td>
+</tr>
+<tr>
+<td> Dữ liệu đám mây điểm đầu ra                                            </td>
+<td> Xuất dữ liệu đám mây điểm trong ROI </td>
+</tr>
+<tr>
+<td> Tập đám mây điểm đầu ra </td>
+<td> Xuất tập hợp đám mây điểm </td>
+</tr>
+<tr>
+<td> Cụm đầu ra </td>
+<td> Tập chỉ số sau khi phân đoạn đa vùng </td>
+</tr>
+<tr>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ </td>
+</tr>
+<tr>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. Dự án ví dụ</h2>
+
+<p>​ Tham khảo “\Samples\3D\Đám mây điểm\Đo lường đám mây điểm.gvp”.</p>
+
+<h2>7. Ghi chú đặc biệt</h2>
+
+<p>【1】Phân đoạn đa vùng mất nhiều thời gian, thông thường chỉ dùng cho phân đoạn cụm với lượng dữ liệu nhỏ</p>

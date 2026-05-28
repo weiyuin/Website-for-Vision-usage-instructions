@@ -16,178 +16,212 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Công cụ Biến Đổi Đám Mây Điểm</h1>
+<h1>Công cụ biến đổi đám mây điểm</h1>
 
 <h2>1. Tổng quan chức năng</h2>
 
-<p> Công cụ Biến Đổi Đám Mây Điểm áp dụng ma trận biến đổi cứng (rigid transformation matrix) – lấy từ bên trong công cụ hoặc từ công cụ khác – để đồng thời biến đổi không gian cho:  
-• Đám mây điểm  
-• Hình hộp chữ nhật (Cuboid)  
-• Hệ tọa độ (Coordinate System)  
-• Tập hợp điểm 3D  
-• Vector  
-Mục đích chính là đưa đám mây điểm về vị trí thuận lợi để thực hiện các phép đo kích thước sau này.</p>
+<p>​ Công cụ biến đổi đám mây điểm thực hiện biến đổi không gian đối với dữ liệu đám mây điểm, khối hộp chữ nhật, hệ tọa độ, tập điểm 3D, vector đầu vào dựa trên ma trận biến đổi cứng được nhập từ bên trong hoặc bên ngoài, từ đó hoàn thành phép đo kích thước ở giai đoạn sau.</p>
 
 <p><img src="media/PointCloudTransfore1_1.gif" alt="img" /></p>
-<p><imgnote>Hình 1-1 Nguyên lý biến đổi đám mây điểm</imgnote></p>
 
-<h2>2. Các kịch bản ứng dụng</h2>
+<p><imgnote>Hình 1_1 Phân đoạn đám mây điểm: nguyên lý biến đổi đám mây điểm</imgnote></p>
 
-<p> Rất phổ biến trong đo lường 3D, ví dụ:  
-• Đo độ dày, chiều cao khung viền điện thoại  
-• Căn chỉnh điểm cloud về hệ tọa độ sản phẩm  
-• Ghép nhiều mảnh điểm cloud lại với nhau  
-• Đưa điểm cloud về mặt phẳng XY = 0 để đo dễ dàng hơn…</p>
+<h2>2. Tình huống ứng dụng</h2>
+
+<p>​ Trong đo lường 3D, biến đổi đám mây điểm được ứng dụng khá rộng rãi, chẳng hạn trong các dự án kiểm tra khung giữa điện thoại, đo độ dày, đo chiều cao, v.v.</p>
 
 <h2>3. Hướng dẫn sử dụng</h2>
 
-<p><strong>Bước 1:</strong> Thêm công cụ Tải file đám mây điểm → Công cụ Biến Đổi Đám Mây Điểm, mở chuỗi tham số, nối đám mây điểm cần biến đổi (và các đối tượng khác nếu muốn);<br/>
-<strong>Bước 2:</strong> Cung cấp ma trận biến đổi 3×4 theo một trong các cách sau:  
-• Nhập tay trong tab “Ma trận”  
-• Load từ file .txt/.csv qua nút “Đường dẫn file”  
-• Nối trực tiếp từ công cụ khác (ví dụ công cụ Đăng ký điểm cloud ICP, Best-fit…)  
-Sau đó nhấn Chạy công cụ.</p>
+<p>step1：Thêm file đám mây điểm, công cụ biến đổi đám mây điểm, đồng thời nhấp đúp để mở chuỗi tham số của công cụ, liên kết file đám mây điểm, như Hình 3-1 minh họa；</p>
+
+<p>step2：Chọn phương thức khác nhau để lấy ma trận biến đổi theo nguồn ma trận, ví dụ nhấp vào thuộc tính công cụ “Đường dẫn file”, nhập ma trận biến đổi đám mây điểm, sau đó nhấp chạy công cụ này；</p>
 
 <p><img src="media/PointCloudTransform3_1.png" alt="img" /></p>
-<p><imgnote>Hình 3-1 Biến đổi đám mây điểm trong thực tế</imgnote></p>
+
+<p><imgnote>Hình 3_1 Biến đổi đám mây điểm: biến đổi dữ liệu đám mây điểm</imgnote></p>
 
 <h2>4. Câu hỏi thường gặp</h2>
 
-<p>Chưa có</p>
+<p>Không có</p>
 
-<h2>5. Giải thích tham số</h2>
+<h2>5. Mô tả tham số</h2>
 
-<h4>Tham số đầu vào (chuỗi tham số)</h4>
-
-<table>
-<thead>
-<tr>
-<th> Tên tham số           </th>
-<th> Mô tả tham số                                                                 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> Đám mây điểm đầu vào  </td>
-<td> Đám mây điểm cần biến đổi                                                             </td>
-</tr>
-<tr>
-<td> Hình hộp chữ nhật đầu vào </td>
-<td> Hình hộp cần biến đổi cùng (nếu có)                                                    </td>
-</tr>
-<tr>
-<td> Hệ tọa độ đầu vào     </td>
-<td> Hệ tọa độ cần biến đổi cùng                                                           </td>
-</tr>
-<tr>
-<td> Tập điểm 3D đầu vào   </td>
-<td> Tập hợp các điểm 3D cần biến đổi cùng                                                 </td>
-</tr>
-<tr>
-<td> Vector 1 đầu vào      </td>
-<td> Vector thứ nhất cần biến đổi                                                          </td>
-</tr>
-<tr>
-<td> Vector 2 đầu vào      </td>
-<td> Vector thứ hai cần biến đổi                                                           </td>
-</tr>
-<tr>
-<td> Ma trận biến đổi cứng </td>
-<td> Ma trận 3×4 (hoặc 4×4) từ công cụ khác hoặc file, định dạng:  
-[[R t][0 1]] (3 hàng cuối của hàng 4 là 0 0 0 1)] </td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
+<h4>Tham số đầu vào（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
 <th> Tên tham số       </th>
-<th> Mô tả tham số                                                                 </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Loại đối tượng biến đổi </td>
-<td> Chọn các đối tượng cần áp dụng biến đổi: Đám mây điểm, Hình hộp chữ nhật, Hệ tọa độ, Tập điểm 3D, Vector </td>
+<td> Dữ liệu đám mây điểm đầu vào </td>
+<td> Nhập ảnh đám mây điểm cần biến đổi                                                                                 </td>
 </tr>
 <tr>
-<td> Nguồn ma trận     </td>
-<td> Ba cách cung cấp ma trận biến đổi:<br>
-• <strong>Chuỗi dữ liệu</strong> (nối từ công cụ khác)<br>
-• <strong>Nhập từ file</strong> (txt/csv)<br>
-• <strong>Nhập tay trong giao diện nâng cao</strong> </td>
+<td> Khối hộp chữ nhật đầu vào </td>
+<td> Nhập khối hộp chữ nhật cần biến đổi </td>
 </tr>
 <tr>
-<td> Đường dẫn file    </td>
-<td> Đường dẫn tới file chứa ma trận biến đổi 3×4 hoặc 4×4                              </td>
+<td> Hệ tọa độ đầu vào </td>
+<td> Nhập hệ tọa độ cần biến đổi </td>
+</tr>
+<tr>
+<td> Tập điểm 3D đầu vào </td>
+<td> Nhập tập điểm 3D cần biến đổi </td>
+</tr>
+<tr>
+<td> Vector đầu vào 1 </td>
+<td> Nhập vector thứ nhất </td>
+</tr>
+<tr>
+<td> Vector đầu vào 2 </td>
+<td> Nhập vector thứ hai </td>
+</tr>
+<tr>
+<td> Ma trận biến đổi cứng   </td>
+<td> Ma trận biến đổi do công cụ khác xuất ra：ma trận 3×4                            </td>
 </tr>
 </tbody>
 </table>
 
-<h4>Tham số đầu vào (giao diện nâng cao)</h4>
 
-<p>Có thể nhập trực tiếp ma trận biến đổi trong bảng như sau:</p>
+<h4>Tham số đầu vào（cửa sổ thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
-<th> Tên                </th>
-<th> Mô tả                                      </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Ma trận biến đổi   </td>
-<td> Nhập tay ma trận 4×4 (hoặc 3×4 + hàng [0 0 0 1]) ngay trong giao diện nâng cao </td>
+<td> Loại biến đổi </td>
+<td> Hỗ trợ đám mây điểm, khối hộp chữ nhật, hệ tọa độ, tập điểm 3D, vector </td>
+</tr>
+<tr>
+<td> Nguồn ma trận </td>
+<td> Bao gồm ba loại：liên kết dữ liệu, nhập từ bên ngoài qua thuộc tính và thiết lập trong giao diện nâng cao </td>
+</tr>
+<tr>
+<td> Đường dẫn file </td>
+<td> Chỉ đường dẫn file ma trận biến đổi đám mây điểm                                     </td>
+</tr>
+<tr>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không, khi chọn Có, thuật toán sẽ bật phương thức tính toán song song OpenMp, có thể tăng tốc độ tính toán, nhưng có thể xuất hiện tình trạng thời gian xử lý không ổn định, khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp. </td>
+</tr>
+<tr>
+<td> Tỷ lệ phần trăm số luồng </td>
+<td> Thiết lập tỷ lệ phần trăm số luồng của tính toán song song, phạm vi hợp lệ là (0, 0.75], tương ứng biểu thị phạm vi phần trăm (0%, 75%]. </td>
 </tr>
 </tbody>
 </table>
 
-<h4>Tham số đầu ra (chuỗi tham số)</h4>
+
+<h4>Tham số đầu vào（giao diện nâng cao）</h4>
+
+<p>Giao diện nâng cao có thể dùng để thiết lập ma trận như sau：</p>
 
 <table>
 <thead>
 <tr>
-<th> Tên tham số                </th>
-<th> Mô tả                                      </th>
+<th> Tên           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
-<tr><td> Đám mây điểm đầu ra        </td><td> Đám mây điểm sau khi đã biến đổi           </td></tr>
-<tr><td> Hình hộp chữ nhật đầu ra   </td><td> Hình hộp sau khi biến đổi                  </td></tr>
-<tr><td> Hệ tọa độ đầu ra           </td><td> Hệ tọa độ sau khi biến đổi                 </td></tr>
-<tr><td> Tập điểm 3D đầu ra         </td><td> Tập điểm 3D sau khi biến đổi               </td></tr>
-<tr><td> Ma trận biến đổi cứng đầu ra </td><td> Ma trận 3×4 đã sử dụng (để truyền tiếp)    </td></tr>
-</tbody></table>
-
-<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
-
-<table>
-<thead>
 <tr>
-<th> Tên tham số                </th>
-<th> Mô tả                                      </th>
+<td> Ma trận                                </td>
+<td> Nhập ma trận biến đổi trong giao diện nâng cao </td>
 </tr>
-</thead>
-<tbody>
-<tr><td> Đám mây điểm đầu ra        </td><td> Đám mây điểm sau khi đã biến đổi           </td></tr>
-<tr><td> Hình hộp chữ nhật đầu ra   </td><td> Hình hộp sau khi biến đổi                  </td></tr>
-<tr><td> Hệ tọa độ đầu ra           </td><td> Hệ tọa độ sau khi biến đổi                 </td></tr>
-<tr><td> Tập điểm 3D đầu ra         </td><td> Tập điểm 3D sau khi biến đổi               </td></tr>
-<tr><td> Ma trận biến đổi cứng      </td><td> Ma trận đã áp dụng                         </td></tr>
-<tr><td> Thời gian thực thi         </td><td> Thời gian chạy công cụ                     </td></tr>
-<tr><td> Kết quả thực thi           </td><td> Trạng thái thực thi công cụ                </td></tr>
 </tbody>
 </table>
 
-<h2>6. Dự án ví dụ</h2>
 
-<p>​ 参见“\Samples\3D\点云\点云变换.gvp”。</p>
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
-<h2>7. 特殊说明</h2>
+<table>
+<thead>
+<tr>
+<th> Tên tham số     </th>
+<th> Mô tả tham số               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Dữ liệu đám mây điểm đầu ra </td>
+<td> Xuất dữ liệu đám mây điểm sau biến đổi </td>
+</tr>
+<tr>
+<td> Khối hộp chữ nhật đầu ra </td>
+<td> Xuất khối hộp chữ nhật sau biến đổi </td>
+</tr>
+<tr>
+<td> Hệ tọa độ đầu ra </td>
+<td> Xuất hệ tọa độ sau biến đổi </td>
+</tr>
+<tr>
+<td> Tập điểm 3D đầu ra </td>
+<td> Xuất tập điểm 3D sau biến đổi </td>
+</tr>
+<tr>
+<td> Ma trận biến đổi cứng đầu ra </td>
+<td> Xuất ma trận biến đổi cứng </td>
+</tr>
+</tbody>
+</table>
 
-<p>​ 无</p>
+
+<h4>Tham số đầu ra（cửa sổ đầu ra）</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số     </th>
+<th> Mô tả tham số               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Dữ liệu đám mây điểm đầu ra </td>
+<td> Xuất dữ liệu đám mây điểm sau biến đổi </td>
+</tr>
+<tr>
+<td> Khối hộp chữ nhật đầu ra </td>
+<td> Xuất khối hộp chữ nhật sau biến đổi </td>
+</tr>
+<tr>
+<td> Hệ tọa độ đầu ra </td>
+<td> Xuất hệ tọa độ sau biến đổi </td>
+</tr>
+<tr>
+<td> Tập điểm 3D đầu ra </td>
+<td> Xuất tập điểm 3D sau biến đổi </td>
+</tr>
+<tr>
+<td> Ma trận biến đổi cứng đầu ra </td>
+<td> Xuất ma trận biến đổi cứng </td>
+</tr>
+<tr>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ </td>
+</tr>
+<tr>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. Công trình mẫu</h2>
+
+<p>​ Tham khảo “\Samples\3D\点云\点云变换.gvp”.</p>
+
+<h2>7. Ghi chú đặc biệt</h2>
+
+<p>​ Không có</p>

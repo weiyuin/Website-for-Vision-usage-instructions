@@ -16,256 +16,408 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Cài đặt Camera 3D</h1>
+<h1>Công cụ cài đặt camera 3D</h1>
 
 <h2>1. Tổng quan chức năng</h2>
 
-<p>​     Công cụ cài đặt Camera 3D cho phép thiết lập các tham số phổ biến liên quan đến việc chụp ảnh của camera 3D đã chọn, ví dụ: thời gian phơi sáng, vùng ROI hiệu dụng của camera, số dòng ảnh thu được, v.v.</p>
+<p>​     Công cụ cài đặt camera 3D có thể cài đặt các tham số thường dùng liên quan đến quá trình thu nhận của camera 3D đã chọn, ví dụ：phơi sáng、ROI hiệu dụng của camera、số dòng ảnh thu nhận và các tham số khác.</p>
 
-<p>​     Hình dưới đây minh họa quy trình sử dụng thông thường của công cụ cài đặt Camera 3D:</p>
+<p>​     Hình dưới đây là quy trình sử dụng thông thường của công cụ cài đặt camera 3D：</p>
 
 <p><img src="media/Gc3DCameraSettingTool_1_1.png" alt="Gc3DCameraSettingTool_1_1" /></p>
 
 <h2>2. Kịch bản ứng dụng</h2>
 
-<p>​     Trong quá trình thu nhận ảnh 3D, cùng một camera nhưng khi chụp ảnh tại các vị trí khác nhau có thể cần sử dụng các tham số khác nhau nhằm thể hiện các đặc trưng khác nhau của sản phẩm, ví dụ: thời gian phơi sáng, ROI hiệu dụng, số dòng ảnh thu được, có sử dụng tín hiệu kích chụp ảnh hay không, v.v.</p>
+<p>​     Trong quá trình thu nhận ảnh 3D, với cùng một camera, khi thu nhận ảnh ở các vị trí khác nhau, có thể cần sử dụng các tham số thu nhận camera khác nhau để thể hiện các đặc trưng khác nhau của sản phẩm, ví dụ：phơi sáng、ROI hiệu dụng của camera、số dòng ảnh thu nhận、có sử dụng tín hiệu trigger bắt đầu chụp hay không và các tham số camera có thể chỉnh sửa khác.</p>
 
-<h2>3. Nguyên lý hoạt động</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>​     Công cụ cài đặt Camera 3D so sánh các tham số phổ biến lấy từ camera 3D đã chọn với các tham số trong bảng thuộc tính của công cụ, và ghi những tham số không trùng khớp vào camera thông qua giao diện API cài đặt camera 3D.</p>
+<p>​     Công cụ cài đặt camera 3D lấy các tham số thường dùng của camera 3D đã chọn và so sánh với các tham số trong thanh thuộc tính của công cụ, sau đó ghi các tham số thuộc tính không giống nhau vào camera thông qua giao diện API cài đặt camera 3D.</p>
 
 <h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>Thêm công cụ, thiết lập tham số camera</h4></li>
+<li><h4>Thêm công cụ, cài đặt tham số camera</h4></li>
 </ul>
+
 
 <p><img src="media/Gc3DCameraSettingTool_4_1.png" alt="Gc3DCameraSettingTool_4_1" /></p>
 
 <ul>
-<li><h4>Hoàn tất thiết lập camera, sử dụng công cụ chụp ảnh 3D để lấy ảnh</h4></li>
+<li><h4>Sau khi cài đặt camera hoàn tất, sử dụng công cụ thu nhận camera 3D để lấy ảnh</h4></li>
 </ul>
+
 
 <p><img src="media/Gc3DCameraSettingTool_4_2.png" alt="Gc3DCameraSettingTool_4_2" /></p>
 
-<h2>5. Các vấn đề thường gặp</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> Mô tả hiện tượng </th>
-<th> Cách khắc phục </th>
+<th> Mô tả hiện tượng                                                     </th>
+<th> Cách xử lý                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Sau khi cài đặt xong, lưu dự án, mở lại dự án thì bảng thuộc tính không hiển thị tham số, hoặc chỉ hiển thị SN của camera </td>
-<td> Kiểm tra xem camera có bị ngắt kết nối không, thử kết nối lại camera </td>
+<td> Sau khi cài đặt xong, lưu project rồi mở lại project, thanh thuộc tính không hiển thị tham số, hoặc chỉ hiển thị SN camera </td>
+<td> Kiểm tra kết nối camera bất thường, kết nối lại camera                               </td>
 </tr>
 <tr>
-<td> Công cụ thực thi thất bại </td>
-<td> Kiểm tra các tham số có hợp lý không, camera có bị mất kết nối không, trạng thái camera có bình thường không, và đường dẫn đến file tham số có tồn tại không </td>
+<td> Công cụ thực thi thất bại                                                 </td>
+<td> Kiểm tra tham số có hợp lý không、camera có bị mất kết nối không、camera có ở trạng thái bình thường không、đường dẫn file tham số có tồn tại không </td>
 </tr>
 </tbody>
 </table>
 
 
-
-<h2>6. Giải thích Tham Số</h2>
+<h2>6. Mô tả tham số</h2>
 
 <h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> Tên Tham Số         </th>
-<th> Mô Tả Tham Số                                         </th>
+<th> Tên tham số               </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Tên Camera          </td>
-<td> Mã số SN của camera được nhập                          </td>
+<td> Tên camera               </td>
+<td> Số SN camera đầu vào                                             </td>
 </tr>
 <tr>
-<td> Số dòng quét_SR     </td>
-<td> Số dòng kết thúc thu nhận của công cụ camera 3D        </td>
+<td> Số dòng quét_SR            </td>
+<td> Số dòng kết thúc thu nhận của công cụ thu nhận camera 3D                                   </td>
 </tr>
 <tr>
-<td> Bật chế độ nhiều ROI_SR </td>
-<td> Có: Hiển thị tệp nhiều ROI đã nhập; Không: Hiển thị các tham số cài đặt ROI; </td>
+<td> Bật chế độ multi-ROI_SR       </td>
+<td> Có：hiển thị nhập file multi-ROI_SR；Không：hiển thị tham số cài đặt ROI；              </td>
 </tr>
 <tr>
-<td> Nhập tệp nhiều ROI_SR </td>
-<td> Chọn đường dẫn tới tệp nhiều ROI                        </td>
+<td> Nhập file multi-ROI_SR       </td>
+<td> Chọn đường dẫn file multi-ROI                                          </td>
 </tr>
 <tr>
-<td> Gốc ROI X_SR        </td>
-<td> Giá trị X tại góc trên bên trái của vùng ROI thu nhận   </td>
+<td> Gốc X ROI thu nhận_SR        </td>
+<td> Giá trị X của gốc góc trên bên trái ROI trong phạm vi thu nhận camera                                 </td>
 </tr>
 <tr>
-<td> Gốc ROI Y_SR        </td>
-<td> Giá trị Y tại góc trên bên trái của vùng ROI thu nhận   </td>
+<td> Gốc Y ROI thu nhận_SR        </td>
+<td> Giá trị Y của gốc góc trên bên trái ROI trong phạm vi thu nhận camera                                 </td>
 </tr>
 <tr>
-<td> Chiều rộng ROI_SR   </td>
-<td> Chiều rộng vùng ROI có hiệu lực của camera             </td>
+<td> Chiều rộng ROI thu nhận_SR         </td>
+<td> Chiều rộng ROI trong phạm vi thu nhận hiệu dụng của camera                                      </td>
 </tr>
 <tr>
-<td> Chiều cao ROI_SR    </td>
-<td> Chiều cao vùng ROI có hiệu lực của camera              </td>
+<td> Chiều cao ROI thu nhận_SR         </td>
+<td> Chiều cao ROI trong phạm vi thu nhận hiệu dụng của camera                                      </td>
 </tr>
 <tr>
-<td> Bật kích hoạt bắt đầu_SR </td>
-<td> Bật/tắt điều kiện kích hoạt bắt đầu                    </td>
+<td> Bật trigger bắt đầu_SR        </td>
+<td> Bật/tắt điều kiện trigger bắt đầu                                        </td>
 </tr>
 <tr>
-<td> Nguồn kích hoạt bắt đầu_SR </td>
-<td> 0-Input0; 1-Input1; 2-Input2;  3-Input3; -1-Không có kích hoạt </td>
+<td> Nguồn trigger bắt đầu_SR          </td>
+<td> 0-Input0; 1-Input1; 2-Input2;  3-Input3; -1-không có đầu vào trigger       </td>
 </tr>
 <tr>
-<td> Cạnh kích hoạt bắt đầu_SR </td>
-<td> 0-Cạnh lên; 1-Cạnh xuống; 2-Bất kỳ                     </td>
+<td> Sườn trigger bắt đầu_SR          </td>
+<td> 0-sườn lên; 1-sườn xuống; 2-bất kỳ;                                  </td>
 </tr>
 <tr>
-<td> Số lần phơi sáng_SR </td>
-<td> Số lần phơi sáng của camera, từ 1 đến 4                </td>
+<td> Số lần phơi sáng_SR            </td>
+<td> Số lần phơi sáng của camera, lớn hơn hoặc bằng 1, nhỏ hơn hoặc bằng 4                           </td>
 </tr>
 <tr>
-<td> Thời gian phơi sáng 1_SR </td>
-<td> Giá trị phơi sáng lần đầu                              </td>
+<td> Thời gian phơi sáng 1_SR           </td>
+<td> Giá trị phơi sáng lần thứ nhất                                               </td>
 </tr>
 <tr>
-<td> Thời gian phơi sáng 2_SR </td>
-<td> Giá trị phơi sáng lần hai                              </td>
+<td> Thời gian phơi sáng 2_SR           </td>
+<td> Giá trị phơi sáng lần thứ hai                                               </td>
 </tr>
 <tr>
-<td> Thời gian phơi sáng 3_SR </td>
-<td> Giá trị phơi sáng lần ba                               </td>
+<td> Thời gian phơi sáng 3_SR           </td>
+<td> Giá trị phơi sáng lần thứ ba                                               </td>
 </tr>
 <tr>
-<td> Thời gian phơi sáng 4_SR </td>
-<td> Giá trị phơi sáng lần bốn                              </td>
+<td> Thời gian phơi sáng 4_SR           </td>
+<td> Giá trị phơi sáng lần thứ tư                                               </td>
 </tr>
 <tr>
-<td> Độ lợi camera_SR    </td>
-<td> Độ lợi (Gain) của camera                               </td>
+<td> Gain camera_SR            </td>
+<td> Gain camera                                                     </td>
 </tr>
 <tr>
-<td> Chế độ kích hoạt camera_SR </td>
-<td> 0-Chế độ tự do; 1-Kích hoạt nội bộ; 2-Kích hoạt ngoài  </td>
+<td> Chế độ trigger camera_SR        </td>
+<td> 0-chế độ tự do；1-trigger nội；2-trigger ngoài                               </td>
 </tr>
 <tr>
-<td> Tần số kích hoạt nội bộ_SR </td>
-<td> Tần số kích hoạt nội bộ                                </td>
+<td> Tần số trigger nội_SR          </td>
+<td> Tần số trigger nội                                                   </td>
 </tr>
 <tr>
-<td> Nguồn kích hoạt ngoài_SR </td>
-<td> 0-Input0; 1-Input1; 2-Chế độ kết hợp đầu vào; 4-Encoder </td>
+<td> Nguồn trigger ngoài_SR            </td>
+<td> 0-Input0; 1-Input1; 2-chế độ tổ hợp Input;  4-encoder                </td>
 </tr>
 <tr>
-<td> Cạnh kích hoạt ngoài_SR </td>
-<td> 0-Cạnh lên; 1-Cạnh xuống; 2-Bất kỳ                     </td>
+<td> Cài đặt sườn trigger ngoài_SR        </td>
+<td> 0-sườn lên; 1-sườn xuống; 2-bất kỳ                                   </td>
 </tr>
 <tr>
-<td> Tỷ lệ phân chia kích hoạt ngoài_SR </td>
-<td> Chênh lệch kích hoạt dữ liệu                           </td>
+<td> Chia tần trigger ngoài_SR          </td>
+<td> Vi sai trigger dữ liệu                                                 </td>
 </tr>
 <tr>
-<td> Trễ kích hoạt ngoài_SR </td>
-<td> Độ trễ khi kích hoạt dữ liệu                            </td>
+<td> Độ trễ trigger ngoài_SR          </td>
+<td> Độ trễ trigger dữ liệu                                                 </td>
 </tr>
 <tr>
-<td> Độ phân giải trục Y_SR </td>
-<td> Khoảng cách quét của camera theo trục Y, đơn vị: mm    </td>
+<td> Độ phân giải hướng Y_SR         </td>
+<td> Khoảng cách quét của camera，đơn vị：mm                                 </td>
 </tr>
 <tr>
-<td> Chế độ làm việc_MP  </td>
-<td> 0-Nhanh; 1-Tiêu chuẩn; 2-Chính xác; 3-Siêu chính xác   </td>
+<td> Chế độ làm việc_MP            </td>
+<td> 0-nhanh；1-tiêu chuẩn；2-chính xác；3-siêu chính xác；                             </td>
 </tr>
 <tr>
-<td> Chế độ kích hoạt_MP </td>
-<td> 0-Kích hoạt phần mềm; 1-Kích hoạt liên tục nội bộ; 2-Input0; 3-Input1 </td>
+<td> Chế độ trigger_MP            </td>
+<td> 0-trigger phần mềm；1-trigger liên tục nội bộ；2-Input0；3-Input1               </td>
 </tr>
 <tr>
-<td> Thời gian phơi sáng_MP </td>
-<td> Phạm vi: [500,50000], đơn vị: us                       </td>
+<td> Thời gian phơi sáng_MP            </td>
+<td> Phạm vi：[500,50000],đơn vị：us                                   </td>
 </tr>
 <tr>
-<td> Số lần chiếu sáng_MP </td>
-<td> Số lần chiếu sáng, bắt đầu từ 1, phạm vi: [1,3]         </td>
+<td> Số lần chiếu sáng_MP            </td>
+<td> Cài đặt số lần chiếu sáng bắt đầu từ 1，phạm vi：[1,3]                             </td>
 </tr>
 <tr>
-<td> Độ sáng chiếu sáng 1_MP </td>
-<td> Phạm vi: [0,255]                                       </td>
+<td> Độ sáng chiếu sáng 1_MP           </td>
+<td> Phạm vi：[0,255]                                                </td>
 </tr>
 <tr>
-<td> Độ sáng chiếu sáng 2_MP </td>
-<td> Phạm vi: [0,255]                                       </td>
+<td> Độ sáng chiếu sáng 2_MP           </td>
+<td> Phạm vi：[0,255]                                                </td>
 </tr>
 <tr>
-<td> Độ sáng chiếu sáng 3_MP </td>
-<td> Phạm vi: [0,255]                                       </td>
+<td> Độ sáng chiếu sáng 3_MP           </td>
+<td> Phạm vi：[0,255]                                                </td>
 </tr>
 <tr>
-<td> Mã cấu hình tham số_SS </td>
-<td> Phạm vi: [0,63]                                        </td>
+<td> Mã cấu hình tham số_SS        </td>
+<td> Phạm vi：[0,63]                                                 </td>
 </tr>
 <tr>
-<td> Số dòng quét_SS    </td>
-<td> Số dòng kết thúc thu nhận, phạm vi: [50,15000]         </td>
+<td> Số dòng quét_SS            </td>
+<td> Số dòng kết thúc thu nhận của công cụ thu nhận camera 3D，phạm vi：[50,15000]                 </td>
 </tr>
 <tr>
-<td> Độ phân giải trục Y_SS </td>
-<td> Khoảng cách quét của camera theo trục Y, đơn vị: mm    </td>
+<td> Độ phân giải hướng Y_SS         </td>
+<td> Khoảng cách quét của camera，đơn vị：mm                                 </td>
 </tr>
 <tr>
-<td> Chế độ kích hoạt_LC </td>
-<td> 0-Kích hoạt phần mềm; 1-Kích hoạt liên tục; 2-Input0    </td>
+<td> Chế độ trigger_LC            </td>
+<td> 0-trigger phần mềm；1-trigger liên tục；2-Input0;                            </td>
 </tr>
 <tr>
-<td> Bật ROI_LC         </td>
-<td>                                                        </td>
+<td> Bật ROI_LC             </td>
+<td>                                                              </td>
 </tr>
 <tr>
-<td> Gốc ROI X_LC       </td>
-<td> Giá trị X vùng hiệu lực thu nhận của camera             </td>
+<td> Gốc X ROI_LC            </td>
+<td> ROIX vùng thu nhận hiệu dụng của camera                                         </td>
 </tr>
 <tr>
-<td> Gốc ROI Y_LC       </td>
-<td> Giá trị Y vùng hiệu lực thu nhận của camera             </td>
+<td> Gốc Y ROI_LC            </td>
+<td> ROIY vùng thu nhận hiệu dụng của camera                                         </td>
 </tr>
 <tr>
-<td> Chiều rộng ROI_LC  </td>
-<td> Chiều rộng vùng hiệu lực thu nhận của camera            </td>
+<td> Chiều rộng ROI_LC             </td>
+<td> Chiều rộng ROI vùng thu nhận hiệu dụng của camera                                      </td>
 </tr>
 <tr>
-<td> Chiều cao ROI_LC   </td>
-<td> Chiều cao vùng hiệu lực thu nhận của camera             </td>
+<td> Chiều cao ROI_LC             </td>
+<td> Chiều cao ROI vùng thu nhận hiệu dụng của camera                                      </td>
 </tr>
 <tr>
-<td> Thời gian phơi sáng_LC </td>
-<td> Phạm vi: [8333,100000]                                 </td>
+<td> Thời gian phơi sáng_LC            </td>
+<td> Phạm vi：[8333,100000]                                          </td>
 </tr>
 <tr>
-<td> Số lần chiếu sáng_LC </td>
-<td> Số lần chiếu sáng, bắt đầu từ 1, phạm vi: [1,3]         </td>
+<td> Số lần chiếu sáng_LC            </td>
+<td> Cài đặt số lần chiếu sáng bắt đầu từ 1，phạm vi：[1,3]                             </td>
 </tr>
 <tr>
-<td> Độ sáng chiếu sáng 1_LC </td>
-<td> Phạm vi: [0,100]                                       </td>
+<td> Độ sáng chiếu sáng 1_LC           </td>
+<td> Phạm vi：[0,255]                                                </td>
 </tr>
 <tr>
-<td> Độ sáng chiếu sáng 2_LC </td>
-<td> Phạm vi: [0,100]                                       </td>
+<td> Độ sáng chiếu sáng 2_LC           </td>
+<td> Phạm vi：[0,255]                                                </td>
 </tr>
 <tr>
-<td> Độ sáng chiếu sáng 3_LC </td>
-<td> Phạm vi: [0,100]                                       </td>
+<td> Độ sáng chiếu sáng 3_LC           </td>
+<td> Phạm vi：[0,255]                                                </td>
+</tr>
+<tr>
+<td> Độ sáng chiếu sáng 4_LC           </td>
+<td> Phạm vi：[0,255]                                                </td>
+</tr>
+<tr>
+<td> Độ sáng chiếu sáng 5_LC           </td>
+<td> Phạm vi：[0,255]                                                </td>
+</tr>
+<tr>
+<td> Độ sáng chiếu sáng 6_LC           </td>
+<td> Phạm vi：[0,255]                                                </td>
+</tr>
+<tr>
+<td> Độ sáng chiếu sáng 7_LC           </td>
+<td> Phạm vi：[0,255]                                                </td>
+</tr>
+<tr>
+<td> Độ sáng chiếu sáng 8_LC           </td>
+<td> Phạm vi：[0,255]                                                </td>
+</tr>
+<tr>
+<td> Số dòng quét_FP            </td>
+<td> Số dòng kết thúc thu nhận của công cụ thu nhận                                         </td>
+</tr>
+<tr>
+<td> ROI_FP                 </td>
+<td> ROI                                                          </td>
+</tr>
+<tr>
+<td> Bật AGC_FP             </td>
+<td> Sau khi bật, thực hiện chức năng phơi sáng tự động                                       </td>
+</tr>
+<tr>
+<td> Phơi sáng_FP                </td>
+<td> Phạm vi giá trị[0, 100000]，đơn vị: us                                </td>
+</tr>
+<tr>
+<td> Gain_FP                </td>
+<td> Phạm vi giá trị[1, 100000]                                          </td>
+</tr>
+<tr>
+<td> Chế độ trigger_FP            </td>
+<td> trigger nội、trigger ngoài                                               </td>
+</tr>
+<tr>
+<td> Tham số trigger ngoài_FP          </td>
+<td> Nguồn trigger、chia tần                                                 </td>
+</tr>
+<tr>
+<td> Tần số trigger nội_FP          </td>
+<td> Phạm vi giá trị[0, 100000]                                          </td>
+</tr>
+<tr>
+<td> Loại vật liệu_FP            </td>
+<td> Không trong suốt、bề mặt gương、trong suốt và tùy chỉnh                                   </td>
+</tr>
+<tr>
+<td> Độ nhạy_FP              </td>
+<td> Độ chính xác tốt nhất、 độ nhạy tốt nhất                                    </td>
+</tr>
+<tr>
+<td> Độ dày tối thiểu_FP            </td>
+<td> Phạm vi giá trị[0, 100000]                                          </td>
+</tr>
+<tr>
+<td> Tham số vật liệu_FP            </td>
+<td> Các tham số như ngưỡng đỉnh                                                 </td>
+</tr>
+<tr>
+<td> Phương thức xuất bề mặt_FP        </td>
+<td> Phương thức sắp xếp、 số lớp bề mặt xuất                                      </td>
+</tr>
+<tr>
+<td> Độ phân giải hướng Y_FP         </td>
+<td> Phạm vi giá trị[0, 100000]                                          </td>
+</tr>
+<tr>
+<td> Tên recipe_LMI           </td>
+<td> Tên recipe                                                     </td>
+</tr>
+<tr>
+<td> Mã cấu hình tham số_KE        </td>
+<td> Mã cấu hình tham số，các mã khác nhau tương ứng với cấu hình tham số khác nhau，phạm vi giá trị[0 , 15]       </td>
+</tr>
+<tr>
+<td> User Set_HK              </td>
+<td> Số User Set，phạm vi giá trị[0 , 10]，0 là User Set mặc định                  </td>
+</tr>
+<tr>
+<td> User Set_LZ              </td>
+<td> Số User Set，phạm vi giá trị[0 , 10]，0 là User Set mặc định                  </td>
+</tr>
+<tr>
+<td> Đọc tham số_MPS           </td>
+<td> Chọn Có：nhập tham số từ file tham số vào camera；Chọn Không：lưu tham số hiện tại thành file tham số </td>
+</tr>
+<tr>
+<td> Đường dẫn tải file tham số_MPS   </td>
+<td> Đường dẫn tải file tham số                                             </td>
+</tr>
+<tr>
+<td> Tên file lưu tham số_MPS </td>
+<td> Tên file dùng để lưu tham số                                       </td>
+</tr>
+<tr>
+<td> Đường dẫn lưu file tham số_MPS   </td>
+<td> Đường dẫn xuất file tham số                                             </td>
+</tr>
+<tr>
+<td> Cho phép ROI_MPS            </td>
+<td> Cho phép ROI                                                      </td>
+</tr>
+<tr>
+<td> Gốc X ROI_MPS           </td>
+<td> Phạm vi giá trị[0, 255]                                             </td>
+</tr>
+<tr>
+<td> Gốc Y ROI_MPS           </td>
+<td> Phạm vi giá trị[0, 255]                                             </td>
+</tr>
+<tr>
+<td> Chiều rộng ROI_MPS            </td>
+<td> Phạm vi giá trị[0, 255]                                             </td>
+</tr>
+<tr>
+<td> Chiều cao ROI_MPS            </td>
+<td> Phạm vi giá trị[0, 255]                                             </td>
+</tr>
+<tr>
+<td> Gain người dùng_MPS           </td>
+<td> Phạm vi giá trị[0, 5]                                               </td>
+</tr>
+<tr>
+<td> Số lần phơi sáng_MPS           </td>
+<td> Phạm vi giá trị[1, 3]                                               </td>
+</tr>
+<tr>
+<td> Phơi sáng 1_MPS              </td>
+<td> Phạm vi giá trị[0.1, 100]                                           </td>
+</tr>
+<tr>
+<td> Phơi sáng 2_MPS              </td>
+<td> Phạm vi giá trị[0.1, 100]                                           </td>
+</tr>
+<tr>
+<td> Phơi sáng 3_MPS              </td>
+<td> Phạm vi giá trị[0.1, 100]                                           </td>
+</tr>
+<tr>
+<td> Phơi sáng 2D_MPS             </td>
+<td> Phạm vi giá trị[0.1, 100]                                           </td>
 </tr>
 </tbody>
 </table>
-
 
 
 <h4>Tham số đầu ra</h4>
@@ -273,8 +425,8 @@
 <table>
 <thead>
 <tr>
-<th> Tên Tham Số </th>
-<th> Mô Tả Tham Số </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
@@ -289,6 +441,7 @@
 </tbody>
 </table>
 
-<h2>7. Dự án mẫu</h2>
+
+<h2>7. Project mẫu</h2>
 
 <p>​     Không có</p>
