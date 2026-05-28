@@ -16,597 +16,597 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>公差测量工具</h1>
+<h1>Công cụ đo dung sai</h1>
 
-<h2>1.功能概述</h2>
+<h2>1.Tổng quan chức năng</h2>
 
-<p>​          该工具主要完成平面度、圆度、直线度、平行度、垂直度、倾斜度、圆柱度、线轮廓度、面轮廓度等制造参数的公差测量；</p>
+<p>​          Công cụ này chủ yếu thực hiện đo dung sai cho các tham số sản xuất như độ phẳng, độ tròn, độ thẳng, độ song song, độ vuông góc, độ nghiêng, độ trụ, độ biên dạng đường, độ biên dạng bề mặt, v.v.;</p>
 
-<h2>2.使用场景</h2>
+<h2>2.Kịch bản sử dụng</h2>
 
-<p>​          主要用于制造材料的尺寸误差测量项目上。</p>
+<p>​          Chủ yếu dùng trong các hạng mục đo sai số kích thước của vật liệu sản xuất.</p>
 
-<h2>3.使用向导</h2>
+<h2>3.Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>3.1 平面度（圆度、圆柱度）测量</h3>
+<li><h3>3.1 Đo độ phẳng（độ tròn、độ trụ）</h3>
 
-<p> ​        该工具中<strong>平面度（圆度、圆柱度）</strong>主要有两种测量模式，当理想元素（平面、圆、圆柱）获取方法为最小二乘法时，工具则根据输入点云拟合理想元素（平面、圆、圆柱）并计算平面度、圆度或圆柱度；当理想元素（平面、圆、圆柱）获取方法为用户自定义时，工具则根据用户输入的标准平面、标准圆柱计算平面度、圆度或圆柱度。</p></li>
+<p> ​        Trong công cụ này, <strong>độ phẳng（độ tròn、độ trụ）</strong>chủ yếu có hai chế độ đo. Khi phương pháp lấy phần tử lý tưởng（mặt phẳng、hình tròn、hình trụ）là phương pháp bình phương tối thiểu, công cụ sẽ dựa trên đám mây điểm đầu vào để fit phần tử lý tưởng（mặt phẳng、hình tròn、hình trụ）và tính độ phẳng, độ tròn hoặc độ trụ；khi phương pháp lấy phần tử lý tưởng（mặt phẳng、hình tròn、hình trụ）là người dùng tự định nghĩa, công cụ sẽ dựa trên mặt phẳng chuẩn, hình trụ chuẩn do người dùng nhập để tính độ phẳng, độ tròn hoặc độ trụ.</p></li>
 </ul>
 
 
 <p><img src="media/3DToleranceTool_3_1.png" alt="" /></p>
 
-<p><imgnote>图3_1 平面度测量流程</imgnote></p>
+<p><imgnote>Hình 3_1 Quy trình đo độ phẳng</imgnote></p>
 
 <ul>
-<li><p><strong>理想元素（平面、圆、圆柱）获取方法为最小二乘法</strong></p>
+<li><p><strong>Phương pháp lấy phần tử lý tưởng（mặt phẳng、hình tròn、hình trụ）là phương pháp bình phương tối thiểu</strong></p>
 
-<p><strong>Step1:</strong>添加点云文件、点云公差测量工具，并双击打开工具参数链，链接点云文件，如图3-2所示；<br/>
-<strong>Step2:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可计算公差值，在自动table页中查看工具输出的平面度(圆度、圆柱度)；</p></li>
+<p><strong>Step1:</strong>Thêm file đám mây điểm, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như hình 3-2；<br/>
+<strong>Step2:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để tính giá trị dung sai, xem độ phẳng(độ tròn、độ trụ) do công cụ xuất ra trong trang table tự động；</p></li>
 </ul>
 
 
 <p><img src="media/3DToleranceTool_3_2.png" alt="" /></p>
 
-<p><imgnote>图3_2 平面度(圆度)测量流程</imgnote></p>
+<p><imgnote>Hình 3_2 Quy trình đo độ phẳng(độ tròn)</imgnote></p>
 
 <ul>
-<li><strong>理想元素（平面、圆、圆柱）获取方法为用户自定义</strong><br/>
-<strong>Step1:</strong>添加点云文件、点云平面拟合工具、点云公差测量工具，并双击打开工具参数链，链接点云文件，如图3-3 所示；<br/>
-<strong>Step2:</strong>数据链接中需要链接一个平面（圆形、圆柱）作为Step3的理想平面（圆形、圆柱）；<br/>
-<strong>Step3:</strong>点击运行即可得到公差值，在自动table页中查看工具输出的平面度(圆度、圆柱度)；
+<li><strong>Phương pháp lấy phần tử lý tưởng（mặt phẳng、hình tròn、hình trụ）là người dùng tự định nghĩa</strong><br/>
+<strong>Step1:</strong>Thêm file đám mây điểm, công cụ fit mặt phẳng đám mây điểm, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như hình 3-3；<br/>
+<strong>Step2:</strong>Trong liên kết dữ liệu cần liên kết một mặt phẳng（hình tròn、hình trụ）làm mặt phẳng lý tưởng（hình tròn、hình trụ）của Step3；<br/>
+<strong>Step3:</strong>Nhấp chạy để nhận giá trị dung sai, xem độ phẳng(độ tròn、độ trụ) do công cụ xuất ra trong trang table tự động；
 <img src="media/3DToleranceTool_3_3.png" alt="" /></li>
 </ul>
 
 
-<p><imgnote>图3_3 自定义获取基准平面(圆)流程</imgnote></p>
+<p><imgnote>Hình 3_3 Quy trình lấy mặt phẳng chuẩn(hình tròn) bằng tự định nghĩa</imgnote></p>
 
 <ul>
-<li><h3>3.2 直线度测量</h3></li>
-<li><p><strong>无约束的直线度</strong></p>
+<li><h3>3.2 Đo độ thẳng</h3></li>
+<li><p><strong>Độ thẳng không ràng buộc</strong></p>
 
-<p><strong>Step1:</strong>添加点云文件、点云公差测量工具，并双击打开工具参数链，链接点云文件，如图3-4 所示；<br/>
-<strong>Step2:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可得到该ROI点云数据的直线度，在自动table页中查看工具输出的直线度；
+<p><strong>Step1:</strong>Thêm file đám mây điểm, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như hình 3-4；<br/>
+<strong>Step2:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để nhận độ thẳng của dữ liệu đám mây điểm trong ROI đó, xem độ thẳng do công cụ xuất ra trong trang table tự động；
 <img src="media/3DToleranceTool_3_4.png" alt="" /></p></li>
 </ul>
 
 
-<p><imgnote>图3_4 测量直线度</imgnote></p>
+<p><imgnote>Hình 3_4 Đo độ thẳng</imgnote></p>
 
 <ul>
-<li><strong>平面约束的直线度</strong><br/>
-<strong>Step1:</strong>添加点云文件、点云平面拟合工具、点云公差测量工具，并双击打开工具参数链，链接点云文件，如图3-5所示；<br/>
-<strong>Step2:</strong>数据链接中链接约束平面；<br/>
-<strong>Step3:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可得到该ROI点云数据的直线度，在自动table页中查看工具输出的直线度；
+<li><strong>Độ thẳng ràng buộc theo mặt phẳng</strong><br/>
+<strong>Step1:</strong>Thêm file đám mây điểm, công cụ fit mặt phẳng đám mây điểm, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như hình 3-5；<br/>
+<strong>Step2:</strong>Trong liên kết dữ liệu, liên kết mặt phẳng ràng buộc；<br/>
+<strong>Step3:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để nhận độ thẳng của dữ liệu đám mây điểm trong ROI đó, xem độ thẳng do công cụ xuất ra trong trang table tự động；
 <img src="media/3DToleranceTool_3_5.png" alt="" /></li>
 </ul>
 
 
-<p><imgnote>图3_5 测量平面约束的直线度</imgnote></p>
+<p><imgnote>Hình 3_5 Đo độ thẳng ràng buộc theo mặt phẳng</imgnote></p>
 
 <ul>
-<li><strong>方向约束的直线度</strong><br/>
-<strong>Step1:</strong>添加点云文件、元素生成工具、点云公差测量工具，并双击打开工具参数链，链接点云文件，如图3-6所示；<br/>
-<strong>Step2:</strong>数据链接中链接约束方向；<br/>
-<strong>Step3:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可得到该ROI点云数据的直线度，在自动table页中查看工具输出的直线度；
+<li><strong>Độ thẳng ràng buộc theo hướng</strong><br/>
+<strong>Step1:</strong>Thêm file đám mây điểm, công cụ tạo phần tử, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như hình 3-6；<br/>
+<strong>Step2:</strong>Trong liên kết dữ liệu, liên kết hướng ràng buộc；<br/>
+<strong>Step3:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để nhận độ thẳng của dữ liệu đám mây điểm trong ROI đó, xem độ thẳng do công cụ xuất ra trong trang table tự động；
 <img src="media/3DToleranceTool_3_6.png" alt="" /></li>
 </ul>
 
 
-<p><imgnote>图3_6 方向约束&ndash;生成方向向量</imgnote></p>
+<p><imgnote>Hình 3_6 Ràng buộc hướng&ndash;tạo vector hướng</imgnote></p>
 
 <ul>
-<li><h3>3.3 平行度测量</h3></li>
-<li><p><strong>基于基准直线+基准平面的直线平行度</strong></p>
+<li><h3>3.3 Đo độ song song</h3></li>
+<li><p><strong>Độ song song đường thẳng dựa trên đường thẳng chuẩn + mặt phẳng chuẩn</strong></p>
 
-<p><strong>Step1:</strong>添加点云文件、点云元素生成工具、点云公差测量工具，并双击打开工具参数链，链接点云文件，如图3-7所示；<br/>
-<strong>Step2:</strong>数据链接中链接所需基准直线和基准平面；<br/>
-<strong>Step3:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可得到该ROI点云数据的平行度，其中最大偏差与最小偏差差值取绝对值即为所求平行度；
+<p><strong>Step1:</strong>Thêm file đám mây điểm, công cụ tạo phần tử đám mây điểm, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như hình 3-7；<br/>
+<strong>Step2:</strong>Trong liên kết dữ liệu, liên kết đường thẳng chuẩn và mặt phẳng chuẩn cần thiết；<br/>
+<strong>Step3:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để nhận độ song song của dữ liệu đám mây điểm trong ROI đó. Trong đó, lấy giá trị tuyệt đối của hiệu giữa độ lệch lớn nhất và độ lệch nhỏ nhất chính là độ song song cần tìm；
 <img src="media/3DToleranceTool_3_7.png" alt="" /></p></li>
 </ul>
 
 
-<p><imgnote>图3_7 点云公差测量：平行度测量流程</imgnote></p>
+<p><imgnote>Hình 3_7 Đo dung sai đám mây điểm: quy trình đo độ song song</imgnote></p>
 
 <ul>
-<li><p><strong>基于基准直线的直线平行度</strong></p>
+<li><p><strong>Độ song song đường thẳng dựa trên đường thẳng chuẩn</strong></p>
 
-<p><strong>Step1:</strong>添加点云文件、点云元素生成工具、点云公差测量工具，并双击打开工具参数链，链接点云文件；<br/>
-<strong>Step2:</strong>数据链接中链接所需基准直线；<br/>
-<strong>Step3:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可得到该ROI点云数据的平行度，其中最大偏差与最小偏差差值取绝对值即为所求平行度；</p></li>
-<li><p><strong>基于基准平面的平面平行度</strong></p>
+<p><strong>Step1:</strong>Thêm file đám mây điểm, công cụ tạo phần tử đám mây điểm, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm；<br/>
+<strong>Step2:</strong>Trong liên kết dữ liệu, liên kết đường thẳng chuẩn cần thiết；<br/>
+<strong>Step3:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để nhận độ song song của dữ liệu đám mây điểm trong ROI đó. Trong đó, lấy giá trị tuyệt đối của hiệu giữa độ lệch lớn nhất và độ lệch nhỏ nhất chính là độ song song cần tìm；</p></li>
+<li><p><strong>Độ song song mặt phẳng dựa trên mặt phẳng chuẩn</strong></p>
 
-<p><strong>Step1:</strong>添加点云文件、点云元素生成工具、点云公差测量工具，并双击打开工具参数链，链接点云文件；<br/>
-<strong>Step2:</strong>数据链接中链接所需基准平面；<br/>
-<strong>Step3:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可得到该ROI点云数据的平行度，在自动table页中查看工具输出的平行度；</p></li>
-<li><h3>3.4 垂直度测量</h3></li>
-<li><p><strong>基准面、平面型垂直度测量</strong><br/>
-<strong>Step1:</strong>添加点云文件、点云平面拟合工具、点云公差测量工具，并双击打开工具参数链，链接点云文件，如图3-8 所示；<br/>
-<strong>Step2:</strong>数据链接中链接所需基准平面； <br/>
-<strong>Step3:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可得到该ROI点云数据的垂直度，在自动table页中查看工具输出的垂直度；
+<p><strong>Step1:</strong>Thêm file đám mây điểm, công cụ tạo phần tử đám mây điểm, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm；<br/>
+<strong>Step2:</strong>Trong liên kết dữ liệu, liên kết mặt phẳng chuẩn cần thiết；<br/>
+<strong>Step3:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để nhận độ song song của dữ liệu đám mây điểm trong ROI đó, xem độ song song do công cụ xuất ra trong trang table tự động；</p></li>
+<li><h3>3.4 Đo độ vuông góc</h3></li>
+<li><p><strong>Đo độ vuông góc kiểu mặt phẳng với chuẩn là mặt phẳng</strong><br/>
+<strong>Step1:</strong>Thêm file đám mây điểm, công cụ fit mặt phẳng đám mây điểm, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như hình 3-8；<br/>
+<strong>Step2:</strong>Trong liên kết dữ liệu, liên kết mặt phẳng chuẩn cần thiết； <br/>
+<strong>Step3:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để nhận độ vuông góc của dữ liệu đám mây điểm trong ROI đó, xem độ vuông góc do công cụ xuất ra trong trang table tự động；
 <img src="media/3DToleranceTool_3_8.png" alt="" /></p></li>
 </ul>
 
 
-<p><imgnote>图3_8 基准面→平面型垂直度测量流程</imgnote></p>
+<p><imgnote>Hình 3_8 Quy trình đo độ vuông góc kiểu mặt phẳng: mặt phẳng chuẩn → mặt phẳng đo</imgnote></p>
 
 <ul>
-<li><strong>基准线、平面型垂直度测量</strong><br/>
-<strong>Step1:</strong>添加点云文件、元素生成工具、点云公差测量工具，并双击打开工具参数链，链接点云文件，如图3-9 所示；<br/>
-<strong>Step2:</strong>数据链接中链接所需基准直线；<br/>
-<strong>Step3:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可得到该ROI点云数据的垂直度，在自动table页中查看工具输出的垂直度；
+<li><strong>Đo độ vuông góc kiểu mặt phẳng với chuẩn là đường thẳng</strong><br/>
+<strong>Step1:</strong>Thêm file đám mây điểm, công cụ tạo phần tử, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như hình 3-9；<br/>
+<strong>Step2:</strong>Trong liên kết dữ liệu, liên kết đường thẳng chuẩn cần thiết；<br/>
+<strong>Step3:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để nhận độ vuông góc của dữ liệu đám mây điểm trong ROI đó, xem độ vuông góc do công cụ xuất ra trong trang table tự động；
 <img src="media/3DToleranceTool_3_9.png" alt="" /></li>
 </ul>
 
 
-<p><imgnote>图3_9 基准线→平面型垂直度测量流程</imgnote></p>
+<p><imgnote>Hình 3_9 Quy trình đo độ vuông góc kiểu mặt phẳng: đường thẳng chuẩn → mặt phẳng đo</imgnote></p>
 
 <ul>
-<li><p><strong>基准面、圆柱型垂直度测量</strong></p>
+<li><p><strong>Đo độ vuông góc kiểu hình trụ với chuẩn là mặt phẳng</strong></p>
 
-<p><strong>Step1:</strong>添加点云文件、点云平面拟合工具、点云公差测量工具，并双击打开工具参数链，链接点云文件，如图3-10 所示；<br/>
-<strong>Step2:</strong>数据链接中链接所需基准平面； <br/>
-<strong>Step3:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可得到该ROI内点云数据的垂直度，在自动table页中查看工具输出的垂直度；
+<p><strong>Step1:</strong>Thêm file đám mây điểm, công cụ fit mặt phẳng đám mây điểm, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như hình 3-10；<br/>
+<strong>Step2:</strong>Trong liên kết dữ liệu, liên kết mặt phẳng chuẩn cần thiết； <br/>
+<strong>Step3:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để nhận độ vuông góc của dữ liệu đám mây điểm trong ROI đó, xem độ vuông góc do công cụ xuất ra trong trang table tự động；
 <img src="media/3DToleranceTool_3_10.png" alt="" /></p></li>
 </ul>
 
 
-<p><imgnote>图3_10 基准线→圆柱型垂直度测量</imgnote></p>
+<p><imgnote>Hình 3_10 Đo độ vuông góc kiểu hình trụ: đường thẳng chuẩn → hình trụ đo</imgnote></p>
 
 <ul>
-<li><h3>3.5 倾斜度测量</h3></li>
-<li><p><strong>线对线、平面型倾斜度测量</strong>  （表示检测的是线，基准是线，中心位置是平面）</p>
+<li><h3>3.5 Đo độ nghiêng</h3></li>
+<li><p><strong>Đo độ nghiêng kiểu mặt phẳng giữa đường với đường</strong>  （biểu thị đối tượng kiểm tra là đường, chuẩn là đường, vị trí trung tâm là mặt phẳng）</p>
 
-<p>如图3-11所示测量该物料标注处的倾斜度</p>
+<p>Như hình 3-11, đo độ nghiêng tại vị trí được đánh dấu trên vật liệu này</p>
 
 <div align="center">
 <img src="media/3DToleranceTool_3_11.gif" style="zoom:30%;"/>
 <img src="media/3DToleranceTool_3_11.png" style="zoom:40%;"/>
-    <center>图3_11 物料测量项介绍</center>
+    <center>Hình 3_11 Giới thiệu hạng mục đo của vật liệu</center>
 </div>
 
 
 <p></p>
 
-<p><strong>Step1:</strong>添加点云文件、点云平面拟合工具、元素生成工具、点云公差测量工具，并双击打开工具参数链，链    接点云文件，如图3-12 所示；</p>
+<p><strong>Step1:</strong>Thêm file đám mây điểm, công cụ fit mặt phẳng đám mây điểm, công cụ tạo phần tử, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên    kết file đám mây điểm, như hình 3-12；</p>
 
-<p><strong>Step2:</strong>设置基准直线、投影基准面和倾斜度理论值；<br/>
-<strong>Step3:</strong>公差测量工具链接数据链，右击打开该工具高级属性界面，设置检测ROI，然后点击运行即可得到该ROI点云数据的倾斜度，在自动table页中查看工具输出的倾斜度；</p></li>
+<p><strong>Step2:</strong>Thiết lập đường thẳng chuẩn, mặt phẳng chuẩn chiếu và giá trị lý thuyết của độ nghiêng；<br/>
+<strong>Step3:</strong>Công cụ đo dung sai liên kết chuỗi dữ liệu, nhấp chuột phải để mở giao diện thuộc tính nâng cao của công cụ này, thiết lập ROI kiểm tra, sau đó nhấp chạy để nhận độ nghiêng của dữ liệu đám mây điểm trong ROI đó, xem độ nghiêng do công cụ xuất ra trong trang table tự động；</p></li>
 </ul>
 
 
 <p><img src="media/3DToleranceTool_3_12.png" alt="" /></p>
 
-<p><imgnote>图3_12 线对线、平面型倾斜度测量流程</imgnote></p>
+<p><imgnote>Hình 3_12 Quy trình đo độ nghiêng kiểu mặt phẳng giữa đường với đường</imgnote></p>
 
 <ul>
-<li><strong>线对面、平面型倾斜度测量</strong>（表示检测的是线，基准是面，中心位置是平面）</li>
-<li><strong>线对面、圆柱型倾斜度测量</strong>（表示检测的是线，基准是面，中心位置是圆柱轴线）</li>
-<li><strong>面对线、平面型倾斜度测量</strong>（表示检测的是面，基准是线，中心位置是平面）</li>
-<li><p><strong>面对面、平面型倾斜度测量</strong>（表示检测的是面，基准是面，中心位置是平面）</p></li>
-<li><h3>3.6 轮廓度测量</h3></li>
-<li><p><strong>启用法向量</strong>  （输入的基准点集中的数据点必须包含法向量）</p>
+<li><strong>Đo độ nghiêng kiểu mặt phẳng giữa đường với mặt</strong>（biểu thị đối tượng kiểm tra là đường, chuẩn là mặt, vị trí trung tâm là mặt phẳng）</li>
+<li><strong>Đo độ nghiêng kiểu hình trụ giữa đường với mặt</strong>（biểu thị đối tượng kiểm tra là đường, chuẩn là mặt, vị trí trung tâm là trục hình trụ）</li>
+<li><strong>Đo độ nghiêng kiểu mặt phẳng giữa mặt với đường</strong>（biểu thị đối tượng kiểm tra là mặt, chuẩn là đường, vị trí trung tâm là mặt phẳng）</li>
+<li><p><strong>Đo độ nghiêng kiểu mặt phẳng giữa mặt với mặt</strong>（biểu thị đối tượng kiểm tra là mặt, chuẩn là mặt, vị trí trung tâm là mặt phẳng）</p></li>
+<li><h3>3.6 Đo biên dạng</h3></li>
+<li><p><strong>Bật vector pháp tuyến</strong>  （các điểm dữ liệu trong tập điểm chuẩn đầu vào bắt buộc phải chứa vector pháp tuyến）</p>
 
-<p><strong>Step1:</strong>添加点云文件、点云平面拟合工具、元素生成工具、点云公差测量工具，并双击打开工具参数链，链接点云文件，如图3-13 所示；<br/>
-<strong>Step2:</strong>数据链接中链基准点集；<br/>
-<strong>Step3:</strong>点击运行即可得到轮廓度，在自动table页中查看工具输出的轮廓度；
+<p><strong>Step1:</strong>Thêm file đám mây điểm, công cụ fit mặt phẳng đám mây điểm, công cụ tạo phần tử, công cụ đo dung sai đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như hình 3-13；<br/>
+<strong>Step2:</strong>Trong liên kết dữ liệu, liên kết tập điểm chuẩn；<br/>
+<strong>Step3:</strong>Nhấp chạy để nhận độ biên dạng, xem độ biên dạng do công cụ xuất ra trong trang table tự động；
 <img src="media/3DToleranceTool_3_13.png" alt="" /></p></li>
 </ul>
 
 
-<p><imgnote>图3_13 线对线、平面型倾斜度测量流程</imgnote></p>
+<p><imgnote>Hình 3_13 Quy trình đo độ nghiêng kiểu mặt phẳng giữa đường với đường</imgnote></p>
 
 <ul>
-<li><strong>不启用法向量</strong>  （输入的基准点集中的数据点可以不包含法向量）</li>
+<li><strong>Không bật vector pháp tuyến</strong>  （các điểm dữ liệu trong tập điểm chuẩn đầu vào có thể không chứa vector pháp tuyến）</li>
 </ul>
 
 
-<h2>4.常见问题</h2>
+<h2>4.Câu hỏi thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5.Mô tả tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述  </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>标准平面              </td>
-<td> 测量类型为平面度使用    </td>
+<td>Mặt phẳng chuẩn              </td>
+<td> Sử dụng khi loại đo là độ phẳng    </td>
 </tr>
 <tr>
-<td>标准圆形</td>
-<td>测量类型为圆度下，用户自定义模式时使用</td>
+<td>Hình tròn chuẩn</td>
+<td>Sử dụng khi loại đo là độ tròn và ở chế độ người dùng tự định nghĩa</td>
 </tr>
 <tr>
-<td>标准直线</td>
-<td>测量类型为直线度下，用户自定义模式时使用</td>
+<td>Đường thẳng chuẩn</td>
+<td>Sử dụng khi loại đo là độ thẳng và ở chế độ người dùng tự định nghĩa</td>
 </tr>
 <tr>
-<td>约束平面</td>
-<td> 测量类型为直线度下，直线度约束条件为指定平面约束时使用 </td>
+<td>Mặt phẳng ràng buộc</td>
+<td> Sử dụng khi loại đo là độ thẳng và điều kiện ràng buộc độ thẳng là ràng buộc mặt phẳng chỉ định </td>
 </tr>
 <tr>
-<td>约束方向</td>
-<td>测量类型为直线度下，直线度约束条件为指定方向约束时使用</td>
+<td>Hướng ràng buộc</td>
+<td>Sử dụng khi loại đo là độ thẳng và điều kiện ràng buộc độ thẳng là ràng buộc hướng chỉ định</td>
 </tr>
 <tr>
-<td>标准圆柱</td>
-<td>测量类型为圆柱度下，用户自定义模式时使用</td>
+<td>Hình trụ chuẩn</td>
+<td>Sử dụng khi loại đo là độ trụ và ở chế độ người dùng tự định nghĩa</td>
 </tr>
 <tr>
-<td> 基准平面 </td>
-<td> 测量类型为圆度下，非用户自定义模式时使用<br />测量类型为平行度下，基准直线+基准平面模式、基准平面模式使用<br />测量类型为垂直度下，基准面，平面型垂直度、基准面，圆柱型垂直度使用<br />测量类型为倾斜度下，线对面，平面型、面对面，平面型使用 </td>
+<td> Mặt phẳng chuẩn </td>
+<td> Sử dụng khi loại đo là độ tròn và không ở chế độ người dùng tự định nghĩa<br />Sử dụng khi loại đo là độ song song ở chế độ đường thẳng chuẩn + mặt phẳng chuẩn, chế độ mặt phẳng chuẩn<br />Sử dụng khi loại đo là độ vuông góc ở chế độ mặt phẳng chuẩn, độ vuông góc kiểu mặt phẳng và mặt phẳng chuẩn, độ vuông góc kiểu hình trụ<br />Sử dụng khi loại đo là độ nghiêng ở chế độ đường với mặt, kiểu mặt phẳng và mặt với mặt, kiểu mặt phẳng </td>
 </tr>
 <tr>
-<td> 基准直线 </td>
-<td> 测量类型为平行度下，基准直线+基准平面模式、基准直线模式使用<br />测量类型为垂直度下，基准线，平面型垂直度使用<br />测量类型为倾斜度下，线对线，平面型、面对线，平面型使用 </td>
+<td> Đường thẳng chuẩn </td>
+<td> Sử dụng khi loại đo là độ song song ở chế độ đường thẳng chuẩn + mặt phẳng chuẩn, chế độ đường thẳng chuẩn<br />Sử dụng khi loại đo là độ vuông góc ở chế độ đường thẳng chuẩn, độ vuông góc kiểu mặt phẳng<br />Sử dụng khi loại đo là độ nghiêng ở chế độ đường với đường, kiểu mặt phẳng và mặt với đường, kiểu mặt phẳng </td>
 </tr>
 <tr>
-<td> 投影基准面 </td>
-<td> 测量类型为倾斜度下，拟合方法选择不拟合时使用 </td>
+<td> Mặt phẳng chuẩn chiếu </td>
+<td> Sử dụng khi loại đo là độ nghiêng và phương pháp fit chọn không fit </td>
 </tr>
 <tr>
-<td> 基准平面1/2 </td>
-<td> 测量类型为倾斜度下，线对面，圆柱型（表示检测的是线，基准是面，中心位置是圆柱轴线）时使用 </td>
+<td> Mặt phẳng chuẩn 1/2 </td>
+<td> Sử dụng khi loại đo là độ nghiêng ở chế độ đường với mặt, kiểu hình trụ（biểu thị đối tượng kiểm tra là đường, chuẩn là mặt, vị trí trung tâm là trục hình trụ） </td>
 </tr>
 <tr>
-<td> 倾斜度理论值 </td>
-<td> 测量类型为倾斜度使用 </td>
+<td> Giá trị lý thuyết của độ nghiêng </td>
+<td> Sử dụng khi loại đo là độ nghiêng </td>
 </tr>
 <tr>
-<td> 基准点集 </td>
-<td> 测量类型为线轮廓度/面轮廓度时使用 </td>
+<td> Tập điểm chuẩn </td>
+<td> Sử dụng khi loại đo là độ biên dạng đường/độ biên dạng bề mặt </td>
 </tr>
 <tr>
-<td> 测量点集 </td>
-<td> 测量类型为线轮廓度/面轮廓度时使用 </td>
+<td> Tập điểm đo </td>
+<td> Sử dụng khi loại đo là độ biên dạng đường/độ biên dạng bề mặt </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào（cửa sổ thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述  </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>公差测量类型              </td>
-<td> 包括：平面度、圆度、直线度、 平行度、  垂直度、 倾斜度、  圆柱度、线轮廓图、面轮廓度      </td>
+<td>Loại đo dung sai              </td>
+<td> Bao gồm：độ phẳng、độ tròn、độ thẳng、 độ song song、  độ vuông góc、 độ nghiêng、  độ trụ、độ biên dạng đường、độ biên dạng bề mặt      </td>
 </tr>
 <tr>
-<td>理想平面获取方法</td>
-<td>指平面的拟合方法，包括：最小二乘法、最小包容法、用户自定义</td>
+<td>Phương pháp lấy mặt phẳng lý tưởng</td>
+<td>Chỉ phương pháp fit mặt phẳng, bao gồm：phương pháp bình phương tối thiểu、phương pháp bao hàm nhỏ nhất、người dùng tự định nghĩa</td>
 </tr>
 <tr>
-<td>理想圆获取方法</td>
-<td>包括：最小二乘法、最小包容法、最小外接法、最大内切法、用户自定义</td>
+<td>Phương pháp lấy hình tròn lý tưởng</td>
+<td>Bao gồm：phương pháp bình phương tối thiểu、phương pháp bao hàm nhỏ nhất、phương pháp ngoại tiếp nhỏ nhất、phương pháp nội tiếp lớn nhất、người dùng tự định nghĩa</td>
 </tr>
 <tr>
-<td>点云形状</td>
-<td>包括：圆(默认)、圆弧或曲线、椭圆、散乱；理想圆获取方法为最大内切法时生效</td>
+<td>Hình dạng đám mây điểm</td>
+<td>Bao gồm：hình tròn(mặc định)、cung tròn hoặc đường cong、hình elip、phân tán；có hiệu lực khi phương pháp lấy hình tròn lý tưởng là phương pháp nội tiếp lớn nhất</td>
 </tr>
 <tr>
-<td>理想直线获取方法</td>
-<td>包括：最小二乘法、最小包容法、用户自定义</td>
+<td>Phương pháp lấy đường thẳng lý tưởng</td>
+<td>Bao gồm：phương pháp bình phương tối thiểu、phương pháp bao hàm nhỏ nhất、người dùng tự định nghĩa</td>
 </tr>
 <tr>
-<td>直线度约束条件</td>
-<td>包括：无约束(对应公差带为圆柱区域)、指定平面约束(对应公差带为指定平面内的两平行直线之间的区域)、指定方向约束(对应公差带为给定方向上的两平行平面之间的区域）</td>
+<td>Điều kiện ràng buộc độ thẳng</td>
+<td>Bao gồm：không ràng buộc(tương ứng vùng dung sai là vùng hình trụ)、ràng buộc mặt phẳng chỉ định(tương ứng vùng dung sai là vùng giữa hai đường thẳng song song trong mặt phẳng chỉ định)、ràng buộc hướng chỉ định(tương ứng vùng dung sai là vùng giữa hai mặt phẳng song song theo hướng cho trước）</td>
 </tr>
 <tr>
-<td>平行度模式</td>
-<td>包括：基准直线+基准平面模式、基准直线模式、基准平面模式</td>
+<td>Chế độ độ song song</td>
+<td>Bao gồm：chế độ đường thẳng chuẩn + mặt phẳng chuẩn、chế độ đường thẳng chuẩn、chế độ mặt phẳng chuẩn</td>
 </tr>
 <tr>
-<td>垂直度模式</td>
-<td>包括：基准面，平面型垂直度、基准线，平面型垂直度、基准面，圆柱型垂直度</td>
+<td>Chế độ độ vuông góc</td>
+<td>Bao gồm：mặt phẳng chuẩn, độ vuông góc kiểu mặt phẳng、đường thẳng chuẩn, độ vuông góc kiểu mặt phẳng、mặt phẳng chuẩn, độ vuông góc kiểu hình trụ</td>
 </tr>
 <tr>
-<td>倾斜度模式</td>
-<td>包括：线对线，平面型（表示检测的是线，基准是线，中心位置是平面）、<br />线对面，平面型（表示检测的是线，基准是面，中心位置是平面）、<br />线对面，圆柱型（表示检测的是线，基准是面，中心位置是圆柱轴线）、<br />面对线，平面型（表示检测的是面，基准是线，中心位置是平面）、<br />面对面，平面型（表示检测的是面，基准是面，中心位置是平面）</td>
+<td>Chế độ độ nghiêng</td>
+<td>Bao gồm：đường với đường, kiểu mặt phẳng（biểu thị đối tượng kiểm tra là đường, chuẩn là đường, vị trí trung tâm là mặt phẳng）、<br />đường với mặt, kiểu mặt phẳng（biểu thị đối tượng kiểm tra là đường, chuẩn là mặt, vị trí trung tâm là mặt phẳng）、<br />đường với mặt, kiểu hình trụ（biểu thị đối tượng kiểm tra là đường, chuẩn là mặt, vị trí trung tâm là trục hình trụ）、<br />mặt với đường, kiểu mặt phẳng（biểu thị đối tượng kiểm tra là mặt, chuẩn là đường, vị trí trung tâm là mặt phẳng）、<br />mặt với mặt, kiểu mặt phẳng（biểu thị đối tượng kiểm tra là mặt, chuẩn là mặt, vị trí trung tâm là mặt phẳng）</td>
 </tr>
 <tr>
-<td>拟合方法</td>
-<td>倾斜度下参数，包括：不拟合，此时需要设置投影基准面、最小二乘拟合</td>
+<td>Phương pháp fit</td>
+<td>Tham số trong độ nghiêng, bao gồm：không fit, lúc này cần thiết lập mặt phẳng chuẩn chiếu、fit bình phương tối thiểu</td>
 </tr>
 <tr>
-<td>理想圆柱获取方法</td>
-<td>包括：最小二乘法、最小包容法、用户自定义（由用户输入标准圆柱）</td>
+<td>Phương pháp lấy hình trụ lý tưởng</td>
+<td>Bao gồm：phương pháp bình phương tối thiểu、phương pháp bao hàm nhỏ nhất、người dùng tự định nghĩa（do người dùng nhập hình trụ chuẩn）</td>
 </tr>
 <tr>
-<td>启用法向量</td>
-<td>开启法向量时，基准点集需要自带法向量</td>
+<td>Bật vector pháp tuyến</td>
+<td>Khi bật vector pháp tuyến, tập điểm chuẩn cần có sẵn vector pháp tuyến</td>
 </tr>
 <tr>
-<td>法向量下对齐模式</td>
-<td>基准点集和测量点集尺寸要不小于2，基准点集需带法向量。对齐模式包括：不对齐模式，即直接计算标称点和实际点的轮廓度、最小二乘模式、矢量最小二乘模式、最小最大模式、矢量最小最大模式</td>
+<td>Chế độ căn chỉnh khi có vector pháp tuyến</td>
+<td>Kích thước tập điểm chuẩn và tập điểm đo không nhỏ hơn 2, tập điểm chuẩn cần có vector pháp tuyến. Chế độ căn chỉnh bao gồm：chế độ không căn chỉnh, tức là trực tiếp tính độ biên dạng của điểm danh nghĩa và điểm thực tế、chế độ bình phương tối thiểu、chế độ bình phương tối thiểu theo vector、chế độ min-max、chế độ min-max theo vector</td>
 </tr>
 <tr>
-<td>无法向量下对齐模式</td>
-<td>基准点集和测量点集尺寸要不小于2，基准点集无需带法向量。对齐模式包括：不对齐模式、最小二乘模式、最小最大模式</td>
+<td>Chế độ căn chỉnh khi không có vector pháp tuyến</td>
+<td>Kích thước tập điểm chuẩn và tập điểm đo không nhỏ hơn 2, tập điểm chuẩn không cần có vector pháp tuyến. Chế độ căn chỉnh bao gồm：chế độ không căn chỉnh、chế độ bình phương tối thiểu、chế độ min-max</td>
 </tr>
 <tr>
-<td>法向量下面轮廓度对齐模式</td>
-<td>基准点集和测量点集尺寸要不小于7，，基准点集需带法向量。对齐模式包括：不对齐模式（直接计算标称点和实际点的轮廓度）、最小二乘模式、矢量最小二乘模式、最小最大模式、矢量最小最大模式、最小最大全局最优模式、矢量最小最大全局最优模式</td>
+<td>Chế độ căn chỉnh độ biên dạng bề mặt khi có vector pháp tuyến</td>
+<td>Kích thước tập điểm chuẩn và tập điểm đo không nhỏ hơn 7，, tập điểm chuẩn cần có vector pháp tuyến. Chế độ căn chỉnh bao gồm：chế độ không căn chỉnh（trực tiếp tính độ biên dạng của điểm danh nghĩa và điểm thực tế）、chế độ bình phương tối thiểu、chế độ bình phương tối thiểu theo vector、chế độ min-max、chế độ min-max theo vector、chế độ min-max tối ưu toàn cục、chế độ min-max theo vector tối ưu toàn cục</td>
 </tr>
 <tr>
-<td>无法向量下面轮廓度对齐模式</td>
-<td>基准点集和测量点集尺寸要不小于7，，基准点集无需带法向量。对齐模式包括：不对齐模式（直接计算标称点和实际点的轮廓度）、最小二乘模式、最小最大全局最优模式</td>
+<td>Chế độ căn chỉnh độ biên dạng bề mặt khi không có vector pháp tuyến</td>
+<td>Kích thước tập điểm chuẩn và tập điểm đo không nhỏ hơn 7，, tập điểm chuẩn không cần có vector pháp tuyến. Chế độ căn chỉnh bao gồm：chế độ không căn chỉnh（trực tiếp tính độ biên dạng của điểm danh nghĩa và điểm thực tế）、chế độ bình phương tối thiểu、chế độ min-max tối ưu toàn cục</td>
 </tr>
 <tr>
-<td>ROI类型</td>
-<td>指ROI的类型，包括：长方体、球体</td>
+<td>Loại ROI</td>
+<td>Chỉ loại ROI, bao gồm：hình hộp chữ nhật、hình cầu</td>
 </tr>
 <tr>
-<td>系数补偿</td>
-<td> 对求得的平面度数值乘以系数，取值范围为[-1000000, 1000000] </td>
+<td>Bù hệ số</td>
+<td> Nhân giá trị độ phẳng tính được với hệ số, phạm vi giá trị là [-1000000, 1000000] </td>
 </tr>
 <tr>
-<td>固定补偿</td>
-<td>对求得的平面度数值进行补偿，取值范围为[-1000000, 1000000]</td>
+<td>Bù cố định</td>
+<td>Bù cho giá trị độ phẳng tính được, phạm vi giá trị là [-1000000, 1000000]</td>
 </tr>
 <tr>
-<td>公差值上/下限</td>
-<td>设定公差的上下限数值，取值范围为[-1000000, 1000000]，且下限应小于等于上限</td>
+<td>Giới hạn trên/dưới của giá trị dung sai</td>
+<td>Thiết lập giá trị giới hạn trên và dưới của dung sai, phạm vi giá trị là [-1000000, 1000000], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên</td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
+<h4>Tham số đầu vào（giao diện nâng cao）</h4>
 
-<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+<p>Tham số của giao diện nâng cao giống với tham số của cửa sổ thuộc tính, các nút tương tác như sau：</p>
 
 <table>
 <thead>
 <tr>
-<th> 按钮名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên nút           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 绘制ROI                                </td>
-<td> 在高级界面图像中，相应位置点击并拖动鼠标即可绘制ROI </td>
+<td> Vẽ ROI                                </td>
+<td> Trong hình ảnh của giao diện nâng cao, nhấp và kéo chuột tại vị trí tương ứng để vẽ ROI </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>平面拟合结果   </td>
-<td>输出拟合的平面</td>
+<td>Kết quả fit mặt phẳng   </td>
+<td>Xuất mặt phẳng đã fit</td>
 </tr>
 <tr>
-<td>圆度拟合结果    </td>
-<td>输出拟合的圆</td>
+<td>Kết quả fit độ tròn    </td>
+<td>Xuất hình tròn đã fit</td>
 </tr>
 <tr>
-<td>直线度拟合结果    </td>
-<td>输出拟合的直线度</td>
+<td>Kết quả fit độ thẳng    </td>
+<td>Xuất độ thẳng đã fit</td>
 </tr>
 <tr>
-<td> 圆柱度                               </td>
-<td> 输出拟合的圆柱体 </td>
+<td> Độ trụ                               </td>
+<td> Xuất hình trụ đã fit </td>
 </tr>
 <tr>
-<td>公差测量结果（平面度/圆度/直线度等）    </td>
-<td>公差测量结果</td>
+<td>Kết quả đo dung sai（độ phẳng/độ tròn/độ thẳng, v.v.）    </td>
+<td>Kết quả đo dung sai</td>
 </tr>
 <tr>
-<td> 最小偏差 </td>
-<td> 最小偏差值 </td>
+<td> Độ lệch nhỏ nhất </td>
+<td> Giá trị độ lệch nhỏ nhất </td>
 </tr>
 <tr>
-<td> 最大偏差 </td>
-<td> 最大偏差值 </td>
+<td> Độ lệch lớn nhất </td>
+<td> Giá trị độ lệch lớn nhất </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra（cửa sổ đầu ra）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>平面拟合结果   </td>
-<td>平面点，拟合平面经过的点<br />法向量，拟合平面的法向量<br />偏移量，拟合平面相对于0平面的偏移量<br />倾斜角，拟合平面法向量与Z轴的夹角<br />旋转角，拟合平面法向量在XOY平面的投影向量与X轴的夹角</td>
+<td>Kết quả fit mặt phẳng   </td>
+<td>Điểm mặt phẳng, điểm mà mặt phẳng fit đi qua<br />Vector pháp tuyến, vector pháp tuyến của mặt phẳng fit<br />Độ lệch, độ lệch của mặt phẳng fit so với mặt phẳng 0<br />Góc nghiêng, góc giữa vector pháp tuyến của mặt phẳng fit và trục Z<br />Góc xoay, góc giữa vector chiếu của vector pháp tuyến mặt phẳng fit lên mặt phẳng XOY và trục X</td>
 </tr>
 <tr>
-<td>圆度拟合结果    </td>
-<td>圆度拟合结果：圆心，点云数据拟合的圆的圆心三维坐标<br />圆度拟合结果：法向量，点云数据拟合的圆形状平面的法向量<br />圆度拟合结果：半径，点云数据拟合的圆的半径，单位：mm</td>
+<td>Kết quả fit độ tròn    </td>
+<td>Kết quả fit độ tròn：tâm tròn, tọa độ ba chiều của tâm hình tròn được fit từ dữ liệu đám mây điểm<br />Kết quả fit độ tròn：vector pháp tuyến, vector pháp tuyến của mặt phẳng chứa hình tròn được fit từ dữ liệu đám mây điểm<br />Kết quả fit độ tròn：bán kính, bán kính của hình tròn được fit từ dữ liệu đám mây điểm, đơn vị：mm</td>
 </tr>
 <tr>
-<td>直线度拟合结果    </td>
-<td>直线度拟合结果：StarPoint，拟合直线的起点<br />直线度拟合结果：EndPoint，拟合直线的终点<br />直线度拟合结果：Direction，拟合直线的方向<br />直线度拟合结果：Tilt，倾斜角，拟合直线的方向向量与Z轴正方向的夹角<br />直线度拟合结果：Rotation，旋转角，拟合直线的方向向量在XOY平面投影向量与X轴的夹角</td>
+<td>Kết quả fit độ thẳng    </td>
+<td>Kết quả fit độ thẳng：StarPoint, điểm bắt đầu của đường thẳng fit<br />Kết quả fit độ thẳng：EndPoint, điểm kết thúc của đường thẳng fit<br />Kết quả fit độ thẳng：Direction, hướng của đường thẳng fit<br />Kết quả fit độ thẳng：Tilt, góc nghiêng, góc giữa vector hướng của đường thẳng fit và chiều dương trục Z<br />Kết quả fit độ thẳng：Rotation, góc xoay, góc giữa vector chiếu của vector hướng đường thẳng fit lên mặt phẳng XOY và trục X</td>
 </tr>
 <tr>
-<td> 圆柱度                               </td>
-<td> 圆柱体：Pos，圆柱体中心位置的三维坐标<br />圆柱体：Normal，圆柱体底部平面法向量的方向<br />圆柱体：Radius，圆柱体中圆形半径 </td>
+<td> Độ trụ                               </td>
+<td> Hình trụ：Pos, tọa độ ba chiều của vị trí tâm hình trụ<br />Hình trụ：Normal, hướng vector pháp tuyến của mặt đáy hình trụ<br />Hình trụ：Radius, bán kính hình tròn trong hình trụ </td>
 </tr>
 <tr>
-<td>公差测量结果（平面度/圆度/直线度等）    </td>
-<td>公差测量结果</td>
+<td>Kết quả đo dung sai（độ phẳng/độ tròn/độ thẳng, v.v.）    </td>
+<td>Kết quả đo dung sai</td>
 </tr>
 <tr>
-<td>刚性变换矩阵 </td>
-<td>面轮廓度下输出测量点集与基准点集之间转换矩阵</td>
+<td>Ma trận biến đổi cứng </td>
+<td>Xuất ma trận chuyển đổi giữa tập điểm đo và tập điểm chuẩn trong độ biên dạng bề mặt</td>
 </tr>
 <tr>
-<td> 最小偏差 </td>
-<td> 最小偏差值 </td>
+<td> Độ lệch nhỏ nhất </td>
+<td> Giá trị độ lệch nhỏ nhất </td>
 </tr>
 <tr>
-<td> 最大偏差 </td>
-<td> 最大偏差值 </td>
+<td> Độ lệch lớn nhất </td>
+<td> Giá trị độ lệch lớn nhất </td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果 </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ </td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 工具执行时间 </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.示例工程</h2>
+<h2>6.Dự án mẫu</h2>
 
-<p>参见“\Samples\3D\点云\公差测量工具.gvp”。</p>
+<p>Tham khảo “\Samples\3D\点云\公差测量工具.gvp”.</p>
 
-<h2>7.特殊说明</h2>
+<h2>7.Ghi chú đặc biệt</h2>
 
-<h3>算法原理说明</h3>
+<h3>Mô tả nguyên lý thuật toán</h3>
 
-<p><strong>1、平面度</strong>控制：限定一个表面允许的不平误差的形位公差。</p>
+<p><strong>1、Độ phẳng</strong>kiểm soát：giới hạn dung sai hình học cho sai số không phẳng cho phép của một bề mặt.</p>
 
-<p><strong>平面度公差带</strong>：两个平行平面，所有元素落在中间。公差带的第一个平面由被控表面上的三个最高点组成，第二个平面是偏离第一平面，控制公差值距离的平行平面。如下图7-1所示，平面度的公差带为距离0.2mm的两个平行平面；</p>
+<p><strong>Vùng dung sai độ phẳng</strong>：hai mặt phẳng song song, tất cả phần tử nằm giữa chúng. Mặt phẳng thứ nhất của vùng dung sai được tạo bởi ba điểm cao nhất trên bề mặt được kiểm soát, mặt phẳng thứ hai là mặt phẳng song song lệch khỏi mặt phẳng thứ nhất một khoảng bằng giá trị dung sai kiểm soát. Như hình 7-1, vùng dung sai độ phẳng là hai mặt phẳng song song cách nhau 0.2mm；</p>
 
 <p><img src="media/3DToleranceTool_7_1.png" alt="" /></p>
 
-<p><imgnote>图7_1 平面度原理</imgnote></p>
+<p><imgnote>Hình 7_1 Nguyên lý độ phẳng</imgnote></p>
 
-<p><strong>2、圆度</strong>误差：在垂直于回转体轴线截面上的轮廓对其理想圆的变动量，如下图7-2所示；</p>
+<p><strong>2、Độ tròn</strong>sai số：lượng biến động của đường bao trên mặt cắt vuông góc với trục của vật thể quay so với hình tròn lý tưởng, như hình 7-2；</p>
 
 <p><img src="media/3DToleranceTool_7_2.png" alt="" /></p>
 
-<p><imgnote>图7_2 圆度原理</imgnote></p>
+<p><imgnote>Hình 7_2 Nguyên lý độ tròn</imgnote></p>
 
-<p><strong>3、直线度</strong>是表示零件上的直线要素保持理想直线的状态，即通常所说的平直程度。直线度公差是实际线对理想直线所允许的最大变动量；凌云光公差测量算法支持GB/T1182-2018中规定的三种公差(即无约束公差类型、平面约束公差类型和方向约束公差类型)。</p>
+<p><strong>3、Độ thẳng</strong>là trạng thái biểu thị phần tử đường thẳng trên chi tiết duy trì đường thẳng lý tưởng, tức mức độ thẳng thường nói. Dung sai độ thẳng là lượng biến động lớn nhất được phép của đường thực tế so với đường thẳng lý tưởng；thuật toán đo dung sai của Luster LightTech hỗ trợ ba loại dung sai được quy định trong GB/T1182-2018（tức loại dung sai không ràng buộc, loại dung sai ràng buộc theo mặt phẳng và loại dung sai ràng buộc theo hướng）.</p>
 
 <p><img src="media/3DToleranceTool_7_3.png" alt="" />
 <img src="media/3DToleranceTool_7_4.png" alt="" />
-<imgnote>图7_3 直线度</imgnote></p>
+<imgnote>Hình 7_3 Độ thẳng</imgnote></p>
 
-<p><strong>无约束的直线度</strong>：输入点云数据，获取理想直线，计算点云的公差带圆柱进而求解直线度和最大/小偏移量；<br/>
-<strong>平面约束的直线度</strong>：输入点云数据，获取理想直线，将点云和直线投影到指定平面，在平面内计算直线度和最大/小偏移量；<br/>
-<strong>方向约束的直线度</strong>：输入点云数据，获取理想直线，计算点云在指定方向上的极限距离进而求解直线度和最大/小偏移量；</p>
+<p><strong>Độ thẳng không ràng buộc</strong>：nhập dữ liệu đám mây điểm, lấy đường thẳng lý tưởng, tính vùng dung sai hình trụ của đám mây điểm, từ đó tính độ thẳng và lượng lệch lớn nhất/nhỏ nhất；<br/>
+<strong>Độ thẳng ràng buộc theo mặt phẳng</strong>：nhập dữ liệu đám mây điểm, lấy đường thẳng lý tưởng, chiếu đám mây điểm và đường thẳng lên mặt phẳng chỉ định, tính độ thẳng và lượng lệch lớn nhất/nhỏ nhất trong mặt phẳng；<br/>
+<strong>Độ thẳng ràng buộc theo hướng</strong>：nhập dữ liệu đám mây điểm, lấy đường thẳng lý tưởng, tính khoảng cách giới hạn của đám mây điểm theo hướng chỉ định, từ đó tính độ thẳng và lượng lệch lớn nhất/nhỏ nhất；</p>
 
-<p><strong>4、平行度</strong>误差是被测实际要素对其平行于基准的理想要素的变动量。平行度的测量包括面对面平行度、线对线平行度测量。测量的方法主要有直接比较法、坐标法、尺寸差法、水平仪法和光轴法。同时，平行度是一个表面，中心线/面精确地平行于一个基准。只表示方向，不定位置。平行度是方向公差。</p>
+<p><strong>4、Độ song song</strong>sai số là lượng biến động của phần tử thực tế được đo so với phần tử lý tưởng song song với chuẩn. Phép đo độ song song bao gồm đo độ song song mặt với mặt, đường với đường. Các phương pháp đo chủ yếu gồm phương pháp so sánh trực tiếp, phương pháp tọa độ, phương pháp sai lệch kích thước, phương pháp thước thủy và phương pháp trục quang. Đồng thời, độ song song là việc một bề mặt, đường tâm/mặt tâm song song chính xác với một chuẩn. Chỉ biểu thị hướng, không xác định vị trí. Độ song song là dung sai định hướng.</p>
 
 <p><img src="media/3DToleranceTool_7_5.png" alt="" /></p>
 
-<p><imgnote>图7_4 平行度原理</imgnote></p>
+<p><imgnote>Hình 7_4 Nguyên lý độ song song</imgnote></p>
 
-<p> ​ 公差测量工具中平行度的计算形式有3种：<br/>
-<strong>基于基准直线+基准平面的直线平行度计算原理</strong>：将点云数据和基准直线投影到基准平面上，计算投影数据点到投影直线上方的最大距离和直线下方的最大距离的和作为点云数据的平行度，其原理示意图如下图7_5所示。</p>
+<p> ​ Trong công cụ đo dung sai, độ song song có 3 hình thức tính toán：<br/>
+<strong>Nguyên lý tính độ song song đường thẳng dựa trên đường thẳng chuẩn + mặt phẳng chuẩn</strong>：chiếu dữ liệu đám mây điểm và đường thẳng chuẩn lên mặt phẳng chuẩn, tính tổng khoảng cách lớn nhất từ các điểm dữ liệu chiếu ở phía trên đường chiếu và khoảng cách lớn nhất ở phía dưới đường thẳng, làm độ song song của dữ liệu đám mây điểm. Sơ đồ nguyên lý như hình 7_5.</p>
 
 <p><img src="media/3DToleranceTool_7_6.png" alt="" /></p>
 
-<p><imgnote>图7_5 基于基准直线+基准平面的直线平行度</imgnote></p>
+<p><imgnote>Hình 7_5 Độ song song đường thẳng dựa trên đường thẳng chuẩn + mặt phẳng chuẩn</imgnote></p>
 
-<p><strong>基于基准直线的直线平行度计算原理</strong>：以基准直线的方向向量为约束条件获取点云数据的拟合直线，根据拟合直线的方向获取点云数据的最小外接圆柱，将最小外接圆柱所在圆的直径作为点云数据的平行度，其原理示意图如下图7_6所示。</p>
+<p><strong>Nguyên lý tính độ song song đường thẳng dựa trên đường thẳng chuẩn</strong>：lấy vector hướng của đường thẳng chuẩn làm điều kiện ràng buộc để lấy đường thẳng fit của dữ liệu đám mây điểm, dựa trên hướng của đường thẳng fit để lấy hình trụ ngoại tiếp nhỏ nhất của dữ liệu đám mây điểm, lấy đường kính của hình tròn nơi hình trụ ngoại tiếp nhỏ nhất nằm làm độ song song của dữ liệu đám mây điểm. Sơ đồ nguyên lý như hình 7_6.</p>
 
 <p><img src="media/3DToleranceTool_7_7.png" alt="" /></p>
 
-<p><imgnote>图7_6 基于基准直线的直线平行度</imgnote></p>
+<p><imgnote>Hình 7_6 Độ song song đường thẳng dựa trên đường thẳng chuẩn</imgnote></p>
 
-<p><strong>基于基准平面的平面平行度计算原理</strong>：以基准平面法向量方向为约束条件获取点云数据的拟合平面，计算点云数据到拟合平面上方的最大值和拟合平面下方的最大值的和作为点云数据的平行度，其原理示意图如下图7_7所示。</p>
+<p><strong>Nguyên lý tính độ song song mặt phẳng dựa trên mặt phẳng chuẩn</strong>：lấy hướng vector pháp tuyến của mặt phẳng chuẩn làm điều kiện ràng buộc để lấy mặt phẳng fit của dữ liệu đám mây điểm, tính tổng giá trị lớn nhất của dữ liệu đám mây điểm phía trên mặt phẳng fit và giá trị lớn nhất phía dưới mặt phẳng fit, làm độ song song của dữ liệu đám mây điểm. Sơ đồ nguyên lý như hình 7_7.</p>
 
 <p><img src="media/3DToleranceTool_7_8.png" alt="" /></p>
 
-<p><imgnote>图7_7 基于基准平面的平面平行度</imgnote></p>
+<p><imgnote>Hình 7_7 Độ song song mặt phẳng dựa trên mặt phẳng chuẩn</imgnote></p>
 
-<p><strong>5、垂直度：</strong>表示线元素、表面、中心平面、相切平面或者轴线相对基准在基本角度90°（垂直）方向上的变动程度。<br/>
-<strong>基准面，平面型</strong>：如图7_8所示，将被测元素对应的点云沿基准面的法向投影到平面，计算投影点的最小包容距离d，作为垂直度。</p>
+<p><strong>5、Độ vuông góc：</strong>biểu thị mức độ biến động của phần tử đường, bề mặt, mặt phẳng tâm, mặt phẳng tiếp tuyến hoặc trục so với chuẩn theo hướng góc cơ bản 90°（vuông góc）.<br/>
+<strong>Mặt phẳng chuẩn, kiểu mặt phẳng</strong>：như hình 7_8, chiếu đám mây điểm tương ứng với phần tử được đo theo hướng pháp tuyến của mặt phẳng chuẩn lên mặt phẳng, tính khoảng cách bao hàm nhỏ nhất d của các điểm chiếu, làm độ vuông góc.</p>
 
 <p><img src="media/3DToleranceTool_7_9.png" alt="" /></p>
 
-<p><imgnote>图7_8 基准面，平面型的垂直度</imgnote></p>
+<p><imgnote>Hình 7_8 Độ vuông góc kiểu mặt phẳng với chuẩn là mặt phẳng</imgnote></p>
 
-<p><strong>基准线，平面型</strong>：如图7_9所示，被测元素对应点云的中心与基准线方向形成中心平面，计算点云到中心平面的最大最小距离d1、d2，以d1-d2作为垂直度。</p>
+<p><strong>Đường thẳng chuẩn, kiểu mặt phẳng</strong>：như hình 7_9, tâm của đám mây điểm tương ứng với phần tử được đo và hướng đường thẳng chuẩn tạo thành mặt phẳng tâm, tính khoảng cách lớn nhất và nhỏ nhất d1、d2 từ đám mây điểm đến mặt phẳng tâm, lấy d1-d2 làm độ vuông góc.</p>
 
 <p><img src="media/3DToleranceTool_7_10.png" alt="" /></p>
 
-<p><imgnote>图7_9 基准线，平面型的垂直度</imgnote></p>
+<p><imgnote>Hình 7_9 Độ vuông góc kiểu mặt phẳng với chuẩn là đường thẳng</imgnote></p>
 
-<p><strong>基准面，圆柱型</strong>：如下图7_10所示，将被测元素对应的点云沿基准面法向投影到基准面，计算投影点的最小外接圆直径d，作为垂直度。</p>
+<p><strong>Mặt phẳng chuẩn, kiểu hình trụ</strong>：như hình 7_10, chiếu đám mây điểm tương ứng với phần tử được đo theo hướng pháp tuyến của mặt phẳng chuẩn lên mặt phẳng chuẩn, tính đường kính hình tròn ngoại tiếp nhỏ nhất d của các điểm chiếu, làm độ vuông góc.</p>
 
 <p><img src="media/3DToleranceTool_7_11.png" alt="" /></p>
 
-<p><imgnote>图7_10 基准面，圆柱型的垂直度</imgnote></p>
+<p><imgnote>Hình 7_10 Độ vuông góc kiểu hình trụ với chuẩn là mặt phẳng</imgnote></p>
 
-<p><strong>6、倾斜度：</strong>是指一个平面（或一条轴线）相对于另一个平面（或一条轴线）成一定倾斜角度的情况，其倾斜关系由一公差值来约束；在倾斜度的概念中需要注意，对于倾斜度评价的对象和基准，都可以是平面，也可以是轴线。对于倾斜度的公差带形状，可以是两个平行平面，也可以是圆柱形公差带，具体要看被测要素是什么，同时还要看倾斜度是哪个视图方向；倾斜度公差有三大要素：公称角度、参考基准和公差值。公称角度也叫参考角度，是指被测要素相对于基准的理论角度，应该是一个角度尺寸；参考基准是指被测要素的倾斜度是相对于哪个基准的角度；公差值是倾斜度公差带的大小，公差带平行平面间的距离或者圆柱形公差带的直径，所以公差值是一个大小尺寸，不是角度，需要和上面的公称角度做区分。</p>
+<p><strong>6、Độ nghiêng：</strong>chỉ trường hợp một mặt phẳng（hoặc một trục）tạo thành một góc nghiêng nhất định so với một mặt phẳng（hoặc một trục）khác, quan hệ nghiêng này được ràng buộc bằng một giá trị dung sai；trong khái niệm độ nghiêng cần chú ý rằng đối tượng đánh giá độ nghiêng và chuẩn đều có thể là mặt phẳng hoặc trục. Hình dạng vùng dung sai của độ nghiêng có thể là hai mặt phẳng song song, cũng có thể là vùng dung sai hình trụ, cụ thể phụ thuộc vào phần tử được đo là gì, đồng thời cũng phụ thuộc độ nghiêng theo hướng nhìn nào；dung sai độ nghiêng có ba yếu tố chính：góc danh nghĩa, chuẩn tham chiếu và giá trị dung sai. Góc danh nghĩa còn gọi là góc tham chiếu, chỉ góc lý thuyết của phần tử được đo so với chuẩn, phải là một kích thước góc；chuẩn tham chiếu chỉ độ nghiêng của phần tử được đo là so với chuẩn nào；giá trị dung sai là kích thước của vùng dung sai độ nghiêng, khoảng cách giữa các mặt phẳng song song của vùng dung sai hoặc đường kính vùng dung sai hình trụ, vì vậy giá trị dung sai là một kích thước, không phải góc, cần phân biệt với góc danh nghĩa phía trên.</p>
 
-<p>  实际上，垂直度、平行度是倾斜度的特殊形式，三者的调用是一样的。倾斜度可称得上是定向控制中的父系，垂直度和平行度派生于倾斜度，也就是说倾斜度不控制两种特殊的定向角90°（垂直）和0°（平行）。倾斜度约束了面、中心面或轴相对于一个基准面、中心面或轴成一定的倾斜度的公差（注意这里的联合倾斜度控制的角度尺寸是一个公称尺寸）。如果有尺寸公差共同约束，倾斜度公差常被用来作为位置控制的加严要求。倾斜度的公差带通常是两个有规定公差值间距的平行面，也有圆柱面公差带的情况，并且需要不止一个基准来定位。也可能这个公差带是由两条平行线组成的，并且在公差控制框下说明为“每一个线元素”。不管以上哪一种方式，定向公差带的角度值必须为一个公称尺寸（没有公差）。</p>
+<p>  Trên thực tế, độ vuông góc và độ song song là các dạng đặc biệt của độ nghiêng, cách gọi của ba loại này là giống nhau. Độ nghiêng có thể được xem là nhóm chính trong kiểm soát định hướng, độ vuông góc và độ song song được dẫn xuất từ độ nghiêng, tức là độ nghiêng không kiểm soát hai góc định hướng đặc biệt 90°（vuông góc）và 0°（song song）. Độ nghiêng ràng buộc dung sai của mặt, mặt tâm hoặc trục so với một mặt phẳng chuẩn, mặt tâm chuẩn hoặc trục chuẩn theo một góc nghiêng nhất định（lưu ý kích thước góc được kiểm soát bởi độ nghiêng liên hợp ở đây là một kích thước danh nghĩa）. Nếu có dung sai kích thước cùng ràng buộc, dung sai độ nghiêng thường được dùng làm yêu cầu siết chặt cho kiểm soát vị trí. Vùng dung sai độ nghiêng thường là hai mặt phẳng song song có khoảng cách giá trị dung sai quy định, cũng có trường hợp là vùng dung sai mặt trụ, và cần nhiều hơn một chuẩn để định vị. Vùng dung sai này cũng có thể được tạo bởi hai đường thẳng song song, đồng thời trong khung kiểm soát dung sai ghi rõ là “mỗi phần tử đường”. Dù là phương thức nào ở trên, giá trị góc của vùng dung sai định hướng bắt buộc phải là một kích thước danh nghĩa（không có dung sai）.</p>
 
-<p>​    公差测量工具中倾斜度的测量方法共有5中模式：<br/>
-<strong>线对线，平面型</strong>：检测对象是线、基准是线的平面倾斜度，根据国标“被测线应投影到包含基准轴线并平行于被测轴线的平面上，公差带是相对于投影到该平面的线而言”，如图7_11所示，公差带是距离t对应的两个平面；</p>
+<p>​    Trong công cụ đo dung sai, phương pháp đo độ nghiêng có tổng cộng 5 chế độ：<br/>
+<strong>Đường với đường, kiểu mặt phẳng</strong>：độ nghiêng kiểu mặt phẳng có đối tượng kiểm tra là đường, chuẩn là đường. Theo tiêu chuẩn quốc gia “đường được đo phải được chiếu lên mặt phẳng chứa trục chuẩn và song song với trục được đo, vùng dung sai là đối với đường được chiếu lên mặt phẳng đó”. Như hình 7_11, vùng dung sai là hai mặt phẳng tương ứng với khoảng cách t；</p>
 
 <p><img src="media/3DToleranceTool_7_12.png" alt="" /></p>
 
-<p><imgnote>图7_11 线对线，平面型的倾斜度</imgnote></p>
+<p><imgnote>Hình 7_11 Độ nghiêng kiểu mặt phẳng giữa đường với đường</imgnote></p>
 
-<p><strong>线对面，平面型</strong>：检测对象是线、基准是面的平面倾斜度；</p>
+<p><strong>Đường với mặt, kiểu mặt phẳng</strong>：độ nghiêng kiểu mặt phẳng có đối tượng kiểm tra là đường, chuẩn là mặt；</p>
 
 <p><img src="media/3DToleranceTool_7_13.png" alt="" /></p>
 
-<p><imgnote>图7_12 线对面，平面型的倾斜度</imgnote></p>
+<p><imgnote>Hình 7_12 Độ nghiêng kiểu mặt phẳng giữa đường với mặt</imgnote></p>
 
-<p><strong>线对面，圆柱型</strong>：检测对象是线、基准是面的圆柱型倾斜度；</p>
+<p><strong>Đường với mặt, kiểu hình trụ</strong>：độ nghiêng kiểu hình trụ có đối tượng kiểm tra là đường, chuẩn là mặt；</p>
 
 <p><img src="media/3DToleranceTool_7_14.png" alt="" /></p>
 
-<p><imgnote>图7_13 线对面，圆柱型的倾斜度</imgnote></p>
+<p><imgnote>Hình 7_13 Độ nghiêng kiểu hình trụ giữa đường với mặt</imgnote></p>
 
-<p><strong>面对线，平面型</strong>：检测对象是面、基准是线的平面倾斜度；</p>
+<p><strong>Mặt với đường, kiểu mặt phẳng</strong>：độ nghiêng kiểu mặt phẳng có đối tượng kiểm tra là mặt, chuẩn là đường；</p>
 
 <p><img src="media/3DToleranceTool_7_15.png" alt="" /></p>
 
-<p><imgnote>图7_14 面对线，平面型的倾斜度</imgnote></p>
+<p><imgnote>Hình 7_14 Độ nghiêng kiểu mặt phẳng giữa mặt với đường</imgnote></p>
 
-<p><strong>面对面，平面型</strong>：检测对象是面、基准是面的平面倾斜度；</p>
+<p><strong>Mặt với mặt, kiểu mặt phẳng</strong>：độ nghiêng kiểu mặt phẳng có đối tượng kiểm tra là mặt, chuẩn là mặt；</p>
 
 <p><img src="media/3DToleranceTool_7_16.png" alt="" /></p>
 
-<p><imgnote>图7_15 面对面，平面型的倾斜度</imgnote></p>
+<p><imgnote>Hình 7_15 Độ nghiêng kiểu mặt phẳng giữa mặt với mặt</imgnote></p>
 
-<p> <font color = "red">注：角度a是指定的理论正确角度，距离t是公差带指定的合格倾斜度值；</font></p>
+<p> <font color = "red">Lưu ý：góc a là góc lý thuyết đúng được chỉ định, khoảng cách t là giá trị độ nghiêng đạt yêu cầu được chỉ định bởi vùng dung sai；</font></p>
 
-<p><strong>7、圆柱度</strong>是指实际圆柱相对其理想圆柱的变动量，用于评价实际圆柱的形状误差。圆柱度公差带指的是两同轴圆柱之间的区域，圆柱度主要用于三维点云测量阶段。</p>
+<p><strong>7、Độ trụ</strong>chỉ lượng biến động của hình trụ thực tế so với hình trụ lý tưởng, dùng để đánh giá sai số hình dạng của hình trụ thực tế. Vùng dung sai độ trụ là vùng giữa hai hình trụ đồng trục, độ trụ chủ yếu được dùng trong giai đoạn đo đám mây điểm 3D.</p>
 
-<p><strong>最小二乘</strong>：点到拟合圆柱面的距离平方和最小；<br/>
-<strong>最小包容</strong>：点到拟合圆柱面的最大距离与最小距离之差最小；</p>
+<p><strong>Bình phương tối thiểu</strong>：tổng bình phương khoảng cách từ điểm đến bề mặt hình trụ fit là nhỏ nhất；<br/>
+<strong>Bao hàm nhỏ nhất</strong>：hiệu giữa khoảng cách lớn nhất và khoảng cách nhỏ nhất từ điểm đến bề mặt hình trụ fit là nhỏ nhất；</p>
 
-<p><strong>8、线轮廓度</strong>首先将输入点云沿投影方向投影为二维点，根据四种对齐模式：最小二乘、矢量最小二乘、最小最大与矢量最小最大将测量点云与标称点云进行对齐。其中最小二乘与矢量最小二乘对齐将测量点云与标称点云距离之差的和最小化；最小最大与矢量最小最大将测量点云与标称点云最大距离最小化。点云对齐之后求得测量点云与标称点云的法向距离最大值的两倍作为最终线轮廓度值输出。</p>
+<p><strong>8、Độ biên dạng đường</strong>trước tiên chiếu đám mây điểm đầu vào theo hướng chiếu thành điểm 2D, sau đó căn chỉnh đám mây điểm đo với đám mây điểm danh nghĩa theo bốn chế độ căn chỉnh：bình phương tối thiểu, bình phương tối thiểu theo vector, min-max và min-max theo vector. Trong đó, căn chỉnh bình phương tối thiểu và bình phương tối thiểu theo vector sẽ tối thiểu hóa tổng chênh lệch khoảng cách giữa đám mây điểm đo và đám mây điểm danh nghĩa；min-max và min-max theo vector sẽ tối thiểu hóa khoảng cách lớn nhất giữa đám mây điểm đo và đám mây điểm danh nghĩa. Sau khi căn chỉnh đám mây điểm, lấy 2 lần giá trị lớn nhất của khoảng cách pháp tuyến giữa đám mây điểm đo và đám mây điểm danh nghĩa làm giá trị độ biên dạng đường cuối cùng xuất ra.</p>
 
-<p><strong>最小二乘</strong>：最常用的模式，根据最小化测量点集与标称点集的距离平方和原则进行点集对齐，常用于形状规则的特征如圆形、圆柱形等，不适用复杂形状特征，如曲面等；<br/>
-<strong>矢量最小二乘</strong>：与最小二乘类似，区别是这里使用的距离为投影至标称法向量的矢量距离，适用于圆形、圆柱形或复杂的曲面等；<br/>
-<strong>最小最大</strong>：最小化测量点集与标称点集中的最大距离，该模式容易受噪声影响，不适用与复杂曲面，但求出的轮廓度值比最小二乘小，符合轮廓度的定义；<br/>
-<strong>矢量最小最大</strong>：与最小最大类型，这里最小化测量点集与标称点集中的最大投影(沿矢量方向)距离，求出轮廓度值比矢量最小二乘小，但受噪声影响较大。</p>
+<p><strong>Bình phương tối thiểu</strong>：chế độ thường dùng nhất, thực hiện căn chỉnh tập điểm theo nguyên tắc tối thiểu hóa tổng bình phương khoảng cách giữa tập điểm đo và tập điểm danh nghĩa, thường dùng cho các đặc trưng có hình dạng quy tắc như hình tròn, hình trụ, v.v., không phù hợp với đặc trưng có hình dạng phức tạp như bề mặt cong, v.v.；<br/>
+<strong>Bình phương tối thiểu theo vector</strong>：tương tự bình phương tối thiểu, khác biệt là khoảng cách ở đây là khoảng cách vector được chiếu lên vector pháp tuyến danh nghĩa, phù hợp với hình tròn, hình trụ hoặc các bề mặt cong phức tạp, v.v.；<br/>
+<strong>Min-max</strong>：tối thiểu hóa khoảng cách lớn nhất trong tập điểm đo và tập điểm danh nghĩa, chế độ này dễ bị ảnh hưởng bởi nhiễu, không phù hợp với bề mặt cong phức tạp, nhưng giá trị độ biên dạng tính được nhỏ hơn bình phương tối thiểu, phù hợp với định nghĩa độ biên dạng；<br/>
+<strong>Min-max theo vector</strong>：tương tự loại min-max, ở đây tối thiểu hóa khoảng cách chiếu lớn nhất（theo hướng vector）trong tập điểm đo và tập điểm danh nghĩa, giá trị độ biên dạng tính được nhỏ hơn bình phương tối thiểu theo vector, nhưng bị ảnh hưởng bởi nhiễu tương đối lớn.</p>
 
-<p><strong>9、面轮廓度</strong>:基于三维点云进行计算，根据六种对齐模式：最小二乘、矢量最小二乘、最小最大、矢量最小最大、全局最优、矢量全局最优将测量点云与标称点云对齐得到刚体变换关系。测量点经过刚体变换得到变换点，利用变换点、标称点、标称点法向、计算变换点到标称点的法向长度，得到各点偏差，各点偏差绝对值最大值的2倍作为最终面轮廓度。最小二乘、矢量最小二乘、最小最大与矢量最小最大与线轮廓度一致。<br/>
-<strong>全局最优</strong>：算法内部综合最小二乘与最小最大结果获得最优面轮廓度值；<br/>
-<strong>矢量全局最优</strong>：算法内部综合矢量最小二乘与矢量最小最大结果获得最优面轮廓度值。</p>
+<p><strong>9、Độ biên dạng bề mặt</strong>:tính toán dựa trên đám mây điểm 3D, căn chỉnh đám mây điểm đo với đám mây điểm danh nghĩa theo sáu chế độ căn chỉnh：bình phương tối thiểu, bình phương tối thiểu theo vector, min-max, min-max theo vector, tối ưu toàn cục, tối ưu toàn cục theo vector, để thu được quan hệ biến đổi cứng. Điểm đo sau khi biến đổi cứng trở thành điểm biến đổi, sử dụng điểm biến đổi, điểm danh nghĩa, pháp tuyến điểm danh nghĩa để tính chiều dài pháp tuyến từ điểm biến đổi đến điểm danh nghĩa, thu được độ lệch của từng điểm, lấy 2 lần giá trị lớn nhất của trị tuyệt đối độ lệch từng điểm làm độ biên dạng bề mặt cuối cùng. Bình phương tối thiểu, bình phương tối thiểu theo vector, min-max và min-max theo vector giống với độ biên dạng đường.<br/>
+<strong>Tối ưu toàn cục</strong>：thuật toán nội bộ tổng hợp kết quả bình phương tối thiểu và min-max để thu được giá trị độ biên dạng bề mặt tối ưu；<br/>
+<strong>Tối ưu toàn cục theo vector</strong>：thuật toán nội bộ tổng hợp kết quả bình phương tối thiểu theo vector và min-max theo vector để thu được giá trị độ biên dạng bề mặt tối ưu.</p>

@@ -16,17 +16,17 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Công cụ Phù hợp Mặt phẳng Với Điểm Ngoại lai</h1>
+<h1>Công cụ khớp mặt phẳng có điểm ngoại lai</h1>
 
 <h2>Chức năng</h2>
 
-<p>Chức năng là loại bỏ điểm ngoại lai trong hình ảnh dữ liệu chiều sâu, dựa trên dữ liệu điểm nội lai để tính toán được biểu thức phân tích của mặt phẳng ba chiều, từ đó có thể thực hiện các thao tác tiếp theo như chiếu chiếu, đo chiều cao và đo thể tích trên mặt phẳng cơ sở này.</p>
+<p>Chức năng là loại bỏ các điểm ngoại lai trong ảnh dữ liệu độ sâu, tính toán biểu thức giải tích của mặt phẳng ba chiều dựa trên dữ liệu điểm nội lai, từ đó có thể thực hiện các thao tác tiếp theo như chiếu, đo chiều cao và đo thể tích trên mặt phẳng cơ sở này.</p>
 
 <p><img src="media/wps20.jpg" alt="img" /> <img src="media/wps21.jpg" alt="img" /></p>
 
-<p><imgnote>(a) Hình ảnh chiều sâu có điểm ngoại lai</imgnote> <imgnote>(b) Hình ảnh dữ liệu chiều sâu sau khi loại bỏ điểm ngoại lai </imgnote></p>
+<p><imgnote>(a) Ảnh độ sâu có điểm ngoại lai</imgnote> <imgnote>(b) Ảnh dữ liệu độ sâu sau khi loại bỏ điểm ngoại lai </imgnote></p>
 
-<p><imgnote>Hình 1 Sơ đồ minh họa phù hợp mặt phẳng với điểm ngoại lai </imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa khớp mặt phẳng có điểm ngoại lai </imgnote></p>
 
 <h2>Tham số</h2>
 
@@ -41,94 +41,94 @@
 <tbody>
 <tr>
 <td> Cửa sổ thuộc tính       </td>
-<td> Bật phù hợp tập điểm ba chiều                                             </td>
-<td> Chọn “Có”, tham số chuỗi sẽ hiển thị tham số tập điểm ba chiều đầu vào, và sử dụng tập điểm ba chiều này để thực hiện phù hợp mặt phẳng. </td>
+<td> Bật khớp tập điểm 3D                                             </td>
+<td> Chọn “Có”, tham số tập điểm 3D đầu vào sẽ hiển thị trong chuỗi tham số, đồng thời sử dụng tập điểm 3D này để khớp mặt phẳng. </td>
 </tr>
 <tr>
 <td></td>
 <td> Hướng mặt phẳng       </td>
-<td> Phân thành hai loại: Không gian pixel dương và không gian pixel âm.<img src="media/wps23.jpg" alt="img" />                                                                  </td>
+<td> Chia thành hai loại：không gian pixel dương và không gian pixel âm.                                                                  </td>
 </tr>
 <tr>
 <td></td>
 <td> Loại ROI      </td>
-<td> Khu vực cần phù hợp, phân thành 7 loại: Toàn bộ hình ảnh, Hình chữ nhật, Hình chữ nhật affine, Hình tròn, Đoạn vòng tròn, Elip, Đa giác.                                                               </td>
+<td> Vùng cần khớp, chia thành 7 loại：toàn bộ ảnh、hình chữ nhật、hình chữ nhật affine、hình tròn、đoạn vành khăn、hình elip、đa giác.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> Khoảng cách phán đoán điểm ngoại lai </td>
-<td> Giá trị tối đa của khoảng cách từ các điểm dữ liệu chiều sâu tham gia phù hợp đến mặt phẳng phù hợp.<img src="media/wps24.jpg" alt="img" />                                                               </td>
+<td> Khoảng cách xác định điểm ngoại lai </td>
+<td> Giá trị lớn nhất của khoảng cách từ điểm dữ liệu độ sâu tham gia khớp đến mặt phẳng khớp.                                                               </td>
 </tr>
 <tr>
 <td></td>
 <td> Tỷ lệ điểm ngoại lai     </td>
-<td> Tỷ lệ điểm ngoại lai chiếm tổng số điểm dữ liệu chiều sâu.                                                                                               </td>
+<td> Tỷ lệ điểm ngoại lai trong tổng số điểm dữ liệu độ sâu.                                                                                               </td>
 </tr>
 <tr>
 <td></td>
 <td> Độ tin cậy kết quả     </td>
-<td> Đo lường mức độ đáng tin cậy khi sử dụng điểm nội lai để xây dựng mặt phẳng phù hợp; độ tin cậy càng lớn, mặt phẳng phù hợp càng đáng tin cậy.                                                               </td>
+<td> Đánh giá mức độ đáng tin cậy khi sử dụng điểm nội lai để xây dựng mặt phẳng khớp, độ tin cậy càng lớn thì mặt phẳng khớp càng đáng tin cậy.                                                               </td>
 </tr>
 <tr>
 <td></td>
 <td> Bật lấy mẫu       </td>
-<td> Có thực hiện lấy mẫu phù hợp hay không, chọn “Có” thì hiển thị tham số nửa chiều rộng lấy mẫu.                                                                           </td>
+<td> Có thực hiện khớp lấy mẫu hay không, chọn “Có” thì hiển thị tham số nửa chiều rộng lấy mẫu.                                                                           </td>
 </tr>
 <tr>
 <td></td>
 <td> Khoảng cách lấy mẫu     </td>
-<td> Mỗi lần cách bao nhiêu thì lấy mẫu một lần, rút ngắn thời gian phù hợp mặt phẳng.                                                                                       </td>
+<td> Cứ cách bao nhiêu thì lấy mẫu một lần, giúp rút ngắn thời gian khớp mặt phẳng.                                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> Bật mặt nạ       </td>
-<td> Dùng để lọc các khu vực không cần phù hợp, thêm mặt nạ cho phần đó. Chọn “Có” thì có thể thực hiện thiết lập mặt nạ qua giao diện nâng cao thuộc tính.                                                               </td>
+<td> Bật mask       </td>
+<td> Dùng để lọc vùng không cần khớp, thêm mask cho phần này. Khi chọn “Có”, có thể thiết lập mask thông qua giao diện nâng cao thuộc tính                                                               </td>
 </tr>
 <tr>
 <td></td>
 <td> Bật tính toán song song </td>
-<td> Có bật tính toán song song hay không, chọn “Có” thì thuật toán sẽ bật chế độ tính toán song song OpenMP, có thể nâng cao tốc độ tính toán nhưng có thể xuất hiện tình huống thời gian tiêu hao không ổn định; chọn “Không” thì thuật toán sẽ tắt tính toán song song OpenMP. </td>
+<td> Có bật tính toán song song hay không, khi chọn Có, thuật toán sẽ bật phương thức tính toán song song OpenMp, có thể nâng cao tốc độ tính toán, nhưng có thể xảy ra tình trạng thời gian xử lý không ổn định; khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp. </td>
 </tr>
 <tr>
 <td></td>
 <td> Phần trăm số luồng </td>
-<td> Thiết lập phần trăm số luồng cho tính toán song song, phạm vi hiệu lực là (0, 0.75], tương ứng với phạm vi phần trăm (0%, 75%]. </td>
+<td> Thiết lập phần trăm số luồng của tính toán song song, phạm vi hợp lệ là (0, 0.75]，tương ứng biểu thị phạm vi phần trăm (0%, 75%]. </td>
 </tr>
 <tr>
-<td> Cửa sổ hình ảnh       </td>
-<td> Hình ảnh chiều sâu                                                     </td>
-<td> Hiển thị hình ảnh chiều sâu cần kiểm tra, hiển thị dưới dạng hình ảnh màu giả.                     </td>
+<td> Cửa sổ ảnh       </td>
+<td> Ảnh độ sâu                                                     </td>
+<td> Hiển thị ảnh độ sâu cần kiểm tra, hiển thị dưới dạng ảnh giả màu.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> Khu vực phù hợp       </td>
-<td> Hiển thị khu vực cần phù hợp trên hình ảnh.                                                                                                   </td>
+<td> Vùng khớp       </td>
+<td> Hiển thị vùng cần khớp trên ảnh.                                                                                                   </td>
 </tr>
 <tr>
 <td> Chuỗi dữ liệu         </td>
-<td> Hình ảnh đầu vào                                                     </td>
-<td> Hình ảnh chiều sâu đầu vào cần kiểm tra, chỉ hiệu lực khi tham số trong thanh thuộc tính “Bật phù hợp tập điểm ba chiều” chọn “Không”. </td>
+<td> Ảnh đầu vào                                                     </td>
+<td> Nhập ảnh độ sâu cần kiểm tra, chỉ có hiệu lực khi tham số thanh thuộc tính Bật khớp tập điểm 3D chọn “Không”. </td>
 </tr>
 <tr>
 <td></td>
-<td> Tập điểm ba chiều đầu vào   </td>
-<td> Tập điểm ba chiều dùng để thực hiện phù hợp mặt phẳng, chỉ hiệu lực khi tham số trong thanh thuộc tính “Bật phù hợp tập điểm ba chiều” chọn “Có”.                                                               </td>
+<td> Tập điểm 3D đầu vào   </td>
+<td> Tập điểm 3D dùng để khớp mặt phẳng, chỉ có hiệu lực khi tham số thanh thuộc tính Bật khớp tập điểm 3D chọn “Có”.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> Biến đổi tuyến tính hai chiều   </td>
-<td> Biến đổi tịnh tiến, xoay, thu phóng của mục tiêu so với mẫu, chỉ hiệu lực khi tham số trong thanh thuộc tính “Bật phù hợp tập điểm ba chiều” chọn “Không”.                                                               </td>
+<td> Biến đổi tuyến tính 2D   </td>
+<td> Biến đổi tịnh tiến、xoay、co giãn của đối tượng so với template, chỉ có hiệu lực khi tham số thanh thuộc tính Bật khớp tập điểm 3D chọn “Không”.                                                               </td>
 </tr>
 <tr>
 <td></td>
 <td> Giao diện nâng cao       </td>
-<td> Chỉ khi tham số trong thanh thuộc tính “Bật mặt nạ” chọn “Có”, thì hiển thị giao diện thiết lập mặt nạ.                                                                       </td>
+<td> Chỉ khi tham số thanh thuộc tính Bật mask chọn “Có”, giao diện thiết lập mask mới hiển thị.                                                                       </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>Kết quả đầu ra</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
@@ -141,105 +141,105 @@
 <tbody>
 <tr>
 <td> Cửa sổ giám sát       </td>
-<td> Hình ảnh đầu ra                                                     </td>
-<td> Đầu ra chiều dài và chiều rộng của hình ảnh chiều sâu cùng kích thước pixel, cũng như tham số dữ liệu chiều sâu, chỉ hiệu lực khi tham số trong thanh thuộc tính “Bật phù hợp tập điểm ba chiều” chọn “Không”. </td>
+<td> Ảnh đầu ra                                                     </td>
+<td> Xuất chiều dài, chiều rộng và kích thước pixel của ảnh độ sâu, cũng như tham số dữ liệu độ sâu, chỉ có hiệu lực khi tham số thanh thuộc tính Bật khớp tập điểm 3D chọn “Không”. </td>
 </tr>
 <tr>
 <td></td>
-<td> Mặt phẳng phù hợp       </td>
-<td> Đầu ra kết quả mặt phẳng phù hợp, bao gồm vectơ pháp tuyến của mặt phẳng, độ lệch, góc nghiêng, góc xoay.<img src="media/wps26.jpg" alt="img" />                                                               </td>
+<td> Mặt phẳng khớp       </td>
+<td> Xuất kết quả mặt phẳng khớp, bao gồm vector pháp tuyến、độ lệch、góc nghiêng、góc xoay của mặt phẳng.                                                               </td>
 </tr>
 <tr>
 <td></td>
 <td> Độ phẳng         </td>
-<td> Đầu ra độ phẳng của mặt phẳng, tức là độ lệch tối đa trừ độ lệch tối thiểu, đơn vị: mm.                                                                          </td>
+<td> Xuất độ phẳng của mặt phẳng, tức là độ lệch lớn nhất - độ lệch nhỏ nhất, đơn vị：mm.                                                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> Lỗi phù hợp       </td>
-<td> Đầu ra lỗi phù hợp của mặt phẳng.                                                                                                       </td>
+<td> Sai số khớp       </td>
+<td> Xuất sai số khớp của mặt phẳng.                                                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> Số điểm phù hợp mặt phẳng </td>
-<td> Đầu ra số điểm tham gia vào quá trình phù hợp mặt phẳng.                                                                                             </td>
+<td> Số điểm khớp mặt phẳng </td>
+<td> Xuất số điểm tham gia khớp trong quá trình khớp mặt phẳng.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
 <td> Kết quả thực thi       </td>
-<td> Kết quả thực thi công cụ.                                                                                                             </td>
+<td> Kết quả thực thi của công cụ.                                                                                                             </td>
 </tr>
 <tr>
 <td></td>
 <td> Thời gian thực thi       </td>
-<td> Thời gian thực thi công cụ.                                                                                                             </td>
+<td> Thời gian thực thi của công cụ.                                                                                                             </td>
 </tr>
 <tr>
-<td> Cửa sổ hình ảnh       </td>
-<td> Hình ảnh đầu ra                                                     </td>
-<td> Hiển thị hình ảnh chiều sâu đã kiểm tra, hiển thị dưới dạng hình ảnh màu giả.                       </td>
+<td> Cửa sổ ảnh       </td>
+<td> Ảnh đầu ra                                                     </td>
+<td> Hiển thị ảnh độ sâu đã kiểm tra, hiển thị dưới dạng ảnh giả màu.                       </td>
 </tr>
 <tr>
 <td></td>
 <td> Chuỗi dữ liệu         </td>
-<td> Giống tham số cửa sổ giám sát, để sử dụng cho công cụ tiếp theo.                                                                                           </td>
+<td> Giống tham số cửa sổ giám sát, dùng cho các công cụ tiếp theo.                                                                                           </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>Giải thích chi tiết</h2>
+<h2>Mô tả chi tiết</h2>
 
 <h3>Tham số liên quan</h3>
 
-<p>Khoảng cách ngưỡng: Chỉ giá trị tối đa của khoảng cách từ điểm đến mặt phẳng phù hợp;</p>
+<p>Ngưỡng khoảng cách：chỉ giá trị lớn nhất được thiết lập cho khoảng cách từ điểm đến mặt phẳng khớp；</p>
 
-<p>Điểm ngoại lai: Chỉ các điểm dữ liệu chiều sâu mà khoảng cách đến mặt phẳng phù hợp không thỏa mãn khoảng cách ngưỡng;</p>
+<p>Điểm ngoại lai：chỉ điểm dữ liệu độ sâu có khoảng cách đến mặt phẳng khớp không thỏa mãn ngưỡng khoảng cách；</p>
 
-<p>Điểm nội lai: Chỉ các điểm dữ liệu chiều sâu mà khoảng cách đến mặt phẳng phù hợp nằm trong khoảng cách ngưỡng;</p>
+<p>Điểm nội lai：chỉ điểm dữ liệu độ sâu có khoảng cách đến mặt phẳng khớp nằm trong ngưỡng khoảng cách；</p>
 
-<p>Tỷ lệ điểm ngoại lai: Tỷ lệ điểm ngoại lai chiếm tổng số điểm dữ liệu chiều sâu, trong đó tổng điểm nội lai và điểm ngoại lai bằng tổng số điểm dữ liệu chiều sâu;</p>
+<p>Tỷ lệ điểm ngoại lai：tỷ lệ điểm ngoại lai trong tổng số điểm dữ liệu độ sâu, trong đó tổng của điểm nội lai và điểm ngoại lai là tổng số điểm dữ liệu độ sâu；</p>
 
-<p>Độ tin cậy: Đo lường mức độ đáng tin cậy khi sử dụng điểm nội lai để xây dựng mặt phẳng phù hợp, độ tin cậy càng lớn thì mặt phẳng phù hợp càng đáng tin cậy.</p>
+<p>Độ tin cậy：đánh giá mức độ đáng tin cậy khi sử dụng điểm nội lai để xây dựng mặt phẳng khớp, độ tin cậy càng lớn thì mặt phẳng khớp càng đáng tin cậy.</p>
 
 <p><img src="media/wps28.jpg" alt="img" /></p>
 
 <p><imgnote>Hình 1 Sơ đồ minh họa tham số liên quan</imgnote></p>
 
-<h3>Vectơ pháp tuyến, góc nghiêng, góc xoay, độ lệch</h3>
+<h3>Vector pháp tuyến、góc nghiêng、góc xoay、độ lệch</h3>
 
-<p>Vectơ pháp tuyến: Vectơ <strong>N</strong> vuông góc với mặt phẳng, biểu thị hướng của mặt phẳng trong không gian ba chiều, như hình 2(a) cho thấy.</p>
+<p>Vector pháp tuyến：vector <strong>N</strong> vuông góc với mặt phẳng, biểu thị hướng của mặt phẳng trong không gian ba chiều, như thể hiện trong Hình 2(a).</p>
 
-<p>Góc nghiêng: Góc <strong>φ</strong> giữa hướng dương trục Z theo chiều kim đồng hồ với vectơ pháp tuyến <strong>N</strong> của mặt phẳng, phạm vi giá trị: [0,π], như hình 2(b) cho thấy.</p>
+<p>Góc nghiêng：góc <strong>φ</strong> giữa chiều dương trục Z theo chiều kim đồng hồ và vector pháp tuyến mặt phẳng <strong>N</strong>, phạm vi giá trị là：[0,π] ，như thể hiện trong Hình 2(b).</p>
 
-<p>Góc xoay: Góc <strong>θ</strong> giữa hướng dương trục X theo chiều ngược kim đồng hồ với vectơ chiếu <strong>N</strong><strong>0</strong> của vectơ pháp tuyến, phạm vi giá trị: [0, 2π), như hình 2(b) cho thấy.</p>
+<p>Góc xoay：góc <strong>θ</strong> giữa chiều dương trục X theo chiều ngược kim đồng hồ và vector hình chiếu <strong>N</strong><strong>0</strong> của vector pháp tuyến, phạm vi giá trị là：[0, 2π) ，như thể hiện trong Hình 2(b).</p>
 
-<p>Độ lệch: Khoảng cách lệch khi di chuyển gốc tọa độ đến mặt phẳng hiện tại <strong>P</strong>, nếu hướng di chuyển trùng với hướng vectơ pháp tuyến thì độ lệch là dương; ngược lại là âm, như hình 2(c)、(d) cho thấy.</p>
+<p>Độ lệch：độ lệch khoảng cách khi di chuyển gốc tọa độ đến mặt phẳng hiện tại <strong>P</strong>, nếu hướng di chuyển giống với hướng vector pháp tuyến thì độ lệch là dương；ngược lại là âm, như thể hiện trong Hình 2&copy;、(d).</p>
 
 <p><img src="media/wps29.jpg" alt="img" /></p>
 
-<p><imgnote>Hình 2 Vectơ pháp tuyến, góc nghiêng, góc xoay, độ lệch</imgnote></p>
+<p><imgnote>Hình 2 Vector pháp tuyến、góc nghiêng、góc xoay、độ lệch</imgnote></p>
 
 <h3>Hướng dẫn sử dụng</h3>
 
-<p><strong>Bước 1 Thiết lập khu vực phù hợp và hướng mặt phẳng</strong></p>
+<p><strong>Step 1 Thiết lập vùng khớp và hướng mặt phẳng</strong></p>
 
-<p>Để thu được dữ liệu điểm trong không gian ba chiều cần thiết lập vùng quan tâm. Khi thu được phương trình mặt phẳng phù hợp, cần xác định hướng mặt phẳng, tức là hướng của vectơ pháp tuyến mặt phẳng; hướng mặt phẳng bao gồm hai loại: Không gian pixel dương Z và không gian pixel âm Z, ý nghĩa vật lý cụ thể được trình bày trong bảng dưới đây. Hai hướng mặt phẳng thu được có giá trị vectơ pháp tuyến mặt phẳng là ngược nhau.</p>
+<p>Để lấy dữ liệu điểm trong không gian ba chiều, cần thiết lập vùng quan tâm. Khi lấy phương trình mặt phẳng khớp, cần xác định hướng mặt phẳng, tức là hướng của vector pháp tuyến mặt phẳng；hướng mặt phẳng bao gồm hai loại：Z không gian pixel dương và Z không gian pixel âm, ý nghĩa vật lý cụ thể được trình bày trong bảng dưới đây. Giá trị vector pháp tuyến mặt phẳng nhận được từ hai hướng mặt phẳng này là hai số đối nhau.</p>
 
 <p><img src="media/wps30.jpg" alt="img" /></p>
 
-<p><strong>Bước 2 Thiết lập tham số, nửa chiều rộng lấy mẫu và có bật mặt nạ hay không</strong></p>
+<p><strong>Step 2Thiết lập tham số、nửa chiều rộng lấy mẫu và có bật mask hay không</strong></p>
 
-<p> Theo nhu cầu thiết lập khoảng cách ngưỡng, độ tin cậy, tỷ lệ điểm ngoại lai trong trường hợp xấu nhất, nửa chiều rộng lấy mẫu và thiết lập mặt nạ.</p>
+<p> Thiết lập ngưỡng khoảng cách、độ tin cậy、tỷ lệ điểm ngoại lai trong trường hợp xấu nhất、nửa chiều rộng lấy mẫu và thiết lập mask theo nhu cầu.</p>
 
-<p><strong>Bước 3 Thực thi phù hợp và đầu ra kết quả</strong></p>
+<p><strong>Step3 Thực hiện khớp và xuất kết quả</strong></p>
 
-<p>Sau các bước trên, có thể thực thi phù hợp. Đối với phù hợp mặt phẳng có điểm ngoại lai, kết quả đầu ra bao gồm: vectơ pháp tuyến của mặt phẳng phù hợp, độ lệch xoay và phương sai trung bình của phù hợp.</p>
+<p>Sau các bước trên, có thể thực hiện khớp. Đối với khớp mặt phẳng có điểm ngoại lai, kết quả đầu ra bao gồm：vector pháp tuyến của mặt phẳng khớp、độ lệch xoay và độ lệch bình phương trung bình của khớp.</p>
 
-<h2>Lưu ý</h2>
+<h2>Chú ý</h2>
 
 <p>Không có</p>
 
-<h2>Dự án ví dụ</h2>
+<h2>Project mẫu</h2>
 
 <p>参见“\Samples\3D\深度图\带局外点平面拟合工具.gvp”。</p>
