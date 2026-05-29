@@ -16,99 +16,99 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点斜式直线生成</h1>
+<h1>Sinh đường thẳng dạng điểm-hệ số góc</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>本工具用于计算由单个GcCoordPos类型的平台坐标决定的scLine型直线结果。</p>
+<p>Công cụ này dùng để tính kết quả đường thẳng kiểu scLine được xác định bởi một tọa độ bàn máy kiểu GcCoordPos đơn lẻ.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                               </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>属性窗口</td>
-<td> 无 </td>
-<td> 无                                     </td>
+<td>Cửa sổ thuộc tính</td>
+<td> Không </td>
+<td> Không                                     </td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无 </td>
-<td> 无                                     </td>
+<td>Cửa sổ ảnh</td>
+<td> Không </td>
+<td> Không                                     </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 平台坐标 </td>
-<td> 单个GcCoordPos类型的平台坐标 </td>
+<td> Chuỗi dữ liệu   </td>
+<td> Tọa độ bàn máy </td>
+<td> Một tọa độ bàn máy kiểu GcCoordPos đơn lẻ </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无 </td>
-<td> 无                                     </td>
+<td>Giao diện nâng cao</td>
+<td> Không </td>
+<td> Không                                     </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                       </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出直线     </td>
-<td> scLine型直线结果数据                             </td>
+<td> Cửa sổ giám sát </td>
+<td> Đường thẳng đầu ra     </td>
+<td> Dữ liệu kết quả đường thẳng kiểu scLine                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果                                                   </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间                                                   </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ                                                   </td>
 </tr>
 <tr>
-<td>图像窗口</td>
-<td> 无 </td>
-<td> 无                                                       </td>
+<td>Cửa sổ ảnh</td>
+<td> Không </td>
+<td> Không                                                       </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出直线     </td>
-<td> scLine型直线结果数据，供后序工具使用，同监视窗口 </td>
+<td> Chuỗi dữ liệu   </td>
+<td> Đường thẳng đầu ra     </td>
+<td> Dữ liệu kết quả đường thẳng kiểu scLine, cung cấp cho công cụ phía sau sử dụng, giống cửa sổ giám sát </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li><p>点斜式直线生成是由一点坐标加一个旋转量来构建直线。由于GcCoordPos型平台坐标是三个double型的X、Y、D坐标组成的结构体。所以点斜式直线生成工具所用点坐标为X、Y组成的二维点坐标，而直线所需的旋转量为平台坐标的D值。</p></li>
-<li><p>直线生成工具的应用场景主要是将平台坐标练成直线，从而为多点线对位计算工具的目标/对象直线向量输入。</p></li>
+<li><p>Sinh đường thẳng dạng điểm-hệ số góc là xây dựng đường thẳng bằng một tọa độ điểm cộng với một lượng xoay. Do tọa độ bàn máy kiểu GcCoordPos là struct được cấu thành từ ba tọa độ kiểu double gồm X、Y、D. Vì vậy tọa độ điểm mà công cụ sinh đường thẳng dạng điểm-hệ số góc sử dụng là tọa độ điểm 2D gồm X、Y, còn lượng xoay cần cho đường thẳng là giá trị D của tọa độ bàn máy.</p></li>
+<li><p>Kịch bản ứng dụng chính của công cụ sinh đường thẳng là chuyển tọa độ bàn máy thành đường thẳng, từ đó làm đầu vào vector đường thẳng mục tiêu/đối tượng cho công cụ tính toán căn chỉnh đa điểm-đường thẳng.</p></li>
 </ul>
 
 
-<h2>示例工程</h2>
+<h2>Project mẫu</h2>
 
-<p>参见“\Samples\标准标定+基准四点两线对位.gvp”</p>
+<p>Tham khảo “\Samples\标准标定+基准四点两线对位.gvp”</p>
