@@ -16,237 +16,237 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>大板对位工具</h1>
+<h1>Công cụ căn chỉnh bảng lớn</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>配合大板标定工具使用，实现较高精度的多穴位取料。</p>
+<p>Sử dụng phối hợp với công cụ hiệu chuẩn bảng lớn để thực hiện lấy liệu tại nhiều vị trí với độ chính xác cao.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>参见大板标定工具应用场景</p>
+<p>Tham khảo kịch bản ứng dụng của công cụ hiệu chuẩn bảng lớn</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Mô tả nguyên lý</h2>
 
-<p> 在完成大板标定后，可以根据标定结果计算出图像中任意一点在机械坐标系下的坐标值，由此，当目标和对象需要进行对位计算时，分别由两个相机采集目标和对象的图像，并计算待重合点的机械坐标值，从而计算出运动机构需要移动的偏移量。有关大板标定的原理请参考大板标定工具手册，有关对位计算原理请参考通用对位计算工具手册。</p>
+<p> Sau khi hoàn tất hiệu chuẩn bảng lớn, có thể dựa trên kết quả hiệu chuẩn để tính ra giá trị tọa độ của một điểm bất kỳ trong ảnh dưới hệ tọa độ cơ khí. Từ đó, khi mục tiêu và đối tượng cần thực hiện tính toán căn chỉnh, hai camera lần lượt chụp ảnh mục tiêu và đối tượng, đồng thời tính giá trị tọa độ cơ khí của các điểm cần trùng khớp, từ đó tính ra lượng offset mà cơ cấu chuyển động cần di chuyển. Về nguyên lý hiệu chuẩn bảng lớn, vui lòng tham khảo tài liệu hướng dẫn công cụ hiệu chuẩn bảng lớn; về nguyên lý tính toán căn chỉnh, vui lòng tham khảo tài liệu hướng dẫn công cụ tính toán căn chỉnh thông dụng.</p>
 
-<p>下面以双相机多穴位小视野双机构场景为例说明使用大板对位工具取料流程和原理。目前有3组转换关系：CCD1平移标定M1、CCD2独立标定M2、大板标定T，根据三个标定结果实现取料引导。</p>
+<p>Dưới đây lấy kịch bản hai camera, nhiều vị trí, trường nhìn nhỏ, hai cơ cấu làm ví dụ để mô tả quy trình và nguyên lý lấy liệu bằng công cụ căn chỉnh bảng lớn. Hiện tại có 3 nhóm quan hệ chuyển đổi: hiệu chuẩn tịnh tiến CCD1 M1, hiệu chuẩn độc lập CCD2 M2, hiệu chuẩn bảng lớn T, dựa trên ba kết quả hiệu chuẩn này để thực hiện dẫn hướng lấy liệu.</p>
 
 <p><img src="media/GcLargePlateAlignTool_3_1.png" alt="GcLargePlateAlignTool_3_1" /></p>
 
 <ol>
-<li><p>读取此时模组的坐标值（X1，Y1）。提醒：此X1 Y1表示CCD1视野中心处的位置</p></li>
-<li><p>利用M1，得到Mark的平台坐标（原点在CCD1视野中心）值（x1，y1）。</p></li>
+<li><p>Đọc giá trị tọa độ của module tại thời điểm này（X1，Y1）. Lưu ý: X1 Y1 này biểu thị vị trí tại tâm trường nhìn CCD1</p></li>
+<li><p>Sử dụng M1 để thu được giá trị tọa độ bàn máy của Mark（gốc tọa độ tại tâm trường nhìn CCD1）（x1，y1）.</p></li>
 <li><p>X ’= X1 + x1；Y ’= Y1 + y1</p></li>
-<li><p>利用T，将（X’，Y’）转换到机械手坐标系下，得到机械手坐标值（X’’，Y’’）。提醒：此时机械手移动到（X’’，Y’’）处，其末端旋转中心刚好能和物料对齐，而非吸笔能对齐。</p></li>
-<li><p>根据吸嘴的平台坐标值，得到吸嘴想要对齐物料所需要移动的偏移量（x, y,d），然后将其加到（X’’，Y’’）上，即可得到机械手最终的取料坐标。</p></li>
-<li><p>利用T，将（X’，Y’）转换到机械手坐标系下，得到机械手坐标值（X’’，Y’’）。提醒：此时机械手移动到（X’’，Y’’）处，其末端旋转中心刚好能和物料对齐，而非吸笔能对齐。</p></li>
-<li><p>根据吸嘴的平台坐标值，得到吸嘴想要对齐物料所需要移动的偏移量（x, y,d），然后将其加到（X’’，Y’’）上，即可得到机械手最终的取料坐标。</p>
+<li><p>Sử dụng T để chuyển đổi（X’，Y’）sang hệ tọa độ robot, thu được giá trị tọa độ robot（X’’，Y’’）. Lưu ý: lúc này khi robot di chuyển đến（X’’，Y’’）, tâm xoay đầu cuối của nó vừa đúng có thể căn thẳng với vật liệu, chứ không phải đầu hút có thể căn thẳng.</p></li>
+<li><p>Dựa trên giá trị tọa độ bàn máy của đầu hút, thu được lượng offset（x, y,d）mà đầu hút cần di chuyển để căn thẳng với vật liệu, sau đó cộng vào（X’’，Y’’）là có thể thu được tọa độ lấy liệu cuối cùng của robot.</p></li>
+<li><p>Sử dụng T để chuyển đổi（X’，Y’）sang hệ tọa độ robot, thu được giá trị tọa độ robot（X’’，Y’’）. Lưu ý: lúc này khi robot di chuyển đến（X’’，Y’’）, tâm xoay đầu cuối của nó vừa đúng có thể căn thẳng với vật liệu, chứ không phải đầu hút có thể căn thẳng.</p></li>
+<li><p>Dựa trên giá trị tọa độ bàn máy của đầu hút, thu được lượng offset（x, y,d）mà đầu hút cần di chuyển để căn thẳng với vật liệu, sau đó cộng vào（X’’，Y’’）là có thể thu được tọa độ lấy liệu cuối cùng của robot.</p>
 
-<p>我们再对最后一步做一个说明：</p>
+<p>Chúng ta giải thích thêm về bước cuối cùng:</p>
 
-<p>1）当CCD2完成独立标定后，可以执行一次吸嘴训练，即将机械手移动到CCD2的拍照位，利用标定结果得到吸嘴的平台坐标（x, y, d）</p>
+<p>1）Sau khi CCD2 hoàn tất hiệu chuẩn độc lập, có thể thực hiện một lần huấn luyện đầu hút, tức là di chuyển robot đến vị trí chụp ảnh của CCD2, sử dụng kết quả hiệu chuẩn để thu được tọa độ bàn máy của đầu hút（x, y, d）</p>
 
-<p>2）由前面的步骤可知，当机械手移动到（X’’，Y’’）处，其末端旋转中心刚好能和物料对齐，即此时物料的平台坐标为（ 0, 0, θ）</p>
+<p>2）Từ các bước phía trước có thể biết, khi robot di chuyển đến（X’’，Y’’）, tâm xoay đầu cuối của nó vừa đúng có thể căn thẳng với vật liệu, tức là lúc này tọa độ bàn máy của vật liệu là（ 0, 0, θ）</p>
 
-<p>3）使用对位的思路计算 (x, y, d) 和 (0, 0, θ) 之间的对位计算结果(∆x, ∆y, ∆θ), 此时机械手最终的取料坐标为 (X’’ + ∆x, Y’‘ + ∆y, ∆θ)</p></li>
+<p>3）Sử dụng tư duy căn chỉnh để tính kết quả căn chỉnh giữa (x, y, d) và (0, 0, θ)(∆x, ∆y, ∆θ), lúc này tọa độ lấy liệu cuối cùng của robot là (X’’ + ∆x, Y’‘ + ∆y, ∆θ)</p></li>
 </ol>
 
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，链接相关参数</h4></li>
+<li><h4>Thêm công cụ, liên kết các tham số liên quan</h4></li>
 </ul>
 
 
 <p><img src="media/GcLargePlateAlignTool_4_1.png" alt="GcLargePlateAlignTool_4_1" /></p>
 
-<p>对象相机标定结果一般链接能完成12步独立标定的标定结果，目标相机标定结果一般链接平移标定结果；对象点坐标向量，目标点坐标向量，对象直线向量，目标直线向量，与通用对位计算工具参数链类型一致；目标相机拍照位置链接在定位目标时，模组或者机械手的位置。</p>
+<p>Kết quả hiệu chuẩn camera đối tượng thường liên kết với kết quả hiệu chuẩn có thể hoàn thành hiệu chuẩn độc lập 12 bước; kết quả hiệu chuẩn camera mục tiêu thường liên kết với kết quả hiệu chuẩn tịnh tiến; vector tọa độ điểm đối tượng, vector tọa độ điểm mục tiêu, vector đường thẳng đối tượng, vector đường thẳng mục tiêu nhất quán với kiểu chuỗi tham số của công cụ tính toán căn chỉnh thông dụng; vị trí chụp ảnh của camera mục tiêu liên kết với vị trí của module hoặc robot khi định vị mục tiêu.</p>
 
 <ul>
-<li><h4>设置工具属性参数</h4></li>
+<li><h4>Thiết lập tham số thuộc tính công cụ</h4></li>
 </ul>
 
 
 <p><img src="media/GcLargePlateAlignTool_4_2.png" alt="GcLargePlateAlignTool_4_2" /></p>
 
-<p><strong><span id="jump5">标定模式</span></strong></p>
+<p><strong><span id="jump5">Chế độ hiệu chuẩn</span></strong></p>
 
-<p> 共包含2种模式：普通模式和靶标模式。普通模式需要机构取放过程中记录目标相机和辅助相机Mark点，然后链接到工具执行计算。靶标模式是在机构取放过程中内部记录坐标</p>
+<p> Bao gồm tổng cộng 2 chế độ: chế độ thường và chế độ bia chuẩn. Chế độ thường cần ghi lại các điểm Mark của camera mục tiêu và camera phụ trợ trong quá trình cơ cấu gắp đặt, sau đó liên kết vào công cụ để thực hiện tính toán. Chế độ bia chuẩn là ghi lại tọa độ nội bộ trong quá trình cơ cấu gắp đặt</p>
 
-<p><strong>是否大角度对位</strong></p>
+<p><strong>Có căn chỉnh góc lớn hay không</strong></p>
 
-<p>根据场景选择是否为大角度。</p>
+<p>Chọn có phải góc lớn hay không tùy theo kịch bản.</p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
-<h2>6. 参数说明</h2>
+<h2>6. Mô tả tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称         </th>
-<th> 参数说明                           </th>
+<th> Tên tham số         </th>
+<th> Mô tả tham số                           </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 当前穴位索引     </td>
-<td> 当前穴位索引                       </td>
+<td> Chỉ số vị trí hiện tại     </td>
+<td> Chỉ số vị trí hiện tại                       </td>
 </tr>
 <tr>
-<td> 大板标定结果     </td>
-<td> 目标和对象机械坐标标定结果         </td>
+<td> Kết quả hiệu chuẩn bảng lớn     </td>
+<td> Kết quả hiệu chuẩn tọa độ cơ khí của mục tiêu và đối tượng         </td>
 </tr>
 <tr>
-<td> 靶标标定结果     </td>
-<td> 目标相机靶标标定结果               </td>
+<td> Kết quả hiệu chuẩn bia chuẩn     </td>
+<td> Kết quả hiệu chuẩn bia chuẩn của camera mục tiêu               </td>
 </tr>
 <tr>
-<td> 对象相机标定结果 </td>
-<td> 链接负责采集对象图像的相机标定结果 </td>
+<td> Kết quả hiệu chuẩn camera đối tượng </td>
+<td> Liên kết kết quả hiệu chuẩn của camera phụ trách chụp ảnh đối tượng </td>
 </tr>
 <tr>
-<td> 目标相机标定结果 </td>
-<td> 链接负责采集目标图像的相机标定结果 </td>
+<td> Kết quả hiệu chuẩn camera mục tiêu </td>
+<td> Liên kết kết quả hiệu chuẩn của camera phụ trách chụp ảnh mục tiêu </td>
 </tr>
 <tr>
-<td> 对象点坐标向量   </td>
-<td> 链接对象的特征点数组               </td>
+<td> Vector tọa độ điểm đối tượng   </td>
+<td> Liên kết mảng điểm đặc trưng của đối tượng               </td>
 </tr>
 <tr>
-<td> 目标点坐标向量   </td>
-<td> 链接目标的特征点数组               </td>
+<td> Vector tọa độ điểm mục tiêu   </td>
+<td> Liên kết mảng điểm đặc trưng của mục tiêu               </td>
 </tr>
 <tr>
-<td> 对象直线向量     </td>
-<td> 链接对象的特征直线数组             </td>
+<td> Vector đường thẳng đối tượng     </td>
+<td> Liên kết mảng đường thẳng đặc trưng của đối tượng             </td>
 </tr>
 <tr>
-<td> 目标直线向量     </td>
-<td> 链接目标的特征点数组               </td>
+<td> Vector đường thẳng mục tiêu     </td>
+<td> Liên kết mảng điểm đặc trưng của mục tiêu               </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性栏）</h4>
+<h4>Tham số đầu vào（thanh thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称       </th>
-<th> 参数说明                             </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 标定模式       </td>
-<td> 普通模式和靶标模式，具体参见上一章节 </td>
+<td> Chế độ hiệu chuẩn       </td>
+<td> Chế độ thường và chế độ bia chuẩn, chi tiết tham khảo chương trước </td>
 </tr>
 <tr>
-<td> 是否大角度对位 </td>
-<td> 是否是大角度                         </td>
+<td> Có căn chỉnh góc lớn hay không </td>
+<td> Có phải góc lớn hay không                         </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（监视窗口）</h4>
+<h4>Tham số đầu ra（cửa sổ giám sát）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称      </th>
-<th> 参数说明                                                     </th>
+<th> Tên tham số      </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 对位计算结果X </td>
-<td> 机械手走位坐标X                                              </td>
+<td> Kết quả tính toán căn chỉnh X </td>
+<td> Tọa độ di chuyển robot X                                              </td>
 </tr>
 <tr>
-<td> 对位计算结果Y </td>
-<td> 机械手走位坐标Y                                              </td>
+<td> Kết quả tính toán căn chỉnh Y </td>
+<td> Tọa độ di chuyển robot Y                                              </td>
 </tr>
 <tr>
-<td> 对位计算结果D </td>
-<td> 机械手走位坐标D                                              </td>
+<td> Kết quả tính toán căn chỉnh D </td>
+<td> Tọa độ di chuyển robot D                                              </td>
 </tr>
 <tr>
-<td> 对象平台坐标  </td>
-<td> 根据输入的对象图像坐标和对象标定结果，计算对象的平台坐标     </td>
+<td> Tọa độ bàn máy của đối tượng  </td>
+<td> Dựa trên tọa độ ảnh đối tượng đầu vào và kết quả hiệu chuẩn đối tượng để tính tọa độ bàn máy của đối tượng     </td>
 </tr>
 <tr>
-<td> 目标平台坐标  </td>
-<td> 根据输入的目标图像坐标和目标标定结果，计算目标的平台坐标     </td>
+<td> Tọa độ bàn máy của mục tiêu  </td>
+<td> Dựa trên tọa độ ảnh mục tiêu đầu vào và kết quả hiệu chuẩn mục tiêu để tính tọa độ bàn máy của mục tiêu     </td>
 </tr>
 <tr>
-<td> 对象平台角度  </td>
-<td> 根据输入的对象图像坐标/图像直线和对象标定结果，计算对象的平台角度 </td>
+<td> Góc bàn máy của đối tượng  </td>
+<td> Dựa trên tọa độ ảnh/đường thẳng ảnh của đối tượng đầu vào và kết quả hiệu chuẩn đối tượng để tính góc bàn máy của đối tượng </td>
 </tr>
 <tr>
-<td> 目标平台角度  </td>
-<td> 根据输入的目标图像坐标/图像直线和目标标定结果，计算目标的平台角度 </td>
+<td> Góc bàn máy của mục tiêu  </td>
+<td> Dựa trên tọa độ ảnh/đường thẳng ảnh của mục tiêu đầu vào và kết quả hiệu chuẩn mục tiêu để tính góc bàn máy của mục tiêu </td>
 </tr>
 <tr>
-<td> 执行结果      </td>
-<td> 工具的执行结果                                               </td>
+<td> Kết quả thực thi      </td>
+<td> Kết quả thực thi của công cụ                                               </td>
 </tr>
 <tr>
-<td> 执行时间      </td>
-<td> 工具的执行时间                                               </td>
+<td> Thời gian thực thi      </td>
+<td> Thời gian thực thi của công cụ                                               </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称      </th>
-<th> 参数说明                                                     </th>
+<th> Tên tham số      </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 对位计算结果X </td>
-<td> 机械手走位坐标X                                              </td>
+<td> Kết quả tính toán căn chỉnh X </td>
+<td> Tọa độ di chuyển robot X                                              </td>
 </tr>
 <tr>
-<td> 对位计算结果Y </td>
-<td> 机械手走位坐标Y                                              </td>
+<td> Kết quả tính toán căn chỉnh Y </td>
+<td> Tọa độ di chuyển robot Y                                              </td>
 </tr>
 <tr>
-<td> 对位计算结果D </td>
-<td> 机械手走位坐标D                                              </td>
+<td> Kết quả tính toán căn chỉnh D </td>
+<td> Tọa độ di chuyển robot D                                              </td>
 </tr>
 <tr>
-<td> 对象平台坐标  </td>
-<td> 根据输入的对象图像坐标和对象标定结果，计算对象的平台坐标     </td>
+<td> Tọa độ bàn máy của đối tượng  </td>
+<td> Dựa trên tọa độ ảnh đối tượng đầu vào và kết quả hiệu chuẩn đối tượng để tính tọa độ bàn máy của đối tượng     </td>
 </tr>
 <tr>
-<td> 目标平台坐标  </td>
-<td> 根据输入的目标图像坐标和目标标定结果，计算目标的平台坐标     </td>
+<td> Tọa độ bàn máy của mục tiêu  </td>
+<td> Dựa trên tọa độ ảnh mục tiêu đầu vào và kết quả hiệu chuẩn mục tiêu để tính tọa độ bàn máy của mục tiêu     </td>
 </tr>
 <tr>
-<td> 对象平台角度  </td>
-<td> 根据输入的对象图像坐标/图像直线和对象标定结果，计算对象的平台角度 </td>
+<td> Góc bàn máy của đối tượng  </td>
+<td> Dựa trên tọa độ ảnh/đường thẳng ảnh của đối tượng đầu vào và kết quả hiệu chuẩn đối tượng để tính góc bàn máy của đối tượng </td>
 </tr>
 <tr>
-<td> 目标平台角度  </td>
-<td> 根据输入的目标图像坐标/图像直线和目标标定结果，计算目标的平台角度 </td>
+<td> Góc bàn máy của mục tiêu  </td>
+<td> Dựa trên tọa độ ảnh/đường thẳng ảnh của mục tiêu đầu vào và kết quả hiệu chuẩn mục tiêu để tính góc bàn máy của mục tiêu </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7. 示例工程</h2>
+<h2>7. Project mẫu</h2>
 
-<p>参见“\Samples\大板标定工具.gvp” 。</p>
+<p>Tham khảo “\Samples\大板标定工具.gvp” 。</p>
