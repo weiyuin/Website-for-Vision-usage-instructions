@@ -16,192 +16,192 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云模型对齐工具</h1>
+<h1>Công cụ căn chỉnh mô hình đám mây điểm</h1>
 
-<h2>1.功能概述</h2>
+<h2>1.Tổng quan chức năng</h2>
 
-<p>​          点云模型对齐工具<strong>基于CAD模型（stl格式）和点云数据中几何特征</strong>完成快速对齐，建立基准坐标系，以协助后续3D测量和检测任务。</p>
+<p>​          Công cụ căn chỉnh mô hình đám mây điểm hoàn thành căn chỉnh nhanh <strong>dựa trên mô hình CAD（định dạng stl）và đặc trưng hình học trong dữ liệu đám mây điểm</strong>, thiết lập hệ tọa độ chuẩn, nhằm hỗ trợ các tác vụ đo lường và kiểm tra 3D tiếp theo.</p>
 
-<h2>2.使用场景</h2>
+<h2>2.Tình huống sử dụng</h2>
 
-<p>​        典型的应用场景如：手机零部件尺寸规格检测、产品曲面轮廓度检测。在基准坐标系下对工件进行尺寸规格质量检测，完成3D测量和检测任务。</p>
+<p>​        Các tình huống ứng dụng điển hình như：kiểm tra thông số kích thước linh kiện điện thoại, kiểm tra độ biên dạng bề mặt cong sản phẩm. Thực hiện kiểm tra chất lượng thông số kích thước của phôi trong hệ tọa độ chuẩn, hoàn thành các tác vụ đo lường và kiểm tra 3D.</p>
 
 <p><img src="media/GvCloudModelAlignmentTool_2_1.png" alt="img" /></p>
 
-<p><imgnote>图2_1 基于基准坐标系，选取特定点位下的平面度测量</imgnote></p>
+<p><imgnote>Hình 2_1 Dựa trên hệ tọa độ chuẩn, chọn phép đo độ phẳng tại vị trí điểm cụ thể</imgnote></p>
 
 <p><img src="media/GvCloudModelAlignmentTool_2_2.png" alt="img" /></p>
 
-<p><imgnote>图2_2 模型对齐过程</imgnote></p>
+<p><imgnote>Hình 2_2 Quá trình căn chỉnh mô hình</imgnote></p>
 
-<h2>3.使用向导</h2>
+<h2>3.Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>添加工具、导入图像</h3>
+<li><h3>Thêm công cụ, nhập ảnh</h3>
 
 <p><img src="media/GvCloudModelAlignmentTool_3_1.png" alt="img" /></p>
 
-<p><imgnote>图3_1</imgnote></p></li>
-<li><h3>参数设置</h3></li>
+<p><imgnote>Hình 3_1</imgnote></p></li>
+<li><h3>Thiết lập tham số</h3></li>
 </ul>
 
 
-<h4>Step1：模型对齐模式选择</h4>
+<h4>Step1：Chọn chế độ căn chỉnh mô hình</h4>
 
 <p><img src="media/GvCloudModelAlignmentTool_3_2.png" alt="img" /></p>
 
-<p><imgnote>图3_2 预对齐参数</imgnote></p>
+<p><imgnote>Hình 3_2 Tham số căn chỉnh sơ bộ</imgnote></p>
 
 <p><img src="media/GvCloudModelAlignmentTool_3_3.png" alt="img" /></p>
 
-<p><imgnote>图3_3 最佳拟合对齐参数</imgnote></p>
+<p><imgnote>Hình 3_3 Tham số căn chỉnh best-fit</imgnote></p>
 
-<p>1、<strong>预对齐</strong>设置流程：载入模型→训练模型→执行匹配。</p>
+<p>1、Quy trình thiết lập <strong>căn chỉnh sơ bộ</strong>：tải mô hình→huấn luyện mô hình→thực thi matching.</p>
 
-<p>（1）点击“载入模型”：会弹出打开文件窗口，选择本地STL文件；</p>
+<p>（1）Nhấp “Tải mô hình”：sẽ bật cửa sổ mở file, chọn file STL cục bộ；</p>
 
-<p>（2）点击“训练模型”：进行训练；</p>
+<p>（2）Nhấp “Huấn luyện mô hình”：tiến hành huấn luyện；</p>
 
-<p>（3）根据设定的参数返回相应的匹配结果。</p>
+<p>（3）Trả về kết quả matching tương ứng theo các tham số đã thiết lập.</p>
 
-<p>2、<strong>最佳拟合对齐</strong>设置流程：载入模型→设置参数→执行匹配。</p>
+<p>2、Quy trình thiết lập <strong>căn chỉnh best-fit</strong>：tải mô hình→thiết lập tham số→thực thi matching.</p>
 
-<p>（1）点击“载入模型”：会弹出打开文件窗口，选择本地STL文件；</p>
+<p>（1）Nhấp “Tải mô hình”：sẽ bật cửa sổ mở file, chọn file STL cục bộ；</p>
 
-<p>（2）设置参数：设置工具参数、约束和初始矩阵；</p>
+<p>（2）Thiết lập tham số：thiết lập tham số công cụ, ràng buộc và ma trận ban đầu；</p>
 
-<p>（3）根据设定的参数返回相应的匹配结果。</p>
+<p>（3）Trả về kết quả matching tương ứng theo các tham số đã thiết lập.</p>
 
-<h4>Step2：导出结果</h4>
+<h4>Step2：Xuất kết quả</h4>
 
-<p>​  执行成功后可以导出对齐结果矩阵到本地，对齐结果如图3_4所示。</p>
+<p>​  Sau khi thực thi thành công, có thể xuất ma trận kết quả căn chỉnh ra cục bộ, kết quả căn chỉnh như Hình 3_4.</p>
 
 <p><img src="media/GvCloudModelAlignmentTool_3_4.png" alt="img" /></p>
 
-<p><imgnote>图3_4 设置测量子项</imgnote></p>
+<p><imgnote>Hình 3_4 Thiết lập hạng mục đo con</imgnote></p>
 
-<h2>4.常见问题</h2>
+<h2>4.Câu hỏi thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5.Mô tả tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数描述                                   </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入点云数据 </td>
-<td> 输入待模型对齐的点云图像                  </td>
+<td> Dữ liệu đám mây điểm đầu vào </td>
+<td> Nhập ảnh đám mây điểm cần căn chỉnh mô hình                  </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào（cửa sổ thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数描述                                   </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 模型文件路径 </td>
-<td> 加载模型文件路径                          </td>
+<td> Đường dẫn file mô hình </td>
+<td> Tải đường dẫn file mô hình                          </td>
 </tr>
 <tr>
-<td> 开启预对齐   </td>
-<td> 是否开启预对齐功能                      </td>
+<td> Bật căn chỉnh sơ bộ   </td>
+<td> Có bật chức năng căn chỉnh sơ bộ hay không                      </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
+<h4>Tham số đầu vào（giao diện nâng cao）</h4>
 
-<p>高级界面参数与属性窗口参数一致。</p>
+<p>Tham số giao diện nâng cao nhất quán với tham số cửa sổ thuộc tính.</p>
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数描述                       </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> RMS误差      </td>
-<td> 模型对齐执行后的匹配误差       </td>
+<td> Sai số RMS      </td>
+<td> Sai số matching sau khi thực thi căn chỉnh mô hình       </td>
 </tr>
 <tr>
-<td> 刚性变换矩阵 </td>
-<td> 模型对齐执行的旋转平移矩阵结果 </td>
+<td> Ma trận biến đổi cứng </td>
+<td> Kết quả ma trận xoay và tịnh tiến khi thực thi căn chỉnh mô hình </td>
 </tr>
 <tr>
-<td> 输出点云数据 </td>
-<td> 供其他工具输入使用的点云数据   </td>
+<td> Dữ liệu đám mây điểm đầu ra </td>
+<td> Dữ liệu đám mây điểm dùng làm đầu vào cho các công cụ khác   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra（cửa sổ đầu ra）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数描述                       </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> RMS误差      </td>
-<td> 模型对齐执行后的匹配误差       </td>
+<td> Sai số RMS      </td>
+<td> Sai số matching sau khi thực thi căn chỉnh mô hình       </td>
 </tr>
 <tr>
-<td> 刚性变换矩阵 </td>
-<td> 模型对齐执行的旋转平移矩阵结果 </td>
+<td> Ma trận biến đổi cứng </td>
+<td> Kết quả ma trận xoay và tịnh tiến khi thực thi căn chỉnh mô hình </td>
 </tr>
 <tr>
-<td> 输出点云数据 </td>
-<td> 模型对齐后输出的点云数据       </td>
+<td> Dữ liệu đám mây điểm đầu ra </td>
+<td> Dữ liệu đám mây điểm đầu ra sau khi căn chỉnh mô hình       </td>
 </tr>
 <tr>
-<td> 执行结果     </td>
-<td> 工具执行结果                   </td>
+<td> Kết quả thực thi     </td>
+<td> Kết quả thực thi công cụ                   </td>
 </tr>
 <tr>
-<td> 执行时间     </td>
-<td> 工具执行时间                   </td>
+<td> Thời gian thực thi     </td>
+<td> Thời gian thực thi công cụ                   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.示例工程</h2>
+<h2>6.Dự án ví dụ</h2>
 
-<p>参见“\Samples\3D\点云\点云模型对齐工具.gvp”。</p>
+<p>Tham khảo “\Samples\3D\点云\点云模型对齐工具.gvp”。</p>
 
-<h2>7.特殊说明</h2>
+<h2>7.Ghi chú đặc biệt</h2>
 
-<h3>对齐参数说明</h3>
+<h3>Mô tả tham số căn chỉnh</h3>
 
-<p>​ a、 <strong>形状复杂度</strong>：用于指定模型训练的精细程度，分为：最简单（默认值）、简单、一般、复杂、最复杂。一般情况下，<strong>最简单和简单</strong>适用于模型形状结构分明的场景，<strong>一般</strong>可适用于扁平狭长的模型，<strong>复杂和最复杂</strong>可针对旋转对称的模型；</p>
+<p>​ a、 <strong>Độ phức tạp hình dạng</strong>：dùng để chỉ định mức độ tinh chỉnh khi huấn luyện mô hình, được chia thành：đơn giản nhất（giá trị mặc định）, đơn giản, thông thường, phức tạp, phức tạp nhất. Trong trường hợp thông thường, <strong>đơn giản nhất và đơn giản</strong> phù hợp với các tình huống mô hình có cấu trúc hình dạng rõ ràng, <strong>thông thường</strong> có thể phù hợp với mô hình dẹt và thuôn dài, <strong>phức tạp và phức tạp nhất</strong> có thể áp dụng cho mô hình đối xứng quay；</p>
 
-<p>​ b、 <strong>搜索时间</strong>：目标匹配过程中，用于指定对齐大致计算可持续的时间，分为：超短（默认值）、短、普通、长、超长。一般情况下，<strong>超短和短</strong>适用于一般的结构分明的零部件，<strong>普通</strong>可适用于平坦特征的目标，<strong>长和超长</strong>可针对旋转对称的物体；</p>
+<p>​ b、 <strong>Thời gian tìm kiếm</strong>：trong quá trình matching mục tiêu, dùng để chỉ định thời gian tính toán căn chỉnh ước lượng có thể duy trì, được chia thành：cực ngắn（giá trị mặc định）, ngắn, bình thường, dài, cực dài. Trong trường hợp thông thường, <strong>cực ngắn và ngắn</strong> phù hợp với các linh kiện thông thường có cấu trúc rõ ràng, <strong>bình thường</strong> có thể phù hợp với mục tiêu có đặc trưng phẳng, <strong>dài và cực dài</strong> có thể áp dụng cho vật thể đối xứng quay；</p>
 
-<p>​ c、 <strong>点云法向量是否取反</strong>：指定是否修正目标点云法线的方向，若启用时，目标匹配过程中其法线方向会反向，默认不启用该参数；</p>
+<p>​ c、 <strong>Có đảo hướng vector pháp tuyến của đám mây điểm hay không</strong>：chỉ định có hiệu chỉnh hướng pháp tuyến của đám mây điểm mục tiêu hay không, nếu bật, trong quá trình matching mục tiêu, hướng pháp tuyến của nó sẽ bị đảo ngược, mặc định không bật tham số này；</p>
 
-<p>​ d、 <strong>是否执行最佳拟合对齐</strong>：目标快速匹配后，可设置是否执行一次最佳拟合对齐以<strong>提高匹配精度</strong>，默认启用该参数；</p>
+<p>​ d、 <strong>Có thực hiện căn chỉnh best-fit hay không</strong>：sau khi matching nhanh mục tiêu, có thể thiết lập có thực hiện một lần căn chỉnh best-fit hay không để <strong>nâng cao độ chính xác matching</strong>, mặc định bật tham số này；</p>
 
-<p>​ e、<strong>约束条件：</strong>约束条件是指对齐过程中各自由度的约束，若锁定x轴旋转，则对齐过程中不考虑x旋转变换。</p>
+<p>​ e、<strong>Điều kiện ràng buộc：</strong>điều kiện ràng buộc là các ràng buộc đối với từng bậc tự do trong quá trình căn chỉnh, nếu khóa xoay trục x, thì trong quá trình căn chỉnh sẽ không xét đến biến đổi xoay quanh trục x.</p>

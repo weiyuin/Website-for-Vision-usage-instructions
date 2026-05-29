@@ -16,218 +16,218 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云拼接工具</h1>
+<h1>Công cụ ghép đám mây điểm</h1>
 
-<h2>1.功能概述</h2>
+<h2>1.Tổng quan chức năng</h2>
 
-<p>​         点云拼接工具根据输入的刚性变换矩阵将多副点云图像进行拼接。</p>
+<p>​         Công cụ ghép đám mây điểm thực hiện ghép nhiều ảnh đám mây điểm dựa trên ma trận biến đổi cứng đầu vào.</p>
 
 <div align="center">
 <img src="media/3DStitchingTool_1_1.png" style="zoom:100%;"/>
-    <center>图1_1 点云拼接工具原理</center>
+    <center>Hình 1_1 Nguyên lý công cụ ghép đám mây điểm</center>
 </div>
 
 
-<h2>2.使用场景</h2>
+<h2>2.Tình huống sử dụng</h2>
 
-<p>​          该工具主要用于XY或Z方向拼接类项目；比如：</p>
+<p>​          Công cụ này chủ yếu dùng cho các dự án ghép theo hướng XY hoặc Z；ví dụ：</p>
 
-<p><strong>场景1：IPhone手机平面度检测项目</strong></p>
+<p><strong>Tình huống 1：Dự án kiểm tra độ phẳng điện thoại IPhone</strong></p>
 
 <div align="center">
 <img src="media/3DAlignment Tool_2_1.png" style="zoom:50%;"/>
-    <center>图2_1 IPhone手机平面度检测项目</center>
+    <center>Hình 2_1 Dự án kiểm tra độ phẳng điện thoại IPhone</center>
 </div>
 
 
-<p>​ 由于测量精度高，该产品需要进行拼接，同时客户提供的测量点坐标是以客户给定产品坐标系来定义的，所以需要我们先进行坐标系对齐，才可以精确地定位到测量点。</p>
+<p>​ Do yêu cầu độ chính xác đo lường cao, sản phẩm này cần thực hiện ghép, đồng thời tọa độ điểm đo do khách hàng cung cấp được định nghĩa theo hệ tọa độ sản phẩm do khách hàng chỉ định, vì vậy cần thực hiện căn chỉnh hệ tọa độ trước, mới có thể định vị chính xác đến điểm đo.</p>
 
-<p><strong>场景2：厚度测量项目</strong></p>
+<p><strong>Tình huống 2：Dự án đo độ dày</strong></p>
 
 <div align="center">
 <img src="media/3DStitchingTool_2_2.png" style="zoom:50%;"/>
-    <center>图2_2 厚度测量项目</center>
+    <center>Hình 2_2 Dự án đo độ dày</center>
 </div>
 
 
-<h2>3.使用向导</h2>
+<h2>3.Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>工具添加，图像导入、参数调节</h3>
+<li><h3>Thêm công cụ, nhập ảnh, điều chỉnh tham số</h3>
 
-<p><strong>Step1:</strong>添加点云文件（2-16个）、点云拼接工具，并双击打开工具参数链，链接点云文件，如图3-1所示；<br/>
-<strong>Step2:</strong>根据矩阵来源选择不同方式设置拼接矩阵，如在属性栏中设置拼接参数、加载转换矩阵文件（.txt文件），如图3-2所示；</p></li>
+<p><strong>Step1:</strong>Thêm file đám mây điểm（2-16 cái）, công cụ ghép đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như trong Hình 3-1；<br/>
+<strong>Step2:</strong>Chọn các cách khác nhau để thiết lập ma trận ghép theo nguồn ma trận, ví dụ thiết lập tham số ghép trong thanh thuộc tính, tải file ma trận chuyển đổi（file .txt）, như trong Hình 3-2；</p></li>
 </ul>
 
 
 <div align="center">
 <img src="media/3DStitchingTool_3_1.png" style="zoom:100%;"/>
-    <center>图3_1 点云拼接流程</center>
+    <center>Hình 3_1 Quy trình ghép đám mây điểm</center>
 </div>
 
 
 <div align="center">
 <img src="media/3DStitchingTool_3_2.gif" style="zoom:100%;"/>
-    <center>图3_2 点云拼接设置</center>
+    <center>Hình 3_2 Thiết lập ghép đám mây điểm</center>
 </div>
 
 
-<h2>4.常见问题</h2>
+<h2>4.Câu hỏi thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5.Mô tả tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述 </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入点云数据                                               </td>
-<td> 输入待拼接的点云图像                                    </td>
+<td> Dữ liệu đám mây điểm đầu vào                                               </td>
+<td> Nhập ảnh đám mây điểm cần ghép                                    </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào（cửa sổ thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述 </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 拼接所需图像个数                    </td>
-<td>需要拼接的图像的个数</td>
+<td> Số lượng ảnh cần ghép                    </td>
+<td>Số lượng ảnh cần ghép</td>
 </tr>
 <tr>
-<td> 矩阵来源 </td>
-<td>包括两种：属性外部导入和高级界面设置</td>
+<td> Nguồn ma trận </td>
+<td>Bao gồm hai loại：nhập bên ngoài từ thuộc tính và thiết lập trên giao diện nâng cao</td>
 </tr>
 <tr>
-<td> 标定结果文件路径 </td>
-<td>导入标定文件，标定文件的格式如第7部分所示</td>
+<td> Đường dẫn file kết quả hiệu chuẩn </td>
+<td>Nhập file hiệu chuẩn, định dạng file hiệu chuẩn như phần 7</td>
 </tr>
 <tr>
-<td> 输出坐标系       </td>
-<td> 包括两种：世界坐标系和传感器坐标系        </td>
+<td> Hệ tọa độ đầu ra       </td>
+<td> Bao gồm hai loại：hệ tọa độ thế giới và hệ tọa độ cảm biến        </td>
 </tr>
 <tr>
-<td> 开启并行运算 </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không, khi chọn Có, thuật toán sẽ bật phương thức tính toán song song OpenMp, có thể nâng cao tốc độ tính toán, nhưng có thể xảy ra tình trạng thời gian xử lý không ổn định, khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp. </td>
 </tr>
 <tr>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td> Tỷ lệ phần trăm số luồng </td>
+<td> Thiết lập tỷ lệ phần trăm số luồng của tính toán song song, phạm vi hợp lệ là (0, 0.75]，tương ứng biểu thị phạm vi tỷ lệ phần trăm (0%, 75%]. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
+<h4>Tham số đầu vào（giao diện nâng cao）</h4>
 
-<p>高级界面可以用于设置矩阵如下：</p>
+<p>Giao diện nâng cao có thể dùng để thiết lập ma trận như sau：</p>
 
 <table>
 <thead>
 <tr>
-<th> 名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 矩阵                                </td>
-<td> 在高级界面中输入变换矩阵 </td>
+<td> Ma trận                                </td>
+<td> Nhập ma trận biến đổi trong giao diện nâng cao </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云数据       </td>
-<td>输出拼接的点云图像</td>
+<td> Dữ liệu đám mây điểm đầu ra       </td>
+<td>Xuất ảnh đám mây điểm đã ghép</td>
 </tr>
 <tr>
-<td> 输出刚性变换矩阵 </td>
-<td>显示刚性变换矩阵</td>
+<td> Ma trận biến đổi cứng đầu ra </td>
+<td>Hiển thị ma trận biến đổi cứng</td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra（cửa sổ đầu ra）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云数据       </td>
-<td>输出拼接的点云图像</td>
+<td> Dữ liệu đám mây điểm đầu ra       </td>
+<td>Xuất ảnh đám mây điểm đã ghép</td>
 </tr>
 <tr>
-<td> 输出刚性变换矩阵 </td>
-<td>显示刚性变换矩阵</td>
+<td> Ma trận biến đổi cứng đầu ra </td>
+<td>Hiển thị ma trận biến đổi cứng</td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果 </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ </td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 工具执行时间 </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.示例工程</h2>
+<h2>6.Dự án ví dụ</h2>
 
-<p>参见“\Samples\3D\点云\点云拼接工具.gvp”。</p>
+<p>Tham khảo “\Samples\3D\点云\点云拼接工具.gvp”。</p>
 
-<h2>7.特殊说明</h2>
+<h2>7.Ghi chú đặc biệt</h2>
 
-<h3>7.1 工具使用</h3>
+<h3>7.1 Sử dụng công cụ</h3>
 
-<p>​    <strong>Step1：</strong>利用Polyworks等软件对塔台等靶标进行标定，获取刚性变换矩阵；
+<p>​    <strong>Step1：</strong>Sử dụng các phần mềm như Polyworks để hiệu chuẩn các target như tháp chuẩn, thu được ma trận biến đổi cứng；
 ​      <br/>
-​    <strong>Step2：</strong>导入刚性变换矩阵到VA中，VA中的矩阵格式如图7_1所示，第一行为拼接图像个数，依次为各个点云图像对应的刚性变换矩阵；</p>
+​    <strong>Step2：</strong>Nhập ma trận biến đổi cứng vào VA, định dạng ma trận trong VA như Hình 7_1, dòng đầu tiên là số lượng ảnh ghép, tiếp theo lần lượt là ma trận biến đổi cứng tương ứng với từng ảnh đám mây điểm；</p>
 
 <p><img src="media/3DStitchingTool_7_3.png" alt="" /></p>
 
-<p><imgnote>图7_1 </imgnote></p>
+<p><imgnote>Hình 7_1 </imgnote></p>
 
-<p>   <strong>Step3：</strong>导入刚性变换矩阵到VA中，使用塔台进图像拼接验证效果，拼接前后如图7_2所示，同时，执行成功后在监视中可以看到导入的刚性变换矩阵，如图7_3所示；</p>
+<p>   <strong>Step3：</strong>Nhập ma trận biến đổi cứng vào VA, sử dụng tháp chuẩn để thực hiện ghép ảnh nhằm kiểm chứng hiệu quả, trước và sau khi ghép như Hình 7_2, đồng thời, sau khi thực thi thành công có thể thấy ma trận biến đổi cứng đã nhập trong phần giám sát, như Hình 7_3；</p>
 
 <p><img src="media/3DStitchingTool_7_4.png" alt="" /></p>
 
-<p><imgnote>图7_2 </imgnote></p>
+<p><imgnote>Hình 7_2 </imgnote></p>
 
 <p><img src="media/3DStitchingTool_7_5.png" alt="" /></p>
 
-<p><imgnote>图7_3 </imgnote></p>
+<p><imgnote>Hình 7_3 </imgnote></p>
 
-<p>​    <strong>Step4：</strong>输入图像切换为物料产品，进行拼接计算即可；</p>
+<p>​    <strong>Step4：</strong>Chuyển ảnh đầu vào sang sản phẩm vật liệu, sau đó thực hiện tính toán ghép；</p>

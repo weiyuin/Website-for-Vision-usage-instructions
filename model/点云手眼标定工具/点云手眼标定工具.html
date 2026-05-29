@@ -16,58 +16,58 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云手眼标定工具</h1>
+<h1>Công cụ hiệu chuẩn hand-eye đám mây điểm</h1>
 
-<h2>1.功能概述</h2>
+<h2>1.Tổng quan chức năng</h2>
 
-<p>​         该工具主要<strong>提供获取相机与机器人坐标系间的位姿转换关系</strong>，以配合机械臂进行抓取或引导。</p>
+<p>​         Công cụ này chủ yếu <strong>cung cấp quan hệ chuyển đổi pose giữa hệ tọa độ camera và hệ tọa độ robot</strong>, nhằm phối hợp với cánh tay robot để thực hiện gắp hoặc dẫn hướng.</p>
 
-<h2>2.使用场景</h2>
+<h2>2.Tình huống sử dụng</h2>
 
-<p>​          该工具主要用于配合机械臂抓取或引导类项目比如：</p>
+<p>​          Công cụ này chủ yếu dùng cho các dự án phối hợp với cánh tay robot để gắp hoặc dẫn hướng, ví dụ：</p>
 
-<p>​        <strong>场景1：3C产品大范围的尺寸测量、缺陷检测、柔性装配等3D引导检测项目</strong></p>
+<p>​        <strong>Tình huống 1：Các dự án kiểm tra dẫn hướng 3D như đo kích thước phạm vi lớn, kiểm tra khuyết tật, lắp ráp linh hoạt cho sản phẩm 3C</strong></p>
 
 <div align="center">
 <img src="media/3DHandeyeCalib Tool_2_1.png" style="zoom:50%;"/>
-    <center>图2_1 柔性装配项目-图片来源于网络</center>
+    <center>Hình 2_1 Dự án lắp ráp linh hoạt - hình ảnh lấy từ Internet</center>
 </div>
 
 
-<p>​        <strong>场景2：仓储物流领域的无序抓取分拣、拆垛码垛 or 汽车制造领域的涂胶、焊接等自动化项目</strong></p>
+<p>​        <strong>Tình huống 2：Các dự án tự động hóa như gắp phân loại không theo thứ tự, tháo pallet/xếp pallet trong lĩnh vực kho vận, hoặc bôi keo, hàn trong lĩnh vực sản xuất ô tô</strong></p>
 
 <div align="center">
 <img src="media/3DHandeyeCalib Tool_2_2.png" style="zoom:50%;"/>
-    <center>图2_1 码垛机器人项目-图片来源于网络</center>
+    <center>Hình 2_1 Dự án robot xếp pallet - hình ảnh lấy từ Internet</center>
 </div>
 
 
-<h2>3.使用向导</h2>
+<h2>3.Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>方案步骤</h3>
+<li><h3>Các bước phương án</h3>
 
-<p><strong>Step1：</strong>准备3D标定块；</p>
+<p><strong>Step1：</strong>Chuẩn bị khối hiệu chuẩn 3D；</p>
 
-<p><strong>Step2：</strong>控制机器人<strong>以不同位姿</strong>运动到<strong>不同位置</strong>下，记录此时的<strong>执行器与机器人世界基准</strong>的坐标转换关系及获取<strong>标定板到相机</strong>的坐标转换关系；</p>
+<p><strong>Step2：</strong>Điều khiển robot di chuyển đến <strong>các vị trí khác nhau</strong> với <strong>các pose khác nhau</strong>, ghi lại quan hệ chuyển đổi tọa độ giữa <strong>end-effector và chuẩn thế giới của robot</strong> tại thời điểm đó, đồng thời lấy quan hệ chuyển đổi tọa độ từ <strong>bảng hiệu chuẩn đến camera</strong>；</p>
 
-<p>注：</p>
+<p>Chú ý：</p>
 
-<p>执行器与世界基准的坐标转换关系可由机器人<strong>直接提供</strong>；</p>
+<p>Quan hệ chuyển đổi tọa độ giữa end-effector và chuẩn thế giới có thể do robot <strong>cung cấp trực tiếp</strong>；</p>
 
-<p>标定板到相机的转换关系可由3D<strong>点云配准</strong><strong>对齐</strong>获取；</p>
+<p>Quan hệ chuyển đổi từ bảng hiệu chuẩn đến camera có thể được lấy thông qua <strong>đăng ký</strong><strong>căn chỉnh</strong> đám mây điểm 3D；</p>
 
-<p><strong>Step3：</strong>根据多组姿态（最少4组，一般为15组及以上，组数越多越好）下的刚体变换关系对，输入手眼标定算子即可获取<strong>相机与机器人执行器</strong>的转换关系。</p></li>
-<li><h3>工具添加，文件导入、参数调节</h3>
+<p><strong>Step3：</strong>Dựa trên các cặp quan hệ biến đổi cứng dưới nhiều nhóm pose（tối thiểu 4 nhóm, thông thường từ 15 nhóm trở lên, số nhóm càng nhiều càng tốt）, nhập vào toán tử hiệu chuẩn hand-eye để thu được quan hệ chuyển đổi giữa <strong>camera và end-effector của robot</strong>.</p></li>
+<li><h3>Thêm công cụ, nhập file, điều chỉnh tham số</h3>
 
-<p><strong>Step1:</strong> 添加点云手眼标定工具，选择标定类型、靶标类型和标定方式，并加载离线文件如图3-1所示；
-<strong>Step2: </strong>右击点云手眼标定工具点击“属性”打开工具高级界面，如图3-2所示；</p></li>
+<p><strong>Step1:</strong> Thêm công cụ hiệu chuẩn hand-eye đám mây điểm, chọn loại hiệu chuẩn, loại target và phương thức hiệu chuẩn, đồng thời tải file offline như trong Hình 3-1；
+<strong>Step2: </strong>Nhấp chuột phải vào công cụ hiệu chuẩn hand-eye đám mây điểm, nhấp “Thuộc tính” để mở giao diện nâng cao của công cụ, như trong Hình 3-2；</p></li>
 </ul>
 
 
 <div align="center">
 <img src="media/3DHandeyeCalib Tool_3_1.png" style="zoom:100%;"/>
-    <center>图3_1 添加点云手眼标定工具</center>
+    <center>Hình 3_1 Thêm công cụ hiệu chuẩn hand-eye đám mây điểm</center>
 </div>
 
 
@@ -75,168 +75,167 @@
 
 <div align="center">
 <img src="media/3DHandeyeCalib Tool_3_2.png" style="zoom:100%;"/>
-    <center>图3_2 点云手眼标定工具运行结果及保存</center>
+    <center>Hình 3_2 Kết quả chạy và lưu của công cụ hiệu chuẩn hand-eye đám mây điểm</center>
 </div>
 
 
-<h2>4.常见问题</h2>
+<h2>4.Câu hỏi thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5.Mô tả tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述                                                                                                       </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số                                                                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 机械臂末端相对于基座的位姿                                  </td>
-<td> 机械臂末端相对于基座的位姿                          </td>
+<td> Pose của đầu cuối cánh tay robot so với đế                                  </td>
+<td> Pose của đầu cuối cánh tay robot so với đế                          </td>
 </tr>
 <tr>
-<td> 标志点在相机坐标系下的坐标 </td>
-<td> 标志点在相机坐标系下的坐标 </td>
+<td> Tọa độ của điểm đánh dấu trong hệ tọa độ camera </td>
+<td> Tọa độ của điểm đánh dấu trong hệ tọa độ camera </td>
 </tr>
 <tr>
-<td> 标定板到相机的刚体变换 </td>
-<td> 标定板相对于相机的刚体变换 </td>
+<td> Biến đổi cứng từ bảng hiệu chuẩn đến camera </td>
+<td> Biến đổi cứng của bảng hiệu chuẩn so với camera </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào（cửa sổ thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                    </th>
-<th> 参数描述                                                                                                       </th>
+<th> Tên tham số                    </th>
+<th> Mô tả tham số                                                                                                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>  </td>
-<td> 选择是，则重新进行标定 </td>
+<td> Chọn Có thì tiến hành hiệu chuẩn lại </td>
 </tr>
 <tr>
-<td> 标定类型                              </td>
-<td> 支持手眼标定和TCP标定；手眼标定一般20组数据比较合适；TCP标定一般用7个点位，前4个标位置，后3个用于建立坐标系 </td>
+<td> Loại hiệu chuẩn                              </td>
+<td> Hỗ trợ hiệu chuẩn hand-eye và hiệu chuẩn TCP；hiệu chuẩn hand-eye thường dùng khoảng 20 nhóm dữ liệu là phù hợp；hiệu chuẩn TCP thường dùng 7 vị trí điểm, 4 vị trí đầu dùng cho vị trí target, 3 vị trí sau dùng để thiết lập hệ tọa độ </td>
 </tr>
 <tr>
-<td> 机械臂旋转顺序 </td>
-<td> 目前支持按Z-Y-X或X-Y-Z顺序旋转 </td>
+<td> Thứ tự xoay của cánh tay robot </td>
+<td> Hiện hỗ trợ xoay theo thứ tự Z-Y-X hoặc X-Y-Z </td>
 </tr>
 <tr>
-<td> 机械臂坐标物理单位 </td>
-<td> 可以选择m或者mm </td>
+<td> Đơn vị vật lý của tọa độ cánh tay robot </td>
+<td> Có thể chọn m hoặc mm </td>
 </tr>
 <tr>
-<td> 相机安装方式 </td>
-<td> 支持眼在手外和眼在手上 </td>
+<td> Phương thức lắp đặt camera </td>
+<td> Hỗ trợ eye-to-hand và eye-in-hand </td>
 </tr>
 <tr>
-<td> 靶标类型 </td>
-<td> 支持2D靶标和3D靶标 </td>
+<td> Loại target </td>
+<td> Hỗ trợ target 2D và target 3D </td>
 </tr>
 <tr>
-<td> 标定方式 </td>
-<td> 可以选择离线标定或在线标定                                   </td>
+<td> Phương thức hiệu chuẩn </td>
+<td> Có thể chọn hiệu chuẩn offline hoặc hiệu chuẩn online                                   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
+<h4>Tham số đầu vào（giao diện nâng cao）</h4>
 
-<p>高级界面参数与属性窗口参数一致。</p>
+<p>Tham số giao diện nâng cao nhất quán với tham số cửa sổ thuộc tính.</p>
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>刚性变换矩阵   </td>
-<td>刚性变换矩阵：Trans，平移矩阵<br />刚性变换矩阵：Matrix，旋转矩阵</td>
+<td>Ma trận biến đổi cứng   </td>
+<td>Ma trận biến đổi cứng：Trans，ma trận tịnh tiến<br />Ma trận biến đổi cứng：Matrix，ma trận xoay</td>
 </tr>
 <tr>
-<td> 工具中心点在机器人执行器坐标系下的坐标 </td>
-<td> 供其他工具输入使用的点坐标 </td>
+<td> Tọa độ của điểm tâm công cụ trong hệ tọa độ end-effector robot </td>
+<td> Tọa độ điểm dùng làm đầu vào cho các công cụ khác </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra（cửa sổ đầu ra）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>刚性变换矩阵   </td>
-<td>刚性变换矩阵：Trans，平移矩阵<br />刚性变换矩阵：Matrix，旋转矩阵</td>
+<td>Ma trận biến đổi cứng   </td>
+<td>Ma trận biến đổi cứng：Trans，ma trận tịnh tiến<br />Ma trận biến đổi cứng：Matrix，ma trận xoay</td>
 </tr>
 <tr>
-<td>3D靶标手眼标定误差 </td>
-<td>3D靶标手眼标定误差</td>
+<td>Sai số hiệu chuẩn hand-eye target 3D </td>
+<td>Sai số hiệu chuẩn hand-eye target 3D</td>
 </tr>
 <tr>
-<td>标定误差 </td>
-<td>标定误差</td>
+<td>Sai số hiệu chuẩn </td>
+<td>Sai số hiệu chuẩn</td>
 </tr>
 <tr>
-<td>重投影误差 </td>
-<td>XYZ三个方向的误差值</td>
+<td>Sai số tái chiếu </td>
+<td>Giá trị sai số theo ba hướng XYZ</td>
 </tr>
 <tr>
-<td>工具中心点在机器人执行器坐标系下的坐标 </td>
-<td>输出工具中心点在机器人执行器坐标系下的坐标</td>
+<td>Tọa độ của điểm tâm công cụ trong hệ tọa độ end-effector robot </td>
+<td>Xuất tọa độ của điểm tâm công cụ trong hệ tọa độ end-effector robot</td>
 </tr>
 <tr>
-<td>TCP标定误差集 </td>
-<td>TCP标定误差集</td>
+<td>Tập sai số hiệu chuẩn TCP </td>
+<td>Tập sai số hiệu chuẩn TCP</td>
 </tr>
 <tr>
-<td>执行时间 </td>
-<td>工具执行时间</td>
+<td>Thời gian thực thi </td>
+<td>Thời gian thực thi công cụ</td>
 </tr>
 <tr>
-<td>执行结果 </td>
-<td>工具执行结果</td>
+<td>Kết quả thực thi </td>
+<td>Kết quả thực thi công cụ</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.示例工程</h2>
+<h2>6.Dự án ví dụ</h2>
 
-<p>参见“\Samples\3D\点云\点云手眼标定工具.gvp”。</p>
+<p>Tham khảo “\Samples\3D\点云\点云手眼标定工具.gvp”。</p>
 
-<h2>7.特殊说明</h2>
+<h2>7.Ghi chú đặc biệt</h2>
 
-<h3>算法原理说明</h3>
+<h3>Mô tả nguyên lý thuật toán</h3>
 
-<p>主要是根据机械臂姿态和对应的靶标位姿或靶标中心点之间的点对关系建立AX=XB方程，求得所需的手眼标定矩阵；</p>
+<p>Chủ yếu dựa trên pose của cánh tay robot và quan hệ cặp điểm giữa pose target tương ứng hoặc điểm tâm target để thiết lập phương trình AX=XB, từ đó tính ra ma trận hiệu chuẩn hand-eye cần thiết；</p>
 
 <div align="center">
 <img src="media/3DHandeyeCalib Tool_7_1.png" style="zoom:100%;"/>
-    <center>图7_1 点云手眼标定原理</center>
+    <center>Hình 7_1 Nguyên lý hiệu chuẩn hand-eye đám mây điểm</center>
 </div>
-
 
 

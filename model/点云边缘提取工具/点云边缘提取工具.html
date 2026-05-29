@@ -16,27 +16,27 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云边缘提取工具</h1>
+<h1>Công cụ trích xuất biên đám mây điểm</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 点云边缘提取工具对输入的点云进行边缘提取，通过提取到点云边缘数据进行边缘检测或者线圆拟合等检测或测量项目。</p>
+<p>​ Công cụ trích xuất biên đám mây điểm thực hiện trích xuất biên trên đám mây điểm đầu vào, sử dụng dữ liệu biên đám mây điểm đã trích xuất để thực hiện các hạng mục kiểm tra hoặc đo lường như phát hiện biên hoặc fitting đường thẳng/đường tròn.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Tình huống ứng dụng</h2>
 
-<p>​ 在3D测量中，点云边缘提取应用较为广泛，如手机中框测量中需要先进行点云边缘提取，再进行直线的拟合等后续测量项。</p>
+<p>​ Trong đo lường 3D, trích xuất biên đám mây điểm được ứng dụng khá rộng rãi, ví dụ trong đo lường khung giữa điện thoại cần thực hiện trích xuất biên đám mây điểm trước, sau đó mới thực hiện các hạng mục đo lường tiếp theo như fitting đường thẳng.</p>
 
-<h2>3. 使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
-<p><strong>step1：</strong>添加点云文件、点云边缘提取工具，并双击打开工具参数链，链接点云文件，如图3-1所示；</p>
+<p><strong>step1：</strong>Thêm file đám mây điểm, công cụ trích xuất biên đám mây điểm, sau đó nhấp đúp để mở chuỗi tham số công cụ, liên kết file đám mây điểm, như trong Hình 3-1；</p>
 
-<p><strong>step2：</strong>右击点云边缘提取工具点击“属性”打开工具高级界面，如图3-2所示，ROI类型选择长方体，设置边缘提取参数，然后点击运行即可得到提取后的点云数据；</p>
+<p><strong>step2：</strong>Nhấp chuột phải vào công cụ trích xuất biên đám mây điểm, nhấp “Thuộc tính” để mở giao diện nâng cao của công cụ, như trong Hình 3-2, chọn loại ROI là hình hộp chữ nhật, thiết lập tham số trích xuất biên, sau đó nhấp chạy để nhận được dữ liệu đám mây điểm sau khi trích xuất；</p>
 
-<p><strong>step3：</strong>如图3-3所示，点云提取后，可以将输出点云数据或输出点集，输出到后续点云线圆拟合工具；</p>
+<p><strong>step3：</strong>Như trong Hình 3-3, sau khi trích xuất đám mây điểm, có thể xuất dữ liệu đám mây điểm đầu ra hoặc tập điểm đầu ra sang công cụ fitting đường thẳng/đường tròn đám mây điểm ở bước sau；</p>
 
 <div align="center">
 <img src="media/GcCloudEdgeDetectTool3_1.png" style="zoom:100%;"/>
-    <center>图3_1 点云边缘提取流程</center>
+    <center>Hình 3_1 Quy trình trích xuất biên đám mây điểm</center>
 </div>
 
 
@@ -44,7 +44,7 @@
 
 <div align="center">
 <img src="media/GcCloudEdgeDetectTool3_2.png" style="zoom:100%;"/>
-    <center>图3_2 点云边缘提取</center>
+    <center>Hình 3_2 Trích xuất biên đám mây điểm</center>
 </div>
 
 
@@ -52,164 +52,164 @@
 
 <div align="center">
 <img src="media/GcCloudEdgeDetectTool3_3.png" style="zoom:100%;"/>
-    <center>图3_3 点云边缘提取结果使用</center>
+    <center>Hình 3_3 Sử dụng kết quả trích xuất biên đám mây điểm</center>
 </div>
 
 
-<h2>4. 常见问题</h2>
+<h2>4. Câu hỏi thường gặp</h2>
 
-<h2>5. 参数说明</h2>
+<h2>5. Mô tả tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên tham số           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入点云数据 </td>
-<td> 输入待提取的点云图像                                                                               </td>
+<td> Dữ liệu đám mây điểm đầu vào </td>
+<td> Nhập ảnh đám mây điểm cần trích xuất                                                                               </td>
 </tr>
 <tr>
-<td> 输入投影平面 </td>
-<td> 开启投影模式选“是”时，该参数有效 </td>
+<td> Mặt phẳng chiếu đầu vào </td>
+<td> Khi bật chế độ chiếu chọn “Có”, tham số này có hiệu lực </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào（cửa sổ thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên tham số           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> ROI类型                 </td>
-<td> 分为两种：长方体和球体 </td>
+<td> Loại ROI                 </td>
+<td> Chia thành hai loại: hình hộp chữ nhật và hình cầu </td>
 </tr>
 <tr>
-<td> 开启投影模式 </td>
-<td> 是：开启投影模式；否：不开启投影模式 </td>
+<td> Bật chế độ chiếu </td>
+<td> Có: bật chế độ chiếu；Không: không bật chế độ chiếu </td>
 </tr>
 <tr>
-<td> 局外点距离阈值 </td>
-<td> 设置范围：[0.0001, 1]，默认值0.005 </td>
+<td> Ngưỡng khoảng cách điểm ngoại lai </td>
+<td> Phạm vi thiết lập：[0.0001, 1]，giá trị mặc định 0.005 </td>
 </tr>
 <tr>
-<td> 开启内部扩增建树模式 </td>
-<td> 开启后，将扩增用于建树的点 </td>
+<td> Bật chế độ tăng cường nội bộ để dựng cây </td>
+<td> Sau khi bật, sẽ tăng cường các điểm dùng để dựng cây </td>
 </tr>
 <tr>
-<td> 边缘阈值 </td>
-<td> 设置范围：[-10.0, 10.0]，默认为1 </td>
+<td> Ngưỡng biên </td>
+<td> Phạm vi thiết lập：[-10.0, 10.0]，mặc định là 1 </td>
 </tr>
 <tr>
-<td> 边缘膨胀程度 </td>
-<td> 设置范围：[1, 50]，默认为1，注：此参数需小于邻域搜索数 </td>
+<td> Mức độ giãn nở biên </td>
+<td> Phạm vi thiết lập：[1, 50]，mặc định là 1，chú ý：tham số này phải nhỏ hơn số lượng tìm kiếm lân cận </td>
 </tr>
 <tr>
-<td> 邻域搜索数 </td>
-<td> 设置范围：[1, 200]，默认为12 </td>
+<td> Số lượng tìm kiếm lân cận </td>
+<td> Phạm vi thiết lập：[1, 200]，mặc định là 12 </td>
 </tr>
 <tr>
-<td> 最大迭代次数 </td>
-<td> 设置范围：[1, 100]，默认为1 </td>
+<td> Số lần lặp tối đa </td>
+<td> Phạm vi thiết lập：[1, 100]，mặc định là 1 </td>
 </tr>
 <tr>
-<td> 输出投影后的边缘点 </td>
-<td> 开启投影模式选“是”时，该参数有效。是：输出源点云上的点；否：输出投影后的点 </td>
+<td> Xuất điểm biên sau khi chiếu </td>
+<td> Khi bật chế độ chiếu chọn “Có”, tham số này có hiệu lực. Có: xuất các điểm trên đám mây điểm nguồn；Không: xuất các điểm sau khi chiếu </td>
 </tr>
 <tr>
-<td> 剔除点云的重复点     </td>
-<td> 是：自动剔除点云的重复点，耗时会增长；否：不处理；对于普通点云图像建议不开启，对于重复点较多的点云图像建议开启 </td>
+<td> Loại bỏ các điểm trùng lặp của đám mây điểm     </td>
+<td> Có: tự động loại bỏ các điểm trùng lặp của đám mây điểm, thời gian xử lý sẽ tăng；Không: không xử lý；đối với ảnh đám mây điểm thông thường khuyến nghị không bật, đối với ảnh đám mây điểm có nhiều điểm trùng lặp khuyến nghị bật </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（高级界面）</h4>
+<h4>Tham số đầu vào（giao diện nâng cao）</h4>
 
-<p>高级界面参数与属性窗口参数一致，交互按钮如下：</p>
+<p>Tham số giao diện nâng cao nhất quán với tham số cửa sổ thuộc tính, các nút tương tác như sau：</p>
 
 <table>
 <thead>
 <tr>
-<th> 按钮名称           </th>
-<th> 参数描述                                                                                                                  </th>
+<th> Tên nút           </th>
+<th> Mô tả tham số                                                                                                                  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 开始绘制                                   </td>
-<td> 在高级界面图像中，相应位置点击并拖动鼠标即可绘制长方体ROI </td>
+<td> Bắt đầu vẽ                                   </td>
+<td> Trong ảnh của giao diện nâng cao, nhấp và kéo chuột tại vị trí tương ứng để vẽ ROI hình hộp chữ nhật </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云数据                                            </td>
-<td> 输出边缘提取的点云数据 </td>
+<td> Dữ liệu đám mây điểm đầu ra                                            </td>
+<td> Xuất dữ liệu đám mây điểm đã trích xuất biên </td>
 </tr>
 <tr>
-<td> 输出边缘点 </td>
-<td> 输出边缘提取的点集 </td>
+<td> Điểm biên đầu ra </td>
+<td> Xuất tập điểm đã trích xuất biên </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra（cửa sổ đầu ra）</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                               </th>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云数据                                            </td>
-<td> 输出边缘提取的点云数据 </td>
+<td> Dữ liệu đám mây điểm đầu ra                                            </td>
+<td> Xuất dữ liệu đám mây điểm đã trích xuất biên </td>
 </tr>
 <tr>
-<td> 输出边缘点 </td>
-<td> 输出边缘提取的点集 </td>
+<td> Điểm biên đầu ra </td>
+<td> Xuất tập điểm đã trích xuất biên </td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 工具执行时间 </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ </td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果 </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 示例工程</h2>
+<h2>6. Dự án ví dụ</h2>
 
-<p>​ 参见“\Samples\3D\点云\点云边缘提取工具.gvp”。</p>
+<p>​ Tham khảo “\Samples\3D\点云\点云边缘提取工具.gvp”.</p>
 
-<h2>7. 特殊说明</h2>
+<h2>7. Ghi chú đặc biệt</h2>
