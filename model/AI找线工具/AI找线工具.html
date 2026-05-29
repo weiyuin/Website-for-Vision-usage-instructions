@@ -16,336 +16,336 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>AI找线工具</h1>
+<h1>Công cụ tìm đường thẳng AI</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>AI找线工具主要针对不同颜色物料抓边参数调整费时，解决在有刀纹，磨损，翘起等因素干扰，光学成像无有效策略提高成像质量下，用现有的高级找线工具，需加大量防呆才可能兼容所有的物料的痛点问题，因此采用深度学习检测算法，以实现稳定的找线效果。</p>
+<p>Công cụ tìm đường thẳng AI chủ yếu nhắm đến vấn đề mất nhiều thời gian điều chỉnh tham số bắt biên cho vật liệu có màu sắc khác nhau, đồng thời giải quyết điểm đau là trong các trường hợp bị nhiễu bởi vết dao, mài mòn, cong vênh, khi hệ thống quang học không có phương án hiệu quả để cải thiện chất lượng ảnh, nếu dùng công cụ tìm đường thẳng nâng cao hiện có thì cần bổ sung rất nhiều cơ chế chống lỗi mới có thể tương thích với tất cả vật liệu. Vì vậy, công cụ sử dụng thuật toán phát hiện bằng học sâu để đạt được hiệu quả tìm đường thẳng ổn định.</p>
 
 <p><img src="media/1-1.png" alt="img" /></p>
 
-<p><imgnote>图1 AI找线结果</imgnote></p>
+<p><imgnote>Hình 1 Kết quả tìm đường thẳng AI</imgnote></p>
 
-<h2>2. 原理说明</h2>
+<h2>2. Mô tả nguyên lý</h2>
 
-<p>AI找线工具整体流程，主要分为训练和执行两部分。训练部分确定AI找线模型；执行部分会根据训练出来的模型对目标图像进行推理，得到找线结果。</p>
+<p>Quy trình tổng thể của công cụ tìm đường thẳng AI chủ yếu gồm hai phần: huấn luyện và thực thi. Phần huấn luyện xác định model tìm đường thẳng AI; phần thực thi sẽ dựa trên model đã huấn luyện để suy luận trên ảnh mục tiêu và thu được kết quả tìm đường thẳng.</p>
 
 <p><img src="media/2-1.png" alt="img" /></p>
 
-<p><imgnote>图a AI找线整体流程</imgnote></p>
+<p><imgnote>Hình a Quy trình tổng thể tìm đường thẳng AI</imgnote></p>
 
-<h2>3. 应用场景</h2>
+<h2>3. Kịch bản ứng dụng</h2>
 
-<p>AI找线工具在有刀纹，磨损，翘起等因素干扰，光学成像无有效策略提高成像质量的场景中，实现稳定快速使用简单的找线效果。</p>
+<p>Công cụ tìm đường thẳng AI được dùng trong các kịch bản có nhiễu do vết dao, mài mòn, cong vênh và hệ thống quang học không có phương án hiệu quả để cải thiện chất lượng ảnh, giúp đạt được hiệu quả tìm đường thẳng ổn định, nhanh và dễ sử dụng.</p>
 
-<h2>4. 使用方法（向导）</h2>
+<h2>4. Phương pháp sử dụng (hướng dẫn)</h2>
 
-<p>工具执行流程：添加工具→关联输入→图像配置输入（包括AI模型）→导入ROI→设定属性→执行找线→结果显示和供其他工具使用。</p>
+<p>Quy trình thực thi công cụ: thêm công cụ→liên kết đầu vào→cấu hình đầu vào ảnh (bao gồm model AI)→nhập ROI→thiết lập thuộc tính→thực thi tìm đường thẳng→hiển thị kết quả và cung cấp cho các công cụ khác sử dụng.</p>
 
-<h3>添加工具</h3>
+<h3>Thêm công cụ</h3>
 
-<p>方式1，可以右击流程图-》“新建”-》“AI工具”-》“AI找线工具”</p>
+<p>Cách 1, có thể nhấp chuột phải vào sơ đồ quy trình-》“Mới”-》“Công cụ AI”-》“Công cụ tìm đường thẳng AI”</p>
 
 <p><img src="media/4-1.PNG" alt="img" /></p>
 
-<p><imgnote>图4 右击添加工具</imgnote></p>
+<p><imgnote>Hình 4 Thêm công cụ bằng nhấp chuột phải</imgnote></p>
 
-<p>方式2，“主面板”-》“工具箱”-》“AI工具”-》“AI找线工具”</p>
+<p>Cách 2, “Bảng điều khiển chính”-》“Hộp công cụ”-》“Công cụ AI”-》“Công cụ tìm đường thẳng AI”</p>
 
 <p><img src="media/4-2.PNG" alt="img" /></p>
 
-<p><imgnote>图5 工具箱添加工具</imgnote></p>
+<p><imgnote>Hình 5 Thêm công cụ từ hộp công cụ</imgnote></p>
 
-<h3>配置输入</h3>
+<h3>Cấu hình đầu vào</h3>
 
-<p>双击工具在弹出窗口中配置输入图像，配置模型路径，导入ROI区域</p>
+<p>Nhấp đúp vào công cụ, trong cửa sổ bật lên cấu hình ảnh đầu vào, cấu hình đường dẫn model, nhập vùng ROI</p>
 
 <p><img src="media/4-3.PNG" alt="img" /></p>
 
-<p><imgnote>图6 配置输入</imgnote></p>
+<p><imgnote>Hình 6 Cấu hình đầu vào</imgnote></p>
 
-<h3>设定属性</h3>
+<h3>Thiết lập thuộc tính</h3>
 
-<p>“主页面”-》“属性”窗口</p>
+<p>“Trang chính”-》cửa sổ “Thuộc tính”</p>
 
 <p><img src="media/4-4.PNG" alt="" /></p>
 
-<p><imgnote>图7 属性栏设定属性示意图</imgnote></p>
+<p><imgnote>Hình 7 Minh họa thiết lập thuộc tính trong thanh thuộc tính</imgnote></p>
 
-<h3>执行搜索</h3>
+<h3>Thực thi tìm kiếm</h3>
 
-<p>Edit视图拖动搜索区域，工具执行</p>
+<p>Kéo vùng tìm kiếm trong giao diện Edit, công cụ thực thi</p>
 
 <p><img src="media/4-7.png" alt="img" /></p>
 
-<p><imgnote>图10 搜索区域示意图</imgnote></p>
+<p><imgnote>Hình 10 Minh họa vùng tìm kiếm</imgnote></p>
 
-<h3>工具结果输出给其他工具</h3>
+<h3>Xuất kết quả công cụ cho các công cụ khác</h3>
 
 <p><img src="media/4-8.png" alt="img" /></p>
 
-<p><imgnote>图11 执行搜索示意图</imgnote></p>
+<p><imgnote>Hình 11 Minh họa thực thi tìm kiếm</imgnote></p>
 
-<h3>视图显示结果</h3>
+<h3>Hiển thị kết quả trên giao diện</h3>
 
-<p>​ 拖动“AI找线工具_002”到View界面（需要提前添加），勾选需要选择的内容，一般选择“输入图像”和“直线”即可快速显示。</p>
+<p>​ Kéo “AI找线工具_002” vào giao diện View (cần thêm trước), tích chọn nội dung cần chọn, thông thường chỉ cần chọn “Ảnh đầu vào” và “Đường thẳng” để hiển thị nhanh.</p>
 
 <p><img src="media/4-9.png" alt="img" /></p>
 
-<p><imgnote>图12 执行搜索示意图</imgnote></p>
+<p><imgnote>Hình 12 Minh họa thực thi tìm kiếm</imgnote></p>
 
-<h2>5. 工具链接参数</h2>
+<h2>5. Tham số liên kết công cụ</h2>
 
 <p><img src="media/5-1.png" alt="img" /></p>
 
-<p><imgnote>图13 工具输入属性参数</imgnote></p>
+<p><imgnote>Hình 13 Tham số thuộc tính đầu vào của công cụ</imgnote></p>
 
 <p><img src="media/5-2.png" alt="img" /></p>
 
-<p><imgnote>图14 工具链接输入/输出参数</imgnote></p>
+<p><imgnote>Hình 14 Tham số đầu vào/đầu ra liên kết của công cụ</imgnote></p>
 
 <p><img src="media/5-3.png" alt="img" /></p>
 
-<p><imgnote>图15 工具输出窗口参数</imgnote></p>
+<p><imgnote>Hình 15 Tham số cửa sổ đầu ra của công cụ</imgnote></p>
 
-<h3>属性输入参数</h3>
+<h3>Tham số đầu vào thuộc tính</h3>
 
 <table>
 <thead>
 <tr>
 <th> No   </th>
-<th> 参数名称         </th>
-<th> 参数类型             </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
-<th> 设置方式               </th>
-<th> 常用值       </th>
+<th> Tên tham số         </th>
+<th> Kiểu tham số             </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
+<th> Cách thiết lập               </th>
+<th> Giá trị thường dùng       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> 1    </td>
-<td> 图像类型         </td>
+<td> Loại ảnh         </td>
 <td> GeOperationImageType </td>
-<td style="text-align:left;"> 输入图像类型，灰度图像和RGB图像。                            </td>
-<td> 下拉选择               </td>
+<td style="text-align:left;"> Loại ảnh đầu vào, ảnh xám và ảnh RGB.                            </td>
+<td> Chọn từ danh sách thả xuống               </td>
 <td> eitInputGray </td>
 </tr>
 <tr>
 <td> 2    </td>
-<td> AI模型           </td>
+<td> Model AI           </td>
 <td> string               </td>
-<td style="text-align:left;"> 训练的AI找线模型。                                           </td>
-<td> 文件选择填入           </td>
+<td style="text-align:left;"> Model tìm đường thẳng AI đã huấn luyện.                                           </td>
+<td> Chọn tệp để nhập           </td>
 <td> NA           </td>
 </tr>
 <tr>
 <td> 3    </td>
-<td> 导入ROI          </td>
+<td> Nhập ROI          </td>
 <td> string               </td>
-<td style="text-align:left;"> 可导入训练的ROI                                              </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Có thể nhập ROI đã huấn luyện                                              </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> NA           </td>
 </tr>
 <tr>
 <td> 4    </td>
-<td> 找线数量         </td>
+<td> Số lượng đường thẳng cần tìm         </td>
 <td> int                  </td>
-<td style="text-align:left;"> 模型训练时的找线数量，模型最大支持找4条线                    </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Số lượng đường thẳng cần tìm khi huấn luyện model, model hỗ trợ tối đa tìm 4 đường thẳng                    </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 4            </td>
 </tr>
 <tr>
 <td> 5    </td>
-<td> 是否启用角度约束 </td>
+<td> Có bật ràng buộc góc hay không </td>
 <td> bool                 </td>
-<td style="text-align:left;"> 开启角度约束时，会根据设置的期望角度和最大角度容差对输出直线的角度进行约束。 </td>
-<td> 下拉选择、表达式、脚本 </td>
-<td> 否           </td>
+<td style="text-align:left;"> Khi bật ràng buộc góc, công cụ sẽ ràng buộc góc của đường thẳng đầu ra theo góc kỳ vọng và dung sai góc tối đa đã thiết lập. </td>
+<td> Chọn từ danh sách thả xuống, biểu thức, script </td>
+<td> Không           </td>
 </tr>
 <tr>
 <td> 6    </td>
-<td> 期望角度         </td>
+<td> Góc kỳ vọng         </td>
 <td> std::vector<double>  </td>
-<td style="text-align:left;"> 用户理想的直线角度，范围为[0,180]，顺时针为正，vector的尺寸不能为空或超过4 </td>
-<td> 数值填入、脚本         </td>
+<td style="text-align:left;"> Góc đường thẳng lý tưởng của người dùng, phạm vi là [0,180], chiều kim đồng hồ là dương, kích thước vector không được rỗng hoặc vượt quá 4 </td>
+<td> Nhập giá trị, script         </td>
 <td> 0            </td>
 </tr>
 <tr>
 <td> 7    </td>
-<td> 最大角度容差     </td>
+<td> Dung sai góc tối đa     </td>
 <td> std::vector<double>  </td>
-<td style="text-align:left;"> 相较期望角度，用户允许的最大角度偏差范围，范围为[0°,90°],vector的尺寸不能为空或超过4 </td>
-<td> 下拉选择               </td>
+<td style="text-align:left;"> Phạm vi sai lệch góc tối đa mà người dùng cho phép so với góc kỳ vọng, phạm vi là [0°,90°],kích thước vector không được rỗng hoặc vượt quá 4 </td>
+<td> Chọn từ danh sách thả xuống               </td>
 <td> 10           </td>
 </tr>
 <tr>
 <td> 8    </td>
-<td> 是否开启超时     </td>
+<td> Có bật timeout hay không     </td>
 <td> bool                 </td>
-<td style="text-align:left;"> 是否开启了超时                                               </td>
-<td> 下拉选择               </td>
-<td> 否           </td>
+<td style="text-align:left;"> Có bật timeout hay không                                               </td>
+<td> Chọn từ danh sách thả xuống               </td>
+<td> Không           </td>
 </tr>
 <tr>
 <td> 9    </td>
-<td> 超时时间         </td>
+<td> Thời gian timeout         </td>
 <td> int                  </td>
-<td style="text-align:left;"> 超时时间(单位ms)，范围[0,100000]                             </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Thời gian timeout(đơn vị ms), phạm vi [0,100000]                             </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 300          </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>链接输入参数</h3>
+<h3>Tham số đầu vào liên kết</h3>
 
 <table>
 <thead>
 <tr>
-<th> 输入参数     </th>
-<th> 输入类型                </th>
-<th style="text-align:left;"> 参数说明                                               </th>
-<th> 输入工具种类 </th>
-<th> 单位 </th>
+<th> Tham số đầu vào     </th>
+<th> Kiểu đầu vào                </th>
+<th style="text-align:left;"> Mô tả tham số                                               </th>
+<th> Loại công cụ đầu vào </th>
+<th> Đơn vị </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像     </td>
+<td> Ảnh đầu vào     </td>
 <td> scImage8                </td>
-<td style="text-align:left;"> 用来实时识别的输入图像，灰度图像。                     </td>
-<td> 图像源       </td>
+<td style="text-align:left;"> Ảnh đầu vào dùng để nhận dạng thời gian thực, ảnh xám.                     </td>
+<td> Nguồn ảnh       </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 输入图像RGB  </td>
+<td> Ảnh đầu vào RGB  </td>
 <td> scImage24               </td>
-<td style="text-align:left;"> 用来实时识别的输入图像，彩色图像。                     </td>
-<td> 图像源       </td>
+<td style="text-align:left;"> Ảnh đầu vào dùng để nhận dạng thời gian thực, ảnh màu.                     </td>
+<td> Nguồn ảnh       </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 二维线性变换 </td>
+<td> Biến đổi tuyến tính 2D </td>
 <td> scPlanarLinearTransform </td>
-<td style="text-align:left;"> 输入的定位二维线性变换结果，以根据其变换相应的搜索区域 </td>
-<td> 定位类工具   </td>
+<td style="text-align:left;"> Kết quả biến đổi tuyến tính 2D định vị đầu vào, dùng để biến đổi vùng tìm kiếm tương ứng theo kết quả đó </td>
+<td> Công cụ định vị   </td>
 <td> NA   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>链接输出参数</h3>
+<h3>Tham số đầu ra liên kết</h3>
 
 <table>
 <thead>
 <tr>
-<th> 输出参数 </th>
-<th> 输出类型              </th>
-<th style="text-align:left;"> 参数说明       </th>
-<th> 单位 </th>
+<th> Tham số đầu ra </th>
+<th> Kiểu đầu ra              </th>
+<th style="text-align:left;"> Mô tả tham số       </th>
+<th> Đơn vị </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 直线     </td>
+<td> Đường thẳng     </td>
 <td> vector<scLine>        </td>
-<td style="text-align:left;"> 直线结果。     </td>
+<td style="text-align:left;"> Kết quả đường thẳng.     </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 线段     </td>
+<td> Đoạn thẳng     </td>
 <td> vector<scLineSegment> </td>
-<td style="text-align:left;"> 找线线段结果。 </td>
+<td style="text-align:left;"> Kết quả đoạn thẳng tìm được. </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 角度     </td>
+<td> Góc     </td>
 <td> vector<double>        </td>
-<td style="text-align:left;"> 直线的角度     </td>
+<td style="text-align:left;"> Góc của đường thẳng     </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 类别编号 </td>
+<td> Mã loại </td>
 <td> vector<int>           </td>
-<td style="text-align:left;"> 类别编号。     </td>
+<td style="text-align:left;"> Mã loại.     </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 拟合误差 </td>
+<td> Sai số fitting </td>
 <td> vector<double>        </td>
-<td style="text-align:left;"> 拟合误差。     </td>
+<td style="text-align:left;"> Sai số fitting.     </td>
 <td> NA   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>输出窗口参数（供查看运行结果）</h3>
+<h3>Tham số cửa sổ đầu ra (dùng để xem kết quả chạy)</h3>
 
 <table>
 <thead>
 <tr>
-<th> 输出参数     </th>
-<th> 输出类型 </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
-<th> 单位 </th>
+<th> Tham số đầu ra     </th>
+<th> Kiểu đầu ra </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
+<th> Đơn vị </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像        </td>
+<td> Ảnh đầu vào        </td>
 <td> scImage8 </td>
-<td style="text-align:left;"> 输入图像宽度、高度、像素大小。                                                                                   </td>
+<td style="text-align:left;"> Chiều rộng, chiều cao, kích thước pixel của ảnh đầu vào.                                                                                   </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 输入图像RGB </td>
+<td> Ảnh đầu vào RGB </td>
 <td> scImage24 </td>
-<td style="text-align:left;"> 输入彩色图像宽度、高度、像素大小。 </td>
+<td style="text-align:left;"> Chiều rộng, chiều cao, kích thước pixel của ảnh màu đầu vào. </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 直线        </td>
+<td> Đường thẳng        </td>
 <td> vector<scLine> </td>
-<td style="text-align:left;"> 直线结果，大小为找到的直线的个数。 </td>
+<td style="text-align:left;"> Kết quả đường thẳng, kích thước là số lượng đường thẳng tìm được. </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 线段 </td>
+<td> Đoạn thẳng </td>
 <td> vector<scLineSegment> </td>
-<td style="text-align:left;"> 找线线段结果，大小为找到的直线的个数。 </td>
+<td style="text-align:left;"> Kết quả đoạn thẳng tìm được, kích thước là số lượng đường thẳng tìm được. </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 角度 </td>
+<td> Góc </td>
 <td> vector<double>        </td>
-<td style="text-align:left;"> 直线的角度值，大小为找到的直线的个数 </td>
+<td style="text-align:left;"> Giá trị góc của đường thẳng, kích thước là số lượng đường thẳng tìm được </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 类别编号    </td>
+<td> Mã loại    </td>
 <td> vector<int> </td>
-<td style="text-align:left;"> 类别编号，大小为找到的直线的个数。            </td>
+<td style="text-align:left;"> Mã loại, kích thước là số lượng đường thẳng tìm được.            </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 拟合误差    </td>
+<td> Sai số fitting    </td>
 <td> vector<double> </td>
-<td style="text-align:left;"> 拟合误差，大小为找到的直线的个数。                        </td>
+<td style="text-align:left;"> Sai số fitting, kích thước là số lượng đường thẳng tìm được.                        </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 执行结果         </td>
+<td> Kết quả thực thi         </td>
 <td> bool </td>
-<td style="text-align:left;"> 工具执行结果。                                                                                                   </td>
+<td style="text-align:left;"> Kết quả thực thi công cụ.                                                                                                   </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 执行时间         </td>
+<td> Thời gian thực thi         </td>
 <td> double </td>
-<td style="text-align:left;"> 工具执行时间。                                                                                                   </td>
+<td style="text-align:left;"> Thời gian thực thi công cụ.                                                                                                   </td>
 <td> ms </td>
 </tr>
 </tbody>
@@ -354,11 +354,11 @@
 
 <h2></h2>
 
-<h2>6. 脚本控制</h2>
+<h2>6. Điều khiển bằng script</h2>
 
 <p>```python</p>
 
-<h1>获取参数</h1>
+<h1>Lấy tham số</h1>
 
 <p>A = GvTool.GetToolData(&ldquo;AI找线工具<em>002.二维线性变换&rdquo;)
 D = GvTool.GetToolData(&ldquo;AI找线工具</em>002.查找区域&rdquo;)
@@ -377,7 +377,7 @@ R = GvTool.GetToolData(&ldquo;AI找线工具</em>002.执行时间&rdquo;)
 S = GvTool.GetToolData(&ldquo;AI找线工具_002.角度&rdquo;)
 print(A,D,G,H,I,J,K,L,M,N,O,P,Q,R,S)</p>
 
-<h1>设置参数</h1>
+<h1>Thiết lập tham số</h1>
 
 <p>GvTool.SetToolData(&ldquo;AI找线工具<em>002.找线数量&rdquo;,4)
 GvTool.SetToolData(&ldquo;AI找线工具</em>002.是否启用角度约束&rdquo;,false)
@@ -385,6 +385,6 @@ GvTool.SetToolData(&ldquo;AI找线工具<em>002.是否开启超时&rdquo;,false)
 GvTool.SetToolData(&ldquo;AI找线工具</em>002.超时时间&rdquo;, 1000)
 ```</p>
 
-<h2>8. 示例工程</h2>
+<h2>8. Project mẫu</h2>
 
-<p>参见“\Samples\AI找线工具.gvp”。</p>
+<p>Tham khảo “\Samples\AI找线工具.gvp”。</p>

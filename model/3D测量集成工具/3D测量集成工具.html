@@ -16,130 +16,130 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>3D测量集成工具</h1>
+<h1>Công cụ tích hợp đo lường 3D</h1>
 
-<h2>1.功能概述</h2>
+<h2>1.Tổng quan chức năng</h2>
 
-<p>3D测量集成工具对单图像段内的高度检测、参数设置、结果显示等流程进行固化集成，内部集成了点云定位、预处理、带局外点平面拟合、高度测量、点云位置测量等工具功能，以达到简化检测工程、提高调试效率，增加工程扩展性的目的。</p>
+<p>Công cụ tích hợp đo lường 3D cố định và tích hợp các quy trình như kiểm tra chiều cao, thiết lập tham số, hiển thị kết quả trong một phân đoạn ảnh đơn, bên trong tích hợp các chức năng công cụ như định vị đám mây điểm, tiền xử lý, fitting mặt phẳng có điểm ngoại lai, đo chiều cao, đo vị trí đám mây điểm, nhằm đơn giản hóa dự án kiểm tra, nâng cao hiệu suất debug và tăng khả năng mở rộng của dự án.</p>
 
-<h2>2.使用场景</h2>
+<h2>2.Tình huống sử dụng</h2>
 
-<p>典型的应用场景如：结构件落差测量，获取感兴趣区域内三维空间点到指定基平面的高度距离，完成高度信息统计。一般先指定基平面，以及感兴趣区域内三维空间点的位置坐标；然后通过查看高度直方图，即描述高度数据分布情况的统计信息，包括：高度直方图、最小值、最大值、均值、中值、标准差、低尾部和高尾部等信息。调整相应的参数使得测量结果满足重复性、相关性等现场对齐要求。</p>
+<p>Các tình huống ứng dụng điển hình như：đo độ chênh cao của kết cấu, lấy khoảng cách chiều cao từ các điểm không gian ba chiều trong vùng quan tâm đến mặt phẳng chuẩn chỉ định, hoàn thành thống kê thông tin chiều cao. Thông thường cần chỉ định mặt phẳng chuẩn trước, cũng như tọa độ vị trí của các điểm không gian ba chiều trong vùng quan tâm；sau đó thông qua việc xem histogram chiều cao, tức thông tin thống kê mô tả phân bố dữ liệu chiều cao, bao gồm：histogram chiều cao, giá trị nhỏ nhất, giá trị lớn nhất, giá trị trung bình, trung vị, độ lệch chuẩn, phần đuôi thấp và phần đuôi cao, v.v. Điều chỉnh các tham số tương ứng để kết quả đo đáp ứng các yêu cầu căn chỉnh tại hiện trường như độ lặp lại, độ tương quan.</p>
 
 <p><img src="media/EasyMeasurement_2_1.png" alt="img" /></p>
 
-<p><imgnote>图2_1 高度测量示意图</imgnote></p>
+<p><imgnote>Hình 2_1 Sơ đồ đo chiều cao</imgnote></p>
 
 <p><img src="media/EasyMeasurement_2_2.png" alt="img" /></p>
 
-<p><imgnote>图2_2 结构件3D示意图</imgnote></p>
+<p><imgnote>Hình 2_2 Sơ đồ 3D của kết cấu</imgnote></p>
 
-<h2>3.使用向导</h2>
+<h2>3.Hướng dẫn sử dụng</h2>
 
-<h3>添加工具、导入图像</h3>
+<h3>Thêm công cụ, nhập ảnh</h3>
 
 <p><img src="media/EasyMeasurement_3_1.png" alt="img" /></p>
 
-<h3>检测参数设置</h3>
+<h3>Thiết lập tham số kiểm tra</h3>
 
-<h4>Step1：设置产品定位参数</h4>
+<h4>Step1：Thiết lập tham số định vị sản phẩm</h4>
 
 <p><img src="media/EasyMeasurement_3_2.gif" alt="img" /></p>
 
-<p><imgnote>图3_2 注册模板</imgnote></p>
+<p><imgnote>Hình 3_2 Đăng ký template</imgnote></p>
 
-<p>工具执行流程：配置输入→设定参数→训练图像→执行搜索。</p>
+<p>Quy trình thực thi công cụ：cấu hình đầu vào→thiết lập tham số→huấn luyện ảnh→thực thi tìm kiếm.</p>
 
-<p>（1）点击“获取训练图像”：更新训练图像，点击后会先进行弹框提示；</p>
+<p>（1）Nhấp “Lấy ảnh huấn luyện”：cập nhật ảnh huấn luyện, sau khi nhấp sẽ hiển thị hộp thoại nhắc trước；</p>
 
-<p>（2）点击“执行模式训练”：进行训练；</p>
+<p>（2）Nhấp “Thực thi huấn luyện chế độ”：tiến hành huấn luyện；</p>
 
-<p>（3）根据设定的搜索参数和判定结果参数返回相应的搜索结果。</p>
+<p>（3）Trả về kết quả tìm kiếm tương ứng theo tham số tìm kiếm và tham số kết quả phán định đã thiết lập.</p>
 
-<h4>Step2：设置测量项</h4>
+<h4>Step2：Thiết lập hạng mục đo</h4>
 
-<p>​  测量项的定位模板为Step1中注册的模板或从外部定位工具获取的模板；测量子项的添加过程如图3_3所示；图3_4演示了子项参数设置操作。</p>
+<p>​  Template định vị của hạng mục đo là template đã đăng ký trong Step1 hoặc template lấy từ công cụ định vị bên ngoài；quá trình thêm hạng mục đo con như trong Hình 3_3；Hình 3_4 minh họa thao tác thiết lập tham số hạng mục con.</p>
 
 <p><img src="media/EasyMeasurement_3_3.gif" alt="img" /></p>
 
-<p><imgnote>图3_3 测量子项添加</imgnote></p>
+<p><imgnote>Hình 3_3 Thêm hạng mục đo con</imgnote></p>
 
 <p><img src="media/EasyMeasurement_3_4.gif" alt="img" /></p>
 
-<p><imgnote>图3_4 设置测量子项</imgnote></p>
+<p><imgnote>Hình 3_4 Thiết lập hạng mục đo con</imgnote></p>
 
-<p><font color='color' size=2>注：使用者在设置预处理时，建议根据具体的图像情况选择合适的预处理工具，预处理参数设置过程中会实时执行并得到结果图像。</font></p>
+<p><font color='color' size=2>Chú ý：khi người dùng thiết lập tiền xử lý, khuyến nghị chọn công cụ tiền xử lý phù hợp theo tình trạng ảnh cụ thể, trong quá trình thiết lập tham số tiền xử lý sẽ thực thi theo thời gian thực và nhận được ảnh kết quả.</font></p>
 
-<h4>Step3：输出设置</h4>
+<h4>Step3：Thiết lập đầu ra</h4>
 
-<p>​ 输出设置具通过获取当前测量项的所有子项的最大高度、最小高度和平均高度，添加至对应的列表中，然后通过ID获取相应的测量结果、通过修改测量类型（可以选择高度或段差），系数补偿、固定补偿和阈值上下限，执行得到结果。具体设定见图3_5所示。</p>
+<p>​ Thiết lập đầu ra thực hiện bằng cách lấy toàn bộ chiều cao lớn nhất, chiều cao nhỏ nhất và chiều cao trung bình của các hạng mục con thuộc hạng mục đo hiện tại, thêm vào danh sách tương ứng, sau đó lấy kết quả đo tương ứng thông qua ID, thông qua việc sửa đổi loại đo（có thể chọn chiều cao hoặc độ chênh bậc）, bù hệ số, bù cố định và giới hạn trên/dưới của ngưỡng, thực thi để thu được kết quả. Thiết lập cụ thể như Hình 3_5.</p>
 
 <p><img src="media/EasyMeasurement_3_5.gif" alt="img" /></p>
 
-<p><imgnote>图3_5 输出设置</imgnote></p>
+<p><imgnote>Hình 3_5 Thiết lập đầu ra</imgnote></p>
 
-<h2>4.常见问题</h2>
+<h2>4.Câu hỏi thường gặp</h2>
 
-<h2>5.参数说明</h2>
+<h2>5.Mô tả tham số</h2>
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                   </th>
-<th> 参数描述                                                                                             </th>
+<th> Tên tham số                                   </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 二维线性变换数组                 </td>
-<td> 产品定位执行后的刚性变换矩阵；                                               </td>
+<td> Mảng biến đổi tuyến tính hai chiều                 </td>
+<td> Ma trận biến đổi cứng sau khi thực thi định vị sản phẩm；                                               </td>
 </tr>
 <tr>
-<td> 二维线性变换执行结果                 </td>
-<td> 产品定位执行的结果OK/NG；                                                 </td>
+<td> Kết quả thực thi biến đổi tuyến tính hai chiều                 </td>
+<td> Kết quả OK/NG khi thực thi định vị sản phẩm；                                                 </td>
 </tr>
 <tr>
-<td> 测量结果数据                                 </td>
-<td> 输出设置中各个结果值所包含的参数，包括系数补偿、固定补偿、阈值上下限等参数，引用时需要注意类型转换 </td>
+<td> Dữ liệu kết quả đo                                 </td>
+<td> Các tham số có trong từng giá trị kết quả ở thiết lập đầu ra, bao gồm bù hệ số, bù cố định, giới hạn trên/dưới của ngưỡng và các tham số khác, khi tham chiếu cần chú ý chuyển đổi kiểu dữ liệu </td>
 </tr>
 <tr>
-<td> 执行结果                                   </td>
-<td> 工具执行结果；                                                                                       </td>
+<td> Kết quả thực thi                                   </td>
+<td> Kết quả thực thi công cụ；                                                                                       </td>
 </tr>
 <tr>
-<td> 执行时间                                   </td>
-<td> 工具执行时间；                                                                                       </td>
+<td> Thời gian thực thi                                   </td>
+<td> Thời gian thực thi công cụ；                                                                                       </td>
 </tr>
 <tr>
-<td> 输入深度图像                                                 </td>
-<td> 显示检测的深度图像，显示为伪彩色图像； </td>
+<td> Ảnh độ sâu đầu vào                                                 </td>
+<td> Hiển thị ảnh độ sâu đã kiểm tra, hiển thị dưới dạng ảnh giả màu； </td>
 </tr>
 <tr>
-<td> 输出深度图像                               </td>
-<td> 显示工具执行检测后的深度图像；                                                      </td>
+<td> Ảnh độ sâu đầu ra                               </td>
+<td> Hiển thị ảnh độ sâu sau khi công cụ thực thi kiểm tra；                                                      </td>
 </tr>
 <tr>
-<td> 输出轮廓数组                                                 </td>
-<td> 输出截面生成功能执行后的输出轮廓数组； </td>
+<td> Mảng biên dạng đầu ra                                                 </td>
+<td> Xuất mảng biên dạng đầu ra sau khi thực thi chức năng tạo mặt cắt； </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.示例工程</h2>
+<h2>6.Dự án ví dụ</h2>
 
-<p>参见“\Samples\3D\深度图\3D测量集成工具.gvp”。</p>
+<p>Tham khảo “\Samples\3D\深度图\3D测量集成工具.gvp”。</p>
 
-<h2>7.特殊说明</h2>
+<h2>7.Ghi chú đặc biệt</h2>
 
-<h3>产品定位说明</h3>
+<h3>Mô tả định vị sản phẩm</h3>
 
-<p>​ a、 颗粒度：图像中最小检测特征的度量，是对要检测的最小图像特征尺寸的一种描述。颗粒度越大，采样间隔越大，训练时提取的最小特征尺寸越大。随着颗粒度增加，能获取特征的目标尺寸增大，有效特征数量不断减少；</p>
+<p>​ a、 Granularity：thước đo đặc trưng kiểm tra nhỏ nhất trong ảnh, là mô tả kích thước đặc trưng ảnh nhỏ nhất cần kiểm tra. Granularity càng lớn, khoảng lấy mẫu càng lớn, kích thước đặc trưng nhỏ nhất được trích xuất khi huấn luyện càng lớn. Khi granularity tăng, kích thước mục tiêu có thể lấy được đặc trưng tăng lên, số lượng đặc trưng hợp lệ liên tục giảm；</p>
 
-<p>​ b、 精细颗粒度：模式训练过程中用于检测精细特征所设置的较小颗粒度。精细颗粒度可以有效地保留小尺寸目标的边缘特征或大尺寸目标中的局部细节特征，可提高实时搜索的定位精度，但可能导致定位耗时增多；</p>
+<p>​ b、 Fine granularity：granularity nhỏ hơn được thiết lập để phát hiện đặc trưng tinh trong quá trình huấn luyện chế độ. Fine granularity có thể giữ lại hiệu quả đặc trưng biên của mục tiêu kích thước nhỏ hoặc đặc trưng chi tiết cục bộ trong mục tiêu kích thước lớn, có thể nâng cao độ chính xác định vị của tìm kiếm thời gian thực, nhưng có thể làm tăng thời gian định vị；</p>
 
-<p>​ c、 噪声阈值：模式训练过程中，有效边缘点梯度幅值的最小值。梯度幅值低于噪声阈值的边缘点将视为噪声点被滤除”；</p>
+<p>​ c、 Ngưỡng nhiễu：trong quá trình huấn luyện chế độ, là giá trị nhỏ nhất của biên độ gradient điểm biên hợp lệ. Điểm biên có biên độ gradient thấp hơn ngưỡng nhiễu sẽ được xem là điểm nhiễu và bị lọc bỏ”；</p>
 
-<p>​ d、 边缘强度：模式训练过程中，有效边缘特征链（由多个有效边缘点组成）的梯度幅值的最小值。梯度幅值和低于边缘强度阈值的短链和弱边缘长链将被滤除；</p>
+<p>​ d、 Cường độ biên：trong quá trình huấn luyện chế độ, là giá trị nhỏ nhất của biên độ gradient chuỗi đặc trưng biên hợp lệ（được tạo bởi nhiều điểm biên hợp lệ）. Chuỗi ngắn và chuỗi biên dài yếu có tổng biên độ gradient thấp hơn ngưỡng cường độ biên sẽ bị lọc bỏ；</p>
