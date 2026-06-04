@@ -16,263 +16,263 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云位置和尺寸测量工具</h1>
+<h1>Công cụ đo vị trí và kích thước đám mây điểm</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>在3D测量中，往往需要对深度图像中两个检测区域内深度数据的特征点进行定位，并对这两个特征点之间的尺寸信息进行测量，图1所示为两个检测区域内均值特征点之间的高度距离信息。</p>
+<p>Trong đo lường 3D, thường cần định vị các điểm đặc trưng của dữ liệu độ sâu trong hai vùng kiểm tra của ảnh độ sâu, đồng thời đo thông tin kích thước giữa hai điểm đặc trưng này. Hình 1 thể hiện thông tin khoảng cách chiều cao giữa các điểm đặc trưng trung bình trong hai vùng kiểm tra.</p>
 
 <p> <img src="media/wps3.jpg" alt="img" /></p>
 
-<p><imgnote>图1 点云位置和尺寸测量工具示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa công cụ đo vị trí và kích thước đám mây điểm</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称       </th>
-<th> 参数描述                                                                                                         </th>
+<th>Phân loại </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                                                                                                         </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口       </td>
-<td> 位置1 特征点模式                                       </td>
-<td> 包括检测和引用两种，可以实时检测或者引用其他工具的特征点作为输入。 </td>
+<td> Cửa sổ thuộc tính       </td>
+<td> Chế độ điểm đặc trưng vị trí 1                                       </td>
+<td> Bao gồm hai loại: kiểm tra và tham chiếu, có thể kiểm tra theo thời gian thực hoặc tham chiếu điểm đặc trưng của công cụ khác làm đầu vào. </td>
 </tr>
 <tr>
 <td>  </td>
-<td> 位置1 ROI生成方式 </td>
-<td> 包括：定位、固定ROI、参考点三种模式，参考点模式会根据数据链接中的参考点和参考直线建立产品坐标系。 </td>
+<td> Phương thức tạo ROI vị trí 1 </td>
+<td> Bao gồm ba chế độ: định vị, ROI cố định, điểm tham chiếu; chế độ điểm tham chiếu sẽ thiết lập hệ tọa độ sản phẩm dựa trên điểm tham chiếu và đường thẳng tham chiếu trong liên kết dữ liệu. </td>
 </tr>
 <tr>
 <td>  </td>
-<td> X固定偏移量 </td>
-<td> 在参考点模式下，在建立的产品坐标系中ROI参考位置坐标X，单位：mm。 </td>
+<td> Lượng offset cố định X </td>
+<td> Trong chế độ điểm tham chiếu, tọa độ X của vị trí tham chiếu ROI trong hệ tọa độ sản phẩm đã thiết lập, đơn vị: mm. </td>
 </tr>
 <tr>
 <td>  </td>
-<td> Y固定偏移量 </td>
-<td> 在参考点模式下，在建立的产品坐标系中ROI参考位置坐标Y，单位：mm。 </td>
+<td> Lượng offset cố định Y </td>
+<td> Trong chế độ điểm tham chiếu, tọa độ Y của vị trí tham chiếu ROI trong hệ tọa độ sản phẩm đã thiết lập, đơn vị: mm. </td>
 </tr>
 <tr>
 <td>  </td>
-<td> 位置1 ROI类型 </td>
-<td> 第1个检测区域，分为3种：整幅图像、矩形、仿射矩形。 </td>
+<td> Loại ROI vị trí 1 </td>
+<td> Vùng kiểm tra thứ 1, chia thành 3 loại: toàn bộ ảnh, hình chữ nhật, hình chữ nhật affine. </td>
 </tr>
 <tr>
 <td></td>
-<td> 位置1 特征类型 </td>
-<td> 根据深度数据特征类型获取特征点1三维坐标信息。<img src="media/wps5.jpg" alt="img" />                                                     </td>
+<td> Loại đặc trưng vị trí 1 </td>
+<td> Lấy thông tin tọa độ 3D của điểm đặc trưng 1 theo loại đặc trưng của dữ liệu độ sâu.<img src="media/wps5.jpg" alt="img" />                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 位置1区间上、下限 </td>
-<td> 测量区域的深度数据按照Z分量从小到大排序，然后再获取位于start% ~ end%的深度数据的均值，中值等特征点。取值范围为下限[0,100)，上限(0,100]，且下限小于上限。 </td>
+<td> Giới hạn trên, dưới của khoảng vị trí 1 </td>
+<td> Dữ liệu độ sâu trong vùng đo được sắp xếp theo thành phần Z từ nhỏ đến lớn, sau đó lấy giá trị trung bình, trung vị và các điểm đặc trưng khác của dữ liệu độ sâu nằm trong khoảng start% ~ end%. Phạm vi giá trị là giới hạn dưới [0,100), giới hạn trên (0,100], và giới hạn dưới nhỏ hơn giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 位置2 特征点模式 </td>
-<td> 包括检测和引用两种，可以实时检测或者引用其他工具的特征点作为输入。 </td>
+<td> Chế độ điểm đặc trưng vị trí 2 </td>
+<td> Bao gồm hai loại: kiểm tra và tham chiếu, có thể kiểm tra theo thời gian thực hoặc tham chiếu điểm đặc trưng của công cụ khác làm đầu vào. </td>
 </tr>
 <tr>
 <td></td>
-<td> 位置2 ROI生成方式 </td>
-<td> 包括：定位、固定ROI、参考点三种模式，参考点模式会根据数据链接中的参考点和参考直线建立产品坐标系。 </td>
+<td> Phương thức tạo ROI vị trí 2 </td>
+<td> Bao gồm ba chế độ: định vị, ROI cố định, điểm tham chiếu; chế độ điểm tham chiếu sẽ thiết lập hệ tọa độ sản phẩm dựa trên điểm tham chiếu và đường thẳng tham chiếu trong liên kết dữ liệu. </td>
 </tr>
 <tr>
 <td></td>
-<td> X固定偏移量 </td>
-<td> 在参考点模式下，在建立的产品坐标系中ROI参考位置坐标X，单位：mm。 </td>
+<td> Lượng offset cố định X </td>
+<td> Trong chế độ điểm tham chiếu, tọa độ X của vị trí tham chiếu ROI trong hệ tọa độ sản phẩm đã thiết lập, đơn vị: mm. </td>
 </tr>
 <tr>
 <td></td>
-<td> Y固定偏移量 </td>
-<td> 在参考点模式下，在建立的产品坐标系中ROI参考位置坐标Y，单位：mm。 </td>
+<td> Lượng offset cố định Y </td>
+<td> Trong chế độ điểm tham chiếu, tọa độ Y của vị trí tham chiếu ROI trong hệ tọa độ sản phẩm đã thiết lập, đơn vị: mm. </td>
 </tr>
 <tr>
 <td></td>
-<td> 位置2 ROI类型 </td>
-<td> 第2个检测区域，分为3种：整幅图像、矩形、仿射矩形。                                                               </td>
+<td> Loại ROI vị trí 2 </td>
+<td> Vùng kiểm tra thứ 2, chia thành 3 loại: toàn bộ ảnh, hình chữ nhật, hình chữ nhật affine.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 位置2 特征类型 </td>
-<td> 根据深度数据特征类型获取特征点2三维坐标信息。                                                                    </td>
+<td> Loại đặc trưng vị trí 2 </td>
+<td> Lấy thông tin tọa độ 3D của điểm đặc trưng 2 theo loại đặc trưng của dữ liệu độ sâu.                                                                    </td>
 </tr>
 <tr>
 <td></td>
-<td> 尺寸 特征类型  </td>
-<td> 深度数据的尺寸类型，以便计算两个特征点的距离或中点，分为6种：宽度、长度、高度、欧氏距离、平面距离、中点。<img src="media/wps6.jpg" alt="img" />                                                     </td>
+<td> Loại đặc trưng kích thước  </td>
+<td> Loại kích thước của dữ liệu độ sâu, dùng để tính khoảng cách hoặc trung điểm của hai điểm đặc trưng, chia thành 6 loại: chiều rộng, chiều dài, chiều cao, khoảng cách Euclid, khoảng cách mặt phẳng, trung điểm.<img src="media/wps6.jpg" alt="img" />                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 系数补偿 </td>
-<td> 测量结果系数补偿，一般为1，用于补偿成像等系统误差。 </td>
+<td> Bù hệ số </td>
+<td> Bù hệ số cho kết quả đo, thông thường là 1, dùng để bù sai số hệ thống như tạo ảnh. </td>
 </tr>
 <tr>
 <td></td>
-<td> 固定补偿 </td>
-<td> 测量结果固定补偿，一般为0，用于补偿成像等系统误差。 </td>
+<td> Bù cố định </td>
+<td> Bù cố định cho kết quả đo, thông thường là 0, dùng để bù sai số hệ thống như tạo ảnh. </td>
 </tr>
 <tr>
 <td></td>
-<td> 阈值范围下限 </td>
-<td> 判定条件的下限值，取值范围：[-100000,100000]，单位：mm。 </td>
+<td> Giới hạn dưới phạm vi ngưỡng </td>
+<td> Giá trị giới hạn dưới của điều kiện phán định, phạm vi giá trị: [-100000,100000], đơn vị: mm. </td>
 </tr>
 <tr>
 <td></td>
-<td> 阈值范围上限 </td>
-<td> 判定条件的上限值，取值范围：[-100000,100000]，单位：mm。 </td>
+<td> Giới hạn trên phạm vi ngưỡng </td>
+<td> Giá trị giới hạn trên của điều kiện phán định, phạm vi giá trị: [-100000,100000], đơn vị: mm. </td>
 </tr>
 <tr>
-<td> 图像窗口       </td>
-<td> 深度图像                                                     </td>
-<td> 显示待检测的深度图像，显示为伪彩色图像。           </td>
-</tr>
-<tr>
-<td></td>
-<td> 检测区域       </td>
-<td> 在图像上显示位置1和位置2的检测区域。                                                                             </td>
-</tr>
-<tr>
-<td> 数据链         </td>
-<td> 输入深度图像                                                 </td>
-<td> 输入待检测的深度图像。                             </td>
+<td> Cửa sổ ảnh       </td>
+<td> Ảnh độ sâu                                                     </td>
+<td> Hiển thị ảnh độ sâu cần kiểm tra, hiển thị dưới dạng ảnh giả màu.           </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换   </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                                                                           </td>
+<td> Vùng kiểm tra       </td>
+<td> Hiển thị vùng kiểm tra của vị trí 1 và vị trí 2 trên ảnh.                                                                             </td>
+</tr>
+<tr>
+<td> Liên kết dữ liệu         </td>
+<td> Ảnh độ sâu đầu vào                                                 </td>
+<td> Nhập ảnh độ sâu cần kiểm tra.                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 参考点 </td>
-<td> 以此点建立产品坐标系的原点。 </td>
+<td> Biến đổi tuyến tính 2D   </td>
+<td> Phép biến đổi tịnh tiến, xoay, co giãn của mục tiêu so với mẫu.                                                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 参考直线 </td>
-<td> 当直线角度趋向于水平时，则该直线作为X轴，否则为Y轴。 </td>
+<td> Điểm tham chiếu </td>
+<td> Lấy điểm này làm gốc để thiết lập hệ tọa độ sản phẩm. </td>
 </tr>
 <tr>
 <td></td>
-<td> 像素当量 </td>
-<td> 建立产品坐标系时，即属性中的X固定偏移、Y中的固定偏移以此反推出图像距离，单位：mm/pixel。 </td>
+<td> Đường thẳng tham chiếu </td>
+<td> Khi góc của đường thẳng gần nằm ngang, đường thẳng này được dùng làm trục X, nếu không thì dùng làm trục Y. </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无       </td>
-<td> 无                                                                                                               </td>
+<td></td>
+<td> Đương lượng pixel </td>
+<td> Khi thiết lập hệ tọa độ sản phẩm, tức là offset cố định X và offset cố định Y trong thuộc tính sẽ dựa vào đây để suy ngược ra khoảng cách ảnh, đơn vị: mm/pixel. </td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td> Không       </td>
+<td> Không                                                                                                               </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称          </th>
-<th> 参数描述                                                                                            </th>
+<th>Phân loại </th>
+<th> Tên tham số          </th>
+<th> Mô tả tham số                                                                                            </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口          </td>
-<td> 输入深度图像                                          </td>
-<td> 输入图像的长宽和像素大小，以及深度数据参数。 </td>
+<td> Cửa sổ giám sát          </td>
+<td> Ảnh độ sâu đầu vào                                          </td>
+<td> Chiều dài, chiều rộng và kích thước pixel của ảnh đầu vào, cũng như tham số dữ liệu độ sâu. </td>
 </tr>
 <tr>
 <td></td>
-<td> 位置1             </td>
-<td> 第1个检测区域内特征点的三维坐标信息。                                                               </td>
+<td> Vị trí 1             </td>
+<td> Thông tin tọa độ 3D của điểm đặc trưng trong vùng kiểm tra thứ 1.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 位置2             </td>
-<td> 第2个检测区域内特征点的三维坐标信息。                                                               </td>
+<td> Vị trí 2             </td>
+<td> Thông tin tọa độ 3D của điểm đặc trưng trong vùng kiểm tra thứ 2.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 尺寸结果          </td>
-<td> 两个特征点间的宽度/长度/高度/欧氏距离/平面距离/中点。                                               </td>
+<td> Kết quả kích thước          </td>
+<td> Chiều rộng/chiều dài/chiều cao/khoảng cách Euclid/khoảng cách mặt phẳng/trung điểm giữa hai điểm đặc trưng.                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果          </td>
-<td> 工具执行结果。                                                                                      </td>
+<td> Kết quả thực thi          </td>
+<td> Kết quả thực thi công cụ.                                                                                      </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间          </td>
-<td> 工具执行时间。                                                                                      </td>
+<td> Thời gian thực thi          </td>
+<td> Thời gian thực thi công cụ.                                                                                      </td>
 </tr>
 <tr>
-<td> 图像窗口          </td>
-<td> 输入深度图像                                          </td>
-<td> 显示检测的深度图像，显示为伪彩色图像。       </td>
+<td> Cửa sổ ảnh          </td>
+<td> Ảnh độ sâu đầu vào                                          </td>
+<td> Hiển thị ảnh độ sâu được kiểm tra, hiển thị dưới dạng ảnh giả màu.       </td>
 </tr>
 <tr>
 <td></td>
-<td> 特征点、距离/中点 </td>
-<td> 显示特征点结果，及两个特征点间的距离或中点。                                                        </td>
+<td> Điểm đặc trưng, khoảng cách/trung điểm </td>
+<td> Hiển thị kết quả điểm đặc trưng, và khoảng cách hoặc trung điểm giữa hai điểm đặc trưng.                                                        </td>
 </tr>
 <tr>
-<td>数据链</td>
-<td>   图像          </td>
-<td> 同监视窗口参数，供后续工具使用。                   </td>
+<td>Liên kết dữ liệu</td>
+<td>   Ảnh          </td>
+<td> Giống với tham số trong cửa sổ giám sát, dùng cho các công cụ phía sau.                   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<h3>使用向导</h3>
+<h3>Hướng dẫn sử dụng</h3>
 
-<p><strong>Step 1 设置检测区域和深度数据特征类型</strong></p>
+<p><strong>Step 1 Thiết lập vùng kiểm tra và loại đặc trưng dữ liệu độ sâu</strong></p>
 
-<p>为了获取深度数据中的特征点三维坐标信息，需要设置检测区域和深度数据特征类型。其中，检测区域有3种：整幅图像、矩形，仿射矩形，而深度数据特征类型有9种：均值、中值、质心、X最大、X最小、Y最大、Y最小、Z最大、Z最小。</p>
+<p>Để lấy thông tin tọa độ 3D của điểm đặc trưng trong dữ liệu độ sâu, cần thiết lập vùng kiểm tra và loại đặc trưng dữ liệu độ sâu. Trong đó, vùng kiểm tra có 3 loại: toàn bộ ảnh, hình chữ nhật, hình chữ nhật affine; còn loại đặc trưng dữ liệu độ sâu có 9 loại: giá trị trung bình, trung vị, tâm khối, X lớn nhất, X nhỏ nhất, Y lớn nhất, Y nhỏ nhất, Z lớn nhất, Z nhỏ nhất.</p>
 
-<p>均值：检测区域内所有深度数据坐标（X,Y,Z）的均值。</p>
+<p>Giá trị trung bình: giá trị trung bình của tọa độ (X,Y,Z) của tất cả dữ liệu độ sâu trong vùng kiểm tra.</p>
 
-<p>中值：检测区域内所有深度数据坐标（X,Y,Z）的中值。</p>
+<p>Trung vị: trung vị của tọa độ (X,Y,Z) của tất cả dữ liệu độ sâu trong vùng kiểm tra.</p>
 
-<p>质心：检测区域内所有深度数据坐标（X,Y,Z）的质心。</p>
+<p>Tâm khối: tâm khối của tọa độ (X,Y,Z) của tất cả dữ liệu độ sâu trong vùng kiểm tra.</p>
 
-<p>X最大值：检测区域内所有深度数据坐标（X,Y,Z）中X坐标最大所对应的深度数据的坐标信息。</p>
+<p>Giá trị X lớn nhất: thông tin tọa độ của dữ liệu độ sâu tương ứng với tọa độ X lớn nhất trong tất cả tọa độ dữ liệu độ sâu (X,Y,Z) trong vùng kiểm tra.</p>
 
-<p>X最小值：检测区域内所有深度数据坐标（X,Y,Z）中X坐标最小所对应的深度数据的坐标信息。</p>
+<p>Giá trị X nhỏ nhất: thông tin tọa độ của dữ liệu độ sâu tương ứng với tọa độ X nhỏ nhất trong tất cả tọa độ dữ liệu độ sâu (X,Y,Z) trong vùng kiểm tra.</p>
 
-<p>Y最大值：检测区域内所有深度数据坐标（X,Y,Z）中Y坐标最大所对应的深度数据的坐标信息。</p>
+<p>Giá trị Y lớn nhất: thông tin tọa độ của dữ liệu độ sâu tương ứng với tọa độ Y lớn nhất trong tất cả tọa độ dữ liệu độ sâu (X,Y,Z) trong vùng kiểm tra.</p>
 
-<p>Y最小值：检测区域内所有深度数据坐标（X,Y,Z）中Y坐标最小所对应的深度数据的坐标信息。</p>
+<p>Giá trị Y nhỏ nhất: thông tin tọa độ của dữ liệu độ sâu tương ứng với tọa độ Y nhỏ nhất trong tất cả tọa độ dữ liệu độ sâu (X,Y,Z) trong vùng kiểm tra.</p>
 
-<p>Z最大值：检测区域内所有深度数据坐标（X,Y,Z）中Z坐标最大所对应的深度数据的坐标信息。</p>
+<p>Giá trị Z lớn nhất: thông tin tọa độ của dữ liệu độ sâu tương ứng với tọa độ Z lớn nhất trong tất cả tọa độ dữ liệu độ sâu (X,Y,Z) trong vùng kiểm tra.</p>
 
-<p>Z最小值：检测区域内所有深度数据坐标（X,Y,Z）中Z坐标最小所对应的深度数据的坐标信息。</p>
+<p>Giá trị Z nhỏ nhất: thông tin tọa độ của dữ liệu độ sâu tương ứng với tọa độ Z nhỏ nhất trong tất cả tọa độ dữ liệu độ sâu (X,Y,Z) trong vùng kiểm tra.</p>
 
-<p><strong>Step 2 设置深度数据尺寸类型</strong></p>
+<p><strong>Step 2 Thiết lập loại kích thước dữ liệu độ sâu</strong></p>
 
-<p>为了获取深度数据特征点之间的距离或者中点坐标信息，需要设置深度数据的尺寸类型。深度数据的尺寸类型有6种：宽度、长度、高度、欧式距离、平面距离、中点，如图2所示。</p>
+<p>Để lấy thông tin khoảng cách hoặc tọa độ trung điểm giữa các điểm đặc trưng của dữ liệu độ sâu, cần thiết lập loại kích thước của dữ liệu độ sâu. Loại kích thước của dữ liệu độ sâu có 6 loại: chiều rộng, chiều dài, chiều cao, khoảng cách Euclid, khoảng cách mặt phẳng, trung điểm, như hình 2.</p>
 
 <p><img src="media/wps9.jpg" alt="img" /></p>
 
-<p><imgnote>图2 位置和尺寸示意图</imgnote></p>
+<p><imgnote>Hình 2 Sơ đồ vị trí và kích thước</imgnote></p>
 
-<p><strong>Step 3 执行测量和输出结果</strong></p>
+<p><strong>Step 3 Thực hiện đo và xuất kết quả</strong></p>
 
-<p>在设置好检测区域，深度数据特征类型以及深度数据尺寸类型之后，就可以执行测量了。输出的结果包括，两个特征点的三维坐标信息，两个特征点之间的尺寸信息或者其中点坐标信息。</p>
+<p>Sau khi đã thiết lập vùng kiểm tra, loại đặc trưng dữ liệu độ sâu và loại kích thước dữ liệu độ sâu, có thể thực hiện đo. Kết quả đầu ra bao gồm thông tin tọa độ 3D của hai điểm đặc trưng, thông tin kích thước giữa hai điểm đặc trưng hoặc thông tin tọa độ trung điểm của chúng.</p>
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
-<p>参见“\Samples\3D\深度图\3D测量工具.gvp”。</p>
+<p>Tham khảo “\Samples\3D\深度图\3D测量工具.gvp”.</p>

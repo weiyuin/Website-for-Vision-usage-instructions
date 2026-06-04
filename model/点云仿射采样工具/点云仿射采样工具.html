@@ -16,142 +16,142 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云仿射采样工具</h1>
+<h1>Công cụ lấy mẫu affine đám mây điểm</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>仿射采样工具主要对输入深度图像仿射矩形区域内的图像进行采样，输出矩形图像，以便对其进行后续处理。</p>
+<p>Công cụ lấy mẫu affine chủ yếu lấy mẫu ảnh trong vùng hình chữ nhật affine của ảnh độ sâu đầu vào, xuất ra ảnh hình chữ nhật để thuận tiện cho xử lý tiếp theo.</p>
 
 <p><img src="media/image-20210311164901525.png" alt="image-20210311164901525" /></p>
 
-<p><imgnote>图1 点云仿射采样工具示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa công cụ lấy mẫu affine đám mây điểm</imgnote></p>
 
-<p> “自动确定-分辨率一致”使用场景：</p>
+<p> Tình huống sử dụng “Tự động xác định - độ phân giải nhất quán”:</p>
 
-<p>在3D项目应用中，对于线扫描类的3D传感器，由于需要满足采集速度或精度的需求，会存在扫描图像的X、Y方向的分辨率不相等的情况，此时采集的的深度图像，会表现为某一个方向的拉伸会压缩，图像发生形变。使用点云仿射采样工具，可纠正这种形变，使图像正常。如图2所示。</p>
+<p>Trong ứng dụng dự án 3D, đối với cảm biến 3D dạng quét dòng, do cần đáp ứng yêu cầu về tốc độ thu thập hoặc độ chính xác, có thể xảy ra tình trạng độ phân giải theo hướng X và Y của ảnh quét không bằng nhau. Lúc này, ảnh độ sâu thu được sẽ biểu hiện hiện tượng kéo giãn hoặc nén theo một hướng nào đó, khiến ảnh bị biến dạng. Sử dụng công cụ lấy mẫu affine đám mây điểm có thể hiệu chỉnh biến dạng này, giúp ảnh trở lại bình thường. Như hình 2.</p>
 
 <p>   <img src="media/wps16.jpg" alt="img" /></p>
 
-<p><imgnote>图2 自动确定-分辨率一致模式</imgnote></p>
+<p><imgnote>Hình 2 Chế độ tự động xác định - độ phân giải nhất quán</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                              </th>
+<th>Phân loại </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                                                              </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口     </td>
-<td> ROI类型                                                    </td>
-<td> 可选“整幅图像”，“矩形ROI”,“仿射矩形ROI” </td>
+<td> Cửa sổ thuộc tính     </td>
+<td> Loại ROI                                                    </td>
+<td> Có thể chọn “toàn bộ ảnh”, “ROI hình chữ nhật”, “ROI hình chữ nhật affine” </td>
 </tr>
 <tr>
 <td></td>
-<td> 采样模式     </td>
-<td> 选择“手动采样”，则需用户输入采样后的深度图像的宽高，并以此重新计算深度图像的X、Y分辨率。选择“自动确定-分辨率一致”，则根据原图像的X、Y分辨率中较小的一个进行采样，并重新计算深度图像的宽高。选择“自动确定-保持缩放”，则根据ROI的大小进行采样，结果图像大小与其一致。                                          </td>
+<td> Chế độ lấy mẫu     </td>
+<td> Chọn “lấy mẫu thủ công”, thì người dùng cần nhập chiều rộng và chiều cao của ảnh độ sâu sau lấy mẫu, và dựa vào đó tính lại độ phân giải X, Y của ảnh độ sâu. Chọn “tự động xác định - độ phân giải nhất quán”, thì lấy mẫu theo giá trị nhỏ hơn trong độ phân giải X, Y của ảnh gốc, đồng thời tính lại chiều rộng và chiều cao của ảnh độ sâu. Chọn “tự động xác định - giữ tỷ lệ co giãn”, thì lấy mẫu theo kích thước ROI, kích thước ảnh kết quả giống với kích thước ROI.                                          </td>
 </tr>
 <tr>
 <td></td>
-<td> 采样后图像宽度 </td>
-<td> 采样后的深度图像的宽度。                                                                              </td>
+<td> Chiều rộng ảnh sau lấy mẫu </td>
+<td> Chiều rộng của ảnh độ sâu sau lấy mẫu.                                                                              </td>
 </tr>
 <tr>
 <td></td>
-<td> 采样后图像高度 </td>
-<td> 采样后的深度图像的高度。                                                                              </td>
+<td> Chiều cao ảnh sau lấy mẫu </td>
+<td> Chiều cao của ảnh độ sâu sau lấy mẫu.                                                                              </td>
 </tr>
 <tr>
 <td></td>
-<td> 开启并行运算 </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không. Khi chọn Có, thuật toán sẽ bật phương thức tính toán song song OpenMp, có thể tăng tốc độ tính toán, nhưng có thể xuất hiện tình trạng thời gian xử lý không ổn định. Khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp. </td>
 </tr>
 <tr>
 <td></td>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td> Phần trăm số luồng </td>
+<td> Thiết lập phần trăm số luồng của tính toán song song, phạm vi hợp lệ là (0, 0.75], tương ứng biểu thị phạm vi phần trăm (0%, 75%]. </td>
 </tr>
 <tr>
-<td> 图像窗口     </td>
-<td> 输入深度图像                                                 </td>
-<td> 显示待变换的深度图像。                  </td>
+<td> Cửa sổ ảnh     </td>
+<td> Ảnh độ sâu đầu vào                                                 </td>
+<td> Hiển thị ảnh độ sâu cần biến đổi.                  </td>
 </tr>
 <tr>
-<td> 数据链       </td>
-<td> 输入深度图像                                                 </td>
-<td> 输入待变换的深度图像。                  </td>
+<td> Liên kết dữ liệu       </td>
+<td> Ảnh độ sâu đầu vào                                                 </td>
+<td> Nhập ảnh độ sâu cần biến đổi.                  </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换 </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                                                                </td>
+<td> Biến đổi tuyến tính 2D </td>
+<td> Phép biến đổi tịnh tiến, xoay, co giãn của mục tiêu so với mẫu.                                                                </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无    </td>
-<td> 无                                                                                                    </td>
+<td>Giao diện nâng cao</td>
+<td> Không    </td>
+<td> Không                                                                                                    </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                                                           </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                                                           </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出深度图像                                                 </td>
-<td> 输出深度图像的长宽和像素大小，以及深度数据参数。     </td>
+<td> Cửa sổ giám sát </td>
+<td> Ảnh độ sâu đầu ra                                                 </td>
+<td> Chiều dài, chiều rộng và kích thước pixel của ảnh độ sâu đầu ra, cũng như tham số dữ liệu độ sâu.     </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                                                                     </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ.                                                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                                                                     </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ.                                                                                                     </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 输出深度图像                                                 </td>
-<td> 显示工具执行结果图像，同监视窗口的输出深度图像参数。 </td>
+<td> Cửa sổ ảnh </td>
+<td> Ảnh độ sâu đầu ra                                                 </td>
+<td> Hiển thị ảnh kết quả thực thi công cụ, giống với tham số ảnh độ sâu đầu ra trong cửa sổ giám sát. </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                       </td>
+<td> Kết quả thực thi </td>
+<td> Hiển thị kết quả thực thi công cụ, thực thi thành công hiển thị “OK”, thực thi thất bại hiển thị “NG”, giống với tham số kết quả thực thi trong cửa sổ giám sát.                                                       </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出深度图像                                                 </td>
-<td> 输出的采样之后的深度图像，供其他工具使用。           </td>
+<td> Liên kết dữ liệu   </td>
+<td> Ảnh độ sâu đầu ra                                                 </td>
+<td> Ảnh độ sâu sau khi lấy mẫu được xuất ra, dùng cho các công cụ khác.           </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
-<p>无</p>
+<p>Không</p>
 
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
 
-<p>参见“\Samples\3D\深度图\点云仿射采样工具.gvp”。</p>
+<p>Tham khảo “\Samples\3D\深度图\点云仿射采样工具.gvp”.</p>
