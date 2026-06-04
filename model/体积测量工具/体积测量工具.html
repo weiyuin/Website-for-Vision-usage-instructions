@@ -16,317 +16,317 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>体积测量工具</h1>
+<h1>Công cụ đo thể tích</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>在3D测量中，体积测量工具主要是获取深度图像中检测区域内三维空间点构成的物体，在指定基平面上方的体积、在XOY面的投影面积和垂直高度。如图1所示为一个三棱锥物体在基平面上方的体积。</p>
+<p>Trong đo lường 3D, công cụ đo thể tích chủ yếu dùng để lấy vật thể được tạo thành bởi các điểm không gian ba chiều trong vùng phát hiện của ảnh độ sâu, đồng thời đo thể tích phía trên mặt phẳng cơ sở được chỉ định, diện tích chiếu trên mặt XOY và chiều cao vuông góc. Hình 1 thể hiện thể tích của một vật thể hình chóp tam giác phía trên mặt phẳng cơ sở.</p>
 
 <p><img src="media/wps11.jpg" alt="img" /></p>
 
-<p><imgnote>图1 体积测量示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa đo thể tích</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số         </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口         </td>
-<td> 平面方向                                                   </td>
-<td> 分为两种：增加法向量一侧为正高度方向和减少法向量一侧为正高度方向。<img src="media/wps13.jpg" alt="img" /> </td>
+<td> Cửa sổ thuộc tính         </td>
+<td> Hướng mặt phẳng                                                   </td>
+<td> Gồm hai loại: phía tăng của vector pháp tuyến là hướng chiều cao dương và phía giảm của vector pháp tuyến là hướng chiều cao dương.<img src="media/wps13.jpg" alt="img" /> </td>
 </tr>
 <tr>
 <td></td>
-<td> ROI类型        </td>
-<td> 待检测区域，分为8种：整幅图像、矩形、仿射矩形、圆形、圆环、椭圆、多边形、多仿射矩形。                                                             </td>
+<td> Loại ROI        </td>
+<td> Vùng cần phát hiện, gồm 8 loại: toàn bộ ảnh, hình chữ nhật, hình chữ nhật affine, hình tròn, vòng tròn, hình elip, đa giác, nhiều hình chữ nhật affine.                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 最小高度阈值     </td>
-<td> 根据最小高度阈值对计算得到的测量数据进行过滤。                                                                             </td>
+<td> Ngưỡng chiều cao tối thiểu     </td>
+<td> Lọc dữ liệu đo đã tính toán dựa trên ngưỡng chiều cao tối thiểu.                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 启用垂直高度计算 </td>
-<td> 选择“是”，则计算垂直高度。                                                                                                 </td>
+<td> Bật tính chiều cao vuông góc </td>
+<td> Chọn “Có”, thì tính chiều cao vuông góc.                                                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 计算高度中值     </td>
-<td> 选择“是”，则计算高度中值。                                                                                                 </td>
+<td> Tính giá trị trung vị chiều cao     </td>
+<td> Chọn “Có”, thì tính giá trị trung vị chiều cao.                                                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 启用掩膜         </td>
-<td> 是否启用掩膜，选择“是”，显示掩膜个数、掩膜序号、掩膜形状等参数。                                                               </td>
+<td> Bật mask         </td>
+<td> Có bật mask hay không, chọn “Có” thì hiển thị các tham số như số lượng mask, số thứ tự mask, hình dạng mask.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 掩膜个数         </td>
-<td> 设置启用的掩膜个数，取值范围为 [1, 99]。                                                                                   </td>
+<td> Số lượng mask         </td>
+<td> Thiết lập số lượng mask được bật, phạm vi giá trị là [1, 99].                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 掩膜序号         </td>
-<td> 当前欲设置的掩膜索引。                                                                                                     </td>
+<td> Số thứ tự mask         </td>
+<td> Chỉ số mask hiện tại cần thiết lập.                                                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 掩膜类型       </td>
-<td> 当前欲设置的掩膜形状，分为6种：矩形、仿射矩形、圆形、圆环、椭圆、多边形。                                                               </td>
+<td> Loại mask       </td>
+<td> Hình dạng mask hiện tại cần thiết lập, gồm 6 loại: hình chữ nhật, hình chữ nhật affine, hình tròn, vòng tròn, hình elip, đa giác.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 体积上限 </td>
-<td> 取值范围为[0, 100000]，且下限应小于等于上限。 </td>
+<td> Giới hạn trên thể tích </td>
+<td> Phạm vi giá trị là [0, 100000], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 体积下限 </td>
-<td> 取值范围为[0, 100000]，且下限应小于等于上限。 </td>
+<td> Giới hạn dưới thể tích </td>
+<td> Phạm vi giá trị là [0, 100000], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 面积上限 </td>
-<td> 取值范围为[0, 100000]，且下限应小于等于上限。 </td>
+<td> Giới hạn trên diện tích </td>
+<td> Phạm vi giá trị là [0, 100000], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 面积下限 </td>
-<td> 取值范围为[0, 100000]，且下限应小于等于上限。 </td>
+<td> Giới hạn dưới diện tích </td>
+<td> Phạm vi giá trị là [0, 100000], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度最大值上限   </td>
-<td> 取值范围为[-100, 100]，且下限应小于等于上限。 </td>
+<td> Giới hạn trên giá trị chiều cao lớn nhất   </td>
+<td> Phạm vi giá trị là [-100, 100], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度最大值下限 </td>
-<td> 取值范围为[-100, 100]，且下限应小于等于上限。                </td>
+<td> Giới hạn dưới giá trị chiều cao lớn nhất </td>
+<td> Phạm vi giá trị là [-100, 100], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên.                </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度最小值上限 </td>
-<td> 取值范围为[-100, 100]，且下限应小于等于上限。 </td>
+<td> Giới hạn trên giá trị chiều cao nhỏ nhất </td>
+<td> Phạm vi giá trị là [-100, 100], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度最小值下限 </td>
-<td> 取值范围为[-100, 100]，且下限应小于等于上限。 </td>
+<td> Giới hạn dưới giá trị chiều cao nhỏ nhất </td>
+<td> Phạm vi giá trị là [-100, 100], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度均值上限 </td>
-<td> 取值范围为[-100, 100]，且下限应小于等于上限。 </td>
+<td> Giới hạn trên giá trị trung bình chiều cao </td>
+<td> Phạm vi giá trị là [-100, 100], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度均值下限 </td>
-<td> 取值范围为[-100, 100]，且下限应小于等于上限。 </td>
+<td> Giới hạn dưới giá trị trung bình chiều cao </td>
+<td> Phạm vi giá trị là [-100, 100], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度中值上限 </td>
-<td> 取值范围为[-100, 100]，且下限应小于等于上限。 </td>
+<td> Giới hạn trên giá trị trung vị chiều cao </td>
+<td> Phạm vi giá trị là [-100, 100], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度中值下限 </td>
-<td> 取值范围为[-100, 100]，且下限应小于等于上限。 </td>
+<td> Giới hạn dưới giá trị trung vị chiều cao </td>
+<td> Phạm vi giá trị là [-100, 100], và giới hạn dưới phải nhỏ hơn hoặc bằng giới hạn trên. </td>
 </tr>
 <tr>
-<td> 图像窗口         </td>
-<td> 深度图像                                                     </td>
-<td> 显示待检测的深度图像，显示为伪彩色图像。                     </td>
-</tr>
-<tr>
-<td></td>
-<td> 检测区域         </td>
-<td> 在图像上显示待检测区域。                                                                                                   </td>
+<td> Cửa sổ ảnh         </td>
+<td> Ảnh độ sâu                                                     </td>
+<td> Hiển thị ảnh độ sâu cần phát hiện, hiển thị dưới dạng ảnh giả màu.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 掩膜区域         </td>
-<td> 在图像上显示待掩膜区域。                                                                                                   </td>
-</tr>
-<tr>
-<td> 数据链           </td>
-<td> 深度图像                                                     </td>
-<td> 输入待检测的深度图像。                                       </td>
+<td> Vùng phát hiện         </td>
+<td> Hiển thị vùng cần phát hiện trên ảnh.                                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 基平面           </td>
-<td> 选择高度测量的基准平面。                                                                                                   </td>
+<td> Vùng mask         </td>
+<td> Hiển thị vùng cần mask trên ảnh.                                                                                                   </td>
+</tr>
+<tr>
+<td> Liên kết dữ liệu           </td>
+<td> Ảnh độ sâu                                                     </td>
+<td> Nhập ảnh độ sâu cần phát hiện.                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换     </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                                                                                     </td>
+<td> Mặt phẳng cơ sở           </td>
+<td> Chọn mặt phẳng chuẩn để đo chiều cao.                                                                                                   </td>
 </tr>
 <tr>
-<td> 高级界面         </td>
-<td> 无     </td>
-<td> 无 </td>
+<td></td>
+<td> Biến đổi tuyến tính 2D     </td>
+<td> Biến đổi tịnh tiến, xoay, tỷ lệ của mục tiêu so với mẫu.                                                                                     </td>
+</tr>
+<tr>
+<td> Giao diện nâng cao         </td>
+<td> Không     </td>
+<td> Không </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称             </th>
-<th> 参数描述                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口             </td>
-<td> 深度图像                                                     </td>
-<td> 深度图像的长宽和像素大小，以及深度数据参数。 </td>
+<td> Cửa sổ giám sát             </td>
+<td> Ảnh độ sâu                                                     </td>
+<td> Chiều dài, chiều rộng và kích thước pixel của ảnh độ sâu, cũng như các tham số dữ liệu độ sâu. </td>
 </tr>
 <tr>
 <td></td>
-<td> 体积                 </td>
-<td> 测量物体在指定基平面上的体积，单位：<strong>mm</strong><strong>3</strong>。<img src="media/wps15.jpg" alt="img" />                                               </td>
+<td> Thể tích                 </td>
+<td> Thể tích của vật thể đo được trên mặt phẳng cơ sở được chỉ định, đơn vị: <strong>mm</strong><strong>3</strong>.<img src="media/wps15.jpg" alt="img" />                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 面积                 </td>
-<td> XOY面的投影面积，单位：<strong>mm</strong><strong>2</strong>。                                                                       </td>
+<td> Diện tích                 </td>
+<td> Diện tích chiếu trên mặt XOY, đơn vị: <strong>mm</strong><strong>2</strong>.                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度均值             </td>
-<td> 高度数据的平均高度值。                                                                                     </td>
+<td> Giá trị trung bình chiều cao             </td>
+<td> Giá trị chiều cao trung bình của dữ liệu chiều cao.                                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度中值             </td>
-<td> 将高度数据排序后，位于中间位置的高度数据。                                                                 </td>
+<td> Giá trị trung vị chiều cao             </td>
+<td> Sau khi sắp xếp dữ liệu chiều cao, dữ liệu chiều cao nằm ở vị trí giữa.                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度最小值           </td>
-<td> 高度数据中最小高度数值。                                                                                   </td>
+<td> Giá trị chiều cao nhỏ nhất           </td>
+<td> Giá trị chiều cao nhỏ nhất trong dữ liệu chiều cao.                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度最大值           </td>
-<td> 高度数据中最大高度数值。                                                                                   </td>
+<td> Giá trị chiều cao lớn nhất           </td>
+<td> Giá trị chiều cao lớn nhất trong dữ liệu chiều cao.                                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 高度质心             </td>
-<td> 测量物体质心的高度值。                                                                                     </td>
+<td> Tâm khối chiều cao             </td>
+<td> Giá trị chiều cao của tâm khối vật thể đo.                                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 区域边界框内像素数目 </td>
-<td> 检测区域的最小外接矩形内像素（包含无效像素）的数目。                                                       </td>
+<td> Số pixel trong bounding box của vùng </td>
+<td> Số pixel trong hình chữ nhật ngoại tiếp nhỏ nhất của vùng phát hiện (bao gồm pixel không hợp lệ).                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 关注像素数目         </td>
-<td> 检测区域形状内像素（包含无效像素）的数目。                                                                 </td>
+<td> Số pixel quan tâm         </td>
+<td> Số pixel bên trong hình dạng vùng phát hiện (bao gồm pixel không hợp lệ).                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 可见关注像素数目     </td>
-<td> 检测区域形状内有效像素的数目。                                                                             </td>
+<td> Số pixel quan tâm nhìn thấy được     </td>
+<td> Số pixel hợp lệ bên trong hình dạng vùng phát hiện.                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 所用像素数目         </td>
-<td> 检测区域内实际用于高度测量的像素数目。                                                                     </td>
+<td> Số pixel được sử dụng         </td>
+<td> Số pixel thực tế được dùng để đo chiều cao trong vùng phát hiện.                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果             </td>
-<td> 工具执行结果。                                                                                             </td>
+<td> Kết quả thực thi             </td>
+<td> Kết quả thực thi của công cụ.                                                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间             </td>
-<td> 工具执行时间。                                                                                             </td>
+<td> Thời gian thực thi             </td>
+<td> Thời gian thực thi của công cụ.                                                                                             </td>
 </tr>
 <tr>
-<td> 图像窗口             </td>
-<td> 输出图像                                                     </td>
-<td> 显示检测的深度图像，显示为伪彩色图像。       </td>
+<td> Cửa sổ ảnh             </td>
+<td> Ảnh đầu ra                                                     </td>
+<td> Hiển thị ảnh độ sâu đã phát hiện, hiển thị dưới dạng ảnh giả màu.       </td>
 </tr>
 <tr>
 <td></td>
-<td> 数据链               </td>
-<td> 同监视窗口参数，供后续工具使用。                                                                           </td>
+<td> Liên kết dữ liệu               </td>
+<td> Giống các tham số trong cửa sổ giám sát, dùng cho các công cụ tiếp theo.                                                                           </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<h3>体积、面积</h3>
+<h3>Thể tích, diện tích</h3>
 
-<p>体积测量主要是根据三维数据点到指定基平面在相同二维坐标下的Z值差的累积和，以及深度图像像素表示的实际物理面积计算得到体积，主要是计算三维点到平面的Z值差，如图2所示。</p>
+<p>Đo thể tích chủ yếu dựa trên tổng tích lũy chênh lệch giá trị Z giữa các điểm dữ liệu ba chiều và mặt phẳng cơ sở được chỉ định tại cùng tọa độ hai chiều, đồng thời kết hợp với diện tích vật lý thực tế mà pixel ảnh độ sâu biểu thị để tính thể tích, chủ yếu là tính chênh lệch giá trị Z từ điểm ba chiều đến mặt phẳng, như minh họa trong Hình 2.</p>
 
 <p><img src="media/wps17.png" alt="img" /></p>
 
-<p><imgnote>图1 体积、面积计算示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa tính thể tích, diện tích</imgnote></p>
 
-<p>设给定基平面为aX+bY+cZ+d=0，三维数据点为q<sub>i</sub>(x<sub>i</sub>,y<sub>i</sub>,z<sub>i</sub>), i = 1,2,…,n，一个深度图像像素表示的物理面积为△s=△x△y，其中，△x是像素x坐标的物理当量，△y是像素y坐标的物理当量，则检测区域内三维点所构成的物体到基平面之上的体积V为：</p>
+<p>Giả sử mặt phẳng cơ sở đã cho là aX+bY+cZ+d=0, điểm dữ liệu ba chiều là q<sub>i</sub>(x<sub>i</sub>,y<sub>i</sub>,z<sub>i</sub>), i = 1,2,…,n, diện tích vật lý được biểu thị bởi một pixel ảnh độ sâu là △s=△x△y, trong đó, △x là lượng tương đương vật lý của tọa độ pixel x, △y là lượng tương đương vật lý của tọa độ pixel y, thì thể tích V của vật thể được tạo thành bởi các điểm ba chiều trong vùng phát hiện phía trên mặt phẳng cơ sở là:</p>
 
 <p><img src="media/wps18.png" alt="img" /></p>
 
-<p>其中，Z<sub>plane</sub>(x<sub>i</sub>,y<sub>i</sub>)表示三维点q<sub>i</sub>在基平面aX+bY+cZ+d=0上的Z值。</p>
+<p>Trong đó, Z<sub>plane</sub>(x<sub>i</sub>,y<sub>i</sub>) biểu thị giá trị Z của điểm ba chiều q<sub>i</sub> trên mặt phẳng cơ sở aX+bY+cZ+d=0.</p>
 
-<p>由公式可知，所测量的体积是三维点的z坐标值与其对应在基平面上的Z<sub>Plane</sub>的差值累积和，与像素表示的物理面积之乘积。显然，三维点在平面上方对应的差值为正，在平面下方差值为负。</p>
+<p>Từ công thức có thể thấy, thể tích được đo là tích của tổng tích lũy chênh lệch giữa giá trị tọa độ z của điểm ba chiều và Z<sub>Plane</sub> tương ứng trên mặt phẳng cơ sở với diện tích vật lý được biểu thị bởi pixel. Rõ ràng, chênh lệch tương ứng của điểm ba chiều nằm phía trên mặt phẳng là dương, còn nằm phía dưới mặt phẳng là âm.</p>
 
-<p>面积如图3所示，其计算公式为：</p>
+<p>Diện tích như minh họa trong Hình 3, công thức tính là:</p>
 
 <p><img src="media/wps19.png" alt="img" /></p>
 
-<p>其中，δ(x,y)表示坐标(x,y)上的深度值是否符合要求，若符合其值为1，否则为0。</p>
+<p>Trong đó, δ(x,y) biểu thị giá trị độ sâu tại tọa độ (x,y) có đáp ứng yêu cầu hay không, nếu đáp ứng thì giá trị là 1, ngược lại là 0.</p>
 
-<h3>使用向导</h3>
+<h3>Hướng dẫn sử dụng</h3>
 
-<p><strong>Step 1 设置平面侧方向</strong></p>
+<p><strong>Step 1 Thiết lập hướng phía mặt phẳng</strong></p>
 
-<p>执行体积计算时，需要确定测量的方向；平面侧方向共包含2种：IncreasingPlaneNormal和DecreasingPlaneNormal，其具体物理含义如下表所示。两种平面侧方向得到的测量数值是互为相反数的，因此，最终计算得到的体积也就不同。</p>
+<p>Khi thực hiện tính thể tích, cần xác định hướng đo; hướng phía mặt phẳng gồm 2 loại: IncreasingPlaneNormal và DecreasingPlaneNormal, ý nghĩa vật lý cụ thể được trình bày trong bảng sau. Kết quả đo thu được từ hai hướng phía mặt phẳng là hai giá trị đối nhau, do đó thể tích cuối cùng tính được cũng khác nhau.</p>
 
 <p><img src="media/wps20.png" alt="img" /></p>
 
-<p><strong>Step 2 设置检测区域及掩膜</strong></p>
+<p><strong>Step 2 Thiết lập vùng phát hiện và mask</strong></p>
 
-<p>为了获取三维空间点数据需要设置检测区域及掩膜，其中，检测区域形状支持圆、椭圆、多边形、矩形、仿射矩形或圆环段等六种设置，掩膜支持一定数量（1~99）的圆、椭圆、多边形、矩形、仿射矩形和圆环段等六种区域设置；此时，体积测量使用的是检测区域形状内除去掩膜区域的三维空间点数据。</p>
+<p>Để lấy dữ liệu điểm không gian ba chiều, cần thiết lập vùng phát hiện và mask, trong đó hình dạng vùng phát hiện hỗ trợ sáu kiểu thiết lập như hình tròn, hình elip, đa giác, hình chữ nhật, hình chữ nhật affine hoặc đoạn vòng tròn; mask hỗ trợ một số lượng nhất định (1~99) các thiết lập vùng gồm hình tròn, hình elip, đa giác, hình chữ nhật, hình chữ nhật affine và đoạn vòng tròn; lúc này, đo thể tích sử dụng dữ liệu điểm không gian ba chiều bên trong hình dạng vùng phát hiện sau khi loại trừ vùng mask.</p>
 
-<p><strong>Step 3 设置直方图统计</strong></p>
+<p><strong>Step 3 Thiết lập thống kê histogram</strong></p>
 
-<p>设置测量参数主要是设置最小高度阈值参数，是根据该阈值对计算得到的测量数据进行过滤，以得到更加精确的体积。</p>
+<p>Thiết lập tham số đo chủ yếu là thiết lập tham số ngưỡng chiều cao tối thiểu, dùng để lọc dữ liệu đo đã tính toán dựa trên ngưỡng này nhằm thu được thể tích chính xác hơn.</p>
 
-<p><strong>Step 4 执行测量与输出结果</strong></p>
+<p><strong>Step 4 Thực hiện đo và xuất kết quả</strong></p>
 
-<p>获取三维空间点数据后，执行测量就可以得到所测量物体的体积，并输出体积、面积、高度以及像素计数等结果。</p>
+<p>Sau khi lấy dữ liệu điểm không gian ba chiều, thực hiện đo là có thể thu được thể tích của vật thể cần đo, đồng thời xuất ra các kết quả như thể tích, diện tích, chiều cao và số lượng pixel.</p>
 
-<h2>注意</h2>
+<h2>Lưu ý</h2>
 
 <ul>
-<li>体积测量中使用的基平面需要从其他工具链接（例如平面拟合工具2），若未链接基平面参数，测量过程中将使用默认值，默认基平面为Z=0的平面（即XOY面）。</li>
+<li>Mặt phẳng cơ sở sử dụng trong đo thể tích cần được liên kết từ công cụ khác (ví dụ công cụ fit mặt phẳng 2), nếu không liên kết tham số mặt phẳng cơ sở, trong quá trình đo sẽ sử dụng giá trị mặc định, mặt phẳng cơ sở mặc định là mặt phẳng Z=0 (tức mặt XOY).</li>
 </ul>
 
 
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
-<p>参见“\Samples\3D\深度图\3D测量工具.gvp”。</p>
+<p>Tham khảo “\Samples\3D\深度图\3D测量工具.gvp”.</p>
