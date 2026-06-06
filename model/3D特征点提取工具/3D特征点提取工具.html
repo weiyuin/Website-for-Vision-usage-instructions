@@ -16,36 +16,36 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>3D特征点提取</h1>
+<h1>Trích xuất điểm đặc trưng 3D</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     按照特征点类型，可以是多平面求交点，也可以是球体拟合得到的特征点，获得相机坐标系下的点集坐标。</p>
+<p>​     Theo loại điểm đặc trưng, có thể là điểm giao từ nhiều mặt phẳng, cũng có thể là điểm đặc trưng thu được bằng cách fitting hình cầu, từ đó lấy tọa độ tập điểm trong hệ tọa độ camera.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Tình huống ứng dụng</h2>
 
-<p>​     在工业生产中，3D引导应用非常广泛，如立体空间中引导打胶，机械手抓取不在同一个平面内的零部件等等，都会涉及到三维空间信息，那么就需要相应的标定技术，将相机坐标系转换到世界坐标下。在标定时，需要知道相机坐标系下的点集和对应的世界坐标系下的点集，通过两个点集来计算相机坐标系和世界坐标系之间的三维线性变换关系。世界坐标系下的点集坐标，通常由标定物厂家确定，是已知的，而相机坐标系下的点集坐标，则可以通过多平面交点工具来获取。</p>
+<p>​     Trong sản xuất công nghiệp, ứng dụng dẫn hướng 3D rất phổ biến, ví dụ như dẫn hướng bơm keo trong không gian lập thể, robot gắp các linh kiện không nằm trên cùng một mặt phẳng, v.v., đều sẽ liên quan đến thông tin không gian ba chiều, khi đó cần có kỹ thuật hiệu chuẩn tương ứng để chuyển đổi hệ tọa độ camera sang hệ tọa độ thế giới. Khi hiệu chuẩn, cần biết tập điểm trong hệ tọa độ camera và tập điểm tương ứng trong hệ tọa độ thế giới, thông qua hai tập điểm này để tính toán quan hệ biến đổi tuyến tính 3D giữa hệ tọa độ camera và hệ tọa độ thế giới. Tọa độ tập điểm trong hệ tọa độ thế giới thường do nhà sản xuất vật chuẩn xác định và là dữ liệu đã biết, còn tọa độ tập điểm trong hệ tọa độ camera thì có thể lấy thông qua công cụ giao điểm nhiều mặt phẳng.</p>
 
-<p>​     如图所示，蓝框内为一个标定特征，通过图示四个平面可获得多个交点，整个产品中有多个标定特征，通过这些标定特征和多平面交点工具，即可获得相机坐标系下的点集坐标。</p>
+<p>​     Như hình minh họa, trong khung màu xanh là một đặc trưng hiệu chuẩn, thông qua bốn mặt phẳng trong hình có thể thu được nhiều giao điểm, trong toàn bộ sản phẩm có nhiều đặc trưng hiệu chuẩn, thông qua các đặc trưng hiệu chuẩn này và công cụ giao điểm nhiều mặt phẳng, có thể thu được tọa độ tập điểm trong hệ tọa độ camera.</p>
 
 <p><img src="media/GcMultiPlaneIntersectionTool_2_1.png" alt="" /></p>
 
-<h2>3. 使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像</h4>
+<li><h4>Thêm công cụ, tải ảnh</h4>
 
 <p><img src="media/GcMultiPlaneIntersectionTool_3_1.png" alt="" /></p></li>
-<li><h4>设置拟合属性、分组个数、分组索引</h4>
+<li><h4>Thiết lập thuộc tính fitting, số lượng nhóm, chỉ số nhóm</h4>
 
 <ul>
-<li>拟合类型为区间拟合或者是带局外点拟合
+<li>Loại fitting là fitting theo khoảng hoặc fitting có điểm ngoại lai
 
 <ul>
-<li><strong>Step 1</strong>    根据分组个数、平面个数在输入深度图像上添加需要的ROI；</li>
-<li><strong>Step 2</strong>    根据拟合类型选择相应的拟合参数，保证拟合效果；</li>
-<li><strong>Step 3 </strong>   根据需要的交点个数，添加平面；</li>
-<li><strong>Step 4</strong>    在列表中选择想要的平面编号</li>
+<li><strong>Step 1</strong>    Dựa theo số lượng nhóm, số lượng mặt phẳng để thêm ROI cần thiết trên ảnh độ sâu đầu vào;</li>
+<li><strong>Step 2</strong>    Dựa theo loại fitting để chọn tham số fitting tương ứng, đảm bảo hiệu quả fitting;</li>
+<li><strong>Step 3 </strong>   Dựa theo số lượng giao điểm cần thiết, thêm mặt phẳng;</li>
+<li><strong>Step 4</strong>    Chọn số thứ tự mặt phẳng mong muốn trong danh sách</li>
 </ul>
 </li>
 </ul>
@@ -54,102 +54,102 @@
 <p><img src="media/GcMultiPlaneIntersectionTool_3_5.png" alt="" /></p>
 
 <ul>
-<li>拟合类型为球体拟合
+<li>Loại fitting là fitting hình cầu
 
 <ul>
-<li><strong>Step 1</strong>    根据分组个数在输入深度图像上添加需要的ROI；</li>
-<li><strong>Step 2</strong>    根据拟合类型选择相应的拟合参数，保证拟合效果；</li>
+<li><strong>Step 1</strong>    Dựa theo số lượng nhóm để thêm ROI cần thiết trên ảnh độ sâu đầu vào;</li>
+<li><strong>Step 2</strong>    Dựa theo loại fitting để chọn tham số fitting tương ứng, đảm bảo hiệu quả fitting;</li>
 </ul>
 </li>
 </ul>
 
 
 <p><img src="media/GcMultiPlaneIntersectionTool_3_2.png" alt="" /></p></li>
-<li><h4>查看结果</h4>
+<li><h4>Xem kết quả</h4>
 
 <ul>
-<li><p>拟合类型为区间拟合或者是带局外点拟合</p>
+<li><p>Loại fitting là fitting theo khoảng hoặc fitting có điểm ngoại lai</p>
 
 <p><img src="media\GcMultiPlaneIntersectionTool_3_6.png" alt="" /></p></li>
-<li><p>拟合类型为球体拟合</p></li>
+<li><p>Loại fitting là fitting hình cầu</p></li>
 </ul>
 
 
 <p><img src="media/GcMultiPlaneIntersectionTool_3_4.png" alt="" /></p></li>
-<li><h4>使用特征点提取结果，作为3D相机全局标定等工具的输入点集</h4>
+<li><h4>Sử dụng kết quả trích xuất điểm đặc trưng làm tập điểm đầu vào cho các công cụ như hiệu chuẩn toàn cục camera 3D</h4>
 
 <p><img src="media/GcMultiPlaneIntersectionTool_3_3.png" alt="" /></p></li>
 </ul>
 
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述                   </th>
-<th> 解决方法                       </th>
+<th> Mô tả hiện tượng                   </th>
+<th> Cách xử lý                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 平面个数和平面索引消失     </td>
-<td> 切换为平面拟合模式，会再次出现 </td>
+<td> Số lượng mặt phẳng và chỉ số mặt phẳng biến mất     </td>
+<td> Chuyển sang chế độ fitting mặt phẳng, sẽ xuất hiện lại </td>
 </tr>
 <tr>
-<td> 平面拟合的时候得不到特征点 </td>
-<td> 看列表中选择的平面索引是否对应 </td>
+<td> Khi fitting mặt phẳng không lấy được điểm đặc trưng </td>
+<td> Kiểm tra xem chỉ số mặt phẳng được chọn trong danh sách có tương ứng hay không </td>
 </tr>
 <tr>
-<td> 球体拟合拟合不出球心       </td>
-<td> 一开始先放宽距离阈值           </td>
+<td> Fitting hình cầu không fit được tâm cầu       </td>
+<td> Ban đầu hãy nới rộng ngưỡng khoảng cách           </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
+<h2>6. Mô tả tham số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明                       </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入深度图像 </td>
-<td> 输入用于特征点提取的深度图像。 </td>
+<td> Ảnh độ sâu đầu vào </td>
+<td> Ảnh độ sâu đầu vào dùng để trích xuất điểm đặc trưng. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明                     </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出深度图像 </td>
-<td> 输出特征点提取后的深度图像。 </td>
+<td> Ảnh độ sâu đầu ra </td>
+<td> Ảnh độ sâu sau khi trích xuất điểm đặc trưng. </td>
 </tr>
 <tr>
-<td> 特征点       </td>
-<td> 特征点坐标                   </td>
+<td> Điểm đặc trưng       </td>
+<td> Tọa độ điểm đặc trưng                   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7. 示例工程</h2>
+<h2>7. Project mẫu</h2>
 
-<p>参见“\Samples\3D特征点提取工具.gvp”。</p>
+<p>Tham khảo “\Samples\Công cụ trích xuất điểm đặc trưng 3D.gvp”.</p>

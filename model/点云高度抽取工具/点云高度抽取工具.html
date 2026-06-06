@@ -16,57 +16,57 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云高度抽取</h1>
+<h1>Trích xuất chiều cao đám mây điểm</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     主要解决3D深度图像中难以检测曲面上高度缺陷等问题，工具将深度图像转换为灰度图像，在灰度图像中根据灰度差凸显高度缺陷，后续利用2D相关检测算法进行缺陷检测，高度抽取工具的处理效果图如下图所示。</p>
+<p>​     Chủ yếu giải quyết các vấn đề như khó phát hiện lỗi chiều cao trên bề mặt cong trong ảnh độ sâu 3D. Công cụ sẽ chuyển đổi ảnh độ sâu thành ảnh xám, trong ảnh xám làm nổi bật lỗi chiều cao dựa trên chênh lệch mức xám, sau đó sử dụng các thuật toán kiểm tra 2D liên quan để phát hiện lỗi. Hình ảnh hiệu quả xử lý của công cụ trích xuất chiều cao như hình bên dưới.</p>
 
 <p><img src="media/GcRangeHeightExtractTool_1_1.png" alt="" /></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Tình huống ứng dụng</h2>
 
-<p>​     主要用于3D缺陷检测，如顶盖焊图像——针孔缺陷、边缘爆点缺陷、波浪边缺陷等。</p>
+<p>​     Chủ yếu dùng cho kiểm tra lỗi 3D, ví dụ như ảnh hàn nắp trên —— lỗi lỗ kim, lỗi điểm nổ mép, lỗi mép gợn sóng, v.v.</p>
 
 <p><img src="media/GcRangeHeightExtractTool_2_1.png" alt="" /></p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>​     工具主要设置抽取方向、抽取对象、抽取大小以及增益等参数，通过从输入图像中生成去除高频成分（谐波成分）的自由曲面作为基准面，取自由曲面与深度图像的高度差转换为灰度图像，从而根据灰度的偏差凸显深度图像中的高度偏差，高度抽取的原理示意图如下图所示。</p>
+<p>​     Công cụ chủ yếu thiết lập các tham số như hướng trích xuất, đối tượng trích xuất, kích thước trích xuất và gain, thông qua việc tạo bề mặt tự do đã loại bỏ thành phần tần số cao（thành phần sóng hài）từ ảnh đầu vào làm mặt chuẩn, lấy chênh lệch chiều cao giữa bề mặt tự do và ảnh độ sâu rồi chuyển đổi thành ảnh xám, từ đó làm nổi bật sai lệch chiều cao trong ảnh độ sâu dựa trên độ lệch mức xám. Sơ đồ nguyên lý trích xuất chiều cao như hình bên dưới.</p>
 
 <p><img src="media/GcRangeHeightExtractTool_3_1.png" alt="" /></p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像</h4></li>
+<li><h4>Thêm công cụ, tải ảnh</h4></li>
 </ul>
 
 
 <p><img src="media/GcRangeHeightExtractTool_4_1.png" alt="" /></p>
 
 <ul>
-<li><h4>设置平面类型、转换参数和转换区域</h4>
+<li><h4>Thiết lập loại mặt phẳng, tham số chuyển đổi và vùng chuyển đổi</h4>
 
 <ul>
-<li><p>平面类型为基准图像</p>
+<li><p>Loại mặt phẳng là ảnh chuẩn</p>
 
 <ul>
-<li><p><strong>Step 1</strong>    数据链输入自由曲面图像绑定为自由曲面工具输出深度图</p>
+<li><p><strong>Step 1</strong>    Đầu vào chuỗi dữ liệu ảnh bề mặt tự do được liên kết với ảnh độ sâu đầu ra của công cụ bề mặt tự do</p>
 
 <p><img src="media/GcRangeHeightExtractTool_4_6.png" alt="" /></p></li>
-<li><p><strong>Step 2</strong>     打开高级界面，设置转换参数以及区域设置</p>
+<li><p><strong>Step 2</strong>     Mở giao diện nâng cao, thiết lập tham số chuyển đổi và thiết lập vùng</p>
 
 <p><img src="media/GcRangeHeightExtractTool_4_7.png" alt="" /></p></li>
 </ul>
 </li>
-<li><p>平面类型为基准平面</p>
+<li><p>Loại mặt phẳng là mặt phẳng chuẩn</p>
 
 <ul>
-<li><p><strong>Step 1</strong>    数据链输入基平面绑定为平面拟合工具拟合后的平面</p>
+<li><p><strong>Step 1</strong>    Đầu vào chuỗi dữ liệu mặt phẳng chuẩn được liên kết với mặt phẳng sau fitting của công cụ fitting mặt phẳng</p>
 
 <p><img src="media/GcRangeHeightExtractTool_4_8.png" alt="" /></p></li>
-<li><p><strong>Step 2</strong>     打开高级界面，设置转换参数以及区域设置</p>
+<li><p><strong>Step 2</strong>     Mở giao diện nâng cao, thiết lập tham số chuyển đổi và thiết lập vùng</p>
 
 <p><img src="media/GcRangeHeightExtractTool_4_9.png" alt="" /></p></li>
 </ul>
@@ -76,133 +76,133 @@
 </ul>
 
 
-<p><span id="jump"> <strong>抽取对象</strong></span></p>
+<p><span id="jump"> <strong>Đối tượng trích xuất</strong></span></p>
 
-<p>​     针对抽取面，选择要抽取的高度对象，包括高、低和高低对象。高对象：表示只抽取高于自由曲面上的数据转换为灰度值，<strong>抽取面灰度值设置为0</strong>；低对象：表示只抽取低于自由曲面上的数据转换为灰度值，<strong>抽取面灰度值设置为255</strong>；高低对象：以抽取面为中心，将高低两侧到自由曲面的数据转换为灰度值，抽取面灰度值设置128。</p>
+<p>​     Đối với bề mặt trích xuất, chọn đối tượng chiều cao cần trích xuất, bao gồm đối tượng cao, thấp và cao-thấp. Đối tượng cao: biểu thị chỉ trích xuất dữ liệu cao hơn bề mặt tự do và chuyển đổi thành giá trị xám, <strong>giá trị xám của bề mặt trích xuất được đặt là 0</strong>；Đối tượng thấp: biểu thị chỉ trích xuất dữ liệu thấp hơn bề mặt tự do và chuyển đổi thành giá trị xám, <strong>giá trị xám của bề mặt trích xuất được đặt là 255</strong>；Đối tượng cao-thấp: lấy bề mặt trích xuất làm tâm, chuyển đổi dữ liệu ở hai phía cao và thấp so với bề mặt tự do thành giá trị xám, giá trị xám của bề mặt trích xuất được đặt là 128。</p>
 
 <p><img src="media/GcRangeHeightExtractTool_4_3.png" alt="" /></p>
 
-<p><span id="jump"> <strong>增益</strong></span></p>
+<p><span id="jump"> <strong>Gain</strong></span></p>
 
-<p>​     指一个灰度级代表高度值的实际物理量，增益设置越小越能凸显高度缺陷的灰度偏差，但也可能误检非缺陷区域，单位：mm。</p>
+<p>​     Chỉ đại lượng vật lý thực tế của giá trị chiều cao tương ứng với một mức xám. Gain đặt càng nhỏ thì càng có thể làm nổi bật sai lệch mức xám của lỗi chiều cao, nhưng cũng có thể kiểm nhầm vùng không lỗi, đơn vị: mm。</p>
 
-<p><span id="jump"> <strong>无效像素填充值</strong></span></p>
+<p><span id="jump"> <strong>Giá trị điền cho pixel không hợp lệ</strong></span></p>
 
-<p>​     深度图像中的无效像素对应灰度图像中的像素值的填充，范围为[0,255]。</p>
+<p>​     Giá trị dùng để điền cho pixel trong ảnh xám tương ứng với pixel không hợp lệ trong ảnh độ sâu, phạm vi là [0,255]。</p>
 
-<p><span id="jump"> <strong>除去干扰</strong></span></p>
+<p><span id="jump"> <strong>Loại bỏ nhiễu</strong></span></p>
 
-<p>​     将小于指定范围的抽取高度视为干扰进行排除，单位mm。</p>
+<p>​     Xem chiều cao trích xuất nhỏ hơn phạm vi chỉ định là nhiễu và loại bỏ, đơn vị mm。</p>
 
 <p><img src="media/GcRangeHeightExtractTool_4_4.png" alt="" /></p>
 
-<p><span id="jump"> <strong>Z偏移</strong></span></p>
+<p><span id="jump"> <strong>Dịch chuyển Z</strong></span></p>
 
-<p>​     针对抽取面，设定Z轴方向的偏移值，单位mm。</p>
+<p>​     Đối với bề mặt trích xuất, thiết lập giá trị dịch chuyển theo hướng trục Z, đơn vị mm。</p>
 
 <p><img src="media/GcRangeHeightExtractTool_4_5.png" alt="" /></p>
 
 <ul>
-<li><h4>使用抽取结果，进行缺陷判定</h4></li>
+<li><h4>Sử dụng kết quả trích xuất để phán định lỗi</h4></li>
 </ul>
 
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述               </th>
-<th> 解决方法                                           </th>
+<th> Mô tả hiện tượng               </th>
+<th> Cách xử lý                                           </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 抽取效果达不到预期要求 </td>
-<td> 调整转换参数，主要是调整抽取对象和增益这两个参数； </td>
+<td> Hiệu quả trích xuất không đạt yêu cầu mong muốn </td>
+<td> Điều chỉnh tham số chuyển đổi, chủ yếu là điều chỉnh hai tham số đối tượng trích xuất và gain； </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
+<h2>6. Mô tả tham số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称        </th>
-<th> 参数说明                                                     </th>
+<th> Tên tham số        </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 基准类型        </td>
-<td> 分为2种：基准平面和基准图像。                                </td>
+<td> Loại chuẩn        </td>
+<td> Chia thành 2 loại: mặt phẳng chuẩn và ảnh chuẩn.                                </td>
 </tr>
 <tr>
-<td> ROI类型         </td>
-<td> 待检测区域，分为8种：整幅图像、矩形、仿射矩形、圆形、圆环、椭圆、多边形、多仿射矩形。 </td>
+<td> Loại ROI         </td>
+<td> Vùng cần kiểm tra, chia thành 8 loại: toàn bộ ảnh, hình chữ nhật, hình chữ nhật affine, hình tròn, vòng tròn, hình elip, đa giác, nhiều hình chữ nhật affine. </td>
 </tr>
 <tr>
-<td> 仿射矩形ROI个数 </td>
-<td> 仿射矩形个数。                                               </td>
+<td> Số lượng ROI hình chữ nhật affine </td>
+<td> Số lượng hình chữ nhật affine.                                               </td>
 </tr>
 <tr>
-<td> 抽取对象        </td>
-<td> 选择要抽取的高度对象，包括高、低和高低对象。                 </td>
+<td> Đối tượng trích xuất        </td>
+<td> Chọn đối tượng chiều cao cần trích xuất, bao gồm đối tượng cao, thấp và cao-thấp.                 </td>
 </tr>
 <tr>
-<td> 增益            </td>
-<td> 表示一个灰度级对应的高度物理值，单位：mm。                   </td>
+<td> Gain            </td>
+<td> Biểu thị giá trị vật lý chiều cao tương ứng với một mức xám, đơn vị: mm.                   </td>
 </tr>
 <tr>
-<td> 无效像素填充值  </td>
-<td> 设定深度图像缺失像素对应的灰度值。                           </td>
+<td> Giá trị điền cho pixel không hợp lệ  </td>
+<td> Thiết lập giá trị xám tương ứng với pixel bị thiếu trong ảnh độ sâu.                           </td>
 </tr>
 <tr>
-<td> 去除干扰        </td>
-<td> 将小于去除干扰的高度值视为干扰进行排除，单位：mm）。         </td>
+<td> Loại bỏ nhiễu        </td>
+<td> Xem giá trị chiều cao nhỏ hơn giá trị loại bỏ nhiễu là nhiễu và loại bỏ, đơn vị: mm）。         </td>
 </tr>
 <tr>
-<td> Z偏移           </td>
-<td> 抽取面Z轴方向的偏移值，单位：mm。                            </td>
+<td> Dịch chuyển Z           </td>
+<td> Giá trị dịch chuyển theo hướng trục Z của bề mặt trích xuất, đơn vị: mm.                            </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明               </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出灰度图像 </td>
-<td> 输出自由曲面深度图像。 </td>
+<td> Ảnh xám đầu ra </td>
+<td> Xuất ảnh độ sâu bề mặt tự do. </td>
 </tr>
 <tr>
-<td> 输出灰度图像 </td>
-<td> 输出抽取的灰度图像。   </td>
+<td> Ảnh xám đầu ra </td>
+<td> Xuất ảnh xám đã trích xuất.   </td>
 </tr>
 <tr>
-<td> 执行结果     </td>
-<td> 工具执行结果           </td>
+<td> Kết quả thực thi     </td>
+<td> Kết quả thực thi của công cụ           </td>
 </tr>
 <tr>
-<td> 执行时间     </td>
-<td> 工具执行时间           </td>
+<td> Thời gian thực thi     </td>
+<td> Thời gian thực thi của công cụ           </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7. 示例工程</h2>
+<h2>7. Project mẫu</h2>
 
 <p>参见“\Samples\3D\深度图\点云高度抽取工具.gvp”。</p>
