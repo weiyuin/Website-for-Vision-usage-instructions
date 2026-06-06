@@ -18,187 +18,187 @@
            </head>
 <h1>sc3Xform</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>三维线性变换，通常来自3D相机全局标定工具，表示了3D相机坐标系和世界坐标系之间的转换关系或者两个相机坐标系间的转换关系。</p>
+<p>Biến đổi tuyến tính ba chiều, thường đến từ công cụ hiệu chuẩn toàn cục camera 3D, biểu thị quan hệ chuyển đổi giữa hệ tọa độ camera 3D và hệ tọa độ thế giới hoặc quan hệ chuyển đổi giữa hai hệ tọa độ camera.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                          </th>
-<th> 接口描述                     </th>
+<th>      Phân loại </th>
+<th> Tên giao diện                          </th>
+<th> Mô tả giao diện                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
+<td> Khởi tạo </td>
 <td> sc3Xform          </td>
-<td> sc3Xform()默认构造函数       </td>
+<td> sc3Xform() hàm khởi tạo mặc định       </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sc3Xform </td>
-<td> sc3Xform(mat, trans)构造函数 </td>
+<td> sc3Xform(mat, trans) hàm khởi tạo </td>
 </tr>
 <tr>
-<td> 函数 </td>
+<td> Hàm </td>
 <td> GetMatrix        </td>
-<td> 获取旋转矩阵                 </td>
+<td> Lấy ma trận xoay                 </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetTrans          </td>
-<td> 获取平移向量                 </td>
+<td> Lấy vector tịnh tiến                 </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetMatrix   </td>
-<td> 设置二维线性变换的旋转矩阵   </td>
+<td> Thiết lập ma trận xoay của biến đổi tuyến tính hai chiều   </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetTrans     </td>
-<td> 设置二维线性变换的平移向量   </td>
+<td> Thiết lập vector tịnh tiến của biến đổi tuyến tính hai chiều   </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetXScale   </td>
-<td> 获取X轴缩放因子              </td>
+<td> Lấy hệ số tỷ lệ trục X              </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetYScale   </td>
-<td> 获取Y轴缩放因子              </td>
+<td> Lấy hệ số tỷ lệ trục Y              </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetZScale </td>
-<td> 获取Z轴缩放因子              </td>
+<td> Lấy hệ số tỷ lệ trục Z              </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
 <h3>sc3Xform()</h3>
 
 <ul>
-<li><p>功能：默认构造函数。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng：Hàm khởi tạo mặc định.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Không có.</p></li>
 </ul>
 
 
 <h3>sc3Xform(mat,trans)</h3>
 
 <ul>
-<li><p>功能：使用旋转矩阵和平移向量构造三维线性变换。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Sử dụng ma trận xoay và vector tịnh tiến để dựng biến đổi tuyến tính ba chiều.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li><p>mat：三维线性变换的旋转矩阵，sc3Matrix类型。</p></li>
-<li><p>trans：三维线性变换的平移向量，sc3Vector类型。</p></li>
+<li><p>mat：Ma trận xoay của biến đổi tuyến tính ba chiều, kiểu sc3Matrix.</p></li>
+<li><p>trans：Vector tịnh tiến của biến đổi tuyến tính ba chiều, kiểu sc3Vector.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示设置是否成功。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, biểu thị thiết lập có thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetMatrix()</h3>
 
 <ul>
-<li><p>功能：获取三维线性变换的旋转矩阵。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：sc3Matrix类型。</p></li>
+<li><p>Chức năng：Lấy ma trận xoay của biến đổi tuyến tính ba chiều.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Kiểu sc3Matrix.</p></li>
 </ul>
 
 
 <h3>GetTrans()</h3>
 
 <ul>
-<li><p>功能：获取三维线性变换的平移向量。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：sc3Vector类型。</p></li>
+<li><p>Chức năng：Lấy vector tịnh tiến của biến đổi tuyến tính ba chiều.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Kiểu sc3Vector.</p></li>
 </ul>
 
 
 <h3>SetMatrix(value)</h3>
 
 <ul>
-<li><p>功能：设置三维线性变换的旋转矩阵。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Thiết lập ma trận xoay của biến đổi tuyến tính ba chiều.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>value：三维线性变换的旋转矩阵，sc3Matrix类型。</li>
+<li>value：Ma trận xoay của biến đổi tuyến tính ba chiều, kiểu sc3Matrix.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示设置是否成功。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, biểu thị thiết lập có thành công hay không.</p></li>
 </ul>
 
 
 <h3>SetTrans(value)</h3>
 
 <ul>
-<li><p>功能：设置三维线性变换的平移向量。</p>
+<li><p>Chức năng：Thiết lập vector tịnh tiến của biến đổi tuyến tính ba chiều.</p>
 
 <ul>
-<li>value：三维线性变换的平移向量，sc3Vector类型。</li>
+<li>value：Vector tịnh tiến của biến đổi tuyến tính ba chiều, kiểu sc3Vector.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示设置是否成功。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, biểu thị thiết lập có thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetXScale(value)</h3>
 
 <ul>
-<li><p>功能：获取X 轴缩放因子。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Lấy hệ số tỷ lệ trục X.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>value：X 轴缩放因子，浮点数类型。</li>
+<li>value：Hệ số tỷ lệ trục X, kiểu số thực dấu phẩy động.</li>
 </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li><p>Giá trị trả về：Không có</p></li>
 </ul>
 
 
 <h3>GetYScale(value)</h3>
 
 <ul>
-<li><p>功能：获取Y 轴缩放因子。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Lấy hệ số tỷ lệ trục Y.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>value：Y 轴缩放因子，浮点数类型。</li>
+<li>value：Hệ số tỷ lệ trục Y, kiểu số thực dấu phẩy động.</li>
 </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li><p>Giá trị trả về：Không có</p></li>
 </ul>
 
 
 <h3>GetZScale(value)</h3>
 
 <ul>
-<li><p>功能：获取Z 轴缩放因子。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Lấy hệ số tỷ lệ trục Z.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>value：Z 轴缩放因子，浮点数类型。</li>
+<li>value：Hệ số tỷ lệ trục Z, kiểu số thực dấu phẩy động.</li>
 </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li><p>Giá trị trả về：Không có</p></li>
 </ul>
 
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>示例代码</h2>
+<h2>Mã ví dụ</h2>
 
-<p>无</p>
+<p>Không có</p>

@@ -18,423 +18,423 @@
            </head>
 <h1>sc3DPlane</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示三维平面。</p>
+<p>Biểu diễn mặt phẳng ba chiều.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                               </th>
-<th> 接口描述                          </th>
+<th>      Phân loại </th>
+<th> Tên giao diện                                               </th>
+<th> Mô tả giao diện                          </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
+<td> Khởi tạo </td>
 <td> sc3DPlane                             </td>
-<td> sc3DPlane()默认构造函数           </td>
+<td> sc3DPlane() hàm khởi tạo mặc định           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sc3DPlane                         </td>
-<td> sc3DPlane (vect)构造函数          </td>
+<td> sc3DPlane (vect) hàm khởi tạo          </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sc3DPlane                      </td>
-<td> sc3DPlane (pos, nor)构造函数      </td>
+<td> sc3DPlane (pos, nor) hàm khởi tạo      </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sc3DPlane                  </td>
-<td> sc3DPlane (pt1, pt2, pt3)构造函数 </td>
+<td> sc3DPlane (pt1, pt2, pt3) hàm khởi tạo </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sc3DPlane                    </td>
-<td> sc3DPlane (a, b, c, d)构造函数    </td>
+<td> sc3DPlane (a, b, c, d) hàm khởi tạo    </td>
 </tr>
 <tr>
-<td> 函数 </td>
+<td> Hàm </td>
 <td> Set3DVector                      </td>
-<td> 设置三维向量                      </td>
+<td> Thiết lập vector ba chiều                      </td>
 </tr>
 <tr>
 <td>      </td>
 <td> Set3Points               </td>
-<td> 设置平面上三个点（构造平面）      </td>
+<td> Thiết lập ba điểm trên mặt phẳng（dựng mặt phẳng）      </td>
 </tr>
 <tr>
 <td>      </td>
 <td> Get3Points                </td>
-<td> 获取平面上三个点                  </td>
+<td> Lấy ba điểm trên mặt phẳng                  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetCoefficients        </td>
-<td> 设置平面一般方程的系数            </td>
+<td> Thiết lập các hệ số của phương trình tổng quát mặt phẳng            </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetCoefficients                </td>
-<td> 获取平面一般方程的系数            </td>
+<td> Lấy các hệ số của phương trình tổng quát mặt phẳng            </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetPos                                </td>
-<td> 设置平面经过的点位置坐标          </td>
+<td> Thiết lập tọa độ vị trí của điểm mà mặt phẳng đi qua          </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetPos                                   </td>
-<td> 获取平面经过的点位置坐标          </td>
+<td> Lấy tọa độ vị trí của điểm mà mặt phẳng đi qua          </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetNormal                          </td>
-<td> 设置平面的法向量                  </td>
+<td> Thiết lập vector pháp tuyến của mặt phẳng                  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetNormal                             </td>
-<td> 获取平面的法向量                  </td>
+<td> Lấy vector pháp tuyến của mặt phẳng                  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetRegularizationNormal </td>
-<td> 获取单位化的平面法向量            </td>
+<td> Lấy vector pháp tuyến đã chuẩn hóa của mặt phẳng            </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetOffset                       </td>
-<td> 设置平面的偏移量                  </td>
+<td> Thiết lập độ lệch của mặt phẳng                  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetOffset                             </td>
-<td> 获取平面的偏移量                  </td>
+<td> Lấy độ lệch của mặt phẳng                  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetRotation                      </td>
-<td> 设置平面法向量的旋转角度          </td>
+<td> Thiết lập góc xoay của vector pháp tuyến mặt phẳng          </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetRotation                         </td>
-<td> 获取平面法向量的旋转角度          </td>
+<td> Lấy góc xoay của vector pháp tuyến mặt phẳng          </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetTilt                              </td>
-<td> 设置平面法向量的倾斜角度          </td>
+<td> Thiết lập góc nghiêng của vector pháp tuyến mặt phẳng          </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetTilt                                 </td>
-<td> 获取平面法向量的倾斜角度          </td>
+<td> Lấy góc nghiêng của vector pháp tuyến mặt phẳng          </td>
 </tr>
 <tr>
 <td>      </td>
 <td> Distance                            </td>
-<td> 计算给顶点到当前平面的距离        </td>
+<td> Tính khoảng cách từ điểm đã cho đến mặt phẳng hiện tại        </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
 <h3>sc3DPlane()</h3>
 
 <ul>
-<li><p>功能：构造sc3DPlane对象， 默认构造函数。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：无</p></li>
+<li><p>Chức năng：Dựng đối tượng sc3DPlane, hàm khởi tạo mặc định.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Không có</p></li>
 </ul>
 
 
 <h3>sc3DPlane(vect)</h3>
 
-<p>功能：根据三维向量vect构造平面，该平面必经过原点（0，0，0）且法向量为vect，若三维向量vect为零向量，则修正为默认向量(0, 0, 1)。</p>
+<p>Chức năng：Dựng mặt phẳng theo vector ba chiều vect, mặt phẳng này bắt buộc đi qua gốc tọa độ（0，0，0）và có vector pháp tuyến là vect, nếu vector ba chiều vect là vector không, thì hiệu chỉnh thành vector mặc định (0, 0, 1).</p>
 
 <ul>
-<li><p>参数：</p>
+<li><p>Tham số：</p>
 
 <ul>
-<li>vect：三维向量，sc3Vector类型。</li>
+<li>vect：Vector ba chiều, kiểu sc3Vector.</li>
 </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li><p>Giá trị trả về：Không có</p></li>
 </ul>
 
 
 <h3>sc3DPlane(pos, nor)</h3>
 
-<p>功能：根据平面所经过点的位置坐标pos和法向量nor构造平面，若法向量nor为零向量，则修正为默认向量(0, 0, 1)。</p>
+<p>Chức năng：Dựng mặt phẳng theo tọa độ vị trí pos của điểm mà mặt phẳng đi qua và vector pháp tuyến nor, nếu vector pháp tuyến nor là vector không, thì hiệu chỉnh thành vector mặc định (0, 0, 1).</p>
 
 <ul>
-<li><p>参数：</p>
+<li><p>Tham số：</p>
 
 <ul>
-<li><p>pos：位置坐标，sc3Dpoint类型。</p></li>
-<li><p>nor：法向量，sc3Dpoint类型。</p></li>
+<li><p>pos：Tọa độ vị trí, kiểu sc3Dpoint.</p></li>
+<li><p>nor：Vector pháp tuyến, kiểu sc3Dpoint.</p></li>
 </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li><p>Giá trị trả về：Không có</p></li>
 </ul>
 
 
 <h3>sc3DPlane(pt1, pt2,pt3)</h3>
 
-<p>功能：用三个点pt1、pt2、pt3来构造平面，若三点共线，则返回经过点pt1，且平行于XOY平面的平面。</p>
+<p>Chức năng：Dùng ba điểm pt1、pt2、pt3 để dựng mặt phẳng, nếu ba điểm thẳng hàng, thì trả về mặt phẳng đi qua điểm pt1, đồng thời song song với mặt phẳng XOY.</p>
 
 <ul>
-<li><p>参数：</p>
+<li><p>Tham số：</p>
 
 <ul>
-<li><p>pt1：平面上第一个点，sc3Dpoint类型。</p></li>
-<li><p>pt2：平面上第二个点，sc3Dpoint类型。</p></li>
-<li><p>pt3：平面上第三个点，sc3Dpoint类型。</p></li>
+<li><p>pt1：Điểm thứ nhất trên mặt phẳng, kiểu sc3Dpoint.</p></li>
+<li><p>pt2：Điểm thứ hai trên mặt phẳng, kiểu sc3Dpoint.</p></li>
+<li><p>pt3：Điểm thứ ba trên mặt phẳng, kiểu sc3Dpoint.</p></li>
 </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li><p>Giá trị trả về：Không có</p></li>
 </ul>
 
 
 <h3>sc3DPlane(a, b, c, d)</h3>
 
-<p>功能：用一般平面方程 aX + bY + cZ +d = 0构造平面，若系数a、b、c同时为0，则修正为：a = 0, b = 0, c = 1。</p>
+<p>Chức năng：Dùng phương trình tổng quát mặt phẳng aX + bY + cZ +d = 0 để dựng mặt phẳng, nếu các hệ số a、b、c đồng thời bằng 0, thì hiệu chỉnh thành：a = 0, b = 0, c = 1.</p>
 
 <ul>
-<li><p>参数：</p>
+<li><p>Tham số：</p>
 
 <ul>
-<li><p>a：一般平面方程第一个系数，浮点数类型。</p></li>
-<li><p>b：一般平面方程第二个系数，浮点数类型。</p></li>
-<li><p>c：一般平面方程第三个系数，浮点数类型。</p></li>
-<li><p>d：一般平面方程第四个系数，浮点数类型。</p></li>
+<li><p>a：Hệ số thứ nhất của phương trình tổng quát mặt phẳng, kiểu số thực dấu phẩy động.</p></li>
+<li><p>b：Hệ số thứ hai của phương trình tổng quát mặt phẳng, kiểu số thực dấu phẩy động.</p></li>
+<li><p>c：Hệ số thứ ba của phương trình tổng quát mặt phẳng, kiểu số thực dấu phẩy động.</p></li>
+<li><p>d：Hệ số thứ tư của phương trình tổng quát mặt phẳng, kiểu số thực dấu phẩy động.</p></li>
 </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li><p>Giá trị trả về：Không có</p></li>
 </ul>
 
 
 <h3>Set3DVector(vect)</h3>
 
-<p>功能：设置三维向量vect构造平面，该平面必经过原点（0，0，0）且法向量为vect。</p>
+<p>Chức năng：Thiết lập vector ba chiều vect để dựng mặt phẳng, mặt phẳng này bắt buộc đi qua gốc tọa độ（0，0，0）và có vector pháp tuyến là vect.</p>
 
 <ul>
-<li><p>参数：</p>
+<li><p>Tham số：</p>
 
 <ul>
-<li>vect：三维向量，sc3Vector类型。</li>
+<li>vect：Vector ba chiều, kiểu sc3Vector.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，若三维向量vect为零向量 则返回false，否则返回true。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, nếu vector ba chiều vect là vector không thì trả về false, ngược lại trả về true.</p></li>
 </ul>
 
 
 <h3>Set3Points(pt1, pt2, pt3)</h3>
 
 <ul>
-<li><p>功能：用平面上三个点来构造平面。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Dùng ba điểm trên mặt phẳng để dựng mặt phẳng.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li><p>pt1：平面经过的第一个点，sc3Dpoint类型。</p></li>
-<li><p>pt2：平面经过的第二个点，sc3Dpoint类型。</p></li>
-<li><p>pt3：平面经过的第三个点，sc3Dpoint类型。</p></li>
+<li><p>pt1：Điểm thứ nhất mà mặt phẳng đi qua, kiểu sc3Dpoint.</p></li>
+<li><p>pt2：Điểm thứ hai mà mặt phẳng đi qua, kiểu sc3Dpoint.</p></li>
+<li><p>pt3：Điểm thứ ba mà mặt phẳng đi qua, kiểu sc3Dpoint.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，若三点共线，则返回false，否则返回true。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, nếu ba điểm thẳng hàng, thì trả về false, ngược lại trả về true.</p></li>
 </ul>
 
 
 <h3>Get3Points(pt1, pt2,pt3)</h3>
 
 <ul>
-<li><p>功能：获取平面上的三个点。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Lấy ba điểm trên mặt phẳng.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li><p>pt1：平面经过的第一个点，sc3Dpoint类型。</p></li>
-<li><p>pt2：平面经过的第二个点，sc3Dpoint类型。</p></li>
-<li><p>pt3：平面经过的第三个点，sc3Dpoint类型。</p></li>
+<li><p>pt1：Điểm thứ nhất mà mặt phẳng đi qua, kiểu sc3Dpoint.</p></li>
+<li><p>pt2：Điểm thứ hai mà mặt phẳng đi qua, kiểu sc3Dpoint.</p></li>
+<li><p>pt3：Điểm thứ ba mà mặt phẳng đi qua, kiểu sc3Dpoint.</p></li>
 </ul>
 </li>
-<li><p>返回值：无</p></li>
+<li><p>Giá trị trả về：Không có</p></li>
 </ul>
 
 
 <h3>SetCoefficients(a, b, c, d)</h3>
 
 <ul>
-<li><p>功能：用平面上三个点来构造平面。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Dùng ba điểm trên mặt phẳng để dựng mặt phẳng.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li><p>a：一般平面方程第一个系数，浮点数类型。</p></li>
-<li><p>b：一般平面方程第二个系数，浮点数类型。</p></li>
-<li><p>c：一般平面方程第三个系数，浮点数类型。</p></li>
-<li><p>d：一般平面方程第四个系数，浮点数类型。</p></li>
+<li><p>a：Hệ số thứ nhất của phương trình tổng quát mặt phẳng, kiểu số thực dấu phẩy động.</p></li>
+<li><p>b：Hệ số thứ hai của phương trình tổng quát mặt phẳng, kiểu số thực dấu phẩy động.</p></li>
+<li><p>c：Hệ số thứ ba của phương trình tổng quát mặt phẳng, kiểu số thực dấu phẩy động.</p></li>
+<li><p>d：Hệ số thứ tư của phương trình tổng quát mặt phẳng, kiểu số thực dấu phẩy động.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，若系数a，b，c同时为0，则返回false，否则返回true。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, nếu các hệ số a，b，c đồng thời bằng 0, thì trả về false, ngược lại trả về true.</p></li>
 </ul>
 
 
 <h3>GetCoefficients( )</h3>
 
 <ul>
-<li><p>功能：获取平面一般方程 aX + bY + cZ +d = 0 的系数。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：各个系数组合成的元组(a, b, c, d)，tuple类型。</p></li>
+<li><p>Chức năng：Lấy các hệ số của phương trình tổng quát mặt phẳng aX + bY + cZ +d = 0.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Tuple (a, b, c, d) được tạo thành từ các hệ số, kiểu tuple.</p></li>
 </ul>
 
 
 <h3>SetPos(pos)</h3>
 
 <ul>
-<li>功能：设置平面经过的点位置坐标。</li>
-<li>参数：</li>
-<li>pos：位置坐标，sc3Dpoint类型。</li>
-<li>返回值：bool类型，表示是否设置成功</li>
+<li>Chức năng：Thiết lập tọa độ vị trí của điểm mà mặt phẳng đi qua.</li>
+<li>Tham số：</li>
+<li>pos：Tọa độ vị trí, kiểu sc3Dpoint.</li>
+<li>Giá trị trả về：Kiểu bool, biểu thị thiết lập có thành công hay không</li>
 </ul>
 
 
 <h3>GetPos()</h3>
 
 <ul>
-<li><p>功能：获取平面经过的点位置坐标。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：平面经过的点位置坐标，sc3Dpoint类型。</p></li>
+<li><p>Chức năng：Lấy tọa độ vị trí của điểm mà mặt phẳng đi qua.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Tọa độ vị trí của điểm mà mặt phẳng đi qua, kiểu sc3Dpoint.</p></li>
 </ul>
 
 
 <h3>SetNormal(nor)</h3>
 
 <ul>
-<li><p>功能：设置平面的法向量。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Thiết lập vector pháp tuyến của mặt phẳng.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>nor：法向量，sc3Dpoint类型。</li>
+<li>nor：Vector pháp tuyến, kiểu sc3Dpoint.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，若法向量nor为零向量，则返回false，否则返回true。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, nếu vector pháp tuyến nor là vector không, thì trả về false, ngược lại trả về true.</p></li>
 </ul>
 
 
 <h3>GetNormal()</h3>
 
 <ul>
-<li><p>功能：获取平面的法向量。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：平面的法向量，sc3Dpoint类型。</p></li>
+<li><p>Chức năng：Lấy vector pháp tuyến của mặt phẳng.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Vector pháp tuyến của mặt phẳng, kiểu sc3Dpoint.</p></li>
 </ul>
 
 
 <h3>GetRegularizationNormal()</h3>
 
 <ul>
-<li><p>功能：获取单位化的平面法向量。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：sc3Dpoint类型</p></li>
+<li><p>Chức năng：Lấy vector pháp tuyến đã chuẩn hóa của mặt phẳng.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Kiểu sc3Dpoint</p></li>
 </ul>
 
 
 <h3>SetOffset(offset)</h3>
 
 <ul>
-<li><p>功能：设置平面的偏移量。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Thiết lập độ lệch của mặt phẳng.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>offset：偏移量，浮点数类型。</li>
+<li>offset：Độ lệch, kiểu số thực dấu phẩy động.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về：Kiểu bool, biểu thị thiết lập có thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetOffset()</h3>
 
 <ul>
-<li><p>功能：获取平面的偏移量。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：平面偏移量，浮点数类型。</p></li>
+<li><p>Chức năng：Lấy độ lệch của mặt phẳng.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Độ lệch mặt phẳng, kiểu số thực dấu phẩy động.</p></li>
 </ul>
 
 
 <h3>SetRotation(rot)</h3>
 
 <ul>
-<li><p>功能：设置平面法向量的旋转角度。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Thiết lập góc xoay của vector pháp tuyến mặt phẳng.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>rot：旋转角度，取值范围[0, π]，scRadian类型。</li>
+<li>rot：Góc xoay, phạm vi giá trị [0, π]，kiểu scRadian.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功</p></li>
+<li><p>Giá trị trả về：Kiểu bool, biểu thị thiết lập có thành công hay không</p></li>
 </ul>
 
 
 <h3>GetRotation()</h3>
 
 <ul>
-<li><p>功能：获取平面法向量的旋转角度。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：scRadian类型</p></li>
+<li><p>Chức năng：Lấy góc xoay của vector pháp tuyến mặt phẳng.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Kiểu scRadian</p></li>
 </ul>
 
 
 <h3>SetTilt(til)</h3>
 
 <ul>
-<li><p>功能：设置平面法向量的倾斜角度。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Thiết lập góc nghiêng của vector pháp tuyến mặt phẳng.</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>til：旋转角度，取值范围[0, 2π)，scRadian类型。</li>
+<li>til：Góc xoay, phạm vi giá trị [0, 2π)，kiểu scRadian.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功</p></li>
+<li><p>Giá trị trả về：Kiểu bool, biểu thị thiết lập có thành công hay không</p></li>
 </ul>
 
 
 <h3>GetTilt()</h3>
 
 <ul>
-<li><p>功能：获取平面法向量的倾斜角度。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：scRadian类型</p></li>
+<li><p>Chức năng：Lấy góc nghiêng của vector pháp tuyến mặt phẳng.</p></li>
+<li><p>Tham số：Không có</p></li>
+<li><p>Giá trị trả về：Kiểu scRadian</p></li>
 </ul>
 
 
 <h3>Distance(pos)</h3>
 
 <ul>
-<li><p>功能：计算给定点pos到当前平面的距离</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng：Tính khoảng cách từ điểm pos đã cho đến mặt phẳng hiện tại</p></li>
+<li><p>Tham số：</p>
 
 <ul>
-<li>pos：给定点，sc3Dpoint类型。</li>
+<li>pos：Điểm đã cho, kiểu sc3Dpoint.</li>
 </ul>
 </li>
-<li><p>返回值：pos到当前平面的距离，浮点数类型。</p></li>
+<li><p>Giá trị trả về：Khoảng cách từ pos đến mặt phẳng hiện tại, kiểu số thực dấu phẩy động.</p></li>
 </ul>
 
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>示例代码</h2>
+<h2>Mã ví dụ</h2>
 
-<p>无</p>
+<p>Không có</p>
