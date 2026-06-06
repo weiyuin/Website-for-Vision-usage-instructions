@@ -16,143 +16,143 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>深度图像重构</h1>
+<h1>Tái cấu trúc ảnh độ sâu</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     深度图像重构工具支持“投影平面”和“指定变换”两种模式。</p>
+<p>​     Công cụ tái cấu trúc ảnh độ sâu hỗ trợ hai chế độ “mặt phẳng chiếu” và “biến đổi chỉ định”.</p>
 
-<p>​     “投影平面”模式为由用户指定投影基平面，重构工具将指定的基平面校正至XOY面，重构后的深度图像中，指定平面校正为水平面，目标物体的Z值即为到平面的高度，如下图所示：</p>
+<p>​     Chế độ “mặt phẳng chiếu” là người dùng chỉ định mặt phẳng chuẩn chiếu, công cụ tái cấu trúc sẽ hiệu chỉnh mặt phẳng chuẩn được chỉ định về mặt XOY. Trong ảnh độ sâu sau khi tái cấu trúc, mặt phẳng chỉ định được hiệu chỉnh thành mặt phẳng ngang, giá trị Z của vật thể mục tiêu chính là chiều cao đến mặt phẳng, như hình bên dưới:</p>
 
 <p><img src="media/GcRangeReconstructionTool_1_1.png" alt="" /></p>
 
-<p>​     “指定变换”模式为将深度图表征的点云信息经指定变换后重新投影至XOY平面，形成新的深度图像，如下图所示：</p>
+<p>​     Chế độ “biến đổi chỉ định” là chuyển đổi thông tin đám mây điểm được biểu diễn bởi ảnh độ sâu theo phép biến đổi chỉ định, sau đó chiếu lại lên mặt phẳng XOY để tạo thành ảnh độ sâu mới, như hình bên dưới:</p>
 
 <p><img src="media/GcRangeReconstructionTool_1_2.png" alt="" /></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Tình huống ứng dụng</h2>
 
-<p>​     相机扫描过程中，产品不一定处于平面方向，因此对测量模块产生精度偏差，或无法统一测量，因此需要在测量之前将产品进行水平处理，使所有图像中的产品处于同一个平面，因此可以进行统一测量。</p>
+<p>​     Trong quá trình camera quét, sản phẩm không nhất thiết nằm theo hướng mặt phẳng, do đó gây ra sai lệch độ chính xác cho module đo, hoặc không thể đo thống nhất. Vì vậy cần xử lý làm phẳng sản phẩm trước khi đo, để sản phẩm trong tất cả ảnh nằm trên cùng một mặt phẳng, từ đó có thể tiến hành đo thống nhất.</p>
 
 <p><img src="media/GcRangeReconstructionTool_2_1.png" alt="" /></p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>​     深度图像重构工具有投影平面和指定变换两种模式。“投影平面”模式为由用户指定投影基平面，重构工具将指定的基平面校正至XOY面，首先根据平面法向量与Z轴获取刚体变换矩阵，对原深度数据表征的点云作刚体变换，然后将变换后的点云重新映射构建新的深度图像，重构后的深度图像中，指定平面校正为水平面，目标物体的Z值即为到平面的高度。“指定变换”模式为将原深度图表征的点云信息经过指定变换后重新投影至XOY平面，形成新的深度图像。</p>
+<p>​     Công cụ tái cấu trúc ảnh độ sâu có hai chế độ là mặt phẳng chiếu và biến đổi chỉ định. Chế độ “mặt phẳng chiếu” là người dùng chỉ định mặt phẳng chuẩn chiếu, công cụ tái cấu trúc sẽ hiệu chỉnh mặt phẳng chuẩn được chỉ định về mặt XOY. Trước tiên dựa vào vector pháp tuyến của mặt phẳng và trục Z để lấy ma trận biến đổi vật rắn, thực hiện biến đổi vật rắn đối với đám mây điểm được biểu diễn bởi dữ liệu độ sâu gốc, sau đó ánh xạ lại đám mây điểm sau biến đổi để xây dựng ảnh độ sâu mới. Trong ảnh độ sâu sau khi tái cấu trúc, mặt phẳng chỉ định được hiệu chỉnh thành mặt phẳng ngang, giá trị Z của vật thể mục tiêu chính là chiều cao đến mặt phẳng. Chế độ “biến đổi chỉ định” là chuyển đổi thông tin đám mây điểm được biểu diễn bởi ảnh độ sâu gốc theo phép biến đổi chỉ định, sau đó chiếu lại lên mặt phẳng XOY để tạo thành ảnh độ sâu mới.</p>
 
 <p><img src="media/GcRangeReconstructionTool_3_1.png" alt="" /></p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像，拟合投影平面</h4></li>
+<li><h4>Thêm công cụ, tải ảnh, fitting mặt phẳng chiếu</h4></li>
 </ul>
 
 
 <p><img src="media/GcRangeReconstructionTool_4_1.png" alt="" /></p>
 
-<p><strong>拟合投影平面</strong></p>
+<p><strong>Fitting mặt phẳng chiếu</strong></p>
 
-<p>​     投影平面的拟合请参考平面拟合、平面拟合2、局外点平面拟合等平面拟合工具操作说明手册。</p>
+<p>​     Việc fitting mặt phẳng chiếu vui lòng tham khảo sổ tay hướng dẫn thao tác của các công cụ fitting mặt phẳng như fitting mặt phẳng, fitting mặt phẳng 2, fitting mặt phẳng có điểm ngoại lai.</p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
-<p>​     无</p>
+<p>​     Không có</p>
 
-<h2>6. 参数说明</h2>
+<h2>6. Mô tả tham số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称               </th>
-<th> 参数说明                                                     </th>
+<th> Tên tham số               </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 启用ROI                </td>
-<td> 选择“是”，则使用矩形ROI。                                    </td>
+<td> Bật ROI                </td>
+<td> Chọn “Có”, thì sử dụng ROI hình chữ nhật.                                    </td>
 </tr>
 <tr>
-<td> 矩形ROI                </td>
-<td> 启用ROI参数选择是时有效，用户使用矩形ROI指定重构区域。       </td>
+<td> ROI hình chữ nhật                </td>
+<td> Có hiệu lực khi tham số bật ROI chọn Có, người dùng sử dụng ROI hình chữ nhật để chỉ định vùng tái cấu trúc.       </td>
 </tr>
 <tr>
-<td> 重构模式               </td>
-<td> 投影平面模式：将深度图像中的所有点，重新投影到指定的平面上，形成新的深度图像；指定变换模式：将深度图像中的所有点，按指定变换形成变换后的深度图像；局部补偿模式：将仿射矩形ROI中的点集根据相对应的补偿值进行局部Z向补偿，并输出补偿后的结果图像； </td>
+<td> Chế độ tái cấu trúc               </td>
+<td> Chế độ mặt phẳng chiếu: chiếu lại tất cả các điểm trong ảnh độ sâu lên mặt phẳng chỉ định để tạo thành ảnh độ sâu mới; chế độ biến đổi chỉ định: biến đổi tất cả các điểm trong ảnh độ sâu theo phép biến đổi chỉ định để tạo thành ảnh độ sâu sau biến đổi; chế độ bù cục bộ: thực hiện bù cục bộ theo hướng Z cho tập điểm trong ROI hình chữ nhật affine theo giá trị bù tương ứng, đồng thời xuất ảnh kết quả sau khi bù; </td>
 </tr>
 <tr>
-<td> 分辨率设置模式         </td>
-<td>选择手动/自动设置分辨率模式，手动模式下可以输入Z向分辨率      </td>
+<td> Chế độ thiết lập độ phân giải         </td>
+<td>Chọn chế độ thiết lập độ phân giải thủ công/tự động, ở chế độ thủ công có thể nhập độ phân giải theo hướng Z      </td>
 </tr>
 <tr>
-<td> Z向分辨率             </td>
-<td> 深度图中显示的物理高度范围有限，Z向分辨率就可以控制显示的高度范围。分辨率数值越大，显示的物理值范围越大，但是细节容易丢失，分辨率数值越小，显示物理值范围越小，细节可以突显。                   </td>
+<td> Độ phân giải hướng Z             </td>
+<td> Phạm vi chiều cao vật lý hiển thị trong ảnh độ sâu là có giới hạn, độ phân giải hướng Z có thể điều khiển phạm vi chiều cao hiển thị. Giá trị độ phân giải càng lớn, phạm vi giá trị vật lý hiển thị càng lớn, nhưng chi tiết dễ bị mất; giá trị độ phân giải càng nhỏ, phạm vi giá trị vật lý hiển thị càng nhỏ, chi tiết có thể được làm nổi bật.                   </td>
 </tr>
 <tr>
-<td> 开启并行运算          </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。 </td>
+<td> Bật tính toán song song          </td>
+<td> Có bật tính toán song song hay không, khi chọn Có, thuật toán sẽ bật phương thức tính toán song song OpenMp, có thể nâng cao tốc độ tính toán, nhưng có thể xuất hiện tình trạng thời gian xử lý không ổn định; khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp. </td>
 </tr>
 <tr>
-<td> 线程数百分比           </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围。 </td>
+<td> Phần trăm số luồng           </td>
+<td> Thiết lập phần trăm số luồng của tính toán song song, phạm vi hợp lệ là (0, 0.75], tương ứng biểu thị phạm vi phần trăm (0%, 75%]. </td>
 </tr>
 <tr>
-<td> 输入深度图像（数据链） </td>
-<td> 输入待重构的深度图像。                                       </td>
+<td> Ảnh độ sâu đầu vào（chuỗi dữ liệu） </td>
+<td> Nhập ảnh độ sâu cần tái cấu trúc.                                       </td>
 </tr>
 <tr>
-<td> 二维线性变换（数据链） </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                       </td>
+<td> Biến đổi tuyến tính 2D（chuỗi dữ liệu） </td>
+<td> Phép biến đổi tịnh tiến, xoay, co giãn của đối tượng so với template.                       </td>
 </tr>
 <tr>
-<td> 投影平面（数据链）     </td>
-<td> 即重构时进行投影的平面。当重构模式为投影平面时开启。         </td>
+<td> Mặt phẳng chiếu（chuỗi dữ liệu）     </td>
+<td> Chính là mặt phẳng dùng để chiếu khi tái cấu trúc. Bật khi chế độ tái cấu trúc là mặt phẳng chiếu.         </td>
 </tr>
 <tr>
-<td> 局部补偿数组（数据链） </td>
-<td> 每个仿射矩形ROI中点集的Z向补偿值组合成的数组。当重构模式为局部补偿时开启。 </td>
+<td> Mảng bù cục bộ（chuỗi dữ liệu） </td>
+<td> Mảng được tạo thành từ các giá trị bù theo hướng Z của tập điểm trong từng ROI hình chữ nhật affine. Bật khi chế độ tái cấu trúc là bù cục bộ. </td>
 </tr>
 <tr>
-<td> 绕x/y/z轴旋转角度     </td>
-<td> 分辨控制变换之后的图像相对于原图在x/y/z轴上旋转的角度，参数范围[-360,360],单位：度（°）</td>
+<td> Góc xoay quanh trục x/y/z     </td>
+<td> Lần lượt điều khiển góc xoay của ảnh sau biến đổi so với ảnh gốc trên các trục x/y/z, phạm vi tham số [-360,360], đơn vị: độ（°）</td>
 </tr>
 <tr>
-<td> 多仿射矩形ROI          </td>
-<td> Center：矩形中心坐标， Size：长和宽， Rotation:旋转角度， Skew：切变角度 </td>
+<td> Nhiều ROI hình chữ nhật affine          </td>
+<td> Center: tọa độ tâm hình chữ nhật, Size: chiều dài và chiều rộng, Rotation: góc xoay, Skew: góc shear </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明                                   </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出深度图像 </td>
-<td> 输出的重构后的深度图像 </td>
+<td> Ảnh độ sâu đầu ra </td>
+<td> Ảnh độ sâu sau khi tái cấu trúc được xuất ra </td>
 </tr>
 <tr>
-<td> 执行结果     </td>
-<td> 工具执行结果                               </td>
+<td> Kết quả thực thi     </td>
+<td> Kết quả thực thi của công cụ                               </td>
 </tr>
 <tr>
-<td> 执行时间     </td>
-<td> 工具执行时间                               </td>
+<td> Thời gian thực thi     </td>
+<td> Thời gian thực thi của công cụ                               </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7. 示例工程</h2>
+<h2>7. Project mẫu</h2>
 
 <p>​     参见“\Samples\3D\深度图\深度图像重构工具.gvp”。</p>
