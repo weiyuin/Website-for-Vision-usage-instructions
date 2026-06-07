@@ -16,154 +16,155 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>环形扫描还原工具</h1>
+<h1>Công cụ khôi phục quét dạng vòng</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 环形扫描还原工具，根据标定的结果，将圆台扫描得到的深度图进行还原，以得到真实的点云数据。</p>
+<p>​ Công cụ khôi phục quét dạng vòng, dựa trên kết quả hiệu chuẩn, khôi phục ảnh độ sâu thu được từ quá trình quét bằng bàn xoay, nhằm thu được dữ liệu đám mây điểm thực.</p>
 
 <p><img src="media/GvPolarRectificationTool1_1.png" alt="img" /></p>
 
-<p><imgnote>图1_1 扫描的原始点云</imgnote></p>
+<p><imgnote>Hình 1_1 Đám mây điểm gốc được quét</imgnote></p>
 
 <p><img src="media/GvPolarRectificationTool1_2.png" alt="img" /></p>
 
-<p><imgnote>图1_2 还原后的真实点云</imgnote></p>
+<p><imgnote>Hình 1_2 Đám mây điểm thực sau khi khôi phục</imgnote></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Trường hợp ứng dụng</h2>
 
-<p>​ 3D项目中，需要对球、圆柱、圆孔等产品进行扫描时，固定线激光，产品在转台/机械手上旋转，而后对扫描得到的点云进行还原，从而得到真实的3D数据。</p>
+<p>​ Trong các dự án 3D, khi cần quét các sản phẩm như hình cầu, hình trụ, lỗ tròn, v.v., cố định laser đường, sản phẩm quay trên bàn xoay/robot, sau đó khôi phục đám mây điểm thu được từ quá trình quét, từ đó thu được dữ liệu 3D thực.</p>
 
-<h2>3. 使用向导</h2>
+<h2>3. Hướng dẫn sử dụng</h2>
 
-<p>step1：添加图像文件（读取深度图）、环形扫描还原工具；</p>
+<p>step1: Thêm tệp hình ảnh (đọc ảnh độ sâu), công cụ khôi phục quét dạng vòng;</p>
 
-<p>step2：选中环形扫描还原工具，在左侧ParameterList中输入采集点云时，实际设置的触发角度间隔（每多少度采集一行）；</p>
+<p>step2: Chọn công cụ khôi phục quét dạng vòng, trong ParameterList bên trái nhập khoảng cách góc kích hoạt thực tế được thiết lập khi thu thập đám mây điểm (mỗi bao nhiêu độ thu thập một dòng);</p>
 
 <p><img src="media/GvPolarRectificationTool3_1.png" alt="img" /></p>
 
-<p><imgnote>图3_1 ParameterList设置</imgnote></p>
+<p><imgnote>Hình 3_1 Thiết lập ParameterList</imgnote></p>
 
-<p>step3：双击打开"环形扫描还原工具"的参数链界面，选择需要还原的深度图数据和标定的具体结果即可。</p>
+<p>step3: Nhấp đúp để mở giao diện chuỗi tham số của "Công cụ khôi phục quét dạng vòng", chọn dữ liệu ảnh độ sâu cần khôi phục và kết quả hiệu chuẩn cụ thể là được.</p>
 
 <p><img src="media/GvPolarRectificationTool3_2.png" alt="img" /></p>
 
-<p><imgnote>图3_2 参数链设置</imgnote></p>
+<p><imgnote>Hình 3_2 Thiết lập chuỗi tham số</imgnote></p>
 
-<h2>4. 常见问题</h2>
+<h2>4. Câu hỏi thường gặp</h2>
 
-<p>注意输入的角度间隔是实际采集时的角度间隔，与深度图每个像素代表的Y值无关。</p>
+<p>Lưu ý khoảng cách góc đầu vào là khoảng cách góc trong quá trình thu thập thực tế, không liên quan đến giá trị Y mà mỗi pixel của ảnh độ sâu đại diện.</p>
 
-<h2>5. 参数说明</h2>
+<h2>5. Mô tả tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称       </th>
-<th> 参数说明                                                     </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入深度图数据 </td>
-<td> 输入深度图数据                                                                               </td>
+<td> Dữ liệu ảnh độ sâu đầu vào </td>
+<td> Dữ liệu ảnh độ sâu đầu vào                                                                               </td>
 </tr>
 <tr>
-<td> 旋转轴的方向RX </td>
-<td> 旋转轴的方向RX </td>
+<td> Hướng RX của trục quay </td>
+<td> Hướng RX của trục quay </td>
 </tr>
 <tr>
-<td> 旋转轴的方向RY </td>
-<td> 旋转轴的方向RY </td>
+<td> Hướng RY của trục quay </td>
+<td> Hướng RY của trục quay </td>
 </tr>
 <tr>
-<td> 旋转轴的方向RZ </td>
-<td> 旋转轴的方向RZ </td>
+<td> Hướng RZ của trục quay </td>
+<td> Hướng RZ của trục quay </td>
 </tr>
 <tr>
-<td> 旋转轴上的一点X </td>
-<td> 旋转轴上的一点X </td>
+<td> Tọa độ X của một điểm trên trục quay </td>
+<td> Tọa độ X của một điểm trên trục quay </td>
 </tr>
 <tr>
-<td> 旋转轴上的一点Y </td>
-<td> 旋转轴上的一点Y </td>
+<td> Tọa độ Y của một điểm trên trục quay </td>
+<td> Tọa độ Y của một điểm trên trục quay </td>
 </tr>
 <tr>
-<td> 旋转轴上的一点Z </td>
-<td> 旋转轴上的一点Z </td>
+<td> Tọa độ Z của một điểm trên trục quay </td>
+<td> Tọa độ Z của một điểm trên trục quay </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称       </th>
-<th> 参数说明                                                     </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 角度间隔 </td>
-<td> 实际采集时的角度间隔（每隔多少度采集一行点云，与Y向分辨率类似） </td>
+<td> Khoảng cách góc </td>
+<td> Khoảng cách góc trong quá trình thu thập thực tế (mỗi bao nhiêu độ thu thập một dòng đám mây điểm, tương tự như độ phân giải theo hướng Y) </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明               </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云 </td>
-<td> 输出还原后的点云 </td>
+<td> Đám mây điểm đầu ra </td>
+<td> Xuất đám mây điểm sau khi khôi phục </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明               </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点云 </td>
-<td> 输出还原后的点云数据，一般用于查看是否有效和点数 </td>
+<td> Đám mây điểm đầu ra </td>
+<td> Xuất dữ liệu đám mây điểm sau khi khôi phục, thường dùng để kiểm tra xem có hợp lệ hay không và số lượng điểm </td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 工具执行时间 </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ </td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果 </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 示例工程</h2>
+<h2>6. Dự án ví dụ</h2>
 
 <p>​ 参见“\Samples\3D\深度图\环形扫描还原工具.gvp”。</p>
 
-<h2>7. 特殊说明</h2>
+<h2>7. Mô tả đặc biệt</h2>
 
-<p>​ 无</p>
+
+<p>​ Không có</p>
