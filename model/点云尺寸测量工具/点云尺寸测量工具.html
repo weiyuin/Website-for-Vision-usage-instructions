@@ -16,156 +16,156 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云尺寸测量工具</h1>
+<h1>Công cụ đo kích thước đám mây điểm</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>对深度图像中某两个特征点之间的尺寸信息进行测量，图1所示为两个特征点之间的长度信息。</p>
+<p>Đo thông tin kích thước giữa hai điểm đặc trưng trong ảnh độ sâu, Hình 1 minh họa thông tin chiều dài giữa hai điểm đặc trưng.</p>
 
 <p><img src="media/wps90.jpg" alt="img" /></p>
 
-<p><imgnote>图1 点云尺寸测量工具示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa công cụ đo kích thước đám mây điểm</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称     </th>
-<th> 参数描述                                                                                             </th>
+<th>Phân loại </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口     </td>
-<td> 尺寸 特征类型                          </td>
-<td> 深度数据的尺寸类型，以便计算两个特征点的距离或中点，分为6种：宽度、长度、高度、欧氏距离、平面距离、中点。<img src="media/wps92.jpg" alt="img" /> </td>
+<td> Cửa sổ thuộc tính     </td>
+<td> Loại đặc trưng kích thước                          </td>
+<td> Loại kích thước của dữ liệu độ sâu, dùng để tính khoảng cách hoặc trung điểm giữa hai điểm đặc trưng, được chia thành 6 loại: chiều rộng, chiều dài, chiều cao, khoảng cách Euclid, khoảng cách phẳng, trung điểm.<img src="media/wps92.jpg" alt="img" /> </td>
 </tr>
 <tr>
 <td>  </td>
-<td> 系数补偿 </td>
-<td> 测量结果系数补偿，一般为1，用于补偿成像等系统误差。 </td>
+<td> Bù hệ số </td>
+<td> Bù hệ số cho kết quả đo, thông thường là 1, dùng để bù sai số hệ thống như sai số tạo ảnh. </td>
 </tr>
 <tr>
 <td>  </td>
-<td> 固定补偿 </td>
-<td> 测量结果固定补偿，一般为0，用于补偿成像等系统误差。 </td>
+<td> Bù cố định </td>
+<td> Bù cố định cho kết quả đo, thông thường là 0, dùng để bù sai số hệ thống như sai số tạo ảnh. </td>
 </tr>
 <tr>
 <td>  </td>
-<td> 阈值范围下限 </td>
-<td> 判定条件的下限值，取值范围：[-100000,100000]，单位：mm。 </td>
+<td> Giới hạn dưới của dải ngưỡng </td>
+<td> Giá trị giới hạn dưới của điều kiện phán định, phạm vi giá trị: [-100000,100000], đơn vị: mm. </td>
 </tr>
 <tr>
 <td>  </td>
-<td> 阈值范围上限 </td>
-<td> 判定条件的上限值，取值范围：[-100000,100000]，单位：mm。 </td>
+<td> Giới hạn trên của dải ngưỡng </td>
+<td> Giá trị giới hạn trên của điều kiện phán định, phạm vi giá trị: [-100000,100000], đơn vị: mm. </td>
 </tr>
 <tr>
-<td> 图像窗口     </td>
-<td> 深度图像                               </td>
-<td> 显示待检测的深度图像，显示为伪彩色图像。                     </td>
+<td> Cửa sổ hình ảnh     </td>
+<td> Ảnh độ sâu                               </td>
+<td> Hiển thị ảnh độ sâu cần kiểm tra, được hiển thị dưới dạng ảnh giả màu.                     </td>
 </tr>
 <tr>
-<td> 数据链       </td>
-<td> 输入深度图像                           </td>
-<td> 输入待检测的深度图像。                                       </td>
+<td> Liên kết dữ liệu       </td>
+<td> Ảnh độ sâu đầu vào                           </td>
+<td> Nhập ảnh độ sâu cần kiểm tra.                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换 </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                                                               </td>
+<td> Biến đổi tuyến tính 2D </td>
+<td> Biến đổi tịnh tiến, xoay và thu phóng của đối tượng so với mẫu.                                                               </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无    </td>
-<td> 无                                                                                                   </td>
+<td>Giao diện nâng cao</td>
+<td> Không có    </td>
+<td> Không có                                                                                                   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称          </th>
-<th> 参数描述                                                                                            </th>
+<th>Phân loại </th>
+<th> Tên tham số          </th>
+<th> Mô tả tham số                                                                                            </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口          </td>
-<td> 输入深度图像                                          </td>
-<td> 输入图像的长宽和像素大小，以及深度数据参数。 </td>
+<td> Cửa sổ giám sát          </td>
+<td> Ảnh độ sâu đầu vào                                          </td>
+<td> Chiều dài, chiều rộng và kích thước pixel của ảnh đầu vào, cùng với các tham số dữ liệu độ sâu. </td>
 </tr>
 <tr>
 <td></td>
-<td> 位置1             </td>
-<td> 第1个特征点的三维坐标信息。                                                                         </td>
+<td> Vị trí 1             </td>
+<td> Thông tin tọa độ 3D của điểm đặc trưng thứ 1.                                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 位置2             </td>
-<td> 第2个特征点的三维坐标信息。                                                                         </td>
+<td> Vị trí 2             </td>
+<td> Thông tin tọa độ 3D của điểm đặc trưng thứ 2.                                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 尺寸结果          </td>
-<td> 两个特征点间的宽度/长度/高度/欧氏距离/平面距离/中点。                                               </td>
+<td> Kết quả kích thước          </td>
+<td> Chiều rộng/chiều dài/chiều cao/khoảng cách Euclid/khoảng cách phẳng/trung điểm giữa hai điểm đặc trưng.                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果          </td>
-<td> 工具执行结果。                                                                                      </td>
+<td> Kết quả thực thi          </td>
+<td> Kết quả thực thi của công cụ.                                                                                      </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间          </td>
-<td> 工具执行时间。                                                                                      </td>
+<td> Thời gian thực thi          </td>
+<td> Thời gian thực thi của công cụ.                                                                                      </td>
 </tr>
 <tr>
-<td> 图像窗口          </td>
-<td> 输入深度图像                                          </td>
-<td> 显示检测的深度图像，显示为伪彩色图像。       </td>
+<td> Cửa sổ hình ảnh          </td>
+<td> Ảnh độ sâu đầu vào                                          </td>
+<td> Hiển thị ảnh độ sâu đã kiểm tra, được hiển thị dưới dạng ảnh giả màu.       </td>
 </tr>
 <tr>
 <td></td>
-<td> 特征点、距离/中点 </td>
-<td> 显示特征点结果，及两个特征点间的距离或中点。                                                        </td>
+<td> Điểm đặc trưng, khoảng cách/trung điểm </td>
+<td> Hiển thị kết quả điểm đặc trưng, và khoảng cách hoặc trung điểm giữa hai điểm đặc trưng.                                                        </td>
 </tr>
 <tr>
-<td>数据链</td>
+<td>Liên kết dữ liệu</td>
 <td>             </td>
-<td> 同监视窗口参数，供后续工具使用。                                                                    </td>
+<td> Giống với tham số trong cửa sổ giám sát, dùng cho các công cụ tiếp theo.                                                                    </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<h3>使用向导</h3>
+<h3>Hướng dẫn sử dụng</h3>
 
-<p><strong>Step 1 设置深度数据尺寸类型</strong></p>
+<p><strong>Bước 1 Thiết lập loại kích thước dữ liệu độ sâu</strong></p>
 
-<p>为了获取深度数据特征点之间的距离或者中点坐标信息，需要设置深度数据的尺寸类型。深度数据的尺寸类型有6种：宽度、长度、高度、欧式距离、平面距离、中点，如图2所示。</p>
+<p>Để lấy khoảng cách giữa các điểm đặc trưng của dữ liệu độ sâu hoặc thông tin tọa độ trung điểm, cần thiết lập loại kích thước của dữ liệu độ sâu. Loại kích thước của dữ liệu độ sâu có 6 loại: chiều rộng, chiều dài, chiều cao, khoảng cách Euclid, khoảng cách phẳng, trung điểm, như trong Hình 2.</p>
 
 <p><img src="media/wps95.jpg" alt="img" /></p>
 
-<p><imgnote>图2 尺寸示意图</imgnote></p>
+<p><imgnote>Hình 2 Sơ đồ kích thước</imgnote></p>
 
-<p><strong>Step 2 执行测量和输出结果</strong></p>
+<p><strong>Bước 2 Thực hiện đo và xuất kết quả</strong></p>
 
-<p>在设置好深度数据尺寸类型之后，就可以执行测量了。输出的结果包括，两个特征点的三维坐标信息，两个特征点之间的尺寸信息或者其中点坐标信息。</p>
+<p>Sau khi thiết lập xong loại kích thước dữ liệu độ sâu, có thể thực hiện đo. Kết quả đầu ra bao gồm thông tin tọa độ 3D của hai điểm đặc trưng, thông tin kích thước giữa hai điểm đặc trưng hoặc thông tin tọa độ trung điểm của chúng.</p>
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
 <p>参见“\Samples\3D\深度图\3D测量工具.gvp”。</p>
