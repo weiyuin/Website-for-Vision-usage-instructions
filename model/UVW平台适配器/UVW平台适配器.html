@@ -16,193 +16,193 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>UVW平台适配器</h1>
+<h1>Bộ chuyển đổi platform UVW</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>UVW平台以其角度的高精度特性，在视觉对位方案中被广泛使用。在实际应用中，UVW的标定对位过程往往需要先将坐标转换到XYD平台坐标系下进行计算，计算结果而后再转换回UVW坐标系。UVW平台适配器就是完成UVW平台坐标与XYD平台坐标之间相互转换功能的工具。</p>
+<p>Platform UVW được sử dụng rộng rãi trong các giải pháp căn chỉnh thị giác nhờ đặc tính độ chính xác góc cao. Trong ứng dụng thực tế, quá trình hiệu chuẩn và căn chỉnh UVW thường cần chuyển tọa độ sang hệ tọa độ platform XYD để tính toán trước, sau đó chuyển kết quả tính toán trở lại hệ tọa độ UVW. Bộ chuyển đổi platform UVW là công cụ thực hiện chức năng chuyển đổi qua lại giữa tọa độ platform UVW và tọa độ platform XYD.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称          </th>
-<th> 参数描述                                                                                             </th>
+<th>Phân loại </th>
+<th> Tên tham số          </th>
+<th> Mô tả tham số                                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口          </td>
-<td> 适配模式                                                     </td>
-<td> 包含UVW转XYD和XYD转UVW两种坐标转换模式 </td>
+<td> Cửa sổ thuộc tính          </td>
+<td> Chế độ chuyển đổi                                                     </td>
+<td> Bao gồm hai chế độ chuyển đổi tọa độ: UVW sang XYD và XYD sang UVW </td>
 </tr>
 <tr>
 <td></td>
-<td> 平台类型          </td>
-<td> 包含PPR型和PRP型两种UVW平台类型<img src="media/wps53.jpg" alt="img" />                                               </td>
+<td> Loại platform          </td>
+<td> Bao gồm hai loại platform UVW: loại PPR và loại PRP<img src="media/wps53.jpg" alt="img" />                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 平台参数类型      </td>
-<td> 仅在平台类型为PPR型时设置，有直角坐标参数和极坐标参数两种选项，意思分别为UVW坐标转到直角坐标系下和转到极坐标系下；平台类型为PRP时，默认固定为直角坐标系的转换。<img src="media/wps54.jpg" alt="img" />                                         </td>
+<td> Loại tham số platform      </td>
+<td> Chỉ thiết lập khi loại platform là PPR, có hai tùy chọn là tham số tọa độ vuông góc và tham số tọa độ cực, lần lượt có nghĩa là chuyển tọa độ UVW sang hệ tọa độ vuông góc và chuyển sang hệ tọa độ cực; khi loại platform là PRP, mặc định cố định là chuyển đổi theo hệ tọa độ vuông góc.<img src="media/wps54.jpg" alt="img" />                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> U轴连接点坐标     </td>
-<td> 当直角坐标参数时，U轴连接点坐标                                                                      </td>
+<td> Tọa độ điểm nối trục U     </td>
+<td> Khi dùng tham số tọa độ vuông góc, là tọa độ điểm nối trục U                                                                      </td>
 </tr>
 <tr>
 <td></td>
-<td> V轴连接点坐标     </td>
-<td> 当直角坐标参数时，V轴连接点坐标                                                                      </td>
+<td> Tọa độ điểm nối trục V     </td>
+<td> Khi dùng tham số tọa độ vuông góc, là tọa độ điểm nối trục V                                                                      </td>
 </tr>
 <tr>
 <td></td>
-<td> W轴连接点坐标     </td>
-<td> 当直角坐标参数时，W轴连接点坐标                                                                      </td>
+<td> Tọa độ điểm nối trục W     </td>
+<td> Khi dùng tham số tọa độ vuông góc, là tọa độ điểm nối trục W                                                                      </td>
 </tr>
 <tr>
 <td></td>
-<td> 旋转中心坐标      </td>
-<td> 当直角坐标参数时，旋转中心坐标                                                                       </td>
+<td> Tọa độ tâm quay      </td>
+<td> Khi dùng tham số tọa độ vuông góc, là tọa độ tâm quay                                                                       </td>
 </tr>
 <tr>
 <td></td>
-<td> U轴连接点角度     </td>
-<td> 当极坐标参数时，U轴连接点角度                                                                        </td>
+<td> Góc điểm nối trục U     </td>
+<td> Khi dùng tham số tọa độ cực, là góc điểm nối trục U                                                                        </td>
 </tr>
 <tr>
 <td></td>
-<td> V轴连接点角度     </td>
-<td> 当极坐标参数时，V轴连接点角度                                                                        </td>
+<td> Góc điểm nối trục V     </td>
+<td> Khi dùng tham số tọa độ cực, là góc điểm nối trục V                                                                        </td>
 </tr>
 <tr>
 <td></td>
-<td> W轴连接点角度     </td>
-<td> 当极坐标参数时，W轴连接点角度                                                                        </td>
+<td> Góc điểm nối trục W     </td>
+<td> Khi dùng tham số tọa độ cực, là góc điểm nối trục W                                                                        </td>
 </tr>
 <tr>
 <td></td>
-<td> 连接点外接圆半径  </td>
-<td> 当极坐标参数时，连接点外接圆半径                                                                     </td>
+<td> Bán kính đường tròn ngoại tiếp điểm nối  </td>
+<td> Khi dùng tham số tọa độ cực, là bán kính đường tròn ngoại tiếp của các điểm nối                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> U轴方向           </td>
-<td> 与设计坐标系X/Y轴同向/反向四个选项<img src="media/wps55.jpg" alt="img" />                                            </td>
+<td> Hướng trục U           </td>
+<td> Bốn tùy chọn cùng hướng/ngược hướng với trục X/Y của hệ tọa độ thiết kế<img src="media/wps55.jpg" alt="img" />                                            </td>
 </tr>
 <tr>
 <td></td>
-<td> V轴方向           </td>
-<td> 与设计坐标系X/Y轴同向/反向四个选项                                                                   </td>
+<td> Hướng trục V           </td>
+<td> Bốn tùy chọn cùng hướng/ngược hướng với trục X/Y của hệ tọa độ thiết kế                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> W轴方向           </td>
-<td> 与设计坐标系X/Y轴同向/反向四个选项                                                                   </td>
+<td> Hướng trục W           </td>
+<td> Bốn tùy chọn cùng hướng/ngược hướng với trục X/Y của hệ tọa độ thiết kế                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 工作坐标系X轴方向 </td>
-<td> 与设计坐标系X/Y轴同向/反向四个选项                                                                   </td>
+<td> Hướng trục X của hệ tọa độ làm việc </td>
+<td> Bốn tùy chọn cùng hướng/ngược hướng với trục X/Y của hệ tọa độ thiết kế                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 工作坐标系Y轴方向 </td>
-<td> 与设计坐标系X/Y轴同向/反向四个选项                                                                   </td>
+<td> Hướng trục Y của hệ tọa độ làm việc </td>
+<td> Bốn tùy chọn cùng hướng/ngược hướng với trục X/Y của hệ tọa độ thiết kế                                                                   </td>
 </tr>
 <tr>
-<td> 图像窗口          </td>
-<td> 无                                                           </td>
-<td> 无                                     </td>
+<td> Cửa sổ hình ảnh          </td>
+<td> Không có                                                           </td>
+<td> Không có                                     </td>
 </tr>
 <tr>
-<td> 数据链            </td>
-<td> 输入平台轴位置                                               </td>
-<td> 输入的待适配转换的平台轴位置           </td>
+<td> Liên kết dữ liệu            </td>
+<td> Vị trí trục platform đầu vào                                               </td>
+<td> Vị trí trục platform đầu vào cần chuyển đổi thích ứng           </td>
 </tr>
 <tr>
-<td> 高级界面          </td>
-<td> 无                                                           </td>
-<td> 无                                     </td>
+<td> Giao diện nâng cao          </td>
+<td> Không có                                                           </td>
+<td> Không có                                     </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                             </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 输出平台轴位置                                               </td>
-<td> 转换后的平台轴位置结果 </td>
+<td> Cửa sổ giám sát </td>
+<td> Vị trí trục platform đầu ra                                               </td>
+<td> Kết quả vị trí trục platform sau khi chuyển đổi </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                         </td>
+<td> Kết quả thực thi </td>
+<td> Hiển thị kết quả thực thi của công cụ, thực thi thành công hiển thị “OK”, thực thi thất bại hiển thị “NG”, giống với tham số kết quả thực thi trong cửa sổ giám sát.                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 执行时间                                                                             </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi                                                                             </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 输出平台轴位置                                               </td>
-<td> 转换后的平台轴位置结果 </td>
+<td> Liên kết dữ liệu   </td>
+<td> Vị trí trục platform đầu ra                                               </td>
+<td> Kết quả vị trí trục platform sau khi chuyển đổi </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<h3>平台类型</h3>
+<h3>Loại platform</h3>
 
-<p>目前已见的UVW平台有两种结构，一种是以电机丝杠——转动幅——导轨滑块——平台台面顺序连接的3-PRP UVW平台，即导轨滑块与平台台面固定，如图1（a）所示；另一种是以电机丝杠——导轨滑块——转动幅——平台台面顺序连接的3-PPR UVW平台，即转动幅与平台台面固定，其中，P(Prismatic joint)为移动副，R(Revolute joint)为转动副，如图1（b）所示。两种类型相比较，相同行程下，PRP型具有较高的角度精度，PPR型具有较大的旋转角度。两种结构平台的转换算法存在差异。</p>
+<p>Hiện nay các platform UVW đã gặp có hai loại kết cấu, một loại là platform UVW 3-PRP được kết nối theo thứ tự vít me động cơ —— khớp quay —— con trượt ray dẫn hướng —— mặt bàn platform, tức là con trượt ray dẫn hướng cố định với mặt bàn platform, như trong Hình 1（a）; loại còn lại là platform UVW 3-PPR được kết nối theo thứ tự vít me động cơ —— con trượt ray dẫn hướng —— khớp quay —— mặt bàn platform, tức là khớp quay cố định với mặt bàn platform, trong đó, P(Prismatic joint) là khớp tịnh tiến, R(Revolute joint) là khớp quay, như trong Hình 1（b）. So sánh hai loại này, trong cùng hành trình, loại PRP có độ chính xác góc cao hơn, loại PPR có góc quay lớn hơn. Thuật toán chuyển đổi của hai kết cấu platform này có sự khác biệt.</p>
 
 <p><img src="media/wps58.png" alt="img" /></p>
 
-<p><imgnote>图1 UVW平台结构</imgnote></p>
+<p><imgnote>Hình 1 Kết cấu platform UVW</imgnote></p>
 
-<p>两平台的的模型示意图如图2所示。</p>
+<p>Sơ đồ mô hình của hai platform được thể hiện như trong Hình 2.</p>
 
 <p><img src="media/wps59.jpg" alt="img" /></p>
 
-<p><imgnote>图2 UVW平台模型示意图</imgnote></p>
+<p><imgnote>Hình 2 Sơ đồ mô hình platform UVW</imgnote></p>
 
-<h3>平台参数类型</h3>
+<h3>Loại tham số platform</h3>
 
-<p>PPR型的平台厂商在给平台参数的时候与PRP型不同，一般并不是给的三个轴的旋转销（角）坐标，而是以极坐标的形式，给出了三个旋转销的角度和到平台中心的半径。这样就有了PPR型UVW平台的极坐标转换算法。</p>
+<p>Khi nhà sản xuất platform loại PPR cung cấp tham số platform, cách cung cấp khác với loại PRP, thông thường không cung cấp tọa độ chốt quay (góc) của ba trục, mà cung cấp góc của ba chốt quay và bán kính đến tâm platform dưới dạng tọa độ cực. Vì vậy có thuật toán chuyển đổi tọa độ cực cho platform UVW loại PPR.</p>
 
-<h3>轴方向、工作坐标系、设计坐标系</h3>
+<h3>Hướng trục, hệ tọa độ làm việc, hệ tọa độ thiết kế</h3>
 
-<p>UVW-XYθ转换实际就是UVW平台轴位置与工作坐标系X<sub>W</sub>OY<sub>W</sub>位置之间的转换。转换过程中借助了定义UVW各轴旋转销坐标的设计坐标系X<sub>d</sub>OY<sub>d</sub>，如图3所示。</p>
+<p>Chuyển đổi UVW-XYθ thực chất là chuyển đổi giữa vị trí trục platform UVW và vị trí trong hệ tọa độ làm việc X<sub>W</sub>OY<sub>W</sub>. Quá trình chuyển đổi sử dụng hệ tọa độ thiết kế X<sub>d</sub>OY<sub>d</sub> dùng để định nghĩa tọa độ chốt quay của từng trục UVW, như trong Hình 3.</p>
 
 <p><img src="media/wps63.png" alt="img" /></p>
 
-<p><imgnote>图3  UVW平台各参数含意示意图</imgnote></p>
+<p><imgnote>Hình 3  Sơ đồ ý nghĩa các tham số của platform UVW</imgnote></p>
 
-<p>在参数设置时，用户一般会有图3(a)所示的UVW平台与设计坐标系的关系参数资料。轴方向可以通过图3（a）得到UVW平台各轴与设计坐标系相应轴的方向关系进行设置。UVW平台与设计坐标系关系参数可以实现UVW轴位置和XYθ坐标之间的相互转化。</p>
+<p>Khi thiết lập tham số, người dùng thường có tài liệu tham số quan hệ giữa platform UVW và hệ tọa độ thiết kế như trong Hình 3(a). Hướng trục có thể được thiết lập thông qua quan hệ hướng giữa từng trục của platform UVW và trục tương ứng của hệ tọa độ thiết kế trong Hình 3（a）. Tham số quan hệ giữa platform UVW và hệ tọa độ thiết kế có thể thực hiện chuyển đổi qua lại giữa vị trí trục UVW và tọa độ XYθ.</p>
 
-<p>在实际应用中，会定义一个工作坐标系，通常与图像坐标系方向相同，理想情况下，工作坐标系原点与平台设计坐标系原点重合。如图3-1（b）中的所示的坐标系X<sub>W</sub>OY<sub>W</sub>。通过工作坐标系与设计坐标系关系参数可以实现工作坐标系位置与设计坐标系位置的相互转换。事实上，工作坐标系与设计坐标系关系参数在UVW平台转换算法中只影响结果的符号（方向）。</p>
+<p>Trong ứng dụng thực tế, sẽ định nghĩa một hệ tọa độ làm việc, thường cùng hướng với hệ tọa độ ảnh. Trong điều kiện lý tưởng, gốc của hệ tọa độ làm việc trùng với gốc của hệ tọa độ thiết kế platform. Như hệ tọa độ X<sub>W</sub>OY<sub>W</sub> được thể hiện trong Hình 3-1（b）. Thông qua tham số quan hệ giữa hệ tọa độ làm việc và hệ tọa độ thiết kế, có thể thực hiện chuyển đổi qua lại giữa vị trí trong hệ tọa độ làm việc và vị trí trong hệ tọa độ thiết kế. Trên thực tế, tham số quan hệ giữa hệ tọa độ làm việc và hệ tọa độ thiết kế trong thuật toán chuyển đổi platform UVW chỉ ảnh hưởng đến dấu (hướng) của kết quả.</p>
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
-<p>参见“\Samples\UVW平台适配器.gvp”。</p>
+<p>Tham khảo “\Samples\UVW平台适配器.gvp”.</p>

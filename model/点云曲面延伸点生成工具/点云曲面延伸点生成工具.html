@@ -16,167 +16,167 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>点云曲面延伸点生成工具</h1>
+<h1>Công cụ tạo điểm mở rộng bề mặt đám mây điểm</h1>
 
-<h2>1.功能概述</h2>
+<h2>1.Tổng quan chức năng</h2>
 
-<p>   点云曲面延伸点生成工具主要将点云截面生成工具获取的截面点拟合成曲线，计算曲线和基平面（基准面需要与截平面垂直）的交点，即生成扩展点。</p>
+<p>   Công cụ tạo điểm mở rộng bề mặt đám mây điểm chủ yếu dùng để khớp các điểm mặt cắt thu được từ công cụ tạo mặt cắt đám mây điểm thành đường cong, tính giao điểm giữa đường cong và mặt phẳng chuẩn (mặt chuẩn cần vuông góc với mặt phẳng cắt), tức là tạo điểm mở rộng.</p>
 
 <p>  <img src="media/GcCloudCrossSectionTool_1_1.png" alt="" /></p>
 
-<p>  <imgnote>图1_1 </imgnote></p>
+<p>  <imgnote>Hình 1_1 </imgnote></p>
 
-<h2>2.使用场景</h2>
+<h2>2.Trường hợp sử dụng</h2>
 
-<p>   该工具主要与截面生成工具搭配使用，用于计算截面生成工具截取到的点云数据与设置的基平面求交点的场景；</p>
+<p>   Công cụ này chủ yếu được sử dụng kết hợp với công cụ tạo mặt cắt, dùng cho trường hợp tính giao điểm giữa dữ liệu đám mây điểm được cắt bởi công cụ tạo mặt cắt và mặt phẳng chuẩn đã thiết lập;</p>
 
-<h2>3.使用向导</h2>
+<h2>3.Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h3>添加工具、导入图像</h3>
+<li><h3>Thêm công cụ, nhập ảnh</h3>
 
-<p>添加“点云曲面延伸点生成工具”，并根据要求链接相关数据链，如图3.1所示；</p>
+<p>Thêm “Công cụ tạo điểm mở rộng bề mặt đám mây điểm”, đồng thời liên kết các chuỗi dữ liệu liên quan theo yêu cầu, như trong Hình 3.1;</p>
 
 <p><img src="media/GcCloudCrossSectionTool_3_1.png" alt="" /></p>
 
-<p><imgnote>图3_1 点云曲面延伸点生成工具数据链配置</imgnote></p></li>
-<li><h3>参数设置</h3>
+<p><imgnote>Hình 3_1 Cấu hình chuỗi dữ liệu của công cụ tạo điểm mở rộng bề mặt đám mây điểm</imgnote></p></li>
+<li><h3>Thiết lập tham số</h3>
 
 <ul>
-<li>①  输入截面数据数组：一般来自于截面生成工具的输出截面数据数组；</li>
-<li>②  输入三维平面数组：一般来自于截面生成工具的输出无界平面；</li>
-<li>③  基平面：需要与输入三维平面数组中各个平面垂直；</li>
+<li>①  Mảng dữ liệu mặt cắt đầu vào: thường lấy từ mảng dữ liệu mặt cắt đầu ra của công cụ tạo mặt cắt;</li>
+<li>②  Mảng mặt phẳng 3D đầu vào: thường lấy từ mặt phẳng không giới hạn đầu ra của công cụ tạo mặt cắt;</li>
+<li>③  Mặt phẳng chuẩn: cần vuông góc với từng mặt phẳng trong mảng mặt phẳng 3D đầu vào;</li>
 </ul>
 </li>
 </ul>
 
 
-<h2>4.常见问题</h2>
+<h2>4.Câu hỏi thường gặp</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>5.参数说明</h2>
+<h2>5.Mô tả tham số</h2>
 
-<h4>输入参数（参数链）</h4>
+<h4>Tham số đầu vào (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th>参数名称</th>
-<th> 参数描述  </th>
+<th>Tên tham số</th>
+<th> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入截面数据数组                                         </td>
-<td> 输入截面数据                                   </td>
+<td> Mảng dữ liệu mặt cắt đầu vào                                         </td>
+<td> Dữ liệu mặt cắt đầu vào                                   </td>
 </tr>
 <tr>
-<td> 输入三维平面数组                                        </td>
-<td>输入截取点云数据时无界平面      </td>
+<td> Mảng mặt phẳng 3D đầu vào                                        </td>
+<td>Nhập mặt phẳng không giới hạn khi cắt dữ liệu đám mây điểm      </td>
 </tr>
 <tr>
-<td> 输入三维矩形平面数组 </td>
-<td>输入截取点云数据时三维矩形平面</td>
+<td> Mảng mặt phẳng chữ nhật 3D đầu vào </td>
+<td>Nhập mặt phẳng chữ nhật 3D khi cắt dữ liệu đám mây điểm</td>
 </tr>
 <tr>
-<td>输入三维圆形平面数组</td>
-<td>输入截取点云数据时三维圆形平面</td>
+<td>Mảng mặt phẳng tròn 3D đầu vào</td>
+<td>Nhập mặt phẳng tròn 3D khi cắt dữ liệu đám mây điểm</td>
 </tr>
 <tr>
-<td>基平面</td>
-<td>基准平面，需要与截平面（输入三维平面数组/输入三维矩形平面数组/输入三维圆形平面数组）垂直</td>
+<td>Mặt phẳng chuẩn</td>
+<td>Mặt phẳng chuẩn, cần vuông góc với mặt phẳng cắt (mảng mặt phẳng 3D đầu vào/mảng mặt phẳng chữ nhật 3D đầu vào/mảng mặt phẳng tròn 3D đầu vào)</td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输入参数（属性窗口）</h4>
+<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
 
 <table>
 <thead>
 <tr>
-<th>参数名称</th>
-<th> 参数描述  </th>
+<th>Tên tham số</th>
+<th> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>截面模式</td>
-<td> 包括三种：无界平面、三维矩形平面、三维圆形平面 </td>
+<td>Chế độ mặt cắt</td>
+<td> Bao gồm ba loại: mặt phẳng không giới hạn, mặt phẳng chữ nhật 3D, mặt phẳng tròn 3D </td>
 </tr>
 <tr>
-<td> 拟合阶乘 </td>
-<td> 每个截平面的点集拟合曲线时拟合阶乘，范围为[1，10] </td>
+<td> Bậc khớp </td>
+<td> Bậc khớp khi khớp đường cong cho tập điểm của từng mặt phẳng cắt, phạm vi là [1，10] </td>
 </tr>
 <tr>
-<td> 拟合迭代次数 </td>
-<td> 每个截平面的点集拟合曲线时迭代的次数，范围为[1，1000] </td>
+<td> Số lần lặp khớp </td>
+<td> Số lần lặp khi khớp đường cong cho tập điểm của từng mặt phẳng cắt, phạm vi là [1，1000] </td>
 </tr>
 <tr>
-<td> 拟合点数量阈值 </td>
-<td> 参与拟合的最少点数量，范围为[1，100000000] </td>
+<td> Ngưỡng số lượng điểm khớp </td>
+<td> Số lượng điểm tối thiểu tham gia khớp, phạm vi là [1，100000000] </td>
 </tr>
 <tr>
-<td> 局外点距离阈值 </td>
-<td> 判定为局外点的距离极值，范围为(0，100000000] </td>
+<td> Ngưỡng khoảng cách điểm ngoại lai </td>
+<td> Giá trị cực hạn khoảng cách để phán định là điểm ngoại lai, phạm vi là (0，100000000] </td>
 </tr>
 <tr>
-<td> 开启并行运算 </td>
-<td> 否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算 </td>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không, khi chọn Có, thuật toán sẽ bật phương thức tính toán song song OpenMp, có thể tăng tốc độ tính toán, nhưng có thể xuất hiện tình trạng thời gian xử lý không ổn định; khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp </td>
 </tr>
 <tr>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围 </td>
+<td> Phần trăm số luồng </td>
+<td> Thiết lập phần trăm số luồng tính toán song song, phạm vi hợp lệ là (0, 0.75], tương ứng biểu thị phạm vi phần trăm (0%, 75%] </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（参数链）</h4>
+<h4>Tham số đầu ra (chuỗi tham số)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称</th>
-<th> 参数描述  </th>
+<th> Tên tham số</th>
+<th> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点集                                      </td>
-<td> 输出扩展点集 </td>
+<td> Tập điểm đầu ra                                      </td>
+<td> Xuất tập điểm mở rộng </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数（输出窗口）</h4>
+<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称</th>
-<th> 参数描述  </th>
+<th> Tên tham số</th>
+<th> Mô tả tham số  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出点集                                      </td>
-<td> 输出扩展点集             </td>
+<td> Tập điểm đầu ra                                      </td>
+<td> Xuất tập điểm mở rộng             </td>
 </tr>
 <tr>
-<td> 执行结果                                   </td>
-<td> 工具执行结果                                                                                       </td>
+<td> Kết quả thực thi                                   </td>
+<td> Kết quả thực thi của công cụ                                                                                       </td>
 </tr>
 <tr>
-<td> 执行时间                                   </td>
-<td> 工具执行时间 </td>
+<td> Thời gian thực thi                                   </td>
+<td> Thời gian thực thi của công cụ </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.示例工程</h2>
+<h2>6.Dự án ví dụ</h2>
 
-<p>参见“\Samples\3D\点云\点云截面生成工具.gvp”。</p>
+<p>Tham khảo “\Samples\3D\点云\点云截面生成工具.gvp”.</p>

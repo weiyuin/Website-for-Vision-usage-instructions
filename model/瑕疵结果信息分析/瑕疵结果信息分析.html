@@ -16,169 +16,169 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>瑕疵结果信息分析工具</h1>
+<h1>Công cụ phân tích thông tin kết quả lỗi</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>瑕疵结果信息分析工具用于对瑕疵检测工具的瑕疵结果进行解析处理。由于瑕疵检测工具的瑕疵结果参数类型为DefectResultInfo，需要先使用数组解析工具将瑕疵检测工具的输出瑕疵结果中某一组数据取出来，具体取出的是哪组数据和数据解析工具的输入数据索引有关系，再使用瑕疵结果信息分析工具将该组数据解析成单个结果数据。</p>
+<p>Công cụ phân tích thông tin kết quả lỗi dùng để phân tích và xử lý kết quả lỗi của công cụ phát hiện lỗi. Do kiểu tham số kết quả lỗi của công cụ phát hiện lỗi là DefectResultInfo, cần dùng công cụ phân tích mảng trước để lấy ra một nhóm dữ liệu trong kết quả lỗi đầu ra của công cụ phát hiện lỗi. Nhóm dữ liệu cụ thể được lấy ra có liên quan đến chỉ số dữ liệu đầu vào của công cụ phân tích dữ liệu, sau đó dùng công cụ phân tích thông tin kết quả lỗi để phân tích nhóm dữ liệu này thành dữ liệu kết quả đơn lẻ.</p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口 </td>
-<td> 无  </td>
-<td> 无 </td>
+<td> Cửa sổ thuộc tính </td>
+<td> Không có  </td>
+<td> Không có </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无  </td>
-<td> 无 </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không có  </td>
+<td> Không có </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 瑕疵结果信息 </td>
-<td> 类型为“DefectResultInfo”的数组解析工具的输出数据作为输入。数组解析工具的输入是瑕疵检测工具的瑕疵结果输出。 </td>
+<td> Liên kết dữ liệu   </td>
+<td> Thông tin kết quả lỗi </td>
+<td> Dữ liệu đầu ra của công cụ phân tích mảng có kiểu “DefectResultInfo” được dùng làm đầu vào. Đầu vào của công cụ phân tích mảng là đầu ra kết quả lỗi của công cụ phát hiện lỗi. </td>
 </tr>
 <tr>
-<td> 高级界面 </td>
-<td> 无  </td>
-<td> 无  </td>
+<td> Giao diện nâng cao </td>
+<td> Không có  </td>
+<td> Không có  </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称          </th>
-<th> 参数描述                                                                         </th>
+<th>Phân loại </th>
+<th> Tên tham số          </th>
+<th> Mô tả tham số                                                                         </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口          </td>
-<td> 索引值                                                       </td>
-<td> 瑕疵结果的索引值。 </td>
+<td> Cửa sổ giám sát          </td>
+<td> Giá trị chỉ số                                                       </td>
+<td> Giá trị chỉ số của kết quả lỗi. </td>
 </tr>
 <tr>
 <td></td>
-<td> 瑕疵面积          </td>
-<td> 对应索引值的瑕疵的面积。                                                         </td>
+<td> Diện tích lỗi          </td>
+<td> Diện tích của lỗi tương ứng với giá trị chỉ số.                                                         </td>
 </tr>
 <tr>
 <td></td>
-<td> 质心X坐标         </td>
-<td> 对应索引值的瑕疵的质心的X坐标，瑕疵检测工具的检测类型选择基于面积时，该值为-1。                     </td>
+<td> Tọa độ X tâm khối         </td>
+<td> Tọa độ X của tâm khối của lỗi tương ứng với giá trị chỉ số, khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là -1.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 质心Y坐标         </td>
-<td> 对应索引值的瑕疵的质心的Y坐标，瑕疵检测工具的检测类型选择基于面积时，该值为-1。                     </td>
+<td> Tọa độ Y tâm khối         </td>
+<td> Tọa độ Y của tâm khối của lỗi tương ứng với giá trị chỉ số, khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là -1.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 外接矩形中心X坐标 </td>
-<td> 对应索引值的瑕疵的坐标最小外接矩形中心的X坐标，瑕疵检测工具的检测类型选择基于面积时，该值为0。                     </td>
+<td> Tọa độ X tâm hình chữ nhật bao ngoài </td>
+<td> Tọa độ X của tâm hình chữ nhật bao ngoài nhỏ nhất theo tọa độ của lỗi tương ứng với giá trị chỉ số, khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là 0.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 外接矩形中心Y坐标 </td>
-<td> 对应索引值的瑕疵的坐标最小外接矩形中心的Y坐标，瑕疵检测工具的检测类型选择基于面积时，该值为0。                     </td>
+<td> Tọa độ Y tâm hình chữ nhật bao ngoài </td>
+<td> Tọa độ Y của tâm hình chữ nhật bao ngoài nhỏ nhất theo tọa độ của lỗi tương ứng với giá trị chỉ số, khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là 0.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 外接矩形X最小坐标 </td>
-<td> 对应索引值的瑕疵的坐标最小外接矩形X最小坐标，瑕疵检测工具的检测类型选择基于面积时，该值为0。                     </td>
+<td> Tọa độ X nhỏ nhất của hình chữ nhật bao ngoài </td>
+<td> Tọa độ X nhỏ nhất của hình chữ nhật bao ngoài nhỏ nhất theo tọa độ của lỗi tương ứng với giá trị chỉ số, khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là 0.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 外接矩形X最大坐标 </td>
-<td> 对应索引值的瑕疵的坐标最小外接矩形X最大坐标，瑕疵检测工具的检测类型选择基于面积时，该值为0。                     </td>
+<td> Tọa độ X lớn nhất của hình chữ nhật bao ngoài </td>
+<td> Tọa độ X lớn nhất của hình chữ nhật bao ngoài nhỏ nhất theo tọa độ của lỗi tương ứng với giá trị chỉ số, khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là 0.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 外接矩形Y最小坐标 </td>
-<td> 对应索引值的瑕疵的坐标最小外接矩形Y最小坐标，瑕疵检测工具的检测类型选择基于面积时，该值为0。                     </td>
+<td> Tọa độ Y nhỏ nhất của hình chữ nhật bao ngoài </td>
+<td> Tọa độ Y nhỏ nhất của hình chữ nhật bao ngoài nhỏ nhất theo tọa độ của lỗi tương ứng với giá trị chỉ số, khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là 0.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 外接矩形Y最大坐标 </td>
-<td> 对应索引值的瑕疵的坐标最小外接矩形Y最大坐标，瑕疵检测工具的检测类型选择基于面积时，该值为0。                     </td>
+<td> Tọa độ Y lớn nhất của hình chữ nhật bao ngoài </td>
+<td> Tọa độ Y lớn nhất của hình chữ nhật bao ngoài nhỏ nhất theo tọa độ của lỗi tương ứng với giá trị chỉ số, khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là 0.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 外接矩形宽度      </td>
-<td> 对应索引值的瑕疵的坐标最小外接矩形的宽度，瑕疵检测工具的检测类型选择基于面积时，该值为0。                     </td>
+<td> Chiều rộng hình chữ nhật bao ngoài      </td>
+<td> Chiều rộng của hình chữ nhật bao ngoài nhỏ nhất theo tọa độ của lỗi tương ứng với giá trị chỉ số, khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là 0.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 外接矩形高度      </td>
-<td> 对应索引值的瑕疵的坐标最小外接矩形的高度，瑕疵检测工具的检测类型选择基于面积时，该值为0。                     </td>
+<td> Chiều cao hình chữ nhật bao ngoài      </td>
+<td> Chiều cao của hình chữ nhật bao ngoài nhỏ nhất theo tọa độ của lỗi tương ứng với giá trị chỉ số, khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là 0.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 外接矩形高宽比值     </td>
-<td> 外接矩形高度与外接矩形宽度的比值。                    </td>
+<td> Tỷ lệ cao/rộng của hình chữ nhật bao ngoài     </td>
+<td> Tỷ lệ giữa chiều cao hình chữ nhật bao ngoài và chiều rộng hình chữ nhật bao ngoài.                    </td>
 </tr>
 <tr>
 <td></td>
-<td> 圆度              </td>
-<td> 对应索引值的瑕疵的圆度，可定义为周长的平方与面积和4π乘积的比值，圆度为1 时表示一个完美的圆形。瑕疵检测工具的检测类型选择基于面积时，该值为0。                     </td>
+<td> Độ tròn              </td>
+<td> Độ tròn của lỗi tương ứng với giá trị chỉ số, có thể được định nghĩa là tỷ lệ giữa bình phương chu vi và tích của diện tích với 4π, độ tròn bằng 1 biểu thị một hình tròn hoàn hảo. Khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là 0.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 归一化圆度        </td>
-<td> 对应索引值的瑕疵的圆度的归一化。瑕疵检测工具的检测类型选择基于面积时，该值为0。                     </td>
+<td> Độ tròn chuẩn hóa        </td>
+<td> Độ tròn đã chuẩn hóa của lỗi tương ứng với giá trị chỉ số. Khi kiểu phát hiện của công cụ phát hiện lỗi chọn dựa trên diện tích, giá trị này là 0.                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果          </td>
-<td> 工具执行结果。                                                                   </td>
+<td> Kết quả thực thi          </td>
+<td> Kết quả thực thi của công cụ.                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间          </td>
-<td> 工具执行时间。                                                                   </td>
+<td> Thời gian thực thi          </td>
+<td> Thời gian thực thi của công cụ.                                                                   </td>
 </tr>
 <tr>
-<td> 图像窗口 </td>
-<td> 无      </td>
-<td> 无      </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không có      </td>
+<td> Không có      </td>
 </tr>
 <tr>
 <td></td>
-<td> 数据链            </td>
-<td> 同监视窗口对应参数，供后序工具使用。  </td>
+<td> Liên kết dữ liệu            </td>
+<td> Giống với các tham số tương ứng trong cửa sổ giám sát, dùng cho công cụ tiếp theo.  </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
 <ul>
-<li><p>瑕疵结果信息分析工具不能单独使用，需要与数组解析工具配合使用，数组解析工具瑕疵结果解析为一组数据，再使用瑕疵结果信息分析工具将该组数据解析成单个结果数据。</p></li>
-<li><p>数组解析工具在与瑕疵结果信息分析工具搭配使用时，其属性窗口的数据类型参数应选择为DefectResultInfo，否则在数据链窗口配置参数输入数组时会找不到参数来源。</p></li>
+<li><p>Công cụ phân tích thông tin kết quả lỗi không thể sử dụng độc lập, cần sử dụng kết hợp với công cụ phân tích mảng. Công cụ phân tích mảng phân tích kết quả lỗi thành một nhóm dữ liệu, sau đó dùng công cụ phân tích thông tin kết quả lỗi để phân tích nhóm dữ liệu này thành dữ liệu kết quả đơn lẻ.</p></li>
+<li><p>Khi công cụ phân tích mảng được sử dụng kết hợp với công cụ phân tích thông tin kết quả lỗi, tham số kiểu dữ liệu trong cửa sổ thuộc tính của nó phải chọn là DefectResultInfo, nếu không khi cấu hình mảng đầu vào tham số trong cửa sổ liên kết dữ liệu sẽ không tìm thấy nguồn tham số.</p></li>
 </ul>
 
 
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
-<p>参见“\Samples\瑕疵检测工具.gvp”。</p>
+<p>Tham khảo “\Samples\瑕疵检测工具.gvp”.</p>

@@ -16,156 +16,156 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>多点对位计算</h1>
+<h1>Tính toán căn chỉnh đa điểm</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>对位是指，在统一的平台坐标系下，根据对象和目标的多个特征，计算机械手/平台运动XYD/XDY/DXY偏移量，使得对象和目标对准重合。最常见的两点对位，如图1所示。</p>
+<p>Căn chỉnh là trong cùng một hệ tọa độ platform, dựa trên nhiều đặc trưng của đối tượng và mục tiêu, tính toán lượng lệch XYD/XDY/DXY cần di chuyển của robot/platform, để đối tượng và mục tiêu được căn chỉnh trùng khớp. Căn chỉnh hai điểm phổ biến nhất được thể hiện như trong Hình 1.</p>
 
 <p><img src="media/wps91.jpg" alt="img" /></p>
 
-<p><imgnote>图1 狭义对位举例</imgnote></p>
+<p><imgnote>Hình 1 Ví dụ căn chỉnh theo nghĩa hẹp</imgnote></p>
 
-<p>在多点对位计算中，根据采样数量和位置分布的不同，矩形产品的点对位点，分为四种具体场景，即2个相邻点、2个对角点、3个L型点、4个矩形点，如图2所示。</p>
+<p>Trong tính toán căn chỉnh đa điểm, tùy theo số lượng lấy mẫu và phân bố vị trí khác nhau, căn chỉnh điểm với điểm của sản phẩm hình chữ nhật được chia thành bốn trường hợp cụ thể, gồm 2 điểm liền kề, 2 điểm đối góc, 3 điểm dạng L, 4 điểm hình chữ nhật, như trong Hình 2.</p>
 
 <p><img src="media/wps92.jpg" alt="img" /> <img src="media/wps93.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 2个相邻点</imgnote> <imgnote>(b) 2个对角点</imgnote></p>
+<p><imgnote>(a) 2 điểm liền kề</imgnote> <imgnote>(b) 2 điểm đối góc</imgnote></p>
 
 <p>​ <img src="media/wps94.jpg" alt="img" /> <img src="media/wps95.jpg" alt="img" /></p>
 
-<p><imgnote>&copy; 3个L型点</imgnote> <imgnote>(d) 4个矩形点</imgnote></p>
+<p><imgnote>&copy; 3 điểm dạng L</imgnote> <imgnote>(d) 4 điểm hình chữ nhật</imgnote></p>
 
-<p><imgnote>图2 点对点对位</imgnote></p>
+<p><imgnote>Hình 2 Căn chỉnh điểm với điểm</imgnote></p>
 
-<p>本工具就用于计算多点间的对位偏移量。目前适用于大于等于2个点的情况，且对象向量与目标向量的长度应相等。</p>
+<p>Công cụ này dùng để tính toán lượng lệch căn chỉnh giữa nhiều điểm. Hiện áp dụng cho trường hợp có từ 2 điểm trở lên, đồng thời độ dài của vector đối tượng và vector mục tiêu phải bằng nhau.</p>
 
-<h2>输入参数</h2>
+<h2>Tham số đầu vào</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称       </th>
-<th> 参数描述                                                                                 </th>
+<th>Phân loại </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                                                                                 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口       </td>
-<td> 坐标系类型                 </td>
-<td> 选择是XYD平台坐标系/XDY平台坐标系/DXY平台坐标系下对位。<img src="media/wps97.jpg" alt="img" /> </td>
+<td> Cửa sổ thuộc tính       </td>
+<td> Loại hệ tọa độ                 </td>
+<td> Chọn căn chỉnh trong hệ tọa độ platform XYD/hệ tọa độ platform XDY/hệ tọa độ platform DXY.<img src="media/wps97.jpg" alt="img" /> </td>
 </tr>
 <tr>
-<td> 图像窗口       </td>
-<td> 无                         </td>
-<td> 无                                                           </td>
+<td> Cửa sổ hình ảnh       </td>
+<td> Không có                         </td>
+<td> Không có                                                           </td>
 </tr>
 <tr>
-<td> 数据链         </td>
-<td> 对象点坐标向量             </td>
-<td> 对象点平台坐标组成的向量。     </td>
-</tr>
-<tr>
-<td></td>
-<td> 目标点坐标向量 </td>
-<td> 目标点平台坐标组成的向量。                                </td>
+<td> Liên kết dữ liệu         </td>
+<td> Vector tọa độ điểm đối tượng             </td>
+<td> Vector được tạo thành từ tọa độ platform của các điểm đối tượng.     </td>
 </tr>
 <tr>
 <td></td>
-<td> 平台轴方向     </td>
-<td> 平台各轴的正方向。                                      </td>
+<td> Vector tọa độ điểm mục tiêu </td>
+<td> Vector được tạo thành từ tọa độ platform của các điểm mục tiêu.                                </td>
 </tr>
 <tr>
 <td></td>
-<td> X补偿量          </td>
-<td> 输出的对位计算结果在X方向需要增加的补偿量 </td>
+<td> Hướng trục platform     </td>
+<td> Hướng dương của từng trục platform.                                      </td>
 </tr>
 <tr>
 <td></td>
-<td> Y补偿量          </td>
-<td> 输出的对位计算结果在Y方向需要增加的补偿量 </td>
+<td> Lượng bù X          </td>
+<td> Lượng bù cần cộng thêm theo hướng X vào kết quả tính toán căn chỉnh đầu ra </td>
 </tr>
 <tr>
 <td></td>
-<td> D补偿量          </td>
-<td> 输出的对位计算结果在D方向需要增加的补偿量 </td>
+<td> Lượng bù Y          </td>
+<td> Lượng bù cần cộng thêm theo hướng Y vào kết quả tính toán căn chỉnh đầu ra </td>
 </tr>
 <tr>
-<td>高级界面</td>
-<td> 无 </td>
-<td> 无                                                   </td>
+<td></td>
+<td> Lượng bù D          </td>
+<td> Lượng bù cần cộng thêm theo hướng D vào kết quả tính toán căn chỉnh đầu ra </td>
+</tr>
+<tr>
+<td>Giao diện nâng cao</td>
+<td> Không có </td>
+<td> Không có                                                   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出参数</h2>
+<h2>Tham số đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称 </th>
-<th> 参数描述                                                                     </th>
+<th>Phân loại </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口 </td>
-<td> 相对对位偏移量 </td>
-<td> 计算的相对对位偏移量结果。                                   </td>
+<td> Cửa sổ giám sát </td>
+<td> Lượng lệch căn chỉnh tương đối </td>
+<td> Kết quả lượng lệch căn chỉnh tương đối được tính toán.                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果 </td>
-<td> 工具执行结果。                                                               </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi của công cụ.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间 </td>
-<td> 工具执行时间。                                                               </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi của công cụ.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 图像窗口 </td>
-<td> 无                                                                           </td>
+<td> Cửa sổ hình ảnh </td>
+<td> Không có                                                                           </td>
 </tr>
 <tr>
-<td> 数据链   </td>
-<td> 相对对位偏移量 </td>
-<td> 输出计算的相对对位偏移量结果，供后序工具使用，同监视窗口参数。 </td>
+<td> Liên kết dữ liệu   </td>
+<td> Lượng lệch căn chỉnh tương đối </td>
+<td> Xuất kết quả lượng lệch căn chỉnh tương đối đã tính toán, dùng cho công cụ tiếp theo, giống với tham số trong cửa sổ giám sát. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<h3>坐标系类型</h3>
+<h3>Loại hệ tọa độ</h3>
 
-<p>XYD平台：项目中最常见的平台类型，其XY轴呈垂直关系，旋转D轴直接对产品进行旋转，而对XY轴的角度关系无影响，如图3(a)所示。</p>
+<p>Platform XYD: loại platform phổ biến nhất trong dự án, trục X và trục Y của nó có quan hệ vuông góc, trục xoay D trực tiếp xoay sản phẩm và không ảnh hưởng đến quan hệ góc giữa trục X và trục Y, như trong Hình 3(a).</p>
 
-<p>XDY平台：该平台类型的旋转D轴安装于X轴与Y轴之间，直接决定XY轴之间的夹角。如图3(b)所示。</p>
+<p>Platform XDY: trục xoay D của loại platform này được lắp giữa trục X và trục Y, trực tiếp quyết định góc giữa trục X và trục Y. Như trong Hình 3(b).</p>
 
-<p>DXY平台：该平台的XY轴会随D轴旋转而旋转，但XY轴始终保持垂直关系，如图3&copy;所示。</p>
+<p>Platform DXY: trục X và trục Y của platform này sẽ xoay theo trục D, nhưng trục X và trục Y luôn giữ quan hệ vuông góc, như trong Hình 3&copy;.</p>
 
 <p>​</p>
 
 <p><img src="media/wps100.jpg" alt="img" /><img src="media/wps101.jpg" alt="img" /><img src="media/wps102.jpg" alt="img" /></p>
 
-<p><imgnote>(a) XYD平台</imgnote> <imgnote>(b) XDY平台</imgnote> <imgnote>&copy; DXY平台</imgnote></p>
+<p><imgnote>(a) Platform XYD</imgnote> <imgnote>(b) Platform XDY</imgnote> <imgnote>&copy; Platform DXY</imgnote></p>
 
-<p><imgnote>图3 坐标系类型</imgnote></p>
+<p><imgnote>Hình 3 Loại hệ tọa độ</imgnote></p>
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
 <ul>
-<li><p>对象点坐标向量与目标点坐标向量中的坐标点顺序需要保持一致，使对象点与目标点对应。</p></li>
-<li><p>输入的对象点坐标向量或者目标点坐标向量可以通过二元数组生成工具、三元数组生成工具、四元数组生成工具、数组生成工具，数据类型属性选择“GcCoordPos”来获得。</p></li>
+<li><p>Thứ tự các điểm tọa độ trong vector tọa độ điểm đối tượng và vector tọa độ điểm mục tiêu cần giữ nhất quán, để điểm đối tượng tương ứng với điểm mục tiêu.</p></li>
+<li><p>Vector tọa độ điểm đối tượng hoặc vector tọa độ điểm mục tiêu đầu vào có thể được tạo bằng công cụ tạo mảng hai phần tử, công cụ tạo mảng ba phần tử, công cụ tạo mảng bốn phần tử, công cụ tạo mảng, chọn thuộc tính kiểu dữ liệu là “GcCoordPos”.</p></li>
 </ul>
 
 
-<h2>示例工程</h2>
+<h2>Dự án ví dụ</h2>
 
-<p>用法参见“\Samples\标准标定+基准四点两线对位.gvp”的多点对位计算工具。</p>
+<p>Cách sử dụng tham khảo công cụ tính toán căn chỉnh đa điểm trong “\Samples\标准标定+基准四点两线对位.gvp”.</p>
