@@ -18,142 +18,142 @@
            </head>
 <h1>scGuiPointsDistance</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示两点之间尺寸的Gui控件类，即在视图中可见的图形，可表示深度图像或轮廓图像中两个特征点之间的宽度、高度、距离等信息。</p>
+<p>Biểu thị lớp control GUI của kích thước giữa hai điểm, tức là đồ họa có thể nhìn thấy trong view, có thể biểu thị các thông tin như chiều rộng, chiều cao, khoảng cách giữa hai điểm đặc trưng trong ảnh độ sâu hoặc ảnh biên dạng.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                             </th>
-<th> 接口描述                             </th>
+<th>      Phân loại </th>
+<th> Tên giao diện                                             </th>
+<th> Mô tả giao diện                             </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
+<td> Khởi tạo </td>
 <td> scGuiPointsDistance       </td>
-<td> scGuiPointsDistance ()默认构造函数。 </td>
+<td> Hàm khởi tạo mặc định scGuiPointsDistance (). </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetLineSeg                  </td>
-<td> 设置距离线段。                       </td>
+<td> Thiết lập đoạn thẳng khoảng cách.                       </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetLineSeg                     </td>
-<td> 获取距离线段。                       </td>
+<td> Lấy đoạn thẳng khoảng cách.                       </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetTextInfoVisible </td>
-<td> 设置文本提示信息是否可见。           </td>
+<td> Thiết lập thông tin gợi ý dạng văn bản có hiển thị hay không.           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> IsTextInfoVisible           </td>
-<td> 获取文本提示信息是否可见。           </td>
+<td> Lấy trạng thái thông tin gợi ý dạng văn bản có hiển thị hay không.           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetTextInfoManually   </td>
-<td> 设置文本提示内容。                   </td>
+<td> Thiết lập nội dung gợi ý dạng văn bản.                   </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetTextInfoManually   </td>
-<td> 获取文本提示内容。                   </td>
+<td> Lấy nội dung gợi ý dạng văn bản.                   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
 <h3>scGuiPointsDistance()</h3>
 
 <ul>
-<li><p>功能：构造scGuiPointsDistance对象。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng: khởi tạo đối tượng scGuiPointsDistance.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: không có.</p></li>
 </ul>
 
 
 <h3>SetLineSeg(lineSeg)</h3>
 
 <ul>
-<li><p>功能：设置距离线段。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập đoạn thẳng khoảng cách.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>lineSeg：距离线段，scLineSeg类型。</li>
+<li>lineSeg: đoạn thẳng khoảng cách, kiểu scLineSeg.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetLineSeg()</h3>
 
 <ul>
-<li><p>功能：获取距离线段。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：返回距离线段，scLineSeg类型。</p></li>
+<li><p>Chức năng: lấy đoạn thẳng khoảng cách.</p></li>
+<li><p>Tham số: không có</p></li>
+<li><p>Giá trị trả về: trả về đoạn thẳng khoảng cách, kiểu scLineSeg.</p></li>
 </ul>
 
 
 <h3>SetTextInfoVisible(bVisible)</h3>
 
 <ul>
-<li><p>功能：设置文本提示信息是否可见。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập thông tin gợi ý dạng văn bản có hiển thị hay không.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>bVisible：文本是否可见，bool类型。</li>
+<li>bVisible: văn bản có hiển thị hay không, kiểu bool.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
 
 
 <h3>IsTextInfoVisible()</h3>
 
 <ul>
-<li><p>功能：获取文本提示信息是否可见。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：bool类型，表示文本提示信息是否可见。</p></li>
+<li><p>Chức năng: lấy trạng thái thông tin gợi ý dạng văn bản có hiển thị hay không.</p></li>
+<li><p>Tham số: không có</p></li>
+<li><p>Giá trị trả về: kiểu bool, cho biết thông tin gợi ý dạng văn bản có hiển thị hay không.</p></li>
 </ul>
 
 
 <h3>SetTextInfoManually(info)</h3>
 
 <ul>
-<li><p>功能：设置文本提示内容。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập nội dung gợi ý dạng văn bản.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>info：文本提示内容，字符串类型。</li>
+<li>info: nội dung gợi ý dạng văn bản, kiểu chuỗi.</li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: không có.</p></li>
 </ul>
 
 
 <h3>GetTextInfoManually(info)</h3>
 
 <ul>
-<li><p>功能：获取文本提示内容。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：文本提示内容， 字符串类型。</p></li>
+<li><p>Chức năng: lấy nội dung gợi ý dạng văn bản.</p></li>
+<li><p>Tham số: không có</p></li>
+<li><p>Giá trị trả về: nội dung gợi ý dạng văn bản, kiểu chuỗi.</p></li>
 </ul>
 
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
-<p>无。</p>
+<p>Không có.</p>
 
-<h2>示例代码</h2>
+<h2>Mã ví dụ</h2>
