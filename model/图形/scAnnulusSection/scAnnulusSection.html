@@ -18,299 +18,299 @@
            </head>
 <h1>scAnnulusSection</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示圆环段。</p>
+<p>Biểu diễn đoạn vành khuyên.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                     </th>
-<th> 接口描述                                                     </th>
+<th>      Phân loại </th>
+<th> Tên giao diện                                                     </th>
+<th> Mô tả giao diện                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
+<td> Khởi tạo </td>
 <td> scAnnulusSection                     </td>
-<td> scAnnulusSection()构造函数。                                 </td>
+<td> Hàm khởi tạo scAnnulusSection().                                 </td>
 </tr>
 <tr>
 <td>      </td>
 <td> scAnnulusSection </td>
-<td> scAnnulusSection(center,radius,startPhi,spanPhi,dRadialScale)构造函数。 </td>
+<td> Hàm khởi tạo scAnnulusSection(center,radius,startPhi,spanPhi,dRadialScale). </td>
 </tr>
 <tr>
 <td>      </td>
 <td> scAnnulusSection </td>
-<td> scAnnulusSection(annulus, startPhi, spanPhi)构造函数。       </td>
+<td> Hàm khởi tạo scAnnulusSection(annulus, startPhi, spanPhi).       </td>
 </tr>
 <tr>
-<td> 函数 </td>
+<td> Hàm </td>
 <td> SetAnnulus                    </td>
-<td> 设置圆环段所在的圆环。                                       </td>
+<td> Thiết lập vành khuyên chứa đoạn vành khuyên.                                       </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetAnnulus                                 </td>
-<td> 获取圆环段所在的圆环。                                       </td>
+<td> Lấy vành khuyên chứa đoạn vành khuyên.                                       </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetCenter                           </td>
-<td> 设置圆环中心。                                               </td>
+<td> Thiết lập tâm vành khuyên.                                               </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetCenter                                   </td>
-<td> 获取圆环段所在圆环的中心。                                   </td>
+<td> Lấy tâm của vành khuyên chứa đoạn vành khuyên.                                   </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetRadius                           </td>
-<td> 设置圆环的基准半径。                                         </td>
+<td> Thiết lập bán kính chuẩn của vành khuyên.                                         </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetRadius                                   </td>
-<td> 获取基准圆半径                                               </td>
+<td> Lấy bán kính của đường tròn chuẩn                                               </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetRadialScale           </td>
-<td> 设置径向缩放比例。                                           </td>
+<td> Thiết lập tỷ lệ co giãn hướng tâm.                                           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetRadialScale                         </td>
-<td> 获取径向缩放比例。                                           </td>
+<td> Lấy tỷ lệ co giãn hướng tâm.                                           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetStartPhi                     </td>
-<td> 设置起始角。                                                 </td>
+<td> Thiết lập góc bắt đầu.                                                 </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetStartPhi                               </td>
-<td> 获取起始角。                                                 </td>
+<td> Lấy góc bắt đầu.                                                 </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetSpanPhi                        </td>
-<td> 设置张角。                                                   </td>
+<td> Thiết lập góc mở.                                                   </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetSpanPhi                                 </td>
-<td> 获取张角。                                                   </td>
+<td> Lấy góc mở.                                                   </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetEndPhi                                   </td>
-<td> 获取终止角                                                   </td>
+<td> Lấy góc kết thúc                                                   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
 <h3>scAnnulusSection()</h3>
 
 <ul>
-<li><p>功能：构造scAnnulus对象。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：无。</p></li>
+<li><p>Chức năng: khởi tạo đối tượng scAnnulus.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: không có.</p></li>
 </ul>
 
 
 <h3>scAnnulusSection( center,radius,startPhi,spanPhi,dRadialScale )</h3>
 
-<p>功能：用圆心center，基准半径radius，起始角度startPhi，张角spanPhi和径向缩放比例dRadialScale来构造圆环段。</p>
+<p>Chức năng: dùng tâm đường tròn center, bán kính chuẩn radius, góc bắt đầu startPhi, góc mở spanPhi và tỷ lệ co giãn hướng tâm dRadialScale để khởi tạo đoạn vành khuyên.</p>
 
 <ul>
-<li><p>参数：</p>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>center：圆心位置，sc2Vector类型。</p></li>
-<li><p>radius：基准半径，浮点数类型。</p></li>
-<li><p>startPhi：起始角度，浮点数类型。</p></li>
-<li><p>spanPhi：张角，浮点数类型。</p></li>
-<li><p>dRadialScale：径向缩放比例，浮点数类型。</p></li>
+<li><p>center: vị trí tâm đường tròn, kiểu sc2Vector.</p></li>
+<li><p>radius: bán kính chuẩn, kiểu số thực dấu phẩy động.</p></li>
+<li><p>startPhi: góc bắt đầu, kiểu số thực dấu phẩy động.</p></li>
+<li><p>spanPhi: góc mở, kiểu số thực dấu phẩy động.</p></li>
+<li><p>dRadialScale: tỷ lệ co giãn hướng tâm, kiểu số thực dấu phẩy động.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: không có.</p></li>
 </ul>
 
 
 <h3>scAnnulusSection( annulus, startPhi, spanPhi )</h3>
 
 <ul>
-<li><p>功能：用圆环annulus，起始角度startPhi和张角spanPhi来构造圆环段。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: dùng vành khuyên annulus, góc bắt đầu startPhi và góc mở spanPhi để khởi tạo đoạn vành khuyên.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>annulus：圆环，scAnnulus类型。</p></li>
-<li><p>startPhi：起始角度，浮点数类型。</p></li>
-<li><p>spanPhi：张角，浮点数类型。</p></li>
+<li><p>annulus: vành khuyên, kiểu scAnnulus.</p></li>
+<li><p>startPhi: góc bắt đầu, kiểu số thực dấu phẩy động.</p></li>
+<li><p>spanPhi: góc mở, kiểu số thực dấu phẩy động.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: không có.</p></li>
 </ul>
 
 
 <h3>SetAnnulus( annulus )</h3>
 
 <ul>
-<li><p>功能：设置圆环段所在的圆环。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập vành khuyên chứa đoạn vành khuyên.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>annulus：圆环，scAnnulus类型。</li>
+<li>annulus: vành khuyên, kiểu scAnnulus.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, biểu thị có thiết lập thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetAnnulus()</h3>
 
 <ul>
-<li><p>功能：获取圆环段所在的圆环。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：圆环段所在的圆环，scAnnulus类型。</p></li>
+<li><p>Chức năng: lấy vành khuyên chứa đoạn vành khuyên.</p></li>
+<li><p>Tham số: không có</p></li>
+<li><p>Giá trị trả về: vành khuyên chứa đoạn vành khuyên, kiểu scAnnulus.</p></li>
 </ul>
 
 
 <h3>SetCenter( center )</h3>
 
 <ul>
-<li><p>功能：设置圆环中心。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập tâm vành khuyên.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>center：圆环中心，sc2Vector类型。</li>
+<li>center: tâm vành khuyên, kiểu sc2Vector.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, biểu thị có thiết lập thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetCenter()</h3>
 
 <ul>
-<li><p>功能：获取圆环段所在的圆环的中心。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：圆环段所在的圆环的中心，sc2Vector类型。</p></li>
+<li><p>Chức năng: lấy tâm của vành khuyên chứa đoạn vành khuyên.</p></li>
+<li><p>Tham số: không có</p></li>
+<li><p>Giá trị trả về: tâm của vành khuyên chứa đoạn vành khuyên, kiểu sc2Vector.</p></li>
 </ul>
 
 
 <h3>SetRadius( radius )</h3>
 
 <ul>
-<li><p>功能：设置圆环的基准半径。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập bán kính chuẩn của vành khuyên.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>radius：基准半径，浮点数类型。</li>
+<li>radius: bán kính chuẩn, kiểu số thực dấu phẩy động.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, biểu thị có thiết lập thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetRadius()</h3>
 
 <ul>
-<li><p>功能：获取圆环的基准半径。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆环的基准半径，浮点数类型。</p></li>
+<li><p>Chức năng: lấy bán kính chuẩn của vành khuyên.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: bán kính chuẩn của vành khuyên, kiểu số thực dấu phẩy động.</p></li>
 </ul>
 
 
 <h3>SetRadialScale( dRadialScale )</h3>
 
 <ul>
-<li><p>功能：设置径向缩放比例。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập tỷ lệ co giãn hướng tâm.</p></li>
+<li><p>Tham số:</p>
 
-<p> -dRadialScale：径向缩放比例，浮点数类型。</p></li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<p> -dRadialScale: tỷ lệ co giãn hướng tâm, kiểu số thực dấu phẩy động.</p></li>
+<li><p>Giá trị trả về: kiểu bool, biểu thị có thiết lập thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetRadialScale()</h3>
 
 <ul>
-<li><p>功能：获取径向缩放比例。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：径向缩放比例，浮点数类型。</p></li>
+<li><p>Chức năng: lấy tỷ lệ co giãn hướng tâm.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: tỷ lệ co giãn hướng tâm, kiểu số thực dấu phẩy động.</p></li>
 </ul>
 
 
 <h3>SetStartPhi( startPhi )</h3>
 
 <ul>
-<li><p>功能：设置起始角度。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập góc bắt đầu.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>startPhi：起始角度，scRadian类型。</li>
+<li>startPhi: góc bắt đầu, kiểu scRadian.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, biểu thị có thiết lập thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetStartPhi()</h3>
 
 <ul>
-<li><p>功能：获取起始角度。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：起始角度，scRadian类型。</p></li>
+<li><p>Chức năng: lấy góc bắt đầu.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: góc bắt đầu, kiểu scRadian.</p></li>
 </ul>
 
 
 <h3>SetSpanPhi( spanPhi )</h3>
 
 <ul>
-<li><p>功能：设置张角。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập góc mở.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>spanPhi：张角，scRadian类型。</li>
+<li>spanPhi: góc mở, kiểu scRadian.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, biểu thị có thiết lập thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetSpanPhi()</h3>
 
 <ul>
-<li><p>功能：获取张角。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：张角，scRadian类型。</p></li>
+<li><p>Chức năng: lấy góc mở.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: góc mở, kiểu scRadian.</p></li>
 </ul>
 
 
 <h3>GetEndPhi()</h3>
 
 <ul>
-<li><p>功能：获取终止角度。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：终止角度，scRadian类型。</p></li>
+<li><p>Chức năng: lấy góc kết thúc.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: góc kết thúc, kiểu scRadian.</p></li>
 </ul>
 
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>示例代码</h2>
+<h2>Mã ví dụ</h2>
 
-<p>无</p>
+<p>Không có</p>
