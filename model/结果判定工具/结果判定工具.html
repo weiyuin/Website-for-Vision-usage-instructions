@@ -16,33 +16,33 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>结果判定</h1>
+<h1>Phán định kết quả</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ 结果判定工具能够新增、删除参与判定项；获取对应判定项的当前结果数值；对多ROI功能工具进行ROI选择，且可直接设置补偿值、判定阈值等参数；可输出列表中所有参与项的OK/NG结果情况，包含整个工具的输出结果；可选择判定策略来决定整个工具的输出结果。</p>
+<p>​ Công cụ phán định kết quả có thể thêm mới, xóa các hạng mục tham gia phán định; lấy giá trị kết quả hiện tại của hạng mục phán định tương ứng; thực hiện lựa chọn ROI đối với công cụ chức năng đa ROI, đồng thời có thể trực tiếp thiết lập các tham số như giá trị bù, ngưỡng phán định; có thể xuất tình trạng kết quả OK/NG của tất cả các hạng mục tham gia trong danh sách, bao gồm cả kết quả đầu ra của toàn bộ công cụ; có thể lựa chọn chiến lược phán định để quyết định kết quả đầu ra của toàn bộ công cụ.</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>​ 当前瑞声大部分的3D量测类项目对待检物料均进行采样检测，样本总数为10，其中检测区域中有5个判定输出真值成功则物料OK，否则NG；或另一种判定模式，10个样本区域中存在一定的逻辑性关系，利用自定义的逻辑关系来输出OK/NG状态。目前对个体工具的阈值设置以及所有工具输出结果判定的方式均通过变量传递至脚本中实施，对于现场人员技术要求较高，且较为繁琐，生产界面中导入时数值很多，搭建耗时长且容易出错。</p>
+<p>​ Hiện nay, phần lớn các dự án đo lường 3D của AAC đều thực hiện kiểm tra lấy mẫu đối với vật liệu cần kiểm tra, tổng số mẫu là 10, trong đó nếu có 5 giá trị true đầu ra phán định trong vùng kiểm tra thành công thì vật liệu OK, nếu không thì NG; hoặc một chế độ phán định khác, trong 10 vùng mẫu tồn tại một quan hệ logic nhất định, sử dụng quan hệ logic tùy chỉnh để xuất trạng thái OK/NG. Hiện tại, việc thiết lập ngưỡng của từng công cụ riêng lẻ cũng như phương thức phán định kết quả đầu ra của tất cả công cụ đều được truyền vào script thông qua biến để thực hiện, yêu cầu kỹ thuật đối với nhân sự hiện trường khá cao, đồng thời tương đối phức tạp, khi nhập trong giao diện sản xuất có rất nhiều giá trị, thời gian xây dựng lâu và dễ xảy ra lỗi.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>​ 结果判定工具通过获取当前工程中的所有3D检测类工具的ID以及工具名，添加至对应的列表中，然后通过ID获取相应的补偿值、判定阈值等参数，最后根据判定策略的选择，执行得到结果。</p>
+<p>​ Công cụ phán định kết quả lấy ID và tên công cụ của tất cả các công cụ kiểm tra 3D trong project hiện tại, thêm vào danh sách tương ứng, sau đó thông qua ID để lấy các tham số tương ứng như giá trị bù, ngưỡng phán định, cuối cùng căn cứ theo lựa chọn chiến lược phán định để thực thi và thu được kết quả.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具</h4>
+<li><h4>Thêm công cụ</h4>
 
 <p><img src=".\media\GcResultJudgementTool_4_1.png" style="zoom:70%;" /></p></li>
-<li><h4>在高级界面中进行设置</h4>
+<li><h4>Thiết lập trong giao diện nâng cao</h4>
 
 <ul>
-<li>① 新增、删除参与判定的工具；</li>
-<li>② 在列表中设置多ROI或单ROI工具对应的系数、固定补偿、判定阈值等参数；</li>
-<li>③ 选择判定策略，自定义逻辑判定或统计占比判定模式；</li>
-<li>④ 按照选择的判定模式执行输出工具执行结果；</li>
+<li>① Thêm mới, xóa công cụ tham gia phán định;</li>
+<li>② Thiết lập các tham số như hệ số, bù cố định, ngưỡng phán định tương ứng với công cụ đa ROI hoặc đơn ROI trong danh sách;</li>
+<li>③ Lựa chọn chiến lược phán định, chế độ phán định logic tùy chỉnh hoặc phán định theo tỷ lệ thống kê;</li>
+<li>④ Thực thi xuất kết quả thực thi công cụ theo chế độ phán định đã chọn;</li>
 </ul>
 
 
@@ -50,96 +50,96 @@
 </ul>
 
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>6. 参数说明</h2>
+<h2>6. Mô tả tham số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称     </th>
-<th> 参数说明                                                     </th>
+<th> Tên tham số     </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 判定策略选择 </td>
-<td> 可选择自定义逻辑判定、统计占比判定两种模式                   </td>
+<td> Lựa chọn chiến lược phán định </td>
+<td> Có thể lựa chọn hai chế độ: phán định logic tùy chỉnh, phán định theo tỷ lệ thống kê                   </td>
 </tr>
 <tr>
-<td> 工具个数     </td>
-<td> 添加至列表项中用于判定的工具个数                             </td>
+<td> Số lượng công cụ     </td>
+<td> Số lượng công cụ được thêm vào các mục trong danh sách để phán định                             </td>
 </tr>
 <tr>
-<td> 工具成功个数 </td>
-<td> 执行成功的工具个数                                           </td>
+<td> Số công cụ thành công </td>
+<td> Số lượng công cụ thực thi thành công                                           </td>
 </tr>
 <tr>
-<td> 工具失败个数 </td>
-<td> 执行失败的工具个数                                           </td>
+<td> Số công cụ thất bại </td>
+<td> Số lượng công cụ thực thi thất bại                                           </td>
 </tr>
 <tr>
-<td> 判定表达式   </td>
-<td> 自定义逻辑判定中可直接输入判断项名称，利用逻辑表达式的方式来设置判定标准 </td>
+<td> Biểu thức phán định   </td>
+<td> Trong phán định logic tùy chỉnh, có thể trực tiếp nhập tên hạng mục phán định, sử dụng phương thức biểu thức logic để thiết lập tiêu chuẩn phán định </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称         </th>
-<th> 参数说明                                                     </th>
+<th> Tên tham số         </th>
+<th> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 3D工具参数       </td>
-<td> 当前工程中所包含的3D工具参数                                 </td>
+<td> Tham số công cụ 3D       </td>
+<td> Tham số công cụ 3D có trong project hiện tại                                 </td>
 </tr>
 <tr>
-<td> 工具执行结果数值 </td>
-<td> 所有参与判定项的执行结果数值输出，输出形式为数组，数组内顺序按列表顺序输出。 </td>
+<td> Giá trị kết quả thực thi công cụ </td>
+<td> Đầu ra giá trị kết quả thực thi của tất cả các hạng mục tham gia phán định, hình thức đầu ra là mảng, thứ tự trong mảng được xuất theo thứ tự trong danh sách. </td>
 </tr>
 <tr>
-<td> 工具执行判定结果 </td>
-<td> 所有参与判定项的执行结果输出，输出形式为数组，数组内顺序按列表顺序输出。 </td>
+<td> Kết quả phán định thực thi công cụ </td>
+<td> Đầu ra kết quả thực thi của tất cả các hạng mục tham gia phán định, hình thức đầu ra là mảng, thứ tự trong mảng được xuất theo thứ tự trong danh sách. </td>
 </tr>
 <tr>
-<td> 系数补偿         </td>
-<td> 测量结果增加的系数补偿                                       </td>
+<td> Hệ số bù         </td>
+<td> Hệ số bù được thêm vào kết quả đo                                       </td>
 </tr>
 <tr>
-<td> 固定补偿         </td>
-<td> 测量结果增加的固定补偿                                       </td>
+<td> Bù cố định         </td>
+<td> Giá trị bù cố định được thêm vào kết quả đo                                       </td>
 </tr>
 <tr>
-<td> 阈值下限         </td>
-<td> 测量结果所在的阈值下限                                       </td>
+<td> Giới hạn dưới ngưỡng         </td>
+<td> Giới hạn dưới của ngưỡng nơi kết quả đo nằm trong                                       </td>
 </tr>
 <tr>
-<td> 阈值上限         </td>
-<td> 测量结果所在的阈值上限                                       </td>
+<td> Giới hạn trên ngưỡng         </td>
+<td> Giới hạn trên của ngưỡng nơi kết quả đo nằm trong                                       </td>
 </tr>
 <tr>
-<td> 执行结果         </td>
-<td> 工具执行结果。                                               </td>
+<td> Kết quả thực thi         </td>
+<td> Kết quả thực thi công cụ.                                               </td>
 </tr>
 <tr>
-<td> 执行时间         </td>
-<td> 工具执行时间。                                               </td>
+<td> Thời gian thực thi         </td>
+<td> Thời gian thực thi công cụ.                                               </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7. 示例工程</h2>
+<h2>7. Project ví dụ</h2>
 
-<p>​ 参见“\Samples\3D\深度图\结果判定工具.gvp”。</p>
+<p>​ Tham khảo “\Samples\3D\深度图\结果判定工具.gvp”.</p>

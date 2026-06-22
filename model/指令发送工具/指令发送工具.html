@@ -16,120 +16,120 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>指令发送工具</h1>
+<h1>Công cụ gửi lệnh</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     指令接收工具，需要配合通信指令集使用，主要是通过对目标设备端口发送特定格式的数据指令，完成与外部设备的信息交互。</p>
+<p>​     Công cụ nhận lệnh，cần sử dụng kết hợp với bộ lệnh truyền thông，chủ yếu là gửi lệnh dữ liệu có định dạng cụ thể đến cổng thiết bị đích，hoàn thành việc trao đổi thông tin với thiết bị bên ngoài。</p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
-<p>​     适用于以太网Ehternet Tcp/IP 无协议 和 PLC MX-Competent两种通信方式。</p>
+<p>​     Phù hợp với hai phương thức truyền thông：Ethernet Ehternet Tcp/IP không giao thức và PLC MX-Competent。</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Giải thích nguyên lý</h2>
 
-<p>​     利用网络、串口、寄存器等和其他设备端建立连接，按照通信指令规则将内部数据发送到其他设备端。</p>
+<p>​     Sử dụng mạng、cổng nối tiếp、thanh ghi, v.v. để thiết lập kết nối với đầu thiết bị khác，gửi dữ liệu nội bộ đến đầu thiết bị khác theo quy tắc lệnh truyền thông。</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，设置指令分组</h4></li>
+<li><h4>Thêm công cụ，thiết lập nhóm lệnh</h4></li>
 </ul>
 
 
 <p><img src="media/GcCommandSendTool_1_1.png" alt="GcCommandSendTool_1_1" /></p>
 
 <ul>
-<li><h4>输出数据</h4></li>
+<li><h4>Dữ liệu đầu ra</h4></li>
 </ul>
 
 
 <p><img src="media/GcCommandSendTool_1_2.png" alt="GcCommandSendTool_1_2" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述     </th>
-<th> 解决方法                                                     </th>
+<th> Mô tả hiện tượng     </th>
+<th> Phương pháp xử lý                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 工具运行失败 </td>
-<td> 1、检查工具的指令分组、指令是否进行设置                      </td>
+<td> Công cụ chạy thất bại </td>
+<td> 1、Kiểm tra nhóm lệnh、lệnh của công cụ đã được thiết lập hay chưa                      </td>
 </tr>
 <tr>
 <td>              </td>
-<td> 2、检查工具的指令分组是否被删除或重命名（在指令管理中查看）  </td>
+<td> 2、Kiểm tra nhóm lệnh của công cụ có bị xóa hoặc đổi tên hay không（xem trong quản lý lệnh）  </td>
 </tr>
 <tr>
 <td>              </td>
-<td> 3、检查工具设置的指令分组是否设置了通信端口                  </td>
+<td> 3、Kiểm tra nhóm lệnh được thiết lập cho công cụ đã thiết lập cổng truyền thông hay chưa                  </td>
 </tr>
 <tr>
 <td>              </td>
-<td> 4、检查工具设置的指令分组是否设置了超时参数，工具是否通信超时 </td>
+<td> 4、Kiểm tra nhóm lệnh được thiết lập cho công cụ đã thiết lập tham số timeout hay chưa，công cụ có bị timeout truyền thông hay không </td>
 </tr>
 <tr>
 <td>              </td>
-<td> 5、检查通信是否中断，可在指令管理中查看当前分组使用的通信端口 </td>
+<td> 5、Kiểm tra truyền thông có bị gián đoạn hay không，có thể xem cổng truyền thông đang được nhóm hiện tại sử dụng trong quản lý lệnh </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
+<h2>6. Mô tả tham số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数说明                           </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                           </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 指令分组 </td>
-<td> 选择指令管理中的某一指令分组。     </td>
+<td> Nhóm lệnh </td>
+<td> Chọn một nhóm lệnh trong quản lý lệnh。     </td>
 </tr>
 <tr>
-<td> 指令     </td>
-<td> 选择当前指令分组中的某条发送指令。 </td>
+<td> Lệnh     </td>
+<td> Chọn một lệnh gửi trong nhóm lệnh hiện tại。 </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数说明                       </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 数据内容 </td>
-<td> 工具发送到其他设备的数据内容。 </td>
+<td> Nội dung dữ liệu </td>
+<td> Nội dung dữ liệu mà công cụ gửi đến thiết bị khác。 </td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果。                 </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ。                 </td>
 </tr>
 <tr>
-<td> 执行时间 </td>
-<td> 工具执行时间。                 </td>
+<td> Thời gian thực thi </td>
+<td> Thời gian thực thi công cụ。                 </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7. 示例工程</h2>
+<h2>7. Project ví dụ</h2>
 
-<p>参见“\Samples\指令接收发送工具.gvp”。</p>
+<p>Tham khảo “\Samples\指令接收发送工具.gvp”。</p>

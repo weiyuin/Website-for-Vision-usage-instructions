@@ -1,0 +1,220 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1>Công cụ kiểm tra phân đoạn instance</h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>​     Công cụ kiểm tra phân đoạn instance chủ yếu được dùng để phát hiện cấp vùng trên ảnh, nhận dạng chính xác đối tượng mục tiêu và khuyết tật, đồng thời định vị và phân loại vị trí khuyết tật cùng thông tin loại tương ứng trong ảnh cần kiểm tra, và thực hiện phân đoạn cấp instance cho từng đối tượng. Đầu vào của công cụ này là một ảnh đơn và mô hình mạng đã được huấn luyện, đầu ra là hình chữ nhật bao ngoài mục tiêu và kết quả vùng phân đoạn của mục tiêu. Hiện tại chỉ sau khi cài đặt gói mở rộng AIVI_FB mới có thể sử dụng công cụ này.</p>
+
+<p>​     Điểm hàn trong hình a là mục tiêu cần phân đoạn, khung đỏ trong hình b là mục tiêu đã được phân đoạn.</p>
+
+<p><img src="media/InSegmentTestTool_1_1.png" alt="InSegmentTestTool_1_1" style="zoom:100%;" /></p>
+
+<h2></h2>
+
+<h2>2. Kịch bản ứng dụng</h2>
+
+<p>​     Bài toán định vị ký tự, phát hiện thiếu vít, nhiều chi tiết, v.v.</p>
+
+<h2>3. Mô tả nguyên lý</h2>
+
+<p>​     <strong>Huấn luyện mô hình:</strong>Thông qua huấn luyện để học quan hệ ánh xạ từ đặc trưng ảnh đầu vào đến vùng mục tiêu đầu ra, quan hệ ánh xạ này được xây dựng bằng mạng nơ-ron tích chập. Như trong Hình 2, mạng phân đoạn instance thường trước tiên sử dụng mạng backbone phân loại để trích xuất đặc trưng ảnh và thu được feature map, từ feature map dự đoán ra các khung chữ nhật kết quả, sau đó dựa trên ngưỡng độ tin cậy để thực hiện ức chế cực đại không chồng lấn（non-maximum suppression，viết tắt là NMS）đối với vùng chồng lấn, rồi cắt các khung chữ nhật kết quả sau khi lọc và vùng mask kết quả dự đoán để thu được kết quả cuối cùng. Phần mạng trích xuất đặc trưng có nhiều tham số, các tham số này sẽ được học trong quá trình huấn luyện.</p>
+
+<p><img src="media/InSegmentTestTool_3_1.png" alt="InSegmentTestTool_3_1" style="zoom:100%;" /></p>
+
+<p>Trong quá trình huấn luyện mạng, một hàm mất mát sẽ được thêm vào phía sau cấu trúc mạng nêu trên, sau đó sử dụng phương pháp giảm gradient ngẫu nhiên để tối thiểu hóa giá trị của hàm mất mát này. Trong quá trình tối ưu bằng giảm gradient ngẫu nhiên, sẽ thực hiện tính toán gradient và cập nhật tham số, nguyên lý cơ bản như sau:
+$$
+w<em>{t+1}=w_t-a\frac{1}{n}\sum</em>{x\in B}\nabla l(x,w_t)
+$$
+Trong đó, <em>n</em> là kích thước batch(batchsize), <em>a</em> là learning rate, $\nabla l(x,w_t)$ biểu thị gradient của hàm mất mát, $w_t$ biểu thị tham số trọng số tại thời điểm trước đó, $w_{t+1}$ biểu thị tham số trọng số sau khi cập nhật, <em>B</em> biểu thị một batch dữ liệu.</p>
+
+<p>​     <strong>Kiểm tra phân đoạn instance:</strong>Ở giai đoạn kiểm tra thời gian thực, ảnh thời gian thực được đưa vào mạng, mạng sẽ xuất ra vùng vị trí, loại của từng khung phát hiện mục tiêu và mask tương ứng trong ảnh đó.</p>
+
+<h2>4. Hướng dẫn sử dụng</h2>
+
+<ul>
+<li><h4>Thêm công cụ, tải mô hình</h4>
+
+<p><img src="media/InSegmentTestTool_4_1.png" alt="InSegmentTestTool_4_1" style="zoom:80%;" /></p></li>
+<li><h4>Thiết lập liên kết dữ liệu ảnh</h4>
+
+<p>Nhấp đúp vào “Công cụ kiểm tra phân đoạn instance”, trong hộp thoại liên kết dữ liệu bật lên, chọn ảnh đầu vào.</p>
+
+<p><img src="media/InSegmentTestTool_4_2.png" alt="InSegmentTestTool_4_2" style="zoom:80%;" /></p></li>
+<li><h4>Thực thi, xem kết quả</h4>
+
+<p><img src="media/InSegmentTestTool_4_3.png" alt="InSegmentTestTool_4_3" style="zoom:80%;" /></p>
+
+<p><img src="media/InSegmentTestTool_4_4.png" alt="InSegmentTestTool_4_4" style="zoom:80%;" /></p></li>
+</ul>
+
+
+<h2>5. Câu hỏi thường gặp</h2>
+
+<table>
+<thead>
+<tr>
+<th> Mô tả hiện tượng                         </th>
+<th> Phương pháp xử lý                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Công cụ chạy thất bại, báo “Lỗi lấy ảnh” </td>
+<td> Kiểm tra ảnh đầu vào đã được thiết lập hay chưa, nhấp đúp vào công cụ là có thể thiết lập ảnh đầu vào               </td>
+</tr>
+<tr>
+<td> Công cụ chạy thất bại, báo “Lỗi gọi thuật toán deep learning”   </td>
+<td> 1. Kiểm tra mô hình trong trình quản lý mô hình có khởi tạo thành công hay không; 2. Kiểm tra kênh, chiều rộng và chiều cao của ảnh đầu vào có giống với mô hình hay không </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. Mô tả tham số</h2>
+
+<h4>Tham số đầu vào</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số             </th>
+<th> Mô tả tham số                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Sử dụng ảnh đầu vào RGB      </td>
+<td> “Có”: trong liên kết dữ liệu hiển thị tham số ảnh đầu vào RGB; “Không”: trong liên kết dữ liệu hiển thị tham số ảnh đầu vào </td>
+</tr>
+<tr>
+<td> Bật mask             </td>
+<td> “Có”: trong liên kết dữ liệu hiển thị tham số ảnh mask đầu vào; “Không”: trong liên kết dữ liệu không hiển thị tham số ảnh mask đầu vào </td>
+</tr>
+<tr>
+<td> Bật hợp nhất kết quả cắt ảnh lớn </td>
+<td> “Có” thực hiện hợp nhất kết quả tại các vùng cắt ảnh dày đặc;                         </td>
+</tr>
+<tr>
+<td> Sử dụng mô hình             </td>
+<td> Tên mô hình phân đoạn instance cần sử dụng                                     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Tham số đầu ra</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số   </th>
+<th> Mô tả tham số                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh đầu vào   </td>
+<td> Ảnh kiểm tra đầu vào                     </td>
+</tr>
+<tr>
+<td> Số lượng kết quả   </td>
+<td> Số lượng mục tiêu được phân đoạn                 </td>
+</tr>
+<tr>
+<td> Kết quả phân đoạn instance   </td>
+<td> Tập hợp kết quả phân đoạn instance                    </td>
+</tr>
+<tr>
+<td> Loại kết quả   </td>
+<td> Chỉ số của loại                       </td>
+</tr>
+<tr>
+<td> Tên loại   </td>
+<td> Tên của loại                       </td>
+</tr>
+<tr>
+<td> Hình chữ nhật kết quả   </td>
+<td> Tọa độ điểm góc trên bên trái và kích thước của mục tiêu được phân đoạn </td>
+</tr>
+<tr>
+<td> Độ tin cậy kết quả </td>
+<td> Độ tin cậy của kết quả nhận dạng                 </td>
+</tr>
+<tr>
+<td> Diện tích kết quả   </td>
+<td> Diện tích của mục tiêu được phân đoạn </td>
+</tr>
+<tr>
+<td> Đường dẫn mô hình   </td>
+<td> Đường dẫn mô hình sử dụng khi phân đoạn </td>
+</tr>
+<tr>
+<td> Kết quả thực thi   </td>
+<td> Công cụ thực thi có thành công hay không </td>
+</tr>
+<tr>
+<td> Thời gian thực thi   </td>
+<td> Thời gian tiêu tốn khi công cụ thực thi </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Tham số view</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số   </th>
+<th> Mô tả tham số           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Ảnh đầu vào   </td>
+<td> Hiển thị ảnh kiểm tra đầu vào </td>
+</tr>
+<tr>
+<td> Khối hình chữ nhật kết quả </td>
+<td> Hiển thị hình chữ nhật kết quả       </td>
+</tr>
+<tr>
+<td> Điểm tâm khối hình chữ nhật kết quả </td>
+<td> Hiển thị điểm tâm của hình chữ nhật kết quả       </td>
+</tr>
+<tr>
+<td> Khối đa giác kết quả </td>
+<td> Hiển thị đa giác kết quả       </td>
+</tr>
+<tr>
+<td> Khối đa giác kết quả - chỉ lỗ rỗng </td>
+<td> Hiển thị đa giác lỗ rỗng kết quả </td>
+</tr>
+<tr>
+<td> Kết quả thực thi   </td>
+<td> Hiển thị kết quả thực thi của công cụ </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>7. Dự án ví dụ</h2>
+
+<p>​ Tham khảo “\Samples\实例分割测试工具.gvp”.</p>
