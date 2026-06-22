@@ -18,298 +18,298 @@
            </head>
 <h1>scCircularArc</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>表示圆弧。</p>
+<p>Biểu thị cung tròn.</p>
 
-<h2>接口</h2>
+<h2>Giao diện</h2>
 
 <table>
 <thead>
 <tr>
-<th>      分类 </th>
-<th> 接口名称                                                     </th>
-<th> 接口描述                                                     </th>
+<th>      Phân loại </th>
+<th> Tên giao diện                                                     </th>
+<th> Mô tả giao diện                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 构造 </td>
+<td> Khởi tạo </td>
 <td> scCircularArc                     </td>
-<td> scCircularArc(circle)构造函数。                              </td>
+<td> Hàm khởi tạo scCircularArc(circle).                              </td>
 </tr>
 <tr>
 <td>      </td>
 <td> scCircularArc  </td>
-<td> scCircularArc(circle, startPhi, spanphi)构造函数。           </td>
+<td> Hàm khởi tạo scCircularArc(circle, startPhi, spanphi).           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> scCircularArc </td>
-<td> scCircularArc(center, radius, startPhi, spanPhi)构造函数。   </td>
+<td> Hàm khởi tạo scCircularArc(center, radius, startPhi, spanPhi).   </td>
 </tr>
 <tr>
-<td> 函数 </td>
+<td> Hàm </td>
 <td> SetCenterRadiusStartPhiSpanPhi </td>
-<td> 设置圆弧所在圆的圆心center和半径radius，以及起始角startPhi和张角spanPhi。 </td>
+<td> Thiết lập tâm center và bán kính radius của đường tròn chứa cung tròn, cũng như góc bắt đầu startPhi và góc quét spanPhi. </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetCircle                             </td>
-<td> 设置圆弧所在的圆。                                           </td>
+<td> Thiết lập đường tròn chứa cung tròn.                                           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetStartPhi                       </td>
-<td> 设置圆弧起始角。                                             </td>
+<td> Thiết lập góc bắt đầu của cung tròn.                                             </td>
 </tr>
 <tr>
 <td>      </td>
 <td> SetSpanPhi                          </td>
-<td> 设置圆弧张角。                                               </td>
+<td> Thiết lập góc quét của cung tròn.                                               </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetCircle                                   </td>
-<td> 获取圆弧所在的圆。                                           </td>
+<td> Lấy đường tròn chứa cung tròn.                                           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetCircleCenter                       </td>
-<td> 获取圆弧所在的圆的圆心。                                     </td>
+<td> Lấy tâm của đường tròn chứa cung tròn.                                     </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetCircleRadius                       </td>
-<td> 获取圆弧所在的圆的半径。                                     </td>
+<td> Lấy bán kính của đường tròn chứa cung tròn.                                     </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetStartPhi                               </td>
-<td> 获取圆弧的起始角。                                           </td>
+<td> Lấy góc bắt đầu của cung tròn.                                           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetSpanPhi                                 </td>
-<td> 获取圆弧的张角。                                             </td>
+<td> Lấy góc quét của cung tròn.                                             </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetEndPhi                                   </td>
-<td> 获取圆弧的终止角。                                           </td>
+<td> Lấy góc kết thúc của cung tròn.                                           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetStartPoint                   </td>
-<td> 获取圆弧的起始点。                                           </td>
+<td> Lấy điểm bắt đầu của cung tròn.                                           </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetMidPoint                               </td>
-<td> 获取圆弧的中点。                                             </td>
+<td> Lấy điểm giữa của cung tròn.                                             </td>
 </tr>
 <tr>
 <td>      </td>
 <td> GetEndPoint                               </td>
-<td> 获取圆弧的终点。                                             </td>
+<td> Lấy điểm kết thúc của cung tròn.                                             </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
 <h3>scCircularArc(cirlce)</h3>
 
 <ul>
-<li><p>功能：用圆形构造scCircularArc对象。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: dùng hình tròn để tạo đối tượng scCircularArc.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>circle：圆形，scCircle类型。</li>
+<li>circle: hình tròn, kiểu scCircle.</li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: không có.</p></li>
 </ul>
 
 
 <h3>scCircularArc (circle, startPhi, spanphi)</h3>
 
 <ul>
-<li><p>功能：用圆形circle,起始角startPhi和张角spanPhi来构造圆弧。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: dùng hình tròn circle, góc bắt đầu startPhi và góc quét spanPhi để tạo cung tròn.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>circle：圆形，scCircle类型。</p></li>
-<li><p>startPhi：圆弧起始角，scRadian类型。</p></li>
-<li><p>spanPhi：圆弧张角，scRadian类型。</p></li>
+<li><p>circle: hình tròn, kiểu scCircle.</p></li>
+<li><p>startPhi: góc bắt đầu của cung tròn, kiểu scRadian.</p></li>
+<li><p>spanPhi: góc quét của cung tròn, kiểu scRadian.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: không có.</p></li>
 </ul>
 
 
 <h3>scCircularArc (center, radius, startPhi, spanPhi)</h3>
 
 <ul>
-<li><p>功能：构造圆弧，设置圆弧所在圆的圆心center和半径radius，以及起始角startPhi和张角spanPhi。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: tạo cung tròn, thiết lập tâm center và bán kính radius của đường tròn chứa cung tròn, cũng như góc bắt đầu startPhi và góc quét spanPhi.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>center：圆心坐标，sc2Vector类型。</p></li>
-<li><p>radius：圆半径，浮点数类型。</p></li>
-<li><p>startPhi：圆弧起始角，scRadian类型。</p></li>
-<li><p>spanPhi：圆弧张角，scRadian类型。</p></li>
+<li><p>center: tọa độ tâm đường tròn, kiểu sc2Vector.</p></li>
+<li><p>radius: bán kính đường tròn, kiểu số thực.</p></li>
+<li><p>startPhi: góc bắt đầu của cung tròn, kiểu scRadian.</p></li>
+<li><p>spanPhi: góc quét của cung tròn, kiểu scRadian.</p></li>
 </ul>
 </li>
-<li><p>返回值：无。</p></li>
+<li><p>Giá trị trả về: không có.</p></li>
 </ul>
 
 
 <h3>SetCenterRadiusStartPhiSpanPhi(center, radius, startPhi, spanPhi)</h3>
 
 <ul>
-<li><p>功能：设置圆弧所在圆的圆心center和半径radius，以及起始角startPhi和张角spanPhi。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập tâm center và bán kính radius của đường tròn chứa cung tròn, cũng như góc bắt đầu startPhi và góc quét spanPhi.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li><p>center：圆心坐标，sc2Vector类型。</p></li>
-<li><p>radius：圆半径，浮点数类型。</p></li>
-<li><p>startPhi：圆弧起始角，scRadian类型。</p></li>
-<li><p>spanPhi：圆弧张角，scRadian类型。</p></li>
+<li><p>center: tọa độ tâm đường tròn, kiểu sc2Vector.</p></li>
+<li><p>radius: bán kính đường tròn, kiểu số thực.</p></li>
+<li><p>startPhi: góc bắt đầu của cung tròn, kiểu scRadian.</p></li>
+<li><p>spanPhi: góc quét của cung tròn, kiểu scRadian.</p></li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
 
 
 <h3>SetCircle(circle)</h3>
 
 <ul>
-<li><p>功能：设置圆弧所在的圆。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập đường tròn chứa cung tròn.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>circle：圆形，scCircle类型。</li>
+<li>circle: hình tròn, kiểu scCircle.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
 
 
 <h3>SetStartPhi(startPhi)</h3>
 
 <ul>
-<li><p>功能：设置圆弧起始角。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập góc bắt đầu của cung tròn.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>startPhi：圆弧起始角，scRadian类型。</li>
+<li>startPhi: góc bắt đầu của cung tròn, kiểu scRadian.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
 
 
 <h3>SetSpanPhi(spanPhi)</h3>
 
 <ul>
-<li><p>功能：设置圆弧张角。</p></li>
-<li><p>参数：</p>
+<li><p>Chức năng: thiết lập góc quét của cung tròn.</p></li>
+<li><p>Tham số:</p>
 
 <ul>
-<li>spanPhi：圆弧张角，scRadian类型。</li>
+<li>spanPhi: góc quét của cung tròn, kiểu scRadian.</li>
 </ul>
 </li>
-<li><p>返回值：bool类型，表示是否设置成功。</p></li>
+<li><p>Giá trị trả về: kiểu bool, cho biết thiết lập có thành công hay không.</p></li>
 </ul>
 
 
 <h3>GetCricle()</h3>
 
 <ul>
-<li><p>功能：获取圆弧所在的圆。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：圆弧所在的圆，scCircle类型。</p></li>
+<li><p>Chức năng: lấy đường tròn chứa cung tròn.</p></li>
+<li><p>Tham số: không có</p></li>
+<li><p>Giá trị trả về: đường tròn chứa cung tròn, kiểu scCircle.</p></li>
 </ul>
 
 
 <h3>GetCircleCenter()</h3>
 
 <ul>
-<li><p>功能：获取圆弧所在的圆的圆心。</p></li>
-<li><p>参数：无</p></li>
-<li><p>返回值：圆弧所在的圆的圆心，sc2Vector类型。</p></li>
+<li><p>Chức năng: lấy tâm của đường tròn chứa cung tròn.</p></li>
+<li><p>Tham số: không có</p></li>
+<li><p>Giá trị trả về: tâm của đường tròn chứa cung tròn, kiểu sc2Vector.</p></li>
 </ul>
 
 
 <h3>GetCircleRadius()</h3>
 
 <ul>
-<li><p>功能：获取圆弧所在圆的半径。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆弧所在圆的半径，浮点数类型。</p></li>
+<li><p>Chức năng: lấy bán kính của đường tròn chứa cung tròn.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: bán kính của đường tròn chứa cung tròn, kiểu số thực.</p></li>
 </ul>
 
 
 <h3>GetStartPhi()</h3>
 
 <ul>
-<li><p>功能：获取圆弧的起始角。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆弧的起始角，scRadian类型。</p></li>
+<li><p>Chức năng: lấy góc bắt đầu của cung tròn.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: góc bắt đầu của cung tròn, kiểu scRadian.</p></li>
 </ul>
 
 
 <h3>GetSpanPhi()</h3>
 
 <ul>
-<li><p>功能：获取圆弧的张角。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆弧的张角，scRadian类型。</p></li>
+<li><p>Chức năng: lấy góc quét của cung tròn.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: góc quét của cung tròn, kiểu scRadian.</p></li>
 </ul>
 
 
 <h3>GetEndPhi()</h3>
 
 <ul>
-<li><p>功能：获取圆弧的终止角。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆弧的终止角，scRadian类型。</p></li>
+<li><p>Chức năng: lấy góc kết thúc của cung tròn.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: góc kết thúc của cung tròn, kiểu scRadian.</p></li>
 </ul>
 
 
 <h3>GetStartPoint()</h3>
 
 <ul>
-<li><p>功能：获取圆弧的起始点。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆弧的起始点，sc2Vector类型。</p></li>
+<li><p>Chức năng: lấy điểm bắt đầu của cung tròn.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: điểm bắt đầu của cung tròn, kiểu sc2Vector.</p></li>
 </ul>
 
 
 <h3>GetMidPoint()</h3>
 
 <ul>
-<li><p>功能：获取圆弧的中点。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆弧的中点，sc2Vector类型。</p></li>
+<li><p>Chức năng: lấy điểm giữa của cung tròn.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: điểm giữa của cung tròn, kiểu sc2Vector.</p></li>
 </ul>
 
 
 <h3>GetEndPoint()</h3>
 
 <ul>
-<li><p>功能：获取圆弧的终点。</p></li>
-<li><p>参数：无。</p></li>
-<li><p>返回值：圆弧的终点，sc2Vector类型。</p></li>
+<li><p>Chức năng: lấy điểm kết thúc của cung tròn.</p></li>
+<li><p>Tham số: không có.</p></li>
+<li><p>Giá trị trả về: điểm kết thúc của cung tròn, kiểu sc2Vector.</p></li>
 </ul>
 
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>示例代码</h2>
+<h2>Mã ví dụ</h2>
 
-<p>无</p>
+<p>Không có</p>
