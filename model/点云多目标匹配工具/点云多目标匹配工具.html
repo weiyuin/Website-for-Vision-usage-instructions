@@ -16,29 +16,29 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>Phù hợp Đa Mục tiêu Đám mây Điểm</h1>
+<h1>Khớp đa mục tiêu đám mây điểm</h1>
 
 <h2>1. Tổng quan chức năng</h2>
 
-<p>Công cụ phù hợp đa mục tiêu đám mây điểm dùng để khớp đám mây điểm mô hình và đám mây điểm cảnh, nhằm thu được đám mây điểm trong đám mây điểm cảnh có độ tương đồng cao hơn với đám mây điểm mô hình.</p>
+<p>Công cụ khớp đa mục tiêu đám mây điểm dùng để khớp đám mây điểm mô hình với đám mây điểm cảnh, nhằm thu được các đám mây điểm trong cảnh có độ tương đồng cao với đám mây điểm mô hình.</p>
 
 <h2>2. Kịch bản ứng dụng</h2>
 
-<p>Chủ yếu dùng trong dự án nắm không thứ tự hoặc hướng dẫn để thực hiện khớp vật liệu, nhằm thu được vị trí nắm hoặc hướng dẫn phù hợp nhất.</p>
+<p>Chủ yếu dùng để khớp vật liệu trong các dự án gắp không theo thứ tự hoặc dẫn hướng, nhằm thu được vị trí gắp hoặc dẫn hướng phù hợp nhất.</p>
 
-<h2>3. Giải thích nguyên lý</h2>
+<h2>3. Mô tả nguyên lý</h2>
 
 <p>Không có</p>
 
 <h2>4. Hướng dẫn sử dụng</h2>
 
-<p>Quy trình thực thi công cụ: tải đám mây điểm mô hình → tải đám mây điểm cảnh → thiết lập tham số khớp → thực thi khớp.</p>
+<p>Quy trình thực thi công cụ: tải đám mây điểm mô hình→tải đám mây điểm cảnh→thiết lập tham số khớp→thực hiện khớp.</p>
 
 <p><img src="media/GcCloudModelMatchTool_4_1.png" alt="img" /></p>
 
-<p><imgnote>Hình 1 Sơ đồ minh họa hướng dẫn sử dụng</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ hướng dẫn sử dụng</imgnote></p>
 
-<h2>5. Vấn đề thường gặp</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
 <table>
 <thead>
@@ -48,21 +48,21 @@
 </thead>
 <tbody>
 <tr>
-<td> 1、Trong quá trình khớp, cần đảm bảo vectơ pháp tuyến của đám mây điểm cảnh và đám mây điểm mục tiêu nhất quán, nếu không thì khớp sẽ vô hiệu </td>
+<td> 1、Trong quá trình khớp, cần đảm bảo vector pháp tuyến của đám mây điểm cảnh và đám mây điểm mục tiêu nhất quán, nếu không kết quả khớp sẽ không hợp lệ </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. Giải thích tham số</h2>
+<h2>6. Mô tả tham số</h2>
 
-<h4>Tham số đầu vào (chuỗi tham số)</h4>
+<h4>Tham số đầu vào（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
 <th> Tên tham số             </th>
-<th style="text-align:left;"> Giải thích tham số                                                     </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
@@ -78,171 +78,179 @@
 </table>
 
 
-<h4>Tham số đầu vào (cửa sổ thuộc tính)</h4>
+<h4>Tham số đầu vào（cửa sổ thuộc tính）</h4>
 
 <table>
 <thead>
 <tr>
 <th> Tên tham số             </th>
-<th style="text-align:left;"> Giải thích tham số                                                     </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> Số điểm tham chiếu mô hình </td>
-<td style="text-align:left;"> Phạm vi giá trị [10, 2000], mặc định 1000; tham số này ảnh hưởng đến độ chính xác khớp thô, gợi ý số điểm tham chiếu khoảng 1000, nếu hiệu quả không lý tưởng có thể xem xét tăng </td>
+<td> Số lượng điểm tham chiếu mô hình </td>
+<td style="text-align:left;"> Phạm vi giá trị [10, 2000]，mặc định là 1000；tham số này ảnh hưởng đến độ chính xác căn chỉnh thô, khuyến nghị số điểm tham chiếu khoảng 1000, nếu hiệu quả không lý tưởng có thể cân nhắc tăng lên </td>
 </tr>
 <tr>
-<td> Số điểm tham chiếu cảnh </td>
-<td style="text-align:left;"> Phạm vi giá trị [10, 2000], mặc định 1000; tham số này ảnh hưởng đến độ chính xác khớp thô, gợi ý số điểm tham chiếu khoảng 1000, nếu hiệu quả không lý tưởng có thể xem xét tăng </td>
+<td> Số lượng điểm tham chiếu cảnh </td>
+<td style="text-align:left;"> Phạm vi giá trị [10, 2000]，mặc định là 1000；tham số này ảnh hưởng đến độ chính xác căn chỉnh thô, khuyến nghị số điểm tham chiếu khoảng 1000, nếu hiệu quả không lý tưởng có thể cân nhắc tăng lên </td>
 </tr>
 <tr>
 <td> Loại điểm đặc trưng </td>
-<td style="text-align:left;"> Phân thành tất cả điểm và điểm biên </td>
+<td style="text-align:left;"> Chia thành tất cả điểm và điểm biên </td>
 </tr>
 <tr>
 <td> Số điểm tìm kiếm lân cận KNN </td>
-<td style="text-align:left;"> Phạm vi giá trị [3,100], mặc định 20 </td>
+<td style="text-align:left;"> Phạm vi giá trị [3,100]，mặc định là 20 </td>
 </tr>
 <tr>
 <td> Ngưỡng biên </td>
-<td style="text-align:left;"> Phạm vi giá trị [-10.0, 10.0], mặc định 1 </td>
+<td style="text-align:left;"> Phạm vi giá trị [-10.0, 10.0]，mặc định là 1 </td>
 </tr>
 <tr>
 <td> Bật tham số nâng cao </td>
 <td style="text-align:left;"> Có bật thiết lập tham số nâng cao hay không </td>
 </tr>
 <tr>
-<td> Lấy ngược vectơ pháp tuyến cảnh </td>
-<td style="text-align:left;"> Khi vectơ pháp tuyến cảnh không nhất quán với mô hình thì cần lấy ngược </td>
+<td> Đảo vector pháp tuyến cảnh </td>
+<td style="text-align:left;"> Khi vector pháp tuyến của cảnh không nhất quán với mô hình thì cần đảo chiều </td>
 </tr>
 <tr>
 <td> Bước lấy mẫu điểm cảnh </td>
-<td style="text-align:left;"> Phạm vi giá trị [-1,100], mặc định 3 </td>
+<td style="text-align:left;"> Phạm vi giá trị [-1,100]，mặc định là 3 </td>
 </tr>
 <tr>
 <td> Bước lấy mẫu khớp dày đặc </td>
-<td style="text-align:left;"> Phạm vi giá trị [-1,100], mặc định 3 </td>
+<td style="text-align:left;"> Phạm vi giá trị [-1,100]，mặc định là 3 </td>
 </tr>
 <tr>
 <td> Số lần lặp khớp thưa </td>
-<td style="text-align:left;"> Phạm vi giá trị [1,200], mặc định 50 </td>
+<td style="text-align:left;"> Phạm vi giá trị [1,200]，mặc định là 50 </td>
 </tr>
 <tr>
 <td> Góc tối thiểu khớp thô </td>
-<td style="text-align:left;"> Phạm vi giá trị [0,90], mặc định 5 </td>
+<td style="text-align:left;"> Phạm vi giá trị [0,90]，mặc định là 5 </td>
 </tr>
 <tr>
 <td> Tối ưu sàng lọc tư thế khớp thô </td>
-<td style="text-align:left;"> Chiến lược tối ưu hiệu suất, bật lên và điều chỉnh tham số liên quan chiến lược, bên trong sẽ tối ưu hóa tư thế đầu ra của khớp thô </td>
+<td style="text-align:left;"> Chiến lược tối ưu hiệu suất, sau khi bật và điều chỉnh các tham số liên quan đến chiến lược, bên trong sẽ tối ưu tư thế đầu ra của khớp thô </td>
 </tr>
 <tr>
-<td> Khớp thưa sử dụng kết quả sai lệch lặp tối thiểu </td>
-<td style="text-align:left;"> Chiến lược tối ưu độ chính xác, bật lên và điều chỉnh tham số liên quan chiến lược, bên trong sẽ tối ưu hóa tư thế đầu ra của khớp thưa </td>
+<td> Khớp thưa sử dụng kết quả có sai lệch lặp tối thiểu </td>
+<td style="text-align:left;"> Chiến lược tối ưu độ chính xác, sau khi bật và điều chỉnh các tham số liên quan đến chiến lược, bên trong sẽ tối ưu tư thế đầu ra của khớp thưa </td>
 </tr>
 <tr>
 <td> Sàng lọc góc nghiêng         </td>
-<td style="text-align:left;"> Bật lên thì có thể lọc tư thế có góc nghiêng lớn                               </td>
+<td style="text-align:left;"> Sau khi bật, có thể lọc các tư thế có góc nghiêng lớn                               </td>
 </tr>
 <tr>
 <td> Sàng lọc tỷ lệ che khuất         </td>
-<td style="text-align:left;"> Bật lên thì có thể lọc tư thế che khuất                                         </td>
+<td style="text-align:left;"> Sau khi bật, có thể lọc tư thế bị che khuất                                         </td>
 </tr>
 <tr>
 <td> Góc nghiêng tối đa                     </td>
-<td style="text-align:left;"> Phạm vi giá trị [0,90], giá trị mặc định là 45.0                               </td>
+<td style="text-align:left;"> Phạm vi giá trị [0,90]， giá trị mặc định là 45.0                               </td>
 </tr>
 <tr>
 <td> Tỷ lệ che khuất tối đa                 </td>
-<td style="text-align:left;"> Phạm vi giá trị [0,1], giá trị mặc định là 0.2                                 </td>
+<td style="text-align:left;"> Phạm vi giá trị [0,1]， giá trị mặc định là 0.2                                 </td>
 </tr>
 <tr>
-<td> Có bật thoát timeout hay không </td>
-<td style="text-align:left;"> Có bật thoát timeout hay không </td>
+<td> Có bật thoát khi quá thời gian hay không </td>
+<td style="text-align:left;"> Có bật thoát khi quá thời gian hay không </td>
 </tr>
 <tr>
-<td> Giới hạn trên timeout </td>
-<td style="text-align:left;"> Phạm vi giá trị [1, 3600.0], giá trị mặc định là 30.0 </td>
+<td> Giới hạn thời gian chờ </td>
+<td style="text-align:left;"> Phạm vi giá trị [1, 3600.0]， giá trị mặc định là 30.0 </td>
 </tr>
 <tr>
-<td> Số kết quả tối đa </td>
-<td style="text-align:left;"> Phạm vi giá trị [1,10000], mặc định 1; số lượng kết quả khớp đầu ra </td>
+<td> Số lượng kết quả tối đa </td>
+<td style="text-align:left;"> Phạm vi giá trị [1,10000]，mặc định là 1；số lượng kết quả khớp được xuất ra </td>
 </tr>
 <tr>
 <td> Điểm tối thiểu </td>
-<td style="text-align:left;"> Phạm vi giá trị [0,1], giá trị mặc định là 0.4; chỉ kết quả lớn hơn điểm này mới được đầu ra </td>
+<td style="text-align:left;"> Phạm vi giá trị [0,1]， giá trị mặc định là 0.4；chỉ các kết quả lớn hơn điểm này mới được xuất ra </td>
 </tr>
 <tr>
-<td> Tỷ lệ chồng lặp tư thế tương tự </td>
-<td style="text-align:left;"> Phạm vi giá trị [0,1], mặc định là 0.8; sau khi khớp, mức độ chồng lặp giữa mô hình và cảnh, lớn hơn giá trị này mặc định là tư thế chồng lặp, chỉ chọn một trong số đó để đầu ra </td>
+<td> Tỷ lệ chồng lấp tư thế tương tự </td>
+<td style="text-align:left;"> Phạm vi giá trị [0,1]，mặc định là 0.8；sau khi khớp, mức độ chồng lấp giữa mô hình và cảnh, lớn hơn giá trị này sẽ được mặc định là tư thế chồng lấp, chỉ chọn một trong số đó để xuất ra </td>
 </tr>
 <tr>
 <td> Ngưỡng lọc tư thế tương tự             </td>
-<td style="text-align:left;"> Phạm vi giá trị [0.0001, 1], mặc định là 0.05; lọc tư thế tương tự              </td>
+<td style="text-align:left;"> Phạm vi giá trị [0.0001, 1]，mặc định là 0.05；lọc các tư thế tương tự              </td>
 </tr>
 <tr>
 <td> Hệ số điểm                     </td>
-<td style="text-align:left;"> Phạm vi giá trị (0,50], giá trị mặc định là 5.0                                </td>
+<td style="text-align:left;"> Phạm vi giá trị (0,50]， giá trị mặc định là 5.0                                </td>
+</tr>
+<tr>
+<td> Bật tính toán song song </td>
+<td style="text-align:left;"> Có bật tính toán song song hay không, khi chọn Có, thuật toán sẽ bật phương thức tính toán song song OpenMp, có thể tăng tốc độ tính toán, nhưng có thể xảy ra tình trạng thời gian xử lý không ổn định; khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp. </td>
+</tr>
+<tr>
+<td> Phần trăm số luồng </td>
+<td style="text-align:left;"> Thiết lập phần trăm số luồng của tính toán song song, phạm vi hợp lệ là (0, 0.75]，tương ứng biểu thị phạm vi phần trăm (0%, 75%]. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>Tham số đầu ra (chuỗi tham số)</h4>
+<h4>Tham số đầu ra（chuỗi tham số）</h4>
 
 <table>
 <thead>
 <tr>
 <th> Tên tham số             </th>
-<th style="text-align:left;"> Giải thích tham số                                                     </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> Ma trận biến đổi đầu ra </td>
-<td style="text-align:left;"> Ma trận biến đổi cứng nhắc sau khi khớp </td>
+<td style="text-align:left;"> Ma trận biến đổi cứng sau khi khớp </td>
 </tr>
 <tr>
 <td> Mảng ma trận biến đổi đầu ra </td>
-<td style="text-align:left;"> Mảng ma trận biến đổi cứng nhắc sau khi khớp </td>
+<td style="text-align:left;"> Mảng ma trận biến đổi cứng sau khi khớp </td>
 </tr>
 <tr>
-<td> Điểm tương ứng kết quả </td>
+<td> Điểm tương ứng của kết quả </td>
 <td style="text-align:left;"> Điểm khớp, phạm vi giá trị [0,1] </td>
 </tr>
 <tr>
 <td> Dữ liệu đám mây điểm đầu ra </td>
-<td style="text-align:left;"> Dữ liệu đám mây điểm sau khi biến đổi mô hình </td>
+<td style="text-align:left;"> Dữ liệu đám mây điểm sau khi mô hình được biến đổi </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>Tham số đầu ra (cửa sổ đầu ra)</h4>
+<h4>Tham số đầu ra（cửa sổ đầu ra）</h4>
 
 <table>
 <thead>
 <tr>
 <th> Tên tham số             </th>
-<th style="text-align:left;"> Giải thích tham số                                                     </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> Ma trận biến đổi đầu ra </td>
-<td style="text-align:left;"> Ma trận biến đổi cứng nhắc sau khi khớp </td>
+<td style="text-align:left;"> Ma trận biến đổi cứng sau khi khớp </td>
 </tr>
 <tr>
 <td> Mảng ma trận biến đổi đầu ra </td>
-<td style="text-align:left;"> Mảng ma trận biến đổi cứng nhắc sau khi khớp </td>
+<td style="text-align:left;"> Mảng ma trận biến đổi cứng sau khi khớp </td>
 </tr>
 <tr>
-<td> Điểm tương ứng kết quả </td>
+<td> Điểm tương ứng của kết quả </td>
 <td style="text-align:left;"> Điểm khớp, phạm vi giá trị [0,1] </td>
 </tr>
 <tr>
 <td> Dữ liệu đám mây điểm đầu ra </td>
-<td style="text-align:left;"> Dữ liệu đám mây điểm sau khi biến đổi mô hình </td>
+<td style="text-align:left;"> Dữ liệu đám mây điểm sau khi mô hình được biến đổi </td>
 </tr>
 <tr>
 <td> Kết quả thực thi </td>
@@ -256,6 +264,6 @@
 </table>
 
 
-<h2>7. 示例工程</h2>
+<h2>7. Công trình mẫu</h2>
 
 <p>参见“\Samples\3D\点云\点云多目标匹配工具.gvp”。</p>
