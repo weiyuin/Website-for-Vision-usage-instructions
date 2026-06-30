@@ -16,475 +16,475 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>AI定位工具</h1>
+<h1>Công cụ định vị AI</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​ AI定位工具主要用于定位图像中的目标。在定位中，传统定位遇到瓶颈，图像材质、对比度、噪声等因素导致稳定性不够，同时传统算法调参门槛高。针对此问题，AI定位工具基于深度学习对目标进行定位，提高定位的稳定性，并且开发了高精训练功能，实现AI+传统定位，即保证了定位的稳定性，又提高了定位精度，并且实现了参数自动设置。</p>
+<p>​ Công cụ định vị AI chủ yếu được dùng để định vị mục tiêu trong ảnh. Trong quá trình định vị, phương pháp định vị truyền thống gặp điểm nghẽn, các yếu tố như vật liệu ảnh, độ tương phản, nhiễu, v.v. làm cho độ ổn định chưa đủ, đồng thời ngưỡng kỹ năng tinh chỉnh tham số của thuật toán truyền thống khá cao. Để giải quyết vấn đề này, công cụ định vị AI định vị mục tiêu dựa trên deep learning, nâng cao độ ổn định định vị, đồng thời phát triển chức năng huấn luyện độ chính xác cao, thực hiện định vị AI + định vị truyền thống, vừa đảm bảo độ ổn định định vị, vừa nâng cao độ chính xác định vị, đồng thời thực hiện thiết lập tham số tự động.</p>
 
 <p><img src="media/1-1.png" alt="img" />    <img src="media/1-2.png" alt="img" /></p>
 
-<p><imgnote>图1 复杂场景定位效果</imgnote></p>
+<p><imgnote>Hình 1 Hiệu quả định vị trong cảnh phức tạp</imgnote></p>
 
-<h2>2. 原理说明</h2>
+<h2>2. Mô tả nguyên lý</h2>
 
-<p>​ AI定位执行可以分为两种模式：（1）仅用AI模型定位；（2）AI+几何定位。</p>
+<p>​ Quá trình thực thi định vị AI có thể chia thành hai chế độ:（1）Chỉ dùng mô hình AI để định vị；（2）AI + định vị hình học。</p>
 
-<p>​ 经过训练后，正常会生成.model和.xml两个文件，其中.model文件是AI模型，.xml为高精训练模型及搜索参数。当仅载入.model时，仅用AI模型定位；.model和.xml都使用时，AI+几何定位。</p>
+<p>​ Sau khi huấn luyện, thông thường sẽ tạo ra hai tệp .model và .xml, trong đó tệp .model là mô hình AI, .xml là mô hình huấn luyện độ chính xác cao và tham số tìm kiếm. Khi chỉ tải .model, chỉ dùng mô hình AI để định vị；khi dùng cả .model và .xml, là AI + định vị hình học。</p>
 
-<p>​ （1）仅AI定位的情况下，可以输出目标的关键点、边缘点集；</p>
+<p>​ （1）Trong trường hợp chỉ định vị AI, có thể xuất các điểm đặc trưng và tập điểm biên của mục tiêu；</p>
 
-<p>​ （2）AI+几何定位情况下：可以输出目标的关键点、边缘点集，以及相对于基准图像的平移、旋转与缩放；</p>
+<p>​ （2）Trong trường hợp AI + định vị hình học：có thể xuất các điểm đặc trưng, tập điểm biên của mục tiêu, cũng như phép tịnh tiến, xoay và co giãn so với ảnh chuẩn；</p>
 
 <p><img src="media/2-1.png" alt="img" /><img src="media/2-2.png" alt="img" /></p>
 
-<p><imgnote>图a AI定位</imgnote>                     <imgnote>图b AI+几何定位</imgnote></p>
+<p><imgnote>Hình a Định vị AI</imgnote>                     <imgnote>Hình b AI + định vị hình học</imgnote></p>
 
-<p><imgnote>图2 不同模式下定位结果</imgnote></p>
+<p><imgnote>Hình 2 Kết quả định vị ở các chế độ khác nhau</imgnote></p>
 
 <p><img src="media/2-4.png" alt="img" /></p>
 
-<p><imgnote>图3 AI定位搜索流程</imgnote></p>
+<p><imgnote>Hình 3 Quy trình tìm kiếm định vị AI</imgnote></p>
 
-<h2>3. 应用场景</h2>
+<h2>3. Kịch bản ứng dụng</h2>
 
-<p>​ AI定位工具可实现对比度变化、前背景变化等成像效果不一致场景的稳健定位，支持CPU部署AI模型进行推理，可在普通工控机上使用，无需再额外增加高性能显卡，兼容产品微变形、极性变换等定位场景。</p>
+<p>​ Công cụ định vị AI có thể thực hiện định vị ổn định trong các cảnh có hiệu quả tạo ảnh không nhất quán như thay đổi độ tương phản, thay đổi tiền cảnh và hậu cảnh, hỗ trợ triển khai mô hình AI trên CPU để suy luận, có thể sử dụng trên máy tính công nghiệp thông thường, không cần bổ sung card đồ họa hiệu năng cao, tương thích với các cảnh định vị như sản phẩm biến dạng nhẹ, đảo cực tính, v.v.</p>
 
-<p>​ AI定位工具具有高度的适应性、鲁棒性、高效训练与推理能力、高精度定位以及低资源消耗等特性，面对复杂多变的成像环境时，将显著提升相关应用领域的定位效率与准确性。</p>
+<p>​ Công cụ định vị AI có các đặc tính như khả năng thích ứng cao, độ robust cao, khả năng huấn luyện và suy luận hiệu quả, định vị độ chính xác cao và tiêu hao tài nguyên thấp, khi đối mặt với môi trường tạo ảnh phức tạp và biến đổi, sẽ nâng cao đáng kể hiệu suất và độ chính xác định vị trong các lĩnh vực ứng dụng liên quan.</p>
 
-<h2>4. 使用方法（向导）</h2>
+<h2>4. Phương pháp sử dụng（hướng dẫn）</h2>
 
-<p>工具执行流程：添加工具→配置输入（包括AI模型）→设定属性→训练图像→执行搜索→结果显示和供其他工具使用。</p>
+<p>Quy trình thực thi công cụ：thêm công cụ→cấu hình đầu vào（bao gồm mô hình AI）→thiết lập thuộc tính→huấn luyện ảnh→thực thi tìm kiếm→hiển thị kết quả và cung cấp cho công cụ khác sử dụng。</p>
 
-<h3>添加工具</h3>
+<h3>Thêm công cụ</h3>
 
-<p>方式1，可以右击流程图-》“新建”-》“定位工具”-》“AI定位工具”</p>
+<p>Cách 1, có thể nhấp chuột phải vào sơ đồ quy trình-》“Tạo mới”-》“Công cụ định vị”-》“Công cụ định vị AI”</p>
 
 <p><img src="media/4-1.PNG" alt="img" /></p>
 
-<p><imgnote>图4 右击添加工具</imgnote></p>
+<p><imgnote>Hình 4 Thêm công cụ bằng nhấp chuột phải</imgnote></p>
 
-<p>方式2，“主面板”-》“工具箱”-》“定位工具”-》“AI定位工具”</p>
+<p>Cách 2，“Bảng điều khiển chính”-》“Hộp công cụ”-》“Công cụ định vị”-》“Công cụ định vị AI”</p>
 
 <p><img src="media/4-2.PNG" alt="img" /></p>
 
-<p><imgnote>图5 工具箱添加工具</imgnote></p>
+<p><imgnote>Hình 5 Thêm công cụ từ hộp công cụ</imgnote></p>
 
-<h3>配置输入</h3>
+<h3>Cấu hình đầu vào</h3>
 
-<p>双击工具在弹出窗口中配置输入图像，配置模型路径</p>
+<p>Nhấp đúp vào công cụ, trong cửa sổ bật lên cấu hình ảnh đầu vào và cấu hình đường dẫn mô hình</p>
 
 <p><img src="media/4-3.PNG" alt="img" /></p>
 
-<p><imgnote>图6 配置输入</imgnote></p>
+<p><imgnote>Hình 6 Cấu hình đầu vào</imgnote></p>
 
-<h3>设定属性</h3>
+<h3>Thiết lập thuộc tính</h3>
 
-<p>方式1，“主页面”-》“属性”窗口</p>
+<p>Cách 1，“Trang chính”-》cửa sổ “Thuộc tính”</p>
 
 <p><img src="media/4-4.PNG" alt="" /></p>
 
-<p><imgnote>图7 属性栏设定属性示意图</imgnote></p>
+<p><imgnote>Hình 7 Sơ đồ thiết lập thuộc tính trên thanh thuộc tính</imgnote></p>
 
-<p>方式2，在“AI定位工具”上“右击”-》选择“属性”</p>
+<p>Cách 2，trên “Công cụ định vị AI” “nhấp chuột phải”-》chọn “Thuộc tính”</p>
 
 <p><img src="media/4-5.PNG" alt="" /></p>
 
-<p><imgnote>图8 高级界面设定属性示意图</imgnote></p>
+<p><imgnote>Hình 8 Sơ đồ thiết lập thuộc tính trên giao diện nâng cao</imgnote></p>
 
-<h3>训练图像</h3>
+<h3>Huấn luyện ảnh</h3>
 
-<p>右键工具→属性→打开高级界面→训练参数</p>
+<p>Nhấp chuột phải vào công cụ→Thuộc tính→mở giao diện nâng cao→tham số huấn luyện</p>
 
 <p><img src="media/4-6.png" alt="img" /></p>
 
-<p><imgnote>图9 训练图像示意图</imgnote></p>
+<p><imgnote>Hình 9 Sơ đồ huấn luyện ảnh</imgnote></p>
 
-<p>（1）首先选择“训练图像”来源：</p>
+<p>（1）Trước tiên chọn nguồn “ảnh huấn luyện”：</p>
 
-<p>​ a.&ldquo;输入图像"：训练图像从参数链“输入图像”获取；</p>
+<p>​ a.&ldquo;Ảnh đầu vào"：ảnh huấn luyện được lấy từ “Ảnh đầu vào” trong chuỗi tham số；</p>
 
-<p>​ b.&ldquo;加载图像"：训练图像由离线加载方式从文件获取；</p>
+<p>​ b.&ldquo;Tải ảnh"：ảnh huấn luyện được lấy từ tệp bằng phương thức tải ngoại tuyến；</p>
 
-<p>（2）点击“获取训练图像”：更新训练图像，点击后会先进行弹框提示；</p>
+<p>（2）Nhấp “Lấy ảnh huấn luyện”：cập nhật ảnh huấn luyện, sau khi nhấp sẽ xuất hiện hộp nhắc trước；</p>
 
-<p>（3）点击“执行训练”：进行训练；</p>
+<p>（3）Nhấp “Thực thi huấn luyện”：tiến hành huấn luyện；</p>
 
-<h3>执行搜索</h3>
+<h3>Thực thi tìm kiếm</h3>
 
-<p>根据设定的搜索参数返回相应的搜索结果</p>
+<p>Trả về kết quả tìm kiếm tương ứng theo tham số tìm kiếm đã thiết lập</p>
 
 <p><img src="media/4-7.png" alt="img" /></p>
 
-<p><imgnote>图10 执行搜索示意图</imgnote></p>
+<p><imgnote>Hình 10 Sơ đồ thực thi tìm kiếm</imgnote></p>
 
-<h3>工具结果输出给其他工具</h3>
+<h3>Xuất kết quả công cụ cho công cụ khác</h3>
 
-<p>​ 双击后续工具，如下“找线工具<em>004”，在参数连接页面，选中“二维线性变换”，在右侧可选连接中双击“AI定位工具</em>003.二维线性变换”，连接完成。</p>
+<p>​ Nhấp đúp vào công cụ phía sau, ví dụ “Công cụ tìm đường thẳng<em>004” bên dưới, trong trang kết nối tham số, chọn “Biến đổi tuyến tính 2D”, trong các kết nối có thể chọn ở bên phải, nhấp đúp “Công cụ định vị AI</em>003.Biến đổi tuyến tính 2D”, hoàn tất kết nối.</p>
 
 <p><img src="media/4-8.png" alt="img" /></p>
 
-<p><imgnote>图11 执行搜索示意图</imgnote></p>
+<p><imgnote>Hình 11 Sơ đồ thực thi tìm kiếm</imgnote></p>
 
-<h3>视图显示结果</h3>
+<h3>Hiển thị kết quả trên View</h3>
 
-<p>​ 拖动“AI定位工具_003”到View界面（需要提前添加），勾选需要选择的内容，一般选择“输入图像”和“关键点”即可快速显示。</p>
+<p>​ Kéo “AI定位工具_003” vào giao diện View（cần thêm trước）, tích chọn nội dung cần chọn, thông thường chọn “Ảnh đầu vào” và “Điểm đặc trưng” là có thể hiển thị nhanh.</p>
 
 <p><img src="media/4-9.png" alt="img" /></p>
 
-<p><imgnote>图12 执行搜索示意图</imgnote></p>
+<p><imgnote>Hình 12 Sơ đồ thực thi tìm kiếm</imgnote></p>
 
-<h3>各种模式使用方法</h3>
+<h3>Phương pháp sử dụng các chế độ khác nhau</h3>
 
-<p>​ （1）AI模型定位</p>
+<p>​ （1）Định vị bằng mô hình AI</p>
 
-<p>​ 上述步骤中，缺少“训练图像”的操作时，是AI模型定位，搜索结果只有“执行搜索”图10中的“关键点检测结果”。</p>
+<p>​ Trong các bước trên, khi thiếu thao tác “huấn luyện ảnh”, đó là định vị bằng mô hình AI, kết quả tìm kiếm chỉ có “kết quả phát hiện điểm đặc trưng” trong “thực thi tìm kiếm” Hình 10.</p>
 
-<p>​ （2）AI+几何定位</p>
+<p>​ （2）AI + định vị hình học</p>
 
-<p>​ 上述步骤中，全部操作时，是AI+几何定位模式，搜索结果如图10所示，有“定位结果”和“关键点检测结果”。</p>
+<p>​ Trong các bước trên, khi thực hiện đầy đủ thao tác, đó là chế độ AI + định vị hình học, kết quả tìm kiếm như Hình 10, có “kết quả định vị” và “kết quả phát hiện điểm đặc trưng”.</p>
 
-<h2>5. 工具链接参数</h2>
+<h2>5. Tham số liên kết công cụ</h2>
 
 <p><img src="media/5-1.png" alt="img" /></p>
 
-<p><imgnote>图13 工具输入属性参数</imgnote></p>
+<p><imgnote>Hình 13 Tham số thuộc tính đầu vào của công cụ</imgnote></p>
 
 <p><img src="media/5-2.png" alt="img" /></p>
 
-<p><imgnote>图14 工具链接输入/输出参数</imgnote></p>
+<p><imgnote>Hình 14 Tham số đầu vào/đầu ra liên kết của công cụ</imgnote></p>
 
 <p><img src="media/5-3.png" alt="img" /></p>
 
-<p><imgnote>图15 工具输出窗口参数</imgnote></p>
+<p><imgnote>Hình 15 Tham số cửa sổ đầu ra của công cụ</imgnote></p>
 
-<h3>属性输入参数</h3>
+<h3>Tham số đầu vào thuộc tính</h3>
 
 <table>
 <thead>
 <tr>
 <th> No   </th>
-<th> 参数名称          </th>
-<th> 参数类型       </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
-<th> 设置方式               </th>
-<th> 常用值    </th>
+<th> Tên tham số          </th>
+<th> Kiểu tham số       </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
+<th> Phương thức thiết lập               </th>
+<th> Giá trị thường dùng    </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> 1    </td>
-<td> 是否是彩色图像    </td>
+<td> Có phải ảnh màu    </td>
 <td> bool           </td>
-<td style="text-align:left;"> 输入图像是否是彩色图像，选择是，参数链中显示输入图像RGB；选择否，参数链中显示输入图像。 </td>
-<td> 下拉选择               </td>
-<td> 否        </td>
+<td style="text-align:left;"> Ảnh đầu vào có phải là ảnh màu hay không, chọn có thì trong chuỗi tham số hiển thị ảnh đầu vào RGB；chọn không thì trong chuỗi tham số hiển thị ảnh đầu vào. </td>
+<td> Chọn từ danh sách thả xuống               </td>
+<td> Không        </td>
 </tr>
 <tr>
 <td> 2    </td>
-<td> 模型路径          </td>
+<td> Đường dẫn mô hình          </td>
 <td> string         </td>
-<td style="text-align:left;"> AI定位工具支持模型加载，以便根据不同检测场景选择不同的训练模型。 </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Công cụ định vị AI hỗ trợ tải mô hình, để lựa chọn mô hình huấn luyện khác nhau theo các cảnh kiểm tra khác nhau. </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> NA        </td>
 </tr>
 <tr>
 <td> 3    </td>
-<td> 定位阈值          </td>
+<td> Ngưỡng định vị          </td>
 <td> double         </td>
-<td style="text-align:left;"> 训练模板与实时搜索结果之间有一个匹配程度的分数，当匹配分数高于定位阈值时表明实时搜索成功，取值范围是(0，1]。 </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Có một điểm số mức độ khớp giữa template huấn luyện và kết quả tìm kiếm thời gian thực, khi điểm khớp cao hơn ngưỡng định vị thì biểu thị tìm kiếm thời gian thực thành công, phạm vi giá trị là (0，1]. </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 0.6       </td>
 </tr>
 <tr>
 <td> 4    </td>
-<td> 结果个数          </td>
+<td> Số lượng kết quả          </td>
 <td> int            </td>
-<td style="text-align:left;"> 设置最多的搜索结果个数，范围（0，50]。                       </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Thiết lập số lượng kết quả tìm kiếm tối đa, phạm vi（0，50].                       </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 1         </td>
 </tr>
 <tr>
 <td> 5    </td>
-<td> 是否开启全图      </td>
+<td> Có bật toàn ảnh      </td>
 <td> bool           </td>
-<td style="text-align:left;"> 开启全图搜索的开关。当选择“是”时，整幅实时采集的图像都是该工具的搜索范围；当选择“否”时，Edit视图中的“搜索区域”仿射矩形是该工具的搜索范围。 </td>
-<td> 下拉选择、表达式、脚本 </td>
-<td> 否        </td>
+<td style="text-align:left;"> Công tắc bật tìm kiếm toàn ảnh. Khi chọn “Có”, toàn bộ ảnh được thu nhận thời gian thực đều là phạm vi tìm kiếm của công cụ này；khi chọn “Không”, hình chữ nhật affine “vùng tìm kiếm” trong Edit view là phạm vi tìm kiếm của công cụ này. </td>
+<td> Chọn từ danh sách thả xuống, biểu thức, script </td>
+<td> Không        </td>
 </tr>
 <tr>
 <td> 6    </td>
-<td> 搜索区域          </td>
+<td> Vùng tìm kiếm          </td>
 <td> scRectangular  </td>
-<td style="text-align:left;"> 当“是否开启全图”选择“否”时，“搜索区域”仿射矩形是该工具的搜索范围。 </td>
-<td> 数值填入、脚本         </td>
+<td style="text-align:left;"> Khi “Có bật toàn ảnh” chọn “Không”, hình chữ nhật affine “vùng tìm kiếm” là phạm vi tìm kiếm của công cụ này. </td>
+<td> Nhập giá trị, script         </td>
 <td> NA        </td>
 </tr>
 <tr>
 <td> 7    </td>
-<td> 搜索模式          </td>
+<td> Chế độ tìm kiếm          </td>
 <td> eVW_SearchMode </td>
-<td style="text-align:left;"> 分为“普通”和“高精”；普通为仅基于AI模型情况下的定位，高精为AI+几何定位的模式，或者没有AI模型，纯几何定位 </td>
-<td> 下拉选择               </td>
-<td> 普通      </td>
+<td style="text-align:left;"> Chia thành “thông thường” và “độ chính xác cao”；thông thường là định vị chỉ dựa trên mô hình AI, độ chính xác cao là chế độ AI + định vị hình học, hoặc không có mô hình AI, định vị hình học thuần túy </td>
+<td> Chọn từ danh sách thả xuống               </td>
+<td> Thông thường      </td>
 </tr>
 <tr>
 <td> 8    </td>
-<td> 搜索最高/最低角度 </td>
+<td> Góc tìm kiếm cao nhất/thấp nhất </td>
 <td> double         </td>
-<td style="text-align:left;"> 搜索的角度范围，最低角度>=-360°，最高角度&lt;=360°，最低角度&lt;=最高角度。 </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Phạm vi góc tìm kiếm, góc thấp nhất>=-360°, góc cao nhất&lt;=360°, góc thấp nhất&lt;=góc cao nhất. </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 15/-15    </td>
 </tr>
 <tr>
 <td> 9    </td>
-<td> 搜索最高/最低缩放 </td>
+<td> Tỷ lệ co giãn tìm kiếm cao nhất/thấp nhất </td>
 <td> double         </td>
-<td style="text-align:left;"> 搜索时的缩放范围，最低缩放>0，最高角度&lt;=10°，最低缩放&lt;=最高缩放。 </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Phạm vi co giãn khi tìm kiếm, co giãn thấp nhất>0, góc cao nhất&lt;=10°, co giãn thấp nhất&lt;=co giãn cao nhất. </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 1.03/0.97 </td>
 </tr>
 <tr>
 <td> 10   </td>
-<td> 对比度阈值        </td>
+<td> Ngưỡng độ tương phản        </td>
 <td> int            </td>
-<td style="text-align:left;"> 对比度定义为模式中所有边界点的幅值的平均。用户可以通过设置对比度阈值删除对比度较低的模式。取值范围[1,255]，支持小数。 </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Độ tương phản được định nghĩa là giá trị trung bình của biên độ tất cả điểm biên trong pattern. Người dùng có thể xóa các pattern có độ tương phản thấp bằng cách thiết lập ngưỡng độ tương phản. Phạm vi giá trị [1,255], hỗ trợ số thập phân. </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 10        </td>
 </tr>
 <tr>
 <td> 11   </td>
-<td> 距离阈值          </td>
+<td> Ngưỡng khoảng cách          </td>
 <td> double         </td>
-<td style="text-align:left;"> 基于当前定位结果，将基准图像的定位得到的关键点，变换至当前图像，两堆点之间的平均距离。取值范围（0,10000]。 </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Dựa trên kết quả định vị hiện tại, biến đổi các điểm đặc trưng thu được từ định vị ảnh chuẩn sang ảnh hiện tại, lấy khoảng cách trung bình giữa hai tập điểm. Phạm vi giá trị（0,10000]. </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 30        </td>
 </tr>
 <tr>
 <td> 12   </td>
-<td> 高精搜索范围      </td>
+<td> Phạm vi tìm kiếm độ chính xác cao      </td>
 <td> int            </td>
-<td style="text-align:left;"> 基于AI定位的结果，在设定的高精搜索范围内，使用几何定位再次搜索。取值范围[1,25]。 </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Dựa trên kết quả định vị AI, trong phạm vi tìm kiếm độ chính xác cao đã thiết lập, sử dụng định vị hình học để tìm kiếm lại. Phạm vi giá trị [1,25]. </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 3         </td>
 </tr>
 <tr>
 <td> 13   </td>
-<td> 重叠阈值          </td>
+<td> Ngưỡng chồng lấp          </td>
 <td> double         </td>
-<td style="text-align:left;"> 两个目标重叠程度。取值范围[0,1]。                            </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Mức độ chồng lấp của hai mục tiêu. Phạm vi giá trị [0,1].                            </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 0.2       </td>
 </tr>
 <tr>
 <td> 14   </td>
-<td> 标记点X/Y         </td>
+<td> Điểm đánh dấu X/Y         </td>
 <td> double         </td>
-<td style="text-align:left;"> 手动输入标记点的X轴、Y轴坐标。                               </td>
-<td> 数值填入、表达式、脚本 </td>
+<td style="text-align:left;"> Nhập thủ công tọa độ trục X, trục Y của điểm đánh dấu.                               </td>
+<td> Nhập giá trị, biểu thức, script </td>
 <td> 0/0       </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>链接输入参数</h3>
+<h3>Tham số đầu vào liên kết</h3>
 
 <table>
 <thead>
 <tr>
-<th> 输入参数    </th>
-<th> 输入类型  </th>
-<th style="text-align:left;"> 参数说明                           </th>
-<th> 输入工具种类 </th>
-<th> 单位 </th>
+<th> Tham số đầu vào    </th>
+<th> Kiểu đầu vào  </th>
+<th style="text-align:left;"> Mô tả tham số                           </th>
+<th> Loại công cụ đầu vào </th>
+<th> Đơn vị </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像    </td>
+<td> Ảnh đầu vào    </td>
 <td> scImage8  </td>
-<td style="text-align:left;"> 用来实时识别的输入图像，灰度图像。 </td>
-<td> 图像源       </td>
+<td style="text-align:left;"> Ảnh đầu vào dùng để nhận dạng thời gian thực, ảnh xám. </td>
+<td> Nguồn ảnh       </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 输入图像RGB </td>
+<td> Ảnh đầu vào RGB </td>
 <td> scImage24 </td>
-<td style="text-align:left;"> 用来实时识别的输入图像，彩色图像。 </td>
-<td> 图像源       </td>
+<td style="text-align:left;"> Ảnh đầu vào dùng để nhận dạng thời gian thực, ảnh màu. </td>
+<td> Nguồn ảnh       </td>
 <td> NA   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>链接输出参数</h3>
+<h3>Tham số đầu ra liên kết</h3>
 
 <table>
 <thead>
 <tr>
-<th> 输出参数         </th>
-<th> 输出类型                </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
-<th> 后续可连接工具           </th>
-<th> 单位 </th>
+<th> Tham số đầu ra         </th>
+<th> Kiểu đầu ra                </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
+<th> Công cụ có thể kết nối phía sau           </th>
+<th> Đơn vị </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 二维线性变换     </td>
+<td> Biến đổi tuyến tính 2D     </td>
 <td> scPlanarLinearTransform </td>
-<td style="text-align:left;"> 该工具输出的二维线性变换是指该工具二维线性变换数组中的第一组值。 </td>
-<td> 查找/检测/颜色/识读/脚本 </td>
+<td style="text-align:left;"> Biến đổi tuyến tính 2D do công cụ này xuất ra là nhóm giá trị đầu tiên trong mảng biến đổi tuyến tính 2D của công cụ này. </td>
+<td> Tìm kiếm/kiểm tra/màu sắc/đọc nhận dạng/script </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 二维线性变换数组 </td>
+<td> Mảng biến đổi tuyến tính 2D </td>
 <td> vector                  </td>
-<td style="text-align:left;"> 二维线性变换是指目标相对于模板的平移、旋转、缩放变换。二维线性变换数组是指在该工具在某一次执行完之后，所有二维线性变换所组成的数组。 </td>
-<td> 脚本                     </td>
+<td style="text-align:left;"> Biến đổi tuyến tính 2D là phép tịnh tiến, xoay, co giãn của mục tiêu so với template. Mảng biến đổi tuyến tính 2D là mảng gồm tất cả biến đổi tuyến tính 2D được tạo ra sau một lần công cụ này thực thi xong. </td>
+<td> Script                     </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 搜索坐标         </td>
+<td> Tọa độ tìm kiếm         </td>
 <td> scPlanarVector          </td>
-<td style="text-align:left;"> 第一个定位结果。                                             </td>
-<td> 脚本                     </td>
+<td style="text-align:left;"> Kết quả định vị đầu tiên.                                             </td>
+<td> Script                     </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 搜索坐标数组     </td>
+<td> Mảng tọa độ tìm kiếm     </td>
 <td> vector                  </td>
-<td style="text-align:left;"> 所有定位结果。                                               </td>
-<td> 脚本                     </td>
+<td style="text-align:left;"> Tất cả kết quả định vị.                                               </td>
+<td> Script                     </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 关键点           </td>
+<td> Điểm đặc trưng           </td>
 <td> vector                  </td>
-<td style="text-align:left;"> 第一个定位目标的点集。                                       </td>
-<td> 脚本                     </td>
+<td style="text-align:left;"> Tập điểm của mục tiêu định vị đầu tiên.                                       </td>
+<td> Script                     </td>
 <td> NA   </td>
 </tr>
 <tr>
-<td> 关键点数组       </td>
+<td> Mảng điểm đặc trưng       </td>
 <td> vector                  </td>
-<td style="text-align:left;"> 所有定位目标的点集。                                         </td>
-<td> 脚本                     </td>
+<td style="text-align:left;"> Tập điểm của tất cả mục tiêu định vị.                                         </td>
+<td> Script                     </td>
 <td> NA   </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>输出窗口参数（供查看运行结果）</h3>
+<h3>Tham số cửa sổ đầu ra（dùng để xem kết quả chạy）</h3>
 
 <table>
 <thead>
 <tr>
-<th> 输出参数     </th>
-<th> 输出类型 </th>
-<th style="text-align:left;"> 参数说明                                                     </th>
-<th> 单位 </th>
+<th> Tham số đầu ra     </th>
+<th> Kiểu đầu ra </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
+<th> Đơn vị </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像        </td>
+<td> Ảnh đầu vào        </td>
 <td> scImage8 </td>
-<td style="text-align:left;"> 输入图像宽度、高度、像素大小。                                                                                   </td>
+<td style="text-align:left;"> Chiều rộng, chiều cao, kích thước pixel của ảnh đầu vào.                                                                                   </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 输入图像RGB </td>
+<td> Ảnh đầu vào RGB </td>
 <td> scImage24 </td>
-<td style="text-align:left;"> 输入彩色图像宽度、高度、像素大小。 </td>
+<td style="text-align:left;"> Chiều rộng, chiều cao, kích thước pixel của ảnh màu đầu vào. </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 二维线性变换 </td>
+<td> Biến đổi tuyến tính 2D </td>
 <td> scPlanarLinearTransform </td>
-<td style="text-align:left;"> 该工具输出的二维线性变换是指该工具二维线性变换数组中的第一组值。                                                             </td>
+<td style="text-align:left;"> Biến đổi tuyến tính 2D do công cụ này xuất ra là nhóm giá trị đầu tiên trong mảng biến đổi tuyến tính 2D của công cụ này.                                                             </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 二维线性变换数组 </td>
+<td> Mảng biến đổi tuyến tính 2D </td>
 <td> vector </td>
-<td style="text-align:left;"> 二维线性变换是指目标相对于模板的平移、旋转、缩放变换。二维线性变换数组是指在该工具在某一次执行完之后，所有二维线性变换所组成的数组。                                                     </td>
+<td style="text-align:left;"> Biến đổi tuyến tính 2D là phép tịnh tiến, xoay, co giãn của mục tiêu so với template. Mảng biến đổi tuyến tính 2D là mảng gồm tất cả biến đổi tuyến tính 2D được tạo ra sau một lần công cụ này thực thi xong.                                                     </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 搜索坐标 </td>
+<td> Tọa độ tìm kiếm </td>
 <td> scPlanarVector </td>
-<td style="text-align:left;"> 第一个定位结果。 </td>
+<td style="text-align:left;"> Kết quả định vị đầu tiên. </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 搜索坐标数组 </td>
+<td> Mảng tọa độ tìm kiếm </td>
 <td> vector </td>
-<td style="text-align:left;"> 所有定位结果。 </td>
+<td style="text-align:left;"> Tất cả kết quả định vị. </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 关键点  </td>
+<td> Điểm đặc trưng  </td>
 <td> vector </td>
-<td style="text-align:left;"> 第一个定位目标的点集。                            </td>
+<td style="text-align:left;"> Tập điểm của mục tiêu định vị đầu tiên.                            </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 关键点数组 </td>
+<td> Mảng điểm đặc trưng </td>
 <td> vector </td>
-<td style="text-align:left;"> 所有定位目标的点集。                                         </td>
+<td style="text-align:left;"> Tập điểm của tất cả mục tiêu định vị.                                         </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 执行结果         </td>
+<td> Kết quả thực thi         </td>
 <td> bool </td>
-<td style="text-align:left;"> 工具执行结果。                                                                                                   </td>
+<td style="text-align:left;"> Kết quả thực thi công cụ.                                                                                                   </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 执行时间         </td>
+<td> Thời gian thực thi         </td>
 <td> double </td>
-<td style="text-align:left;"> 工具执行时间。                                                                                                   </td>
+<td style="text-align:left;"> Thời gian thực thi công cụ.                                                                                                   </td>
 <td> ms </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 常见问题</h2>
+<h2>6. Câu hỏi thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述                         </th>
-<th> 解决方法                                                     </th>
+<th> Mô tả hiện tượng                         </th>
+<th> Phương pháp xử lý                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 如何获取多个定位结果             </td>
-<td> 可以通过脚本工具来获取AI定位结果的搜索结果数组中某个搜索结果 </td>
+<td> Cách lấy nhiều kết quả định vị             </td>
+<td> Có thể dùng công cụ script để lấy một kết quả tìm kiếm nào đó trong mảng kết quả tìm kiếm của kết quả định vị AI </td>
 </tr>
 <tr>
-<td> 如何获取多个二维线性变换结果     </td>
-<td> 多个二维线性变换结果可以使用脚本工具获得。                   </td>
+<td> Cách lấy nhiều kết quả biến đổi tuyến tính 2D     </td>
+<td> Có thể dùng công cụ script để lấy nhiều kết quả biến đổi tuyến tính 2D.                   </td>
 </tr>
 <tr>
-<td> 不训练或训练失败可以执行搜索成功 </td>
-<td> 加载模型，不训练，可以搜索成功，但是结果列表中没有定位结果。 </td>
+<td> Không huấn luyện hoặc huấn luyện thất bại nhưng có thể thực thi tìm kiếm thành công </td>
+<td> Tải mô hình, không huấn luyện, có thể tìm kiếm thành công, nhưng trong danh sách kết quả không có kết quả định vị. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7. 脚本控制</h2>
+<h2>7. Điều khiển bằng script</h2>
 
 <p>```python</p>
 
-<h1>获取参数</h1>
+<h1>Lấy tham số</h1>
 
 <p>A = GvTool.GetToolData(&ldquo;AI定位工具<em>003.二维线性变换&rdquo;)
 B = GvTool.GetToolData(&ldquo;AI定位工具</em>003.二维线性变换数组&rdquo;)
@@ -514,7 +514,7 @@ Y = GvTool.GetToolData(&ldquo;AI定位工具<em>003.搜索坐标&rdquo;)
 Z = GvTool.GetToolData(&ldquo;AI定位工具</em>003.搜索坐标数组&rdquo;)
 print(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)</p>
 
-<h1>设置参数</h1>
+<h1>Thiết lập tham số</h1>
 
 <p>GvTool.SetToolData(&ldquo;AI定位工具<em>003.定位阈值&rdquo;,0.6)
 GvTool.SetToolData(&ldquo;AI定位工具</em>003.对比度阈值&rdquo;,10)
@@ -533,6 +533,5 @@ GvTool.SetToolData(&ldquo;AI定位工具</em>003.重叠阈值&rdquo;,0.2)
 GvTool.SetToolData(&ldquo;AI定位工具_003.高精搜索范围&rdquo;,3)
 ```</p>
 
-<h2>8. 示例工程</h2>
-
+<h2>8. Dự án mẫu</h2>
 <p>参见“\Samples\AI定位工具.gvp”。</p>
