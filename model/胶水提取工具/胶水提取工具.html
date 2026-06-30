@@ -16,35 +16,35 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>胶水提取工具</h1>
+<h1>Công cụ trích xuất keo</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     胶水提取工具主要用来对输入图像的某一区域内的胶水提取。</p>
+<p>​     Công cụ trích xuất keo chủ yếu được dùng để trích xuất keo trong một vùng nào đó của ảnh đầu vào.</p>
 
 <p><img src="media/GcAIGlueExtractTool_1_1.png" alt="" /></p>
 
-<p><imgnote>图1 胶水提取工具 应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ ứng dụng công cụ trích xuất keo</imgnote></p>
 
-<h2>2. 应用场景</h2>
-
-<p>​</p>
-
-<h2>3. 原理说明</h2>
+<h2>2. Kịch bản ứng dụng</h2>
 
 <p>​</p>
 
-<h2>4. 使用向导</h2>
+<h2>3. Mô tả nguyên lý</h2>
+
+<p>​</p>
+
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像</h4></li>
+<li><h4>Thêm công cụ, tải ảnh</h4></li>
 </ul>
 
 
 <p><img src="media/GcAIGlueExtractTool_1_2.png" alt="" /></p>
 
 <ul>
-<li><h4>配置AI模型、边界忽略比例、调整ROI位置</h4></li>
+<li><h4>Cấu hình mô hình AI, tỷ lệ bỏ qua biên, điều chỉnh vị trí ROI</h4></li>
 </ul>
 
 
@@ -52,123 +52,123 @@
 
 <p><img src="media/GcAIGlueExtractTool_1_4.png" alt="" /></p>
 
-<p><strong>AI模型</strong></p>
+<p><strong>Mô hình AI</strong></p>
 
-<p>导入AI模型，格式为vwai。</p>
+<p>Nhập mô hình AI, định dạng là vwai.</p>
 
-<p><strong>边界忽略比例</strong></p>
+<p><strong>Tỷ lệ bỏ qua biên</strong></p>
 
-<p>ROI区域的边界忽略比例，取值范围为[0.01, 0.2]。</p>
+<p>Tỷ lệ bỏ qua biên của vùng ROI, phạm vi giá trị là [0.01, 0.2].</p>
 
-<p><strong>导入ROI列表</strong></p>
+<p><strong>Nhập danh sách ROI</strong></p>
 
-<p>ROI的设置，包括ROI数目和ROI尺寸，Edit视图可修改ROI的位置。</p>
+<p>Thiết lập ROI, bao gồm số lượng ROI và kích thước ROI, có thể chỉnh sửa vị trí ROI trong Edit view.</p>
 
-<p>可导入ROI列表，导入成功，ROI数目和ROI尺寸同步为列表里的数据。</p>
+<p>Có thể nhập danh sách ROI, sau khi nhập thành công, số lượng ROI và kích thước ROI sẽ được đồng bộ theo dữ liệu trong danh sách.</p>
 
-<p><strong>是否实时显示提取轮廓</strong></p>
+<p><strong>Có hiển thị contour trích xuất theo thời gian thực hay không</strong></p>
 
-<p>是：执行成功，Result显示输入图像和轮廓；否：执行成功，显示提取二值图。</p>
+<p>Có：thực thi thành công, Result hiển thị ảnh đầu vào và contour；Không：thực thi thành công, hiển thị ảnh nhị phân đã trích xuất.</p>
 
-<p>在调试过程中，配置为’是‘； 生成过程中，配置为’否‘。</p>
+<p>Trong quá trình debug, cấu hình là ’Có‘； trong quá trình sản xuất, cấu hình là ’Không‘。</p>
 
 <ul>
-<li><h4>查看结果</h4></li>
+<li><h4>Xem kết quả</h4></li>
 </ul>
 
 
 <p><img src="media/GcAIGlueExtractTool_1_1.png" alt="" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>6. 参数说明</h2>
+<h2>6. Mô tả tham số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称 </th>
-<th> 参数说明 </th>
+<th> Tên tham số </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像       </td>
-<td> 待提取的图像。                   </td>
+<td> Ảnh đầu vào       </td>
+<td> Ảnh cần trích xuất.                   </td>
 </tr>
 <tr>
-<td> 二维线性变换   </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                       </td>
+<td> Biến đổi tuyến tính 2D   </td>
+<td> Phép tịnh tiến, xoay, co giãn của mục tiêu so với template.                       </td>
 </tr>
 <tr>
-<td> AI模型 </td>
-<td> 设置AI模型路径。 </td>
+<td> Mô hình AI </td>
+<td> Thiết lập đường dẫn mô hình AI. </td>
 </tr>
 <tr>
-<td> ROI数目 </td>
-<td> 取值范围为[1, 50]。 </td>
+<td> Số lượng ROI </td>
+<td> Phạm vi giá trị là [1, 50]. </td>
 </tr>
 <tr>
-<td> ROI尺寸 </td>
-<td> 取值范围为[128, 2048]。 </td>
+<td> Kích thước ROI </td>
+<td> Phạm vi giá trị là [128, 2048]. </td>
 </tr>
 <tr>
-<td> 边界忽略比例 </td>
-<td> 取值范围为[0.01, 0.2]。 </td>
+<td> Tỷ lệ bỏ qua biên </td>
+<td> Phạm vi giá trị là [0.01, 0.2]. </td>
 </tr>
 <tr>
-<td> 导入ROI列表 </td>
-<td> 导入的ROI列表文件路径。 </td>
+<td> Nhập danh sách ROI </td>
+<td> Đường dẫn tệp danh sách ROI được nhập. </td>
 </tr>
 <tr>
-<td> 是否实时显示提取轮廓 </td>
-<td> 是：执行成功，Result显示输入图像和轮廓；否：执行成功，显示提取二值图 </td>
+<td> Có hiển thị contour trích xuất theo thời gian thực hay không </td>
+<td> Có：thực thi thành công, Result hiển thị ảnh đầu vào và contour；Không：thực thi thành công, hiển thị ảnh nhị phân đã trích xuất </td>
 </tr>
 <tr>
-<td> 开启并行运算 </td>
-<td> 是否开启并行运算，选择是时，算法将开启OpenMp并行计算方式，可以提升计算速度，但可能出现耗时不稳定的情况，选择否时，算法将关闭OpenMp并行计算。默认否。 </td>
+<td> Bật tính toán song song </td>
+<td> Có bật tính toán song song hay không, khi chọn Có, thuật toán sẽ bật phương thức tính toán song song OpenMp, có thể nâng cao tốc độ tính toán, nhưng có thể xuất hiện tình trạng thời gian xử lý không ổn định；khi chọn Không, thuật toán sẽ tắt tính toán song song OpenMp. Mặc định là Không. </td>
 </tr>
 <tr>
-<td> 线程数百分比 </td>
-<td> 设置并行运算的线程数百分比，有效范围为 (0, 0.75]，对应表示(0%, 75%]百分比范围，默认0.75。 </td>
+<td> Phần trăm số luồng </td>
+<td> Thiết lập phần trăm số luồng của tính toán song song, phạm vi hợp lệ là (0, 0.75]，tương ứng biểu thị phạm vi phần trăm (0%, 75%]，mặc định 0.75. </td>
 </tr>
 <tr>
-<td> 高级界面 </td>
-<td> 无 </td>
+<td> Giao diện nâng cao </td>
+<td> Không có </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                </th>
-<th> 参数说明                           </th>
+<th> Tên tham số                                </th>
+<th> Mô tả tham số                           </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输出图像                               </td>
-<td> 输出图像宽度、高度、像素大小。     </td>
+<td> Ảnh đầu ra                               </td>
+<td> Chiều rộng, chiều cao, kích thước pixel của ảnh đầu ra.     </td>
 </tr>
 <tr>
-<td> 执行结果 </td>
-<td> 工具执行结果。 </td>
+<td> Kết quả thực thi </td>
+<td> Kết quả thực thi công cụ. </td>
 </tr>
 <tr>
-<td> 执行时间                          </td>
-<td> 工具执行时间。                 </td>
+<td> Thời gian thực thi                          </td>
+<td> Thời gian thực thi công cụ.                 </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7. 示例工程</h2>
+<h2>7. Dự án mẫu</h2>
 
 <p>参见“\Samples\AI胶水提取工具.gvp”。</p>
