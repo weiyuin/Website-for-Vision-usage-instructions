@@ -16,70 +16,70 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>直线到直线角度工具</h1>
+<h1>Công cụ đo góc từ đường thẳng đến đường thẳng</h1>
 
-<h2>1. 功能概述</h2>
+<h2>1. Tổng quan chức năng</h2>
 
-<p>​     直线到直线角度工具主要用来计算输入图像中两条直线之间的角度，并输出两条直线的角度。其实际应用效果如图1所示。</p>
+<p>​     Công cụ đo góc từ đường thẳng đến đường thẳng chủ yếu được sử dụng để tính góc giữa hai đường thẳng trong ảnh đầu vào，并 xuất góc của hai đường thẳng. Hiệu quả ứng dụng thực tế được thể hiện như Hình 1.</p>
 
 <p><img src="media\GcAngleLineLineTool_1_1.png" alt="" /></p>
 
-<p><imgnote>图1 直线到直线角度工具应用示意图</imgnote></p>
+<p><imgnote>Hình 1 Sơ đồ minh họa ứng dụng công cụ đo góc từ đường thẳng đến đường thẳng</imgnote></p>
 
-<h2>2. 应用场景</h2>
+<h2>2. Tình huống ứng dụng</h2>
 
-<p>​     直线到直线角度工具主要用于计算目标物边缘线的夹角，判断目标边缘角度是否符合规范。</p>
+<p>​     Công cụ đo góc từ đường thẳng đến đường thẳng chủ yếu được sử dụng để tính góc kẹp giữa các đường biên của đối tượng，phán định góc biên của đối tượng có đáp ứng tiêu chuẩn hay không.</p>
 
-<h2>3. 原理说明</h2>
+<h2>3. Mô tả nguyên lý</h2>
 
-<p>​     <strong>直线到直线角度</strong></p>
+<p>​     <strong>Góc từ đường thẳng đến đường thẳng</strong></p>
 
-<p>​     计算方法：直线A与直线B的角度α可以描述为：假设直线的方向为向上、向右为正，直线A旋转α度后与直线B平行（或重合），其中α的方向为顺时针为正，逆时针为负。其示意图如图2所示。</p>
+<p>​     Phương pháp tính：góc α giữa đường thẳng A và đường thẳng B có thể được mô tả như sau：giả sử hướng của đường thẳng hướng lên trên、hướng sang phải là hướng dương，sau khi đường thẳng A xoay α độ thì song song（hoặc trùng）với đường thẳng B，trong đó hướng của α theo chiều kim đồng hồ là dương，ngược chiều kim đồng hồ là âm. Sơ đồ minh họa được thể hiện như Hình 2.</p>
 
 <p><img src="media\GcAngleLineLineTool_1_2.png" alt="" /><img src="media\GcAngleLineLineTool_1_3.png" alt="" /></p>
 
-<p><imgnote>(a) 角度为正</imgnote> <imgnote>(b) 角度为负</imgnote></p>
+<p><imgnote>(a) Góc dương</imgnote> <imgnote>(b) Góc âm</imgnote></p>
 
-<p><imgnote>图2 直线到直线角度示意图</imgnote></p>
+<p><imgnote>Hình 2 Sơ đồ minh họa góc từ đường thẳng đến đường thẳng</imgnote></p>
 
-<p>​     <strong>无方向角度</strong></p>
+<p>​     <strong>Góc không hướng</strong></p>
 
-<p>​     计算方法：首先取角度的绝对值β，对于绝对值β小于90，β即为无方向角度；对于绝对值β大于90，无方向角度等于180-β。</p>
+<p>​     Phương pháp tính：trước tiên lấy giá trị tuyệt đối β của góc，đối với giá trị tuyệt đối β nhỏ hơn 90，β chính là góc không hướng；đối với giá trị tuyệt đối β lớn hơn 90，góc không hướng bằng 180-β.</p>
 
-<h2>4. 使用向导</h2>
+<h2>4. Hướng dẫn sử dụng</h2>
 
 <ul>
-<li><h4>添加工具，载入图像</h4></li>
+<li><h4>Thêm công cụ，nạp ảnh</h4></li>
 </ul>
 
 
 <p><img src="media\GcAngleLineLineTool_1_4.png" alt="" /></p>
 
 <ul>
-<li><h4>定角度上下限、无方向角度上下限等</h4></li>
+<li><h4>Thiết lập giới hạn trên và giới hạn dưới của góc、giới hạn trên và giới hạn dưới của góc không hướng，v.v.</h4></li>
 </ul>
 
 
 <p><img src="media\GcAngleLineLineTool_1_5.png" alt="" /></p>
 
-<p><strong>角度上限、角度下限</strong></p>
+<p><strong>Giới hạn trên của góc、giới hạn dưới của góc</strong></p>
 
-<p>对于输出参数<a href="#%E8%A7%92%E5%BA%A6">角度</a>的有效范围进行设定，角度上限、角度下限的可取值范围为[-180,180]，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对角度上限或下限不进行限定。</p>
+<p>Thiết lập phạm vi hợp lệ của tham số đầu ra<a href="#%E8%A7%92%E5%BA%A6">góc</a>，phạm vi giá trị có thể thiết lập của giới hạn trên của góc、giới hạn dưới của góc là[-180,180]，ngoài ra có thể thiết lập là"&ndash;.&mdash;&mdash;&ldquo;,biểu thị không giới hạn giới hạn trên hoặc giới hạn dưới của góc.</p>
 
-<p>使用角度上限或/和角度下限对角度数值的有效范围进行设定后，执行此距离工具。</p>
+<p>Sau khi sử dụng giới hạn trên của góc hoặc/và giới hạn dưới của góc để thiết lập phạm vi hợp lệ của giá trị góc，thực thi công cụ khoảng cách này.</p>
 
-<p>当输出结果角度在设定的有效范围内时，显示工具执行成功；否则，显示工具执行失败。</p>
+<p>Khi góc của kết quả đầu ra nằm trong phạm vi hợp lệ đã thiết lập，hiển thị công cụ thực thi thành công；nếu không，hiển thị công cụ thực thi thất bại.</p>
 
-<p><strong>无方向角度上限、无方向角度下限</strong></p>
+<p><strong>Giới hạn trên của góc không hướng、giới hạn dưới của góc không hướng</strong></p>
 
-<p>对于输出参数<a href="#%E6%97%A0%E6%96%B9%E5%90%91%E8%A7%92%E5%BA%A6">无方向角度</a>的有效范围进行设定，无方向角度上限、无方向角度下限的可取值范围为[0,90]，另可设置为"&ndash;.&mdash;&mdash;&ldquo;,表示对无方向角度上限或下限不进行限定。</p>
+<p>Thiết lập phạm vi hợp lệ của tham số đầu ra<a href="#%E6%97%A0%E6%96%B9%E5%90%91%E8%A7%92%E5%BA%A6">góc không hướng</a>，phạm vi giá trị có thể thiết lập của giới hạn trên của góc không hướng、giới hạn dưới của góc không hướng là[0,90]，ngoài ra có thể thiết lập là"&ndash;.&mdash;&mdash;&ldquo;,biểu thị không giới hạn giới hạn trên hoặc giới hạn dưới của góc không hướng.</p>
 
-<p>使用角度上限或/和角度下限对角度数值的有效范围进行设定后，执行此距离工具。</p>
+<p>Sau khi sử dụng giới hạn trên của góc hoặc/và giới hạn dưới của góc để thiết lập phạm vi hợp lệ của giá trị góc，thực thi công cụ khoảng cách này.</p>
 
-<p>当输出结果角度在设定的有效范围内时，显示工具执行成功；否则，显示工具执行失败。</p>
+<p>Khi góc của kết quả đầu ra nằm trong phạm vi hợp lệ đã thiết lập，hiển thị công cụ thực thi thành công；nếu không，hiển thị công cụ thực thi thất bại.</p>
 
 <ul>
-<li><h4>查看结果</h4></li>
+<li><h4>Xem kết quả</h4></li>
 </ul>
 
 
@@ -87,113 +87,111 @@
 
 <p><img src="media\GcAngleLineLineTool_1_7.png" alt="" /></p>
 
-<h2>5. 常见问题</h2>
+<h2>5. Câu hỏi thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述                                                     </th>
+<th> Mô tả hiện tượng                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 数据链窗口中直线A与直线B参数来源相同时，工具执行成功，但两条直线的的角度为0。 </td>
+<td> Khi nguồn tham số của đường thẳng A và đường thẳng B trong cửa sổ chuỗi dữ liệu giống nhau，công cụ thực thi thành công，nhưng góc của hai đường thẳng bằng 0. </td>
 </tr>
 <tr>
-<td> 当数据链窗口中没有指定直线A与直线B参数来源时，直线A与直线B由图像窗口的直线GUI确定；当数据链窗口中已经指定直线A与直线B参数来源时，以该参数来源为优先，图像窗口直线GUI确定的直线无效。 </td>
+<td> Khi nguồn tham số của đường thẳng A và đường thẳng B chưa được chỉ định trong cửa sổ chuỗi dữ liệu，đường thẳng A và đường thẳng B được xác định bằng GUI đường thẳng trong cửa sổ ảnh；khi nguồn tham số của đường thẳng A và đường thẳng B đã được chỉ định trong cửa sổ chuỗi dữ liệu，nguồn tham số đó được ưu tiên，đường thẳng được xác định bằng GUI đường thẳng trong cửa sổ ảnh không có hiệu lực. </td>
 </tr>
 <tr>
-<td> 如果直线A与直线B由图像窗口的直线GUI确定，则每次打开工程时需重新确定直线。 </td>
+<td> Nếu đường thẳng A và đường thẳng B được xác định bằng GUI đường thẳng trong cửa sổ ảnh，thì cần xác định lại đường thẳng mỗi khi mở dự án. </td>
 </tr>
 <tr>
-<td> 数据源顺序的不同会影响角度结果的正负。                       </td>
+<td> Thứ tự khác nhau của nguồn dữ liệu sẽ ảnh hưởng đến dấu âm dương của kết quả góc.                       </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6. 参数说明</h2>
+<h2>6. Mô tả tham số</h2>
 
-<h4>输入参数</h4>
+<h4>Tham số đầu vào</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称          </th>
-<th> 参数说明 </th>
+<th> Tên tham số          </th>
+<th> Mô tả tham số </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像       </td>
-<td> 显示待检测的图像。 </td>
+<td> Ảnh đầu vào       </td>
+<td> Hiển thị ảnh cần kiểm tra. </td>
 </tr>
 <tr>
-<td> 直线A          </td>
-<td> 将要求角度的两条直线中的第一条。                             </td>
+<td> Đường thẳng A          </td>
+<td> Đường thẳng thứ nhất trong hai đường thẳng cần tính góc.                             </td>
 </tr>
 <tr>
-<td> 直线B          </td>
-<td> 将要求角度的两条直线中的第二条。                             </td>
+<td> Đường thẳng B          </td>
+<td> Đường thẳng thứ hai trong hai đường thẳng cần tính góc.                             </td>
 </tr>
 <tr>
-<td> 角度上限       </td>
-<td> 输出参数<a href="#%E8%A7%92%E5%BA%A6">角度</a>的上限阈值，取值范围[-180,180]。        </td>
+<td> Giới hạn trên của góc       </td>
+<td> Ngưỡng giới hạn trên của tham số đầu ra<a href="#%E8%A7%92%E5%BA%A6">góc</a>，phạm vi giá trị[-180,180].        </td>
 </tr>
 <tr>
-<td> 角度下限 </td>
-<td> 输出参数<a href="#%E8%A7%92%E5%BA%A6">角度</a>的下限阈值，取值范围[-180,180]。 </td>
+<td> Giới hạn dưới của góc </td>
+<td> Ngưỡng giới hạn dưới của tham số đầu ra<a href="#%E8%A7%92%E5%BA%A6">góc</a>，phạm vi giá trị[-180,180]. </td>
 </tr>
 <tr>
-<td> 无方向角度上限 </td>
-<td> 输出参数<a href="#%E6%97%A0%E6%96%B9%E5%90%91%E8%A7%92%E5%BA%A6">无方向角度</a>的下限阈值，取值范围[0,90]。 </td>
+<td> Giới hạn trên của góc không hướng </td>
+<td> Ngưỡng giới hạn dưới của tham số đầu ra<a href="#%E6%97%A0%E6%96%B9%E5%90%91%E8%A7%92%E5%BA%A6">góc không hướng</a>，phạm vi giá trị[0,90]. </td>
 </tr>
 <tr>
-<td> 无方向角度下限 </td>
-<td> 输出参数<a href="#%E6%97%A0%E6%96%B9%E5%90%91%E8%A7%92%E5%BA%A6">无方向角度</a>的下限阈值，取值范围[0,90]。 </td>
+<td> Giới hạn dưới của góc không hướng </td>
+<td> Ngưỡng giới hạn dưới của tham số đầu ra<a href="#%E6%97%A0%E6%96%B9%E5%90%91%E8%A7%92%E5%BA%A6">góc không hướng</a>，phạm vi giá trị[0,90]. </td>
 </tr>
 <tr>
-<td> 高级界面 </td>
-<td>    无      </td>
+<td> Giao diện nâng cao </td>
+<td>    Không có      </td>
 </tr>
 </tbody>
 </table>
 
 
-<h4>输出参数</h4>
+<h4>Tham số đầu ra</h4>
 
 <table>
 <thead>
 <tr>
-<th> 参数名称                                </th>
-<th> 参数说明                       </th>
+<th> Tên tham số                                </th>
+<th> Mô tả tham số                       </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 输入图像                                </td>
-<td> 输出图像宽度、高度、像素大小。 </td>
+<td> Ảnh đầu vào                                </td>
+<td> Xuất chiều rộng、chiều cao、kích thước pixel của ảnh. </td>
 </tr>
 <tr>
-<td> 角度                                    </td>
-<td> 直线A与直线B的夹角             </td>
+<td> Góc                                    </td>
+<td> Góc kẹp giữa đường thẳng A và đường thẳng B             </td>
 </tr>
 <tr>
-<td> 无方向角度                              </td>
-<td> 直线A与直线B所夹的锐角。       </td>
+<td> Góc không hướng                              </td>
+<td> Góc nhọn được tạo bởi đường thẳng A và đường thẳng B.       </td>
 </tr>
 <tr>
-<td> 执行结果                                </td>
-<td> 工具执行结果。                 </td>
+<td> Kết quả thực thi                                </td>
+<td> Kết quả thực thi của công cụ.                 </td>
 </tr>
 <tr>
-<td> 执行时间                                </td>
-<td> 工具执行时间。                 </td>
+<td> Thời gian thực thi                                </td>
+<td> Thời gian thực thi của công cụ.                 </td>
 </tr>
 </tbody>
 </table>
 
-
-<h2>7. 示例工程</h2>
 
 <p>参见“\Samples\形状间距及相关点.gvp”。</p>

@@ -16,421 +16,421 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>深度学习通用检测工具</h1>
+<h1>Công cụ kiểm tra tổng quát bằng Deep Learning</h1>
 
-<h2>1.功能概述</h2>
+<h2>1.Tổng quan chức năng</h2>
 
-<p>深度学习通用检测工具是单一深度学习工具（分类测试工具、检测测试工具、分割测试工具）的集成版本，本工具支持多图像源、多ROI区域的深度学习检测，同时支持掩膜、精定位、ROI区域设置、模型选择、类别筛选；本工具支持对多个检测结果进行汇总和判断，输出最终结果；本工具支持存图信息设置以及存图；</p>
+<p>Công cụ kiểm tra tổng quát bằng Deep Learning là phiên bản tích hợp của các công cụ Deep Learning đơn lẻ（công cụ kiểm thử phân loại、công cụ kiểm thử phát hiện、công cụ kiểm thử phân đoạn），công cụ này hỗ trợ kiểm tra Deep Learning với nhiều nguồn ảnh、nhiều vùng ROI，đồng thời hỗ trợ mask、định vị tinh、thiết lập vùng ROI、lựa chọn mô hình、lọc lớp；công cụ này hỗ trợ tổng hợp và phán định nhiều kết quả kiểm tra，xuất kết quả cuối cùng；công cụ này hỗ trợ thiết lập thông tin lưu ảnh và lưu ảnh；</p>
 
-<h2>2.原理说明</h2>
+<h2>2.Mô tả nguyên lý</h2>
 
-<p>本工具通过集成分类测试工具、检测测试工具、分割测试工具来实现深度学习检测功能，通过集成掩膜工具、找圆找线、数据输出工具等来实现辅助功能；</p>
+<p>Công cụ này thực hiện chức năng kiểm tra Deep Learning bằng cách tích hợp công cụ kiểm thử phân loại、công cụ kiểm thử phát hiện、công cụ kiểm thử phân đoạn，đồng thời thực hiện các chức năng hỗ trợ bằng cách tích hợp công cụ mask、tìm đường tròn và đường thẳng、công cụ xuất dữ liệu và các công cụ khác；</p>
 
-<p>具体子工具原理可见相关工具帮助文档，本工具不再赘述；</p>
+<p>Nguyên lý cụ thể của từng công cụ con có thể xem trong tài liệu trợ giúp của công cụ liên quan，tài liệu này không trình bày lại；</p>
 
-<h2>3.应用场景</h2>
+<h2>3.Tình huống ứng dụng</h2>
 
-<p>本工具可覆盖80%的深度学习检测场景，但复杂的深度学习检测无法覆盖；</p>
+<p>Công cụ này có thể đáp ứng 80% tình huống kiểm tra bằng Deep Learning，nhưng không thể đáp ứng các tình huống kiểm tra Deep Learning phức tạp；</p>
 
-<h2>4.使用方法（向导）</h2>
+<h2>4.Phương pháp sử dụng（hướng dẫn）</h2>
 
-<h3>4.1 ROI配置</h3>
+<h3>4.1 Cấu hình ROI</h3>
 
-<h4>4.1.1 ROI管理</h4>
+<h4>4.1.1 Quản lý ROI</h4>
 
 <p><img src="media/GcDeepLearningGeTool_4_1.png" alt="1729488522478" /></p>
 
 <ol>
-<li>双击ROI列表，可以修改ROI名称，名称仅能输入英文字母和数字以及符号“_”，长度为32个字符；</li>
+<li>Nhấp đúp vào danh sách ROI，có thể sửa tên ROI，tên chỉ được phép nhập chữ cái tiếng Anh và chữ số cùng ký hiệu“_”，độ dài là 32 ký tự；</li>
 </ol>
 
 
-<h4>4.1.2 ROI参数设置窗口</h4>
+<h4>4.1.2 Cửa sổ thiết lập tham số ROI</h4>
 
 <p><img src="media/GcDeepLearningGeTool_4_2.png" alt="1729490868473" /></p>
 
-<h5>（1）掩膜设置</h5>
+<h5>（1）Thiết lập mask</h5>
 
 <p><img src="media/GcDeepLearningGeTool_4_3.png" alt="1729490965218" /></p>
 
 <ol>
-<li><p>勾选“是否启用掩膜设置”，点击“掩膜设置”，打开掩膜窗口，可进行掩膜设置；</p></li>
-<li><p>点击“执行”按钮，可在右侧view查看掩膜结果；</p></li>
+<li><p>Đánh dấu“Có bật thiết lập mask hay không”，nhấp“Thiết lập mask”，mở cửa sổ mask，có thể thực hiện thiết lập mask；</p></li>
+<li><p>Nhấp nút“Thực thi”，có thể xem kết quả mask trong view bên phải；</p></li>
 </ol>
 
 
-<h5>（2）精定位设置</h5>
+<h5>（2）Thiết lập định vị tinh</h5>
 
 <p><img src="media/GcDeepLearningGeTool_4_4.png" alt="1729491232575" /></p>
 
 <ol>
-<li><p>勾选“是否启用精定位”，可选择“线圆定位”和“线线定位”两种模式；</p></li>
-<li><p>“线圆定位”模式下，圆心为ROI基准点，直线方向为ROI方向；“线线定位”模式下，线线交点为ROI基准点，直线1方向为ROI方向；</p></li>
-<li><p>右侧下拉框选择“精定位设置”，可在view中通过拖动找线/找圆卡尺，设置查找位置；</p></li>
-<li><p>在“线/圆参数”部分，通过下拉框选择相关卡尺，可设置其相关参数；</p></li>
+<li><p>Đánh dấu“Có bật định vị tinh hay không”，có thể chọn hai chế độ“Định vị đường thẳng và đường tròn”và“Định vị hai đường thẳng”；</p></li>
+<li><p>Trong chế độ“Định vị đường thẳng và đường tròn”，tâm đường tròn là điểm chuẩn ROI，hướng đường thẳng là hướng ROI；trong chế độ“Định vị hai đường thẳng”，giao điểm của hai đường thẳng là điểm chuẩn ROI，hướng của đường thẳng 1 là hướng ROI；</p></li>
+<li><p>Chọn“Thiết lập định vị tinh”trong hộp thả xuống bên phải，có thể thiết lập vị trí tìm kiếm bằng cách kéo thước cặp tìm đường thẳng/tìm đường tròn trong view，thiết lập vị trí tìm kiếm；</p></li>
+<li><p>Trong phần“Tham số đường thẳng/đường tròn”，chọn thước cặp liên quan thông qua hộp thả xuống，có thể thiết lập các tham số tương ứng；</p></li>
 </ol>
 
 
 <p><img src="media/GcDeepLearningGeTool_4_5.png" alt="1729491278629" /></p>
 
 <ol>
-<li>在“ROI参数”部分，可以设置ROI相关参数，X/Y偏移是相对于精定位基点，旋转角度补偿是相对于精定位方向；</li>
+<li>Trong phần“Tham số ROI”，có thể thiết lập các tham số liên quan đến ROI，độ lệch X/Y là tương đối so với điểm chuẩn định vị tinh，bù góc xoay là tương đối so với hướng định vị tinh；</li>
 </ol>
 
 
-<p>点击“执行”按钮，可见：</p>
+<p>Nhấp nút“Thực thi”，có thể thấy：</p>
 
 <p><img src="media/GcDeepLearningGeTool_4_6.png" alt="1729491337651" /></p>
 
-<h3>4.2 模型设置</h3>
+<h3>4.2 Thiết lập mô hình</h3>
 
-<h4>4.2.1 模型管理</h4>
+<h4>4.2.1 Quản lý mô hình</h4>
 
 <p><img src="media/GcDeepLearningGeTool_4_7.png" alt="1729491705641" /></p>
 
 <ol>
-<li>在列表中选中相关ROI，可对其进行模型选择和执行检测；</li>
+<li>Chọn ROI tương ứng trong danh sách，có thể lựa chọn mô hình và thực thi kiểm tra cho ROI đó；</li>
 </ol>
 
 
-<h4>4.2.2 选择模型</h4>
+<h4>4.2.2 Chọn mô hình</h4>
 
 <p><img src="media/GcDeepLearningGeTool_4_8.png" alt="1729492086565" /></p>
 
 <ol>
-<li>点击“选择模型”，可在“选择模型”窗口选择模型，仅可选择一个；</li>
-<li>点击“筛选类型”，可在“选择类别”窗口选择检测类别，默认无勾选，代表所有类别均检测；</li>
+<li>Nhấp“Chọn mô hình”，có thể chọn mô hình trong cửa sổ“Chọn mô hình”，chỉ được chọn một mô hình；</li>
+<li>Nhấp“Lọc loại”，có thể chọn lớp kiểm tra trong cửa sổ“Chọn lớp”，mặc định không đánh dấu，nghĩa là kiểm tra tất cả các lớp；</li>
 </ol>
 
 
-<h4>4.2.3 执行检测</h4>
+<h4>4.2.3 Thực thi kiểm tra</h4>
 
 <p><img src="media/GcDeepLearningGeTool_4_9.png" alt="1729492341451" /></p>
 
 <ol>
-<li>选择“显示原图”，点击“执行”，可在右侧view查看原图结果；</li>
-<li>选择“显示截图”，点击“执行”，可在右侧view查看截图结果；</li>
+<li>Chọn“Hiển thị ảnh gốc”，nhấp“Thực thi”，có thể xem kết quả trên ảnh gốc trong view bên phải；</li>
+<li>Chọn“Hiển thị ảnh cắt”，nhấp“Thực thi”，có thể xem kết quả trên ảnh cắt trong view bên phải；</li>
 </ol>
 
 
-<h3>4.3  综合判断</h3>
+<h3>4.3  Phán định tổng hợp</h3>
 
 <p><img src="media/GcDeepLearningGeTool_4_10.png" alt="1729499917268" /></p>
 
 <ol>
-<li><p>可在综合判定列表中，双击OK条件列选择OK条件；</p></li>
-<li><p>“Feature_null”代表无特征时OK，检测出该特征为NG；“Feature_exit”代表有特征时OK，未检测出该特征为NG；“Feature_indiff”代表有无特征均OK；</p></li>
-<li><p>通过“背景图像”下拉框，可选择综合判定的背景图像；</p></li>
-<li><p>点击“执行”按钮，进行检测，右侧view显示检测结果；</p></li>
+<li><p>Trong danh sách phán định tổng hợp，có thể nhấp đúp vào cột điều kiện OK để chọn điều kiện OK；</p></li>
+<li><p>“Feature_null”biểu thị OK khi không có đặc trưng，phát hiện đặc trưng này thì NG；“Feature_exit”biểu thị OK khi có đặc trưng，không phát hiện đặc trưng này thì NG；“Feature_indiff”biểu thị có hoặc không có đặc trưng đều OK；</p></li>
+<li><p>Thông qua hộp thả xuống“Ảnh nền”，có thể chọn ảnh nền dùng cho phán định tổng hợp；</p></li>
+<li><p>Nhấp nút“Thực thi”，tiến hành kiểm tra，view bên phải hiển thị kết quả kiểm tra；</p></li>
 </ol>
 
 
-<h3>4.4  存图管理</h3>
+<h3>4.4  Quản lý lưu ảnh</h3>
 
 <p><img src="media/GcDeepLearningGeTool_4_12.png" alt="1729501223708" /></p>
 
 <ol>
-<li><p>点击“&hellip;”按钮，可设置根目录；</p></li>
-<li><p>点击“存图列表”相关项，可在信息窗口查看该项信息；</p></li>
-<li><p>在“是否保存”列，勾选该项代表该项保存，不勾选该项代表不保存；</p></li>
-<li><p>双击某项，可弹出“存图信息”窗口，可对存图名称、子目录等进行设置；</p></li>
+<li><p>Nhấp nút“&hellip;”，có thể thiết lập thư mục gốc；</p></li>
+<li><p>Nhấp vào mục tương ứng trong“Danh sách lưu ảnh”，có thể xem thông tin của mục đó trong cửa sổ thông tin；</p></li>
+<li><p>Trong cột“Có lưu hay không”，đánh dấu mục đó nghĩa là lưu mục đó，không đánh dấu nghĩa là không lưu；</p></li>
+<li><p>Nhấp đúp vào một mục，cửa sổ“Thông tin lưu ảnh”sẽ bật lên，có thể thiết lập tên ảnh lưu、thư mục con và các nội dung khác；</p></li>
 </ol>
 
 
 <p><img src="media/GcDeepLearningGeTool_4_11.png" alt="1729501197581" /></p>
 
 <ol>
-<li>&ldquo;设置存图信息"的操作与数据输出工具的操作基本一致；</li>
-<li>新增“检测”项可选择，通过输入相应序号，可自动解析出相关名称，需要注意的是图像源IMG的序号范围是1~16；ROI、模型序号从0开始；ROI顺序为其列表顺序，模型顺序与ROI一致；</li>
+<li>&ldquo;Thiết lập thông tin lưu ảnh"có thao tác về cơ bản giống với công cụ xuất dữ liệu；</li>
+<li>Có thể chọn mục“Kiểm tra”mới bổ sung，bằng cách nhập số thứ tự tương ứng，hệ thống có thể tự động phân tích tên liên quan，cần lưu ý phạm vi số thứ tự của nguồn ảnh IMG là 1~16；số thứ tự ROI、mô hình bắt đầu từ 0；thứ tự ROI là thứ tự trong danh sách，thứ tự mô hình tương ứng với ROI；</li>
 </ol>
 
 
-<h2>5.工具参数链参数</h2>
+<h2>5.Tham số chuỗi tham số công cụ</h2>
 
-<h3>5.1  属性输入参数</h3>
+<h3>5.1  Tham số đầu vào thuộc tính</h3>
 
 <table>
 <thead>
 <tr>
 <th> No   </th>
-<th> 参数名称                         </th>
-<th> 参数类型 </th>
-<th> 参数说明                                                     </th>
-<th> 设置方式 </th>
-<th> 常用值                           </th>
+<th> Tên tham số                         </th>
+<th> Kiểu tham số </th>
+<th> Mô tả tham số                                                     </th>
+<th> Phương thức thiết lập </th>
+<th> Giá trị thường dùng                           </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> 1    </td>
-<td> 图像源个数                       </td>
+<td> Số lượng nguồn ảnh                       </td>
 <td> Int      </td>
-<td> 设置该工具图像源的个数，范围1~16                             </td>
-<td> 数值填入 </td>
-<td> 视具体情况而定，默认值为1        </td>
+<td> Thiết lập số lượng nguồn ảnh của công cụ，phạm vi 1~16                             </td>
+<td> Nhập giá trị </td>
+<td> Tùy theo tình huống cụ thể，giá trị mặc định là 1        </td>
 </tr>
 <tr>
 <td> 2    </td>
-<td> 图像源1~16类型                   </td>
+<td> Loại nguồn ảnh 1~16                   </td>
 <td> List     </td>
-<td> 可设置灰度图像或RGB图像，此参数决定图像源输入图像的类型      </td>
-<td> 下拉选择 </td>
-<td> 视具体情况而定，默认值为灰度图像 </td>
+<td> Có thể thiết lập ảnh mức xám hoặc ảnh RGB，tham số này quyết định loại ảnh đầu vào của nguồn ảnh      </td>
+<td> Chọn từ danh sách thả xuống </td>
+<td> Tùy theo tình huống cụ thể，giá trị mặc định là ảnh mức xám </td>
 </tr>
 <tr>
 <td> 3    </td>
-<td> 是否输出图像源检测ROI数组        </td>
+<td> Có xuất mảng ROI kiểm tra của nguồn ảnh hay không        </td>
 <td> Bool     </td>
-<td> 是：输出参数链显示图像源1~16检测ROI数组，显示个数由图像源个数决定，该参数可显示在view上；否：隐藏输出参数链图像源1~16检测ROI数组，同时隐藏设置在view上的该参数； </td>
-<td> 下拉选择 </td>
-<td> 视具体情况而定，默认值为否       </td>
+<td> Có：chuỗi tham số đầu ra hiển thị mảng ROI kiểm tra của nguồn ảnh 1~16，số lượng hiển thị được quyết định bởi số lượng nguồn ảnh，tham số này có thể hiển thị trên view；Không：ẩn mảng ROI kiểm tra của nguồn ảnh 1~16 trong chuỗi tham số đầu ra，đồng thời ẩn tham số đã thiết lập trên view； </td>
+<td> Chọn từ danh sách thả xuống </td>
+<td> Tùy theo tình huống cụ thể，giá trị mặc định là Không       </td>
 </tr>
 <tr>
 <td> 4    </td>
-<td> 是否输出图像源检测结果位置数组   </td>
+<td> Có xuất mảng vị trí kết quả kiểm tra của nguồn ảnh hay không   </td>
 <td> Bool     </td>
-<td> 是：输出参数链显示图像源1~16检测结果位置数组，显示个数由图像源个数决定，该参数可显示在view上；否：隐藏输出参数链图像源1~16检测结果位置数组，同时隐藏设置在view上的该参数； </td>
-<td> 下拉选择 </td>
-<td> 视具体情况而定，默认值为否       </td>
+<td> Có：chuỗi tham số đầu ra hiển thị mảng vị trí kết quả kiểm tra của nguồn ảnh 1~16，số lượng hiển thị được quyết định bởi số lượng nguồn ảnh，tham số này có thể hiển thị trên view；Không：ẩn mảng vị trí kết quả kiểm tra của nguồn ảnh 1~16 trong chuỗi tham số đầu ra，đồng thời ẩn tham số đã thiết lập trên view； </td>
+<td> Chọn từ danh sách thả xuống </td>
+<td> Tùy theo tình huống cụ thể，giá trị mặc định là Không       </td>
 </tr>
 <tr>
 <td> 5    </td>
-<td> 是否输出图像源检测结果轮廓数组   </td>
+<td> Có xuất mảng đường bao kết quả kiểm tra của nguồn ảnh hay không   </td>
 <td> Bool     </td>
-<td> 是：输出参数链显示图像源1~16检测结果轮廓数组，显示个数由图像源个数决定，该参数可显示在view上；否：隐藏输出参数链图像源1~16检测结果轮廓数组，同时隐藏设置在view上的该参数； </td>
-<td> 下拉选择 </td>
-<td> 视具体情况而定，默认值为否       </td>
+<td> Có：chuỗi tham số đầu ra hiển thị mảng đường bao kết quả kiểm tra của nguồn ảnh 1~16，số lượng hiển thị được quyết định bởi số lượng nguồn ảnh，tham số này có thể hiển thị trên view；Không：ẩn mảng đường bao kết quả kiểm tra của nguồn ảnh 1~16 trong chuỗi tham số đầu ra，đồng thời ẩn tham số đã thiết lập trên view； </td>
+<td> Chọn từ danh sách thả xuống </td>
+<td> Tùy theo tình huống cụ thể，giá trị mặc định là Không       </td>
 </tr>
 <tr>
 <td> 6    </td>
-<td> 是否输出图像源精定位查找ROI数组  </td>
+<td> Có xuất mảng ROI tìm kiếm định vị tinh của nguồn ảnh hay không  </td>
 <td> Bool     </td>
-<td> 是：输出参数链显示图像源1~16精定位查找ROI数组，显示个数由图像源个数决定，该参数可显示在view上；否：隐藏输出参数链图像源1~16精定位查找ROI数组，同时隐藏设置在view上的该参数； </td>
-<td> 下拉选择 </td>
-<td> 视具体情况而定，默认值为否       </td>
+<td> Có：chuỗi tham số đầu ra hiển thị mảng ROI tìm kiếm định vị tinh của nguồn ảnh 1~16，số lượng hiển thị được quyết định bởi số lượng nguồn ảnh，tham số này có thể hiển thị trên view；Không：ẩn mảng ROI tìm kiếm định vị tinh của nguồn ảnh 1~16 trong chuỗi tham số đầu ra，đồng thời ẩn tham số đã thiết lập trên view； </td>
+<td> Chọn từ danh sách thả xuống </td>
+<td> Tùy theo tình huống cụ thể，giá trị mặc định là Không       </td>
 </tr>
 <tr>
 <td> 7    </td>
-<td> 是否输出图像源精定位查找结果数组 </td>
+<td> Có xuất mảng kết quả tìm kiếm định vị tinh của nguồn ảnh hay không </td>
 <td> Bool     </td>
-<td> 是：输出参数链显示图像源1~16精定位查找结果数组，显示个数由图像源个数决定，该参数可显示在view上；否：隐藏输出参数链图像源1~16精定位查找结果数组，同时隐藏设置在view上的该参数； </td>
-<td> 下拉选择 </td>
-<td> 视具体情况而定，默认值为否       </td>
+<td> Có：chuỗi tham số đầu ra hiển thị mảng kết quả tìm kiếm định vị tinh của nguồn ảnh 1~16，số lượng hiển thị được quyết định bởi số lượng nguồn ảnh，tham số này có thể hiển thị trên view；Không：ẩn mảng kết quả tìm kiếm định vị tinh của nguồn ảnh 1~16 trong chuỗi tham số đầu ra，đồng thời ẩn tham số đã thiết lập trên view； </td>
+<td> Chọn từ danh sách thả xuống </td>
+<td> Tùy theo tình huống cụ thể，giá trị mặc định là Không       </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>5.2 链接输入参数</h3>
+<h3>5.2 Tham số đầu vào liên kết</h3>
 
 <table>
 <thead>
 <tr>
-<th> 输入参数</th>
-<th> 输入类型 </th>
-<th> 参数说明 </th>
-<th> 输入工具种类 </th>
-<th> 单位 </th>
+<th> Tham số đầu vào</th>
+<th> Kiểu đầu vào </th>
+<th> Mô tả tham số </th>
+<th> Loại công cụ đầu vào </th>
+<th> Đơn vị </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 产品SN </td>
+<td> SN sản phẩm </td>
 <td> String </td>
-<td> 工件的SN号，用于记录 </td>
-<td> 脚本/表达式/链接 </td>
+<td> Số SN của chi tiết，dùng để ghi lại </td>
+<td> Script/Biểu thức/Liên kết </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源1~16灰度图 </td>
+<td> Ảnh mức xám của nguồn ảnh 1~16 </td>
 <td> ScImage8 </td>
-<td> 检测图像源（灰度图） </td>
-<td> 链接 </td>
+<td> Nguồn ảnh kiểm tra（ảnh mức xám） </td>
+<td> Liên kết </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源1~16RGB图 </td>
+<td> Ảnh RGB của nguồn ảnh 1~16 </td>
 <td> ScImage24 </td>
-<td> 检测图像源（RGB图） </td>
-<td> 链接 </td>
+<td> Nguồn ảnh kiểm tra（ảnh RGB） </td>
+<td> Liên kết </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源1~16二维线性变换 </td>
+<td> Biến đổi tuyến tính hai chiều của nguồn ảnh 1~16 </td>
 <td> ScPlanarLinearTransform </td>
-<td> 检测该图像源时所用二维线性变换 </td>
-<td> 链接 </td>
+<td> Biến đổi tuyến tính hai chiều được sử dụng khi kiểm tra nguồn ảnh này </td>
+<td> Liên kết </td>
 <td> NA </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>5.3 链接输出参数</h3>
+<h3>5.3 Tham số đầu ra liên kết</h3>
 
 <table>
 <thead>
 <tr>
-<th> 输出参数 </th>
-<th> 输出类型 </th>
-<th> 参数说明 </th>
-<th> 后续可连接工具 </th>
-<th> 单位 </th>
+<th> Tham số đầu ra </th>
+<th> Kiểu đầu ra </th>
+<th> Mô tả tham số </th>
+<th> Công cụ có thể liên kết tiếp theo </th>
+<th> Đơn vị </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 检测结果 </td>
+<td> Kết quả kiểm tra </td>
 <td> Bool </td>
-<td> 该工具的检测总结果，OK or NG </td>
-<td> 表达式/脚本 </td>
+<td> Kết quả kiểm tra tổng thể của công cụ，OK or NG </td>
+<td> Biểu thức/Script </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 检测结果数组 </td>
-<td> GsImgSourceDetectResult数组 </td>
-<td> 该工具的检测结果，以图像源为单位进行汇总 </td>
-<td> 脚本 </td>
+<td> Mảng kết quả kiểm tra </td>
+<td> Mảng GsImgSourceDetectResult </td>
+<td> Kết quả kiểm tra của công cụ，được tổng hợp theo từng nguồn ảnh </td>
+<td> Script </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源检测结果数组 </td>
-<td> Bool数组 </td>
-<td> 该工具每个图像源的检测结果，以图像源为单位进行汇总 </td>
-<td> 脚本 </td>
+<td> Mảng kết quả kiểm tra nguồn ảnh </td>
+<td> Mảng Bool </td>
+<td> Kết quả kiểm tra của từng nguồn ảnh trong công cụ，được tổng hợp theo từng nguồn ảnh </td>
+<td> Script </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源1~16灰度图子图数组 </td>
-<td> ScImage8数组 </td>
-<td> 该工具每个图像源的裁剪子图（灰度图），裁剪区域为该图像源的设置ROI区域，数组大小即为该图像源设置ROI个数 </td>
-<td> 脚本 </td>
+<td> Mảng ảnh con mức xám của nguồn ảnh 1~16 </td>
+<td> Mảng ScImage8 </td>
+<td> Ảnh con được cắt từ từng nguồn ảnh của công cụ（ảnh mức xám），vùng cắt là vùng ROI đã thiết lập của nguồn ảnh đó，kích thước mảng chính là số lượng ROI đã thiết lập cho nguồn ảnh đó </td>
+<td> Script </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源1~16RGB图子图数组 </td>
-<td> ScImage24数组 </td>
-<td> 该工具每个图像源的裁剪子图（RGB图），裁剪区域为该图像源的设置ROI区域，数组大小即为该图像源设置ROI个数 </td>
-<td> 脚本 </td>
+<td> Mảng ảnh con RGB của nguồn ảnh 1~16 </td>
+<td> Mảng ScImage24 </td>
+<td> Ảnh con được cắt từ từng nguồn ảnh của công cụ（ảnh RGB），vùng cắt là vùng ROI đã thiết lập của nguồn ảnh đó，kích thước mảng chính là số lượng ROI đã thiết lập cho nguồn ảnh đó </td>
+<td> Script </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源1~16检测ROI数组 </td>
-<td> ScAffineRectangular数组 </td>
-<td> 该工具每个图像源的检测区域，数组大小即为该图像源设置ROI个数 </td>
-<td> 脚本 </td>
+<td> Mảng ROI kiểm tra của nguồn ảnh 1~16 </td>
+<td> Mảng ScAffineRectangular </td>
+<td> Vùng kiểm tra của từng nguồn ảnh trong công cụ，kích thước mảng chính là số lượng ROI đã thiết lập cho nguồn ảnh đó </td>
+<td> Script </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源1~16检测结果位置 </td>
-<td> ScAffineRectangular二维数组 </td>
-<td> 该工具每个图像源的检测特征位置，第一层数组大小为该图像源设置ROI个数，第二层数组大小为ROI内所检测到的特征数量；分类模型无检测结果位置 </td>
-<td> 脚本 </td>
+<td> Vị trí kết quả kiểm tra của nguồn ảnh 1~16 </td>
+<td> Mảng hai chiều ScAffineRectangular </td>
+<td> Vị trí đặc trưng được phát hiện trong từng nguồn ảnh của công cụ，kích thước mảng lớp thứ nhất là số lượng ROI đã thiết lập cho nguồn ảnh đó，kích thước mảng lớp thứ hai là số lượng đặc trưng được phát hiện trong ROI；mô hình phân loại không có vị trí kết quả kiểm tra </td>
+<td> Script </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源1~16检测结果轮廓 </td>
-<td> ScPolyline二维数组 </td>
-<td> 该工具每个图像源的检测特征轮廓，第一层数组大小为该图像源设置ROI个数，第二层数组大小为ROI内所检测到的特征数量；分类、检测模型无检测结果轮廓 </td>
-<td> 脚本 </td>
+<td> Đường bao kết quả kiểm tra của nguồn ảnh 1~16 </td>
+<td> Mảng hai chiều ScPolyline </td>
+<td> Đường bao đặc trưng được phát hiện trong từng nguồn ảnh của công cụ，kích thước mảng lớp thứ nhất là số lượng ROI đã thiết lập cho nguồn ảnh đó，kích thước mảng lớp thứ hai là số lượng đặc trưng được phát hiện trong ROI；mô hình phân loại、mô hình phát hiện không có đường bao kết quả kiểm tra </td>
+<td> Script </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源1~16精定位查找ROI </td>
-<td> GsPrecisePosFindRoi数组 </td>
-<td> 该工具每个图像源的精定位查找ROI位置，数组个数为该图像源设置ROI中启用精定位的个数；查找ROI分为线圆模式和线线模式 </td>
-<td> 脚本 </td>
+<td> ROI tìm kiếm định vị tinh của nguồn ảnh 1~16 </td>
+<td> Mảng GsPrecisePosFindRoi </td>
+<td> Vị trí ROI tìm kiếm định vị tinh của từng nguồn ảnh trong công cụ，số phần tử mảng là số ROI đã bật định vị tinh trong nguồn ảnh đó；ROI tìm kiếm được chia thành chế độ đường thẳng và đường tròn và chế độ hai đường thẳng </td>
+<td> Script </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 图像源1~16精定位查找结果 </td>
-<td> GsPrecisePosResult数组 </td>
-<td> 该工具每个图像源的精定位查找结果，数组个数为该图像源设置ROI中启用精定位的个数；查找结果由查找模式决定是输出线圆还是线线 </td>
-<td> 脚本 </td>
+<td> Kết quả tìm kiếm định vị tinh của nguồn ảnh 1~16 </td>
+<td> Mảng GsPrecisePosResult </td>
+<td> Kết quả tìm kiếm định vị tinh của từng nguồn ảnh trong công cụ，số phần tử mảng là số ROI đã bật định vị tinh trong nguồn ảnh đó；kết quả tìm kiếm xuất đường thẳng và đường tròn hoặc hai đường thẳng tùy theo chế độ tìm kiếm </td>
+<td> Script </td>
 <td> NA </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>5.4 输出栏输出参数</h3>
+<h3>5.4 Tham số đầu ra tại thanh đầu ra</h3>
 
 <table>
 <thead>
 <tr>
-<th> 输出参数 </th>
-<th> 输出类型 </th>
-<th> 参数说明 </th>
-<th> 单位 </th>
+<th> Tham số đầu ra </th>
+<th> Kiểu đầu ra </th>
+<th> Mô tả tham số </th>
+<th> Đơn vị </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 执行结果 </td>
+<td> Kết quả thực thi </td>
 <td> Bool </td>
-<td> 工具执行结果；注意区别于检测结果 </td>
+<td> Kết quả thực thi của công cụ；chú ý phân biệt với kết quả kiểm tra </td>
 <td> NA </td>
 </tr>
 <tr>
-<td> 执行时间 </td>
+<td> Thời gian thực thi </td>
 <td> Float </td>
-<td> 工具执行时间 </td>
+<td> Thời gian thực thi của công cụ </td>
 <td> ms </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>6.常见问题</h2>
+<h2>6.Câu hỏi thường gặp</h2>
 
 <table>
 <thead>
 <tr>
-<th> 现象描述                                          </th>
-<th> 解决方法                                                     </th>
+<th> Mô tả hiện tượng                                          </th>
+<th> Phương pháp xử lý                                                     </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 开启工具属性界面，显示某图像源某ROI模式初始化失败 </td>
-<td> 查看该图像源ROI是否配置模型或在模型管理器中查看该模型是否初始化成功 </td>
+<td> Khi mở giao diện thuộc tính công cụ，hiển thị khởi tạo chế độ của một ROI thuộc một nguồn ảnh bị thất bại </td>
+<td> Kiểm tra ROI của nguồn ảnh đó đã cấu hình mô hình hay chưa hoặc kiểm tra trong trình quản lý mô hình xem mô hình đó đã khởi tạo thành công hay chưa </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>7 脚本控制</h2>
+<h2>7 Điều khiển bằng script</h2>
 
-<h3>7.1 脚本数据类型</h3>
+<h3>7.1 Kiểu dữ liệu script</h3>
 
 <h4>（1）GeImgType</h4>
 
-<p>描述：图像类型</p>
+<p>Mô tả：Loại ảnh</p>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 名称     </th>
-<th> 描述   </th>
-<th> 类型 </th>
-<th> 读/写    </th>
+<th> Phân loại </th>
+<th> Tên     </th>
+<th> Mô tả   </th>
+<th> Kiểu </th>
+<th> Đọc/Ghi    </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
+<td> Thuộc tính </td>
 <td> eImgGray </td>
-<td> 灰度图 </td>
-<td> 枚举 </td>
-<td> 可读可写 </td>
+<td> Ảnh mức xám </td>
+<td> Enum </td>
+<td> Có thể đọc và ghi </td>
 </tr>
 <tr>
 <td>      </td>
 <td> eImgRGB  </td>
-<td> 彩色图 </td>
-<td> 枚举 </td>
-<td> 可读可写 </td>
+<td> Ảnh màu </td>
+<td> Enum </td>
+<td> Có thể đọc và ghi </td>
 </tr>
 </tbody>
 </table>
@@ -438,32 +438,32 @@
 
 <h4>（2）GePrecisePosType</h4>
 
-<p>描述：精定位模式</p>
+<p>Mô tả：Chế độ định vị tinh</p>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 名称        </th>
-<th> 描述     </th>
-<th> 类型 </th>
-<th> 读/写    </th>
+<th> Phân loại </th>
+<th> Tên        </th>
+<th> Mô tả     </th>
+<th> Kiểu </th>
+<th> Đọc/Ghi    </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
+<td> Thuộc tính </td>
 <td> eLineCircle </td>
-<td> 线圆定位 </td>
-<td> 枚举 </td>
-<td> 可读可写 </td>
+<td> Định vị đường thẳng và đường tròn </td>
+<td> Enum </td>
+<td> Có thể đọc và ghi </td>
 </tr>
 <tr>
 <td>      </td>
 <td> eLineLine   </td>
-<td> 线线定位 </td>
-<td> 枚举 </td>
-<td> 可读可写 </td>
+<td> Định vị hai đường thẳng </td>
+<td> Enum </td>
+<td> Có thể đọc và ghi </td>
 </tr>
 </tbody>
 </table>
@@ -471,53 +471,53 @@
 
 <h4>（3）GsPrecisePosFindRoi</h4>
 
-<p>描述：精定位查找ROI</p>
+<p>Mô tả：ROI tìm kiếm định vị tinh</p>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 名称            </th>
-<th> 描述           </th>
-<th> 类型              </th>
-<th> 读/写 </th>
+<th> Phân loại </th>
+<th> Tên            </th>
+<th> Mô tả           </th>
+<th> Kiểu              </th>
+<th> Đọc/Ghi </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
+<td> Thuộc tính </td>
 <td> bEnable         </td>
-<td> 是否启用精定位 </td>
+<td> Có bật định vị tinh hay không </td>
 <td> bool              </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> eType           </td>
-<td> 精定位类型     </td>
+<td> Loại định vị tinh     </td>
 <td> GePrecisePosType  </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sFindCircleRoi  </td>
-<td> 找圆卡尺区域   </td>
+<td> Vùng thước cặp tìm đường tròn   </td>
 <td> scGuiFindCircleEx </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sFindLineOneRoi </td>
-<td> 找线1卡尺区域  </td>
+<td> Vùng thước cặp tìm đường thẳng 1  </td>
 <td> scGuiFindLineEx   </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sFindLineTwoRoi </td>
-<td> 找线2卡尺区域  </td>
+<td> Vùng thước cặp tìm đường thẳng 2  </td>
 <td> scGuiFindLineEx   </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 </tbody>
 </table>
@@ -525,60 +525,60 @@
 
 <h4>（4）GsPrecisePosResult</h4>
 
-<p>描述：精定位查找结果</p>
+<p>Mô tả：Kết quả tìm kiếm định vị tinh</p>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 名称         </th>
-<th> 描述       </th>
-<th> 类型             </th>
-<th> 读/写 </th>
+<th> Phân loại </th>
+<th> Tên         </th>
+<th> Mô tả       </th>
+<th> Kiểu             </th>
+<th> Đọc/Ghi </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
+<td> Thuộc tính </td>
 <td> eType        </td>
-<td> 精定位类型 </td>
+<td> Loại định vị tinh </td>
 <td> GePrecisePosType </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sPointDatum  </td>
-<td> 基准点     </td>
+<td> Điểm chuẩn     </td>
 <td> sc2Vector        </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sLineDirect  </td>
-<td> 方向线     </td>
+<td> Đường định hướng     </td>
 <td> scLine           </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sCircleReult </td>
-<td> 圆         </td>
+<td> Đường tròn         </td>
 <td> scCircle         </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sLineNormal  </td>
-<td> 辅助线     </td>
+<td> Đường phụ trợ     </td>
 <td> scLine           </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> rcResultRoi  </td>
-<td> 结果区域   </td>
+<td> Vùng kết quả   </td>
 <td> scAffineRect     </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 </tbody>
 </table>
@@ -586,81 +586,81 @@
 
 <h4>（5）GsCategoryResult</h4>
 
-<p>描述：深度学习模型检测特征结果</p>
+<p>Mô tả：Kết quả đặc trưng được phát hiện bởi mô hình Deep Learning</p>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 名称              </th>
-<th> 描述           </th>
-<th> 类型         </th>
-<th> 读/写 </th>
+<th> Phân loại </th>
+<th> Tên              </th>
+<th> Mô tả           </th>
+<th> Kiểu         </th>
+<th> Đọc/Ghi </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
+<td> Thuộc tính </td>
 <td> nCategoryIndex    </td>
-<td> 类别索引       </td>
+<td> Chỉ mục lớp       </td>
 <td> int          </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> strCategoryName   </td>
-<td> 类别名称       </td>
+<td> Tên lớp       </td>
 <td> string       </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> fConfidenceLevel  </td>
-<td> 置信度         </td>
+<td> Độ tin cậy         </td>
 <td> float        </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> dArea             </td>
-<td> 面积           </td>
+<td> Diện tích           </td>
 <td> double       </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> strReferenceModel </td>
-<td> 所属模型名称   </td>
+<td> Tên mô hình liên quan   </td>
 <td> string       </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> rcLocationOrg     </td>
-<td> 特征在原图位置 </td>
+<td> Vị trí đặc trưng trên ảnh gốc </td>
 <td> scAffineRect </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> rcLocationCap     </td>
-<td> 特征在截图位置 </td>
+<td> Vị trí đặc trưng trên ảnh cắt </td>
 <td> scAffineRect </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sResultContourOrg </td>
-<td> 特征在原图轮廓 </td>
+<td> Đường bao đặc trưng trên ảnh gốc </td>
 <td> scPolyline   </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sResultContourCap </td>
-<td> 特征在截图轮廓 </td>
+<td> Đường bao đặc trưng trên ảnh cắt </td>
 <td> scPolyline   </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 </tbody>
 </table>
@@ -668,53 +668,53 @@
 
 <h4>（6）GsCategoryTotalResult</h4>
 
-<p>描述：深度学习模型检测某特征汇总结果</p>
+<p>Mô tả：Kết quả tổng hợp của một đặc trưng được phát hiện bởi mô hình Deep Learning</p>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 名称               </th>
-<th> 描述         </th>
-<th> 类型                 </th>
-<th> 读/写 </th>
+<th> Phân loại </th>
+<th> Tên               </th>
+<th> Mô tả         </th>
+<th> Kiểu                 </th>
+<th> Đọc/Ghi </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
+<td> Thuộc tính </td>
 <td> strCategoryName    </td>
-<td> 类别名称     </td>
+<td> Tên lớp     </td>
 <td> string               </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> nResultCount       </td>
-<td> 类别数量     </td>
+<td> Số lượng lớp     </td>
 <td> int                  </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> dAccumulatedArea   </td>
-<td> 类别总面积   </td>
+<td> Tổng diện tích của lớp   </td>
 <td> double               </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> strReferenceModel  </td>
-<td> 所属模型名称 </td>
+<td> Tên mô hình liên quan </td>
 <td> string               </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> vectCategoryResult </td>
-<td> 类别数组     </td>
-<td> GsCategoryResult数组 </td>
-<td> 只读  </td>
+<td> Mảng lớp     </td>
+<td> Mảng GsCategoryResult </td>
+<td> Chỉ đọc  </td>
 </tr>
 </tbody>
 </table>
@@ -722,74 +722,74 @@
 
 <h4>（7）GsROIDetectResult</h4>
 
-<p>描述：ROI检测结果</p>
+<p>Mô tả：Kết quả kiểm tra ROI</p>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 名称                    </th>
-<th> 描述           </th>
-<th> 类型                      </th>
-<th> 读/写 </th>
+<th> Phân loại </th>
+<th> Tên                    </th>
+<th> Mô tả           </th>
+<th> Kiểu                      </th>
+<th> Đọc/Ghi </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
+<td> Thuộc tính </td>
 <td> strRoiName              </td>
-<td> ROI名称        </td>
+<td> Tên ROI        </td>
 <td> string                    </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sPrecisePosFindRoi      </td>
-<td> 精定位查找ROI  </td>
+<td> ROI tìm kiếm định vị tinh  </td>
 <td> GsPrecisePosFindRoi       </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> sPrecisePosResult       </td>
-<td> 精定位查找结果 </td>
+<td> Kết quả tìm kiếm định vị tinh </td>
 <td> GsPrecisePosResult        </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> rcDetectRoi             </td>
-<td> 检测区域       </td>
+<td> Vùng kiểm tra       </td>
 <td> scAffineRect              </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> imgSubGray              </td>
-<td> 灰度图裁剪图   </td>
+<td> Ảnh cắt mức xám   </td>
 <td> scImageGray               </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> imgSubRGB               </td>
-<td> 彩色图裁剪图   </td>
+<td> Ảnh cắt màu   </td>
 <td> scImageRGB                </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> bDetectResult           </td>
-<td> 检测结果       </td>
+<td> Kết quả kiểm tra       </td>
 <td> bool                      </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> vectCategoryTotalResult </td>
-<td> 检测特征数组   </td>
-<td> GsCategoryTotalResult数组 </td>
-<td> 只读  </td>
+<td> Mảng đặc trưng kiểm tra   </td>
+<td> Mảng GsCategoryTotalResult </td>
+<td> Chỉ đọc  </td>
 </tr>
 </tbody>
 </table>
@@ -797,46 +797,46 @@
 
 <h4>（8）GsImgSourceDetectResult</h4>
 
-<p>描述：图像源检测结果</p>
+<p>Mô tả：Kết quả kiểm tra nguồn ảnh</p>
 
 <table>
 <thead>
 <tr>
-<th> 分类 </th>
-<th> 名称               </th>
-<th> 描述            </th>
-<th> 类型                             </th>
-<th> 读/写 </th>
+<th> Phân loại </th>
+<th> Tên               </th>
+<th> Mô tả            </th>
+<th> Kiểu                             </th>
+<th> Đọc/Ghi </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性 </td>
+<td> Thuộc tính </td>
 <td> strImgSourceName   </td>
-<td> 图像源名称      </td>
+<td> Tên nguồn ảnh      </td>
 <td> string                           </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> eImgType           </td>
-<td> 图像类型        </td>
+<td> Loại ảnh        </td>
 <td> GeImgType                        </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> bDetectResult      </td>
-<td> 检测结果        </td>
+<td> Kết quả kiểm tra        </td>
 <td> bool                             </td>
-<td> 只读  </td>
+<td> Chỉ đọc  </td>
 </tr>
 <tr>
 <td>      </td>
 <td> mapROIDetectResult </td>
-<td> ROI检测结果集合 </td>
-<td> 字典{ROI名称，GsROIDetectResult} </td>
-<td> 只读  </td>
+<td> Tập hợp kết quả kiểm tra ROI </td>
+<td> Từ điển{Tên ROI，GsROIDetectResult} </td>
+<td> Chỉ đọc  </td>
 </tr>
 </tbody>
 </table>
@@ -897,31 +897,31 @@ for imgResult in ProductResultArray:
             print("     未开启精定位")        
 </code></p>
 
-<h2>8.示例工程</h2>
+<h2>8.Dự án mẫu</h2>
 
-<p>参见“\Samples\深度学习通用检测工具.gvp”。</p>
+<p>Tham khảo“\Samples\深度学习通用检测工具.gvp”。</p>
 
-<h2>9.视频讲解</h2>
+<h2>9.Video hướng dẫn</h2>
 
-<p>无</p>
+<p>Không có</p>
 
-<h2>文件修订履历表</h2>
+<h2>Bảng lịch sử sửa đổi tài liệu</h2>
 
 <table>
 <thead>
 <tr>
-<th> 版本号 </th>
-<th> 章节号 </th>
-<th> 修订内容描述 </th>
-<th> 修订人 </th>
-<th> 修订日期 </th>
+<th> Số phiên bản </th>
+<th> Số chương </th>
+<th> Mô tả nội dung sửa đổi </th>
+<th> Người sửa đổi </th>
+<th> Ngày sửa đổi </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td> V1.0 </td>
 <td> &ndash; </td>
-<td> 初次发布 </td>
+<td> Phát hành lần đầu </td>
 <td> 朱永吉 </td>
 <td> 2024/10/21 </td>
 </tr>
@@ -934,4 +934,3 @@ for imgResult in ProductResultArray:
 </tr>
 </tbody>
 </table>
-
