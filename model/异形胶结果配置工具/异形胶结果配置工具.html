@@ -1,0 +1,215 @@
+<head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../css/main.css" /> 
+           <script src="../../js/jquery.js"></script> 
+           <script src="../../js/main.js"></script> 
+           </head> 
+           <head> 
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../css/main.css" /> 
+           <script src="../../../js/jquery.js"></script> 
+           <script src="../../../js/main.js"></script> 
+           </head>  
+           <head>  
+           <meta charset="utf-8"> 
+           <link rel="stylesheet" href="../../../../css/main.css" /> 
+           <script src="../../../../js/jquery.js"></script> 
+           <script src="../../../../js/main.js"></script> 
+           </head>
+<h1><strong>Công cụ cấu hình kết quả keo biên dạng đặc biệt</strong></h1>
+
+<h2>1. Tổng quan chức năng</h2>
+
+<p>​ Công cụ cấu hình kết quả keo biên dạng đặc biệt chủ yếu lấy kết quả tuần tự hóa khuyết tật của Công cụ kiểm tra keo biên dạng đặc biệt, thay thế và tích hợp dữ liệu theo cấu hình, sau đó xuất kết quả tuần tự hóa khuyết tật đã tính toán cuối cùng; hỗ trợ thay thế cấp một và thay thế cấp hai theo phương thức cấu hình nhóm. Kết quả tuần tự hóa khuyết tật của Công cụ kiểm tra keo biên dạng đặc biệt là một chuỗi được lưu trữ dưới dạng từ điển, hình dưới đây giới thiệu sơ lược nội dung từ điển khuyết tật của Công cụ kiểm tra keo biên dạng đặc biệt. Nội dung chủ yếu bao gồm: định nghĩa mã lỗi, kiểu định nghĩa vùng, thông tin cơ bản, thông tin chi tiết theo từng vùng, thông tin tổng hợp về đứt keo/thừa keo/thiếu keo/tràn keo, v.v.; chức năng của công cụ này là lấy thông tin chi tiết theo từng vùng, thay thế và tích hợp các hạng mục kiểm tra liên quan của từng vùng theo kết quả cấu hình, sau đó xuất kết quả cuối cùng.</p>
+
+<p><img src="media/SpecialShapResultConfigTool_1_1.png" alt="" /></p>
+
+<p><img src="media/SpecialShapResultConfigTool_1_2.png" alt="" /></p>
+
+<p><img src="media/SpecialShapResultConfigTool_1_3.png" alt="" /></p>
+
+<p><img src="media/SpecialShapResultConfigTool_1_4.png" alt="" /></p>
+
+<p><img src="media/SpecialShapResultConfigTool_1_5.png" alt="" /></p>
+
+<p><img src="media/SpecialShapResultConfigTool_1_6.png" alt="" /></p>
+
+<p><img src="media/SpecialShapResultConfigTool_1_7.png" alt="" /></p>
+
+<p>​ Hình dưới đây là giao diện chính của công cụ, trong hình được chia thành ba chức năng. Thứ nhất là cấu hình hạng mục kiểm tra, có thể cấu hình nguồn dữ liệu cần thay thế cho các hạng mục kiểm tra liên quan đã được bật (ngoại trừ chiều dài keo), tức là thay thế giá trị current_val; thứ hai là cấu hình nhóm, có thể thực hiện thay thế cấp hai bằng cách cấu hình số lượng nhóm và chiến lược nhóm. Thứ ba là chức năng gợi ý tô sáng GUI, tô sáng GUI liên quan theo vùng hoặc nguồn dữ liệu đã chọn.</p>
+
+<p><img src="media/SpecialShapResultConfigTool_1_8.png" alt="" /></p>
+
+<h2>2. Tình huống ứng dụng</h2>
+
+<p>​ Thực hiện các thao tác như hợp nhất và thay thế kết quả tuần tự hóa khuyết tật của Công cụ kiểm tra keo biên dạng đặc biệt, cấu hình thông qua giao diện thuộc tính nâng cao để đơn giản hóa quá trình tính toán và giảm chi phí bảo trì dự án.</p>
+
+<h2>3. Hướng dẫn sử dụng</h2>
+
+<ul>
+<li><h4>Thêm công cụ, liên kết ảnh đầu vào, kết quả tuần tự hóa khuyết tật chính và kết quả tuần tự hóa khuyết tật</h4></li>
+</ul>
+
+
+<p><img src="media/SpecialShapResultConfigTool_4_1.png" alt="" /></p>
+
+<ul>
+<li><h4>Mở giao diện thuộc tính nâng cao và thực hiện cấu hình liên quan</h4>
+
+<ul>
+<li><p><strong>Cấu hình hạng mục kiểm tra</strong>, công cụ này sẽ tự động tạo các vùng kiểm tra chính, bao gồm số lượng vùng và dữ liệu, dựa trên dữ liệu của công cụ được liên kết với tham số kết quả kiểm tra khuyết tật chính.</p>
+
+<p>​ 1、Nhấp vào vùng có hạng mục cần cấu hình.</p>
+
+<p>​ 2、Chọn chiến lược tính toán, bao gồm lấy giá trị lớn nhất, lấy giá trị nhỏ nhất và giá trị trung bình.</p>
+
+<p>​ 3、Chuyển sang hạng mục kiểm tra mục tiêu, nhấp vào nút thêm nguồn dữ liệu mới, một dữ liệu không hợp lệ sẽ được thêm vào cuối danh sách nguồn dữ liệu. Nhấp vào vùng <strong>Nguồn dữ liệu</strong> của mục đó, dữ liệu nguồn của hạng mục kiểm tra sẽ tự động bật lên. Số lượng nguồn dữ liệu tối đa được hỗ trợ thêm là 10.</p></li>
+</ul>
+
+
+<p><img src="media/SpecialShapResultConfigTool_4_2.png" alt="" /></p>
+
+<p>  ​ 4、Nhấp đúp vào một mục hợp lệ trong danh sách nguồn dữ liệu trên giao diện nguồn dữ liệu của hạng mục kiểm tra, nguồn dữ liệu này sẽ được cập nhật/ghi vào hạng mục kiểm tra đã nhấp trước đó. Để thay thế nguồn dữ liệu đã thêm, chỉ cần nhấp lại vào vùng <strong>Nguồn dữ liệu</strong> của mục đó, sau đó chọn nguồn dữ liệu mục tiêu và nhấp đúp. Lúc này, một cửa sổ nhắc sẽ bật lên như hình dưới đây, nhấp <strong>Có</strong> để xác nhận.</p>
+
+<p><img src="media/SpecialShapResultConfigTool_4_10.png" alt="" /></p>
+
+<p>Giao diện nguồn dữ liệu của hạng mục kiểm tra hỗ trợ tìm kiếm và lọc theo công cụ hoặc biến. Khi chọn nút radio công cụ, chỉ hiển thị thông tin khuyết tật của công cụ được liên kết với tham số kết quả tuần tự hóa khuyết tật.</p>
+
+<p><img src="media/SpecialShapResultConfigTool_4_3.png" alt="" /></p>
+
+<p>Khi chọn nút radio biến, chỉ hiển thị các biến cục bộ và biến toàn cục thuộc kiểu double.</p>
+
+<p><img src="media/SpecialShapResultConfigTool_4_4.png" alt="" /></p></li>
+<li><p><strong>Cấu hình nhóm dữ liệu</strong>, nếu cần thay thế cấp hai, phải đánh dấu hộp kiểm bật cấu hình nhóm. Sau khi đánh dấu, danh sách thả xuống nhóm, nút thêm nhóm mới, nút xóa nhóm, văn bản chiến lược nhóm và danh sách thả xuống sẽ được hiển thị. Số lượng nhóm tối đa được hỗ trợ thêm là 10. Sau đó thêm nhóm mới và sửa đổi chiến lược nhóm. Phương thức tính toán là tính kết quả cuối cùng của từng nhóm theo chiến lược tính toán của nhóm đó, sau đó thực hiện phép tính cuối cùng cho kết quả của tất cả các nhóm theo chiến lược nhóm. Ví dụ: có tổng cộng bốn nhóm, kết quả cuối cùng của từng nhóm lần lượt là 0.8，1.0，1.2 và 1.5, nếu chiến lược nhóm là lấy giá trị lớn nhất thì kết quả cuối cùng là 1.5, nếu lấy giá trị nhỏ nhất thì kết quả cuối cùng là 0.8.</p>
+
+<p><img src="media/SpecialShapResultConfigTool_4_5.png" alt="" /></p></li>
+<li><p><strong>Chức năng gợi ý tô sáng GUI</strong></p>
+
+<ul>
+<li><p><strong>Nhấp vào danh sách nguồn dữ liệu trên giao diện nguồn hạng mục kiểm tra</strong>
+Khi thêm nguồn hạng mục kiểm tra, nhấp vào danh sách nguồn dữ liệu trên giao diện nguồn hạng mục kiểm tra, chế độ xem sẽ tô sáng GUI liên quan.</p>
+
+<p><img src="media/SpecialShapResultConfigTool_4_7.png" alt="" /></p></li>
+<li><p><strong>Nhấp vào danh sách vùng</strong>
+Khi cấu hình nguồn hạng mục kiểm tra cho vùng, nhấp vào danh sách vùng, chế độ xem sẽ tô sáng GUI của vùng này và các hạng mục kiểm tra bên trong.</p>
+
+<p><img src="media/SpecialShapResultConfigTool_4_8.png" alt="" /></p></li>
+<li><p><strong>Nhấp vào danh sách nguồn dữ liệu trong cấu hình hạng mục kiểm tra</strong>
+Khi cấu hình nguồn hạng mục kiểm tra cho vùng, nhấp vào danh sách nguồn dữ liệu, chế độ xem sẽ tô sáng GUI của hạng mục kiểm tra liên quan.</p>
+
+<p><img src="media/SpecialShapResultConfigTool_4_6.png" alt="" /></p>
+
+<p>Cũng có thể đánh dấu Hiển thị nhãn, nhãn của GUI liên quan sẽ được hiển thị trên chế độ xem, ví dụ: R1.</p>
+
+<p><img src="media/SpecialShapResultConfigTool_4_9.png" alt="" /></p></li>
+</ul>
+</li>
+<li><p><strong>Vấn đề đồng bộ vùng và trạng thái bật/tắt hạng mục kiểm tra</strong></p>
+
+<p>  <strong>Đồng bộ số lượng vùng chính</strong> ：Nếu vùng kiểm tra của công cụ được liên kết với tham số <strong>Kết quả tuần tự hóa khuyết tật chính</strong> được thêm hoặc giảm, cần mở lại giao diện nâng cao của công cụ này, khi đó số lượng vùng sẽ được tự động đồng bộ. Sau khi đồng bộ hoàn tất, cần xác nhận cấu hình hạng mục kiểm tra hiện tại có đúng như mong đợi hay không; nếu không đúng, cần sửa thủ công nguồn dữ liệu, chiến lược tính toán và các cấu hình liên quan của hạng mục kiểm tra.</p>
+
+<p>  <strong>Đồng bộ trạng thái bật/tắt hạng mục kiểm tra của vùng chính</strong>：Nếu trạng thái kích hoạt của một số hạng mục kiểm tra trong các vùng của công cụ được liên kết với tham số <strong>Kết quả tuần tự hóa khuyết tật chính</strong> thay đổi, tức là từ bật chuyển thành tắt hoặc từ tắt chuyển thành bật. Khi thực thi, công cụ này sẽ tính toán/không tính toán các hạng mục kiểm tra liên quan theo trạng thái bật/tắt hiện tại. Tuy nhiên, nếu trạng thái kích hoạt của một số hạng mục kiểm tra trong các vùng của công cụ được liên kết với tham số <strong>Kết quả tuần tự hóa khuyết tật</strong> thay đổi, công cụ này sẽ báo lỗi khi thực thi. Cần xóa nguồn hạng mục kiểm tra liên quan và bật thủ công hạng mục kiểm tra của công cụ nguồn mục tiêu (Công cụ kiểm tra keo biên dạng đặc biệt).</p></li>
+</ul>
+
+
+<h2>4. Câu hỏi thường gặp</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;"> Mô tả hiện tượng                           </th>
+<th> Phương pháp xử lý                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">Ảnh đầu vào không hợp lệ                     </td>
+<td> Liên kết ảnh đầu vào </td>
+</tr>
+<tr>
+<td style="text-align:left;">Chuỗi tham số chưa liên kết với kết quả tuần tự hóa khuyết tật chính </td>
+<td> Liên kết kết quả tuần tự hóa khuyết tật chính </td>
+</tr>
+<tr>
+<td style="text-align:left;">SN không nhất quán, không thể hợp nhất kết quả khuyết tật  </td>
+<td> Số sê-ri sản phẩm của công cụ được liên kết với kết quả tuần tự hóa khuyết tật chính và công cụ được liên kết với kết quả tuần tự hóa khuyết tật không nhất quán, hãy sửa số sê-ri sản phẩm; hoặc thay đổi công cụ của kết quả tuần tự hóa khuyết tật </td>
+</tr>
+<tr>
+<td style="text-align:left;">Chưa cấu hình trong giao diện thuộc tính nâng cao, thực thi thất bại </td>
+<td> Cần mở thuộc tính nâng cao để cấu hình   </td>
+</tr>
+<tr>
+<td style="text-align:left;">Xử lý chuỗi từ điển bất thường：XX </td>
+<td> Kiểm tra chuỗi được liên kết có tuân theo định dạng từ điển quy định hay không </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>5. Mô tả tham số</h2>
+
+<h4>Tham số thuộc tính công cụ</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số     </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Không có </td>
+<td style="text-align:left;"> Không có                    </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Tham số đầu vào của công cụ</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;"> Tên tham số     </th>
+<th style="text-align:left;"> Mô tả tham số                   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">Ảnh đầu vào       </td>
+<td style="text-align:left;"> Liên kết ảnh màu đầu vào         </td>
+</tr>
+<tr>
+<td style="text-align:left;">Kết quả tuần tự hóa khuyết tật chính</td>
+<td style="text-align:left;"> Liên kết chuỗi tuần tự hóa khuyết tật của Công cụ kiểm tra keo biên dạng đặc biệt chính         </td>
+</tr>
+<tr>
+<td style="text-align:left;">Kết quả tuần tự hóa khuyết tật（0~9） </td>
+<td style="text-align:left;"> Liên kết chuỗi tuần tự hóa khuyết tật của Công cụ kiểm tra keo biên dạng đặc biệt cần được thay thế         </td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Tham số đầu ra của công cụ</h4>
+
+<table>
+<thead>
+<tr>
+<th> Tên tham số     </th>
+<th style="text-align:left;"> Mô tả tham số                                                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Kết quả tuần tự hóa khuyết tật đã tính toán </td>
+<td style="text-align:left;"> Chuỗi từ điển khuyết tật cuối cùng sau khi thay thế và hợp nhất                    </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>6. Dự án mẫu</h2>
+
+<p>参见“\Samples\异形胶结果配置工具.gvp”。</p>
