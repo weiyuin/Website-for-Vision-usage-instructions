@@ -16,415 +16,417 @@
            <script src="../../../../js/jquery.js"></script> 
            <script src="../../../../js/main.js"></script> 
            </head>
-<h1>边检测工具</h1>
+<h1>Công cụ kiểm tra biên</h1>
 
-<h2>功能</h2>
+<h2>Chức năng</h2>
 
-<p>边检测工具针对直线和圆两种边缘类型，通过一组卡尺精确定位边缘特征，并拟合直线或者圆，根据卡尺边缘位置和拟合结果，检测直线或圆边缘的凹痕、凸痕、裂痕等类型偏差，给出偏差的数量、面积、尺寸等相关信息，完成边缘的连贯性检测。边检测示意如图1所示。</p>
+<p>Công cụ kiểm tra biên hỗ trợ hai loại biên là đường thẳng và đường tròn, sử dụng một nhóm thước cặp để định vị chính xác đặc trưng biên và fit đường thẳng hoặc đường tròn. Dựa trên vị trí biên của thước cặp và kết quả fit, công cụ kiểm tra các dạng sai lệch của biên đường thẳng hoặc đường tròn như vết lõm, vết lồi, vết nứt, đồng thời cung cấp các thông tin liên quan như số lượng, diện tích, kích thước sai lệch để hoàn thành việc kiểm tra tính liên tục của biên. Minh họa kiểm tra biên như Hình 1.</p>
 
 <p><img src="media/wps136.jpg" alt="img" />     <img src="media/wps137.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 直线边缘偏差</imgnote> <imgnote>(b) 圆边缘偏差</imgnote></p>
+<p><imgnote>(a) Sai lệch biên đường thẳng</imgnote> <imgnote>(b) Sai lệch biên đường tròn</imgnote></p>
 
-<p><imgnote>图1 边检测示意图</imgnote></p>
+<p><imgnote>Hình 1 Minh họa kiểm tra biên</imgnote></p>
 
-<h2>参数</h2>
+<h2>Tham số</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称         </th>
-<th> 参数描述                                                                                                                   </th>
+<th>Phân loại </th>
+<th> Tên tham số         </th>
+<th> Mô tả tham số                                                                                                                   </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 属性窗口         </td>
-<td> 边缘极性                                                     </td>
-<td> 边缘极性是指图像边缘灰度级的过渡形式，分为3种：任意极性、亮到暗和暗到亮。<a href="#_%E8%BE%B9%E7%BC%98%E6%A8%A1%E5%BC%8F"><img src="media/wps139.jpg" alt="img" /></a> </td>
+<td> Cửa sổ thuộc tính         </td>
+<td> Phân cực biên                                                     </td>
+<td> Phân cực biên là dạng chuyển mức xám tại biên ảnh, gồm 3 loại: phân cực bất kỳ, sáng sang tối và tối sang sáng.<a href="#_%E8%BE%B9%E7%BC%98%E6%A8%A1%E5%BC%8F"><img src="media/wps139.jpg" alt="img" /></a> </td>
 </tr>
 <tr>
 <td></td>
-<td> 对比度阈值       </td>
-<td> 卡尺工具默认只采用对比度评价分数，即按照边缘信号的强度来评分，输出边缘最强的点。对比度阈值的取值范围是0~255。                                                               </td>
+<td> Ngưỡng tương phản       </td>
+<td> Theo mặc định, công cụ thước cặp chỉ sử dụng điểm đánh giá tương phản, tức là chấm điểm dựa trên cường độ tín hiệu biên và xuất ra điểm có biên mạnh nhất. Phạm vi giá trị của ngưỡng tương phản là 0~255.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 滤波器半宽       </td>
-<td> 卡尺工具在直线（圆）的拟合过程中，会对图像进行滤波处理以增强边缘信息，其中滤波半宽是可调的，滤波半宽默认值为1。                                                               </td>
+<td> Nửa độ rộng bộ lọc       </td>
+<td> Trong quá trình fit đường thẳng (đường tròn), công cụ thước cặp sẽ lọc ảnh để tăng cường thông tin biên, trong đó nửa độ rộng bộ lọc có thể điều chỉnh và giá trị mặc định là 1.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 第一边缘         </td>
-<td> 选择“是”，则启用第一边缘准则以获取最佳边缘。<a href="#_%E8%8E%B7%E5%8F%96%E6%9C%80%E4%BD%B3%E8%BE%B9%E7%BC%98"><img src="media/wps140.jpg" alt="img" /></a>                                                               </td>
+<td> Biên đầu tiên         </td>
+<td> Chọn “Có” để bật tiêu chí biên đầu tiên nhằm lấy biên tốt nhất.<a href="#_%E8%8E%B7%E5%8F%96%E6%9C%80%E4%BD%B3%E8%BE%B9%E7%BC%98"><img src="media/wps140.jpg" alt="img" /></a>                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 最强边缘         </td>
-<td> 选择“是”，则启用最强边缘准则以获取最佳边缘。                                                                               </td>
+<td> Biên mạnh nhất         </td>
+<td> Chọn “Có” để bật tiêu chí biên mạnh nhất nhằm lấy biên tốt nhất.                                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 分数阈值         </td>
-<td> 对所有边缘进行评分，会得到一个评价分数，分数阈值是边缘评分的阈值，高于该阈值且评分最高的边缘被选为拟合边缘和候选边缘。                                                               </td>
+<td> Ngưỡng điểm         </td>
+<td> Sau khi chấm điểm tất cả các biên sẽ thu được điểm đánh giá. Ngưỡng điểm là ngưỡng của điểm đánh giá biên, biên có điểm cao hơn ngưỡng này và có điểm cao nhất sẽ được chọn làm biên fit và biên ứng viên.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否过滤异常值   </td>
-<td> 过滤异常值的目的是对拟合边缘（点）进行筛选，以降低偏差边缘给拟合带来的干扰。筛选的原则是基于拟合点在卡尺搜索方向上到拟合直线（圆）的距离，过滤距离较大的点，根据设定的距离阈值对拟合边缘进行更新。                                                               </td>
+<td> Có lọc giá trị ngoại lai hay không   </td>
+<td> Mục đích của việc lọc giá trị ngoại lai là sàng lọc các biên (điểm) dùng để fit nhằm giảm ảnh hưởng của các biên sai lệch đến kết quả fit. Nguyên tắc sàng lọc dựa trên khoảng cách từ điểm fit đến đường thẳng (đường tròn) fit theo hướng tìm kiếm của thước cặp, các điểm có khoảng cách lớn sẽ được lọc và biên fit được cập nhật theo ngưỡng khoảng cách đã thiết lập.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 过滤距离阈值     </td>
-<td> 过滤掉到拟合直线（圆）的距离大于过滤阈值的拟合点。以直线边缘为例，在卡尺搜索方向上，若拟合点到拟合线的距离大于过滤距离阈值，则去除该拟合点，剔除掉所有距离过大的拟合点后，再由剩下的其它拟合点重新拟合直线。                                                               </td>
+<td> Ngưỡng khoảng cách lọc     </td>
+<td> Lọc bỏ các điểm fit có khoảng cách đến đường thẳng (đường tròn) fit lớn hơn ngưỡng lọc. Lấy biên đường thẳng làm ví dụ, theo hướng tìm kiếm của thước cặp, nếu khoảng cách từ điểm fit đến đường fit lớn hơn ngưỡng khoảng cách lọc thì điểm fit đó sẽ bị loại bỏ. Sau khi loại bỏ tất cả các điểm có khoảng cách quá lớn, đường thẳng sẽ được fit lại bằng các điểm fit còn lại.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否重新评分     </td>
-<td> 重新评分的目的是对候选边缘进行更新，以降低干扰边缘带来的误判。重新评分添加边缘到拟合线的距离作为新的评价指标，对每个卡尺的所有边缘进行评分，距离越小，分数越高，分数取值范围为[0,100]。重新评分后，将“重新评分”准则代替“第一边缘”准则（若有），再与“最强边缘”准则（若有）作几何评价，得到最终的评价分数，然后在每个卡尺内，选取分数最高的作为候选边缘。                                                               </td>
+<td> Có chấm điểm lại hay không     </td>
+<td> Mục đích của việc chấm điểm lại là cập nhật biên ứng viên nhằm giảm phán định sai do biên nhiễu gây ra. Khi chấm điểm lại, khoảng cách từ biên đến đường fit được bổ sung làm chỉ số đánh giá mới, tất cả các biên trong mỗi thước cặp sẽ được chấm điểm, khoảng cách càng nhỏ thì điểm càng cao, phạm vi điểm là [0,100]. Sau khi chấm điểm lại, tiêu chí “Chấm điểm lại” sẽ thay thế tiêu chí “Biên đầu tiên” (nếu có), sau đó kết hợp với tiêu chí “Biên mạnh nhất” (nếu có) để đánh giá hình học và thu được điểm đánh giá cuối cùng, sau đó trong mỗi thước cặp chọn biên có điểm cao nhất làm biên ứng viên.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否重新拟合     </td>
-<td> 重新拟合是在重新评分的基础上更新拟合边缘：先将重新评分得到的候选边缘作为拟合边缘，若需要过滤异常值，则与过滤异常值拟合过程一样，先拟合直线（圆），根据拟合边缘到拟合线的距离剔除距离异常的拟合边缘，更新拟合边缘。                                                               </td>
+<td> Có fit lại hay không     </td>
+<td> Fit lại là quá trình cập nhật biên fit dựa trên kết quả chấm điểm lại: trước tiên sử dụng biên ứng viên thu được sau khi chấm điểm lại làm biên fit, nếu cần lọc giá trị ngoại lai thì thực hiện giống quá trình fit có lọc giá trị ngoại lai, trước tiên fit đường thẳng (đường tròn), sau đó dựa trên khoảng cách từ biên fit đến đường fit để loại bỏ các biên fit có khoảng cách bất thường và cập nhật biên fit.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 最小缺陷距离     </td>
-<td> 缺陷边缘到拟合线的最小距离，小于该距离，则不认为是缺陷。                                                                   </td>
+<td> Khoảng cách khuyết tật nhỏ nhất     </td>
+<td> Khoảng cách nhỏ nhất từ biên khuyết tật đến đường fit, nếu nhỏ hơn khoảng cách này thì không được coi là khuyết tật.                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 最大缺陷距离     </td>
-<td> 缺陷边缘到拟合线的最大距离，大于该距离，则不认为是缺陷。                                                                   </td>
+<td> Khoảng cách khuyết tật lớn nhất     </td>
+<td> Khoảng cách lớn nhất từ biên khuyết tật đến đường fit, nếu lớn hơn khoảng cách này thì không được coi là khuyết tật.                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否启动尺寸     </td>
-<td> 选择“是”，则显示最小尺寸和最大尺寸参数，并根据最小尺寸和最大尺寸对缺陷结果进行过滤。                                                               </td>
+<td> Có bật kích thước hay không     </td>
+<td> Chọn “Có” để hiển thị tham số kích thước nhỏ nhất và kích thước lớn nhất, đồng thời lọc kết quả khuyết tật dựa trên kích thước nhỏ nhất và kích thước lớn nhất.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否启动面积     </td>
-<td> 选择“是”，则显示最小面积和最大面积参数，并根据最小面积和最大面积对缺陷结果进行过滤。                                                               </td>
+<td> Có bật diện tích hay không     </td>
+<td> Chọn “Có” để hiển thị tham số diện tích nhỏ nhất và diện tích lớn nhất, đồng thời lọc kết quả khuyết tật dựa trên diện tích nhỏ nhất và diện tích lớn nhất.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 缺陷排序规则     </td>
-<td> 排序规则分为3种：尺寸、面积和位置，根据选择的规则对缺陷结果进行排序。其中，尺寸和面积为从大到小排序，位置为沿着卡尺方向从左到右排序。                                                               </td>
+<td> Quy tắc sắp xếp khuyết tật     </td>
+<td> Có 3 quy tắc sắp xếp: kích thước, diện tích và vị trí, kết quả khuyết tật được sắp xếp theo quy tắc đã chọn. Trong đó, kích thước và diện tích được sắp xếp từ lớn đến nhỏ, vị trí được sắp xếp từ trái sang phải theo hướng thước cặp.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否过滤左侧缺陷 </td>
-<td> 沿着卡尺方向，位于拟合线左侧的缺陷为左侧缺陷。该参数选择“是”，则在缺陷结果中将左侧缺陷过滤掉。                                                               </td>
+<td> Có lọc khuyết tật bên trái hay không </td>
+<td> Theo hướng thước cặp, khuyết tật nằm bên trái đường fit được gọi là khuyết tật bên trái. Khi tham số này chọn “Có”, các khuyết tật bên trái sẽ bị lọc khỏi kết quả khuyết tật.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否过滤右侧缺陷 </td>
-<td> 沿着卡尺方向，位于拟合线右侧的缺陷为右侧缺陷。该参数选择“是”，则在缺陷结果中将右侧缺陷过滤掉。                                                               </td>
+<td> Có lọc khuyết tật bên phải hay không </td>
+<td> Theo hướng thước cặp, khuyết tật nằm bên phải đường fit được gọi là khuyết tật bên phải. Khi tham số này chọn “Có”, các khuyết tật bên phải sẽ bị lọc khỏi kết quả khuyết tật.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 最大缺陷数目     </td>
-<td> 缺陷结果数目的最大值，若缺陷数目超过该值，则按照缺陷排序规则，过滤掉缺陷结果中排在后位的缺陷。                                                               </td>
+<td> Số lượng khuyết tật lớn nhất     </td>
+<td> Giá trị lớn nhất của số lượng kết quả khuyết tật. Nếu số lượng khuyết tật vượt quá giá trị này, các kết quả khuyết tật xếp ở vị trí phía sau sẽ bị lọc theo quy tắc sắp xếp khuyết tật.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否检测间距     </td>
-<td> 选择“是”，则同时检测缺陷和间距，并显示最大间距数目、最小间距、最大间距、是否会略端点间距、间距排序规则等参数。                                                               </td>
+<td> Có kiểm tra khoảng hở hay không     </td>
+<td> Chọn “Có” để đồng thời kiểm tra khuyết tật và khoảng hở, đồng thời hiển thị các tham số như số lượng khoảng hở lớn nhất, khoảng hở nhỏ nhất, khoảng hở lớn nhất, có bỏ qua khoảng hở đầu mút hay không và quy tắc sắp xếp khoảng hở.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 最大间距数目     </td>
-<td> 间距结果数目的最大值，若间距数目超过该值，则按照间距排序规则，过滤掉间距结果中排在后位的间距。                                                               </td>
+<td> Số lượng khoảng hở lớn nhất     </td>
+<td> Giá trị lớn nhất của số lượng kết quả khoảng hở. Nếu số lượng khoảng hở vượt quá giá trị này, các kết quả khoảng hở xếp ở vị trí phía sau sẽ bị lọc theo quy tắc sắp xếp khoảng hở.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 最小间距         </td>
-<td> 卡尺边缘到拟合线的最小距离，小于该距离，则不认为是间距。                                                                   </td>
+<td> Khoảng hở nhỏ nhất         </td>
+<td> Khoảng cách nhỏ nhất từ biên thước cặp đến đường fit, nếu nhỏ hơn khoảng cách này thì không được coi là khoảng hở.                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 最大间距         </td>
-<td> 卡尺边缘到拟合线的最大距离，大于该距离，则不认为是间距。                                                                   </td>
+<td> Khoảng hở lớn nhất         </td>
+<td> Khoảng cách lớn nhất từ biên thước cặp đến đường fit, nếu lớn hơn khoảng cách này thì không được coi là khoảng hở.                                                                   </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否忽略端点间距 </td>
-<td> 选择“是”，则忽略掉端点间距。端点间距是在检测区域范围内位于两端的间距。                                                               </td>
+<td> Có bỏ qua khoảng hở đầu mút hay không </td>
+<td> Chọn “Có” để bỏ qua khoảng hở đầu mút. Khoảng hở đầu mút là khoảng hở nằm ở hai đầu trong phạm vi vùng kiểm tra.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 间距排序规则     </td>
-<td> 排序规则分为3种：尺寸、面积和位置，根据选择的规则对间距结果进行排序。其中，尺寸和面积为从大到小排序，位置为沿着卡尺方向从左到右排序。                                                               </td>
+<td> Quy tắc sắp xếp khoảng hở     </td>
+<td> Có 3 quy tắc sắp xếp: kích thước, diện tích và vị trí, kết quả khoảng hở được sắp xếp theo quy tắc đã chọn. Trong đó, kích thước và diện tích được sắp xếp từ lớn đến nhỏ, vị trí được sắp xếp từ trái sang phải theo hướng thước cặp.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否显示拟合结果 </td>
-<td> 选择“是”，则显示图像检测区域内的拟合直线（圆）。                                                                           </td>
+<td> Có hiển thị kết quả fit hay không </td>
+<td> Chọn “Có” để hiển thị đường thẳng (đường tròn) fit trong vùng kiểm tra của ảnh.                                                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否显示缺陷区域 </td>
-<td> 选择“是”，则显示图像检测区域内的缺陷。                                                                                     </td>
+<td> Có hiển thị vùng khuyết tật hay không </td>
+<td> Chọn “Có” để hiển thị khuyết tật trong vùng kiểm tra của ảnh.                                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 是否显示间距区域 </td>
-<td> 选择“是”，则显示图像检测区域内的间距。                                                                                     </td>
+<td> Có hiển thị vùng khoảng hở hay không </td>
+<td> Chọn “Có” để hiển thị khoảng hở trong vùng kiểm tra của ảnh.                                                                                     </td>
 </tr>
 <tr>
 <td></td>
-<td> 检测区域         </td>
-<td> 设置检测区域位置及尺寸。Rotation表示检测区域的旋转角度，Bend表示检测区域的弯曲度，通过调整可切换直线与圆检测区域。                                                               </td>
+<td> Vùng kiểm tra         </td>
+<td> Thiết lập vị trí và kích thước của vùng kiểm tra. Rotation biểu thị góc xoay của vùng kiểm tra, Bend biểu thị độ cong của vùng kiểm tra, có thể điều chỉnh để chuyển đổi giữa vùng kiểm tra đường thẳng và đường tròn.                                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 缺陷结果数目上限 </td>
-<td> 对检测出的缺陷数目进行判定，如果缺陷数目超过此上限设置，工具执行结果失败。参数的取值范围为[0,100000]，可设置为&mdash;&mdash;，此参数不生效。 </td>
+<td> Giới hạn trên số lượng kết quả khuyết tật </td>
+<td> Phán định số lượng khuyết tật được kiểm tra. Nếu số lượng khuyết tật vượt quá giới hạn trên đã thiết lập, kết quả thực thi của công cụ là thất bại. Phạm vi giá trị của tham số là [0,100000], có thể thiết lập thành &mdash;&mdash;, khi đó tham số này không có hiệu lực. </td>
 </tr>
 <tr>
 <td></td>
-<td> 间距结果数目上限 </td>
-<td> 对检测出的间距数目进行判定，如果缺陷数目超过此上限设置，工具执行结果失败。参数的取值范围为[0,100000]，可设置为&mdash;&mdash;，此参数不生效。 </td>
+<td> Giới hạn trên số lượng kết quả khoảng hở </td>
+<td> Phán định số lượng khoảng hở được kiểm tra. Nếu số lượng khuyết tật vượt quá giới hạn trên đã thiết lập, kết quả thực thi của công cụ là thất bại. Phạm vi giá trị của tham số là [0,100000], có thể thiết lập thành &mdash;&mdash;, khi đó tham số này không có hiệu lực. </td>
 </tr>
 <tr>
-<td> 图像窗口         </td>
-<td> 检测区域                                                     </td>
-<td> 图像中参与检测的矩形或环形区域。                             </td>
-</tr>
-<tr>
-<td></td>
-<td> 输入图像         </td>
-<td> 显示待检测的图像。                                                                                                         </td>
-</tr>
-<tr>
-<td> 数据链           </td>
-<td> 输入图像                                                     </td>
-<td> 输入图像宽度、高度、像素大小，同图像窗口的输入图像参数。     </td>
+<td> Cửa sổ ảnh         </td>
+<td> Vùng kiểm tra                                                     </td>
+<td> Vùng hình chữ nhật hoặc hình vành khuyên tham gia kiểm tra trong ảnh.                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 二维线性变换     </td>
-<td> 目标相对于模板的平移、旋转、缩放变换。                                                                                     </td>
+<td> Ảnh đầu vào         </td>
+<td> Hiển thị ảnh cần kiểm tra.                                                                                                         </td>
+</tr>
+<tr>
+<td> Liên kết dữ liệu           </td>
+<td> Ảnh đầu vào                                                     </td>
+<td> Chiều rộng, chiều cao và kích thước pixel của ảnh đầu vào, giống với tham số Ảnh đầu vào trong cửa sổ ảnh.     </td>
 </tr>
 <tr>
 <td></td>
-<td> 高级界面         </td>
-<td> 无                                                                                                                         </td>
+<td> Phép biến đổi tuyến tính 2D     </td>
+<td> Phép biến đổi tịnh tiến, xoay và tỷ lệ của đối tượng so với mẫu.                                                                                     </td>
+</tr>
+<tr>
+<td></td>
+<td> Giao diện nâng cao         </td>
+<td> Không                                                                                                                         </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>输出</h2>
+<h2>Đầu ra</h2>
 
 <table>
 <thead>
 <tr>
-<th>分类 </th>
-<th> 参数名称       </th>
-<th> 参数描述                                                                                                                 </th>
+<th>Phân loại </th>
+<th> Tên tham số       </th>
+<th> Mô tả tham số                                                                                                                 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 监视窗口       </td>
-<td> 输入图像                                                     </td>
-<td> 输出图像宽度、高度、像素大小。                             </td>
+<td> Cửa sổ giám sát       </td>
+<td> Ảnh đầu vào                                                     </td>
+<td> Xuất chiều rộng, chiều cao và kích thước pixel của ảnh.                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 缺陷结果       </td>
-<td> 缺陷的位置、尺寸、面积等信息。                                                                                           </td>
+<td> Kết quả khuyết tật       </td>
+<td> Thông tin về vị trí, kích thước, diện tích của khuyết tật.                                                                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 间距结果       </td>
-<td> 间距的位置、尺寸、面积等信息。                                                                                           </td>
+<td> Kết quả khoảng hở       </td>
+<td> Thông tin về vị trí, kích thước, diện tích của khoảng hở.                                                                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 缺陷结果数目   </td>
-<td> 过滤后的缺陷结果总数目。                                                                                                 </td>
+<td> Số lượng kết quả khuyết tật   </td>
+<td> Tổng số kết quả khuyết tật sau khi lọc.                                                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 间距结果数目   </td>
-<td> 过滤后的间距结果总数目。                                                                                                 </td>
+<td> Số lượng kết quả khoảng hở   </td>
+<td> Tổng số kết quả khoảng hở sau khi lọc.                                                                                                 </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果       </td>
-<td> 工具执行结果。                                                                                                           </td>
+<td> Kết quả thực thi       </td>
+<td> Kết quả thực thi của công cụ.                                                                                                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行时间       </td>
-<td> 工具执行时间。                                                                                                           </td>
+<td> Thời gian thực thi       </td>
+<td> Thời gian thực thi của công cụ.                                                                                                           </td>
 </tr>
 <tr>
-<td> 图像窗口       </td>
-<td> 输入图像                                                     </td>
-<td> 显示工具执行结果图像，同监视窗口的输入图像参数。           </td>
-</tr>
-<tr>
-<td></td>
-<td> 拟合直线（圆） </td>
-<td> 属性窗口的是否显示拟合结果参数选择是时，显示图像检测区域内的拟合直线（圆）。                                                             </td>
+<td> Cửa sổ ảnh       </td>
+<td> Ảnh đầu vào                                                     </td>
+<td> Hiển thị ảnh kết quả sau khi công cụ thực thi, giống với tham số Ảnh đầu vào trong cửa sổ giám sát.           </td>
 </tr>
 <tr>
 <td></td>
-<td> 缺陷结果       </td>
-<td> 属性窗口的是否显示缺陷结果参数选择是时，显示图像检测区域内的缺陷结果。                                                             </td>
+<td> Đường thẳng (đường tròn) fit </td>
+<td> Khi tham số Có hiển thị kết quả fit hay không trong cửa sổ thuộc tính được chọn là Có, đường thẳng (đường tròn) fit trong vùng kiểm tra của ảnh sẽ được hiển thị.                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 间距结果       </td>
-<td> 属性窗口的是否显示间距结果参数选择是时，显示图像检测区域内的间距结果。                                                             </td>
+<td> Kết quả khuyết tật       </td>
+<td> Khi tham số Có hiển thị kết quả khuyết tật hay không trong cửa sổ thuộc tính được chọn là Có, kết quả khuyết tật trong vùng kiểm tra của ảnh sẽ được hiển thị.                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 执行结果       </td>
-<td> 显示工具执行结果，执行成功显示“OK”，执行失败显示“NG”，同监视窗口的执行结果参数。                                                             </td>
+<td> Kết quả khoảng hở       </td>
+<td> Khi tham số Có hiển thị kết quả khoảng hở hay không trong cửa sổ thuộc tính được chọn là Có, kết quả khoảng hở trong vùng kiểm tra của ảnh sẽ được hiển thị.                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 缺陷起始点 </td>
-<td> 输出所有缺陷的起始点。 </td>
+<td> Kết quả thực thi       </td>
+<td> Hiển thị kết quả thực thi của công cụ, thực thi thành công hiển thị “OK”, thực thi thất bại hiển thị “NG”, giống với tham số Kết quả thực thi trong cửa sổ giám sát.                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 缺陷终止点 </td>
-<td> 输出所有缺陷的终止点。 </td>
+<td> Điểm bắt đầu khuyết tật </td>
+<td> Xuất điểm bắt đầu của tất cả khuyết tật. </td>
 </tr>
 <tr>
 <td></td>
-<td> 间距起始点 </td>
-<td> 输出所有间距的起始点。 </td>
+<td> Điểm kết thúc khuyết tật </td>
+<td> Xuất điểm kết thúc của tất cả khuyết tật.                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 间距终止点 </td>
-<td> 输出所有间距的终止点。 </td>
-</tr>
-<tr>
-<td>数据链</td>
-<td> 缺陷结果       </td>
-<td> 输出缺陷的位置、尺寸、面积等信息，供后序工具使用，同监视窗口的缺陷结果参数。                                                             </td>
+<td> Điểm bắt đầu khoảng hở </td>
+<td> Xuất điểm bắt đầu của tất cả khoảng hở. </td>
 </tr>
 <tr>
 <td></td>
-<td> 间距结果       </td>
-<td> 输出间距的位置、尺寸、面积等信息，供后序工具使用，同监视窗口的间距结果参数。                                                             </td>
+<td> Điểm kết thúc khoảng hở </td>
+<td> Xuất điểm kết thúc của tất cả khoảng hở. </td>
+</tr>
+<tr>
+<td>Liên kết dữ liệu</td>
+<td> Kết quả khuyết tật       </td>
+<td> Xuất thông tin về vị trí, kích thước, diện tích của khuyết tật để các công cụ phía sau sử dụng, giống với tham số Kết quả khuyết tật trong cửa sổ giám sát.                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 缺陷起始点 </td>
-<td> 输出所有缺陷的起始点。                           </td>
+<td> Kết quả khoảng hở       </td>
+<td> Xuất thông tin về vị trí, kích thước, diện tích của khoảng hở để các công cụ phía sau sử dụng, giống với tham số Kết quả khoảng hở trong cửa sổ giám sát.                                                             </td>
 </tr>
 <tr>
 <td></td>
-<td> 缺陷终止点 </td>
-<td> 输出所有缺陷的终止点。                                               </td>
+<td> Điểm bắt đầu khuyết tật </td>
+<td> Xuất điểm bắt đầu của tất cả khuyết tật.                           </td>
 </tr>
 <tr>
 <td></td>
-<td> 间距起始点     </td>
-<td> 输出所有间距的起始点。                                       </td>
+<td> Điểm kết thúc khuyết tật </td>
+<td> Xuất điểm kết thúc của tất cả khuyết tật.                                               </td>
 </tr>
 <tr>
 <td></td>
-<td> 间距终止点 </td>
-<td> 输出所有间距的终止点。 </td>
+<td> Điểm bắt đầu khoảng hở     </td>
+<td> Xuất điểm bắt đầu của tất cả khoảng hở.                                       </td>
+</tr>
+<tr>
+<td></td>
+<td> Điểm kết thúc khoảng hở </td>
+<td> Xuất điểm kết thúc của tất cả khoảng hở. </td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>详细说明</h2>
+<h2>Mô tả chi tiết</h2>
 
-<h3>缺陷有左右之分</h3>
+<h3>Khuyết tật được phân biệt bên trái và bên phải</h3>
 
 <p><img src="media/wps143.jpg" alt="img" /></p>
 
-<h3>边缘极性</h3>
+<h3>Phân cực biên</h3>
 
-<p>卡尺的边缘极性是根据图像边缘的灰度级过渡形式来确定的。如图2所示，沿着卡尺Y轴正方向(红色箭头所指的方向)，图像边缘的灰度级过渡形式如果是从亮到暗，则边缘极性选择亮到暗，反之选择暗到亮，如果图像边缘的灰度级过渡形式不确定时选择任意极性。</p>
+<p>Phân cực biên của thước cặp được xác định dựa trên dạng chuyển mức xám tại biên ảnh. Như Hình 2, theo chiều dương trục Y của thước cặp (hướng mũi tên màu đỏ), nếu mức xám tại biên ảnh chuyển từ sáng sang tối thì chọn phân cực biên Sáng sang tối, ngược lại chọn Tối sang sáng, nếu không xác định được dạng chuyển mức xám tại biên ảnh thì chọn Phân cực bất kỳ.</p>
 
 <p><img src="media/wps144.jpg" alt="img" />     <img src="media/wps145.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 亮到暗</imgnote> <imgnote>(b) 暗到亮</imgnote></p>
+<p><imgnote>(a) Sáng sang tối</imgnote> <imgnote>(b) Tối sang sáng</imgnote></p>
 
-<p><imgnote>图2 边缘极性示意图</imgnote></p>
+<p><imgnote>Hình 2 Minh họa phân cực biên</imgnote></p>
 
-<h3>基本概念</h3>
+<h3>Khái niệm cơ bản</h3>
 
-<p>偏差的尺寸、面积、区域、位置等物理量的概念与计算方式如下表所示。</p>
+<p>Khái niệm và phương pháp tính các đại lượng vật lý như kích thước, diện tích, vùng và vị trí của sai lệch được trình bày trong bảng dưới đây.</p>
 
 <table>
 <thead>
 <tr>
-<th> 偏差类型 </th>
-<th> 示意图                                             </th>
-<th> 说明                                               </th>
+<th> Loại sai lệch </th>
+<th> Hình minh họa                                             </th>
+<th> Mô tả                                               </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 直线缺陷           </td>
+<td> Khuyết tật đường thẳng           </td>
 <td> <img src="media/wps146.png" alt="img" /> </td>
-<td> 尺寸：左右缺陷卡尺与拟合线交点距离；面积：缺陷卡尺候选点到拟合线距离（卡尺搜索方向）的均值与尺寸的乘积；区域：仿射矩形，图中红色区域所示；位置： 缺陷区域右下角 </td>
+<td> Kích thước: khoảng cách giữa các giao điểm của thước cặp khuyết tật bên trái và bên phải với đường fit; diện tích: tích của giá trị trung bình khoảng cách từ điểm ứng viên của thước cặp khuyết tật đến đường fit (theo hướng tìm kiếm của thước cặp) với kích thước; vùng: hình chữ nhật affine, như vùng màu đỏ trong hình; vị trí: góc dưới bên phải của vùng khuyết tật </td>
 </tr>
 <tr>
-<td> 圆缺陷             </td>
+<td> Khuyết tật đường tròn             </td>
 <td> <img src="media/wps147.png" alt="img" /> </td>
-<td> 尺寸：左右缺陷卡尺与拟合圆交点所在弧线段距离；面积：缺陷卡尺候选点到拟合圆距离（卡尺搜索方向）的均值与尺寸的乘积；区域：扇形，图中红色区域所示；位置：扇形区域右下角 </td>
+<td> Kích thước: khoảng cách theo cung tròn giữa các giao điểm của thước cặp khuyết tật bên trái và bên phải với đường tròn fit; diện tích: tích của giá trị trung bình khoảng cách từ điểm ứng viên của thước cặp khuyết tật đến đường tròn fit (theo hướng tìm kiếm của thước cặp) với kích thước; vùng: hình quạt, như vùng màu đỏ trong hình; vị trí: góc dưới bên phải của vùng hình quạt </td>
 </tr>
 <tr>
-<td> 直线间距           </td>
+<td> Khoảng hở đường thẳng           </td>
 <td> <img src="media/wps148.png" alt="img" /> </td>
-<td> 尺寸：左右间距卡尺与拟合线交点距离；面积：卡尺搜索长度与尺寸的乘积；区域：仿射矩形，图中红色区域所示；位置：缺陷区域右下角 </td>
+<td> Kích thước: khoảng cách giữa các giao điểm của thước cặp khoảng hở bên trái và bên phải với đường fit; diện tích: tích của chiều dài tìm kiếm của thước cặp với kích thước; vùng: hình chữ nhật affine, như vùng màu đỏ trong hình; vị trí: góc dưới bên phải của vùng khuyết tật </td>
 </tr>
 <tr>
-<td> 圆间距             </td>
+<td> Khoảng hở đường tròn             </td>
 <td> <img src="media/wps149.png" alt="img" /> </td>
-<td> 尺寸：左右间距卡尺与拟合圆交点所在弧线段距离；面积：卡尺搜索长度与尺寸的乘积；区域：扇形，图中红色区域所示；位置：扇形区域右下角 </td>
+<td> Kích thước: khoảng cách theo cung tròn giữa các giao điểm của thước cặp khoảng hở bên trái và bên phải với đường tròn fit; diện tích: tích của chiều dài tìm kiếm của thước cặp với kích thước; vùng: hình quạt, như vùng màu đỏ trong hình; vị trí: góc dưới bên phải của vùng hình quạt </td>
 </tr>
 </tbody>
 </table>
 
 
-<h3>获取最佳边缘</h3>
+<h3>Lấy biên tốt nhất</h3>
 
-<p>依次对单个卡尺的所有边缘进行评分，获取评价分数最高的边缘，作为拟合边缘和候选边缘。边检测工具提供“第一条边缘”、“最强边缘”两个准则来评价边缘。两个准则至少选取一个，若两个准则同时采用，取两个准则评价分数的几何平均作为评价分数。</p>
+<p>Lần lượt chấm điểm tất cả các biên của từng thước cặp, lấy biên có điểm đánh giá cao nhất làm biên fit và biên ứng viên. Công cụ kiểm tra biên cung cấp hai tiêu chí “Biên đầu tiên” và “Biên mạnh nhất” để đánh giá biên. Phải chọn ít nhất một trong hai tiêu chí, nếu đồng thời sử dụng cả hai tiêu chí thì lấy trung bình nhân của điểm đánh giá từ hai tiêu chí làm điểm đánh giá.</p>
 
-<p>其中，“第一条边缘”准则以中心偏移（即边缘位置相对于投影区域中心位置的偏移，其值可正可负）作为评价指标，中心偏移值越小分数越高；“最强边缘”准则以边缘幅值（即边缘两侧像素灰度差）作为评价指标，边缘幅值越大分数越高。分数值域范围为[0,100]。</p>
+<p>Trong đó, tiêu chí “Biên đầu tiên” sử dụng độ lệch tâm (tức là độ lệch vị trí của biên so với vị trí tâm của vùng chiếu, giá trị có thể dương hoặc âm) làm chỉ số đánh giá, độ lệch tâm càng nhỏ thì điểm càng cao; tiêu chí “Biên mạnh nhất” sử dụng biên độ biên (tức là độ chênh mức xám của pixel ở hai phía của biên) làm chỉ số đánh giá, biên độ biên càng lớn thì điểm càng cao. Phạm vi giá trị điểm là [0,100].</p>
 
-<h2>注意</h2>
+<h2>Chú ý</h2>
 
 <ul>
-<li>边检测工具对偏差确认为缺陷还是间距，与检测区域卡尺的搜索长度有很大关系，如图3所示，在实际使用中应注意检测区域大小应适当。</li>
+<li>Việc công cụ kiểm tra biên xác định sai lệch là khuyết tật hay khoảng hở phụ thuộc rất nhiều vào chiều dài tìm kiếm của thước cặp trong vùng kiểm tra. Như Hình 3, khi sử dụng thực tế cần chú ý thiết lập kích thước vùng kiểm tra phù hợp.</li>
 </ul>
 
 
 <p><img src="media/wps151.jpg" alt="img" /> <img src="media/wps152.jpg" alt="img" /></p>
 
-<p><imgnote>(a) 确认为间距</imgnote></p>
+<p><imgnote>(a) Xác định là khoảng hở</imgnote></p>
 
 <p><img src="media/wps153.jpg" alt="img" /> <img src="media/wps154.jpg" alt="img" /></p>
 
-<p><imgnote>(b) 确认为缺陷</imgnote></p>
+<p><imgnote>(b) Xác định là khuyết tật</imgnote></p>
 
-<p><imgnote>图3 偏差确认</imgnote></p>
+<p><imgnote>Hình 3 Xác định sai lệch</imgnote></p>
 
 <ul>
-<li><p>边检测工具需要配合数组解析工具和边特征检测工具结果解析使用。数组解析工具的数据类型属性选择“EdgeDeviation”就可以获取边检测工具的缺陷结果和间距结果输出，再利用边特征检测工具结果解析可以数组解析工具的输出结果进行解析。</p></li>
-<li><p>边检测工具的缺陷结果数据和间距结果数目可以直接获取，类型为int。</p></li>
+<li><p>Công cụ kiểm tra biên cần được sử dụng kết hợp với công cụ phân tích mảng và công cụ phân tích kết quả kiểm tra đặc trưng biên. Chọn thuộc tính kiểu dữ liệu của công cụ phân tích mảng là “EdgeDeviation” để lấy đầu ra kết quả khuyết tật và kết quả khoảng hở của công cụ kiểm tra biên, sau đó sử dụng công cụ phân tích kết quả kiểm tra đặc trưng biên để phân tích kết quả đầu ra của công cụ phân tích mảng.</p></li>
+<li><p>Có thể lấy trực tiếp dữ liệu kết quả khuyết tật và số lượng kết quả khoảng hở của công cụ kiểm tra biên, kiểu dữ liệu là int.</p></li>
 </ul>
 
 
-<h2>示例工程</h2>
+<h2>Dự án mẫu</h2>
+
+<p>Tham khảo “\Samples\边特征检测工具结果解析.gvp”.</p>
 
 <p>参见“\Samples\边特征检测工具结果解析.gvp”。</p>
